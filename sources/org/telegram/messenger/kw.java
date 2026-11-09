@@ -6,7 +6,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class kw implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -69,11 +69,11 @@ public final /* synthetic */ class kw implements Runnable {
                         tL_username.active = z11;
                         laVar.n0(i11, z11, false);
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, laVar.getParentActivity(), laVar.getResourceProvider());
-                        String M0 = id.M0(2131743675, null);
+                        String M0 = id.M0(2131743672, null);
                         org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                         u1Var.R = M0;
-                        u1Var.T = id.M0(2131743676, null);
-                        alertDialog$Builder.k(id.M0(2131747832, null), new ab.j(caVar, tL_username, z12, 4));
+                        u1Var.T = id.M0(2131743673, null);
+                        alertDialog$Builder.k(id.M0(2131747831, null), new ab.j(caVar, tL_username, z12, 4));
                         alertDialog$Builder.p();
                     }
                 }

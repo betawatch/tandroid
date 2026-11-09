@@ -8,10 +8,10 @@ import org.telegram.messenger.iz;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.Components.k60;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.Components.l60;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class w3 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -37,7 +37,7 @@ public final /* synthetic */ class w3 implements View.OnClickListener {
                 break;
             default:
                 final p pVar = y3Var.a.a;
-                f6 f6Var = pVar.a;
+                g6 g6Var = pVar.a;
                 t3 t3Var = pVar.r;
                 a T2 = t3Var.T2();
                 final int i11 = 0;
@@ -48,13 +48,13 @@ public final /* synthetic */ class w3 implements View.OnClickListener {
                 pagetablecell = null;
                 if (i10 == 1) {
                     int i13 = pVar.n;
-                    k60 k60Var = pVar.H;
-                    if (k60Var != null) {
-                        k60Var.u();
+                    l60 l60Var = pVar.H;
+                    if (l60Var != null) {
+                        l60Var.u();
                     }
-                    k60 G = k60.G(pVar, f6Var, view, true);
+                    l60 G = l60.G(pVar, g6Var, view, true);
                     G.Q = true;
-                    k60 J = G.J();
+                    l60 J = G.J();
                     boolean z9 = (qp.s1(i13).s4() || p10.i(i13).q()) ? false : true;
                     J.c(R.drawable.ic_ab_back, id.M0(2131753756, null), new h(G, 0), false);
                     J.k();
@@ -83,11 +83,11 @@ public final /* synthetic */ class w3 implements View.OnClickListener {
                     pVar.H = G;
                     break;
                 } else if (i10 == 2) {
-                    k60 k60Var2 = pVar.H;
-                    if (k60Var2 != null) {
-                        k60Var2.u();
+                    l60 l60Var2 = pVar.H;
+                    if (l60Var2 != null) {
+                        l60Var2.u();
                     }
-                    final k60 F = k60.F(pVar, f6Var, view);
+                    final l60 F = l60.F(pVar, g6Var, view);
                     F.Q = true;
                     F.j(T2 == null || !T2.b(), R.drawable.field_carret_empty, null, id.M0(2131753999, null), new f(pVar, T2, 1));
                     F.j((T2 == null || !T2.b() || T2.a() || T2.c()) ? false : true, R.drawable.iv_list, null, id.M0(2131754006, null), new f(pVar, T2, 2));
@@ -167,7 +167,7 @@ public final /* synthetic */ class w3 implements View.OnClickListener {
                             pageblockmath = (TL_iv.pageBlockMath) pageBlock;
                         }
                     }
-                    p.Z(pVar.getContext(), (pageblockmath == null || TextUtils.isEmpty(pageblockmath.source)) ? "" : pageblockmath.source, new ai.f1(26, pVar, pageblockmath), f6Var);
+                    p.Z(pVar.getContext(), (pageblockmath == null || TextUtils.isEmpty(pageblockmath.source)) ? "" : pageblockmath.source, new ai.f1(26, pVar, pageblockmath), g6Var);
                     break;
                 } else if (i10 == 9) {
                     t3Var.w3();

@@ -5,9 +5,9 @@ import android.view.KeyEvent;
 import android.view.ViewGroup;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class la extends oj0 {
+public final class la extends pj0 {
     public final /* synthetic */ int c;
     public final Context d;
     public final Object e;
@@ -24,7 +24,7 @@ public final class la extends oj0 {
     public void B(v4.i0 i0Var) {
         switch (this.c) {
             case 0:
-                ((oj0) this.e).B(new ka(this, i0Var));
+                ((pj0) this.e).B(new ka(this, i0Var));
                 break;
             default:
                 super.B(i0Var);
@@ -32,11 +32,11 @@ public final class la extends oj0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.oj0
+    @Override // org.telegram.ui.Components.pj0
     public final boolean D(v4.d1 d1Var) {
         switch (this.c) {
             case 0:
-                return ((oj0) this.e).D(d1Var);
+                return ((pj0) this.e).D(d1Var);
             default:
                 return d1Var.f == 0;
         }
@@ -46,7 +46,7 @@ public final class la extends oj0 {
     public final int b() {
         switch (this.c) {
             case 0:
-                return ((oj0) this.e).b() + 1;
+                return ((pj0) this.e).b() + 1;
             default:
                 return ((ArrayList) this.e).size();
         }
@@ -60,7 +60,7 @@ public final class la extends oj0 {
                 if (i7 == (naVar.G1 ? b() - 1 : 0)) {
                     return -1000;
                 }
-                return ((oj0) this.e).d(i7 - (!naVar.G1 ? 1 : 0));
+                return ((pj0) this.e).d(i7 - (!naVar.G1 ? 1 : 0));
             default:
                 return 0;
         }
@@ -72,7 +72,7 @@ public final class la extends oj0 {
             case 0:
                 na naVar = (na) this.f;
                 if (i7 != (naVar.G1 ? b() - 1 : 0)) {
-                    ((oj0) this.e).t(d1Var, i7 - (!naVar.G1 ? 1 : 0));
+                    ((pj0) this.e).t(d1Var, i7 - (!naVar.G1 ? 1 : 0));
                     break;
                 }
                 break;
@@ -89,18 +89,18 @@ public final class la extends oj0 {
     public final v4.d1 x(ViewGroup viewGroup, int i7) {
         switch (this.c) {
             case 0:
-                return i7 == -1000 ? new xi0(new bi.ec((na) this.f, this.d)) : ((oj0) this.e).x(viewGroup, i7);
+                return i7 == -1000 ? new yi0(new bi.ec((na) this.f, this.d)) : ((pj0) this.e).x(viewGroup, i7);
             default:
                 pi piVar = new pi(this, this.d);
                 piVar.b = false;
-                return new xi0(piVar);
+                return new yi0(piVar);
         }
     }
 
-    public la(na naVar, oj0 oj0Var, Context context) {
+    public la(na naVar, pj0 pj0Var, Context context) {
         this.c = 0;
         this.f = naVar;
-        this.e = oj0Var;
+        this.e = pj0Var;
         this.d = context;
     }
 }

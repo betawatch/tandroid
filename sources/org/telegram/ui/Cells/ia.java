@@ -7,24 +7,24 @@ import android.widget.TextView;
 import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class ia extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
+public final class ia extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public boolean a;
     public org.telegram.ui.Components.l9 b;
     public TextView c;
     public TextView d;
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.k6.c9));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.l6.c9));
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
         if (this.a) {
-            canvas.drawLine(org.telegram.messenger.g0.L(72.0f), getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.k6.k0);
+            canvas.drawLine(org.telegram.messenger.g0.L(72.0f), getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.l6.k0);
         }
     }
 
@@ -33,7 +33,7 @@ public final class ia extends FrameLayout implements org.telegram.ui.ActionBar.a
         super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(56.0f), TLObject.FLAG_30));
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
         org.telegram.ui.Components.l9 l9Var = this.b;
         if (l9Var != null) {
@@ -41,7 +41,7 @@ public final class ia extends FrameLayout implements org.telegram.ui.ActionBar.a
                 if (l9Var.getImageReceiver() == null || !(l9Var.getImageReceiver().t() instanceof qg.c)) {
                     return;
                 }
-                ((qg.c) l9Var.getImageReceiver().t()).a(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.c9, false));
+                ((qg.c) l9Var.getImageReceiver().t()).a(org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.c9, false));
                 l9Var.invalidate();
             } catch (Exception e10) {
                 org.telegram.messenger.a8.g(e10, true);

@@ -13,7 +13,7 @@ import org.telegram.messenger.m20;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class j5 extends FrameLayout {
     public final TextView a;
@@ -29,8 +29,8 @@ public final class j5 extends FrameLayout {
         addView(l9Var, c8.ha.d(100, 100.0f, id.a0 ? 5 : 3, 10.0f, 10.0f, 10.0f, 0.0f));
         TextView textView = new TextView(context);
         this.a = textView;
-        int i7 = org.telegram.ui.ActionBar.k6.G6;
-        org.telegram.ui.ActionBar.r6.V(textView, i7, null);
+        int i7 = org.telegram.ui.ActionBar.l6.G6;
+        org.telegram.ui.ActionBar.s6.U(textView, i7, null);
         textView.setTextSize(1, 16.0f);
         textView.setLines(1);
         textView.setTypeface(org.telegram.messenger.g0.o());
@@ -43,7 +43,7 @@ public final class j5 extends FrameLayout {
         addView(textView, c8.ha.d(-1, -2.0f, (z9 ? 5 : 3) | 48, z9 ? 10.0f : 123.0f, 9.0f, z9 ? 123.0f : 10.0f, 0.0f));
         TextView textView2 = new TextView(context);
         this.b = textView2;
-        org.telegram.ui.ActionBar.r6.V(textView2, i7, null);
+        org.telegram.ui.ActionBar.s6.U(textView2, i7, null);
         textView2.setTextSize(1, 14.0f);
         textView2.setMaxLines(3);
         textView2.setEllipsize(truncateAt);
@@ -52,7 +52,7 @@ public final class j5 extends FrameLayout {
         addView(textView2, c8.ha.d(-1, -2.0f, (z10 ? 5 : 3) | 48, z10 ? 10.0f : 123.0f, 33.0f, z10 ? 123.0f : 10.0f, 0.0f));
         TextView textView3 = new TextView(context);
         this.c = textView3;
-        org.telegram.ui.ActionBar.r6.V(textView3, org.telegram.ui.ActionBar.k6.z6, null);
+        org.telegram.ui.ActionBar.s6.U(textView3, org.telegram.ui.ActionBar.l6.z6, null);
         org.telegram.messenger.camera.q.n(textView3, 1, 14.0f, 1, 1);
         textView3.setSingleLine(true);
         textView3.setEllipsize(truncateAt);

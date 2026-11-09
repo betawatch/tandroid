@@ -4,7 +4,7 @@ import android.view.KeyEvent;
 import android.widget.TextView;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t0 implements TextView.OnEditorActionListener {
     public final /* synthetic */ int a;
@@ -54,12 +54,12 @@ public final /* synthetic */ class t0 implements TextView.OnEditorActionListener
                 }
                 break;
             case 4:
-                ec0 ec0Var = (ec0) this.b;
+                fc0 fc0Var = (fc0) this.b;
                 if (i7 != 6) {
-                    ec0Var.getClass();
+                    fc0Var.getClass();
                     break;
                 } else {
-                    ec0Var.n(false);
+                    fc0Var.n(false);
                     break;
                 }
             case 5:
@@ -70,7 +70,7 @@ public final /* synthetic */ class t0 implements TextView.OnEditorActionListener
                 }
                 break;
             case 6:
-                ah.i iVar = ((el0) this.b).d;
+                ah.i iVar = ((fl0) this.b).d;
                 if (keyEvent != null) {
                     if ((keyEvent.getAction() == 1 && keyEvent.getKeyCode() == 84) || (keyEvent.getAction() == 0 && keyEvent.getKeyCode() == 66)) {
                         iVar.m();
@@ -80,10 +80,10 @@ public final /* synthetic */ class t0 implements TextView.OnEditorActionListener
                 }
                 break;
             case 7:
-                mo0 mo0Var = (mo0) this.b;
+                no0 no0Var = (no0) this.b;
                 if (keyEvent != null) {
                     if ((keyEvent.getAction() == 1 && keyEvent.getKeyCode() == 84) || (keyEvent.getAction() == 0 && keyEvent.getKeyCode() == 66)) {
-                        org.telegram.messenger.g0.v1(mo0Var.q2.r);
+                        org.telegram.messenger.g0.v1(no0Var.q2.r);
                         break;
                     }
                 }
@@ -103,19 +103,19 @@ public final /* synthetic */ class t0 implements TextView.OnEditorActionListener
                 }
                 break;
             case 10:
-                vz0 vz0Var = (vz0) this.b;
+                wz0 wz0Var = (wz0) this.b;
                 if (keyEvent != null) {
                     if ((keyEvent.getAction() == 1 && keyEvent.getKeyCode() == 84) || (keyEvent.getAction() == 0 && keyEvent.getKeyCode() == 66)) {
-                        org.telegram.messenger.g0.v1(vz0Var.b);
+                        org.telegram.messenger.g0.v1(wz0Var.b);
                         break;
                     }
                 }
                 break;
             default:
-                a51 a51Var = (a51) this.b;
+                b51 b51Var = (b51) this.b;
                 if (keyEvent != null) {
                     if ((keyEvent.getAction() == 1 && keyEvent.getKeyCode() == 84) || (keyEvent.getAction() == 0 && keyEvent.getKeyCode() == 66)) {
-                        org.telegram.messenger.g0.v1(a51Var.J);
+                        org.telegram.messenger.g0.v1(b51Var.J);
                         break;
                     }
                 }

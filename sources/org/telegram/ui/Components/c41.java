@@ -1,18 +1,53 @@
 package org.telegram.ui.Components;
 
+import android.net.Uri;
 import android.text.TextPaint;
+import android.text.style.URLSpan;
+import android.view.View;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class c41 extends b41 {
+public class c41 extends URLSpan {
+    public final boolean a;
+    public final vy0 b;
+    public TLObject c;
+    public String d;
+
     public c41(String str) {
-        super(str != null ? str.replace((char) 8238, ' ') : str, (uy0) null);
+        this(str, (vy0) null);
     }
 
-    @Override // org.telegram.ui.Components.b41, android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
+    @Override // android.text.style.URLSpan, android.text.style.ClickableSpan
+    public void onClick(View view) {
+        String url = getURL();
+        if (!url.startsWith("@")) {
+            vf.c.t(view.getContext(), url);
+            return;
+        }
+        vf.c.q(view.getContext(), Uri.parse("https://t.me/" + url.substring(1)), true, true);
+    }
+
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public void updateDrawState(TextPaint textPaint) {
+        int i7 = textPaint.linkColor;
+        int color = textPaint.getColor();
         super.updateDrawState(textPaint);
-        textPaint.setTypeface(org.telegram.messenger.g0.o());
-        textPaint.setUnderlineText(false);
+        vy0 vy0Var = this.b;
+        if (vy0Var != null) {
+            vy0Var.a(textPaint);
+        }
+        textPaint.setUnderlineText(i7 == color && !this.a);
+    }
+
+    public c41(String str, int i7) {
+        this(str, (vy0) null);
+        this.a = true;
+    }
+
+    public c41(String str, vy0 vy0Var) {
+        super(str != null ? str.replace((char) 8238, ' ') : str);
+        this.a = false;
+        this.b = vy0Var;
     }
 }

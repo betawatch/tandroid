@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class qs {
     public static final int A = 11;
@@ -607,9 +607,9 @@ public final class qs {
                     int hashCode = (Arrays.hashCode(objArr) << 16) + i7;
                     SparseArray sparseArray2 = this.q;
                     if (sparseArray2.indexOfKey(hashCode) < 0) {
-                        l2.a0 a0Var = new l2.a0(this, i7, objArr, hashCode);
-                        sparseArray2.put(hashCode, a0Var);
-                        g0.i3(a0Var, 250L);
+                        l2.z zVar = new l2.z(this, i7, objArr, hashCode);
+                        sparseArray2.put(hashCode, zVar);
+                        g0.i3(zVar, 250L);
                     }
                 } else {
                     l(objArr, i7, z9);
@@ -643,12 +643,12 @@ public final class qs {
         }
         if (!this.h.isEmpty()) {
             for (int i10 = 0; i10 < this.h.size(); i10++) {
-                org.telegram.ui.ek ekVar = (org.telegram.ui.ek) this.h.get(i10);
-                ekVar.getClass();
+                org.telegram.ui.gk gkVar = (org.telegram.ui.gk) this.h.get(i10);
+                gkVar.getClass();
                 if (i7 == 1) {
                     long longValue = ((Long) objArr[0]).longValue();
-                    org.telegram.ui.an anVar = ekVar.a;
-                    if (anVar.X6 && longValue == anVar.j6) {
+                    org.telegram.ui.cn cnVar = gkVar.a;
+                    if (cnVar.X6 && longValue == cnVar.j6) {
                         this.d.add(new ks(i7, objArr));
                         return;
                     }

@@ -1,70 +1,23 @@
 package org.telegram.ui;
 
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
+import android.app.Activity;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class xu0 extends v4.s0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ProfileActivity b;
+public final class xu0 extends org.telegram.ui.Components.no0 {
+    public final /* synthetic */ yu0 R2;
 
-    public /* synthetic */ xu0(ProfileActivity profileActivity, int i7) {
-        this.a = i7;
-        this.b = profileActivity;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public xu0(yu0 yu0Var, Activity activity, String str) {
+        super(activity, null, str, false, null, false, null);
+        this.R2 = yu0Var;
     }
 
-    @Override // v4.s0
-    public final void a(RecyclerView recyclerView, int i7) {
-        View m10;
-        switch (this.a) {
-            case 0:
-                if (i7 == 1) {
-                    org.telegram.messenger.g0.v1(this.b.getParentActivity().getCurrentFocus());
-                    break;
-                }
-                break;
-            default:
-                ProfileActivity profileActivity = this.b;
-                if (i7 == 1) {
-                    org.telegram.messenger.g0.v1(profileActivity.getParentActivity().getCurrentFocus());
-                }
-                if (profileActivity.F0 && i7 != 2) {
-                    profileActivity.F0 = false;
-                }
-                if (i7 == 0 && !profileActivity.F1 && (m10 = profileActivity.c.m(0)) != null) {
-                    ProfileActivity.R0(profileActivity, m10, 0.0f);
-                }
-                org.telegram.ui.ActionBar.f5 f5Var = profileActivity.T0;
-                if (f5Var != null) {
-                    boolean z9 = i7 != 0;
-                    profileActivity.y1 = z9;
-                    f5Var.setEnabled((z9 || profileActivity.o2) ? false : true);
-                }
-                vv0 vv0Var = profileActivity.N;
-                boolean z10 = profileActivity.a.I1;
-                vv0Var.getClass();
-                break;
-        }
-    }
-
-    @Override // v4.s0
-    public void b(RecyclerView recyclerView, int i7, int i10) {
-        switch (this.a) {
-            case 1:
-                ProfileActivity profileActivity = this.b;
-                fi.m3 m3Var = profileActivity.W;
-                if (m3Var != null) {
-                    m3Var.f(true);
-                }
-                profileActivity.O3();
-                if (profileActivity.B1 != null && !profileActivity.C1 && profileActivity.c.N0() > profileActivity.u4 - 8) {
-                    profileActivity.h4(false);
-                }
-                vv0 vv0Var = profileActivity.N;
-                vv0Var.setPinnedToTop(vv0Var.getY() <= 0.0f);
-                profileActivity.p5();
-                break;
+    @Override // org.telegram.ui.Components.no0
+    public final void R0(a0.h hVar, int i7, TLRPC.TL_forumTopic tL_forumTopic, boolean z9) {
+        if (z9) {
+            org.telegram.messenger.g0.i3(new sn0(this, hVar, i7, 24), 250L);
         }
     }
 }

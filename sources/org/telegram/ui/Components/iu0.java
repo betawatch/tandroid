@@ -1,37 +1,70 @@
 package org.telegram.ui.Components;
 
-import org.telegram.ui.ProfileActivity;
+import android.animation.TimeAnimator;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class iu0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ lu0 b;
+public final class iu0 extends TimeAnimator {
+    public int a;
+    public int b;
+    public ValueAnimator.AnimatorUpdateListener c;
+    public Float d;
+    public float[] e;
 
-    public /* synthetic */ iu0(lu0 lu0Var, int i7) {
-        this.a = i7;
-        this.b = lu0Var;
+    @Override // android.animation.ValueAnimator
+    public final void addUpdateListener(ValueAnimator.AnimatorUpdateListener animatorUpdateListener) {
+        this.c = animatorUpdateListener;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                lu0 lu0Var = this.b;
-                lu0Var.invalidate();
-                org.telegram.messenger.g0.h3(new iu0(lu0Var, 1));
-                break;
-            default:
-                lu0 lu0Var2 = this.b;
-                ku0 ku0Var = lu0Var2.e;
-                if (ku0Var != null) {
-                    lu0Var2.getVisibilityFactor();
-                    ProfileActivity profileActivity = ((org.telegram.ui.tt0) ku0Var).b;
-                    profileActivity.r.setTranslationX(profileActivity.m4(profileActivity.u6, profileActivity.w6));
-                    profileActivity.r.setTranslationY(profileActivity.n4(profileActivity.x6));
-                    break;
+    @Override // android.animation.ValueAnimator, android.animation.Animator
+    public final void end() {
+        this.c = null;
+        super.end();
+    }
+
+    @Override // android.animation.ValueAnimator
+    public final Object getAnimatedValue() {
+        return this.d;
+    }
+
+    @Override // android.animation.ValueAnimator
+    public final void setFloatValues(float[] fArr) {
+        super.setFloatValues(fArr);
+        this.e = fArr;
+    }
+
+    @Override // android.animation.TimeAnimator, android.animation.ValueAnimator, android.animation.Animator
+    public final void start() {
+        setTimeListener(new TimeAnimator.TimeListener() { // from class: org.telegram.ui.Components.hu0
+            @Override // android.animation.TimeAnimator.TimeListener
+            public final void onTimeUpdate(TimeAnimator timeAnimator, long j3, long j10) {
+                int i7;
+                iu0 iu0Var = iu0.this;
+                int i10 = iu0Var.a;
+                if (i10 <= 0 || (i7 = iu0Var.b) <= 0) {
+                    iu0Var.end();
+                    return;
                 }
-                break;
-        }
+                int i11 = i10 - 1;
+                iu0Var.a = i11;
+                if (iu0Var.c != null) {
+                    float[] fArr = iu0Var.e;
+                    if (fArr == null || fArr.length != 2) {
+                        iu0Var.end();
+                        return;
+                    }
+                    float interpolation = iu0Var.getInterpolator().getInterpolation(1.0f - (i11 / i7));
+                    float[] fArr2 = iu0Var.e;
+                    float f10 = fArr2[0];
+                    iu0Var.d = Float.valueOf(((fArr2[1] - f10) * interpolation) + f10);
+                    iu0Var.c.onAnimationUpdate(iu0Var);
+                }
+            }
+        });
+        int duration = (int) (getDuration() / org.telegram.messenger.g0.t);
+        this.a = duration;
+        this.b = duration;
+        super.start();
     }
 }

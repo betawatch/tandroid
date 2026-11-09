@@ -1,44 +1,30 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.view.ViewGroup;
-import java.io.Serializable;
-
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class c31 implements org.telegram.messenger.a20, org.telegram.messenger.b20, r0.m {
-    public final /* synthetic */ m31 a;
+public final /* synthetic */ class c31 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ n31 b;
 
-    public /* synthetic */ c31(m31 m31Var) {
-        this.a = m31Var;
+    public /* synthetic */ c31(n31 n31Var, int i7) {
+        this.a = i7;
+        this.b = n31Var;
     }
 
-    @Override // r0.m
-    public r0.k1 S0(View view, r0.k1 k1Var) {
-        i0.b I0 = org.telegram.messenger.g0.I0(k1Var, false);
-        int i7 = I0.d;
-        m31 m31Var = this.a;
-        m31Var.c0 = i7;
-        int i10 = I0.b;
-        if (m31Var.P != null) {
-            int currentActionBarHeight = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + i10;
-            ViewGroup.LayoutParams layoutParams = m31Var.P.getLayoutParams();
-            if (layoutParams.height != currentActionBarHeight) {
-                layoutParams.height = currentActionBarHeight;
-                m31Var.P.setLayoutParams(layoutParams);
-            }
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = this.a;
+        n31 n31Var = this.b;
+        switch (i7) {
+            case 0:
+                org.telegram.messenger.qp.s1(n31Var.currentAccount).l0(null);
+                break;
+            case 1:
+                vf.c.t(n31Var.getParentActivity(), org.telegram.messenger.id.M0(2131752154, null));
+                break;
+            default:
+                n31Var.c.f3.O(true);
+                break;
         }
-        oi.a.e(m31Var.c, i10, i7, org.telegram.messenger.g0.L(12.0f), m31Var.d0);
-        return r0.k1.b;
-    }
-
-    @Override // org.telegram.messenger.b20
-    public Boolean a(org.telegram.ui.Components.x31 x31Var, View view, Integer num, Float f10, Float f11) {
-        return Boolean.valueOf(m31.Z(this.a, x31Var, view));
-    }
-
-    @Override // org.telegram.messenger.a20
-    public void i(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-        m31.h0(this.a, (org.telegram.ui.Components.x31) obj);
     }
 }

@@ -12,10 +12,10 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.hc;
-import org.telegram.ui.Components.k60;
-import org.telegram.ui.Components.up0;
+import org.telegram.ui.Components.l60;
+import org.telegram.ui.Components.vp0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o1 implements Runnable {
     public final /* synthetic */ int a;
@@ -42,13 +42,13 @@ public final /* synthetic */ class o1 implements Runnable {
             case 0:
                 z1 z1Var = (z1) obj2;
                 TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) tLObject;
-                up0 up0Var = z1Var.a;
-                up0Var.e.k(z1Var.e.d, savedStarGift);
-                ((k60) obj).u();
-                up0Var.o();
-                TL_stars.TL_starGiftCollection c10 = up0Var.e.c(z1Var.e.d);
+                vp0 vp0Var = z1Var.a;
+                vp0Var.e.k(z1Var.e.d, savedStarGift);
+                ((l60) obj).u();
+                vp0Var.o();
+                TL_stars.TL_starGiftCollection c10 = vp0Var.e.c(z1Var.e.d);
                 if (c10 != null) {
-                    hc.a0(up0Var.a).R(savedStarGift.gift.getDocument(), org.telegram.messenger.g0.X2(id.a0(null, null, 2131750038, k7.A1(savedStarGift.gift), c10.title))).j();
+                    hc.a0(vp0Var.a).R(savedStarGift.gift.getDocument(), org.telegram.messenger.g0.X2(id.a0(null, null, 2131750037, k7.z1(savedStarGift.gift), c10.title))).j();
                     break;
                 }
                 break;
@@ -72,22 +72,22 @@ public final /* synthetic */ class o1 implements Runnable {
                 ConnectionsManager.getInstance(z1Var2.b).sendRequest(savestargift, null);
                 break;
             default:
-                b3 b3Var = (b3) obj2;
+                c3 c3Var = (c3) obj2;
                 TL_stars.getResaleStarGifts getresalestargifts = (TL_stars.getResaleStarGifts) obj;
-                HashMap hashMap = b3Var.m;
-                HashMap hashMap2 = b3Var.o;
-                HashMap hashMap3 = b3Var.n;
-                ArrayList arrayList = b3Var.h;
-                ArrayList arrayList2 = b3Var.g;
-                ArrayList arrayList3 = b3Var.f;
-                int i10 = b3Var.a;
-                ArrayList arrayList4 = b3Var.d;
-                b3Var.v = -1;
+                HashMap hashMap = c3Var.m;
+                HashMap hashMap2 = c3Var.o;
+                HashMap hashMap3 = c3Var.n;
+                ArrayList arrayList = c3Var.h;
+                ArrayList arrayList2 = c3Var.g;
+                ArrayList arrayList3 = c3Var.f;
+                int i10 = c3Var.a;
+                ArrayList arrayList4 = c3Var.d;
+                c3Var.v = -1;
                 if (tLObject instanceof TL_stars.resaleStarGifts) {
                     TL_stars.resaleStarGifts resalestargifts = (TL_stars.resaleStarGifts) tLObject;
                     qp.s1(i10).Y3(resalestargifts.users, false);
                     qp.s1(i10).S3(resalestargifts.chats, false);
-                    b3Var.e = resalestargifts.count;
+                    c3Var.e = resalestargifts.count;
                     if (TextUtils.isEmpty(getresalestargifts.offset)) {
                         arrayList4.clear();
                         z10 = true;
@@ -105,9 +105,9 @@ public final /* synthetic */ class o1 implements Runnable {
                             arrayList4.add((TL_stars.TL_starGiftUnique) starGift2);
                         }
                     }
-                    b3Var.u = arrayList4.size() >= b3Var.e || TextUtils.isEmpty(resalestargifts.next_offset);
-                    b3Var.q = resalestargifts.next_offset;
-                    b3Var.t = false;
+                    c3Var.u = arrayList4.size() >= c3Var.e || TextUtils.isEmpty(resalestargifts.next_offset);
+                    c3Var.q = resalestargifts.next_offset;
+                    c3Var.t = false;
                     ArrayList<TL_stars.StarGiftAttribute> arrayList6 = resalestargifts.attributes;
                     if (arrayList6 != null && !arrayList6.isEmpty()) {
                         arrayList3.clear();
@@ -116,7 +116,7 @@ public final /* synthetic */ class o1 implements Runnable {
                         arrayList3.addAll(ea.m(resalestargifts.attributes, TL_stars.starGiftAttributeModel.class));
                         arrayList2.addAll(ea.m(resalestargifts.attributes, TL_stars.starGiftAttributeBackdrop.class));
                         arrayList.addAll(ea.m(resalestargifts.attributes, TL_stars.starGiftAttributePattern.class));
-                        b3Var.i = resalestargifts.attributes_hash;
+                        c3Var.i = resalestargifts.attributes_hash;
                     }
                     if (!resalestargifts.counters.isEmpty()) {
                         hashMap3.clear();
@@ -139,7 +139,7 @@ public final /* synthetic */ class o1 implements Runnable {
                             }
                         }
                     }
-                    c20 c20Var = b3Var.c;
+                    c20 c20Var = c3Var.c;
                     if (c20Var != null) {
                         c20Var.a(Boolean.valueOf(z10));
                         break;

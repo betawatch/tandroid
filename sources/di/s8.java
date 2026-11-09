@@ -1,44 +1,164 @@
 package di;
 
+import android.R;
 import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.LinearGradient;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.view.MotionEvent;
 import android.view.View;
-import android.widget.FrameLayout;
+import android.view.animation.LinearInterpolator;
+import j$.util.Objects;
 import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.Components.ic;
+import org.telegram.ui.Components.ot;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class s8 extends FrameLayout {
-    public final TL_stories.MediaArea a;
-    public final tg.m0 b;
+public class s8 extends View {
+    public final boolean D;
+    public boolean E;
+    public long F;
+    public final Path G;
+    public final f8 H;
+    public final org.telegram.ui.Components.w5 a;
+    public final TL_stories.MediaArea b;
+    public final Paint c;
+    public final Paint d;
+    public LinearGradient e;
+    public LinearGradient f;
+    public final Matrix h;
+    public final org.telegram.ui.Cells.y n;
+    public final ic r;
+    public final boolean s;
+    public final boolean w;
+    public final boolean x;
+    public final boolean y;
 
-    public s8(Context context, tg.m0 m0Var, TL_stories.MediaArea mediaArea) {
+    public s8(Context context, View view, TL_stories.MediaArea mediaArea) {
         super(context);
-        this.a = mediaArea;
-        this.b = m0Var;
-        addView(m0Var);
+        boolean z9 = true;
+        this.c = new Paint(1);
+        Paint paint = new Paint(1);
+        this.d = paint;
+        this.h = new Matrix();
+        org.telegram.ui.Cells.y h02 = org.telegram.ui.ActionBar.l6.h0(1174405119, 2, -1);
+        this.n = h02;
+        this.r = new ic(this);
+        this.s = false;
+        this.w = false;
+        this.E = false;
+        this.G = new Path();
+        this.H = new f8(this, 3);
+        this.b = mediaArea;
+        boolean z10 = mediaArea instanceof TL_stories.TL_mediaAreaGeoPoint;
+        this.s = z10 || (mediaArea instanceof TL_stories.TL_mediaAreaVenue) || (mediaArea instanceof TL_stories.TL_mediaAreaUrl);
+        this.w = z10 || (mediaArea instanceof TL_stories.TL_mediaAreaVenue);
+        if (!z10 && !(mediaArea instanceof TL_stories.TL_mediaAreaVenue) && (mediaArea.coordinates.flags & 1) == 0) {
+            z9 = false;
+        }
+        this.x = z9;
+        this.D = z9;
+        this.y = z9;
+        this.a = new org.telegram.ui.Components.w5(view, 0L, 120L, new LinearInterpolator());
+        paint.setStyle(Paint.Style.STROKE);
+        h02.setCallback(this);
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        tg.m0 m0Var = this.b;
-        m0Var.measure(i7, i10);
-        int measuredWidth = (m0Var.getMeasuredWidth() - m0Var.getPaddingLeft()) - m0Var.getPaddingRight();
-        int measuredHeight = (m0Var.getMeasuredHeight() - m0Var.getPaddingTop()) - m0Var.getPaddingBottom();
-        float f10 = measuredWidth;
-        float f11 = f10 / 2.0f;
-        m0Var.setPivotX(m0Var.getPaddingLeft() + f11);
-        float f12 = measuredHeight;
-        float f13 = f12 / 2.0f;
-        m0Var.setPivotY(m0Var.getPaddingTop() + f13);
-        int size = View.MeasureSpec.getSize(i7);
-        int size2 = View.MeasureSpec.getSize(i10);
-        setMeasuredDimension(size, size2);
-        float f14 = size;
-        float f15 = size2;
-        float min = Math.min(f14 / f10, f15 / f12);
-        m0Var.setTranslationX((f14 / 2.0f) - (f11 + m0Var.getPaddingLeft()));
-        m0Var.setTranslationY((f15 / 2.0f) - (f13 + m0Var.getPaddingTop()));
-        m0Var.setScaleX(min);
-        m0Var.setScaleY(min);
+    public final void b(Canvas canvas) {
+        if (this.D) {
+            float innerRadius = getInnerRadius();
+            RectF rectF = org.telegram.messenger.g0.P;
+            rectF.set(0.0f, 0.0f, getWidth(), getHeight());
+            Path path = this.G;
+            path.rewind();
+            path.addRoundRect(rectF, innerRadius, innerRadius, Path.Direction.CW);
+            canvas.save();
+            canvas.clipPath(path);
+            int width = getWidth();
+            int height = getHeight();
+            org.telegram.ui.Cells.y yVar = this.n;
+            yVar.setBounds(0, 0, width, height);
+            yVar.draw(canvas);
+            canvas.restore();
+        }
+    }
+
+    @Override // android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        int action = motionEvent.getAction();
+        org.telegram.ui.Cells.y yVar = this.n;
+        ic icVar = this.r;
+        if (action == 0) {
+            if (getParent() instanceof View) {
+                View view = (View) getParent();
+                Objects.requireNonNull(view);
+                icVar.f = new ot(1, view);
+            }
+            icVar.c(true);
+            yVar.setHotspot(motionEvent.getX(), motionEvent.getY());
+            yVar.setState(new int[]{R.attr.state_pressed, R.attr.state_enabled});
+        } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
+            icVar.c(false);
+            yVar.setState(new int[0]);
+        }
+        super.dispatchTouchEvent(motionEvent);
+        return true;
+    }
+
+    public float getInnerRadius() {
+        TL_stories.MediaArea mediaArea;
+        TL_stories.MediaAreaCoordinates mediaAreaCoordinates;
+        return (!(getParent() instanceof View) || (mediaArea = this.b) == null || (mediaAreaCoordinates = mediaArea.coordinates) == null) ? getMeasuredHeight() * 0.2f : (mediaAreaCoordinates.flags & 1) != 0 ? (float) (((mediaAreaCoordinates.radius / 100.0d) * getWidth()) / getScaleX()) : getMeasuredHeight() * 0.2f;
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        float innerRadius = getInnerRadius();
+        b(canvas);
+        if (this.w && this.E && this.e != null) {
+            float measuredWidth = getMeasuredWidth() * 0.7f;
+            float currentTimeMillis = (System.currentTimeMillis() - this.F) / 600.0f;
+            float measuredWidth2 = ((getMeasuredWidth() + measuredWidth) * currentTimeMillis) - measuredWidth;
+            if (currentTimeMillis >= 1.0f) {
+                this.E = false;
+                return;
+            }
+            Matrix matrix = this.h;
+            matrix.reset();
+            matrix.postScale(measuredWidth / 40.0f, 1.0f);
+            matrix.postTranslate(measuredWidth2, 0.0f);
+            this.e.setLocalMatrix(matrix);
+            LinearGradient linearGradient = this.e;
+            Paint paint = this.c;
+            paint.setShader(linearGradient);
+            RectF rectF = org.telegram.messenger.g0.P;
+            rectF.set(0.0f, 0.0f, getWidth(), getHeight());
+            canvas.drawRoundRect(rectF, innerRadius, innerRadius, paint);
+            this.f.setLocalMatrix(matrix);
+            LinearGradient linearGradient2 = this.f;
+            Paint paint2 = this.d;
+            paint2.setShader(linearGradient2);
+            float N = org.telegram.messenger.g0.N(1.5f);
+            paint2.setStrokeWidth(N);
+            float f10 = N / 2.0f;
+            rectF.inset(f10, f10);
+            float f11 = innerRadius - f10;
+            canvas.drawRoundRect(rectF, f11, f11, paint2);
+            invalidate();
+        }
+    }
+
+    @Override // android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        return drawable == this.n || super.verifyDrawable(drawable);
+    }
+
+    public void a(Canvas canvas) {
     }
 }

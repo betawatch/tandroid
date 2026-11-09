@@ -18,19 +18,19 @@ import org.telegram.messenger.id;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.r6;
-import org.telegram.ui.Components.a20;
-import org.telegram.ui.Components.ch0;
-import org.telegram.ui.Components.t41;
-import org.telegram.ui.Components.zg0;
-import org.telegram.ui.c40;
-import org.telegram.ui.t20;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.s6;
+import org.telegram.ui.Components.ah0;
+import org.telegram.ui.Components.b20;
+import org.telegram.ui.Components.dh0;
+import org.telegram.ui.Components.u41;
+import org.telegram.ui.e40;
+import org.telegram.ui.v20;
 import org.telegram.ui.va;
 import org.telegram.ui.w9;
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public abstract class t0 extends FrameLayout implements VoIPService.StateListener {
     public final boolean D;
@@ -38,7 +38,7 @@ public abstract class t0 extends FrameLayout implements VoIPService.StateListene
     public final c5.k b;
     public final ei.k c;
     public final LinearLayout d;
-    public final ch0 e;
+    public final dh0 e;
     public final TextView[] f;
     public final k2 h;
     public int n;
@@ -59,7 +59,7 @@ public abstract class t0 extends FrameLayout implements VoIPService.StateListene
         c5.k kVar = new c5.k(context);
         this.b = kVar;
         org.telegram.messenger.g0.C3(kVar, 2130706432);
-        kVar.setAdapter(new a20(this, i7));
+        kVar.setAdapter(new b20(this, i7));
         kVar.setPageMargin(0);
         kVar.setOffscreenPageLimit(1);
         addView(kVar, ha.c(-1.0f, -1));
@@ -78,7 +78,7 @@ public abstract class t0 extends FrameLayout implements VoIPService.StateListene
         org.telegram.ui.ActionBar.k kVar2 = new org.telegram.ui.ActionBar.k(context, null);
         kVar2.setBackButtonDrawable(new org.telegram.ui.ActionBar.y1(false));
         kVar2.setBackgroundColor(0);
-        r6.m(kVar2, 1, k6.Vg, null);
+        s6.l(kVar2, 1, l6.Vg, null);
         kVar2.setOccupyStatusBar(true);
         kVar2.setActionBarMenuOnItemClick(new w9(this, 19));
         addView(kVar2);
@@ -87,14 +87,14 @@ public abstract class t0 extends FrameLayout implements VoIPService.StateListene
         kVar3.setMinWidth(org.telegram.messenger.g0.L(64.0f));
         kVar3.setTag(-1);
         kVar3.setTextSize(1, 14.0f);
-        int i11 = k6.bh;
-        r6.V(kVar3, i11, null);
+        int i11 = l6.bh;
+        s6.U(kVar3, i11, null);
         kVar3.setGravity(17);
         kVar3.setTypeface(org.telegram.messenger.g0.o());
-        kVar3.setText(id.M0(2131743243, null));
+        kVar3.setText(id.M0(2131743240, null));
         int L = org.telegram.messenger.g0.L(6.0f);
-        int o4 = i0.a.o(k6.x0(null, i11, false), 76);
-        kVar3.setForeground(k6.k0(L, L, L, L, 0, o4, o4));
+        int o4 = i0.a.o(l6.x0(null, i11, false), 76);
+        kVar3.setForeground(l6.k0(L, L, L, L, 0, o4, o4));
         kVar3.setPadding(0, org.telegram.messenger.g0.L(12.0f), 0, org.telegram.messenger.g0.L(12.0f));
         kVar3.setOnClickListener(new ii.g(this, 18));
         addView(kVar3, ha.d(-1, 48.0f, 80, 0.0f, 0.0f, 0.0f, 64.0f));
@@ -116,11 +116,11 @@ public abstract class t0 extends FrameLayout implements VoIPService.StateListene
             this.f[i12].setSingleLine(true);
             this.d.addView(this.f[i12], ha.o(-2, -1));
             if (i12 == 0 && this.D) {
-                this.f[i12].setText(id.M0(2131743262, null));
+                this.f[i12].setText(id.M0(2131743259, null));
             } else if (i12 == 0 || (i12 == 1 && this.D)) {
-                this.f[i12].setText(id.M0(2131743408, null));
+                this.f[i12].setText(id.M0(2131743405, null));
             } else {
-                this.f[i12].setText(id.M0(2131743496, null));
+                this.f[i12].setText(id.M0(2131743493, null));
             }
             this.f[i12].setOnClickListener(new ai.v(this, i12, 20));
             i12++;
@@ -136,17 +136,17 @@ public abstract class t0 extends FrameLayout implements VoIPService.StateListene
             sharedInstance.setLocalSink(this.h.d, false);
         }
         this.b.setCurrentItem(this.D ? 1 : 0);
-        ch0 ch0Var = new ch0(context);
-        this.e = ch0Var;
-        ch0Var.setPadding(org.telegram.messenger.g0.L(9.0f), org.telegram.messenger.g0.L(9.0f), org.telegram.messenger.g0.L(9.0f), org.telegram.messenger.g0.L(9.0f));
-        ch0Var.setBackground(k6.L(org.telegram.messenger.g0.L(48.0f), i0.a.o(-16777216, 76)));
-        zg0 zg0Var = new zg0(R.raw.voice_mini, org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(24.0f), true, null);
-        ch0Var.setAnimation(zg0Var);
-        ch0Var.setScaleType(ImageView.ScaleType.FIT_CENTER);
+        dh0 dh0Var = new dh0(context);
+        this.e = dh0Var;
+        dh0Var.setPadding(org.telegram.messenger.g0.L(9.0f), org.telegram.messenger.g0.L(9.0f), org.telegram.messenger.g0.L(9.0f), org.telegram.messenger.g0.L(9.0f));
+        dh0Var.setBackground(l6.L(org.telegram.messenger.g0.L(48.0f), i0.a.o(-16777216, 76)));
+        ah0 ah0Var = new ah0(R.raw.voice_mini, org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(24.0f), true, null);
+        dh0Var.setAnimation(ah0Var);
+        dh0Var.setScaleType(ImageView.ScaleType.FIT_CENTER);
         this.w = true;
-        zg0Var.M(69);
-        ch0Var.setOnClickListener(new t41(i10, this, zg0Var));
-        addView(ch0Var, ha.d(48, 48.0f, 83, 24.0f, 0.0f, 0.0f, 136.0f));
+        ah0Var.M(69);
+        dh0Var.setOnClickListener(new u41(i10, this, ah0Var));
+        addView(dh0Var, ha.d(48, 48.0f, 83, 24.0f, 0.0f, 0.0f, 136.0f));
     }
 
     public static void a(t0 t0Var) {
@@ -171,9 +171,9 @@ public abstract class t0 extends FrameLayout implements VoIPService.StateListene
         }
         this.a = true;
         c();
-        c40 c40Var = ((t20) this).E;
-        boolean z11 = c40Var.q2.w;
-        c40Var.q2 = null;
+        e40 e40Var = ((v20) this).E;
+        boolean z11 = e40Var.q2.w;
+        e40Var.q2 = null;
         VoIPService sharedInstance = VoIPService.getSharedInstance();
         if (z10) {
             if (sharedInstance != null) {
@@ -182,10 +182,10 @@ public abstract class t0 extends FrameLayout implements VoIPService.StateListene
             if (z9 && sharedInstance != null) {
                 sharedInstance.setVideoState(false, 0);
             }
-            c40Var.T1(true, false);
-            c40Var.R2.z();
-            c40Var.Q0(true);
-            c40Var.l1.requestLayout();
+            e40Var.T1(true, false);
+            e40Var.R2.z();
+            e40Var.Q0(true);
+            e40Var.l1.requestLayout();
         } else if (sharedInstance != null) {
             sharedInstance.setVideoState(false, 0);
         }
@@ -266,7 +266,7 @@ public abstract class t0 extends FrameLayout implements VoIPService.StateListene
     }
 
     public int getBackgroundColor() {
-        return i0.a.o(k6.x0(null, k6.Ug, false), (int) (getAlpha() * 1.0f * 255.0f));
+        return i0.a.o(l6.x0(null, l6.Ug, false), (int) (getAlpha() * 1.0f * 255.0f));
     }
 
     @Override // android.view.View
@@ -335,9 +335,9 @@ public abstract class t0 extends FrameLayout implements VoIPService.StateListene
             marginLayoutParams.leftMargin = L2;
             marginLayoutParams.rightMargin = L2;
         }
-        ch0 ch0Var = this.e;
-        if (ch0Var != null) {
-            ViewGroup.MarginLayoutParams marginLayoutParams2 = (ViewGroup.MarginLayoutParams) ch0Var.getLayoutParams();
+        dh0 dh0Var = this.e;
+        if (dh0Var != null) {
+            ViewGroup.MarginLayoutParams marginLayoutParams2 = (ViewGroup.MarginLayoutParams) dh0Var.getLayoutParams();
             if (z9) {
                 int L3 = org.telegram.messenger.g0.L(88.0f);
                 marginLayoutParams2.leftMargin = L3;

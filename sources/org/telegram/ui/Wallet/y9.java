@@ -1,30 +1,36 @@
 package org.telegram.ui.Wallet;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.widget.FrameLayout;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.ui.Components.di;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
-public final class y9 extends FrameLayout {
-    public final /* synthetic */ aa a;
+public final class y9 extends AnimatorListenerAdapter {
+    public final /* synthetic */ di a;
+    public final /* synthetic */ u6 b;
+    public final /* synthetic */ z9 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y9(aa aaVar, Context context) {
-        super(context);
-        this.a = aaVar;
+    public y9(z9 z9Var, di diVar, u6 u6Var) {
+        this.c = z9Var;
+        this.a = diVar;
+        this.b = u6Var;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        canvas.save();
-        canvas.translate(-getLeft(), -getTop());
-        aa aaVar = this.a;
-        aaVar.j.c(canvas);
-        canvas.restore();
-        super.dispatchDraw(canvas);
-        if (aaVar.j.d()) {
-            postInvalidateOnAnimation();
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationCancel(Animator animator) {
+        this.c.b();
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        this.c.b();
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationStart(Animator animator) {
+        if (this.a != null) {
+            org.telegram.messenger.g0.v1(this.b);
         }
     }
 }

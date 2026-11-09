@@ -9,23 +9,23 @@ import android.view.Menu;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.id;
 import org.telegram.ui.Components.lt;
-import org.telegram.ui.Components.rt0;
-import org.telegram.ui.Components.u31;
-import org.telegram.ui.Components.uy0;
+import org.telegram.ui.Components.tt0;
+import org.telegram.ui.Components.v31;
 import org.telegram.ui.Components.vy0;
+import org.telegram.ui.Components.wy0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class f3 extends lt {
-    public final /* synthetic */ org.telegram.ui.ActionBar.f6 V;
+    public final /* synthetic */ org.telegram.ui.ActionBar.g6 V;
     public final /* synthetic */ boolean W;
     public final /* synthetic */ h3 a0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f3(h3 h3Var, Context context, rt0 rt0Var, org.telegram.ui.ActionBar.f6 f6Var, boolean z9) {
-        super(context, rt0Var, null, 4, true, null);
+    public f3(h3 h3Var, Context context, tt0 tt0Var, org.telegram.ui.ActionBar.g6 g6Var, boolean z9) {
+        super(context, tt0Var, null, 4, true, null);
         this.a0 = h3Var;
-        this.V = f6Var;
+        this.V = g6Var;
         this.W = z9;
     }
 
@@ -50,19 +50,19 @@ public final class f3 extends lt {
             return;
         }
         menu.removeItem(android.R.id.shareText);
-        menu.add(R.id.menu_groupbolditalic, R.id.menu_spoiler, 6, id.M0(2131745265, null));
+        menu.add(R.id.menu_groupbolditalic, R.id.menu_spoiler, 6, id.M0(2131745262, null));
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(id.M0(2131753671, null));
-        spannableStringBuilder.setSpan(new u31(org.telegram.messenger.g0.o()), 0, spannableStringBuilder.length(), 33);
+        spannableStringBuilder.setSpan(new v31(org.telegram.messenger.g0.o()), 0, spannableStringBuilder.length(), 33);
         menu.add(R.id.menu_groupbolditalic, R.id.menu_bold, 7, spannableStringBuilder);
-        SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(id.M0(2131749088, null));
-        spannableStringBuilder2.setSpan(new u31(org.telegram.messenger.g0.o1("fonts/rmediumitalic.ttf")), 0, spannableStringBuilder2.length(), 33);
+        SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(id.M0(2131749087, null));
+        spannableStringBuilder2.setSpan(new v31(org.telegram.messenger.g0.o1("fonts/rmediumitalic.ttf")), 0, spannableStringBuilder2.length(), 33);
         menu.add(R.id.menu_groupbolditalic, R.id.menu_italic, 8, spannableStringBuilder2);
-        SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder(id.M0(2131744440, null));
-        uy0 uy0Var = new uy0();
-        uy0Var.a = 8 | uy0Var.a;
-        spannableStringBuilder3.setSpan(new vy0(uy0Var, 0), 0, spannableStringBuilder3.length(), 33);
+        SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder(id.M0(2131744437, null));
+        vy0 vy0Var = new vy0();
+        vy0Var.a = 8 | vy0Var.a;
+        spannableStringBuilder3.setSpan(new wy0(vy0Var, 0), 0, spannableStringBuilder3.length(), 33);
         menu.add(R.id.menu_groupbolditalic, R.id.menu_strike, 9, spannableStringBuilder3);
-        menu.add(R.id.menu_groupbolditalic, R.id.menu_regular, 10, id.M0(2131746338, null));
+        menu.add(R.id.menu_groupbolditalic, R.id.menu_regular, 10, id.M0(2131746337, null));
     }
 
     @Override // android.view.View
@@ -75,7 +75,7 @@ public final class f3 extends lt {
         org.telegram.ui.Components.i6 i6Var = h3Var.y;
         org.telegram.ui.Components.z4 z4Var = h3Var.w;
         if (z4Var != null) {
-            i6Var.u(z4Var.a(org.telegram.ui.ActionBar.k6.w0(h3Var.x <= 0 ? org.telegram.ui.ActionBar.k6.p7 : org.telegram.ui.ActionBar.k6.P5, this.V), false));
+            i6Var.u(z4Var.a(org.telegram.ui.ActionBar.l6.w0(h3Var.x <= 0 ? org.telegram.ui.ActionBar.l6.p7 : org.telegram.ui.ActionBar.l6.P5, this.V), false));
         }
         int min = Math.min(org.telegram.messenger.g0.L(48.0f), getHeight());
         boolean z9 = this.W;

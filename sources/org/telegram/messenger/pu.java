@@ -14,7 +14,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class pu extends fu {
     public static Paint d0;
@@ -107,9 +107,9 @@ public final class pu extends fu {
             d0 = new Paint(1);
         }
         Paint paint = d0;
-        int i7 = org.telegram.ui.ActionBar.k6.df;
+        int i7 = org.telegram.ui.ActionBar.l6.df;
         kv kvVar = this.a;
-        paint.setColor(org.telegram.ui.ActionBar.k6.w0(i7, kvVar.D));
+        paint.setColor(org.telegram.ui.ActionBar.l6.w0(i7, kvVar.D));
         boolean R = R();
         boolean D = kvVar.D();
         int i10 = 0;
@@ -130,7 +130,7 @@ public final class pu extends fu {
             canvas2 = canvas;
             canvas2.drawRect(-i11, 0.0f, i13 + i10, i12, d0);
         }
-        Drawable drawable = org.telegram.ui.ActionBar.k6.S4[kvVar.E() ? 1 : 0];
+        Drawable drawable = org.telegram.ui.ActionBar.l6.S4[kvVar.E() ? 1 : 0];
         if (drawable != null) {
             int intrinsicWidth = drawable.getIntrinsicWidth();
             int intrinsicHeight = drawable.getIntrinsicHeight();

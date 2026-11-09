@@ -10,13 +10,13 @@ import java.util.ArrayList;
 import java.util.List;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public abstract class es extends v4.f1 {
     public static final DecelerateInterpolator D = new DecelerateInterpolator();
     public int A;
     public int B;
-    public final pj0 C;
+    public final qj0 C;
     public final ArrayList o = new ArrayList();
     public final ArrayList p = new ArrayList();
     public final ArrayList q = new ArrayList();
@@ -30,9 +30,9 @@ public abstract class es extends v4.f1 {
     public final ArrayList y = new ArrayList();
     public org.telegram.ui.Cells.t2 z;
 
-    public es(pj0 pj0Var) {
+    public es(qj0 qj0Var) {
         this.m = false;
-        this.C = pj0Var;
+        this.C = qj0Var;
     }
 
     public final void A() {
@@ -61,10 +61,9 @@ public abstract class es extends v4.f1 {
             csVar.a = null;
         }
         View view = d1Var.a;
-        View view2 = d1Var.a;
         view.setAlpha(1.0f);
-        view2.setTranslationX(0.0f);
-        view2.setTranslationY(0.0f);
+        view.setTranslationX(0.0f);
+        view.setTranslationY(0.0f);
         d(d1Var);
         return true;
     }
@@ -678,11 +677,11 @@ public abstract class es extends v4.f1 {
         org.telegram.ui.Cells.t2 t2Var = null;
         int i7 = 0;
         while (true) {
-            pj0 pj0Var = this.C;
-            if (i7 >= pj0Var.getChildCount()) {
+            qj0 qj0Var = this.C;
+            if (i7 >= qj0Var.getChildCount()) {
                 break;
             }
-            View childAt = pj0Var.getChildAt(i7);
+            View childAt = qj0Var.getChildAt(i7);
             if (childAt.getTop() > Integer.MIN_VALUE && (childAt instanceof org.telegram.ui.Cells.t2)) {
                 t2Var = (org.telegram.ui.Cells.t2) childAt;
             }

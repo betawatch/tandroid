@@ -10,9 +10,9 @@ import android.view.View;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.i6;
 import org.telegram.ui.Components.xq;
-import org.telegram.ui.s81;
+import org.telegram.ui.t81;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class b extends View {
     public final i6 a;
@@ -40,7 +40,7 @@ public final class b extends View {
     }
 
     public final void a(int i7, boolean z9) {
-        if (!s.i()) {
+        if (!r.i()) {
             i7 = 0;
         }
         if (i7 > 0) {
@@ -59,7 +59,7 @@ public final class b extends View {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
             this.c = ofFloat;
             ofFloat.addUpdateListener(new ti.d(this, 5));
-            this.c.addListener(new s81(this, 23));
+            this.c.addListener(new t81(this, 23));
             org.telegram.messenger.camera.q.i(2.0f, this.c);
             this.c.setDuration(200L);
             this.c.start();

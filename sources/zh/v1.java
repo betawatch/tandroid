@@ -1,14 +1,14 @@
 package zh;
 
-import org.telegram.ui.Components.up0;
+import org.telegram.ui.Components.vp0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class v1 extends v4.k {
-    public final /* synthetic */ up0 F;
+    public final /* synthetic */ vp0 F;
 
-    public v1(up0 up0Var) {
-        this.F = up0Var;
+    public v1(vp0 vp0Var) {
+        this.F = vp0Var;
     }
 
     @Override // v4.k

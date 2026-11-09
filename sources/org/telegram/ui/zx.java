@@ -1,30 +1,64 @@
 package org.telegram.ui;
 
-import org.telegram.ui.Components.EditTextBoldCursor;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.widget.FrameLayout;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class zx implements org.telegram.ui.ActionBar.r1 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ EditTextBoldCursor b;
+public final class zx extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
+    public Paint a;
+    public float[] b;
+    public Path c;
+    public float d;
 
-    public /* synthetic */ zx(EditTextBoldCursor editTextBoldCursor, int i7) {
-        this.a = i7;
-        this.b = editTextBoldCursor;
+    public final void a(float f10, float f11) {
+        float[] fArr = this.b;
+        fArr[7] = f10;
+        fArr[6] = f10;
+        fArr[1] = f10;
+        fArr[0] = f10;
+        fArr[5] = f11;
+        fArr[4] = f11;
+        fArr[3] = f11;
+        fArr[2] = f11;
     }
 
-    @Override // org.telegram.ui.ActionBar.r1
-    public final void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
-        switch (this.a) {
-            case 0:
-                org.telegram.messenger.g0.v1(this.b);
-                break;
-            case 1:
-                org.telegram.messenger.g0.v1(this.b);
-                break;
-            default:
-                org.telegram.messenger.g0.v1(this.b);
-                break;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        float measuredWidth = getMeasuredWidth() / 2.0f;
+        Path path = this.c;
+        path.rewind();
+        RectF rectF = org.telegram.messenger.g0.P;
+        rectF.set(0.0f, 0.0f, measuredWidth - org.telegram.messenger.g0.W1(this.d, 0, org.telegram.messenger.g0.L(4.0f)), getMeasuredHeight());
+        a(org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.W1(this.d, 0, org.telegram.messenger.g0.L(8.0f)));
+        float[] fArr = this.b;
+        Path.Direction direction = Path.Direction.CW;
+        path.addRoundRect(rectF, fArr, direction);
+        Paint paint = this.a;
+        canvas.drawPath(path, paint);
+        path.rewind();
+        rectF.set(measuredWidth + org.telegram.messenger.g0.W1(this.d, 0, org.telegram.messenger.g0.L(4.0f)), 0.0f, getMeasuredWidth(), getMeasuredHeight());
+        a(org.telegram.messenger.g0.W1(this.d, 0, org.telegram.messenger.g0.L(8.0f)), org.telegram.messenger.g0.L(8.0f));
+        path.addRoundRect(rectF, fArr, direction);
+        canvas.drawPath(path, paint);
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void updateColors() {
+        try {
+            this.a.setColor(org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.Ci, false));
+            invalidate();
+        } catch (Exception e10) {
+            org.telegram.messenger.a8.g(e10, true);
         }
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class ju extends FrameLayout {
     public final /* synthetic */ ru D;
@@ -87,10 +87,10 @@ public final class ju extends FrameLayout {
         cp cpVar = ruVar.w1;
         fi.v vVar = ruVar.n1;
         if (this.d) {
-            int w02 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.h5, ruVar.I0);
+            int w02 = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.h5, ruVar.I0);
             Paint paint = this.a;
             paint.setColor(w02);
-            org.telegram.ui.ActionBar.k6.n(paint);
+            org.telegram.ui.ActionBar.l6.n(paint);
             Path path = this.b;
             path.reset();
             float I0 = ruVar.I0();
@@ -130,12 +130,12 @@ public final class ju extends FrameLayout {
                 this.c = Boolean.valueOf(z9);
                 ruVar.O0(z9);
             }
-            org.telegram.ui.ActionBar.k6.t0.setColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.wj, ruVar.I0));
-            org.telegram.ui.ActionBar.k6.t0.setAlpha((int) (c8.j9.a(T1 / org.telegram.messenger.g0.L(f10), 0.0f, 1.0f) * org.telegram.ui.ActionBar.k6.t0.getAlpha()));
+            org.telegram.ui.ActionBar.l6.t0.setColor(org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.wj, ruVar.I0));
+            org.telegram.ui.ActionBar.l6.t0.setAlpha((int) (c8.j9.a(T1 / org.telegram.messenger.g0.L(f10), 0.0f, 1.0f) * org.telegram.ui.ActionBar.l6.t0.getAlpha()));
             int L4 = org.telegram.messenger.g0.L(36.0f);
             float L5 = T1 + org.telegram.messenger.g0.L(10.0f);
             rectF.set((getMeasuredWidth() - L4) / 2, L5, (getMeasuredWidth() + L4) / 2, org.telegram.messenger.g0.L(4.0f) + L5);
-            canvas2.drawRoundRect(rectF, org.telegram.messenger.g0.L(f11), org.telegram.messenger.g0.L(f11), org.telegram.ui.ActionBar.k6.t0);
+            canvas2.drawRoundRect(rectF, org.telegram.messenger.g0.L(f11), org.telegram.messenger.g0.L(f11), org.telegram.ui.ActionBar.l6.t0);
             ruVar.p1.setVisibility((vVar.canScrollVertically(1) || ruVar.s1.getVisibility() == 0) ? 0 : 4);
             if (vVar != null) {
                 canvas2.save();
@@ -175,7 +175,7 @@ public final class ju extends FrameLayout {
                             f12 = f15;
                             i5 i5Var = (i5) ruVar.i1.get(r5Var.getDocumentId());
                             if (i5Var != null) {
-                                int w03 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.G6, ruVar.I0);
+                                int w03 = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.G6, ruVar.I0);
                                 if (w03 != ruVar.L1 || ruVar.K1 == null) {
                                     ruVar.L1 = w03;
                                     f13 = f16;

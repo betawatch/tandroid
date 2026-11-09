@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import org.telegram.SQLite.SQLiteDatabase;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public abstract /* synthetic */ class k5 {
     public static float A(float f10, float f11, float f12, float f13) {
@@ -63,8 +63,8 @@ public abstract /* synthetic */ class k5 {
         return textView;
     }
 
-    public static fi.d h(int i7, Context context, org.telegram.ui.ActionBar.f6 f6Var, boolean z9) {
-        fi.d dVar = new fi.d(context, f6Var, z9);
+    public static fi.d h(int i7, Context context, org.telegram.ui.ActionBar.g6 g6Var, boolean z9) {
+        fi.d dVar = new fi.d(context, g6Var, z9);
         dVar.setRoundRadius(i7);
         return dVar;
     }
@@ -86,8 +86,8 @@ public abstract /* synthetic */ class k5 {
         return arrayList;
     }
 
-    public static org.telegram.ui.ActionBar.v2 l(int i7, Context context, org.telegram.ui.ActionBar.f6 f6Var, boolean z9) {
-        org.telegram.ui.ActionBar.v2 v2Var = new org.telegram.ui.ActionBar.v2(i7, context, f6Var, z9);
+    public static org.telegram.ui.ActionBar.v2 l(int i7, Context context, org.telegram.ui.ActionBar.g6 g6Var, boolean z9) {
+        org.telegram.ui.ActionBar.v2 v2Var = new org.telegram.ui.ActionBar.v2(i7, context, g6Var, z9);
         v2Var.N();
         return v2Var;
     }
@@ -97,8 +97,8 @@ public abstract /* synthetic */ class k5 {
         textView.setText(id.M0(i10, str));
     }
 
-    public static void n(TextView textView, int i7, org.telegram.ui.ActionBar.f6 f6Var, int i10, float f10) {
-        org.telegram.ui.ActionBar.r6.V(textView, i7, f6Var);
+    public static void n(TextView textView, int i7, org.telegram.ui.ActionBar.g6 g6Var, int i10, float f10) {
+        org.telegram.ui.ActionBar.s6.U(textView, i7, g6Var);
         textView.setTextSize(i10, f10);
         textView.setTypeface(g0.o());
     }
@@ -107,8 +107,8 @@ public abstract /* synthetic */ class k5 {
         hcVar.Q(i10, i11, id.M0(i7, str)).j();
     }
 
-    public static void p(String str, int i7, org.telegram.ui.Components.hc hcVar, org.telegram.ui.ActionBar.f6 f6Var) {
-        hcVar.t(id.M0(i7, str), f6Var).j();
+    public static void p(String str, int i7, org.telegram.ui.Components.hc hcVar, org.telegram.ui.ActionBar.g6 g6Var) {
+        hcVar.t(id.M0(i7, str), g6Var).j();
     }
 
     public static void q(String str, String str2, int i7, Object[] objArr, SpannableStringBuilder spannableStringBuilder) {

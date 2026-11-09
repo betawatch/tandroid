@@ -1,35 +1,108 @@
 package di;
 
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.text.TextPaint;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import c8.ha;
+import java.util.HashSet;
 import org.telegram.messenger.id;
-import org.telegram.ui.Components.xq;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class o8 {
-    public final f4 a;
-    public final org.telegram.ui.Components.w5 b;
-    public final TextPaint c;
-    public final StaticLayout d;
-    public final float e;
-    public final float f;
-    public float g;
-    public boolean h;
-    public int i;
+public final class o8 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
+    public final Paint a;
+    public final Paint b;
+    public final TextView c;
+    public final TextView d;
+    public final TextView e;
+    public final org.telegram.ui.ActionBar.g6 f;
 
-    public o8(i4 i4Var, f4 f4Var) {
-        this.a = f4Var;
-        this.b = new org.telegram.ui.Components.w5(i4Var, 0L, 360L, xq.h);
-        TextPaint textPaint = new TextPaint(1);
-        this.c = textPaint;
-        textPaint.setTextSize(org.telegram.messenger.g0.L(14.0f));
-        textPaint.setColor(-1);
-        textPaint.setShadowLayer(org.telegram.messenger.g0.L(3.0f), 0.0f, org.telegram.messenger.g0.L(1.0f), 805306368);
-        StaticLayout staticLayout = new StaticLayout(id.M0(2131744483, null), textPaint, org.telegram.messenger.g0.q.x, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-        this.d = staticLayout;
-        this.e = staticLayout.getLineCount() > 0 ? staticLayout.getLineLeft(0) : 0.0f;
-        this.f = staticLayout.getLineCount() > 0 ? staticLayout.getLineWidth(0) : 0.0f;
+    public o8(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(context);
+        Paint paint = new Paint(1);
+        this.a = paint;
+        Paint paint2 = new Paint(1);
+        this.b = paint2;
+        this.f = g6Var;
+        paint.setColor(org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.q7, g6Var));
+        paint2.setColor(-1);
+        setWillNotDraw(false);
+        TextView textView = new TextView(context);
+        this.c = textView;
+        jg.g.v(textView, 1, 14.0f, null, 2131744668);
+        textView.setTextColor(-1);
+        addView(textView, ha.d(-2, -2.0f, 19, 44.0f, 0.0f, 0.0f, 0.0f));
+        TextView textView2 = new TextView(context);
+        this.d = textView2;
+        textView2.setTextSize(1, 8.0f);
+        textView2.setTextColor(org.telegram.ui.ActionBar.l6.r1(0.5f, -1));
+        textView2.setVisibility(8);
+        textView2.setTranslationY(org.telegram.messenger.g0.L(9.0f));
+        addView(textView2, ha.d(-2, -2.0f, 19, 44.0f, 0.0f, 0.0f, 0.0f));
+        TextView textView3 = new TextView(context);
+        this.e = textView3;
+        textView3.setPadding(org.telegram.messenger.g0.L(13.0f), 0, org.telegram.messenger.g0.L(13.0f), 0);
+        int L = org.telegram.messenger.g0.L(16.0f);
+        textView3.setBackground(org.telegram.ui.ActionBar.l6.k0(L, L, L, L, 536870911, 956301311, 956301311));
+        textView3.setTypeface(org.telegram.messenger.g0.o());
+        textView3.setText(id.M0(2131743943, null));
+        textView3.setTextSize(1, 14.0f);
+        textView3.setTextColor(-1);
+        textView3.setGravity(17);
+        addView(textView3, ha.d(-2, 32.0f, 21, 0.0f, 0.0f, 12.0f, 0.0f));
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        float L = org.telegram.messenger.g0.L(23.0f);
+        float height = getHeight() / 2.0f;
+        canvas.drawCircle(L, height, org.telegram.messenger.g0.L(10.0f), this.a);
+        RectF rectF = org.telegram.messenger.g0.P;
+        rectF.set(L - org.telegram.messenger.g0.L(1.0f), height - org.telegram.messenger.g0.N(4.6f), org.telegram.messenger.g0.L(1.0f) + L, org.telegram.messenger.g0.N(1.6f) + height);
+        float L2 = org.telegram.messenger.g0.L(3.0f);
+        float L3 = org.telegram.messenger.g0.L(3.0f);
+        Paint paint = this.b;
+        canvas.drawRoundRect(rectF, L2, L3, paint);
+        rectF.set(L - org.telegram.messenger.g0.L(1.0f), org.telegram.messenger.g0.N(2.6f) + height, L + org.telegram.messenger.g0.L(1.0f), org.telegram.messenger.g0.N(4.6f) + height);
+        canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(3.0f), org.telegram.messenger.g0.L(3.0f), paint);
+    }
+
+    public void set(TLRPC.TL_error tL_error) {
+        TextView textView = this.c;
+        TextView textView2 = this.d;
+        if (tL_error == null || TextUtils.isEmpty(tL_error.text)) {
+            textView.setTranslationY(0.0f);
+            textView2.setVisibility(8);
+        } else {
+            textView.setTranslationY(-org.telegram.messenger.g0.N(5.33f));
+            textView2.setText(tL_error.text);
+            textView2.setVisibility(0);
+        }
+    }
+
+    @Override // android.view.View
+    public void setOnClickListener(View.OnClickListener onClickListener) {
+        this.e.setOnClickListener(onClickListener);
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void updateColors() {
+        try {
+            this.a.setColor(org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.q7, this.f));
+            invalidate();
+        } catch (Exception e10) {
+            org.telegram.messenger.a8.g(e10, true);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

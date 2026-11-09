@@ -2,39 +2,30 @@ package org.telegram.ui.Components;
 
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.PopupWindow;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class g60 implements PopupWindow.OnDismissListener {
-    public final /* synthetic */ ViewGroup a;
-    public final /* synthetic */ k60 b;
+public final class g60 extends org.telegram.ui.ActionBar.g1 {
+    public final /* synthetic */ ViewGroup o;
+    public final /* synthetic */ l60 p;
 
-    public g60(k60 k60Var, ViewGroup viewGroup) {
-        this.b = k60Var;
-        this.a = viewGroup;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public g60(l60 l60Var, View view, ViewGroup viewGroup) {
+        super(view, -2, -2);
+        this.p = l60Var;
+        this.o = viewGroup;
     }
 
-    @Override // android.widget.PopupWindow.OnDismissListener
-    public final void onDismiss() {
-        View view;
-        k60 k60Var = this.b;
-        k60Var.m = null;
-        k60.a(k60Var, this.a);
-        View view2 = k60Var.p0;
-        if (view2 != null) {
-            view2.setPressed(false);
-            k60Var.p0 = null;
-        }
-        if (k60Var.o0 != null && (view = k60Var.f) != null) {
-            view.setOnTouchListener(null);
-        }
-        k60Var.o0 = null;
-        k60Var.N();
-        Runnable runnable = k60Var.p;
+    @Override // org.telegram.ui.ActionBar.g1, android.widget.PopupWindow
+    public final void dismiss() {
+        d(true);
+        ViewGroup viewGroup = this.o;
+        l60 l60Var = this.p;
+        l60.a(l60Var, viewGroup);
+        Runnable runnable = l60Var.p;
         if (runnable != null) {
             runnable.run();
-            k60Var.p = null;
+            l60Var.p = null;
         }
     }
 }

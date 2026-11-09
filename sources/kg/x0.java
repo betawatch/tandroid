@@ -7,16 +7,16 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import java.nio.charset.StandardCharsets;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.i6;
 import org.telegram.ui.Components.ik;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.Components.z4;
-import org.telegram.ui.Wallet.m9;
+import org.telegram.ui.Wallet.l9;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class x0 extends EditTextBoldCursor {
     public final /* synthetic */ int G1 = 1;
@@ -43,7 +43,7 @@ public final class x0 extends EditTextBoldCursor {
         switch (this.G1) {
             case 0:
                 super.dispatchDraw(canvas);
-                int a10 = this.H1.a(k6.w0(this.I1 < 0 ? k6.p7 : k6.P5, ((a1) this.K1).getResourceProvider()), false);
+                int a10 = this.H1.a(l6.w0(this.I1 < 0 ? l6.p7 : l6.P5, ((a1) this.K1).getResourceProvider()), false);
                 i6 i6Var = this.J1;
                 i6Var.u(a10);
                 i6Var.setBounds(getScrollX(), 0, getWidth() + getScrollX(), getHeight());
@@ -51,7 +51,7 @@ public final class x0 extends EditTextBoldCursor {
                 break;
             case 1:
                 super.dispatchDraw(canvas);
-                int a11 = this.H1.a(k6.w0(this.I1 < 0 ? k6.p7 : k6.P5, (f6) this.K1), false);
+                int a11 = this.H1.a(l6.w0(this.I1 < 0 ? l6.p7 : l6.P5, (g6) this.K1), false);
                 i6 i6Var2 = this.J1;
                 i6Var2.u(a11);
                 i6Var2.setBounds(getScrollX(), 0, getWidth() + getScrollX(), getHeight());
@@ -59,7 +59,7 @@ public final class x0 extends EditTextBoldCursor {
                 break;
             case 2:
                 super.dispatchDraw(canvas);
-                int a12 = this.H1.a(k6.w0(this.I1 <= 0 ? k6.p7 : k6.P5, ((ik) this.K1).a), false);
+                int a12 = this.H1.a(l6.w0(this.I1 <= 0 ? l6.p7 : l6.P5, ((ik) this.K1).a), false);
                 i6 i6Var3 = this.J1;
                 i6Var3.u(a12);
                 int L = org.telegram.messenger.g0.L(48.0f) + ((getWidth() + getScrollX()) - getPaddingRight());
@@ -69,7 +69,7 @@ public final class x0 extends EditTextBoldCursor {
                 break;
             default:
                 super.dispatchDraw(canvas);
-                int a13 = this.H1.a(k6.w0(this.I1 <= 0 ? k6.p7 : k6.P5, ((m9) this.K1).getResourceProvider()), false);
+                int a13 = this.H1.a(l6.w0(this.I1 <= 0 ? l6.p7 : l6.P5, ((l9) this.K1).getResourceProvider()), false);
                 i6 i6Var4 = this.J1;
                 i6Var4.u(a13);
                 int L2 = org.telegram.messenger.g0.L(48.0f) + ((getWidth() + getScrollX()) - getPaddingRight());
@@ -174,9 +174,9 @@ public final class x0 extends EditTextBoldCursor {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x0(Context context, f6 f6Var) {
+    public x0(Context context, g6 g6Var) {
         super(context);
-        this.K1 = f6Var;
+        this.K1 = g6Var;
         this.H1 = new z4(this);
         i6 i6Var = new i6(false, true, true);
         this.J1 = i6Var;
@@ -201,9 +201,9 @@ public final class x0 extends EditTextBoldCursor {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x0(m9 m9Var, Activity activity) {
+    public x0(l9 l9Var, Activity activity) {
         super(activity);
-        this.K1 = m9Var;
+        this.K1 = l9Var;
         this.I1 = 960;
         this.H1 = new z4(this);
         i6 i6Var = new i6(false, true, true);

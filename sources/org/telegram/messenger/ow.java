@@ -9,7 +9,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ow implements Runnable {
     public final /* synthetic */ TL_stories.StoryItem D;
@@ -18,7 +18,7 @@ public final /* synthetic */ class ow implements Runnable {
     public final /* synthetic */ boolean G;
     public final /* synthetic */ long H;
     public final /* synthetic */ Runnable I;
-    public final /* synthetic */ sh.f a;
+    public final /* synthetic */ sh.g a;
     public final /* synthetic */ ArrayList b;
     public final /* synthetic */ long c;
     public final /* synthetic */ c d;
@@ -32,8 +32,8 @@ public final /* synthetic */ class ow implements Runnable {
     public final /* synthetic */ int x;
     public final /* synthetic */ int y;
 
-    public /* synthetic */ ow(sh.f fVar, ArrayList arrayList, long j3, c cVar, CharSequence charSequence, boolean z9, ArrayList arrayList2, ij ijVar, ij ijVar2, ij ijVar3, boolean z10, int i7, int i10, TL_stories.StoryItem storyItem, hw hwVar, long j10, boolean z11, long j11, Runnable runnable) {
-        this.a = fVar;
+    public /* synthetic */ ow(sh.g gVar, ArrayList arrayList, long j3, c cVar, CharSequence charSequence, boolean z9, ArrayList arrayList2, ij ijVar, ij ijVar2, ij ijVar3, boolean z10, int i7, int i10, TL_stories.StoryItem storyItem, hw hwVar, long j10, boolean z11, long j11, Runnable runnable) {
+        this.a = gVar;
         this.b = arrayList;
         this.c = j3;
         this.d = cVar;
@@ -77,17 +77,17 @@ public final /* synthetic */ class ow implements Runnable {
     public final void run() {
         int i7;
         ArrayList arrayList;
-        sh.f fVar;
+        sh.g gVar;
         final String str;
         TLRPC.TL_document tL_document;
         final TLRPC.TL_document tL_document2;
         int i10;
         final HashMap hashMap;
         Bitmap bitmap;
-        sh.f fVar2 = this.a;
-        long j3 = fVar2 != null ? fVar2.c : 0L;
+        sh.g gVar2 = this.a;
+        long j3 = gVar2 != null ? gVar2.c : 0L;
         int i11 = 1;
-        boolean z9 = fVar2 != null;
+        boolean z9 = gVar2 != null;
         ArrayList arrayList2 = this.b;
         int size = arrayList2.size();
         long j10 = j3 != 0 ? j3 : 0L;
@@ -99,7 +99,7 @@ public final /* synthetic */ class ow implements Runnable {
             File file = new File(str2);
             final long j11 = this.c;
             boolean C = m5.C(j11);
-            if (!C && size > i11 && i13 % 10 == 0 && fVar2 == null) {
+            if (!C && size > i11 && i13 % 10 == 0 && gVar2 == null) {
                 j10 = Utilities.b.nextLong();
                 i13 = 0;
             }
@@ -118,7 +118,7 @@ public final /* synthetic */ class ow implements Runnable {
                 Object[] g02 = yr.a0(cVar.a).g0(!C ? i7 : 4, str2);
                 if (g02 != null) {
                     Object obj = g02[0];
-                    fVar = fVar2;
+                    gVar = gVar2;
                     if (obj instanceof TLRPC.TL_document) {
                         tL_document = (TLRPC.TL_document) obj;
                         String str3 = (String) g02[i7];
@@ -156,7 +156,7 @@ public final /* synthetic */ class ow implements Runnable {
                                 }
                                 int i15 = i10 + 1;
                                 hashMap.put("groupId", "" + j10);
-                                if (!this.f && ((fVar == null && i15 == 10) || i12 == size - 1)) {
+                                if (!this.f && ((gVar == null && i15 == 10) || i12 == size - 1)) {
                                     hashMap.put("final", "1");
                                 }
                                 ArrayList arrayList3 = this.h;
@@ -168,7 +168,7 @@ public final /* synthetic */ class ow implements Runnable {
                                 final ArrayList arrayList4 = W;
                                 final ij ijVar4 = this.s;
                                 final boolean z10 = this.w;
-                                final sh.f fVar3 = fVar;
+                                final sh.g gVar3 = gVar;
                                 final int i16 = intValue;
                                 final int i17 = this.x;
                                 final int i18 = this.y;
@@ -196,13 +196,13 @@ public final /* synthetic */ class ow implements Runnable {
                                         e10.O = j14;
                                         e10.L = z11;
                                         e10.Q = j15;
-                                        e10.j = fVar3;
+                                        e10.j = gVar3;
                                         e10.k = i16;
                                         gz.C(cVar2.a).r0(e10);
                                     }
                                 });
                                 i12++;
-                                fVar2 = fVar3;
+                                gVar2 = gVar3;
                                 size = size;
                                 j10 = j13;
                                 i13 = i15;
@@ -240,7 +240,7 @@ public final /* synthetic */ class ow implements Runnable {
                         final ArrayList arrayList42 = W;
                         final ij ijVar42 = this.s;
                         final boolean z102 = this.w;
-                        final sh.f fVar32 = fVar;
+                        final sh.g gVar32 = gVar;
                         final int i162 = intValue;
                         final int i172 = this.x;
                         final int i182 = this.y;
@@ -268,13 +268,13 @@ public final /* synthetic */ class ow implements Runnable {
                                 e10.O = j142;
                                 e10.L = z112;
                                 e10.Q = j152;
-                                e10.j = fVar32;
+                                e10.j = gVar32;
                                 e10.k = i162;
                                 gz.C(cVar2.a).r0(e10);
                             }
                         });
                         i12++;
-                        fVar2 = fVar32;
+                        gVar2 = gVar32;
                         size = size;
                         j10 = j132;
                         i13 = i152;
@@ -322,7 +322,7 @@ public final /* synthetic */ class ow implements Runnable {
                     final ArrayList arrayList422 = W;
                     final ij ijVar422 = this.s;
                     final boolean z1022 = this.w;
-                    final sh.f fVar322 = fVar;
+                    final sh.g gVar322 = gVar;
                     final int i1622 = intValue;
                     final int i1722 = this.x;
                     final int i1822 = this.y;
@@ -350,13 +350,13 @@ public final /* synthetic */ class ow implements Runnable {
                             e10.O = j1422;
                             e10.L = z1122;
                             e10.Q = j1522;
-                            e10.j = fVar322;
+                            e10.j = gVar322;
                             e10.k = i1622;
                             gz.C(cVar2.a).r0(e10);
                         }
                     });
                     i12++;
-                    fVar2 = fVar322;
+                    gVar2 = gVar322;
                     size = size;
                     j10 = j1322;
                     i13 = i1522;
@@ -364,7 +364,7 @@ public final /* synthetic */ class ow implements Runnable {
                     i11 = 1;
                 }
             }
-            fVar = fVar2;
+            gVar = gVar2;
             str = null;
             tL_document = null;
             if (tL_document == null) {
@@ -401,7 +401,7 @@ public final /* synthetic */ class ow implements Runnable {
             final ArrayList arrayList4222 = W;
             final ij ijVar4222 = this.s;
             final boolean z10222 = this.w;
-            final sh.f fVar3222 = fVar;
+            final sh.g gVar3222 = gVar;
             final int i16222 = intValue;
             final int i17222 = this.x;
             final int i18222 = this.y;
@@ -429,13 +429,13 @@ public final /* synthetic */ class ow implements Runnable {
                     e10.O = j14222;
                     e10.L = z11222;
                     e10.Q = j15222;
-                    e10.j = fVar3222;
+                    e10.j = gVar3222;
                     e10.k = i16222;
                     gz.C(cVar2.a).r0(e10);
                 }
             });
             i12++;
-            fVar2 = fVar3222;
+            gVar2 = gVar3222;
             size = size;
             j10 = j13222;
             i13 = i15222;

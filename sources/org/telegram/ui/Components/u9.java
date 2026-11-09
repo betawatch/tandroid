@@ -13,9 +13,9 @@ import android.widget.TextView;
 import java.util.HashSet;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class u9 extends FrameLayout implements org.telegram.messenger.ls, org.telegram.ui.ActionBar.a6 {
+public final class u9 extends FrameLayout implements org.telegram.messenger.ls, org.telegram.ui.ActionBar.b6 {
     public boolean D;
     public int E;
     public int F;
@@ -23,7 +23,7 @@ public final class u9 extends FrameLayout implements org.telegram.messenger.ls, 
     public TextView b;
     public bi.e5 c;
     public bi.e5 d;
-    public dh0 e;
+    public eh0 e;
     public ScrollView f;
     public AnimatorSet h;
     public TLRPC.TL_help_appUpdate n;
@@ -113,18 +113,18 @@ public final class u9 extends FrameLayout implements org.telegram.messenger.ls, 
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
         int x02;
         ScrollView scrollView;
         GradientDrawable gradientDrawable = this.y;
         GradientDrawable gradientDrawable2 = this.x;
         try {
-            int x03 = org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.d6, false);
+            int x03 = org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.d6, false);
             if (this.D) {
                 if (x03 != this.E) {
                 }
-                x02 = org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.s8, false);
+                x02 = org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.s8, false);
                 scrollView = this.f;
                 if (scrollView != null && (!this.D || x02 != this.F)) {
                     this.F = x02;
@@ -140,7 +140,7 @@ public final class u9 extends FrameLayout implements org.telegram.messenger.ls, 
             if (gradientDrawable != null) {
                 gradientDrawable.setColors(new int[]{x03, 0});
             }
-            x02 = org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.s8, false);
+            x02 = org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.s8, false);
             scrollView = this.f;
             if (scrollView != null) {
                 this.F = x02;
@@ -153,7 +153,7 @@ public final class u9 extends FrameLayout implements org.telegram.messenger.ls, 
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

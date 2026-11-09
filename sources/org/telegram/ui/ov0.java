@@ -1,16 +1,21 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
+import android.content.Context;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class ov0 extends ez {
-    @Override // org.telegram.ui.ez, android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i7, int i10, float f10, int i11, int i12, int i13, Paint paint) {
-        canvas.save();
-        canvas.translate(org.telegram.messenger.g0.L(2.0f), 0.0f);
-        super.draw(canvas, charSequence, i7, i10, f10, i11, i12, i13, paint);
-        canvas.restore();
+public final class ov0 extends org.telegram.ui.ActionBar.y4 {
+    public final /* synthetic */ ProfileActivity t0;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ov0(ProfileActivity profileActivity, Context context, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(context, g6Var);
+        this.t0 = profileActivity;
+    }
+
+    @Override // org.telegram.ui.ActionBar.y4, te.b
+    public final void Y(int i7, float f10, float f11, te.c cVar) {
+        super.Y(i7, f10, f11, cVar);
+        ProfileActivity.s1(this.t0);
     }
 }

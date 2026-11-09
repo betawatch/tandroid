@@ -8,11 +8,11 @@ import android.view.MenuItem;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
-import org.telegram.ui.Components.k21;
+import org.telegram.ui.Components.l21;
 import org.telegram.ui.Components.zs;
-import org.telegram.ui.qy0;
+import org.telegram.ui.ty0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class f9 implements ActionMode.Callback {
     public final /* synthetic */ int a;
@@ -31,7 +31,7 @@ public final class f9 implements ActionMode.Callback {
         if (findItem == null) {
             return;
         }
-        findItem.setVisible((((v9) this.c).k0 == null || ((String) this.b) == null || qy0.d0().contains((String) this.b)) ? false : true);
+        findItem.setVisible((((v9) this.c).k0 == null || ((String) this.b) == null || ty0.d0().contains((String) this.b)) ? false : true);
     }
 
     @Override // android.view.ActionMode.Callback
@@ -77,7 +77,7 @@ public final class f9 implements ActionMode.Callback {
                             String str = (String) this.b;
                             f fVar2 = new f(this, 9);
                             org.telegram.ui.g4 g4Var = sVar.a;
-                            k21.U0(g4Var.L, g4Var.M, str, language, r11, null, fVar2);
+                            l21.U0(g4Var.L, g4Var.M, str, language, r11, null, fVar2);
                         }
                         v9Var.u();
                     } else if (itemId == R.id.menu_quote) {
@@ -119,8 +119,8 @@ public final class f9 implements ActionMode.Callback {
         switch (this.a) {
             case 0:
                 menu.add(0, android.R.id.copy, 0, android.R.string.copy);
-                menu.add(0, R.id.menu_quote, 1, id.M0(2131746441, null));
-                menu.add(0, 3, 2, id.M0(2131743959, null));
+                menu.add(0, R.id.menu_quote, 1, id.M0(2131746440, null));
+                menu.add(0, 3, 2, id.M0(2131743956, null));
                 menu.add(0, android.R.id.cut, 3, android.R.string.cut);
                 menu.add(0, android.R.id.paste, 4, android.R.string.paste);
                 menu.add(0, android.R.id.selectAll, 5, android.R.string.selectAll);

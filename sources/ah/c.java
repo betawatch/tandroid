@@ -9,11 +9,11 @@ import org.telegram.messenger.g0;
 import org.telegram.messenger.i6;
 import org.telegram.messenger.id;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.Components.wo;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class c extends yg.c {
     public final wo s;
@@ -21,17 +21,17 @@ public final class c extends yg.c {
     public final TextPaint x;
     public final a3.f y;
 
-    public c(Context context, f6 f6Var) {
-        super(context, f6Var);
+    public c(Context context, g6 g6Var) {
+        super(context, g6Var);
         TextPaint textPaint = new TextPaint();
         this.x = textPaint;
         this.y = new a3.f(this, 3);
         textPaint.setTextSize(g0.L(20.0f));
         this.f.setVisibility(8);
         this.c.setVisibility(8);
-        wo woVar = new wo(21, context, f6Var);
+        wo woVar = new wo(21, context, g6Var);
         this.s = woVar;
-        woVar.b(k6.B5, k6.j7, k6.C5);
+        woVar.b(l6.B5, l6.j7, l6.C5);
         woVar.setDrawUnchecked(true);
         woVar.setDrawBackgroundAsArc(10);
         addView(woVar);
@@ -78,7 +78,7 @@ public final class c extends yg.c {
             spannableStringBuilder.append((CharSequence) " ");
             spannableStringBuilder.setSpan(new b(34), 0, 1, 0);
         }
-        String i02 = id.i0(2131750522, tL_help_country.iso2);
+        String i02 = id.i0(2131750521, tL_help_country.iso2);
         if (TextUtils.isEmpty(i02)) {
             i02 = tL_help_country.default_name;
         }

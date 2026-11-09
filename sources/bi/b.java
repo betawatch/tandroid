@@ -8,36 +8,36 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.Components.vr;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f6 b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.g6 b;
     public final /* synthetic */ Context c;
 
-    public /* synthetic */ b(int i7, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+    public /* synthetic */ b(int i7, Context context, org.telegram.ui.ActionBar.g6 g6Var) {
         this.a = i7;
         this.c = context;
-        this.b = f6Var;
+        this.b = g6Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         int i7 = this.a;
-        org.telegram.ui.ActionBar.f6 f6Var = this.b;
+        org.telegram.ui.ActionBar.g6 g6Var = this.b;
         Context context = this.c;
         switch (i7) {
             case 0:
-                new uc(context, f6Var).show();
+                new uc(context, g6Var).show();
                 break;
             case 1:
                 org.telegram.ui.ActionBar.u1[] u1VarArr = new org.telegram.ui.ActionBar.u1[1];
-                SpannableStringBuilder V2 = org.telegram.messenger.g0.V2(org.telegram.messenger.g0.L2(org.telegram.messenger.id.M0(2131754175, null), f6Var, new qr(u1VarArr, 0)));
+                SpannableStringBuilder V2 = org.telegram.messenger.g0.V2(org.telegram.messenger.g0.L2(org.telegram.messenger.id.M0(2131754175, null), g6Var, new qr(u1VarArr, 0)));
                 Matcher matcher = Pattern.compile("@([a-zA-Z0-9_-]+)").matcher(V2);
                 while (matcher.find()) {
                     V2.setSpan(new org.telegram.messenger.v(u1VarArr, context, matcher.group(1)), matcher.start(), matcher.end(), 33);
                 }
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, f6Var);
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, g6Var);
                 String M0 = org.telegram.messenger.id.M0(2131754174, null);
                 org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                 u1Var.R = M0;
@@ -46,14 +46,14 @@ public final /* synthetic */ class b implements Runnable {
                 u1VarArr[0] = alertDialog$Builder.p();
                 break;
             default:
-                org.telegram.ui.Wallet.x5.I0(context, f6Var);
+                org.telegram.ui.Wallet.w5.I0(context, g6Var);
                 break;
         }
     }
 
-    public /* synthetic */ b(vr vrVar, org.telegram.ui.ActionBar.f6 f6Var, Context context) {
+    public /* synthetic */ b(vr vrVar, org.telegram.ui.ActionBar.g6 g6Var, Context context) {
         this.a = 1;
-        this.b = f6Var;
+        this.b = g6Var;
         this.c = context;
     }
 }

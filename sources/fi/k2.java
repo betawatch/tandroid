@@ -8,7 +8,7 @@ import org.telegram.messenger.qs;
 import org.telegram.messenger.ui;
 import org.telegram.messenger.y10;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public class k2 extends org.telegram.ui.ActionBar.v2 implements ls {
     public static int y1 = 1;
@@ -30,8 +30,8 @@ public class k2 extends org.telegram.ui.ActionBar.v2 implements ls {
     public d20 x1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k2(Context context, org.telegram.ui.ActionBar.f6 f6Var, boolean z9, boolean z10) {
-        super(1, context, f6Var, true);
+    public k2(Context context, org.telegram.ui.ActionBar.g6 g6Var, boolean z9, boolean z10) {
+        super(1, context, g6Var, true);
         int i7 = 1;
         this.i1 = null;
         this.j1 = -1;
@@ -41,7 +41,7 @@ public class k2 extends org.telegram.ui.ActionBar.v2 implements ls {
         this.p1 = z9;
         this.q1 = z10;
         this.F = true;
-        O(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.h5, f6Var));
+        O(org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.h5, g6Var));
         this.s1 = this.G0;
         this.x = true;
         int i10 = 0;
@@ -166,7 +166,7 @@ public class k2 extends org.telegram.ui.ActionBar.v2 implements ls {
         int w02;
         super.s0();
         try {
-            if (this.F0 >= 0 || this.G0 != this.s1 || (w02 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.h5, this.I0)) == this.G0) {
+            if (this.F0 >= 0 || this.G0 != this.s1 || (w02 = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.h5, this.I0)) == this.G0) {
                 return;
             }
             this.G0 = w02;

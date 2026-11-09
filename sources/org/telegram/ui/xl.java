@@ -1,31 +1,46 @@
 package org.telegram.ui;
 
-import android.graphics.RectF;
+import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xl implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.Cells.q1 b;
-    public final /* synthetic */ RectF c;
+    public final /* synthetic */ nm b;
+    public final /* synthetic */ org.telegram.messenger.ij c;
 
-    public /* synthetic */ xl(org.telegram.ui.Cells.q1 q1Var, RectF rectF, int i7) {
+    public /* synthetic */ xl(nm nmVar, org.telegram.messenger.ij ijVar, int i7) {
         this.a = i7;
-        this.b = q1Var;
-        this.c = rectF;
+        this.b = nmVar;
+        this.c = ijVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                org.telegram.messenger.g0.i3(new xl(this.b, this.c, 1), 400L);
+                nm nmVar = this.b;
+                cn cnVar = nmVar.a;
+                cnVar.g8();
+                UndoView undoView = cnVar.M3;
+                if (undoView != null) {
+                    int i7 = (cnVar.Z.getVisibility() != 0 || cnVar.S.getVisibility() == 0) ? 17 : 16;
+                    org.telegram.messenger.ij ijVar = this.c;
+                    undoView.k(0L, i7, ijVar.C0(), null, null, new xl(nmVar, ijVar, 2));
+                    break;
+                }
+                break;
+            case 1:
+                cn cnVar2 = this.b.a;
+                cnVar2.Yb = this.c.e1();
+                cnVar2.Zb = 0;
                 break;
             default:
-                RectF rectF = this.c;
-                org.telegram.ui.Cells.q1 q1Var = this.b;
-                if (q1Var.getScrimBlockBounds() == rectF) {
-                    q1Var.setScrimBlockBounds(null);
+                cn cnVar3 = this.b.a;
+                if (cnVar3.u7()) {
+                    org.telegram.messenger.ez b10 = org.telegram.messenger.ez.b(this.c.C0(), cnVar3.j6, cnVar3.D5, cnVar3.l4, null, false, null, null, null, true, 0, 0, null, false);
+                    b10.K = cnVar3.X8();
+                    cnVar3.getSendMessagesHelper().r0(b10);
                     break;
                 }
                 break;

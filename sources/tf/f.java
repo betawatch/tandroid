@@ -2,9 +2,9 @@ package tf;
 
 import java.io.EOFException;
 import org.telegram.ui.Components.vy;
-import org.telegram.ui.hy0;
+import org.telegram.ui.ky0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class f {
     public final String a;
@@ -15,13 +15,13 @@ public final class f {
     public final boolean f;
     public final int g;
 
-    public f(hy0 hy0Var) {
+    public f(ky0 ky0Var) {
         byte b10;
         byte b11;
-        uf.a aVar = (uf.a) hy0Var.b;
+        uf.a aVar = (uf.a) ky0Var.b;
         long j3 = aVar.b;
-        vy vyVar = (vy) hy0Var.d;
-        h hVar = (h) hy0Var.c;
+        vy vyVar = (vy) ky0Var.d;
+        h hVar = (h) ky0Var.c;
         int i7 = hVar.a;
         int i10 = hVar.a;
         byte b12 = 2;

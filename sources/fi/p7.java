@@ -11,7 +11,7 @@ import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public abstract class p7 extends FrameLayout implements o2 {
     public final o7 a;
@@ -42,7 +42,7 @@ public abstract class p7 extends FrameLayout implements o2 {
         textView.setTextSize(1, 14.0f);
         textView.setTypeface(org.telegram.messenger.g0.o());
         textView.setTextColor(-1);
-        textView.setText(id.M0(2131744634, null));
+        textView.setText(id.M0(2131744631, null));
         frameLayout.addView(textView, c8.ha.d(-2, -2.0f, 80, 16.0f, 0.0f, 16.0f, 7.0f));
         o7Var.addView(frameLayout, c8.ha.s(-2, -1, qs.x1, 0.0f, 0.0f, 6.66f, 0.0f));
         frameLayout.setOnClickListener(new View.OnClickListener(this) { // from class: fi.n7
@@ -75,7 +75,7 @@ public abstract class p7 extends FrameLayout implements o2 {
         textView2.setTextSize(1, 14.0f);
         textView2.setTypeface(org.telegram.messenger.g0.o());
         textView2.setTextColor(-1);
-        textView2.setText(id.M0(2131744588, null));
+        textView2.setText(id.M0(2131744585, null));
         frameLayout2.addView(textView2, c8.ha.d(-2, -2.0f, 80, 16.0f, 0.0f, 16.0f, 7.0f));
         o7Var.addView(frameLayout2, c8.ha.s(-2, -1, qs.x1, 0.0f, 0.0f, 6.66f, 0.0f));
         frameLayout2.setOnClickListener(new View.OnClickListener(this) { // from class: fi.n7
@@ -108,7 +108,7 @@ public abstract class p7 extends FrameLayout implements o2 {
         textView3.setTextSize(1, 14.0f);
         textView3.setTypeface(org.telegram.messenger.g0.o());
         textView3.setTextColor(-1);
-        textView3.setText(id.M0(2131744453, null));
+        textView3.setText(id.M0(2131744450, null));
         frameLayout3.addView(textView3, c8.ha.d(-2, -2.0f, 80, 16.0f, 0.0f, 16.0f, 7.0f));
         o7Var.addView(frameLayout3, c8.ha.t(-2, -1, qs.x1, 0, 0, 0, 0));
         final int i11 = 2;
@@ -168,7 +168,7 @@ public abstract class p7 extends FrameLayout implements o2 {
 
     @Override // android.view.ViewGroup, android.view.View
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (((p9) this).D.H()) {
+        if (((o9) this).D.H()) {
             return false;
         }
         return super.dispatchTouchEvent(motionEvent);

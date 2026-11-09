@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class uv {
     public long a;
@@ -20,7 +20,7 @@ public final class uv {
 
     public static uv a(int i7, TLRPC.Message message) {
         uv uvVar = new uv();
-        uvVar.a = ij.R1(p10.i(i7).e(), message);
+        uvVar.a = ij.Q1(p10.i(i7).e(), message);
         uvVar.b = false;
         uvVar.c = message.id;
         uvVar.d = new ij(i7, message, null, null, null, null, null, false, false, 0L, false, false, true, 0);

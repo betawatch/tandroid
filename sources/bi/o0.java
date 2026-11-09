@@ -2,21 +2,21 @@ package bi;
 
 import android.content.Context;
 import org.telegram.messenger.v10;
-import org.telegram.ui.Components.l41;
-import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.m41;
+import org.telegram.ui.Components.qj0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class o0 extends l41 {
+public final class o0 extends m41 {
     public final /* synthetic */ int P;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ o0(pj0 pj0Var, Context context, int i7, int i10, boolean z9, v10 v10Var, org.telegram.ui.ActionBar.f6 f6Var, int i11) {
-        super(pj0Var, context, i7, i10, z9, v10Var, f6Var);
+    public /* synthetic */ o0(qj0 qj0Var, Context context, int i7, int i10, boolean z9, v10 v10Var, org.telegram.ui.ActionBar.g6 g6Var, int i11) {
+        super(qj0Var, context, i7, i10, z9, v10Var, g6Var);
         this.P = i11;
     }
 
-    @Override // org.telegram.ui.Components.l41, org.telegram.ui.Components.oj0
+    @Override // org.telegram.ui.Components.m41, org.telegram.ui.Components.pj0
     public boolean D(v4.d1 d1Var) {
         switch (this.P) {
             case 0:
@@ -26,14 +26,14 @@ public final class o0 extends l41 {
         }
     }
 
-    @Override // org.telegram.ui.Components.l41
+    @Override // org.telegram.ui.Components.m41
     public int I(int i7) {
         switch (this.P) {
             case 1:
-                if (i7 == org.telegram.ui.ActionBar.k6.i5) {
+                if (i7 == org.telegram.ui.ActionBar.l6.i5) {
                     return -15921907;
                 }
-                return org.telegram.ui.ActionBar.k6.w0(i7, this.x);
+                return org.telegram.ui.ActionBar.l6.w0(i7, this.x);
             default:
                 return super.I(i7);
         }

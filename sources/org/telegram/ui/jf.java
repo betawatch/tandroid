@@ -4,20 +4,20 @@ import android.os.Bundle;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class jf implements org.telegram.ui.Components.qh0, org.telegram.ui.ActionBar.r1 {
+public final /* synthetic */ class jf implements org.telegram.ui.Components.rh0, org.telegram.ui.ActionBar.r1 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ an b;
+    public final /* synthetic */ cn b;
     public final /* synthetic */ org.telegram.messenger.ij c;
 
-    public /* synthetic */ jf(an anVar, org.telegram.messenger.ij ijVar, int i7) {
+    public /* synthetic */ jf(cn cnVar, org.telegram.messenger.ij ijVar, int i7) {
         this.a = i7;
-        this.b = anVar;
+        this.b = cnVar;
         this.c = ijVar;
     }
 
-    @Override // org.telegram.ui.Components.qh0
+    @Override // org.telegram.ui.Components.rh0
     public void d(long j3, TLRPC.MessagePeerReaction messagePeerReaction) {
         switch (this.a) {
             case 0:
@@ -27,17 +27,17 @@ public final /* synthetic */ class jf implements org.telegram.ui.Components.qh0,
                 } else {
                     bundle.putLong("chat_id", -j3);
                 }
-                an anVar = this.b;
+                cn cnVar = this.b;
                 if (messagePeerReaction != null && messagePeerReaction.reaction != null) {
-                    bundle.putInt("report_reaction_message_id", this.c.f1());
-                    bundle.putLong("report_reaction_from_dialog_id", anVar.j6);
+                    bundle.putInt("report_reaction_message_id", this.c.e1());
+                    bundle.putLong("report_reaction_from_dialog_id", cnVar.j6);
                 }
-                anVar.presentFragment(new ProfileActivity(bundle, null));
-                anVar.O7(true);
+                cnVar.presentFragment(new ProfileActivity(bundle, null));
+                cnVar.P7(true);
                 break;
             default:
-                an anVar2 = this.b;
-                anVar2.getClass();
+                cn cnVar2 = this.b;
+                cnVar2.getClass();
                 Bundle bundle2 = new Bundle();
                 if (j3 > 0) {
                     bundle2.putLong("user_id", j3);
@@ -45,19 +45,19 @@ public final /* synthetic */ class jf implements org.telegram.ui.Components.qh0,
                     bundle2.putLong("chat_id", -j3);
                 }
                 if (messagePeerReaction != null && messagePeerReaction.reaction != null) {
-                    bundle2.putInt("report_reaction_message_id", this.c.f1());
-                    bundle2.putLong("report_reaction_from_dialog_id", anVar2.j6);
+                    bundle2.putInt("report_reaction_message_id", this.c.e1());
+                    bundle2.putLong("report_reaction_from_dialog_id", cnVar2.j6);
                 }
-                anVar2.presentFragment(new ProfileActivity(bundle2, null));
-                anVar2.O7(true);
+                cnVar2.presentFragment(new ProfileActivity(bundle2, null));
+                cnVar2.P7(true);
                 break;
         }
     }
 
     @Override // org.telegram.ui.ActionBar.r1
     public void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
-        an anVar = this.b;
-        org.telegram.ui.ActionBar.u1[] u1VarArr = {new org.telegram.ui.ActionBar.u1(3, anVar.getParentActivity(), anVar.xa)};
+        cn cnVar = this.b;
+        org.telegram.ui.ActionBar.u1[] u1VarArr = {new org.telegram.ui.ActionBar.u1(3, cnVar.getParentActivity(), cnVar.za)};
         TLRPC.TL_messages_editMessage tL_messages_editMessage = new TLRPC.TL_messages_editMessage();
         org.telegram.messenger.ij ijVar = this.c;
         TLRPC.TL_messageMediaPoll tL_messageMediaPoll = (TLRPC.TL_messageMediaPoll) ijVar.k.media;
@@ -70,9 +70,9 @@ public final /* synthetic */ class jf implements org.telegram.ui.Components.qh0,
         tL_poll.answers = poll.answers;
         tL_poll.closed = true;
         tL_messages_editMessage.media = tL_inputMediaPoll;
-        tL_messages_editMessage.peer = anVar.getMessagesController().j1(anVar.j6);
-        tL_messages_editMessage.id = ijVar.f1();
+        tL_messages_editMessage.peer = cnVar.getMessagesController().j1(cnVar.j6);
+        tL_messages_editMessage.id = ijVar.e1();
         tL_messages_editMessage.flags |= TLObject.FLAG_14;
-        org.telegram.messenger.g0.i3(new bg(anVar, u1VarArr, anVar.getConnectionsManager().sendRequest(tL_messages_editMessage, new z9(anVar, u1VarArr, tL_messages_editMessage, 5)), 2), 500L);
+        org.telegram.messenger.g0.i3(new zf(cnVar, u1VarArr, cnVar.getConnectionsManager().sendRequest(tL_messages_editMessage, new z9(cnVar, u1VarArr, tL_messages_editMessage, 5)), 2), 500L);
     }
 }

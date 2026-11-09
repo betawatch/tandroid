@@ -1,64 +1,34 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class xl0 extends q11 {
-    public final /* synthetic */ am0 e2;
-    public final /* synthetic */ h11[] f2;
-    public final /* synthetic */ bm0 g2;
+public final class xl0 extends v4.s0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ dm0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xl0(bm0 bm0Var, org.telegram.ui.ActionBar.f2 f2Var, Context context, Integer num, int i7, org.telegram.ui.ActionBar.f6 f6Var, int i10, int i11, am0 am0Var, h11[] h11VarArr) {
-        super(f2Var, context, true, num, i7, true, f6Var, i10, i11);
-        this.g2 = bm0Var;
-        this.e2 = am0Var;
-        this.f2 = h11VarArr;
+    public xl0(dm0 dm0Var, int i7) {
+        this.b = dm0Var;
+        this.a = i7;
     }
 
-    @Override // org.telegram.ui.q11
-    public final float getScrimDrawableTranslationY() {
-        return 0.0f;
-    }
-
-    @Override // org.telegram.ui.q11
-    public final void p(View view, Long l10, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
-        bm0 bm0Var = this.g2;
-        if (tL_starGiftUnique != null) {
-            if (bm0Var.m0 == 0) {
-                TLRPC.PeerColor peerColor = tL_starGiftUnique.peer_color;
-                if (!(peerColor instanceof TLRPC.TL_peerColorCollectible)) {
-                    return;
-                }
-                bm0Var.s = (TLRPC.TL_peerColorCollectible) peerColor;
-                bm0Var.r = null;
-            } else {
-                bm0Var.s = null;
-                bm0Var.r = org.telegram.messenger.qp.q0(tL_starGiftUnique);
+    @Override // v4.s0
+    public final void b(RecyclerView recyclerView, int i7, int i10) {
+        dm0 dm0Var = this.b;
+        jm0 jm0Var = dm0Var.p0;
+        dm0Var.h();
+        if (dm0Var.K != null) {
+            if (dm0Var.J == null || !dm0Var.c()) {
+                return;
             }
-            bm0Var.I = null;
-            bm0Var.h = -1;
-        } else {
-            bm0Var.n = l10 == null ? 0L : l10.longValue();
-            bm0Var.r = null;
-            bm0Var.s = null;
-            bm0Var.I = null;
+            dm0Var.J.g(false);
+            return;
         }
-        am0 am0Var = this.e2;
-        if (am0Var != null) {
-            am0Var.b(true);
+        bi.v9 v9Var = this.a == 1 ? jm0Var.c : jm0Var.b;
+        if (v9Var == null || !dm0Var.c()) {
+            return;
         }
-        bm0Var.j(true);
-        bm0Var.i();
-        bm0Var.f(true);
-        h11 h11Var = this.f2[0];
-        if (h11Var != null) {
-            bm0Var.o0 = null;
-            h11Var.dismiss();
-        }
+        v9Var.a();
     }
 }

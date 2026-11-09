@@ -7,7 +7,7 @@ import android.text.TextUtils;
 import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class h1 implements Runnable {
     public final /* synthetic */ int a;
@@ -43,7 +43,7 @@ public final class h1 implements Runnable {
                         org.telegram.messenger.g0.i3(h1Var, 1000L);
                         q1Var.eb = true;
                         int L = q1Var.a7 - org.telegram.messenger.g0.L(91.0f);
-                        q1Var.d3 = new StaticLayout(TextUtils.ellipsize(id.M0(2131753966, null), org.telegram.ui.ActionBar.k6.H2, L, TextUtils.TruncateAt.END), org.telegram.ui.ActionBar.k6.H2, L, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+                        q1Var.d3 = new StaticLayout(TextUtils.ellipsize(id.M0(2131753966, null), org.telegram.ui.ActionBar.l6.H2, L, TextUtils.TruncateAt.END), org.telegram.ui.ActionBar.l6.H2, L, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
                     }
                 }
                 if (!q1Var.g3) {

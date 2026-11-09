@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.c20;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m implements Runnable {
     public final /* synthetic */ int a;
@@ -28,7 +28,7 @@ public final /* synthetic */ class m implements Runnable {
                 TLRPC.Chat chat = this.b;
                 ArrayList arrayList = this.d;
                 if (chat == null) {
-                    s.m(this.c, arrayList);
+                    r.m(this.c, arrayList);
                 }
                 this.e.a(arrayList);
                 break;
@@ -36,7 +36,7 @@ public final /* synthetic */ class m implements Runnable {
                 TLRPC.Chat chat2 = this.b;
                 ArrayList arrayList2 = this.d;
                 if (chat2 == null) {
-                    s.m(this.c, arrayList2);
+                    r.m(this.c, arrayList2);
                 }
                 this.e.a(arrayList2);
                 break;

@@ -38,9 +38,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.RadioButton;
-import org.telegram.ui.Components.qa0;
+import org.telegram.ui.Components.ra0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 class ThemesHorizontalListCell$InnerThemeView extends FrameLayout {
     public static final /* synthetic */ int b0 = 0;
@@ -66,7 +66,7 @@ class ThemesHorizontalListCell$InnerThemeView extends FrameLayout {
     public boolean W;
     public final RadioButton a;
     public final /* synthetic */ ga a0;
-    public org.telegram.ui.ActionBar.j6 b;
+    public org.telegram.ui.ActionBar.k6 b;
     public final RectF c;
     public final Paint d;
     public Drawable e;
@@ -101,8 +101,8 @@ class ThemesHorizontalListCell$InnerThemeView extends FrameLayout {
     }
 
     public final void a() {
-        org.telegram.ui.ActionBar.j6 j6Var = this.b;
-        int i7 = (j6Var.S && j6Var.Y == org.telegram.ui.ActionBar.k6.n) ? -1 : j6Var.Q;
+        org.telegram.ui.ActionBar.k6 k6Var = this.b;
+        int i7 = (k6Var.S && k6Var.Y == org.telegram.ui.ActionBar.l6.n) ? -1 : k6Var.Q;
         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
         this.h.setColorFilter(new PorterDuffColorFilter(i7, mode));
         this.n.setColorFilter(new PorterDuffColorFilter(this.b.p(), mode));
@@ -118,25 +118,25 @@ class ThemesHorizontalListCell$InnerThemeView extends FrameLayout {
         }
         this.Q = null;
         this.O = null;
-        org.telegram.ui.ActionBar.j6 j6Var2 = this.b;
-        int i10 = j6Var2.M;
-        if (i10 != 0 && j6Var2.N != 0) {
+        org.telegram.ui.ActionBar.k6 k6Var2 = this.b;
+        int i10 = k6Var2.M;
+        if (i10 != 0 && k6Var2.N != 0) {
             int o10 = this.b.o();
-            org.telegram.ui.ActionBar.j6 j6Var3 = this.b;
-            qa0 qa0Var = new qa0(true, o10, j6Var3.M, j6Var3.N, j6Var3.O);
-            qa0Var.v(org.telegram.messenger.g0.L(6.0f));
-            this.O = qa0Var;
+            org.telegram.ui.ActionBar.k6 k6Var3 = this.b;
+            ra0 ra0Var = new ra0(true, o10, k6Var3.M, k6Var3.N, k6Var3.O);
+            ra0Var.v(org.telegram.messenger.g0.L(6.0f));
+            this.O = ra0Var;
             dArr = org.telegram.messenger.g0.e3(Color.red(this.b.o()), Color.green(this.b.o()), Color.blue(this.b.o()));
         } else if (i10 != 0) {
             GradientDrawable gradientDrawable = new GradientDrawable(GradientDrawable.Orientation.BL_TR, new int[]{this.b.o(), this.b.M});
             gradientDrawable.setCornerRadius(org.telegram.messenger.g0.L(6.0f));
             this.O = gradientDrawable;
             dArr = org.telegram.messenger.g0.e3(Color.red(this.b.o()), Color.green(this.b.o()), Color.blue(this.b.o()));
-        } else if (j6Var2.P > 0 || j6Var2.c != null) {
+        } else if (k6Var2.P > 0 || k6Var2.c != null) {
             float L = org.telegram.messenger.g0.L(76.0f);
             float L2 = org.telegram.messenger.g0.L(97.0f);
-            org.telegram.ui.ActionBar.j6 j6Var4 = this.b;
-            Bitmap e12 = org.telegram.messenger.g0.e1(L, L2, j6Var4.c, j6Var4.b, j6Var4.P);
+            org.telegram.ui.ActionBar.k6 k6Var4 = this.b;
+            Bitmap e12 = org.telegram.messenger.g0.e1(L, L2, k6Var4.c, k6Var4.b, k6Var4.P);
             if (e12 != null) {
                 this.O = new BitmapDrawable(e12);
                 Shader.TileMode tileMode = Shader.TileMode.CLAMP;
@@ -146,7 +146,7 @@ class ThemesHorizontalListCell$InnerThemeView extends FrameLayout {
                 int[] q10 = org.telegram.messenger.g0.q(this.O);
                 dArr = org.telegram.messenger.g0.e3(Color.red(q10[0]), Color.green(q10[0]), Color.blue(q10[0]));
             }
-        } else if (j6Var2.o() != 0) {
+        } else if (k6Var2.o() != 0) {
             dArr = org.telegram.messenger.g0.e3(Color.red(this.b.o()), Color.green(this.b.o()), Color.blue(this.b.o()));
         }
         if (dArr == null || dArr[1] > 0.10000000149011612d || dArr[2] < 0.9599999785423279d) {
@@ -155,7 +155,7 @@ class ThemesHorizontalListCell$InnerThemeView extends FrameLayout {
             this.R = true;
         }
         if (this.b.o() == 0 && this.b.T && this.O == null) {
-            qa0 S = org.telegram.ui.ActionBar.k6.S(100, qs.e3);
+            ra0 S = org.telegram.ui.ActionBar.l6.S(100, qs.e3);
             this.O = S;
             S.v(org.telegram.messenger.g0.L(6.0f));
         }
@@ -176,8 +176,8 @@ class ThemesHorizontalListCell$InnerThemeView extends FrameLayout {
         int intValue;
         String[] split;
         HashMap hashMap = this.a0.h3;
-        org.telegram.ui.ActionBar.j6 j6Var = this.b;
-        if (j6Var == null || j6Var.b == null) {
+        org.telegram.ui.ActionBar.k6 k6Var = this.b;
+        if (k6Var == null || k6Var.b == null) {
             return false;
         }
         try {
@@ -250,9 +250,9 @@ class ThemesHorizontalListCell$InnerThemeView extends FrameLayout {
                                     if (!TextUtils.isEmpty(queryParameter4)) {
                                         this.b.D = Utilities.z(queryParameter4).intValue();
                                     }
-                                    org.telegram.ui.ActionBar.j6 j6Var2 = this.b;
-                                    if (j6Var2.D == 0) {
-                                        j6Var2.D = 50;
+                                    org.telegram.ui.ActionBar.k6 k6Var2 = this.b;
+                                    if (k6Var2.D == 0) {
+                                        k6Var2.D = 50;
                                     }
                                 }
                                 c10 = 65535;
@@ -264,7 +264,7 @@ class ThemesHorizontalListCell$InnerThemeView extends FrameLayout {
                                 }
                                 int indexOf = str.indexOf(61);
                                 c10 = 65535;
-                                if (indexOf != -1 && ((h = org.telegram.ui.ActionBar.u4.h(str.substring(0, indexOf))) == org.telegram.ui.ActionBar.k6.ra || h == org.telegram.ui.ActionBar.k6.ob || h == org.telegram.ui.ActionBar.k6.Be || h == org.telegram.ui.ActionBar.k6.Ce || h == org.telegram.ui.ActionBar.k6.De || h == org.telegram.ui.ActionBar.k6.Ee)) {
+                                if (indexOf != -1 && ((h = org.telegram.ui.ActionBar.u4.h(str.substring(0, indexOf))) == org.telegram.ui.ActionBar.l6.ra || h == org.telegram.ui.ActionBar.l6.ob || h == org.telegram.ui.ActionBar.l6.Be || h == org.telegram.ui.ActionBar.l6.Ce || h == org.telegram.ui.ActionBar.l6.De || h == org.telegram.ui.ActionBar.l6.Ee)) {
                                     String substring2 = str.substring(indexOf + 1);
                                     if (substring2.length() <= 0 || substring2.charAt(0) != '#') {
                                         intValue = Utilities.z(substring2).intValue();
@@ -275,17 +275,17 @@ class ThemesHorizontalListCell$InnerThemeView extends FrameLayout {
                                             intValue = Utilities.z(substring2).intValue();
                                         }
                                     }
-                                    if (h == org.telegram.ui.ActionBar.k6.ra) {
+                                    if (h == org.telegram.ui.ActionBar.l6.ra) {
                                         this.b.Q = intValue;
-                                    } else if (h == org.telegram.ui.ActionBar.k6.ob) {
+                                    } else if (h == org.telegram.ui.ActionBar.l6.ob) {
                                         this.b.R = intValue;
-                                    } else if (h == org.telegram.ui.ActionBar.k6.Be) {
+                                    } else if (h == org.telegram.ui.ActionBar.l6.Be) {
                                         this.b.L = intValue;
-                                    } else if (h == org.telegram.ui.ActionBar.k6.Ce) {
+                                    } else if (h == org.telegram.ui.ActionBar.l6.Ce) {
                                         this.b.M = intValue;
-                                    } else if (h == org.telegram.ui.ActionBar.k6.De) {
+                                    } else if (h == org.telegram.ui.ActionBar.l6.De) {
                                         this.b.N = intValue;
-                                    } else if (h == org.telegram.ui.ActionBar.k6.Ee) {
+                                    } else if (h == org.telegram.ui.ActionBar.l6.Ee) {
                                         this.b.O = intValue;
                                     }
                                 }
@@ -310,22 +310,22 @@ class ThemesHorizontalListCell$InnerThemeView extends FrameLayout {
         } catch (Throwable th2) {
             org.telegram.messenger.a8.g(th2, true);
         }
-        org.telegram.ui.ActionBar.j6 j6Var3 = this.b;
-        if (j6Var3.c == null || j6Var3.f || new File(this.b.c).exists()) {
+        org.telegram.ui.ActionBar.k6 k6Var3 = this.b;
+        if (k6Var3.c == null || k6Var3.f || new File(this.b.c).exists()) {
             this.b.T = true;
             return true;
         }
         if (hashMap.containsKey(this.b)) {
             return false;
         }
-        org.telegram.ui.ActionBar.j6 j6Var4 = this.b;
-        hashMap.put(j6Var4, j6Var4.e);
+        org.telegram.ui.ActionBar.k6 k6Var4 = this.b;
+        hashMap.put(k6Var4, k6Var4.e);
         TL_account.getWallPaper getwallpaper = new TL_account.getWallPaper();
         TLRPC.TL_inputWallPaperSlug tL_inputWallPaperSlug = new TLRPC.TL_inputWallPaperSlug();
-        org.telegram.ui.ActionBar.j6 j6Var5 = this.b;
-        tL_inputWallPaperSlug.slug = j6Var5.e;
+        org.telegram.ui.ActionBar.k6 k6Var5 = this.b;
+        tL_inputWallPaperSlug.slug = k6Var5.e;
         getwallpaper.wallpaper = tL_inputWallPaperSlug;
-        ConnectionsManager.getInstance(j6Var5.E).sendRequest(getwallpaper, new RequestDelegate() { // from class: org.telegram.ui.Cells.da
+        ConnectionsManager.getInstance(k6Var5.E).sendRequest(getwallpaper, new RequestDelegate() { // from class: org.telegram.ui.Cells.da
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 int i16 = ThemesHorizontalListCell$InnerThemeView.b0;
@@ -343,7 +343,7 @@ class ThemesHorizontalListCell$InnerThemeView extends FrameLayout {
         this.I = this.D;
         this.J = this.E;
         int i11 = 0;
-        org.telegram.ui.ActionBar.h6 k10 = this.b.k(false);
+        org.telegram.ui.ActionBar.i6 k10 = this.b.k(false);
         if (k10 != null) {
             i11 = k10.c;
             i10 = k10.e;
@@ -358,12 +358,12 @@ class ThemesHorizontalListCell$InnerThemeView extends FrameLayout {
             i7 = 0;
             i10 = 0;
         }
-        org.telegram.ui.ActionBar.j6 j6Var = this.b;
-        this.x = org.telegram.ui.ActionBar.k6.C(j6Var, i11, (j6Var.S && j6Var.Y == org.telegram.ui.ActionBar.k6.n) ? -1 : j6Var.Q);
-        org.telegram.ui.ActionBar.j6 j6Var2 = this.b;
-        this.y = org.telegram.ui.ActionBar.k6.C(j6Var2, i10, j6Var2.p());
-        org.telegram.ui.ActionBar.j6 j6Var3 = this.b;
-        this.D = org.telegram.ui.ActionBar.k6.C(j6Var3, i7, j6Var3.o());
+        org.telegram.ui.ActionBar.k6 k6Var = this.b;
+        this.x = org.telegram.ui.ActionBar.l6.C(k6Var, i11, (k6Var.S && k6Var.Y == org.telegram.ui.ActionBar.l6.n) ? -1 : k6Var.Q);
+        org.telegram.ui.ActionBar.k6 k6Var2 = this.b;
+        this.y = org.telegram.ui.ActionBar.l6.C(k6Var2, i10, k6Var2.p());
+        org.telegram.ui.ActionBar.k6 k6Var3 = this.b;
+        this.D = org.telegram.ui.ActionBar.l6.C(k6Var3, i7, k6Var3.o());
         this.E = this.y;
         this.F = this.b.Y;
         ObjectAnimator objectAnimator = this.L;
@@ -389,9 +389,9 @@ class ThemesHorizontalListCell$InnerThemeView extends FrameLayout {
         TLRPC.TL_theme tL_theme;
         super.onAttachedToWindow();
         ga gaVar = this.a0;
-        this.a.a(this.b == (gaVar.m3 == 1 ? org.telegram.ui.ActionBar.k6.J : org.telegram.ui.ActionBar.k6.D0()), false);
-        org.telegram.ui.ActionBar.j6 j6Var = this.b;
-        if (j6Var == null || (tL_theme = j6Var.F) == null || j6Var.U) {
+        this.a.a(this.b == (gaVar.m3 == 1 ? org.telegram.ui.ActionBar.l6.J : org.telegram.ui.ActionBar.l6.D0()), false);
+        org.telegram.ui.ActionBar.k6 k6Var = this.b;
+        if (k6Var == null || (tL_theme = k6Var.F) == null || k6Var.U) {
             return;
         }
         if (gaVar.g3.containsKey(org.telegram.messenger.w7.r(null, tL_theme.document)) || gaVar.h3.containsKey(this.b)) {
@@ -427,13 +427,13 @@ class ThemesHorizontalListCell$InnerThemeView extends FrameLayout {
         TextPaint textPaint = this.f;
         String charSequence = TextUtils.ellipsize(n10, textPaint, measuredWidth, truncateAt).toString();
         int ceil = (int) Math.ceil(textPaint.measureText(charSequence));
-        textPaint.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.G6, false));
+        textPaint.setColor(org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.G6, false));
         canvas.drawText(charSequence, ((org.telegram.messenger.g0.L(76.0f) - ceil) / 2) + L, org.telegram.messenger.g0.L(131.0f), textPaint);
-        org.telegram.ui.ActionBar.j6 j6Var = this.b;
-        TLRPC.TL_theme tL_theme = j6Var.F;
+        org.telegram.ui.ActionBar.k6 k6Var = this.b;
+        TLRPC.TL_theme tL_theme = k6Var.F;
         Paint paint = this.d;
         RadioButton radioButton = this.a;
-        if (tL_theme == null || (tL_theme.document != null && j6Var.U)) {
+        if (tL_theme == null || (tL_theme.document != null && k6Var.U)) {
             paint.setColor(b(this.I, this.D));
             boolean z9 = this.K;
             Drawable drawable = this.n;
@@ -476,17 +476,17 @@ class ThemesHorizontalListCell$InnerThemeView extends FrameLayout {
                 this.O.draw(canvas);
             }
             radioButton.b(1728053247, -1);
-            org.telegram.ui.ActionBar.j6 j6Var2 = this.b;
-            if (j6Var2.X != 0) {
-                if ("Day".equals(j6Var2.a) || "Arctic Blue".equals(this.b.a)) {
+            org.telegram.ui.ActionBar.k6 k6Var2 = this.b;
+            if (k6Var2.X != 0) {
+                if ("Day".equals(k6Var2.a) || "Arctic Blue".equals(this.b.a)) {
                     radioButton.b(-5000269, b(this.J, this.E));
-                    org.telegram.ui.ActionBar.k6.X1.setColor(733001146);
-                    canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(f10), org.telegram.messenger.g0.L(f10), org.telegram.ui.ActionBar.k6.X1);
+                    org.telegram.ui.ActionBar.l6.X1.setColor(733001146);
+                    canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(f10), org.telegram.messenger.g0.L(f10), org.telegram.ui.ActionBar.l6.X1);
                 }
             } else if (this.R) {
-                radioButton.b(-5000269, j6Var2.p());
-                org.telegram.ui.ActionBar.k6.X1.setColor(733001146);
-                canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(f10), org.telegram.messenger.g0.L(f10), org.telegram.ui.ActionBar.k6.X1);
+                radioButton.b(-5000269, k6Var2.p());
+                org.telegram.ui.ActionBar.l6.X1.setColor(733001146);
+                canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(f10), org.telegram.messenger.g0.L(f10), org.telegram.ui.ActionBar.l6.X1);
             }
             drawable2.setBounds(org.telegram.messenger.g0.L(f10) + L, org.telegram.messenger.g0.L(22.0f), org.telegram.messenger.g0.L(49.0f) + L, org.telegram.messenger.g0.L(36.0f));
             drawable2.draw(canvas);
@@ -503,18 +503,18 @@ class ThemesHorizontalListCell$InnerThemeView extends FrameLayout {
             f10 = 6.0f;
             f11 = 1.0f;
         }
-        org.telegram.ui.ActionBar.j6 j6Var3 = this.b;
-        TLRPC.TL_theme tL_theme2 = j6Var3.F;
+        org.telegram.ui.ActionBar.k6 k6Var3 = this.b;
+        TLRPC.TL_theme tL_theme2 = k6Var3.F;
         if (tL_theme2 != null && tL_theme2.document == null) {
             radioButton.setAlpha(0.0f);
-            org.telegram.ui.ActionBar.k6.X1.setColor(733001146);
-            canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(f10), org.telegram.messenger.g0.L(f10), org.telegram.ui.ActionBar.k6.X1);
+            org.telegram.ui.ActionBar.l6.X1.setColor(733001146);
+            canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(f10), org.telegram.messenger.g0.L(f10), org.telegram.ui.ActionBar.l6.X1);
             if (this.T != null) {
-                int x02 = org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.E6, false);
+                int x02 = org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.E6, false);
                 if (this.U != x02) {
                     Drawable drawable5 = this.T;
                     this.U = x02;
-                    org.telegram.ui.ActionBar.k6.C1(x02, drawable5);
+                    org.telegram.ui.ActionBar.l6.C1(x02, drawable5);
                 }
                 int centerX = (int) (rectF.centerX() - (this.T.getIntrinsicWidth() / 2));
                 int centerY = (int) (rectF.centerY() - (this.T.getIntrinsicHeight() / 2));
@@ -525,7 +525,7 @@ class ThemesHorizontalListCell$InnerThemeView extends FrameLayout {
             }
             return;
         }
-        if ((tL_theme2 == null || j6Var3.U) && this.w <= 0.0f) {
+        if ((tL_theme2 == null || k6Var3.U) && this.w <= 0.0f) {
             if (radioButton.getAlpha() != f11) {
                 radioButton.setAlpha(f11);
                 return;
@@ -533,15 +533,15 @@ class ThemesHorizontalListCell$InnerThemeView extends FrameLayout {
             return;
         }
         radioButton.setAlpha(f11 - this.w);
-        paint.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.a7, false));
+        paint.setColor(org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.a7, false));
         paint.setAlpha((int) (this.w * 255.0f));
         canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(f10), org.telegram.messenger.g0.L(f10), paint);
         if (this.T != null) {
-            int x03 = org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.E6, false);
+            int x03 = org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.E6, false);
             if (this.U != x03) {
                 Drawable drawable7 = this.T;
                 this.U = x03;
-                org.telegram.ui.ActionBar.k6.C1(x03, drawable7);
+                org.telegram.ui.ActionBar.l6.C1(x03, drawable7);
             }
             int centerX2 = (int) (rectF.centerX() - (this.T.getIntrinsicWidth() / 2));
             int centerY2 = (int) (rectF.centerY() - (this.T.getIntrinsicHeight() / 2));
@@ -586,8 +586,8 @@ class ThemesHorizontalListCell$InnerThemeView extends FrameLayout {
 
     @Override // android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        org.telegram.ui.ActionBar.j6 j6Var;
-        if (this.e != null && (j6Var = this.b) != null && (j6Var.F == null || j6Var.U)) {
+        org.telegram.ui.ActionBar.k6 k6Var;
+        if (this.e != null && (k6Var = this.b) != null && (k6Var.F == null || k6Var.U)) {
             ga gaVar = this.a0;
             if (gaVar.m3 == 0) {
                 int action = motionEvent.getAction();

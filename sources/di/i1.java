@@ -9,19 +9,19 @@ import java.util.ArrayList;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.qm0;
+import org.telegram.ui.Components.rm0;
 import org.telegram.ui.LaunchActivity;
 import org.webrtc.SurfaceViewRenderer;
 import org.webrtc.TextureViewRenderer;
 import org.webrtc.VideoSink;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class i1 implements ti.m {
     public static i1 w;
     public ti.o a;
     public g1 b;
-    public p9 c;
+    public q9 c;
     public org.telegram.ui.Components.voip.q0 e;
     public fi.s3 f;
     public VideoSink h;
@@ -75,8 +75,8 @@ public final class i1 implements ti.m {
     @Override // ti.m
     public final boolean E() {
         g1 g1Var;
-        p9 p9Var = this.c;
-        return (p9Var == null || p9Var.G0 || (g1Var = this.b) == null || p9Var.A0 != g1Var) ? false : true;
+        q9 q9Var = this.c;
+        return (q9Var == null || q9Var.G0 || (g1Var = this.b) == null || q9Var.A0 != g1Var) ? false : true;
     }
 
     @Override // ti.m
@@ -86,8 +86,8 @@ public final class i1 implements ti.m {
         if (this.d.b > 0) {
             return this.d.b;
         }
-        p9 p9Var = this.c;
-        TextureViewRenderer textureViewRenderer = (p9Var == null || (s3Var = p9Var.D0) == null) ? null : s3Var.d;
+        q9 q9Var = this.c;
+        TextureViewRenderer textureViewRenderer = (q9Var == null || (s3Var = q9Var.D0) == null) ? null : s3Var.d;
         if (textureViewRenderer == null || (i7 = textureViewRenderer.rotatedFrameWidth) <= 0) {
             return 9;
         }
@@ -120,7 +120,7 @@ public final class i1 implements ti.m {
         VideoSink videoSink;
         this.s = false;
         g1 g1Var = this.b;
-        p9 p9Var = this.c;
+        q9 q9Var = this.c;
         boolean z9 = (this.f == null && this.h == null) ? false : true;
         this.a = null;
         this.b = null;
@@ -130,21 +130,21 @@ public final class i1 implements ti.m {
             q0Var.a();
             this.e = null;
         }
-        if (z9 && p9Var != null) {
+        if (z9 && q9Var != null) {
             d(false);
             if (g1Var != null && (videoSink = this.h) != null) {
                 g1Var.s(videoSink);
             }
             this.h = null;
             this.c = null;
-            p9Var.u(false);
+            q9Var.u(false);
             return;
         }
         this.c = null;
         if (g1Var == null || g1Var.x) {
             return;
         }
-        if (p9Var == null || p9Var.A0 != g1Var) {
+        if (q9Var == null || q9Var.A0 != g1Var) {
             if (g1Var.n || g1Var == g1.W) {
                 g1Var.s(null);
             } else {
@@ -154,7 +154,7 @@ public final class i1 implements ti.m {
     }
 
     @Override // ti.m
-    public final /* synthetic */ boolean R(boolean z9, float f10, qm0 qm0Var) {
+    public final /* synthetic */ boolean R(boolean z9, float f10, rm0 rm0Var) {
         return false;
     }
 
@@ -203,8 +203,8 @@ public final class i1 implements ti.m {
         if (this.d.c > 0) {
             return this.d.c;
         }
-        p9 p9Var = this.c;
-        TextureViewRenderer textureViewRenderer = (p9Var == null || (s3Var = p9Var.D0) == null) ? null : s3Var.d;
+        q9 q9Var = this.c;
+        TextureViewRenderer textureViewRenderer = (q9Var == null || (s3Var = q9Var.D0) == null) ? null : s3Var.d;
         if (textureViewRenderer == null || (i7 = textureViewRenderer.rotatedFrameHeight) <= 0) {
             return 16;
         }
@@ -229,12 +229,12 @@ public final class i1 implements ti.m {
     }
 
     public final void d(boolean z9) {
-        d9 d9Var;
-        p9 p9Var = this.c;
-        if (p9Var == null || (d9Var = p9Var.s) == null) {
+        e9 e9Var;
+        q9 q9Var = this.c;
+        if (q9Var == null || (e9Var = q9Var.s) == null) {
             return;
         }
-        d9Var.setVisibility(z9 ? 8 : 0);
+        e9Var.setVisibility(z9 ? 8 : 0);
     }
 
     @Override // ti.m

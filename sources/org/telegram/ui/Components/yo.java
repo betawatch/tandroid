@@ -5,7 +5,7 @@ import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.text.style.ReplacementSpan;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class yo extends ReplacementSpan {
     public final /* synthetic */ int a;
@@ -48,9 +48,9 @@ public final class yo extends ReplacementSpan {
                 }
                 return org.telegram.messenger.g0.L(32.0f);
             case 1:
-                return ((l90) this.b).y;
+                return ((m90) this.b).y;
             case 2:
-                return (int) ((org.telegram.ui.qg0) this.b).f2;
+                return (int) ((org.telegram.ui.sg0) this.b).f2;
             case 3:
                 return (int) ((wg.f1) this.b).l2;
             default:
@@ -58,9 +58,9 @@ public final class yo extends ReplacementSpan {
         }
     }
 
-    public yo(zg0 zg0Var) {
+    public yo(ah0 ah0Var) {
         this.a = 0;
-        this.b = zg0Var;
+        this.b = ah0Var;
     }
 
     private final void a(Canvas canvas, CharSequence charSequence, int i7, int i10, float f10, int i11, int i12, int i13, Paint paint) {

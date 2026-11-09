@@ -12,7 +12,7 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class l extends Drawable {
     public final Paint a;
@@ -40,9 +40,9 @@ public final class l extends Drawable {
         k kVar2 = new k(this, 1);
         this.d = kVar2;
         this.e = false;
-        di.s7 s7Var = new di.s7(this, 13);
+        di.f8 f8Var = new di.f8(this, 12);
         xq xqVar = xq.h;
-        this.f = new org.telegram.ui.Components.w5(s7Var, 350L, xqVar, 0);
+        this.f = new org.telegram.ui.Components.w5(f8Var, 350L, xqVar, 0);
         this.g = new Path();
         this.i = 21.0f;
         this.h = i7;

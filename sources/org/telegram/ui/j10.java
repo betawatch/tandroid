@@ -1,20 +1,11 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class j10 extends v4.k {
-    public final /* synthetic */ c40 F;
+public final class j10 {
+    public final /* synthetic */ e40 a;
 
-    public j10(c40 c40Var) {
-        this.F = c40Var;
-    }
-
-    @Override // v4.k
-    public final void P(v4.d1 d1Var) {
-        c40 c40Var = this.F;
-        c40Var.H1.invalidate();
-        c40Var.R3.invalidate();
-        c40Var.b.invalidate();
-        c40.P0(c40Var);
+    public j10(e40 e40Var) {
+        this.a = e40Var;
     }
 }

@@ -2,15 +2,15 @@ package org.telegram.ui;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class p6 extends org.telegram.ui.ActionBar.v2 {
     public static final /* synthetic */ int j1 = 0;
     public final /* synthetic */ int i1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ p6(int i7, Context context, org.telegram.ui.ActionBar.f6 f6Var, boolean z9) {
-        super(i7, context, f6Var, z9);
+    public /* synthetic */ p6(int i7, Context context, org.telegram.ui.ActionBar.g6 g6Var, boolean z9) {
+        super(i7, context, g6Var, z9);
         this.i1 = 2;
     }
 
@@ -30,7 +30,7 @@ public final class p6 extends org.telegram.ui.ActionBar.v2 {
             case 2:
                 super.s0();
                 try {
-                    int w02 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.h5, this.I0);
+                    int w02 = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.h5, this.I0);
                     if (this.G0 != w02) {
                         O(w02);
                         break;

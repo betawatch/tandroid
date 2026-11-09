@@ -9,14 +9,14 @@ import android.graphics.RectF;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.Components.hc;
 import org.telegram.ui.Components.hy;
-import org.telegram.ui.Components.rt0;
+import org.telegram.ui.Components.tt0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
-public final class t1 extends rt0 {
+public final class t1 extends tt0 {
     public boolean f0;
     public final Paint g0;
     public final RectF h0;
@@ -31,11 +31,11 @@ public final class t1 extends rt0 {
         this.h0 = new RectF();
     }
 
-    @Override // org.telegram.ui.Components.rt0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.tt0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         b2 b2Var = this.i0;
         Rect rect = b2Var.x;
-        int r12 = k6.r1(b2Var.I, b2Var.getThemedColor(k6.d6));
+        int r12 = l6.r1(b2Var.I, b2Var.getThemedColor(l6.d6));
         Paint paint = this.g0;
         paint.setColor(r12);
         if (!b2Var.E || b2Var.y == null) {
@@ -83,7 +83,7 @@ public final class t1 extends rt0 {
         b2 b2Var = this.i0;
         if (action == 0 && keyEvent.getKeyCode() == 47 && keyEvent.isCtrlPressed()) {
             if (b2Var.v0()) {
-                org.telegram.messenger.k5.o(null, 2131746006, new hc(b2Var.X, b2Var.getResourceProvider()), R.raw.contact_check, 36);
+                org.telegram.messenger.k5.o(null, 2131746003, new hc(b2Var.X, b2Var.getResourceProvider()), R.raw.contact_check, 36);
                 return true;
             }
         } else if (!b2Var.P.k3(keyEvent)) {

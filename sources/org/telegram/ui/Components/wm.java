@@ -6,15 +6,15 @@ import android.view.ActionMode;
 import android.view.Menu;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class wm extends org.telegram.ui.Cells.a6 {
     public final /* synthetic */ int F;
     public final /* synthetic */ org.telegram.ui.l4 G;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public wm(org.telegram.ui.l4 l4Var, Context context, int i7, org.telegram.ui.ActionBar.f6 f6Var, int i10) {
-        super(context, i7, null, f6Var);
+    public wm(org.telegram.ui.l4 l4Var, Context context, int i7, org.telegram.ui.ActionBar.g6 g6Var, int i10) {
+        super(context, i7, null, g6Var);
         this.G = l4Var;
         this.F = i10;
     }
@@ -27,7 +27,7 @@ public final class wm extends org.telegram.ui.Cells.a6 {
             if (menu.findItem(R.id.copy) == null) {
                 return;
             }
-            org.telegram.ui.an.A8(menu, ((org.telegram.ui.an) bnVar.b.W1).h, false, true, true, true);
+            org.telegram.ui.cn.B8(menu, ((org.telegram.ui.cn) bnVar.b.W1).h, false, true, true, true);
         }
     }
 

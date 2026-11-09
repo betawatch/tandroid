@@ -5,7 +5,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class kf implements Runnable {
     public final /* synthetic */ org.telegram.messenger.ij a;
@@ -27,14 +27,14 @@ public final class kf implements Runnable {
     @Override // java.lang.Runnable
     public final void run() {
         ChatActivityEnterView chatActivityEnterView = this.f;
-        org.telegram.ui.an anVar = chatActivityEnterView.P2;
+        org.telegram.ui.cn cnVar = chatActivityEnterView.P2;
         if (chatActivityEnterView.m1.Q() > org.telegram.messenger.g0.L(20.0f) || chatActivityEnterView.s0()) {
             chatActivityEnterView.k0(false);
             org.telegram.messenger.g0.v1(chatActivityEnterView);
             org.telegram.messenger.g0.i3(this, 150L);
             return;
         }
-        if (anVar == null) {
+        if (cnVar == null) {
             return;
         }
         int i7 = chatActivityEnterView.Q;
@@ -44,7 +44,7 @@ public final class kf implements Runnable {
         String url = keyboardButtonProto.getUrl();
         boolean c10 = cg.c.c(keyboardButtonProto, TL_keyboard.TL_buttonTypeSimpleWebView.class);
         org.telegram.messenger.ij ijVar = this.d;
-        hi.q4 b10 = hi.q4.b(i7, j3, this.b, text, url, c10 ? 1 : 0, ijVar != null ? ijVar.k.id : 0, anVar == null ? 0L : anVar.h9(), null, false, null, null, 0, false, false);
+        hi.q4 b10 = hi.q4.b(i7, j3, this.b, text, url, c10 ? 1 : 0, ijVar != null ? ijVar.k.id : 0, cnVar == null ? 0L : cnVar.i9(), null, false, null, null, 0, false, false);
         LaunchActivity launchActivity = LaunchActivity.G1;
         if (launchActivity != null && launchActivity.O() != null && LaunchActivity.G1.O().k(b10) != null) {
             hi.y yVar = chatActivityEnterView.l0;
@@ -58,11 +58,11 @@ public final class kf implements Runnable {
         String F1 = user == null ? null : org.telegram.messenger.qp.s1(chatActivityEnterView.Q).F1(user.restriction_reason);
         if (!TextUtils.isEmpty(F1)) {
             org.telegram.messenger.qp.s1(chatActivityEnterView.Q);
-            org.telegram.messenger.qp.R4(F1, anVar);
+            org.telegram.messenger.qp.R4(F1, cnVar);
         } else {
             hi.a3 a3Var = new hi.a3(chatActivityEnterView.getContext(), chatActivityEnterView.W3);
             a3Var.l0 = chatActivityEnterView.O2;
-            a3Var.x(anVar, b10);
+            a3Var.x(cnVar, b10);
             a3Var.show();
         }
     }

@@ -17,10 +17,10 @@ import org.telegram.messenger.qp;
 import org.telegram.ui.Components.hc;
 import org.telegram.ui.Components.xn;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.ca1;
-import org.telegram.ui.gx0;
+import org.telegram.ui.ea1;
+import org.telegram.ui.kx0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ua implements OnFailureListener, f3.p, f3.q, o2.i, xn, wi.w0 {
     public final /* synthetic */ int a;
@@ -173,13 +173,13 @@ public final /* synthetic */ class ua implements OnFailureListener, f3.p, f3.q, 
             }
             return;
         }
-        RectF rectF = ProfileActivity.S6;
+        RectF rectF = ProfileActivity.V6;
         profileActivity.getNotificationsController().H(this.b, i7, profileActivity.f1);
         if (hc.a(profileActivity)) {
             hc.z(profileActivity, 5, i7, profileActivity.z0).j();
         }
-        profileActivity.v5();
-        profileActivity.F5(true);
+        profileActivity.y5();
+        profileActivity.I5(true);
     }
 
     @Override // f3.q
@@ -266,12 +266,12 @@ public final /* synthetic */ class ua implements OnFailureListener, f3.p, f3.q, 
     public void n() {
         Bundle bundle = new Bundle();
         bundle.putLong("dialog_id", this.b);
-        ca1 ca1Var = new ca1(bundle);
-        ca1Var.d = new ArrayList();
-        ca1Var.e = new HashSet();
+        ea1 ea1Var = new ea1(bundle);
+        ea1Var.d = new ArrayList();
+        ea1Var.e = new HashSet();
         ProfileActivity profileActivity = (ProfileActivity) this.c;
-        ca1Var.e = profileActivity.h5;
-        profileActivity.presentFragment(ca1Var);
+        ea1Var.e = profileActivity.j5;
+        profileActivity.presentFragment(ea1Var);
     }
 
     @Override // o2.i
@@ -313,8 +313,8 @@ public final /* synthetic */ class ua implements OnFailureListener, f3.p, f3.q, 
         if (profileActivity.fragmentView != null) {
             hc.A(profileActivity, z9, null).j();
         }
-        profileActivity.v5();
-        profileActivity.F5(true);
+        profileActivity.y5();
+        profileActivity.I5(true);
     }
 
     @Override // f3.p
@@ -392,7 +392,7 @@ public final /* synthetic */ class ua implements OnFailureListener, f3.p, f3.q, 
             Bundle bundle = new Bundle();
             bundle.putLong("dialog_id", j3);
             bundle.putLong("topic_id", profileActivity.f1);
-            profileActivity.presentFragment(new gx0(bundle, profileActivity.z0));
+            profileActivity.presentFragment(new kx0(bundle, profileActivity.z0));
         }
     }
 

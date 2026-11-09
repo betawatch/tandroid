@@ -14,20 +14,20 @@ import org.telegram.messenger.k5;
 import org.telegram.ui.ActionBar.f2;
 import org.telegram.ui.Cells.q1;
 import org.telegram.ui.Cells.t0;
-import org.telegram.ui.Components.gi0;
+import org.telegram.ui.Components.ah0;
+import org.telegram.ui.Components.hi0;
 import org.telegram.ui.Components.xq;
-import org.telegram.ui.Components.zg0;
-import org.telegram.ui.aj;
-import org.telegram.ui.an;
+import org.telegram.ui.cj;
+import org.telegram.ui.cn;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class h0 extends FrameLayout {
     public final /* synthetic */ f2 a;
     public final /* synthetic */ View b;
     public final /* synthetic */ boolean c;
     public final /* synthetic */ ij d;
-    public final /* synthetic */ an e;
+    public final /* synthetic */ cn e;
     public final /* synthetic */ int f;
     public final /* synthetic */ int h;
     public final /* synthetic */ boolean n;
@@ -38,14 +38,14 @@ public final class h0 extends FrameLayout {
     public final /* synthetic */ k0 y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h0(k0 k0Var, Context context, f2 f2Var, View view, boolean z9, ij ijVar, an anVar, int i7, int i10, boolean z10, float f10, float f11, float f12, o0 o0Var) {
+    public h0(k0 k0Var, Context context, f2 f2Var, View view, boolean z9, ij ijVar, cn cnVar, int i7, int i10, boolean z10, float f10, float f11, float f12, o0 o0Var) {
         super(context);
         this.y = k0Var;
         this.a = f2Var;
         this.b = view;
         this.c = z9;
         this.d = ijVar;
-        this.e = anVar;
+        this.e = cnVar;
         this.f = i7;
         this.h = i10;
         this.n = z10;
@@ -111,7 +111,7 @@ public final class h0 extends FrameLayout {
         float f21;
         m0 m0Var;
         int paddingTop;
-        an anVar;
+        cn cnVar;
         ij messageObject;
         k0 k0Var2 = this.y;
         final int i10 = 0;
@@ -155,20 +155,20 @@ public final class h0 extends FrameLayout {
             invalidate();
             return;
         }
-        gi0 gi0Var = k0Var2.t;
-        if (gi0Var != null) {
-            gi0Var.a.setAlpha(0.0f);
+        hi0 hi0Var = k0Var2.t;
+        if (hi0Var != null) {
+            hi0Var.a.setAlpha(0.0f);
             this.y.t.c.setAlpha(0.0f);
         }
         f2 f2Var = this.a;
-        if (f2Var instanceof an) {
-            an anVar2 = (an) f2Var;
+        if (f2Var instanceof cn) {
+            cn cnVar2 = (cn) f2Var;
             int i11 = this.y.n;
-            aj ajVar = anVar2.z0;
-            if (ajVar != null) {
-                int childCount = ajVar.getChildCount();
+            cj cjVar = cnVar2.z0;
+            if (cjVar != null) {
+                int childCount = cjVar.getChildCount();
                 for (int i12 = 0; i12 < childCount; i12++) {
-                    view = anVar2.z0.getChildAt(i12);
+                    view = cnVar2.z0.getChildAt(i12);
                     if (view instanceof q1) {
                         messageObject = ((q1) view).getMessageObject();
                     } else if (view instanceof t0) {
@@ -176,7 +176,7 @@ public final class h0 extends FrameLayout {
                     } else {
                         continue;
                     }
-                    if (messageObject != null && messageObject.f1() == i11) {
+                    if (messageObject != null && messageObject.e1() == i11) {
                         break;
                     }
                 }
@@ -217,9 +217,9 @@ public final class h0 extends FrameLayout {
                         f11 += rect.left;
                         f12 += rect.top;
                     }
-                    anVar = this.e;
-                    if (anVar != null) {
-                        f12 += anVar.Sa;
+                    cnVar = this.e;
+                    if (cnVar != null) {
+                        f12 += cnVar.Ua;
                     }
                     k0 k0Var4 = this.y;
                     k0Var4.q = f11;
@@ -229,8 +229,8 @@ public final class h0 extends FrameLayout {
             f12 += paddingTop;
             if (m0Var != null) {
             }
-            anVar = this.e;
-            if (anVar != null) {
+            cnVar = this.e;
+            if (cnVar != null) {
             }
             k0 k0Var42 = this.y;
             k0Var42.q = f11;
@@ -365,7 +365,7 @@ public final class h0 extends FrameLayout {
                     if (!this.y.x.isEmpty()) {
                         i0 i0Var3 = this.y.b;
                         if (i0Var3.G) {
-                            zg0 B = i0Var3.getImageReceiver().B();
+                            ah0 B = i0Var3.getImageReceiver().B();
                             int i15 = 0;
                             while (i15 < this.y.x.size()) {
                                 j0 j0Var = (j0) this.y.x.get(i15);

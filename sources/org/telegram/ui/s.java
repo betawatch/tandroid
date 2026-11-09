@@ -3,23 +3,23 @@ package org.telegram.ui;
 import android.view.KeyEvent;
 import android.view.View;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class s implements er0, org.telegram.ui.Components.dj0, org.telegram.ui.ActionBar.e1 {
+public final /* synthetic */ class s implements gr0, org.telegram.ui.Components.ej0, org.telegram.ui.ActionBar.e1 {
     public final /* synthetic */ g4 a;
 
     public /* synthetic */ s(g4 g4Var) {
         this.a = g4Var;
     }
 
-    @Override // org.telegram.ui.er0
+    @Override // org.telegram.ui.gr0
     public void a(float[] fArr) {
         g4 g4Var = this.a;
         fArr[0] = g4Var.J0;
         fArr[1] = g4Var.u0[0].b.getMeasuredHeight();
     }
 
-    @Override // org.telegram.ui.Components.dj0
+    @Override // org.telegram.ui.Components.ej0
     public boolean c(int i7, View view) {
         g4 g4Var = this.a;
         g4Var.getClass();

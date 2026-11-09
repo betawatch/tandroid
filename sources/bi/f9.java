@@ -19,10 +19,10 @@ import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.an;
-import org.telegram.ui.l60;
+import org.telegram.ui.cn;
+import org.telegram.ui.n60;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f9 implements Runnable {
     public final /* synthetic */ int a;
@@ -100,7 +100,7 @@ public final /* synthetic */ class f9 implements Runnable {
                 if (T == null) {
                     return;
                 }
-                T.presentFragment(an.ra(j3));
+                T.presentFragment(cn.ta(j3));
                 return;
             case 2:
                 org.telegram.ui.g4 g4Var = (org.telegram.ui.g4) obj2;
@@ -125,50 +125,50 @@ public final /* synthetic */ class f9 implements Runnable {
                 ((org.telegram.ui.n6) obj2).a(Float.valueOf(((int[]) obj)[0] / i10), Boolean.valueOf(System.currentTimeMillis() - j3 > 250));
                 return;
             case 4:
-                RectF rectF = ProfileActivity.S6;
+                RectF rectF = ProfileActivity.V6;
                 ((ProfileActivity) obj2).getMessagesController().P1().b(i10, j3, (ArrayList) obj);
                 return;
             case 5:
                 rc.u uVar = (rc.u) obj;
-                org.telegram.ui.Wallet.z0 z0Var = ((org.telegram.ui.Wallet.y0) obj2).c;
-                if (!z0Var.c(uVar, i10)) {
-                    z0Var.d("closing stale connected websocket; attempt=" + i10);
+                org.telegram.ui.Wallet.y0 y0Var = ((org.telegram.ui.Wallet.x0) obj2).c;
+                if (!y0Var.c(uVar, i10)) {
+                    y0Var.d("closing stale connected websocket; attempt=" + i10);
                     uVar.c();
                     return;
                 }
-                z0Var.d("websocket connected after " + (SystemClock.elapsedRealtime() - j3) + " ms");
-                org.telegram.ui.Wallet.w0 w0Var = z0Var.o;
+                y0Var.d("websocket connected after " + (SystemClock.elapsedRealtime() - j3) + " ms");
+                org.telegram.ui.Wallet.v0 v0Var = y0Var.o;
                 try {
-                    JSONArray put = new JSONArray().put(z0Var.b);
+                    JSONArray put = new JSONArray().put(y0Var.b);
                     StringBuilder sb2 = new StringBuilder("wallet-");
-                    int i12 = z0Var.g + 1;
-                    z0Var.g = i12;
+                    int i12 = y0Var.g + 1;
+                    y0Var.g = i12;
                     sb2.append(i12);
-                    z0Var.f = sb2.toString();
-                    JSONObject put2 = new JSONObject().put("operation", "subscribe").put("id", z0Var.f).put("types", new JSONArray().put("transactions").put("account_state_change")).put("include_address_book", true).put("addresses", put).put("min_finality", "pending");
-                    org.telegram.messenger.g0.r(w0Var);
-                    org.telegram.messenger.g0.i3(w0Var, 30000L);
-                    z0Var.g(put2.toString());
+                    y0Var.f = sb2.toString();
+                    JSONObject put2 = new JSONObject().put("operation", "subscribe").put("id", y0Var.f).put("types", new JSONArray().put("transactions").put("account_state_change")).put("include_address_book", true).put("addresses", put).put("min_finality", "pending");
+                    org.telegram.messenger.g0.r(v0Var);
+                    org.telegram.messenger.g0.i3(v0Var, 30000L);
+                    y0Var.g(put2.toString());
                     return;
                 } catch (JSONException unused) {
-                    z0Var.f("could not encode subscription");
+                    y0Var.f("could not encode subscription");
                     return;
                 }
             case 6:
-                org.telegram.ui.Wallet.e2 e2Var = (org.telegram.ui.Wallet.e2) obj2;
-                e2Var.getClass();
+                org.telegram.ui.Wallet.d2 d2Var = (org.telegram.ui.Wallet.d2) obj2;
+                d2Var.getClass();
                 TL_wallet.tonConnectGetPending tonconnectgetpending = new TL_wallet.tonConnectGetPending();
                 long j10 = this.c;
                 tonconnectgetpending.session_id = Long.valueOf(j10);
-                e2Var.f.sendRequestTyped(tonconnectgetpending, new d3.b(1), new org.telegram.ui.Wallet.o1(e2Var, (l60) obj, j10, this.b, 0));
+                d2Var.f.sendRequestTyped(tonconnectgetpending, new d3.b(1), new org.telegram.ui.Wallet.n1(d2Var, (n60) obj, j10, this.b, 0));
                 return;
             default:
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, (Context) obj2, (org.telegram.ui.ActionBar.f6) obj);
-                String M0 = org.telegram.messenger.id.M0(2131743076, null);
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, (Context) obj2, (org.telegram.ui.ActionBar.g6) obj);
+                String M0 = org.telegram.messenger.id.M0(2131743073, null);
                 org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                 u1Var.R = M0;
-                u1Var.T = org.telegram.messenger.g0.W2(org.telegram.messenger.id.V(null, null, 2131743074, org.telegram.ui.Wallet.m0.x(i10).m(j3, true)));
-                jg.g.C(null, 2131743066, alertDialog$Builder, null);
+                u1Var.T = org.telegram.messenger.g0.W2(org.telegram.messenger.id.V(null, null, 2131743071, org.telegram.ui.Wallet.l0.x(i10).m(j3, true)));
+                jg.g.C(null, 2131743063, alertDialog$Builder, null);
                 return;
         }
     }
@@ -181,11 +181,11 @@ public final /* synthetic */ class f9 implements Runnable {
         this.e = arrayList;
     }
 
-    public /* synthetic */ f9(org.telegram.ui.Wallet.e2 e2Var, long j3, l60 l60Var, int i7) {
+    public /* synthetic */ f9(org.telegram.ui.Wallet.d2 d2Var, long j3, n60 n60Var, int i7) {
         this.a = 6;
-        this.d = e2Var;
+        this.d = d2Var;
         this.c = j3;
-        this.e = l60Var;
+        this.e = n60Var;
         this.b = i7;
     }
 }

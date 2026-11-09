@@ -5,7 +5,7 @@ import android.graphics.PorterDuff;
 import android.view.View;
 import android.widget.ImageView;
 import c8.ha;
-import di.d4;
+import di.e4;
 import java.util.HashSet;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
@@ -15,36 +15,36 @@ import org.telegram.messenger.id;
 import org.telegram.messenger.t3;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.a6;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.ActionBar.b6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.s6;
 import org.telegram.ui.Components.l9;
 import org.telegram.ui.Components.w8;
 import wg.z0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class g extends c implements a6 {
+public final class g extends c implements b6 {
     public int D;
     public final ImageView s;
     public f w;
     public TLRPC.Chat x;
     public boolean y;
 
-    public g(Context context, f6 f6Var) {
-        super(context, f6Var);
+    public g(Context context, g6 g6Var) {
+        super(context, g6Var);
         this.d.setTypeface(g0.o());
         ImageView imageView = new ImageView(context);
         this.s = imageView;
         imageView.setFocusable(false);
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        int x02 = k6.x0(null, k6.Ji, false);
+        int x02 = l6.x0(null, l6.Ji, false);
         this.D = x02;
-        imageView.setBackground(k6.h0(x02, 1, -1));
+        imageView.setBackground(l6.h0(x02, 1, -1));
         imageView.setImageResource(R.drawable.poll_remove);
-        r6.t(imageView, k6.m6, null, PorterDuff.Mode.MULTIPLY);
-        imageView.setContentDescription(id.M0(2131751599, null));
+        s6.s(imageView, l6.m6, null, PorterDuff.Mode.MULTIPLY);
+        imageView.setContentDescription(id.M0(2131751598, null));
         boolean z9 = id.a0;
         addView(imageView, ha.d(48, 50.0f, (z9 ? 3 : 5) | 17, z9 ? 3.0f : 0.0f, 0.0f, z9 ? 0.0f : 3.0f, 0.0f));
         this.d.setPadding(g0.L(id.a0 ? 24.0f : 0.0f), 0, g0.L(id.a0 ? 0.0f : 24.0f), 0);
@@ -66,20 +66,20 @@ public final class g extends c implements a6 {
         l9Var.setRoundRadius(L);
         l9Var.e(chat, w8Var);
         String str = chat.title;
-        d4 d4Var = this.d;
-        d4Var.k(i6.m(str, d4Var.getPaint().getFontMetricsInt(), false, null, 0));
+        e4 e4Var = this.d;
+        e4Var.k(i6.m(str, e4Var.getPaint().getFontMetricsInt(), false, null, 0));
         boolean V = t3.V(chat);
         if (z9) {
             if (i10 >= 1) {
                 M0 = id.G(i10, V ? "Subscribers" : "Members", new Object[0]);
             } else {
-                M0 = id.M0(V ? 2131751391 : 2131754876, null);
+                M0 = id.M0(V ? 2131751390 : 2131754876, null);
             }
             setSubtitle(M0);
         } else {
             setSubtitle(id.G(i7, V ? "BoostingChannelWillReceiveBoost" : "BoostingGroupWillReceiveBoost", new Object[0]));
         }
-        r6.Y(this.e, k6.r5, this.a);
+        s6.X(this.e, l6.r5, this.a);
         setDivider(true);
         ImageView imageView = this.s;
         if (z9) {
@@ -104,23 +104,23 @@ public final class g extends c implements a6 {
         this.w = fVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
         try {
-            int x02 = k6.x0(null, k6.Ji, false);
+            int x02 = l6.x0(null, l6.Ji, false);
             ImageView imageView = this.s;
             if (imageView == null || x02 == this.D) {
                 return;
             }
             this.D = x02;
-            k6.H1(imageView.getBackground(), x02, true);
+            l6.H1(imageView.getBackground(), x02, true);
             imageView.invalidate();
         } catch (Exception e10) {
             a8.g(e10, true);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

@@ -12,11 +12,11 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.t0;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.l6;
 import ug.x0;
 import ug.y0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class e {
     public static e j;
@@ -81,9 +81,9 @@ public final class e {
     }
 
     public void b() {
-        int i7 = k6.z9;
-        if (k6.x0(null, i7, false) != this.a) {
-            this.a = k6.x0(null, i7, false);
+        int i7 = l6.z9;
+        if (l6.x0(null, i7, false) != this.a) {
+            this.a = l6.x0(null, i7, false);
             ((Drawable) this.f).setColorFilter(new PorterDuffColorFilter(this.a, PorterDuff.Mode.MULTIPLY));
         }
         this.g = a((x0) this.g);
@@ -97,7 +97,7 @@ public final class e {
         if (((Paint) this.d) == null) {
             this.d = new Paint(1);
         }
-        ((Paint) this.d).setColor(k6.x0(null, k6.Ci, false));
+        ((Paint) this.d).setColor(l6.x0(null, l6.Ci, false));
         return (Paint) this.d;
     }
 
@@ -106,9 +106,9 @@ public final class e {
     }
 
     public e() {
-        y0 y0Var = new y0(k6.zk, k6.Ak, k6.Bk, k6.Ck, null);
+        y0 y0Var = new y0(l6.zk, l6.Ak, l6.Bk, l6.Ck, null);
         this.b = y0Var;
-        y0 y0Var2 = new y0(k6.Tk, k6.Uk, -1, -1, null);
+        y0 y0Var2 = new y0(l6.Tk, l6.Uk, -1, -1, null);
         this.c = y0Var.f;
         this.f = t0.b.getDrawable(R.drawable.msg_premium_liststar).mutate();
         this.g = c(t0.b.getDrawable(R.drawable.msg_settings_premium), y0Var);

@@ -17,20 +17,20 @@ import org.telegram.messenger.ij;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.s6;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.NumberTextView;
-import org.telegram.ui.Components.av0;
-import org.telegram.ui.Components.l41;
-import org.telegram.ui.Components.n41;
+import org.telegram.ui.Components.cv0;
+import org.telegram.ui.Components.m41;
+import org.telegram.ui.Components.o41;
 import org.telegram.ui.Components.ui;
-import org.telegram.ui.Components.x31;
-import org.telegram.ui.nt0;
+import org.telegram.ui.Components.y31;
+import org.telegram.ui.pt0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
-public final class l extends n41 {
+public final class l extends o41 {
     public h f;
     public final Runnable h;
     public final org.telegram.ui.q n;
@@ -55,7 +55,7 @@ public final class l extends n41 {
             hVar.b(new ArrayList(hashSet));
         }
         lVar.y.clear();
-        lVar.actionBar.u();
+        lVar.actionBar.v();
         lVar.a.f3.O(true);
     }
 
@@ -75,8 +75,8 @@ public final class l extends n41 {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.n41
-    public final void Z(ArrayList arrayList, l41 l41Var) {
+    @Override // org.telegram.ui.Components.o41
+    public final void Z(ArrayList arrayList, m41 m41Var) {
         CharSequence charSequence;
         TLRPC.MessageMedia messageMedia;
         HashSet hashSet = this.D;
@@ -95,7 +95,7 @@ public final class l extends n41 {
                 if (!TextUtils.isEmpty(a10) && !a10.startsWith("#") && !a10.startsWith("$") && !a10.startsWith("@")) {
                     hashSet.add(a10);
                     int i10 = f.b;
-                    x31 K = x31.K(f.class);
+                    y31 K = y31.K(f.class);
                     K.z = 3;
                     K.q = false;
                     K.H = ijVar;
@@ -105,9 +105,9 @@ public final class l extends n41 {
             }
             charSequence = null;
             if (!hVar.f) {
-                arrayList.add(x31.q(arrayList.size(), 32));
-                arrayList.add(x31.q(arrayList.size(), 32));
-                arrayList.add(x31.q(arrayList.size(), 32));
+                arrayList.add(y31.q(arrayList.size(), 32));
+                arrayList.add(y31.q(arrayList.size(), 32));
+                arrayList.add(y31.q(arrayList.size(), 32));
             }
         } else {
             charSequence = null;
@@ -130,7 +130,7 @@ public final class l extends n41 {
                     if (k0(K0, this.w) || k0(str, this.w) || k0(str2, this.w)) {
                         String str3 = this.w;
                         int i12 = f.b;
-                        x31 K2 = x31.K(f.class);
+                        y31 K2 = y31.K(f.class);
                         K2.z = 3;
                         K2.q = false;
                         K2.H = ijVar2;
@@ -152,7 +152,7 @@ public final class l extends n41 {
                     hashSet.add(a13);
                     String str4 = this.w;
                     int i14 = f.b;
-                    x31 K3 = x31.K(f.class);
+                    y31 K3 = y31.K(f.class);
                     K3.z = 3;
                     K3.q = false;
                     K3.H = ijVar3;
@@ -162,111 +162,111 @@ public final class l extends n41 {
                 }
             }
             if (!this.f.f) {
-                arrayList.add(x31.q(arrayList.size(), 32));
-                arrayList.add(x31.q(arrayList.size(), 32));
-                arrayList.add(x31.q(arrayList.size(), 32));
+                arrayList.add(y31.q(arrayList.size(), 32));
+                arrayList.add(y31.q(arrayList.size(), 32));
+                arrayList.add(y31.q(arrayList.size(), 32));
             }
         }
         if (arrayList.isEmpty()) {
             return;
         }
-        arrayList.add(x31.C(charSequence));
+        arrayList.add(y31.C(charSequence));
     }
 
-    @Override // org.telegram.ui.Components.n41
+    @Override // org.telegram.ui.Components.o41
     public final CharSequence a0() {
-        return id.M0(2131742942, null);
+        return id.M0(2131742939, null);
     }
 
-    @Override // org.telegram.ui.Components.n41
-    public final void b0(x31 x31Var, View view) {
-        if (x31Var.H(f.class)) {
-            if (this.actionBar.v()) {
-                h0(x31Var, view);
+    @Override // org.telegram.ui.Components.o41
+    public final void b0(y31 y31Var, View view) {
+        if (y31Var.H(f.class)) {
+            if (this.actionBar.w()) {
+                h0(y31Var, view);
                 return;
             }
             finishFragment();
-            this.n.a(j.a((ij) x31Var.H));
+            this.n.a(j.a((ij) y31Var.H));
         }
     }
 
-    @Override // org.telegram.ui.Components.n41
-    public final boolean c0(x31 x31Var, View view) {
-        if (!x31Var.H(f.class)) {
+    @Override // org.telegram.ui.Components.o41
+    public final boolean c0(y31 y31Var, View view) {
+        if (!y31Var.H(f.class)) {
             return false;
         }
-        h0(x31Var, view);
+        h0(y31Var, view);
         return true;
     }
 
-    @Override // org.telegram.ui.Components.n41, org.telegram.ui.ActionBar.f2
+    @Override // org.telegram.ui.Components.o41, org.telegram.ui.ActionBar.f2
     public final View createView(Context context) {
         this.fragmentView = super.createView(context);
         org.telegram.ui.ActionBar.k kVar = this.actionBar;
-        int i7 = k6.d6;
-        r6.i(i7, kVar, getResourceProvider());
-        this.actionBar.setActionModeColor(k6.x0(null, i7, false));
+        int i7 = l6.d6;
+        s6.h(i7, kVar, getResourceProvider());
+        this.actionBar.setActionModeColor(l6.x0(null, i7, false));
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         org.telegram.ui.ActionBar.k kVar2 = this.actionBar;
-        int i10 = k6.G6;
-        r6.m(kVar2, 5, i10, getResourceProvider());
-        r6.m(this.actionBar, 3, k6.z8, getResourceProvider());
-        r6.m(this.actionBar, 1, i10, getResourceProvider());
-        r6.b(this.actionBar, i10, getResourceProvider(), true);
+        int i10 = l6.G6;
+        s6.l(kVar2, 5, i10, getResourceProvider());
+        s6.l(this.actionBar, 3, l6.z8, getResourceProvider());
+        s6.l(this.actionBar, 1, i10, getResourceProvider());
+        s6.b(this.actionBar, i10, getResourceProvider(), true);
         this.actionBar.setCastShadows(true);
-        this.actionBar.setActionBarMenuOnItemClick(new nt0(this, 21));
-        org.telegram.ui.ActionBar.y n10 = this.actionBar.n(null);
-        NumberTextView numberTextView = new NumberTextView(n10.getContext());
+        this.actionBar.setActionBarMenuOnItemClick(new pt0(this, 21));
+        org.telegram.ui.ActionBar.y o4 = this.actionBar.o(null);
+        NumberTextView numberTextView = new NumberTextView(o4.getContext());
         this.x = numberTextView;
         numberTextView.setTextSize(18);
         this.x.setTypeface(org.telegram.messenger.g0.o());
-        this.x.setTextColor(getThemedColor(k6.y8));
+        this.x.setTextColor(getThemedColor(l6.y8));
         this.x.setOnTouchListener(new ei.b(2));
-        n10.addView(this.x, ha.m(1.0f, 0, -1, 65, 0, 0));
-        this.s = n10.h(R.id.menu_link, R.drawable.msg_message, org.telegram.messenger.g0.L(54.0f), id.M0(2131754877, null));
-        n10.h(R.id.menu_delete, R.drawable.msg_delete, org.telegram.messenger.g0.L(54.0f), id.M0(2131751599, null));
-        org.telegram.ui.ActionBar.r0 c10 = this.actionBar.q().c(0, R.drawable.outline_header_search, getResourceProvider());
+        o4.addView(this.x, ha.m(1.0f, 0, -1, 65, 0, 0));
+        this.s = o4.h(R.id.menu_link, R.drawable.msg_message, org.telegram.messenger.g0.L(54.0f), id.M0(2131754877, null));
+        o4.h(R.id.menu_delete, R.drawable.msg_delete, org.telegram.messenger.g0.L(54.0f), id.M0(2131751598, null));
+        org.telegram.ui.ActionBar.r0 c10 = this.actionBar.r().c(0, R.drawable.outline_header_search, getResourceProvider());
         c10.N();
         c10.H = new u2(this);
         this.r = c10;
-        c10.setSearchFieldHint(id.M0(2131745839, null));
-        this.r.setContentDescription(id.M0(2131745839, null));
+        c10.setSearchFieldHint(id.M0(2131745836, null));
+        this.r.setContentDescription(id.M0(2131745836, null));
         EditTextBoldCursor searchField = this.r.getSearchField();
-        r6.V(searchField, i10, getResourceProvider());
-        r6.E(searchField, k6.Gj, getResourceProvider());
-        r6.w(searchField, i10, getResourceProvider());
+        s6.U(searchField, i10, getResourceProvider());
+        s6.D(searchField, l6.Gj, getResourceProvider());
+        s6.v(searchField, i10, getResourceProvider());
         this.a.j(new ui(this, 24));
-        av0 av0Var = new av0(context, null, 1, null);
-        av0Var.d.setText(id.M0(2131742922, null));
-        av0Var.e.setVisibility(8);
-        av0Var.e(false, false);
-        av0Var.setAnimateLayoutChange(true);
-        ((FrameLayout) this.fragmentView).addView(av0Var, ha.c(-1.0f, -1));
-        this.a.setEmptyView(av0Var);
+        cv0 cv0Var = new cv0(context, null, 1, null);
+        cv0Var.d.setText(id.M0(2131742919, null));
+        cv0Var.e.setVisibility(8);
+        cv0Var.e(false, false);
+        cv0Var.setAnimateLayoutChange(true);
+        ((FrameLayout) this.fragmentView).addView(cv0Var, ha.c(-1.0f, -1));
+        this.a.setEmptyView(cv0Var);
         return this.fragmentView;
     }
 
-    public final void h0(x31 x31Var, View view) {
+    public final void h0(y31 y31Var, View view) {
         g gVar = (g) view;
-        ij ijVar = (ij) x31Var.H;
+        ij ijVar = (ij) y31Var.H;
         boolean j02 = j0(ijVar);
         HashSet hashSet = this.y;
         if (j02) {
             if (ijVar != null) {
-                hashSet.remove(Integer.valueOf(ijVar.f1()));
+                hashSet.remove(Integer.valueOf(ijVar.e1()));
             }
             gVar.setChecked(false);
         } else {
             if (ijVar != null) {
-                hashSet.add(Integer.valueOf(ijVar.f1()));
+                hashSet.add(Integer.valueOf(ijVar.e1()));
             }
             gVar.setChecked(true);
         }
         this.x.a(hashSet.size(), true);
         if (hashSet.isEmpty()) {
-            this.actionBar.u();
+            this.actionBar.v();
         } else {
-            this.actionBar.O(null, null);
+            this.actionBar.P(null, null);
         }
         org.telegram.messenger.g0.V3(this.s, hashSet.size() == 1, true);
     }
@@ -288,12 +288,12 @@ public final class l extends n41 {
 
     @Override // org.telegram.ui.ActionBar.f2
     public final boolean isLightStatusBar() {
-        return org.telegram.messenger.g0.B(getThemedColor(k6.d6)) > 0.721f;
+        return org.telegram.messenger.g0.B(getThemedColor(l6.d6)) > 0.721f;
     }
 
     public final boolean j0(ij ijVar) {
         if (ijVar != null) {
-            return this.y.contains(Integer.valueOf(ijVar.f1()));
+            return this.y.contains(Integer.valueOf(ijVar.e1()));
         }
         return false;
     }
@@ -345,17 +345,17 @@ public final class l extends n41 {
             super.onThemeColorsChanged();
             org.telegram.ui.ActionBar.k kVar = this.actionBar;
             if (kVar != null) {
-                kVar.setActionModeColor(k6.x0(null, k6.d6, false));
+                kVar.setActionModeColor(l6.x0(null, l6.d6, false));
             }
             NumberTextView numberTextView = this.x;
             if (numberTextView != null) {
-                numberTextView.setTextColor(getThemedColor(k6.y8));
+                numberTextView.setTextColor(getThemedColor(l6.y8));
             }
             org.telegram.ui.ActionBar.r0 r0Var = this.r;
             if (r0Var == null || r0Var.getSearchField() == null) {
                 return;
             }
-            this.r.getSearchField().setCursorColor(getThemedColor(k6.G6));
+            this.r.getSearchField().setCursorColor(getThemedColor(l6.G6));
         } catch (Exception e10) {
             a8.g(e10, true);
         }

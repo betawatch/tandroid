@@ -6,7 +6,7 @@ import android.view.View;
 import org.telegram.messenger.sc;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class e4 {
     public float a;
@@ -33,9 +33,9 @@ public final class e4 {
         r9Var2.b = f11;
         r9Var.b();
         r9Var2.b();
-        int i11 = org.telegram.ui.ActionBar.k6.eh;
-        r9Var.d.setColor(i0.a.o(org.telegram.ui.ActionBar.k6.x0(null, i11, false), 38));
-        r9Var2.d.setColor(i0.a.o(org.telegram.ui.ActionBar.k6.x0(null, i11, false), 38));
+        int i11 = org.telegram.ui.ActionBar.l6.eh;
+        r9Var.d.setColor(i0.a.o(org.telegram.ui.ActionBar.l6.x0(null, i11, false), 38));
+        r9Var2.d.setColor(i0.a.o(org.telegram.ui.ActionBar.l6.x0(null, i11, false), 38));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:24:0x006c  */
@@ -62,7 +62,7 @@ public final class e4 {
                             if (f14 > 1.0f) {
                                 this.j = 1.0f;
                             }
-                            r9Var.d.setColor(i0.a.o(i0.a.f(this.j, org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.eh, false), org.telegram.ui.ActionBar.k6.x0(null, this.i != 2 ? org.telegram.ui.ActionBar.k6.gh : org.telegram.ui.ActionBar.k6.dh, false)), 38));
+                            r9Var.d.setColor(i0.a.o(i0.a.f(this.j, org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.eh, false), org.telegram.ui.ActionBar.l6.x0(null, this.i != 2 ? org.telegram.ui.ActionBar.l6.gh : org.telegram.ui.ActionBar.l6.dh, false)), 38));
                         }
                     }
                     if (i7 == 1) {
@@ -75,7 +75,7 @@ public final class e4 {
                             }
                         }
                     }
-                    r9Var.d.setColor(i0.a.o(i0.a.f(this.j, org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.eh, false), org.telegram.ui.ActionBar.k6.x0(null, this.i != 2 ? org.telegram.ui.ActionBar.k6.gh : org.telegram.ui.ActionBar.k6.dh, false)), 38));
+                    r9Var.d.setColor(i0.a.o(i0.a.f(this.j, org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.eh, false), org.telegram.ui.ActionBar.l6.x0(null, this.i != 2 ? org.telegram.ui.ActionBar.l6.gh : org.telegram.ui.ActionBar.l6.dh, false)), 38));
                 }
                 r9Var.e(this.a, 1.0f);
                 Paint paint = r9Var.d;

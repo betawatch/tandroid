@@ -7,17 +7,17 @@ import c8.ha;
 import org.telegram.messenger.i6;
 import org.telegram.messenger.iz;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.g6;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final class p5 extends FrameLayout {
     public final g1 a;
     public TL_iv.pageTableCell b;
 
-    public p5(Context context, f6 f6Var) {
+    public p5(Context context, g6 g6Var) {
         super(context);
-        g1 g1Var = new g1(context, f6Var);
+        g1 g1Var = new g1(context, g6Var);
         this.a = g1Var;
         g1Var.setTextSize(1, Math.max(8, iz.W0 - 2));
         g1Var.setAllowNewlines(true);

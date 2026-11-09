@@ -4,8 +4,8 @@ import a8.c1;
 import android.content.Context;
 import android.content.SharedPreferences;
 import com.google.android.gms.tasks.OnSuccessListener;
-import di.g7;
-import di.y6;
+import di.h7;
+import di.z6;
 import h9.t1;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,21 +17,22 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.r1;
 import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.Cells.w1;
-import org.telegram.ui.Components.b70;
+import org.telegram.ui.Components.c70;
 import org.telegram.ui.Components.i6;
-import org.telegram.ui.Components.x60;
-import org.telegram.ui.an;
-import org.telegram.ui.c40;
-import org.telegram.ui.gz;
-import org.telegram.ui.h30;
-import org.telegram.ui.ib1;
-import org.telegram.ui.qj;
+import org.telegram.ui.Components.y60;
+import org.telegram.ui.cn;
+import org.telegram.ui.e40;
+import org.telegram.ui.iz;
+import org.telegram.ui.j30;
+import org.telegram.ui.kb1;
+import org.telegram.ui.sj;
+import org.telegram.ui.y6;
 import p4.a1;
 import p4.g1;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class y implements OnSuccessListener, g7, ib1, r1, bg.p, bp, a1, h2.j, xh.j {
+public final /* synthetic */ class y implements OnSuccessListener, h7, kb1, r1, bg.p, bp, a1, h2.j, xh.j {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ Object c;
@@ -44,11 +45,11 @@ public final /* synthetic */ class y implements OnSuccessListener, g7, ib1, r1, 
 
     @Override // org.telegram.messenger.bp
     public boolean a(TLRPC.TL_error tL_error) {
-        b70 b70Var = (b70) this.c;
+        c70 c70Var = (c70) this.c;
         if (tL_error != null && "INVITE_REQUEST_SENT".equals(tL_error.text)) {
-            b70Var.setOnDismissListener(new x60(0, b70Var, this.b));
+            c70Var.setOnDismissListener(new y60(0, c70Var, this.b));
         }
-        b70Var.dismiss();
+        c70Var.dismiss();
         return false;
     }
 
@@ -57,24 +58,24 @@ public final /* synthetic */ class y implements OnSuccessListener, g7, ib1, r1, 
         ((g1) obj).D((e2.e) this.c, this.b);
     }
 
-    @Override // di.g7
+    @Override // di.h7
     public void b(boolean z9) {
         di.q qVar = (di.q) this.c;
         if (!this.b && z9) {
             boolean z10 = qVar.b == 1;
-            y6 y6Var = qVar.s;
+            z6 z6Var = qVar.s;
             if (z10) {
-                if (!y6Var.z) {
+                if (!z6Var.z) {
                     return;
                 }
-            } else if (!y6Var.p) {
+            } else if (!z6Var.p) {
                 return;
             }
-            y6Var.T(z10);
+            z6Var.T(z10);
         }
     }
 
-    @Override // org.telegram.ui.ib1
+    @Override // org.telegram.ui.kb1
     public void c(int i7, ArrayList arrayList) {
         switch (this.a) {
             case 2:
@@ -102,21 +103,21 @@ public final /* synthetic */ class y implements OnSuccessListener, g7, ib1, r1, 
                 a0Var.e.run();
                 break;
             default:
-                gz gzVar = (gz) this.c;
-                LongSparseIntArray longSparseIntArray = gzVar.H;
-                gzVar.D = i7;
+                iz izVar = (iz) this.c;
+                LongSparseIntArray longSparseIntArray = izVar.H;
+                izVar.D = i7;
                 if (this.b) {
-                    gzVar.u0(gzVar.F, arrayList, true);
-                    gzVar.F = arrayList;
-                    for (int i11 = 0; i11 < gzVar.F.size(); i11++) {
-                        gzVar.G.remove(gzVar.F.get(i11));
+                    izVar.u0(izVar.F, arrayList, true);
+                    izVar.F = arrayList;
+                    for (int i11 = 0; i11 < izVar.F.size(); i11++) {
+                        izVar.G.remove(izVar.F.get(i11));
                     }
                     ArrayList arrayList4 = new ArrayList();
                     int size = longSparseIntArray.size();
                     for (int i12 = 0; i12 < size; i12++) {
                         long keyAt = longSparseIntArray.keyAt(i12);
                         Long valueOf = Long.valueOf(keyAt);
-                        if (!m5.C(keyAt) && !gzVar.F.contains(valueOf)) {
+                        if (!m5.C(keyAt) && !izVar.F.contains(valueOf)) {
                             arrayList4.add(valueOf);
                         }
                     }
@@ -125,17 +126,17 @@ public final /* synthetic */ class y implements OnSuccessListener, g7, ib1, r1, 
                         longSparseIntArray.delete(((Long) arrayList4.get(i13)).longValue());
                     }
                 } else {
-                    gzVar.u0(gzVar.G, arrayList, false);
-                    gzVar.G = arrayList;
-                    for (int i14 = 0; i14 < gzVar.G.size(); i14++) {
-                        Long l10 = (Long) gzVar.G.get(i14);
-                        gzVar.F.remove(l10);
+                    izVar.u0(izVar.G, arrayList, false);
+                    izVar.G = arrayList;
+                    for (int i14 = 0; i14 < izVar.G.size(); i14++) {
+                        Long l10 = (Long) izVar.G.get(i14);
+                        izVar.F.remove(l10);
                         longSparseIntArray.delete(l10.longValue());
                     }
                 }
-                gzVar.p0();
-                gzVar.o0(false);
-                gzVar.C0();
+                izVar.p0();
+                izVar.o0(false);
+                izVar.C0();
                 break;
         }
     }
@@ -144,23 +145,23 @@ public final /* synthetic */ class y implements OnSuccessListener, g7, ib1, r1, 
     public void g(u1 u1Var, int i7) {
         switch (this.a) {
             case 3:
-                org.telegram.ui.y6.d0((org.telegram.ui.y6) this.c, this.b);
+                y6.d0((y6) this.c, this.b);
                 break;
             case 4:
             default:
-                c40 c40Var = ((h30) this.c).b;
-                c40Var.R2.A(0, null);
-                c40Var.n1().j(this.b ? 101 : 40, 0L, null);
+                e40 e40Var = ((j30) this.c).b;
+                e40Var.R2.A(0, null);
+                e40Var.n1().j(this.b ? 101 : 40, 0L, null);
                 break;
             case 5:
-                an anVar = (an) this.c;
-                qj qjVar = anVar.Z;
-                if (qjVar != null) {
+                cn cnVar = (cn) this.c;
+                sj sjVar = cnVar.Z;
+                if (sjVar != null) {
                     if (!this.b) {
-                        qjVar.x();
+                        sjVar.x();
                         break;
                     } else {
-                        anVar.finishFragment();
+                        cnVar.finishFragment();
                         break;
                     }
                 }

@@ -1,6 +1,6 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l9 implements r1.c {
     public final /* synthetic */ int a;
@@ -24,14 +24,14 @@ public final /* synthetic */ class l9 implements r1.c {
                 }
                 break;
             case 1:
-                dl0 dl0Var = (dl0) this.b;
-                if (gVar == dl0Var.c) {
-                    dl0Var.c = null;
+                fl0 fl0Var = (fl0) this.b;
+                if (gVar == fl0Var.c) {
+                    fl0Var.c = null;
                     break;
                 }
                 break;
             default:
-                ((iq0) this.b).E();
+                ((kq0) this.b).E();
                 break;
         }
     }

@@ -1,30 +1,78 @@
 package org.telegram.ui.Components;
 
-import android.content.DialogInterface;
-import org.telegram.tgnet.ConnectionsManager;
+import android.content.Context;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class m60 implements DialogInterface.OnCancelListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.messenger.c b;
-    public final /* synthetic */ int c;
+public final /* synthetic */ class m60 implements RequestDelegate {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object g;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object i;
 
-    public /* synthetic */ m60(org.telegram.messenger.c cVar, int i7, int i10) {
-        this.a = i10;
-        this.b = cVar;
-        this.c = i7;
+    public /* synthetic */ m60(Context context, di.i0 i0Var, long j3, byte[] bArr, org.telegram.messenger.video.a aVar, hc hcVar, org.telegram.messenger.video.d dVar, int i7) {
+        this.b = context;
+        this.e = i0Var;
+        this.c = j3;
+        this.f = bArr;
+        this.g = aVar;
+        this.h = hcVar;
+        this.i = dVar;
+        this.d = i7;
     }
 
-    @Override // android.content.DialogInterface.OnCancelListener
-    public final void onCancel(DialogInterface dialogInterface) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                ConnectionsManager.getInstance(this.b.a).cancelRequest(this.c, true);
+                org.telegram.messenger.g0.h3(new hi.a1((org.telegram.ui.ActionBar.u1) this.e, tLObject, (org.telegram.messenger.c) this.f, (s60) this.g, this.c, this.b, (org.telegram.ui.ActionBar.f2) this.h, this.d, (TLRPC.Peer) this.i));
                 break;
             default:
-                ConnectionsManager.getInstance(this.b.a).cancelRequest(this.c, true);
+                di.i0 i0Var = (di.i0) this.e;
+                byte[] bArr = (byte[]) this.f;
+                org.telegram.messenger.video.a aVar = (org.telegram.messenger.video.a) this.g;
+                hc hcVar = (hc) this.h;
+                org.telegram.messenger.video.d dVar = (org.telegram.messenger.video.d) this.i;
+                Context context = this.b;
+                if (tLObject == null) {
+                    if (tL_error != null && "AD_EXPIRED".equalsIgnoreCase(tL_error.text)) {
+                        org.telegram.messenger.g0.i3(new org.telegram.ui.iy0(aVar, hcVar, context, i0Var, 1), 200L);
+                        break;
+                    }
+                } else if (!(tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultChooseOption)) {
+                    if (!(tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultReported)) {
+                        if (tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultAdsHidden) {
+                            org.telegram.messenger.g0.i3(new org.telegram.ui.f10(aVar, hcVar, this.d, 11), 200L);
+                            break;
+                        }
+                    } else {
+                        org.telegram.messenger.g0.i3(new org.telegram.ui.iy0(aVar, hcVar, context, i0Var, 0), 200L);
+                        break;
+                    }
+                } else {
+                    org.telegram.messenger.g0.h3(new bi.m4(tLObject, context, i0Var, this.c, bArr, aVar, hcVar, dVar));
+                    break;
+                }
                 break;
         }
+    }
+
+    public /* synthetic */ m60(org.telegram.ui.ActionBar.u1 u1Var, org.telegram.messenger.c cVar, s60 s60Var, long j3, Context context, org.telegram.ui.ActionBar.f2 f2Var, int i7, TLRPC.Peer peer) {
+        this.e = u1Var;
+        this.f = cVar;
+        this.g = s60Var;
+        this.c = j3;
+        this.b = context;
+        this.h = f2Var;
+        this.d = i7;
+        this.i = peer;
     }
 }

@@ -6,9 +6,9 @@ import android.graphics.Paint;
 import android.graphics.Picture;
 import android.text.TextUtils;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public abstract class y4 extends s70 implements te.b {
+public abstract class y4 extends t70 implements te.b {
     public final te.c P0;
     public Picture Q0;
     public float R0;
@@ -77,7 +77,7 @@ public abstract class y4 extends s70 implements te.b {
         return l(charSequence, false);
     }
 
-    @Override // org.telegram.ui.Components.s70, org.telegram.ui.ActionBar.k5, android.view.View
+    @Override // org.telegram.ui.Components.t70, org.telegram.ui.ActionBar.l5, android.view.View
     public final void onDraw(Canvas canvas) {
         if (this.Q0 == null) {
             super.onDraw(canvas);

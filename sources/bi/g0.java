@@ -5,13 +5,13 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.dx;
 import org.telegram.ui.Components.hx;
-import org.telegram.ui.c40;
-import org.telegram.ui.lm;
-import org.telegram.ui.pa0;
-import org.telegram.ui.pn;
-import org.telegram.ui.y71;
+import org.telegram.ui.e40;
+import org.telegram.ui.nm;
+import org.telegram.ui.ra0;
+import org.telegram.ui.rn;
+import org.telegram.ui.z71;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g0 implements DialogInterface.OnCancelListener {
     public final /* synthetic */ int a;
@@ -34,13 +34,13 @@ public final /* synthetic */ class g0 implements DialogInterface.OnCancelListene
                 ConnectionsManager.getInstance(((org.telegram.ui.la) this.c).currentAccount).cancelRequest(this.b, true);
                 break;
             case 2:
-                ((lm) this.c).a.getConnectionsManager().cancelRequest(this.b, true);
+                ((nm) this.c).a.getConnectionsManager().cancelRequest(this.b, true);
                 break;
             case 3:
-                pn pnVar = (pn) this.c;
-                pnVar.N0 = false;
-                pnVar.b = null;
-                pnVar.getConnectionsManager().cancelRequest(this.b, true);
+                rn rnVar = (rn) this.c;
+                rnVar.N0 = false;
+                rnVar.b = null;
+                rnVar.getConnectionsManager().cancelRequest(this.b, true);
                 break;
             case 4:
                 ((ChatActivityEnterView) this.c).P2.getConnectionsManager().cancelRequest(this.b, true);
@@ -49,13 +49,13 @@ public final /* synthetic */ class g0 implements DialogInterface.OnCancelListene
                 ConnectionsManager.getInstance(((hx) ((dx) this.c).c.b).F.c1).cancelRequest(this.b, true);
                 break;
             case 6:
-                ConnectionsManager.getInstance(((c40) this.c).k1.a).cancelRequest(this.b, true);
+                ConnectionsManager.getInstance(((e40) this.c).k1.a).cancelRequest(this.b, true);
                 break;
             case 7:
-                ((pa0) this.c).getConnectionsManager().cancelRequest(this.b, true);
+                ((ra0) this.c).getConnectionsManager().cancelRequest(this.b, true);
                 break;
             default:
-                ConnectionsManager.getInstance(((y71) this.c).currentAccount).cancelRequest(this.b, true);
+                ConnectionsManager.getInstance(((z71) this.c).currentAccount).cancelRequest(this.b, true);
                 break;
         }
     }

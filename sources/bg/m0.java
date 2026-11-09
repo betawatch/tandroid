@@ -8,7 +8,7 @@ import android.text.TextUtils;
 import android.util.StateSet;
 import bi.ea;
 import bi.s5;
-import di.y6;
+import di.z6;
 import fi.e7;
 import fi.k2;
 import fi.va;
@@ -36,17 +36,17 @@ import org.telegram.ui.Cells.l1;
 import org.telegram.ui.Cells.q1;
 import org.telegram.ui.Components.r1;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.an;
-import org.telegram.ui.gi;
-import org.telegram.ui.hi;
-import org.telegram.ui.lm;
-import org.telegram.ui.ni;
-import org.telegram.ui.ol;
+import org.telegram.ui.cn;
+import org.telegram.ui.ii;
+import org.telegram.ui.ji;
+import org.telegram.ui.nm;
 import org.telegram.ui.p4;
+import org.telegram.ui.pi;
+import org.telegram.ui.ql;
 import org.telegram.ui.ud;
 import org.telegram.ui.vd;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class m0 implements Runnable {
     public final /* synthetic */ int a;
@@ -93,13 +93,13 @@ public final /* synthetic */ class m0 implements Runnable {
                 }
                 break;
             case 3:
-                y6 y6Var = (y6) obj;
-                ArrayList arrayList = y6Var.g;
-                y6Var.v(arrayList);
-                s5 s5Var = y6Var.J;
+                z6 z6Var = (z6) obj;
+                ArrayList arrayList = z6Var.g;
+                z6Var.v(arrayList);
+                s5 s5Var = z6Var.J;
                 Collections.sort(arrayList, s5Var);
-                ArrayList arrayList2 = y6Var.h;
-                y6Var.v(arrayList2);
+                ArrayList arrayList2 = z6Var.h;
+                z6Var.v(arrayList2);
                 Collections.sort(arrayList2, s5Var);
                 qs.f(i12).k(qs.v5, new Object[0]);
                 break;
@@ -245,49 +245,49 @@ public final /* synthetic */ class m0 implements Runnable {
                 vdVar.c(i12);
                 break;
             case 21:
-                an anVar = ((gi) obj).g;
-                if (anVar.Wb == i12) {
-                    anVar.lb();
+                cn cnVar = ((ii) obj).g;
+                if (cnVar.Yb == i12) {
+                    cnVar.ob();
                     break;
                 }
                 break;
             case 22:
-                an anVar2 = ((hi) obj).g;
-                if (anVar2.Wb == i12) {
-                    anVar2.lb();
+                cn cnVar2 = ((ji) obj).g;
+                if (cnVar2.Yb == i12) {
+                    cnVar2.ob();
                     break;
                 }
                 break;
             case 23:
-                ((ni) obj).a.l(this.b, 0, true, 0, true, 0);
+                ((pi) obj).a.l(this.b, 0, true, 0, true, 0);
                 break;
             case 24:
-                an anVar3 = ((gi) obj).g;
-                if (anVar3.Wb == i12) {
-                    anVar3.lb();
+                cn cnVar3 = ((ii) obj).g;
+                if (cnVar3.Yb == i12) {
+                    cnVar3.ob();
                     break;
                 }
                 break;
             case 25:
-                an anVar4 = ((hi) obj).g;
-                if (anVar4.Wb == i12) {
-                    anVar4.lb();
+                cn cnVar4 = ((ji) obj).g;
+                if (cnVar4.Yb == i12) {
+                    cnVar4.ob();
                     break;
                 }
                 break;
             case 26:
-                an anVar5 = ((hi) obj).g;
-                if (anVar5.Wb == i12) {
-                    anVar5.lb();
+                cn cnVar5 = ((ji) obj).g;
+                if (cnVar5.Yb == i12) {
+                    cnVar5.ob();
                     break;
                 }
                 break;
             case 27:
-                an anVar6 = ((ol) obj).w0;
-                anVar6.B0.h1(i12, anVar6.M4);
+                cn cnVar6 = ((ql) obj).w0;
+                cnVar6.B0.h1(i12, cnVar6.M4);
                 break;
             case 28:
-                i7 = ((f2) ((lm) obj).a).currentAccount;
+                i7 = ((f2) ((nm) obj).a).currentAccount;
                 ConnectionsManager.getInstance(i7).cancelRequest(i12, true);
                 break;
             default:

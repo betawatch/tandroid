@@ -1,47 +1,54 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class lq implements Runnable {
+public final /* synthetic */ class lq implements org.telegram.ui.Cells.z4, org.telegram.ui.Components.wt0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ nq b;
-    public final /* synthetic */ String c;
+    public final /* synthetic */ mq b;
 
-    public /* synthetic */ lq(nq nqVar, String str, int i7) {
+    public /* synthetic */ lq(mq mqVar, int i7) {
         this.a = i7;
-        this.b = nqVar;
-        this.c = str;
+        this.b = mqVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        m6 m6Var;
+    @Override // org.telegram.ui.Cells.z4
+    public boolean b(org.telegram.ui.Cells.a5 a5Var, boolean z9) {
+        qq qqVar = this.b.d;
+        return qqVar.m0(qqVar.a.E(((Integer) a5Var.getTag()).intValue()), !z9, a5Var);
+    }
+
+    @Override // org.telegram.ui.Components.wt0
+    public void m(int i7) {
         switch (this.a) {
-            case 0:
-                nq nqVar = this.b;
-                nqVar.getClass();
-                org.telegram.messenger.g0.h3(new lq(nqVar, this.c, 1));
+            case 1:
+                qq qqVar = this.b.d;
+                if (qqVar.r != null) {
+                    int i10 = qqVar.o1;
+                    boolean z9 = (i10 > 0 && i7 == 0) || (i10 == 0 && i7 > 0);
+                    qqVar.o1 = i7;
+                    if (z9) {
+                        kq B0 = qqVar.B0();
+                        qqVar.G0();
+                        qqVar.F0(B0);
+                    }
+                    qqVar.a.g(qqVar.O0);
+                    break;
+                }
                 break;
             default:
-                nq nqVar2 = this.b;
-                nqVar2.n = null;
-                oq oqVar = nqVar2.D;
-                TLRPC.Chat chat = oqVar.n;
-                int i7 = oqVar.d1;
-                ArrayList arrayList = (org.telegram.messenger.t3.T(chat) || oqVar.r == null) ? null : new ArrayList(oqVar.r.participants.participants);
-                ArrayList arrayList2 = i7 == 1 ? new ArrayList(oqVar.getContactsController().e0) : null;
-                String str = this.c;
-                if (arrayList == null && arrayList2 == null) {
-                    nqVar2.s = false;
-                    m6Var = null;
-                } else {
-                    m6Var = new m6(nqVar2, str, arrayList, arrayList2, 13);
-                }
-                nqVar2.h.h(str, i7 != 0, false, true, false, false, org.telegram.messenger.t3.T(oqVar.n) ? oqVar.M : 0L, false, oqVar.N, 1, 0L, m6Var);
+                this.b.d.r1 = i7 + 1;
                 break;
         }
+    }
+
+    @Override // org.telegram.ui.Components.wt0
+    public /* synthetic */ void n() {
+        int i7 = this.a;
+    }
+
+    private final /* synthetic */ void a() {
+    }
+
+    private final /* synthetic */ void c() {
     }
 }

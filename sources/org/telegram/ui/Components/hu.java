@@ -10,16 +10,16 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class hu extends oj0 {
+public final class hu extends pj0 {
     public final /* synthetic */ ru c;
 
     public hu(ru ruVar) {
         this.c = ruVar;
     }
 
-    @Override // org.telegram.ui.Components.oj0
+    @Override // org.telegram.ui.Components.pj0
     public final boolean D(v4.d1 d1Var) {
         return d1Var.f == 1;
     }
@@ -53,7 +53,7 @@ public final class hu extends oj0 {
         ArrayList arrayList;
         ru ruVar = this.c;
         du duVar = ruVar.l1;
-        ?? r22 = (org.telegram.messenger.p10.i(ruVar.a).q() || (arrayList = duVar.b) == null || arrayList.size() != 1 || !org.telegram.messenger.ij.W3((TLRPC.TL_messages_stickerSet) duVar.b.get(0))) ? 0 : 1;
+        ?? r22 = (org.telegram.messenger.p10.i(ruVar.a).q() || (arrayList = duVar.b) == null || arrayList.size() != 1 || !org.telegram.messenger.ij.V3((TLRPC.TL_messages_stickerSet) duVar.b.get(0))) ? 0 : 1;
         ruVar.z1 = r22;
         int i10 = r22 + 1;
         if (duVar.c != null) {
@@ -216,8 +216,8 @@ public final class hu extends oj0 {
             }
             TextView textView2 = (TextView) view;
             textView2.setTextSize(1, 13.0f);
-            org.telegram.ui.ActionBar.r6.V(textView2, org.telegram.ui.ActionBar.k6.Lf, ruVar.I0);
-            textView2.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.M0(2131747006, null)));
+            org.telegram.ui.ActionBar.s6.U(textView2, org.telegram.ui.ActionBar.l6.Lf, ruVar.I0);
+            textView2.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.M0(2131747005, null)));
             textView2.setPadding(org.telegram.messenger.g0.L(14.0f), 0, org.telegram.messenger.g0.L(30.0f), org.telegram.messenger.g0.L(14.0f));
             return;
         }
@@ -245,7 +245,7 @@ public final class hu extends oj0 {
         TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = (arrayList2 == null || i16 >= arrayList2.size()) ? null : (TLRPC.TL_messages_stickerSet) duVar.b.get(i16);
         if (tL_messages_stickerSet2 != null && tL_messages_stickerSet2.documents != null) {
             for (int i18 = 0; i18 < tL_messages_stickerSet2.documents.size(); i18++) {
-                if (!org.telegram.messenger.ij.n3(tL_messages_stickerSet2.documents.get(i18))) {
+                if (!org.telegram.messenger.ij.m3(tL_messages_stickerSet2.documents.get(i18))) {
                     z9 = true;
                     break;
                 }
@@ -259,10 +259,10 @@ public final class hu extends oj0 {
             TextView textView4 = nuVar.c;
             ru ruVar2 = nuVar.y;
             ug.p0 p0Var = nuVar.e;
-            w70 w70Var = nuVar.a;
+            x70 x70Var = nuVar.a;
             nuVar.r = tL_messages_stickerSet2;
             if (tL_messages_stickerSet2 == null || tL_messages_stickerSet2.set == null) {
-                w70Var.setText((CharSequence) null);
+                x70Var.setText((CharSequence) null);
             } else {
                 try {
                     if (ru.M1 == null) {
@@ -275,7 +275,7 @@ public final class hu extends oj0 {
                             org.telegram.messenger.a8.g(e, r92);
                             if (charSequence == null) {
                             }
-                            w70Var.setText(charSequence);
+                            x70Var.setText(charSequence);
                             textView = nuVar.b;
                             if (textView != null) {
                             }
@@ -302,7 +302,7 @@ public final class hu extends oj0 {
                         if (charSequence == null) {
                             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(tL_messages_stickerSet2.set.title);
                             try {
-                                w70Var.setMovementMethod(new org.telegram.messenger.c0(i12));
+                                x70Var.setMovementMethod(new org.telegram.messenger.c0(i12));
                                 r82 = spannableStringBuilder;
                             } catch (Exception e11) {
                                 e = e11;
@@ -311,7 +311,7 @@ public final class hu extends oj0 {
                                 org.telegram.messenger.a8.g(e, r92);
                                 if (charSequence == null) {
                                 }
-                                w70Var.setText(charSequence);
+                                x70Var.setText(charSequence);
                                 textView = nuVar.b;
                                 if (textView != null) {
                                 }
@@ -351,7 +351,7 @@ public final class hu extends oj0 {
                 if (charSequence == null) {
                     charSequence = tL_messages_stickerSet2.set.title;
                 }
-                w70Var.setText(charSequence);
+                x70Var.setText(charSequence);
             }
             textView = nuVar.b;
             if (textView != null) {
@@ -414,9 +414,9 @@ public final class hu extends oj0 {
                 view2 = new TextView(ruVar.getContext());
             } else if (i7 == 4) {
                 View quVar = new qu(ruVar.getContext());
-                int i10 = org.telegram.ui.ActionBar.k6.zf;
+                int i10 = org.telegram.ui.ActionBar.l6.zf;
                 Pattern pattern = ru.M1;
-                org.telegram.ui.ActionBar.r6.i(i10, quVar, ruVar.I0);
+                org.telegram.ui.ActionBar.s6.h(i10, quVar, ruVar.I0);
                 v4.o0 o0Var = new v4.o0(-1, org.telegram.messenger.g0.f1());
                 ((ViewGroup.MarginLayoutParams) o0Var).topMargin = org.telegram.messenger.g0.L(14.0f);
                 quVar.setLayoutParams(o0Var);
@@ -426,6 +426,6 @@ public final class hu extends oj0 {
             }
             view = view2;
         }
-        return new xi0(view);
+        return new yi0(view);
     }
 }

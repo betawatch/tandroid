@@ -4,17 +4,17 @@ import android.content.Context;
 import android.view.ContextThemeWrapper;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class zc extends RadialProgressView {
     public final /* synthetic */ int N;
     public final /* synthetic */ Object O;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ zc(org.telegram.ui.Components.i30 i30Var, Context context, int i7) {
+    public /* synthetic */ zc(org.telegram.ui.Components.j30 j30Var, Context context, int i7) {
         super(context, null);
         this.N = i7;
-        this.O = i30Var;
+        this.O = j30Var;
     }
 
     @Override // android.view.View
@@ -22,9 +22,9 @@ public final class zc extends RadialProgressView {
         switch (this.N) {
             case 3:
                 super.invalidate();
-                pq0 pq0Var = ((PhotoViewer) this.O).e0;
-                if (pq0Var != null) {
-                    pq0Var.invalidate();
+                rq0 rq0Var = ((PhotoViewer) this.O).e0;
+                if (rq0Var != null) {
+                    rq0Var.invalidate();
                     break;
                 }
                 break;
@@ -43,17 +43,17 @@ public final class zc extends RadialProgressView {
                 break;
             case 1:
                 super.setAlpha(f10);
-                ((d50) this.O).e.invalidate();
+                ((f50) this.O).e.invalidate();
                 break;
             case 2:
                 super.setAlpha(f10);
-                ((pc0) this.O).h.invalidate();
+                ((rc0) this.O).h.invalidate();
                 break;
             default:
                 super.setAlpha(f10);
-                pq0 pq0Var = ((PhotoViewer) this.O).e0;
-                if (pq0Var != null) {
-                    pq0Var.invalidate();
+                rq0 rq0Var = ((PhotoViewer) this.O).e0;
+                if (rq0Var != null) {
+                    rq0Var.invalidate();
                     break;
                 }
                 break;
@@ -61,8 +61,8 @@ public final class zc extends RadialProgressView {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zc(PhotoViewer photoViewer, ContextThemeWrapper contextThemeWrapper, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(contextThemeWrapper, f6Var);
+    public zc(PhotoViewer photoViewer, ContextThemeWrapper contextThemeWrapper, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(contextThemeWrapper, g6Var);
         this.N = 3;
         this.O = photoViewer;
     }

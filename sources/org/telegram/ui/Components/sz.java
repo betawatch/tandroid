@@ -12,9 +12,9 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.FrameLayout;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class sz extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
+public final class sz extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public float D;
     public boolean E;
     public ValueAnimator F;
@@ -160,7 +160,7 @@ public final class sz extends FrameLayout implements org.telegram.ui.ActionBar.a
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
         ShapeDrawable shapeDrawable = this.h;
         i6 i6Var = this.b;
@@ -168,27 +168,27 @@ public final class sz extends FrameLayout implements org.telegram.ui.ActionBar.a
         if (paint == null || i6Var == null) {
             return;
         }
-        int i7 = org.telegram.ui.ActionBar.k6.Ci;
-        int x02 = org.telegram.ui.ActionBar.k6.x0(null, i7, false);
-        if (x02 != this.H || this.I != org.telegram.ui.ActionBar.k6.I.q()) {
+        int i7 = org.telegram.ui.ActionBar.l6.Ci;
+        int x02 = org.telegram.ui.ActionBar.l6.x0(null, i7, false);
+        if (x02 != this.H || this.I != org.telegram.ui.ActionBar.l6.I.q()) {
             this.H = x02;
-            this.I = org.telegram.ui.ActionBar.k6.I.q();
+            this.I = org.telegram.ui.ActionBar.l6.I.q();
             View view = this.f;
             if (view != null) {
-                view.setBackground(org.telegram.ui.ActionBar.z5.d(0, org.telegram.ui.ActionBar.z5.b(x02), 8.0f));
+                view.setBackground(org.telegram.ui.ActionBar.a6.d(0, org.telegram.ui.ActionBar.a6.b(x02), 8.0f));
             }
             if (shapeDrawable != null) {
                 shapeDrawable.getPaint().setColor(x02);
                 shapeDrawable.invalidateSelf();
             }
         }
-        int i10 = org.telegram.ui.ActionBar.k6.Gi;
-        paint.setColor(org.telegram.ui.ActionBar.k6.x0(null, i10, false));
-        i6Var.u(org.telegram.ui.ActionBar.k6.x0(null, i10, false));
+        int i10 = org.telegram.ui.ActionBar.l6.Gi;
+        paint.setColor(org.telegram.ui.ActionBar.l6.x0(null, i10, false));
+        i6Var.u(org.telegram.ui.ActionBar.l6.x0(null, i10, false));
         try {
             i6 i6Var2 = this.c;
             if (i6Var2 != null) {
-                i6Var2.u(org.telegram.ui.ActionBar.k6.x0(null, i7, false));
+                i6Var2.u(org.telegram.ui.ActionBar.l6.x0(null, i7, false));
             }
         } catch (Exception e10) {
             org.telegram.messenger.a8.g(e10, true);
@@ -201,7 +201,7 @@ public final class sz extends FrameLayout implements org.telegram.ui.ActionBar.a
         return this.b == drawable || this.c == drawable || super.verifyDrawable(drawable);
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

@@ -12,13 +12,13 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.bi;
 import org.telegram.ui.Components.qg;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class v2 implements bi {
-    public final /* synthetic */ i4 a;
+    public final /* synthetic */ j4 a;
 
-    public v2(i4 i4Var) {
-        this.a = i4Var;
+    public v2(j4 j4Var) {
+        this.a = j4Var;
     }
 
     @Override // org.telegram.ui.Components.bi
@@ -34,17 +34,17 @@ public final class v2 implements bi {
     @Override // org.telegram.ui.Components.bi
     public final void M1(ArrayList arrayList, CharSequence charSequence, boolean z9, int i7, int i10, long j3, boolean z10, long j10) {
         org.telegram.messenger.c accountInstance;
-        i4 i4Var = this.a;
-        TL_stories.StoryItem storyItem = i4Var.x1.a;
+        j4 j4Var = this.a;
+        TL_stories.StoryItem storyItem = j4Var.x1.a;
         if (storyItem == null || (storyItem instanceof TL_stories.TL_storyItemSkipped)) {
             return;
         }
-        accountInstance = i4Var.getAccountInstance();
+        accountInstance = j4Var.getAccountInstance();
         CharSequence charSequence2 = charSequence != null ? charSequence : null;
-        long j11 = i4Var.k1;
+        long j11 = j4Var.k1;
         org.telegram.messenger.p5 p5Var = gz.I;
         new Thread(new ow(null, arrayList, j11, accountInstance, charSequence2, false, null, null, null, null, z9, i7, i10, storyItem, null, j3, z10, j10, null)).start();
-        i4Var.i0(j10 <= 0);
+        j4Var.i0(j10 <= 0);
     }
 
     @Override // org.telegram.ui.Components.bi
@@ -72,12 +72,12 @@ public final class v2 implements bi {
         boolean z13;
         ?? r12;
         String str;
-        i4 i4Var = this.a;
-        if (!i4Var.s0.m0 || (storyItem = i4Var.x1.a) == null || (storyItem instanceof TL_stories.TL_storyItemSkipped)) {
+        j4 j4Var = this.a;
+        if (!j4Var.s0.m0 || (storyItem = j4Var.x1.a) == null || (storyItem instanceof TL_stories.TL_storyItemSkipped)) {
             return;
         }
-        if (i7 != 8 && i7 != 7 && (i7 != 4 || i4Var.r2.a2.getSelectedPhotos().isEmpty())) {
-            u2 u2Var = i4Var.r2;
+        if (i7 != 8 && i7 != 7 && (i7 != 4 || j4Var.r2.a2.getSelectedPhotos().isEmpty())) {
+            u2 u2Var = j4Var.r2;
             if (u2Var != null) {
                 u2Var.L(i7);
                 return;
@@ -86,10 +86,10 @@ public final class v2 implements bi {
         }
         boolean z14 = true;
         if (i7 != 8) {
-            i4Var.r2.a(true);
+            j4Var.r2.a(true);
         }
-        HashMap<Object, Object> selectedPhotos = i4Var.r2.a2.getSelectedPhotos();
-        ArrayList<Object> selectedPhotosOrder = i4Var.r2.a2.getSelectedPhotosOrder();
+        HashMap<Object, Object> selectedPhotos = j4Var.r2.a2.getSelectedPhotos();
+        ArrayList<Object> selectedPhotosOrder = j4Var.r2.a2.getSelectedPhotosOrder();
         if (selectedPhotos.isEmpty()) {
             return;
         }
@@ -131,10 +131,10 @@ public final class v2 implements bi {
             }
             boolean z16 = i12 == 0 ? ((fz) arrayList.get(r72)).t : r72;
             HashMap<Object, Object> hashMap = selectedPhotos;
-            accountInstance = i4Var.getAccountInstance();
+            accountInstance = j4Var.getAccountInstance();
             ArrayList<Object> arrayList2 = selectedPhotosOrder;
             int i16 = r72;
-            long j11 = i4Var.k1;
+            long j11 = j4Var.k1;
             if (i7 == 4 || z12) {
                 z13 = 4;
                 r12 = 1;
@@ -142,7 +142,7 @@ public final class v2 implements bi {
                 z13 = 4;
                 r12 = i16;
             }
-            gz.X(accountInstance, arrayList, j11, null, null, storyItem, null, r12, z9, null, null, z10, i10, i11, z16, null, null, 0L, false, 0L, i4Var.K1.getSendMonoForumPeerId(), i4Var.K1.getSendMessageSuggestionParams(), null, false);
+            gz.X(accountInstance, arrayList, j11, null, null, storyItem, null, r12, z9, null, null, z10, i10, i11, z16, null, null, 0L, false, 0L, j4Var.K1.getSendMonoForumPeerId(), j4Var.K1.getSendMessageSuggestionParams(), null, false);
             i12++;
             z14 = true;
             selectedPhotos = hashMap;
@@ -151,8 +151,8 @@ public final class v2 implements bi {
         }
         boolean z17 = z14;
         boolean z18 = r72;
-        i4Var.K1.setFieldText("");
-        i4Var.i0(j10 <= 0 ? z17 : z18);
+        j4Var.K1.setFieldText("");
+        j4Var.i0(j10 <= 0 ? z17 : z18);
     }
 
     @Override // org.telegram.ui.Components.bi

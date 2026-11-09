@@ -1,41 +1,35 @@
 package org.telegram.ui;
 
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.ImageReceiver;
+import android.content.Context;
+import android.view.View;
+import android.widget.TextView;
+import java.util.HashSet;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class yw0 implements org.telegram.messenger.lc {
-    public final /* synthetic */ Runnable[] a;
+public final class yw0 extends TextView implements org.telegram.ui.ActionBar.b6 {
+    public final /* synthetic */ ProfileActivity a;
 
-    public yw0(Runnable[] runnableArr) {
-        this.a = runnableArr;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public yw0(ProfileActivity profileActivity, Context context) {
+        super(context);
+        this.a = profileActivity;
+        updateColors();
     }
 
-    @Override // org.telegram.messenger.lc
-    public final void f0(ImageReceiver imageReceiver, boolean z9, boolean z10, boolean z11) {
-        if (imageReceiver.I()) {
-            Runnable[] runnableArr = this.a;
-            if (runnableArr[0] != null) {
-                org.telegram.ui.Components.zg0 B = imageReceiver.B();
-                if (B == null) {
-                    runnableArr[0].run();
-                    runnableArr[0] = null;
-                } else if (B.y()) {
-                    B.A0 = new ru0(runnableArr, 7);
-                } else {
-                    runnableArr[0].run();
-                    runnableArr[0] = null;
-                }
-            }
-        }
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void addColorKeys(HashSet hashSet) {
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.l6.G6));
     }
 
-    @Override // org.telegram.messenger.lc
-    public final /* synthetic */ void O(ImageReceiver imageReceiver) {
+    @Override // android.widget.TextView, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), i10);
     }
 
-    @Override // org.telegram.messenger.lc
-    public final /* synthetic */ void t0(int i7, Drawable drawable) {
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void updateColors() {
+        setTextColor(org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.G6, this.a.z0));
     }
 }

@@ -12,15 +12,15 @@ import org.telegram.messenger.qs;
 import org.telegram.messenger.t10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.s6;
 import org.telegram.ui.Components.j6;
 import org.telegram.ui.Components.l9;
 import org.telegram.ui.Components.w8;
 import org.telegram.ui.Components.wp;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class j extends LinearLayout implements ls {
     public final l9 a;
@@ -30,20 +30,20 @@ public final class j extends LinearLayout implements ls {
     public final wp[] e;
     public boolean f;
 
-    public j(Context context, f6 f6Var) {
+    public j(Context context, g6 g6Var) {
         super(context);
         this.e = new wp[1];
         setOrientation(0);
         j6 j6Var = new j6(context, false, false, false);
         this.c = j6Var;
-        int i7 = k6.G6;
-        r6.Z(j6Var, i7, f6Var);
+        int i7 = l6.G6;
+        s6.Y(j6Var, i7, g6Var);
         j6Var.setTextSize(org.telegram.messenger.g0.L(15.0f));
         j6Var.setPadding(org.telegram.messenger.g0.L(12.0f), 0, org.telegram.messenger.g0.L(12.0f), 0);
         j6Var.setEllipsizeByGradient(true);
         j6 j6Var2 = new j6(context, false, false, false);
         this.d = j6Var2;
-        r6.Z(j6Var2, k6.y6, f6Var);
+        s6.Y(j6Var2, l6.y6, g6Var);
         j6Var2.setTextSize(org.telegram.messenger.g0.L(15.0f));
         l9 l9Var = new l9(context);
         this.a = l9Var;
@@ -51,7 +51,7 @@ public final class j extends LinearLayout implements ls {
         this.b = j6Var3;
         j6Var3.setTextSize(org.telegram.messenger.g0.L(15.0f));
         j6Var3.setPadding(org.telegram.messenger.g0.L(20.0f), 0, 0, 0);
-        r6.Z(j6Var3, i7, f6Var);
+        s6.Y(j6Var3, i7, g6Var);
         j6Var3.setTypeface(org.telegram.messenger.g0.o());
         j6Var3.setGravity(17);
         addView(j6Var3, ha.p(66, -2, 0.0f, 16));
@@ -87,7 +87,7 @@ public final class j extends LinearLayout implements ls {
     }
 
     public final void c(TLRPC.User user) {
-        w8 w8Var = new w8((f6) null);
+        w8 w8Var = new w8((g6) null);
         w8Var.r(user);
         l9 l9Var = this.a;
         l9Var.e(user, w8Var);
@@ -104,7 +104,7 @@ public final class j extends LinearLayout implements ls {
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
         if (this.f) {
-            canvas.drawLine(org.telegram.messenger.g0.L(112.0f), getMeasuredHeight() - 1, getMeasuredWidth() - org.telegram.messenger.g0.L(16.0f), getMeasuredHeight(), k6.k0);
+            canvas.drawLine(org.telegram.messenger.g0.L(112.0f), getMeasuredHeight() - 1, getMeasuredWidth() - org.telegram.messenger.g0.L(16.0f), getMeasuredHeight(), l6.k0);
         }
     }
 

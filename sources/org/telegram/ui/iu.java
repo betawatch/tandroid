@@ -1,32 +1,28 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class iu implements org.telegram.messenger.sr {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ww b;
+import android.animation.ValueAnimator;
 
-    public /* synthetic */ iu(ww wwVar, int i7) {
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class iu implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ yw b;
+    public final /* synthetic */ float c;
+
+    public /* synthetic */ iu(yw ywVar, float f10, int i7) {
         this.a = i7;
-        this.b = wwVar;
+        this.b = ywVar;
+        this.c = f10;
     }
 
-    @Override // org.telegram.messenger.sr
-    public final void a(int i7) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                ww wwVar = this.b;
-                wwVar.getClass();
-                wwVar.U1 = i7 != 0;
-                org.telegram.messenger.qp.f1().edit().putBoolean("askAboutContacts", wwVar.U1).apply();
-                wwVar.u3(false);
+                yw.a0(this.b, this.c, valueAnimator);
                 break;
             default:
-                ww wwVar2 = this.b;
-                wwVar2.getClass();
-                wwVar2.U1 = i7 != 0;
-                org.telegram.messenger.qp.f1().edit().putBoolean("askAboutContacts", wwVar2.U1).commit();
-                wwVar2.u3(false);
+                yw.G0(this.b, this.c, valueAnimator);
                 break;
         }
     }

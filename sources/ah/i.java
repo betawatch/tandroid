@@ -19,19 +19,19 @@ import org.telegram.ui.ActionBar.n0;
 import org.telegram.ui.ActionBar.r0;
 import org.telegram.ui.ActionBar.y4;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.c20;
-import org.telegram.ui.Components.el0;
-import org.telegram.ui.Components.kb0;
+import org.telegram.ui.Components.d20;
+import org.telegram.ui.Components.fl0;
+import org.telegram.ui.Components.lb0;
 import org.telegram.ui.Components.r00;
 import org.telegram.ui.Components.s00;
 import org.telegram.ui.UsersSelectActivity;
-import org.telegram.ui.dv;
-import org.telegram.ui.ec0;
-import org.telegram.ui.go;
-import org.telegram.ui.hz;
-import org.telegram.ui.zn;
+import org.telegram.ui.bo;
+import org.telegram.ui.fv;
+import org.telegram.ui.gc0;
+import org.telegram.ui.io;
+import org.telegram.ui.jz;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class i extends EditTextBoldCursor {
     public final /* synthetic */ int G1;
@@ -48,7 +48,7 @@ public final class i extends EditTextBoldCursor {
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
         switch (this.G1) {
             case 8:
-                ((el0) this.H1).getClass();
+                ((fl0) this.H1).getClass();
                 break;
         }
         return super.dispatchTouchEvent(motionEvent);
@@ -91,9 +91,9 @@ public final class i extends EditTextBoldCursor {
                 break;
             case 7:
                 super.onFocusChanged(z9, i7, rect);
-                kb0 kb0Var = (kb0) this.H1;
+                lb0 lb0Var = (lb0) this.H1;
                 float f10 = (z9 || isFocused()) ? 1.0f : 0.0f;
-                kb0Var.b(f10, f10, true);
+                lb0Var.b(f10, f10, true);
                 break;
             default:
                 super.onFocusChanged(z9, i7, rect);
@@ -108,11 +108,11 @@ public final class i extends EditTextBoldCursor {
                 super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
                 StringBuilder sb2 = new StringBuilder();
                 sb2.append((CharSequence) getText());
-                go goVar = (go) this.H1;
-                zn znVar = goVar.h;
-                if (znVar != null && znVar.getTextView() != null && !TextUtils.isEmpty(goVar.h.getTextView().getText())) {
+                io ioVar = (io) this.H1;
+                bo boVar = ioVar.h;
+                if (boVar != null && boVar.getTextView() != null && !TextUtils.isEmpty(ioVar.h.getTextView().getText())) {
                     sb2.append("\n");
-                    sb2.append(goVar.h.getTextView().getText());
+                    sb2.append(ioVar.h.getTextView().getText());
                 }
                 accessibilityNodeInfo.setText(sb2);
                 break;
@@ -147,7 +147,7 @@ public final class i extends EditTextBoldCursor {
                 if (i7 != 67 || length() != 0 || (textView = y4Var.x) == null || textView.getVisibility() != 0) {
                     return super.onKeyDown(i7, keyEvent);
                 }
-                y4Var.i();
+                y4Var.j();
                 return true;
             case 5:
             default:
@@ -163,7 +163,7 @@ public final class i extends EditTextBoldCursor {
                 o0 o0Var2 = (o0) jg.g.i(1, s00Var.F);
                 r00 r00Var = s00Var.H;
                 if (r00Var != null) {
-                    ((dv) r00Var).h(o0Var2);
+                    ((fv) r00Var).h(o0Var2);
                 }
                 s00Var.f(o0Var2);
                 return true;
@@ -193,8 +193,8 @@ public final class i extends EditTextBoldCursor {
         switch (this.G1) {
             case 9:
                 if (i7 == 16908322 || i7 == 16908337) {
-                    ((ec0) this.H1).D = true;
-                    postDelayed(new hz(this, 24), 1000L);
+                    ((gc0) this.H1).D = true;
+                    postDelayed(new jz(this, 24), 1000L);
                 }
                 break;
         }
@@ -206,9 +206,9 @@ public final class i extends EditTextBoldCursor {
         switch (this.G1) {
             case 0:
                 o oVar = (o) this.H1;
-                c20 c20Var = oVar.f;
-                if (c20Var != null) {
-                    c20Var.a();
+                d20 d20Var = oVar.f;
+                if (d20Var != null) {
+                    d20Var.a();
                     oVar.f = null;
                 }
                 if (motionEvent.getAction() == 0 && !g0.K3(this)) {
@@ -230,9 +230,9 @@ public final class i extends EditTextBoldCursor {
                 }
             case 2:
                 p8 p8Var = (p8) this.H1;
-                c20 c20Var2 = p8Var.f;
-                if (c20Var2 != null) {
-                    c20Var2.a();
+                d20 d20Var2 = p8Var.f;
+                if (d20Var2 != null) {
+                    d20Var2.a();
                     p8Var.f = null;
                 }
                 if (motionEvent.getAction() == 0 && !g0.K3(this)) {
@@ -252,16 +252,16 @@ public final class i extends EditTextBoldCursor {
             case 8:
                 if (isEnabled()) {
                     if (motionEvent.getAction() == 1) {
-                        ((el0) this.H1).getClass();
+                        ((fl0) this.H1).getClass();
                     }
                     break;
                 }
                 break;
             case 10:
                 UsersSelectActivity usersSelectActivity = (UsersSelectActivity) this.H1;
-                c20 c20Var3 = usersSelectActivity.Q;
-                if (c20Var3 != null) {
-                    c20Var3.a();
+                d20 d20Var3 = usersSelectActivity.Q;
+                if (d20Var3 != null) {
+                    d20Var3.a();
                     usersSelectActivity.Q = null;
                 }
                 if (motionEvent.getAction() == 0 && !g0.K3(this)) {

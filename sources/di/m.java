@@ -1,21 +1,21 @@
 package di;
 
 import android.view.ViewGroup;
-import org.telegram.ui.Components.xi0;
-import org.telegram.ui.pv;
+import org.telegram.ui.Components.yi0;
+import org.telegram.ui.rv;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class m extends rg.b {
     public final boolean d;
-    public final /* synthetic */ pv e;
+    public final /* synthetic */ rv e;
 
-    public m(pv pvVar, boolean z9) {
-        this.e = pvVar;
+    public m(rv rvVar, boolean z9) {
+        this.e = rvVar;
         this.d = z9;
     }
 
-    @Override // org.telegram.ui.Components.oj0
+    @Override // org.telegram.ui.Components.pj0
     public final boolean D(v4.d1 d1Var) {
         return false;
     }
@@ -23,8 +23,8 @@ public final class m extends rg.b {
     @Override // v4.g0
     public final int b() {
         boolean z9 = this.d;
-        pv pvVar = this.e;
-        return (z9 ? pvVar.D : pvVar.y).size();
+        rv rvVar = this.e;
+        return (z9 ? rvVar.D : rvVar.y).size();
     }
 
     @Override // v4.g0
@@ -32,11 +32,11 @@ public final class m extends rg.b {
         p pVar = (p) d1Var.a;
         pVar.b = i7;
         boolean z9 = this.d;
-        pv pvVar = this.e;
+        rv rvVar = this.e;
         if (z9) {
-            pVar.setDialogId(((n) pvVar.D.get(i7)).c);
+            pVar.setDialogId(((n) rvVar.D.get(i7)).c);
         } else {
-            pVar.setDialogId(((n) pvVar.y.get(i7)).c);
+            pVar.setDialogId(((n) rvVar.y.get(i7)).c);
         }
     }
 
@@ -48,6 +48,6 @@ public final class m extends rg.b {
         if (z9) {
             pVar.d(1.0f, 1.0f, 0.0f, false);
         }
-        return new xi0(pVar);
+        return new yi0(pVar);
     }
 }

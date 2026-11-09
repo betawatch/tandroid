@@ -10,68 +10,68 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import c8.ha;
-import di.d4;
+import di.e4;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k5;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l5;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.s6;
 import org.telegram.ui.Components.RadioButton;
 import org.telegram.ui.Components.l9;
 import org.telegram.ui.Components.w8;
 import org.telegram.ui.Components.wp;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public abstract class c extends FrameLayout {
-    public final f6 a;
+    public final g6 a;
     public final w8 b;
     public final l9 c;
-    public final d4 d;
-    public final k5 e;
+    public final e4 d;
+    public final l5 e;
     public final RadioButton f;
     public final Paint h;
     public boolean n;
     public final View r;
 
-    public c(Context context, f6 f6Var) {
+    public c(Context context, g6 g6Var) {
         super(context);
-        w8 w8Var = new w8((f6) null);
+        w8 w8Var = new w8((g6) null);
         this.b = w8Var;
         this.h = new Paint(1);
-        this.a = f6Var;
+        this.a = g6Var;
         View view = new View(context);
         this.r = view;
         addView(view, ha.o(-1, -1));
-        r6.i(k6.h5, view, f6Var);
+        s6.h(l6.h5, view, g6Var);
         w8Var.r = g0.L(40.0f);
         l9 l9Var = new l9(context);
         this.c = l9Var;
         l9Var.setRoundRadius(g0.L(20.0f));
         addView(l9Var);
-        d4 d4Var = new d4(context, 5);
-        this.d = d4Var;
-        qs.i(d4Var);
+        e4 e4Var = new e4(context, 5);
+        this.d = e4Var;
+        qs.i(e4Var);
         qs.i(l9Var);
-        d4Var.setTextSize(16);
-        int i7 = k6.j5;
-        r6.Y(d4Var, i7, f6Var);
-        d4Var.setGravity(id.a0 ? 5 : 3);
-        addView(d4Var);
-        k5 k5Var = new k5(context);
-        this.e = k5Var;
-        k5Var.setTextSize(14);
-        r6.Y(k5Var, i7, f6Var);
-        k5Var.setGravity(id.a0 ? 5 : 3);
-        addView(k5Var);
+        e4Var.setTextSize(16);
+        int i7 = l6.j5;
+        s6.X(e4Var, i7, g6Var);
+        e4Var.setGravity(id.a0 ? 5 : 3);
+        addView(e4Var);
+        l5 l5Var = new l5(context);
+        this.e = l5Var;
+        l5Var.setTextSize(14);
+        s6.X(l5Var, i7, g6Var);
+        l5Var.setGravity(id.a0 ? 5 : 3);
+        addView(l5Var);
         RadioButton radioButton = new RadioButton(context);
         this.f = radioButton;
         radioButton.setSize(g0.L(20.0f));
-        r6.P(radioButton, k6.j7, k6.E5, f6Var);
+        s6.O(radioButton, l6.j7, l6.E5, g6Var);
         addView(radioButton);
         d();
         if (b()) {
@@ -133,7 +133,7 @@ public abstract class c extends FrameLayout {
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
         if (this.n) {
-            int w02 = k6.w0(k6.d7, this.a);
+            int w02 = l6.w0(l6.d7, this.a);
             Paint paint = this.h;
             paint.setColor(w02);
             int i7 = b() ? qs.q1 : 70;
@@ -176,24 +176,24 @@ public abstract class c extends FrameLayout {
 
     public void setSubtitle(CharSequence charSequence) {
         boolean isEmpty = TextUtils.isEmpty(charSequence);
-        d4 d4Var = this.d;
-        k5 k5Var = this.e;
+        e4 e4Var = this.d;
+        l5 l5Var = this.e;
         if (isEmpty) {
-            d4Var.setTranslationY(0.0f);
-            k5Var.setVisibility(8);
+            e4Var.setTranslationY(0.0f);
+            l5Var.setVisibility(8);
         } else {
-            d4Var.setTranslationY(g0.L(-9.0f));
-            k5Var.setTranslationY(g0.L(12.0f));
-            k5Var.l(charSequence, false);
-            k5Var.setVisibility(0);
+            e4Var.setTranslationY(g0.L(-9.0f));
+            l5Var.setTranslationY(g0.L(12.0f));
+            l5Var.l(charSequence, false);
+            l5Var.setVisibility(0);
         }
         if (this.c.getVisibility() == 8) {
             if (id.a0) {
-                d4Var.setTranslationX(g0.L(40.0f));
-                k5Var.setTranslationX(g0.L(40.0f));
+                e4Var.setTranslationX(g0.L(40.0f));
+                l5Var.setTranslationX(g0.L(40.0f));
             } else {
-                d4Var.setTranslationX(g0.L(-40.0f));
-                k5Var.setTranslationX(g0.L(-40.0f));
+                e4Var.setTranslationX(g0.L(-40.0f));
+                l5Var.setTranslationX(g0.L(-40.0f));
             }
         }
     }

@@ -21,11 +21,11 @@ import org.telegram.messenger.sc;
 import org.telegram.messenger.ui;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.uw;
-import org.telegram.ui.Components.xi0;
 import org.telegram.ui.Components.xp;
-import org.telegram.ui.q11;
+import org.telegram.ui.Components.yi0;
+import org.telegram.ui.s11;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class y1 extends v4.g0 {
     public final TLRPC.TL_inputStickerSetShortName E;
@@ -49,7 +49,7 @@ public final class y1 extends v4.g0 {
     public int y = 0;
     public final SparseIntArray D = new SparseIntArray();
     public final HashSet L = new HashSet();
-    public final di.s7 M = new di.s7(this, 19);
+    public final di.f8 M = new di.f8(this, 18);
 
     public y1(z1 z1Var) {
         this.N = z1Var;
@@ -81,17 +81,17 @@ public final class y1 extends v4.g0 {
         w1 w1Var4 = z1Var3.e;
         k2 k2Var2 = z1Var3.s;
         this.H = str;
-        di.s7 s7Var = this.M;
+        di.f8 f8Var = this.M;
         int i11 = 1;
         if (str != null) {
             z1Var3.f.c(true);
             w1Var4.n(false);
-            org.telegram.messenger.g0.r(s7Var);
-            org.telegram.messenger.g0.i3(s7Var, 100L);
+            org.telegram.messenger.g0.r(f8Var);
+            org.telegram.messenger.g0.i3(f8Var, 100L);
             return;
         }
         w1Var4.n(true);
-        org.telegram.messenger.g0.r(s7Var);
+        org.telegram.messenger.g0.r(f8Var);
         int i12 = k2.y1;
         ui b02 = ui.b0(k2Var2.a);
         this.y = 0;
@@ -124,7 +124,7 @@ public final class y1 extends v4.g0 {
                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = this.F;
                 tL_messages_stickerSet2.documents = i02;
                 tL_messages_stickerSet2.set = new TLRPC.TL_stickerSet();
-                this.F.set.title = id.M0(2131750842, null);
+                this.F.set.title = id.M0(2131750841, null);
                 arrayList5.add(this.F);
             }
             ArrayList<TLRPC.Document> i03 = b02.i0(0, false);
@@ -137,7 +137,7 @@ public final class y1 extends v4.g0 {
                     i03.add(0, k2Var2.l1);
                 }
                 this.G.set = new TLRPC.TL_stickerSet();
-                this.G.set.title = id.M0(2131746365, null);
+                this.G.set.title = id.M0(2131746364, null);
                 arrayList5.add(this.G);
             }
         }
@@ -450,7 +450,7 @@ public final class y1 extends v4.g0 {
                 int i12 = this.K;
                 if (v1Var.b != i12) {
                     v1Var.b = i12;
-                    q11.D(p10.s0, v1Var.a);
+                    s11.D(p10.s0, v1Var.a);
                     return;
                 }
                 return;
@@ -463,21 +463,21 @@ public final class y1 extends v4.g0 {
         if (document == k2Var.l1) {
             l1Var.setSticker(null);
             if (l1Var.a == null) {
-                ShapeDrawable d02 = org.telegram.ui.ActionBar.k6.d0(org.telegram.messenger.g0.L(28.0f), -1);
-                int i13 = org.telegram.ui.ActionBar.k6.Bf;
-                org.telegram.ui.ActionBar.n6 L = org.telegram.ui.ActionBar.r6.L(0.12f, i13);
-                org.telegram.ui.ActionBar.r6.l(l1Var, d02, L.a, -1, 2, L.d, k2Var.I0, PorterDuff.Mode.SRC_IN);
+                ShapeDrawable d02 = org.telegram.ui.ActionBar.l6.d0(org.telegram.messenger.g0.L(28.0f), -1);
+                int i13 = org.telegram.ui.ActionBar.l6.Bf;
+                org.telegram.ui.ActionBar.o6 K = org.telegram.ui.ActionBar.s6.K(0.12f, i13);
+                org.telegram.ui.ActionBar.s6.k(l1Var, d02, K.a, -1, 2, K.d, k2Var.I0, PorterDuff.Mode.SRC_IN);
                 Drawable mutate = z1Var.getResources().getDrawable(R.drawable.filled_add_sticker).mutate();
-                org.telegram.ui.ActionBar.r6.y(l1Var, mutate, i13, k2Var.I0, PorterDuff.Mode.MULTIPLY);
+                org.telegram.ui.ActionBar.s6.x(l1Var, mutate, i13, k2Var.I0, PorterDuff.Mode.MULTIPLY);
                 xp xpVar = new xp(d02, mutate);
+                int L = org.telegram.messenger.g0.L(56.0f);
                 int L2 = org.telegram.messenger.g0.L(56.0f);
-                int L3 = org.telegram.messenger.g0.L(56.0f);
-                xpVar.h = L2;
-                xpVar.n = L3;
+                xpVar.h = L;
+                xpVar.n = L2;
+                int L3 = org.telegram.messenger.g0.L(24.0f);
                 int L4 = org.telegram.messenger.g0.L(24.0f);
-                int L5 = org.telegram.messenger.g0.L(24.0f);
-                xpVar.e = L4;
-                xpVar.f = L5;
+                xpVar.e = L3;
+                xpVar.f = L4;
                 xpVar.r = true;
                 l1Var.a = xpVar;
             }
@@ -546,7 +546,7 @@ public final class y1 extends v4.g0 {
             TextView textView = new TextView(context2);
             textView.setTextSize(1, 14.0f);
             textView.setTextColor(-8553090);
-            textView.setText(id.M0(z9 ? 2131748214 : 2131748150, null));
+            textView.setText(id.M0(z9 ? 2131748213 : 2131748149, null));
             v1Var.addView(textView, c8.ha.d(-2, -2.0f, 17, 0.0f, 34.0f, 0.0f, 0.0f));
             j8Var = v1Var;
         } else if (i7 == 4) {
@@ -556,6 +556,6 @@ public final class y1 extends v4.g0 {
         } else {
             j8Var = new l1(z1Var.getContext(), z1Var.b);
         }
-        return new xi0(j8Var);
+        return new yi0(j8Var);
     }
 }

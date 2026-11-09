@@ -1,25 +1,20 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class fo0 implements org.telegram.messenger.c20 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ qo0 b;
+import android.util.FloatProperty;
 
-    public /* synthetic */ fo0(qo0 qo0Var, int i7) {
-        this.a = i7;
-        this.b = qo0Var;
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* loaded from: classes3.dex */
+public final class fo0 extends FloatProperty {
+    public fo0() {
+        super("progress");
     }
 
-    @Override // org.telegram.messenger.c20
-    public final void a(Object obj) {
-        switch (this.a) {
-            case 0:
-                new org.telegram.ui.Components.hc(this.b.b.e0, null).m(org.telegram.ui.Components.gc.r, 1, -115203550, -1, null).j();
-                break;
-            default:
-                new org.telegram.ui.Components.hc(this.b.b.e0, null).m(org.telegram.ui.Components.gc.r, 1, -115203550, -1, null).j();
-                break;
-        }
+    @Override // android.util.Property
+    public final Object get(Object obj) {
+        return Float.valueOf(((er0) obj).a);
+    }
+
+    public final void setValue(Object obj, float f10) {
+        ((er0) obj).b(f10);
     }
 }

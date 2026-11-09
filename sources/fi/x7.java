@@ -9,10 +9,10 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.qj0;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class x7 extends FrameLayout {
     public final /* synthetic */ int a = 0;
@@ -52,12 +52,12 @@ public final class x7 extends FrameLayout {
                         n8 n8Var = (n8) view;
                         float i10 = Utilities.i(1.0f - Math.abs(n8Var.getTranslationX() / n8Var.getMeasuredWidth()), 1.0f, f10);
                         float f11 = this.c;
-                        pj0 pj0Var = n8Var.f;
+                        qj0 qj0Var = n8Var.f;
                         FrameLayout frameLayout = n8Var.e;
                         v4.b0 b0Var = n8Var.h;
                         float f12 = (b0Var.t || n8Var.a == 0) ? org.telegram.messenger.g0.q.y : f10;
-                        for (int i11 = 0; i11 < pj0Var.getChildCount(); i11++) {
-                            View childAt = pj0Var.getChildAt(i11);
+                        for (int i11 = 0; i11 < qj0Var.getChildCount(); i11++) {
+                            View childAt = qj0Var.getChildAt(i11);
                             if (b0Var.t) {
                                 float y11 = childAt.getY() + frameLayout.getPaddingTop();
                                 float alpha = childAt.getAlpha();

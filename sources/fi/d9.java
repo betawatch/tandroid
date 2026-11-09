@@ -19,14 +19,14 @@ import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.g51;
-import org.telegram.ui.Components.q71;
+import org.telegram.ui.Components.h51;
 import org.telegram.ui.Components.r71;
+import org.telegram.ui.Components.s71;
 import org.telegram.ui.Components.sy;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class d9 implements CameraView.CameraViewDelegate, r0.m, org.telegram.ui.ActionBar.r1, q71, g51, y7, c7 {
+public final /* synthetic */ class d9 implements CameraView.CameraViewDelegate, r0.m, org.telegram.ui.ActionBar.r1, r71, h51, y7, c7 {
     public final /* synthetic */ int a;
     public final /* synthetic */ va b;
 
@@ -48,7 +48,7 @@ public final /* synthetic */ class d9 implements CameraView.CameraViewDelegate, 
         return r0.k1.b;
     }
 
-    @Override // org.telegram.ui.Components.g51
+    @Override // org.telegram.ui.Components.h51
     public void a(sy syVar) {
         hf hfVar;
         va vaVar = this.b;
@@ -63,7 +63,7 @@ public final /* synthetic */ class d9 implements CameraView.CameraViewDelegate, 
         syVar.d(new org.telegram.ui.Components.n(hfVar));
     }
 
-    @Override // org.telegram.ui.Components.q71
+    @Override // org.telegram.ui.Components.r71
     public void b(float f10) {
         va vaVar = this.b;
         y9 y9Var = vaVar.B0;
@@ -184,7 +184,7 @@ public final /* synthetic */ class d9 implements CameraView.CameraViewDelegate, 
     }
 
     @Override // fi.y7
-    public void k(final q8 q8Var, final boolean z9, final boolean z10, boolean z11, final boolean z12, final TLRPC.InputPeer inputPeer, final int i7, f2.h hVar, final di.s7 s7Var) {
+    public void i(final q8 q8Var, final boolean z9, final boolean z10, boolean z11, final boolean z12, final TLRPC.InputPeer inputPeer, final int i7, f2.h hVar, final di.f8 f8Var) {
         int i10 = 0;
         switch (this.a) {
             case 9:
@@ -243,9 +243,9 @@ public final /* synthetic */ class d9 implements CameraView.CameraViewDelegate, 
                         final va vaVar3 = va.this;
                         int i14 = vaVar3.c;
                         boolean booleanValue = ((Boolean) obj2).booleanValue();
-                        final di.s7 s7Var2 = s7Var;
+                        final di.f8 f8Var2 = f8Var;
                         if (!booleanValue) {
-                            s7Var2.run();
+                            f8Var2.run();
                             return;
                         }
                         y9 y9Var = vaVar3.B0;
@@ -270,7 +270,7 @@ public final /* synthetic */ class d9 implements CameraView.CameraViewDelegate, 
                         ConnectionsManager.getInstance(i14).sendRequest(tL_startLive, new RequestDelegate() { // from class: fi.c9
                             @Override // org.telegram.tgnet.RequestDelegate
                             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                                org.telegram.messenger.g0.h3(new bi.v8(va.this, tLObject, tL_startLive, z15, e10, z14, tL_error, s7Var2));
+                                org.telegram.messenger.g0.h3(new bi.v8(va.this, tLObject, tL_startLive, z15, e10, z14, tL_error, f8Var2));
                             }
                         });
                     }
@@ -287,10 +287,10 @@ public final /* synthetic */ class d9 implements CameraView.CameraViewDelegate, 
             B = null;
         }
         vaVar.d0(vaVar.f0 == 0 ? B : null);
-        r71 r71Var = vaVar.V0;
-        if (r71Var != null) {
+        s71 s71Var = vaVar.V0;
+        if (s71Var != null) {
             vaVar.T1 = 0.0f;
-            r71Var.b(false, 0.0f);
+            s71Var.b(false, 0.0f);
         }
         vaVar.l0(true);
     }

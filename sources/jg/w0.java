@@ -14,11 +14,10 @@ import org.telegram.messenger.yr;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.b90;
+import org.telegram.ui.Components.c90;
 import org.telegram.ui.Components.l9;
-import org.telegram.ui.Wallet.e2;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w0 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -73,13 +72,13 @@ public final /* synthetic */ class w0 implements Runnable {
                 String str3 = (String) obj5;
                 yr yrVar = (yr) obj;
                 String str4 = (String) obj4;
-                b90 b90Var = i1Var.V;
+                c90 c90Var = i1Var.V;
                 if (str2.equals(i1Var.r0)) {
                     i1Var.u0 = 0;
                     if (z10 && tLObject == null) {
                         i1Var.T(false, user, str2, str3);
-                    } else if (b90Var != null) {
-                        b90Var.b(false);
+                    } else if (c90Var != null) {
+                        c90Var.b(false);
                     }
                     if (tLObject instanceof TLRPC.TL_messages_botResults) {
                         TLRPC.TL_messages_botResults tL_messages_botResults = (TLRPC.TL_messages_botResults) tLObject;
@@ -131,7 +130,7 @@ public final /* synthetic */ class w0 implements Runnable {
                         i1Var.K = r32;
                         i1Var.P = r32;
                         i1Var.o0 = false;
-                        b90Var.a((i1Var.R.isEmpty() && i1Var.T == null && i1Var.U == null) ? false : true);
+                        c90Var.a((i1Var.R.isEmpty() && i1Var.T == null && i1Var.U == null) ? false : true);
                         if (!z9) {
                             i1Var.f();
                             break;
@@ -149,15 +148,15 @@ public final /* synthetic */ class w0 implements Runnable {
                 break;
             default:
                 fi.d dVar = (fi.d) obj7;
-                org.telegram.ui.Wallet.m0 m0Var = (org.telegram.ui.Wallet.m0) obj6;
-                e2 e2Var = m0Var.g;
+                org.telegram.ui.Wallet.l0 l0Var = (org.telegram.ui.Wallet.l0) obj6;
+                org.telegram.ui.Wallet.d2 d2Var = l0Var.g;
                 TL_wallet.tonConnectSession tonconnectsession = (TL_wallet.tonConnectSession) obj5;
-                org.telegram.ui.Wallet.z1 z1Var = (org.telegram.ui.Wallet.z1) obj4;
+                org.telegram.ui.Wallet.y1 y1Var = (org.telegram.ui.Wallet.y1) obj4;
                 TextView textView = (TextView) obj3;
                 l9 l9Var = (l9) obj2;
                 TextView textView2 = (TextView) obj;
                 if (!z10) {
-                    ArrayList arrayList = e2Var.d;
+                    ArrayList arrayList = d2Var.d;
                     int size = arrayList.size();
                     int i12 = 0;
                     while (true) {
@@ -168,7 +167,7 @@ public final /* synthetic */ class w0 implements Runnable {
                             r15 = 0;
                             ArrayList arrayList2 = arrayList;
                             if (tonconnectsession2.id == tonconnectsession.id) {
-                                z1Var.e = tonconnectsession2;
+                                y1Var.e = tonconnectsession2;
                             } else {
                                 i12 = i13;
                                 arrayList = arrayList2;
@@ -177,15 +176,15 @@ public final /* synthetic */ class w0 implements Runnable {
                             r15 = 0;
                         }
                     }
-                    TL_wallet.tonConnectSession tonconnectsession3 = z1Var.e;
+                    TL_wallet.tonConnectSession tonconnectsession3 = y1Var.e;
                     boolean z11 = (tonconnectsession3.manifest == null || tonconnectsession3.manifest_error != null || tonconnectsession3.closed || tonconnectsession3.closing) ? r15 : true;
-                    dVar.setEnabled((!z11 || z1Var.f) ? r15 : true);
+                    dVar.setEnabled((!z11 || y1Var.f) ? r15 : true);
                     TL_wallet.tonConnectManifest tonconnectmanifest = tonconnectsession3.manifest;
                     if (tonconnectmanifest != null) {
                         Object[] objArr = new Object[1];
                         objArr[r15] = tonconnectmanifest.name;
                         str = null;
-                        textView.setText(id.V(null, null, 2131743163, objArr));
+                        textView.setText(id.V(null, null, 2131743160, objArr));
                         TLRPC.WebDocument webDocument = tonconnectsession3.manifest.icon;
                         if (webDocument != null) {
                             l9Var.p(hc.p(m20.c(webDocument)), "76_76", null, tonconnectsession3.manifest);
@@ -196,21 +195,21 @@ public final /* synthetic */ class w0 implements Runnable {
                     Integer num = tonconnectsession3.manifest_error;
                     if (num == null) {
                         if (!z11) {
-                            textView2.setText(id.M0((tonconnectsession3.closed || tonconnectsession3.closing) ? 2131742995 : 2131748780, str));
+                            textView2.setText(id.M0((tonconnectsession3.closed || tonconnectsession3.closing) ? 2131742992 : 2131748779, str));
                             break;
                         } else {
-                            e2Var.getClass();
-                            textView2.setText(id.M0(e2.w(z1Var) ? 2131743164 : 2131743166, str));
+                            d2Var.getClass();
+                            textView2.setText(id.M0(org.telegram.ui.Wallet.d2.w(y1Var) ? 2131743161 : 2131743163, str));
                             break;
                         }
                     } else {
                         Object[] objArr2 = new Object[1];
                         objArr2[r15] = num;
-                        textView2.setText(id.a0(str, str, 2131743005, objArr2));
+                        textView2.setText(id.a0(str, str, 2131743002, objArr2));
                         break;
                     }
                 } else {
-                    dVar.setEnabled((!m0Var.G() || m0Var.t() == null || m0Var.y() == null || dVar.Q) ? false : true);
+                    dVar.setEnabled((!l0Var.G() || l0Var.t() == null || l0Var.y() == null || dVar.Q) ? false : true);
                     break;
                 }
                 break;
@@ -228,12 +227,12 @@ public final /* synthetic */ class w0 implements Runnable {
         this.r = runnable;
     }
 
-    public /* synthetic */ w0(boolean z9, fi.d dVar, org.telegram.ui.Wallet.m0 m0Var, TL_wallet.tonConnectSession tonconnectsession, org.telegram.ui.Wallet.z1 z1Var, TextView textView, l9 l9Var, TextView textView2) {
+    public /* synthetic */ w0(boolean z9, fi.d dVar, org.telegram.ui.Wallet.l0 l0Var, TL_wallet.tonConnectSession tonconnectsession, org.telegram.ui.Wallet.y1 y1Var, TextView textView, l9 l9Var, TextView textView2) {
         this.b = z9;
         this.c = dVar;
-        this.d = m0Var;
+        this.d = l0Var;
         this.e = tonconnectsession;
-        this.f = z1Var;
+        this.f = y1Var;
         this.h = textView;
         this.n = l9Var;
         this.r = textView2;

@@ -14,10 +14,10 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.hc;
 import org.telegram.ui.Components.xa;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.an;
-import org.telegram.ui.oy0;
+import org.telegram.ui.cn;
+import org.telegram.ui.ry0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x1 implements Runnable {
     public final /* synthetic */ int a;
@@ -116,7 +116,7 @@ public final /* synthetic */ class x1 implements Runnable {
             case 9:
                 Activity activity = a3Var.l0;
                 if (activity instanceof LaunchActivity) {
-                    ((LaunchActivity) activity).t0(an.ra(a3Var.I));
+                    ((LaunchActivity) activity).t0(cn.ta(a3Var.I));
                 }
                 a3Var.o(true);
                 break;
@@ -137,8 +137,8 @@ public final /* synthetic */ class x1 implements Runnable {
                 Context context = a3Var.getContext();
                 hc hcVar = new hc(xa.a(a3Var.getContext()), a3Var.F);
                 long j3 = a3Var.I;
-                int i14 = oy0.s1;
-                oy0.J0(i13, context, j3, false, false, new ArrayList(), hcVar, null, new byte[0], null, null);
+                int i14 = ry0.s1;
+                ry0.J0(i13, context, j3, false, false, new ArrayList(), hcVar, null, new byte[0], null, null);
                 break;
             case 14:
                 a3.n(a3Var.H, a3Var.I, new x1(a3Var, 15));

@@ -9,16 +9,16 @@ import h6.m;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.id;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.cq;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class h extends FrameLayout implements te.b {
     public static final int[] s = {R.drawable.msg_input_attach2, R.drawable.pagedown, R.drawable.mentionbutton, R.drawable.reactionbutton, R.drawable.menu_poll_notify, R.drawable.pagedown, R.drawable.pagedown};
     public final String[] a;
-    public final f6 b;
+    public final g6 b;
     public final gh.a c;
     public final dh.c d;
     public final m[] e;
@@ -27,7 +27,7 @@ public final class h extends FrameLayout implements te.b {
     public b n;
     public int r;
 
-    public h(Context context, f6 f6Var, gh.b bVar, dh.c cVar) {
+    public h(Context context, g6 g6Var, gh.b bVar, dh.c cVar) {
         super(context);
         this.a = new String[]{id.M0(2131753953, null), id.M0(2131754815, null), id.M0(2131754842, null), id.M0(2131754790, null), id.M0(2131754804, null), id.M0(2131754778, null), id.M0(2131754779, null)};
         this.e = new m[7];
@@ -35,7 +35,7 @@ public final class h extends FrameLayout implements te.b {
         this.r = 83;
         this.d = cVar;
         this.c = bVar;
-        this.b = f6Var;
+        this.b = g6Var;
     }
 
     @Override // te.b
@@ -128,9 +128,9 @@ public final class h extends FrameLayout implements te.b {
                 int i13 = i11;
                 Context context = getContext();
                 int i14 = s[i7];
-                f6 f6Var = this.b;
-                kh.b bVar = new kh.b(context, f6Var);
-                kh.a d = kh.a.d(context, this.d, this.c, f6Var, i14, i13);
+                g6 g6Var = this.b;
+                kh.b bVar = new kh.b(context, g6Var);
+                kh.a d = kh.a.d(context, this.d, this.c, g6Var, i14, i13);
                 bVar.b = d;
                 bVar.addView(d, ha.e(i10, i10, 80));
                 d.setIconPadding(g0.L(2.0f));

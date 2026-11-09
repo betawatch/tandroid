@@ -1,39 +1,29 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.messenger.c20;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.id;
+import org.telegram.ui.Components.hc;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class q9 implements c20 {
+public final /* synthetic */ class q9 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ w9 b;
+    public final /* synthetic */ v9 b;
 
-    public /* synthetic */ q9(w9 w9Var, int i7) {
+    public /* synthetic */ q9(v9 v9Var, int i7) {
         this.a = i7;
-        this.b = w9Var;
+        this.b = v9Var;
     }
 
-    @Override // org.telegram.messenger.c20
-    public final void a(Object obj) {
-        ah.i iVar;
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = this.a;
+        v9 v9Var = this.b;
+        switch (i7) {
             case 0:
-                w9.e0(this.b, (String) obj);
+                v9Var.d0 = null;
                 break;
             default:
-                TLRPC.User user = (TLRPC.User) obj;
-                w9 w9Var = this.b;
-                if (!w9Var.isFinished && (iVar = w9Var.N) != null) {
-                    if (user != null) {
-                        org.telegram.messenger.g0.v1(iVar);
-                        w9Var.m0(null, user);
-                        break;
-                    } else {
-                        org.telegram.messenger.g0.h3(new r9(w9Var, 1));
-                        break;
-                    }
-                }
+                hc.a0(v9Var).N(id.M0(2131745861, null), id.M0(2131751105, null)).j();
                 break;
         }
     }

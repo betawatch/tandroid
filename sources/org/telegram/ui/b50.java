@@ -1,148 +1,298 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import android.graphics.RectF;
 import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.messenger.beta.R;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import org.telegram.ui.Components.Premium.LimitPreviewView;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class b50 extends org.telegram.ui.Components.oj0 {
-    public final Context c;
-    public int d;
-    public final ArrayList e = new ArrayList();
-    public final /* synthetic */ d50 f;
+public final class b50 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ Object c;
 
-    public b50(d50 d50Var, Context context) {
-        this.f = d50Var;
-        this.c = context;
+    public /* synthetic */ b50(int i7, Object obj, boolean z9) {
+        this.a = i7;
+        this.c = obj;
+        this.b = z9;
     }
 
-    @Override // v4.g0
-    public final void A(v4.d1 d1Var) {
-        if (d1Var.f == 2) {
-            ((org.telegram.ui.Cells.h4) d1Var.a).a.getImageReceiver().c();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.oj0
-    public final boolean D(v4.d1 d1Var) {
-        int i7 = d1Var.f;
-        if (i7 == 3 || i7 == 4) {
-            return true;
-        }
-        return i7 == 6 && this.f.Q;
-    }
-
-    @Override // v4.g0
-    public final int b() {
-        return this.e.size();
-    }
-
-    @Override // v4.g0
-    public final int d(int i7) {
-        return ((a50) this.e.get(i7)).a;
-    }
-
-    @Override // v4.g0
-    public final void f() {
-        ArrayList arrayList = this.e;
-        arrayList.clear();
-        arrayList.add(new a50(0, true));
-        d50 d50Var = this.f;
-        if (d50Var.P == 5) {
-            arrayList.add(new a50(6, true));
-            arrayList.add(new a50(org.telegram.messenger.id.M0(2131750589, null)));
-        } else {
-            arrayList.add(new a50(4, true));
-            arrayList.add(new a50(org.telegram.messenger.id.M0(2131749456, null)));
-        }
-        if (d50Var.T != null) {
-            arrayList.add(new a50(1, true));
-            arrayList.add(new a50(3, true));
-            arrayList.add(new a50(0, true));
-        }
-        if (d50Var.K.size() > 0) {
-            arrayList.add(new a50(1, true));
-            this.d = arrayList.size();
-            for (int i7 = 0; i7 < d50Var.K.size(); i7++) {
-                arrayList.add(new a50(2, true));
-            }
-            arrayList.add(new a50(7, true));
-        }
-        super.f();
-    }
-
-    @Override // v4.g0
-    public final void t(v4.d1 d1Var, int i7) {
-        boolean z9;
-        int i10 = d1Var.f;
-        View view = d1Var.a;
-        ArrayList arrayList = this.e;
-        d50 d50Var = this.f;
-        switch (i10) {
-            case 1:
-                org.telegram.ui.Cells.n4 n4Var = (org.telegram.ui.Cells.n4) view;
-                if (d50Var.T != null && i7 == 1) {
-                    n4Var.setText(org.telegram.messenger.id.M0(2131753961, null));
-                    break;
-                } else {
-                    n4Var.setText(org.telegram.messenger.id.G(d50Var.K.size(), "Members", new Object[0]));
-                    break;
-                }
-            case 2:
-                org.telegram.ui.Cells.h4 h4Var = (org.telegram.ui.Cells.h4) view;
-                h4Var.d(d50Var.getMessagesController().a2((Long) d50Var.K.get(i7 - this.d)), null, null);
-                h4Var.setDrawDivider(i7 != arrayList.size() - 1);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationCancel(Animator animator) {
+        switch (this.a) {
+            case 0:
+                ((f50) this.c).h = null;
                 break;
             case 3:
-                ((org.telegram.ui.Cells.w9) view).b(d50Var.T, false);
+                zm0 zm0Var = (zm0) this.c;
+                if (animator.equals(zm0Var.k0)) {
+                    zm0Var.k0 = null;
+                    break;
+                }
                 break;
-            case 4:
-                org.telegram.ui.Cells.m8 m8Var = (org.telegram.ui.Cells.m8) view;
-                int i11 = d50Var.W;
-                String M0 = i11 == 0 ? org.telegram.messenger.id.M0(2131747440, null) : org.telegram.messenger.id.c0(i11);
-                String M02 = org.telegram.messenger.id.M0(2131753850, null);
-                z9 = ((org.telegram.ui.ActionBar.f2) d50Var).fragmentBeginToShow;
-                m8Var.u(M02, M0, z9, R.drawable.msg_autodelete, false);
+            case 9:
+                ((n31) this.c).n = null;
                 break;
-            case 5:
-                ((org.telegram.ui.Cells.z8) view).setText(((a50) arrayList.get(i7)).c);
+            case 11:
+                bb1 bb1Var = (bb1) this.c;
+                AnimatorSet animatorSet = bb1Var.I;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    bb1Var.I = null;
+                    break;
+                }
                 break;
-            case 6:
-                org.telegram.ui.Cells.m8 m8Var2 = (org.telegram.ui.Cells.m8) view;
-                m8Var2.n(R.drawable.msg_topics, org.telegram.messenger.id.M0(2131752281, null), true);
-                m8Var2.getCheckBox().setAlpha(0.75f);
+            default:
+                super.onAnimationCancel(animator);
                 break;
         }
     }
 
-    @Override // v4.g0
-    public final v4.d1 x(ViewGroup viewGroup, int i7) {
-        View view;
-        Context context = this.c;
-        if (i7 == 0) {
-            view = new org.telegram.ui.Cells.y6(context, (org.telegram.ui.Cells.f1) null);
-        } else if (i7 == 1) {
-            org.telegram.ui.Cells.n4 n4Var = new org.telegram.ui.Cells.n4(context);
-            n4Var.setHeight(46);
-            view = n4Var;
-        } else if (i7 == 2) {
-            view = new org.telegram.ui.Cells.h4(context, 0, 3, false);
-        } else if (i7 == 4) {
-            view = new org.telegram.ui.Cells.m8(context);
-        } else if (i7 == 5) {
-            view = new org.telegram.ui.Cells.z8(context);
-        } else if (i7 == 6) {
-            view = new org.telegram.ui.Cells.m8(23, this.c, this.f.getResourceProvider(), false, true);
-        } else if (i7 != 7) {
-            view = new org.telegram.ui.Cells.w9(context);
-        } else {
-            View view2 = new View(context);
-            view2.setTag(-33024);
-            view = view2;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        yc ycVar;
+        float f10;
+        org.telegram.ui.Cells.b4 b4Var;
+        int i7 = this.a;
+        boolean z9 = this.b;
+        Object obj = this.c;
+        switch (i7) {
+            case 0:
+                f50 f50Var = (f50) obj;
+                if (f50Var.h != null && (ycVar = f50Var.f) != null) {
+                    if (z9) {
+                        ycVar.setVisibility(4);
+                    } else {
+                        f50Var.n.setVisibility(4);
+                    }
+                    f50Var.h = null;
+                    break;
+                }
+                break;
+            case 1:
+                ee0 ee0Var = (ee0) obj;
+                if (!z9) {
+                    ee0Var.V.setVisibility(4);
+                }
+                AnimatorSet animatorSet = ee0Var.L;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    ee0Var.L = null;
+                    break;
+                }
+                break;
+            case 2:
+                if (!z9) {
+                    ((PasscodeActivity) obj).w.setVisibility(8);
+                    break;
+                }
+                break;
+            case 3:
+                zm0 zm0Var = (zm0) obj;
+                if (animator.equals(zm0Var.k0)) {
+                    if (!z9) {
+                        zm0Var.Z.setVisibility(4);
+                        zm0Var.a0.setVisibility(4);
+                    }
+                    zm0Var.k0 = null;
+                    break;
+                }
+                break;
+            case 4:
+                ((bs0) obj).E = z9 ? 1.0f : 0.0f;
+                break;
+            case 5:
+                ow0 ow0Var = (ow0) obj;
+                ProfileActivity profileActivity = ow0Var.n;
+                if (ow0Var.h) {
+                    org.telegram.ui.ActionBar.f5 f5Var = profileActivity.T0;
+                    if (f5Var != null) {
+                        f5Var.setClickable(false);
+                    }
+                } else {
+                    ow0Var.setVisibility(8);
+                }
+                RectF rectF = ProfileActivity.V6;
+                profileActivity.O5(false);
+                break;
+            case 6:
+                rx0 rx0Var = (rx0) obj;
+                if (z9) {
+                    rx0Var.c.setVisibility(8);
+                    break;
+                } else {
+                    rx0Var.f.setVisibility(8);
+                    break;
+                }
+            case 7:
+                uz0 uz0Var = (uz0) obj;
+                uz0Var.w = z9 ? 1.0f : 0.0f;
+                if (uz0Var.S) {
+                    uz0Var.N.invalidate();
+                    break;
+                }
+                break;
+            case 8:
+                o11 o11Var = (o11) obj;
+                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = o11Var.w;
+                f10 = z9 ? 1.0f : 0.0f;
+                o11Var.L = f10;
+                actionBarPopupWindow$ActionBarPopupWindowLayout.setBackScaleY(f10);
+                actionBarPopupWindow$ActionBarPopupWindowLayout.setAlpha(org.telegram.ui.Components.xq.g.getInterpolation(o11Var.L));
+                int itemsCount = actionBarPopupWindow$ActionBarPopupWindowLayout.getItemsCount();
+                for (int i10 = 0; i10 < itemsCount; i10++) {
+                    float s5 = org.telegram.messenger.g0.s(o11Var.L, i10, itemsCount, 4.0f);
+                    actionBarPopupWindow$ActionBarPopupWindowLayout.L.getChildAt(i10).setTranslationY((1.0f - s5) * org.telegram.messenger.g0.L(-12.0f));
+                    actionBarPopupWindow$ActionBarPopupWindowLayout.L.getChildAt(i10).setAlpha(s5);
+                }
+                o11Var.N = null;
+                break;
+            case 9:
+                n31 n31Var = (n31) obj;
+                if (n31Var.n != null && (b4Var = n31Var.r) != null) {
+                    if (!z9) {
+                        b4Var.setVisibility(4);
+                    }
+                    n31Var.n = null;
+                    break;
+                }
+                break;
+            case 10:
+                ((h81) obj).D = z9 ? 1.0f : 0.0f;
+                break;
+            case 11:
+                bb1 bb1Var = (bb1) obj;
+                AnimatorSet animatorSet2 = bb1Var.I;
+                if (animatorSet2 != null && animatorSet2.equals(animator)) {
+                    if (z9) {
+                        bb1Var.e.setVisibility(4);
+                        break;
+                    } else {
+                        bb1Var.b.setVisibility(4);
+                        break;
+                    }
+                }
+                break;
+            case 12:
+                org.telegram.ui.web.k1 k1Var = (org.telegram.ui.web.k1) obj;
+                bi.v vVar = k1Var.V;
+                if (!k1Var.T) {
+                    vVar.setVisibility(8);
+                    vVar.setText("");
+                }
+                f10 = z9 ? 1.0f : 0.0f;
+                k1Var.U = f10;
+                vVar.setAlpha(f10);
+                k1Var.invalidate();
+                if (k1Var.T) {
+                    vVar.requestFocus();
+                    org.telegram.messenger.g0.K3(vVar);
+                    break;
+                } else {
+                    vVar.clearFocus();
+                    org.telegram.messenger.g0.v1(vVar);
+                    break;
+                }
+            case 13:
+                l0 l0Var = (l0) obj;
+                bi.v vVar2 = l0Var.b0;
+                if (!l0Var.W) {
+                    vVar2.setVisibility(8);
+                }
+                f10 = z9 ? 1.0f : 0.0f;
+                l0Var.a0 = f10;
+                vVar2.setAlpha(f10);
+                l0Var.j(l0Var.a0);
+                l0Var.R.setTranslationX(org.telegram.messenger.g0.L(56.0f) * l0Var.a0);
+                l0Var.O.setTranslationX(org.telegram.messenger.g0.L(112.0f) * l0Var.a0);
+                l0Var.invalidate();
+                break;
+            case 14:
+                tg.o1 o1Var = (tg.o1) obj;
+                ((sg.i) o1Var).D.o1.c();
+                if (z9) {
+                    o1Var.x.accept(Integer.valueOf(o1Var.s));
+                }
+                if (o1Var.getParent() != null) {
+                    ((ViewGroup) o1Var.getParent()).removeView(o1Var);
+                    break;
+                }
+                break;
+            case 15:
+                LimitPreviewView limitPreviewView = (LimitPreviewView) obj;
+                if (z9) {
+                    limitPreviewView.j0 = false;
+                }
+                Runnable runnable = limitPreviewView.k0;
+                if (runnable != null) {
+                    org.telegram.messenger.g0.r(runnable);
+                    limitPreviewView.k0.run();
+                    break;
+                }
+                break;
+            case 16:
+                ug.p0 p0Var = (ug.p0) obj;
+                p0Var.O = z9 ? 1.0f : 0.0f;
+                p0Var.f.invalidate();
+                ug.o0 o0Var = p0Var.h;
+                if (o0Var != null) {
+                    o0Var.invalidate();
+                    break;
+                }
+                break;
+            default:
+                if (!z9) {
+                    ((zh.m3) obj).w.setVisibility(8);
+                    break;
+                }
+                break;
         }
-        return new org.telegram.ui.Components.xi0(view);
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 1:
+                if (this.b) {
+                    ((ee0) this.c).V.setVisibility(0);
+                    break;
+                }
+                break;
+            case 2:
+                if (this.b) {
+                    ((PasscodeActivity) this.c).w.setVisibility(0);
+                    break;
+                }
+                break;
+            case 3:
+            case 4:
+            default:
+                super.onAnimationStart(animator);
+                break;
+            case 5:
+                ow0 ow0Var = (ow0) this.c;
+                ProfileActivity profileActivity = ow0Var.n;
+                org.telegram.ui.ActionBar.f5 f5Var = profileActivity.T0;
+                if (f5Var != null && !this.b) {
+                    f5Var.setClickable(true);
+                }
+                profileActivity.E5(true);
+                ow0Var.setVisibility(0);
+                profileActivity.O5(false);
+                break;
+            case 6:
+                rx0 rx0Var = (rx0) this.c;
+                if (!this.b) {
+                    rx0Var.c.setAlpha(0.0f);
+                    rx0Var.c.setVisibility(0);
+                    break;
+                } else {
+                    rx0Var.f.setAlpha(0.0f);
+                    rx0Var.f.setVisibility(0);
+                    break;
+                }
+        }
     }
 }

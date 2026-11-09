@@ -1,29 +1,34 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.app.Activity;
+import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class al extends AnimatorListenerAdapter {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ an d;
+public final class al extends org.telegram.ui.Components.e10 {
+    public final /* synthetic */ cn j1;
 
-    public al(an anVar, boolean z9, boolean z10, boolean z11) {
-        this.d = anVar;
-        this.a = z9;
-        this.b = z10;
-        this.c = z11;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public al(cn cnVar, Activity activity, org.telegram.ui.ActionBar.f2 f2Var) {
+        super(activity, f2Var);
+        this.j1 = cnVar;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        an anVar = this.d;
-        anVar.a3 = null;
-        anVar.X2.setVisibility(this.a ? 0 : 4);
-        anVar.Z2.setVisibility(this.b ? 0 : 4);
-        anVar.Y2.setVisibility(this.c ? 0 : 4);
+    @Override // org.telegram.ui.Components.e10
+    public final void I0() {
+        cn cnVar = this.j1;
+        cnVar.g8();
+        UndoView undoView = cnVar.M3;
+        if (undoView == null) {
+            return;
+        }
+        undoView.j(75, 0L, null);
+        cnVar.getMessagesController().k4(cnVar.j6, "CONVERT_GIGAGROUP");
+    }
+
+    @Override // org.telegram.ui.Components.e10
+    public final void J0() {
+        cn cnVar = this.j1;
+        cnVar.getMessagesController().S(cnVar.getParentActivity(), cnVar.e, cnVar, new w0(this, 21));
     }
 }

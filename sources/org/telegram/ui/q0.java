@@ -1,6 +1,6 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class q0 extends org.telegram.ui.Components.l6 {
     public final /* synthetic */ int b;
@@ -18,7 +18,7 @@ public final class q0 extends org.telegram.ui.Components.l6 {
                 ((ArticleViewer$WindowView) obj).setInnerTranslationX(f10);
                 break;
             case 1:
-                an.id = (int) f10;
+                cn.kd = (int) f10;
                 break;
             case 2:
                 ((org.telegram.ui.Cells.q1) obj).setTimeAlpha(f10);
@@ -27,7 +27,7 @@ public final class q0 extends org.telegram.ui.Components.l6 {
                 ((org.telegram.messenger.ej) obj).d = f10;
                 break;
             case 4:
-                ((wv0) obj).setCrossfadeProgress(f10);
+                ((yv0) obj).setCrossfadeProgress(f10);
                 break;
             case 5:
                 ((SecretMediaViewer) obj).setVideoCrossfadeAlpha(f10);
@@ -36,14 +36,14 @@ public final class q0 extends org.telegram.ui.Components.l6 {
                 ((SecretMediaViewer) obj).setAnimationValue(f10);
                 break;
             default:
-                lz0 lz0Var = (lz0) obj;
-                if (lz0Var.a != f10) {
-                    lz0Var.a = f10;
-                    SecretMediaViewer secretMediaViewer = lz0Var.r;
+                oz0 oz0Var = (oz0) obj;
+                if (oz0Var.a != f10) {
+                    oz0Var.a = f10;
+                    SecretMediaViewer secretMediaViewer = oz0Var.r;
                     secretMediaViewer.Q.setAlpha(f10);
-                    if (!lz0Var.b) {
-                        if (lz0Var.c) {
-                            lz0Var.setTranslationY((1.0f - f10) * org.telegram.messenger.g0.N(24.0f));
+                    if (!oz0Var.b) {
+                        if (oz0Var.c) {
+                            oz0Var.setTranslationY((1.0f - f10) * org.telegram.messenger.g0.N(24.0f));
                         }
                         secretMediaViewer.P.setAlpha(f10);
                         break;
@@ -54,10 +54,10 @@ public final class q0 extends org.telegram.ui.Components.l6 {
                         float f12 = 1.0f - (0.1f * f11);
                         secretMediaViewer.Q.setScaleX(f12);
                         secretMediaViewer.Q.setScaleY(f12);
-                        org.telegram.ui.Components.v51 v51Var = secretMediaViewer.O;
-                        if (v51Var.y != f11) {
-                            v51Var.y = f11;
-                            v51Var.v.invalidate();
+                        org.telegram.ui.Components.w51 w51Var = secretMediaViewer.O;
+                        if (w51Var.y != f11) {
+                            w51Var.y = f11;
+                            w51Var.v.invalidate();
                             break;
                         }
                     }
@@ -72,19 +72,19 @@ public final class q0 extends org.telegram.ui.Components.l6 {
             case 0:
                 return Float.valueOf(((ArticleViewer$WindowView) obj).getInnerTranslationX());
             case 1:
-                return Float.valueOf(an.id);
+                return Float.valueOf(cn.kd);
             case 2:
                 return Float.valueOf(((org.telegram.ui.Cells.q1) obj).getTimeAlpha());
             case 3:
                 return Float.valueOf(((org.telegram.messenger.ej) obj).d);
             case 4:
-                return Float.valueOf(((wv0) obj).S);
+                return Float.valueOf(((yv0) obj).S);
             case 5:
                 return Float.valueOf(((SecretMediaViewer) obj).getVideoCrossfadeAlpha());
             case 6:
                 return Float.valueOf(((SecretMediaViewer) obj).getAnimationValue());
             default:
-                return Float.valueOf(((lz0) obj).a);
+                return Float.valueOf(((oz0) obj).a);
         }
     }
 }

@@ -1,6 +1,6 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class qy implements Runnable {
     public final /* synthetic */ int a;
@@ -20,7 +20,7 @@ public final /* synthetic */ class qy implements Runnable {
     @Override // java.lang.Runnable
     public final void run() {
         org.telegram.utils.twidget.v0 v0Var;
-        p71 p71Var;
+        q71 q71Var;
         switch (this.a) {
             case 0:
                 sy syVar = (sy) this.e;
@@ -43,15 +43,15 @@ public final /* synthetic */ class qy implements Runnable {
                 }
                 break;
             case 1:
-                ((org.telegram.ui.ce0) this.e).O1(this.b, this.c, this.d);
+                ((org.telegram.ui.ee0) this.e).O1(this.b, this.c, this.d);
                 break;
             default:
                 org.telegram.utils.twidget.i1 i1Var = (org.telegram.utils.twidget.i1) this.e;
                 boolean z12 = this.b;
                 boolean z13 = this.c;
                 boolean z14 = this.d;
-                if (!i1Var.w && (v0Var = i1Var.L) != null && (p71Var = v0Var.h) != null && p71Var.w && !p71Var.x) {
-                    p71Var.k(z12, z13, z14);
+                if (!i1Var.w && (v0Var = i1Var.L) != null && (q71Var = v0Var.h) != null && q71Var.w && !q71Var.x) {
+                    q71Var.k(z12, z13, z14);
                     break;
                 }
                 break;

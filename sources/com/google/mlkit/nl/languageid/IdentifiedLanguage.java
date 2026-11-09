@@ -1,10 +1,10 @@
 package com.google.mlkit.nl.languageid;
 
 import java.util.Arrays;
-import org.telegram.ui.hy0;
+import org.telegram.ui.ky0;
 import y7.r0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class IdentifiedLanguage {
     public final String a;
@@ -39,18 +39,18 @@ public final class IdentifiedLanguage {
     }
 
     public final String toString() {
-        hy0 hy0Var = new hy0("IdentifiedLanguage", 29);
-        hy0 hy0Var2 = new hy0(28, false);
-        ((hy0) hy0Var.d).d = hy0Var2;
-        hy0Var.d = hy0Var2;
-        hy0Var2.c = this.a;
-        hy0Var2.b = "languageTag";
+        ky0 ky0Var = new ky0("IdentifiedLanguage", 29);
+        ky0 ky0Var2 = new ky0(28, false);
+        ((ky0) ky0Var.d).d = ky0Var2;
+        ky0Var.d = ky0Var2;
+        ky0Var2.c = this.a;
+        ky0Var2.b = "languageTag";
         String valueOf = String.valueOf(this.b);
         r0 r0Var = new r0(28, false);
-        ((hy0) hy0Var.d).d = r0Var;
-        hy0Var.d = r0Var;
+        ((ky0) ky0Var.d).d = r0Var;
+        ky0Var.d = r0Var;
         r0Var.c = valueOf;
         r0Var.b = "confidence";
-        return hy0Var.toString();
+        return ky0Var.toString();
     }
 }

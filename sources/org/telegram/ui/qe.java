@@ -2,16 +2,16 @@ package org.telegram.ui;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class qe implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ an b;
+    public final /* synthetic */ cn b;
     public final /* synthetic */ int c;
 
-    public /* synthetic */ qe(an anVar, int i7, int i10) {
+    public /* synthetic */ qe(cn cnVar, int i7, int i10) {
         this.a = i10;
-        this.b = anVar;
+        this.b = cnVar;
         this.c = i7;
     }
 
@@ -30,18 +30,18 @@ public final /* synthetic */ class qe implements Runnable {
                 this.b.getConnectionsManager().cancelRequest(this.c, true);
                 break;
             case 3:
-                an anVar = this.b;
-                aj ajVar = anVar.z0;
-                if (ajVar != null) {
-                    int childCount = ajVar.getChildCount();
+                cn cnVar = this.b;
+                cj cjVar = cnVar.z0;
+                if (cjVar != null) {
+                    int childCount = cjVar.getChildCount();
                     for (int i7 = 0; i7 < childCount; i7++) {
-                        View childAt = anVar.z0.getChildAt(i7);
-                        if ((childAt instanceof org.telegram.ui.Cells.q1) && (messageObject = (q1Var = (org.telegram.ui.Cells.q1) childAt).getMessageObject()) != null && messageObject.T(anVar.U3)) {
+                        View childAt = cnVar.z0.getChildAt(i7);
+                        if ((childAt instanceof org.telegram.ui.Cells.q1) && (messageObject = (q1Var = (org.telegram.ui.Cells.q1) childAt).getMessageObject()) != null && messageObject.T(cnVar.U3)) {
                             q1Var.G3(this.c, true, true);
                         }
                     }
                 }
-                anVar.U3 = null;
+                cnVar.U3 = null;
                 break;
             case 4:
                 this.b.actionBar.getActionBarMenuOnItemClick().b(this.c);
@@ -50,7 +50,7 @@ public final /* synthetic */ class qe implements Runnable {
                 this.b.getConnectionsManager().cancelRequest(this.c, true);
                 break;
             case 6:
-                an.b0(this.b, this.c);
+                cn.c0(this.b, this.c);
                 break;
             case 7:
                 this.b.actionBar.setSubtitle(org.telegram.messenger.id.G(this.c, "messages", new Object[0]));
@@ -59,10 +59,10 @@ public final /* synthetic */ class qe implements Runnable {
                 this.b.getConnectionsManager().cancelRequest(this.c, true);
                 break;
             case 9:
-                an.L0(this.b, this.c);
+                cn.O0(this.b, this.c);
                 break;
             default:
-                an.Y0(this.b, this.c);
+                cn.d1(this.b, this.c);
                 break;
         }
     }

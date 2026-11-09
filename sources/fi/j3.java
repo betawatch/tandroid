@@ -5,10 +5,10 @@ import android.content.Context;
 import android.view.MotionEvent;
 import org.telegram.messenger.c20;
 import org.telegram.messenger.p10;
-import org.telegram.ui.Components.rt0;
+import org.telegram.ui.Components.tt0;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class j3 extends org.telegram.ui.ActionBar.v2 {
     public final i3 i1;
@@ -17,8 +17,8 @@ public final class j3 extends org.telegram.ui.ActionBar.v2 {
     public Boolean l1;
     public c20 m1;
 
-    public j3(Context context, org.telegram.ui.ActionBar.f6 f6Var, String str, float f10) {
-        super(1, context, f6Var, false);
+    public j3(Context context, org.telegram.ui.ActionBar.g6 g6Var, String str, float f10) {
+        super(1, context, g6Var, false);
         O(-14737633);
         i3 i3Var = new i3(p10.s0, context, new di.b(), f10, str);
         this.i1 = i3Var;
@@ -26,10 +26,10 @@ public final class j3 extends org.telegram.ui.ActionBar.v2 {
         i3Var.setMultipleOnClick(false);
         i3Var.setOnBackClickListener(new g3(this, 0));
         i3Var.setOnSelectListener(new ai.e(this, 18));
-        rt0 rt0Var = new rt0(context, null);
-        this.b = rt0Var;
+        tt0 tt0Var = new tt0(context, null);
+        this.b = tt0Var;
         int i7 = this.t0;
-        rt0Var.setPadding(i7, 0, i7, 0);
+        tt0Var.setPadding(i7, 0, i7, 0);
         this.b.addView(i3Var);
     }
 

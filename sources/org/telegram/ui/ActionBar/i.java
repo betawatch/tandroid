@@ -11,7 +11,7 @@ import android.util.Property;
 import android.view.View;
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class i extends ChangeBounds {
     public final /* synthetic */ int a;
@@ -26,8 +26,8 @@ public final class i extends ChangeBounds {
             case 0:
                 super.captureEndValues(transitionValues);
                 View view = transitionValues.view;
-                if (view instanceof k5) {
-                    transitionValues.values.put("text_size", Float.valueOf(((k5) view).getTextPaint().getTextSize()));
+                if (view instanceof l5) {
+                    transitionValues.values.put("text_size", Float.valueOf(((l5) view).getTextPaint().getTextSize()));
                     break;
                 }
                 break;
@@ -55,8 +55,8 @@ public final class i extends ChangeBounds {
             case 0:
                 super.captureStartValues(transitionValues);
                 View view = transitionValues.view;
-                if (view instanceof k5) {
-                    transitionValues.values.put("text_size", Float.valueOf(((k5) view).getTextPaint().getTextSize()));
+                if (view instanceof l5) {
+                    transitionValues.values.put("text_size", Float.valueOf(((l5) view).getTextPaint().getTextSize()));
                     break;
                 }
                 break;
@@ -84,7 +84,7 @@ public final class i extends ChangeBounds {
         final int i10 = 1;
         switch (this.a) {
             case 0:
-                if (transitionValues != null && (transitionValues.view instanceof k5)) {
+                if (transitionValues != null && (transitionValues.view instanceof l5)) {
                     AnimatorSet animatorSet = new AnimatorSet();
                     if (transitionValues2 != null) {
                         Animator createAnimator = super.createAnimator(viewGroup, transitionValues, transitionValues2);

@@ -20,7 +20,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public abstract class uc extends fi.m {
     public boolean R0;
@@ -28,7 +28,7 @@ public abstract class uc extends fi.m {
     public boolean T0;
     public final ImageView U0;
     public final fi.l V0;
-    public k60 W0;
+    public l60 W0;
     public final org.telegram.ui.ActionBar.u2 X0;
     public final ImageView Y0;
     public fi.m3 Z0;
@@ -51,8 +51,8 @@ public abstract class uc extends fi.m {
     public org.telegram.messenger.c20 q1;
     public boolean r1;
 
-    public uc(Context context, FrameLayout frameLayout, rt0 rt0Var, FrameLayout frameLayout2, org.telegram.ui.ActionBar.f6 f6Var, y9 y9Var, Runnable runnable) {
-        super(context, frameLayout, rt0Var, frameLayout2, f6Var, y9Var);
+    public uc(Context context, FrameLayout frameLayout, tt0 tt0Var, FrameLayout frameLayout2, org.telegram.ui.ActionBar.g6 g6Var, y9 y9Var, Runnable runnable) {
+        super(context, frameLayout, tt0Var, frameLayout2, g6Var, y9Var);
         float f10;
         float f11;
         this.a1 = 0;
@@ -70,12 +70,12 @@ public abstract class uc extends fi.m {
         i6Var.w(org.telegram.messenger.g0.L(14.0f));
         i6Var.M = org.telegram.messenger.g0.q.x;
         i6Var.u(-1);
-        boolean z9 = this instanceof org.telegram.ui.ap0;
+        boolean z9 = this instanceof org.telegram.ui.cp0;
         if (z9) {
-            i6Var.t(org.telegram.messenger.id.M0(2131748326, null), true, true);
+            i6Var.t(org.telegram.messenger.id.M0(2131748325, null), true, true);
             this.f1 = context.getResources().getDrawable(R.drawable.menu_link_below);
         } else {
-            i6Var.t(org.telegram.messenger.id.M0(2131748325, null), true, true);
+            i6Var.t(org.telegram.messenger.id.M0(2131748324, null), true, true);
             this.f1 = context.getResources().getDrawable(R.drawable.menu_link_above);
         }
         ImageView imageView = new ImageView(context);
@@ -84,7 +84,7 @@ public abstract class uc extends fi.m {
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
         imageView.setScaleType(scaleType);
         imageView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-        imageView.setBackground(org.telegram.ui.ActionBar.k6.h0(1090519039, 1, org.telegram.messenger.g0.L(18.0f)));
+        imageView.setBackground(org.telegram.ui.ActionBar.l6.h0(1090519039, 1, org.telegram.messenger.g0.L(18.0f)));
         C(false);
         int i7 = (z9 ? 48 : 80) | 3;
         float f12 = z9 ? 6.0f : 0.0f;
@@ -103,7 +103,7 @@ public abstract class uc extends fi.m {
         fi.l lVar = new fi.l(5);
         this.V0 = lVar;
         imageView2.setImageDrawable(lVar);
-        imageView2.setBackground(org.telegram.ui.ActionBar.k6.h0(1090519039, 1, org.telegram.messenger.g0.L(18.0f)));
+        imageView2.setBackground(org.telegram.ui.ActionBar.l6.h0(1090519039, 1, org.telegram.messenger.g0.L(18.0f)));
         imageView2.setScaleType(scaleType);
         E(false, false);
         addView(imageView2, c8.ha.d(44, 44.0f, (z9 ? 48 : 80) | 5, 0.0f, z9 ? 6.0f : f13, 10.0f, z9 ? f13 : 6.0f));
@@ -121,7 +121,7 @@ public abstract class uc extends fi.m {
         imageView3.setImageDrawable(u2Var);
         imageView3.setScaleType(scaleType);
         imageView3.setColorFilter(new PorterDuffColorFilter(-1140850689, PorterDuff.Mode.MULTIPLY));
-        imageView3.setBackground(org.telegram.ui.ActionBar.k6.h0(1090519039, 1, org.telegram.messenger.g0.L(16.0f)));
+        imageView3.setBackground(org.telegram.ui.ActionBar.l6.h0(1090519039, 1, org.telegram.messenger.g0.L(16.0f)));
         addView(imageView3, c8.ha.d(44, 44.0f, 53, 8.0f, 0.0f, 8.0f, 0.0f));
         imageView3.setContentDescription(org.telegram.messenger.id.M0(2131755006, null));
         c8.ka.a(imageView3);
@@ -234,16 +234,16 @@ public abstract class uc extends fi.m {
 
     public abstract boolean G();
 
-    public final void H(org.telegram.ui.ActionBar.f6 f6Var) {
-        this.a = f6Var;
-        this.h.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.U5, false), PorterDuff.Mode.SRC_IN));
+    public final void H(org.telegram.ui.ActionBar.g6 g6Var) {
+        this.a = g6Var;
+        this.h.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.U5, false), PorterDuff.Mode.SRC_IN));
         int L = org.telegram.messenger.g0.L(16.0f);
-        int i7 = org.telegram.ui.ActionBar.k6.ng;
-        ShapeDrawable L2 = org.telegram.ui.ActionBar.k6.L(L, org.telegram.ui.ActionBar.k6.w0(i7, f6Var));
+        int i7 = org.telegram.ui.ActionBar.l6.ng;
+        ShapeDrawable L2 = org.telegram.ui.ActionBar.l6.L(L, org.telegram.ui.ActionBar.l6.w0(i7, g6Var));
         xp xpVar = this.n;
         xpVar.a = L2;
         xpVar.invalidateSelf();
-        this.V0.e(-1, org.telegram.ui.ActionBar.k6.w0(i7, f6Var), -1);
+        this.V0.e(-1, org.telegram.ui.ActionBar.l6.w0(i7, g6Var), -1);
     }
 
     @Override // fi.m
@@ -285,7 +285,7 @@ public abstract class uc extends fi.m {
         ImageView imageView = this.Y0;
         if (imageView != null) {
             imageView.setTranslationX(-org.telegram.messenger.g0.L((1.0f - this.n0) * 4.0f));
-            boolean z9 = this instanceof org.telegram.ui.ap0;
+            boolean z9 = this instanceof org.telegram.ui.cp0;
             imageView.setTranslationY((Utilities.l((-this.j1.e(false, this.f.getEditText().getLineCount())) + 4.0f) * org.telegram.messenger.g0.L(3.0f) * (z9 ? 1 : -1)) + (z9 ? rectF.bottom - org.telegram.messenger.g0.L(44.0f) : rectF.top));
         }
         float f11 = this.k1.f(this.m1, true ^ G());
@@ -293,7 +293,7 @@ public abstract class uc extends fi.m {
         if (f11 > 0.0f) {
             float a10 = this.h1.a(0.03f);
             int L = org.telegram.messenger.g0.L((1.0f - this.n0) * 4.0f);
-            boolean z10 = this instanceof org.telegram.ui.ap0;
+            boolean z10 = this instanceof org.telegram.ui.cp0;
             i6 i6Var = this.g1;
             RectF rectF2 = this.e1;
             if (z10) {
@@ -354,7 +354,7 @@ public abstract class uc extends fi.m {
         } else if ((motionEvent.getAction() == 1 || motionEvent.getAction() == 3) && icVar.i) {
             if (motionEvent.getAction() == 1) {
                 A();
-                this.g1.t(org.telegram.messenger.id.M0(this instanceof org.telegram.ui.ap0 ? 2131748326 : 2131748325, null), true, true);
+                this.g1.t(org.telegram.messenger.id.M0(this instanceof org.telegram.ui.cp0 ? 2131748325 : 2131748324, null), true, true);
             }
             icVar.c(false);
             return true;
@@ -402,7 +402,7 @@ public abstract class uc extends fi.m {
 
     @Override // fi.m
     public final void r(int i7) {
-        this.c1.setTranslationY(((-Math.min(org.telegram.messenger.g0.L(34.0f), i7)) - org.telegram.messenger.g0.L(10.0f)) * (this instanceof org.telegram.ui.ap0 ? -1.0f : 1.0f));
+        this.c1.setTranslationY(((-Math.min(org.telegram.messenger.g0.L(34.0f), i7)) - org.telegram.messenger.g0.L(10.0f)) * (this instanceof org.telegram.ui.cp0 ? -1.0f : 1.0f));
     }
 
     @Override // fi.m

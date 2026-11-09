@@ -3,7 +3,7 @@ package wi;
 import android.hardware.camera2.CameraDevice;
 import android.os.HandlerThread;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final class j extends CameraDevice.StateCallback {
     public final CameraDevice.StateCallback a;
@@ -17,31 +17,31 @@ public final class j extends CameraDevice.StateCallback {
         this.f = kVar;
         this.a = stateCallback;
         this.b = z9;
-        kVar.x0++;
+        kVar.w0++;
     }
 
     public final void a() {
         k kVar = this.f;
         boolean z9 = this.b;
         if (z9) {
-            if (kVar.w0 != this) {
+            if (kVar.v0 != this) {
                 return;
             }
-        } else if (kVar.v0 != this) {
+        } else if (kVar.u0 != this) {
             return;
         }
         if (z9) {
-            kVar.w0 = null;
-        } else {
             kVar.v0 = null;
+        } else {
+            kVar.u0 = null;
         }
     }
 
     public final boolean b() {
-        if (this.f.u0) {
+        if (this.f.t0) {
             return false;
         }
-        return (this.b ? this.f.w0 : this.f.v0) == this;
+        return (this.b ? this.f.v0 : this.f.u0) == this;
     }
 
     public final void c() {
@@ -50,20 +50,20 @@ public final class j extends CameraDevice.StateCallback {
         }
         this.c = true;
         k kVar = this.f;
-        int i7 = kVar.x0 - 1;
-        kVar.x0 = i7;
-        HandlerThread handlerThread = kVar.y0;
+        int i7 = kVar.w0 - 1;
+        kVar.w0 = i7;
+        HandlerThread handlerThread = kVar.x0;
         if (i7 > 0 || handlerThread == null) {
             return;
         }
-        kVar.y0 = null;
+        kVar.x0 = null;
         kVar.j.b("camera open results settled after release; quitting thread");
         handlerThread.quitSafely();
     }
 
     @Override // android.hardware.camera2.CameraDevice.StateCallback
     public final void onClosed(CameraDevice cameraDevice) {
-        if (!this.e || this.f.u0) {
+        if (!this.e || this.f.t0) {
             return;
         }
         this.a.onClosed(cameraDevice);
@@ -73,7 +73,7 @@ public final class j extends CameraDevice.StateCallback {
     public final void onDisconnected(CameraDevice cameraDevice) {
         boolean b10 = b();
         c();
-        if (this.f.u0 || !(this.d || b10)) {
+        if (this.f.t0 || !(this.d || b10)) {
             cameraDevice.close();
             return;
         }
@@ -86,7 +86,7 @@ public final class j extends CameraDevice.StateCallback {
     public final void onError(CameraDevice cameraDevice, int i7) {
         boolean b10 = b();
         c();
-        if (!this.f.u0 && (this.d || b10)) {
+        if (!this.f.t0 && (this.d || b10)) {
             a();
             this.e = true;
             this.a.onError(cameraDevice, i7);
@@ -104,11 +104,11 @@ public final class j extends CameraDevice.StateCallback {
         if (b10) {
             this.d = true;
             this.e = true;
-            this.f.s0.add(cameraDevice);
+            this.f.r0.add(cameraDevice);
             this.a.onOpened(cameraDevice);
             return;
         }
-        this.f.j.b("stale camera open closed: id=" + cameraDevice.getId() + ", warm=" + this.b + ", released=" + this.f.u0);
+        this.f.j.b("stale camera open closed: id=" + cameraDevice.getId() + ", warm=" + this.b + ", released=" + this.f.t0);
         cameraDevice.close();
     }
 }

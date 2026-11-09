@@ -3,9 +3,9 @@ package x2;
 import android.net.Uri;
 import android.os.Looper;
 import j$.util.Objects;
-import org.telegram.ui.hy0;
+import org.telegram.ui.ky0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class y0 extends a {
     public final j2.g h;
@@ -51,7 +51,7 @@ public final class y0 extends a {
         g0Var2.getClass();
         Uri uri = g0Var2.a;
         this.g.getClass();
-        return new w0(uri, createDataSource, new hy0((f3.r) this.i.b), this.j, new q2.j(this.d.c, 0, g0Var), this.k, b(g0Var), this, mVar, g0Var2.f, this.l, this.m, h2.m0.S(g0Var2.h), null);
+        return new w0(uri, createDataSource, new ky0((f3.r) this.i.b), this.j, new q2.j(this.d.c, 0, g0Var), this.k, b(g0Var), this, mVar, g0Var2.f, this.l, this.m, h2.m0.S(g0Var2.h), null);
     }
 
     @Override // x2.a

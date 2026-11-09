@@ -25,9 +25,9 @@ import java.util.Set;
 import org.telegram.messenger.la;
 import org.telegram.ui.ActionBar.m3;
 import org.telegram.ui.Components.us;
-import org.telegram.ui.jo0;
+import org.telegram.ui.lo0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class c1 extends Binder implements m {
     public final WeakReference a;
@@ -53,7 +53,7 @@ public final class c1 extends Binder implements m {
         }
         m9.y yVar = (m9.y) a1Var.l(d0Var, vVar, i7);
         m9.e0 e0Var = new m9.e0();
-        yVar.b(new jo0(d0Var, e0Var, jVar, yVar, 24), m9.r.a);
+        yVar.b(new lo0(d0Var, e0Var, jVar, yVar, 24), m9.r.a);
         return e0Var;
     }
 
@@ -181,7 +181,7 @@ public final class c1 extends Binder implements m {
                 d0 d0Var2 = (d0) weakReference.get();
                 if (d0Var2 != null && !d0Var2.j()) {
                     this.c.add(vVar);
-                    h2.m0.W(d0Var2.l, new jo0(this, vVar, d0Var2, lVar, 23));
+                    h2.m0.W(d0Var2.l, new lo0(this, vVar, d0Var2, lVar, 23));
                 }
                 bb.a(lVar);
             } finally {
@@ -349,7 +349,7 @@ public final class c1 extends Binder implements m {
                 int readInt = parcel.readInt();
                 boolean z9 = parcel.readInt() != 0;
                 if (h12 != null) {
-                    p1(h12, readInt, 1, s1(new l2.x(4, z9)));
+                    p1(h12, readInt, 1, s1(new l2.w(4, z9)));
                     return true;
                 }
                 return true;
@@ -407,7 +407,7 @@ public final class c1 extends Binder implements m {
                 int readInt6 = parcel.readInt();
                 boolean z10 = parcel.readInt() != 0;
                 if (h17 != null) {
-                    p1(h17, readInt6, 14, s1(new l2.x(6, z10)));
+                    p1(h17, readInt6, 14, s1(new l2.w(6, z10)));
                     return true;
                 }
                 return true;
@@ -565,7 +565,7 @@ public final class c1 extends Binder implements m {
                             bundle5.getClass();
                             p10.c(e2.l0.a(x14.c, bundle5));
                         }
-                        q1(x14, readInt28, 20, new t0(new org.telegram.ui.web.a0(8, new l2.z(3, p10.f()), new r0(3)), 1));
+                        q1(x14, readInt28, 20, new t0(new org.telegram.ui.web.a0(8, new l2.y(3, p10.f()), new r0(3)), 1));
                     } catch (RuntimeException e14) {
                         h2.a.m("MediaSessionStub", "Ignoring malformed Bundle for MediaItem", e14);
                     }
@@ -585,7 +585,7 @@ public final class c1 extends Binder implements m {
                             bundle6.getClass();
                             p11.c(e2.l0.a(x15.c, bundle6));
                         }
-                        q1(x15, readInt29, 20, new t0(new org.telegram.ui.web.a0(8, new l2.z(2, p11.f()), new o0(this, readInt30, 3)), 1));
+                        q1(x15, readInt29, 20, new t0(new org.telegram.ui.web.a0(8, new l2.y(2, p11.f()), new o0(this, readInt30, 3)), 1));
                     } catch (RuntimeException e15) {
                         h2.a.m("MediaSessionStub", "Ignoring malformed Bundle for MediaItem", e15);
                     }
@@ -619,7 +619,7 @@ public final class c1 extends Binder implements m {
                     try {
                         d0 d0Var = (d0) this.a.get();
                         if (d0Var != null && !d0Var.j()) {
-                            h2.m0.W(d0Var.l, new org.telegram.ui.web.w(12, this, h124));
+                            h2.m0.W(d0Var.l, new org.telegram.ui.web.s(13, this, h124));
                             return true;
                         }
                         return true;
@@ -713,7 +713,7 @@ public final class c1 extends Binder implements m {
                         if (d0Var2 != null && !d0Var2.j()) {
                             v x25 = this.b.x(h134.asBinder());
                             if (x25 != null) {
-                                h2.m0.W(d0Var2.l, new org.telegram.ui.web.w(13, this, x25));
+                                h2.m0.W(d0Var2.l, new org.telegram.ui.web.s(14, this, x25));
                             }
                             return true;
                         }
@@ -1086,7 +1086,7 @@ public final class c1 extends Binder implements m {
         if (lVar == null) {
             return;
         }
-        p1(lVar, i7, 26, s1(new l2.x(5, z9)));
+        p1(lVar, i7, 26, s1(new l2.w(5, z9)));
     }
 
     public final void u1(l lVar, int i7, int i10) {

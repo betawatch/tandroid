@@ -25,7 +25,7 @@ import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.Cells.f1;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public class ConferenceCall {
     public static final int PERMISSION_ADD = 1;
@@ -52,7 +52,7 @@ public class ConferenceCall {
     private final Runnable pollRunnable = new b(this, 2);
     private final int[] pollRequestId = new int[2];
 
-    /* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+    /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
     public static final class CallParticipant {
         int permissions;
         long public_key_id;
@@ -66,7 +66,7 @@ public class ConferenceCall {
         }
     }
 
-    /* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+    /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
     public static final class CallState {
         int height;
         CallParticipant[] participants;
@@ -104,7 +104,7 @@ public class ConferenceCall {
         }
     }
 
-    /* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+    /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
     public static final class CallVerificationState {
         byte[] emoji_hash;
         int height;
@@ -123,7 +123,7 @@ public class ConferenceCall {
         }
     }
 
-    /* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+    /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
     public static final class CallVerificationWords {
         int height;
         String[] words;

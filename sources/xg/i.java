@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import c8.ha;
-import di.d4;
+import di.e4;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.g0;
@@ -19,28 +19,28 @@ import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.yr;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.s6;
 import org.telegram.ui.Cells.m8;
 import org.telegram.ui.Cells.w3;
 import org.telegram.ui.Cells.x3;
-import org.telegram.ui.Components.av0;
+import org.telegram.ui.Components.cv0;
 import org.telegram.ui.Components.l9;
-import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.qj0;
 import org.telegram.ui.Components.wo;
-import org.telegram.ui.Components.xi0;
+import org.telegram.ui.Components.yi0;
 import v4.d1;
 import v4.o0;
 import wg.a1;
 import wg.z0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class i extends rg.b {
-    public final f6 d;
+    public final g6 d;
     public final Context e;
-    public pj0 f;
+    public qj0 f;
     public ArrayList n;
     public boolean s;
     public x3 w;
@@ -50,16 +50,16 @@ public final class i extends rg.b {
     public boolean D = true;
     public final boolean h = true;
 
-    public i(Context context, f6 f6Var, boolean z9) {
+    public i(Context context, g6 g6Var, boolean z9) {
         this.e = context;
         this.x = z9;
-        this.d = f6Var;
+        this.d = g6Var;
         a aVar = new a(this, 2);
         yr a02 = yr.a0(p10.s0);
-        a02.a.c(new u9.f(17, a02, aVar));
+        a02.a.c(new u9.f(18, a02, aVar));
     }
 
-    @Override // org.telegram.ui.Components.oj0
+    @Override // org.telegram.ui.Components.pj0
     public final boolean D(d1 d1Var) {
         int i7 = d1Var.f;
         return i7 == 3 || i7 == 6 || i7 == 9;
@@ -138,7 +138,7 @@ public final class i extends rg.b {
             }
             if (i11 == 5) {
                 try {
-                    ((av0) view).b.getImageReceiver().P0(false);
+                    ((cv0) view).b.getImageReceiver().P0(false);
                     return;
                 } catch (Exception unused) {
                     return;
@@ -147,7 +147,7 @@ public final class i extends rg.b {
             if (i11 != 8) {
                 if (i11 == 9) {
                     m8 m8Var = (m8) view;
-                    m8Var.g(k6.v6, k6.u6);
+                    m8Var.g(l6.v6, l6.u6);
                     m8Var.o(hVar.j, hVar.g, false);
                     return;
                 } else {
@@ -195,17 +195,17 @@ public final class i extends rg.b {
             l9 l9Var = rVar.c;
             l9Var.setRoundRadius(g0.L(20.0f));
             l9Var.setImageDrawable(drawable);
-            d4 d4Var = rVar.d;
-            d4Var.k(charSequence3);
+            e4 e4Var = rVar.d;
+            e4Var.k(charSequence3);
             boolean[] zArr = rVar.s;
             zArr[0] = false;
             rVar.setSubtitle(charSequence4);
-            r6.Y(rVar.e, zArr[0] ? k6.n5 : k6.r5, rVar.a);
+            s6.X(rVar.e, zArr[0] ? l6.n5 : l6.r5, rVar.a);
             wo woVar = rVar.w;
             if (woVar != null) {
                 woVar.setAlpha(1.0f);
             }
-            d4Var.i(null);
+            e4Var.i(null);
         } else {
             TLRPC.User user = hVar.c;
             if (user != null) {
@@ -213,7 +213,7 @@ public final class i extends rg.b {
                 CharSequence charSequence5 = hVar.h;
                 if (charSequence5 != null) {
                     rVar.setSubtitle(charSequence5);
-                    r6.Y(rVar.e, k6.r5, this.d);
+                    s6.X(rVar.e, l6.r5, this.d);
                 }
             } else {
                 TLRPC.Chat chat = hVar.e;
@@ -274,17 +274,17 @@ public final class i extends rg.b {
         } else if (i7 == 3) {
             rVar = new r(this.e, this.x, this.y, this.d, this.s);
         } else {
-            f6 f6Var = this.d;
+            g6 g6Var = this.d;
             if (i7 == 5) {
-                av0 av0Var = new av0(context, null, 1, f6Var);
-                av0Var.d.setText(id.M0(2131748168, null));
-                av0Var.e.setText(id.M0(2131745810, null));
-                av0Var.a.setTranslationY(g0.L(24.0f));
-                rVar = av0Var;
+                cv0 cv0Var = new cv0(context, null, 1, g6Var);
+                cv0Var.d.setText(id.M0(2131748167, null));
+                cv0Var.e.setText(id.M0(2131745807, null));
+                cv0Var.a.setTranslationY(g0.L(24.0f));
+                rVar = cv0Var;
             } else {
                 boolean z9 = this.h;
                 if (i7 == 7) {
-                    ah.f fVar = new ah.f(context, f6Var);
+                    ah.f fVar = new ah.f(context, g6Var);
                     fVar.setTag(-33024);
                     rVar = fVar;
                     if (z9) {
@@ -292,7 +292,7 @@ public final class i extends rg.b {
                         rVar = fVar;
                     }
                 } else if (i7 == 6) {
-                    ah.c cVar = new ah.c(context, f6Var);
+                    ah.c cVar = new ah.c(context, g6Var);
                     cVar.setTag(-33024);
                     rVar = cVar;
                     if (z9) {
@@ -300,7 +300,7 @@ public final class i extends rg.b {
                         rVar = cVar;
                     }
                 } else if (i7 == 8) {
-                    x3 x3Var = new x3(context, f6Var);
+                    x3 x3Var = new x3(context, g6Var);
                     x3Var.setTag(-33024);
                     rVar = x3Var;
                     if (z9) {
@@ -308,7 +308,7 @@ public final class i extends rg.b {
                         rVar = x3Var;
                     }
                 } else if (i7 == 9) {
-                    m8 m8Var = new m8(context, f6Var);
+                    m8 m8Var = new m8(context, g6Var);
                     m8Var.n = 16;
                     m8Var.x = 19;
                     rVar = m8Var;
@@ -317,7 +317,7 @@ public final class i extends rg.b {
                 }
             }
         }
-        return new xi0(rVar);
+        return new yi0(rVar);
     }
 
     @Override // v4.g0

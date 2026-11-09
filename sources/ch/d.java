@@ -14,12 +14,12 @@ import org.telegram.messenger.qs;
 import org.telegram.messenger.sc;
 import org.telegram.messenger.ui;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.ah0;
 import org.telegram.ui.Components.i5;
 import org.telegram.ui.Components.xq;
-import org.telegram.ui.Components.zg0;
-import org.telegram.ui.ix;
+import org.telegram.ui.kx;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class d {
     public static int m;
@@ -209,7 +209,7 @@ public final class d {
                 int i10 = m;
                 m = i10 + 1;
                 imageReceiver.v1 = a8.p0.n(i10, " ", sb2);
-                int f10 = ix.f();
+                int f10 = kx.f();
                 TLRPC.Document document3 = tL_availableReaction.around_animation;
                 z9 = true;
                 imageReceiver.q0(hc.b(tL_availableReaction.around_animation), f10 + "_" + f10 + "_pcache_compress", null, null, document3, 0);
@@ -236,7 +236,7 @@ public final class d {
                     int i11 = m;
                     m = i11 + 1;
                     imageReceiver.v1 = a8.p0.n(i11, " ", sb3);
-                    int f11 = ix.f();
+                    int f11 = kx.f();
                     imageReceiver.q0(hc.b(tL_messages_stickerSet.documents.get(this.k)), f11 + "_" + f11 + "_pcache_compress", null, null, tL_messages_stickerSet.documents.get(this.k), 0);
                 } else {
                     imageReceiver.q0(hc.b(tL_messages_stickerSet.documents.get(this.k)), "60_60", null, null, tL_messages_stickerSet.documents.get(this.k), 0);
@@ -245,7 +245,7 @@ public final class d {
             }
         }
         if (!z10) {
-            imageReceiver.w0(new zg0(R.raw.custom_emoji_reaction, org.telegram.messenger.g0.L(60.0f), org.telegram.messenger.g0.L(60.0f), false, null));
+            imageReceiver.w0(new ah0(R.raw.custom_emoji_reaction, org.telegram.messenger.g0.L(60.0f), org.telegram.messenger.g0.L(60.0f), false, null));
             return;
         }
         if (imageReceiver.B() != null) {

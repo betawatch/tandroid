@@ -17,9 +17,9 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class uj extends kj0 {
+public final class uj extends lj0 {
     public jg.o0 D;
     public long E;
     public long F;
@@ -36,7 +36,7 @@ public final class uj extends kj0 {
     public f x;
     public long y;
     public ArrayList s = new ArrayList();
-    public final org.telegram.ui.rz H = new org.telegram.ui.rz(0, 0);
+    public final org.telegram.ui.tz H = new org.telegram.ui.tz(0, 0);
     public final ArrayList L = new ArrayList();
     public final ArrayList M = new ArrayList();
     public final ArrayList N = new ArrayList();
@@ -52,18 +52,18 @@ public final class uj extends kj0 {
         this.r = context;
     }
 
-    @Override // org.telegram.ui.Components.vi0
+    @Override // org.telegram.ui.Components.wi0
     public final String F(int i7) {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.vi0
-    public final void G(pj0 pj0Var, float f10, int[] iArr) {
+    @Override // org.telegram.ui.Components.wi0
+    public final void G(qj0 qj0Var, float f10, int[] iArr) {
         iArr[0] = 0;
         iArr[1] = 0;
     }
 
-    @Override // org.telegram.ui.Components.kj0
+    @Override // org.telegram.ui.Components.lj0
     public final int M(int i7) {
         if (i7 == 0) {
             return this.s.size();
@@ -85,7 +85,7 @@ public final class uj extends kj0 {
         return size + i11;
     }
 
-    @Override // org.telegram.ui.Components.kj0
+    @Override // org.telegram.ui.Components.lj0
     public final Object O(int i7, int i10) {
         ArrayList arrayList;
         if (i7 == 0) {
@@ -106,7 +106,7 @@ public final class uj extends kj0 {
         return arrayList.get(i12);
     }
 
-    @Override // org.telegram.ui.Components.kj0
+    @Override // org.telegram.ui.Components.lj0
     public final int P(int i7, int i10) {
         if (i7 == 0) {
             return 1;
@@ -121,7 +121,7 @@ public final class uj extends kj0 {
         return 2;
     }
 
-    @Override // org.telegram.ui.Components.kj0
+    @Override // org.telegram.ui.Components.lj0
     public final int R() {
         ArrayList arrayList = this.P;
         if (arrayList.isEmpty()) {
@@ -130,14 +130,14 @@ public final class uj extends kj0 {
         return arrayList.size() + (!this.V ? 1 : 0) + 2;
     }
 
-    @Override // org.telegram.ui.Components.kj0
+    @Override // org.telegram.ui.Components.lj0
     public final View T(int i7, View view) {
         org.telegram.ui.Cells.x3 x3Var = (org.telegram.ui.Cells.x3) view;
         if (x3Var == null) {
             Context context = this.r;
             vj vjVar = this.X;
             x3Var = new org.telegram.ui.Cells.x3(context, vjVar.a);
-            x3Var.setBackgroundColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.e7, vjVar.a) & (-218103809));
+            x3Var.setBackgroundColor(org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.e7, vjVar.a) & (-218103809));
         }
         if (i7 == 0 || (i7 == 1 && this.s.isEmpty())) {
             x3Var.setAlpha(0.0f);
@@ -148,19 +148,19 @@ public final class uj extends kj0 {
         if (i10 < arrayList.size()) {
             x3Var.setAlpha(1.0f);
             if (((ArrayList) this.Q.get((String) arrayList.get(i10))) != null) {
-                x3Var.setText((i10 != 0 || this.s.isEmpty()) ? org.telegram.messenger.id.e0(((org.telegram.messenger.ij) r1.get(0)).k.date, false) : org.telegram.messenger.id.M0(2131749536, null));
+                x3Var.setText((i10 != 0 || this.s.isEmpty()) ? org.telegram.messenger.id.e0(((org.telegram.messenger.ij) r1.get(0)).k.date, false) : org.telegram.messenger.id.M0(2131749535, null));
             }
         }
         return view;
     }
 
-    @Override // org.telegram.ui.Components.kj0
+    @Override // org.telegram.ui.Components.lj0
     public final boolean V(int i7, int i10, v4.d1 d1Var) {
         int i11 = d1Var.f;
         return i11 == 1 || i11 == 4;
     }
 
-    @Override // org.telegram.ui.Components.kj0
+    @Override // org.telegram.ui.Components.lj0
     public final void W(int i7, int i10, v4.d1 d1Var) {
         int i11 = i10;
         int i12 = d1Var.f;
@@ -176,7 +176,7 @@ public final class uj extends kj0 {
             if (((ArrayList) hashMap.get((String) arrayList.get(i13))) == null) {
                 return;
             }
-            ((org.telegram.ui.Cells.x3) view).setText((i13 != 0 || this.s.isEmpty()) ? org.telegram.messenger.id.e0(((org.telegram.messenger.ij) r3.get(0)).k.date, false) : org.telegram.messenger.id.M0(2131749536, null));
+            ((org.telegram.ui.Cells.x3) view).setText((i13 != 0 || this.s.isEmpty()) ? org.telegram.messenger.id.e0(((org.telegram.messenger.ij) r3.get(0)).k.date, false) : org.telegram.messenger.id.M0(2131749535, null));
             return;
         }
         if (i12 == 1 || i12 == 4) {
@@ -208,7 +208,7 @@ public final class uj extends kj0 {
                 return;
             }
             org.telegram.messenger.ij ijVar = (org.telegram.messenger.ij) arrayList2.get(i11);
-            boolean z10 = h7Var.getMessage() != null && h7Var.getMessage().f1() == ijVar.f1();
+            boolean z10 = h7Var.getMessage() != null && h7Var.getMessage().e1() == ijVar.e1();
             if (i11 != arrayList2.size() - 1 || (i15 == arrayList.size() - 1 && this.S)) {
                 z9 = true;
             }
@@ -276,7 +276,7 @@ public final class uj extends kj0 {
     public final void Z(final long j3, final long j10, final long j11, jg.o0 o0Var, final String str, boolean z9) {
         vj vjVar = this.X;
         kj kjVar = vjVar.r;
-        di.f5 f5Var = vjVar.L;
+        di.g5 g5Var = vjVar.L;
         Locale locale = Locale.ENGLISH;
         final String str2 = j3 + j10 + j11 + o0Var.d + str;
         String str3 = this.I;
@@ -303,7 +303,7 @@ public final class uj extends kj0 {
             this.P.clear();
             this.Q.clear();
             this.S = true;
-            f5Var.setVisibility(0);
+            g5Var.setVisibility(0);
             f();
             this.T++;
             if (kjVar.getPinnedHeader() != null) {
@@ -316,7 +316,7 @@ public final class uj extends kj0 {
         f();
         if (!z10) {
             f3Var.run();
-            f5Var.e(true, !z9);
+            g5Var.e(true, !z9);
         }
         if (TextUtils.isEmpty(str)) {
             arrayList.clear();
@@ -359,7 +359,7 @@ public final class uj extends kj0 {
                         tL_messages_search.max_date = (int) (j16 / 1000);
                     }
                     if (z12 && str4.equals(ujVar.J) && !arrayList6.isEmpty()) {
-                        tL_messages_search.offset_id = ((org.telegram.messenger.ij) jg.g.i(1, arrayList6)).f1();
+                        tL_messages_search.offset_id = ((org.telegram.messenger.ij) jg.g.i(1, arrayList6)).e1();
                     } else {
                         tL_messages_search.offset_id = 0;
                     }
@@ -390,7 +390,7 @@ public final class uj extends kj0 {
                     }
                     if (z12 && str4.equals(ujVar.J) && !arrayList6.isEmpty()) {
                         org.telegram.messenger.ij ijVar = (org.telegram.messenger.ij) jg.g.i(1, arrayList6);
-                        tL_messages_searchGlobal2.offset_id = ijVar.f1();
+                        tL_messages_searchGlobal2.offset_id = ijVar.e1();
                         tL_messages_searchGlobal2.offset_rate = ujVar.G;
                         TLRPC.Peer peer = ijVar.k.peer_id;
                         long j17 = peer.channel_id;
@@ -429,7 +429,7 @@ public final class uj extends kj0 {
                             int size = messages_messages.messages.size();
                             for (int i13 = 0; i13 < size; i13++) {
                                 org.telegram.messenger.ij ijVar2 = new org.telegram.messenger.ij(cVar2.a, messages_messages.messages.get(i13), false, true);
-                                ijVar2.L5(str5, true);
+                                ijVar2.K5(str5, true);
                                 arrayList9.add(ijVar2);
                             }
                         }
@@ -511,7 +511,7 @@ public final class uj extends kj0 {
                     vjVar.I = animatorSet2;
                     kj kjVar = vjVar.r;
                     Property property = View.TRANSLATION_Y;
-                    animatorSet2.playTogether(ObjectAnimator.ofFloat(kjVar, (Property<kj, Float>) property, !z10 ? org.telegram.messenger.g0.L(44.0f) : 0.0f), ObjectAnimator.ofFloat(q0Var, (Property<jg.q0, Float>) property, !z10 ? 0.0f : -org.telegram.messenger.g0.L(44.0f)), ObjectAnimator.ofFloat(vjVar.J, (Property<mz, Float>) property, !z10 ? org.telegram.messenger.g0.L(44.0f) : 0.0f), ObjectAnimator.ofFloat(vjVar.L, (Property<di.f5, Float>) property, z10 ? org.telegram.messenger.g0.L(44.0f) : 0.0f));
+                    animatorSet2.playTogether(ObjectAnimator.ofFloat(kjVar, (Property<kj, Float>) property, !z10 ? org.telegram.messenger.g0.L(44.0f) : 0.0f), ObjectAnimator.ofFloat(q0Var, (Property<jg.q0, Float>) property, !z10 ? 0.0f : -org.telegram.messenger.g0.L(44.0f)), ObjectAnimator.ofFloat(vjVar.J, (Property<mz, Float>) property, !z10 ? org.telegram.messenger.g0.L(44.0f) : 0.0f), ObjectAnimator.ofFloat(vjVar.L, (Property<di.g5, Float>) property, z10 ? org.telegram.messenger.g0.L(44.0f) : 0.0f));
                     vjVar.I.addListener(new z5(this, 12));
                     vjVar.I.setInterpolator(xq.g);
                     vjVar.I.setDuration(180L);
@@ -538,14 +538,14 @@ public final class uj extends kj0 {
         vjVar.I = animatorSet22;
         kj kjVar2 = vjVar.r;
         Property property2 = View.TRANSLATION_Y;
-        animatorSet22.playTogether(ObjectAnimator.ofFloat(kjVar2, (Property<kj, Float>) property2, !z10 ? org.telegram.messenger.g0.L(44.0f) : 0.0f), ObjectAnimator.ofFloat(q0Var, (Property<jg.q0, Float>) property2, !z10 ? 0.0f : -org.telegram.messenger.g0.L(44.0f)), ObjectAnimator.ofFloat(vjVar.J, (Property<mz, Float>) property2, !z10 ? org.telegram.messenger.g0.L(44.0f) : 0.0f), ObjectAnimator.ofFloat(vjVar.L, (Property<di.f5, Float>) property2, z10 ? org.telegram.messenger.g0.L(44.0f) : 0.0f));
+        animatorSet22.playTogether(ObjectAnimator.ofFloat(kjVar2, (Property<kj, Float>) property2, !z10 ? org.telegram.messenger.g0.L(44.0f) : 0.0f), ObjectAnimator.ofFloat(q0Var, (Property<jg.q0, Float>) property2, !z10 ? 0.0f : -org.telegram.messenger.g0.L(44.0f)), ObjectAnimator.ofFloat(vjVar.J, (Property<mz, Float>) property2, !z10 ? org.telegram.messenger.g0.L(44.0f) : 0.0f), ObjectAnimator.ofFloat(vjVar.L, (Property<di.g5, Float>) property2, z10 ? org.telegram.messenger.g0.L(44.0f) : 0.0f));
         vjVar.I.addListener(new z5(this, 12));
         vjVar.I.setInterpolator(xq.g);
         vjVar.I.setDuration(180L);
         vjVar.I.start();
     }
 
-    @Override // org.telegram.ui.Components.kj0, v4.g0
+    @Override // org.telegram.ui.Components.lj0, v4.g0
     public final void f() {
         X(false);
         this.X.X();

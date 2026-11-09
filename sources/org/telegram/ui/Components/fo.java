@@ -5,7 +5,7 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.ui.WallpapersListActivity;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class fo implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -24,7 +24,7 @@ public final /* synthetic */ class fo implements View.OnClickListener {
             case 0:
                 di diVar = voVar.O1;
                 if (diVar.s2 != diVar.a2) {
-                    voVar.Q1.setText(org.telegram.messenger.id.M0(2131745540, null));
+                    voVar.Q1.setText(org.telegram.messenger.id.M0(2131745537, null));
                     di diVar2 = voVar.O1;
                     diVar2.F1(diVar2.a2);
                     break;
@@ -33,11 +33,11 @@ public final /* synthetic */ class fo implements View.OnClickListener {
                     di diVar3 = voVar.O1;
                     if (diVar3.i2 == null) {
                         Context context = diVar3.getContext();
-                        org.telegram.ui.ActionBar.f6 f6Var = diVar3.I0;
-                        qi qiVar = new qi(context, f6Var, diVar3);
+                        org.telegram.ui.ActionBar.g6 g6Var = diVar3.I0;
+                        qi qiVar = new qi(context, g6Var, diVar3);
                         qiVar.r = org.telegram.messenger.g0.L(80.0f);
                         qiVar.x = 3;
-                        bi.q1 q1Var = new bi.q1(qiVar, context, f6Var, 14);
+                        bi.q1 q1Var = new bi.q1(qiVar, context, g6Var, 14);
                         qiVar.n = q1Var;
                         la laVar = new la(qiVar, context);
                         qiVar.w = laVar;
@@ -46,7 +46,7 @@ public final /* synthetic */ class fo implements View.OnClickListener {
                         q1Var.setItemAnimator(null);
                         q1Var.setLayoutAnimation(null);
                         q1Var.setVerticalScrollBarEnabled(false);
-                        org.telegram.ui.ActionBar.r6.m(q1Var, 21, org.telegram.ui.ActionBar.k6.A5, f6Var);
+                        org.telegram.ui.ActionBar.s6.l(q1Var, 21, org.telegram.ui.ActionBar.l6.A5, g6Var);
                         qiVar.addView(q1Var, c8.ha.c(-1.0f, -1));
                         q1Var.setOnScrollListener(new ai.b(qiVar, 29));
                         ei.h hVar = new ei.h(qiVar, qiVar.r, 2);

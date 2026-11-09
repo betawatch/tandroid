@@ -9,7 +9,7 @@ import android.widget.EditText;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class br extends ViewGroup {
     public static final /* synthetic */ int x = 0;
@@ -81,7 +81,7 @@ public final class br extends ViewGroup {
                 zq zqVar = new zq(this, context, new vy(context, new hi.z3(this, ViewConfiguration.get(context).getScaledTouchSlop(), i10)));
                 this.a = zqVar;
                 zqVar.setImageResource(R.drawable.msg_clear_input);
-                org.telegram.ui.ActionBar.r6.t(zqVar, org.telegram.ui.ActionBar.k6.G6, null, PorterDuff.Mode.SRC_ATOP);
+                org.telegram.ui.ActionBar.s6.s(zqVar, org.telegram.ui.ActionBar.l6.G6, null, PorterDuff.Mode.SRC_ATOP);
                 int L = org.telegram.messenger.g0.L(11.0f);
                 zqVar.setPadding(L, L, L, L);
                 zqVar.setOnClickListener(new bi.l1(i12));
@@ -109,9 +109,9 @@ public final class br extends ViewGroup {
         boolean z10 = i10 == 0;
         boolean z11 = i10 == 2;
         boolean z12 = i7 > 8;
-        int i11 = org.telegram.ui.ActionBar.k6.i6;
-        int x02 = org.telegram.ui.ActionBar.k6.x0(null, i11, false);
-        int o4 = i0.a.o(org.telegram.ui.ActionBar.k6.x0(null, i11, false), 30);
+        int i11 = org.telegram.ui.ActionBar.l6.i6;
+        int x02 = org.telegram.ui.ActionBar.l6.x0(null, i11, false);
+        int o4 = i0.a.o(org.telegram.ui.ActionBar.l6.x0(null, i11, false), 30);
         float f10 = 12.0f;
         int L = org.telegram.messenger.g0.L((z10 && z9) ? 24.0f : 12.0f);
         int L2 = org.telegram.messenger.g0.L((z11 && z9) ? 24.0f : 12.0f);
@@ -119,11 +119,11 @@ public final class br extends ViewGroup {
         if (z10 && z12) {
             f10 = 24.0f;
         }
-        org.telegram.ui.Cells.y k02 = org.telegram.ui.ActionBar.k6.k0(L, L2, L3, org.telegram.messenger.g0.L(f10), x02, o4, o4);
-        org.telegram.ui.ActionBar.n6 N = org.telegram.ui.ActionBar.r6.N(i11);
-        org.telegram.ui.ActionBar.n6 h = org.telegram.ui.ActionBar.r6.h(i11, 30);
+        org.telegram.ui.Cells.y k02 = org.telegram.ui.ActionBar.l6.k0(L, L2, L3, org.telegram.messenger.g0.L(f10), x02, o4, o4);
+        org.telegram.ui.ActionBar.o6 M = org.telegram.ui.ActionBar.s6.M(i11);
+        org.telegram.ui.ActionBar.o6 g10 = org.telegram.ui.ActionBar.s6.g(i11, 30);
         view.setBackground(k02);
-        org.telegram.ui.ActionBar.r6.k(view, k02, N, h, null);
+        org.telegram.ui.ActionBar.s6.j(view, k02, M, g10, null);
     }
 
     @Override // android.view.View

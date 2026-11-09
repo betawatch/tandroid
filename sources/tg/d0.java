@@ -5,18 +5,18 @@ import android.graphics.Canvas;
 import android.graphics.Path;
 import android.graphics.RectF;
 import android.view.ViewGroup;
-import org.telegram.ui.up0;
+import org.telegram.ui.wp0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class d0 extends y0 {
     public final Path n3;
-    public final /* synthetic */ up0 o3;
+    public final /* synthetic */ wp0 o3;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d0(up0 up0Var, Context context) {
+    public d0(wp0 wp0Var, Context context) {
         super(context);
-        this.o3 = up0Var;
+        this.o3 = wp0Var;
         this.n3 = new Path();
     }
 

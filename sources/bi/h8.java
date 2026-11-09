@@ -3,7 +3,7 @@ package bi;
 import org.telegram.messenger.c20;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h8 implements q0.a {
     public final /* synthetic */ int a;
@@ -28,10 +28,10 @@ public final /* synthetic */ class h8 implements q0.a {
                 break;
             case 1:
                 f5.f fVar2 = (f5.f) this.b;
-                org.telegram.ui.Wallet.u1 u1Var = (org.telegram.ui.Wallet.u1) this.c;
+                org.telegram.ui.Wallet.t1 t1Var = (org.telegram.ui.Wallet.t1) this.c;
                 int i10 = fVar2.a;
                 boolean z10 = i10 == 0;
-                org.telegram.messenger.g0.h3(new u7(u1Var, z10, z10 ? null : org.telegram.messenger.r1.j(i10), 1));
+                org.telegram.messenger.g0.h3(new u7(t1Var, z10, z10 ? null : org.telegram.messenger.r1.j(i10), 1));
                 break;
             case 2:
                 fi.o5.X((fi.x9) this.b, (sg.l0) this.c, (Integer) obj);
@@ -57,15 +57,15 @@ public final /* synthetic */ class h8 implements q0.a {
                 f5.f fVar3 = (f5.f) this.b;
                 c20 c20Var = (c20) this.c;
                 if (fVar3.a == 0) {
-                    org.telegram.messenger.g0.h3(new fi.k9(c20Var, 2));
+                    org.telegram.messenger.g0.h3(new fi.j9(c20Var, 2));
                     break;
                 }
                 break;
             default:
                 f5.f fVar4 = (f5.f) this.b;
-                wg.v vVar = (wg.v) this.c;
+                wg.u uVar = (wg.u) this.c;
                 if (fVar4.a == 0) {
-                    org.telegram.messenger.g0.h3(new wg.p(vVar, 1));
+                    org.telegram.messenger.g0.h3(new sh.b(uVar, 29));
                     break;
                 }
                 break;

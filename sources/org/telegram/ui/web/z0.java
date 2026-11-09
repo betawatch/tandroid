@@ -15,26 +15,26 @@ import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.c20;
 import org.telegram.messenger.id;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.s6;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.NumberTextView;
-import org.telegram.ui.Components.av0;
-import org.telegram.ui.Components.l41;
-import org.telegram.ui.Components.n41;
+import org.telegram.ui.Components.cv0;
+import org.telegram.ui.Components.m41;
+import org.telegram.ui.Components.o41;
 import org.telegram.ui.Components.ui;
-import org.telegram.ui.Components.x31;
-import org.telegram.ui.nt0;
+import org.telegram.ui.Components.y31;
+import org.telegram.ui.pt0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
-public final class z0 extends n41 {
+public final class z0 extends o41 {
     public final c20 e;
     public boolean n;
     public String r;
     public NumberTextView s;
     public org.telegram.ui.ActionBar.r0 x;
-    public av0 y;
+    public cv0 y;
     public ArrayList f = xa.a(new ii.c(this, 17));
     public final ArrayList h = new ArrayList();
     public final HashSet w = new HashSet();
@@ -43,8 +43,8 @@ public final class z0 extends n41 {
         this.e = c20Var;
     }
 
-    @Override // org.telegram.ui.Components.n41
-    public final void Z(ArrayList arrayList, l41 l41Var) {
+    @Override // org.telegram.ui.Components.o41
+    public final void Z(ArrayList arrayList, m41 m41Var) {
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeZone(TimeZone.getDefault());
         int i7 = 5;
@@ -58,12 +58,12 @@ public final class z0 extends n41 {
                     calendar.setTimeInMillis(y0Var.b);
                     int i12 = calendar.get(5) + (calendar.get(2) * 100) + (calendar.get(1) * 10000);
                     if (i11 != i12) {
-                        arrayList.add(x31.r(id.u(y0Var.b / 1000, false)));
+                        arrayList.add(y31.r(id.u(y0Var.b / 1000, false)));
                         i11 = i12;
                     }
                     String str = this.r;
                     int i13 = f.b;
-                    x31 K = x31.K(f.class);
+                    y31 K = y31.K(f.class);
                     K.z = 3;
                     K.q = false;
                     K.H = y0Var;
@@ -80,12 +80,12 @@ public final class z0 extends n41 {
                 calendar.setTimeInMillis(y0Var2.b);
                 int i15 = calendar.get(i7) + (calendar.get(i10) * 100) + (calendar.get(1) * 10000);
                 if (i14 != i15) {
-                    arrayList.add(x31.r(id.u(y0Var2.b / 1000, false)));
+                    arrayList.add(y31.r(id.u(y0Var2.b / 1000, false)));
                     i14 = i15;
                 }
                 String str2 = this.r;
                 int i16 = f.b;
-                x31 K2 = x31.K(f.class);
+                y31 K2 = y31.K(f.class);
                 K2.z = 3;
                 K2.q = false;
                 K2.H = y0Var2;
@@ -96,73 +96,73 @@ public final class z0 extends n41 {
                 i10 = 2;
             }
             if (this.n) {
-                arrayList.add(x31.p(32));
-                arrayList.add(x31.p(32));
-                arrayList.add(x31.p(32));
+                arrayList.add(y31.p(32));
+                arrayList.add(y31.p(32));
+                arrayList.add(y31.p(32));
             }
         }
         if (arrayList.isEmpty()) {
             return;
         }
-        arrayList.add(x31.C(null));
+        arrayList.add(y31.C(null));
     }
 
-    @Override // org.telegram.ui.Components.n41
+    @Override // org.telegram.ui.Components.o41
     public final CharSequence a0() {
-        return id.M0(2131742923, null);
+        return id.M0(2131742920, null);
     }
 
-    @Override // org.telegram.ui.Components.n41
-    public final void b0(x31 x31Var, View view) {
-        if (!x31Var.H(f.class) || this.actionBar.v()) {
+    @Override // org.telegram.ui.Components.o41
+    public final void b0(y31 y31Var, View view) {
+        if (!y31Var.H(f.class) || this.actionBar.w()) {
             return;
         }
         finishFragment();
-        this.e.a((y0) x31Var.H);
+        this.e.a((y0) y31Var.H);
     }
 
-    @Override // org.telegram.ui.Components.n41
-    public final boolean c0(x31 x31Var, View view) {
+    @Override // org.telegram.ui.Components.o41
+    public final boolean c0(y31 y31Var, View view) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.n41, org.telegram.ui.ActionBar.f2
+    @Override // org.telegram.ui.Components.o41, org.telegram.ui.ActionBar.f2
     public final View createView(Context context) {
         this.fragmentView = super.createView(context);
         org.telegram.ui.ActionBar.k kVar = this.actionBar;
-        int i7 = k6.d6;
-        r6.i(i7, kVar, getResourceProvider());
-        this.actionBar.setActionModeColor(k6.x0(null, i7, false));
+        int i7 = l6.d6;
+        s6.h(i7, kVar, getResourceProvider());
+        this.actionBar.setActionModeColor(l6.x0(null, i7, false));
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         org.telegram.ui.ActionBar.k kVar2 = this.actionBar;
-        int i10 = k6.G6;
-        r6.m(kVar2, 5, i10, getResourceProvider());
-        r6.m(this.actionBar, 3, k6.z8, getResourceProvider());
-        r6.m(this.actionBar, 1, i10, getResourceProvider());
-        r6.b(this.actionBar, i10, getResourceProvider(), true);
+        int i10 = l6.G6;
+        s6.l(kVar2, 5, i10, getResourceProvider());
+        s6.l(this.actionBar, 3, l6.z8, getResourceProvider());
+        s6.l(this.actionBar, 1, i10, getResourceProvider());
+        s6.b(this.actionBar, i10, getResourceProvider(), true);
         this.actionBar.setCastShadows(true);
-        this.actionBar.setActionBarMenuOnItemClick(new nt0(this, 22));
-        org.telegram.ui.ActionBar.y n10 = this.actionBar.n(null);
-        NumberTextView numberTextView = new NumberTextView(n10.getContext());
+        this.actionBar.setActionBarMenuOnItemClick(new pt0(this, 22));
+        org.telegram.ui.ActionBar.y o4 = this.actionBar.o(null);
+        NumberTextView numberTextView = new NumberTextView(o4.getContext());
         this.s = numberTextView;
         numberTextView.setTextSize(18);
         this.s.setTypeface(org.telegram.messenger.g0.o());
-        this.s.setTextColor(getThemedColor(k6.y8));
+        this.s.setTextColor(getThemedColor(l6.y8));
         this.s.setOnTouchListener(new ei.b(2));
-        n10.addView(this.s, ha.m(1.0f, 0, -1, 65, 0, 0));
-        org.telegram.ui.ActionBar.r0 c10 = this.actionBar.q().c(0, R.drawable.outline_header_search, getResourceProvider());
+        o4.addView(this.s, ha.m(1.0f, 0, -1, 65, 0, 0));
+        org.telegram.ui.ActionBar.r0 c10 = this.actionBar.r().c(0, R.drawable.outline_header_search, getResourceProvider());
         c10.N();
         c10.H = new u2(this);
         this.x = c10;
-        c10.setSearchFieldHint(id.M0(2131745839, null));
-        this.x.setContentDescription(id.M0(2131745839, null));
+        c10.setSearchFieldHint(id.M0(2131745836, null));
+        this.x.setContentDescription(id.M0(2131745836, null));
         EditTextBoldCursor searchField = this.x.getSearchField();
-        r6.V(searchField, i10, getResourceProvider());
-        r6.E(searchField, k6.Gj, getResourceProvider());
-        r6.w(searchField, i10, getResourceProvider());
-        av0 av0Var = new av0(context, null, 1, null);
-        this.y = av0Var;
-        av0Var.d.setText(id.M0(TextUtils.isEmpty(this.r) ? 2131742921 : 2131742920, null));
+        s6.U(searchField, i10, getResourceProvider());
+        s6.D(searchField, l6.Gj, getResourceProvider());
+        s6.v(searchField, i10, getResourceProvider());
+        cv0 cv0Var = new cv0(context, null, 1, null);
+        this.y = cv0Var;
+        cv0Var.d.setText(id.M0(TextUtils.isEmpty(this.r) ? 2131742918 : 2131742917, null));
         this.y.e.setVisibility(8);
         this.y.e(false, false);
         this.y.setAnimateLayoutChange(true);
@@ -174,7 +174,7 @@ public final class z0 extends n41 {
 
     @Override // org.telegram.ui.ActionBar.f2
     public final boolean isLightStatusBar() {
-        return org.telegram.messenger.g0.B(getThemedColor(k6.d6)) > 0.721f;
+        return org.telegram.messenger.g0.B(getThemedColor(l6.d6)) > 0.721f;
     }
 
     @Override // org.telegram.ui.ActionBar.f2
@@ -183,7 +183,7 @@ public final class z0 extends n41 {
             super.onThemeColorsChanged();
             org.telegram.ui.ActionBar.k kVar = this.actionBar;
             if (kVar != null) {
-                kVar.setActionModeColor(k6.x0(null, k6.d6, false));
+                kVar.setActionModeColor(l6.x0(null, l6.d6, false));
             }
         } catch (Exception e10) {
             a8.g(e10, true);
@@ -191,13 +191,13 @@ public final class z0 extends n41 {
         try {
             NumberTextView numberTextView = this.s;
             if (numberTextView != null) {
-                numberTextView.setTextColor(getThemedColor(k6.y8));
+                numberTextView.setTextColor(getThemedColor(l6.y8));
             }
             org.telegram.ui.ActionBar.r0 r0Var = this.x;
             if (r0Var == null || r0Var.getSearchField() == null) {
                 return;
             }
-            this.x.getSearchField().setCursorColor(getThemedColor(k6.G6));
+            this.x.getSearchField().setCursorColor(getThemedColor(l6.G6));
         } catch (Exception e11) {
             a8.g(e11, true);
         }

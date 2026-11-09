@@ -23,18 +23,18 @@ import org.telegram.ui.Cells.s5;
 import org.telegram.ui.Cells.x9;
 import org.telegram.ui.Cells.y9;
 import org.telegram.ui.Components.Crop.CropAreaView;
-import org.telegram.ui.Components.ag0;
-import org.telegram.ui.Components.t51;
+import org.telegram.ui.Components.bg0;
+import org.telegram.ui.Components.u51;
 import org.telegram.ui.e8;
-import org.telegram.ui.ew0;
 import org.telegram.ui.g4;
+import org.telegram.ui.gw0;
 import org.telegram.ui.h8;
 import org.telegram.ui.q4;
 import org.telegram.ui.s9;
 import org.telegram.ui.t4;
 import org.telegram.ui.t5;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class a extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -94,15 +94,15 @@ public final class a extends AnimatorListenerAdapter {
                 }
                 break;
             case 5:
-                t51 t51Var = ((MediaController) this.b).i0;
-                if (t51Var != null) {
-                    t51Var.g0();
+                u51 u51Var = ((MediaController) this.b).i0;
+                if (u51Var != null) {
+                    u51Var.g0();
                     break;
                 }
                 break;
             case 6:
                 try {
-                    ((t51) this.b).m0();
+                    ((u51) this.b).m0();
                     break;
                 } catch (Exception e10) {
                     a8.g(e10, true);
@@ -203,7 +203,7 @@ public final class a extends AnimatorListenerAdapter {
                 break;
             case 20:
                 org.telegram.ui.Cells.j jVar = (org.telegram.ui.Cells.j) this.b;
-                ((ew0) jVar).e0.e.c.r = false;
+                ((gw0) jVar).e0.e.c.r = false;
                 FrameLayout frameLayout = jVar.J;
                 if (frameLayout.getBackground() == null) {
                     frameLayout.setBackground(jVar.K);
@@ -213,12 +213,12 @@ public final class a extends AnimatorListenerAdapter {
             case 21:
                 org.telegram.ui.Cells.v vVar = (org.telegram.ui.Cells.v) this.b;
                 Button button = vVar.n;
-                ag0 ag0Var = vVar.f;
-                if (button == ag0Var) {
+                bg0 bg0Var = vVar.f;
+                if (button == bg0Var) {
                     vVar.e.setVisibility(4);
                     break;
                 } else {
-                    ag0Var.setVisibility(4);
+                    bg0Var.setVisibility(4);
                     break;
                 }
             case 22:
@@ -281,7 +281,7 @@ public final class a extends AnimatorListenerAdapter {
                 }
                 break;
             case 20:
-                ((ew0) ((org.telegram.ui.Cells.j) this.b)).e0.e.c.r = true;
+                ((gw0) ((org.telegram.ui.Cells.j) this.b)).e0.e.c.r = true;
                 break;
             default:
                 super.onAnimationStart(animator);

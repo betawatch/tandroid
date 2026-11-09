@@ -8,9 +8,9 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-import org.telegram.ui.fx;
+import org.telegram.ui.hx;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class v0 extends u0 implements g0 {
     public final Executor c;
@@ -48,10 +48,10 @@ public final class v0 extends u0 implements g0 {
         ScheduledFuture<?> scheduledFuture = null;
         ScheduledExecutorService scheduledExecutorService = executor instanceof ScheduledExecutorService ? (ScheduledExecutorService) executor : null;
         if (scheduledExecutorService != null) {
-            fx fxVar = new fx(this, mVar, false, 12);
+            hx hxVar = new hx(this, mVar, false, 12);
             id.h hVar = mVar.e;
             try {
-                scheduledFuture = scheduledExecutorService.schedule(fxVar, j3, TimeUnit.MILLISECONDS);
+                scheduledFuture = scheduledExecutorService.schedule(hxVar, j3, TimeUnit.MILLISECONDS);
             } catch (RejectedExecutionException e10) {
                 CancellationException cancellationException = new CancellationException("The task was rejected");
                 cancellationException.initCause(e10);

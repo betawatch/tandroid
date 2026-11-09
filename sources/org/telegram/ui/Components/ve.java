@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.content.Context;
 import android.graphics.Paint;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class ve extends hi.u {
     public boolean s;
@@ -25,7 +25,7 @@ public final class ve extends hi.u {
         q1Var.setClipToOutline(true);
         q1Var.j(new ai.b(this, 14));
         addView(q1Var);
-        paint.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.wj, false));
+        paint.setColor(org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.wj, false));
         fh.g gVar = this.r;
         if (gVar != null) {
             gVar.updateColors();

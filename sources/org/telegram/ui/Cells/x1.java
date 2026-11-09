@@ -16,11 +16,11 @@ import org.telegram.messenger.gj;
 import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.kv;
-import org.telegram.ui.Components.ck0;
+import org.telegram.ui.Components.dk0;
 import org.telegram.ui.Components.iy;
-import org.telegram.ui.tg0;
+import org.telegram.ui.vg0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class x1 {
     public boolean A;
@@ -375,8 +375,8 @@ public final class x1 {
         }
         this.L0 = false;
         if (kvVar2 != this.N0) {
-            tg0 tg0Var = q1Var.zc;
-            boolean z17 = tg0Var != null && tg0Var.h;
+            vg0 vg0Var = q1Var.zc;
+            boolean z17 = vg0Var != null && vg0Var.h;
             kv kvVar3 = this.M0;
             if (kvVar3 != null) {
                 kvVar3.f(q1Var);
@@ -397,7 +397,7 @@ public final class x1 {
                         if (arrayList6.size() == 1 && arrayList7.size() == 1) {
                             fu fuVar = (fu) arrayList6.get(0);
                             fu fuVar2 = (fu) arrayList7.get(0);
-                            boolean z18 = (fuVar instanceof ck0) && (fuVar2 instanceof ck0) && TextUtils.equals(((ck0) fuVar).W.url, ((ck0) fuVar2).W.url);
+                            boolean z18 = (fuVar instanceof dk0) && (fuVar2 instanceof dk0) && TextUtils.equals(((dk0) fuVar).W.url, ((dk0) fuVar2).W.url);
                         }
                     }
                 }
@@ -434,12 +434,12 @@ public final class x1 {
         }
         boolean z19 = q1Var.ib;
         if (z19 && !this.a1 && q1Var.y9 != null) {
-            String M0 = id.M0(2131751211, "EditedMessage");
+            String M0 = id.M0(2131751210, "EditedMessage");
             CharSequence text2 = q1Var.y9.getText();
             int indexOf = text2.toString().indexOf(M0);
             if (indexOf >= 0) {
                 if (indexOf == 0) {
-                    TextPaint textPaint = org.telegram.ui.ActionBar.k6.T2;
+                    TextPaint textPaint = org.telegram.ui.ActionBar.l6.T2;
                     int L = org.telegram.messenger.g0.L(100.0f) + q1Var.A9;
                     Layout.Alignment alignment = Layout.Alignment.ALIGN_NORMAL;
                     this.V0 = new StaticLayout(M0, textPaint, L, alignment, 1.0f, 0.0f, false);
@@ -447,7 +447,7 @@ public final class x1 {
                     spannableStringBuilder.append((CharSequence) M0);
                     spannableStringBuilder.append(text2.subSequence(M0.length(), text2.length()));
                     spannableStringBuilder.setSpan(new iy(z13), 0, M0.length(), 0);
-                    this.W0 = new StaticLayout(spannableStringBuilder, org.telegram.ui.ActionBar.k6.T2, org.telegram.messenger.g0.L(100.0f) + q1Var.A9, alignment, 1.0f, 0.0f, false);
+                    this.W0 = new StaticLayout(spannableStringBuilder, org.telegram.ui.ActionBar.l6.T2, org.telegram.messenger.g0.L(100.0f) + q1Var.A9, alignment, 1.0f, 0.0f, false);
                     this.Z0 = q1Var.z9 - this.Y0;
                 } else {
                     this.Z0 = 0;
@@ -761,7 +761,7 @@ public final class x1 {
                             this.h3 = z12;
                             z9 = true;
                         }
-                        if (ijVar != null || this.x2 == ijVar.o5()) {
+                        if (ijVar != null || this.x2 == ijVar.n5()) {
                             i12 = this.I2;
                             if (i12 != q1Var.Ta) {
                                 this.G2 = true;
@@ -771,7 +771,7 @@ public final class x1 {
                             if (p0Var.a()) {
                                 z9 = true;
                             }
-                            if (q1Var.P5.i4()) {
+                            if (q1Var.P5.h4()) {
                                 float L2 = q1Var.d7 - org.telegram.messenger.g0.L(28 - (q1Var.J ? 2 : 0));
                                 if (!p0Var.p) {
                                     L2 -= p0Var.n;
@@ -812,7 +812,7 @@ public final class x1 {
                         q1Var.U3();
                         if (p0Var.a()) {
                         }
-                        if (q1Var.P5.i4()) {
+                        if (q1Var.P5.h4()) {
                         }
                         if (q1Var.P7 != null) {
                         }
@@ -837,7 +837,7 @@ public final class x1 {
                 q1Var.U3();
                 if (p0Var.a()) {
                 }
-                if (q1Var.P5.i4()) {
+                if (q1Var.P5.h4()) {
                 }
                 if (q1Var.P7 != null) {
                 }
@@ -901,7 +901,7 @@ public final class x1 {
         q1Var.U3();
         if (p0Var.a()) {
         }
-        if (q1Var.P5.i4()) {
+        if (q1Var.P5.h4()) {
         }
         if (q1Var.P7 != null) {
         }
@@ -917,26 +917,26 @@ public final class x1 {
         boolean z10;
         q1 q1Var = this.a;
         boolean z11 = true;
-        if (!q1Var.P5.Q3()) {
-            if (!q1Var.P5.p4() && !q1Var.P5.Z2()) {
+        if (!q1Var.P5.P3()) {
+            if (!q1Var.P5.o4() && !q1Var.P5.Y2()) {
                 z11 = false;
             }
-            return (z11 ? 4 : 0) | (q1Var.P5.o4() ? 8 : 0);
+            return (z11 ? 4 : 0) | (q1Var.P5.n4() ? 8 : 0);
         }
-        if (q1Var.P5.p4() || q1Var.P5.Z2()) {
+        if (q1Var.P5.o4() || q1Var.P5.Y2()) {
             z9 = true;
             i7 = 0;
             z11 = false;
             z10 = false;
-        } else if (q1Var.P5.o4()) {
+        } else if (q1Var.P5.n4()) {
             z10 = true;
             i7 = 0;
             z11 = false;
             z9 = false;
         } else {
-            if (q1Var.P5.r4()) {
+            if (q1Var.P5.q4()) {
                 ij ijVar = q1Var.P5;
-                i7 = (ijVar.p1 || ijVar.G4()) ? 0 : 1;
+                i7 = (ijVar.p1 || ijVar.F4()) ? 0 : 1;
                 z9 = false;
             } else {
                 i7 = 0;
@@ -946,7 +946,7 @@ public final class x1 {
             z10 = z9;
         }
         ij ijVar2 = q1Var.P5;
-        if (ijVar2.u1 || ij.c4(ijVar2.k)) {
+        if (ijVar2.u1 || ij.b4(ijVar2.k)) {
             i7 = 0;
             z11 = false;
             z9 = false;
@@ -1034,7 +1034,7 @@ public final class x1 {
         staticLayoutArr2[0] = staticLayout;
         staticLayoutArr2[1] = staticLayoutArr[1];
         ij ijVar3 = q1Var.P5;
-        this.x2 = ijVar3 != null && ijVar3.o5();
+        this.x2 = ijVar3 != null && ijVar3.n5();
         this.B2 = q1Var.s9;
         int i7 = q1Var.Ta;
         this.w2 = i7;
@@ -1078,7 +1078,7 @@ public final class x1 {
         StaticLayout[] staticLayoutArr2 = this.y2;
         staticLayoutArr2[0] = staticLayout;
         staticLayoutArr2[1] = staticLayoutArr[1];
-        this.x2 = q1Var.P5.o5();
+        this.x2 = q1Var.P5.n5();
         this.B2 = q1Var.s9;
         int i7 = q1Var.Ta;
         this.w2 = i7;

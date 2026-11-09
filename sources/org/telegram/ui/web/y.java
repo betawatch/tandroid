@@ -1,6 +1,6 @@
 package org.telegram.ui.web;
 
-import di.o7;
+import di.p7;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -9,39 +9,39 @@ import org.telegram.messenger.xr;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.pg0;
-import org.telegram.ui.qw;
-import org.telegram.ui.w91;
-import org.telegram.ui.ww;
+import org.telegram.ui.rg0;
+import org.telegram.ui.sw;
+import org.telegram.ui.y91;
+import org.telegram.ui.yw;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class y implements pg0, qw {
+public final /* synthetic */ class y implements rg0, sw {
     public final /* synthetic */ x0 a;
     public final /* synthetic */ boolean[] b;
     public final /* synthetic */ String c;
     public final /* synthetic */ TL_keyboard.TL_buttonTypeRequestPeer d;
-    public final /* synthetic */ o7 e;
+    public final /* synthetic */ p7 e;
 
-    public /* synthetic */ y(x0 x0Var, boolean[] zArr, String str, TL_keyboard.TL_buttonTypeRequestPeer tL_buttonTypeRequestPeer, o7 o7Var) {
+    public /* synthetic */ y(x0 x0Var, boolean[] zArr, String str, TL_keyboard.TL_buttonTypeRequestPeer tL_buttonTypeRequestPeer, p7 p7Var) {
         this.a = x0Var;
         this.b = zArr;
         this.c = str;
         this.d = tL_buttonTypeRequestPeer;
-        this.e = o7Var;
+        this.e = p7Var;
     }
 
-    @Override // org.telegram.ui.qw
+    @Override // org.telegram.ui.sw
     public /* synthetic */ boolean G() {
         return false;
     }
 
-    @Override // org.telegram.ui.qw
-    public /* synthetic */ boolean N(ww wwVar) {
+    @Override // org.telegram.ui.sw
+    public /* synthetic */ boolean N(yw ywVar) {
         return false;
     }
 
-    @Override // org.telegram.ui.pg0
+    @Override // org.telegram.ui.rg0
     public void a(ArrayList arrayList) {
         if (arrayList.isEmpty()) {
             return;
@@ -64,8 +64,8 @@ public final /* synthetic */ class y implements pg0, qw {
         ConnectionsManager.getInstance(x0Var.M).sendRequestTyped(tL_messages_sendBotRequestedPeer, new d3.b(1), new r(x0Var, this.e, str, 2));
     }
 
-    @Override // org.telegram.ui.qw
-    public boolean y(ww wwVar, ArrayList arrayList, CharSequence charSequence, boolean z9, boolean z10, int i7, int i10, w91 w91Var) {
+    @Override // org.telegram.ui.sw
+    public boolean y(yw ywVar, ArrayList arrayList, CharSequence charSequence, boolean z9, boolean z10, int i7, int i10, y91 y91Var) {
         if (!arrayList.isEmpty()) {
             int i11 = 0;
             this.b[0] = true;
@@ -89,7 +89,7 @@ public final /* synthetic */ class y implements pg0, qw {
             }
             ConnectionsManager.getInstance(x0Var.M).sendRequestTyped(tL_messages_sendBotRequestedPeer, new d3.b(1), new r(x0Var, this.e, str, 1));
         }
-        wwVar.finishFragment();
+        ywVar.finishFragment();
         return true;
     }
 }

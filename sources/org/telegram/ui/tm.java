@@ -1,47 +1,51 @@
 package org.telegram.ui;
 
-import android.util.SparseIntArray;
+import android.animation.ValueAnimator;
+import android.view.View;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class tm implements Runnable {
+public final /* synthetic */ class tm implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ym b;
+    public final /* synthetic */ um b;
 
-    public /* synthetic */ tm(ym ymVar, int i7) {
+    public /* synthetic */ tm(um umVar, int i7) {
         this.a = i7;
-        this.b = ymVar;
+        this.b = umVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        org.telegram.ui.ActionBar.q4 q4Var;
-        org.telegram.ui.ActionBar.q4 q4Var2;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                SparseIntArray sparseIntArray = new SparseIntArray();
-                ym ymVar = this.b;
-                ymVar.e = sparseIntArray;
-                an anVar = ymVar.G;
-                org.telegram.ui.ActionBar.t4 t4Var = (org.telegram.ui.ActionBar.t4) anVar.getThemedDrawable("drawableMsgOut");
-                ymVar.t = t4Var;
-                q4Var = ((org.telegram.ui.ActionBar.f2) anVar).parentLayout;
-                t4Var.J = q4Var.getMessageDrawableOutStart();
-                org.telegram.ui.ActionBar.t4 t4Var2 = (org.telegram.ui.ActionBar.t4) anVar.getThemedDrawable("drawableMsgOutMedia");
-                ymVar.u = t4Var2;
-                q4Var2 = ((org.telegram.ui.ActionBar.f2) anVar).parentLayout;
-                t4Var2.J = q4Var2.getMessageDrawableOutMediaStart();
-                ymVar.t.K = 0.0f;
-                ymVar.u.K = 0.0f;
-                anVar.Yc();
-                ymVar.u(0.0f);
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                um umVar = this.b;
+                umVar.a = floatValue;
+                View view = umVar.b.fragmentView;
+                if (view != null) {
+                    view.invalidate();
+                    break;
+                }
+                break;
+            case 1:
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                um umVar2 = this.b;
+                umVar2.a = floatValue2;
+                View view2 = umVar2.b.fragmentView;
+                if (view2 != null) {
+                    view2.invalidate();
+                    break;
+                }
                 break;
             default:
-                ym ymVar2 = this.b;
-                ymVar2.t.J = null;
-                ymVar2.u.J = null;
-                ymVar2.e = null;
-                ymVar2.u(1.0f);
+                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                um umVar3 = this.b;
+                umVar3.a = floatValue3;
+                View view3 = umVar3.b.fragmentView;
+                if (view3 != null) {
+                    view3.invalidate();
+                    break;
+                }
                 break;
         }
     }

@@ -5,7 +5,7 @@ import android.content.Context;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class aw implements Runnable {
     public final /* synthetic */ int a;
@@ -52,7 +52,7 @@ public final /* synthetic */ class aw implements Runnable {
                     org.telegram.ui.ActionBar.u1 u1Var2 = alertDialog$Builder.a;
                     u1Var2.R = M0;
                     u1Var2.T = id.M0(2131751750, null);
-                    alertDialog$Builder.k(id.M0(2131747832, null), null);
+                    alertDialog$Builder.k(id.M0(2131747831, null), null);
                     alertDialog$Builder.p().setCanceledOnTouchOutside(true);
                     break;
                 }

@@ -11,7 +11,7 @@ import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class y9 extends q1 {
     public final GestureDetector ld;
@@ -21,8 +21,8 @@ public final class y9 extends q1 {
     public final /* synthetic */ z9 pd;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y9(z9 z9Var, Context context, int i7, org.telegram.ui.ActionBar.f6 f6Var, Context context2, int i10) {
-        super(context, i7, false, null, f6Var);
+    public y9(z9 z9Var, Context context, int i7, org.telegram.ui.ActionBar.g6 g6Var, Context context2, int i10) {
+        super(context, i7, false, null, g6Var);
         this.pd = z9Var;
         this.od = i10;
         this.ld = new GestureDetector(context2, new x9(0, this));
@@ -49,17 +49,17 @@ public final class y9 extends q1 {
                 fp d = gpVar != null ? gpVar.d(i7) : null;
                 if (d != null) {
                     int f10 = d.f();
-                    w02 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.p8[org.telegram.ui.Components.w8.f(f10)], this.Pb);
-                    w03 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.q8[org.telegram.ui.Components.w8.f(f10)], this.Pb);
+                    w02 = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.p8[org.telegram.ui.Components.w8.f(f10)], this.Pb);
+                    w03 = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.q8[org.telegram.ui.Components.w8.f(f10)], this.Pb);
                 } else {
                     long j3 = i7;
-                    w02 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.p8[org.telegram.ui.Components.w8.e(j3)], this.Pb);
-                    w03 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.q8[org.telegram.ui.Components.w8.e(j3)], this.Pb);
+                    w02 = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.p8[org.telegram.ui.Components.w8.e(j3)], this.Pb);
+                    w03 = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.q8[org.telegram.ui.Components.w8.e(j3)], this.Pb);
                 }
             } else {
                 long j10 = i7;
-                w02 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.p8[org.telegram.ui.Components.w8.e(j10)], this.Pb);
-                w03 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.q8[org.telegram.ui.Components.w8.e(j10)], this.Pb);
+                w02 = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.p8[org.telegram.ui.Components.w8.e(j10)], this.Pb);
+                w03 = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.q8[org.telegram.ui.Components.w8.e(j10)], this.Pb);
             }
             w8Var.i(z4Var2.a(w02, false), z4Var.a(w03, false));
         }

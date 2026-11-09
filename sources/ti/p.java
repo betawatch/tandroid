@@ -3,9 +3,9 @@ package ti;
 import android.app.Activity;
 import android.graphics.SurfaceTexture;
 import android.view.TextureView;
-import org.telegram.ui.web.w;
+import org.telegram.ui.web.s;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final class p extends TextureView implements TextureView.SurfaceTextureListener {
     public SurfaceTexture a;
@@ -43,7 +43,7 @@ public final class p extends TextureView implements TextureView.SurfaceTextureLi
     @Override // android.view.TextureView.SurfaceTextureListener
     public final boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
         if (surfaceTexture == this.a) {
-            post(new w(25, this, surfaceTexture));
+            post(new s(26, this, surfaceTexture));
             return false;
         }
         TextureView.SurfaceTextureListener surfaceTextureListener = this.b;

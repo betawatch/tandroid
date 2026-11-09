@@ -1,35 +1,36 @@
 package org.telegram.ui;
 
-import android.view.View;
-import java.util.Iterator;
-
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class o30 implements org.telegram.ui.Components.o5 {
+public final /* synthetic */ class o30 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ p30 b;
 
-    public /* synthetic */ o30(Object obj, int i7) {
+    public /* synthetic */ o30(p30 p30Var, int i7) {
         this.a = i7;
-        this.b = obj;
+        this.b = p30Var;
     }
 
-    @Override // org.telegram.ui.Components.o5
-    public final void invalidate() {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                Iterator it = ((p30) this.b).i.iterator();
-                while (it.hasNext()) {
-                    ((View) it.next()).invalidate();
+                p30 p30Var = this.b;
+                n00 n00Var = p30Var.b;
+                if (n00Var != null) {
+                    n00Var.setVisibility(0);
+                }
+                org.telegram.messenger.g0.i3(new o30(p30Var, 2), 16L);
+                break;
+            case 1:
+                n00 n00Var2 = this.b.b;
+                if (n00Var2 != null) {
+                    n00Var2.setVisibility(4);
+                    break;
                 }
                 break;
             default:
-                a11 a11Var = (a11) this.b;
-                a11Var.getClass();
-                if (!ch.e0.b && a11Var.getParent() != null) {
-                    ((View) a11Var.getParent()).invalidate();
-                    break;
-                }
+                super/*android.app.Dialog*/.dismiss();
                 break;
         }
     }

@@ -17,9 +17,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.zc0;
+import org.telegram.ui.bd0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f9 implements v10 {
     public final /* synthetic */ int a = 1;
@@ -31,14 +31,14 @@ public final /* synthetic */ class f9 implements v10 {
     public final /* synthetic */ Object g;
     public final /* synthetic */ Object h;
 
-    public /* synthetic */ f9(int i7, org.telegram.ui.Wallet.m0 m0Var, String str, byte[] bArr, byte[] bArr2, TL_wallet.sendTransfer sendtransfer, org.telegram.ui.Wallet.t2 t2Var) {
+    public /* synthetic */ f9(int i7, org.telegram.ui.Wallet.l0 l0Var, String str, byte[] bArr, byte[] bArr2, TL_wallet.sendTransfer sendtransfer, org.telegram.ui.Wallet.s2 s2Var) {
         this.b = i7;
-        this.c = m0Var;
+        this.c = l0Var;
         this.d = str;
         this.e = bArr;
         this.f = bArr2;
         this.g = sendtransfer;
-        this.h = t2Var;
+        this.h = s2Var;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:156:0x0323  */
@@ -62,7 +62,7 @@ public final /* synthetic */ class f9 implements v10 {
                 Runnable[] runnableArr = (Runnable[]) this.e;
                 k0.b bVar = (k0.b) this.f;
                 Context context = (Context) this.g;
-                zc0 zc0Var = (zc0) this.h;
+                bd0 bd0Var = (bd0) this.h;
                 int i10 = this.b;
                 TLRPC.TL_auth_firebasePnvIntent tL_auth_firebasePnvIntent = (TLRPC.TL_auth_firebasePnvIntent) obj;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
@@ -97,7 +97,7 @@ public final /* synthetic */ class f9 implements v10 {
                                 cancellationSignal.cancel();
                                 break;
                             } else {
-                                bVar.c(context, nVar, cancellationSignal, new d3.b(1), new h9(cancellationToken, taskCompletionSource, zc0Var, i10, runnableArr));
+                                bVar.c(context, nVar, cancellationSignal, new d3.b(1), new h9(cancellationToken, taskCompletionSource, bd0Var, i10, runnableArr));
                                 break;
                             }
                         }
@@ -106,12 +106,12 @@ public final /* synthetic */ class f9 implements v10 {
                 break;
             default:
                 int i11 = this.b;
-                org.telegram.ui.Wallet.m0 m0Var = (org.telegram.ui.Wallet.m0) this.c;
+                org.telegram.ui.Wallet.l0 l0Var = (org.telegram.ui.Wallet.l0) this.c;
                 String str4 = (String) this.d;
                 byte[] bArr = (byte[]) this.e;
                 byte[] bArr2 = (byte[]) this.f;
                 TL_wallet.sendTransfer sendtransfer = (TL_wallet.sendTransfer) this.g;
-                org.telegram.ui.Wallet.t2 t2Var = (org.telegram.ui.Wallet.t2) this.h;
+                org.telegram.ui.Wallet.s2 s2Var = (org.telegram.ui.Wallet.s2) this.h;
                 TLRPC.Updates updates = (TLRPC.Updates) obj;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
                 if (updates != null) {
@@ -133,14 +133,14 @@ public final /* synthetic */ class f9 implements v10 {
                     tL_updateSentWalletTransaction = null;
                 }
                 if (tL_error2 != null && "WALLET_KEY_MISMATCH".equals(tL_error2.text)) {
-                    m0Var.E();
+                    l0Var.E();
                 }
                 byte b10 = 1;
                 if (tL_updateSentWalletTransaction != null && !TextUtils.isEmpty(tL_updateSentWalletTransaction.msg_hash)) {
                     TLRPC.TL_widgetQueryTypeSentTransaction tL_widgetQueryTypeSentTransaction = new TLRPC.TL_widgetQueryTypeSentTransaction();
                     TLRPC.TL_userWallet tL_userWallet = new TLRPC.TL_userWallet();
                     tL_userWallet.address = str4;
-                    tL_userWallet.balance = m0Var.v();
+                    tL_userWallet.balance = l0Var.v();
                     if (bArr2 != null) {
                         tL_userWallet.public_key = bArr;
                         tL_userWallet.state_init = bArr2;
@@ -283,25 +283,25 @@ public final /* synthetic */ class f9 implements v10 {
                         str3 = null;
                     }
                     tL_widgetQueryTypeSentTransaction.msg_hash = str3 != null ? Base64.encodeToString(Utilities.v(str3), i7) : str2;
-                    t2Var.d = false;
-                    if (!t2Var.f) {
-                        t2Var.f = true;
-                        t2Var.b.d(tL_widgetQueryTypeSentTransaction);
+                    s2Var.d = false;
+                    if (!s2Var.f) {
+                        s2Var.f = true;
+                        s2Var.b.d(tL_widgetQueryTypeSentTransaction);
                     }
-                    if (!t2Var.e) {
-                        t2Var.a.dismiss();
+                    if (!s2Var.e) {
+                        s2Var.a.dismiss();
                         break;
                     }
                 } else {
-                    org.telegram.ui.Components.hc.b0(org.telegram.ui.Wallet.e2.z(tL_error2, "widget sendTransfer"));
+                    org.telegram.ui.Components.hc.b0(org.telegram.ui.Wallet.d2.z(tL_error2, "widget sendTransfer"));
                     di.e eVar = (tL_error2 == null || tL_error2.code != 400) ? new di.e(27) : new di.e(26);
-                    t2Var.d = false;
-                    if (!t2Var.f) {
-                        t2Var.f = true;
-                        eVar.a(t2Var.b);
+                    s2Var.d = false;
+                    if (!s2Var.f) {
+                        s2Var.f = true;
+                        eVar.a(s2Var.b);
                     }
-                    if (!t2Var.e) {
-                        t2Var.a.dismiss();
+                    if (!s2Var.e) {
+                        s2Var.a.dismiss();
                         break;
                     }
                 }
@@ -309,13 +309,13 @@ public final /* synthetic */ class f9 implements v10 {
         }
     }
 
-    public /* synthetic */ f9(CancellationToken cancellationToken, TaskCompletionSource taskCompletionSource, Runnable[] runnableArr, k0.b bVar, Context context, zc0 zc0Var, int i7) {
+    public /* synthetic */ f9(CancellationToken cancellationToken, TaskCompletionSource taskCompletionSource, Runnable[] runnableArr, k0.b bVar, Context context, bd0 bd0Var, int i7) {
         this.c = cancellationToken;
         this.d = taskCompletionSource;
         this.e = runnableArr;
         this.f = bVar;
         this.g = context;
-        this.h = zc0Var;
+        this.h = bd0Var;
         this.b = i7;
     }
 }

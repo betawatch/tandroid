@@ -3,9 +3,9 @@ package com.google.android.gms.internal.vision;
 import android.os.Parcel;
 import android.os.Parcelable;
 import c8.xb;
-import org.telegram.ui.hy0;
+import org.telegram.ui.ky0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class f3 extends r6.a {
     public static final Parcelable.Creator<f3> CREATOR = new a1(1);
@@ -15,15 +15,15 @@ public final class f3 extends r6.a {
     public long d;
     public int e;
 
-    public static f3 b(hy0 hy0Var) {
+    public static f3 b(ky0 ky0Var) {
         f3 f3Var = new f3();
-        b7.d dVar = (b7.d) hy0Var.b;
+        b7.d dVar = (b7.d) ky0Var.b;
         f3Var.a = dVar.a;
         f3Var.b = dVar.b;
         f3Var.e = dVar.c;
         dVar.getClass();
         f3Var.c = 0;
-        ((b7.d) hy0Var.b).getClass();
+        ((b7.d) ky0Var.b).getClass();
         f3Var.d = 0L;
         return f3Var;
     }

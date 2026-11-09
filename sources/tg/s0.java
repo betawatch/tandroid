@@ -10,13 +10,13 @@ import org.telegram.messenger.aj;
 import org.telegram.messenger.dj;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.p10;
-import org.telegram.ui.Components.oj0;
-import org.telegram.ui.Components.xi0;
+import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.y9;
+import org.telegram.ui.Components.yi0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class s0 extends oj0 {
+public final class s0 extends pj0 {
     public final /* synthetic */ Context c;
     public final /* synthetic */ y9 d;
     public final /* synthetic */ x5 e;
@@ -31,7 +31,7 @@ public final class s0 extends oj0 {
         this.f = z9;
     }
 
-    @Override // org.telegram.ui.Components.oj0
+    @Override // org.telegram.ui.Components.pj0
     public final boolean D(v4.d1 d1Var) {
         return true;
     }
@@ -77,10 +77,10 @@ public final class s0 extends oj0 {
         t0 t0Var = this.h.D0;
         Context context = this.c;
         if (i7 == 1) {
-            return new xi0(new q0(this, context, t0Var));
+            return new yi0(new q0(this, context, t0Var));
         }
         r0 r0Var = new r0(this, context, p10.s0, t0Var);
         r0Var.e6 = true;
-        return new xi0(r0Var);
+        return new yi0(r0Var);
     }
 }

@@ -16,13 +16,13 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.qs;
 import org.telegram.ui.Components.bx;
-import org.telegram.ui.Components.hy0;
-import org.telegram.ui.Components.i40;
-import org.telegram.ui.Components.n40;
-import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.iy0;
+import org.telegram.ui.Components.j40;
+import org.telegram.ui.Components.o40;
 import org.telegram.ui.Components.rt;
+import org.telegram.ui.Components.s31;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final class t0 {
     public boolean A;
@@ -150,7 +150,7 @@ public final class t0 {
         e();
         t();
         x(10);
-        if (!this.E && !this.l.X()) {
+        if (!this.E && !this.l.W()) {
             i();
             return true;
         }
@@ -189,7 +189,7 @@ public final class t0 {
             this.T = p0Var;
             this.U = new x(d, this.n.a, z9, this.m, new org.telegram.ui.web.a0(22, this, p0Var));
             this.m.b("output generation started: id=" + j3 + ", includeAudio=" + z9 + ", file=" + d.getName());
-            this.k.execute(new r31(this, p0Var, d, 26));
+            this.k.execute(new s31(this, p0Var, d, 26));
         }
     }
 
@@ -235,27 +235,27 @@ public final class t0 {
             }
             x(9);
             m("error");
-            n40 n40Var = (n40) this.d.b;
-            n40Var.C();
+            o40 o40Var = (o40) this.d.b;
+            o40Var.C();
             a8.g(exc, true);
-            hy0 hy0Var = n40Var.S;
-            if (hy0Var != null) {
-                hy0Var.d(true);
+            iy0 iy0Var = o40Var.S;
+            if (iy0Var != null) {
+                iy0Var.d(true);
             }
-            n40Var.S = null;
-            if (n40Var.W) {
-                n40Var.W = false;
-                n40Var.O = null;
+            o40Var.S = null;
+            if (o40Var.W) {
+                o40Var.W = false;
+                o40Var.O = null;
             } else {
                 MediaController.B().Y(false);
-                if (n40Var.g0) {
-                    n40Var.z(6);
+                if (o40Var.g0) {
+                    o40Var.z(6);
                 } else {
-                    qs.f(n40Var.f).k(qs.m2, Integer.valueOf(n40Var.h));
+                    qs.f(o40Var.f).k(qs.m2, Integer.valueOf(o40Var.h));
                 }
-                n40Var.B(false, false);
+                o40Var.B(false, false);
             }
-            if (!this.E && !this.l.X()) {
+            if (!this.E && !this.l.W()) {
                 i();
             } else {
                 this.E = true;
@@ -273,7 +273,7 @@ public final class t0 {
         i0 i0Var = new i0(this, 1);
         ExecutorService executorService = this.j;
         executorService.execute(i0Var);
-        this.l.L();
+        this.l.K();
         this.i.removeCallbacksAndMessages(null);
         executorService.shutdown();
         this.k.shutdown();
@@ -340,12 +340,12 @@ public final class t0 {
         m0 m0Var = this.r;
         m0 m0Var2 = this.s;
         l0 l0Var = new l0(m0Var, m0Var2, this.b0, this.v);
-        n40 n40Var = (n40) this.d.b;
-        n40Var.R = l0Var;
+        o40 o40Var = (o40) this.d.b;
+        o40Var.R = l0Var;
         if (m0Var2 != null) {
             xi.e.j.b(m0Var2);
         }
-        n40Var.D();
+        o40Var.D();
     }
 
     public final void o() {
@@ -357,49 +357,49 @@ public final class t0 {
         boolean z11 = this.w;
         long j11 = this.q;
         s0 s0Var = new s0(i7, j3, j10, j11, z9, z10, z11);
-        n40 n40Var = (n40) this.d.b;
-        s0 s0Var2 = n40Var.Q;
-        int i10 = n40Var.f;
+        o40 o40Var = (o40) this.d.b;
+        s0 s0Var2 = o40Var.Q;
+        int i10 = o40Var.f;
         int i11 = s0Var2 == null ? 0 : s0Var2.a;
-        n40Var.Q = s0Var;
+        o40Var.Q = s0Var;
         if (i11 == 3 && i7 != 3) {
-            n40Var.A(true);
+            o40Var.A(true);
         }
-        n40Var.v0 = Math.max(n40Var.v0, j3);
+        o40Var.v0 = Math.max(o40Var.v0, j3);
         if (i7 == 3) {
-            if (!n40Var.D0) {
-                n40Var.D0 = true;
+            if (!o40Var.D0) {
+                o40Var.D0 = true;
                 qs.e().k(qs.j1, 512);
             }
-            n40.o(n40Var);
-            n40Var.setRecordingUiFrameClockActive(true);
-            n40Var.F();
-            if (!n40Var.g0) {
-                n40Var.g0 = true;
-                qs.f(i10).k(qs.l2, Integer.valueOf(n40Var.h), Boolean.FALSE);
-            } else if (n40Var.h0) {
-                n40Var.h0 = false;
+            o40.o(o40Var);
+            o40Var.setRecordingUiFrameClockActive(true);
+            o40Var.F();
+            if (!o40Var.g0) {
+                o40Var.g0 = true;
+                qs.f(i10).k(qs.l2, Integer.valueOf(o40Var.h), Boolean.FALSE);
+            } else if (o40Var.h0) {
+                o40Var.h0 = false;
                 qs.f(i10).k(qs.p2, new Object[0]);
             }
         } else {
-            n40Var.setRecordingUiFrameClockActive(false);
-            n40Var.w.setProgress(j3 / j11);
+            o40Var.setRecordingUiFrameClockActive(false);
+            o40Var.w.setProgress(j3 / j11);
         }
         if (i7 == 8 || i7 == 9 || i7 == 10) {
-            n40Var.s();
-            n40Var.C();
+            o40Var.s();
+            o40Var.C();
         }
         if (i11 == 3 && i7 == 4) {
-            n40Var.z(2);
+            o40Var.z(2);
         }
-        n40Var.D();
-        if (n40Var.U != null && !n40Var.V) {
-            org.telegram.messenger.g0.h3(new i40(n40Var, 1));
+        o40Var.D();
+        if (o40Var.U != null && !o40Var.V) {
+            org.telegram.messenger.g0.h3(new j40(o40Var, 1));
         }
-        if (!z9 || n40Var.getWindowVisibility() == 0) {
+        if (!z9 || o40Var.getWindowVisibility() == 0) {
             return;
         }
-        org.telegram.messenger.g0.h3(new i40(n40Var, 2));
+        org.telegram.messenger.g0.h3(new j40(o40Var, 2));
     }
 
     public final void p() {
@@ -425,9 +425,9 @@ public final class t0 {
         e();
         this.i.removeCallbacks(this.X);
         x(4);
-        boolean X = this.l.X();
-        this.E = X;
-        if (X) {
+        boolean W = this.l.W();
+        this.E = W;
+        if (W) {
             return;
         }
         h(new IllegalStateException("Unable to stop the camera segment"));
@@ -474,7 +474,7 @@ public final class t0 {
         }
         e();
         t();
-        this.l.L();
+        this.l.K();
         this.F = true;
         x(10);
         m("released");
@@ -551,7 +551,7 @@ public final class t0 {
         this.x = z9;
         bx bxVar = this.f;
         if (bxVar != null) {
-            ((n40) bxVar.b).setScreenFlashEnabled(z9);
+            ((o40) bxVar.b).setScreenFlashEnabled(z9);
         }
     }
 

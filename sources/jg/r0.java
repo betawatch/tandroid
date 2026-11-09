@@ -22,9 +22,9 @@ import org.telegram.messenger.rd;
 import org.telegram.messenger.sd;
 import org.telegram.messenger.t10;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k5;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l5;
+import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.Cells.n4;
 import org.telegram.ui.Cells.q6;
 import org.telegram.ui.Cells.r7;
@@ -33,12 +33,12 @@ import org.telegram.ui.Cells.w4;
 import org.telegram.ui.Cells.y6;
 import org.telegram.ui.Components.l9;
 import org.telegram.ui.Components.w8;
-import org.telegram.ui.Components.xi0;
 import org.telegram.ui.Components.xp;
-import org.telegram.ui.ja0;
+import org.telegram.ui.Components.yi0;
 import org.telegram.ui.la0;
+import org.telegram.ui.na0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public class r0 extends c {
     public int D;
@@ -56,13 +56,13 @@ public class r0 extends c {
     public ArrayList P;
     public boolean Q;
     public final boolean R;
-    public final f6 S;
+    public final g6 S;
     public boolean T;
     public TLRPC.TL_messageMediaVenue U;
     public TLRPC.TL_messageMediaVenue V;
     public boolean W;
     public final boolean X;
-    public ja0 Y;
+    public la0 Y;
     public boolean Z;
     public boolean a0;
     public boolean b0;
@@ -70,7 +70,7 @@ public class r0 extends c {
     public final int x;
     public final Context y;
 
-    public r0(Context context, int i7, long j3, boolean z9, f6 f6Var, boolean z10, boolean z11, boolean z12) {
+    public r0(Context context, int i7, long j3, boolean z9, g6 g6Var, boolean z10, boolean z11, boolean z12) {
         super(z10, z12);
         this.x = p10.s0;
         this.M = -1;
@@ -83,10 +83,10 @@ public class r0 extends c {
         this.K = i7;
         this.L = j3;
         this.R = z9;
-        this.S = f6Var;
+        this.S = g6Var;
     }
 
-    @Override // org.telegram.ui.Components.oj0
+    @Override // org.telegram.ui.Components.pj0
     public final boolean D(v4.d1 d1Var) {
         int i7 = d1Var.f;
         if (i7 == 6) {
@@ -254,7 +254,7 @@ public class r0 extends c {
         this.P = new ArrayList(arrayList);
         long e10 = p10.i(this.x).e();
         for (int i7 = 0; i7 < this.P.size(); i7++) {
-            if (((la0) this.P.get(i7)).a == e10 || ((la0) this.P.get(i7)).b.out) {
+            if (((na0) this.P.get(i7)).a == e10 || ((na0) this.P.get(i7)).b.out) {
                 this.P.remove(i7);
                 break;
             }
@@ -299,18 +299,18 @@ public class r0 extends c {
         if (q6Var != null) {
             int i7 = this.K;
             if (i7 == 8) {
-                q6Var.b(id.M0(2131745514, null), !TextUtils.isEmpty(this.H) ? this.H : !TextUtils.isEmpty(this.I) ? this.I : this.Q ? id.M0(2131748780, null) : id.M0(2131743880, null));
+                q6Var.b(id.M0(2131745511, null), !TextUtils.isEmpty(this.H) ? this.H : !TextUtils.isEmpty(this.I) ? this.I : this.Q ? id.M0(2131748779, null) : id.M0(2131743877, null));
                 q6Var.setHasLocation(true);
                 return;
             }
             str = "";
             if (i7 != 4 && this.G == null) {
                 if (this.F != null) {
-                    q6Var.b(id.M0(2131745614, null), id.a0(null, null, 2131754693, id.G((int) this.F.getAccuracy(), "Meters", new Object[0])));
+                    q6Var.b(id.M0(2131745611, null), id.a0(null, null, 2131754693, id.G((int) this.F.getAccuracy(), "Meters", new Object[0])));
                     q6Var.setHasLocation(true);
                     return;
                 } else {
-                    q6Var.b(id.M0(2131745614, null), this.a0 ? "" : id.M0(2131748780, null));
+                    q6Var.b(id.M0(2131745611, null), this.a0 ? "" : id.M0(2131748779, null));
                     q6Var.setHasLocation(!this.a0);
                     return;
                 }
@@ -320,7 +320,7 @@ public class r0 extends c {
             } else if (TextUtils.isEmpty(this.I)) {
                 Location location = this.G;
                 if ((location == null && this.F == null) || this.Q) {
-                    str = id.M0(2131748780, null);
+                    str = id.M0(2131748779, null);
                 } else if (location != null) {
                     str = String.format(Locale.US, "(%f,%f)", Double.valueOf(location.getLatitude()), Double.valueOf(this.G.getLongitude()));
                 } else {
@@ -328,7 +328,7 @@ public class r0 extends c {
                     if (location2 != null) {
                         str = String.format(Locale.US, "(%f,%f)", Double.valueOf(location2.getLatitude()), Double.valueOf(this.F.getLongitude()));
                     } else if (!this.a0) {
-                        str = id.M0(2131748780, null);
+                        str = id.M0(2131748779, null);
                     }
                 }
             } else {
@@ -339,7 +339,7 @@ public class r0 extends c {
             } else if (i7 == 4) {
                 q6Var.b(id.M0(2131752211, null), str);
             } else {
-                q6Var.b(id.M0(2131745593, null), str);
+                q6Var.b(id.M0(2131745590, null), str);
             }
             q6Var.setHasLocation(true);
         }
@@ -460,7 +460,7 @@ public class r0 extends c {
             return;
         }
         if (i10 == 2) {
-            ((n4) view).setText(id.M0(2131748838, null));
+            ((n4) view).setText(id.M0(2131748837, null));
             return;
         }
         if (i10 == 6) {
@@ -543,32 +543,32 @@ public class r0 extends c {
         if (i12 < 0 || i12 >= this.P.size()) {
             return;
         }
-        la0 la0Var = (la0) this.P.get(i12);
+        na0 na0Var = (na0) this.P.get(i12);
         Location location2 = this.F;
         TextView textView2 = r7Var.f;
         l9 l9Var2 = r7Var.c;
-        k5 k5Var = r7Var.d;
+        l5 l5Var = r7Var.d;
         Location location3 = r7Var.y;
-        r7Var.x = la0Var;
-        if (m5.E(la0Var.a)) {
-            TLRPC.User a23 = qp.s1(r7Var.E).a2(Long.valueOf(la0Var.a));
+        r7Var.x = na0Var;
+        if (m5.E(na0Var.a)) {
+            TLRPC.User a23 = qp.s1(r7Var.E).a2(Long.valueOf(na0Var.a));
             if (a23 != null) {
                 r7Var.n.r(a23);
-                k5Var.l(g5.m(0, a23.first_name, a23.last_name), false);
+                l5Var.l(g5.m(0, a23.first_name, a23.last_name), false);
                 l9Var2.e(a23, r7Var.n);
             }
         } else {
-            TLRPC.Chat M02 = qp.s1(r7Var.E).M0(Long.valueOf(-la0Var.a));
+            TLRPC.Chat M02 = qp.s1(r7Var.E).M0(Long.valueOf(-na0Var.a));
             if (M02 != null) {
                 r7Var.n.q(M02);
-                k5Var.l(M02.title, false);
+                l5Var.l(M02.title, false);
                 l9Var2.e(M02, r7Var.n);
             }
         }
-        cb a10 = la0Var.e.a();
+        cb a10 = na0Var.e.a();
         location3.setLatitude(a10.a);
         location3.setLongitude(a10.b);
-        int i13 = la0Var.b.edit_date;
+        int i13 = na0Var.b.edit_date;
         String D = id.D(i13 != 0 ? i13 : r11.date);
         if (location2 == null) {
             textView2.setText(D);
@@ -583,35 +583,35 @@ public class r0 extends c {
         View view2;
         Context context = this.y;
         if (i7 != 0) {
-            f6 f6Var = this.S;
+            g6 g6Var = this.S;
             if (i7 == 1) {
-                view2 = new q6(context, f6Var, false, false);
+                view2 = new q6(context, g6Var, false, false);
             } else if (i7 != 2) {
                 int i10 = 5;
                 long j3 = this.L;
                 switch (i7) {
                     case 6:
-                        q6 q6Var = new q6(context, f6Var, true, false);
+                        q6 q6Var = new q6(context, g6Var, true, false);
                         q6Var.setDialogId(j3);
                         view2 = q6Var;
                         break;
                     case 7:
-                        q6 q6Var2 = new q6(context, f6Var, true, true);
+                        q6 q6Var2 = new q6(context, g6Var, true, true);
                         q6Var2.setDialogId(j3);
                         view2 = q6Var2;
                         break;
                     case 8:
                         int i11 = this.K;
-                        view2 = new r7((i11 == 4 || i11 == 5 || i11 == 3) ? 16 : 54, context, f6Var, true);
+                        view2 = new r7((i11 == 4 || i11 == 5 || i11 == 3) ? 16 : 54, context, g6Var, true);
                         break;
                     case 9:
-                        w4 w4Var = new w4(context, f6Var);
+                        w4 w4Var = new w4(context, g6Var);
                         w4Var.setOnButtonClick(new ii.g(this, i10));
                         view2 = w4Var;
                         break;
                     case 10:
                         View y6Var = new y6(context, (org.telegram.ui.Cells.f1) null);
-                        new xp(new ColorDrawable(k6.w0(k6.a7, f6Var)), k6.Y0(context, R.drawable.greydivider_bottom, k6.b7)).x = true;
+                        new xp(new ColorDrawable(l6.w0(l6.a7, g6Var)), l6.Y0(context, R.drawable.greydivider_bottom, l6.b7)).x = true;
                         view2 = y6Var;
                         break;
                     case 11:
@@ -620,7 +620,7 @@ public class r0 extends c {
                         view = view3;
                         break;
                     case 12:
-                        v4 v4Var = new v4(context, f6Var);
+                        v4 v4Var = new v4(context, g6Var);
                         v4Var.setAllowTextAnimation(true);
                         view2 = v4Var;
                         break;
@@ -632,9 +632,9 @@ public class r0 extends c {
                         break;
                 }
             } else {
-                view2 = new n4(context, f6Var);
+                view2 = new n4(context, g6Var);
             }
-            return new xi0(view2);
+            return new yi0(view2);
         }
         FrameLayout frameLayout = new FrameLayout(context);
         this.c0 = frameLayout;
@@ -642,7 +642,7 @@ public class r0 extends c {
         this.c0.setLayoutParams(new v4.o0(-1, this.D));
         view = frameLayout;
         view2 = view;
-        return new xi0(view2);
+        return new yi0(view2);
     }
 
     @Override // v4.g0

@@ -18,7 +18,7 @@ import java.util.HashMap;
 import jg.g;
 import org.telegram.messenger.a8;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public abstract class JobIntentService extends Service {
     static final boolean DEBUG = false;
@@ -33,7 +33,7 @@ public abstract class JobIntentService extends Service {
     boolean mStopped = false;
     boolean mDestroyed = false;
 
-    /* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+    /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
     public final class CommandProcessor extends AsyncTask<Void, Void, Void> {
         public CommandProcessor() {
         }
@@ -64,14 +64,14 @@ public abstract class JobIntentService extends Service {
         }
     }
 
-    /* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+    /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
     public interface CompatJobEngine {
         IBinder compatGetBinder();
 
         GenericWorkItem dequeueWork();
     }
 
-    /* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+    /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
     public static final class CompatWorkEnqueuer extends WorkEnqueuer {
         private final Context mContext;
         private final PowerManager.WakeLock mLaunchWakeLock;
@@ -156,7 +156,7 @@ public abstract class JobIntentService extends Service {
         }
     }
 
-    /* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+    /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
     public final class CompatWorkItem implements GenericWorkItem {
         final Intent mIntent;
         final int mStartId;
@@ -177,14 +177,14 @@ public abstract class JobIntentService extends Service {
         }
     }
 
-    /* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+    /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
     public interface GenericWorkItem {
         void complete();
 
         Intent getIntent();
     }
 
-    /* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+    /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
     public static final class JobServiceEngineImpl extends JobServiceEngine implements CompatJobEngine {
         static final boolean DEBUG = false;
         static final String TAG = "JobServiceEngineImpl";
@@ -192,7 +192,7 @@ public abstract class JobIntentService extends Service {
         JobParameters mParams;
         final JobIntentService mService;
 
-        /* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+        /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
         public final class WrapperWorkItem implements GenericWorkItem {
             final JobWorkItem mJobWork;
 
@@ -267,7 +267,7 @@ public abstract class JobIntentService extends Service {
         }
     }
 
-    /* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+    /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
     public static final class JobWorkEnqueuer extends WorkEnqueuer {
         private final JobInfo mJobInfo;
         private final JobScheduler mJobScheduler;
@@ -447,7 +447,7 @@ public abstract class JobIntentService extends Service {
         }
     }
 
-    /* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+    /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
     public static abstract class WorkEnqueuer {
         final ComponentName mComponentName;
         boolean mHasJobId;

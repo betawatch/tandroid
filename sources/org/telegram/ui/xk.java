@@ -1,66 +1,28 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Bitmap;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class xk extends nq0 {
-    public final /* synthetic */ org.telegram.messenger.ij a;
-    public final /* synthetic */ org.telegram.messenger.gf b;
-    public final /* synthetic */ an c;
+public final class xk extends pq0 {
+    public final /* synthetic */ Bitmap a;
+    public final /* synthetic */ ArrayList b;
+    public final /* synthetic */ cn c;
 
-    public xk(an anVar, org.telegram.messenger.ij ijVar, org.telegram.messenger.gf gfVar) {
-        this.c = anVar;
-        this.a = ijVar;
-        this.b = gfVar;
+    public xk(cn cnVar, Bitmap bitmap, ArrayList arrayList) {
+        this.c = cnVar;
+        this.a = bitmap;
+        this.b = arrayList;
     }
 
-    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
-    public final wq0 E(org.telegram.messenger.ij ijVar, TLRPC.FileLocation fileLocation, int i7, boolean z9, boolean z10) {
-        return an.O1(this.c, this.a, null, i7, z9, true);
+    @Override // org.telegram.ui.pq0, org.telegram.ui.wq0
+    public final org.telegram.messenger.jc j(int i7) {
+        return new org.telegram.messenger.jc(this.a, null, 0);
     }
 
-    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
-    public final boolean P() {
-        an anVar = this.c;
-        if (anVar.Z == null || !anVar.T9()) {
-            return false;
-        }
-        anVar.Z.L();
-        return true;
-    }
-
-    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
-    public final org.telegram.messenger.ij V() {
-        org.telegram.messenger.ij ijVar = this.c.F5;
-        org.telegram.messenger.ij ijVar2 = this.a;
-        if (ijVar == ijVar2) {
-            return ijVar2;
-        }
-        return null;
-    }
-
-    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
-    public final void e(CharSequence charSequence) {
-        this.c.Z.e1(charSequence, false);
-    }
-
-    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
-    public final boolean g() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
+    @Override // org.telegram.ui.pq0, org.telegram.ui.wq0
     public final void o(int i7, org.telegram.messenger.j20 j20Var, boolean z9, int i10, int i11, boolean z10) {
-        an anVar = this.c;
-        if (anVar.F5 != this.a) {
-            return;
-        }
-        org.telegram.messenger.gf gfVar = this.b;
-        if (gfVar.w || gfVar.v || gfVar.u || j20Var != null) {
-            anVar.u(gfVar, j20Var, z9, i10, 0, z10, 0L);
-        } else {
-            anVar.Z.a0();
-        }
+        this.c.u((org.telegram.messenger.gf) this.b.get(0), j20Var, z9, i10, 0, z10, 0L);
     }
 }

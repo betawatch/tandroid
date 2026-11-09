@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.ui.web.HttpGetFileTask;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b0 implements Runnable {
     public final /* synthetic */ int a;
@@ -31,16 +31,16 @@ public final /* synthetic */ class b0 implements Runnable {
             case 2:
                 org.telegram.ui.Components.voip.w0 w0Var = (org.telegram.ui.Components.voip.w0) this.c;
                 float f10 = this.b;
-                zb1 zb1Var = w0Var.c;
+                cc1 cc1Var = w0Var.c;
                 if (f10 > 0.0f) {
-                    int i7 = zb1Var.x;
+                    int i7 = cc1Var.x;
                     if (i7 < 2) {
-                        zb1Var.c(i7 + 1, true);
+                        cc1Var.c(i7 + 1, true);
                     }
                 } else {
-                    int i10 = zb1Var.x;
+                    int i10 = cc1Var.x;
                     if (i10 > 0) {
-                        zb1Var.c(i10 - 1, true);
+                        cc1Var.c(i10 - 1, true);
                     }
                 }
                 w0Var.b = false;

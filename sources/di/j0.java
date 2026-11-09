@@ -14,9 +14,9 @@ import android.graphics.drawable.Drawable;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.rz;
-import org.telegram.ui.Components.my0;
+import org.telegram.ui.Components.ny0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class j0 extends Drawable {
     public final /* synthetic */ int a;
@@ -37,7 +37,7 @@ public final class j0 extends Drawable {
                 Drawable drawable = (Drawable) this.b;
                 drawable.setBounds(bounds);
                 drawable.draw(canvas);
-                ((my0) this.d).c(bounds.centerX() - (((my0) this.d).c / 2.0f), org.telegram.messenger.g0.L(0.15f) + bounds.centerY(), drawable.getAlpha() / 255.0f, -1, canvas);
+                ((ny0) this.d).c(bounds.centerX() - (((ny0) this.d).c / 2.0f), org.telegram.messenger.g0.L(0.15f) + bounds.centerY(), drawable.getAlpha() / 255.0f, -1, canvas);
                 canvas.restore();
                 break;
             case 1:
@@ -189,7 +189,7 @@ public final class j0 extends Drawable {
         Paint paint = new Paint(1);
         this.d = paint;
         this.b = context.getResources().getDrawable(R.drawable.msg_filled_menu_groups);
-        paint.setColor(org.telegram.ui.ActionBar.k6.r1(0.1552f, -16777216));
+        paint.setColor(org.telegram.ui.ActionBar.l6.r1(0.1552f, -16777216));
         this.c = f10;
     }
 
@@ -203,9 +203,9 @@ public final class j0 extends Drawable {
         this.a = 0;
         this.c = 0.75f;
         this.b = jg.g.h(context, R.drawable.filled_stream_crown);
-        my0 my0Var = new my0(jg.g.j(i7, ""), 8.0f, org.telegram.messenger.g0.o1("fonts/num.otf"));
-        this.d = my0Var;
-        my0Var.a.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
+        ny0 ny0Var = new ny0(jg.g.j(i7, ""), 8.0f, org.telegram.messenger.g0.o1("fonts/num.otf"));
+        this.d = ny0Var;
+        ny0Var.a.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
     }
 
     private final void a(int i7) {

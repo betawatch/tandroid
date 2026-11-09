@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class wu extends fu {
     public static Paint m0;
@@ -101,7 +101,7 @@ public final class wu extends fu {
             return null;
         }
         int max = Math.max(0, Math.min(this.a0, arrayList.size() - 1));
-        return TextUtils.concat(((yt) arrayList.get(max)).f(), ", ", id.a0(null, null, 2131747830, Integer.valueOf(max + 1), Integer.valueOf(arrayList.size())));
+        return TextUtils.concat(((yt) arrayList.get(max)).f(), ", ", id.a0(null, null, 2131747829, Integer.valueOf(max + 1), Integer.valueOf(arrayList.size())));
     }
 
     @Override // org.telegram.messenger.fu
@@ -272,7 +272,7 @@ public final class wu extends fu {
                 i14 = this.a0;
                 float f17 = 0.0f;
                 if ((i14 == 0 && this.b0 < 0.0f) || (i14 == arrayList2.size() - 1 && this.b0 > 0.0f)) {
-                    canvas2.drawColor(org.telegram.ui.ActionBar.k6.r1(0.2f, org.telegram.ui.ActionBar.k6.w0(kvVar.E() ? org.telegram.ui.ActionBar.k6.Qb : org.telegram.ui.ActionBar.k6.Kd, kvVar.D)));
+                    canvas2.drawColor(org.telegram.ui.ActionBar.l6.r1(0.2f, org.telegram.ui.ActionBar.l6.w0(kvVar.E() ? org.telegram.ui.ActionBar.l6.Qb : org.telegram.ui.ActionBar.l6.Kd, kvVar.D)));
                 }
                 float f18 = i23;
                 float f19 = (-this.b0) * f18;
@@ -368,7 +368,7 @@ public final class wu extends fu {
         i14 = this.a0;
         float f172 = 0.0f;
         if (i14 == 0) {
-            canvas2.drawColor(org.telegram.ui.ActionBar.k6.r1(0.2f, org.telegram.ui.ActionBar.k6.w0(kvVar.E() ? org.telegram.ui.ActionBar.k6.Qb : org.telegram.ui.ActionBar.k6.Kd, kvVar.D)));
+            canvas2.drawColor(org.telegram.ui.ActionBar.l6.r1(0.2f, org.telegram.ui.ActionBar.l6.w0(kvVar.E() ? org.telegram.ui.ActionBar.l6.Qb : org.telegram.ui.ActionBar.l6.Kd, kvVar.D)));
             float f182 = i23;
             float f192 = (-this.b0) * f182;
             i15 = this.a0 - 1;
@@ -380,7 +380,7 @@ public final class wu extends fu {
             if (size > i16) {
             }
         }
-        canvas2.drawColor(org.telegram.ui.ActionBar.k6.r1(0.2f, org.telegram.ui.ActionBar.k6.w0(kvVar.E() ? org.telegram.ui.ActionBar.k6.Qb : org.telegram.ui.ActionBar.k6.Kd, kvVar.D)));
+        canvas2.drawColor(org.telegram.ui.ActionBar.l6.r1(0.2f, org.telegram.ui.ActionBar.l6.w0(kvVar.E() ? org.telegram.ui.ActionBar.l6.Qb : org.telegram.ui.ActionBar.l6.Kd, kvVar.D)));
         float f1822 = i23;
         float f1922 = (-this.b0) * f1822;
         i15 = this.a0 - 1;

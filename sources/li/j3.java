@@ -35,11 +35,11 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_update;
-import org.telegram.ui.Components.hm0;
+import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.xq;
-import org.telegram.ui.sy0;
+import org.telegram.ui.vy0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j3 implements Runnable {
     public final /* synthetic */ int a;
@@ -118,7 +118,7 @@ public final /* synthetic */ class j3 implements Runnable {
                         }
                         y4Var.y = true;
                         y4Var.e();
-                        if (!TextUtils.isEmpty(y4Var.F) && ij.X2(document) && (w10 = w7.w(document.thumbs, qs.r5, false, null, false)) != null) {
+                        if (!TextUtils.isEmpty(y4Var.F) && ij.W2(document) && (w10 = w7.w(document.thumbs, qs.r5, false, null, false)) != null) {
                             w7.G(i11).e0(y4Var.F, w10);
                             File file = new File(y4Var.F);
                             w7.G(i11);
@@ -298,7 +298,7 @@ public final /* synthetic */ class j3 implements Runnable {
                 ((VideoAds) this.b).lambda$show$16((c20) this.c);
                 return;
             case 18:
-                sy0.d1((Context) this.b, null, false, (di.i0) this.c, null);
+                vy0.d1((Context) this.b, null, false, (di.i0) this.c, null);
                 return;
             case 19:
                 ((ConferenceCall) this.b).lambda$processUpdates$4((TLRPC.Updates) this.c);
@@ -329,7 +329,7 @@ public final /* synthetic */ class j3 implements Runnable {
                 return;
             case 28:
                 org.telegram.ui.ActionBar.k kVar = (org.telegram.ui.ActionBar.k) this.b;
-                boolean canScrollVertically = ((hm0) this.c).canScrollVertically(-1);
+                boolean canScrollVertically = ((im0) this.c).canScrollVertically(-1);
                 boolean z11 = !canScrollVertically;
                 if (kVar.C1 == z11) {
                     return;

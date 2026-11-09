@@ -3,10 +3,10 @@ package hi;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
-import fi.h9;
+import fi.v9;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final class s0 implements SensorEventListener {
     public final /* synthetic */ int a;
@@ -77,9 +77,9 @@ public final class s0 implements SensorEventListener {
         switch (this.a) {
             case 0:
                 v0 v0Var = this.d;
-                h9 h9Var = v0Var.m;
-                if (h9Var != null) {
-                    org.telegram.messenger.g0.r(h9Var);
+                v9 v9Var = v0Var.m;
+                if (v9Var != null) {
+                    org.telegram.messenger.g0.r(v9Var);
                     v0Var.m = null;
                 }
                 if (!v0Var.l && v0Var.k != null) {
@@ -90,18 +90,18 @@ public final class s0 implements SensorEventListener {
                         c();
                         break;
                     } else {
-                        h9 h9Var2 = new h9(this, 14);
-                        v0Var.m = h9Var2;
-                        org.telegram.messenger.g0.i3(h9Var2, j3 - currentTimeMillis);
+                        v9 v9Var2 = new v9(this, 13);
+                        v0Var.m = v9Var2;
+                        org.telegram.messenger.g0.i3(v9Var2, j3 - currentTimeMillis);
                         break;
                     }
                 }
                 break;
             default:
                 v0 v0Var2 = this.d;
-                h9 h9Var3 = v0Var2.o;
-                if (h9Var3 != null) {
-                    org.telegram.messenger.g0.r(h9Var3);
+                v9 v9Var3 = v0Var2.o;
+                if (v9Var3 != null) {
+                    org.telegram.messenger.g0.r(v9Var3);
                     v0Var2.o = null;
                 }
                 if (!v0Var2.l && v0Var2.k != null) {
@@ -117,9 +117,9 @@ public final class s0 implements SensorEventListener {
                         c();
                         break;
                     } else {
-                        h9 h9Var4 = new h9(this, 15);
-                        v0Var2.o = h9Var4;
-                        org.telegram.messenger.g0.i3(h9Var4, j10 - currentTimeMillis2);
+                        v9 v9Var4 = new v9(this, 14);
+                        v0Var2.o = v9Var4;
+                        org.telegram.messenger.g0.i3(v9Var4, j10 - currentTimeMillis2);
                         break;
                     }
                 }

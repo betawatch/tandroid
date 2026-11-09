@@ -2,7 +2,7 @@ package fi;
 
 import android.os.SystemClock;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d6 implements Runnable {
     public final /* synthetic */ int a;
@@ -26,7 +26,7 @@ public final /* synthetic */ class d6 implements Runnable {
                 g6Var.J.c(false);
                 g6Var.K.c(false);
                 g6Var.L.c(false);
-                ((s9) g6Var.a).e(true);
+                ((r9) g6Var.a).e(true);
                 break;
             case 1:
                 long currentTimeMillis = System.currentTimeMillis();
@@ -34,12 +34,12 @@ public final /* synthetic */ class d6 implements Runnable {
                 g6Var2.Q = currentTimeMillis;
                 g6Var2.R = 0L;
                 g6Var2.r0 = true;
-                ((s9) g6Var2.a).a.J0.a(0L, true);
+                ((r9) g6Var2.a).a.J0.a(0L, true);
                 break;
             case 2:
                 g6 g6Var3 = this.b;
                 if (!g6Var3.r0 && !g6Var3.b()) {
-                    if (!va.c(((s9) g6Var3.a).a)) {
+                    if (!va.c(((r9) g6Var3.a).a)) {
                         g6Var3.w0 = false;
                         g6Var3.J.c(false);
                         g6Var3.K.c(false);
@@ -48,7 +48,7 @@ public final /* synthetic */ class d6 implements Runnable {
                     } else {
                         g6Var3.z0 = true;
                         g6Var3.A0 = true;
-                        ((s9) g6Var3.a).f(new d6(g6Var3, 4), true);
+                        ((r9) g6Var3.a).f(new d6(g6Var3, 4), true);
                         break;
                     }
                 }
@@ -56,7 +56,7 @@ public final /* synthetic */ class d6 implements Runnable {
             case 3:
                 g6 g6Var4 = this.b;
                 if (!g6Var4.r0 && !g6Var4.b()) {
-                    y9 y9Var = ((s9) g6Var4.a).a.B0;
+                    y9 y9Var = ((r9) g6Var4.a).a.B0;
                     if (y9Var != null) {
                         y9Var.toggleDual();
                     }
@@ -75,7 +75,7 @@ public final /* synthetic */ class d6 implements Runnable {
                 g6Var5.r0 = true;
                 e6 e6Var = g6Var5.a;
                 g6Var5.R = 0L;
-                ((s9) e6Var).a.J0.a(0L, true);
+                ((r9) e6Var).a.J0.a(0L, true);
                 break;
         }
     }

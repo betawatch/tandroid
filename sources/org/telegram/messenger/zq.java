@@ -20,9 +20,9 @@ import org.telegram.SQLite.SQLitePreparedStatement;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.mu0;
+import org.telegram.ui.ou0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class zq implements Runnable {
     public final /* synthetic */ int a;
@@ -281,7 +281,7 @@ public final /* synthetic */ class zq implements Runnable {
                 }
                 return;
             case 13:
-                ((mu0) this.b).x((HashSet) this.c);
+                ((ou0) this.b).x((HashSet) this.c);
                 return;
             case 14:
                 dt dtVar2 = (dt) this.b;
@@ -310,12 +310,12 @@ public final /* synthetic */ class zq implements Runnable {
                             if (sparseArray == null) {
                                 break;
                             }
-                            ij ijVar2 = (ij) sparseArray.get(ijVar.f1());
+                            ij ijVar2 = (ij) sparseArray.get(ijVar.e1());
                             if (ijVar2 != null && (ijVar2.I || ijVar2.J)) {
                                 ijVar2 = null;
                             }
                             if (ijVar2 != null) {
-                                sparseArray.put(ijVar.f1(), ijVar);
+                                sparseArray.put(ijVar.e1(), ijVar);
                                 int indexOf = arrayList3.indexOf(ijVar2);
                                 if (indexOf >= 0) {
                                     arrayList3.set(indexOf, ijVar);

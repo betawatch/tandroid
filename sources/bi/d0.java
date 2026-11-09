@@ -13,9 +13,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.p31;
+import org.telegram.ui.q31;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d0 implements Runnable {
     public final /* synthetic */ int a;
@@ -78,13 +78,13 @@ public final /* synthetic */ class d0 implements Runnable {
                 ConnectionsManager.getInstance(i12).sendRequest(tL_fulfillStarsSubscription, new b0(i12, 1, j10, dVar, v2VarArr));
                 break;
             case 2:
-                di.y6 y6Var = (di.y6) this.d;
+                di.z6 z6Var = (di.z6) this.d;
                 TLObject tLObject2 = (TLObject) this.f;
                 int i13 = this.b;
                 String str = (String) this.e;
                 long j11 = this.c;
-                int i14 = y6Var.a;
-                HashSet hashSet = y6Var.t;
+                int i14 = z6Var.a;
+                HashSet hashSet = z6Var.t;
                 if (tLObject2 != null) {
                     TL_stories.TL_stories_stories tL_stories_stories = (TL_stories.TL_stories_stories) tLObject2;
                     qp.s1(i14).Y3(tL_stories_stories.users, false);
@@ -99,7 +99,7 @@ public final /* synthetic */ class d0 implements Runnable {
                         }
                     }
                 }
-                y6Var.W.remove(str);
+                z6Var.W.remove(str);
                 if (storyItem == null) {
                     Iterator it = hashSet.iterator();
                     while (true) {
@@ -111,14 +111,14 @@ public final /* synthetic */ class d0 implements Runnable {
                         }
                     }
                     hashSet.add(str);
-                    y6Var.l.edit().putStringSet("unsupported_stories_checked", hashSet).apply();
+                    z6Var.l.edit().putStringSet("unsupported_stories_checked", hashSet).apply();
                     break;
                 } else {
                     storyItem.dialogId = j11;
                     TL_stories.TL_updateStory tL_updateStory = new TL_stories.TL_updateStory();
                     tL_updateStory.peer = qp.s1(i14).z1(j11);
                     tL_updateStory.story = storyItem;
-                    y6Var.c0(tL_updateStory);
+                    z6Var.c0(tL_updateStory);
                     break;
                 }
             case 3:
@@ -200,19 +200,19 @@ public final /* synthetic */ class d0 implements Runnable {
                     i1Var.d();
                     break;
                 } else {
-                    org.telegram.utils.twidget.a1.a.execute(new p31(i1Var, j13, 2));
+                    org.telegram.utils.twidget.a1.a.execute(new q31(i1Var, j13, 2));
                     break;
                 }
                 break;
             default:
-                new zh.a4((Context) this.d, this.b, ((org.telegram.messenger.s9) this.e).d, null, this.c, (Runnable) this.f, false, false).show();
+                new zh.b4((Context) this.d, this.b, ((org.telegram.messenger.s9) this.e).d, null, this.c, (Runnable) this.f, false, false).show();
                 break;
         }
     }
 
-    public /* synthetic */ d0(di.y6 y6Var, TLObject tLObject, int i7, String str, long j3) {
+    public /* synthetic */ d0(di.z6 z6Var, TLObject tLObject, int i7, String str, long j3) {
         this.a = 2;
-        this.d = y6Var;
+        this.d = z6Var;
         this.f = tLObject;
         this.b = i7;
         this.e = str;

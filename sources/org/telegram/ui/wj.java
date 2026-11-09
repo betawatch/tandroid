@@ -1,24 +1,21 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+import android.content.Context;
+
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class wj extends org.telegram.ui.Components.ri0 {
-    public final /* synthetic */ an l;
+public final class wj extends lh.e {
+    public final /* synthetic */ cn L;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public wj(an anVar, aj ajVar, dj djVar) {
-        super(ajVar, djVar);
-        this.l = anVar;
+    public wj(cn cnVar, Context context, org.telegram.ui.ActionBar.g6 g6Var, qi qiVar, dh.c cVar) {
+        super(context, cVar, qiVar, g6Var);
+        this.L = cnVar;
     }
 
-    public final void f(int i7) {
-        if (this.l.jb) {
-            if (i7 == 0) {
-                i7 = 1;
-            } else if (i7 == 1) {
-                i7 = 0;
-            }
-        }
-        this.b = i7;
+    @Override // lh.e, android.view.View
+    public final void setVisibility(int i7) {
+        super.setVisibility(i7);
+        this.L.hd.h(3, i7 == 0, getMeasuredWidth() > 0);
     }
 }

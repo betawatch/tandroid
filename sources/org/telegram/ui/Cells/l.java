@@ -14,7 +14,7 @@ import org.telegram.messenger.qs;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class l extends FrameLayout {
     public final org.telegram.ui.Components.i6 a;
@@ -54,7 +54,7 @@ public final class l extends FrameLayout {
     public final void b(long j3) {
         org.telegram.ui.Components.i6 i6Var = this.a;
         if (j3 == 0) {
-            i6Var.t(id.M0(2131750337, null), true, true);
+            i6Var.t(id.M0(2131750336, null), true, true);
         } else {
             i6Var.t(j3 > 3600 ? org.telegram.messenger.g0.g0((int) j3, false, false) : org.telegram.messenger.g0.h0((int) j3, false), isAttachedToWindow(), true);
         }

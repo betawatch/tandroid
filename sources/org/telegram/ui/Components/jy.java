@@ -9,20 +9,20 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class jy extends FrameLayout {
     public static final /* synthetic */ int h = 0;
-    public final org.telegram.ui.ActionBar.f6 a;
+    public final org.telegram.ui.ActionBar.g6 a;
     public final TextView b;
     public final View c;
-    public final ch0 d;
+    public final dh0 d;
     public boolean e;
     public int f;
 
-    public jy(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+    public jy(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
         super(context);
-        this.a = f6Var;
+        this.a = g6Var;
         View radialProgressView = new RadialProgressView(context, null);
         addView(radialProgressView, c8.ha.c(-2.0f, -2));
         this.c = radialProgressView;
@@ -32,17 +32,17 @@ public final class jy extends FrameLayout {
         linearLayout.setClipChildren(false);
         linearLayout.setClipToPadding(false);
         linearLayout.setOrientation(1);
-        ch0 ch0Var = new ch0(context);
-        this.d = ch0Var;
-        ch0Var.setScaleType(ImageView.ScaleType.FIT_XY);
-        ch0Var.setImportantForAccessibility(2);
-        ch0Var.setVisibility(8);
-        linearLayout.addView(ch0Var, c8.ha.t(org.telegram.messenger.qs.g2, org.telegram.messenger.qs.g2, 17, 0, 0, 0, 20));
+        dh0 dh0Var = new dh0(context);
+        this.d = dh0Var;
+        dh0Var.setScaleType(ImageView.ScaleType.FIT_XY);
+        dh0Var.setImportantForAccessibility(2);
+        dh0Var.setVisibility(8);
+        linearLayout.addView(dh0Var, c8.ha.t(org.telegram.messenger.qs.g2, org.telegram.messenger.qs.g2, 17, 0, 0, 0, 20));
         TextView textView = new TextView(context);
         this.b = textView;
         textView.setTextSize(1, 20.0f);
-        org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.c7, f6Var);
-        org.telegram.messenger.k5.m(textView, 1, null, 2131748168);
+        org.telegram.ui.ActionBar.s6.U(textView, org.telegram.ui.ActionBar.l6.c7, g6Var);
+        org.telegram.messenger.k5.m(textView, 1, null, 2131748167);
         linearLayout.addView(textView, c8.ha.r(-2, -2, 17));
         addView(linearLayout, c8.ha.c(-2.0f, -2));
         org.telegram.messenger.g0.Z3(textView, false, 2.0f, true, false);
@@ -52,11 +52,11 @@ public final class jy extends FrameLayout {
 
     public final void a(int i7, int i10, int i11) {
         int i12 = i7 != 0 ? 0 : 8;
-        ch0 ch0Var = this.d;
-        ch0Var.setVisibility(i12);
+        dh0 dh0Var = this.d;
+        dh0Var.setVisibility(i12);
         if (i7 != 0) {
-            ch0Var.f(i7, i10, i11, null);
-            ch0Var.d();
+            dh0Var.f(i7, i10, i11, null);
+            dh0Var.d();
         }
     }
 
@@ -140,7 +140,7 @@ public final class jy extends FrameLayout {
 
     public void setTextColor(int i7) {
         TextView textView = this.b;
-        org.telegram.ui.ActionBar.r6.r(textView);
+        org.telegram.ui.ActionBar.s6.q(textView);
         textView.setTextColor(i7);
     }
 
@@ -156,7 +156,7 @@ public final class jy extends FrameLayout {
         }
         Drawable mutate = getContext().getResources().getDrawable(i7).mutate();
         if (mutate != null) {
-            org.telegram.ui.ActionBar.r6.y(this, mutate, org.telegram.ui.ActionBar.k6.c7, this.a, PorterDuff.Mode.MULTIPLY);
+            org.telegram.ui.ActionBar.s6.x(this, mutate, org.telegram.ui.ActionBar.l6.c7, this.a, PorterDuff.Mode.MULTIPLY);
         }
         textView.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, mutate, (Drawable) null, (Drawable) null);
         textView.setCompoundDrawablePadding(org.telegram.messenger.g0.L(1.0f));

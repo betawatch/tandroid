@@ -1,57 +1,77 @@
 package org.telegram.ui;
 
+import android.view.KeyEvent;
 import android.view.View;
-import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class sm0 implements org.telegram.ui.ActionBar.o0, org.telegram.ui.Components.sj0 {
-    public final /* synthetic */ xm0 a;
+public final /* synthetic */ class sm0 implements org.telegram.ui.Components.t4, org.telegram.ui.Components.ej0, org.telegram.ui.ActionBar.e1, org.telegram.ui.ActionBar.r1 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ zm0 b;
 
-    public /* synthetic */ sm0(xm0 xm0Var) {
-        this.a = xm0Var;
+    public /* synthetic */ sm0(zm0 zm0Var, int i7) {
+        this.a = i7;
+        this.b = zm0Var;
     }
 
-    @Override // org.telegram.ui.Components.sj0
-    public void d(boolean z9) {
-        org.telegram.ui.ActionBar.q4 q4Var;
-        xm0 xm0Var = this.a;
-        xm0Var.W = z9 ? 1 : 0;
-        if (z9) {
-            q4Var = ((org.telegram.ui.ActionBar.f2) xm0Var).parentLayout;
-            q4Var.getView().requestDisallowInterceptTouchEvent(true);
-        }
-        xm0Var.K.d1(true);
-    }
-
-    @Override // org.telegram.ui.Components.sj0
-    public boolean e(int i7) {
-        return this.a.L.d(i7) == 0;
-    }
-
-    @Override // org.telegram.ui.Components.sj0
-    public void j(View view, boolean z9) {
-        if (z9 == this.a.X && (view instanceof org.telegram.ui.Cells.q5)) {
-            org.telegram.ui.Cells.q5 q5Var = (org.telegram.ui.Cells.q5) view;
-            q5Var.y.d(q5Var);
+    @Override // org.telegram.ui.Components.t4
+    public void L(int i7, int i10, boolean z9) {
+        switch (this.a) {
+            case 0:
+                this.b.j0(i7, z9);
+                break;
+            default:
+                this.b.j0(i7, z9);
+                break;
         }
     }
 
-    @Override // org.telegram.ui.Components.sj0
-    public boolean k(int i7) {
-        xm0 xm0Var = this.a;
-        org.telegram.messenger.we weVar = xm0Var.J;
-        return xm0Var.b.containsKey(weVar != null ? Integer.valueOf(((org.telegram.messenger.gf) weVar.e.get(i7)).C) : ((org.telegram.messenger.kf) xm0Var.f.get(i7)).B);
+    @Override // org.telegram.ui.Components.ej0
+    public boolean c(int i7, View view) {
+        zm0 zm0Var = this.b;
+        if (zm0Var.Y) {
+            zm0Var.f0(view, zm0Var.J.e.get(i7));
+            return true;
+        }
+        if (!(view instanceof org.telegram.ui.Cells.q5)) {
+            return false;
+        }
+        org.telegram.ui.Components.uj0 uj0Var = zm0Var.V;
+        boolean z9 = !((org.telegram.ui.Cells.q5) view).a();
+        zm0Var.X = z9;
+        uj0Var.d(i7, view, z9);
+        return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.o0
-    public void n() {
-        xm0 xm0Var = this.a;
-        xm0Var.Q.setText(org.telegram.messenger.id.M0(xm0Var.Y ? 2131745349 : 2131745348, null));
-        xm0Var.Q.setIcon(xm0Var.Y ? R.drawable.msg_media : R.drawable.msg_list);
+    @Override // org.telegram.ui.ActionBar.r1
+    public void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+        zm0 zm0Var = this.b;
+        an0 an0Var = zm0Var.t0;
+        if (an0Var == null) {
+            zm0Var.e0();
+            return;
+        }
+        switch (an0Var.a) {
+            case 1:
+                cn0 cn0Var = an0Var.b;
+                cn0Var.a.e0();
+                cn0Var.b.e0();
+                break;
+            default:
+                cn0 cn0Var2 = an0Var.b;
+                cn0Var2.a.e0();
+                cn0Var2.b.e0();
+                break;
+        }
     }
 
-    @Override // org.telegram.ui.ActionBar.o0
-    public void i() {
+    @Override // org.telegram.ui.ActionBar.e1
+    public void j(KeyEvent keyEvent) {
+        org.telegram.ui.ActionBar.g1 g1Var;
+        zm0 zm0Var = this.b;
+        zm0Var.getClass();
+        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (g1Var = zm0Var.m0) != null && g1Var.isShowing()) {
+            zm0Var.m0.d(true);
+        }
     }
 }

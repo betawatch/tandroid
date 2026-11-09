@@ -1,14 +1,21 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Outline;
-import android.view.View;
-import android.view.ViewOutlineProvider;
+import android.content.Context;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class mq0 extends ViewOutlineProvider {
-    @Override // android.view.ViewOutlineProvider
-    public final void getOutline(View view, Outline outline) {
-        outline.setRoundRect(0, 0, view.getWidth(), view.getHeight(), org.telegram.messenger.g0.L(16.0f));
+public final class mq0 extends ClippingImageView {
+    public final /* synthetic */ qj0 R;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public mq0(Context context, tr0 tr0Var) {
+        super(context);
+        this.R = tr0Var;
+    }
+
+    @Override // android.view.View
+    public final void invalidate() {
+        super.invalidate();
+        this.R.invalidate();
     }
 }

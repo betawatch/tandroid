@@ -2,22 +2,22 @@ package wg;
 
 import android.view.ViewGroup;
 import c8.ha;
-import di.p4;
+import di.q4;
 import java.util.ArrayList;
 import org.telegram.messenger.id;
 import org.telegram.messenger.m5;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.s6;
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.na;
-import org.telegram.ui.Components.oj0;
 import org.telegram.ui.Components.pj0;
-import org.telegram.ui.fk0;
+import org.telegram.ui.Components.qj0;
+import org.telegram.ui.hk0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class q0 extends na {
     public final ArrayList P1;
@@ -49,20 +49,20 @@ public final class q0 extends na {
         aVar.setClickable(true);
         aVar.setOrientation(1);
         aVar.setPadding(org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f));
-        r6.i(k6.h5, aVar, this.I0);
+        s6.h(l6.h5, aVar, this.I0);
         d0 d0Var = new d0(getContext(), this.I0);
         this.S1 = d0Var;
         d0Var.k();
         d0Var.setCounterColor(-6785796);
-        d0Var.setOnClickListener(new fk0(29, this, chat));
+        d0Var.setOnClickListener(new hk0(29, this, chat));
         aVar.addView(d0Var, ha.r(-1, 48, 87));
         ViewGroup viewGroup = this.b;
         int i10 = this.t0;
         viewGroup.addView(aVar, ha.f(-2.0f, -1, 87, i10, 0, i10, 0));
-        pj0 pj0Var = this.k1;
+        qj0 qj0Var = this.k1;
         int i11 = this.t0;
-        pj0Var.setPadding(i11, 0, i11, org.telegram.messenger.g0.L(64.0f));
-        this.k1.setOnItemClickListener(new p4(24, this, chat));
+        qj0Var.setPadding(i11, 0, i11, org.telegram.messenger.g0.L(64.0f));
+        this.k1.setOnItemClickListener(new q4(24, this, chat));
         N();
         b1();
         d1(false);
@@ -70,7 +70,7 @@ public final class q0 extends na {
     }
 
     @Override // org.telegram.ui.Components.na
-    public final oj0 L0(pj0 pj0Var) {
+    public final pj0 L0(qj0 qj0Var) {
         return new m0(this);
     }
 

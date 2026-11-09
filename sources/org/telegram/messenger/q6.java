@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class q6 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -96,11 +96,11 @@ public final /* synthetic */ class q6 implements RequestDelegate {
                 break;
             case 3:
                 qp qpVar2 = (qp) obj4;
-                org.telegram.ui.ActionBar.c6 c6Var = (org.telegram.ui.ActionBar.c6) obj3;
+                org.telegram.ui.ActionBar.d6 d6Var = (org.telegram.ui.ActionBar.d6) obj3;
                 TLRPC.TL_wallPaperSettings tL_wallPaperSettings = (TLRPC.TL_wallPaperSettings) obj2;
                 String str = (String) obj;
                 TLRPC.WallPaper wallPaper = (TLRPC.WallPaper) tLObject;
-                File file = new File(t0.h(), c6Var.b);
+                File file = new File(t0.h(), d6Var.b);
                 if (wallPaper != null) {
                     try {
                         w7 fileLoader = qpVar2.getFileLoader();
@@ -110,7 +110,7 @@ public final /* synthetic */ class q6 implements RequestDelegate {
                     } catch (Exception unused) {
                     }
                 }
-                g0.h3(new yj(qpVar2, wallPaper, tL_wallPaperSettings, c6Var, file, str, 0));
+                g0.h3(new yj(qpVar2, wallPaper, tL_wallPaperSettings, d6Var, file, str, 0));
                 break;
             case 4:
                 dw dwVar = (dw) obj4;
@@ -148,7 +148,7 @@ public final /* synthetic */ class q6 implements RequestDelegate {
                             int i17 = messagesStorage6.D;
                             yr messagesStorage7 = dwVar.getMessagesStorage();
                             messagesStorage7.H();
-                            messagesStorage4.a.c(new l2.a0(messagesStorage4, i16, i17, messagesStorage7.y, 7));
+                            messagesStorage4.a.c(new l2.z(messagesStorage4, i16, i17, messagesStorage7.y, 7));
                         }
                     }
                     byte[] bArr3 = new byte[256];
@@ -184,9 +184,9 @@ public final /* synthetic */ class q6 implements RequestDelegate {
                 Runnable runnable = (Runnable) obj;
                 a0.h hVar = gzVar.x;
                 if (tL_error == null) {
-                    hVar.k(0L, ijVar.E1());
+                    hVar.k(0L, ijVar.D1());
                     gzVar.getMessagesController().O3((TLRPC.Updates) tLObject, false);
-                    hVar.k(Long.valueOf(SystemClock.elapsedRealtime()), ijVar.E1());
+                    hVar.k(Long.valueOf(SystemClock.elapsedRealtime()), ijVar.D1());
                 }
                 g0.h3(new lg(gzVar, str2, runnable, 26));
                 break;

@@ -8,10 +8,10 @@ import android.widget.LinearLayout;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public abstract class bo extends LinearLayout {
-    public ii0 a;
+    public ji0 a;
     public ActionBarPopupWindow$ActionBarPopupWindowLayout b;
     public FrameLayout c;
     public int d;
@@ -47,11 +47,11 @@ public abstract class bo extends LinearLayout {
         int i11 = i7;
         int i12 = this.d;
         int makeMeasureSpec = i12 != 0 ? View.MeasureSpec.makeMeasureSpec(i12, TLObject.FLAG_31) : i10;
-        ii0 ii0Var = this.a;
-        if (ii0Var == null || this.b == null) {
+        ji0 ji0Var = this.a;
+        if (ji0Var == null || this.b == null) {
             super.onMeasure(i11, makeMeasureSpec);
         } else {
-            ii0Var.getLayoutParams().width = -2;
+            ji0Var.getLayoutParams().width = -2;
             ((LinearLayout.LayoutParams) this.a.getLayoutParams()).rightMargin = 0;
             this.e = 0.0f;
             super.onMeasure(i11, makeMeasureSpec);
@@ -65,38 +65,38 @@ public abstract class bo extends LinearLayout {
             if (this.a.q()) {
                 i11 = View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_30);
             }
-            ii0 ii0Var2 = this.a;
-            if (!ii0Var2.f1 && ii0Var2.Q0 && ii0Var2.getMeasuredWidth() > 0) {
-                int C = org.telegram.messenger.camera.q.C(16.0f, ii0Var2.getMeasuredWidth(), org.telegram.messenger.g0.L(320.0f));
-                StaticLayout staticLayout = new StaticLayout(ii0Var2.R0.getText(), ii0Var2.R0.getPaint(), C, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-                ii0Var2.T0 = staticLayout.getHeight();
-                ii0Var2.S0 = 0;
+            ji0 ji0Var2 = this.a;
+            if (!ji0Var2.f1 && ji0Var2.Q0 && ji0Var2.getMeasuredWidth() > 0) {
+                int C = org.telegram.messenger.camera.q.C(16.0f, ji0Var2.getMeasuredWidth(), org.telegram.messenger.g0.L(320.0f));
+                StaticLayout staticLayout = new StaticLayout(ji0Var2.R0.getText(), ji0Var2.R0.getPaint(), C, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+                ji0Var2.T0 = staticLayout.getHeight();
+                ji0Var2.S0 = 0;
                 for (int i13 = 0; i13 < staticLayout.getLineCount(); i13++) {
-                    ii0Var2.S0 = Math.max(ii0Var2.S0, (int) Math.ceil(staticLayout.getLineWidth(i13)));
+                    ji0Var2.S0 = Math.max(ji0Var2.S0, (int) Math.ceil(staticLayout.getLineWidth(i13)));
                 }
-                if (staticLayout.getLineCount() <= 1 || ii0Var2.R0.getText().toString().contains("\n")) {
-                    ii0Var2.R0.setWidth(org.telegram.messenger.g0.L(16.0f) + C);
+                if (staticLayout.getLineCount() <= 1 || ji0Var2.R0.getText().toString().contains("\n")) {
+                    ji0Var2.R0.setWidth(org.telegram.messenger.g0.L(16.0f) + C);
                 } else {
-                    int a10 = fi.m3.a(ii0Var2.R0.getText(), ii0Var2.R0.getPaint());
-                    StaticLayout staticLayout2 = new StaticLayout(ii0Var2.R0.getText(), ii0Var2.R0.getPaint(), a10, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-                    ii0Var2.T0 = staticLayout2.getHeight();
-                    ii0Var2.S0 = 0;
+                    int a10 = fi.m3.a(ji0Var2.R0.getText(), ji0Var2.R0.getPaint());
+                    StaticLayout staticLayout2 = new StaticLayout(ji0Var2.R0.getText(), ji0Var2.R0.getPaint(), a10, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+                    ji0Var2.T0 = staticLayout2.getHeight();
+                    ji0Var2.S0 = 0;
                     for (int i14 = 0; i14 < staticLayout2.getLineCount(); i14++) {
-                        ii0Var2.S0 = Math.max(ii0Var2.S0, (int) Math.ceil(staticLayout2.getLineWidth(i14)));
+                        ji0Var2.S0 = Math.max(ji0Var2.S0, (int) Math.ceil(staticLayout2.getLineWidth(i14)));
                     }
-                    ii0Var2.R0.setPadding(org.telegram.messenger.g0.L(24.0f), 0, org.telegram.messenger.g0.L(24.0f), 0);
-                    ii0Var2.R0.setWidth(org.telegram.messenger.g0.L(48.0f) + a10);
+                    ji0Var2.R0.setPadding(org.telegram.messenger.g0.L(24.0f), 0, org.telegram.messenger.g0.L(24.0f), 0);
+                    ji0Var2.R0.setWidth(org.telegram.messenger.g0.L(48.0f) + a10);
                 }
-                int max = Math.max(org.telegram.messenger.g0.L(20.0f), org.telegram.messenger.g0.L(7.0f) + ii0Var2.T0);
-                int i15 = ii0Var2.M0;
+                int max = Math.max(org.telegram.messenger.g0.L(20.0f), org.telegram.messenger.g0.L(7.0f) + ji0Var2.T0);
+                int i15 = ji0Var2.M0;
                 if (i15 == 1 || i15 == 2) {
                     max = org.telegram.messenger.g0.L(20.0f);
                 } else {
-                    ii0Var2.getLayoutParams().height = org.telegram.messenger.g0.L(22.0f) + org.telegram.messenger.g0.L(52.0f) + max;
+                    ji0Var2.getLayoutParams().height = org.telegram.messenger.g0.L(22.0f) + org.telegram.messenger.g0.L(52.0f) + max;
                 }
-                ((FrameLayout.LayoutParams) ii0Var2.z0.getLayoutParams()).topMargin = max;
-                ((FrameLayout.LayoutParams) ii0Var2.b.getLayoutParams()).topMargin = max;
-                ii0Var2.f1 = true;
+                ((FrameLayout.LayoutParams) ji0Var2.z0.getLayoutParams()).topMargin = max;
+                ((FrameLayout.LayoutParams) ji0Var2.b.getLayoutParams()).topMargin = max;
+                ji0Var2.f1 = true;
             }
             int totalWidth = this.a.getTotalWidth();
             View childAt = (this.b.getSwipeBack() != null ? this.b.getSwipeBack() : this.b).getChildAt(0);
@@ -184,9 +184,9 @@ public abstract class bo extends LinearLayout {
         this.b = actionBarPopupWindow$ActionBarPopupWindowLayout;
         actionBarPopupWindow$ActionBarPopupWindowLayout.setOnSizeChangedListener(new f2(12, this, actionBarPopupWindow$ActionBarPopupWindowLayout));
         if (actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack() != null) {
-            ve0 swipeBack = actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack();
-            swipeBack.y.add(new ue0() { // from class: org.telegram.ui.Components.ao
-                @Override // org.telegram.ui.Components.ue0
+            we0 swipeBack = actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack();
+            swipeBack.y.add(new ve0() { // from class: org.telegram.ui.Components.ao
+                @Override // org.telegram.ui.Components.ve0
                 public final void a(float f10, float f11) {
                     bo boVar = bo.this;
                     FrameLayout frameLayout = boVar.c;
@@ -200,10 +200,10 @@ public abstract class bo extends LinearLayout {
         }
     }
 
-    public void setReactionsLayout(ii0 ii0Var) {
-        this.a = ii0Var;
-        if (ii0Var != null) {
-            ii0Var.setChatScrimView(this);
+    public void setReactionsLayout(ji0 ji0Var) {
+        this.a = ji0Var;
+        if (ji0Var != null) {
+            ji0Var.setChatScrimView(this);
         }
     }
 

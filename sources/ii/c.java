@@ -37,28 +37,29 @@ import org.telegram.messenger.sc;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.ActionBar.w0;
 import org.telegram.ui.Components.ac;
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.kb;
-import org.telegram.ui.Components.l41;
-import org.telegram.ui.Components.q41;
-import org.telegram.ui.Components.yl0;
+import org.telegram.ui.Components.m41;
+import org.telegram.ui.Components.r41;
+import org.telegram.ui.Components.zl0;
 import org.telegram.ui.Components.zs;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.an;
-import org.telegram.ui.fw;
+import org.telegram.ui.cn;
+import org.telegram.ui.hw;
 import org.telegram.ui.web.BotWebViewContainer$WebViewProxy;
 import org.telegram.ui.web.o1;
 import org.telegram.ui.web.u0;
 import org.telegram.ui.web.z0;
-import org.telegram.ui.ww;
-import sg.t0;
+import org.telegram.ui.yw;
+import sg.v0;
+import sg.y0;
 import tg.i2;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c implements c20 {
     public final /* synthetic */ int a;
@@ -72,27 +73,27 @@ public final /* synthetic */ class c implements c20 {
     @Override // org.telegram.messenger.c20
     public final void a(Object obj) {
         boolean z9;
-        l41 l41Var;
-        l41 l41Var2;
+        m41 m41Var;
+        m41 m41Var2;
         int i7;
         TLRPC.TL_messageMediaGiveaway tL_messageMediaGiveaway;
         int i10 = this.a;
         String str = "";
         int i11 = 3;
-        int i12 = 2;
         boolean z10 = false;
-        int i13 = 1;
+        boolean z11 = false;
+        int i12 = 1;
         Object obj2 = this.b;
         switch (i10) {
             case 0:
                 f fVar = (f) obj2;
                 ArrayList arrayList = (ArrayList) obj;
                 ArrayList arrayList2 = fVar.n;
-                boolean z11 = arrayList2 == null || arrayList2.isEmpty();
+                boolean z12 = arrayList2 == null || arrayList2.isEmpty();
                 fVar.n = arrayList;
-                q41 q41Var = fVar.f;
-                if (q41Var != null) {
-                    q41Var.f3.O(z11);
+                r41 r41Var = fVar.f;
+                if (r41Var != null) {
+                    r41Var.f3.O(z12);
                     break;
                 }
                 break;
@@ -101,24 +102,24 @@ public final /* synthetic */ class c implements c20 {
                 break;
             case 2:
                 TLRPC.User user = (TLRPC.User) obj;
-                yl0 yl0Var = (yl0) ((jg.h0) obj2);
-                fw fwVar = yl0Var.K0;
+                zl0 zl0Var = (zl0) ((jg.h0) obj2);
+                hw hwVar = zl0Var.K0;
                 if (user != null) {
-                    ww wwVar = fwVar.L0;
-                    if (wwVar != null) {
-                        wwVar.W3();
+                    yw ywVar = hwVar.L0;
+                    if (ywVar != null) {
+                        ywVar.W3();
                     }
-                    qp.s1(fwVar.J0).x3(null, user, null, 0, null, false, false);
-                    yl0Var.Q(user.id, user);
+                    qp.s1(hwVar.J0).x3(null, user, null, 0, null, false, false);
+                    zl0Var.Q(user.id, user);
                     break;
                 }
                 break;
             case 3:
                 kg.m mVar = (kg.m) obj2;
-                boolean z12 = ((Integer) obj).intValue() > org.telegram.messenger.g0.L(20.0f);
-                if (mVar.F != z12) {
-                    mVar.F = z12;
-                    if (!z12) {
+                boolean z13 = ((Integer) obj).intValue() > org.telegram.messenger.g0.L(20.0f);
+                if (mVar.F != z13) {
+                    mVar.F = z13;
+                    if (!z13) {
                         mVar.a.y0(0);
                         break;
                     }
@@ -142,12 +143,12 @@ public final /* synthetic */ class c implements c20 {
                 if (a0Var != null) {
                     a0Var.i(tL_connectedBot3 != null ? tL_connectedBot3.recipients : null);
                 }
-                q41 q41Var2 = q0Var.c;
-                if (q41Var2 == null || (l41Var = q41Var2.f3) == null) {
+                r41 r41Var2 = q0Var.c;
+                if (r41Var2 == null || (m41Var = r41Var2.f3) == null) {
                     z9 = true;
                 } else {
                     z9 = true;
-                    l41Var.O(true);
+                    m41Var.O(true);
                 }
                 q0Var.d0(z9);
                 q0Var.T = z9;
@@ -164,9 +165,9 @@ public final /* synthetic */ class c implements c20 {
                 bundle.putInt("chatMode", 5);
                 bundle.putLong("user_id", q1Var.getUserConfig().e());
                 bundle.putString("quick_reply", (String) obj);
-                an anVar = new an(bundle);
-                anVar.V9 = true;
-                q1Var.presentFragment(anVar);
+                cn cnVar = new cn(bundle);
+                cnVar.X9 = true;
+                q1Var.presentFragment(cnVar);
                 break;
             case 8:
                 org.telegram.messenger.g0.v1((x0) obj2);
@@ -175,13 +176,13 @@ public final /* synthetic */ class c implements c20 {
             case 9:
                 k3 k3Var = (k3) obj2;
                 TL_iv.RichMessage richMessage = (TL_iv.RichMessage) obj;
-                int i14 = k3Var.b;
-                int i15 = k3Var.a;
+                int i13 = k3Var.b;
+                int i14 = k3Var.a;
                 t3 t3Var = k3Var.e;
                 if (richMessage != null) {
                     ArrayList arrayList3 = t3Var.s3;
                     ArrayList arrayList4 = t3Var.s3;
-                    if (i15 < arrayList3.size() && i14 < arrayList4.size()) {
+                    if (i14 < arrayList3.size() && i13 < arrayList4.size()) {
                         f2 f2Var = t3Var.Q3;
                         if (f2Var != null) {
                             f2Var.d();
@@ -190,8 +191,8 @@ public final /* synthetic */ class c implements c20 {
                         if (g3Var != null) {
                             g3Var.f(false);
                         }
-                        li.a aVar = (li.a) arrayList4.get(i15);
-                        li.a aVar2 = (li.a) arrayList4.get(i14);
+                        li.a aVar = (li.a) arrayList4.get(i14);
+                        li.a aVar2 = (li.a) arrayList4.get(i13);
                         String P4 = t3.D3(aVar.b) ? t3Var.P4(aVar) : "";
                         CharSequence charSequence = str;
                         if (t3.D3(aVar2.b)) {
@@ -246,14 +247,14 @@ public final /* synthetic */ class c implements c20 {
                                 t3Var.r3.documents.addAll(arrayList7);
                             }
                         }
-                        for (int i16 = 0; i16 < arrayList5.size(); i16++) {
-                            t3Var.y4((li.a) arrayList5.get(i16));
+                        for (int i15 = 0; i15 < arrayList5.size(); i15++) {
+                            t3Var.y4((li.a) arrayList5.get(i15));
                         }
-                        while (i14 >= i15) {
-                            arrayList4.remove(i14);
-                            i14--;
+                        while (i13 >= i14) {
+                            arrayList4.remove(i13);
+                            i13--;
                         }
-                        arrayList4.addAll(i15, arrayList5);
+                        arrayList4.addAll(i14, arrayList5);
                         t3Var.v4();
                         t3Var.f3.O(false);
                         f2 f2Var2 = t3Var.Q3;
@@ -362,8 +363,8 @@ public final /* synthetic */ class c implements c20 {
                 o1 o1Var = (o1) obj2;
                 o1Var.r = ((ArrayList) obj).size();
                 w3 w3Var2 = o1Var.a;
-                if (w3Var2 != null && (l41Var2 = w3Var2.f3) != null && w3Var2.G) {
-                    l41Var2.O(true);
+                if (w3Var2 != null && (m41Var2 = w3Var2.f3) != null && w3Var2.G) {
+                    m41Var2.O(true);
                     break;
                 }
                 break;
@@ -376,31 +377,31 @@ public final /* synthetic */ class c implements c20 {
                 break;
             case 20:
                 sg.w wVar = (sg.w) obj2;
-                sg.z0 z0Var2 = (sg.z0) obj;
-                sg.w0 w0Var2 = wVar.a;
-                if (z0Var2 != null) {
-                    float currentWeight = w0Var2.getCurrentWeight();
-                    z0Var2.f = currentWeight;
+                y0 y0Var = (y0) obj;
+                v0 v0Var = wVar.a;
+                if (y0Var != null) {
+                    float currentWeight = v0Var.getCurrentWeight();
+                    y0Var.f = currentWeight;
                     double d = wVar.p;
                     if (d > 0.0d) {
-                        z0Var2.f = (float) ((d / wVar.q) * currentWeight);
+                        y0Var.f = (float) ((d / wVar.q) * currentWeight);
                     }
-                    if (z0Var2.a.o() == 4) {
-                        z0Var2.k *= z0Var2.f;
+                    if (y0Var.a.o() == 4) {
+                        y0Var.k *= y0Var.f;
                     }
                 }
-                sg.j0 painting = w0Var2.getPainting();
+                sg.j0 painting = v0Var.getPainting();
                 if (painting.L == null) {
-                    painting.f.f(new sg.e0(painting, z0Var2, i13));
+                    painting.f.f(new sg.e0(painting, y0Var, i12));
                     break;
                 }
                 break;
             case 21:
-                sh.b bVar = (sh.b) obj2;
-                sh.c cVar = (sh.c) obj;
-                bVar.h = cVar;
-                bVar.c.b(cVar, true);
-                org.telegram.messenger.g0.i3(new t0(bVar, i12), 200L);
+                sh.c cVar = (sh.c) obj2;
+                sh.d dVar = (sh.d) obj;
+                cVar.h = dVar;
+                cVar.c.b(dVar, true);
+                org.telegram.messenger.g0.i3(new sh.b(cVar, z11 ? 1 : 0), 200L);
                 break;
             case 22:
                 e5 e5Var = (e5) obj2;
@@ -422,8 +423,8 @@ public final /* synthetic */ class c implements c20 {
                 i2Var.r = bitmapShader2;
                 paint2.setShader(bitmapShader2);
                 ColorMatrix colorMatrix2 = new ColorMatrix();
-                org.telegram.messenger.g0.i(colorMatrix2, k6.I.q() ? 0.08f : 0.25f);
-                org.telegram.messenger.g0.h(colorMatrix2, k6.I.q() ? -0.02f : -0.07f);
+                org.telegram.messenger.g0.i(colorMatrix2, l6.I.q() ? 0.08f : 0.25f);
+                org.telegram.messenger.g0.h(colorMatrix2, l6.I.q() ? -0.02f : -0.07f);
                 i2Var.s.setColorFilter(new ColorMatrixColorFilter(colorMatrix2));
                 i2Var.w = new Matrix();
                 break;
@@ -467,7 +468,7 @@ public final /* synthetic */ class c implements c20 {
                 if (Q != null) {
                     String b10 = wg.h.b(ijVar);
                     TLRPC.Chat M0 = qp.s1(p10.s0).M0(Long.valueOf(-ijVar.Z0()));
-                    boolean z13 = M0 != null && org.telegram.messenger.t3.V(M0);
+                    boolean z14 = M0 != null && org.telegram.messenger.t3.V(M0);
                     kb kbVar = new kb(Q.getParentActivity(), Q.getResourceProvider());
                     if (payments_giveawayinfo instanceof TLRPC.TL_payments_giveawayInfoResults) {
                         kbVar.c(R.raw.chats_infotip, 30, 30, new String[0]);
@@ -484,8 +485,8 @@ public final /* synthetic */ class c implements c20 {
                     kbVar.b.setSingleLine(false);
                     kbVar.b.setMaxLines(2);
                     ac acVar = new ac(Q.getParentActivity(), Q.getResourceProvider(), true);
-                    acVar.e(id.M0(2131749011, null));
-                    acVar.b = new fi.q1(payments_giveawayinfo, z13, b10, j3, tL_messageMediaGiveaway2, Q);
+                    acVar.e(id.M0(2131749010, null));
+                    acVar.b = new fi.q1(payments_giveawayinfo, z14, b10, j3, tL_messageMediaGiveaway2, Q);
                     kbVar.setButton(acVar);
                     cc.g(Q, kbVar, 2750).j();
                     break;
@@ -512,8 +513,8 @@ public final /* synthetic */ class c implements c20 {
                     hVar2.L = paint3;
                     paint3.setShader(hVar2.J);
                     ColorMatrix colorMatrix3 = new ColorMatrix();
-                    org.telegram.messenger.g0.i(colorMatrix3, k6.I.q() ? 0.08f : 1.25f);
-                    org.telegram.messenger.g0.h(colorMatrix3, k6.I.q() ? 0.02f : -0.15f);
+                    org.telegram.messenger.g0.i(colorMatrix3, l6.I.q() ? 0.08f : 1.25f);
+                    org.telegram.messenger.g0.h(colorMatrix3, l6.I.q() ? 0.02f : -0.15f);
                     hVar2.L.setColorFilter(new ColorMatrixColorFilter(colorMatrix3));
                     matrix5.reset();
                     matrix5.setScale(15.0f, 15.0f);

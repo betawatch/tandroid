@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.content.DialogInterface;
 import android.view.View;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p0 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -49,14 +49,14 @@ public final /* synthetic */ class p0 implements DialogInterface.OnDismissListen
                 ((FragmentContextView) obj).c(false);
                 break;
             case 8:
-                ql0.H = null;
+                rl0.H = null;
                 ((View) obj).requestFocus();
                 break;
             case 9:
-                org.telegram.messenger.g0.v1((kl0) obj);
+                org.telegram.messenger.g0.v1((ll0) obj);
                 break;
             default:
-                ThemeEditorView themeEditorView = ((ez0) obj).d;
+                ThemeEditorView themeEditorView = ((fz0) obj).d;
                 themeEditorView.n = null;
                 if (themeEditorView.d != null) {
                     org.telegram.messenger.g0.y3(themeEditorView.j, themeEditorView.c, themeEditorView.i);

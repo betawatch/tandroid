@@ -64,20 +64,20 @@ import org.telegram.ui.Cells.r7;
 import org.telegram.ui.Cells.s5;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.am;
-import org.telegram.ui.Components.b41;
 import org.telegram.ui.Components.b8;
 import org.telegram.ui.Components.bm;
 import org.telegram.ui.Components.bn;
+import org.telegram.ui.Components.c41;
 import org.telegram.ui.Components.hc;
 import org.telegram.ui.Components.l7;
 import org.telegram.ui.Components.m6;
 import org.telegram.ui.Components.pc;
-import org.telegram.ui.Components.t51;
+import org.telegram.ui.Components.u51;
 import org.telegram.ui.Components.uj;
-import org.telegram.ui.Components.x70;
 import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.y70;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class f3 implements Runnable {
     public final /* synthetic */ int a;
@@ -636,10 +636,10 @@ public final class f3 implements Runnable {
                 return;
             case 18:
                 org.telegram.ui.Cells.j jVar = (org.telegram.ui.Cells.j) this.b;
-                x70 x70Var = jVar.x;
-                if (x70Var != null) {
-                    CharacterStyle characterStyle = x70Var.i;
-                    final String url = characterStyle instanceof b41 ? ((b41) characterStyle).getURL() : characterStyle instanceof URLSpan ? ((URLSpan) characterStyle).getURL() : characterStyle.toString();
+                y70 y70Var = jVar.x;
+                if (y70Var != null) {
+                    CharacterStyle characterStyle = y70Var.i;
+                    final String url = characterStyle instanceof c41 ? ((c41) characterStyle).getURL() : characterStyle instanceof URLSpan ? ((URLSpan) characterStyle).getURL() : characterStyle.toString();
                     try {
                         jVar.performHapticFeedback(0, 2);
                     } catch (Exception unused2) {
@@ -651,7 +651,7 @@ public final class f3 implements Runnable {
                         org.telegram.ui.ActionBar.v2 l10 = k5.l(1, jVar.getContext(), null, false);
                         l10.O = url;
                         l10.P = false;
-                        CharSequence[] charSequenceArr = {id.M0(2131747818, null), id.M0(2131751767, null)};
+                        CharSequence[] charSequenceArr = {id.M0(2131747817, null), id.M0(2131751767, null)};
                         DialogInterface.OnClickListener onClickListener = new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Cells.d
                             @Override // android.content.DialogInterface.OnClickListener
                             public final void onClick(DialogInterface dialogInterface, int i37) {
@@ -666,11 +666,11 @@ public final class f3 implements Runnable {
                                     org.telegram.messenger.g0.g(str2);
                                     if (org.telegram.messenger.g0.I3()) {
                                         if (str2.startsWith("@")) {
-                                            org.telegram.messenger.k5.o(null, 2131743668, hc.a0(f2Var), R.raw.copy, 36);
+                                            org.telegram.messenger.k5.o(null, 2131743665, hc.a0(f2Var), R.raw.copy, 36);
                                         } else if (str2.startsWith("#") || str2.startsWith("$")) {
-                                            org.telegram.messenger.k5.o(null, 2131749363, hc.a0(f2Var), R.raw.copy, 36);
+                                            org.telegram.messenger.k5.o(null, 2131749362, hc.a0(f2Var), R.raw.copy, 36);
                                         } else {
-                                            org.telegram.messenger.k5.o(null, 2131748922, hc.a0(f2Var), R.raw.copy, 36);
+                                            org.telegram.messenger.k5.o(null, 2131748921, hc.a0(f2Var), R.raw.copy, 36);
                                         }
                                     }
                                 }
@@ -769,8 +769,8 @@ public final class f3 implements Runnable {
                 return;
             case 25:
                 b8 b8Var2 = (b8) this.b;
-                t51 t51Var = MediaController.B().i0;
-                long U = t51Var == null ? 0L : t51Var.U();
+                u51 u51Var = MediaController.B().i0;
+                long U = u51Var == null ? 0L : u51Var.U();
                 if (U == 0 || U == -9223372036854775807L) {
                     b8Var2.A2 = System.currentTimeMillis();
                     return;
@@ -787,7 +787,7 @@ public final class f3 implements Runnable {
                 }
                 b8Var2.y2 = f15;
                 ij ijVar2 = MediaController.B().u0;
-                if (ijVar2 != null && ijVar2.J3()) {
+                if (ijVar2 != null && ijVar2.I3()) {
                     if (!MediaController.B().H()) {
                         MediaController.B().u0.b0 = b8Var2.y2;
                     }

@@ -2,7 +2,7 @@ package wi;
 
 import android.os.Handler;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d implements Runnable {
     public final /* synthetic */ int a;
@@ -40,12 +40,12 @@ public final /* synthetic */ class d implements Runnable {
             case 2:
                 k kVar3 = this.b;
                 n nVar = this.c;
-                if (kVar3.V && !kVar3.Z && kVar3.x == nVar) {
+                if (kVar3.U && !kVar3.Y && kVar3.w == nVar) {
                     kVar3.j();
-                    if (kVar3.g0 == 0) {
-                        kVar3.g0 = nVar.e;
+                    if (kVar3.f0 == 0) {
+                        kVar3.f0 = nVar.e;
                     }
-                    kVar3.j.b("common A/V start completed: segmentElapsedMs=" + k.A(kVar3.D0));
+                    kVar3.j.b("common A/V start completed: segmentElapsedMs=" + k.z(kVar3.C0));
                     t0 t0Var = (t0) kVar3.k.b;
                     t0Var.i.post(new i0(t0Var, 2));
                     return;
@@ -54,7 +54,7 @@ public final /* synthetic */ class d implements Runnable {
             default:
                 k kVar4 = this.b;
                 n nVar2 = this.c;
-                if (!kVar4.V || kVar4.Z || kVar4.x != nVar2 || kVar4.A == null || (tVar = kVar4.w) == null) {
+                if (!kVar4.U || kVar4.Y || kVar4.w != nVar2 || kVar4.z == null || (tVar = kVar4.v) == null) {
                     return;
                 }
                 try {
@@ -68,11 +68,11 @@ public final /* synthetic */ class d implements Runnable {
                     tVar.S = -1L;
                     tVar.q = Long.MAX_VALUE;
                     tVar.t0 = true;
-                    kVar4.j.b("common A/V start armed; waiting for next camera frame: segmentElapsedMs=" + k.A(kVar4.D0));
+                    kVar4.j.b("common A/V start armed; waiting for next camera frame: segmentElapsedMs=" + k.z(kVar4.C0));
                     return;
                 } catch (RuntimeException e10) {
                     kVar4.j();
-                    kVar4.N(e10);
+                    kVar4.M(e10);
                     return;
                 }
         }

@@ -61,7 +61,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.Cells.f1;
 import org.telegram.ui.Cells.h3;
 import org.telegram.ui.Cells.j9;
@@ -71,34 +71,34 @@ import org.telegram.ui.Cells.t2;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.bi;
 import org.telegram.ui.Components.di;
-import org.telegram.ui.Components.ej0;
-import org.telegram.ui.Components.ey0;
-import org.telegram.ui.Components.lm0;
+import org.telegram.ui.Components.fj0;
+import org.telegram.ui.Components.fy0;
+import org.telegram.ui.Components.mm0;
 import org.telegram.ui.Components.qg;
 import org.telegram.ui.Components.r5;
-import org.telegram.ui.Components.rt0;
+import org.telegram.ui.Components.tt0;
 import org.telegram.ui.Components.xs;
 import org.telegram.ui.Components.zs;
 import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.Wallet.x5;
-import org.telegram.ui.bk0;
-import org.telegram.ui.ef0;
-import org.telegram.ui.fr0;
+import org.telegram.ui.Wallet.w5;
+import org.telegram.ui.dk0;
+import org.telegram.ui.gf0;
 import org.telegram.ui.h5;
-import org.telegram.ui.hy0;
-import org.telegram.ui.kj0;
-import org.telegram.ui.mw;
-import org.telegram.ui.qj0;
-import org.telegram.ui.tg0;
-import org.telegram.ui.vw;
-import org.telegram.ui.ww;
+import org.telegram.ui.hr0;
+import org.telegram.ui.ky0;
+import org.telegram.ui.mj0;
+import org.telegram.ui.ow;
+import org.telegram.ui.sj0;
+import org.telegram.ui.vg0;
+import org.telegram.ui.xw;
+import org.telegram.ui.yw;
 import ug.y0;
 import v4.d1;
 import v4.j1;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
-public final class d0 implements a0, Continuation, lm0, xs, l1, ej0, qj0, ri.a, h2.d, te.b, bi, com.google.android.gms.common.api.internal.p {
+public final class d0 implements a0, Continuation, mm0, xs, l1, fj0, sj0, ri.a, h2.d, te.b, bi, com.google.android.gms.common.api.internal.p {
     public Object a;
     public Object b;
 
@@ -111,9 +111,9 @@ public final class d0 implements a0, Continuation, lm0, xs, l1, ej0, qj0, ri.a, 
     public m9.y A(o0 o0Var) {
         Uri uri;
         byte[] bArr;
-        hy0 hy0Var = (hy0) this.b;
-        if (hy0Var != null && (((uri = (Uri) hy0Var.c) != null && uri.equals(o0Var.n)) || ((bArr = (byte[]) hy0Var.b) != null && Arrays.equals(bArr, o0Var.k)))) {
-            m9.y yVar = (m9.y) ((hy0) this.b).d;
+        ky0 ky0Var = (ky0) this.b;
+        if (ky0Var != null && (((uri = (Uri) ky0Var.c) != null && uri.equals(o0Var.n)) || ((bArr = (byte[]) ky0Var.b) != null && Arrays.equals(bArr, o0Var.k)))) {
+            m9.y yVar = (m9.y) ((ky0) this.b).d;
             yVar.getClass();
             return yVar;
         }
@@ -121,7 +121,7 @@ public final class d0 implements a0, Continuation, lm0, xs, l1, ej0, qj0, ri.a, 
         if (A == null) {
             return null;
         }
-        this.b = new hy0(o0Var, A);
+        this.b = new ky0(o0Var, A);
         return A;
     }
 
@@ -315,7 +315,7 @@ public final class d0 implements a0, Continuation, lm0, xs, l1, ej0, qj0, ri.a, 
         return j3;
     }
 
-    public tg0 I(int i7, long j3, boolean z9) {
+    public vg0 I(int i7, long j3, boolean z9) {
         if (i7 > 0) {
             i7 = ((SparseIntArray) this.b).get(i7, 0);
         }
@@ -324,13 +324,13 @@ public final class d0 implements a0, Continuation, lm0, xs, l1, ej0, qj0, ri.a, 
         }
         long j10 = i7;
         LongSparseArray V = ((g6.d0) this.a).V(j3, 0L);
-        tg0 tg0Var = (tg0) (V != null ? V.get(j10) : null);
-        if (tg0Var != null || !z9) {
-            return tg0Var;
+        vg0 vg0Var = (vg0) (V != null ? V.get(j10) : null);
+        if (vg0Var != null || !z9) {
+            return vg0Var;
         }
-        tg0 tg0Var2 = new tg0();
-        ((g6.d0) this.a).Z(j3, 0L, j10, tg0Var2);
-        return tg0Var2;
+        vg0 vg0Var2 = new vg0();
+        ((g6.d0) this.a).Z(j3, 0L, j10, vg0Var2);
+        return vg0Var2;
     }
 
     public long I0(int i7, int i10, int i11) {
@@ -357,7 +357,7 @@ public final class d0 implements a0, Continuation, lm0, xs, l1, ej0, qj0, ri.a, 
 
     @Override // org.telegram.ui.Cells.l1
     public boolean J0(long j3) {
-        return ((ey0) this.b).w;
+        return ((fy0) this.b).w;
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -376,12 +376,12 @@ public final class d0 implements a0, Continuation, lm0, xs, l1, ej0, qj0, ri.a, 
     }
 
     public boolean M() {
-        x5 x5Var = (x5) this.b;
-        return x5Var.I0 > 0.0f || x5Var.A0();
+        w5 w5Var = (w5) this.b;
+        return w5Var.I0 > 0.0f || w5Var.A0();
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ fr0 N1() {
+    public /* synthetic */ hr0 N1() {
         return null;
     }
 
@@ -403,7 +403,7 @@ public final class d0 implements a0, Continuation, lm0, xs, l1, ej0, qj0, ri.a, 
 
     @Override // org.telegram.ui.Cells.l1
     public boolean Q1(long j3) {
-        return ((ey0) this.b).s;
+        return ((fy0) this.b).s;
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -502,13 +502,13 @@ public final class d0 implements a0, Continuation, lm0, xs, l1, ej0, qj0, ri.a, 
     @Override // h2.d
     public m9.y W(byte[] bArr) {
         byte[] bArr2;
-        hy0 hy0Var = (hy0) this.b;
-        if (hy0Var == null || (bArr2 = (byte[]) hy0Var.b) == null || !Arrays.equals(bArr2, bArr)) {
+        ky0 ky0Var = (ky0) this.b;
+        if (ky0Var == null || (bArr2 = (byte[]) ky0Var.b) == null || !Arrays.equals(bArr2, bArr)) {
             m9.y W = ((h2.d) this.a).W(bArr);
-            this.b = new hy0(bArr, W);
+            this.b = new ky0(bArr, W);
             return W;
         }
-        m9.y yVar = (m9.y) ((hy0) this.b).d;
+        m9.y yVar = (m9.y) ((ky0) this.b).d;
         yVar.getClass();
         return yVar;
     }
@@ -548,13 +548,13 @@ public final class d0 implements a0, Continuation, lm0, xs, l1, ej0, qj0, ri.a, 
         return null;
     }
 
-    @Override // org.telegram.ui.qj0
+    @Override // org.telegram.ui.sj0
     public void a(String str, String str2) {
-        bk0 bk0Var = ((kj0) this.b).a;
+        dk0 dk0Var = ((mj0) this.b).a;
         if ("PHONE_VERIFICATION_NEEDED".equals(str)) {
-            bk0Var.S1(true, str2, (ef0) this.a, this, bk0Var.B1);
+            dk0Var.S1(true, str2, (gf0) this.a, this, dk0Var.B1);
         } else {
-            bk0Var.R1(true, false);
+            dk0Var.R1(true, false);
         }
     }
 
@@ -784,7 +784,7 @@ public final class d0 implements a0, Continuation, lm0, xs, l1, ej0, qj0, ri.a, 
         PremiumPreviewFragment premiumPreviewFragment = (PremiumPreviewFragment) this.b;
         y0 y0Var = premiumPreviewFragment.m0;
         if (premiumPreviewFragment.h0) {
-            paint.setColor(premiumPreviewFragment.getThemedColor(k6.a7));
+            paint.setColor(premiumPreviewFragment.getThemedColor(l6.a7));
             canvas.drawRect(f10, f11, f12, f13, paint);
         } else {
             y0Var.d(0, (-premiumPreviewFragment.d0.getMeasuredWidth()) * 0.1f * premiumPreviewFragment.b0, 0, premiumPreviewFragment.d0.getMeasuredWidth(), 0.0f, premiumPreviewFragment.d0.getMeasuredHeight());
@@ -797,21 +797,21 @@ public final class d0 implements a0, Continuation, lm0, xs, l1, ej0, qj0, ri.a, 
         return false;
     }
 
-    @Override // org.telegram.ui.Components.ej0
+    @Override // org.telegram.ui.Components.fj0
     public boolean f(float f10, float f11, int i7, View view) {
-        ww wwVar = (ww) this.b;
+        yw ywVar = (yw) this.b;
         if (view instanceof t2) {
             t2 t2Var = (t2) view;
             if (t2Var.n2) {
-                wwVar.Z4(t2Var.getDialogId(), view);
+                ywVar.Z4(t2Var.getDialogId(), view);
                 return true;
             }
         }
-        mw mwVar = wwVar.z0;
-        if (mwVar != null && mwVar.getVisibility() == 0 && wwVar.z0.n) {
+        ow owVar = ywVar.z0;
+        if (owVar != null && owVar.getVisibility() == 0 && ywVar.z0.n) {
             return false;
         }
-        return wwVar.A4(view, i7, f10, ((vw) this.a).d);
+        return ywVar.A4(view, i7, f10, ((xw) this.a).d);
     }
 
     @Override // org.telegram.ui.Components.bi
@@ -829,7 +829,7 @@ public final class d0 implements a0, Continuation, lm0, xs, l1, ej0, qj0, ri.a, 
         return false;
     }
 
-    @Override // org.telegram.ui.Components.lm0
+    @Override // org.telegram.ui.Components.mm0
     public /* synthetic */ CharSequence getContentDescription() {
         return null;
     }
@@ -844,11 +844,11 @@ public final class d0 implements a0, Continuation, lm0, xs, l1, ej0, qj0, ri.a, 
         return 0;
     }
 
-    @Override // org.telegram.ui.Components.ej0
+    @Override // org.telegram.ui.Components.fj0
     public void i() {
         Point point = org.telegram.messenger.g0.q;
         if (point.x > point.y) {
-            ((ww) this.b).finishPreviewFragment();
+            ((yw) this.b).finishPreviewFragment();
         }
     }
 
@@ -875,13 +875,13 @@ public final class d0 implements a0, Continuation, lm0, xs, l1, ej0, qj0, ri.a, 
         return null;
     }
 
-    @Override // org.telegram.ui.Components.lm0
+    @Override // org.telegram.ui.Components.mm0
     public void l(boolean z9, float f10) {
         h5.j1 = f10;
         ((TextView) this.a).setText("Saturation " + (f10 * 5.0f));
-        rt0 rt0Var = ((h5) this.b).i1;
-        rt0Var.M();
-        rt0Var.L();
+        tt0 tt0Var = ((h5) this.b).i1;
+        tt0Var.M();
+        tt0Var.L();
     }
 
     public void l0(o0.f fVar) {
@@ -967,15 +967,15 @@ public final class d0 implements a0, Continuation, lm0, xs, l1, ej0, qj0, ri.a, 
         return false;
     }
 
-    @Override // org.telegram.ui.Components.ej0
+    @Override // org.telegram.ui.Components.fj0
     public void q(float f10) {
         Point point = org.telegram.messenger.g0.q;
         if (point.x > point.y) {
-            ((ww) this.b).movePreviewFragment(f10);
+            ((yw) this.b).movePreviewFragment(f10);
         }
     }
 
-    @Override // org.telegram.ui.Components.lm0
+    @Override // org.telegram.ui.Components.mm0
     public /* synthetic */ int q0() {
         return 0;
     }
@@ -1110,7 +1110,7 @@ public final class d0 implements a0, Continuation, lm0, xs, l1, ej0, qj0, ri.a, 
         if (trim.length() > 16) {
             trim = trim.substring(0, 16);
         }
-        if (((ey0) this.b).s || !TextUtils.isEmpty(trim)) {
+        if (((fy0) this.b).s || !TextUtils.isEmpty(trim)) {
             return trim;
         }
         return null;
@@ -1160,7 +1160,7 @@ public final class d0 implements a0, Continuation, lm0, xs, l1, ej0, qj0, ri.a, 
         }
     }
 
-    @Override // org.telegram.ui.Components.lm0
+    @Override // org.telegram.ui.Components.mm0
     public void D() {
     }
 

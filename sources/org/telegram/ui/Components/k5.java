@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k5 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -42,9 +42,9 @@ public final /* synthetic */ class k5 implements ValueAnimator.AnimatorUpdateLis
                 int i10 = ChatActivityEnterView.s5;
                 float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 float z9 = com.google.android.recaptcha.internal.a.z(f12, f13, floatValue2, f13);
-                cn0 cn0Var = chatActivityEnterView.p0;
-                if (cn0Var != null) {
-                    cn0Var.setAlpha(((f10 - f11) * floatValue2) + f11);
+                dn0 dn0Var = chatActivityEnterView.p0;
+                if (dn0Var != null) {
+                    dn0Var.setAlpha(((f10 - f11) * floatValue2) + f11);
                     chatActivityEnterView.p0.setTranslationX(z9);
                 }
                 chatActivityEnterView.Q0.setTranslationX(z9);

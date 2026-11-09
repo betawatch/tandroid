@@ -18,24 +18,24 @@ import org.telegram.messenger.id;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.a6;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Components.ch0;
+import org.telegram.ui.ActionBar.b6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.Components.dh0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class u1 extends LinearLayout implements a6 {
+public final class u1 extends LinearLayout implements b6 {
     public final /* synthetic */ int a = 0;
-    public final f6 b;
+    public final g6 b;
     public final TextView c;
     public final View d;
     public final TextView e;
 
-    public u1(Activity activity, int i7, long j3, String str, f6 f6Var) {
+    public u1(Activity activity, int i7, long j3, String str, g6 g6Var) {
         super(activity);
         setOrientation(1);
-        this.b = f6Var;
+        this.b = g6Var;
         TextView textView = new TextView(activity);
         this.c = textView;
         textView.setTextSize(1, 14.0f);
@@ -50,29 +50,29 @@ public final class u1 extends LinearLayout implements a6 {
         mdVar.setTextSize(1, 12.0f);
         mdVar.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
         mdVar.setGravity(1);
-        ch0 ch0Var = new ch0(activity);
-        ch0Var.setScaleType(ImageView.ScaleType.CENTER);
-        ch0Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+        dh0 dh0Var = new dh0(activity);
+        dh0Var.setScaleType(ImageView.ScaleType.CENTER);
+        dh0Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
         mdVar.setMaxWidth(org.telegram.messenger.g0.L(160.0f));
         int i10 = 22;
         if (i7 == 9) {
-            ch0Var.setImageResource(R.drawable.large_greeting);
-            textView.setText(id.M0(2131742899, null));
-            mdVar.setText(id.M0(2131742900, null));
+            dh0Var.setImageResource(R.drawable.large_greeting);
+            textView.setText(id.M0(2131742896, null));
+            mdVar.setText(id.M0(2131742897, null));
             mdVar.setMaxWidth(Math.min(org.telegram.messenger.g0.L(160.0f), m3.a(mdVar.getText(), mdVar.getPaint())));
         } else if ("hello".equalsIgnoreCase(str)) {
-            ch0Var.setImageResource(R.drawable.large_greeting);
+            dh0Var.setImageResource(R.drawable.large_greeting);
             textView.setText(id.M0(2131752765, null));
             mdVar.setText(id.M0(2131752766, null));
             mdVar.setMaxWidth(Math.min(org.telegram.messenger.g0.L(160.0f), m3.a(mdVar.getText(), mdVar.getPaint())));
         } else if ("away".equalsIgnoreCase(str)) {
-            ch0Var.setImageResource(R.drawable.large_away);
+            dh0Var.setImageResource(R.drawable.large_away);
             textView.setText(id.M0(2131752833, null));
             mdVar.setText(id.M0(2131752834, null));
             mdVar.setMaxWidth(Math.min(org.telegram.messenger.g0.L(160.0f), m3.a(mdVar.getText(), mdVar.getPaint())));
         } else {
             if (i7 == 5) {
-                ch0Var.setImageResource(R.drawable.large_quickreplies);
+                dh0Var.setImageResource(R.drawable.large_quickreplies);
                 s1 c10 = t1.f(p10.s0).c(j3);
                 String str2 = c10 == null ? str : c10.b;
                 textView.setText(id.M0(2131752667, null));
@@ -93,7 +93,7 @@ public final class u1 extends LinearLayout implements a6 {
             i10 = 12;
         }
         int i11 = i10;
-        addView(ch0Var, ha.t(78, 78, 49, 20, 17, 20, 9));
+        addView(dh0Var, ha.t(78, 78, 49, 20, 17, 20, 9));
         addView(textView, ha.t(-2, -2, 49, 20, 0, 20, 6));
         addView(mdVar, ha.t(-2, -2, 49, i11, 0, i11, ((md) this.e) == null ? 19 : 9));
         View view = (md) this.e;
@@ -103,13 +103,13 @@ public final class u1 extends LinearLayout implements a6 {
         updateColors();
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void addColorKeys(HashSet hashSet) {
         switch (this.a) {
             case 0:
                 break;
             default:
-                hashSet.add(Integer.valueOf(k6.G6));
+                hashSet.add(Integer.valueOf(l6.G6));
                 break;
         }
     }
@@ -126,31 +126,31 @@ public final class u1 extends LinearLayout implements a6 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
         switch (this.a) {
             case 0:
                 md mdVar = (md) this.d;
                 TextView textView = this.c;
                 if (textView != null && mdVar != null) {
-                    int i7 = k6.Wc;
-                    f6 f6Var = this.b;
-                    textView.setTextColor(k6.w0(i7, f6Var));
-                    mdVar.setTextColor(k6.w0(i7, f6Var));
+                    int i7 = l6.Wc;
+                    g6 g6Var = this.b;
+                    textView.setTextColor(l6.w0(i7, g6Var));
+                    mdVar.setTextColor(l6.w0(i7, g6Var));
                     md mdVar2 = (md) this.e;
                     if (mdVar2 != null) {
-                        mdVar2.setTextColor(k6.w0(i7, f6Var));
+                        mdVar2.setTextColor(l6.w0(i7, g6Var));
                         break;
                     }
                 }
                 break;
             default:
                 ImageView imageView = (ImageView) this.d;
-                int i10 = k6.G6;
-                f6 f6Var2 = this.b;
-                imageView.setColorFilter(new PorterDuffColorFilter(k6.w0(i10, f6Var2), PorterDuff.Mode.SRC_IN));
-                this.c.setTextColor(k6.w0(i10, f6Var2));
-                this.e.setTextColor(k6.r1(0.75f, k6.w0(i10, f6Var2)));
+                int i10 = l6.G6;
+                g6 g6Var2 = this.b;
+                imageView.setColorFilter(new PorterDuffColorFilter(l6.w0(i10, g6Var2), PorterDuff.Mode.SRC_IN));
+                this.c.setTextColor(l6.w0(i10, g6Var2));
+                this.e.setTextColor(l6.r1(0.75f, l6.w0(i10, g6Var2)));
                 break;
         }
     }
@@ -158,9 +158,9 @@ public final class u1 extends LinearLayout implements a6 {
     private final /* synthetic */ void a(HashSet hashSet) {
     }
 
-    public u1(Context context, li.l0 l0Var, f6 f6Var) {
+    public u1(Context context, li.l0 l0Var, g6 g6Var) {
         super(context);
-        this.b = f6Var;
+        this.b = g6Var;
         setOrientation(0);
         ImageView imageView = new ImageView(context);
         this.d = imageView;

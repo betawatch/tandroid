@@ -16,9 +16,9 @@ import java.util.List;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
 import org.telegram.ui.ActionBar.m3;
-import org.telegram.ui.o61;
+import org.telegram.ui.p61;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class b0 {
     public static final b0 e;
@@ -203,7 +203,7 @@ public final class b0 {
         }
         if (arrayList == null && !i) {
             i = true;
-            Utilities.i.c(new o61(15));
+            Utilities.i.c(new p61(15));
         }
         return f;
     }

@@ -6,7 +6,7 @@ import java.util.Iterator;
 import org.telegram.messenger.voip.VoIPGroupNotification;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ql implements Runnable {
     public final /* synthetic */ int a;
@@ -39,7 +39,7 @@ public final /* synthetic */ class ql implements Runnable {
                                     if (messageAction instanceof TLRPC.TL_messageActionConferenceCall) {
                                         TLRPC.TL_messageActionConferenceCall tL_messageActionConferenceCall = (TLRPC.TL_messageActionConferenceCall) messageAction;
                                         if (tL_messageActionConferenceCall.active || tL_messageActionConferenceCall.missed) {
-                                            VoIPGroupNotification.hide(t0.b, notificationsController.currentAccount, ijVar.f1());
+                                            VoIPGroupNotification.hide(t0.b, notificationsController.currentAccount, ijVar.e1());
                                         }
                                     }
                                 }
@@ -55,7 +55,7 @@ public final /* synthetic */ class ql implements Runnable {
                 for (int i11 = 0; i11 < hVar.m(); i11++) {
                     ArrayList arrayList2 = (ArrayList) hVar.n(i11);
                     for (int i12 = 0; i12 < arrayList2.size(); i12++) {
-                        TLRPC.TL_forumTopic tL_forumTopic = (TLRPC.TL_forumTopic) k00Var.e.f(k00.p(((ij) arrayList2.get(i12)).f1(), -ij.B0(((ij) arrayList2.get(i12)).k)));
+                        TLRPC.TL_forumTopic tL_forumTopic = (TLRPC.TL_forumTopic) k00Var.e.f(k00.p(((ij) arrayList2.get(i12)).e1(), -ij.B0(((ij) arrayList2.get(i12)).k)));
                         if (tL_forumTopic != null) {
                             tL_forumTopic.topMessage = ((ij) arrayList2.get(i12)).k;
                             hashSet.add(Long.valueOf(-ij.B0(((ij) arrayList2.get(i12)).k)));

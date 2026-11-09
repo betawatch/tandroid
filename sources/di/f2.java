@@ -12,18 +12,18 @@ import org.telegram.messenger.iz;
 import org.telegram.messenger.qp;
 import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.Components.hc;
-import org.telegram.ui.Components.ii0;
-import org.telegram.ui.Components.k60;
-import org.telegram.ui.Components.l51;
+import org.telegram.ui.Components.ji0;
+import org.telegram.ui.Components.l60;
 import org.telegram.ui.Components.lz;
+import org.telegram.ui.Components.m51;
 import org.telegram.ui.Components.xa;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.k41;
 import org.telegram.ui.l41;
+import org.telegram.ui.m41;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f2 implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -45,34 +45,34 @@ public final /* synthetic */ class f2 implements View.OnLongClickListener {
         Object obj2 = this.b;
         switch (i7) {
             case 0:
-                i4 i4Var = (i4) obj2;
-                p9 p9Var = (p9) obj;
-                w1 w1Var = i4Var.i3;
+                j4 j4Var = (j4) obj2;
+                q9 q9Var = (q9) obj;
+                w1 w1Var = j4Var.i3;
                 if (w1Var != null) {
                     org.telegram.messenger.g0.r(w1Var);
-                    i4Var.i3 = null;
+                    j4Var.i3 = null;
                 }
                 iz.H(true);
-                fi.m3 m3Var = i4Var.q0;
+                fi.m3 m3Var = j4Var.q0;
                 if (m3Var != null) {
                     m3Var.f(true);
                 }
-                ii0 ii0Var = i4Var.a3;
-                if (ii0Var == null) {
-                    ii0 ii0Var2 = new ii0(2, i4Var.l2, i4Var.getContext(), LaunchActivity.Q(), new m2(4, i4Var.k0));
-                    i4Var.a3 = ii0Var2;
-                    ii0Var2.setPadding(0, 0, 0, org.telegram.messenger.g0.L(22.0f));
-                    i4Var.addView(i4Var.a3, i4Var.getChildCount() - 1, ha.d(-2, 74.0f, 53, 0.0f, 0.0f, 12.0f, 64.0f));
-                    i4Var.a3.setVisibility(8);
-                    i4Var.a3.setDelegate(new i3(i4Var));
-                    i4Var.a3.p(null, null, true);
+                ji0 ji0Var = j4Var.a3;
+                if (ji0Var == null) {
+                    ji0 ji0Var2 = new ji0(2, j4Var.l2, j4Var.getContext(), LaunchActivity.Q(), new m2(4, j4Var.k0));
+                    j4Var.a3 = ji0Var2;
+                    ji0Var2.setPadding(0, 0, 0, org.telegram.messenger.g0.L(22.0f));
+                    j4Var.addView(j4Var.a3, j4Var.getChildCount() - 1, ha.d(-2, 74.0f, 53, 0.0f, 0.0f, 12.0f, 64.0f));
+                    j4Var.a3.setVisibility(8);
+                    j4Var.a3.setDelegate(new i3(j4Var));
+                    j4Var.a3.p(null, null, true);
                 } else {
-                    i4Var.bringChildToFront(ii0Var);
-                    i4Var.a3.n();
+                    j4Var.bringChildToFront(ji0Var);
+                    j4Var.a3.n();
                 }
-                i4Var.a3.setFragment(LaunchActivity.Q());
-                p9Var.s.dispatchTouchEvent(org.telegram.messenger.g0.R());
-                i4Var.Z0(true);
+                j4Var.a3.setFragment(LaunchActivity.Q());
+                q9Var.s.dispatchTouchEvent(org.telegram.messenger.g0.R());
+                j4Var.Z0(true);
                 break;
             case 1:
                 org.telegram.ui.Components.e0 e0Var = (org.telegram.ui.Components.e0) obj;
@@ -86,7 +86,7 @@ public final /* synthetic */ class f2 implements View.OnLongClickListener {
                 float f10 = MediaController.B().q0;
                 org.telegram.ui.ActionBar.v0 v0Var = b8Var.N1;
                 v0Var.e(false, f10);
-                org.telegram.ui.ActionBar.r6.i(org.telegram.ui.ActionBar.k6.G8, v0Var, (org.telegram.ui.ActionBar.f6) obj);
+                org.telegram.ui.ActionBar.s6.h(org.telegram.ui.ActionBar.l6.G8, v0Var, (org.telegram.ui.ActionBar.g6) obj);
                 b8Var.a1(false);
                 org.telegram.ui.ActionBar.r0 r0Var = b8Var.L1;
                 r0Var.setDimMenu(0.15f);
@@ -94,10 +94,10 @@ public final /* synthetic */ class f2 implements View.OnLongClickListener {
                 qp.f1().edit().putInt("speedhint", -15).apply();
                 break;
             case 3:
-                k60 k60Var = (k60) obj2;
-                ((l51) obj).run();
-                if (k60Var.J) {
-                    k60Var.u();
+                l60 l60Var = (l60) obj2;
+                ((m51) obj).run();
+                if (l60Var.J) {
+                    l60Var.u();
                     break;
                 }
                 break;
@@ -115,21 +115,21 @@ public final /* synthetic */ class f2 implements View.OnLongClickListener {
             case 5:
                 final ProfileActivity profileActivity = (ProfileActivity) obj2;
                 ImageView imageView = (ImageView) obj;
-                RectF rectF = ProfileActivity.S6;
+                RectF rectF = ProfileActivity.V6;
                 org.telegram.ui.ActionBar.g1 b10 = org.telegram.ui.Components.d9.b(profileActivity, imageView, profileActivity.a(), profileActivity.f1, profileActivity.z0);
                 if (b10 != null) {
-                    b10.setOnDismissListener(new PopupWindow.OnDismissListener() { // from class: org.telegram.ui.wt0
+                    b10.setOnDismissListener(new PopupWindow.OnDismissListener() { // from class: org.telegram.ui.yt0
                         @Override // android.widget.PopupWindow.OnDismissListener
                         public final void onDismiss() {
                             int i12 = i11;
                             ProfileActivity profileActivity2 = profileActivity;
                             switch (i12) {
                                 case 0:
-                                    RectF rectF2 = ProfileActivity.S6;
+                                    RectF rectF2 = ProfileActivity.V6;
                                     profileActivity2.X3(0.0f);
                                     break;
                                 default:
-                                    RectF rectF3 = ProfileActivity.S6;
+                                    RectF rectF3 = ProfileActivity.V6;
                                     profileActivity2.X3(0.0f);
                                     break;
                             }
@@ -147,21 +147,21 @@ public final /* synthetic */ class f2 implements View.OnLongClickListener {
             case 6:
                 final ProfileActivity profileActivity2 = (ProfileActivity) obj2;
                 View view2 = (View) obj;
-                RectF rectF2 = ProfileActivity.S6;
+                RectF rectF2 = ProfileActivity.V6;
                 org.telegram.ui.ActionBar.g1 b11 = org.telegram.ui.Components.d9.b(profileActivity2, view2, profileActivity2.a(), profileActivity2.f1, profileActivity2.z0);
                 if (b11 != null) {
-                    b11.setOnDismissListener(new PopupWindow.OnDismissListener() { // from class: org.telegram.ui.wt0
+                    b11.setOnDismissListener(new PopupWindow.OnDismissListener() { // from class: org.telegram.ui.yt0
                         @Override // android.widget.PopupWindow.OnDismissListener
                         public final void onDismiss() {
                             int i12 = i10;
                             ProfileActivity profileActivity22 = profileActivity2;
                             switch (i12) {
                                 case 0:
-                                    RectF rectF22 = ProfileActivity.S6;
+                                    RectF rectF22 = ProfileActivity.V6;
                                     profileActivity22.X3(0.0f);
                                     break;
                                 default:
-                                    RectF rectF3 = ProfileActivity.S6;
+                                    RectF rectF3 = ProfileActivity.V6;
                                     profileActivity22.X3(0.0f);
                                     break;
                             }
@@ -177,27 +177,27 @@ public final /* synthetic */ class f2 implements View.OnLongClickListener {
                 }
                 break;
             default:
-                k41 k41Var = (k41) obj2;
+                l41 l41Var = (l41) obj2;
                 ng.f fVar = (ng.f) obj;
-                l41 l41Var = k41Var.d;
-                lz lzVar = k41Var.a;
+                m41 m41Var = l41Var.d;
+                lz lzVar = l41Var.a;
                 if (lzVar.c) {
-                    l41Var.f();
-                    ArrayList arrayList = l41Var.n;
-                    lg.g gVar = l41Var.c;
+                    m41Var.f();
+                    ArrayList arrayList = m41Var.n;
+                    lg.g gVar = m41Var.c;
                     int size = arrayList.size();
                     for (int i12 = 0; i12 < size; i12++) {
-                        ((k41) arrayList.get(i12)).a.setChecked(false);
-                        ((k41) arrayList.get(i12)).b.n = false;
-                        if (l41Var.r.c > 0 && i12 < gVar.d.size()) {
+                        ((l41) arrayList.get(i12)).a.setChecked(false);
+                        ((l41) arrayList.get(i12)).b.n = false;
+                        if (m41Var.r.c > 0 && i12 < gVar.d.size()) {
                             ((ng.f) gVar.d.get(i12)).n = false;
                         }
                     }
                     lzVar.setChecked(true);
                     fVar.n = true;
-                    l41Var.b.z();
-                    if (l41Var.r.c > 0) {
-                        ((ng.f) gVar.d.get(k41Var.c)).n = true;
+                    m41Var.b.z();
+                    if (m41Var.r.c > 0) {
+                        ((ng.f) gVar.d.get(l41Var.c)).n = true;
                         gVar.z();
                     }
                     break;

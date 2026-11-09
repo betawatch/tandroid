@@ -6,14 +6,14 @@ import java.util.ArrayList;
 import org.telegram.messenger.qp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.q41;
+import org.telegram.ui.Components.r41;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class y extends FrameLayout {
     public final int a;
     public final ArrayList b;
-    public final q41 c;
+    public final r41 c;
     public String d;
     public boolean e;
     public boolean f;
@@ -25,7 +25,7 @@ public final class y extends FrameLayout {
     public y(z zVar, Context context, int i7) {
         super(context);
         int i10;
-        org.telegram.ui.ActionBar.f6 f6Var;
+        org.telegram.ui.ActionBar.g6 g6Var;
         oi.q qVar;
         this.r = zVar;
         this.b = new ArrayList();
@@ -38,18 +38,18 @@ public final class y extends FrameLayout {
         int classGuid = zVar.getClassGuid();
         ai.e eVar = new ai.e(this, 2);
         a1.c cVar = new a1.c(this, 10);
-        f6Var = ((org.telegram.ui.ActionBar.f2) zVar).resourceProvider;
-        q41 q41Var = new q41(context, i10, classGuid, true, eVar, cVar, null, f6Var);
-        this.c = q41Var;
-        q41Var.s1(org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(16.0f), false);
-        q41Var.f3.r = false;
-        q41Var.setCaptureSectionsDecoratorAllowed(true);
-        q41Var.setClipToPadding(false);
-        q41Var.setOverScrollMode(0);
-        addView(q41Var, c8.ha.c(-1.0f, -1));
+        g6Var = ((org.telegram.ui.ActionBar.f2) zVar).resourceProvider;
+        r41 r41Var = new r41(context, i10, classGuid, true, eVar, cVar, null, g6Var);
+        this.c = r41Var;
+        r41Var.s1(org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(16.0f), false);
+        r41Var.f3.r = false;
+        r41Var.setCaptureSectionsDecoratorAllowed(true);
+        r41Var.setClipToPadding(false);
+        r41Var.setOverScrollMode(0);
+        addView(r41Var, c8.ha.c(-1.0f, -1));
         qVar = ((org.telegram.ui.ActionBar.f2) zVar).glassEngine;
-        qVar.b(q41Var);
-        q41Var.j(new ai.b(this, 2));
+        qVar.b(r41Var);
+        r41Var.j(new ai.b(this, 2));
     }
 
     public final void a() {

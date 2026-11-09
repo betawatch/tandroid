@@ -4,7 +4,7 @@ import android.graphics.RectF;
 import java.util.ArrayList;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class ab {
     public int a;
@@ -42,7 +42,7 @@ public final class ab {
                 int i11 = (i7 - i10) - i10;
                 int L = org.telegram.messenger.g0.L(38.0f);
                 long j3 = abVar.e;
-                abVar.c = new db(fbVar2, z10, str, i11, L, j3 > 2 ? Long.valueOf(j3) : null, fbVar.getMaxScrollDuration(), fbVar.Z0, fbVar.a1, new h9(abVar, 6));
+                abVar.c = new db(fbVar2, z10, str, i11, L, j3 > 2 ? Long.valueOf(j3) : null, fbVar.getMaxScrollDuration(), fbVar.Z0, fbVar.a1, new v9(abVar, 5));
             }
         }
     }

@@ -4,16 +4,16 @@ import android.view.View;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class ca implements org.telegram.ui.Components.bj0 {
+public final class ca implements org.telegram.ui.Components.cj0 {
     public final /* synthetic */ la a;
 
     public ca(la laVar) {
         this.a = laVar;
     }
 
-    @Override // org.telegram.ui.Components.bj0
+    @Override // org.telegram.ui.Components.cj0
     public final void c(int i7, View view) {
         boolean z9 = view instanceof ia;
         la laVar = this.a;
@@ -35,11 +35,11 @@ public final class ca implements org.telegram.ui.Components.bj0 {
             return;
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, laVar.getParentActivity(), laVar.getResourceProvider());
-        String M0 = org.telegram.messenger.id.M0(tL_username.active ? 2131743667 : 2131743674, null);
+        String M0 = org.telegram.messenger.id.M0(tL_username.active ? 2131743664 : 2131743671, null);
         org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
         u1Var.R = M0;
-        u1Var.T = org.telegram.messenger.id.M0(tL_username.active ? 2131743665 : 2131743672, null);
-        alertDialog$Builder.k(org.telegram.messenger.id.M0(tL_username.active ? 2131749326 : 2131745356, null), new bg.f0(this, tL_username, i7, view, 1));
+        u1Var.T = org.telegram.messenger.id.M0(tL_username.active ? 2131743662 : 2131743669, null);
+        alertDialog$Builder.k(org.telegram.messenger.id.M0(tL_username.active ? 2131749325 : 2131745353, null), new bg.f0(this, tL_username, i7, view, 1));
         alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), new org.telegram.messenger.ch(18));
         alertDialog$Builder.p();
     }

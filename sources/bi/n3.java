@@ -6,7 +6,7 @@ import org.telegram.messenger.c20;
 import org.telegram.messenger.p10;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n3 implements c20 {
     public final /* synthetic */ int a = 0;
@@ -41,41 +41,41 @@ public final /* synthetic */ class n3 implements c20 {
                     p10 i7 = p10.i(k7Var.a);
                     i7.y = null;
                     i7.v(false);
-                    k7Var.V1(this.b, bVar, runnable);
+                    k7Var.U1(this.b, bVar, runnable);
                     break;
                 }
             default:
-                org.telegram.ui.Wallet.e2 e2Var = (org.telegram.ui.Wallet.e2) this.c;
-                org.telegram.ui.Wallet.a2 a2Var = (org.telegram.ui.Wallet.a2) this.d;
-                org.telegram.ui.Wallet.t tVar = (org.telegram.ui.Wallet.t) this.e;
-                org.telegram.ui.Wallet.j0 j0Var = (org.telegram.ui.Wallet.j0) this.f;
+                org.telegram.ui.Wallet.d2 d2Var = (org.telegram.ui.Wallet.d2) this.c;
+                org.telegram.ui.Wallet.z1 z1Var = (org.telegram.ui.Wallet.z1) this.d;
+                org.telegram.ui.Wallet.s sVar = (org.telegram.ui.Wallet.s) this.e;
+                org.telegram.ui.Wallet.i0 i0Var = (org.telegram.ui.Wallet.i0) this.f;
                 byte[] bArr = (byte[]) obj;
-                if (!e2Var.j(a2Var) && e2Var.A(a2Var)) {
+                if (!d2Var.j(z1Var) && d2Var.A(z1Var)) {
                     TL_wallet.tonConnectClaimRequest tonconnectclaimrequest = new TL_wallet.tonConnectClaimRequest();
-                    tonconnectclaimrequest.session_id = a2Var.a.id;
-                    tonconnectclaimrequest.msg_id = a2Var.b;
-                    tonconnectclaimrequest.app_request_id = a2Var.d;
+                    tonconnectclaimrequest.session_id = z1Var.a.id;
+                    tonconnectclaimrequest.msg_id = z1Var.b;
+                    tonconnectclaimrequest.app_request_id = z1Var.d;
                     boolean z9 = this.b;
                     tonconnectclaimrequest.declined = z9;
                     tonconnectclaimrequest.challenge_answer = bArr;
-                    e2Var.f.sendRequestTyped(tonconnectclaimrequest, new d3.b(1), new org.telegram.ui.Wallet.v1(e2Var, bArr, a2Var, tVar, z9, j0Var));
+                    d2Var.f.sendRequestTyped(tonconnectclaimrequest, new d3.b(1), new org.telegram.ui.Wallet.u1(d2Var, bArr, z1Var, sVar, z9, i0Var));
                     break;
                 } else {
                     if (bArr != null) {
                         Arrays.fill(bArr, (byte) 0);
                     }
-                    tVar.a("Request expired or wallet changed");
+                    sVar.a("Request expired or wallet changed");
                     break;
                 }
                 break;
         }
     }
 
-    public /* synthetic */ n3(org.telegram.ui.Wallet.e2 e2Var, org.telegram.ui.Wallet.a2 a2Var, org.telegram.ui.Wallet.t tVar, boolean z9, org.telegram.ui.Wallet.j0 j0Var) {
-        this.c = e2Var;
-        this.d = a2Var;
-        this.e = tVar;
+    public /* synthetic */ n3(org.telegram.ui.Wallet.d2 d2Var, org.telegram.ui.Wallet.z1 z1Var, org.telegram.ui.Wallet.s sVar, boolean z9, org.telegram.ui.Wallet.i0 i0Var) {
+        this.c = d2Var;
+        this.d = z1Var;
+        this.e = sVar;
         this.b = z9;
-        this.f = j0Var;
+        this.f = i0Var;
     }
 }

@@ -7,7 +7,7 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import c8.ha;
-import di.q4;
+import di.r4;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.id;
@@ -17,19 +17,19 @@ import org.telegram.messenger.ui;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.f2;
 import org.telegram.ui.ActionBar.f5;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.s6;
 import org.telegram.ui.Cells.r8;
-import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.l9;
-import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.q41;
-import org.telegram.ui.Components.x31;
+import org.telegram.ui.Components.m41;
+import org.telegram.ui.Components.qj0;
+import org.telegram.ui.Components.r41;
+import org.telegram.ui.Components.y31;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class w1 extends f2 implements ls {
-    public q41 a;
+    public r41 a;
     public LinearLayout b;
     public ai.f1 c;
     public boolean d;
@@ -38,8 +38,8 @@ public final class w1 extends f2 implements ls {
     public boolean h;
     public String n;
 
-    public static void Z(w1 w1Var, x31 x31Var, View view) {
-        if (x31Var.d == -1) {
+    public static void Z(w1 w1Var, y31 y31Var, View view) {
+        if (y31Var.d == -1) {
             boolean z9 = w1Var.h;
             w1Var.h = !z9;
             if (!z9) {
@@ -57,14 +57,14 @@ public final class w1 extends f2 implements ls {
         if (view.isEnabled()) {
             x1 b10 = x1.b(w1Var.currentAccount);
             ArrayList arrayList = b10.d;
-            int i7 = x31Var.d;
+            int i7 = y31Var.d;
             if (i7 >= 0) {
                 b10.g();
                 if (i7 >= arrayList.size()) {
                     return;
                 }
                 b10.g();
-                TLRPC.TL_timezone tL_timezone = (TLRPC.TL_timezone) arrayList.get(x31Var.d);
+                TLRPC.TL_timezone tL_timezone = (TLRPC.TL_timezone) arrayList.get(y31Var.d);
                 w1Var.h = false;
                 String str2 = tL_timezone.id;
                 w1Var.n = str2;
@@ -73,31 +73,31 @@ public final class w1 extends f2 implements ls {
                     f1Var2.a(str2);
                 }
                 if (w1Var.d) {
-                    w1Var.simpleActionBar.j(true);
+                    w1Var.simpleActionBar.k(true);
                 }
                 w1Var.a.f3.O(true);
             }
         }
     }
 
-    public static void a0(w1 w1Var, ArrayList arrayList, l41 l41Var) {
+    public static void a0(w1 w1Var, ArrayList arrayList, m41 m41Var) {
         boolean z9 = w1Var.d && !TextUtils.isEmpty(w1Var.e);
         x1 b10 = x1.b(w1Var.currentAccount);
         ArrayList arrayList2 = b10.d;
         if (!z9) {
-            l41Var.V();
-            String M0 = id.M0(2131744123, null);
-            x31 x31Var = new x31(9);
-            x31Var.d = -1;
-            x31Var.l = M0;
-            x31Var.L(w1Var.h);
-            arrayList.add(x31Var);
-            l41Var.U();
-            arrayList.add(x31.C(id.a0(null, null, 2131744122, b10.d(w1Var.n, true))));
+            m41Var.V();
+            String M0 = id.M0(2131744120, null);
+            y31 y31Var = new y31(9);
+            y31Var.d = -1;
+            y31Var.l = M0;
+            y31Var.L(w1Var.h);
+            arrayList.add(y31Var);
+            m41Var.U();
+            arrayList.add(y31.C(id.a0(null, null, 2131744119, b10.d(w1Var.n, true))));
         }
-        l41Var.V();
+        m41Var.V();
         if (!z9) {
-            arrayList.add(x31.u(id.M0(2131744121, null)));
+            arrayList.add(y31.u(id.M0(2131744118, null)));
         }
         boolean z10 = true;
         int i7 = 0;
@@ -119,21 +119,21 @@ public final class w1 extends f2 implements ls {
                 }
             }
             String f10 = x1.f(tL_timezone);
-            x31 x31Var2 = new x31(10);
-            x31Var2.d = i7;
-            x31Var2.l = e10;
-            x31Var2.n = f10;
-            x31Var2.L(TextUtils.equals(tL_timezone.id, w1Var.n));
-            x31Var2.g = !w1Var.h || z9;
-            arrayList.add(x31Var2);
+            y31 y31Var2 = new y31(10);
+            y31Var2.d = i7;
+            y31Var2.l = e10;
+            y31Var2.n = f10;
+            y31Var2.L(TextUtils.equals(tL_timezone.id, w1Var.n));
+            y31Var2.g = !w1Var.h || z9;
+            arrayList.add(y31Var2);
             z10 = false;
             i7++;
         }
-        l41Var.U();
+        m41Var.U();
         if (z10) {
-            arrayList.add(x31.m(w1Var.b));
+            arrayList.add(y31.m(w1Var.b));
         } else {
-            arrayList.add(x31.C(null));
+            arrayList.add(y31.C(null));
         }
     }
 
@@ -141,16 +141,16 @@ public final class w1 extends f2 implements ls {
     public final View createView(Context context) {
         setHasOwnBackground(true);
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.simpleActionBar.setTitle(id.M0(2131744119, null));
+        this.simpleActionBar.setTitle(id.M0(2131744116, null));
         this.simpleActionBar.setActionBarMenuOnItemClick(new bi.s(this, 19));
-        f5 b10 = this.simpleActionBar.o().b(1, R.drawable.outline_header_search);
+        f5 b10 = this.simpleActionBar.p().b(1, R.drawable.outline_header_search);
         b10.N();
         b10.B0 = new v1(this, 0);
-        b10.setSearchFieldHint(id.M0(2131745839, null));
+        b10.setSearchFieldHint(id.M0(2131745836, null));
         FrameLayout frameLayout = new FrameLayout(context);
-        q41 q41Var = new q41(this, new hi.u1(this, 13), new q4(this, 27), null);
-        this.a = q41Var;
-        q41Var.r1();
+        r41 r41Var = new r41(this, new hi.u1(this, 13), new r4(this, 27), null);
+        this.a = r41Var;
+        r41Var.r1();
         this.a.setSectionsDrawBackground(true);
         frameLayout.addView(this.a, ha.c(-1.0f, -1));
         this.a.setOnScrollListener(new ai.b(this, 22));
@@ -163,8 +163,8 @@ public final class w1 extends f2 implements ls {
         ui.b0(this.currentAccount).c2(l9Var, "RestrictedEmoji", "🌖", "130_130");
         this.b.addView(l9Var, ha.t(qs.O1, qs.O1, 49, 0, 42, 0, 12));
         TextView textView = new TextView(context);
-        textView.setText(id.M0(2131744120, null));
-        r6.V(textView, k6.y6, this.resourceProvider);
+        textView.setText(id.M0(2131744117, null));
+        s6.U(textView, l6.y6, this.resourceProvider);
         textView.setTextSize(1, 15.0f);
         this.b.addView(textView, ha.t(-2, -2, 49, 0, 0, 0, 0));
         this.fragmentView = frameLayout;
@@ -173,16 +173,16 @@ public final class w1 extends f2 implements ls {
 
     @Override // org.telegram.messenger.ls
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        q41 q41Var;
-        l41 l41Var;
-        if (i7 != qs.r3 || (q41Var = this.a) == null || (l41Var = q41Var.f3) == null) {
+        r41 r41Var;
+        m41 m41Var;
+        if (i7 != qs.r3 || (r41Var = this.a) == null || (m41Var = r41Var.f3) == null) {
             return;
         }
-        l41Var.O(true);
+        m41Var.O(true);
     }
 
     @Override // org.telegram.ui.ActionBar.f2
-    public final pj0 getListViewForSimpleGlass() {
+    public final qj0 getListViewForSimpleGlass() {
         return this.a;
     }
 

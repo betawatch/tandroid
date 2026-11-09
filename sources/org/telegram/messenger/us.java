@@ -4,7 +4,7 @@ import android.util.SparseArray;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class us implements Runnable {
     public final /* synthetic */ int a;
@@ -50,12 +50,12 @@ public final /* synthetic */ class us implements Runnable {
                         i7 = 0;
                         while (i7 < arrayList.size()) {
                             ij ijVar = (ij) arrayList.get(i7);
-                            if (ijVar != null && ijVar.N && ijVar.f1() == i10) {
+                            if (ijVar != null && ijVar.N && ijVar.e1() == i10) {
                                 arrayList.remove(i7);
                                 i7--;
                                 SparseArray sparseArray = (SparseArray) hVar.f(ij.B0(ijVar.k));
                                 if (sparseArray != null) {
-                                    sparseArray.remove(ijVar.f1());
+                                    sparseArray.remove(ijVar.e1());
                                 }
                                 if (sparseArray != null && sparseArray.size() <= 0) {
                                     hVar.l(ij.B0(ijVar.k));
@@ -99,12 +99,12 @@ public final /* synthetic */ class us implements Runnable {
                 int i11 = 0;
                 while (i11 < arrayList2.size()) {
                     ij ijVar2 = (ij) arrayList2.get(i11);
-                    if (ijVar2 != null && ijVar2.N && ijVar2.f1() <= this.d) {
+                    if (ijVar2 != null && ijVar2.N && ijVar2.e1() <= this.d) {
                         arrayList2.remove(i11);
                         i11--;
                         SparseArray sparseArray2 = (SparseArray) hVar3.f(ij.B0(ijVar2.k));
                         if (sparseArray2 != null) {
-                            sparseArray2.remove(ijVar2.f1());
+                            sparseArray2.remove(ijVar2.e1());
                         }
                         if (sparseArray2 != null && sparseArray2.size() <= 0) {
                             hVar3.l(ij.B0(ijVar2.k));

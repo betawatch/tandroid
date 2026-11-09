@@ -28,12 +28,12 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.camera.CameraView;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.j60;
+import org.telegram.ui.Components.k60;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public abstract class e0 extends FrameLayout implements j60 {
+public abstract class e0 extends FrameLayout implements k60 {
     public static final /* synthetic */ int x0 = 0;
     public final int D;
     public final LinearGradient E;
@@ -191,7 +191,7 @@ public abstract class e0 extends FrameLayout implements j60 {
         drawable.setBounds(0, 0, intrinsicWidth, intrinsicHeight);
         drawable.draw(canvas);
         if (f10 > 0.0f) {
-            canvas.drawColor(org.telegram.ui.ActionBar.k6.r1(drawable.getAlpha() * f10, -16777216));
+            canvas.drawColor(org.telegram.ui.ActionBar.l6.r1(drawable.getAlpha() * f10, -16777216));
         }
         canvas.restore();
     }
@@ -739,7 +739,7 @@ public abstract class e0 extends FrameLayout implements j60 {
             view.draw(canvas);
         }
         if (f10 > 0.0f) {
-            canvas.drawColor(org.telegram.ui.ActionBar.k6.r1(view.getAlpha() * f10, -16777216));
+            canvas.drawColor(org.telegram.ui.ActionBar.l6.r1(view.getAlpha() * f10, -16777216));
         }
         canvas.restore();
         if (view != this.d || (b6Var = this.c) == null) {
@@ -804,7 +804,7 @@ public abstract class e0 extends FrameLayout implements j60 {
         canvas.restore();
     }
 
-    @Override // org.telegram.ui.Components.j60
+    @Override // org.telegram.ui.Components.k60
     public final void g(RectF rectF) {
         d0 d0Var = this.j0;
         if (d0Var == null) {
@@ -964,7 +964,7 @@ public abstract class e0 extends FrameLayout implements j60 {
         return this.h.size();
     }
 
-    @Override // org.telegram.ui.Components.j60
+    @Override // org.telegram.ui.Components.k60
     public final void h(Canvas canvas, float f10) {
         d0 d0Var = this.j0;
         if (d0Var != null) {

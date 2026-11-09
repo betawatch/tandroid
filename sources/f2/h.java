@@ -20,7 +20,7 @@ import android.widget.TextView;
 import bi.o0;
 import com.google.android.gms.internal.vision.t2;
 import com.google.android.gms.internal.vision.x1;
-import di.s7;
+import di.f8;
 import fi.a6;
 import fi.c6;
 import fi.cb;
@@ -66,7 +66,7 @@ import org.telegram.ui.Cells.i3;
 import org.telegram.ui.Components.xq;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h implements Runnable {
     public final /* synthetic */ int a;
@@ -200,7 +200,7 @@ public final /* synthetic */ class h implements Runnable {
                 tg.r1 r1Var2 = (tg.r1) this.c;
                 k6 k6Var = pVar.a;
                 if (r1Var2.getWidth() <= 0) {
-                    k6Var.animate().scaleX(0.0f).scaleY(1.0f).withEndAction(new s7(pVar, 27)).start();
+                    k6Var.animate().scaleX(0.0f).scaleY(1.0f).withEndAction(new f8(pVar, 26)).start();
                     return;
                 }
                 float width = r1Var2.getWidth() / k6Var.getWidth();

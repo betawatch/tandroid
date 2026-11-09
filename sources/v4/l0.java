@@ -6,11 +6,11 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
-import org.telegram.ui.Components.mi0;
+import org.telegram.ui.Components.ni0;
 import org.telegram.ui.Components.vy;
-import org.telegram.ui.hy0;
+import org.telegram.ui.ky0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public abstract class l0 {
     public jh.g a;
@@ -62,15 +62,15 @@ public abstract class l0 {
             }
             v0 v0Var = recyclerView.b;
             recyclerView.z0();
-            hy0 hy0Var = recyclerView.e;
-            ua uaVar = (ua) hy0Var.c;
-            vy vyVar = (vy) hy0Var.b;
+            ky0 ky0Var = recyclerView.e;
+            ua uaVar = (ua) ky0Var.c;
+            vy vyVar = (vy) ky0Var.b;
             int indexOfChild = ((RecyclerView) vyVar.b).indexOfChild(view);
             if (indexOfChild == -1) {
-                hy0Var.M(view);
+                ky0Var.M(view);
             } else if (uaVar.E(indexOfChild)) {
                 uaVar.G(indexOfChild);
-                hy0Var.M(view);
+                ky0Var.M(view);
                 vyVar.Q(indexOfChild);
             } else {
                 z9 = false;
@@ -92,8 +92,8 @@ public abstract class l0 {
         ArrayList arrayList = this.b;
         int size = arrayList.size();
         for (int i7 = 0; i7 < size; i7++) {
-            mi0 mi0Var = (mi0) arrayList.get(i7);
-            mi0Var.a.d(mi0Var.b, mi0Var.c, mi0Var.d, false);
+            ni0 ni0Var = (ni0) arrayList.get(i7);
+            ni0Var.a.d(ni0Var.b, ni0Var.c, ni0Var.d, false);
         }
         arrayList.clear();
     }

@@ -13,7 +13,7 @@ import javax.microedition.khronos.egl.EGLSurface;
 import org.webrtc.EglBase;
 import org.webrtc.EglBase10;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 class EglBase10Impl implements EglBase10 {
     private static final int EGL_CONTEXT_CLIENT_VERSION = 12440;
@@ -25,7 +25,7 @@ class EglBase10Impl implements EglBase10 {
     private EGLDisplay eglDisplay;
     private EGLSurface eglSurface;
 
-    /* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+    /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
     public static class Context implements EglBase10.Context {
         private final EGL10 egl;
         private final EGLContext eglContext;
@@ -75,7 +75,7 @@ class EglBase10Impl implements EglBase10 {
         }
     }
 
-    /* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+    /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
     public class FakeSurfaceHolder implements SurfaceHolder {
         private final Surface surface;
 

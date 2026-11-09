@@ -9,7 +9,7 @@ import java.util.HashSet;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class zx implements org.telegram.messenger.c20 {
     public final /* synthetic */ int a;
@@ -61,7 +61,7 @@ public final /* synthetic */ class zx implements org.telegram.messenger.c20 {
                         Object obj2 = arrayList3.get(i12);
                         i12++;
                         TLRPC.Document document = (TLRPC.Document) obj2;
-                        if (!hashSet.contains(Long.valueOf(document.id)) && org.telegram.messenger.ij.Y3(document)) {
+                        if (!hashSet.contains(Long.valueOf(document.id)) && org.telegram.messenger.ij.X3(document)) {
                             hashSet.add(Long.valueOf(document.id));
                             arrayList2.add(document);
                             longSparseArray.put(document.id, document);
@@ -76,7 +76,7 @@ public final /* synthetic */ class zx implements org.telegram.messenger.c20 {
                     i13++;
                     TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) obj3;
                     TLRPC.Document document2 = stickerSetCovered.cover;
-                    if (document2 != null && !hashSet.contains(Long.valueOf(document2.id)) && org.telegram.messenger.ij.Y3(stickerSetCovered.cover)) {
+                    if (document2 != null && !hashSet.contains(Long.valueOf(document2.id)) && org.telegram.messenger.ij.X3(stickerSetCovered.cover)) {
                         hashSet.add(Long.valueOf(stickerSetCovered.cover.id));
                         arrayList2.add(stickerSetCovered.cover);
                         TLRPC.Document document3 = stickerSetCovered.cover;
@@ -91,7 +91,7 @@ public final /* synthetic */ class zx implements org.telegram.messenger.c20 {
                             i14++;
                             TLRPC.Document document5 = document4;
                             cy cyVar2 = cyVar;
-                            if (!hashSet.contains(Long.valueOf(document5.id)) && org.telegram.messenger.ij.Y3(document5)) {
+                            if (!hashSet.contains(Long.valueOf(document5.id)) && org.telegram.messenger.ij.X3(document5)) {
                                 hashSet.add(Long.valueOf(document5.id));
                                 arrayList2.add(document5);
                                 longSparseArray.put(document5.id, document5);

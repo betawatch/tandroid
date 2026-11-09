@@ -3,49 +3,49 @@ package org.telegram.ui.Components;
 import android.widget.FrameLayout;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a7 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ b8 b;
-    public final /* synthetic */ k60 c;
+    public final /* synthetic */ l60 c;
 
-    public /* synthetic */ a7(b8 b8Var, k60 k60Var, int i7) {
+    public /* synthetic */ a7(b8 b8Var, l60 l60Var, int i7) {
         this.a = i7;
         this.b = b8Var;
-        this.c = k60Var;
+        this.c = l60Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         int i7 = this.a;
-        k60 k60Var = this.c;
+        l60 l60Var = this.c;
         b8 b8Var = this.b;
         switch (i7) {
             case 0:
                 b8Var.getClass();
-                k60Var.u();
+                l60Var.u();
                 b8Var.P0(1);
                 break;
             case 1:
                 b8Var.getClass();
-                k60Var.u();
+                l60Var.u();
                 b8Var.P0(2);
                 break;
             case 2:
                 b8Var.getClass();
-                k60Var.u();
+                l60Var.u();
                 b8Var.P0(4);
                 break;
             case 3:
                 b8Var.getClass();
-                k60Var.u();
+                l60Var.u();
                 b8Var.P0(7);
                 break;
             default:
                 b8Var.U0(true);
                 org.telegram.messenger.k5.o(null, 2131753912, new hc((FrameLayout) b8Var.b, b8Var.I0), R.raw.saved_messages, 36);
-                k60Var.u();
+                l60Var.u();
                 break;
         }
     }

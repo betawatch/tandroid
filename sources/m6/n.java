@@ -40,7 +40,7 @@ import org.telegram.ui.Cells.r2;
 import org.telegram.ui.Components.i6;
 import org.telegram.ui.xf;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class n implements OnSuccessListener, te.i {
     public static n e;
@@ -49,11 +49,11 @@ public final class n implements OnSuccessListener, te.i {
     public Object c;
     public Object d;
 
-    public /* synthetic */ n(Object obj, Object obj2, Object obj3, int i7) {
-        this.b = obj;
-        this.c = obj2;
-        this.d = obj3;
-        this.a = i7;
+    public n(int i7, String str, int i10, ArrayList arrayList, byte[] bArr) {
+        this.b = str;
+        this.a = i10;
+        this.c = arrayList == null ? Collections.EMPTY_LIST : DesugarCollections.unmodifiableList(arrayList);
+        this.d = bArr;
     }
 
     public static synchronized n i(Context context) {
@@ -99,10 +99,19 @@ public final class n implements OnSuccessListener, te.i {
         if (TextUtils.isEmpty((String) this.d) && !a10) {
             throw new IllegalArgumentException("Negative text must be set and non-empty.");
         }
-        if (TextUtils.isEmpty((String) this.d) || !a10) {
-            return new n((String) this.b, (String) this.c, (String) this.d, this.a);
+        if (!TextUtils.isEmpty((String) this.d) && a10) {
+            throw new IllegalArgumentException("Negative text must not be set if device credential authentication is allowed.");
         }
-        throw new IllegalArgumentException("Negative text must not be set if device credential authentication is allowed.");
+        String str = (String) this.b;
+        String str2 = (String) this.c;
+        String str3 = (String) this.d;
+        int i11 = this.a;
+        n nVar = new n();
+        nVar.b = str;
+        nVar.c = str2;
+        nVar.d = str3;
+        nVar.a = i11;
+        return nVar;
     }
 
     public int c() {
@@ -252,13 +261,6 @@ public final class n implements OnSuccessListener, te.i {
         gVar.a(new q5(x0Var2));
         if (sVar == null) {
         }
-    }
-
-    public n(int i7, String str, int i10, ArrayList arrayList, byte[] bArr) {
-        this.b = str;
-        this.a = i10;
-        this.c = arrayList == null ? Collections.EMPTY_LIST : DesugarCollections.unmodifiableList(arrayList);
-        this.d = bArr;
     }
 
     public n(int i7) {

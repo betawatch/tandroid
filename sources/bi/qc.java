@@ -14,10 +14,10 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class qc extends FrameLayout {
-    public final org.telegram.ui.ActionBar.f6 a;
+    public final org.telegram.ui.ActionBar.g6 a;
     public final Drawable b;
     public final Drawable c;
     public final TextView d;
@@ -27,24 +27,24 @@ public final class qc extends FrameLayout {
     public int n;
     public final org.telegram.ui.Components.w5 r;
 
-    public qc(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+    public qc(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
         super(context);
         this.r = new org.telegram.ui.Components.w5(this, 0L, 500L, xq.h);
-        this.a = f6Var;
+        this.a = g6Var;
         Drawable h = jg.g.h(context, R.drawable.star_small_outline);
         this.b = h;
-        org.telegram.ui.ActionBar.r6.y(this, h, org.telegram.ui.ActionBar.k6.h5, f6Var, PorterDuff.Mode.SRC_IN);
+        org.telegram.ui.ActionBar.s6.x(this, h, org.telegram.ui.ActionBar.l6.h5, g6Var, PorterDuff.Mode.SRC_IN);
         this.c = jg.g.h(context, R.drawable.star_small_inner);
         setWillNotDraw(false);
         TextView textView = new TextView(context);
         this.d = textView;
         org.telegram.messenger.camera.q.m(textView, 1, 15.0f);
-        org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.G6, f6Var);
+        org.telegram.ui.ActionBar.s6.U(textView, org.telegram.ui.ActionBar.l6.G6, g6Var);
         addView(textView, c8.ha.i(-2.0f, -2.0f, 8388627, 48.0f, 0.0f, 0.0f, 0.0f));
         org.telegram.ui.Components.j6 j6Var = new org.telegram.ui.Components.j6(context, false, false, false);
         this.e = j6Var;
         j6Var.setTextSize(org.telegram.messenger.g0.L(15.0f));
-        org.telegram.ui.ActionBar.r6.Z(j6Var, org.telegram.ui.ActionBar.k6.z6, f6Var);
+        org.telegram.ui.ActionBar.s6.Y(j6Var, org.telegram.ui.ActionBar.l6.z6, g6Var);
         j6Var.setGravity(org.telegram.messenger.id.a0 ? 3 : 5);
         addView(j6Var, c8.ha.i(-2.0f, 21.0f, 8388629, 0.0f, 0.0f, 19.0f, 0.0f));
     }
@@ -82,10 +82,10 @@ public final class qc extends FrameLayout {
             ceil--;
         }
         if (this.h) {
-            org.telegram.ui.ActionBar.f6 f6Var = this.a;
-            Paint d = f6Var != null ? f6Var.d("paintDivider") : null;
+            org.telegram.ui.ActionBar.g6 g6Var = this.a;
+            Paint d = g6Var != null ? g6Var.d("paintDivider") : null;
             if (d == null) {
-                d = org.telegram.ui.ActionBar.k6.k0;
+                d = org.telegram.ui.ActionBar.l6.k0;
             }
             canvas.drawRect(org.telegram.messenger.id.a0 ? 0.0f : org.telegram.messenger.g0.L(22.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (org.telegram.messenger.id.a0 ? org.telegram.messenger.g0.L(22.0f) : 0), getMeasuredHeight(), d);
         }

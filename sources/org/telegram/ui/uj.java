@@ -1,21 +1,66 @@
 package org.telegram.ui;
 
 import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class uj extends lh.e {
-    public final /* synthetic */ an L;
+public final class uj extends org.telegram.ui.Components.xc {
+    public org.telegram.ui.Cells.y e;
+    public int f;
+    public final /* synthetic */ boolean h;
+    public final /* synthetic */ cn n;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public uj(an anVar, Context context, org.telegram.ui.ActionBar.f6 f6Var, oi oiVar, dh.c cVar) {
-        super(context, cVar, oiVar, f6Var);
-        this.L = anVar;
+    public uj(cn cnVar, Context context, boolean z9) {
+        super(context);
+        this.n = cnVar;
+        this.h = z9;
     }
 
-    @Override // lh.e, android.view.View
-    public final void setVisibility(int i7) {
-        super.setVisibility(i7);
-        this.L.fd.h(3, i7 == 0, getMeasuredWidth() > 0);
+    @Override // org.telegram.ui.Components.xc
+    public final void d() {
+        try {
+            int themedColor = this.n.getThemedColor(org.telegram.ui.ActionBar.l6.kf);
+            if (this.e != null) {
+                Drawable background = getBackground();
+                Drawable drawable = this.e;
+                if (background == drawable) {
+                    if (themedColor != this.f) {
+                        org.telegram.ui.ActionBar.l6.H1(drawable, themedColor & 436207615, true);
+                    }
+                    if (getImageView() != null && (themedColor != this.f || getImageView().getColorFilter() == null)) {
+                        getImageView().setColorFilter(new PorterDuffColorFilter(themedColor, PorterDuff.Mode.MULTIPLY));
+                    }
+                    this.f = themedColor;
+                    if (getTextView() != null || getTextView().getCurrentTextColor() == themedColor) {
+                    }
+                    getTextView().setTextColor(themedColor);
+                    return;
+                }
+            }
+            org.telegram.ui.Cells.y Y = org.telegram.ui.ActionBar.l6.Y(org.telegram.messenger.g0.L(19.0f), themedColor & 436207615, this.h ? org.telegram.messenger.g0.L(4.0f) : 0, org.telegram.messenger.g0.L(3.0f), 0, org.telegram.messenger.g0.L(3.0f));
+            this.e = Y;
+            setBackground(Y);
+            if (getImageView() != null) {
+                getImageView().setColorFilter(new PorterDuffColorFilter(themedColor, PorterDuff.Mode.MULTIPLY));
+            }
+            this.f = themedColor;
+            if (getTextView() != null) {
+            }
+        } catch (Exception e10) {
+            org.telegram.messenger.a8.g(e10, true);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.xc
+    public final void setEditButton(boolean z9) {
+        super.setEditButton(z9);
+        if (this.h) {
+            getTextView().setMaxWidth(z9 ? org.telegram.messenger.g0.L(116.0f) : ConnectionsManager.DEFAULT_DATACENTER_ID);
+        }
     }
 }

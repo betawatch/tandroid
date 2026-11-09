@@ -20,7 +20,7 @@ import java.util.HashMap;
 import java.util.concurrent.CountDownLatch;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class cf implements ls {
     public c a;
@@ -242,22 +242,22 @@ public final class cf implements ls {
     /* JADX WARN: Type inference failed for: r6v1, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r6v5 */
     public final boolean b(ij ijVar) {
-        TLRPC.MessageMedia o12;
+        TLRPC.MessageMedia n1;
         TLRPC.Photo photo;
         TLRPC.PhotoSize w10;
         boolean z9 = false;
-        if (!ijVar.E3() || (o12 = ij.o1(ijVar.k)) == null || (photo = o12.photo) == null || o12.document == null || (w10 = w7.w(photo.sizes, g0.Z0(true), false, null, true)) == null) {
+        if (!ijVar.D3() || (n1 = ij.n1(ijVar.k)) == null || (photo = n1.photo) == null || n1.document == null || (w10 = w7.w(photo.sizes, g0.Z0(true), false, null, true)) == null) {
             return false;
         }
         w7.G(this.a.a);
         File J = w7.J(w10, null, false, true);
-        File J2 = w7.J(o12.document, null, false, true);
+        File J2 = w7.J(n1.document, null, false, true);
         ?? r22 = (J == null || !J.exists()) ? 1 : 0;
         ?? r62 = (J2 == null || !J2.exists()) ? 1 : 0;
         int i7 = r22 + r62;
         if (i7 > 0) {
             this.r = new CountDownLatch(i7);
-            g0.h3(new mh(this, (boolean) r22, w10, ijVar, o12.photo, (boolean) r62, o12.document));
+            g0.h3(new mh(this, (boolean) r22, w10, ijVar, n1.photo, (boolean) r62, n1.document));
             this.r.await();
         }
         if (!this.f) {
@@ -265,7 +265,7 @@ public final class cf implements ls {
                 J = w7.J(w10, null, true, true);
             }
             if (J2 == null || !J2.exists()) {
-                J2 = w7.J(o12.document, null, true, true);
+                J2 = w7.J(n1.document, null, true, true);
             }
             if (J != null && J.exists() && J2 != null && J2.exists()) {
                 String D = w7.D(J);

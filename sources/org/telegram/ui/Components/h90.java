@@ -1,155 +1,416 @@
 package org.telegram.ui.Components;
 
-import android.content.ComponentName;
-import android.content.Intent;
-import android.view.KeyEvent;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.SubMenu;
-import j$.util.Objects;
-import org.telegram.messenger.beta.R;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class h90 implements Menu {
-    public final k60 a;
-    public final s2 b;
-    public final Runnable c;
-    public final qs d;
+public abstract class h90 extends FrameLayout implements org.telegram.messenger.ls {
+    public static final /* synthetic */ int U = 0;
+    public final Rect D;
+    public Paint E;
+    public Integer F;
+    public boolean G;
+    public boolean H;
+    public boolean I;
+    public final gp J;
+    public r1.g K;
+    public boolean L;
+    public float M;
+    public boolean N;
+    public int O;
+    public ArrayList P;
+    public final d90 Q;
+    public fh.g R;
+    public final Path S;
+    public final RectF T;
+    public final org.telegram.ui.ActionBar.g6 a;
+    public final g90 b;
+    public final jg.i0 c;
+    public final a90 d;
+    public final jg.o1 e;
+    public final jg.i1 f;
+    public final org.telegram.ui.ActionBar.f2 h;
+    public float n;
+    public float r;
+    public float s;
+    public float w;
+    public di.q4 x;
+    public e90 y;
 
-    public h90(k60 k60Var, zs zsVar) {
-        Objects.requireNonNull(zsVar);
-        s2 s2Var = new s2(zsVar, 5);
-        Runnable onPremiumMenuLockClickListener = zsVar.getOnPremiumMenuLockClickListener();
-        qs qsVar = new qs(zsVar, 2);
-        this.a = k60Var;
-        this.b = s2Var;
-        this.c = onPremiumMenuLockClickListener;
-        this.d = qsVar;
+    public h90(Context context, long j3, long j10, org.telegram.ui.ActionBar.f2 f2Var, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(context);
+        this.D = new Rect();
+        this.G = false;
+        this.H = false;
+        this.I = false;
+        this.J = new gp(this, 25);
+        this.L = false;
+        this.M = 0.0f;
+        this.N = false;
+        this.Q = new d90(this);
+        this.S = new Path();
+        this.T = new RectF();
+        this.h = f2Var;
+        this.a = g6Var;
+        setVisibility(8);
+        setWillNotDraw(false);
+        setClipToOutline(true);
+        this.w = (int) Math.min(org.telegram.messenger.g0.L(126.0f), org.telegram.messenger.g0.q.y * 0.22f);
+        g90 g90Var = new g90(this, context, g6Var);
+        this.b = g90Var;
+        jg.i0 i0Var = new jg.i0((Object) this, 3);
+        this.c = i0Var;
+        i0Var.j1(1);
+        a90 a90Var = new a90(this);
+        this.d = a90Var;
+        a90Var.O = new b90(this);
+        v4.k kVar = new v4.k();
+        kVar.c = 150L;
+        kVar.e = 150L;
+        kVar.f = 150L;
+        kVar.g = 150L;
+        kVar.d = 150L;
+        kVar.o = xq.f;
+        kVar.C = false;
+        g90Var.setItemAnimator(kVar);
+        g90Var.setClipToPadding(false);
+        g90Var.setLayoutManager(i0Var);
+        jg.i1 i1Var = new jg.i1(context, j3, j10, new c90(this, f2Var), g6Var, h());
+        this.f = i1Var;
+        jg.o1 o1Var = new jg.o1();
+        o1Var.d = null;
+        o1Var.f = false;
+        jg.n1 n1Var = new jg.n1(o1Var, 0);
+        o1Var.c = i1Var;
+        i1Var.B(n1Var);
+        this.e = o1Var;
+        g90Var.setAdapter(o1Var);
+        g90Var.setTranslationY(org.telegram.messenger.g0.L(6.0f));
+        addView(g90Var, c8.ha.c(-1.0f, -1));
+        setReversed(false);
     }
 
-    @Override // android.view.Menu
-    public final MenuItem add(int i7) {
-        return null;
+    public boolean a() {
+        return true;
     }
 
-    @Override // android.view.Menu
-    public final int addIntentOptions(int i7, int i10, int i11, ComponentName componentName, Intent[] intentArr, Intent intent, int i12, MenuItem[] menuItemArr) {
-        return 0;
+    public final void b() {
+        a90 a90Var;
+        jg.i1 i1Var;
+        g90 g90Var = this.b;
+        if (g90Var == null || this.c == null) {
+            return;
+        }
+        boolean g10 = g();
+        this.s = 0.0f;
+        jg.o1 o1Var = this.e;
+        if (g10) {
+            float min = Math.min(Math.max(0.0f, g90Var.getTranslationY() + (o1Var.f ? o1Var.e.getTop() : getHeight())) + this.s, (1.0f - this.M) * getHeight());
+            this.n = 0.0f;
+            this.r = min;
+        } else {
+            this.n = Math.max(Math.max(0.0f, g90Var.getTranslationY() + (o1Var.f ? o1Var.e.getBottom() : 0)) - this.s, this.M * getHeight());
+            this.r = getMeasuredHeight();
+        }
+        fh.g gVar = this.R;
+        if (gVar != null) {
+            gVar.setBounds(0, ((int) this.n) - org.telegram.messenger.g0.L(5.0f), getMeasuredWidth(), org.telegram.messenger.g0.L(5.0f) + ((int) this.r));
+            Path path = this.S;
+            path.rewind();
+            Rect rect = this.R.Q.m;
+            RectF rectF = this.T;
+            rectF.set(rect);
+            if (g90Var == null || (a90Var = this.d) == null || g90Var.getLayoutManager() != a90Var || (i1Var = this.f) == null || i1Var.R == null) {
+                path.addRoundRect(rectF, org.telegram.messenger.g0.L(22.0f), org.telegram.messenger.g0.L(22.0f), Path.Direction.CW);
+            } else {
+                rectF.inset(org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f));
+                path.addRoundRect(rectF, org.telegram.messenger.g0.L(20.0f), org.telegram.messenger.g0.L(20.0f), Path.Direction.CW);
+            }
+            path.close();
+            invalidate();
+        }
     }
 
-    @Override // android.view.Menu
-    public final SubMenu addSubMenu(int i7) {
-        return null;
+    public final void c() {
+        a90 a90Var;
+        jg.i1 i1Var;
+        g90 g90Var = this.b;
+        if (g90Var == null || this.c == null) {
+            return;
+        }
+        boolean z9 = (g90Var == null || (a90Var = this.d) == null || g90Var.getLayoutManager() != a90Var || (i1Var = this.f) == null || i1Var.R == null) ? false : true;
+        if (this.R == null) {
+            g90Var.setPadding(0, 0, 0, 0);
+        } else {
+            g90Var.setPadding(org.telegram.messenger.g0.L(z9 ? 7.0f : 5.0f), z9 ? org.telegram.messenger.g0.L(2.0f) : 0, org.telegram.messenger.g0.L(z9 ? 7.0f : 5.0f), z9 ? org.telegram.messenger.g0.L(2.0f) : 0);
+        }
     }
 
-    @Override // android.view.Menu
-    public final MenuItem findItem(int i7) {
-        return null;
+    public final float d() {
+        if (getVisibility() == 0 && !g()) {
+            return getMeasuredHeight() - this.n;
+        }
+        return 0.0f;
     }
 
-    @Override // android.view.Menu
-    public final MenuItem getItem(int i7) {
-        return null;
+    @Override // org.telegram.messenger.ls
+    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
+        if (i7 == org.telegram.messenger.qs.i4) {
+            org.telegram.messenger.g0.d0(this.b, new di.e(14));
+        }
     }
 
-    @Override // android.view.Menu
-    public final boolean hasVisibleItems() {
-        return false;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        float min;
+        fh.g gVar = this.R;
+        if (gVar != null) {
+            gVar.draw(canvas);
+            canvas.save();
+            canvas.clipPath(this.S);
+            super.dispatchDraw(canvas);
+            canvas.restore();
+            return;
+        }
+        boolean g10 = g();
+        jg.i1 i1Var = this.f;
+        this.s = org.telegram.messenger.g0.L((((i1Var.N() || i1Var.R != null) && (i1Var.x0 || i1Var.A0 != null) && i1Var.I() == null && i1Var.U == null) ? 2 : 0) + 2);
+        canvas.save();
+        float L = org.telegram.messenger.g0.L(6.0f);
+        float f10 = this.n;
+        jg.o1 o1Var = this.e;
+        g90 g90Var = this.b;
+        Rect rect = this.D;
+        if (g10) {
+            float min2 = Math.min(Math.max(0.0f, g90Var.getTranslationY() + (o1Var.f ? o1Var.e.getTop() : getHeight())) + this.s, (1.0f - this.M) * getHeight());
+            this.n = 0.0f;
+            int measuredWidth = getMeasuredWidth();
+            this.r = min2;
+            rect.set(0, (int) 0.0f, measuredWidth, (int) min2);
+            min = Math.min(L, Math.abs(getMeasuredHeight() - this.r));
+            if (min > 0.0f) {
+                canvas.clipRect(0, 0, getWidth(), getHeight());
+                rect.top -= (int) min;
+            }
+        } else {
+            if (g90Var.getLayoutManager() == this.d) {
+                this.s += org.telegram.messenger.g0.L(2.0f);
+                L += org.telegram.messenger.g0.L(2.0f);
+            }
+            float max = Math.max(0.0f, g90Var.getTranslationY() + (o1Var.f ? o1Var.e.getBottom() : 0)) - this.s;
+            this.n = max;
+            float max2 = Math.max(max, this.M * getHeight());
+            this.n = max2;
+            int measuredWidth2 = getMeasuredWidth();
+            float measuredHeight = getMeasuredHeight();
+            this.r = measuredHeight;
+            rect.set(0, (int) max2, measuredWidth2, (int) measuredHeight);
+            min = Math.min(L, Math.abs(this.n));
+            if (min > 0.0f) {
+                canvas.clipRect(0, 0, getWidth(), getHeight());
+                rect.bottom += (int) min;
+            }
+        }
+        if (Math.abs(f10 - this.n) > 0.1f) {
+            i();
+        }
+        if (this.E == null) {
+            Paint paint = new Paint(1);
+            this.E = paint;
+            paint.setShadowLayer(org.telegram.messenger.g0.L(4.0f), 0.0f, 0.0f, 503316480);
+        }
+        Paint paint2 = this.E;
+        Integer num = this.F;
+        paint2.setColor(num != null ? num.intValue() : org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.Ge, this.a));
+        f(canvas, rect, min);
+        canvas.clipRect(rect);
+        super.dispatchDraw(canvas);
+        canvas.restore();
     }
 
-    @Override // android.view.Menu
-    public final boolean isShortcutKey(int i7, KeyEvent keyEvent) {
-        return false;
+    public final float e() {
+        if (getVisibility() == 0 && g()) {
+            return this.r;
+        }
+        return 0.0f;
     }
 
-    @Override // android.view.Menu
-    public final boolean performIdentifierAction(int i7, int i10) {
-        return false;
+    public void f(Canvas canvas, Rect rect, float f10) {
+        RectF rectF = org.telegram.messenger.g0.P;
+        rectF.set(rect);
+        canvas.drawRoundRect(rectF, f10, f10, this.E);
     }
 
-    @Override // android.view.Menu
-    public final boolean performShortcut(int i7, KeyEvent keyEvent, int i10) {
-        return false;
+    public final boolean g() {
+        v4.n0 layoutManager = this.b.getLayoutManager();
+        jg.i0 i0Var = this.c;
+        return layoutManager == i0Var && i0Var.t;
     }
 
-    @Override // android.view.Menu
-    public final int size() {
-        return 0;
+    public jg.i1 getAdapter() {
+        return this.f;
     }
 
-    @Override // android.view.Menu
-    public final MenuItem add(CharSequence charSequence) {
-        return null;
+    public v4.b0 getCurrentLayoutManager() {
+        v4.n0 layoutManager = this.b.getLayoutManager();
+        jg.i0 i0Var = this.c;
+        return layoutManager == i0Var ? i0Var : this.d;
     }
 
-    @Override // android.view.Menu
-    public final SubMenu addSubMenu(int i7, int i10, int i11, int i12) {
-        return null;
+    public g90 getListView() {
+        return this.b;
     }
 
-    @Override // android.view.Menu
-    public final MenuItem add(int i7, int i10, int i11, CharSequence charSequence) {
-        qs qsVar;
-        if (i10 != R.id.menu_quote || (qsVar = this.d) == null || ((Boolean) qsVar.run()).booleanValue()) {
-            Runnable runnable = this.c;
-            if ((i10 != R.id.menu_regular || runnable == null) && (runnable == null || !org.telegram.ui.ActionBar.k4.r.contains(Integer.valueOf(i10)) || !org.telegram.messenger.qp.s1(org.telegram.messenger.p10.s0).D3())) {
-                r2 r2Var = new r2(this, i10, 7);
-                k60 k60Var = this.a;
-                k60Var.c(0, charSequence, r2Var, false);
-                if (runnable != null && org.telegram.ui.ActionBar.k4.r.contains(Integer.valueOf(i10))) {
-                    k60Var.M(runnable);
+    public v4.b0 getNeededLayoutManager() {
+        jg.i1 i1Var = this.f;
+        return ((i1Var.N() || i1Var.R != null) && (i1Var.x0 || i1Var.A0 != null)) ? this.d : this.c;
+    }
+
+    public boolean h() {
+        return this instanceof di.q2;
+    }
+
+    public final void o(boolean z9) {
+        if (z9) {
+            boolean g10 = g();
+            if (!this.I) {
+                this.H = true;
+                g90 g90Var = this.b;
+                v4.n0 layoutManager = g90Var.getLayoutManager();
+                jg.i0 i0Var = this.c;
+                if (layoutManager == i0Var) {
+                    i0Var.h1(0, g10 ? -100000 : 100000);
+                }
+                if (getVisibility() == 8) {
+                    this.M = 1.0f;
+                    g90Var.setTranslationY(g10 ? -(this.w + org.telegram.messenger.g0.L(12.0f)) : g90Var.computeVerticalScrollOffset() + this.w);
+                }
+            }
+            setVisibility(0);
+        } else {
+            this.H = false;
+        }
+        this.I = z9;
+        gp gpVar = this.J;
+        org.telegram.messenger.g0.r(gpVar);
+        r1.g gVar = this.K;
+        if (gVar != null) {
+            gVar.d();
+        }
+        org.telegram.ui.ActionBar.f2 f2Var = this.h;
+        org.telegram.messenger.g0.i3(gpVar, (f2Var == null || !f2Var.getFragmentBeginToShow()) ? 100L : 0L);
+        if (z9) {
+            m();
+        } else {
+            j();
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        org.telegram.messenger.qs.e().c(this, org.telegram.messenger.qs.i4);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        org.telegram.messenger.qs.e().n(this, org.telegram.messenger.qs.i4);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
+        super.onLayout(z9, i7, i10, i11, i12);
+        b();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        c();
+        super.onMeasure(i7, i10);
+    }
+
+    public final void p(e90 e90Var) {
+        this.y = e90Var;
+        g90 listView = getListView();
+        di.q4 q4Var = new di.q4(12, this, e90Var);
+        this.x = q4Var;
+        listView.setOnItemClickListener(q4Var);
+        getListView().setOnTouchListener(new zj(this, 4));
+    }
+
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.G) {
+            return;
+        }
+        super.requestLayout();
+    }
+
+    public void setBackgroundDrawable(fh.g gVar) {
+        this.R = gVar;
+        gVar.r(org.telegram.messenger.g0.L(22.0f));
+        this.R.q(org.telegram.messenger.g0.L(5.0f));
+        c();
+    }
+
+    public void setDialogId(long j3) {
+        jg.i1 i1Var = this.f;
+        if (i1Var.n != j3) {
+            i1Var.n = j3;
+        }
+    }
+
+    public void setIgnoreLayout(boolean z9) {
+        this.G = z9;
+    }
+
+    public void setOverrideColor(int i7) {
+        this.F = Integer.valueOf(i7);
+        invalidate();
+    }
+
+    public void setReversed(boolean z9) {
+        if (z9 != g()) {
+            this.H = true;
+            this.c.k1(z9);
+            jg.i1 i1Var = this.f;
+            if (i1Var.L0 != z9) {
+                i1Var.L0 = z9;
+                int i7 = i1Var.M0;
+                if (i7 > 0) {
+                    i1Var.g(0);
+                }
+                if (i7 > 1) {
+                    i1Var.g(i7 - 1);
                 }
             }
         }
-        return null;
     }
 
-    @Override // android.view.Menu
-    public final SubMenu addSubMenu(int i7, int i10, int i11, CharSequence charSequence) {
-        return null;
+    public void k(TLRPC.BotInlineResult botInlineResult) {
     }
 
-    @Override // android.view.Menu
-    public final SubMenu addSubMenu(CharSequence charSequence) {
-        return null;
+    public void l(boolean z9) {
     }
 
-    @Override // android.view.Menu
-    public final MenuItem add(int i7, int i10, int i11, int i12) {
-        add(i7, i10, i11, org.telegram.messenger.id.M0(i12, null));
-        return null;
+    public void n(boolean z9) {
     }
 
-    @Override // android.view.Menu
-    public final void removeGroup(int i7) {
+    public void i() {
     }
 
-    @Override // android.view.Menu
-    public final void removeItem(int i7) {
+    public void j() {
     }
 
-    @Override // android.view.Menu
-    public final void setQwertyMode(boolean z9) {
-    }
-
-    @Override // android.view.Menu
-    public final void clear() {
-    }
-
-    @Override // android.view.Menu
-    public final void close() {
-    }
-
-    @Override // android.view.Menu
-    public final void setGroupEnabled(int i7, boolean z9) {
-    }
-
-    @Override // android.view.Menu
-    public final void setGroupVisible(int i7, boolean z9) {
-    }
-
-    @Override // android.view.Menu
-    public final void setGroupCheckable(int i7, boolean z9, boolean z10) {
+    public void m() {
     }
 }

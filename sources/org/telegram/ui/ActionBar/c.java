@@ -3,7 +3,7 @@ package org.telegram.ui.ActionBar;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class c extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -23,13 +23,13 @@ public final class c extends AnimatorListenerAdapter {
                 float f10 = this.b ? 1.0f : 0.0f;
                 k kVar = this.c;
                 kVar.D1 = f10;
-                kVar.f();
+                kVar.g();
                 break;
             default:
                 float f11 = this.b ? 1.0f : 0.0f;
                 k kVar2 = this.c;
                 kVar2.D1 = f11;
-                kVar2.f();
+                kVar2.g();
                 break;
         }
     }

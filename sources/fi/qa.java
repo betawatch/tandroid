@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public abstract class qa {
     public float b;
@@ -57,25 +57,25 @@ public abstract class qa {
         return paVar;
     }
 
-    public static oa d(di.p9 p9Var) {
-        di.i4 currentPeerView;
+    public static oa d(di.q9 q9Var) {
+        di.j4 currentPeerView;
         di.j3 j3Var;
-        if (p9Var == null) {
+        if (q9Var == null) {
             return null;
         }
-        oa oaVar = new oa(p9Var, 1);
-        di.f9 f9Var = p9Var.n0;
-        if (f9Var == null || (currentPeerView = f9Var.getCurrentPeerView()) == null || (j3Var = currentPeerView.L0) == null) {
+        oa oaVar = new oa(q9Var, 1);
+        di.g9 g9Var = q9Var.n0;
+        if (g9Var == null || (currentPeerView = g9Var.getCurrentPeerView()) == null || (j3Var = currentPeerView.L0) == null) {
             return null;
         }
-        di.d9 d9Var = p9Var.s;
-        float x10 = d9Var == null ? 0.0f : d9Var.getX();
-        di.d9 d9Var2 = p9Var.s;
-        float y10 = d9Var2 != null ? d9Var2.getY() : 0.0f;
-        oaVar.c.set(j3Var.getX() + currentPeerView.getX() + p9Var.X + x10 + p9Var.w.getLeft(), j3Var.getY() + currentPeerView.getY() + p9Var.W + y10 + p9Var.w.getTop(), (((x10 + p9Var.X) + p9Var.w.getRight()) - (p9Var.w.getWidth() - currentPeerView.getRight())) - (currentPeerView.getWidth() - j3Var.getRight()), (((y10 + p9Var.W) + p9Var.w.getBottom()) - (p9Var.w.getHeight() - currentPeerView.getBottom())) - (currentPeerView.getHeight() - j3Var.getBottom()));
+        di.e9 e9Var = q9Var.s;
+        float x10 = e9Var == null ? 0.0f : e9Var.getX();
+        di.e9 e9Var2 = q9Var.s;
+        float y10 = e9Var2 != null ? e9Var2.getY() : 0.0f;
+        oaVar.c.set(j3Var.getX() + currentPeerView.getX() + q9Var.X + x10 + q9Var.w.getLeft(), j3Var.getY() + currentPeerView.getY() + q9Var.W + y10 + q9Var.w.getTop(), (((x10 + q9Var.X) + q9Var.w.getRight()) - (q9Var.w.getWidth() - currentPeerView.getRight())) - (currentPeerView.getWidth() - j3Var.getRight()), (((y10 + q9Var.W) + q9Var.w.getBottom()) - (q9Var.w.getHeight() - currentPeerView.getBottom())) - (currentPeerView.getHeight() - j3Var.getBottom()));
         oaVar.a = 1;
         oaVar.b = org.telegram.messenger.g0.L(8.0f);
-        di.i4 z9 = p9Var.z();
+        di.j4 z9 = q9Var.z();
         if (z9 != null) {
             oaVar.f = z9.L0;
         }

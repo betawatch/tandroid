@@ -3,9 +3,9 @@ package org.telegram.ui.Components;
 import android.view.View;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class t6 implements org.telegram.ui.ActionBar.m0, dj0 {
+public final /* synthetic */ class t6 implements org.telegram.ui.ActionBar.m0, ej0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ b8 b;
 
@@ -14,7 +14,7 @@ public final /* synthetic */ class t6 implements org.telegram.ui.ActionBar.m0, d
         this.b = b8Var;
     }
 
-    @Override // org.telegram.ui.Components.dj0
+    @Override // org.telegram.ui.Components.ej0
     public boolean c(int i7, View view) {
         boolean z9 = view instanceof org.telegram.ui.Cells.w;
         b8 b8Var = this.b;

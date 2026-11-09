@@ -2,13 +2,13 @@ package org.telegram.ui;
 
 import android.webkit.JavascriptInterface;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 class PaymentFormActivity$TelegramWebviewProxy {
-    public final /* synthetic */ hl0 a;
+    public final /* synthetic */ jl0 a;
 
-    public PaymentFormActivity$TelegramWebviewProxy(hl0 hl0Var) {
-        this.a = hl0Var;
+    public PaymentFormActivity$TelegramWebviewProxy(jl0 jl0Var) {
+        this.a = jl0Var;
     }
 
     @JavascriptInterface

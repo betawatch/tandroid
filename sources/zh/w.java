@@ -5,9 +5,9 @@ import android.graphics.Canvas;
 import android.graphics.Path;
 import android.view.View;
 import bi.e7;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.g6;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class w extends e7 {
     public final Path D0;
@@ -16,8 +16,8 @@ public final class w extends e7 {
     public final /* synthetic */ b0 G0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w(b0 b0Var, Context context, f6 f6Var, wg.p pVar, bi.l1 l1Var, bi.l1 l1Var2, bi.l1 l1Var3, bi.l1 l1Var4, bi.l1 l1Var5, bi.l1 l1Var6, int i7) {
-        super(context, f6Var, pVar, l1Var, null, l1Var2, l1Var3, l1Var4, l1Var5, l1Var6);
+    public w(b0 b0Var, Context context, g6 g6Var, wg.a0 a0Var, bi.l1 l1Var, bi.l1 l1Var2, bi.l1 l1Var3, bi.l1 l1Var4, bi.l1 l1Var5, bi.l1 l1Var6, int i7) {
+        super(context, g6Var, a0Var, l1Var, null, l1Var2, l1Var3, l1Var4, l1Var5, l1Var6);
         this.G0 = b0Var;
         this.F0 = i7;
         this.D0 = new Path();

@@ -13,14 +13,14 @@ import org.telegram.ui.Components.vy;
 import org.telegram.ui.Components.w5;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class m1 extends View {
     public final w5 D;
-    public sg.w0 E;
+    public sg.v0 E;
     public float F;
     public float G;
-    public sg.j1 H;
+    public sg.i1 H;
     public Runnable I;
     public boolean J;
     public l1 K;
@@ -50,7 +50,7 @@ public final class m1 extends View {
         this.x = new w5(this);
         this.y = new w5(this);
         this.D = new w5(this);
-        this.H = new sg.j1(1.0f, 0.016773745f, -1);
+        this.H = new sg.i1(1.0f, 0.016773745f, -1);
         this.J = true;
         this.d = new vy(context, new k1(this));
         paint2.setColor(-1);
@@ -143,9 +143,9 @@ public final class m1 extends View {
                         float f14 = L2 * 1.5f;
                         a(xqVar.getInterpolation(this.r) * org.telegram.messenger.g0.L(32.0f), j9.a(com.google.android.recaptcha.internal.a.z(1.0f, f13, rectF.height(), rectF.top), rectF.top + f12, rectF.bottom - Math.min(f14, f12)), org.telegram.messenger.g0.T1(org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.T1(Math.min(f14, f12), f12, f13), this.r), canvas, false);
                         if (this.J && this.r != 0.0f && this.w && this.E != null) {
-                            sg.w0 w0Var = this.E;
-                            float f15 = w0Var.c.g.a;
-                            a(getWidth() / 2.0f, getHeight() / 2.0f, w0Var.getCurrentBrush().h() * com.google.android.recaptcha.internal.a.x(f15, 0.043945312f, e10, 0.00390625f * f15) * this.E.getCurrentBrush().g(), canvas, true);
+                            sg.v0 v0Var = this.E;
+                            float f15 = v0Var.c.g.a;
+                            a(getWidth() / 2.0f, getHeight() / 2.0f, v0Var.getCurrentBrush().h() * com.google.android.recaptcha.internal.a.x(f15, 0.043945312f, e10, 0.00390625f * f15) * this.E.getCurrentBrush().g(), canvas, true);
                         }
                         if (this.n != 0.0f) {
                             canvas.restore();
@@ -194,9 +194,9 @@ public final class m1 extends View {
                 float f142 = L22 * 1.5f;
                 a(xqVar2.getInterpolation(this.r) * org.telegram.messenger.g0.L(32.0f), j9.a(com.google.android.recaptcha.internal.a.z(1.0f, f132, rectF3.height(), rectF3.top), rectF3.top + f122, rectF3.bottom - Math.min(f142, f122)), org.telegram.messenger.g0.T1(org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.T1(Math.min(f142, f122), f122, f132), this.r), canvas, false);
                 if (this.J) {
-                    sg.w0 w0Var2 = this.E;
-                    float f152 = w0Var2.c.g.a;
-                    a(getWidth() / 2.0f, getHeight() / 2.0f, w0Var2.getCurrentBrush().h() * com.google.android.recaptcha.internal.a.x(f152, 0.043945312f, e10, 0.00390625f * f152) * this.E.getCurrentBrush().g(), canvas, true);
+                    sg.v0 v0Var2 = this.E;
+                    float f152 = v0Var2.c.g.a;
+                    a(getWidth() / 2.0f, getHeight() / 2.0f, v0Var2.getCurrentBrush().h() * com.google.android.recaptcha.internal.a.x(f152, 0.043945312f, e10, 0.00390625f * f152) * this.E.getCurrentBrush().g(), canvas, true);
                 }
                 if (this.n != 0.0f) {
                 }
@@ -275,8 +275,8 @@ public final class m1 extends View {
         invalidate();
     }
 
-    public void setColorSwatch(sg.j1 j1Var) {
-        this.H = j1Var;
+    public void setColorSwatch(sg.i1 i1Var) {
+        this.H = i1Var;
         invalidate();
     }
 
@@ -289,8 +289,8 @@ public final class m1 extends View {
         this.I = runnable;
     }
 
-    public void setRenderView(sg.w0 w0Var) {
-        this.E = w0Var;
+    public void setRenderView(sg.v0 v0Var) {
+        this.E = v0Var;
     }
 
     public void setShowPreview(boolean z9) {

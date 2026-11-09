@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class sx implements Runnable {
     public final /* synthetic */ gz a;
@@ -189,7 +189,7 @@ public final /* synthetic */ class sx implements Runnable {
                                         int i23 = i12;
                                         j11 = j13;
                                         gzVar3.z0(ijVar2, message2, message2.id, Collections.singletonList(null), true, -1, message2.params);
-                                        final int p12 = ijVar2.p1();
+                                        final int o12 = ijVar2.o1();
                                         message3.id = message2.id;
                                         int i24 = i18 + 1;
                                         if (i23 != i13) {
@@ -209,7 +209,7 @@ public final /* synthetic */ class sx implements Runnable {
                                                     final int i25 = i14;
                                                     int i26 = i25 != 0 ? 1 : 0;
                                                     final TLRPC.Message message6 = message5;
-                                                    if (ij.e5(message6)) {
+                                                    if (ij.d5(message6)) {
                                                         i26 = 9;
                                                     } else if (message6.quick_reply_shortcut_id != 0 || message6.quick_reply_shortcut != null) {
                                                         i26 = 5;
@@ -219,23 +219,23 @@ public final /* synthetic */ class sx implements Runnable {
                                                     yr messagesStorage = gzVar5.getMessagesStorage();
                                                     final TLRPC.Message message7 = message3;
                                                     long j14 = message7.random_id;
-                                                    long C1 = ij.C1(peer2);
+                                                    long B1 = ij.B1(peer2);
                                                     final int i28 = i21;
-                                                    messagesStorage.a2(j14, C1, Integer.valueOf(i28), message7.id, 0, i25 != 0 ? 1 : 0, message6.quick_reply_shortcut_id);
+                                                    messagesStorage.a2(j14, B1, Integer.valueOf(i28), message7.id, 0, i25 != 0 ? 1 : 0, message6.quick_reply_shortcut_id);
                                                     gzVar5.getMessagesStorage().j1(arrayList11, true, false, false, 0, false, i27, message6.quick_reply_shortcut_id);
-                                                    if (ij.f3(message7)) {
-                                                        long C12 = ij.C1(message7.peer_id);
+                                                    if (ij.e3(message7)) {
+                                                        long B12 = ij.B1(message7.peer_id);
                                                         ArrayList arrayList12 = new ArrayList(1);
                                                         arrayList12.add(Integer.valueOf(message7.id));
-                                                        gzVar5.getMessagesStorage().P0(C12, arrayList12, false, false, i27, (int) ij.a2(gzVar5.currentAccount, message7, 0));
-                                                        gzVar5.getMessagesStorage().R1(C12, -C12, arrayList12, null);
+                                                        gzVar5.getMessagesStorage().P0(B12, arrayList12, false, false, i27, (int) ij.Z1(gzVar5.currentAccount, message7, 0));
+                                                        gzVar5.getMessagesStorage().R1(B12, -B12, arrayList12, null);
                                                         gzVar4 = gzVar5;
-                                                        g0.h3(new pw(gzVar5, C12, arrayList12, 2));
+                                                        g0.h3(new pw(gzVar5, B12, arrayList12, 2));
                                                     } else {
                                                         gzVar4 = gzVar5;
                                                     }
                                                     final long j15 = j11;
-                                                    final int i29 = p12;
+                                                    final int i29 = o12;
                                                     g0.h3(new Runnable() { // from class: org.telegram.messenger.cx
                                                         @Override // java.lang.Runnable
                                                         public final void run() {

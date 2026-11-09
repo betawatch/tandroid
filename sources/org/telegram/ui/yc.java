@@ -3,9 +3,9 @@ package org.telegram.ui;
 import android.content.Context;
 import android.view.accessibility.AccessibilityNodeInfo;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class yc extends org.telegram.ui.Components.ch0 {
+public final class yc extends org.telegram.ui.Components.dh0 {
     public final /* synthetic */ int r;
     public final /* synthetic */ Object s;
 
@@ -30,11 +30,11 @@ public final class yc extends org.telegram.ui.Components.ch0 {
                 break;
             case 3:
                 super.invalidate(i7, i10, i11, i12);
-                ((d50) this.s).e.invalidate();
+                ((f50) this.s).e.invalidate();
                 break;
             case 4:
                 super.invalidate(i7, i10, i11, i12);
-                ((pc0) this.s).h.invalidate();
+                ((rc0) this.s).h.invalidate();
                 break;
         }
     }
@@ -74,11 +74,11 @@ public final class yc extends org.telegram.ui.Components.ch0 {
                 break;
             case 3:
                 super.invalidate();
-                ((d50) this.s).e.invalidate();
+                ((f50) this.s).e.invalidate();
                 break;
             case 4:
                 super.invalidate();
-                ((pc0) this.s).h.invalidate();
+                ((rc0) this.s).h.invalidate();
                 break;
         }
     }

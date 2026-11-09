@@ -17,7 +17,7 @@ import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class i5 implements RemoteViewsService.RemoteViewsFactory {
     public ArrayList a;
@@ -102,12 +102,12 @@ public final class i5 implements RemoteViewsService.RemoteViewsFactory {
         String str4 = null;
         if (this.h) {
             RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.widget_deleted);
-            remoteViews.setTextViewText(R.id.widget_deleted_text, id.M0(2131742877, null));
+            remoteViews.setTextViewText(R.id.widget_deleted_text, id.M0(2131742874, null));
             return remoteViews;
         }
         if (i7 >= getCount() - 1) {
             RemoteViews remoteViews2 = new RemoteViews(context.getPackageName(), R.layout.widget_edititem);
-            remoteViews2.setTextViewText(R.id.widget_edititem_text, id.M0(2131744259, null));
+            remoteViews2.setTextViewText(R.id.widget_edititem_text, id.M0(2131744256, null));
             Bundle bundle = new Bundle();
             bundle.putInt("appWidgetId", this.c);
             bundle.putInt("appWidgetType", 1);
@@ -131,7 +131,7 @@ public final class i5 implements RemoteViewsService.RemoteViewsFactory {
                 Long l10 = (Long) arrayList.get(i16);
                 if (m5.E(l10.longValue())) {
                     TLRPC.User a22 = qp.s1(cVar.a).a2(l10);
-                    String M0 = t10.B(a22) ? id.M0(2131745904, str4) : t10.z(a22) ? id.M0(2131746267, str4) : t10.x(a22) ? id.M0(2131749329, str4) : t10.j(a22, true);
+                    String M0 = t10.B(a22) ? id.M0(2131745901, str4) : t10.z(a22) ? id.M0(2131746266, str4) : t10.x(a22) ? id.M0(2131749328, str4) : t10.j(a22, true);
                     if (t10.z(a22) || t10.B(a22) || a22 == null || (userProfilePhoto = a22.photo) == null || (fileLocation2 = userProfilePhoto.photo_small) == null || fileLocation2.volume_id == 0 || fileLocation2.local_id == 0) {
                         String str5 = str4;
                         str2 = M0;
@@ -210,7 +210,7 @@ public final class i5 implements RemoteViewsService.RemoteViewsFactory {
                                 w8Var.g(1);
                             }
                         } else {
-                            ?? w8Var2 = new org.telegram.ui.Components.w8((org.telegram.ui.ActionBar.f6) null);
+                            ?? w8Var2 = new org.telegram.ui.Components.w8((org.telegram.ui.ActionBar.g6) null);
                             int i17 = cVar.a;
                             w8Var2.q(r12);
                             w8Var = w8Var2;

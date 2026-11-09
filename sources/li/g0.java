@@ -20,9 +20,9 @@ import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.bj;
 import org.telegram.ui.Components.di;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.an;
+import org.telegram.ui.cn;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g0 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -258,7 +258,7 @@ public final /* synthetic */ class g0 implements Runnable {
                 ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = (ChatAttachAlertPhotoLayout) obj4;
                 org.telegram.ui.ActionBar.f2 f2Var = (org.telegram.ui.ActionBar.f2) obj3;
                 ArrayList arrayList6 = (ArrayList) obj2;
-                an anVar = (an) obj;
+                cn cnVar = (cn) obj;
                 boolean z10 = ChatAttachAlertPhotoLayout.q1;
                 di diVar = chatAttachAlertPhotoLayout.b;
                 if (!diVar.w1 || diVar.x1) {
@@ -273,7 +273,7 @@ public final /* synthetic */ class g0 implements Runnable {
                 if (diVar.y1) {
                     i10 = 13;
                 }
-                PhotoViewer.p1().e2(arrayList6, this.c, i10, false, chatAttachAlertPhotoLayout.h1, diVar.y1 ? null : anVar);
+                PhotoViewer.p1().e2(arrayList6, this.c, i10, false, chatAttachAlertPhotoLayout.h1, diVar.y1 ? null : cnVar);
                 PhotoViewer.p1().u2(diVar.H1);
                 if (diVar.w1 && !diVar.x1) {
                     PhotoViewer.p1().O = false;
@@ -341,13 +341,13 @@ public final /* synthetic */ class g0 implements Runnable {
         this.c = i10;
     }
 
-    public /* synthetic */ g0(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout, int i7, org.telegram.ui.ActionBar.f2 f2Var, ArrayList arrayList, int i10, an anVar) {
+    public /* synthetic */ g0(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout, int i7, org.telegram.ui.ActionBar.f2 f2Var, ArrayList arrayList, int i10, cn cnVar) {
         this.d = chatAttachAlertPhotoLayout;
         this.b = i7;
         this.e = f2Var;
         this.f = arrayList;
         this.c = i10;
-        this.h = anVar;
+        this.h = cnVar;
     }
 
     public /* synthetic */ g0(p4.c1 c1Var, p4.v vVar, int i7, p4.d0 d0Var, int i10, p4.a1 a1Var) {

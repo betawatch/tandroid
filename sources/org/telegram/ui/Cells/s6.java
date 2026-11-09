@@ -23,7 +23,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.fs;
 import org.telegram.ui.Components.xp;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class s6 extends FrameLayout {
     public int a;
@@ -57,77 +57,77 @@ public final class s6 extends FrameLayout {
         }
         String lowerCase2 = tL_authorization.device_model.toLowerCase();
         if (lowerCase2.contains("safari")) {
-            i10 = org.telegram.ui.ActionBar.k6.U7;
-            i11 = org.telegram.ui.ActionBar.k6.b8;
+            i10 = org.telegram.ui.ActionBar.l6.U7;
+            i11 = org.telegram.ui.ActionBar.l6.b8;
             i12 = R.drawable.device_web_safari;
         } else if (lowerCase2.contains("edge")) {
-            i10 = org.telegram.ui.ActionBar.k6.U7;
-            i11 = org.telegram.ui.ActionBar.k6.b8;
+            i10 = org.telegram.ui.ActionBar.l6.U7;
+            i11 = org.telegram.ui.ActionBar.l6.b8;
             i12 = R.drawable.device_web_edge;
         } else if (lowerCase2.contains("chrome")) {
-            i10 = org.telegram.ui.ActionBar.k6.U7;
-            i11 = org.telegram.ui.ActionBar.k6.b8;
+            i10 = org.telegram.ui.ActionBar.l6.U7;
+            i11 = org.telegram.ui.ActionBar.l6.b8;
             i12 = R.drawable.device_web_chrome;
         } else if (lowerCase2.contains("opera")) {
-            i10 = org.telegram.ui.ActionBar.k6.U7;
-            i11 = org.telegram.ui.ActionBar.k6.b8;
+            i10 = org.telegram.ui.ActionBar.l6.U7;
+            i11 = org.telegram.ui.ActionBar.l6.b8;
             i12 = R.drawable.device_web_opera;
         } else if (lowerCase2.contains("firefox")) {
-            i10 = org.telegram.ui.ActionBar.k6.U7;
-            i11 = org.telegram.ui.ActionBar.k6.b8;
+            i10 = org.telegram.ui.ActionBar.l6.U7;
+            i11 = org.telegram.ui.ActionBar.l6.b8;
             i12 = R.drawable.device_web_firefox;
         } else {
             if (lowerCase2.contains("vivaldi")) {
-                i10 = org.telegram.ui.ActionBar.k6.U7;
-                i11 = org.telegram.ui.ActionBar.k6.b8;
+                i10 = org.telegram.ui.ActionBar.l6.U7;
+                i11 = org.telegram.ui.ActionBar.l6.b8;
             } else if (lowerCase.contains("ios")) {
                 i12 = lowerCase2.contains("ipad") ? R.drawable.device_tablet_ios : R.drawable.device_phone_ios;
-                i10 = org.telegram.ui.ActionBar.k6.T7;
-                i11 = org.telegram.ui.ActionBar.k6.a8;
+                i10 = org.telegram.ui.ActionBar.l6.T7;
+                i11 = org.telegram.ui.ActionBar.l6.a8;
             } else if (lowerCase.contains("windows")) {
-                i10 = org.telegram.ui.ActionBar.k6.S7;
-                i11 = org.telegram.ui.ActionBar.k6.Z7;
+                i10 = org.telegram.ui.ActionBar.l6.S7;
+                i11 = org.telegram.ui.ActionBar.l6.Z7;
                 i12 = R.drawable.device_desktop_win;
             } else if (lowerCase.contains("macos")) {
-                i10 = org.telegram.ui.ActionBar.k6.S7;
-                i11 = org.telegram.ui.ActionBar.k6.Z7;
+                i10 = org.telegram.ui.ActionBar.l6.S7;
+                i11 = org.telegram.ui.ActionBar.l6.Z7;
                 i12 = R.drawable.device_desktop_osx;
             } else if (lowerCase.contains("android")) {
                 i12 = lowerCase2.contains("tab") ? R.drawable.device_tablet_android : R.drawable.device_phone_android;
-                i10 = org.telegram.ui.ActionBar.k6.R7;
-                i11 = org.telegram.ui.ActionBar.k6.Y7;
+                i10 = org.telegram.ui.ActionBar.l6.R7;
+                i11 = org.telegram.ui.ActionBar.l6.Y7;
             } else {
                 if (lowerCase.contains("fragment")) {
                     i12 = R.drawable.fragment;
                 } else if (lowerCase.equalsIgnoreCase("search")) {
-                    i10 = org.telegram.ui.ActionBar.k6.T7;
-                    i11 = org.telegram.ui.ActionBar.k6.a8;
+                    i10 = org.telegram.ui.ActionBar.l6.T7;
+                    i11 = org.telegram.ui.ActionBar.l6.a8;
                     i12 = R.drawable.msg_search;
                 } else if (lowerCase.contains("anonymous")) {
-                    i10 = org.telegram.ui.ActionBar.k6.T7;
-                    i11 = org.telegram.ui.ActionBar.k6.a8;
+                    i10 = org.telegram.ui.ActionBar.l6.T7;
+                    i11 = org.telegram.ui.ActionBar.l6.a8;
                     i12 = R.drawable.large_hidden;
                 } else if (lowerCase.contains("premiumbot")) {
-                    i10 = org.telegram.ui.ActionBar.k6.mk;
-                    i11 = org.telegram.ui.ActionBar.k6.lk;
+                    i10 = org.telegram.ui.ActionBar.l6.mk;
+                    i11 = org.telegram.ui.ActionBar.l6.lk;
                     i12 = R.drawable.filled_star_plus;
                 } else if (lowerCase.contains("ads")) {
-                    i10 = org.telegram.ui.ActionBar.k6.U7;
-                    i11 = org.telegram.ui.ActionBar.k6.b8;
+                    i10 = org.telegram.ui.ActionBar.l6.U7;
+                    i11 = org.telegram.ui.ActionBar.l6.b8;
                     i12 = R.drawable.msg_channel;
                 } else if (lowerCase.contains("api")) {
-                    i10 = org.telegram.ui.ActionBar.k6.R7;
-                    i11 = org.telegram.ui.ActionBar.k6.Y7;
+                    i10 = org.telegram.ui.ActionBar.l6.R7;
+                    i11 = org.telegram.ui.ActionBar.l6.Y7;
                     i12 = R.drawable.filled_paid_broadcast;
                 } else if (lowerCase.equals("?")) {
                     i12 = R.drawable.msg_emoji_question;
                 } else if (tL_authorization.app_name.toLowerCase().contains("desktop")) {
-                    i10 = org.telegram.ui.ActionBar.k6.S7;
-                    i11 = org.telegram.ui.ActionBar.k6.Z7;
+                    i10 = org.telegram.ui.ActionBar.l6.S7;
+                    i11 = org.telegram.ui.ActionBar.l6.Z7;
                     i12 = R.drawable.device_desktop_other;
                 } else {
-                    i10 = org.telegram.ui.ActionBar.k6.U7;
-                    i11 = org.telegram.ui.ActionBar.k6.b8;
+                    i10 = org.telegram.ui.ActionBar.l6.U7;
+                    i11 = org.telegram.ui.ActionBar.l6.b8;
                 }
                 i10 = -1;
                 i11 = -1;
@@ -135,11 +135,11 @@ public final class s6 extends FrameLayout {
             i12 = R.drawable.device_web_other;
         }
         Drawable mutate = org.telegram.messenger.t0.b.getDrawable(i12).mutate();
-        mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.J7, false), PorterDuff.Mode.SRC_IN));
+        mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.J7, false), PorterDuff.Mode.SRC_IN));
         float f10 = i7;
         int L = org.telegram.messenger.g0.L(f10);
-        int x02 = i10 == -1 ? -16777216 : org.telegram.ui.ActionBar.k6.x0(null, i10, false);
-        int x03 = i11 != -1 ? org.telegram.ui.ActionBar.k6.x0(null, i11, false) : -16777216;
+        int x02 = i10 == -1 ? -16777216 : org.telegram.ui.ActionBar.l6.x0(null, i10, false);
+        int x03 = i11 != -1 ? org.telegram.ui.ActionBar.l6.x0(null, i11, false) : -16777216;
         r6 r6Var = new r6(0);
         r6Var.b = L;
         Paint paint = new Paint(1);
@@ -203,9 +203,9 @@ public final class s6 extends FrameLayout {
             l9Var.setRoundRadius(org.telegram.messenger.g0.L(21.0f));
             l9Var.e(a22, w8Var);
             textView4.setText(t10.p(a22));
-            textView3.setText(id.M0(2131745563, null));
+            textView3.setText(id.M0(2131745560, null));
             if (TLObject.hasFlag(tL_connectedBot.flags, 2)) {
-                textView2.setText(id.a0(null, null, 2131745561, id.x(tL_connectedBot.date, false)));
+                textView2.setText(id.a0(null, null, 2131745558, id.x(tL_connectedBot.date, false)));
                 return;
             }
             return;
@@ -230,10 +230,10 @@ public final class s6 extends FrameLayout {
             }
             textView4.setText(sb2);
             if ((tL_authorization.flags & 1) != 0) {
-                setTag(Integer.valueOf(org.telegram.ui.ActionBar.k6.I6));
-                e12 = id.M0(2131747827, null);
+                setTag(Integer.valueOf(org.telegram.ui.ActionBar.l6.I6));
+                e12 = id.M0(2131747826, null);
             } else {
-                setTag(Integer.valueOf(org.telegram.ui.ActionBar.k6.A6));
+                setTag(Integer.valueOf(org.telegram.ui.ActionBar.l6.A6));
                 e12 = id.e1(tL_authorization.date_active);
             }
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
@@ -267,10 +267,10 @@ public final class s6 extends FrameLayout {
             } else {
                 str = "";
             }
-            int i10 = org.telegram.ui.ActionBar.k6.A6;
+            int i10 = org.telegram.ui.ActionBar.l6.A6;
             setTag(Integer.valueOf(i10));
             textView.setText(id.e1(tL_webAuthorization.date_active));
-            org.telegram.ui.ActionBar.r6.V(textView, i10, null);
+            org.telegram.ui.ActionBar.s6.U(textView, i10, null);
             StringBuilder sb4 = new StringBuilder();
             if (tL_webAuthorization.ip.length() != 0) {
                 sb4.append(tL_webAuthorization.ip);
@@ -308,7 +308,7 @@ public final class s6 extends FrameLayout {
         setContentAlpha(1.0f - this.s.e(false, 0.0f));
         if (this.r) {
             int i7 = this.a == 1 ? 49 : 72;
-            canvas.drawLine(id.a0 ? 0.0f : org.telegram.messenger.g0.L(i7), getMeasuredHeight() - 1, getMeasuredWidth() - (id.a0 ? org.telegram.messenger.g0.L(i7) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.k6.k0);
+            canvas.drawLine(id.a0 ? 0.0f : org.telegram.messenger.g0.L(i7), getMeasuredHeight() - 1, getMeasuredWidth() - (id.a0 ? org.telegram.messenger.g0.L(i7) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.l6.k0);
         }
     }
 

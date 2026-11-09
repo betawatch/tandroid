@@ -13,16 +13,16 @@ import android.view.ViewConfiguration;
 import android.widget.FrameLayout;
 import c8.j9;
 import fi.f9;
-import fi.h9;
+import fi.v9;
 import org.telegram.messenger.k9;
 import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.lt0;
+import org.telegram.ui.Components.nt0;
 import org.telegram.ui.Components.vy;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public abstract class b4 extends FrameLayout {
-    public static final lt0 b0 = new lt0(new g2.c(29), new x3(0));
+    public static final nt0 b0 = new nt0(new g2.c(29), new x3(0));
     public Runnable D;
     public Runnable E;
     public a4 F;
@@ -90,9 +90,9 @@ public abstract class b4 extends FrameLayout {
 
     public final void c() {
         setTranslationY(Math.max(this.e, this.f + this.r));
-        int i7 = 20;
-        org.telegram.messenger.g0.r(new h9(this, i7));
-        org.telegram.messenger.g0.h3(new h9(this, i7));
+        int i7 = 19;
+        org.telegram.messenger.g0.r(new v9(this, i7));
+        org.telegram.messenger.g0.h3(new v9(this, i7));
         Runnable runnable = this.D;
         if (runnable != null) {
             runnable.run();

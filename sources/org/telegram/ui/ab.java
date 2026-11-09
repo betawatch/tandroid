@@ -4,17 +4,17 @@ import android.view.View;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class ab extends nq0 {
+public final class ab extends pq0 {
     public final /* synthetic */ mb a;
 
     public ab(mb mbVar) {
         this.a = mbVar;
     }
 
-    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
-    public final wq0 E(org.telegram.messenger.ij ijVar, TLRPC.FileLocation fileLocation, int i7, boolean z9, boolean z10) {
+    @Override // org.telegram.ui.pq0, org.telegram.ui.wq0
+    public final yq0 E(org.telegram.messenger.ij ijVar, TLRPC.FileLocation fileLocation, int i7, boolean z9, boolean z10) {
         org.telegram.ui.Cells.t0 t0Var;
         org.telegram.messenger.ij messageObject;
         org.telegram.ui.Cells.q1 q1Var;
@@ -29,12 +29,12 @@ public final class ab extends nq0 {
             }
             View childAt = mbVar.w.getChildAt(i10);
             if (childAt instanceof org.telegram.ui.Cells.q1) {
-                if (ijVar != null && (messageObject2 = (q1Var = (org.telegram.ui.Cells.q1) childAt).getMessageObject()) != null && messageObject2.f1() == ijVar.f1()) {
+                if (ijVar != null && (messageObject2 = (q1Var = (org.telegram.ui.Cells.q1) childAt).getMessageObject()) != null && messageObject2.e1() == ijVar.e1()) {
                     imageReceiver = q1Var.getPhotoImage();
                 }
             } else if ((childAt instanceof org.telegram.ui.Cells.t0) && (messageObject = (t0Var = (org.telegram.ui.Cells.t0) childAt).getMessageObject()) != null) {
                 if (ijVar != null) {
-                    if (messageObject.f1() == ijVar.f1()) {
+                    if (messageObject.e1() == ijVar.e1()) {
                         imageReceiver = t0Var.getPhotoImage();
                     }
                 } else if (fileLocation != null && messageObject.n0 != null) {
@@ -55,15 +55,15 @@ public final class ab extends nq0 {
             if (imageReceiver != null) {
                 int[] iArr = new int[2];
                 childAt.getLocationInWindow(iArr);
-                wq0 wq0Var = new wq0();
-                wq0Var.b = iArr[0];
-                wq0Var.c = iArr[1];
-                wq0Var.d = mbVar.w;
-                wq0Var.a = imageReceiver;
-                wq0Var.e = imageReceiver.p();
-                wq0Var.h = imageReceiver.E();
-                wq0Var.l = true;
-                return wq0Var;
+                yq0 yq0Var = new yq0();
+                yq0Var.b = iArr[0];
+                yq0Var.c = iArr[1];
+                yq0Var.d = mbVar.w;
+                yq0Var.a = imageReceiver;
+                yq0Var.e = imageReceiver.p();
+                yq0Var.h = imageReceiver.E();
+                yq0Var.l = true;
+                return yq0Var;
             }
             i10++;
         }

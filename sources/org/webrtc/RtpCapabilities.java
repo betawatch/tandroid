@@ -4,13 +4,13 @@ import java.util.List;
 import java.util.Map;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public class RtpCapabilities {
     public List<CodecCapability> codecs;
     public List<HeaderExtensionCapability> headerExtensions;
 
-    /* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+    /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
     public static class CodecCapability {
         public Integer clockRate;
         public MediaStreamTrack.MediaType kind;
@@ -58,7 +58,7 @@ public class RtpCapabilities {
         }
     }
 
-    /* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+    /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
     public static class HeaderExtensionCapability {
         private final boolean preferredEncrypted;
         private final int preferredId;

@@ -41,11 +41,10 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.c3;
 import org.telegram.ui.ActionBar.d3;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.BubbleActivity;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.Wallet.g2;
 import org.telegram.ui.g4;
 import org.telegram.ui.k3;
 import org.telegram.ui.web.u0;
@@ -54,7 +53,7 @@ import sa.d;
 import sg.i0;
 import v6.e;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public abstract class c {
     public static i0 a;
@@ -816,7 +815,7 @@ public abstract class c {
                                 bVar2.d();
                                 return;
                             } else {
-                                g0.i3(new g2(u1VarArr, sendRequest, i10), 1000L);
+                                g0.i3(new org.telegram.ui.Wallet.f2(u1VarArr, sendRequest, i10), 1000L);
                                 return;
                             }
                         } catch (Exception unused) {
@@ -889,10 +888,10 @@ public abstract class c {
                         bundle2.putParcelable("android.support.customtabs.customaction.PENDING_INTENT", broadcast);
                         arrayList.add(bundle2);
                         z21 = false;
-                        intent3.putExtra("android.support.customtabs.extra.TOOLBAR_COLOR", k6.x0(null, k6.S8, false));
+                        intent3.putExtra("android.support.customtabs.extra.TOOLBAR_COLOR", l6.x0(null, l6.S8, false));
                         intent3.putExtra("android.support.customtabs.extra.TITLE_VISIBILITY", 1);
                         Bitmap decodeResource = BitmapFactory.decodeResource(context.getResources(), R.drawable.msg_filled_shareout);
-                        String M02 = id.M0(2131745462, null);
+                        String M02 = id.M0(2131745459, null);
                         z20 = false;
                         PendingIntent broadcast2 = PendingIntent.getBroadcast(t0.b, 0, intent2, 33554432);
                         Bundle bundle3 = new Bundle();

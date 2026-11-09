@@ -20,14 +20,14 @@ import org.telegram.messenger.qp;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.Cells.h9;
 import org.telegram.ui.Cells.i9;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
-public final class m4 extends y implements org.telegram.ui.ActionBar.a6, h9, k0 {
+public final class m4 extends y implements org.telegram.ui.ActionBar.b6, h9, k0 {
     public static final /* synthetic */ int M = 0;
     public final ImageReceiver D;
     public final Drawable E;
@@ -39,13 +39,13 @@ public final class m4 extends y implements org.telegram.ui.ActionBar.a6, h9, k0 
     public int K;
     public final j0 L;
     public final int n;
-    public final f6 r;
+    public final g6 r;
     public final Paint s;
     public final Paint w;
     public final Paint x;
     public final TextPaint y;
 
-    public m4(int i7, Context context, f6 f6Var) {
+    public m4(int i7, Context context, g6 g6Var) {
         super(context);
         this.s = new Paint(1);
         this.w = new Paint(1);
@@ -53,7 +53,7 @@ public final class m4 extends y implements org.telegram.ui.ActionBar.a6, h9, k0 
         TextPaint textPaint = new TextPaint(1);
         this.y = textPaint;
         this.n = i7;
-        this.r = f6Var;
+        this.r = g6Var;
         setWillNotDraw(false);
         textPaint.setTextSize(org.telegram.messenger.g0.L(15.0f));
         textPaint.setTextAlign(Paint.Align.CENTER);
@@ -64,7 +64,7 @@ public final class m4 extends y implements org.telegram.ui.ActionBar.a6, h9, k0 
         this.F = view;
         view.setOnClickListener(new ii.g(this, 12));
         addView(view, ha.e(-1, -2, 51));
-        j0 j0Var = new j0(context, f6Var, new g6.d0(this, 14));
+        j0 j0Var = new j0(context, g6Var, new g6.d0(this, 14));
         this.L = j0Var;
         addView(j0Var.a, ha.e(-2, -2, 51));
         updateColors();
@@ -87,12 +87,12 @@ public final class m4 extends y implements org.telegram.ui.ActionBar.a6, h9, k0 
         return this.L.f(i7, i10);
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(k6.df));
-        hashSet.add(Integer.valueOf(k6.ue));
-        hashSet.add(Integer.valueOf(k6.ig));
-        hashSet.add(Integer.valueOf(k6.G6));
+        hashSet.add(Integer.valueOf(l6.df));
+        hashSet.add(Integer.valueOf(l6.ue));
+        hashSet.add(Integer.valueOf(l6.ig));
+        hashSet.add(Integer.valueOf(l6.G6));
     }
 
     @Override // li.k0
@@ -257,16 +257,16 @@ public final class m4 extends y implements org.telegram.ui.ActionBar.a6, h9, k0 
         setMeasuredDimension(size, getPaddingBottom() + getPaddingTop() + this.K + h);
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
-        int i7 = k6.df;
-        f6 f6Var = this.r;
-        this.s.setColor(k6.w0(i7, f6Var));
-        this.w.setColor(k6.w0(k6.ue, f6Var));
-        this.x.setColor(k6.w0(k6.ig, f6Var));
-        int i10 = k6.G6;
-        this.y.setColor(k6.r1(0.5f, k6.w0(i10, f6Var)));
-        this.E.setColorFilter(new PorterDuffColorFilter(k6.r1(0.5f, k6.w0(i10, f6Var)), PorterDuff.Mode.SRC_IN));
+        int i7 = l6.df;
+        g6 g6Var = this.r;
+        this.s.setColor(l6.w0(i7, g6Var));
+        this.w.setColor(l6.w0(l6.ue, g6Var));
+        this.x.setColor(l6.w0(l6.ig, g6Var));
+        int i10 = l6.G6;
+        this.y.setColor(l6.r1(0.5f, l6.w0(i10, g6Var)));
+        this.E.setColorFilter(new PorterDuffColorFilter(l6.r1(0.5f, l6.w0(i10, g6Var)), PorterDuff.Mode.SRC_IN));
         j0 j0Var = this.L;
         if (j0Var != null) {
             j0Var.a();

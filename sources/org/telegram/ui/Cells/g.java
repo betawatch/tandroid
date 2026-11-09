@@ -3,13 +3,13 @@ package org.telegram.ui.Cells;
 import android.graphics.RectF;
 import android.text.Layout;
 import android.text.style.ClickableSpan;
-import org.telegram.ui.Components.a80;
+import org.telegram.ui.Components.b80;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class g extends vf.b {
-    public a80 d;
+    public b80 d;
     public final /* synthetic */ Layout e;
     public final /* synthetic */ ClickableSpan f;
     public final /* synthetic */ float g;
@@ -31,16 +31,16 @@ public final class g extends vf.b {
     public final void d() {
         j jVar = this.h;
         n2.n0 n0Var = jVar.E;
-        a80 a80Var = jVar.G;
-        if (a80Var != null) {
-            n0Var.n(a80Var, true);
+        b80 b80Var = jVar.G;
+        if (b80Var != null) {
+            n0Var.n(b80Var, true);
         }
-        a80 k10 = n2.n0.k(this.e, this.f, this.g);
+        b80 k10 = n2.n0.k(this.e, this.f, this.g);
         this.d = k10;
         jVar.G = k10;
-        int w02 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.ze, jVar.I);
-        RectF rectF = ProfileActivity.S6;
-        this.d.g(org.telegram.ui.ActionBar.k6.r1(0.8f, w02), org.telegram.ui.ActionBar.k6.r1(1.3f, w02), org.telegram.ui.ActionBar.k6.r1(1.0f, w02), org.telegram.ui.ActionBar.k6.r1(4.0f, w02));
+        int w02 = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.ze, jVar.I);
+        RectF rectF = ProfileActivity.V6;
+        this.d.g(org.telegram.ui.ActionBar.l6.r1(0.8f, w02), org.telegram.ui.ActionBar.l6.r1(1.3f, w02), org.telegram.ui.ActionBar.l6.r1(1.0f, w02), org.telegram.ui.ActionBar.l6.r1(4.0f, w02));
         this.d.x.setStrokeWidth(org.telegram.messenger.g0.N(1.25f));
         n0Var.c(this.d, null);
     }

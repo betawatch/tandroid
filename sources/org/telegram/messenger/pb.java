@@ -7,7 +7,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class pb implements Runnable {
     public final /* synthetic */ int a = 3;
@@ -19,12 +19,12 @@ public final /* synthetic */ class pb implements Runnable {
     public final /* synthetic */ Object h;
     public final /* synthetic */ Object n;
 
-    public /* synthetic */ pb(int i7, long j3, Activity activity, ArrayList arrayList, HashMap hashMap, c20 c20Var, org.telegram.ui.ActionBar.f6 f6Var) {
+    public /* synthetic */ pb(int i7, long j3, Activity activity, ArrayList arrayList, HashMap hashMap, c20 c20Var, org.telegram.ui.ActionBar.g6 g6Var) {
         this.c = i7;
         this.b = j3;
         this.d = activity;
         this.e = arrayList;
-        this.f = f6Var;
+        this.f = g6Var;
         this.h = c20Var;
         this.n = hashMap;
     }
@@ -111,7 +111,7 @@ public final /* synthetic */ class pb implements Runnable {
             case 3:
                 Activity activity = (Activity) obj2;
                 ArrayList arrayList2 = (ArrayList) obj5;
-                org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) obj4;
+                org.telegram.ui.ActionBar.g6 g6Var = (org.telegram.ui.ActionBar.g6) obj4;
                 c20 c20Var = (c20) obj3;
                 HashMap hashMap = (HashMap) obj;
                 long j11 = bi.ea.y(i10, false).p().amount;
@@ -121,46 +121,46 @@ public final /* synthetic */ class pb implements Runnable {
                     break;
                 } else if (activity != null) {
                     long longValue = ((Long) arrayList2.get(0)).longValue();
-                    new bi.tc(activity, f6Var, j12, 13, m5.s(i10, longValue), new org.telegram.ui.Components.y1(c20Var, hashMap, 0), longValue).show();
+                    new bi.tc(activity, g6Var, j12, 13, m5.s(i10, longValue), new org.telegram.ui.Components.y1(c20Var, hashMap, 0), longValue).show();
                     break;
                 }
                 break;
             default:
-                final org.telegram.ui.Wallet.e2 e2Var = (org.telegram.ui.Wallet.e2) obj5;
-                final org.telegram.ui.Wallet.a2 a2Var = (org.telegram.ui.Wallet.a2) obj4;
-                final org.telegram.ui.Wallet.u1 u1Var = (org.telegram.ui.Wallet.u1) obj3;
+                final org.telegram.ui.Wallet.d2 d2Var = (org.telegram.ui.Wallet.d2) obj5;
+                final org.telegram.ui.Wallet.z1 z1Var = (org.telegram.ui.Wallet.z1) obj4;
+                final org.telegram.ui.Wallet.t1 t1Var = (org.telegram.ui.Wallet.t1) obj3;
                 String str = (String) obj2;
-                org.telegram.ui.Wallet.j0 j0Var = (org.telegram.ui.Wallet.j0) obj;
-                e2Var.h = false;
-                if (a2Var == null) {
-                    u1Var.a(null, str);
+                org.telegram.ui.Wallet.i0 i0Var = (org.telegram.ui.Wallet.i0) obj;
+                d2Var.h = false;
+                if (z1Var == null) {
+                    t1Var.a(null, str);
                     break;
                 } else {
-                    String str2 = a2Var.e;
-                    if (!e2Var.A(a2Var) || e2Var.j(a2Var)) {
-                        u1Var.a(null, "Request expired or wallet changed");
+                    String str2 = z1Var.e;
+                    if (!d2Var.A(z1Var) || d2Var.j(z1Var)) {
+                        t1Var.a(null, "Request expired or wallet changed");
                         break;
                     } else {
-                        e2Var.g = a2Var;
-                        if ("sendTransaction".equals(str2) && a2Var.f != null) {
-                            if (qp.s1(e2Var.a).e7.contains(org.telegram.ui.Wallet.e2.l(j3, i10) + ".transfer")) {
-                                a2Var.m = true;
-                                e2Var.B(a2Var, j0Var, new c20() { // from class: org.telegram.ui.Wallet.w1
+                        d2Var.g = z1Var;
+                        if ("sendTransaction".equals(str2) && z1Var.f != null) {
+                            if (qp.s1(d2Var.a).e7.contains(org.telegram.ui.Wallet.d2.l(j3, i10) + ".transfer")) {
+                                z1Var.m = true;
+                                d2Var.B(z1Var, i0Var, new c20() { // from class: org.telegram.ui.Wallet.v1
                                     @Override // org.telegram.messenger.c20
                                     public final void a(Object obj6) {
                                         String str3 = (String) obj6;
                                         switch (i12) {
                                             case 0:
-                                                e2 e2Var2 = e2Var;
-                                                e2Var2.getClass();
-                                                a2 a2Var2 = a2Var;
-                                                a2Var2.m = false;
-                                                e2Var2.u(a2Var2);
-                                                u1Var.a(null, str3);
+                                                d2 d2Var2 = d2Var;
+                                                d2Var2.getClass();
+                                                z1 z1Var2 = z1Var;
+                                                z1Var2.m = false;
+                                                d2Var2.u(z1Var2);
+                                                t1Var.a(null, str3);
                                                 break;
                                             default:
-                                                e2Var.u(a2Var);
-                                                u1Var.a(null, str3);
+                                                d2Var.u(z1Var);
+                                                t1Var.a(null, str3);
                                                 break;
                                         }
                                     }
@@ -168,31 +168,31 @@ public final /* synthetic */ class pb implements Runnable {
                                 break;
                             }
                         }
-                        if (a2Var.l >= 0 || "disconnect".equals(str2)) {
-                            j0Var.close();
-                            e2Var.f(a2Var, false, new c20() { // from class: org.telegram.ui.Wallet.w1
+                        if (z1Var.l >= 0 || "disconnect".equals(str2)) {
+                            i0Var.close();
+                            d2Var.f(z1Var, false, new c20() { // from class: org.telegram.ui.Wallet.v1
                                 @Override // org.telegram.messenger.c20
                                 public final void a(Object obj6) {
                                     String str3 = (String) obj6;
                                     switch (i11) {
                                         case 0:
-                                            e2 e2Var2 = e2Var;
-                                            e2Var2.getClass();
-                                            a2 a2Var2 = a2Var;
-                                            a2Var2.m = false;
-                                            e2Var2.u(a2Var2);
-                                            u1Var.a(null, str3);
+                                            d2 d2Var2 = d2Var;
+                                            d2Var2.getClass();
+                                            z1 z1Var2 = z1Var;
+                                            z1Var2.m = false;
+                                            d2Var2.u(z1Var2);
+                                            t1Var.a(null, str3);
                                             break;
                                         default:
-                                            e2Var.u(a2Var);
-                                            u1Var.a(null, str3);
+                                            d2Var.u(z1Var);
+                                            t1Var.a(null, str3);
                                             break;
                                     }
                                 }
                             });
                             break;
                         } else {
-                            u1Var.a(a2Var, null);
+                            t1Var.a(z1Var, null);
                             break;
                         }
                     }
@@ -231,13 +231,13 @@ public final /* synthetic */ class pb implements Runnable {
         this.n = epVar;
     }
 
-    public /* synthetic */ pb(org.telegram.ui.Wallet.e2 e2Var, org.telegram.ui.Wallet.a2 a2Var, org.telegram.ui.Wallet.u1 u1Var, String str, long j3, int i7, org.telegram.ui.Wallet.j0 j0Var) {
-        this.e = e2Var;
-        this.f = a2Var;
-        this.h = u1Var;
+    public /* synthetic */ pb(org.telegram.ui.Wallet.d2 d2Var, org.telegram.ui.Wallet.z1 z1Var, org.telegram.ui.Wallet.t1 t1Var, String str, long j3, int i7, org.telegram.ui.Wallet.i0 i0Var) {
+        this.e = d2Var;
+        this.f = z1Var;
+        this.h = t1Var;
         this.d = str;
         this.b = j3;
         this.c = i7;
-        this.n = j0Var;
+        this.n = i0Var;
     }
 }

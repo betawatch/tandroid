@@ -3,7 +3,7 @@ package org.webrtc;
 import java.util.List;
 import org.webrtc.VideoEncoderFactory;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public class SoftwareVideoEncoderFactory implements VideoEncoderFactory {
     private static final String TAG = "SoftwareVideoEncoderFactory";
@@ -37,12 +37,12 @@ public class SoftwareVideoEncoderFactory implements VideoEncoderFactory {
 
     @Override // org.webrtc.VideoEncoderFactory
     public final /* synthetic */ VideoEncoderFactory.VideoEncoderSelector getEncoderSelector() {
-        return y.a(this);
+        return x.a(this);
     }
 
     @Override // org.webrtc.VideoEncoderFactory
     public final /* synthetic */ VideoCodecInfo[] getImplementations() {
-        return y.b(this);
+        return x.b(this);
     }
 
     @Override // org.webrtc.VideoEncoderFactory

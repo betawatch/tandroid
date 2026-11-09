@@ -9,14 +9,14 @@ import org.telegram.messenger.lc;
 import org.telegram.messenger.w10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.CheckBoxBase;
-import org.telegram.ui.Components.dj0;
+import org.telegram.ui.Components.ah0;
+import org.telegram.ui.Components.ej0;
 import org.telegram.ui.Components.xo;
-import org.telegram.ui.Components.zg0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ca implements dj0, bg.p, lc, org.telegram.messenger.j9, xo, w10 {
+public final /* synthetic */ class ca implements ej0, bg.p, lc, org.telegram.messenger.j9, xo, w10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -52,7 +52,7 @@ public final /* synthetic */ class ca implements dj0, bg.p, lc, org.telegram.mes
         }
     }
 
-    @Override // org.telegram.ui.Components.dj0
+    @Override // org.telegram.ui.Components.ej0
     public boolean c(int i7, View view) {
         ga gaVar = (ga) this.b;
         gaVar.getClass();
@@ -67,7 +67,7 @@ public final /* synthetic */ class ca implements dj0, bg.p, lc, org.telegram.mes
 
     @Override // org.telegram.messenger.lc
     public void f0(ImageReceiver imageReceiver, boolean z9, boolean z10, boolean z11) {
-        zg0 B;
+        ah0 B;
         q0 q0Var;
         int w10;
         ij ijVar;
@@ -107,7 +107,7 @@ public final /* synthetic */ class ca implements dj0, bg.p, lc, org.telegram.mes
                 o7 o7Var = (o7) this.b;
                 ImageReceiver imageReceiver2 = o7Var.d;
                 ImageReceiver imageReceiver3 = o7Var.c;
-                if (z9 && !z10 && (ijVar = o7Var.n) != null && ijVar.u2() && imageReceiver3.n() != null) {
+                if (z9 && !z10 && (ijVar = o7Var.n) != null && ijVar.t2() && imageReceiver3.n() != null) {
                     if (imageReceiver2.n() != null) {
                         imageReceiver2.n().recycle();
                     }
@@ -117,7 +117,7 @@ public final /* synthetic */ class ca implements dj0, bg.p, lc, org.telegram.mes
                     int J0 = org.telegram.messenger.g0.J0(imageReceiver3.n());
                     o7Var.a = J0;
                     CheckBoxBase checkBoxBase = o7Var.P;
-                    if (checkBoxBase != null && checkBoxBase.x != (w10 = org.telegram.ui.ActionBar.k6.w(J0, org.telegram.ui.ActionBar.k6.r1(0.25f, -1)))) {
+                    if (checkBoxBase != null && checkBoxBase.x != (w10 = org.telegram.ui.ActionBar.l6.w(J0, org.telegram.ui.ActionBar.l6.r1(0.25f, -1)))) {
                         checkBoxBase.x = w10;
                         checkBoxBase.b();
                         break;
@@ -142,7 +142,7 @@ public final /* synthetic */ class ca implements dj0, bg.p, lc, org.telegram.mes
             return false;
         }
         if (ijVar.D != 29 || ((l4Var = q1Var.W5) != null && l4Var.i)) {
-            return (message.noforwards && !ij.d3(message)) || q1Var.P5.T4() || q1Var.P5.z2();
+            return (message.noforwards && !ij.c3(message)) || q1Var.P5.S4() || q1Var.P5.y2();
         }
         return true;
     }

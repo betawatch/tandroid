@@ -59,14 +59,14 @@ import org.telegram.ui.Components.ra;
 import org.telegram.ui.Components.sa;
 import org.telegram.ui.Components.ta;
 import org.telegram.ui.Components.xf;
-import org.telegram.ui.fr0;
-import org.telegram.ui.fx;
+import org.telegram.ui.hr0;
+import org.telegram.ui.hx;
 import pb.l;
 import s2.m;
 import s2.s;
 import s2.t;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class d implements SuccessContinuation, androidx.car.app.messaging.model.b, b7.e, q, eg.a, fg.a, j2.g, gh.a, p, u9.d, q5.b, fb, l1, q0, OnFailureListener, t, u4.c {
     public static d b;
@@ -183,7 +183,7 @@ public final class d implements SuccessContinuation, androidx.car.app.messaging.
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ fr0 N1() {
+    public /* synthetic */ hr0 N1() {
         return null;
     }
 
@@ -323,7 +323,7 @@ public final class d implements SuccessContinuation, androidx.car.app.messaging.
         ReferenceQueue referenceQueue = aVar.a;
         Set set = aVar.b;
         set.add(new l(aVar, referenceQueue, set, nVar));
-        Thread thread = new Thread(new fx(referenceQueue, set, false, 1), "MlKitCleaner");
+        Thread thread = new Thread(new hx(referenceQueue, set, false, 1), "MlKitCleaner");
         thread.setDaemon(true);
         thread.start();
         return aVar;

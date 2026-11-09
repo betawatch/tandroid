@@ -4,7 +4,7 @@ import j$.util.concurrent.ConcurrentHashMap;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class fm implements Runnable {
     public final /* synthetic */ int a = 3;
@@ -112,7 +112,7 @@ public final /* synthetic */ class fm implements Runnable {
                                         j12 = j15;
                                         ijVar = new ij(qpVar.currentAccount, message2, hVar2, (a0.h) null, contains, contains);
                                         message = ijVar.k;
-                                        if ((message.out || message.from_scheduled) && ijVar.G4()) {
+                                        if ((message.out || message.from_scheduled) && ijVar.F4()) {
                                             arrayList.add(ijVar);
                                         }
                                         arrayList2 = (ArrayList) hVar.f(j11);

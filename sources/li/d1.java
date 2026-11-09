@@ -1,9 +1,9 @@
 package li;
 
 import android.os.SystemClock;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.l6;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final class d1 implements Runnable {
     public final /* synthetic */ int a;
@@ -33,7 +33,7 @@ public final class d1 implements Runnable {
                 }
                 break;
             default:
-                boolean h12 = k6.h1();
+                boolean h12 = l6.h1();
                 g1 g1Var2 = this.b;
                 if (!h12) {
                     g1Var2.I();

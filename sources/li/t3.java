@@ -59,23 +59,23 @@ import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.s6;
 import org.telegram.ui.Cells.h9;
 import org.telegram.ui.Cells.i9;
 import org.telegram.ui.Cells.t9;
 import org.telegram.ui.Cells.u9;
-import org.telegram.ui.Components.k60;
-import org.telegram.ui.Components.l41;
-import org.telegram.ui.Components.q41;
-import org.telegram.ui.Components.x31;
-import org.telegram.ui.Components.zj0;
+import org.telegram.ui.Components.ak0;
+import org.telegram.ui.Components.l60;
+import org.telegram.ui.Components.m41;
+import org.telegram.ui.Components.r41;
+import org.telegram.ui.Components.y31;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
-public final class t3 extends q41 {
+public final class t3 extends r41 {
     public static final ArrayList z4 = new ArrayList();
     public float A3;
     public float B3;
@@ -117,14 +117,14 @@ public final class t3 extends q41 {
     public final y2 l4;
     public final int m3;
     public final z2 m4;
-    public final f6 n3;
+    public final g6 n3;
     public final a3 n4;
     public final r3 o3;
     public final b3 o4;
     public ij p3;
     public m5 p4;
     public boolean q3;
-    public k60 q4;
+    public l60 q4;
     public TL_iv.RichMessage r3;
     public int r4;
     public final ArrayList s3;
@@ -138,13 +138,13 @@ public final class t3 extends q41 {
     public int w3;
     public final ArrayList w4;
     public int x3;
-    public zj0 x4;
+    public ak0 x4;
     public int y3;
     public int y4;
     public boolean z3;
 
-    public t3(Context context, int i7, f6 f6Var, r3 r3Var) {
-        super(context, i7, 0, false, new hi.u1(r1, 18), new l2.y(r1, 7), null, f6Var);
+    public t3(Context context, int i7, g6 g6Var, r3 r3Var) {
+        super(context, i7, 0, false, new hi.u1(r1, 18), new l2.x(r1, 7), null, g6Var);
         this.q3 = true;
         this.s3 = new ArrayList();
         this.t3 = new HashMap();
@@ -175,7 +175,7 @@ public final class t3 extends q41 {
         this.y4 = -1;
         t3[] t3VarArr = {this};
         this.m3 = i7;
-        this.n3 = f6Var;
+        this.n3 = g6Var;
         this.o3 = r3Var;
         this.f3.r = false;
         setClipToPadding(false);
@@ -240,7 +240,7 @@ public final class t3 extends q41 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static void L1(t3[] t3VarArr, ArrayList arrayList, l41 l41Var) {
+    public static void L1(t3[] t3VarArr, ArrayList arrayList, m41 m41Var) {
         int i7;
         boolean z9;
         ArrayList arrayList2;
@@ -293,11 +293,11 @@ public final class t3 extends q41 {
                     if (i18 == i15 || arrayList6.size() >= i18) {
                         if (i19 == 0) {
                             if (i17 != 0) {
-                                l41Var.L();
+                                m41Var.L();
                                 i17 = 0;
                             }
                             int i20 = s0.b;
-                            x31 K = x31.K(s0.class);
+                            y31 K = y31.K(s0.class);
                             K.G = aVar3;
                             arrayList.add(K);
                             arrayList4.add(aVar3);
@@ -318,16 +318,16 @@ public final class t3 extends q41 {
                             boolean z14 = ((TL_iv.pageBlockDetails) aVar3.b).open;
                             if (!arrayList6.isEmpty() || z14) {
                                 if (i17 != 0) {
-                                    l41Var.L();
+                                    m41Var.L();
                                     i17 = 0;
                                 }
                             } else if (i17 == 0) {
-                                l41Var.M();
+                                m41Var.M();
                                 i17 = i7;
                             }
                             b3 b3Var = t3Var.o4;
                             int i22 = q0.b;
-                            x31 K2 = x31.K(q0.class);
+                            y31 K2 = y31.K(q0.class);
                             K2.G = aVar3;
                             K2.H = b3Var;
                             arrayList.add(K2);
@@ -379,25 +379,25 @@ public final class t3 extends q41 {
                         }
                         if (arrayList2.isEmpty()) {
                             if (i17 == 0) {
-                                l41Var.M();
+                                m41Var.M();
                                 i17 = 1;
                             }
                         } else if (i17 != 0) {
-                            l41Var.L();
+                            m41Var.L();
                             i17 = 0;
                         }
                         TL_iv.PageBlock pageBlock = aVar3.b;
                         if (pageBlock instanceof TL_iv.pageBlockDivider) {
                             q2 q2Var = t3Var.c4;
                             int i25 = u0.b;
-                            x31 K3 = x31.K(u0.class);
+                            y31 K3 = y31.K(u0.class);
                             K3.G = aVar3;
                             K3.H = q2Var;
                             arrayList.add(K3);
                         } else if (G3(pageBlock)) {
                             m3 m3Var = t3Var.d4;
                             int i26 = r4.b;
-                            x31 K4 = x31.K(r4.class);
+                            y31 K4 = y31.K(r4.class);
                             K4.d = (int) aVar3.a;
                             K4.G = aVar3;
                             K4.H = m3Var;
@@ -407,42 +407,42 @@ public final class t3 extends q41 {
                             if (pageBlock2 instanceof TL_iv.pageBlockAudio) {
                                 n3 n3Var = t3Var.e4;
                                 int i27 = w.b;
-                                x31 K5 = x31.K(w.class);
+                                y31 K5 = y31.K(w.class);
                                 K5.G = aVar3;
                                 K5.H = n3Var;
                                 arrayList.add(K5);
                             } else if (pageBlock2 instanceof TL_iv.pageBlockDocument) {
                                 o3 o3Var = t3Var.f4;
                                 int i28 = w0.b;
-                                x31 K6 = x31.K(w0.class);
+                                y31 K6 = y31.K(w0.class);
                                 K6.G = aVar3;
                                 K6.H = o3Var;
                                 arrayList.add(K6);
                             } else if (pageBlock2 instanceof TL_iv.pageBlockMap) {
                                 p3 p3Var = t3Var.k4;
                                 int i29 = l4.b;
-                                x31 K7 = x31.K(l4.class);
+                                y31 K7 = y31.K(l4.class);
                                 K7.G = aVar3;
                                 K7.H = p3Var;
                                 arrayList.add(K7);
                             } else if (pageBlock2 instanceof TL_iv.pageBlockMath) {
                                 y2 y2Var = t3Var.l4;
                                 int i30 = n4.b;
-                                x31 K8 = x31.K(n4.class);
+                                y31 K8 = y31.K(n4.class);
                                 K8.G = aVar3;
                                 K8.H = y2Var;
                                 arrayList.add(K8);
                             } else if (pageBlock2 instanceof TL_iv.pageBlockTable) {
                                 a3 a3Var = t3Var.n4;
                                 int i31 = k5.b;
-                                x31 K9 = x31.K(k5.class);
+                                y31 K9 = y31.K(k5.class);
                                 K9.G = aVar3;
                                 K9.H = a3Var;
                                 arrayList.add(K9);
                             } else if (pageBlock2 instanceof TL_iv.pageBlockButtonRow) {
                                 l3 l3Var = t3Var.b4;
                                 int i32 = e0.b;
-                                x31 K10 = x31.K(e0.class);
+                                y31 K10 = y31.K(e0.class);
                                 K10.G = aVar3;
                                 K10.H = l3Var;
                                 arrayList.add(K10);
@@ -455,7 +455,7 @@ public final class t3 extends q41 {
                                         z10 = true;
                                         c3 c3Var = t3Var.u4;
                                         int i33 = y5.b;
-                                        x31 K11 = x31.K(y5.class);
+                                        y31 K11 = y31.K(y5.class);
                                         K11.G = aVar3;
                                         K11.H = c3Var;
                                         K11.r = z10;
@@ -469,7 +469,7 @@ public final class t3 extends q41 {
                                 z10 = false;
                                 c3 c3Var2 = t3Var.u4;
                                 int i332 = y5.b;
-                                x31 K112 = x31.K(y5.class);
+                                y31 K112 = y31.K(y5.class);
                                 K112.G = aVar3;
                                 K112.H = c3Var2;
                                 K112.r = z10;
@@ -494,7 +494,7 @@ public final class t3 extends q41 {
             }
             int i34 = i7;
             if (i17 != 0) {
-                l41Var.L();
+                m41Var.L();
             }
             if (aVar2 != null) {
                 t3Var.v3(aVar2, z4, hashMap, arrayList);
@@ -1053,7 +1053,7 @@ public final class t3 extends q41 {
         int i10;
         f2 f2Var;
         ArrayList arrayList = t3Var.w4;
-        l41 l41Var = t3Var.f3;
+        m41 m41Var = t3Var.f3;
         ArrayList arrayList2 = t3Var.s3;
         int indexOf = arrayList2.indexOf(aVar);
         if (indexOf >= 0) {
@@ -1079,7 +1079,7 @@ public final class t3 extends q41 {
                 t3Var.w2(indexOf);
                 t3Var.v4();
                 if (!(t3Var.findFocus() instanceof g1)) {
-                    l41Var.O(false);
+                    m41Var.O(false);
                     f2 f2Var3 = t3Var.Q3;
                     if (f2Var3 != null) {
                         f2Var3.h();
@@ -1115,7 +1115,7 @@ public final class t3 extends q41 {
                         t3Var.A2();
                         t3Var.v4();
                         if (t3Var.findFocus() instanceof g1) {
-                            l41Var.O(false);
+                            m41Var.O(false);
                             f2 f2Var5 = t3Var.Q3;
                             if (f2Var5 != null) {
                                 f2Var5.h();
@@ -1236,7 +1236,7 @@ public final class t3 extends q41 {
                         }
                         arrayList2.remove(indexOf);
                         t3Var.v4();
-                        l41Var.O(false);
+                        m41Var.O(false);
                         f2 f2Var12 = t3Var.Q3;
                         if (f2Var12 != null) {
                             f2Var12.h();
@@ -1252,7 +1252,7 @@ public final class t3 extends q41 {
                         arrayList2.remove(i13);
                         t3Var.v4();
                         if (!(t3Var.findFocus() instanceof g1)) {
-                            l41Var.O(false);
+                            m41Var.O(false);
                             f2 f2Var14 = t3Var.Q3;
                             if (f2Var14 != null) {
                                 f2Var14.h();
@@ -1283,7 +1283,7 @@ public final class t3 extends q41 {
                                 arrayList2.remove(indexOf);
                                 t3Var.A2();
                                 t3Var.v4();
-                                l41Var.O(false);
+                                m41Var.O(false);
                                 f2 f2Var17 = t3Var.Q3;
                                 if (f2Var17 != null) {
                                     f2Var17.h();
@@ -1317,7 +1317,7 @@ public final class t3 extends q41 {
                             boolean A22 = t3Var.A2();
                             t3Var.v4();
                             if (A22) {
-                                l41Var.O(false);
+                                m41Var.O(false);
                                 f2 f2Var18 = t3Var.Q3;
                                 if (f2Var18 != null) {
                                     f2Var18.h();
@@ -1325,13 +1325,13 @@ public final class t3 extends q41 {
                                 t3Var.post(new o2(t3Var, aVar4, Math.max(0, length3), 4));
                                 return z10;
                             }
-                            l41Var.T();
+                            m41Var.T();
                             t3Var.s4(indexOf);
                             v4.l0 itemAnimator = t3Var.getItemAnimator();
                             t3Var.setItemAnimator(null);
-                            l41Var.s(indexOf2);
+                            m41Var.s(indexOf2);
                             if ((aVar4.d > 0 || aVar.d > 0) && indexOf2 < arrayList.size()) {
-                                l41Var.k(indexOf2, arrayList.size() - indexOf2);
+                                m41Var.k(indexOf2, arrayList.size() - indexOf2);
                             }
                             t3Var.post(new w2(t3Var, itemAnimator, 1));
                             f2 f2Var19 = t3Var.Q3;
@@ -1637,7 +1637,7 @@ public final class t3 extends q41 {
             KeyEvent.Callback childAt = getChildAt(i7);
             if (childAt instanceof j4) {
                 y yVar = (y) ((j4) childAt);
-                yVar.b.a(yVar.a, new l2.y(yVar, 4));
+                yVar.b.a(yVar.a, new l2.x(yVar, 4));
             }
         }
         invalidate();
@@ -1715,7 +1715,7 @@ public final class t3 extends q41 {
         this.f3.O(false);
     }
 
-    @Override // org.telegram.ui.Components.q41
+    @Override // org.telegram.ui.Components.r41
     public final boolean D1() {
         return this.a4;
     }
@@ -1784,7 +1784,7 @@ public final class t3 extends q41 {
         return new int[]{Math.min(indexOf2, indexOf3), Math.max(indexOf2, indexOf3)};
     }
 
-    @Override // org.telegram.ui.Components.q41
+    @Override // org.telegram.ui.Components.r41
     public final void F1() {
         r3 r3Var = this.o3;
         if (r3Var != null) {
@@ -1897,7 +1897,7 @@ public final class t3 extends q41 {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.q41
+    @Override // org.telegram.ui.Components.r41
     public final void G1() {
         r3 r3Var = this.o3;
         if (r3Var != null) {
@@ -1948,7 +1948,7 @@ public final class t3 extends q41 {
         return new int[]{indexOf, indexOf2};
     }
 
-    @Override // org.telegram.ui.Components.q41
+    @Override // org.telegram.ui.Components.r41
     public final void H1(v4.d1 d1Var) {
         r3 r3Var = this.o3;
         if (r3Var == null || d1Var == null) {
@@ -2027,7 +2027,7 @@ public final class t3 extends q41 {
         g1Var.C(new b(this, 4));
     }
 
-    @Override // org.telegram.ui.Components.q41
+    @Override // org.telegram.ui.Components.r41
     public final void I1(v4.d1 d1Var) {
         a aVar = this.Z3;
         this.Z3 = null;
@@ -2149,7 +2149,7 @@ public final class t3 extends q41 {
         int i13;
         int i14;
         int i15;
-        k60 k60Var;
+        l60 l60Var;
         int i16;
         int L;
         int i17;
@@ -2303,11 +2303,11 @@ public final class t3 extends q41 {
                                                         i13 = i11;
                                                         i14 = (z12 || !z10 || model.c >= ((org.telegram.messenger.j0) qp.s1(this.m3).x7.Z.b).c) ? 0 : i11;
                                                         i15 = (z12 || !z9) ? 0 : i11;
-                                                        k60Var = this.q4;
+                                                        l60Var = this.q4;
                                                         i16 = i7;
-                                                        if (k60Var != null) {
+                                                        if (l60Var != null) {
                                                             this.q4 = null;
-                                                            k60Var.u();
+                                                            l60Var.u();
                                                         }
                                                         L = org.telegram.messenger.g0.L(((i16 + 1 + i10 + (i14 != 0 ? 2 : 0) + (i15 != 0 ? 2 : 0) + i13 + i12 + (z11 ? 3 : 0)) * 48) + 68 + (z11 ? 8 : 0));
                                                         FrameLayout S42 = S4(m5Var2, false);
@@ -2322,7 +2322,7 @@ public final class t3 extends q41 {
                                                             S4 = S4(m5Var2, z16);
                                                             r12 = z16;
                                                         }
-                                                        final k60 J = this.o3.J(S4);
+                                                        final l60 J = this.o3.J(S4);
                                                         J.s = 0;
                                                         J.t = false;
                                                         J.Z = r12;
@@ -2333,9 +2333,9 @@ public final class t3 extends q41 {
                                                         textView.setText(id.M0(2131754057, null));
                                                         textView.setTextSize(1, 12.0f);
                                                         textView.setGravity(17);
-                                                        int i41 = k6.y6;
-                                                        f6 f6Var = this.n3;
-                                                        r6.V(textView, i41, f6Var);
+                                                        int i41 = l6.y6;
+                                                        g6 g6Var = this.n3;
+                                                        s6.U(textView, i41, g6Var);
                                                         linearLayout.addView(textView, ha.k(0.0f, 5.0f, 0.0f, 4.0f, -1, -2));
                                                         LinearLayout linearLayout2 = new LinearLayout(getContext());
                                                         i18 = i10;
@@ -2344,20 +2344,20 @@ public final class t3 extends q41 {
                                                         linearLayout2.setPadding(org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f));
                                                         linearLayout2.setOrientation(0);
                                                         linearLayout.addView(linearLayout2, ha.r(-2, -2, 17));
-                                                        x1 x1Var = new x1(R.drawable.iv_align_horiz_left, getContext(), f6Var);
+                                                        x1 x1Var = new x1(R.drawable.iv_align_horiz_left, getContext(), g6Var);
                                                         x1Var.e = 4;
                                                         x1Var.updateColors();
                                                         x1Var.b();
-                                                        int i42 = k6.G8;
+                                                        int i42 = l6.G8;
                                                         x1Var.c(i42);
                                                         linearLayout2.addView(x1Var, ha.o(32, 32));
-                                                        x1 x1Var2 = new x1(R.drawable.iv_align_horiz_middle, getContext(), f6Var);
+                                                        x1 x1Var2 = new x1(R.drawable.iv_align_horiz_middle, getContext(), g6Var);
                                                         x1Var2.e = 4;
                                                         x1Var2.updateColors();
                                                         x1Var2.b();
                                                         x1Var2.c(i42);
                                                         linearLayout2.addView(x1Var2, ha.o(32, 32));
-                                                        x1 x1Var3 = new x1(R.drawable.iv_align_horiz_right, getContext(), f6Var);
+                                                        x1 x1Var3 = new x1(R.drawable.iv_align_horiz_right, getContext(), g6Var);
                                                         x1Var3.e = 4;
                                                         x1Var3.updateColors();
                                                         x1Var3.b();
@@ -2367,19 +2367,19 @@ public final class t3 extends q41 {
                                                         linearLayout2.addView(x1Var3, ha.o(32, 32));
                                                         z13 = z11;
                                                         linearLayout2.addView(new Space(getContext()), ha.o(8, 0));
-                                                        x1 x1Var4 = new x1(R.drawable.iv_align_vert_top, getContext(), f6Var);
+                                                        x1 x1Var4 = new x1(R.drawable.iv_align_vert_top, getContext(), g6Var);
                                                         x1Var4.e = 4;
                                                         x1Var4.updateColors();
                                                         x1Var4.b();
                                                         x1Var4.c(i42);
                                                         linearLayout2.addView(x1Var4, ha.o(32, 32));
-                                                        x1 x1Var5 = new x1(R.drawable.iv_align_vert_middle, getContext(), f6Var);
+                                                        x1 x1Var5 = new x1(R.drawable.iv_align_vert_middle, getContext(), g6Var);
                                                         x1Var5.e = 4;
                                                         x1Var5.updateColors();
                                                         x1Var5.b();
                                                         x1Var5.c(i42);
                                                         linearLayout2.addView(x1Var5, ha.o(32, 32));
-                                                        x1 x1Var6 = new x1(R.drawable.iv_align_vert_bottom, getContext(), f6Var);
+                                                        x1 x1Var6 = new x1(R.drawable.iv_align_vert_bottom, getContext(), g6Var);
                                                         x1Var6.e = 4;
                                                         x1Var6.updateColors();
                                                         x1Var6.b();
@@ -6277,9 +6277,9 @@ public final class t3 extends q41 {
                                                 }
                                                 if (z12) {
                                                 }
-                                                k60Var = this.q4;
+                                                l60Var = this.q4;
                                                 i16 = i7;
-                                                if (k60Var != null) {
+                                                if (l60Var != null) {
                                                 }
                                                 L = org.telegram.messenger.g0.L(((i16 + 1 + i10 + (i14 != 0 ? 2 : 0) + (i15 != 0 ? 2 : 0) + i13 + i12 + (z11 ? 3 : 0)) * 48) + 68 + (z11 ? 8 : 0));
                                                 FrameLayout S422 = S4(m5Var2, false);
@@ -6288,7 +6288,7 @@ public final class t3 extends q41 {
                                                 S422.getLocationOnScreen(iArr);
                                                 if (((iArr[i11] - L) - org.telegram.messenger.g0.L(8.0f) >= org.telegram.messenger.g0.L(8.0f) + org.telegram.messenger.g0.m ? i11 : 0) != 0) {
                                                 }
-                                                final k60 J2 = this.o3.J(S4);
+                                                final l60 J2 = this.o3.J(S4);
                                                 J2.s = 0;
                                                 J2.t = false;
                                                 J2.Z = r12;
@@ -6299,9 +6299,9 @@ public final class t3 extends q41 {
                                                 textView2.setText(id.M0(2131754057, null));
                                                 textView2.setTextSize(1, 12.0f);
                                                 textView2.setGravity(17);
-                                                int i412 = k6.y6;
-                                                f6 f6Var2 = this.n3;
-                                                r6.V(textView2, i412, f6Var2);
+                                                int i412 = l6.y6;
+                                                g6 g6Var2 = this.n3;
+                                                s6.U(textView2, i412, g6Var2);
                                                 linearLayout3.addView(textView2, ha.k(0.0f, 5.0f, 0.0f, 4.0f, -1, -2));
                                                 LinearLayout linearLayout22 = new LinearLayout(getContext());
                                                 i18 = i10;
@@ -6310,20 +6310,20 @@ public final class t3 extends q41 {
                                                 linearLayout22.setPadding(org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f));
                                                 linearLayout22.setOrientation(0);
                                                 linearLayout3.addView(linearLayout22, ha.r(-2, -2, 17));
-                                                x1 x1Var7 = new x1(R.drawable.iv_align_horiz_left, getContext(), f6Var2);
+                                                x1 x1Var7 = new x1(R.drawable.iv_align_horiz_left, getContext(), g6Var2);
                                                 x1Var7.e = 4;
                                                 x1Var7.updateColors();
                                                 x1Var7.b();
-                                                int i422 = k6.G8;
+                                                int i422 = l6.G8;
                                                 x1Var7.c(i422);
                                                 linearLayout22.addView(x1Var7, ha.o(32, 32));
-                                                x1 x1Var22 = new x1(R.drawable.iv_align_horiz_middle, getContext(), f6Var2);
+                                                x1 x1Var22 = new x1(R.drawable.iv_align_horiz_middle, getContext(), g6Var2);
                                                 x1Var22.e = 4;
                                                 x1Var22.updateColors();
                                                 x1Var22.b();
                                                 x1Var22.c(i422);
                                                 linearLayout22.addView(x1Var22, ha.o(32, 32));
-                                                x1 x1Var32 = new x1(R.drawable.iv_align_horiz_right, getContext(), f6Var2);
+                                                x1 x1Var32 = new x1(R.drawable.iv_align_horiz_right, getContext(), g6Var2);
                                                 x1Var32.e = 4;
                                                 x1Var32.updateColors();
                                                 x1Var32.b();
@@ -6333,19 +6333,19 @@ public final class t3 extends q41 {
                                                 linearLayout22.addView(x1Var32, ha.o(32, 32));
                                                 z13 = z11;
                                                 linearLayout22.addView(new Space(getContext()), ha.o(8, 0));
-                                                x1 x1Var42 = new x1(R.drawable.iv_align_vert_top, getContext(), f6Var2);
+                                                x1 x1Var42 = new x1(R.drawable.iv_align_vert_top, getContext(), g6Var2);
                                                 x1Var42.e = 4;
                                                 x1Var42.updateColors();
                                                 x1Var42.b();
                                                 x1Var42.c(i422);
                                                 linearLayout22.addView(x1Var42, ha.o(32, 32));
-                                                x1 x1Var52 = new x1(R.drawable.iv_align_vert_middle, getContext(), f6Var2);
+                                                x1 x1Var52 = new x1(R.drawable.iv_align_vert_middle, getContext(), g6Var2);
                                                 x1Var52.e = 4;
                                                 x1Var52.updateColors();
                                                 x1Var52.b();
                                                 x1Var52.c(i422);
                                                 linearLayout22.addView(x1Var52, ha.o(32, 32));
-                                                x1 x1Var62 = new x1(R.drawable.iv_align_vert_bottom, getContext(), f6Var2);
+                                                x1 x1Var62 = new x1(R.drawable.iv_align_vert_bottom, getContext(), g6Var2);
                                                 x1Var62.e = 4;
                                                 x1Var62.updateColors();
                                                 x1Var62.b();
@@ -6417,9 +6417,9 @@ public final class t3 extends q41 {
                                         }
                                         if (z12) {
                                         }
-                                        k60Var = this.q4;
+                                        l60Var = this.q4;
                                         i16 = i7;
-                                        if (k60Var != null) {
+                                        if (l60Var != null) {
                                         }
                                         L = org.telegram.messenger.g0.L(((i16 + 1 + i10 + (i14 != 0 ? 2 : 0) + (i15 != 0 ? 2 : 0) + i13 + i12 + (z11 ? 3 : 0)) * 48) + 68 + (z11 ? 8 : 0));
                                         FrameLayout S4222 = S4(m5Var2, false);
@@ -6428,7 +6428,7 @@ public final class t3 extends q41 {
                                         S4222.getLocationOnScreen(iArr);
                                         if (((iArr[i11] - L) - org.telegram.messenger.g0.L(8.0f) >= org.telegram.messenger.g0.L(8.0f) + org.telegram.messenger.g0.m ? i11 : 0) != 0) {
                                         }
-                                        final k60 J22 = this.o3.J(S4);
+                                        final l60 J22 = this.o3.J(S4);
                                         J22.s = 0;
                                         J22.t = false;
                                         J22.Z = r12;
@@ -6439,9 +6439,9 @@ public final class t3 extends q41 {
                                         textView22.setText(id.M0(2131754057, null));
                                         textView22.setTextSize(1, 12.0f);
                                         textView22.setGravity(17);
-                                        int i4122 = k6.y6;
-                                        f6 f6Var22 = this.n3;
-                                        r6.V(textView22, i4122, f6Var22);
+                                        int i4122 = l6.y6;
+                                        g6 g6Var22 = this.n3;
+                                        s6.U(textView22, i4122, g6Var22);
                                         linearLayout32.addView(textView22, ha.k(0.0f, 5.0f, 0.0f, 4.0f, -1, -2));
                                         LinearLayout linearLayout222 = new LinearLayout(getContext());
                                         i18 = i10;
@@ -6450,20 +6450,20 @@ public final class t3 extends q41 {
                                         linearLayout222.setPadding(org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f));
                                         linearLayout222.setOrientation(0);
                                         linearLayout32.addView(linearLayout222, ha.r(-2, -2, 17));
-                                        x1 x1Var72 = new x1(R.drawable.iv_align_horiz_left, getContext(), f6Var22);
+                                        x1 x1Var72 = new x1(R.drawable.iv_align_horiz_left, getContext(), g6Var22);
                                         x1Var72.e = 4;
                                         x1Var72.updateColors();
                                         x1Var72.b();
-                                        int i4222 = k6.G8;
+                                        int i4222 = l6.G8;
                                         x1Var72.c(i4222);
                                         linearLayout222.addView(x1Var72, ha.o(32, 32));
-                                        x1 x1Var222 = new x1(R.drawable.iv_align_horiz_middle, getContext(), f6Var22);
+                                        x1 x1Var222 = new x1(R.drawable.iv_align_horiz_middle, getContext(), g6Var22);
                                         x1Var222.e = 4;
                                         x1Var222.updateColors();
                                         x1Var222.b();
                                         x1Var222.c(i4222);
                                         linearLayout222.addView(x1Var222, ha.o(32, 32));
-                                        x1 x1Var322 = new x1(R.drawable.iv_align_horiz_right, getContext(), f6Var22);
+                                        x1 x1Var322 = new x1(R.drawable.iv_align_horiz_right, getContext(), g6Var22);
                                         x1Var322.e = 4;
                                         x1Var322.updateColors();
                                         x1Var322.b();
@@ -6473,19 +6473,19 @@ public final class t3 extends q41 {
                                         linearLayout222.addView(x1Var322, ha.o(32, 32));
                                         z13 = z11;
                                         linearLayout222.addView(new Space(getContext()), ha.o(8, 0));
-                                        x1 x1Var422 = new x1(R.drawable.iv_align_vert_top, getContext(), f6Var22);
+                                        x1 x1Var422 = new x1(R.drawable.iv_align_vert_top, getContext(), g6Var22);
                                         x1Var422.e = 4;
                                         x1Var422.updateColors();
                                         x1Var422.b();
                                         x1Var422.c(i4222);
                                         linearLayout222.addView(x1Var422, ha.o(32, 32));
-                                        x1 x1Var522 = new x1(R.drawable.iv_align_vert_middle, getContext(), f6Var22);
+                                        x1 x1Var522 = new x1(R.drawable.iv_align_vert_middle, getContext(), g6Var22);
                                         x1Var522.e = 4;
                                         x1Var522.updateColors();
                                         x1Var522.b();
                                         x1Var522.c(i4222);
                                         linearLayout222.addView(x1Var522, ha.o(32, 32));
-                                        x1 x1Var622 = new x1(R.drawable.iv_align_vert_bottom, getContext(), f6Var22);
+                                        x1 x1Var622 = new x1(R.drawable.iv_align_vert_bottom, getContext(), g6Var22);
                                         x1Var622.e = 4;
                                         x1Var622.updateColors();
                                         x1Var622.b();
@@ -6559,9 +6559,9 @@ public final class t3 extends q41 {
                                     }
                                     if (z12) {
                                     }
-                                    k60Var = this.q4;
+                                    l60Var = this.q4;
                                     i16 = i7;
-                                    if (k60Var != null) {
+                                    if (l60Var != null) {
                                     }
                                     L = org.telegram.messenger.g0.L(((i16 + 1 + i10 + (i14 != 0 ? 2 : 0) + (i15 != 0 ? 2 : 0) + i13 + i12 + (z11 ? 3 : 0)) * 48) + 68 + (z11 ? 8 : 0));
                                     FrameLayout S42222 = S4(m5Var2, false);
@@ -6570,7 +6570,7 @@ public final class t3 extends q41 {
                                     S42222.getLocationOnScreen(iArr);
                                     if (((iArr[i11] - L) - org.telegram.messenger.g0.L(8.0f) >= org.telegram.messenger.g0.L(8.0f) + org.telegram.messenger.g0.m ? i11 : 0) != 0) {
                                     }
-                                    final k60 J222 = this.o3.J(S4);
+                                    final l60 J222 = this.o3.J(S4);
                                     J222.s = 0;
                                     J222.t = false;
                                     J222.Z = r12;
@@ -6581,9 +6581,9 @@ public final class t3 extends q41 {
                                     textView222.setText(id.M0(2131754057, null));
                                     textView222.setTextSize(1, 12.0f);
                                     textView222.setGravity(17);
-                                    int i41222 = k6.y6;
-                                    f6 f6Var222 = this.n3;
-                                    r6.V(textView222, i41222, f6Var222);
+                                    int i41222 = l6.y6;
+                                    g6 g6Var222 = this.n3;
+                                    s6.U(textView222, i41222, g6Var222);
                                     linearLayout322.addView(textView222, ha.k(0.0f, 5.0f, 0.0f, 4.0f, -1, -2));
                                     LinearLayout linearLayout2222 = new LinearLayout(getContext());
                                     i18 = i10;
@@ -6592,20 +6592,20 @@ public final class t3 extends q41 {
                                     linearLayout2222.setPadding(org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f));
                                     linearLayout2222.setOrientation(0);
                                     linearLayout322.addView(linearLayout2222, ha.r(-2, -2, 17));
-                                    x1 x1Var722 = new x1(R.drawable.iv_align_horiz_left, getContext(), f6Var222);
+                                    x1 x1Var722 = new x1(R.drawable.iv_align_horiz_left, getContext(), g6Var222);
                                     x1Var722.e = 4;
                                     x1Var722.updateColors();
                                     x1Var722.b();
-                                    int i42222 = k6.G8;
+                                    int i42222 = l6.G8;
                                     x1Var722.c(i42222);
                                     linearLayout2222.addView(x1Var722, ha.o(32, 32));
-                                    x1 x1Var2222 = new x1(R.drawable.iv_align_horiz_middle, getContext(), f6Var222);
+                                    x1 x1Var2222 = new x1(R.drawable.iv_align_horiz_middle, getContext(), g6Var222);
                                     x1Var2222.e = 4;
                                     x1Var2222.updateColors();
                                     x1Var2222.b();
                                     x1Var2222.c(i42222);
                                     linearLayout2222.addView(x1Var2222, ha.o(32, 32));
-                                    x1 x1Var3222 = new x1(R.drawable.iv_align_horiz_right, getContext(), f6Var222);
+                                    x1 x1Var3222 = new x1(R.drawable.iv_align_horiz_right, getContext(), g6Var222);
                                     x1Var3222.e = 4;
                                     x1Var3222.updateColors();
                                     x1Var3222.b();
@@ -6615,19 +6615,19 @@ public final class t3 extends q41 {
                                     linearLayout2222.addView(x1Var3222, ha.o(32, 32));
                                     z13 = z11;
                                     linearLayout2222.addView(new Space(getContext()), ha.o(8, 0));
-                                    x1 x1Var4222 = new x1(R.drawable.iv_align_vert_top, getContext(), f6Var222);
+                                    x1 x1Var4222 = new x1(R.drawable.iv_align_vert_top, getContext(), g6Var222);
                                     x1Var4222.e = 4;
                                     x1Var4222.updateColors();
                                     x1Var4222.b();
                                     x1Var4222.c(i42222);
                                     linearLayout2222.addView(x1Var4222, ha.o(32, 32));
-                                    x1 x1Var5222 = new x1(R.drawable.iv_align_vert_middle, getContext(), f6Var222);
+                                    x1 x1Var5222 = new x1(R.drawable.iv_align_vert_middle, getContext(), g6Var222);
                                     x1Var5222.e = 4;
                                     x1Var5222.updateColors();
                                     x1Var5222.b();
                                     x1Var5222.c(i42222);
                                     linearLayout2222.addView(x1Var5222, ha.o(32, 32));
-                                    x1 x1Var6222 = new x1(R.drawable.iv_align_vert_bottom, getContext(), f6Var222);
+                                    x1 x1Var6222 = new x1(R.drawable.iv_align_vert_bottom, getContext(), g6Var222);
                                     x1Var6222.e = 4;
                                     x1Var6222.updateColors();
                                     x1Var6222.b();
@@ -6708,9 +6708,9 @@ public final class t3 extends q41 {
                                 }
                                 if (z12) {
                                 }
-                                k60Var = this.q4;
+                                l60Var = this.q4;
                                 i16 = i7;
-                                if (k60Var != null) {
+                                if (l60Var != null) {
                                 }
                                 L = org.telegram.messenger.g0.L(((i16 + 1 + i10 + (i14 != 0 ? 2 : 0) + (i15 != 0 ? 2 : 0) + i13 + i12 + (z11 ? 3 : 0)) * 48) + 68 + (z11 ? 8 : 0));
                                 FrameLayout S422222 = S4(m5Var2, false);
@@ -6719,7 +6719,7 @@ public final class t3 extends q41 {
                                 S422222.getLocationOnScreen(iArr);
                                 if (((iArr[i11] - L) - org.telegram.messenger.g0.L(8.0f) >= org.telegram.messenger.g0.L(8.0f) + org.telegram.messenger.g0.m ? i11 : 0) != 0) {
                                 }
-                                final k60 J2222 = this.o3.J(S4);
+                                final l60 J2222 = this.o3.J(S4);
                                 J2222.s = 0;
                                 J2222.t = false;
                                 J2222.Z = r12;
@@ -6730,9 +6730,9 @@ public final class t3 extends q41 {
                                 textView2222.setText(id.M0(2131754057, null));
                                 textView2222.setTextSize(1, 12.0f);
                                 textView2222.setGravity(17);
-                                int i412222 = k6.y6;
-                                f6 f6Var2222 = this.n3;
-                                r6.V(textView2222, i412222, f6Var2222);
+                                int i412222 = l6.y6;
+                                g6 g6Var2222 = this.n3;
+                                s6.U(textView2222, i412222, g6Var2222);
                                 linearLayout3222.addView(textView2222, ha.k(0.0f, 5.0f, 0.0f, 4.0f, -1, -2));
                                 LinearLayout linearLayout22222 = new LinearLayout(getContext());
                                 i18 = i10;
@@ -6741,20 +6741,20 @@ public final class t3 extends q41 {
                                 linearLayout22222.setPadding(org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f));
                                 linearLayout22222.setOrientation(0);
                                 linearLayout3222.addView(linearLayout22222, ha.r(-2, -2, 17));
-                                x1 x1Var7222 = new x1(R.drawable.iv_align_horiz_left, getContext(), f6Var2222);
+                                x1 x1Var7222 = new x1(R.drawable.iv_align_horiz_left, getContext(), g6Var2222);
                                 x1Var7222.e = 4;
                                 x1Var7222.updateColors();
                                 x1Var7222.b();
-                                int i422222 = k6.G8;
+                                int i422222 = l6.G8;
                                 x1Var7222.c(i422222);
                                 linearLayout22222.addView(x1Var7222, ha.o(32, 32));
-                                x1 x1Var22222 = new x1(R.drawable.iv_align_horiz_middle, getContext(), f6Var2222);
+                                x1 x1Var22222 = new x1(R.drawable.iv_align_horiz_middle, getContext(), g6Var2222);
                                 x1Var22222.e = 4;
                                 x1Var22222.updateColors();
                                 x1Var22222.b();
                                 x1Var22222.c(i422222);
                                 linearLayout22222.addView(x1Var22222, ha.o(32, 32));
-                                x1 x1Var32222 = new x1(R.drawable.iv_align_horiz_right, getContext(), f6Var2222);
+                                x1 x1Var32222 = new x1(R.drawable.iv_align_horiz_right, getContext(), g6Var2222);
                                 x1Var32222.e = 4;
                                 x1Var32222.updateColors();
                                 x1Var32222.b();
@@ -6764,19 +6764,19 @@ public final class t3 extends q41 {
                                 linearLayout22222.addView(x1Var32222, ha.o(32, 32));
                                 z13 = z11;
                                 linearLayout22222.addView(new Space(getContext()), ha.o(8, 0));
-                                x1 x1Var42222 = new x1(R.drawable.iv_align_vert_top, getContext(), f6Var2222);
+                                x1 x1Var42222 = new x1(R.drawable.iv_align_vert_top, getContext(), g6Var2222);
                                 x1Var42222.e = 4;
                                 x1Var42222.updateColors();
                                 x1Var42222.b();
                                 x1Var42222.c(i422222);
                                 linearLayout22222.addView(x1Var42222, ha.o(32, 32));
-                                x1 x1Var52222 = new x1(R.drawable.iv_align_vert_middle, getContext(), f6Var2222);
+                                x1 x1Var52222 = new x1(R.drawable.iv_align_vert_middle, getContext(), g6Var2222);
                                 x1Var52222.e = 4;
                                 x1Var52222.updateColors();
                                 x1Var52222.b();
                                 x1Var52222.c(i422222);
                                 linearLayout22222.addView(x1Var52222, ha.o(32, 32));
-                                x1 x1Var62222 = new x1(R.drawable.iv_align_vert_bottom, getContext(), f6Var2222);
+                                x1 x1Var62222 = new x1(R.drawable.iv_align_vert_bottom, getContext(), g6Var2222);
                                 x1Var62222.e = 4;
                                 x1Var62222.updateColors();
                                 x1Var62222.b();
@@ -6870,9 +6870,9 @@ public final class t3 extends q41 {
                 }
                 if (z12) {
                 }
-                k60Var = this.q4;
+                l60Var = this.q4;
                 i16 = i7;
-                if (k60Var != null) {
+                if (l60Var != null) {
                 }
                 L = org.telegram.messenger.g0.L(((i16 + 1 + i10 + (i14 != 0 ? 2 : 0) + (i15 != 0 ? 2 : 0) + i13 + i12 + (z11 ? 3 : 0)) * 48) + 68 + (z11 ? 8 : 0));
                 FrameLayout S4222222 = S4(m5Var2, false);
@@ -6881,7 +6881,7 @@ public final class t3 extends q41 {
                 S4222222.getLocationOnScreen(iArr);
                 if (((iArr[i11] - L) - org.telegram.messenger.g0.L(8.0f) >= org.telegram.messenger.g0.L(8.0f) + org.telegram.messenger.g0.m ? i11 : 0) != 0) {
                 }
-                final k60 J22222 = this.o3.J(S4);
+                final l60 J22222 = this.o3.J(S4);
                 J22222.s = 0;
                 J22222.t = false;
                 J22222.Z = r12;
@@ -6892,9 +6892,9 @@ public final class t3 extends q41 {
                 textView22222.setText(id.M0(2131754057, null));
                 textView22222.setTextSize(1, 12.0f);
                 textView22222.setGravity(17);
-                int i4122222 = k6.y6;
-                f6 f6Var22222 = this.n3;
-                r6.V(textView22222, i4122222, f6Var22222);
+                int i4122222 = l6.y6;
+                g6 g6Var22222 = this.n3;
+                s6.U(textView22222, i4122222, g6Var22222);
                 linearLayout32222.addView(textView22222, ha.k(0.0f, 5.0f, 0.0f, 4.0f, -1, -2));
                 LinearLayout linearLayout222222 = new LinearLayout(getContext());
                 i18 = i10;
@@ -6903,20 +6903,20 @@ public final class t3 extends q41 {
                 linearLayout222222.setPadding(org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f));
                 linearLayout222222.setOrientation(0);
                 linearLayout32222.addView(linearLayout222222, ha.r(-2, -2, 17));
-                x1 x1Var72222 = new x1(R.drawable.iv_align_horiz_left, getContext(), f6Var22222);
+                x1 x1Var72222 = new x1(R.drawable.iv_align_horiz_left, getContext(), g6Var22222);
                 x1Var72222.e = 4;
                 x1Var72222.updateColors();
                 x1Var72222.b();
-                int i4222222 = k6.G8;
+                int i4222222 = l6.G8;
                 x1Var72222.c(i4222222);
                 linearLayout222222.addView(x1Var72222, ha.o(32, 32));
-                x1 x1Var222222 = new x1(R.drawable.iv_align_horiz_middle, getContext(), f6Var22222);
+                x1 x1Var222222 = new x1(R.drawable.iv_align_horiz_middle, getContext(), g6Var22222);
                 x1Var222222.e = 4;
                 x1Var222222.updateColors();
                 x1Var222222.b();
                 x1Var222222.c(i4222222);
                 linearLayout222222.addView(x1Var222222, ha.o(32, 32));
-                x1 x1Var322222 = new x1(R.drawable.iv_align_horiz_right, getContext(), f6Var22222);
+                x1 x1Var322222 = new x1(R.drawable.iv_align_horiz_right, getContext(), g6Var22222);
                 x1Var322222.e = 4;
                 x1Var322222.updateColors();
                 x1Var322222.b();
@@ -6926,19 +6926,19 @@ public final class t3 extends q41 {
                 linearLayout222222.addView(x1Var322222, ha.o(32, 32));
                 z13 = z11;
                 linearLayout222222.addView(new Space(getContext()), ha.o(8, 0));
-                x1 x1Var422222 = new x1(R.drawable.iv_align_vert_top, getContext(), f6Var22222);
+                x1 x1Var422222 = new x1(R.drawable.iv_align_vert_top, getContext(), g6Var22222);
                 x1Var422222.e = 4;
                 x1Var422222.updateColors();
                 x1Var422222.b();
                 x1Var422222.c(i4222222);
                 linearLayout222222.addView(x1Var422222, ha.o(32, 32));
-                x1 x1Var522222 = new x1(R.drawable.iv_align_vert_middle, getContext(), f6Var22222);
+                x1 x1Var522222 = new x1(R.drawable.iv_align_vert_middle, getContext(), g6Var22222);
                 x1Var522222.e = 4;
                 x1Var522222.updateColors();
                 x1Var522222.b();
                 x1Var522222.c(i4222222);
                 linearLayout222222.addView(x1Var522222, ha.o(32, 32));
-                x1 x1Var622222 = new x1(R.drawable.iv_align_vert_bottom, getContext(), f6Var22222);
+                x1 x1Var622222 = new x1(R.drawable.iv_align_vert_bottom, getContext(), g6Var22222);
                 x1Var622222.e = 4;
                 x1Var622222.updateColors();
                 x1Var622222.b();
@@ -7030,9 +7030,9 @@ public final class t3 extends q41 {
         }
         if (z12) {
         }
-        k60Var = this.q4;
+        l60Var = this.q4;
         i16 = i7;
-        if (k60Var != null) {
+        if (l60Var != null) {
         }
         L = org.telegram.messenger.g0.L(((i16 + 1 + i10 + (i14 != 0 ? 2 : 0) + (i15 != 0 ? 2 : 0) + i13 + i12 + (z11 ? 3 : 0)) * 48) + 68 + (z11 ? 8 : 0));
         FrameLayout S42222222 = S4(m5Var2, false);
@@ -7041,7 +7041,7 @@ public final class t3 extends q41 {
         S42222222.getLocationOnScreen(iArr);
         if (((iArr[i11] - L) - org.telegram.messenger.g0.L(8.0f) >= org.telegram.messenger.g0.L(8.0f) + org.telegram.messenger.g0.m ? i11 : 0) != 0) {
         }
-        final k60 J222222 = this.o3.J(S4);
+        final l60 J222222 = this.o3.J(S4);
         J222222.s = 0;
         J222222.t = false;
         J222222.Z = r12;
@@ -7052,9 +7052,9 @@ public final class t3 extends q41 {
         textView222222.setText(id.M0(2131754057, null));
         textView222222.setTextSize(1, 12.0f);
         textView222222.setGravity(17);
-        int i41222222 = k6.y6;
-        f6 f6Var222222 = this.n3;
-        r6.V(textView222222, i41222222, f6Var222222);
+        int i41222222 = l6.y6;
+        g6 g6Var222222 = this.n3;
+        s6.U(textView222222, i41222222, g6Var222222);
         linearLayout322222.addView(textView222222, ha.k(0.0f, 5.0f, 0.0f, 4.0f, -1, -2));
         LinearLayout linearLayout2222222 = new LinearLayout(getContext());
         i18 = i10;
@@ -7063,20 +7063,20 @@ public final class t3 extends q41 {
         linearLayout2222222.setPadding(org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f));
         linearLayout2222222.setOrientation(0);
         linearLayout322222.addView(linearLayout2222222, ha.r(-2, -2, 17));
-        x1 x1Var722222 = new x1(R.drawable.iv_align_horiz_left, getContext(), f6Var222222);
+        x1 x1Var722222 = new x1(R.drawable.iv_align_horiz_left, getContext(), g6Var222222);
         x1Var722222.e = 4;
         x1Var722222.updateColors();
         x1Var722222.b();
-        int i42222222 = k6.G8;
+        int i42222222 = l6.G8;
         x1Var722222.c(i42222222);
         linearLayout2222222.addView(x1Var722222, ha.o(32, 32));
-        x1 x1Var2222222 = new x1(R.drawable.iv_align_horiz_middle, getContext(), f6Var222222);
+        x1 x1Var2222222 = new x1(R.drawable.iv_align_horiz_middle, getContext(), g6Var222222);
         x1Var2222222.e = 4;
         x1Var2222222.updateColors();
         x1Var2222222.b();
         x1Var2222222.c(i42222222);
         linearLayout2222222.addView(x1Var2222222, ha.o(32, 32));
-        x1 x1Var3222222 = new x1(R.drawable.iv_align_horiz_right, getContext(), f6Var222222);
+        x1 x1Var3222222 = new x1(R.drawable.iv_align_horiz_right, getContext(), g6Var222222);
         x1Var3222222.e = 4;
         x1Var3222222.updateColors();
         x1Var3222222.b();
@@ -7086,19 +7086,19 @@ public final class t3 extends q41 {
         linearLayout2222222.addView(x1Var3222222, ha.o(32, 32));
         z13 = z11;
         linearLayout2222222.addView(new Space(getContext()), ha.o(8, 0));
-        x1 x1Var4222222 = new x1(R.drawable.iv_align_vert_top, getContext(), f6Var222222);
+        x1 x1Var4222222 = new x1(R.drawable.iv_align_vert_top, getContext(), g6Var222222);
         x1Var4222222.e = 4;
         x1Var4222222.updateColors();
         x1Var4222222.b();
         x1Var4222222.c(i42222222);
         linearLayout2222222.addView(x1Var4222222, ha.o(32, 32));
-        x1 x1Var5222222 = new x1(R.drawable.iv_align_vert_middle, getContext(), f6Var222222);
+        x1 x1Var5222222 = new x1(R.drawable.iv_align_vert_middle, getContext(), g6Var222222);
         x1Var5222222.e = 4;
         x1Var5222222.updateColors();
         x1Var5222222.b();
         x1Var5222222.c(i42222222);
         linearLayout2222222.addView(x1Var5222222, ha.o(32, 32));
-        x1 x1Var6222222 = new x1(R.drawable.iv_align_vert_bottom, getContext(), f6Var222222);
+        x1 x1Var6222222 = new x1(R.drawable.iv_align_vert_bottom, getContext(), g6Var222222);
         x1Var6222222.e = 4;
         x1Var6222222.updateColors();
         x1Var6222222.b();
@@ -7156,10 +7156,10 @@ public final class t3 extends q41 {
         J222222.Z();
     }
 
-    @Override // org.telegram.ui.Components.q41
+    @Override // org.telegram.ui.Components.r41
     public final void J1(v4.d1 d1Var) {
         int b10;
-        x31 G;
+        y31 G;
         a aVar = null;
         if (d1Var != null && (b10 = d1Var.b()) >= 0 && (G = this.f3.G(b10)) != null) {
             Object obj = G.G;
@@ -7783,10 +7783,10 @@ public final class t3 extends q41 {
         this.J3 = false;
         this.K3 = null;
         this.L3 = null;
-        k60 k60Var = this.q4;
-        if (k60Var != null) {
+        l60 l60Var = this.q4;
+        if (l60Var != null) {
             this.q4 = null;
-            k60Var.u();
+            l60Var.u();
         }
         m5 m5Var = this.p4;
         if (m5Var != null) {
@@ -9207,7 +9207,7 @@ public final class t3 extends q41 {
         }
         int i17 = indexOf;
         while (true) {
-            l41 l41Var = this.f3;
+            m41 m41Var = this.f3;
             str = "";
             if (i17 > indexOf2) {
                 int i18 = i15;
@@ -9438,7 +9438,7 @@ public final class t3 extends q41 {
                     v4();
                     a aVar3 = (indexOf < 0 || indexOf >= arrayList.size()) ? null : (a) arrayList.get(indexOf);
                     g3Var.f(false);
-                    l41Var.O(false);
+                    m41Var.O(false);
                     f2 f2Var10 = this.Q3;
                     if (f2Var10 != null) {
                         f2Var10.h();
@@ -10560,7 +10560,7 @@ public final class t3 extends q41 {
         }
     }
 
-    @Override // org.telegram.ui.Components.q41, org.telegram.ui.Components.pj0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.r41, org.telegram.ui.Components.qj0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         ArrayList arrayList;
         int i7;
@@ -10597,9 +10597,9 @@ public final class t3 extends q41 {
             }
             if (i13 != 0) {
                 if (this.x4 == null) {
-                    zj0 zj0Var = new zj0(this);
-                    this.x4 = zj0Var;
-                    zj0Var.a(null, null, null, this.n3, 1);
+                    ak0 ak0Var = new ak0(this);
+                    this.x4 = ak0Var;
+                    ak0Var.a(null, null, null, this.n3, 1);
                     c8.l1.a(this.x4, this.n3);
                 }
                 int i14 = 0;
@@ -10841,9 +10841,9 @@ public final class t3 extends q41 {
                 str = g1Var.getText().subSequence(B, f10).toString();
             }
             final float L = org.telegram.messenger.g0.L(iz.W0 + 4);
-            int i17 = k6.G6;
-            f6 f6Var = this.n3;
-            final int w02 = k6.w0(i17, f6Var);
+            int i17 = l6.G6;
+            g6 g6Var = this.n3;
+            final int w02 = l6.w0(i17, g6Var);
             p.Z(getContext(), str, new c20() { // from class: li.v2
                 @Override // org.telegram.messenger.c20
                 public final void a(Object obj) {
@@ -10879,7 +10879,7 @@ public final class t3 extends q41 {
                     g1Var2.N();
                     t3Var.post(new t2(g1Var2, min, 3));
                 }
-            }, f6Var);
+            }, g6Var);
         }
     }
 
@@ -12023,7 +12023,7 @@ public final class t3 extends q41 {
                                                     m5Var = null;
                                                 }
                                             }
-                                            l41 l41Var = this.f3;
+                                            m41 m41Var = this.f3;
                                             if (m5Var == null) {
                                                 int indexOf3 = arrayList.indexOf(m5Var.getRow());
                                                 if (indexOf3 >= 0) {
@@ -12037,7 +12037,7 @@ public final class t3 extends q41 {
                                                         if (W22 < 0) {
                                                             a aVar3 = new a(new TL_iv.pageBlockParagraph(), 0, 0);
                                                             arrayList.add(aVar3);
-                                                            l41Var.O(false);
+                                                            m41Var.O(false);
                                                             post(new m2(this, aVar3, 2));
                                                         } else {
                                                             post(new m2(this, (a) arrayList.get(W22), 4));
@@ -12080,7 +12080,7 @@ public final class t3 extends q41 {
                                                             if (X32 == null) {
                                                                 a aVar4 = new a(new TL_iv.pageBlockParagraph(), 0, 0);
                                                                 arrayList.add(aVar4);
-                                                                l41Var.O(false);
+                                                                m41Var.O(false);
                                                                 post(new m2(this, aVar4, 6));
                                                             } else {
                                                                 post(new m2(this, X32, 7));
@@ -12198,7 +12198,7 @@ public final class t3 extends q41 {
                                                                                 if (W24 < 0) {
                                                                                     a aVar5 = new a(new TL_iv.pageBlockParagraph(), 0, 0);
                                                                                     arrayList.add(aVar5);
-                                                                                    l41Var.O(false);
+                                                                                    m41Var.O(false);
                                                                                     post(new m2(this, aVar5, 11));
                                                                                 } else {
                                                                                     post(new m2(this, (a) arrayList.get(W24), 12));
@@ -12334,7 +12334,7 @@ public final class t3 extends q41 {
                                             }
                                             i10++;
                                         }
-                                        l41 l41Var2 = this.f3;
+                                        m41 m41Var2 = this.f3;
                                         if (m5Var == null) {
                                         }
                                     }
@@ -12535,7 +12535,7 @@ public final class t3 extends q41 {
                     }
                 }
                 boolean z10 = this.G3;
-                l41 l41Var = this.f3;
+                m41 m41Var = this.f3;
                 ArrayList arrayList = this.s3;
                 if (!z10 && !this.H3 && this.E3 == null && !g3Var.x() && this.p4 == null) {
                     float x10 = motionEvent.getX();
@@ -12556,7 +12556,7 @@ public final class t3 extends q41 {
                                 }
                                 a aVar2 = new a(new TL_iv.pageBlockParagraph(), 0, 0);
                                 arrayList.add(aVar2);
-                                l41Var.O(false);
+                                m41Var.O(false);
                                 f2 f2Var2 = this.Q3;
                                 if (f2Var2 != null) {
                                     f2Var2.h();
@@ -12595,7 +12595,7 @@ public final class t3 extends q41 {
                                     }
                                     a aVar4 = new a(new TL_iv.pageBlockParagraph(), 0, 0);
                                     arrayList.add(0, aVar4);
-                                    l41Var.O(false);
+                                    m41Var.O(false);
                                     f2 f2Var4 = this.Q3;
                                     if (f2Var4 != null) {
                                         f2Var4.h();
@@ -13052,20 +13052,20 @@ public final class t3 extends q41 {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.qj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         getViewTreeObserver().addOnGlobalFocusChangeListener(this.T3);
     }
 
-    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.qj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         getViewTreeObserver().removeOnGlobalFocusChangeListener(this.T3);
         this.h3 = false;
     }
 
-    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.qj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
         int i13 = i12 - i10;
         int i14 = this.R3;
@@ -13375,9 +13375,9 @@ public final class t3 extends q41 {
             return;
         }
         int size = aVar.h.size();
-        l41 l41Var = this.f3;
+        m41 m41Var = this.f3;
         if (size != 1) {
-            l41Var.O(true);
+            m41Var.O(true);
             q4(aVar);
             return;
         }
@@ -13387,7 +13387,7 @@ public final class t3 extends q41 {
         pageBlock.caption = pageCaption;
         aVar.g = (s) aVar.h.get(0);
         aVar.h = null;
-        l41Var.O(true);
+        m41Var.O(true);
         q4(aVar);
     }
 
@@ -13448,7 +13448,7 @@ public final class t3 extends q41 {
                     aVar2.k.add((Long) arrayList3.get(i11));
                 }
                 int i12 = d5.b;
-                x31 K = x31.K(d5.class);
+                y31 K = y31.K(d5.class);
                 K.G = aVar2;
                 K.H = this.m4;
                 arrayList2.add(K);

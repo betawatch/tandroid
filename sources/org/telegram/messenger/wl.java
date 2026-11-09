@@ -7,7 +7,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class wl implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -82,13 +82,13 @@ public final /* synthetic */ class wl implements Runnable {
                                     break;
                                 }
                             } else {
-                                f2Var.presentFragment(org.telegram.ui.an.ra(user.id));
+                                f2Var.presentFragment(org.telegram.ui.cn.ta(user.id));
                                 break;
                             }
                         } else {
                             long j10 = user.id;
-                            if (f2Var instanceof org.telegram.ui.an) {
-                                j10 = ((org.telegram.ui.an) f2Var).a();
+                            if (f2Var instanceof org.telegram.ui.cn) {
+                                j10 = ((org.telegram.ui.cn) f2Var).a();
                             } else if (f2Var instanceof ProfileActivity) {
                                 j10 = ((ProfileActivity) f2Var).a();
                             }

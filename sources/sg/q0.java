@@ -1,6 +1,6 @@
 package sg;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q0 implements Runnable {
     public final /* synthetic */ int a;
@@ -15,25 +15,25 @@ public final /* synthetic */ class q0 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                u0 u0Var = this.b.b.d;
-                if (u0Var != null) {
-                    u0Var.postRunnable(u0Var.x);
+                t0 t0Var = this.b.b.d;
+                if (t0Var != null) {
+                    t0Var.postRunnable(t0Var.x);
                     break;
                 }
                 break;
             case 1:
-                u0 u0Var2 = this.b.b.d;
-                if (u0Var2 != null) {
-                    u0Var2.postRunnable(u0Var2.x);
+                t0 t0Var2 = this.b.b.d;
+                if (t0Var2 != null) {
+                    t0Var2.postRunnable(t0Var2.x);
                     break;
                 }
                 break;
             default:
-                w0 w0Var = this.b.b;
-                u0 u0Var3 = w0Var.d;
-                u0Var3.getClass();
-                u0Var3.postRunnable(new s0(u0Var3, 2));
-                w0Var.d = null;
+                v0 v0Var = this.b.b;
+                t0 t0Var3 = v0Var.d;
+                t0Var3.getClass();
+                t0Var3.postRunnable(new s0(t0Var3, 2));
+                v0Var.d = null;
                 break;
         }
     }

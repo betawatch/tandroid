@@ -26,12 +26,12 @@ import org.telegram.messenger.t10;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.Components.et;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.va;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class a0 extends ViewGroup {
     public final z D;
@@ -73,7 +73,7 @@ public final class a0 extends ViewGroup {
         this.e = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setColorFilter(-1);
-        imageView.setBackground(k6.L(org.telegram.messenger.g0.L(28.0f), 1711276032));
+        imageView.setBackground(l6.L(org.telegram.messenger.g0.L(28.0f), 1711276032));
         addView(imageView);
         TextView textView = new TextView(context);
         this.d = textView;
@@ -487,7 +487,7 @@ public final class a0 extends ViewGroup {
         int i14;
         int i15;
         boolean z11;
-        long C1;
+        long B1;
         TLRPC.GroupCallParticipant groupCallParticipant;
         boolean z12;
         String str;
@@ -519,10 +519,10 @@ public final class a0 extends ViewGroup {
             }
             int callState = sharedInstance.getCallState();
             if (callState == 5) {
-                textView.setText(id.M0(2131743256, null));
+                textView.setText(id.M0(2131743253, null));
                 textView.setVisibility(0);
             } else if (callState != 3) {
-                textView.setText(id.M0(2131743422, null));
+                textView.setText(id.M0(2131743419, null));
                 textView.setVisibility(0);
             } else {
                 textView.setVisibility(8);
@@ -741,7 +741,7 @@ public final class a0 extends ViewGroup {
                 } else if (!isEmpty && !this.a.isEmpty()) {
                     i13 = 0;
                     if (((d0) this.a.get(0)).b != null) {
-                        this.F = ij.C1(((d0) this.a.get(0)).b.a.peer);
+                        this.F = ij.B1(((d0) this.a.get(0)).b.a.peer);
                     }
                     if (j11 == j12) {
                         long j17 = this.F;
@@ -786,16 +786,16 @@ public final class a0 extends ViewGroup {
                                     d0Var10.invalidate();
                                 }
                                 s3 s3Var4 = d0Var10.b;
-                                C1 = s3Var4 == null ? ij.C1(s3Var4.a.peer) : j11;
-                                if (C1 != d0Var10.F) {
-                                    d0Var10.F = C1;
+                                B1 = s3Var4 == null ? ij.B1(s3Var4.a.peer) : j11;
+                                if (B1 != d0Var10.F) {
+                                    d0Var10.F = B1;
                                     qp s12 = qp.s1(voIPService2.getAccount());
-                                    if (m5.E(C1)) {
-                                        TLRPC.User a22 = s12.a2(Long.valueOf(C1));
+                                    if (m5.E(B1)) {
+                                        TLRPC.User a22 = s12.a2(Long.valueOf(B1));
                                         str = t10.p(a22);
                                         chat = a22;
                                     } else {
-                                        TLRPC.Chat M0 = s12.M0(Long.valueOf(-C1));
+                                        TLRPC.Chat M0 = s12.M0(Long.valueOf(-B1));
                                         if (M0 != null) {
                                             str = M0.title;
                                             chat = M0;
@@ -807,8 +807,8 @@ public final class a0 extends ViewGroup {
                                     d0Var10.d.a(chat);
                                     d0Var10.e.setText(str);
                                 }
-                                groupCallParticipant = (TLRPC.GroupCallParticipant) r3Var.d.f(C1);
-                                if (groupCallParticipant != null && r3Var.P.g(null, C1) != null) {
+                                groupCallParticipant = (TLRPC.GroupCallParticipant) r3Var.d.f(B1);
+                                if (groupCallParticipant != null && r3Var.P.g(null, B1) != null) {
                                     z12 = i11;
                                     h hVar2 = d0Var10.d;
                                     float f12 = z12 == 0 ? groupCallParticipant.amplitude : 0.0f;
@@ -841,9 +841,9 @@ public final class a0 extends ViewGroup {
                         s3 s3Var42 = d0Var10.b;
                         if (s3Var42 == null) {
                         }
-                        if (C1 != d0Var10.F) {
+                        if (B1 != d0Var10.F) {
                         }
-                        groupCallParticipant = (TLRPC.GroupCallParticipant) r3Var.d.f(C1);
+                        groupCallParticipant = (TLRPC.GroupCallParticipant) r3Var.d.f(B1);
                         if (groupCallParticipant != null) {
                             z12 = i11;
                             h hVar222 = d0Var10.d;

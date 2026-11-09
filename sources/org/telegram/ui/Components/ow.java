@@ -7,9 +7,9 @@ import android.view.MotionEvent;
 import android.view.VelocityTracker;
 import android.view.ViewConfiguration;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public class ow extends rk0 {
+public class ow extends sk0 {
     public boolean A0;
     public boolean B0;
     public VelocityTracker C0;
@@ -22,14 +22,14 @@ public class ow extends rk0 {
     public float z0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ow(hy hyVar, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, f6Var, hyVar.i2);
+    public ow(hy hyVar, Context context, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(context, g6Var, hyVar.i2);
         this.D0 = hyVar;
         this.x0 = true;
         this.u0 = ViewConfiguration.get(context).getScaledTouchSlop();
     }
 
-    @Override // org.telegram.ui.Components.rk0, android.widget.HorizontalScrollView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.sk0, android.widget.HorizontalScrollView, android.view.ViewGroup
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         if (this.s != null) {
             return super.onInterceptTouchEvent(motionEvent);
@@ -58,7 +58,7 @@ public class ow extends rk0 {
         return super.onInterceptTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.rk0, android.widget.HorizontalScrollView, android.view.View
+    @Override // org.telegram.ui.Components.sk0, android.widget.HorizontalScrollView, android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         boolean z9;
         hy hyVar = this.D0;

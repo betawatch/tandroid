@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class jb extends v4.g0 {
     public final Context c;
@@ -180,12 +180,12 @@ public final class jb extends v4.g0 {
         int d2 = d(i7 - 1);
         if (!(ijVar.k.reply_markup instanceof TLRPC.TL_replyInlineMarkup) && d == d1Var.f) {
             org.telegram.messenger.ij ijVar2 = (org.telegram.messenger.ij) arrayList.get((arrayList.size() - (i14 - this.f)) - 1);
-            z9 = ijVar2.Q3() == ijVar.Q3() && ijVar2.Z0() == ijVar.Z0() && Math.abs(ijVar2.k.date - ijVar.k.date) <= 300;
+            z9 = ijVar2.P3() == ijVar.P3() && ijVar2.Z0() == ijVar.Z0() && Math.abs(ijVar2.k.date - ijVar.k.date) <= 300;
             if (z9) {
                 TLRPC.TL_forumTopic tL_forumTopic = ijVar.h1;
                 if (tL_forumTopic == null) {
                     i13 = ((org.telegram.ui.ActionBar.f2) mbVar).currentAccount;
-                    j11 = org.telegram.messenger.ij.c2(i13, ijVar.k, true, false);
+                    j11 = org.telegram.messenger.ij.b2(i13, ijVar.k, true, false);
                 } else {
                     j11 = tL_forumTopic.id;
                 }
@@ -193,7 +193,7 @@ public final class jb extends v4.g0 {
                 if (tL_forumTopic2 == null) {
                     i12 = ((org.telegram.ui.ActionBar.f2) mbVar).currentAccount;
                     q1Var = q1Var2;
-                    j12 = org.telegram.messenger.ij.c2(i12, ijVar2.k, true, false);
+                    j12 = org.telegram.messenger.ij.b2(i12, ijVar2.k, true, false);
                 } else {
                     q1Var = q1Var2;
                     j12 = tL_forumTopic2.id;
@@ -203,13 +203,13 @@ public final class jb extends v4.g0 {
             }
             if (d2 != d1Var.f) {
                 org.telegram.messenger.ij ijVar3 = (org.telegram.messenger.ij) arrayList.get(arrayList.size() - (i7 - this.f));
-                boolean z12 = !(ijVar3.k.reply_markup instanceof TLRPC.TL_replyInlineMarkup) && ijVar3.Q3() == ijVar.Q3() && ijVar3.Z0() == ijVar.Z0() && Math.abs(ijVar3.k.date - ijVar.k.date) <= 300;
+                boolean z12 = !(ijVar3.k.reply_markup instanceof TLRPC.TL_replyInlineMarkup) && ijVar3.P3() == ijVar.P3() && ijVar3.Z0() == ijVar.Z0() && Math.abs(ijVar3.k.date - ijVar.k.date) <= 300;
                 if (z12) {
                     TLRPC.TL_forumTopic tL_forumTopic3 = ijVar.h1;
                     if (tL_forumTopic3 == null) {
                         i11 = ((org.telegram.ui.ActionBar.f2) mbVar).currentAccount;
                         z11 = true;
-                        j3 = org.telegram.messenger.ij.c2(i11, ijVar.k, true, false);
+                        j3 = org.telegram.messenger.ij.b2(i11, ijVar.k, true, false);
                     } else {
                         z11 = true;
                         j3 = tL_forumTopic3.id;
@@ -217,7 +217,7 @@ public final class jb extends v4.g0 {
                     TLRPC.TL_forumTopic tL_forumTopic4 = ijVar3.h1;
                     if (tL_forumTopic4 == null) {
                         i10 = ((org.telegram.ui.ActionBar.f2) mbVar).currentAccount;
-                        j10 = org.telegram.messenger.ij.c2(i10, ijVar3.k, z11, false);
+                        j10 = org.telegram.messenger.ij.b2(i10, ijVar3.k, z11, false);
                     } else {
                         j10 = tL_forumTopic4.id;
                     }
@@ -250,7 +250,7 @@ public final class jb extends v4.g0 {
     /* JADX WARN: Type inference failed for: r5v4, types: [org.telegram.ui.Cells.t0] */
     @Override // v4.g0
     public final v4.d1 x(ViewGroup viewGroup, int i7) {
-        org.telegram.ui.ActionBar.f6 f6Var;
+        org.telegram.ui.ActionBar.g6 g6Var;
         ViewGroup viewGroup2;
         int i10;
         ViewGroup viewGroup3;
@@ -277,8 +277,8 @@ public final class jb extends v4.g0 {
         } else if (i7 == 2) {
             viewGroup2 = new org.telegram.ui.Cells.z1(context, null);
         } else if (i7 == 10) {
-            f6Var = ((org.telegram.ui.ActionBar.f2) mbVar).resourceProvider;
-            ?? y1Var = new org.telegram.ui.Cells.y1(context, f6Var);
+            g6Var = ((org.telegram.ui.ActionBar.f2) mbVar).resourceProvider;
+            ?? y1Var = new org.telegram.ui.Cells.y1(context, g6Var);
             y1Var.setDelegate(new f(this, 8));
             viewGroup2 = y1Var;
         } else {

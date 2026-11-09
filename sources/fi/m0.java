@@ -12,7 +12,7 @@ import org.telegram.messenger.ye;
 import org.telegram.ui.Components.Crop.CropAreaView;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public abstract class m0 extends FrameLayout {
     public final og.g D;
@@ -63,7 +63,7 @@ public abstract class m0 extends FrameLayout {
         TextView textView = new TextView(context);
         com.google.android.recaptcha.internal.a.q(textView, 1, 14.0f);
         final int i11 = 0;
-        textView.setBackground(org.telegram.ui.ActionBar.k6.h0(-12763843, 0, -1));
+        textView.setBackground(org.telegram.ui.ActionBar.l6.h0(-12763843, 0, -1));
         textView.setTextColor(-1);
         textView.setText(id.M0(2131752589, null));
         textView.setPadding(org.telegram.messenger.g0.L(12.0f), 0, org.telegram.messenger.g0.L(12.0f), 0);
@@ -101,7 +101,7 @@ public abstract class m0 extends FrameLayout {
                             m0Var2.b.requestLayout();
                             m0Var2.b.z0.requestLayout();
                             m0Var2.b.z0.invalidate();
-                            m0Var2.b.z0.post(new di.s7(m0Var2, 15));
+                            m0Var2.b.z0.post(new di.f8(m0Var2, 14));
                         }
                         ((ga) m0Var2).F.k0(-1, false, true);
                         break;
@@ -111,9 +111,9 @@ public abstract class m0 extends FrameLayout {
         TextView textView2 = new TextView(context);
         textView2.setTextSize(1, 14.0f);
         textView2.setTypeface(org.telegram.messenger.g0.o());
-        textView2.setBackground(org.telegram.ui.ActionBar.k6.h0(-12763843, 0, -1));
+        textView2.setBackground(org.telegram.ui.ActionBar.l6.h0(-12763843, 0, -1));
         textView2.setTextColor(-1);
-        textView2.setText(id.M0(2131751697, null));
+        textView2.setText(id.M0(2131751696, null));
         textView2.setPadding(org.telegram.messenger.g0.L(12.0f), 0, org.telegram.messenger.g0.L(12.0f), 0);
         frameLayout2.addView(textView2, c8.ha.e(-2, -1, qs.y1));
         textView2.setOnClickListener(new View.OnClickListener(this) { // from class: fi.k0
@@ -149,7 +149,7 @@ public abstract class m0 extends FrameLayout {
                             m0Var2.b.requestLayout();
                             m0Var2.b.z0.requestLayout();
                             m0Var2.b.z0.invalidate();
-                            m0Var2.b.z0.post(new di.s7(m0Var2, 15));
+                            m0Var2.b.z0.post(new di.f8(m0Var2, 14));
                         }
                         ((ga) m0Var2).F.k0(-1, false, true);
                         break;
@@ -159,9 +159,9 @@ public abstract class m0 extends FrameLayout {
         TextView textView3 = new TextView(context);
         textView3.setTextSize(1, 14.0f);
         textView3.setTypeface(org.telegram.messenger.g0.o());
-        textView3.setBackground(org.telegram.ui.ActionBar.k6.h0(-12763843, 0, -1));
+        textView3.setBackground(org.telegram.ui.ActionBar.l6.h0(-12763843, 0, -1));
         textView3.setTextColor(-15098625);
-        textView3.setText(id.M0(2131744691, null));
+        textView3.setText(id.M0(2131744688, null));
         textView3.setPadding(org.telegram.messenger.g0.L(12.0f), 0, org.telegram.messenger.g0.L(12.0f), 0);
         frameLayout2.addView(textView3, c8.ha.e(-2, -1, qs.C1));
         textView3.setOnClickListener(new View.OnClickListener(this) { // from class: fi.k0
@@ -197,7 +197,7 @@ public abstract class m0 extends FrameLayout {
                             m0Var2.b.requestLayout();
                             m0Var2.b.z0.requestLayout();
                             m0Var2.b.z0.invalidate();
-                            m0Var2.b.z0.post(new di.s7(m0Var2, 15));
+                            m0Var2.b.z0.post(new di.f8(m0Var2, 14));
                         }
                         ((ga) m0Var2).F.k0(-1, false, true);
                         break;

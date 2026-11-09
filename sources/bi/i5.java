@@ -3,15 +3,15 @@ package bi;
 import android.content.Context;
 import android.view.View;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class i5 extends k7 {
     public final /* synthetic */ int t3 = 0;
     public final /* synthetic */ org.telegram.ui.Components.na u3;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i5(zh.g1 g1Var, Context context, int i7, long j3, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, i7, j3, f6Var, null);
+    public i5(zh.g1 g1Var, Context context, int i7, long j3, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(context, i7, j3, g6Var, null);
         this.u3 = g1Var;
     }
 
@@ -37,8 +37,8 @@ public final class i5 extends k7 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i5(k7 k7Var, Context context, int i7, long j3, org.telegram.ui.ActionBar.f6 f6Var, View view) {
-        super(context, i7, j3, f6Var, view);
+    public i5(k7 k7Var, Context context, int i7, long j3, org.telegram.ui.ActionBar.g6 g6Var, View view) {
+        super(context, i7, j3, g6Var, view);
         this.u3 = k7Var;
     }
 }

@@ -5,10 +5,10 @@ import android.graphics.Canvas;
 import android.view.MotionEvent;
 import android.widget.FrameLayout;
 import org.telegram.messenger.g0;
-import org.telegram.ui.Components.j51;
-import org.telegram.ui.Components.qm0;
+import org.telegram.ui.Components.k51;
+import org.telegram.ui.Components.rm0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final class e extends FrameLayout {
     public final /* synthetic */ int a;
@@ -27,8 +27,8 @@ public final class e extends FrameLayout {
             case 0:
                 super.dispatchDraw(canvas);
                 i iVar = this.b;
-                qm0 qm0Var = iVar.G;
-                if (qm0Var != null && qm0Var.a()) {
+                rm0 rm0Var = iVar.G;
+                if (rm0Var != null && rm0Var.a()) {
                     iVar.G.setBounds(getLeft(), getTop(), getRight(), getBottom());
                     iVar.G.draw(canvas);
                     break;
@@ -125,10 +125,10 @@ public final class e extends FrameLayout {
         switch (this.a) {
             case 0:
                 i iVar = this.b;
-                j51 j51Var = iVar.F;
-                if (j51Var.j) {
-                    j51Var.setBounds(getLeft(), getTop(), getRight(), getBottom());
-                    j51Var.draw(canvas);
+                k51 k51Var = iVar.F;
+                if (k51Var.j) {
+                    k51Var.setBounds(getLeft(), getTop(), getRight(), getBottom());
+                    k51Var.draw(canvas);
                 }
                 canvas.save();
                 canvas.translate(getLeft(), getTop());

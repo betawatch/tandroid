@@ -1,15 +1,15 @@
 package jg;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public enum e0 {
-    d(0, 2131745758, 2131745757),
+    d(0, 2131745755, 2131745754),
     /* JADX INFO: Fake field, exist only in values array */
-    EF30(8, 2131745749, 2131745748),
+    EF30(8, 2131745746, 2131745745),
     /* JADX INFO: Fake field, exist only in values array */
-    EF45(4, 2131745751, 2131745750),
+    EF45(4, 2131745748, 2131745747),
     /* JADX INFO: Fake field, exist only in values array */
-    EF60(2, 2131745756, 2131745755);
+    EF60(2, 2131745753, 2131745752);
 
     public final int a;
     public final int b;

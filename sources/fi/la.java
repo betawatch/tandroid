@@ -15,19 +15,19 @@ import org.telegram.messenger.id;
 import org.telegram.messenger.qp;
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.hc;
-import org.telegram.ui.Components.ki0;
-import org.telegram.ui.Components.rt0;
+import org.telegram.ui.Components.li0;
+import org.telegram.ui.Components.tt0;
 import org.telegram.ui.Components.yz;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class la extends r {
     public final Path Q1;
     public final /* synthetic */ va R1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public la(va vaVar, Activity activity, FrameLayout frameLayout, rt0 rt0Var, FrameLayout frameLayout2, di.b bVar, org.telegram.ui.Components.y9 y9Var) {
-        super(activity, frameLayout, rt0Var, frameLayout2, bVar, y9Var);
+    public la(va vaVar, Activity activity, FrameLayout frameLayout, tt0 tt0Var, FrameLayout frameLayout2, di.b bVar, org.telegram.ui.Components.y9 y9Var) {
+        super(activity, frameLayout, tt0Var, frameLayout2, bVar, y9Var);
         this.R1 = vaVar;
         this.Q1 = new Path();
     }
@@ -47,7 +47,7 @@ public final class la extends r {
             int indexOf2 = X2.toString().indexOf("__");
             if (indexOf2 >= 0) {
                 X2.replace(indexOf2, indexOf2 + 2, (CharSequence) "");
-                X2.setSpan(new yz(org.telegram.ui.ActionBar.k6.Uc, this.a), indexOf, indexOf2, 33);
+                X2.setSpan(new yz(org.telegram.ui.ActionBar.l6.Uc, this.a), indexOf, indexOf2, 33);
                 X2.setSpan(new ka(this, i7), indexOf, indexOf2, 33);
             }
         }
@@ -109,7 +109,7 @@ public final class la extends r {
                 for (int i7 = 0; i7 < vaVar.v1.A0.getChildCount(); i7++) {
                     View childAt = vaVar.v1.A0.getChildAt(i7);
                     if (childAt instanceof tg.j) {
-                        ki0 selectionBounds = ((tg.j) childAt).getSelectionBounds();
+                        li0 selectionBounds = ((tg.j) childAt).getSelectionBounds();
                         RectF rectF = org.telegram.messenger.g0.P;
                         float f12 = selectionBounds.a;
                         float f13 = selectionBounds.b;
@@ -139,9 +139,9 @@ public final class la extends r {
         va vaVar = this.R1;
         s5 s5Var = vaVar.b1;
         if (!vaVar.N1 && !z9) {
-            di.y6 P1 = qp.s1(this.U).P1();
+            di.z6 P1 = qp.s1(this.U).P1();
             int A = vaVar.A();
-            di.s6 o4 = P1.o();
+            di.t6 o4 = P1.o();
             if (o4 == null || !o4.a(P1.a, A) || ((e7Var = vaVar.K1) != null && e7Var.g)) {
                 z10 = true;
                 s5Var.setShareEnabled(z10);

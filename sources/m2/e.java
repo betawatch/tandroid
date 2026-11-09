@@ -34,14 +34,14 @@ import java.util.List;
 import l2.b0;
 import l2.l;
 import l2.q;
+import l2.x;
 import l2.y;
-import l2.z;
 import q2.k;
 import x2.c0;
 import x2.k0;
 import x2.u;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class e implements a1, k0, k {
     public final g0 a;
@@ -81,7 +81,7 @@ public final class e implements a1, k0, k {
     @Override // e2.a1
     public final void B(List list) {
         a Q = Q();
-        V(Q, 27, new z(Q, list));
+        V(Q, 27, new y(Q, list));
     }
 
     @Override // e2.a1
@@ -331,7 +331,7 @@ public final class e implements a1, k0, k {
     @Override // x2.k0
     public final void r(int i7, x2.g0 g0Var, u uVar, c0 c0Var, IOException iOException, boolean z9) {
         a T = T(i7, g0Var);
-        V(T, 1003, new y(T, uVar, c0Var, iOException, z9));
+        V(T, 1003, new x(T, uVar, c0Var, iOException, z9));
     }
 
     @Override // e2.a1
@@ -381,7 +381,7 @@ public final class e implements a1, k0, k {
     public final void y(v0 v0Var) {
         x2.g0 g0Var;
         a Q = (!(v0Var instanceof l) || (g0Var = ((l) v0Var).E) == null) ? Q() : S(g0Var);
-        V(Q, 10, new y(Q, v0Var, 13));
+        V(Q, 10, new x(Q, v0Var, 13));
     }
 
     @Override // q2.k

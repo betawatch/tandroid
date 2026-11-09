@@ -4,20 +4,20 @@ import android.content.Context;
 import android.view.MotionEvent;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class jl extends pj0 {
+public final class jl extends qj0 {
     public final /* synthetic */ int e3;
     public final /* synthetic */ ChatAttachAlertPhotoLayout f3;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ jl(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout, Context context, org.telegram.ui.ActionBar.f6 f6Var, int i7) {
-        super(context, f6Var);
+    public /* synthetic */ jl(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout, Context context, org.telegram.ui.ActionBar.g6 g6Var, int i7) {
+        super(context, g6Var);
         this.e3 = i7;
         this.f3 = chatAttachAlertPhotoLayout;
     }
 
-    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.qj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         switch (this.e3) {
             case 1:
@@ -29,7 +29,7 @@ public final class jl extends pj0 {
         return super.onInterceptTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.qj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
         switch (this.e3) {
             case 1:
@@ -42,7 +42,7 @@ public final class jl extends pj0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.qj0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public boolean onTouchEvent(MotionEvent motionEvent) {
         switch (this.e3) {
             case 1:
@@ -54,7 +54,7 @@ public final class jl extends pj0 {
         return super.onTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
+    @Override // org.telegram.ui.Components.qj0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
     public void requestLayout() {
         switch (this.e3) {
             case 0:

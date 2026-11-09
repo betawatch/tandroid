@@ -15,10 +15,10 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.id;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class i extends a {
     public final ArrayList d;
@@ -29,8 +29,8 @@ public final class i extends a {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public i(int i7, Context context, f6 f6Var) {
-        super(context, f6Var);
+    public i(int i7, Context context, g6 g6Var) {
+        super(context, g6Var);
         SparseIntArray sparseIntArray;
         ArrayList arrayList = new ArrayList();
         this.d = arrayList;
@@ -38,24 +38,24 @@ public final class i extends a {
         ArrayList arrayList2 = new ArrayList();
         qp s12 = qp.s1(p10.s0);
         if (i7 == 0) {
-            arrayList2.add(new g(R.drawable.msg_stories_order, 20, id.M0(2131746940, null), id.M0(2131746939, null)));
-            arrayList2.add(new g(R.drawable.msg_stories_stealth, 15, id.M0(2131746934, null), id.M0(2131746933, null)));
-            arrayList2.add(new g(R.drawable.menu_quality_hd, 25, id.M0(2131746938, null), id.M0(2131746937, null)));
-            arrayList2.add(new g(R.drawable.msg_stories_views, 16, id.M0(2131746932, null), id.M0(2131746931, null)));
-            arrayList2.add(new g(R.drawable.msg_stories_timer, 17, id.M0(2131746944, null), id.M0(2131746943, null)));
-            arrayList2.add(new g(R.drawable.msg_stories_save, 18, id.M0(2131746936, null), id.M0(2131746935, null)));
-            arrayList2.add(new g(R.drawable.msg_stories_caption, 21, id.M0(2131746946, null), id.M0(2131746945, null)));
-            arrayList2.add(new g(R.drawable.msg_stories_link, 19, id.M0(2131746942, null), id.M0(2131746941, null)));
+            arrayList2.add(new g(R.drawable.msg_stories_order, 20, id.M0(2131746939, null), id.M0(2131746938, null)));
+            arrayList2.add(new g(R.drawable.msg_stories_stealth, 15, id.M0(2131746933, null), id.M0(2131746932, null)));
+            arrayList2.add(new g(R.drawable.menu_quality_hd, 25, id.M0(2131746937, null), id.M0(2131746936, null)));
+            arrayList2.add(new g(R.drawable.msg_stories_views, 16, id.M0(2131746931, null), id.M0(2131746930, null)));
+            arrayList2.add(new g(R.drawable.msg_stories_timer, 17, id.M0(2131746943, null), id.M0(2131746942, null)));
+            arrayList2.add(new g(R.drawable.msg_stories_save, 18, id.M0(2131746935, null), id.M0(2131746934, null)));
+            arrayList2.add(new g(R.drawable.msg_stories_caption, 21, id.M0(2131746945, null), id.M0(2131746944, null)));
+            arrayList2.add(new g(R.drawable.msg_stories_link, 19, id.M0(2131746941, null), id.M0(2131746940, null)));
         } else if (i7 == 1) {
             sparseIntArray = s12.O0;
-            arrayList2.add(new g(R.drawable.menu_premium_location, 29, id.M0(2131747054, null), id.M0(2131747053, null)));
-            arrayList2.add(new g(R.drawable.menu_premium_clock, 30, id.M0(2131747052, null), id.M0(2131747051, null)));
-            arrayList2.add(new g(R.drawable.menu_quickreply, 31, id.M0(2131747050, null), id.M0(2131747049, null)));
-            arrayList2.add(new g(R.drawable.menu_feature_status, 32, id.M0(2131747058, null), id.M0(2131747057, null)));
-            arrayList2.add(new g(R.drawable.menu_premium_away, 33, id.M0(2131747065, null), id.M0(2131747064, null)));
-            arrayList2.add(new g(R.drawable.menu_premium_chatbot, 34, id.M0(2131747060, null), id.M0(2131747059, null)));
-            arrayList2.add(new g(R.drawable.menu_feature_intro, 36, id.M0(2131747056, null), id.M0(2131747055, null)));
-            arrayList2.add(new g(R.drawable.menu_premium_chatlink, 37, id.M0(2131747063, null), id.M0(2131747062, null)));
+            arrayList2.add(new g(R.drawable.menu_premium_location, 29, id.M0(2131747053, null), id.M0(2131747052, null)));
+            arrayList2.add(new g(R.drawable.menu_premium_clock, 30, id.M0(2131747051, null), id.M0(2131747050, null)));
+            arrayList2.add(new g(R.drawable.menu_quickreply, 31, id.M0(2131747049, null), id.M0(2131747048, null)));
+            arrayList2.add(new g(R.drawable.menu_feature_status, 32, id.M0(2131747057, null), id.M0(2131747056, null)));
+            arrayList2.add(new g(R.drawable.menu_premium_away, 33, id.M0(2131747064, null), id.M0(2131747063, null)));
+            arrayList2.add(new g(R.drawable.menu_premium_chatbot, 34, id.M0(2131747059, null), id.M0(2131747058, null)));
+            arrayList2.add(new g(R.drawable.menu_feature_intro, 36, id.M0(2131747055, null), id.M0(2131747054, null)));
+            arrayList2.add(new g(R.drawable.menu_premium_chatlink, 37, id.M0(2131747062, null), id.M0(2131747061, null)));
             if (sparseIntArray != null) {
                 Collections.sort(arrayList2, new s5(sparseIntArray, 7));
             }
@@ -66,7 +66,7 @@ public final class i extends a {
             this.e = createBitmap;
             Canvas canvas = new Canvas(createBitmap);
             Paint paint = new Paint();
-            paint.setShader(new LinearGradient(0.0f, 0.0f, createBitmap.getWidth(), 0.0f, new int[]{k6.x0(null, k6.zk, false), k6.x0(null, k6.Ak, false), k6.x0(null, k6.Bk, false), k6.x0(null, k6.Ck, false)}, (float[]) null, Shader.TileMode.CLAMP));
+            paint.setShader(new LinearGradient(0.0f, 0.0f, createBitmap.getWidth(), 0.0f, new int[]{l6.x0(null, l6.zk, false), l6.x0(null, l6.Ak, false), l6.x0(null, l6.Bk, false), l6.x0(null, l6.Ck, false)}, (float[]) null, Shader.TileMode.CLAMP));
             canvas.drawRect(0.0f, 0.0f, createBitmap.getWidth(), createBitmap.getHeight(), paint);
         }
         sparseIntArray = null;
@@ -79,7 +79,7 @@ public final class i extends a {
         this.e = createBitmap2;
         Canvas canvas2 = new Canvas(createBitmap2);
         Paint paint2 = new Paint();
-        paint2.setShader(new LinearGradient(0.0f, 0.0f, createBitmap2.getWidth(), 0.0f, new int[]{k6.x0(null, k6.zk, false), k6.x0(null, k6.Ak, false), k6.x0(null, k6.Bk, false), k6.x0(null, k6.Ck, false)}, (float[]) null, Shader.TileMode.CLAMP));
+        paint2.setShader(new LinearGradient(0.0f, 0.0f, createBitmap2.getWidth(), 0.0f, new int[]{l6.x0(null, l6.zk, false), l6.x0(null, l6.Ak, false), l6.x0(null, l6.Bk, false), l6.x0(null, l6.Ck, false)}, (float[]) null, Shader.TileMode.CLAMP));
         canvas2.drawRect(0.0f, 0.0f, createBitmap2.getWidth(), createBitmap2.getHeight(), paint2);
     }
 

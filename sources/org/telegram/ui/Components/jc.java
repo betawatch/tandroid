@@ -10,16 +10,16 @@ import android.text.Spanned;
 import android.text.TextUtils;
 import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public class jc extends w70 {
+public class jc extends x70 {
     public final Path L;
     public final RectF M;
     public kc N;
     public kc O;
 
-    public jc(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, f6Var);
+    public jc(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(context, g6Var);
         this.L = new Path();
         this.M = new RectF();
     }
@@ -38,7 +38,7 @@ public class jc extends w70 {
         this.O = null;
     }
 
-    @Override // org.telegram.ui.Components.w70, android.widget.TextView, android.view.View
+    @Override // org.telegram.ui.Components.x70, android.widget.TextView, android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         Layout layout;
         kc kcVar;

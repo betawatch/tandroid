@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.UserInfoActivity;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c8 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -35,7 +35,7 @@ public final /* synthetic */ class c8 implements RequestDelegate {
     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                org.telegram.messenger.g0.h3(new n8(tLObject, (f5.l) this.b, (f5.f) this.c, (org.telegram.ui.Wallet.u1) this.f, (Activity) this.d, (TLRPC.TL_inputStorePaymentStarsGiveaway) this.g, this.e, tL_error, 0));
+                org.telegram.messenger.g0.h3(new n8(tLObject, (f5.l) this.b, (f5.f) this.c, (org.telegram.ui.Wallet.t1) this.f, (Activity) this.d, (TLRPC.TL_inputStorePaymentStarsGiveaway) this.g, this.e, tL_error, 0));
                 break;
             case 1:
                 org.telegram.messenger.g0.h3(new n8(tLObject, (f5.l) this.b, (f5.f) this.c, (mc) this.f, (Activity) this.d, (TLRPC.TL_inputStorePaymentStarsGift) this.g, this.e, tL_error, 1));

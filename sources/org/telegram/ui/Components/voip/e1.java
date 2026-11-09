@@ -8,13 +8,13 @@ import org.telegram.messenger.hc;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.m3;
 import org.telegram.ui.Components.w8;
 import org.webrtc.JavaI420Buffer;
 import org.webrtc.VideoFrame;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class e1 {
     public final ImageReceiver a;
@@ -25,7 +25,7 @@ public final class e1 {
         this.a = imageReceiver;
         VoIPService sharedInstance = VoIPService.getSharedInstance();
         TLRPC.Chat chat = sharedInstance != null ? sharedInstance.getChat() : null;
-        w8 w8Var = new w8((f6) null);
+        w8 w8Var = new w8((g6) null);
         if (chat != null) {
             sharedInstance.getAccount();
             w8Var.q(chat);

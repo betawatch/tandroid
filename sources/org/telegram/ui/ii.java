@@ -1,38 +1,60 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.view.View;
+import android.text.style.CharacterStyle;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class ii implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f2 b;
+public final class ii extends vf.b {
+    public final /* synthetic */ int d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ org.telegram.ui.Cells.q1 f;
+    public final /* synthetic */ cn g;
+    public final /* synthetic */ Object h;
 
-    public /* synthetic */ ii(int i7, org.telegram.ui.ActionBar.f2 f2Var) {
-        this.a = i7;
-        this.b = f2Var;
+    public /* synthetic */ ii(cn cnVar, int i7, Object obj, org.telegram.ui.Cells.q1 q1Var, int i10) {
+        this.d = i10;
+        this.g = cnVar;
+        this.e = i7;
+        this.h = obj;
+        this.f = q1Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
+    @Override // vf.b
+    public final void c(boolean z9) {
+        switch (this.d) {
             case 0:
-                an anVar = (an) this.b;
-                anVar.Ea = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                anVar.l1.invalidate();
-                break;
-            case 1:
-                ww wwVar = (ww) this.b;
-                wwVar.H0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                View view = wwVar.fragmentView;
-                if (view != null) {
-                    view.invalidate();
+                if (!z9) {
+                    org.telegram.messenger.g0.i3(new bg.m0(this, this.e, 21), 240L);
                     break;
                 }
                 break;
             default:
-                ((v71) this.b).y0.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                if (!z9) {
+                    org.telegram.messenger.g0.i3(new bg.m0(this, this.e, 24), 240L);
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // vf.b
+    public final void d() {
+        switch (this.d) {
+            case 0:
+                int i7 = this.e;
+                cn cnVar = this.g;
+                cnVar.Yb = i7;
+                cnVar.Zb = 1;
+                cnVar.ac = (CharacterStyle) this.h;
+                this.f.invalidate();
+                break;
+            default:
+                int i10 = this.e;
+                cn cnVar2 = this.g;
+                cnVar2.Yb = i10;
+                cnVar2.Zb = 3;
+                cnVar2.bc = (String) this.h;
+                this.f.invalidate();
                 break;
         }
     }

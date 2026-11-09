@@ -13,23 +13,24 @@ import org.telegram.messenger.qp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.g2;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.s6;
 import org.telegram.ui.Cells.n4;
 import org.telegram.ui.Cells.y6;
-import org.telegram.ui.Components.oj0;
-import org.telegram.ui.Components.w70;
+import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.x70;
+import org.telegram.ui.Wallet.f2;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class m0 extends oj0 {
+public final class m0 extends pj0 {
     public final /* synthetic */ q0 c;
 
     public m0(q0 q0Var) {
         this.c = q0Var;
     }
 
-    @Override // org.telegram.ui.Components.oj0
+    @Override // org.telegram.ui.Components.pj0
     public final boolean D(v4.d1 d1Var) {
         return d1Var.f == 3;
     }
@@ -78,14 +79,14 @@ public final class m0 extends oj0 {
             p0 p0Var = (p0) view;
             q0Var.T1 = p0Var;
             TLRPC.Chat chat = q0Var.R1;
-            w70 w70Var = p0Var.e;
+            x70 x70Var = p0Var.e;
             try {
                 SpannableStringBuilder X2 = org.telegram.messenger.g0.X2(id.G((int) qp.s1(p10.s0).r0, "BoostingReassignBoostTextPluralWithLink", chat == null ? "" : chat.title, "%3$s"));
-                SpannableStringBuilder S2 = org.telegram.messenger.g0.S2(id.M0(2131753320, "BoostingReassignBoostTextLink"), k6.Uc, 2, new g2(q0Var, i11), null);
+                SpannableStringBuilder S2 = org.telegram.messenger.g0.S2(id.M0(2131753320, "BoostingReassignBoostTextLink"), l6.Uc, 2, new g2(q0Var, i11), null);
                 int indexOf = TextUtils.indexOf(X2, "%3$s");
                 X2.replace(indexOf, indexOf + 4, (CharSequence) S2);
-                w70Var.setText(X2, TextView.BufferType.EDITABLE);
-                w70Var.post(new org.telegram.ui.Wallet.g2(p0Var, indexOf, 10));
+                x70Var.setText(X2, TextView.BufferType.EDITABLE);
+                x70Var.post(new f2(p0Var, indexOf, 10));
             } catch (Exception e10) {
                 a8.g(e10, true);
             }
@@ -104,9 +105,9 @@ public final class m0 extends oj0 {
         } else if (i7 != 1) {
             view = i7 != 2 ? i7 != 3 ? new View(context) : new ah.r(context, true, false, q0Var.I0, true) : new n4(context, 22);
         } else {
-            int i10 = k6.a7;
-            view = new y6(context, k6.x0(null, i10, false), 0);
-            r6.i(i10, view, null);
+            int i10 = l6.a7;
+            view = new y6(context, l6.x0(null, i10, false), 0);
+            s6.h(i10, view, null);
         }
         return jg.g.r(view, view, -1, -2);
     }

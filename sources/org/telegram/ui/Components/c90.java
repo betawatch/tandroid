@@ -1,68 +1,43 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class c90 extends org.telegram.ui.nq0 {
-    public final /* synthetic */ g90 a;
+public final class c90 {
+    public final /* synthetic */ org.telegram.ui.ActionBar.f2 a;
+    public final /* synthetic */ h90 b;
 
-    public c90(g90 g90Var) {
-        this.a = g90Var;
+    public c90(h90 h90Var, org.telegram.ui.ActionBar.f2 f2Var) {
+        this.b = h90Var;
+        this.a = f2Var;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:13:0x0066 A[LOOP:0: B:6:0x001e->B:13:0x0066, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x003d A[SYNTHETIC] */
-    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final org.telegram.ui.wq0 E(org.telegram.messenger.ij ijVar, TLRPC.FileLocation fileLocation, int i7, boolean z9, boolean z10) {
-        ImageReceiver imageReceiver;
-        if (i7 >= 0) {
-            g90 g90Var = this.a;
-            if (i7 < g90Var.P.size()) {
-                int childCount = g90Var.getListView().getChildCount();
-                Object obj = g90Var.P.get(i7);
-                for (int i10 = 0; i10 < childCount; i10++) {
-                    View childAt = g90Var.getListView().getChildAt(i10);
-                    if (childAt instanceof org.telegram.ui.Cells.h2) {
-                        org.telegram.ui.Cells.h2 h2Var = (org.telegram.ui.Cells.h2) childAt;
-                        if (h2Var.getResult() == obj) {
-                            imageReceiver = h2Var.getPhotoImage();
-                            if (imageReceiver == null) {
-                                int[] iArr = new int[2];
-                                childAt.getLocationInWindow(iArr);
-                                org.telegram.ui.wq0 wq0Var = new org.telegram.ui.wq0();
-                                wq0Var.b = iArr[0];
-                                wq0Var.c = iArr[1];
-                                wq0Var.d = g90Var.getListView();
-                                wq0Var.a = imageReceiver;
-                                wq0Var.e = imageReceiver.p();
-                                wq0Var.h = imageReceiver.E();
-                                return wq0Var;
-                            }
-                        }
-                    }
-                    imageReceiver = null;
-                    if (imageReceiver == null) {
-                    }
-                }
-            }
-        }
-        return null;
-    }
-
-    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
-    public final void o(int i7, org.telegram.messenger.j20 j20Var, boolean z9, int i10, int i11, boolean z10) {
-        if (i7 >= 0) {
-            g90 g90Var = this.a;
-            if (i7 >= g90Var.P.size()) {
+    public final void a(boolean z9) {
+        h90 h90Var = this.b;
+        if (h90Var.getNeededLayoutManager() != h90Var.getCurrentLayoutManager() && h90Var.a()) {
+            if (h90Var.f.M0 > 0) {
+                h90Var.N = true;
+                h90Var.o(false);
                 return;
             }
-            g90Var.y.M((TLRPC.BotInlineResult) g90Var.P.get(i7), z9, i10);
+            h90Var.b.setLayoutManager(h90Var.getNeededLayoutManager());
         }
+        if (z9 && !h90Var.a()) {
+            z9 = false;
+        }
+        h90Var.o((!z9 || h90Var.f.K() > 0) ? z9 : false);
+    }
+
+    public final void b(boolean z9) {
+        this.b.l(z9);
+    }
+
+    public final void c() {
+        h90 h90Var = this.b;
+        gp gpVar = h90Var.J;
+        if (h90Var.b.getLayoutManager() == h90Var.d || !h90Var.I) {
+            return;
+        }
+        org.telegram.messenger.g0.r(gpVar);
+        org.telegram.messenger.g0.i3(gpVar, this.a.getFragmentBeginToShow() ? 0L : 100L);
     }
 }

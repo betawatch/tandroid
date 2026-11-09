@@ -35,11 +35,12 @@ import org.telegram.ui.Cells.j9;
 import org.telegram.ui.Cells.l1;
 import org.telegram.ui.Cells.q1;
 import org.telegram.ui.Components.r5;
-import org.telegram.ui.fr0;
+import org.telegram.ui.hr0;
+import sg.k1;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
-public class s implements s0, b7.e, c4.k, i0, eg.a, l5.e, fg.a, ja.a, w, u9.d, l1, q6.l, sg.l1, x5.a {
+public class s implements s0, b7.e, c4.k, i0, eg.a, l5.e, fg.a, ja.a, w, u9.d, l1, q6.l, k1, x5.a {
     public static s b;
     public final /* synthetic */ int a;
 
@@ -235,7 +236,7 @@ public class s implements s0, b7.e, c4.k, i0, eg.a, l5.e, fg.a, ja.a, w, u9.d, l
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ fr0 N1() {
+    public /* synthetic */ hr0 N1() {
         switch (this.a) {
         }
         return null;
@@ -851,7 +852,7 @@ public class s implements s0, b7.e, c4.k, i0, eg.a, l5.e, fg.a, ja.a, w, u9.d, l
     private final /* synthetic */ void y3() {
     }
 
-    @Override // sg.l1
+    @Override // sg.k1
     public void f() {
     }
 

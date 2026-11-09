@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public abstract class v8 extends FrameLayout {
     public final u8 D;
@@ -58,10 +58,10 @@ public abstract class v8 extends FrameLayout {
         TextView textView = new TextView(context);
         this.h = textView;
         textView.setTextSize(1, 12.0f);
-        org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.J7, null);
+        org.telegram.ui.ActionBar.s6.U(textView, org.telegram.ui.ActionBar.l6.J7, null);
         textView.setTypeface(org.telegram.messenger.g0.o());
         textView.setGravity(17);
-        textView.setText(org.telegram.messenger.id.M0(2131743800, null));
+        textView.setText(org.telegram.messenger.id.M0(2131743797, null));
         addView(textView, c8.ha.d(-1, 28.0f, 80, 10.0f, 10.0f, 10.0f, 10.0f));
     }
 

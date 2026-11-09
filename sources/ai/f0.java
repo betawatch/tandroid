@@ -5,7 +5,7 @@ import org.telegram.messenger.id;
 import org.telegram.ui.ActionBar.f2;
 import org.telegram.ui.Components.hc;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f0 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -31,7 +31,7 @@ public final /* synthetic */ class f0 implements Runnable {
                 break;
             default:
                 if (str == null) {
-                    hc.a0(f2Var).N(id.M0(2131745864, null), id.M0(2131751106, null)).j();
+                    hc.a0(f2Var).N(id.M0(2131745861, null), id.M0(2131751105, null)).j();
                     break;
                 } else {
                     c20Var.a(str);

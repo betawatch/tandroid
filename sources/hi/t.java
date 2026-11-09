@@ -15,8 +15,8 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.c20;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.Components.cp;
 import org.telegram.ui.Components.i6;
 import org.telegram.ui.Components.r5;
@@ -24,7 +24,7 @@ import org.telegram.ui.Components.w5;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.Components.z4;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public abstract class t extends FrameLayout {
     public final Paint a;
@@ -37,7 +37,7 @@ public abstract class t extends FrameLayout {
     public c20 n;
     public Runnable r;
 
-    public t(Context context, f6 f6Var) {
+    public t(Context context, g6 g6Var) {
         super(context);
         Paint paint = new Paint(1);
         this.a = paint;
@@ -52,9 +52,9 @@ public abstract class t extends FrameLayout {
         this.e = waVar;
         this.f = new r[]{new r(this), new r(this)};
         setWillNotDraw(false);
-        paint2.setColor(k6.r1(0.1f, -16777216));
+        paint2.setColor(l6.r1(0.1f, -16777216));
         wa waVar2 = this.e;
-        int w02 = k6.w0(k6.d6, f6Var);
+        int w02 = l6.w0(l6.d6, g6Var);
         waVar2.b = w02;
         paint.setColor(w02);
     }
@@ -182,7 +182,7 @@ public abstract class t extends FrameLayout {
             canvas.save();
             float T13 = org.telegram.messenger.g0.T1(0.7f, 1.0f, d) * rVar.j.a(0.02f);
             canvas.scale(T13, T13, T12, W1);
-            paint2.setColor(k6.r1(d, rVar.f.a(sVar.g, false)));
+            paint2.setColor(l6.r1(d, rVar.f.a(sVar.g, false)));
             canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(9.0f), org.telegram.messenger.g0.L(9.0f), paint2);
             if (d2 < 1.0f) {
                 canvas.save();
@@ -191,7 +191,7 @@ public abstract class t extends FrameLayout {
                 canvas.scale(T14, T14, T12, W1);
                 canvas.translate(0.0f, org.telegram.messenger.g0.L(-10.0f) * d2);
                 float f18 = f17 * d;
-                int r12 = k6.r1(f18, z4Var.a(sVar.h, false));
+                int r12 = l6.r1(f18, z4Var.a(sVar.h, false));
                 i6 i6Var3 = i6Var;
                 if (i6Var3.Z != r12) {
                     i6Var3.Z = r12;
@@ -200,7 +200,7 @@ public abstract class t extends FrameLayout {
                 } else {
                     str = str2;
                 }
-                i6Var3.u(k6.r1(f18, z4Var.a(sVar.h, false)));
+                i6Var3.u(l6.r1(f18, z4Var.a(sVar.h, false)));
                 i6Var3.p(rectF);
                 i6Var3.draw(canvas);
                 canvas.restore();
@@ -213,7 +213,7 @@ public abstract class t extends FrameLayout {
                 float T15 = org.telegram.messenger.g0.T1(0.75f, 1.0f, d2);
                 canvas.scale(T15, T15, T12, W1);
                 canvas.translate(0.0f, (1.0f - d2) * org.telegram.messenger.g0.L(10.0f));
-                cpVar.b(k6.r1(d2 * d, z4Var.a(sVar.h, false)));
+                cpVar.b(l6.r1(d2 * d, z4Var.a(sVar.h, false)));
                 cpVar.setBounds((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
                 cpVar.draw(canvas);
                 canvas.restore();
@@ -224,17 +224,17 @@ public abstract class t extends FrameLayout {
             }
             if (d10 > f12) {
                 z9 = false;
-                nVar.b(k6.r1(d * d10, z4Var.a(sVar.h, false)), 64);
+                nVar.b(l6.r1(d * d10, z4Var.a(sVar.h, false)), 64);
                 nVar.a(org.telegram.messenger.g0.L(8.0f), canvas, rectF, this);
             } else {
                 z9 = false;
             }
-            if (rVar.m != k6.r1(0.15f, sVar.h)) {
-                int r13 = k6.r1(0.15f, sVar.h);
+            if (rVar.m != l6.r1(0.15f, sVar.h)) {
+                int r13 = l6.r1(0.15f, sVar.h);
                 rVar.m = r13;
                 yVar = yVar2;
                 i7 = 1;
-                k6.H1(yVar, r13, true);
+                l6.H1(yVar, r13, true);
             } else {
                 yVar = yVar2;
                 i7 = 1;

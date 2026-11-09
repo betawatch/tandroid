@@ -10,9 +10,9 @@ import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class ox extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
+public final class ox extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public final ImageView a;
     public final TextView b;
     public final RadialProgressView c;
@@ -23,25 +23,25 @@ public final class ox extends FrameLayout implements org.telegram.ui.ActionBar.a
     public ox(hy hyVar, Context context) {
         super(context);
         this.e = hyVar;
-        org.telegram.ui.ActionBar.q6 q6Var = org.telegram.ui.ActionBar.r6.a;
+        org.telegram.ui.ActionBar.r6 r6Var = org.telegram.ui.ActionBar.s6.a;
         ImageView imageView = new ImageView(getContext());
         this.a = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setImageResource(R.drawable.gif_empty);
-        int i7 = org.telegram.ui.ActionBar.k6.Af;
-        org.telegram.ui.ActionBar.f6 f6Var = hyVar.Z1;
-        org.telegram.ui.ActionBar.r6.t(imageView, i7, f6Var, PorterDuff.Mode.MULTIPLY);
+        int i7 = org.telegram.ui.ActionBar.l6.Af;
+        org.telegram.ui.ActionBar.g6 g6Var = hyVar.Z1;
+        org.telegram.ui.ActionBar.s6.s(imageView, i7, g6Var, PorterDuff.Mode.MULTIPLY);
         addView(imageView, c8.ha.d(-2, -2.0f, 17, 0.0f, 8.0f, 0.0f, 0.0f));
         TextView textView = new TextView(getContext());
         this.b = textView;
-        textView.setText(org.telegram.messenger.id.M0(2131748208, null));
+        textView.setText(org.telegram.messenger.id.M0(2131748207, null));
         textView.setTextSize(1, 16.0f);
-        org.telegram.ui.ActionBar.r6.V(textView, i7, f6Var);
+        org.telegram.ui.ActionBar.s6.U(textView, i7, g6Var);
         addView(textView, c8.ha.d(-2, -2.0f, 17, 0.0f, 42.0f, 0.0f, 0.0f));
-        RadialProgressView radialProgressView = new RadialProgressView(context, f6Var);
+        RadialProgressView radialProgressView = new RadialProgressView(context, g6Var);
         this.c = radialProgressView;
         radialProgressView.setVisibility(8);
-        radialProgressView.setProgressColor(hyVar.z(org.telegram.ui.ActionBar.k6.h6));
+        radialProgressView.setProgressColor(hyVar.z(org.telegram.ui.ActionBar.l6.h6));
         addView(radialProgressView, c8.ha.e(-2, -2, 17));
     }
 
@@ -59,17 +59,17 @@ public final class ox extends FrameLayout implements org.telegram.ui.ActionBar.a
         super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(!this.d ? (int) (org.telegram.messenger.camera.q.y(8.0f, r0 - r4.b1, 3) * 1.7f) : this.e.h0.getMeasuredHeight() - org.telegram.messenger.g0.L(80.0f), TLObject.FLAG_30));
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
         try {
-            this.c.setProgressColor(this.e.z(org.telegram.ui.ActionBar.k6.h6));
+            this.c.setProgressColor(this.e.z(org.telegram.ui.ActionBar.l6.h6));
             invalidate();
         } catch (Exception e10) {
             org.telegram.messenger.a8.g(e10, true);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

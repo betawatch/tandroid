@@ -1,36 +1,56 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
-import java.util.ArrayList;
-import org.telegram.tgnet.ConnectionsManager;
+import android.content.Context;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class px implements DialogInterface.OnCancelListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int[] c;
+public final class px extends org.telegram.ui.ActionBar.f2 {
+    public long a;
+    public TLRPC.Chat b;
+    public boolean c;
+    public boolean d;
+    public boolean e;
+    public mx f;
+    public di.b0 h;
 
-    public /* synthetic */ px(int i7, int i10, int[] iArr) {
-        this.a = i10;
-        this.b = i7;
-        this.c = iArr;
+    @Override // org.telegram.ui.ActionBar.f2
+    public final View createView(Context context) {
+        setHasOwnBackground(true);
+        this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
+        this.simpleActionBar.setActionBarMenuOnItemClick(new w9(this, 29));
+        this.simpleActionBar.setTitle(org.telegram.messenger.id.M0(2131743981, null));
+        FrameLayout frameLayout = new FrameLayout(context);
+        mx mxVar = new mx(this, new a5(this, 13), new yr(this, 9), null, 0);
+        this.f = mxVar;
+        mxVar.r1();
+        this.f.setSectionsDrawBackground(true);
+        frameLayout.addView(this.f, c8.ha.e(-1, -1, org.telegram.messenger.qs.E1));
+        this.fragmentView = frameLayout;
+        return frameLayout;
     }
 
-    @Override // android.content.DialogInterface.OnCancelListener
-    public final void onCancel(DialogInterface dialogInterface) {
-        int i7 = this.a;
-        int[] iArr = this.c;
-        int i10 = this.b;
-        switch (i7) {
-            case 0:
-                ArrayList arrayList = ExternalActionActivity.y;
-                ConnectionsManager.getInstance(i10).cancelRequest(iArr[0], true);
-                break;
-            default:
-                String str = LaunchActivity.B1;
-                ConnectionsManager.getInstance(i10).cancelRequest(iArr[0], true);
-                break;
-        }
+    @Override // org.telegram.ui.ActionBar.f2
+    public final org.telegram.ui.Components.qj0 getListViewForSimpleGlass() {
+        return this.f;
+    }
+
+    @Override // org.telegram.ui.ActionBar.f2
+    public final boolean isSupportEdgeToEdge() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.f2
+    public final boolean onFragmentCreate() {
+        this.b = getMessagesController().M0(Long.valueOf(-this.a));
+        return super.onFragmentCreate();
+    }
+
+    @Override // org.telegram.ui.ActionBar.f2
+    public final boolean useSimpleActionBar() {
+        return true;
     }
 }

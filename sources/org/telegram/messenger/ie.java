@@ -1,8 +1,8 @@
 package org.telegram.messenger;
 
-import org.telegram.ui.Components.k60;
+import org.telegram.ui.Components.l60;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ie implements Runnable {
     public final /* synthetic */ int a;
@@ -33,10 +33,10 @@ public final /* synthetic */ class ie implements Runnable {
                 break;
             default:
                 org.telegram.ui.g4 g4Var = (org.telegram.ui.g4) this.c;
-                k60 k60Var = (k60) this.d;
+                l60 l60Var = (l60) this.d;
                 g4Var.h0.M.c(true, 0.0f);
-                k60Var.p = new org.telegram.ui.b0(g4Var, this.b, 0);
-                k60Var.Z();
+                l60Var.p = new org.telegram.ui.b0(g4Var, this.b, 0);
+                l60Var.Z();
                 break;
         }
     }

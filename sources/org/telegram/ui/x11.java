@@ -1,22 +1,16 @@
 package org.telegram.ui;
 
-import androidx.recyclerview.widget.RecyclerView;
-
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class x11 extends v4.s0 {
-    public final /* synthetic */ a21 a;
+public final class x11 extends v4.k {
+    public final /* synthetic */ c21 F;
 
-    public x11(a21 a21Var) {
-        this.a = a21Var;
+    public x11(c21 c21Var) {
+        this.F = c21Var;
     }
 
-    @Override // v4.s0
-    public final void b(RecyclerView recyclerView, int i7, int i10) {
-        a21 a21Var = this.a;
-        if (a21Var.k1.I1) {
-            org.telegram.messenger.g0.v1(a21Var.U1);
-        }
-        a21.d1(a21Var);
+    @Override // v4.k
+    public final void P(v4.d1 d1Var) {
+        c21.d1(this.F);
     }
 }

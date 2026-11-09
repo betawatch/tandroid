@@ -4,14 +4,14 @@ import android.content.Context;
 import android.graphics.Typeface;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public class ob extends za {
     public final l9 a;
     public final TextView b;
 
-    public ob(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, f6Var);
+    public ob(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(context, g6Var);
         l9 l9Var = new l9(getContext());
         this.a = l9Var;
         TextView textView = new TextView(getContext());
@@ -19,7 +19,7 @@ public class ob extends za {
         addView(l9Var, c8.ha.i(30.0f, 30.0f, 8388627, 12.0f, 8.0f, 12.0f, 8.0f));
         textView.setGravity(8388611);
         textView.setPadding(0, org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f));
-        org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.vj, f6Var);
+        org.telegram.ui.ActionBar.s6.U(textView, org.telegram.ui.ActionBar.l6.vj, g6Var);
         textView.setTextSize(1, 15.0f);
         textView.setTypeface(Typeface.SANS_SERIF);
         addView(textView, c8.ha.i(-1.0f, -2.0f, 8388627, 56.0f, 0.0f, 16.0f, 0.0f));

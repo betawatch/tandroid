@@ -15,7 +15,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.wo;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class w5 extends FrameLayout {
     public org.telegram.ui.Components.l9 a;
@@ -29,7 +29,7 @@ public final class w5 extends FrameLayout {
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        this.c.b(org.telegram.ui.ActionBar.k6.W9, org.telegram.ui.ActionBar.k6.X9, org.telegram.ui.ActionBar.k6.V9);
+        this.c.b(org.telegram.ui.ActionBar.l6.W9, org.telegram.ui.ActionBar.l6.X9, org.telegram.ui.ActionBar.l6.V9);
     }
 
     @Override // android.widget.FrameLayout, android.view.View
@@ -101,7 +101,7 @@ public final class w5 extends FrameLayout {
         String str2 = kfVar.D;
         if (str2 != null && str2.length() > 0) {
             l9Var.h(kfVar.D, null, drawable);
-        } else if (ij.X2(kfVar.J)) {
+        } else if (ij.W2(kfVar.J)) {
             l9Var.j(hc.c(org.telegram.messenger.w7.w(kfVar.J.thumbs, qs.r5, false, null, false), kfVar.J), null, drawable, kfVar);
         } else {
             l9Var.setImageDrawable(drawable);

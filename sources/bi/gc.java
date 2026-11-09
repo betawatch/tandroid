@@ -6,7 +6,7 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import org.telegram.messenger.qs;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class gc extends ug.q1 {
     public final /* synthetic */ int r;
@@ -75,7 +75,7 @@ public final class gc extends ug.q1 {
                             p1Var2.y = 1600;
                             p1Var2.L = true;
                         }
-                        p1Var2.Q = org.telegram.ui.ActionBar.k6.G6;
+                        p1Var2.Q = org.telegram.ui.ActionBar.l6.G6;
                         p1Var2.c();
                         break;
                     } else {
@@ -124,7 +124,7 @@ public final class gc extends ug.q1 {
                         p1Var4.r = 17;
                         p1Var4.s = 18;
                         p1Var4.t = 19;
-                        p1Var4.Q = org.telegram.ui.ActionBar.k6.G6;
+                        p1Var4.Q = org.telegram.ui.ActionBar.l6.G6;
                         p1Var4.c();
                         break;
                     } else {

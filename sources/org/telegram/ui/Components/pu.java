@@ -4,7 +4,7 @@ import android.content.Context;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public abstract class pu implements org.telegram.messenger.ls {
     public final ArrayList a;
@@ -74,7 +74,7 @@ public abstract class pu implements org.telegram.messenger.ls {
                         org.telegram.ui.ActionBar.f2 f2Var = ruVar.j1;
                         TLRPC.InputStickerSet inputStickerSet = (TLRPC.InputStickerSet) this.a.get(i11);
                         org.telegram.ui.ActionBar.f2 f2Var2 = ruVar.j1;
-                        new yv0(context, f2Var, inputStickerSet, null, f2Var2 instanceof org.telegram.ui.an ? ((org.telegram.ui.an) f2Var2).Z : null, ruVar.I0).show();
+                        new zv0(context, f2Var, inputStickerSet, null, f2Var2 instanceof org.telegram.ui.cn ? ((org.telegram.ui.cn) f2Var2).Z : null, ruVar.I0).show();
                         return;
                     }
                     this.b.set(i11, m0);

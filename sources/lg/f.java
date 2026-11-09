@@ -15,14 +15,14 @@ import org.telegram.messenger.g0;
 import org.telegram.messenger.i7;
 import org.telegram.messenger.p5;
 import org.telegram.messenger.x7;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.Components.i6;
 import org.telegram.ui.Components.w5;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.l0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class f {
     public int a;
@@ -115,7 +115,7 @@ public final class f {
         canvas.translate(0.0f, com.google.android.recaptcha.internal.a.v(1.0f, f13, g0.L(4.0f), (g0.L(14.0f) * f13) + ((1.0f - l0Var.G) * f14 * f13) + (-g0.L(1.0f))));
         float T12 = g0.T1(1.15f, 0.9f, f13) * l0Var.G;
         canvas.scale(T12, T12, 0.0f, 0.0f);
-        i6Var2.u(i0.a.f(d, this.a, k6.x0(null, k6.q7, false)));
+        i6Var2.u(i0.a.f(d, this.a, l6.x0(null, l6.q7, false)));
         if (d > 0.0f) {
             if (this.b != textPaint.getColor()) {
                 int color = textPaint.getColor();
@@ -138,7 +138,7 @@ public final class f {
         Canvas canvas;
         Paint paint = (Paint) this.g;
         RectF rectF = (RectF) this.f;
-        int w02 = k6.w0(k6.d6, (f6) this.h);
+        int w02 = l6.w0(l6.d6, (g6) this.h);
         int i11 = (i7 + i10) << 10;
         if (i11 != this.a || this.c) {
             this.c = false;
@@ -181,7 +181,7 @@ public final class f {
         this.g = l0Var.getContext().getResources().getDrawable(R.drawable.warning_sign).mutate();
     }
 
-    public f(f6 f6Var) {
+    public f(g6 g6Var) {
         this.f = new RectF();
         Paint paint = new Paint(1);
         this.g = paint;
@@ -189,6 +189,6 @@ public final class f {
         this.c = true;
         paint.setColor(0);
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
-        this.h = f6Var;
+        this.h = g6Var;
     }
 }

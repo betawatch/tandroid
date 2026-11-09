@@ -5,15 +5,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import c8.ha;
-import l2.y;
+import l2.x;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.qs;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.ActionBar.y4;
-import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.qj0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final class a {
     public final q a;
@@ -34,7 +34,7 @@ public final class a {
 
     public a(q qVar, org.telegram.ui.ActionBar.n nVar) {
         this.a = qVar;
-        qVar.a = new y(this, 21);
+        qVar.a = new x(this, 21);
         qVar.d = new qi.b(g0.L(48.0f));
         ri.c cVar = new ri.c();
         this.b = cVar;
@@ -114,7 +114,7 @@ public final class a {
         fVar.I = qs.q2;
         ri.c cVar = fVar.G;
         if (cVar != null) {
-            fVar.H = k6.r1(qs.q2 / 255.0f, cVar.b);
+            fVar.H = l6.r1(qs.q2 / 255.0f, cVar.b);
         }
         fVar.w = true;
         fVar.invalidateSelf();
@@ -127,7 +127,7 @@ public final class a {
         fVar.K = qs.n3;
         ri.c cVar2 = fVar.G;
         if (cVar2 != null) {
-            fVar.J = k6.r1(qs.n3 / 255.0f, cVar2.b);
+            fVar.J = l6.r1(qs.n3 / 255.0f, cVar2.b);
         }
         fVar.x = true;
         fVar.invalidateSelf();
@@ -156,7 +156,7 @@ public final class a {
         fVar.I = qs.q2;
         ri.c cVar = fVar.G;
         if (cVar != null) {
-            fVar.H = k6.r1(qs.q2 / 255.0f, cVar.b);
+            fVar.H = l6.r1(qs.q2 / 255.0f, cVar.b);
         }
         fVar.w = true;
         fVar.invalidateSelf();
@@ -169,7 +169,7 @@ public final class a {
         fVar.K = qs.n3;
         ri.c cVar2 = fVar.G;
         if (cVar2 != null) {
-            fVar.J = k6.r1(qs.n3 / 255.0f, cVar2.b);
+            fVar.J = l6.r1(qs.n3 / 255.0f, cVar2.b);
         }
         fVar.x = true;
         fVar.invalidateSelf();
@@ -180,17 +180,17 @@ public final class a {
         return fVar;
     }
 
-    public final void f(FrameLayout frameLayout, pj0 pj0Var, View view, f6 f6Var) {
+    public final void f(FrameLayout frameLayout, qj0 qj0Var, View view, g6 g6Var) {
         this.m = frameLayout;
-        this.n = pj0Var;
-        pj0Var.setCaptureSectionsDecoratorAllowed(true);
-        this.o = new bi.g(4, pj0Var, frameLayout);
-        this.a.b(pj0Var);
-        pj0Var.setClipToPadding(false);
-        g(frameLayout, view, f6Var);
+        this.n = qj0Var;
+        qj0Var.setCaptureSectionsDecoratorAllowed(true);
+        this.o = new bi.g(4, qj0Var, frameLayout);
+        this.a.b(qj0Var);
+        qj0Var.setClipToPadding(false);
+        g(frameLayout, view, g6Var);
     }
 
-    public final void g(FrameLayout frameLayout, View view, f6 f6Var) {
+    public final void g(FrameLayout frameLayout, View view, g6 g6Var) {
         if (view == null) {
             return;
         }
@@ -201,10 +201,10 @@ public final class a {
         if (z9) {
             y4 y4Var = (y4) view;
             y4Var.setExtraHeight(g0.L(6.0f));
-            gh.e m10 = c8.g0.m(f6Var);
+            gh.e l10 = c8.g0.l(g6Var);
             y4Var.L = cVar;
-            y4Var.M = m10;
-            y4Var.m();
+            y4Var.M = l10;
+            y4Var.n();
             y4Var.n0 = this.d;
             y4Var.o0 = this.e;
             return;
@@ -215,7 +215,7 @@ public final class a {
             kVar.setCenterTitleAndGlass(true);
             kVar.setExtraHeight(g0.L(6.0f));
             kVar.T0 = true;
-            kVar.M(cVar, c8.g0.m(f6Var), false);
+            kVar.N(cVar, c8.g0.l(g6Var), false);
         }
     }
 }

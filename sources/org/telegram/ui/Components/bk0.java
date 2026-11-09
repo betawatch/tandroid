@@ -1,8 +1,22 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.tgnet.TLObject;
+
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public abstract class bk0 extends org.telegram.ui.ActionBar.v2 {
-    public ak0 i1;
-    public EditTextBoldCursor j1;
+public final class bk0 extends FrameLayout {
+    public View a;
+    public TextView b;
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(80.0f), TLObject.FLAG_30));
+    }
+
+    public void setText(CharSequence charSequence) {
+        this.b.setText(charSequence);
+    }
 }

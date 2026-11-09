@@ -12,9 +12,9 @@ import android.graphics.drawable.Drawable;
 import androidx.appcompat.widget.ActionBarContainer;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.Components.my0;
+import org.telegram.ui.Components.ny0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class l3 extends Drawable {
     public final /* synthetic */ int a;
@@ -84,7 +84,7 @@ public final class l3 extends Drawable {
                 imageReceiver.h(canvas, null);
                 break;
             case 7:
-                ((my0) this.b).c(getBounds().centerX() - (((my0) this.b).c / 2.0f), getBounds().centerY(), 1.0f, org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.G6, false), canvas);
+                ((ny0) this.b).c(getBounds().centerX() - (((ny0) this.b).c / 2.0f), getBounds().centerY(), 1.0f, org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.G6, false), canvas);
                 break;
             case 8:
                 canvas.save();
@@ -271,7 +271,7 @@ public final class l3 extends Drawable {
 
     public l3(String str) {
         this.a = 7;
-        this.b = new my0(str.substring(0, !str.isEmpty() ? 1 : 0), 14.0f, org.telegram.messenger.g0.o());
+        this.b = new ny0(str.substring(0, !str.isEmpty() ? 1 : 0), 14.0f, org.telegram.messenger.g0.o());
     }
 
     private final void a(int i7) {

@@ -29,9 +29,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.messaging.FirebaseMessaging;
-import di.i4;
-import di.k9;
-import di.z3;
+import di.a4;
+import di.j4;
+import di.l9;
 import fi.m1;
 import fi.q8;
 import fi.s8;
@@ -59,7 +59,6 @@ import li.t3;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.c20;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.g6;
 import org.telegram.messenger.gz;
 import org.telegram.messenger.i6;
 import org.telegram.messenger.ij;
@@ -78,7 +77,7 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.m0;
 import org.telegram.ui.ActionBar.r1;
 import org.telegram.ui.ActionBar.u1;
@@ -91,26 +90,26 @@ import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.bn;
 import org.telegram.ui.Components.d4;
 import org.telegram.ui.Components.di;
-import org.telegram.ui.Components.fb0;
-import org.telegram.ui.Components.hb0;
+import org.telegram.ui.Components.gb0;
+import org.telegram.ui.Components.ib0;
 import org.telegram.ui.Components.ik;
-import org.telegram.ui.Components.mb0;
+import org.telegram.ui.Components.nb0;
 import org.telegram.ui.Components.t4;
 import org.telegram.ui.Components.u3;
-import org.telegram.ui.Components.ui0;
 import org.telegram.ui.Components.v4;
+import org.telegram.ui.Components.vi0;
 import org.telegram.ui.Components.vk;
 import org.telegram.ui.Components.wk;
-import org.telegram.ui.an;
-import org.telegram.ui.gl0;
+import org.telegram.ui.cn;
+import org.telegram.ui.il0;
 import org.telegram.ui.ld;
-import org.telegram.ui.qw;
-import org.telegram.ui.w91;
-import org.telegram.ui.ww;
+import org.telegram.ui.sw;
+import org.telegram.ui.y91;
+import org.telegram.ui.yw;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class h implements p, SuccessContinuation, androidx.car.app.utils.b, Continuation, qw, wr, k9, ri, r1, OnFailureListener, gl0, vk, m0, fb0, t4 {
+public final /* synthetic */ class h implements p, SuccessContinuation, androidx.car.app.utils.b, Continuation, sw, wr, l9, ri, r1, OnFailureListener, il0, vk, m0, gb0, t4 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -123,7 +122,7 @@ public final /* synthetic */ class h implements p, SuccessContinuation, androidx
         this.d = gVar;
     }
 
-    @Override // org.telegram.ui.qw
+    @Override // org.telegram.ui.sw
     public /* synthetic */ boolean G() {
         switch (this.a) {
         }
@@ -146,8 +145,8 @@ public final /* synthetic */ class h implements p, SuccessContinuation, androidx
         }
     }
 
-    @Override // org.telegram.ui.qw
-    public /* synthetic */ boolean N(ww wwVar) {
+    @Override // org.telegram.ui.sw
+    public /* synthetic */ boolean N(yw ywVar) {
         switch (this.a) {
         }
         return false;
@@ -155,31 +154,31 @@ public final /* synthetic */ class h implements p, SuccessContinuation, androidx
 
     @Override // org.telegram.messenger.wr
     public void a(String str) {
-        z3 z3Var = (z3) this.c;
+        a4 a4Var = (a4) this.c;
         TL_stories.StoryItem storyItem = (TL_stories.StoryItem) this.b;
-        f6 f6Var = (f6) this.d;
-        i4 i4Var = z3Var.x;
-        i4Var.getStoriesController().r(i4Var.k1, str, new v3(z3Var, storyItem, f6Var, 3));
+        g6 g6Var = (g6) this.d;
+        j4 j4Var = a4Var.x;
+        j4Var.getStoriesController().r(j4Var.k1, str, new v3(a4Var, storyItem, g6Var, 3));
     }
 
-    @Override // org.telegram.ui.gl0
+    @Override // org.telegram.ui.il0
     public void b(int i7) {
         switch (this.a) {
             case 12:
                 v2 v2Var = (v2) this.c;
-                mb0 mb0Var = (mb0) this.d;
+                nb0 nb0Var = (nb0) this.d;
                 String str = (String) this.b;
                 if (i7 != 3) {
-                    mb0Var.dismiss();
+                    nb0Var.dismiss();
                 }
                 v2Var.d.D.G(str, f1.A(i7).toLowerCase(Locale.ROOT), false);
                 break;
             default:
-                mb0 mb0Var2 = (mb0) this.c;
+                nb0 nb0Var2 = (nb0) this.c;
                 c4 c4Var = (c4) this.d;
                 String str2 = (String) this.b;
                 if (i7 != 3) {
-                    mb0Var2.dismiss();
+                    nb0Var2.dismiss();
                 }
                 c4Var.getWebViewContainer().G(str2, f1.A(i7).toLowerCase(Locale.ROOT), false);
                 break;
@@ -303,7 +302,7 @@ public final /* synthetic */ class h implements p, SuccessContinuation, androidx
             for (int i13 = 0; i13 < j3.size(); i13++) {
                 try {
                     qi qiVar = new qi();
-                    qiVar.a = ((g6) j3.get(i13)).c.toString();
+                    qiVar.a = ((org.telegram.messenger.g6) j3.get(i13)).c.toString();
                     arrayList5.add(qiVar);
                 } catch (Exception unused) {
                 }
@@ -574,22 +573,22 @@ public final /* synthetic */ class h implements p, SuccessContinuation, androidx
         }
     }
 
-    @Override // org.telegram.ui.Components.fb0
-    public void n(hb0 hb0Var, int i7) {
+    @Override // org.telegram.ui.Components.gb0
+    public void n(ib0 ib0Var, int i7) {
         switch (this.a) {
             case 19:
-                v4.g(null, null, 0L, 0L, 0, (hb0) this.c, (org.telegram.ui.Components.c4) this.b, (d4) this.d);
+                v4.g(null, null, 0L, 0L, 0, (ib0) this.c, (org.telegram.ui.Components.c4) this.b, (d4) this.d);
                 break;
             default:
-                v4.g(null, null, 0L, 0L, 0, (hb0) this.c, (u3) this.b, (org.telegram.ui.Components.v3) this.d);
+                v4.g(null, null, 0L, 0L, 0, (ib0) this.c, (u3) this.b, (org.telegram.ui.Components.v3) this.d);
                 break;
         }
     }
 
-    @Override // di.k9
+    @Override // di.l9
     public void o(Canvas canvas, RectF rectF, float f10) {
         o7 o7Var = (o7) this.c;
-        ui0 ui0Var = (ui0) this.b;
+        vi0 vi0Var = (vi0) this.b;
         int[] iArr = (int[]) this.d;
         o7Var.c(canvas, rectF, f10);
         o7Var.f(canvas, rectF, f10);
@@ -598,10 +597,10 @@ public final /* synthetic */ class h implements p, SuccessContinuation, androidx
         } else {
             o7Var.e(canvas, rectF, f10);
         }
-        if (ui0Var != null && ui0Var.a0 && ui0Var.getVisibility() == 0) {
+        if (vi0Var != null && vi0Var.a0 && vi0Var.getVisibility() == 0) {
             canvas.saveLayerAlpha(0.0f, 0.0f, canvas.getWidth(), canvas.getHeight(), (int) (f10 * 255.0f), 31);
             canvas.translate(iArr[0], iArr[1]);
-            ui0Var.draw(canvas);
+            vi0Var.draw(canvas);
             canvas.restore();
         }
     }
@@ -647,22 +646,22 @@ public final /* synthetic */ class h implements p, SuccessContinuation, androidx
         return Tasks.forResult(null);
     }
 
-    @Override // org.telegram.ui.qw
-    public boolean y(ww wwVar, ArrayList arrayList, CharSequence charSequence, boolean z9, boolean z10, int i7, int i10, w91 w91Var) {
+    @Override // org.telegram.ui.sw
+    public boolean y(yw ywVar, ArrayList arrayList, CharSequence charSequence, boolean z9, boolean z10, int i7, int i10, y91 y91Var) {
         switch (this.a) {
             case 5:
                 k7 k7Var = (k7) this.c;
                 TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) this.b;
-                ww wwVar2 = (ww) this.d;
+                yw ywVar2 = (yw) this.d;
                 if (!arrayList.isEmpty()) {
                     long j3 = ((xr) arrayList.get(0)).a;
                     Long l10 = (Long) org.telegram.messenger.d4.f(k7Var.a).r.get(tL_starGiftUnique.slug);
                     long longValue = l10 != null ? l10.longValue() : 0L;
                     if (longValue == 0 || longValue == j3) {
                         org.telegram.messenger.d4.f(k7Var.a).s(j3, new ig.b(null, tL_starGiftUnique.slug), null, true);
-                        wwVar2.presentFragment(an.ra(j3), true);
+                        ywVar2.presentFragment(cn.ta(j3), true);
                     } else {
-                        v4.k0(k7Var.getContext(), k7Var.I0, k7Var.a, tL_starGiftUnique, longValue, new w2(k7Var, j3, tL_starGiftUnique, wwVar2, 1));
+                        v4.k0(k7Var.getContext(), k7Var.I0, k7Var.a, tL_starGiftUnique, longValue, new w2(k7Var, j3, tL_starGiftUnique, ywVar2, 1));
                     }
                     break;
                 }
@@ -671,7 +670,7 @@ public final /* synthetic */ class h implements p, SuccessContinuation, androidx
                 ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.c;
                 ij ijVar = (ij) this.b;
                 TL_keyboard.TL_inlineButtonTypeSwitchInline tL_inlineButtonTypeSwitchInline = (TL_keyboard.TL_inlineButtonTypeSwitchInline) this.d;
-                an anVar = chatActivityEnterView.P2;
+                cn cnVar = chatActivityEnterView.P2;
                 TLRPC.Message message = ijVar.k;
                 long j10 = message.from_id.user_id;
                 long j11 = message.via_bot_id;
@@ -683,7 +682,7 @@ public final /* synthetic */ class h implements p, SuccessContinuation, androidx
                     long j12 = ((xr) arrayList.get(0)).a;
                     ui.b0(chatActivityEnterView.Q).Q1(j12, 0, "@" + t10.n(a22) + " " + tL_inlineButtonTypeSwitchInline.query, null, null, null, null, 0L, true, false, null);
                     if (j12 == chatActivityEnterView.Q2) {
-                        wwVar.finishFragment();
+                        ywVar.finishFragment();
                         break;
                     } else if (!m5.C(j12)) {
                         Bundle bundle = new Bundle();
@@ -692,21 +691,21 @@ public final /* synthetic */ class h implements p, SuccessContinuation, androidx
                         } else {
                             bundle.putLong("chat_id", -j12);
                         }
-                        if (qp.s1(chatActivityEnterView.R.a).E(bundle, wwVar, null, null)) {
-                            if (!anVar.presentFragment(new an(bundle), true)) {
-                                wwVar.finishFragment();
+                        if (qp.s1(chatActivityEnterView.R.a).E(bundle, ywVar, null, null)) {
+                            if (!cnVar.presentFragment(new cn(bundle), true)) {
+                                ywVar.finishFragment();
                                 break;
                             } else if (!g0.Q1()) {
-                                anVar.removeSelfFromStack();
+                                cnVar.removeSelfFromStack();
                                 break;
                             }
                         }
                     } else {
-                        wwVar.finishFragment();
+                        ywVar.finishFragment();
                         break;
                     }
                 } else {
-                    wwVar.finishFragment();
+                    ywVar.finishFragment();
                     break;
                 }
                 break;

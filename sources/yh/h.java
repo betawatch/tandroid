@@ -10,25 +10,25 @@ import org.telegram.messenger.id;
 import org.telegram.messenger.t10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.k5;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.ActionBar.l5;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.s6;
 import org.telegram.ui.Cells.e5;
-import org.telegram.ui.Components.oj0;
+import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.w8;
-import org.telegram.ui.Components.xi0;
+import org.telegram.ui.Components.yi0;
 import v4.d1;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class h extends oj0 {
+public final class h extends pj0 {
     public final /* synthetic */ m c;
 
     public h(m mVar) {
         this.c = mVar;
     }
 
-    @Override // org.telegram.ui.Components.oj0
+    @Override // org.telegram.ui.Components.pj0
     public final boolean D(d1 d1Var) {
         return d1Var.f == 0;
     }
@@ -96,7 +96,7 @@ public final class h extends oj0 {
         LongSparseArray longSparseArray = mVar.d;
         TLRPC.TL_chatInviteImporter tL_chatInviteImporter = (TLRPC.TL_chatInviteImporter) arrayList.get(i11);
         boolean z9 = i11 != arrayList.size() - 1 || mVar.x;
-        k5 k5Var = e5Var.d;
+        l5 l5Var = e5Var.d;
         e5Var.e = tL_chatInviteImporter;
         e5Var.f = z9;
         e5Var.setWillNotDraw(!z9);
@@ -107,19 +107,19 @@ public final class h extends oj0 {
         e5Var.c.l(t10.p(user), false);
         String s5 = id.s(tL_chatInviteImporter.date, false);
         if (tL_chatInviteImporter.via_chatlist) {
-            k5Var.l(id.M0(2131749070, null), false);
+            l5Var.l(id.M0(2131749069, null), false);
             return;
         }
         long j3 = tL_chatInviteImporter.approved_by;
         if (j3 == 0) {
-            k5Var.l(id.a0("RequestedToJoinAt", null, 2131746163, s5), false);
+            l5Var.l(id.a0("RequestedToJoinAt", null, 2131746160, s5), false);
             return;
         }
         TLRPC.User user2 = (TLRPC.User) longSparseArray.get(j3);
         if (user2 != null) {
-            k5Var.l(id.a0("AddedBy", null, 2131754361, t10.j(user2, true), s5), false);
+            l5Var.l(id.a0("AddedBy", null, 2131754361, t10.j(user2, true), s5), false);
         } else {
-            k5Var.l("", false);
+            l5Var.l("", false);
         }
     }
 
@@ -142,9 +142,9 @@ public final class h extends oj0 {
             f2 f2Var = mVar.g;
             s2 s2Var = new s2(2, f2Var.getParentActivity(), f2Var.getResourceProvider());
             if (mVar.B) {
-                r6.i(k6.d6, s2Var, f2Var.getResourceProvider());
+                s6.h(l6.d6, s2Var, f2Var.getResourceProvider());
             }
-            s2Var.e(k6.d6, k6.a7, -1);
+            s2Var.e(l6.d6, l6.a7, -1);
             s2Var.setViewType(15);
             s2Var.setMemberRequestButton(z9);
             s2Var.setIsSingleCell(true);
@@ -152,6 +152,6 @@ public final class h extends oj0 {
             s2Var.setTag(-33024);
             view = s2Var;
         }
-        return new xi0(view);
+        return new yi0(view);
     }
 }

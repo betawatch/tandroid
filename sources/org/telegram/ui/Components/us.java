@@ -9,9 +9,9 @@ import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class us implements ys, h2.j, cj0 {
+public final /* synthetic */ class us implements ys, h2.j, dj0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ Object c;
@@ -34,7 +34,7 @@ public final /* synthetic */ class us implements ys, h2.j, cj0 {
         CharacterStyle[] characterStyleArr = (CharacterStyle[]) text.getSpans(i7, i10, CharacterStyle.class);
         if (characterStyleArr != null && characterStyleArr.length > 0) {
             for (CharacterStyle characterStyle : characterStyleArr) {
-                if (!(characterStyle instanceof r5) && !(characterStyle instanceof tg0)) {
+                if (!(characterStyle instanceof r5) && !(characterStyle instanceof ug0)) {
                     int spanStart = text.getSpanStart(characterStyle);
                     int spanEnd = text.getSpanEnd(characterStyle);
                     text.removeSpan(characterStyle);
@@ -76,12 +76,12 @@ public final /* synthetic */ class us implements ys, h2.j, cj0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.cj0
+    @Override // org.telegram.ui.Components.dj0
     public void f(float f10, float f11, int i7, View view) {
         wg.f1 f1Var = (wg.f1) this.c;
-        org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) this.d;
+        org.telegram.ui.ActionBar.g6 g6Var = (org.telegram.ui.ActionBar.g6) this.d;
         ah.a aVar = f1Var.V1;
-        org.telegram.ui.ng0 ng0Var = f1Var.R1;
+        org.telegram.ui.pg0 pg0Var = f1Var.R1;
         ArrayList arrayList = f1Var.Y1;
         HashSet hashSet = f1Var.Z1;
         boolean z9 = view instanceof org.telegram.ui.Cells.m8;
@@ -90,12 +90,12 @@ public final /* synthetic */ class us implements ys, h2.j, cj0 {
         xg.h hVar = null;
         if (z9) {
             if (i11 != 4) {
-                ((org.telegram.ui.ActionBar.v2) v4.l(f1Var.getContext(), org.telegram.messenger.id.M0(2131751239, null), org.telegram.messenger.id.M0(2131751244, null), null, new wg.y0(f1Var, i10), new wg.x0(f1Var, 9), false, false, f1Var.I0).b).show();
+                ((org.telegram.ui.ActionBar.v2) v4.l(f1Var.getContext(), org.telegram.messenger.id.M0(2131751238, null), org.telegram.messenger.id.M0(2131751243, null), null, new wg.y0(f1Var, i10), new wg.x0(f1Var, 9), false, false, f1Var.I0).b).show();
                 return;
             }
-            org.telegram.ui.s00 s00Var = f1Var.s2;
-            if (s00Var != null) {
-                s00Var.run();
+            org.telegram.ui.u00 u00Var = f1Var.s2;
+            if (u00Var != null) {
+                u00Var.run();
                 f1Var.dismiss();
                 return;
             }
@@ -139,10 +139,10 @@ public final /* synthetic */ class us implements ys, h2.j, cj0 {
                 return;
             }
             if (i11 == 1) {
-                if (ng0Var != null) {
-                    org.telegram.messenger.g0.v1(ng0Var.getEditText());
+                if (pg0Var != null) {
+                    org.telegram.messenger.g0.v1(pg0Var.getEditText());
                 }
-                bi.oc ocVar = new bi.oc(f1Var.getContext(), f6Var, user, new wg.x0(f1Var, 11));
+                bi.oc ocVar = new bi.oc(f1Var.getContext(), g6Var, user, new wg.x0(f1Var, 11));
                 if (!org.telegram.messenger.g0.Q1()) {
                     ocVar.a0(f1Var.f1);
                 }
@@ -151,10 +151,10 @@ public final /* synthetic */ class us implements ys, h2.j, cj0 {
             }
             if (i11 == 0 || i11 == 2) {
                 if (org.telegram.messenger.t10.b(org.telegram.messenger.qp.s1(org.telegram.messenger.p10.s0).b2(j3))) {
-                    org.telegram.messenger.camera.q.s(org.telegram.messenger.id.a0(null, null, 2131743745, org.telegram.messenger.m5.t(j3)), new hc(f1Var.c, f6Var), R.raw.error, 36);
+                    org.telegram.messenger.camera.q.s(org.telegram.messenger.id.a0(null, null, 2131743742, org.telegram.messenger.m5.t(j3)), new hc(f1Var.c, g6Var), R.raw.error, 36);
                     return;
                 }
-                zh.g1 g1Var = new zh.g1(f1Var.getContext(), this.b, j3, wg.s.c(wg.s.b(1, f1Var.j2)), new wg.y0(f1Var, true ? 1 : 0));
+                zh.g1 g1Var = new zh.g1(f1Var.getContext(), this.b, j3, wg.r.c(wg.r.b(1, f1Var.j2)), new wg.y0(f1Var, true ? 1 : 0));
                 org.telegram.messenger.t1 t1Var = f1Var.n2;
                 g1Var.e1(t1Var != null && t1Var.a(j3));
                 g1Var.show();
@@ -199,13 +199,13 @@ public final /* synthetic */ class us implements ys, h2.j, cj0 {
                 }
             }
             f1Var.e1();
-            ng0Var.b(true, hashSet, new wg.x0(f1Var, i10), null);
+            pg0Var.b(true, hashSet, new wg.x0(f1Var, i10), null);
             f1Var.p1(true, true);
             f1Var.f1();
         }
     }
 
-    @Override // org.telegram.ui.Components.cj0
+    @Override // org.telegram.ui.Components.dj0
     public /* synthetic */ boolean f1(View view) {
         return false;
     }
@@ -217,14 +217,14 @@ public final /* synthetic */ class us implements ys, h2.j, cj0 {
         this.b = i10;
     }
 
-    public /* synthetic */ us(wg.f1 f1Var, int i7, org.telegram.ui.ActionBar.f6 f6Var, int i10) {
+    public /* synthetic */ us(wg.f1 f1Var, int i7, org.telegram.ui.ActionBar.g6 g6Var, int i10) {
         this.c = f1Var;
         this.a = i7;
-        this.d = f6Var;
+        this.d = g6Var;
         this.b = i10;
     }
 
-    @Override // org.telegram.ui.Components.cj0
+    @Override // org.telegram.ui.Components.dj0
     public /* synthetic */ void r0(View view, float f10, float f11) {
     }
 }

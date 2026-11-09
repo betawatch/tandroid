@@ -14,12 +14,12 @@ import org.telegram.messenger.qs;
 import org.telegram.messenger.v10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ic;
-import org.telegram.ui.Components.l41;
-import org.telegram.ui.Components.my0;
-import org.telegram.ui.Components.x31;
+import org.telegram.ui.Components.m41;
+import org.telegram.ui.Components.ny0;
 import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.y31;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public abstract class b4 extends FrameLayout {
     public final RectF D;
@@ -29,7 +29,7 @@ public abstract class b4 extends FrameLayout {
     public final Path H;
     public boolean I;
     public final org.telegram.ui.Components.w5 J;
-    public my0 K;
+    public ny0 K;
     public final Path L;
     public boolean M;
     public final org.telegram.ui.Components.ca a;
@@ -38,12 +38,12 @@ public abstract class b4 extends FrameLayout {
     public ArrayList d;
     public ArrayList e;
     public int f;
-    public final di.s7 h;
+    public final di.f8 h;
     public final ic n;
     public final RectF r;
     public final RectF s;
     public final Paint w;
-    public my0 x;
+    public ny0 x;
     public final Path y;
 
     /* JADX WARN: Type inference failed for: r5v0, types: [fi.u3] */
@@ -52,8 +52,8 @@ public abstract class b4 extends FrameLayout {
         this.c = new ArrayList();
         this.d = new ArrayList();
         this.e = new ArrayList();
-        final o9 o9Var = (o9) this;
-        this.h = new di.s7(o9Var, 25);
+        final n9 n9Var = (n9) this;
+        this.h = new di.f8(n9Var, 24);
         this.n = new ic(this);
         this.r = new RectF();
         this.s = new RectF();
@@ -74,55 +74,55 @@ public abstract class b4 extends FrameLayout {
         path.lineTo(org.telegram.messenger.g0.L(4.33f), org.telegram.messenger.g0.L(4.33f));
         path.moveTo(-org.telegram.messenger.g0.L(4.33f), org.telegram.messenger.g0.L(4.33f));
         path.lineTo(org.telegram.messenger.g0.L(4.33f), -org.telegram.messenger.g0.L(4.33f));
-        this.a = new org.telegram.ui.Components.ca(y9Var, this, 0, !o9Var.O.r0.c());
+        this.a = new org.telegram.ui.Components.ca(y9Var, this, 0, !n9Var.O.r0.c());
         setPadding(org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(44.0f));
         final int i7 = 0;
-        w3 w3Var = new w3(o9Var, context, p10.s0, (u3) new v10() { // from class: fi.u3
+        w3 w3Var = new w3(n9Var, context, p10.s0, (u3) new v10() { // from class: fi.u3
             @Override // org.telegram.messenger.v10
             public final void a(Object obj, Object obj2) {
                 int i10 = i7;
                 int i11 = 0;
-                o9 o9Var2 = o9Var;
+                n9 n9Var2 = n9Var;
                 switch (i10) {
                     case 0:
                         ArrayList arrayList = (ArrayList) obj;
-                        l41 l41Var = (l41) obj2;
-                        l41Var.M();
+                        m41 m41Var = (m41) obj2;
+                        m41Var.M();
                         int i12 = 0;
-                        for (int i13 = 0; i13 < o9Var2.d.size(); i13++) {
-                            Integer num = (Integer) o9Var2.d.get(i13);
+                        for (int i13 = 0; i13 < n9Var2.d.size(); i13++) {
+                            Integer num = (Integer) n9Var2.d.get(i13);
                             int intValue = num.intValue();
-                            e7 e7Var = (e7) o9Var2.c.get(intValue);
+                            e7 e7Var = (e7) n9Var2.c.get(intValue);
                             int i14 = z3.b;
-                            x31 K = x31.K(z3.class);
+                            y31 K = y31.K(z3.class);
                             K.d = intValue;
                             K.G = e7Var;
                             K.z = i12;
-                            K.L(o9Var2.f == intValue);
-                            K.f = o9Var2.e.contains(num);
-                            K.D = new ai.v(o9Var2, intValue, 3);
+                            K.L(n9Var2.f == intValue);
+                            K.f = n9Var2.e.contains(num);
+                            K.D = new ai.v(n9Var2, intValue, 3);
                             arrayList.add(K);
-                            if (o9Var2.e.contains(num)) {
+                            if (n9Var2.e.contains(num)) {
                                 i12++;
                             }
                         }
-                        l41Var.L();
+                        m41Var.L();
                         break;
                     default:
                         ((Integer) obj).getClass();
                         ArrayList arrayList2 = (ArrayList) obj2;
-                        o9Var2.d.clear();
+                        n9Var2.d.clear();
                         int size = arrayList2.size();
                         while (i11 < size) {
                             Object obj3 = arrayList2.get(i11);
                             i11++;
-                            o9Var2.d.add(Integer.valueOf(((x31) obj3).d));
+                            n9Var2.d.add(Integer.valueOf(((y31) obj3).d));
                         }
-                        org.telegram.messenger.g0.d0(o9Var2.b, new ai.i(o9Var2, 21));
+                        org.telegram.messenger.g0.d0(n9Var2.b, new ai.i(n9Var2, 21));
                         break;
                 }
             }
-        }, new di.q4(o9Var, 12), bVar);
+        }, new di.r4(n9Var, 12), bVar);
         this.b = w3Var;
         w3Var.f3.r = false;
         w3Var.setClipToPadding(false);
@@ -136,43 +136,43 @@ public abstract class b4 extends FrameLayout {
             public final void a(Object obj, Object obj2) {
                 int i102 = i10;
                 int i11 = 0;
-                o9 o9Var2 = o9Var;
+                n9 n9Var2 = n9Var;
                 switch (i102) {
                     case 0:
                         ArrayList arrayList = (ArrayList) obj;
-                        l41 l41Var = (l41) obj2;
-                        l41Var.M();
+                        m41 m41Var = (m41) obj2;
+                        m41Var.M();
                         int i12 = 0;
-                        for (int i13 = 0; i13 < o9Var2.d.size(); i13++) {
-                            Integer num = (Integer) o9Var2.d.get(i13);
+                        for (int i13 = 0; i13 < n9Var2.d.size(); i13++) {
+                            Integer num = (Integer) n9Var2.d.get(i13);
                             int intValue = num.intValue();
-                            e7 e7Var = (e7) o9Var2.c.get(intValue);
+                            e7 e7Var = (e7) n9Var2.c.get(intValue);
                             int i14 = z3.b;
-                            x31 K = x31.K(z3.class);
+                            y31 K = y31.K(z3.class);
                             K.d = intValue;
                             K.G = e7Var;
                             K.z = i12;
-                            K.L(o9Var2.f == intValue);
-                            K.f = o9Var2.e.contains(num);
-                            K.D = new ai.v(o9Var2, intValue, 3);
+                            K.L(n9Var2.f == intValue);
+                            K.f = n9Var2.e.contains(num);
+                            K.D = new ai.v(n9Var2, intValue, 3);
                             arrayList.add(K);
-                            if (o9Var2.e.contains(num)) {
+                            if (n9Var2.e.contains(num)) {
                                 i12++;
                             }
                         }
-                        l41Var.L();
+                        m41Var.L();
                         break;
                     default:
                         ((Integer) obj).getClass();
                         ArrayList arrayList2 = (ArrayList) obj2;
-                        o9Var2.d.clear();
+                        n9Var2.d.clear();
                         int size = arrayList2.size();
                         while (i11 < size) {
                             Object obj3 = arrayList2.get(i11);
                             i11++;
-                            o9Var2.d.add(Integer.valueOf(((x31) obj3).d));
+                            n9Var2.d.add(Integer.valueOf(((y31) obj3).d));
                         }
-                        org.telegram.messenger.g0.d0(o9Var2.b, new ai.i(o9Var2, 21));
+                        org.telegram.messenger.g0.d0(n9Var2.b, new ai.i(n9Var2, 21));
                         break;
                 }
             }
@@ -189,14 +189,14 @@ public abstract class b4 extends FrameLayout {
         if (f11 < 1.0f) {
             canvas.saveLayerAlpha(rectF, (int) (255.0f * f11), 31);
         }
-        o9 o9Var = (o9) this;
-        boolean c10 = o9Var.O.r0.c();
+        n9 n9Var = (n9) this;
+        boolean c10 = n9Var.O.r0.c();
         org.telegram.ui.Components.ca caVar = this.a;
         Paint paint = this.E;
         if (c10) {
             if (canvas.isHardwareAccelerated()) {
                 canvas.save();
-                Path path = o9Var.N;
+                Path path = n9Var.N;
                 path.rewind();
                 path.addRoundRect(rectF, f10, f10, Path.Direction.CW);
                 canvas.clipPath(path);
@@ -285,10 +285,10 @@ public abstract class b4 extends FrameLayout {
         paint.setStrokeWidth(L);
         paint.setAlpha(qs.e4);
         canvas.drawCircle(rectF.centerX(), rectF.centerY(), (rectF.width() / 2.0f) - org.telegram.messenger.g0.L(0.9f), paint);
-        my0 my0Var = this.x;
+        ny0 ny0Var = this.x;
         w3 w3Var = this.b;
-        if (my0Var != null) {
-            my0Var.c(rectF.centerX() - (this.x.c / 2.0f), rectF.centerY() - org.telegram.messenger.g0.L(0.6f), 1.0f - w3Var.getAlpha(), -1, canvas);
+        if (ny0Var != null) {
+            ny0Var.c(rectF.centerX() - (this.x.c / 2.0f), rectF.centerY() - org.telegram.messenger.g0.L(0.6f), 1.0f - w3Var.getAlpha(), -1, canvas);
         }
         if (w3Var.getAlpha() > 0.0f) {
             canvas.save();

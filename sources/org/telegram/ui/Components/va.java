@@ -4,9 +4,9 @@ import android.view.View;
 import android.widget.FrameLayout;
 import j$.util.Objects;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.ob1;
+import org.telegram.ui.qb1;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class va implements View.OnLayoutChangeListener {
     public final /* synthetic */ boolean a;
@@ -27,8 +27,8 @@ public final class va implements View.OnLayoutChangeListener {
             gbVar.onShow();
             org.telegram.ui.ActionBar.f2 f2Var = ccVar.g;
             boolean z9 = this.a;
-            if (z9 && (f2Var instanceof ob1)) {
-                f2Var = ((ob1) f2Var).c0();
+            if (z9 && (f2Var instanceof qb1)) {
+                f2Var = ((qb1) f2Var).c0();
             }
             FrameLayout frameLayout = ccVar.h;
             if (f2Var == null || (abVar = f2Var.getBulletinDelegate()) == null) {

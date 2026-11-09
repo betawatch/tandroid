@@ -1,25 +1,25 @@
 package oi;
 
-import org.telegram.ui.Components.hm0;
+import org.telegram.ui.Components.im0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final class k implements Runnable {
     public int a;
     public int b;
-    public final /* synthetic */ hm0 c;
+    public final /* synthetic */ im0 c;
     public final /* synthetic */ q d;
 
-    public k(q qVar, hm0 hm0Var) {
+    public k(q qVar, im0 im0Var) {
         this.d = qVar;
-        this.c = hm0Var;
+        this.c = im0Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        hm0 hm0Var = this.c;
-        int scrollX = hm0Var.getScrollX();
-        int scrollY = hm0Var.getScrollY();
+        im0 im0Var = this.c;
+        int scrollX = im0Var.getScrollX();
+        int scrollY = im0Var.getScrollY();
         int i7 = scrollX - this.a;
         q qVar = this.d;
         qVar.k += i7;

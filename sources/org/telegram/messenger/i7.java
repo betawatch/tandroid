@@ -22,7 +22,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class i7 {
     public static bg.d0 l1;
@@ -86,7 +86,7 @@ public final class i7 {
     public final int b1;
     public boolean c;
     public final long c0;
-    public di.s6 c1;
+    public di.t6 c1;
     public long d;
     public long d0;
     public long d1;
@@ -1288,7 +1288,7 @@ public final class i7 {
         Object obj = this.p0;
         if (obj instanceof ij) {
             ij ijVar = (ij) obj;
-            if (ijVar.f1() < 0 && (message = ijVar.k) != null && (messageMedia = message.media) != null && (webPage = messageMedia.webpage) != null) {
+            if (ijVar.e1() < 0 && (message = ijVar.k) != null && (messageMedia = message.media) != null && (webPage = messageMedia.webpage) != null) {
                 this.p0 = webPage;
                 this.j = false;
             }
@@ -1677,14 +1677,14 @@ public final class i7 {
                 this.S = true;
                 try {
                     k(1, false, false);
-                    di.s6 s6Var = this.c1;
-                    if (s6Var != null) {
+                    di.t6 t6Var = this.c1;
+                    if (t6Var != null) {
                         u7 u7Var4 = this.g0;
                         File file3 = this.L0;
                         f8 f8Var3 = u7Var4.e.d;
-                        long j17 = s6Var.c;
-                        int i15 = s6Var.b;
-                        int i16 = s6Var.d;
+                        long j17 = t6Var.c;
+                        int i15 = t6Var.b;
+                        int i16 = t6Var.d;
                         String file4 = file3 != null ? file3.toString() : null;
                         f8Var3.getClass();
                         f8Var3.h(new d8(f8Var3, j17, i15, i16, file4, 0));
@@ -2894,8 +2894,8 @@ public final class i7 {
         this.Y = 0;
         this.F0 = new ArrayList();
         this.f1 = new y6(this, 5);
-        this.k = ij.L4(document);
-        if (document != null && !ij.O2(document)) {
+        this.k = ij.K4(document);
+        if (document != null && !ij.N2(document)) {
             "application/x-tgwallpattern".equals(document.mime_type);
         }
         u();

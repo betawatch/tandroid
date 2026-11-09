@@ -37,17 +37,17 @@ import org.telegram.messenger.iz;
 import org.telegram.messenger.kv;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.s6;
 import org.telegram.ui.Cells.h9;
 import org.telegram.ui.Cells.i9;
 import org.telegram.ui.Components.RadialProgress2;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
-public final class s4 extends y implements org.telegram.ui.ActionBar.a6, h9, k0 {
+public final class s4 extends y implements org.telegram.ui.ActionBar.b6, h9, k0 {
     public static Paint m0;
     public final ArrayList D;
     public final ArrayList E;
@@ -81,14 +81,14 @@ public final class s4 extends y implements org.telegram.ui.ActionBar.a6, h9, k0 
     public final ArrayList j0;
     public int k0;
     public final Path l0;
-    public final f6 n;
+    public final g6 n;
     public final Paint r;
     public final Paint s;
     public final j0 w;
     public final ImageView x;
     public final ImageView y;
 
-    public s4(Context context, f6 f6Var) {
+    public s4(Context context, g6 g6Var) {
         super(context);
         int i7 = 1;
         this.r = new Paint(1);
@@ -105,12 +105,12 @@ public final class s4 extends y implements org.telegram.ui.ActionBar.a6, h9, k0 
         this.T = -1;
         this.U = new org.telegram.ui.Components.w5(this, 0L, 320L, xq.h);
         this.j0 = new ArrayList();
-        this.k0 = r6.b;
+        this.k0 = s6.b;
         this.l0 = new Path();
-        this.n = f6Var;
+        this.n = g6Var;
         setWillNotDraw(false);
         f(0, org.telegram.messenger.g0.L(6.0f), 0, org.telegram.messenger.g0.L(4.0f));
-        j0 j0Var = new j0(context, f6Var, new gf.g(this, 14));
+        j0 j0Var = new j0(context, g6Var, new gf.g(this, 14));
         this.w = j0Var;
         addView(j0Var.a, ha.e(-2, -2, 51));
         setClipChildren(false);
@@ -186,10 +186,10 @@ public final class s4 extends y implements org.telegram.ui.ActionBar.a6, h9, k0 
         return this.w.f(i7, i10);
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(k6.ue));
-        hashSet.add(Integer.valueOf(k6.ig));
+        hashSet.add(Integer.valueOf(l6.ue));
+        hashSet.add(Integer.valueOf(l6.ig));
     }
 
     @Override // li.k0
@@ -205,17 +205,17 @@ public final class s4 extends y implements org.telegram.ui.ActionBar.a6, h9, k0 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         ArrayList arrayList = this.j0;
-        f6 f6Var = this.n;
+        g6 g6Var = this.n;
         int i7 = this.k0;
-        int i10 = r6.b;
+        int i10 = s6.b;
         if (i7 != i10) {
             this.k0 = i10;
             try {
-                int w02 = k6.w0(k6.d6, f6Var);
+                int w02 = l6.w0(l6.d6, g6Var);
                 if (getBackground() instanceof y1) {
                     ((y1) getBackground()).a(w02);
                 }
-                int w10 = k6.w(w02, k6.w0(k6.i6, f6Var));
+                int w10 = l6.w(w02, l6.w0(l6.i6, g6Var));
                 for (int i11 = 0; i11 < arrayList.size(); i11++) {
                     Drawable drawable = (Drawable) arrayList.get(i11);
                     if (drawable instanceof RippleDrawable) {
@@ -260,12 +260,12 @@ public final class s4 extends y implements org.telegram.ui.ActionBar.a6, h9, k0 
         ImageView imageView = new ImageView(getContext());
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         if (!this.H || Build.VERSION.SDK_INT < 31) {
-            int i7 = k6.G6;
+            int i7 = l6.G6;
             PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
-            f6 f6Var = this.n;
-            r6.t(imageView, i7, f6Var, mode);
-            int i10 = k6.d6;
-            org.telegram.ui.Cells.y b02 = k6.b0(k6.w0(i10, f6Var), k6.w(k6.w0(i10, f6Var), k6.w0(k6.i6, f6Var)), 20, 20);
+            g6 g6Var = this.n;
+            s6.s(imageView, i7, g6Var, mode);
+            int i10 = l6.d6;
+            org.telegram.ui.Cells.y b02 = l6.b0(l6.w0(i10, g6Var), l6.w(l6.w0(i10, g6Var), l6.w0(l6.i6, g6Var)), 20, 20);
             this.j0.add(b02);
             imageView.setBackground(new a2(b02));
         } else {
@@ -1216,12 +1216,12 @@ public final class s4 extends y implements org.telegram.ui.ActionBar.a6, h9, k0 
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
-        int i7 = k6.ue;
-        f6 f6Var = this.n;
-        this.r.setColor(k6.w0(i7, f6Var));
-        this.s.setColor(k6.w0(k6.ig, f6Var));
+        int i7 = l6.ue;
+        g6 g6Var = this.n;
+        this.r.setColor(l6.w0(i7, g6Var));
+        this.s.setColor(l6.w0(l6.ig, g6Var));
         j0 j0Var = this.w;
         if (j0Var != null) {
             j0Var.a();

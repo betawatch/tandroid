@@ -7,9 +7,9 @@ import android.util.Pair;
 import android.view.View;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class dv implements oi.m, dj0, pk0, te.b {
+public final /* synthetic */ class dv implements oi.m, ej0, qk0, te.b {
     public final /* synthetic */ int a;
     public final /* synthetic */ hy b;
 
@@ -23,7 +23,7 @@ public final /* synthetic */ class dv implements oi.m, dj0, pk0, te.b {
         this.b.R();
     }
 
-    @Override // org.telegram.ui.Components.pk0
+    @Override // org.telegram.ui.Components.qk0
     public void a(int i7) {
         int i10;
         tx txVar;
@@ -126,7 +126,7 @@ public final /* synthetic */ class dv implements oi.m, dj0, pk0, te.b {
                             break;
                         }
                     } else {
-                        hyVar2.t1.o(new t31(hyVar2.getContext(), new bw(hyVar2), hyVar2.x1, hyVar2.y1, hyVar2.z1, null, hyVar2.Z1));
+                        hyVar2.t1.o(new u31(hyVar2.getContext(), new bw(hyVar2), hyVar2.x1, hyVar2.y1, hyVar2.z1, null, hyVar2.Z1));
                         break;
                     }
                 }
@@ -134,7 +134,7 @@ public final /* synthetic */ class dv implements oi.m, dj0, pk0, te.b {
         }
     }
 
-    @Override // org.telegram.ui.Components.dj0
+    @Override // org.telegram.ui.Components.ej0
     public boolean c(int i7, View view) {
         String str;
         int i10;

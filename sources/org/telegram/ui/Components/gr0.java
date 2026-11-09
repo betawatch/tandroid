@@ -1,30 +1,24 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
+import android.os.Bundle;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class gr0 extends us0 {
-    public final /* synthetic */ xs0 G;
+public final class gr0 extends org.telegram.ui.en {
+    public final /* synthetic */ zs0 f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gr0(xs0 xs0Var, Context context) {
-        super(xs0Var, context, 0, false);
-        this.G = xs0Var;
+    public gr0(zs0 zs0Var, Context context, org.telegram.ui.ActionBar.q4 q4Var, Bundle bundle) {
+        super(context, q4Var, bundle);
+        this.f = zs0Var;
     }
 
-    @Override // org.telegram.ui.Components.us0, v4.g0
-    public final void f() {
-        super.f();
-        xs0 xs0Var = this.G;
-        sr0 g02 = xs0Var.g0(8);
-        if (g02 != null && g02.n.getVisibility() == 0) {
-            xs0Var.f0.f();
-        }
-        if (g02 != null) {
-            nq0 nq0Var = g02.w;
-            di.q6 q6Var = this.s;
-            nq0Var.e(q6Var != null && (q6Var.k() || (xs0Var.t0() && this.s.g() > 0)), true);
+    @Override // org.telegram.ui.en
+    public final void b(boolean z9) {
+        org.telegram.ui.ActionBar.r0 r0Var = this.f.p0;
+        if (r0Var != null) {
+            r0Var.setShowSearchProgress(z9);
         }
     }
 }

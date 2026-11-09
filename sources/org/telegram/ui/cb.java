@@ -8,7 +8,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.MediaController;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class cb extends kb {
     public final jh.l g0;
@@ -21,10 +21,10 @@ public final class cb extends kb {
         this.g0 = new jh.l();
     }
 
-    @Override // org.telegram.ui.Components.rt0
+    @Override // org.telegram.ui.Components.tt0
     public final void T(Drawable drawable) {
-        if (drawable instanceof org.telegram.ui.Components.qa0) {
-            ((org.telegram.ui.Components.qa0) drawable).p();
+        if (drawable instanceof org.telegram.ui.Components.ra0) {
+            ((org.telegram.ui.Components.ra0) drawable).p();
         }
         jh.l lVar = this.g0;
         ri.a c10 = lVar.c(drawable);
@@ -51,11 +51,11 @@ public final class cb extends kb {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.rt0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.tt0, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         org.telegram.messenger.ij ijVar = MediaController.B().u0;
-        if (ijVar == null || !ijVar.i4() || ijVar.T == 0) {
+        if (ijVar == null || !ijVar.h4() || ijVar.T == 0) {
             return;
         }
         long B0 = org.telegram.messenger.ij.B0(ijVar.k);
@@ -69,7 +69,7 @@ public final class cb extends kb {
     /* JADX WARN: Removed duplicated region for block: B:23:0x0092  */
     /* JADX WARN: Removed duplicated region for block: B:31:0x00b1  */
     /* JADX WARN: Removed duplicated region for block: B:49:0x0083  */
-    @Override // org.telegram.ui.Components.rt0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.tt0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

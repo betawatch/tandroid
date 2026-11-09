@@ -16,10 +16,10 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.my0;
+import org.telegram.ui.Components.ny0;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class a3 {
     public final Path A;
@@ -43,8 +43,8 @@ public final class a3 {
     public final Bitmap r;
     public final Drawable s;
     public int t;
-    public final my0 u;
-    public my0 v;
+    public final ny0 u;
+    public ny0 v;
     public float w;
     public final float[] x;
     public final Path y;
@@ -56,7 +56,7 @@ public final class a3 {
         Paint paint = new Paint(1);
         this.i = paint;
         this.j = new Paint(3);
-        org.telegram.ui.Cells.y h02 = k6.h0(822083583, 1, -1);
+        org.telegram.ui.Cells.y h02 = l6.h0(822083583, 1, -1);
         this.l = h02;
         this.t = -1;
         this.x = new float[8];
@@ -77,7 +77,7 @@ public final class a3 {
         this.r = c3Var.F;
         String b10 = c3Var.b();
         textPaint = d3.getTextPaint();
-        this.u = new my0(org.telegram.messenger.i6.m(b10, textPaint.getFontMetricsInt(), false, null, 0), 17.0f, org.telegram.messenger.g0.o());
+        this.u = new ny0(org.telegram.messenger.i6.m(b10, textPaint.getFontMetricsInt(), false, null, 0), 17.0f, org.telegram.messenger.g0.o());
         int i7 = c3Var.q;
         this.n = i7;
         this.p = org.telegram.messenger.g0.B(i7) < 0.721f;
@@ -111,7 +111,7 @@ public final class a3 {
         paint.setColor(f14);
         float f15 = f11 * 255.0f;
         paint.setAlpha((int) f15);
-        paint.setShadowLayer(org.telegram.messenger.g0.L(2.33f), 0.0f, org.telegram.messenger.g0.L(1.0f), k6.r1(f11, TLObject.FLAG_28));
+        paint.setShadowLayer(org.telegram.messenger.g0.L(2.33f), 0.0f, org.telegram.messenger.g0.L(1.0f), l6.r1(f11, TLObject.FLAG_28));
         float[] fArr = this.x;
         fArr[3] = f10;
         fArr[2] = f10;
@@ -131,7 +131,7 @@ public final class a3 {
         if (f16 > 0.0f && this.w > 0.0f && f11 > 0.0f) {
             canvas2.save();
             canvas2.clipPath(path);
-            int r12 = k6.r1(0.07f * f11 * this.w, org.telegram.messenger.g0.B(f14) > 0.721f ? -16777216 : -1);
+            int r12 = l6.r1(0.07f * f11 * this.w, org.telegram.messenger.g0.B(f14) > 0.721f ? -16777216 : -1);
             Paint paint2 = this.h;
             paint2.setColor(r12);
             float f17 = rectF.left;
@@ -155,7 +155,7 @@ public final class a3 {
         yVar.setBounds(L, i10, L2, L3);
         if (this.k != f19) {
             this.k = f19;
-            k6.H1(yVar, f19, false);
+            l6.H1(yVar, f19, false);
         }
         yVar.draw(canvas2);
         canvas2.restore();
@@ -202,19 +202,19 @@ public final class a3 {
                 i7 = intrinsicHeight - org.telegram.messenger.g0.L(2.0f);
             }
         }
-        my0 my0Var = this.v;
-        if (my0Var != null) {
-            my0Var.p = (int) ((rectF.width() - org.telegram.messenger.g0.L(100.0f)) - r3);
+        ny0 ny0Var = this.v;
+        if (ny0Var != null) {
+            ny0Var.p = (int) ((rectF.width() - org.telegram.messenger.g0.L(100.0f)) - r3);
             f13 = 1.0f;
-            my0Var.c(rectF.left + org.telegram.messenger.g0.L(60.0f) + i7, rectF.centerY(), org.telegram.messenger.k5.A(1.0f, this.w, f11, f12), f18, canvas2);
+            ny0Var.c(rectF.left + org.telegram.messenger.g0.L(60.0f) + i7, rectF.centerY(), org.telegram.messenger.k5.A(1.0f, this.w, f11, f12), f18, canvas2);
         } else {
             f13 = 1.0f;
         }
         float width = rectF.width() - org.telegram.messenger.g0.L(100.0f);
         float f24 = i7;
-        my0 my0Var2 = this.u;
-        my0Var2.p = (int) (width - f24);
-        my0Var2.c(f24 + rectF.left + org.telegram.messenger.g0.L(60.0f), rectF.centerY(), (this.v == null ? f13 : this.w) * f11 * f12, f18, canvas);
+        ny0 ny0Var2 = this.u;
+        ny0Var2.p = (int) (width - f24);
+        ny0Var2.c(f24 + rectF.left + org.telegram.messenger.g0.L(60.0f), rectF.centerY(), (this.v == null ? f13 : this.w) * f11 * f12, f18, canvas);
     }
 
     public final float b() {

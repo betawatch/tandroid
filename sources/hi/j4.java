@@ -25,12 +25,11 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Cells.i9;
 import org.telegram.ui.StickersActivity;
-import org.telegram.ui.Wallet.b6;
+import org.telegram.ui.Wallet.x5;
 import org.telegram.ui.Wallet.y5;
-import org.telegram.ui.Wallet.z5;
-import org.telegram.ui.an;
+import org.telegram.ui.cn;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j4 implements Runnable {
     public final /* synthetic */ int a;
@@ -113,11 +112,11 @@ public final /* synthetic */ class j4 implements Runnable {
                                 strArr4[1] = str2;
                             }
                             if (t10.z(a22)) {
-                                strArr4[2] = id.M0(2131746267, str2).toLowerCase();
+                                strArr4[2] = id.M0(2131746266, str2).toLowerCase();
                             } else {
                                 String str3 = str2;
                                 if (a22.self) {
-                                    strArr4[2] = id.M0(2131745904, str3).toLowerCase();
+                                    strArr4[2] = id.M0(2131745901, str3).toLowerCase();
                                 }
                             }
                             int i16 = 0;
@@ -287,9 +286,9 @@ public final /* synthetic */ class j4 implements Runnable {
                     int i21 = 0;
                     for (int i22 = 0; i22 < size2; i22++) {
                         ij ijVar = new ij(i10, messages_messages.messages.get(i22), false, true);
-                        if (!ijVar.T4() && !hashMap.containsKey(Integer.valueOf(ijVar.f1()))) {
+                        if (!ijVar.S4() && !hashMap.containsKey(Integer.valueOf(ijVar.e1()))) {
                             arrayList7.add(0, ijVar);
-                            hashMap.put(Integer.valueOf(ijVar.f1()), ijVar);
+                            hashMap.put(Integer.valueOf(ijVar.e1()), ijVar);
                             i21++;
                         }
                     }
@@ -321,15 +320,15 @@ public final /* synthetic */ class j4 implements Runnable {
                     break;
                 }
             case 9:
-                an anVar = (an) obj3;
-                anVar.Wb = i11;
-                anVar.Xb = i10;
-                anVar.Yb = (CharacterStyle) obj2;
+                cn cnVar = (cn) obj3;
+                cnVar.Yb = i11;
+                cnVar.Zb = i10;
+                cnVar.ac = (CharacterStyle) obj2;
                 ((org.telegram.ui.Cells.q1) obj).invalidate();
                 break;
             default:
-                z5 z5Var = (z5) obj;
-                org.telegram.messenger.g0.h3(new org.telegram.ui.Wallet.g((b6) obj3, new y5(((Context) obj2).getApplicationContext(), i11, i10, z5Var), z5Var, 15));
+                y5 y5Var = (y5) obj;
+                org.telegram.messenger.g0.h3(new org.telegram.ui.Wallet.g((org.telegram.ui.Wallet.a6) obj3, new x5(((Context) obj2).getApplicationContext(), i11, i10, y5Var), y5Var, 15));
                 break;
         }
     }
@@ -352,21 +351,21 @@ public final /* synthetic */ class j4 implements Runnable {
         this.c = i10;
     }
 
-    public /* synthetic */ j4(an anVar, int i7, int i10, CharacterStyle characterStyle, org.telegram.ui.Cells.q1 q1Var) {
+    public /* synthetic */ j4(cn cnVar, int i7, int i10, CharacterStyle characterStyle, org.telegram.ui.Cells.q1 q1Var) {
         this.a = 9;
-        this.d = anVar;
+        this.d = cnVar;
         this.b = i7;
         this.c = i10;
         this.e = characterStyle;
         this.f = q1Var;
     }
 
-    public /* synthetic */ j4(b6 b6Var, Context context, int i7, int i10, z5 z5Var) {
+    public /* synthetic */ j4(org.telegram.ui.Wallet.a6 a6Var, Context context, int i7, int i10, y5 y5Var) {
         this.a = 10;
-        this.d = b6Var;
+        this.d = a6Var;
         this.e = context;
         this.b = i7;
         this.c = i10;
-        this.f = z5Var;
+        this.f = y5Var;
     }
 }

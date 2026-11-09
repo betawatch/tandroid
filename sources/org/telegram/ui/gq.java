@@ -1,25 +1,47 @@
 package org.telegram.ui;
 
-import android.app.Activity;
+import android.view.View;
+import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class gq extends org.telegram.ui.Components.e10 {
-    public final /* synthetic */ oq j1;
+public final /* synthetic */ class gq implements q0.a {
+    public final /* synthetic */ int a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gq(oq oqVar, Activity activity, oq oqVar2) {
-        super(activity, oqVar2);
-        this.j1 = oqVar;
+    public /* synthetic */ gq(int i7) {
+        this.a = i7;
     }
 
-    @Override // org.telegram.ui.Components.e10
-    public final void J0() {
-        oq oqVar = this.j1;
-        oqVar.getMessagesController().S(oqVar.getParentActivity(), oqVar.n, oqVar, new w0(this, 27));
-    }
-
-    @Override // org.telegram.ui.Components.e10
-    public final void I0() {
+    @Override // q0.a
+    public final void accept(Object obj) {
+        switch (this.a) {
+            case 0:
+                break;
+            case 1:
+                View view = (View) obj;
+                boolean z9 = ChatAttachAlertPhotoLayout.q1;
+                if (view instanceof org.telegram.ui.Cells.q5) {
+                    org.telegram.ui.Cells.q5 q5Var = (org.telegram.ui.Cells.q5) view;
+                    q5Var.c(q5Var.getPhotoEntry() != null && q5Var.getPhotoEntry().M, Float.valueOf(250.0f));
+                    q5Var.setHighQuality(q5Var.getPhotoEntry() != null && q5Var.getPhotoEntry().c());
+                    q5Var.f(q5Var.getPhotoEntry() != null ? q5Var.getPhotoEntry().N : 0L, ChatAttachAlertPhotoLayout.s1.size() > 1);
+                    break;
+                }
+                break;
+            case 2:
+                View view2 = (View) obj;
+                if (view2 instanceof org.telegram.ui.Components.ql0) {
+                    ((org.telegram.ui.Components.ql0) view2).a(false, true);
+                    break;
+                }
+                break;
+            default:
+                View view3 = (View) obj;
+                if (view3 instanceof org.telegram.ui.Components.ql0) {
+                    ((org.telegram.ui.Components.ql0) view3).a(false, true);
+                    break;
+                }
+                break;
+        }
     }
 }

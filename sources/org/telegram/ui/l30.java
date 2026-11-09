@@ -1,82 +1,143 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Canvas;
+import android.graphics.LinearGradient;
+import android.graphics.Matrix;
+import android.graphics.Shader;
+import android.os.SystemClock;
+import java.security.SecureRandom;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class l30 implements org.telegram.ui.Components.i30 {
-    public float a;
-    public TLRPC.FileLocation b;
-    public TLRPC.FileLocation c;
-    public org.telegram.messenger.hc d;
-    public final long e;
-    public final /* synthetic */ c40 f;
+public final class l30 extends org.telegram.ui.ActionBar.l5 {
+    public LinearGradient M0;
+    public int N0;
+    public final Matrix O0;
+    public float P0;
+    public float Q0;
+    public float R0;
+    public float S0;
+    public float T0;
+    public long U0;
+    public final /* synthetic */ e40 V0;
 
-    public l30(c40 c40Var, long j3) {
-        this.f = c40Var;
-        this.e = j3;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public l30(e40 e40Var, LaunchActivity launchActivity) {
+        super(launchActivity);
+        this.V0 = e40Var;
+        this.O0 = new Matrix();
+        this.P0 = -1.0f;
     }
 
-    @Override // org.telegram.ui.Components.i30
-    public final void H(float f10) {
-        this.f.i1.O(this.d, f10);
-        a(f10);
-    }
-
-    @Override // org.telegram.ui.Components.i30
-    public final void U(TLRPC.InputFile inputFile, TLRPC.InputFile inputFile2, double d, String str, TLRPC.PhotoSize photoSize, TLRPC.PhotoSize photoSize2, boolean z9, TLRPC.VideoSize videoSize) {
-        org.telegram.messenger.g0.h3(new ii.l(this, inputFile, inputFile2, videoSize, d, str, photoSize2, photoSize, 3));
-    }
-
-    public final void a(float f10) {
-        this.a = f10;
-        k30 k30Var = this.f.H1;
-        if (k30Var == null) {
-            return;
+    @Override // org.telegram.ui.ActionBar.l5
+    public final void d(int i7) {
+        super.d(i7);
+        int textWidth = getTextWidth();
+        if (textWidth != this.N0) {
+            float f10 = textWidth;
+            this.T0 = 1.3f * f10;
+            float textHeight = getTextHeight();
+            float f11 = f10 * 2.0f;
+            int x02 = org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.Wh, false);
+            int x03 = org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.Yh, false);
+            int i10 = org.telegram.ui.ActionBar.l6.Xh;
+            this.M0 = new LinearGradient(0.0f, textHeight, f11, 0.0f, new int[]{x02, x03, org.telegram.ui.ActionBar.l6.x0(null, i10, false), org.telegram.ui.ActionBar.l6.x0(null, i10, false)}, new float[]{0.0f, 0.38f, 0.76f, 1.0f}, Shader.TileMode.CLAMP);
+            getPaint().setShader(this.M0);
+            this.N0 = textWidth;
         }
-        for (int i7 = 0; i7 < k30Var.getChildCount(); i7++) {
-            View childAt = k30Var.getChildAt(i7);
-            if (childAt instanceof org.telegram.ui.Cells.f4) {
-                org.telegram.ui.Cells.f4 f4Var = (org.telegram.ui.Cells.f4) childAt;
-                if (f4Var.c()) {
-                    org.telegram.ui.Cells.b4 b4Var = f4Var.y;
-                    b4Var.setProgress(f10);
-                    if (f10 < 1.0f) {
-                        org.telegram.messenger.g0.Z3(b4Var, true, 1.0f, true, true);
-                    } else {
-                        org.telegram.messenger.g0.Z3(b4Var, false, 1.0f, true, true);
-                    }
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:12:0x0060  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x00be  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x008e  */
+    @Override // org.telegram.ui.ActionBar.l5, android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onDraw(Canvas canvas) {
+        float f10;
+        long j3;
+        float f11;
+        float d;
+        float f12;
+        if (this.M0 != null) {
+            e40 e40Var = this.V0;
+            org.telegram.messenger.r3 r3Var = e40Var.R2;
+            if (r3Var != null && r3Var.j()) {
+                long currentTimeMillis = (e40Var.R2.b.schedule_date * 1000) - ConnectionsManager.getInstance(e40Var.k1.a).getCurrentTimeMillis();
+                if (currentTimeMillis < 0) {
+                    f10 = 1.0f;
+                } else if (currentTimeMillis < 5000) {
+                    f10 = 1.0f - (currentTimeMillis / 5000.0f);
                 }
+                Matrix matrix = this.O0;
+                matrix.reset();
+                matrix.postTranslate((-this.N0) * 0.7f * f10, 0.0f);
+                long elapsedRealtime = SystemClock.elapsedRealtime();
+                j3 = elapsedRealtime - this.U0;
+                if (j3 > 20) {
+                    j3 = 17;
+                }
+                this.U0 = elapsedRealtime;
+                f11 = this.R0;
+                if (f11 != 0.0f || this.S0 >= f11) {
+                    SecureRandom secureRandom = Utilities.b;
+                    this.R0 = secureRandom.nextInt(org.telegram.messenger.qs.e3) + 1500;
+                    this.S0 = 0.0f;
+                    if (this.P0 == -1.0f) {
+                        this.P0 = ((secureRandom.nextInt(100) - 50) * 0.2f) / 50.0f;
+                    }
+                    this.Q0 = this.P0;
+                    this.P0 = ((secureRandom.nextInt(100) - 50) * 0.2f) / 50.0f;
+                }
+                float f13 = j3;
+                d = rf.b.d(f13 * 0.02f, e40Var.F2, 1.0f * f13, this.S0);
+                this.S0 = d;
+                f12 = this.R0;
+                if (d > f12) {
+                    this.S0 = f12;
+                }
+                float interpolation = org.telegram.ui.Components.xq.g.getInterpolation(this.S0 / f12);
+                float f14 = this.T0;
+                float f15 = this.Q0;
+                matrix.postTranslate(((((this.P0 - f15) * interpolation) + f15) * f14) - (f14 / 2.0f), 0.0f);
+                this.M0.setLocalMatrix(matrix);
+                invalidate();
             }
+            f10 = 0.0f;
+            Matrix matrix2 = this.O0;
+            matrix2.reset();
+            matrix2.postTranslate((-this.N0) * 0.7f * f10, 0.0f);
+            long elapsedRealtime2 = SystemClock.elapsedRealtime();
+            j3 = elapsedRealtime2 - this.U0;
+            if (j3 > 20) {
+            }
+            this.U0 = elapsedRealtime2;
+            f11 = this.R0;
+            if (f11 != 0.0f) {
+            }
+            SecureRandom secureRandom2 = Utilities.b;
+            this.R0 = secureRandom2.nextInt(org.telegram.messenger.qs.e3) + 1500;
+            this.S0 = 0.0f;
+            if (this.P0 == -1.0f) {
+            }
+            this.Q0 = this.P0;
+            this.P0 = ((secureRandom2.nextInt(100) - 50) * 0.2f) / 50.0f;
+            float f132 = j3;
+            d = rf.b.d(f132 * 0.02f, e40Var.F2, 1.0f * f132, this.S0);
+            this.S0 = d;
+            f12 = this.R0;
+            if (d > f12) {
+            }
+            float interpolation2 = org.telegram.ui.Components.xq.g.getInterpolation(this.S0 / f12);
+            float f142 = this.T0;
+            float f152 = this.Q0;
+            matrix2.postTranslate(((((this.P0 - f152) * interpolation2) + f152) * f142) - (f142 / 2.0f), 0.0f);
+            this.M0.setLocalMatrix(matrix2);
+            invalidate();
         }
-    }
-
-    @Override // org.telegram.ui.Components.i30
-    public final /* synthetic */ boolean e() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.i30
-    public final /* synthetic */ wq0 getCloseIntoObject() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.i30
-    public final /* synthetic */ String getInitialSearchString() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.i30
-    public final /* synthetic */ boolean x() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.i30
-    public final /* synthetic */ void T() {
-    }
-
-    @Override // org.telegram.ui.Components.i30
-    public final void O(boolean z9, boolean z10) {
+        super.onDraw(canvas);
     }
 }

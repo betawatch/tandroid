@@ -7,12 +7,12 @@ import android.view.View;
 import android.widget.FrameLayout;
 import java.util.HashSet;
 import org.telegram.messenger.a8;
-import org.telegram.ui.ActionBar.a6;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.b6;
+import org.telegram.ui.ActionBar.l6;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
-public final class r3 extends FrameLayout implements a6 {
+public final class r3 extends FrameLayout implements b6 {
     public Path a;
     public float b;
     public int c;
@@ -22,10 +22,10 @@ public final class r3 extends FrameLayout implements a6 {
     public View h;
     public y n;
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(k6.Rf));
-        hashSet.add(Integer.valueOf(k6.Ci));
+        hashSet.add(Integer.valueOf(l6.Rf));
+        hashSet.add(Integer.valueOf(l6.Ci));
     }
 
     @Override // android.view.View
@@ -77,21 +77,21 @@ public final class r3 extends FrameLayout implements a6 {
 
     public void setProgress(float f10) {
         this.b = f10;
-        this.e = i0.a.f(f10, k6.x0(null, k6.Rf, false), this.c);
+        this.e = i0.a.f(f10, l6.x0(null, l6.Rf, false), this.c);
         for (int i7 = 0; i7 < getChildCount(); i7++) {
             getChildAt(i7).setAlpha(f10);
         }
         invalidate();
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
         try {
             if (this.d) {
-                this.c = k6.x0(null, k6.Ci, false);
+                this.c = l6.x0(null, l6.Ci, false);
             }
             if (this.e != 0) {
-                this.e = i0.a.f(this.b, k6.x0(null, k6.Rf, false), this.c);
+                this.e = i0.a.f(this.b, l6.x0(null, l6.Rf, false), this.c);
                 invalidate();
             }
         } catch (Exception e10) {

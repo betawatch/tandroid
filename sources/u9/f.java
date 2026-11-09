@@ -1,7 +1,6 @@
 package u9;
 
 import android.animation.ValueAnimator;
-import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.opengl.EGL14;
 import android.opengl.EGLDisplay;
@@ -23,7 +22,6 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CountDownLatch;
-import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.c20;
@@ -34,39 +32,37 @@ import org.telegram.messenger.qp;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.w7;
 import org.telegram.messenger.yr;
-import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.i2;
 import org.telegram.ui.Cells.l9;
+import org.telegram.ui.Components.a80;
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.fx;
 import org.telegram.ui.Components.hc;
-import org.telegram.ui.Components.n40;
-import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.o40;
+import org.telegram.ui.Components.qj0;
 import org.telegram.ui.Components.rt;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.Components.y1;
-import org.telegram.ui.Components.z70;
-import org.telegram.ui.an;
-import org.telegram.ui.pk;
+import org.telegram.ui.cn;
+import org.telegram.ui.rk;
 import ug.g0;
 import ug.h0;
 import ug.i0;
 import ug.t1;
 import v4.b0;
-import wg.a0;
 import wg.f1;
 import wg.t0;
-import wg.v;
+import wg.u;
+import wg.z;
 import wi.m0;
 import wi.t;
 import x2.w0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f implements Runnable {
     public final /* synthetic */ int a;
@@ -75,8 +71,24 @@ public final /* synthetic */ class f implements Runnable {
 
     public /* synthetic */ f(int i7, Object obj, Object obj2) {
         this.a = i7;
-        this.b = obj;
-        this.c = obj2;
+        this.c = obj;
+        this.b = obj2;
+    }
+
+    private final void a() {
+        o oVar = (o) this.c;
+        ua.b bVar = (ua.b) this.b;
+        synchronized (oVar) {
+            try {
+                if (oVar.b == null) {
+                    oVar.a.add(bVar);
+                } else {
+                    oVar.b.add(bVar.get());
+                }
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:67:0x00a2, code lost:
@@ -86,9 +98,9 @@ public final /* synthetic */ class f implements Runnable {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    private final void a() {
-        ui.i iVar = (ui.i) this.b;
-        ui.h hVar = (ui.h) this.c;
+    private final void b() {
+        ui.i iVar = (ui.i) this.c;
+        ui.h hVar = (ui.h) this.b;
         byte[] bArr = new byte[65536];
         try {
             InputStream inputStream = hVar.b.getInputStream();
@@ -129,10 +141,10 @@ public final /* synthetic */ class f implements Runnable {
         }
     }
 
-    private final void b() {
+    private final void c() {
         int i7;
-        vi.h hVar = (vi.h) this.b;
-        File file = (File) this.c;
+        vi.h hVar = (vi.h) this.c;
+        File file = (File) this.b;
         synchronized (hVar.m) {
             while (i7 < hVar.m.size()) {
                 try {
@@ -151,33 +163,35 @@ public final /* synthetic */ class f implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
+        ua.a aVar;
         int i7;
         TLObject e22;
         TLObject e23;
-        TLRPC.Document document;
         int i10 = 4;
         int i11 = 0;
         switch (this.a) {
             case 0:
-                o oVar = (o) this.b;
-                ua.b bVar = (ua.b) this.c;
-                synchronized (oVar) {
-                    try {
-                        if (oVar.b == null) {
-                            oVar.a.add(bVar);
-                        } else {
-                            oVar.b.add(bVar.get());
-                        }
-                    } finally {
-                    }
+                p pVar = (p) this.c;
+                ua.b bVar = (ua.b) this.b;
+                if (pVar.b != p.d) {
+                    throw new IllegalStateException("provide() can be called only once.");
                 }
+                synchronized (pVar) {
+                    aVar = pVar.a;
+                    pVar.a = null;
+                    pVar.b = bVar;
+                }
+                aVar.c(bVar);
                 return;
             case 1:
-                l9 l9Var = (l9) this.b;
-                View view = (View) this.c;
-                ue.a aVar = (ue.a) l9Var.d;
+                a();
+                return;
+            case 2:
+                l9 l9Var = (l9) this.c;
+                View view = (View) this.b;
+                ue.a aVar2 = (ue.a) l9Var.d;
                 if ((2 & l9Var.a) != 0) {
-                    if (!aVar.c1(view, l9Var.b, l9Var.c)) {
+                    if (!aVar2.c1(view, l9Var.b, l9Var.c)) {
                         l9Var.a = 8 | l9Var.a;
                         return;
                     }
@@ -189,11 +203,11 @@ public final /* synthetic */ class f implements Runnable {
                     return;
                 }
                 return;
-            case 2:
-                i0 i0Var = (i0) this.b;
-                TLObject tLObject = (TLObject) this.c;
+            case 3:
+                i0 i0Var = (i0) this.c;
+                TLObject tLObject = (TLObject) this.b;
                 ArrayList arrayList = i0Var.a2;
-                pj0 pj0Var = i0Var.k1;
+                qj0 qj0Var = i0Var.k1;
                 if (tLObject != null) {
                     arrayList.clear();
                     arrayList.addAll(((TLRPC.TL_messages_chats) tLObject).chats);
@@ -201,17 +215,17 @@ public final /* synthetic */ class f implements Runnable {
                     i0Var.B2.b(i0Var.f2 + 4);
                     int i12 = 0;
                     while (true) {
-                        if (i12 >= pj0Var.getChildCount()) {
+                        if (i12 >= qj0Var.getChildCount()) {
                             i7 = 0;
-                        } else if (pj0Var.getChildAt(i12) instanceof h0) {
-                            i7 = pj0Var.getChildAt(i12).getTop();
+                        } else if (qj0Var.getChildAt(i12) instanceof h0) {
+                            i7 = qj0Var.getChildAt(i12).getTop();
                         } else {
                             i12++;
                         }
                     }
                     i0Var.G1();
                     if (i0Var.d2 >= 0 && i7 != 0) {
-                        ((b0) pj0Var.getLayoutManager()).h1(i0Var.d2 + 1, i7);
+                        ((b0) qj0Var.getLayoutManager()).h1(i0Var.d2 + 1, i7);
                     }
                 }
                 int max = Math.max(arrayList.size(), i0Var.E2.b);
@@ -221,27 +235,27 @@ public final /* synthetic */ class f implements Runnable {
                 g0Var.H = true;
                 g0Var.requestLayout();
                 return;
-            case 3:
-                ((i0) this.b).h1((z70) this.c, true);
-                return;
             case 4:
-                t1 t1Var = (t1) this.b;
-                TLRPC.Document document2 = (TLRPC.Document) this.c;
-                w7.G(t1Var.s);
-                org.telegram.messenger.g0.h3(new f(5, t1Var, w7.I(document2)));
+                ((i0) this.c).h1((a80) this.b, true);
                 return;
             case 5:
-                t1 t1Var2 = (t1) this.b;
-                t1Var2.e = (File) this.c;
-                t1Var2.a();
+                t1 t1Var = (t1) this.c;
+                TLRPC.Document document = (TLRPC.Document) this.b;
+                w7.G(t1Var.s);
+                org.telegram.messenger.g0.h3(new f(6, t1Var, w7.I(document)));
                 return;
             case 6:
-                a();
+                t1 t1Var2 = (t1) this.c;
+                t1Var2.e = (File) this.b;
+                t1Var2.a();
                 return;
             case 7:
-                ui.i iVar = (ui.i) this.b;
+                b();
+                return;
+            case 8:
+                ui.i iVar = (ui.i) this.c;
                 try {
-                    byte[] decode = Base64.decode(((String) this.c).substring(14), 2);
+                    byte[] decode = Base64.decode(((String) this.b).substring(14), 2);
                     if (decode.length >= 8 && decode.length <= 1048584) {
                         iVar.m(decode);
                         return;
@@ -253,22 +267,22 @@ public final /* synthetic */ class f implements Runnable {
                     iVar.h();
                     return;
                 }
-            case 8:
-                ((ui.i) this.b).m((byte[]) this.c);
-                return;
             case 9:
-                v9.a aVar2 = (v9.a) this.b;
-                Runnable runnable = (Runnable) this.c;
-                Process.setThreadPriority(aVar2.c);
-                StrictMode.ThreadPolicy threadPolicy = aVar2.d;
+                ((ui.i) this.c).m((byte[]) this.b);
+                return;
+            case 10:
+                v9.a aVar3 = (v9.a) this.c;
+                Runnable runnable = (Runnable) this.b;
+                Process.setThreadPriority(aVar3.c);
+                StrictMode.ThreadPolicy threadPolicy = aVar3.d;
                 if (threadPolicy != null) {
                     StrictMode.setThreadPolicy(threadPolicy);
                 }
                 runnable.run();
                 return;
-            case 10:
-                Callable callable = (Callable) this.b;
-                v9.h hVar = (v9.h) ((rt) this.c).b;
+            case 11:
+                Callable callable = (Callable) this.c;
+                v9.h hVar = (v9.h) ((rt) this.b).b;
                 try {
                     hVar.k(callable.call());
                     return;
@@ -276,25 +290,25 @@ public final /* synthetic */ class f implements Runnable {
                     hVar.l(e11);
                     return;
                 }
-            case 11:
-                ((vg.e) this.b).c((ArrayList) this.c);
-                return;
             case 12:
-                vg.o oVar2 = (vg.o) this.b;
-                vg.q qVar = (vg.q) this.c;
-                oVar2.getClass();
+                ((vg.e) this.c).c((ArrayList) this.b);
+                return;
+            case 13:
+                vg.o oVar = (vg.o) this.c;
+                vg.q qVar = (vg.q) this.b;
+                oVar.getClass();
                 try {
-                    EGLDisplay eGLDisplay = oVar2.j;
+                    EGLDisplay eGLDisplay = oVar.j;
                     if (eGLDisplay != EGL14.EGL_NO_DISPLAY) {
-                        EGLSurface eGLSurface = oVar2.l;
-                        EGL14.eglMakeCurrent(eGLDisplay, eGLSurface, eGLSurface, oVar2.k);
+                        EGLSurface eGLSurface = oVar.l;
+                        EGL14.eglMakeCurrent(eGLDisplay, eGLSurface, eGLSurface, oVar.k);
                         EGLSurface eGLSurface2 = qVar.h;
                         if (eGLSurface2 != EGL14.EGL_NO_SURFACE) {
-                            EGL14.eglDestroySurface(oVar2.j, eGLSurface2);
+                            EGL14.eglDestroySurface(oVar.j, eGLSurface2);
                         }
                         qVar.h = EGL14.EGL_NO_SURFACE;
-                        if (oVar2.g.length == 0) {
-                            oVar2.b();
+                        if (oVar.g.length == 0) {
+                            oVar.b();
                         }
                     }
                     qVar.b.release();
@@ -303,44 +317,44 @@ public final /* synthetic */ class f implements Runnable {
                     qVar.b.release();
                     throw th2;
                 }
-            case 13:
-                vi.h hVar2 = (vi.h) this.b;
-                Throwable th3 = (Throwable) this.c;
+            case 14:
+                vi.h hVar2 = (vi.h) this.c;
+                Throwable th3 = (Throwable) this.b;
                 hVar2.getClass();
                 hVar2.g(th3 instanceof Exception ? (Exception) th3 : new RuntimeException(th3));
                 return;
-            case 14:
-                b();
-                return;
             case 15:
-                ((t0) this.b).a((ArrayList) this.c);
+                c();
                 return;
             case 16:
-                ((v) this.b).a((TLRPC.TL_error) this.c);
+                ((t0) this.c).a((ArrayList) this.b);
                 return;
             case 17:
-                yr yrVar = (yr) this.b;
-                c20 c20Var = (c20) this.c;
+                ((u) this.c).a((TLRPC.TL_error) this.b);
+                return;
+            case 18:
+                yr yrVar = (yr) this.c;
+                c20 c20Var = (c20) this.b;
                 HashMap h02 = yrVar.h0();
                 if (h02.isEmpty()) {
                     return;
                 }
                 org.telegram.messenger.g0.h3(new y1(c20Var, h02, 1));
                 return;
-            case 18:
-                ((fx) this.b).a((ArrayList) this.c);
-                return;
             case 19:
-                cc I = hc.a0((an) this.b).I(R.raw.stars_send, id.M0(2131745095, null), org.telegram.messenger.g0.X2(id.H(',', "StarsGiveawaySentPopupInfo", (int) ((TL_stars.TL_starsGiveawayOption) this.c).stars)));
+                ((fx) this.c).a((ArrayList) this.b);
+                return;
+            case 20:
+                cc I = hc.a0((cn) this.c).I(R.raw.stars_send, id.M0(2131745092, null), org.telegram.messenger.g0.X2(id.H(',', "StarsGiveawaySentPopupInfo", (int) ((TL_stars.TL_starsGiveawayOption) this.b).stars)));
                 I.j = 5000;
                 I.k(true);
                 return;
-            case 20:
-                qs.f(p10.s0).k(qs.V2, ((a0) this.b).T1, Boolean.TRUE, (TL_stories.PrepaidGiveaway) this.c);
-                return;
             case 21:
-                f1 f1Var = (f1) this.b;
-                TLObject tLObject2 = (TLObject) this.c;
+                qs.f(p10.s0).k(qs.V2, ((z) this.c).T1, Boolean.TRUE, (TL_stories.PrepaidGiveaway) this.b);
+                return;
+            case 22:
+                f1 f1Var = (f1) this.c;
+                TLObject tLObject2 = (TLObject) this.b;
                 ArrayList arrayList2 = f1Var.c2;
                 arrayList2.clear();
                 f1Var.p2 = -1;
@@ -376,22 +390,22 @@ public final /* synthetic */ class f implements Runnable {
                 }
                 f1Var.p1(true, true);
                 return;
-            case 22:
-                wh.i iVar2 = (wh.i) this.b;
-                iVar2.b.add((String) this.c);
+            case 23:
+                wh.i iVar2 = (wh.i) this.c;
+                iVar2.b.add((String) this.b);
                 iVar2.invalidate();
                 return;
-            case 23:
-                ((wi.k) this.b).Z((m0) this.c);
-                return;
             case 24:
-                wi.k kVar = (wi.k) this.b;
-                HandlerThread handlerThread = (HandlerThread) this.c;
+                ((wi.k) this.c).Y((m0) this.b);
+                return;
+            case 25:
+                wi.k kVar = (wi.k) this.c;
+                HandlerThread handlerThread = (HandlerThread) this.b;
                 kVar.j();
-                wi.n nVar = kVar.x;
+                wi.n nVar = kVar.w;
                 if (nVar != null) {
                     long p10 = nVar.p();
-                    t tVar = kVar.w;
+                    t tVar = kVar.v;
                     if (tVar != null && p10 != Long.MAX_VALUE) {
                         tVar.q = Math.max(0L, p10) * 1000;
                         Handler handler = tVar.u;
@@ -400,22 +414,22 @@ public final /* synthetic */ class f implements Runnable {
                         }
                     }
                 }
-                kVar.o();
-                wi.n nVar2 = kVar.x;
+                kVar.n();
+                wi.n nVar2 = kVar.w;
                 if (nVar2 != null) {
                     nVar2.u();
-                    kVar.x = null;
+                    kVar.w = null;
                 }
-                if (kVar.x0 <= 0) {
+                if (kVar.w0 <= 0) {
                     handlerThread.quitSafely();
                     return;
                 }
-                kVar.j.b("release waits for camera open results: pending=" + kVar.x0);
-                kVar.y0 = handlerThread;
+                kVar.j.b("release waits for camera open results: pending=" + kVar.w0);
+                kVar.x0 = handlerThread;
                 return;
-            case 25:
-                t tVar2 = (t) this.b;
-                CountDownLatch countDownLatch = (CountDownLatch) this.c;
+            case 26:
+                t tVar2 = (t) this.c;
+                CountDownLatch countDownLatch = (CountDownLatch) this.b;
                 tVar2.getClass();
                 try {
                     try {
@@ -429,117 +443,56 @@ public final /* synthetic */ class f implements Runnable {
                     tVar2.i();
                 }
                 return;
-            case 26:
-                rt rtVar = (rt) this.b;
-                m0 m0Var = (m0) this.c;
+            case 27:
+                rt rtVar = (rt) this.c;
+                m0 m0Var = (m0) this.b;
                 wi.t0 t0Var = (wi.t0) rtVar.b;
                 t0Var.R++;
                 t0Var.y = true;
                 t0Var.m.b("camera switch started: target=" + m0Var);
-                n40 n40Var = (n40) t0Var.d.b;
-                FrameLayout frameLayout = n40Var.x;
-                n40Var.t0++;
-                ValueAnimator valueAnimator = n40Var.c0;
+                o40 o40Var = (o40) t0Var.d.b;
+                FrameLayout frameLayout = o40Var.x;
+                o40Var.t0++;
+                ValueAnimator valueAnimator = o40Var.c0;
                 if (valueAnimator != null) {
                     valueAnimator.removeAllListeners();
-                    n40Var.c0.cancel();
-                    n40Var.c0 = null;
+                    o40Var.c0.cancel();
+                    o40Var.c0 = null;
                 }
-                n40Var.o0 = true;
-                n40Var.p0 = false;
-                n40Var.q0 = false;
-                n40Var.r0 = false;
-                n40Var.s0 = SystemClock.elapsedRealtime();
-                pk pkVar = n40Var.D;
-                n40Var.A(false);
-                Bitmap bitmap = n40Var.u0;
+                o40Var.o0 = true;
+                o40Var.p0 = false;
+                o40Var.q0 = false;
+                o40Var.r0 = false;
+                o40Var.s0 = SystemClock.elapsedRealtime();
+                rk rkVar = o40Var.D;
+                o40Var.A(false);
+                Bitmap bitmap = o40Var.u0;
                 if (bitmap != null) {
-                    pkVar.setImageBitmap(bitmap);
-                    n40Var.n0 = true;
-                    pkVar.animate().cancel();
-                    pkVar.setAlpha(1.0f);
+                    rkVar.setImageBitmap(bitmap);
+                    o40Var.n0 = true;
+                    rkVar.animate().cancel();
+                    rkVar.setAlpha(1.0f);
                 }
                 frameLayout.animate().cancel();
                 frameLayout.setRotationY(0.0f);
                 frameLayout.setCameraDistance(frameLayout.getMeasuredHeight() * 8.0f);
-                int i14 = n40Var.t0;
+                int i14 = o40Var.t0;
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                n40Var.c0 = ofFloat;
+                o40Var.c0 = ofFloat;
                 ofFloat.setDuration(580L);
-                n40Var.c0.setInterpolator(xq.h);
-                n40Var.c0.addUpdateListener(new i2(n40Var, i14, i10));
-                n40Var.c0.addListener(new m2(n40Var, i14, 10));
-                n40Var.c0.start();
+                o40Var.c0.setInterpolator(xq.h);
+                o40Var.c0.addUpdateListener(new i2(o40Var, i14, i10));
+                o40Var.c0.addListener(new m2(o40Var, i14, 10));
+                o40Var.c0.start();
                 a8.b("RoundVideo camera flip started: facing=" + m0Var + ", minimumDurationMs=580");
-                n40Var.D();
+                o40Var.D();
                 t0Var.o();
                 return;
-            case 27:
-                ((h2.j) this.b).accept(this.c);
-                return;
             case 28:
-                ((w0) this.b).y((c0) this.c);
+                ((h2.j) this.c).accept(this.b);
                 return;
             default:
-                yf.d dVar = (yf.d) this.b;
-                TLObject tLObject3 = (TLObject) this.c;
-                if (tLObject3 != null) {
-                    if (tLObject3 instanceof TL_account.TL_savedRingtonesNotModified) {
-                        dVar.f(true);
-                    } else if (tLObject3 instanceof TL_account.TL_savedRingtones) {
-                        TL_account.TL_savedRingtones tL_savedRingtones = (TL_account.TL_savedRingtones) tLObject3;
-                        ArrayList<TLRPC.Document> arrayList5 = tL_savedRingtones.ringtones;
-                        ArrayList arrayList6 = dVar.e;
-                        if (!dVar.f) {
-                            dVar.f(false);
-                            dVar.f = true;
-                        }
-                        HashMap hashMap = new HashMap();
-                        int size3 = arrayList6.size();
-                        int i15 = 0;
-                        while (i15 < size3) {
-                            Object obj = arrayList6.get(i15);
-                            i15++;
-                            yf.c cVar = (yf.c) obj;
-                            if (cVar.b != null && (document = cVar.a) != null) {
-                                hashMap.put(Long.valueOf(document.id), cVar.b);
-                            }
-                        }
-                        arrayList6.clear();
-                        SharedPreferences d = dVar.d();
-                        d.edit().clear().apply();
-                        SharedPreferences.Editor edit = d.edit();
-                        edit.putInt("count", arrayList5.size());
-                        for (int i16 = 0; i16 < arrayList5.size(); i16++) {
-                            TLRPC.Document document3 = arrayList5.get(i16);
-                            String str = (String) hashMap.get(Long.valueOf(document3.id));
-                            SerializedData serializedData = new SerializedData(document3.getObjectSize());
-                            document3.serializeToStream(serializedData);
-                            edit.putString("tone_document" + i16, Utilities.f(serializedData.toByteArray()));
-                            if (str != null) {
-                                edit.putString("tone_local_path" + i16, str);
-                            }
-                            yf.c cVar2 = new yf.c();
-                            cVar2.a = document3;
-                            cVar2.b = str;
-                            int i17 = dVar.d;
-                            dVar.d = i17 + 1;
-                            cVar2.c = i17;
-                            arrayList6.add(cVar2);
-                        }
-                        edit.apply();
-                        qs.f(dVar.c).k(qs.e5, new Object[0]);
-                        SharedPreferences.Editor edit2 = dVar.d().edit();
-                        long j3 = tL_savedRingtones.hash;
-                        yf.d.g = j3;
-                        SharedPreferences.Editor putLong = edit2.putLong("hash", j3);
-                        long currentTimeMillis = System.currentTimeMillis();
-                        yf.d.h = currentTimeMillis;
-                        putLong.putLong("lastReload", currentTimeMillis).apply();
-                    }
-                    dVar.b();
-                    return;
-                }
+                ((w0) this.c).y((c0) this.b);
                 return;
         }
     }

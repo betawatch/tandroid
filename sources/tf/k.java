@@ -2,7 +2,7 @@ package tf;
 
 import org.telegram.messenger.qs;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class k {
     public static final int[][] h = {new int[]{11025, -1, 22050, 44100}, new int[]{12000, -1, 24000, 48000}, new int[]{8000, -1, androidx.car.app.media.b.AUDIO_CONTENT_SAMPLING_RATE, 32000}, new int[]{-1, -1, -1, -1}};

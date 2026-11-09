@@ -1,46 +1,27 @@
 package sh;
 
-import java.util.ArrayList;
-import org.telegram.messenger.c20;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import sg.t0;
+import android.content.Context;
+import android.view.View;
+import org.telegram.messenger.g0;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.Components.mz;
+import org.telegram.ui.Components.qj0;
+import org.telegram.ui.Components.x31;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class m {
-    public final int a;
-    public final TLRPC.InputPeer b;
-    public final int c;
-    public final byte[] d;
-    public final t0 e;
-    public final c20 f;
-    public String g;
-    public boolean h;
-    public boolean i;
-    public final ArrayList j = new ArrayList();
+public final class m extends x31 {
+    public static final /* synthetic */ int b = 0;
 
-    public m(int i7, TLRPC.InputPeer inputPeer, int i10, byte[] bArr, t0 t0Var, c20 c20Var) {
-        this.a = i7;
-        this.b = inputPeer;
-        this.c = i10;
-        this.d = bArr;
-        this.e = t0Var;
-        this.f = c20Var;
+    static {
+        x31.h(new m());
     }
 
-    public final void a() {
-        if (this.h || this.i) {
-            return;
-        }
-        this.i = true;
-        TLRPC.TL_messages_getPollVotes tL_messages_getPollVotes = new TLRPC.TL_messages_getPollVotes();
-        String str = this.g;
-        tL_messages_getPollVotes.limit = str != null ? 10 : 15;
-        tL_messages_getPollVotes.peer = this.b;
-        tL_messages_getPollVotes.id = this.c;
-        tL_messages_getPollVotes.option = this.d;
-        tL_messages_getPollVotes.offset = str;
-        ConnectionsManager.getInstance(this.a).sendRequestTyped(tL_messages_getPollVotes, new d3.b(1), new h(this, 1));
+    @Override // org.telegram.ui.Components.x31
+    public final View d(Context context, qj0 qj0Var, int i7, g6 g6Var) {
+        mz mzVar = new mz(context, null);
+        mzVar.setViewType(16);
+        mzVar.setMinimumHeight(g0.L(48.0f));
+        return mzVar;
     }
 }

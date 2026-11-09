@@ -8,36 +8,36 @@ import java.util.Date;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.id;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k5;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l5;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.s6;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class h extends FrameLayout {
-    public final k5 a;
+    public final l5 a;
     public long b;
 
-    public h(Context context, f6 f6Var) {
+    public h(Context context, g6 g6Var) {
         super(context);
-        k5 k5Var = new k5(context);
-        k5Var.setTextSize(16);
-        r6.Y(k5Var, k6.j5, f6Var);
-        k5Var.setGravity(id.a0 ? 5 : 3);
-        addView(k5Var);
-        k5 k5Var2 = new k5(context);
-        this.a = k5Var2;
-        k5Var2.setTextSize(16);
-        r6.Y(k5Var2, k6.L6, f6Var);
-        k5Var2.setGravity(id.a0 ? 3 : 5);
-        addView(k5Var2);
-        k5Var.l(id.a0("BoostingDateAndTime", null, 2131753539, new Object[0]), false);
+        l5 l5Var = new l5(context);
+        l5Var.setTextSize(16);
+        s6.X(l5Var, l6.j5, g6Var);
+        l5Var.setGravity(id.a0 ? 5 : 3);
+        addView(l5Var);
+        l5 l5Var2 = new l5(context);
+        this.a = l5Var2;
+        l5Var2.setTextSize(16);
+        s6.X(l5Var2, l6.L6, g6Var);
+        l5Var2.setGravity(id.a0 ? 3 : 5);
+        addView(l5Var2);
+        l5Var.l(id.a0("BoostingDateAndTime", null, 2131753539, new Object[0]), false);
         boolean z9 = id.a0;
-        k5Var.setLayoutParams(ha.d(-1, -2.0f, (z9 ? 5 : 3) | 16, z9 ? 0.0f : 21.0f, 0.0f, z9 ? 21.0f : 0.0f, 0.0f));
+        l5Var.setLayoutParams(ha.d(-1, -2.0f, (z9 ? 5 : 3) | 16, z9 ? 0.0f : 21.0f, 0.0f, z9 ? 21.0f : 0.0f, 0.0f));
         boolean z10 = id.a0;
-        k5Var2.setLayoutParams(ha.d(-1, -2.0f, (z10 ? 3 : 5) | 16, z10 ? 21.0f : 0.0f, 0.0f, z10 ? 0.0f : 21.0f, 0.0f));
-        r6.i(k6.h5, this, f6Var);
+        l5Var2.setLayoutParams(ha.d(-1, -2.0f, (z10 ? 3 : 5) | 16, z10 ? 21.0f : 0.0f, 0.0f, z10 ? 0.0f : 21.0f, 0.0f));
+        s6.h(l6.h5, this, g6Var);
     }
 
     public long getSelectedTime() {
@@ -52,6 +52,6 @@ public final class h extends FrameLayout {
     public void setDate(long j3) {
         this.b = j3;
         Date date = new Date(j3);
-        this.a.l(id.a0("formatDateAtTime", null, 2131742786, id.E0().q0().format(date), id.E0().p0().format(date)), false);
+        this.a.l(id.a0("formatDateAtTime", null, 2131742783, id.E0().q0().format(date), id.E0().p0().format(date)), false);
     }
 }

@@ -1,167 +1,179 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import android.os.AsyncTask;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.Locale;
+import java.util.Scanner;
+import org.json.JSONObject;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class bl0 implements TextWatcher {
-    public final String[] a = {"34", "37"};
-    public final String[] b = {"300", "301", "302", "303", "304", "305", "309", "36", "38", "39"};
-    public final String[] c = {"2221", "2222", "2223", "2224", "2225", "2226", "2227", "2228", "2229", "2200", "2201", "2202", "2203", "2204", "8600", "9860", "223", "224", "225", "226", "227", "228", "229", "23", "24", "25", "26", "270", "271", "2720", "50", "51", "52", "53", "54", "55", "4", "60", "62", "64", "65", "35"};
-    public int d = -1;
-    public int e;
-    public final /* synthetic */ hl0 f;
+public final class bl0 extends AsyncTask {
+    public final /* synthetic */ uc.a a;
+    public final /* synthetic */ jl0 b;
 
-    public bl0(hl0 hl0Var) {
-        this.f = hl0Var;
+    public bl0(jl0 jl0Var, uc.a aVar) {
+        this.b = jl0Var;
+        this.a = aVar;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        int i7;
-        boolean z9;
-        int i10;
-        int i11;
-        String[] strArr;
-        int i12;
-        String str;
-        hl0 hl0Var = this.f;
-        if (hl0Var.o0) {
+    /* JADX WARN: Can't wrap try/catch for region: R(11:0|1|(2:2|3)|(9:(13:46|47|(3:49|50|(1:52))|(1:7)(2:42|(1:44)(1:45))|8|9|10|11|12|13|14|15|(3:23|24|25)(3:19|20|21))|12|13|14|15|(1:17)|23|24|25)|5|(0)(0)|8|9|10|11|(2:(0)|(0))) */
+    /* JADX WARN: Code restructure failed: missing block: B:38:0x0134, code lost:
+    
+        r0 = e;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:39:0x016c, code lost:
+    
+        org.telegram.messenger.a8.g(r0, true);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:40:0x016f, code lost:
+    
+        if (r5 == null) goto L51;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:53:0x0084, code lost:
+    
+        if (r5.endsWith(".smart-glocal.com/cds/v1/tokenize/card") == false) goto L14;
+     */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x0098 A[Catch: all -> 0x0087, Exception -> 0x0094, TryCatch #4 {all -> 0x0087, blocks: (B:3:0x000f, B:47:0x0063, B:50:0x0076, B:52:0x007e, B:7:0x008e, B:8:0x00af, B:42:0x0098, B:44:0x00a0, B:45:0x00a8), top: B:2:0x000f }] */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x0176  */
+    /* JADX WARN: Removed duplicated region for block: B:7:0x008e A[Catch: all -> 0x0087, Exception -> 0x0094, TRY_ENTER, TryCatch #4 {all -> 0x0087, blocks: (B:3:0x000f, B:47:0x0063, B:50:0x0076, B:52:0x007e, B:7:0x008e, B:8:0x00af, B:42:0x0098, B:44:0x00a0, B:45:0x00a8), top: B:2:0x000f }] */
+    /* JADX WARN: Type inference failed for: r8v0 */
+    /* JADX WARN: Type inference failed for: r8v1, types: [java.net.HttpURLConnection] */
+    /* JADX WARN: Type inference failed for: r8v2 */
+    @Override // android.os.AsyncTask
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final Object doInBackground(Object[] objArr) {
+        HttpURLConnection httpURLConnection;
+        ?? r82;
+        JSONObject jSONObject;
+        String string;
+        int responseCode;
+        jl0 jl0Var = this.b;
+        uc.a aVar = this.a;
+        try {
+            try {
+                try {
+                    jSONObject = new JSONObject();
+                    JSONObject jSONObject2 = new JSONObject();
+                    jSONObject2.put("number", aVar.a);
+                    jSONObject2.put("expiration_month", String.format(Locale.US, "%02d", aVar.c));
+                    jSONObject2.put("expiration_year", "" + aVar.d);
+                    jSONObject2.put("security_code", "" + aVar.b);
+                    jSONObject.put("card", jSONObject2);
+                } catch (Throwable th2) {
+                    th = th2;
+                    r82 = aVar;
+                    if (r82 != 0) {
+                        r82.disconnect();
+                    }
+                    throw th;
+                }
+            } catch (Throwable th3) {
+                th = th3;
+                r82 = 0;
+                if (r82 != 0) {
+                }
+                throw th;
+            }
+        } catch (Exception e10) {
+            e = e10;
+            httpURLConnection = null;
+        }
+        try {
+            if (jl0Var.C0.native_params != null) {
+                try {
+                    string = new JSONObject(jl0Var.C0.native_params.data).getString("tokenize_url");
+                    if (string != null) {
+                        try {
+                            if (string.startsWith("https://")) {
+                            }
+                        } catch (Exception unused) {
+                        }
+                    }
+                } catch (Exception unused2) {
+                }
+                httpURLConnection = (HttpURLConnection) (string == null ? new URL(string) : jl0Var.C0.invoice.test ? new URL("https://tgb-playground.smart-glocal.com/cds/v1/tokenize/card") : new URL("https://tgb.smart-glocal.com/cds/v1/tokenize/card")).openConnection();
+                httpURLConnection.setConnectTimeout(30000);
+                httpURLConnection.setReadTimeout(80000);
+                httpURLConnection.setUseCaches(false);
+                httpURLConnection.setDoOutput(true);
+                httpURLConnection.setRequestMethod("POST");
+                httpURLConnection.setRequestProperty("Content-Type", "application/json");
+                httpURLConnection.setRequestProperty("X-PUBLIC-TOKEN", jl0Var.j0);
+                OutputStream outputStream = httpURLConnection.getOutputStream();
+                outputStream.write(jSONObject.toString().getBytes("UTF-8"));
+                outputStream.close();
+                responseCode = httpURLConnection.getResponseCode();
+                if (responseCode >= 200 || responseCode >= 300) {
+                    boolean z9 = org.telegram.messenger.r2.a;
+                    StringBuilder sb2 = new StringBuilder("");
+                    InputStream errorStream = httpURLConnection.getErrorStream();
+                    String next = new Scanner(errorStream, "UTF-8").useDelimiter("\\A").next();
+                    errorStream.close();
+                    sb2.append(next);
+                    org.telegram.messenger.a8.d(sb2.toString());
+                    httpURLConnection.disconnect();
+                    return null;
+                }
+                JSONObject jSONObject3 = new JSONObject();
+                InputStream inputStream = httpURLConnection.getInputStream();
+                String next2 = new Scanner(inputStream, "UTF-8").useDelimiter("\\A").next();
+                inputStream.close();
+                jSONObject3.put("token", new JSONObject(next2).getJSONObject("data").getString("token"));
+                jSONObject3.put(TeXSymbolParser.TYPE_ATTR, "card");
+                String jSONObject4 = jSONObject3.toString();
+                httpURLConnection.disconnect();
+                return jSONObject4;
+            }
+            outputStream.write(jSONObject.toString().getBytes("UTF-8"));
+            outputStream.close();
+            responseCode = httpURLConnection.getResponseCode();
+            if (responseCode >= 200) {
+            }
+            boolean z92 = org.telegram.messenger.r2.a;
+            StringBuilder sb22 = new StringBuilder("");
+            InputStream errorStream2 = httpURLConnection.getErrorStream();
+            String next3 = new Scanner(errorStream2, "UTF-8").useDelimiter("\\A").next();
+            errorStream2.close();
+            sb22.append(next3);
+            org.telegram.messenger.a8.d(sb22.toString());
+            httpURLConnection.disconnect();
+            return null;
+        } finally {
+        }
+        string = null;
+        httpURLConnection = (HttpURLConnection) (string == null ? new URL(string) : jl0Var.C0.invoice.test ? new URL("https://tgb-playground.smart-glocal.com/cds/v1/tokenize/card") : new URL("https://tgb.smart-glocal.com/cds/v1/tokenize/card")).openConnection();
+        httpURLConnection.setConnectTimeout(30000);
+        httpURLConnection.setReadTimeout(80000);
+        httpURLConnection.setUseCaches(false);
+        httpURLConnection.setDoOutput(true);
+        httpURLConnection.setRequestMethod("POST");
+        httpURLConnection.setRequestProperty("Content-Type", "application/json");
+        httpURLConnection.setRequestProperty("X-PUBLIC-TOKEN", jl0Var.j0);
+        OutputStream outputStream2 = httpURLConnection.getOutputStream();
+    }
+
+    @Override // android.os.AsyncTask
+    public final void onPostExecute(Object obj) {
+        String str = (String) obj;
+        jl0 jl0Var = this.b;
+        if (jl0Var.Q0) {
             return;
         }
-        int i13 = 0;
-        EditTextBoldCursor editTextBoldCursor = hl0Var.f[0];
-        int selectionStart = editTextBoldCursor.getSelectionStart();
-        String obj = editTextBoldCursor.getText().toString();
-        int i14 = 3;
-        int i15 = 1;
-        if (this.d == 3) {
-            obj = obj.substring(0, this.e) + obj.substring(this.e + 1);
-            selectionStart--;
-        }
-        StringBuilder sb2 = new StringBuilder(obj.length());
-        int i16 = 0;
-        while (i16 < obj.length()) {
-            int i17 = i16 + 1;
-            String substring = obj.substring(i16, i17);
-            if ("0123456789".contains(substring)) {
-                sb2.append(substring);
-            }
-            i16 = i17;
-        }
-        hl0Var.o0 = true;
-        String str2 = null;
-        int i18 = 100;
-        if (sb2.length() > 0) {
-            String sb3 = sb2.toString();
-            int i19 = 0;
-            while (true) {
-                if (i19 >= i14) {
-                    i7 = i15;
-                    break;
-                }
-                if (i19 == 0) {
-                    strArr = this.c;
-                    i12 = 16;
-                    str = "xxxx xxxx xxxx xxxx";
-                } else if (i19 != i15) {
-                    strArr = this.b;
-                    i12 = 14;
-                    str = "xxxx xxxx xxxx xx";
-                } else {
-                    strArr = this.a;
-                    i12 = 15;
-                    str = "xxxx xxxx xxxx xxx";
-                }
-                i7 = i15;
-                for (int i20 = i13; i20 < strArr.length; i20++) {
-                    String str3 = strArr[i20];
-                    if (sb3.length() <= str3.length()) {
-                        if (str3.startsWith(sb3)) {
-                            i18 = i12;
-                            str2 = str;
-                            break;
-                        }
-                    } else {
-                        if (sb3.startsWith(str3)) {
-                            i18 = i12;
-                            str2 = str;
-                            break;
-                        }
-                    }
-                }
-                if (str2 != null) {
-                    break;
-                }
-                i19++;
-                i15 = i7;
-                i13 = 0;
-                i14 = 3;
-            }
-            if (sb2.length() > i18) {
-                sb2.setLength(i18);
-            }
+        if (str == null) {
+            org.telegram.ui.Components.v4.t0(org.telegram.messenger.id.M0(2131747404, null), jl0Var);
         } else {
-            i7 = 1;
+            jl0Var.w0 = str;
+            jl0Var.z0();
         }
-        if (str2 != null) {
-            if (sb2.length() == i18) {
-                hl0Var.f[i7].requestFocus();
-            }
-            org.telegram.ui.ActionBar.r6.V(editTextBoldCursor, org.telegram.ui.ActionBar.k6.G6, hl0Var.Y0);
-            int i21 = 0;
-            while (true) {
-                if (i21 >= sb2.length()) {
-                    break;
-                }
-                if (i21 < str2.length()) {
-                    if (str2.charAt(i21) == ' ') {
-                        sb2.insert(i21, ' ');
-                        i21++;
-                        if (selectionStart == i21 && (i11 = this.d) != 2 && i11 != 3) {
-                            selectionStart++;
-                        }
-                    }
-                    i21++;
-                } else {
-                    sb2.insert(i21, ' ');
-                    if (selectionStart == i21 + 1 && (i10 = this.d) != 2 && i10 != 3) {
-                        selectionStart++;
-                    }
-                }
-            }
-        }
-        if (sb2.toString().equals(editable.toString())) {
-            z9 = false;
-        } else {
-            z9 = false;
-            editable.replace(0, editable.length(), sb2);
-        }
-        if (selectionStart >= 0) {
-            editTextBoldCursor.setSelection(Math.min(selectionStart, editTextBoldCursor.length()));
-        }
-        hl0Var.o0 = z9;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
-        if (i10 == 0 && i11 == 1) {
-            this.d = 1;
-            return;
-        }
-        if (i10 != 1 || i11 != 0) {
-            this.d = -1;
-        } else if (charSequence.charAt(i7) != ' ' || i7 <= 0) {
-            this.d = 2;
-        } else {
-            this.d = 3;
-            this.e = i7 - 1;
-        }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+        jl0Var.N0(true, false);
+        jl0Var.J0(false);
     }
 }

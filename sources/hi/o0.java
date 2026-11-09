@@ -2,7 +2,7 @@ package hi;
 
 import android.app.Activity;
 import android.content.DialogInterface;
-import di.o7;
+import di.p7;
 import java.util.Iterator;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.json.JSONObject;
@@ -10,7 +10,7 @@ import org.telegram.messenger.c20;
 import org.telegram.ui.Cells.z5;
 import org.telegram.ui.Components.u4;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o0 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -75,10 +75,10 @@ public final /* synthetic */ class o0 implements DialogInterface.OnDismissListen
             case 4:
                 org.telegram.ui.web.x0 x0Var = (org.telegram.ui.web.x0) this.c;
                 AtomicBoolean atomicBoolean = (AtomicBoolean) this.b;
-                o7 o7Var = (o7) this.d;
+                p7 p7Var = (p7) this.d;
                 x0Var.getClass();
                 if (!atomicBoolean.get()) {
-                    x0Var.x(o7Var, "popup_closed", new JSONObject());
+                    x0Var.x(p7Var, "popup_closed", new JSONObject());
                 }
                 x0Var.c0 = null;
                 x0Var.e0 = System.currentTimeMillis();

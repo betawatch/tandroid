@@ -1,215 +1,128 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.animation.ValueAnimator;
-import android.util.Property;
-import android.util.SparseArray;
-import android.view.View;
-import android.view.ViewTreeObserver;
-import androidx.recyclerview.widget.RecyclerView;
+import android.app.Activity;
+import android.content.SharedPreferences;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class vp implements ViewTreeObserver.OnPreDrawListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ View b;
-    public final /* synthetic */ int c;
+public final /* synthetic */ class vp implements org.telegram.messenger.c20 {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ long c;
     public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object g;
+    public final /* synthetic */ Serializable h;
 
-    public /* synthetic */ vp(Object obj, org.telegram.ui.Components.mz mzVar, int i7, int i10) {
-        this.a = i10;
-        this.d = obj;
-        this.b = mzVar;
-        this.c = i7;
+    public /* synthetic */ vp(int i7, long j3, Activity activity, ArrayList arrayList, HashMap hashMap, org.telegram.messenger.c20 c20Var, org.telegram.ui.ActionBar.g6 g6Var) {
+        this.b = i7;
+        this.d = arrayList;
+        this.c = j3;
+        this.e = activity;
+        this.f = g6Var;
+        this.g = c20Var;
+        this.h = hashMap;
     }
 
-    @Override // android.view.ViewTreeObserver.OnPreDrawListener
-    public final boolean onPreDraw() {
-        boolean z9;
-        float f10;
-        float f11;
-        int i7;
-        int i10 = this.a;
-        int i11 = this.c;
-        Object obj = this.d;
-        View view = this.b;
-        float f12 = 0.0f;
-        int i12 = 2;
-        int i13 = 0;
-        boolean z10 = true;
-        switch (i10) {
+    @Override // org.telegram.messenger.c20
+    public final void a(Object obj) {
+        int i7 = this.a;
+        Serializable serializable = this.h;
+        Object obj2 = this.g;
+        Object obj3 = this.f;
+        Object obj4 = this.e;
+        Object obj5 = this.d;
+        switch (i7) {
             case 0:
-                oq oqVar = (oq) obj;
-                oqVar.c.getViewTreeObserver().removeOnPreDrawListener(this);
-                int childCount = oqVar.c.getChildCount();
-                AnimatorSet animatorSet = new AnimatorSet();
-                for (int i14 = 0; i14 < childCount; i14++) {
-                    View childAt = oqVar.c.getChildAt(i14);
-                    if (childAt != view) {
-                        oqVar.c.getClass();
-                        if (RecyclerView.R(childAt) >= i11) {
-                            childAt.setAlpha(0.0f);
-                            int min = (int) ((Math.min(oqVar.c.getMeasuredHeight(), Math.max(0, childAt.getTop())) / oqVar.c.getMeasuredHeight()) * 100.0f);
-                            ObjectAnimator ofFloat = ObjectAnimator.ofFloat(childAt, (Property<View, Float>) View.ALPHA, 0.0f, 1.0f);
-                            ofFloat.setStartDelay(min);
-                            ofFloat.setDuration(200L);
-                            animatorSet.playTogether(ofFloat);
-                        }
-                    }
-                }
-                if (view != null && view.getParent() == null) {
-                    oqVar.c.addView(view);
-                    v4.n0 layoutManager = oqVar.c.getLayoutManager();
-                    if (layoutManager != null) {
-                        layoutManager.M(view);
-                        z9 = true;
-                        ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, view.getAlpha(), 0.0f);
-                        ofFloat2.addListener(new va(this, layoutManager));
-                        ofFloat2.start();
-                        animatorSet.start();
-                        return z9;
-                    }
-                }
-                z9 = true;
-                animatorSet.start();
-                return z9;
+                qq qqVar = (qq) obj5;
+                TLObject tLObject = (TLObject) obj4;
+                TLRPC.TL_chatAdminRights tL_chatAdminRights = (TLRPC.TL_chatAdminRights) obj3;
+                TLRPC.TL_chatBannedRights tL_chatBannedRights = (TLRPC.TL_chatBannedRights) obj2;
+                String str = (String) serializable;
+                int intValue = ((Integer) obj).intValue();
+                boolean[] zArr = new boolean[1];
+                boolean z9 = (tLObject instanceof TLRPC.TL_channelParticipantAdmin) || (tLObject instanceof TLRPC.TL_chatParticipantAdmin);
+                long j3 = qqVar.M;
+                TLRPC.TL_chatBannedRights tL_chatBannedRights2 = qqVar.D;
+                long j10 = this.c;
+                yp ypVar = new yp(qqVar, j10, j3, tL_chatAdminRights, tL_chatBannedRights2, tL_chatBannedRights, str, intValue, zArr, j10);
+                ypVar.X0 = new zp(qqVar, intValue, j10, this.b, z9, zArr);
+                qqVar.presentFragment(ypVar);
+                break;
             case 1:
-                float f13 = 0.0f;
-                org.telegram.ui.Components.uj ujVar = (org.telegram.ui.Components.uj) obj;
-                org.telegram.ui.Components.vj vjVar = ujVar.X;
-                vjVar.getViewTreeObserver().removeOnPreDrawListener(this);
-                int childCount2 = vjVar.r.getChildCount();
-                AnimatorSet animatorSet2 = new AnimatorSet();
-                int i15 = 0;
-                while (i15 < childCount2) {
-                    View childAt2 = vjVar.r.getChildAt(i15);
-                    if (view != null) {
-                        vjVar.r.getClass();
-                        if (RecyclerView.R(childAt2) < i11) {
-                            i15++;
-                            f13 = 0.0f;
+                ArrayList arrayList = (ArrayList) obj5;
+                Activity activity = (Activity) obj4;
+                org.telegram.ui.ActionBar.g6 g6Var = (org.telegram.ui.ActionBar.g6) obj3;
+                org.telegram.messenger.c20 c20Var = (org.telegram.messenger.c20) obj2;
+                HashMap hashMap = (HashMap) serializable;
+                boolean booleanValue = ((Boolean) obj).booleanValue();
+                int i10 = this.b;
+                if (booleanValue) {
+                    SharedPreferences.Editor edit = org.telegram.messenger.qp.s1(i10).e7.edit();
+                    int size = arrayList.size();
+                    int i11 = 0;
+                    while (i11 < size) {
+                        Object obj6 = arrayList.get(i11);
+                        i11++;
+                        Long l10 = (Long) obj6;
+                        long longValue = l10.longValue();
+                        long N1 = org.telegram.messenger.qp.s1(i10).N1(longValue);
+                        if (N1 <= 0 && longValue > 0) {
+                            N1 = org.telegram.messenger.m5.k(org.telegram.messenger.qp.s1(i10).J2(longValue));
                         }
+                        edit.putLong(rf.b.h(longValue, "ask_paid_message_", "_price"), N1);
+                        bi.ea.y(i10, false).O.put(l10, Long.valueOf(System.currentTimeMillis()));
                     }
-                    childAt2.setAlpha(f13);
-                    int min2 = (int) ((Math.min(vjVar.r.getMeasuredHeight(), Math.max(0, childAt2.getTop())) / vjVar.r.getMeasuredHeight()) * 100.0f);
-                    ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(childAt2, (Property<View, Float>) View.ALPHA, 0.0f, 1.0f);
-                    ofFloat3.setStartDelay(min2);
-                    ofFloat3.setDuration(200L);
-                    animatorSet2.playTogether(ofFloat3);
-                    i15++;
-                    f13 = 0.0f;
+                    edit.apply();
                 }
-                animatorSet2.addListener(new org.telegram.ui.Components.sj(this));
-                ujVar.U.d();
-                animatorSet2.start();
-                if (view != null && view.getParent() == null) {
-                    vjVar.r.addView(view);
-                    v4.n0 layoutManager2 = vjVar.r.getLayoutManager();
-                    if (layoutManager2 != null) {
-                        layoutManager2.M(view);
-                        ObjectAnimator ofFloat4 = ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, view.getAlpha(), 0.0f);
-                        ofFloat4.addListener(new org.telegram.ui.Components.sj(this, layoutManager2));
-                        ofFloat4.start();
-                        return true;
-                    }
+                org.telegram.messenger.pb pbVar = new org.telegram.messenger.pb(i10, this.c, activity, arrayList, hashMap, c20Var, g6Var);
+                if (!bi.ea.y(i10, false).e) {
+                    bi.ea y10 = bi.ea.y(i10, false);
+                    y10.e = false;
+                    y10.q(pbVar, false, true);
+                    y10.e = true;
+                    break;
+                } else {
+                    pbVar.run();
+                    break;
                 }
-                return true;
-            case 2:
-                int i16 = 0;
-                org.telegram.ui.Components.si0 si0Var = (org.telegram.ui.Components.si0) obj;
-                SparseArray sparseArray = si0Var.b;
-                org.telegram.ui.Components.pj0 pj0Var = si0Var.a;
-                pj0Var.getViewTreeObserver().removeOnPreDrawListener(this);
-                si0Var.h.remove(this);
-                int childCount3 = pj0Var.getChildCount();
-                AnimatorSet animatorSet3 = new AnimatorSet();
-                while (i13 < childCount3) {
-                    View childAt3 = pj0Var.getChildAt(i13);
-                    pj0Var.getClass();
-                    int R = RecyclerView.R(childAt3);
-                    if (childAt3 != view && R >= i11 - 1 && sparseArray.get(R, null) == null) {
-                        sparseArray.put(R, Float.valueOf(0.0f));
-                        si0Var.d = z10;
-                        pj0Var.invalidate();
-                        ValueAnimator ofFloat5 = ValueAnimator.ofFloat(0.0f, 1.0f);
-                        ofFloat5.addUpdateListener(new org.telegram.ui.ActionBar.i2(this, R, 5));
-                        ofFloat5.addListener(new hi.m2(this, R, 12));
-                        ofFloat5.setStartDelay((int) ((Math.min(pj0Var.getMeasuredHeight(), Math.max(i16, childAt3.getTop())) / pj0Var.getMeasuredHeight()) * 100.0f));
-                        ofFloat5.setDuration(200L);
-                        animatorSet3.playTogether(ofFloat5);
-                    }
-                    i13++;
-                    z10 = true;
-                    i16 = 0;
-                }
-                si0Var.g.add(animatorSet3);
-                animatorSet3.start();
-                animatorSet3.addListener(new org.telegram.ui.Components.v50(3, this, animatorSet3));
-                return false;
+                break;
             default:
-                yz yzVar = (yz) obj;
-                yzVar.getViewTreeObserver().removeOnPreDrawListener(this);
-                zs zsVar = yzVar.b;
-                int childCount4 = zsVar.getChildCount();
-                AnimatorSet animatorSet4 = new AnimatorSet();
-                int i17 = 0;
-                while (i17 < childCount4) {
-                    View childAt4 = zsVar.getChildAt(i17);
-                    if (view != null) {
-                        zsVar.getClass();
-                        f10 = 100.0f;
-                        if (RecyclerView.R(childAt4) < i11) {
-                            f11 = f12;
-                            i7 = i13;
-                            i17++;
-                            f12 = f11;
-                            i13 = i7;
-                            i12 = 2;
-                        }
-                    } else {
-                        f10 = 100.0f;
-                    }
-                    childAt4.setAlpha(f12);
-                    f11 = f12;
-                    int min3 = (int) ((Math.min(zsVar.getMeasuredHeight(), Math.max(i13, childAt4.getTop())) / zsVar.getMeasuredHeight()) * f10);
-                    i7 = i13;
-                    float[] fArr = new float[i12];
-                    // fill-array-data instruction
-                    fArr[0] = 0.0f;
-                    fArr[1] = 1.0f;
-                    ObjectAnimator ofFloat6 = ObjectAnimator.ofFloat(childAt4, (Property<View, Float>) View.ALPHA, fArr);
-                    ofFloat6.setStartDelay(min3);
-                    ofFloat6.setDuration(200L);
-                    Animator[] animatorArr = new Animator[1];
-                    animatorArr[i7] = ofFloat6;
-                    animatorSet4.playTogether(animatorArr);
-                    i17++;
-                    f12 = f11;
-                    i13 = i7;
-                    i12 = 2;
-                }
-                float f14 = f12;
-                int i18 = i13;
-                animatorSet4.addListener(new oz(this));
-                yzVar.l0.d();
-                animatorSet4.start();
-                if (view != null && view.getParent() == null) {
-                    zsVar.addView(view);
-                    v4.n0 layoutManager3 = zsVar.getLayoutManager();
-                    if (layoutManager3 != null) {
-                        layoutManager3.M(view);
-                        Property property = View.ALPHA;
-                        float[] fArr2 = new float[2];
-                        fArr2[i18] = view.getAlpha();
-                        fArr2[1] = f14;
-                        ObjectAnimator ofFloat7 = ObjectAnimator.ofFloat(view, (Property<View, Float>) property, fArr2);
-                        ofFloat7.addListener(new oz(this, layoutManager3));
-                        ofFloat7.start();
-                    }
-                }
-                return true;
+                String str2 = LaunchActivity.B1;
+                TLRPC.TL_messages_toggleBotInAttachMenu tL_messages_toggleBotInAttachMenu = new TLRPC.TL_messages_toggleBotInAttachMenu();
+                int i12 = this.b;
+                tL_messages_toggleBotInAttachMenu.bot = org.telegram.messenger.qp.s1(i12).o1(this.c);
+                tL_messages_toggleBotInAttachMenu.enabled = true;
+                tL_messages_toggleBotInAttachMenu.write_allowed = true;
+                ConnectionsManager.getInstance(i12).sendRequest(tL_messages_toggleBotInAttachMenu, new org.telegram.messenger.nx((LaunchActivity) obj5, i12, (yw) obj4, (org.telegram.ui.ActionBar.f2) obj3, (TLRPC.User) obj2, (String) serializable), 66);
+                break;
         }
+    }
+
+    public /* synthetic */ vp(qq qqVar, long j3, int i7, TLObject tLObject, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str, boolean z9) {
+        this.d = qqVar;
+        this.c = j3;
+        this.b = i7;
+        this.e = tLObject;
+        this.f = tL_chatAdminRights;
+        this.g = tL_chatBannedRights;
+        this.h = str;
+    }
+
+    public /* synthetic */ vp(LaunchActivity launchActivity, int i7, long j3, yw ywVar, org.telegram.ui.ActionBar.f2 f2Var, TLRPC.User user, String str) {
+        this.d = launchActivity;
+        this.b = i7;
+        this.c = j3;
+        this.e = ywVar;
+        this.f = f2Var;
+        this.g = user;
+        this.h = str;
     }
 }

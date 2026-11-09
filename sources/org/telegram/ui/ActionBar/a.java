@@ -1,9 +1,9 @@
 package org.telegram.ui.ActionBar;
 
 import android.animation.ValueAnimator;
-import org.telegram.ui.ru0;
+import org.telegram.ui.tu0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -19,16 +19,16 @@ public final /* synthetic */ class a implements ValueAnimator.AnimatorUpdateList
         y yVar;
         switch (this.a) {
             case 0:
-                ru0 ru0Var = this.b.e1;
-                if (ru0Var != null) {
-                    ru0Var.run();
+                tu0 tu0Var = this.b.e1;
+                if (tu0Var != null) {
+                    tu0Var.run();
                     break;
                 }
                 break;
             case 1:
-                ru0 ru0Var2 = this.b.e1;
-                if (ru0Var2 != null) {
-                    ru0Var2.run();
+                tu0 tu0Var2 = this.b.e1;
+                if (tu0Var2 != null) {
+                    tu0Var2.run();
                     break;
                 }
                 break;
@@ -45,9 +45,9 @@ public final /* synthetic */ class a implements ValueAnimator.AnimatorUpdateList
                 if (kVar.P0 && (yVar = kVar.E) != null) {
                     yVar.setTranslationX(-org.telegram.messenger.g0.T1(org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(5.0f), kVar.o0));
                 }
-                ru0 ru0Var3 = kVar.e1;
-                if (ru0Var3 != null) {
-                    ru0Var3.run();
+                tu0 tu0Var3 = kVar.e1;
+                if (tu0Var3 != null) {
+                    tu0Var3.run();
                     break;
                 }
                 break;
@@ -55,13 +55,13 @@ public final /* synthetic */ class a implements ValueAnimator.AnimatorUpdateList
                 k kVar2 = this.b;
                 kVar2.getClass();
                 kVar2.D1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                kVar2.f();
+                kVar2.g();
                 break;
             default:
                 k kVar3 = this.b;
                 kVar3.getClass();
                 kVar3.D1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                kVar3.f();
+                kVar3.g();
                 break;
         }
     }

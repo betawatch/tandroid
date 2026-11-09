@@ -7,21 +7,21 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.messenger.id;
-import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.v61;
-import org.telegram.ui.an;
-import org.telegram.ui.bm0;
-import org.telegram.ui.g81;
-import org.telegram.ui.hm0;
-import org.telegram.ui.ly0;
-import org.telegram.ui.nj;
-import org.telegram.ui.ny0;
+import org.telegram.ui.Components.qj0;
+import org.telegram.ui.Components.w61;
+import org.telegram.ui.bs0;
+import org.telegram.ui.cn;
+import org.telegram.ui.dm0;
+import org.telegram.ui.h81;
+import org.telegram.ui.jm0;
 import org.telegram.ui.oy0;
-import org.telegram.ui.zr0;
+import org.telegram.ui.pj;
+import org.telegram.ui.qy0;
+import org.telegram.ui.ry0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class g1 extends v61 {
+public final class g1 extends w61 {
     public final /* synthetic */ int V;
     public final /* synthetic */ Object W;
 
@@ -32,15 +32,15 @@ public final class g1 extends v61 {
         this.W = obj;
     }
 
-    @Override // org.telegram.ui.Components.v61
+    @Override // org.telegram.ui.Components.w61
     public void A(int i7) {
         switch (this.V) {
             case 3:
                 if (i7 == 0) {
-                    an anVar = (an) this.W;
-                    if (anVar.G1) {
-                        anVar.G1 = false;
-                        anVar.E1.h.clear();
+                    cn cnVar = (cn) this.W;
+                    if (cnVar.G1) {
+                        cnVar.G1 = false;
+                        cnVar.E1.h.clear();
                         break;
                     }
                 }
@@ -48,7 +48,7 @@ public final class g1 extends v61 {
         }
     }
 
-    @Override // org.telegram.ui.Components.v61
+    @Override // org.telegram.ui.Components.w61
     public int H() {
         switch (this.V) {
             case 9:
@@ -62,7 +62,7 @@ public final class g1 extends v61 {
     /* JADX WARN: Removed duplicated region for block: B:54:0x00d8  */
     /* JADX WARN: Removed duplicated region for block: B:56:0x00de A[ORIG_RETURN, RETURN] */
     /* JADX WARN: Removed duplicated region for block: B:57:? A[RETURN, SYNTHETIC] */
-    @Override // org.telegram.ui.Components.v61
+    @Override // org.telegram.ui.Components.w61
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -83,8 +83,8 @@ public final class g1 extends v61 {
                 }
                 n8 n8Var = (n8) currentView;
                 ArrayList arrayList = n8Var.L;
-                pj0 pj0Var = n8Var.f;
-                if (n8Var.a == 0 && motionEvent != null && (E = pj0Var.E(motionEvent.getX(), motionEvent.getY() - n8Var.e.getPaddingTop())) != null && (R = RecyclerView.R(E)) >= 0 && R < arrayList.size()) {
+                qj0 qj0Var = n8Var.f;
+                if (n8Var.a == 0 && motionEvent != null && (E = qj0Var.E(motionEvent.getX(), motionEvent.getY() - n8Var.e.getPaddingTop())) != null && (R = RecyclerView.R(E)) >= 0 && R < arrayList.size()) {
                     b8 b8Var = (b8) arrayList.get(R);
                     if (b8Var.a == 3 && !b8Var.n) {
                         boolean z9 = id.a0;
@@ -124,12 +124,12 @@ public final class g1 extends v61 {
             default:
                 return super.b(motionEvent);
             case 3:
-                nj njVar = ((an) this.W).D1;
-                return njVar != null && njVar.b > 0.5f;
+                pj pjVar = ((cn) this.W).D1;
+                return pjVar != null && pjVar.b > 0.5f;
         }
     }
 
-    @Override // org.telegram.ui.Components.v61
+    @Override // org.telegram.ui.Components.w61
     public boolean j(MotionEvent motionEvent) {
         switch (this.V) {
             case 2:
@@ -139,7 +139,7 @@ public final class g1 extends v61 {
         }
     }
 
-    @Override // org.telegram.ui.Components.v61
+    @Override // org.telegram.ui.Components.w61
     public boolean k(MotionEvent motionEvent) {
         switch (this.V) {
             case 2:
@@ -151,7 +151,7 @@ public final class g1 extends v61 {
         }
     }
 
-    @Override // org.telegram.ui.Components.v61, android.view.View
+    @Override // org.telegram.ui.Components.w61, android.view.View
     public boolean onTouchEvent(MotionEvent motionEvent) {
         switch (this.V) {
             case 3:
@@ -161,7 +161,7 @@ public final class g1 extends v61 {
         }
     }
 
-    @Override // org.telegram.ui.Components.v61
+    @Override // org.telegram.ui.Components.w61
     public void t(View view, View view2, int i7, int i10) {
         switch (this.V) {
             case 1:
@@ -174,7 +174,7 @@ public final class g1 extends v61 {
         }
     }
 
-    @Override // org.telegram.ui.Components.v61
+    @Override // org.telegram.ui.Components.w61
     public void u() {
         switch (this.V) {
             case 2:
@@ -186,20 +186,20 @@ public final class g1 extends v61 {
         }
     }
 
-    @Override // org.telegram.ui.Components.v61
+    @Override // org.telegram.ui.Components.w61
     public void v() {
-        ly0 ly0Var;
+        oy0 oy0Var;
         switch (this.V) {
             case 6:
-                if ((getCurrentView() instanceof ny0) && (ly0Var = ((ny0) getCurrentView()).n) != null) {
-                    org.telegram.messenger.g0.v1(ly0Var);
+                if ((getCurrentView() instanceof qy0) && (oy0Var = ((qy0) getCurrentView()).n) != null) {
+                    org.telegram.messenger.g0.v1(oy0Var);
                     break;
                 }
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.v61
+    @Override // org.telegram.ui.Components.w61
     public final void w(boolean z9) {
         switch (this.V) {
             case 0:
@@ -221,63 +221,63 @@ public final class g1 extends v61 {
                 ((ii.d0) this.W).b.invalidate();
                 break;
             case 3:
-                an anVar = (an) this.W;
-                anVar.l1.getClass();
-                anVar.l1.getClass();
-                anVar.z7();
+                cn cnVar = (cn) this.W;
+                cnVar.l1.getClass();
+                cnVar.l1.getClass();
+                cnVar.A7();
                 break;
             case 4:
-                hm0 hm0Var = (hm0) this.W;
-                float positionAnimated = hm0Var.I.getPositionAnimated();
-                hm0Var.M.setSelected(positionAnimated);
-                hm0Var.e.setProgressToGradient(1.0f - c8.j9.a((positionAnimated - 0.333333f) / 0.333333f, 0.0f, 1.0f));
-                hm0Var.K0();
-                bm0 H0 = hm0Var.H0();
-                d dVar = hm0Var.Q;
-                if (dVar != null && H0 != null && H0 != hm0Var.R) {
-                    hm0Var.R = H0;
+                jm0 jm0Var = (jm0) this.W;
+                float positionAnimated = jm0Var.I.getPositionAnimated();
+                jm0Var.M.setSelected(positionAnimated);
+                jm0Var.e.setProgressToGradient(1.0f - c8.j9.a((positionAnimated - 0.333333f) / 0.333333f, 0.0f, 1.0f));
+                jm0Var.K0();
+                dm0 H0 = jm0Var.H0();
+                d dVar = jm0Var.Q;
+                if (dVar != null && H0 != null && H0 != jm0Var.R) {
+                    jm0Var.R = H0;
                     j2.n nVar = H0.e;
                     dVar.i((CharSequence) nVar.b, true, true);
-                    hm0Var.Q.g((SpannableStringBuilder) nVar.c, true);
+                    jm0Var.Q.g((SpannableStringBuilder) nVar.c, true);
                     break;
                 }
                 break;
             case 5:
-                ((zr0) this.W).e();
+                ((bs0) this.W).e();
                 break;
             case 6:
-                ((oy0) this.W).b.invalidate();
+                ((ry0) this.W).b.invalidate();
                 break;
             case 7:
-                ((g81) this.W).e();
+                ((h81) this.W).e();
                 break;
             case 8:
-                ((org.telegram.ui.Wallet.y2) this.W).b.invalidate();
+                ((org.telegram.ui.Wallet.x2) this.W).b.invalidate();
                 break;
             default:
-                org.telegram.ui.Wallet.x5 x5Var = (org.telegram.ui.Wallet.x5) this.W;
-                x5Var.Z0();
-                org.telegram.ui.Wallet.b8 b8Var = x5Var.j0;
-                if (b8Var != null && b8Var.h1) {
-                    b8Var.f0();
+                org.telegram.ui.Wallet.w5 w5Var = (org.telegram.ui.Wallet.w5) this.W;
+                w5Var.Z0();
+                org.telegram.ui.Wallet.a8 a8Var = w5Var.j0;
+                if (a8Var != null && a8Var.h1) {
+                    a8Var.f0();
                     break;
                 }
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.v61
+    @Override // org.telegram.ui.Components.w61
     public void y(int i7) {
-        org.telegram.ui.Wallet.s8 s8Var;
+        org.telegram.ui.Wallet.r8 r8Var;
         switch (this.V) {
             case 9:
-                org.telegram.ui.Wallet.x5 x5Var = (org.telegram.ui.Wallet.x5) this.W;
-                x5Var.e0 = i7;
-                if (i7 != 1 && (s8Var = x5Var.i0) != null) {
-                    s8Var.b(false);
+                org.telegram.ui.Wallet.w5 w5Var = (org.telegram.ui.Wallet.w5) this.W;
+                w5Var.e0 = i7;
+                if (i7 != 1 && (r8Var = w5Var.i0) != null) {
+                    r8Var.b(false);
                 }
                 if (i7 == 1) {
-                    x5Var.p0.post(new org.telegram.ui.Wallet.e4(x5Var, 13));
+                    w5Var.p0.post(new org.telegram.ui.Wallet.d4(w5Var, 13));
                     break;
                 }
                 break;
@@ -285,8 +285,8 @@ public final class g1 extends v61 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ g1(org.telegram.ui.ActionBar.f2 f2Var, Context context, org.telegram.ui.ActionBar.f6 f6Var, int i7) {
-        super(context, f6Var);
+    public /* synthetic */ g1(org.telegram.ui.ActionBar.f2 f2Var, Context context, org.telegram.ui.ActionBar.g6 g6Var, int i7) {
+        super(context, g6Var);
         this.V = i7;
         this.W = f2Var;
     }

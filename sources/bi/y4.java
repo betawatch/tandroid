@@ -4,11 +4,11 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import org.telegram.ui.Components.di;
 import org.telegram.ui.Components.oh;
-import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.qg;
+import org.telegram.ui.Components.qj0;
 import org.telegram.ui.Components.vh;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class y4 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -28,7 +28,7 @@ public final class y4 extends AnimatorListenerAdapter {
         switch (this.a) {
             case 0:
                 k7 k7Var = (k7) this.d;
-                k7Var.P1();
+                k7Var.O1();
                 h5 h5Var = k7Var.Y1;
                 int i7 = this.b;
                 h5Var.setVisibility(i7 == 0 ? 0 : 8);
@@ -63,7 +63,7 @@ public final class y4 extends AnimatorListenerAdapter {
                 break;
             default:
                 a8.wa waVar = (a8.wa) this.d;
-                ((pj0) waVar.d).scrollBy(0, this.b - ((int[]) this.c)[0]);
+                ((qj0) waVar.d).scrollBy(0, this.b - ((int[]) this.c)[0]);
                 waVar.c = null;
                 break;
         }

@@ -6,7 +6,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d3 implements c20 {
     public final /* synthetic */ int a;
@@ -44,7 +44,7 @@ public final /* synthetic */ class d3 implements c20 {
                 ijVar.k.factcheck = tL_factCheck;
                 break;
             case 2:
-                Utilities.d.c(new em((r8) this.b, (String) this.c, (String) this.d, (di.i6) obj, 8));
+                Utilities.d.c(new em((r8) this.b, (String) this.c, (String) this.d, (di.j6) obj, 8));
                 break;
             case 3:
                 String str = (String) this.b;
@@ -76,7 +76,7 @@ public final /* synthetic */ class d3 implements c20 {
                         i11++;
                     }
                     if (document != null) {
-                        l9Var.p(hc.b(document), str2, t5.f(document, org.telegram.ui.ActionBar.k6.m6, 0.2f, null), document);
+                        l9Var.p(hc.b(document), str2, t5.f(document, org.telegram.ui.ActionBar.l6.m6, 0.2f, null), document);
                         l9Var.invalidate();
                         break;
                     }

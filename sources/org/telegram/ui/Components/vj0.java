@@ -1,37 +1,46 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.widget.ImageView;
+import android.view.View;
+import android.view.ViewParent;
+import android.widget.FrameLayout;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class vj0 extends ub {
-    public final wj0 c;
+public final class vj0 extends FrameLayout {
+    public View a;
 
-    public vj0(Activity activity, String str) {
-        super(activity, null);
-        this.b.setText(str);
-        this.b.setTranslationY(-1.0f);
-        ImageView imageView = this.a;
-        wj0 wj0Var = new wj0();
-        this.c = wj0Var;
-        imageView.setImageDrawable(wj0Var);
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        View view = this.a;
+        if (view == null) {
+            ViewParent parent = getParent();
+            while (true) {
+                if (!(parent instanceof View)) {
+                    view = null;
+                    break;
+                } else {
+                    if (parent instanceof RecyclerView) {
+                        view = (RecyclerView) parent;
+                        break;
+                    }
+                    parent = parent.getParent();
+                }
+            }
+        }
+        int max = view != null ? Math.max(0, (view.getMeasuredHeight() - view.getPaddingTop()) - view.getPaddingBottom()) : 0;
+        if (max > 0) {
+            i10 = View.MeasureSpec.makeMeasureSpec(max, TLObject.FLAG_30);
+        }
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), i10);
     }
 
-    @Override // org.telegram.ui.Components.gb
-    public final void onEnterTransitionEnd() {
-        super.onEnterTransitionEnd();
-        wj0 wj0Var = this.c;
-        wj0Var.getClass();
-        wj0Var.g = System.currentTimeMillis();
-        wj0Var.invalidateSelf();
-    }
-
-    @Override // org.telegram.ui.Components.gb
-    public final void onExitTransitionEnd() {
-        super.onExitTransitionEnd();
-        wj0 wj0Var = this.c;
-        wj0Var.g = -1L;
-        wj0Var.invalidateSelf();
+    public void setViewportView(View view) {
+        if (this.a == view) {
+            return;
+        }
+        this.a = view;
+        requestLayout();
     }
 }

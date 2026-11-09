@@ -9,13 +9,13 @@ import j$.util.Objects;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.Executor;
-import org.telegram.ui.web.w;
+import org.telegram.ui.web.s;
 import p4.r0;
 import r.a;
 import r.c;
 import w.b;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public class CarResultStub<T> extends ICarHardwareResult.Stub {
     private final b mBundle;
@@ -54,7 +54,7 @@ public class CarResultStub<T> extends ICarHardwareResult.Stub {
     private void notifyResults(boolean z9, b bVar) {
         T convertAndRecast = z9 ? convertAndRecast(bVar) : this.mUnsupportedValue;
         for (Map.Entry<c, Executor> entry : this.mListeners.entrySet()) {
-            entry.getValue().execute(new w(15, entry, convertAndRecast));
+            entry.getValue().execute(new s(16, entry, convertAndRecast));
         }
         if (this.mIsSingleShot) {
             this.mListeners.clear();

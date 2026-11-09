@@ -9,7 +9,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class ny extends View {
     public final Paint a;
@@ -17,10 +17,10 @@ public final class ny extends View {
     public final Path c;
     public int d;
     public int e;
-    public my0[] f;
+    public ny0[] f;
     public RectF[] h;
     public float n;
-    public org.telegram.ui.il0 r;
+    public org.telegram.ui.kl0 r;
     public int s;
 
     public ny(Context context) {
@@ -34,15 +34,15 @@ public final class ny extends View {
     }
 
     public final void a(float f10, int i7, int i10, Canvas canvas) {
-        my0[] my0VarArr = this.f;
-        int length = my0VarArr.length;
+        ny0[] ny0VarArr = this.f;
+        int length = ny0VarArr.length;
         int i11 = 0;
         float f11 = f10;
         while (i11 < length) {
-            my0 my0Var = my0VarArr[i11];
+            ny0 ny0Var = ny0VarArr[i11];
             int i12 = i10;
-            my0Var.c(f11, i7 / 2.0f, 1.0f, i12, canvas);
-            f11 += my0Var.k() + org.telegram.messenger.g0.L(24.0f);
+            ny0Var.c(f11, i7 / 2.0f, 1.0f, i12, canvas);
+            f11 += ny0Var.k() + org.telegram.messenger.g0.L(24.0f);
             i11++;
             i10 = i12;
         }
@@ -59,11 +59,11 @@ public final class ny extends View {
         int L = org.telegram.messenger.g0.L(4.0f) + org.telegram.messenger.k5.D(24.0f, this.f.length, org.telegram.messenger.g0.L(4.0f));
         int i7 = 0;
         while (true) {
-            my0[] my0VarArr = this.f;
-            if (i7 >= my0VarArr.length) {
+            ny0[] ny0VarArr = this.f;
+            if (i7 >= ny0VarArr.length) {
                 break;
             }
-            L = (int) (my0VarArr[i7].k() + L);
+            L = (int) (ny0VarArr[i7].k() + L);
             i7++;
         }
         float L2 = (height - org.telegram.messenger.g0.L(36.0f)) / 2.0f;
@@ -124,9 +124,9 @@ public final class ny extends View {
         }
         if (i7 >= 0 && i7 != this.s) {
             this.s = i7;
-            org.telegram.ui.il0 il0Var = this.r;
-            if (il0Var != null) {
-                il0Var.a(Integer.valueOf(i7));
+            org.telegram.ui.kl0 kl0Var = this.r;
+            if (kl0Var != null) {
+                kl0Var.a(Integer.valueOf(i7));
             }
         }
         if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
@@ -162,10 +162,10 @@ public final class ny extends View {
     }
 
     public void setTabs(CharSequence... charSequenceArr) {
-        this.f = new my0[charSequenceArr.length];
+        this.f = new ny0[charSequenceArr.length];
         this.h = new RectF[charSequenceArr.length];
         for (int i7 = 0; i7 < charSequenceArr.length; i7++) {
-            this.f[i7] = new my0(charSequenceArr[i7], 14.0f, org.telegram.messenger.g0.o());
+            this.f[i7] = new ny0(charSequenceArr[i7], 14.0f, org.telegram.messenger.g0.o());
             this.h[i7] = new RectF();
         }
         invalidate();

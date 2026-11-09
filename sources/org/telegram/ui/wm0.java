@@ -1,17 +1,10 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public interface wm0 {
-    void A();
-
-    void B(Editable editable);
-
-    boolean e();
-
-    void f0();
-
-    void v0(int i7, boolean z9, boolean z10);
+public final class wm0 extends v4.s {
+    @Override // v4.s, v4.b0, v4.n0
+    public final boolean y0() {
+        return false;
+    }
 }

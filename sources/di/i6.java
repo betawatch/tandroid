@@ -1,27 +1,25 @@
 package di;
 
+import org.telegram.messenger.c20;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_bots;
-import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class i6 extends TL_stories.StoryItem {
-    public final j6 a;
+public final class i6 implements RequestDelegate {
+    public final /* synthetic */ long a;
+    public final /* synthetic */ c20 b;
+    public final /* synthetic */ z6 c;
 
-    public i6(j6 j6Var, long j3, TL_bots.botPreviewMedia botpreviewmedia) {
-        this.a = j6Var;
-        this.dialogId = j3;
-        TLRPC.MessageMedia messageMedia = botpreviewmedia.media;
-        this.media = messageMedia;
-        TLRPC.Document document = messageMedia.document;
-        if (document != null) {
-            document.date = botpreviewmedia.date;
-            return;
-        }
-        TLRPC.Photo photo = messageMedia.photo;
-        if (photo != null) {
-            photo.date = botpreviewmedia.date;
-        }
+    public i6(z6 z6Var, long j3, c20 c20Var) {
+        this.c = z6Var;
+        this.a = j3;
+        this.b = c20Var;
+    }
+
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        org.telegram.messenger.g0.h3(new bi.w2(this, tLObject, this.a, this.b, 10));
     }
 }

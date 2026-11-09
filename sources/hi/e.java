@@ -1,10 +1,10 @@
 package hi;
 
 import android.content.Context;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.m00;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.o00;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final class e extends ug.q1 {
     public final /* synthetic */ int r;
@@ -37,19 +37,19 @@ public final class e extends ug.q1 {
                 p1Var2.c();
                 break;
             case 2:
-                m00 m00Var = new m00(50);
-                this.a = m00Var;
-                m00Var.O = 100;
-                m00Var.M = false;
-                m00Var.G = false;
-                m00Var.K = true;
-                m00Var.H = true;
-                m00Var.J = false;
-                m00Var.r = 4;
-                m00Var.w = 0.98f;
-                m00Var.v = 0.98f;
-                m00Var.u = 0.98f;
-                m00Var.c();
+                o00 o00Var = new o00(50);
+                this.a = o00Var;
+                o00Var.O = 100;
+                o00Var.M = false;
+                o00Var.G = false;
+                o00Var.K = true;
+                o00Var.H = true;
+                o00Var.J = false;
+                o00Var.r = 4;
+                o00Var.w = 0.98f;
+                o00Var.v = 0.98f;
+                o00Var.u = 0.98f;
+                o00Var.c();
                 break;
             case 3:
                 ug.p1 p1Var3 = this.a;
@@ -64,7 +64,7 @@ public final class e extends ug.q1 {
                 p1Var4.r = 16;
                 p1Var4.G = false;
                 p1Var4.O = 28;
-                p1Var4.Q = k6.Ak;
+                p1Var4.Q = l6.Ak;
                 p1Var4.c();
                 break;
             case 4:
@@ -80,7 +80,7 @@ public final class e extends ug.q1 {
                 p1Var6.r = 16;
                 p1Var6.G = false;
                 p1Var6.O = 28;
-                p1Var6.Q = k6.Ak;
+                p1Var6.Q = l6.Ak;
                 p1Var6.c();
                 break;
             default:

@@ -11,13 +11,13 @@ import java.util.ArrayList;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.ui.Components.et;
-import org.telegram.ui.Components.qm0;
+import org.telegram.ui.Components.rm0;
 import org.telegram.ui.Components.vs;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.fc1;
-import org.telegram.ui.yb1;
+import org.telegram.ui.bc1;
+import org.telegram.ui.ic1;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class f2 implements ti.m {
     public static f2 h;
@@ -33,7 +33,7 @@ public final class f2 implements ti.m {
     /* JADX WARN: Type inference failed for: r5v3 */
     public static void d() {
         VoIPService sharedInstance = VoIPService.getSharedInstance();
-        boolean z9 = (fc1.l1 == null && e2.d() == null) ? false : true;
+        boolean z9 = (ic1.l1 == null && e2.d() == null) ? false : true;
         if (sharedInstance == null || !z9) {
             f2 f2Var = h;
             if (f2Var != null) {
@@ -61,7 +61,7 @@ public final class f2 implements ti.m {
             oVar3.c();
             return;
         }
-        e2 d = fc1.l1 == null ? e2.d() : null;
+        e2 d = ic1.l1 == null ? e2.d() : null;
         ti.o oVar4 = f2Var2.a;
         ?? r52 = d != null ? 1 : 0;
         boolean z10 = d != null && d.e;
@@ -82,19 +82,19 @@ public final class f2 implements ti.m {
     @Override // ti.m
     public final void B(View view) {
         m mVar;
-        fc1 fc1Var = fc1.l1;
-        if (fc1Var == null || (mVar = this.b) != view || this.f) {
+        ic1 ic1Var = ic1.l1;
+        if (ic1Var == null || (mVar = this.b) != view || this.f) {
             return;
         }
         this.f = true;
         mVar.getClass();
         mVar.r = SystemClock.elapsedRealtime();
         mVar.b();
-        fc1Var.j1 = this.b.a;
-        fc1Var.k1 = true;
-        fc1Var.y();
+        ic1Var.j1 = this.b.a;
+        ic1Var.k1 = true;
+        ic1Var.y();
         try {
-            ((WindowManager) fc1Var.b.getSystemService("window")).removeView(fc1Var.t0);
+            ((WindowManager) ic1Var.b.getSystemService("window")).removeView(ic1Var.t0);
         } catch (Exception e10) {
             a8.g(e10, true);
         }
@@ -112,8 +112,8 @@ public final class f2 implements ti.m {
 
     @Override // ti.m
     public final boolean E() {
-        fc1 fc1Var = fc1.l1;
-        return fc1Var != null && fc1Var.c0.isAttachedToWindow();
+        ic1 ic1Var = ic1.l1;
+        return ic1Var != null && ic1Var.c0.isAttachedToWindow();
     }
 
     @Override // ti.m
@@ -156,22 +156,22 @@ public final class f2 implements ti.m {
         if (h == this) {
             h = null;
         }
-        fc1 fc1Var = fc1.l1;
-        if (fc1Var != null) {
-            fc1Var.F0 = true;
-            fc1Var.c0.d.release();
-            fc1Var.d0.d.release();
-            fc1Var.b0.release();
-            fc1Var.c();
-            fc1Var.t0.d();
-            fc1.l1 = null;
+        ic1 ic1Var = ic1.l1;
+        if (ic1Var != null) {
+            ic1Var.F0 = true;
+            ic1Var.c0.d.release();
+            ic1Var.d0.d.release();
+            ic1Var.b0.release();
+            ic1Var.c();
+            ic1Var.t0.d();
+            ic1.l1 = null;
             d();
         }
         e2.b();
     }
 
     @Override // ti.m
-    public final /* synthetic */ boolean R(boolean z9, float f10, qm0 qm0Var) {
+    public final /* synthetic */ boolean R(boolean z9, float f10, rm0 rm0Var) {
         return false;
     }
 
@@ -188,7 +188,7 @@ public final class f2 implements ti.m {
         org.telegram.messenger.g0.r(etVar);
         org.telegram.messenger.g0.i3(etVar, 500L);
         this.f = false;
-        if (fc1.l1 != null || e2.d() == null) {
+        if (ic1.l1 != null || e2.d() == null) {
             return;
         }
         e2 d = e2.d();
@@ -237,8 +237,8 @@ public final class f2 implements ti.m {
                 return j2Var;
             }
         }
-        fc1 fc1Var = fc1.l1;
-        if (fc1Var != null && (k2Var = fc1Var.c0) != null) {
+        ic1 ic1Var = ic1.l1;
+        if (ic1Var != null && (k2Var = ic1Var.c0) != null) {
             return k2Var.d;
         }
         e2 d = e2.d();
@@ -253,22 +253,22 @@ public final class f2 implements ti.m {
         g.a = false;
         org.telegram.messenger.g0.r(this.e);
         this.b = null;
-        fc1 fc1Var = fc1.l1;
-        if (fc1Var != null) {
+        ic1 ic1Var = ic1.l1;
+        if (ic1Var != null) {
             try {
-                if (fc1Var.t0.getParent() == null) {
-                    WindowManager windowManager = (WindowManager) fc1Var.b.getSystemService("window");
-                    yb1 yb1Var = fc1Var.t0;
-                    yb1Var.getClass();
-                    windowManager.addView(yb1Var, o2.a());
+                if (ic1Var.t0.getParent() == null) {
+                    WindowManager windowManager = (WindowManager) ic1Var.b.getSystemService("window");
+                    bc1 bc1Var = ic1Var.t0;
+                    bc1Var.getClass();
+                    windowManager.addView(bc1Var, o2.a());
                 }
             } catch (Exception e10) {
                 a8.g(e10, true);
             }
-            fc1Var.k1 = false;
-            fc1Var.j1 = null;
-            fc1Var.y();
-            fc1Var.t0.invalidate();
+            ic1Var.k1 = false;
+            ic1Var.j1 = null;
+            ic1Var.y();
+            ic1Var.t0.invalidate();
             return;
         }
         if (e2.d() != null) {

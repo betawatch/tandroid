@@ -17,7 +17,7 @@ import android.widget.FrameLayout;
 import java.util.WeakHashMap;
 import org.telegram.messenger.a8;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class x1 extends u1 {
     public static final int[] u1 = {R.attr.windowEnterAnimation, R.attr.windowExitAnimation};
@@ -30,13 +30,13 @@ public final class x1 extends u1 {
     public DialogInterface.OnDismissListener q1;
     public boolean r1;
     public long s1;
-    public final l2.w t1;
+    public final l2.a0 t1;
 
-    public x1(int i7, Context context, f6 f6Var) {
-        super(i7, context, f6Var);
+    public x1(int i7, Context context, g6 g6Var) {
+        super(i7, context, g6Var);
         this.r1 = false;
         this.s1 = 0L;
-        this.t1 = new l2.w(this, 21);
+        this.t1 = new l2.a0(this, 20);
     }
 
     public static Activity t(Context context) {
@@ -132,7 +132,7 @@ public final class x1 extends u1 {
         frameLayout.setOnClickListener(new ii.g(this, 14));
         View view = new View(getContext());
         this.o1 = view;
-        view.setBackgroundColor(k6.r1(attributes.dimAmount, -16777216));
+        view.setBackgroundColor(l6.r1(attributes.dimAmount, -16777216));
         frameLayout.addView(this.o1, new FrameLayout.LayoutParams(-1, -1));
         FrameLayout frameLayout2 = new FrameLayout(getContext());
         frameLayout2.addView(this.n1, new FrameLayout.LayoutParams(-1, -2, 17));
@@ -145,11 +145,11 @@ public final class x1 extends u1 {
         r0.a0.i(this.m1, new bi.f(3, frameLayout2));
         this.m1.setVisibility(4);
         long j3 = this.s1;
-        l2.w wVar = this.t1;
+        l2.a0 a0Var = this.t1;
         if (j3 == 0) {
-            wVar.run();
+            a0Var.run();
         } else {
-            org.telegram.messenger.g0.i3(wVar, j3);
+            org.telegram.messenger.g0.i3(a0Var, j3);
         }
     }
 

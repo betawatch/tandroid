@@ -1,49 +1,53 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import java.util.ArrayList;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class ha0 extends jg.r0 {
-    public boolean d0;
-    public final /* synthetic */ pa0 e0;
+public final class ha0 extends v4.s0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ra0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ha0(pa0 pa0Var, Context context, int i7, long j3, org.telegram.ui.ActionBar.f6 f6Var, boolean z9, boolean z10) {
-        super(context, i7, j3, false, f6Var, false, z9, z10);
-        this.e0 = pa0Var;
-        this.d0 = true;
+    public /* synthetic */ ha0(ra0 ra0Var, int i7) {
+        this.a = i7;
+        this.b = ra0Var;
     }
 
-    @Override // jg.r0
-    public final void J() {
-        this.e0.B0(null);
-    }
-
-    @Override // jg.r0
-    public final void N(ArrayList arrayList) {
-        int i7;
-        pa0 pa0Var = this.e0;
-        org.telegram.messenger.ij ijVar = pa0Var.D0;
-        if (ijVar != null && ijVar.D3()) {
-            if (arrayList != null) {
-                i7 = 0;
-                for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                    la0 la0Var = (la0) arrayList.get(i10);
-                    if (la0Var != null && !org.telegram.messenger.t10.B(la0Var.c)) {
-                        i7++;
+    @Override // v4.s0
+    public final void a(RecyclerView recyclerView, int i7) {
+        switch (this.a) {
+            case 0:
+                if (i7 == 1) {
+                    ra0 ra0Var = this.b;
+                    if (ra0Var.t0 && ra0Var.u0) {
+                        org.telegram.messenger.g0.v1(ra0Var.getParentActivity().getCurrentFocus());
+                        break;
                     }
                 }
-            } else {
-                i7 = 0;
-            }
-            if (this.d0 && i7 == 1) {
-                pa0Var.p0 = ((la0) arrayList.get(0)).a;
-            }
-            this.d0 = false;
-            pa0Var.V.setVisibility(i7 != 1 ? 8 : 0);
+                break;
+            default:
+                boolean z9 = i7 != 0;
+                ra0 ra0Var2 = this.b;
+                ra0Var2.M = z9;
+                if (!z9 && ra0Var2.H != null) {
+                    ra0Var2.H = null;
+                    break;
+                }
+                break;
         }
-        super.N(arrayList);
+    }
+
+    @Override // v4.s0
+    public void b(RecyclerView recyclerView, int i7, int i10) {
+        switch (this.a) {
+            case 1:
+                ra0 ra0Var = this.b;
+                ra0Var.K0(false);
+                if (ra0Var.H != null) {
+                    ra0Var.J += i10;
+                    break;
+                }
+                break;
+        }
     }
 }

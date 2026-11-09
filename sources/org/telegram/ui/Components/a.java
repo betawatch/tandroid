@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import android.graphics.Paint;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a implements Runnable {
     public final /* synthetic */ int a;
@@ -32,7 +32,7 @@ public final /* synthetic */ class a implements Runnable {
                 fi.m3 m3Var3 = g0Var.t2;
                 float L = org.telegram.messenger.g0.L(12.0f);
                 float L2 = org.telegram.messenger.g0.L(4.0f);
-                int r12 = org.telegram.ui.ActionBar.k6.r1(0.25f, -16777216);
+                int r12 = org.telegram.ui.ActionBar.l6.r1(0.25f, -16777216);
                 Paint paint = m3Var3.F;
                 m3Var3.i0 = L;
                 m3Var3.j0 = L2;

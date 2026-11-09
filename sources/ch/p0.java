@@ -33,8 +33,8 @@ import org.telegram.messenger.t5;
 import org.telegram.messenger.ui;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.Cells.p4;
 import org.telegram.ui.Cells.q1;
 import org.telegram.ui.Components.bq;
@@ -42,9 +42,9 @@ import org.telegram.ui.Components.i5;
 import org.telegram.ui.Components.i6;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.Components.y8;
-import org.telegram.ui.ol;
+import org.telegram.ui.ql;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class p0 {
     public static int W;
@@ -81,7 +81,7 @@ public final class p0 {
     public int r;
     public final org.telegram.ui.Cells.z w;
     public ij x;
-    public f6 y;
+    public g6 y;
     public Integer z;
     public static final Paint S = new Paint(1);
     public static final Paint T = new Paint(1);
@@ -155,9 +155,9 @@ public final class p0 {
         return 0L;
     }
 
-    public static void n(f6 f6Var) {
-        S.setColor(k6.w0(k6.We, f6Var));
-        int w02 = k6.w0(k6.Gi, f6Var);
+    public static void n(g6 g6Var) {
+        S.setColor(l6.w0(l6.We, g6Var));
+        int w02 = l6.w0(l6.Gi, g6Var);
         TextPaint textPaint = V;
         textPaint.setColor(w02);
         textPaint.setTextSize(org.telegram.messenger.g0.L(12.0f));
@@ -561,7 +561,7 @@ public final class p0 {
         }
     }
 
-    public final void f(ol olVar, Canvas canvas, int i7, Integer num) {
+    public final void f(ql qlVar, Canvas canvas, int i7, Integer num) {
         if (this.p && this.t.isEmpty()) {
             return;
         }
@@ -596,7 +596,7 @@ public final class p0 {
                         if (o0Var.f != null) {
                             TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) ui.b0(i12).r.get(o0Var.f);
                             if (tL_availableReaction != null && tL_availableReaction.activate_animation != null) {
-                                rz f13 = t5.f(tL_availableReaction.static_icon, k6.a7, 1.0f, null);
+                                rz f13 = t5.f(tL_availableReaction.static_icon, l6.a7, 1.0f, null);
                                 ImageReceiver imageReceiver = new ImageReceiver(view);
                                 m0Var.e0 = imageReceiver;
                                 imageReceiver.E0(7);
@@ -632,7 +632,7 @@ public final class p0 {
                             m0Var.f0.draw(canvas);
                         }
                     }
-                    olVar.invalidate();
+                    qlVar.invalidate();
                 }
             }
             i10++;
@@ -826,7 +826,7 @@ public final class p0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void r(ij ijVar, boolean z9, f6 f6Var) {
+    public final void r(ij ijVar, boolean z9, g6 g6Var) {
         int i7;
         TLRPC.TL_messageReactions tL_messageReactions;
         ?? r72;
@@ -837,7 +837,7 @@ public final class p0 {
         boolean z11;
         int i11;
         boolean z12 = z9;
-        this.y = f6Var;
+        this.y = g6Var;
         this.J = z12;
         this.x = ijVar;
         ArrayList arrayList = this.s;
@@ -903,7 +903,7 @@ public final class p0 {
                                 }
                             }
                             n0 n0Var = new n0(this, m0Var, reactionCount, z12);
-                            n0Var.Q = ijVar.A2();
+                            n0Var.Q = ijVar.z2();
                             arrayList.add(n0Var);
                             this.I = (this.I || n0Var.l) ? true : r52 == true ? 1 : 0;
                             if (!z12) {
@@ -949,7 +949,7 @@ public final class p0 {
                                             o0 d2 = o0.d(reactionCount.reaction);
                                             int i18 = i17;
                                             int i19 = i14;
-                                            TLObject e22 = qp.s1(i14).e2(ij.C1(messagePeerReaction.peer_id));
+                                            TLObject e22 = qp.s1(i14).e2(ij.B1(messagePeerReaction.peer_id));
                                             if (d.equals(d2) && e22 != null) {
                                                 if (arrayList5 == null) {
                                                     arrayList5 = new ArrayList();

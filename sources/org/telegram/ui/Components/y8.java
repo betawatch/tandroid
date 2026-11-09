@@ -15,7 +15,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class y8 {
     public float A;
@@ -35,7 +35,7 @@ public final class y8 {
     public int s;
     public boolean w;
     public boolean x;
-    public di.z6 y;
+    public di.a7 y;
     public final Random z;
     public final x8[] b = new x8[3];
     public final x8[] c = new x8[3];
@@ -59,7 +59,7 @@ public final class y8 {
             ImageReceiver imageReceiver = this.b[i7].e;
             imageReceiver.J0 = true;
             imageReceiver.J0(org.telegram.messenger.g0.L(12.0f));
-            this.b[i7].a = new w8((org.telegram.ui.ActionBar.f6) null);
+            this.b[i7].a = new w8((org.telegram.ui.ActionBar.g6) null);
             this.b[i7].a.u(org.telegram.messenger.g0.L(12.0f));
             x8[] x8VarArr2 = this.c;
             x8 x8Var2 = new x8();
@@ -68,7 +68,7 @@ public final class y8 {
             ImageReceiver imageReceiver2 = this.c[i7].e;
             imageReceiver2.J0 = true;
             imageReceiver2.J0(org.telegram.messenger.g0.L(12.0f));
-            this.c[i7].a = new w8((org.telegram.ui.ActionBar.f6) null);
+            this.c[i7].a = new w8((org.telegram.ui.ActionBar.g6) null);
             this.c[i7].a.u(org.telegram.messenger.g0.L(12.0f));
         }
         this.m = z9;
@@ -219,7 +219,7 @@ public final class y8 {
                 this.c[i7].e.R();
             }
             if (this.k == 3) {
-                org.telegram.ui.ActionBar.k6.G0().a(0.0f);
+                org.telegram.ui.ActionBar.l6.G0().a(0.0f);
             }
         }
     }
@@ -311,9 +311,9 @@ public final class y8 {
         int i25 = this.k;
         Paint paint4 = this.h;
         if (i25 == 4) {
-            paint4.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.v7, false));
+            paint4.setColor(org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.v7, false));
         } else if (i25 != 3) {
-            paint4.setColor(org.telegram.ui.ActionBar.k6.x0(null, z13 ? org.telegram.ui.ActionBar.k6.z7 : org.telegram.ui.ActionBar.k6.y7, false));
+            paint4.setColor(org.telegram.ui.ActionBar.l6.x0(null, z13 ? org.telegram.ui.ActionBar.l6.z7 : org.telegram.ui.ActionBar.l6.y7, false));
         }
         int i26 = 0;
         int i27 = 0;
@@ -418,15 +418,15 @@ public final class y8 {
                                     float f25 = f15 * this.u;
                                     float b12 = (b() / 2.0f) + org.telegram.messenger.g0.L(4.0f);
                                     if (this.y != null) {
-                                        di.z6 z6Var = new di.z6();
-                                        int i35 = org.telegram.ui.ActionBar.k6.Hh;
-                                        z6Var.n = i35;
-                                        int i36 = org.telegram.ui.ActionBar.k6.Jh;
-                                        z6Var.o = i36;
-                                        z6Var.a = z11;
+                                        di.a7 a7Var = new di.a7();
+                                        int i35 = org.telegram.ui.ActionBar.l6.Hh;
+                                        a7Var.n = i35;
+                                        int i36 = org.telegram.ui.ActionBar.l6.Jh;
+                                        a7Var.o = i36;
+                                        a7Var.a = z11;
                                         i15 = i29;
-                                        z6Var.d(org.telegram.ui.ActionBar.k6.x0(null, i35, false), org.telegram.ui.ActionBar.k6.x0(null, i36, false), 0, 0);
-                                        this.y = z6Var;
+                                        a7Var.d(org.telegram.ui.ActionBar.l6.x0(null, i35, false), org.telegram.ui.ActionBar.l6.x0(null, i36, false), 0, 0);
+                                        this.y = a7Var;
                                     } else {
                                         i15 = i29;
                                     }
@@ -566,7 +566,7 @@ public final class y8 {
                                                         }
                                                     }
                                                     if (this.k == 5) {
-                                                        x8VarArr4[i11].b.d(i0.a.o(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.eh, false), (int) (f30 * 76.5f)));
+                                                        x8VarArr4[i11].b.d(i0.a.o(org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.eh, false), (int) (f30 * 76.5f)));
                                                     }
                                                     x8Var2 = x8VarArr4[i11];
                                                     groupCallParticipant = x8Var2.f;
@@ -625,9 +625,9 @@ public final class y8 {
                                                         x8Var3.b = new org.telegram.ui.Cells.e4(org.telegram.messenger.g0.L(17.0f), org.telegram.messenger.g0.L(21.0f));
                                                     }
                                                     if (this.k == 10) {
-                                                        x8VarArr8[i37].b.d(i0.a.o(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.eh, false), (int) (f30 * 76.5f)));
+                                                        x8VarArr8[i37].b.d(i0.a.o(org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.eh, false), (int) (f30 * 76.5f)));
                                                     } else {
-                                                        x8VarArr8[i37].b.d(i0.a.o(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.dh, false), (int) (f30 * 76.5f)));
+                                                        x8VarArr8[i37].b.d(i0.a.o(org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.dh, false), (int) (f30 * 76.5f)));
                                                     }
                                                     long currentTimeMillis = System.currentTimeMillis();
                                                     x8 x8Var4 = x8VarArr8[i37];
@@ -972,27 +972,27 @@ public final class y8 {
         if (tLObject instanceof TLRPC.GroupCallParticipant) {
             TLRPC.GroupCallParticipant groupCallParticipant = (TLRPC.GroupCallParticipant) tLObject;
             x8Var.f = groupCallParticipant;
-            long C1 = org.telegram.messenger.ij.C1(groupCallParticipant.peer);
-            if (org.telegram.messenger.m5.E(C1)) {
-                user = org.telegram.messenger.qp.s1(i10).a2(Long.valueOf(C1));
+            long B1 = org.telegram.messenger.ij.B1(groupCallParticipant.peer);
+            if (org.telegram.messenger.m5.E(B1)) {
+                user = org.telegram.messenger.qp.s1(i10).a2(Long.valueOf(B1));
                 x8VarArr[i7].a.r(user);
                 chat = null;
             } else {
-                TLRPC.Chat M0 = org.telegram.messenger.qp.s1(i10).M0(Long.valueOf(-C1));
+                TLRPC.Chat M0 = org.telegram.messenger.qp.s1(i10).M0(Long.valueOf(-B1));
                 x8VarArr[i7].a.q(M0);
                 chat = M0;
                 user = null;
             }
             if (this.k != 4) {
                 x8VarArr[i7].d = groupCallParticipant.active_date;
-            } else if (C1 == org.telegram.messenger.p10.i(org.telegram.messenger.c.a(i10).a).e()) {
+            } else if (B1 == org.telegram.messenger.p10.i(org.telegram.messenger.c.a(i10).a).e()) {
                 x8VarArr[i7].d = 0L;
             } else if (this.m) {
                 x8VarArr[i7].d = groupCallParticipant.lastActiveDate;
             } else {
                 x8VarArr[i7].d = groupCallParticipant.active_date;
             }
-            x8VarArr[i7].g = C1;
+            x8VarArr[i7].g = B1;
         } else if (tLObject instanceof TLRPC.User) {
             TLRPC.User user2 = (TLRPC.User) tLObject;
             if (user2.self && this.a) {

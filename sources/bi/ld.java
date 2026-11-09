@@ -2,7 +2,7 @@ package bi;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class ld extends zd {
     public final /* synthetic */ boolean m0;
@@ -10,8 +10,8 @@ public final class ld extends zd {
     public final /* synthetic */ ce o0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ld(ce ceVar, Context context, org.telegram.ui.ActionBar.f6 f6Var, boolean z9, int i7) {
-        super(context, f6Var);
+    public ld(ce ceVar, Context context, org.telegram.ui.ActionBar.g6 g6Var, boolean z9, int i7) {
+        super(context, g6Var);
         this.o0 = ceVar;
         this.m0 = z9;
         this.n0 = i7;
@@ -24,7 +24,7 @@ public final class ld extends zd {
         ceVar.N0(j3);
         fi.d dVar = ceVar.t1;
         if (dVar != null) {
-            dVar.i(dd.Y0(false, org.telegram.messenger.id.a0(null, null, 2131745050, org.telegram.messenger.id.E(j3, ',')), ceVar.J1), true, true);
+            dVar.i(dd.Y0(false, org.telegram.messenger.id.a0(null, null, 2131745047, org.telegram.messenger.id.E(j3, ',')), ceVar.J1), true, true);
         }
         if (this.m0) {
             di.s0 s0Var = ceVar.x1;

@@ -12,7 +12,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.DataAutoDownloadActivity;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class lb implements View.OnClickListener {
     public final /* synthetic */ int a = 2;
@@ -50,7 +50,7 @@ public final /* synthetic */ class lb implements View.OnClickListener {
                 fi.d dVar = (fi.d) obj5;
                 TL_stars.StarsSubscription starsSubscription = (TL_stars.StarsSubscription) obj3;
                 org.telegram.ui.ActionBar.v2[] v2VarArr = (org.telegram.ui.ActionBar.v2[]) obj2;
-                org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) obj4;
+                org.telegram.ui.ActionBar.g6 g6Var = (org.telegram.ui.ActionBar.g6) obj4;
                 boolean[] zArr = (boolean[]) obj6;
                 Activity activity = (Activity) obj;
                 if (!dVar.Q) {
@@ -65,7 +65,7 @@ public final /* synthetic */ class lb implements View.OnClickListener {
                         TLRPC.TL_messages_checkChatInvite tL_messages_checkChatInvite = new TLRPC.TL_messages_checkChatInvite();
                         tL_messages_checkChatInvite.hash = starsSubscription.chat_invite_hash;
                         int i11 = this.b;
-                        ConnectionsManager.getInstance(i11).sendRequest(tL_messages_checkChatInvite, new bg.k0(dVar, v2VarArr, f6Var, i11, tL_messages_checkChatInvite, 1));
+                        ConnectionsManager.getInstance(i11).sendRequest(tL_messages_checkChatInvite, new bg.k0(dVar, v2VarArr, g6Var, i11, tL_messages_checkChatInvite, 1));
                         break;
                     }
                 }
@@ -105,22 +105,22 @@ public final /* synthetic */ class lb implements View.OnClickListener {
                 break;
             default:
                 boolean[] zArr3 = (boolean[]) obj6;
-                org.telegram.ui.Wallet.z2[] z2VarArr = (org.telegram.ui.Wallet.z2[]) obj5;
-                org.telegram.ui.ActionBar.f6 f6Var2 = (org.telegram.ui.ActionBar.f6) obj4;
+                org.telegram.ui.Wallet.y2[] y2VarArr = (org.telegram.ui.Wallet.y2[]) obj5;
+                org.telegram.ui.ActionBar.g6 g6Var2 = (org.telegram.ui.ActionBar.g6) obj4;
                 xh.l lVar = (xh.l) obj3;
                 TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) obj2;
                 String str = (String) obj;
                 if (!zArr3[0]) {
                     zArr3[0] = true;
-                    org.telegram.ui.Wallet.r rVar = new org.telegram.ui.Wallet.r(zArr3, z2VarArr, f6Var2, lVar, 9);
+                    org.telegram.ui.Wallet.q qVar = new org.telegram.ui.Wallet.q(zArr3, y2VarArr, g6Var2, lVar, 9);
                     if (!wallettransaction.comment_encrypted_preparing) {
-                        org.telegram.ui.Wallet.m0 x10 = org.telegram.ui.Wallet.m0.x(i10);
+                        org.telegram.ui.Wallet.l0 x10 = org.telegram.ui.Wallet.l0.x(i10);
                         String str2 = wallettransaction.comment;
-                        org.telegram.ui.Wallet.m0.H("decrypting transaction comment");
-                        x10.z(new org.telegram.ui.Wallet.j(x10, rVar, str, str2), true, false);
+                        org.telegram.ui.Wallet.l0.H("decrypting transaction comment");
+                        x10.z(new org.telegram.ui.Wallet.j(x10, qVar, str, str2), true, false);
                         break;
                     } else {
-                        rVar.a(wallettransaction.comment, null);
+                        qVar.a(wallettransaction.comment, null);
                         break;
                     }
                 }
@@ -128,12 +128,12 @@ public final /* synthetic */ class lb implements View.OnClickListener {
         }
     }
 
-    public /* synthetic */ lb(fi.d dVar, TL_stars.StarsSubscription starsSubscription, int i7, org.telegram.ui.ActionBar.v2[] v2VarArr, org.telegram.ui.ActionBar.f6 f6Var, boolean[] zArr, Activity activity) {
+    public /* synthetic */ lb(fi.d dVar, TL_stars.StarsSubscription starsSubscription, int i7, org.telegram.ui.ActionBar.v2[] v2VarArr, org.telegram.ui.ActionBar.g6 g6Var, boolean[] zArr, Activity activity) {
         this.c = dVar;
         this.d = starsSubscription;
         this.b = i7;
         this.e = v2VarArr;
-        this.f = f6Var;
+        this.f = g6Var;
         this.h = zArr;
         this.n = activity;
     }
@@ -148,10 +148,10 @@ public final /* synthetic */ class lb implements View.OnClickListener {
         this.n = animatorSetArr;
     }
 
-    public /* synthetic */ lb(boolean[] zArr, org.telegram.ui.Wallet.z2[] z2VarArr, org.telegram.ui.ActionBar.f6 f6Var, xh.l lVar, TL_wallet.walletTransaction wallettransaction, int i7, String str) {
+    public /* synthetic */ lb(boolean[] zArr, org.telegram.ui.Wallet.y2[] y2VarArr, org.telegram.ui.ActionBar.g6 g6Var, xh.l lVar, TL_wallet.walletTransaction wallettransaction, int i7, String str) {
         this.h = zArr;
-        this.c = z2VarArr;
-        this.f = f6Var;
+        this.c = y2VarArr;
+        this.f = g6Var;
         this.d = lVar;
         this.e = wallettransaction;
         this.b = i7;

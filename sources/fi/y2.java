@@ -1,12 +1,12 @@
 package fi;
 
 import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.ui.Components.bj0;
 import org.telegram.ui.Components.cj0;
 import org.telegram.ui.Components.dj0;
 import org.telegram.ui.Components.ej0;
+import org.telegram.ui.Components.fj0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y2 implements Runnable {
     public final /* synthetic */ int a;
@@ -28,15 +28,15 @@ public final /* synthetic */ class y2 implements Runnable {
                 b3 b3Var = this.c;
                 int R = RecyclerView.R(b3Var);
                 if (R != -1) {
-                    bj0 bj0Var = q1Var.T0;
-                    if (bj0Var == null) {
-                        cj0 cj0Var = q1Var.U0;
-                        if (cj0Var != null) {
-                            cj0Var.f(0.0f, 0.0f, R, b3Var);
+                    cj0 cj0Var = q1Var.T0;
+                    if (cj0Var == null) {
+                        dj0 dj0Var = q1Var.U0;
+                        if (dj0Var != null) {
+                            dj0Var.f(0.0f, 0.0f, R, b3Var);
                             break;
                         }
                     } else {
-                        bj0Var.c(R, b3Var);
+                        cj0Var.c(R, b3Var);
                         break;
                     }
                 }
@@ -47,15 +47,15 @@ public final /* synthetic */ class y2 implements Runnable {
                 b3 b3Var2 = this.c;
                 int R2 = RecyclerView.R(b3Var2);
                 if (R2 != -1) {
-                    dj0 dj0Var = q1Var2.V0;
-                    if (dj0Var == null) {
-                        ej0 ej0Var = q1Var2.W0;
-                        if (ej0Var != null) {
-                            ej0Var.f(0.0f, 0.0f, R2, b3Var2);
+                    ej0 ej0Var = q1Var2.V0;
+                    if (ej0Var == null) {
+                        fj0 fj0Var = q1Var2.W0;
+                        if (fj0Var != null) {
+                            fj0Var.f(0.0f, 0.0f, R2, b3Var2);
                             break;
                         }
                     } else {
-                        dj0Var.c(R2, b3Var2);
+                        ej0Var.c(R2, b3Var2);
                         break;
                     }
                 }

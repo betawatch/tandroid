@@ -16,7 +16,7 @@ import java.util.LinkedHashMap;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public class i5 extends Drawable {
     public static SparseArray r;
@@ -158,7 +158,7 @@ public class i5 extends Drawable {
                         }
                         m10.start();
                     } else {
-                        zg0 B = z2Var.B();
+                        ah0 B = z2Var.B();
                         if (B != null) {
                             B.start();
                         }
@@ -198,7 +198,7 @@ public class i5 extends Drawable {
     }
 
     public final void a(View view) {
-        if (view instanceof org.telegram.ui.t01) {
+        if (view instanceof org.telegram.ui.v01) {
             throw new RuntimeException();
         }
         this.m = false;
@@ -234,7 +234,7 @@ public class i5 extends Drawable {
         if (this.e == null) {
             return false;
         }
-        if (!k() && !org.telegram.messenger.ij.D4(this.e)) {
+        if (!k() && !org.telegram.messenger.ij.C4(this.e)) {
             z9 = false;
         }
         this.n = Boolean.valueOf(z9);
@@ -366,11 +366,11 @@ public class i5 extends Drawable {
                 if ("video/webm".equals(this.e.mime_type)) {
                     b10 = org.telegram.messenger.hc.b(this.e);
                     str3 = rf.b.r(str3, "_g");
-                    d = org.telegram.messenger.t5.d(this.e.thumbs, org.telegram.ui.ActionBar.k6.m6, 0.2f, true);
+                    d = org.telegram.messenger.t5.d(this.e.thumbs, org.telegram.ui.ActionBar.l6.m6, 0.2f, true);
                 } else {
                     if (!"application/x-tgsticker".equals(this.e.mime_type)) {
-                        d = org.telegram.messenger.t5.d(this.e.thumbs, org.telegram.ui.ActionBar.k6.m6, 0.2f, true);
-                        if (d != null && org.telegram.messenger.ij.L2(this.e, true)) {
+                        d = org.telegram.messenger.t5.d(this.e.thumbs, org.telegram.ui.ActionBar.l6.m6, 0.2f, true);
+                        if (d != null && org.telegram.messenger.ij.K2(this.e, true)) {
                             d.e = 512;
                             d.f = 512;
                         }
@@ -397,7 +397,7 @@ public class i5 extends Drawable {
                                             String str5 = this.d + "_" + this.d;
                                             TLRPC.Document document3 = this.e;
                                             z2Var5.u0(null, null, c11, str5, c10, null, drawable, document3.size, null, document3, 1);
-                                        } else if (org.telegram.messenger.ij.L2(this.e, true)) {
+                                        } else if (org.telegram.messenger.ij.K2(this.e, true)) {
                                             di.z2 z2Var6 = this.k;
                                             String r10 = rf.b.r(str4, "_firstframe");
                                             TLRPC.Document document4 = this.e;
@@ -476,8 +476,8 @@ public class i5 extends Drawable {
                     sb2.append(str3);
                     String sb3 = sb2.toString();
                     if (org.telegram.messenger.iz.o() != 0 || i10 == 2 || i10 == 25 || i10 == 22 || (kbVar = org.telegram.messenger.gc.D().e) == null || !((LinkedHashMap) kbVar.c).containsKey(sb3)) {
-                        org.telegram.messenger.rz d2 = org.telegram.messenger.t5.d(this.e.thumbs, org.telegram.ui.ActionBar.k6.m6, i10 == 22 ? 0.8f : 0.2f, false);
-                        if (d2 != null && org.telegram.messenger.ij.L2(this.e, true)) {
+                        org.telegram.messenger.rz d2 = org.telegram.messenger.t5.d(this.e.thumbs, org.telegram.ui.ActionBar.l6.m6, i10 == 22 ? 0.8f : 0.2f, false);
+                        if (d2 != null && org.telegram.messenger.ij.K2(this.e, true)) {
                             d2.e = 512;
                             d2.f = 512;
                         }
@@ -555,10 +555,10 @@ public class i5 extends Drawable {
         TLRPC.Document document = this.e;
         boolean z9 = false;
         if (document != null) {
-            TLRPC.InputStickerSet j12 = org.telegram.messenger.ij.j1(document);
-            if (!(j12 instanceof TLRPC.TL_inputStickerSetEmojiDefaultStatuses)) {
-                if (j12 instanceof TLRPC.TL_inputStickerSetID) {
-                    long j3 = j12.id;
+            TLRPC.InputStickerSet i12 = org.telegram.messenger.ij.i1(document);
+            if (!(i12 instanceof TLRPC.TL_inputStickerSetEmojiDefaultStatuses)) {
+                if (i12 instanceof TLRPC.TL_inputStickerSetID) {
+                    long j3 = i12.id;
                     if (j3 != 773947703670341676L) {
                     }
                 }
@@ -697,16 +697,16 @@ public class i5 extends Drawable {
     public final void x() {
         int i7 = this.g;
         if (i7 == 0 || i7 == 26) {
-            this.d = (int) (((Math.abs(org.telegram.ui.ActionBar.k6.o2.descent()) + Math.abs(org.telegram.ui.ActionBar.k6.o2.ascent())) * 1.15f) / org.telegram.messenger.g0.p);
+            this.d = (int) (((Math.abs(org.telegram.ui.ActionBar.l6.o2.descent()) + Math.abs(org.telegram.ui.ActionBar.l6.o2.ascent())) * 1.15f) / org.telegram.messenger.g0.p);
             return;
         }
-        TextPaint[] textPaintArr = org.telegram.ui.ActionBar.k6.y2;
+        TextPaint[] textPaintArr = org.telegram.ui.ActionBar.l6.y2;
         if (textPaintArr != null && (i7 == 1 || i7 == 4 || i7 == 19 || i7 == 20)) {
-            this.d = (int) (((Math.abs(org.telegram.ui.ActionBar.k6.y2[2].descent()) + Math.abs(textPaintArr[2].ascent())) * 1.15f) / org.telegram.messenger.g0.p);
+            this.d = (int) (((Math.abs(org.telegram.ui.ActionBar.l6.y2[2].descent()) + Math.abs(textPaintArr[2].ascent())) * 1.15f) / org.telegram.messenger.g0.p);
             return;
         }
         if (textPaintArr != null && i7 == 8) {
-            this.d = (int) (((Math.abs(org.telegram.ui.ActionBar.k6.y2[0].descent()) + Math.abs(textPaintArr[0].ascent())) * 1.15f) / org.telegram.messenger.g0.p);
+            this.d = (int) (((Math.abs(org.telegram.ui.ActionBar.l6.y2[0].descent()) + Math.abs(textPaintArr[0].ascent())) * 1.15f) / org.telegram.messenger.g0.p);
             return;
         }
         if (i7 == 14 || i7 == 15 || i7 == 17) {

@@ -17,24 +17,24 @@ import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
-import org.telegram.ui.ActionBar.a6;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.ActionBar.b6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.s6;
 import org.telegram.ui.Components.vy;
 import org.telegram.ui.Components.zs;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public abstract class d0 extends zs implements a6 {
-    public final f6 Y1;
+public abstract class d0 extends zs implements b6 {
+    public final g6 Y1;
     public final vy Z1;
     public Runnable a2;
     public int b2;
 
-    public d0(int i7, Context context, f6 f6Var) {
-        super(context, f6Var);
-        this.Y1 = f6Var;
+    public d0(int i7, Context context, g6 g6Var) {
+        super(context, g6Var);
+        this.Y1 = g6Var;
         this.Z1 = new vy(getContext(), new c0());
         setBackground(null);
         setIncludeFontPadding(true);
@@ -47,14 +47,14 @@ public abstract class d0 extends zs implements a6 {
         setTextSize(1, 22.0f);
         setGravity(80);
         setPadding(org.telegram.messenger.g0.L(18.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(18.0f), org.telegram.messenger.g0.L(12.0f));
-        r6.V(this, k6.Ie, f6Var);
-        r6.H(this, k6.Vc, f6Var);
-        r6.D(this, k6.ig, f6Var);
-        int i11 = k6.Je;
-        r6.m(this, 34, i11, f6Var);
-        r6.E(this, i11, f6Var);
-        r6.m(this, 30, k6.Ke, f6Var);
-        r6.m(this, 36, k6.jg, f6Var);
+        s6.U(this, l6.Ie, g6Var);
+        s6.G(this, l6.Vc, g6Var);
+        s6.C(this, l6.ig, g6Var);
+        int i11 = l6.Je;
+        s6.l(this, 34, i11, g6Var);
+        s6.D(this, i11, g6Var);
+        s6.l(this, 30, l6.Ke, g6Var);
+        s6.l(this, 36, l6.jg, g6Var);
         if (i10 >= 28) {
             setFallbackLineSpacing(false);
         }
@@ -127,7 +127,7 @@ public abstract class d0 extends zs implements a6 {
     @Override // org.telegram.ui.Components.EditTextBoldCursor
     public final void o(ActionMode actionMode, Menu menu) {
         menu.clear();
-        menu.add(R.id.menu_delete, R.id.menu_delete, 0, id.M0(2131751599, null));
+        menu.add(R.id.menu_delete, R.id.menu_delete, 0, id.M0(2131751598, null));
     }
 
     @Override // org.telegram.ui.Components.dt, android.widget.TextView
@@ -150,20 +150,20 @@ public abstract class d0 extends zs implements a6 {
         this.a2 = runnable;
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
-        f6 f6Var = this.Y1;
+        g6 g6Var = this.Y1;
         try {
-            setHintColor(k6.w0(k6.Je, f6Var));
-            setCursorColor(k6.w0(k6.Ke, f6Var));
-            setHandlesColor(k6.w0(k6.jg, f6Var));
+            setHintColor(l6.w0(l6.Je, g6Var));
+            setCursorColor(l6.w0(l6.Ke, g6Var));
+            setHandlesColor(l6.w0(l6.jg, g6Var));
             invalidate();
         } catch (Exception e10) {
             a8.g(e10, true);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

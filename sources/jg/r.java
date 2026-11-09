@@ -23,16 +23,17 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.Components.ca0;
+import org.telegram.ui.Components.da0;
 import org.telegram.ui.Components.qn;
-import org.telegram.ui.Components.t51;
+import org.telegram.ui.Components.u51;
 import org.telegram.ui.Components.xn;
-import org.telegram.ui.an;
+import org.telegram.ui.cn;
+import org.webrtc.ScreenCapturerAndroid;
 import org.webrtc.SurfaceTextureHelper;
 import org.webrtc.SurfaceViewRenderer;
 import org.webrtc.TextureViewRenderer;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r implements Runnable {
     public final /* synthetic */ int a;
@@ -49,7 +50,7 @@ public final /* synthetic */ class r implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        t51 t51Var;
+        u51 u51Var;
         switch (this.a) {
             case 0:
                 int i7 = this.b;
@@ -160,9 +161,9 @@ public final /* synthetic */ class r implements Runnable {
                 break;
             case 3:
                 MediaController mediaController = (MediaController) ((f5.u) this.d).c;
-                if (this.b == mediaController.k0 && this.c == 4 && (t51Var = mediaController.j0) != null) {
+                if (this.b == mediaController.k0 && this.c == 4 && (u51Var = mediaController.j0) != null) {
                     try {
-                        t51Var.m0();
+                        u51Var.m0();
                         mediaController.j0 = null;
                         break;
                     } catch (Exception e11) {
@@ -197,7 +198,7 @@ public final /* synthetic */ class r implements Runnable {
                 Bundle bundle = new Bundle();
                 bundle.putLong("user_id", p10.i(this.b).e());
                 bundle.putInt("message_id", this.c);
-                f2Var.presentFragment(new an(bundle));
+                f2Var.presentFragment(new cn(bundle));
                 break;
             case 11:
                 xn xnVar = (xn) this.d;
@@ -218,9 +219,9 @@ public final /* synthetic */ class r implements Runnable {
                 qnVar.a(Integer.valueOf(i19));
                 break;
             case 13:
-                ca0 ca0Var = (ca0) ((bi.q1) this.d).f3;
-                View d = ca0Var.d();
-                bi.q1 q1Var = ca0Var.f;
+                da0 da0Var = (da0) ((bi.q1) this.d).f3;
+                View d = da0Var.d();
+                bi.q1 q1Var = da0Var.f;
                 if (d != null) {
                     int top = d.getTop() + this.b;
                     int top2 = d.getTop() + this.c;
@@ -239,9 +240,12 @@ public final /* synthetic */ class r implements Runnable {
                 }
                 break;
             case 14:
-                ((SurfaceTextureHelper) this.d).lambda$setTextureSize$2(this.b, this.c);
+                ((ScreenCapturerAndroid) this.d).lambda$changeCaptureFormat$1(this.b, this.c);
                 break;
             case 15:
+                ((SurfaceTextureHelper) this.d).lambda$setTextureSize$2(this.b, this.c);
+                break;
+            case 16:
                 ((SurfaceViewRenderer) this.d).lambda$onFrameResolutionChanged$0(this.b, this.c);
                 break;
             default:

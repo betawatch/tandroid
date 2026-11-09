@@ -15,13 +15,13 @@ import java.util.concurrent.ScheduledExecutorService;
 import org.telegram.messenger.t0;
 import org.telegram.ui.ActionBar.r1;
 import org.telegram.ui.ActionBar.u1;
-import org.telegram.ui.Components.db0;
+import org.telegram.ui.Components.eb0;
 import x2.e0;
 import x2.z0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class j implements v5.e, u9.d, ua.a, OnFailureListener, j2.g, r1, db0, g9.k, h2.j, t3.g {
+public final /* synthetic */ class j implements v5.e, u9.d, ua.a, OnFailureListener, j2.g, r1, eb0, g9.k, h2.j, t3.g {
     public final /* synthetic */ int a;
 
     public /* synthetic */ j(int i7) {
@@ -129,7 +129,7 @@ public final /* synthetic */ class j implements v5.e, u9.d, ua.a, OnFailureListe
         }
     }
 
-    @Override // org.telegram.ui.Components.db0
+    @Override // org.telegram.ui.Components.eb0
     public String h(int i7) {
         switch (this.a) {
             case 16:

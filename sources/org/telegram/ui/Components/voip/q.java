@@ -9,10 +9,10 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import c8.ha;
 import org.telegram.messenger.qs;
-import org.telegram.ui.Components.l51;
+import org.telegram.ui.Components.m51;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class q extends FrameLayout {
     public final p a;
@@ -50,7 +50,7 @@ public final class q extends FrameLayout {
         ViewGroup.LayoutParams layoutParams = pVar.getLayoutParams();
         layoutParams.width = -1;
         pVar.setLayoutParams(layoutParams);
-        org.telegram.messenger.g0.i3(new l51(4, this, onClickListener), 500L);
+        org.telegram.messenger.g0.i3(new m51(4, this, onClickListener), 500L);
     }
 
     public p getEndCloseView() {

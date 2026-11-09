@@ -8,7 +8,7 @@ import org.telegram.messenger.id;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.t10;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public class c3 {
     public boolean A;
@@ -68,7 +68,7 @@ public class c3 {
 
     public String b() {
         if (this.J != null) {
-            return TextUtils.isEmpty(this.E) ? id.M0(2131742929, null) : this.E;
+            return TextUtils.isEmpty(this.E) ? id.M0(2131742926, null) : this.E;
         }
         hi.q4 q4Var = this.a;
         return q4Var == null ? "" : q4Var.g == 6 ? q4Var.e : t10.p(qp.s1(q4Var.a).a2(Long.valueOf(this.a.c)));

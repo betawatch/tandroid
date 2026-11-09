@@ -6,9 +6,9 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.PathInterpolator;
 import org.telegram.messenger.ui;
-import org.telegram.ui.s81;
+import org.telegram.ui.t81;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class x9 extends GestureDetector.SimpleOnGestureListener {
     public final /* synthetic */ int a;
@@ -27,12 +27,12 @@ public final class x9 extends GestureDetector.SimpleOnGestureListener {
                 int i7 = y9Var.Z5;
                 boolean z9 = false;
                 if (y9Var.od == 2 && ui.b0(i7).Q() != null) {
-                    boolean I5 = y9Var.getMessageObject().I5(ch.o0.b(ui.b0(i7).Q()), false);
+                    boolean H5 = y9Var.getMessageObject().H5(ch.o0.b(ui.b0(i7).Q()), false);
                     y9Var.w3(y9Var.getMessageObject(), null, false, false, false, false);
                     y9Var.requestLayout();
                     ch.k0.b(false);
                     z9 = true;
-                    if (I5) {
+                    if (H5) {
                         z9 z9Var = y9Var.pd;
                         ch.k0.d(z9Var.x, null, z9Var.n[1], null, motionEvent.getX(), motionEvent.getY(), ch.o0.b(ui.b0(i7).Q()), y9Var.Z5, 0);
                         ch.k0.f();
@@ -93,7 +93,7 @@ public final class x9 extends GestureDetector.SimpleOnGestureListener {
                     ofFloat.setDuration(220L);
                     eVar.d.setInterpolator(new PathInterpolator(0.23f, 1.0f, 0.32f, 1.0f));
                     eVar.d.addUpdateListener(new fi.j6(this, f10, x10, f11, y10, 2));
-                    eVar.d.addListener(new s81(this, 20));
+                    eVar.d.addListener(new t81(this, 20));
                     eVar.d.start();
                     break;
                 }

@@ -32,7 +32,7 @@ import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.Components.CheckBoxBase;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class z0 extends AccessibilityNodeProvider {
     public final q1 a;
@@ -399,7 +399,7 @@ public final class z0 extends AccessibilityNodeProvider {
                         float f13 = q1Var.J5;
                         int i33 = c0Var.d;
                         rect.set((int) (f12 * f13), i33, (int) ((f12 + c0Var.e) * f13), c0Var.f + i33);
-                        rect.offset(q1Var.P5.Q3() ? (q1Var.getMeasuredWidth() - q1Var.getWidthForButtons()) - org.telegram.messenger.g0.L(10.0f) : q1Var.M6 + org.telegram.messenger.g0.L(q1Var.B6 ? 1.0f : 7.0f), q1Var.d7);
+                        rect.offset(q1Var.P5.P3() ? (q1Var.getMeasuredWidth() - q1Var.getWidthForButtons()) - org.telegram.messenger.g0.L(10.0f) : q1Var.M6 + org.telegram.messenger.g0.L(q1Var.B6 ? 1.0f : 7.0f), q1Var.d7);
                         obtain.setBoundsInParent(rect);
                         if (sparseArray.get(i7) == null) {
                             sparseArray.put(i7, new Rect(rect));
@@ -497,7 +497,7 @@ public final class z0 extends AccessibilityNodeProvider {
                         if (q1Var.F2(q1Var.P5)) {
                             obtain.setContentDescription(id.M0(2131754819, "AccDescrOpenChat"));
                         } else {
-                            obtain.setContentDescription(id.M0(2131745462, "ShareFile"));
+                            obtain.setContentDescription(id.M0(2131745459, "ShareFile"));
                         }
                         obtain.addAction(16);
                         int i38 = (int) q1Var.Q8;
@@ -513,7 +513,7 @@ public final class z0 extends AccessibilityNodeProvider {
                     } else if (i7 == 497) {
                         obtain.setEnabled(true);
                         StringBuilder sb3 = new StringBuilder();
-                        org.telegram.messenger.camera.q.q("Reply", 2131746264, sb3, ", ");
+                        org.telegram.messenger.camera.q.q("Reply", 2131746263, sb3, ", ");
                         StaticLayout staticLayout3 = q1Var.P7;
                         if (staticLayout3 != null) {
                             sb3.append(staticLayout3.getText());
@@ -566,12 +566,12 @@ public final class z0 extends AccessibilityNodeProvider {
                         obtain.setEnabled(true);
                         int repliesCount = q1Var.getRepliesCount();
                         ij ijVar2 = q1Var.P5;
-                        if (ijVar2 == null || ijVar2.Q5() || q1Var.P5.H2()) {
+                        if (ijVar2 == null || ijVar2.P5() || q1Var.P5.G2()) {
                             S = (q1Var.t6 || repliesCount <= 0) ? null : id.S(null, repliesCount);
                         } else if (q1Var.t6) {
-                            S = id.M0(2131743555, "ViewInChat");
+                            S = id.M0(2131743552, "ViewInChat");
                         } else {
-                            S = repliesCount == 0 ? id.M0(2131749009, "LeaveAComment") : id.G(repliesCount, "CommentsCount", new Object[0]);
+                            S = repliesCount == 0 ? id.M0(2131749008, "LeaveAComment") : id.G(repliesCount, "CommentsCount", new Object[0]);
                         }
                         if (S != null) {
                             obtain.setText(S);
@@ -589,7 +589,7 @@ public final class z0 extends AccessibilityNodeProvider {
                     } else if (i7 == 493) {
                         obtain.setClassName("android.widget.Button");
                         obtain.setEnabled(true);
-                        if (q1Var.P5.U4()) {
+                        if (q1Var.P5.T4()) {
                             str = "AccActionCloseTranscription";
                             i10 = 2131754939;
                         } else {
@@ -669,12 +669,12 @@ public final class z0 extends AccessibilityNodeProvider {
         AccessibilityNodeInfo obtain2 = AccessibilityNodeInfo.obtain(q1Var);
         q1Var.onInitializeAccessibilityNodeInfo(obtain2);
         ij ijVar3 = q1Var.P5;
-        if (ijVar3 != null && ijVar3.O3()) {
+        if (ijVar3 != null && ijVar3.N3()) {
             ij ijVar4 = q1Var.P5;
-            if (!ijVar4.p1 && ijVar4.G4()) {
+            if (!ijVar4.p1 && ijVar4.F4()) {
                 z12 = true;
                 ij ijVar5 = q1Var.P5;
-                boolean z15 = ijVar5 == null && ijVar5.S2();
+                boolean z15 = ijVar5 == null && ijVar5.R2();
                 ij ijVar6 = q1Var.P5;
                 j3 = ijVar6 == null ? ijVar6.F0 : 0L;
                 if (q1Var.O2 == null && q1Var.P2 == z12 && q1Var.Q2 == z15) {
@@ -704,7 +704,7 @@ public final class z0 extends AccessibilityNodeProvider {
                             accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_small_button, id.M0(2131754938, "AccActionDownload")));
                         }
                         if (!q1Var.I8 || q1Var.r8) {
-                            accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_summarize, id.M0(2131744331, "SummaryTitle")));
+                            accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_summarize, id.M0(2131744328, "SummaryTitle")));
                         }
                         arrayList6 = q1Var.P5.z2;
                         if (arrayList6 != null) {
@@ -722,14 +722,14 @@ public final class z0 extends AccessibilityNodeProvider {
                                 }
                             }
                         }
-                        if ((!q1Var.P5.Q4() || q1Var.P5.i4() || q1Var.P5.J3()) && MediaController.B().I(q1Var.P5)) {
+                        if ((!q1Var.P5.P4() || q1Var.P5.h4() || q1Var.P5.I3()) && MediaController.B().I(q1Var.P5)) {
                             q1Var.E4.f(accessibilityNodeInfo2);
                         }
                         if (q1Var.H4 && q1Var.I4 != null) {
                             accessibilityNodeInfo2.addChild(q1Var, 493);
                         }
                         if (Build.VERSION.SDK_INT < 24) {
-                            if (q1Var.e6 && q1Var.ia != null && !q1Var.P5.O3()) {
+                            if (q1Var.e6 && q1Var.ia != null && !q1Var.P5.N3()) {
                                 accessibilityNodeInfo2.addChild(q1Var, 5000);
                             }
                             CharSequence charSequence3 = q1Var.P5.v;
@@ -760,7 +760,7 @@ public final class z0 extends AccessibilityNodeProvider {
                             accessibilityNodeInfo2.addChild(q1Var, i47 + 1000);
                             i47++;
                         }
-                        if (q1Var.q5 && q1Var.n5 != -1 && q1Var.P5.U3()) {
+                        if (q1Var.q5 && q1Var.n5 != -1 && q1Var.P5.T3()) {
                             accessibilityNodeInfo2.addChild(q1Var, 495);
                         }
                         size2 = arrayList4.size();
@@ -837,7 +837,7 @@ public final class z0 extends AccessibilityNodeProvider {
                     arrayList3 = arrayList9;
                 }
                 spannableStringBuilder = new SpannableStringBuilder();
-                if (q1Var.e6 || q1Var.ia == null || q1Var.P5.O3()) {
+                if (q1Var.e6 || q1Var.ia == null || q1Var.P5.N3()) {
                     accessibilityNodeInfo = obtain2;
                     staticLayoutArr = staticLayoutArr2;
                     j10 = j3;
@@ -946,19 +946,19 @@ public final class z0 extends AccessibilityNodeProvider {
                 }
                 if (q1Var.M1 != null && (((i14 = q1Var.L1) == 1 || i14 == 2 || i14 == 4) && q1Var.N3 == 1 && q1Var.z3 != null)) {
                     spannableStringBuilder.append((CharSequence) "\n");
-                    boolean p42 = q1Var.P5.p4();
-                    spannableStringBuilder.append((CharSequence) id.Y(!p42 ? 2131754742 : 2131754888, !p42 ? "AccDescrUploadProgress" : "AccDescrDownloadProgress", org.telegram.messenger.g0.i0(q1Var.P5.F0, false, false), org.telegram.messenger.g0.i0(q1Var.z1, false, false)));
+                    boolean o4 = q1Var.P5.o4();
+                    spannableStringBuilder.append((CharSequence) id.Y(!o4 ? 2131754742 : 2131754888, !o4 ? "AccDescrUploadProgress" : "AccDescrDownloadProgress", org.telegram.messenger.g0.i0(q1Var.P5.F0, false, false), org.telegram.messenger.g0.i0(q1Var.z1, false, false)));
                 }
-                if (!q1Var.P5.J3()) {
+                if (!q1Var.P5.I3()) {
                     spannableStringBuilder.append((CharSequence) "\n");
-                    spannableStringBuilder.append((CharSequence) id.Y(2131754832, "AccDescrMusicInfo", q1Var.P5.x1(true), q1Var.P5.z1(true)));
+                    spannableStringBuilder.append((CharSequence) id.Y(2131754832, "AccDescrMusicInfo", q1Var.P5.w1(true), q1Var.P5.y1(true)));
                     spannableStringBuilder.append((CharSequence) ", ");
                     spannableStringBuilder.append((CharSequence) id.z((int) q1Var.P5.L0()));
-                } else if (q1Var.P5.Q4() || q1Var.xb) {
+                } else if (q1Var.P5.P4() || q1Var.xb) {
                     spannableStringBuilder.append((CharSequence) ", ");
                     spannableStringBuilder.append((CharSequence) id.z((int) q1Var.P5.L0()));
                     spannableStringBuilder.append((CharSequence) ", ");
-                    if (q1Var.P5.S2()) {
+                    if (q1Var.P5.R2()) {
                         spannableStringBuilder.append((CharSequence) id.M0(2131754838, "AccDescrMsgNotPlayed"));
                     } else {
                         spannableStringBuilder.append((CharSequence) id.M0(2131754837, "AccDescrMsgPlayed"));
@@ -969,10 +969,10 @@ public final class z0 extends AccessibilityNodeProvider {
                     spannableStringBuilder.append((CharSequence) q1Var.i5.question.text);
                     spannableStringBuilder.append((CharSequence) ", ");
                     if (q1Var.W4) {
-                        M0 = id.M0(2131750696, "FinalResults");
+                        M0 = id.M0(2131750695, "FinalResults");
                     } else {
                         TLRPC.Poll poll2 = q1Var.i5;
-                        M0 = poll2.quiz ? poll2.public_voters ? id.M0(2131746446, "QuizPoll") : id.M0(2131754248, "AnonymousQuizPoll") : poll2.public_voters ? id.M0(2131746589, "PublicPoll") : id.M0(2131754249, "AnonymousPoll");
+                        M0 = poll2.quiz ? poll2.public_voters ? id.M0(2131746445, "QuizPoll") : id.M0(2131754248, "AnonymousQuizPoll") : poll2.public_voters ? id.M0(2131746588, "PublicPoll") : id.M0(2131754249, "AnonymousPoll");
                     }
                     spannableStringBuilder.append((CharSequence) M0);
                 }
@@ -986,30 +986,30 @@ public final class z0 extends AccessibilityNodeProvider {
                         spannableStringBuilder.append((CharSequence) org.telegram.messenger.g0.i0(q1Var.M1.size, false, false));
                     }
                 }
-                if (!q1Var.P5.U4()) {
+                if (!q1Var.P5.T4()) {
                     spannableStringBuilder.append((CharSequence) "\n");
-                    spannableStringBuilder.append(q1Var.P5.j2());
-                } else if (ij.o1(q1Var.P5.k) != null && !TextUtils.isEmpty(q1Var.P5.z)) {
+                    spannableStringBuilder.append(q1Var.P5.i2());
+                } else if (ij.n1(q1Var.P5.k) != null && !TextUtils.isEmpty(q1Var.P5.z)) {
                     spannableStringBuilder.append((CharSequence) "\n");
                     spannableStringBuilder.append(q1Var.P5.z);
                 }
-                if (q1Var.P5.O3()) {
+                if (q1Var.P5.N3()) {
                     spannableStringBuilder.append((CharSequence) "\n");
                     StringBuilder sb5 = new StringBuilder();
-                    org.telegram.messenger.camera.q.q("TodayAt", 2131744115, sb5, " ");
+                    org.telegram.messenger.camera.q.q("TodayAt", 2131744112, sb5, " ");
                     sb5.append((Object) q1Var.D9);
                     spannableStringBuilder.append((CharSequence) id.Y(2131754789, "AccDescrReceivedDate", sb5.toString()));
-                } else if (q1Var.P5.r4()) {
+                } else if (q1Var.P5.q4()) {
                     spannableStringBuilder.append((CharSequence) "\n");
                     if (q1Var.P5.p1) {
                         spannableStringBuilder.append((CharSequence) id.Y(2131754781, "AccDescrScheduledDate", q1Var.D9));
                     } else {
                         StringBuilder sb6 = new StringBuilder();
-                        org.telegram.messenger.camera.q.q("TodayAt", 2131744115, sb6, " ");
+                        org.telegram.messenger.camera.q.q("TodayAt", 2131744112, sb6, " ");
                         sb6.append((Object) q1Var.D9);
                         spannableStringBuilder.append((CharSequence) id.Y(2131754765, "AccDescrSentDate", sb6.toString()));
                         spannableStringBuilder.append((CharSequence) ", ");
-                        if (q1Var.P5.G4()) {
+                        if (q1Var.P5.F4()) {
                             str3 = "AccDescrMsgUnread";
                             i13 = 2131754833;
                         } else {
@@ -1018,7 +1018,7 @@ public final class z0 extends AccessibilityNodeProvider {
                         }
                         spannableStringBuilder.append((CharSequence) id.M0(i13, str3));
                     }
-                } else if (q1Var.P5.p4()) {
+                } else if (q1Var.P5.o4()) {
                     spannableStringBuilder.append((CharSequence) "\n");
                     spannableStringBuilder.append((CharSequence) id.M0(2131754835, "AccDescrMsgSending"));
                     RadialProgress2 radialProgress2 = q1Var.P0;
@@ -1026,7 +1026,7 @@ public final class z0 extends AccessibilityNodeProvider {
                     if (f15 > 0.0f) {
                         spannableStringBuilder.append((CharSequence) Integer.toString(Math.round(f15 * 100.0f))).append((CharSequence) "%");
                     }
-                } else if (q1Var.P5.o4()) {
+                } else if (q1Var.P5.n4()) {
                     spannableStringBuilder.append((CharSequence) "\n");
                     spannableStringBuilder.append((CharSequence) id.M0(2131754834, "AccDescrMsgSendingError"));
                 }
@@ -1048,7 +1048,7 @@ public final class z0 extends AccessibilityNodeProvider {
                             if (arrayList16 == null || arrayList16.size() != 1 || (messagePeerReaction = q1Var.P5.k.reactions.recent_reactions.get(0)) == null) {
                                 z13 = false;
                             } else {
-                                TLRPC.User a22 = qp.s1(q1Var.Z5).a2(Long.valueOf(ij.C1(messagePeerReaction.peer_id)));
+                                TLRPC.User a22 = qp.s1(q1Var.Z5).a2(Long.valueOf(ij.B1(messagePeerReaction.peer_id)));
                                 z13 = t10.B(a22);
                                 if (a22 != null) {
                                     str4 = t10.i(a22);
@@ -1064,7 +1064,7 @@ public final class z0 extends AccessibilityNodeProvider {
                             spannableStringBuilder.append((CharSequence) id.G(reactionCount.count, "AccDescrNumberOfPeopleReactions", str5));
                         }
                     } else {
-                        spannableStringBuilder.append((CharSequence) id.M0(2131746388, "Reactions")).append((CharSequence) ": ");
+                        spannableStringBuilder.append((CharSequence) id.M0(2131746387, "Reactions")).append((CharSequence) ": ");
                         int size8 = q1Var.P5.k.reactions.results.size();
                         int i57 = 0;
                         while (i57 < size8) {
@@ -1111,11 +1111,11 @@ public final class z0 extends AccessibilityNodeProvider {
                 }
                 if (!q1Var.I8) {
                 }
-                accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_summarize, id.M0(2131744331, "SummaryTitle")));
+                accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_summarize, id.M0(2131744328, "SummaryTitle")));
                 arrayList6 = q1Var.P5.z2;
                 if (arrayList6 != null) {
                 }
-                if (!q1Var.P5.Q4()) {
+                if (!q1Var.P5.P4()) {
                 }
                 q1Var.E4.f(accessibilityNodeInfo2);
                 if (q1Var.H4) {
@@ -1207,18 +1207,18 @@ public final class z0 extends AccessibilityNodeProvider {
         }
         if (q1Var.M1 != null) {
             spannableStringBuilder.append((CharSequence) "\n");
-            boolean p422 = q1Var.P5.p4();
-            spannableStringBuilder.append((CharSequence) id.Y(!p422 ? 2131754742 : 2131754888, !p422 ? "AccDescrUploadProgress" : "AccDescrDownloadProgress", org.telegram.messenger.g0.i0(q1Var.P5.F0, false, false), org.telegram.messenger.g0.i0(q1Var.z1, false, false)));
+            boolean o42 = q1Var.P5.o4();
+            spannableStringBuilder.append((CharSequence) id.Y(!o42 ? 2131754742 : 2131754888, !o42 ? "AccDescrUploadProgress" : "AccDescrDownloadProgress", org.telegram.messenger.g0.i0(q1Var.P5.F0, false, false), org.telegram.messenger.g0.i0(q1Var.z1, false, false)));
         }
-        if (!q1Var.P5.J3()) {
+        if (!q1Var.P5.I3()) {
         }
         if (q1Var.i5 != null) {
         }
         if (q1Var.M1 != null) {
         }
-        if (!q1Var.P5.U4()) {
+        if (!q1Var.P5.T4()) {
         }
-        if (q1Var.P5.O3()) {
+        if (q1Var.P5.N3()) {
         }
         if (q1Var.getRepliesCount() > 0) {
             spannableStringBuilder.append((CharSequence) "\n");
@@ -1253,11 +1253,11 @@ public final class z0 extends AccessibilityNodeProvider {
         }
         if (!q1Var.I8) {
         }
-        accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_summarize, id.M0(2131744331, "SummaryTitle")));
+        accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_summarize, id.M0(2131744328, "SummaryTitle")));
         arrayList6 = q1Var.P5.z2;
         if (arrayList6 != null) {
         }
-        if (!q1Var.P5.Q4()) {
+        if (!q1Var.P5.P4()) {
         }
         q1Var.E4.f(accessibilityNodeInfo2);
         if (q1Var.H4) {
@@ -1448,8 +1448,8 @@ public final class z0 extends AccessibilityNodeProvider {
                                 if (q1Var.n6 && !q1Var.l6) {
                                     TLRPC.MessageReplyHeader messageReplyHeader2 = q1Var.P5.k.reply_to;
                                 }
-                                if (q1Var.P5.C2() || q1Var.L7 || ((message = q1Var.P5.k) != null && (messageReplyHeader = message.reply_to) != null && messageReplyHeader.reply_from != null)) {
-                                    q1Var.Ra.R1(q1Var, q1Var.P5.O1(), 0.0f, 0.0f, false);
+                                if (q1Var.P5.B2() || q1Var.L7 || ((message = q1Var.P5.k) != null && (messageReplyHeader = message.reply_to) != null && messageReplyHeader.reply_from != null)) {
+                                    q1Var.Ra.R1(q1Var, q1Var.P5.N1(), 0.0f, 0.0f, false);
                                     return true;
                                 }
                             }

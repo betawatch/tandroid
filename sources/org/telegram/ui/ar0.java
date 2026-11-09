@@ -1,16 +1,19 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+import java.util.ArrayList;
+
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class ar0 extends v4.k {
-    public final /* synthetic */ br0 F;
+public final class ar0 {
+    public final int a;
+    public final ArrayList b;
+    public final wq0 c;
+    public final /* synthetic */ PhotoViewer d;
 
-    public ar0(br0 br0Var) {
-        this.F = br0Var;
-    }
-
-    @Override // v4.k
-    public final void P(v4.d1 d1Var) {
-        this.F.invalidate();
+    public ar0(PhotoViewer photoViewer, int i7, ArrayList arrayList, wq0 wq0Var) {
+        this.d = photoViewer;
+        this.b = arrayList;
+        this.a = i7;
+        this.c = wq0Var;
     }
 }

@@ -23,9 +23,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.a01;
+import org.telegram.ui.d01;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class em implements Runnable {
     public final /* synthetic */ int a;
@@ -596,7 +596,7 @@ public final /* synthetic */ class em implements Runnable {
                                     qpVar3 = qpVar4;
                                     ijVar = new ij(qpVar3.currentAccount, message2, hVar3, hVar4, contains, contains);
                                     message = ijVar.k;
-                                    if ((message.out || message.from_scheduled) && ijVar.G4()) {
+                                    if ((message.out || message.from_scheduled) && ijVar.F4()) {
                                         arrayList3.add(ijVar);
                                     }
                                     arrayList = (ArrayList) hVar5.f(message2.dialog_id);
@@ -743,9 +743,9 @@ public final /* synthetic */ class em implements Runnable {
                     return;
                 }
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(launchActivity);
-                alertDialog$Builder.a.R = id.M0(2131746609, null);
-                alertDialog$Builder.a.T = id.M0(2131746608, null);
-                alertDialog$Builder.k(id.M0(2131746744, null), new o(1, e12, ngVar));
+                alertDialog$Builder.a.R = id.M0(2131746608, null);
+                alertDialog$Builder.a.T = id.M0(2131746607, null);
+                alertDialog$Builder.k(id.M0(2131746743, null), new o(1, e12, ngVar));
                 jg.g.w(null, 2131752589, alertDialog$Builder, null);
                 return;
             case 6:
@@ -801,7 +801,7 @@ public final /* synthetic */ class em implements Runnable {
                 }
                 return;
             case 8:
-                ((r8) this.b).s((String) this.c, (String) this.d, (di.i6) this.e, null, true, false);
+                ((r8) this.b).s((String) this.c, (String) this.d, (di.j6) this.e, null, true, false);
                 return;
             case 9:
                 ((gc) this.b).S((String) this.c, (String) this.d, (hc) this.e);
@@ -891,7 +891,7 @@ public final /* synthetic */ class em implements Runnable {
                 String str3 = (String) this.b;
                 ArrayList arrayList13 = (ArrayList) this.c;
                 ArrayList arrayList14 = (ArrayList) this.d;
-                a01 a01Var = (a01) this.e;
+                d01 d01Var = (d01) this.e;
                 ArrayList arrayList15 = new ArrayList();
                 ArrayList arrayList16 = new ArrayList();
                 String lowerCase = str3.toLowerCase();
@@ -926,7 +926,7 @@ public final /* synthetic */ class em implements Runnable {
                     }
                 }
                 arrayList15.addAll(arrayList16);
-                a01Var.a(arrayList15);
+                d01Var.a(arrayList15);
                 return;
             case 17:
                 qp qpVar7 = (qp) this.b;
@@ -980,7 +980,7 @@ public final /* synthetic */ class em implements Runnable {
                                 if (ijVar4 != null) {
                                     a0.h hVar12 = hVar9;
                                     if (ijVar4.k.peer_id.channel_id == 0) {
-                                        sparseArray.remove(ijVar4.f1());
+                                        sparseArray.remove(ijVar4.e1());
                                     }
                                     long j12 = ijVar4.k.random_id;
                                     if (j12 != 0) {
@@ -1027,7 +1027,7 @@ public final /* synthetic */ class em implements Runnable {
                                 arrayList2 = arrayList23;
                                 i10 = i33;
                                 if (ijVar5.k.peer_id.channel_id == 0) {
-                                    sparseArray.put(ijVar5.f1(), ijVar5);
+                                    sparseArray.put(ijVar5.e1(), ijVar5);
                                     qpVar2 = qpVar10;
                                     qpVar2.N = Math.min(qpVar2.N, ijVar5.k.date);
                                     hVar = hVar7;

@@ -20,7 +20,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public abstract class b1 extends CameraView {
     public static final int[] a0 = {1893745684, -215458996, -862041025, -1258375037, -1320049076, -215749424, 1901578030, -215451421, 1908491424, -1321491332, -1155551678, 1908524435, 976847578, -1489198134, 1910814392, -713271737, -2010722764, 1407170066, -821405251, -1394190955, -1394190055, 1407170066, 1407159934, 1407172057, 1231389747, -2076538925, 41497626, 846150482, -1198092731, -251277614, -2073158771, 1273004781};
@@ -146,7 +146,7 @@ public abstract class b1 extends CameraView {
                 tL_inputAppEvent.data = tL_jsonObject;
                 tL_inputAppEvent.peer = (z9 ? 1 : 0) | (p10 ? 2 : 0);
                 tL_help_saveAppLog.events.add(tL_inputAppEvent);
-                ConnectionsManager.getInstance(p10.s0).sendRequest(tL_help_saveAppLog, new di.u5(4));
+                ConnectionsManager.getInstance(p10.s0).sendRequest(tL_help_saveAppLog, new di.v5(4));
             } catch (Exception unused) {
             }
         }
@@ -164,8 +164,9 @@ public abstract class b1 extends CameraView {
         v();
         if (this.H) {
             y9 y9Var = (y9) this;
+            int i7 = 2;
             if (qp.e1().getInt("storysvddualhint", 0) < 2) {
-                org.telegram.messenger.g0.i3(new h9(y9Var, 3), 340L);
+                org.telegram.messenger.g0.i3(new v9(y9Var, i7), 340L);
             }
             va vaVar = y9Var.b0;
             vaVar.F0.setValue(y9Var.isDual());
@@ -182,11 +183,11 @@ public abstract class b1 extends CameraView {
                 this.a = false;
                 edit.putBoolean("dual_available", false).apply();
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getContext());
-                String M0 = id.M0(2131751341, null);
+                String M0 = id.M0(2131751340, null);
                 org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                 u1Var.R = M0;
-                u1Var.T = id.M0(2131751342, null);
-                jg.g.C(null, 2131747832, alertDialog$Builder, null);
+                u1Var.T = id.M0(2131751341, null);
+                jg.g.C(null, 2131747831, alertDialog$Builder, null);
             }
             t(false);
             toggleDual();

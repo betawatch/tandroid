@@ -11,31 +11,31 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import c8.ha;
 import c8.ka;
-import di.m4;
+import di.n4;
 import org.telegram.messenger.k5;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.r2;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.s6;
+import org.telegram.ui.Components.a80;
 import org.telegram.ui.Components.bq;
-import org.telegram.ui.Components.ch0;
 import org.telegram.ui.Components.cp;
 import org.telegram.ui.Components.cq;
+import org.telegram.ui.Components.dh0;
 import org.telegram.ui.Components.j6;
-import org.telegram.ui.Components.v41;
+import org.telegram.ui.Components.w41;
 import org.telegram.ui.Components.w5;
 import org.telegram.ui.Components.xq;
-import org.telegram.ui.Components.z70;
-import org.telegram.ui.s81;
-import org.telegram.ui.z40;
+import org.telegram.ui.b50;
+import org.telegram.ui.t81;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public class p0 extends FrameLayout implements z70 {
+public class p0 extends FrameLayout implements a80 {
     public final org.telegram.ui.Components.voip.n D;
     public boolean E;
-    public final ch0 F;
+    public final dh0 F;
     public boolean G;
     public boolean H;
     public cq I;
@@ -49,7 +49,7 @@ public class p0 extends FrameLayout implements z70 {
     public ValueAnimator Q;
     public final Paint a;
     public final boolean b;
-    public final f6 c;
+    public final g6 c;
     public float d;
     public boolean e;
     public final o0 f;
@@ -57,15 +57,15 @@ public class p0 extends FrameLayout implements z70 {
     public final int n;
     public boolean r;
     public float s;
-    public final v41 w;
+    public final w41 w;
     public ValueAnimator x;
     public final Path y;
 
-    public p0(Context context, f6 f6Var, boolean z9) {
-        this(org.telegram.messenger.g0.L(8.0f), context, f6Var, z9);
+    public p0(Context context, g6 g6Var, boolean z9) {
+        this(org.telegram.messenger.g0.L(8.0f), context, g6Var, z9);
     }
 
-    @Override // org.telegram.ui.Components.z70
+    @Override // org.telegram.ui.Components.a80
     public final boolean a() {
         return this.P;
     }
@@ -80,12 +80,12 @@ public class p0 extends FrameLayout implements z70 {
             o0Var.a();
         }
         o0Var.c(str, z9, true);
-        v41 v41Var = this.w;
-        v41Var.setContentDescription(str);
+        w41 w41Var = this.w;
+        w41Var.setContentDescription(str);
         if (this.K) {
             return;
         }
-        v41Var.setOnClickListener(onClickListener);
+        w41Var.setOnClickListener(onClickListener);
     }
 
     public final void c(CharSequence charSequence, boolean z9, boolean z10) {
@@ -110,8 +110,8 @@ public class p0 extends FrameLayout implements z70 {
         }
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.s, this.r ? 1.0f : 0.0f);
         this.x = ofFloat;
-        ofFloat.addUpdateListener(new m4(this, 12));
-        this.x.addListener(new s81(this, 18));
+        ofFloat.addUpdateListener(new n4(this, 12));
+        this.x.addListener(new t81(this, 18));
         this.x.setDuration(250L);
         this.x.setInterpolator(xq.f);
         this.x.start();
@@ -142,7 +142,7 @@ public class p0 extends FrameLayout implements z70 {
         RectF rectF = org.telegram.messenger.g0.P;
         rectF.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
         float f10 = this.s;
-        f6 f6Var = this.c;
+        g6 g6Var = this.c;
         boolean z9 = this.b;
         int i7 = this.n;
         Paint paint = this.a;
@@ -166,7 +166,7 @@ public class p0 extends FrameLayout implements z70 {
                 canvas.drawRoundRect(rectF, f13, f13, ia.e.d().e());
             } else {
                 if (z9) {
-                    paint.setColor(k6.w0(k6.Ci, f6Var));
+                    paint.setColor(l6.w0(l6.Ci, g6Var));
                 }
                 paint.setAlpha(qs.e4);
                 float f14 = i7;
@@ -183,7 +183,7 @@ public class p0 extends FrameLayout implements z70 {
         }
         if (this.s != 0.0f && this.E) {
             if (z9) {
-                paint.setColor(k6.w0(k6.Ci, f6Var));
+                paint.setColor(l6.w0(l6.Ci, g6Var));
             }
             paint.setAlpha((int) (this.s * 255.0f));
             if (this.s != 1.0f) {
@@ -209,15 +209,15 @@ public class p0 extends FrameLayout implements z70 {
         o0Var.setAlpha(f10);
         o0Var.setTranslationY((1.0f - this.s) * org.telegram.messenger.g0.L(12.0f));
         float f11 = 1.0f - this.s;
-        v41 v41Var = this.w;
-        v41Var.setAlpha(f11);
-        v41Var.setTranslationY((-org.telegram.messenger.g0.L(12.0f)) * this.s);
-        v41Var.setVisibility(this.s == 1.0f ? 4 : 0);
+        w41 w41Var = this.w;
+        w41Var.setAlpha(f11);
+        w41Var.setTranslationY((-org.telegram.messenger.g0.L(12.0f)) * this.s);
+        w41Var.setVisibility(this.s == 1.0f ? 4 : 0);
         o0Var.setVisibility(this.s == 0.0f ? 4 : 0);
         invalidate();
     }
 
-    public ch0 getIconView() {
+    public dh0 getIconView() {
         return this.F;
     }
 
@@ -247,16 +247,16 @@ public class p0 extends FrameLayout implements z70 {
     }
 
     public void setIcon(int i7) {
-        ch0 ch0Var = this.F;
-        ch0Var.f(i7, 24, 24, null);
+        dh0 dh0Var = this.F;
+        dh0Var.f(i7, 24, 24, null);
         org.telegram.ui.Components.voip.n nVar = this.D;
         nVar.g = 2.0f;
-        nVar.p = new sg.t0(this, 17);
+        nVar.p = new sh.b(this, 15);
         invalidate();
-        ch0Var.setVisibility(0);
+        dh0Var.setVisibility(0);
     }
 
-    @Override // org.telegram.ui.Components.z70
+    @Override // org.telegram.ui.Components.a80
     public void setLoading(boolean z9) {
         if (this.P != z9) {
             ValueAnimator valueAnimator = this.Q;
@@ -269,14 +269,14 @@ public class p0 extends FrameLayout implements z70 {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(f10, z9 ? 1.0f : 0.0f);
             this.Q = ofFloat;
             ofFloat.addUpdateListener(new ti.d(this, 2));
-            this.Q.addListener(new z40(16, this, z9));
+            this.Q.addListener(new b50(16, this, z9));
             this.Q.setDuration(320L);
             this.Q.setInterpolator(xq.h);
             this.Q.start();
         }
     }
 
-    public p0(int i7, Context context, f6 f6Var, boolean z9) {
+    public p0(int i7, Context context, g6 g6Var, boolean z9) {
         super(context);
         Paint paint = new Paint(1);
         this.a = paint;
@@ -299,18 +299,18 @@ public class p0 extends FrameLayout implements z70 {
         o0Var.setTextColor(-1);
         o0Var.setTextSize(org.telegram.messenger.g0.L(14.0f));
         o0Var.setTypeface(org.telegram.messenger.g0.o());
-        ch0 ch0Var = new ch0(context);
-        this.F = ch0Var;
-        ch0Var.setColorFilter(-1);
-        ch0Var.setVisibility(8);
-        v41 v41Var = new v41(10, context, this);
-        this.w = v41Var;
-        v41Var.addView(f10, ha.e(-2, -2, 17));
+        dh0 dh0Var = new dh0(context);
+        this.F = dh0Var;
+        dh0Var.setColorFilter(-1);
+        dh0Var.setVisibility(8);
+        w41 w41Var = new w41(10, context, this);
+        this.w = w41Var;
+        w41Var.addView(f10, ha.e(-2, -2, 17));
         int o4 = i0.a.o(-1, 120);
-        v41Var.setBackground(k6.k0(i7, i7, i7, i7, 0, o4, o4));
+        w41Var.setBackground(l6.k0(i7, i7, i7, i7, 0, o4, o4));
         f10.addView(o0Var, ha.r(-2, -2, 16));
-        f10.addView(ch0Var, ha.q(24, 24, 0.0f, 16, 4, 0, 0, 0));
-        addView(v41Var);
+        f10.addView(dh0Var, ha.q(24, 24, 0.0f, 16, 4, 0, 0, 0));
+        addView(w41Var);
         setOutlineProvider(bg.u0.b);
         setClipToOutline(true);
         ka.b(this, 0.02f, 1.2f);
@@ -319,17 +319,17 @@ public class p0 extends FrameLayout implements z70 {
             this.h = o0Var2;
             o0Var2.setPadding(org.telegram.messenger.g0.L(34.0f), 0, org.telegram.messenger.g0.L(34.0f), 0);
             o0Var2.setGravity(17);
-            r6.Z(o0Var2, k6.Gi, f6Var);
+            s6.Y(o0Var2, l6.Gi, g6Var);
             o0Var2.setTextSize(org.telegram.messenger.g0.L(14.0f));
             o0Var2.setTypeface(org.telegram.messenger.g0.o());
             o0Var2.getDrawable().J = true;
             int L = org.telegram.messenger.g0.L(8.0f);
             int o10 = i0.a.o(-1, 120);
-            o0Var2.setBackground(k6.k0(L, L, L, L, 0, o10, o10));
+            o0Var2.setBackground(l6.k0(L, L, L, L, 0, o10, o10));
             addView(o0Var2);
-            paint.setColor(k6.w0(k6.Ci, f6Var));
+            paint.setColor(l6.w0(l6.Ci, g6Var));
             this.b = true;
-            this.c = f6Var;
+            this.c = g6Var;
             e();
         }
     }

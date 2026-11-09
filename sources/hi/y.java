@@ -19,26 +19,26 @@ import org.telegram.messenger.i6;
 import org.telegram.messenger.id;
 import org.telegram.messenger.k5;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.a6;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Components.mu0;
+import org.telegram.ui.ActionBar.b6;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.Components.ah0;
+import org.telegram.ui.Components.ou0;
 import org.telegram.ui.Components.xq;
-import org.telegram.ui.Components.zg0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
-public final class y extends View implements a6 {
+public final class y extends View implements b6 {
     public final org.telegram.ui.Cells.y D;
     public boolean E;
     public int F;
-    public zg0 G;
+    public ah0 G;
     public int H;
     public int I;
     public final RectF a;
     public final Paint b;
     public final TextPaint c;
     public final v d;
-    public final zg0 e;
+    public final ah0 e;
     public boolean f;
     public float h;
     public String n;
@@ -56,8 +56,8 @@ public final class y extends View implements a6 {
         this.c = textPaint;
         v vVar = new v(this);
         this.d = vVar;
-        zg0 zg0Var = new zg0(R.raw.bot_webview_sheet_to_cross, org.telegram.messenger.g0.L(20.0f), org.telegram.messenger.g0.L(20.0f));
-        this.e = zg0Var;
+        ah0 ah0Var = new ah0(R.raw.bot_webview_sheet_to_cross, org.telegram.messenger.g0.L(20.0f), org.telegram.messenger.g0.L(20.0f));
+        this.e = ah0Var;
         this.n = id.M0(2131752891, null);
         this.E = true;
         updateColors();
@@ -69,21 +69,21 @@ public final class y extends View implements a6 {
         vVar.a.setStrokeCap(Paint.Cap.ROUND);
         vVar.l = true;
         int L = org.telegram.messenger.g0.L(16.0f);
-        int x02 = k6.x0(null, k6.Ei, false);
+        int x02 = l6.x0(null, l6.Ei, false);
         this.F = x02;
-        org.telegram.ui.Cells.y k02 = k6.k0(L, L, L, L, 0, x02, x02);
+        org.telegram.ui.Cells.y k02 = l6.k0(L, L, L, L, 0, x02, x02);
         this.D = k02;
         k02.setCallback(this);
-        zg0Var.setCallback(this);
-        zg0Var.R(this);
+        ah0Var.setCallback(this);
+        ah0Var.R(this);
         setContentDescription(id.M0(2131754917, "AccDescrBotMenu"));
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(k6.Rf));
-        hashSet.add(Integer.valueOf(k6.Tf));
-        hashSet.add(Integer.valueOf(k6.Ei));
+        hashSet.add(Integer.valueOf(l6.Rf));
+        hashSet.add(Integer.valueOf(l6.Tf));
+        hashSet.add(Integer.valueOf(l6.Ei));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:13:0x0046  */
@@ -119,11 +119,11 @@ public final class y extends View implements a6 {
                     if (this.E) {
                         this.a.set(0.0f, 0.0f, org.telegram.messenger.camera.q.b(this.s, org.telegram.messenger.g0.L(4.0f), interpolation, org.telegram.messenger.g0.L(40.0f)), getMeasuredHeight());
                         canvas.drawRoundRect(this.a, org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f), this.b);
-                        int x02 = k6.x0(null, k6.Ei, false);
+                        int x02 = l6.x0(null, l6.Ei, false);
                         if (x02 != this.F) {
                             org.telegram.ui.Cells.y yVar = this.D;
                             this.F = x02;
-                            k6.H1(yVar, x02, true);
+                            l6.H1(yVar, x02, true);
                         }
                         org.telegram.ui.Cells.y yVar2 = this.D;
                         RectF rectF = this.a;
@@ -133,11 +133,11 @@ public final class y extends View implements a6 {
                     if (this.x) {
                         canvas.save();
                         canvas.translate(org.telegram.messenger.g0.L(9.5f), org.telegram.messenger.g0.L(6.0f));
-                        zg0 zg0Var = this.e;
-                        zg0Var.setBounds(0, 0, zg0Var.b, zg0Var.c);
-                        zg0Var.draw(canvas);
+                        ah0 ah0Var = this.e;
+                        ah0Var.setBounds(0, 0, ah0Var.b, ah0Var.c);
+                        ah0Var.draw(canvas);
                         canvas.restore();
-                        if (zg0Var.k0) {
+                        if (ah0Var.k0) {
                             invalidate();
                         }
                     } else {
@@ -220,7 +220,7 @@ public final class y extends View implements a6 {
             textPaint.setTextSize(L);
             this.I = size;
             int i11 = (int) (org.telegram.messenger.g0.q.x * 0.6f);
-            StaticLayout c10 = mu0.c(i6.m(this.n, textPaint.getFontMetricsInt(), false, null, 0), textPaint, i11, Layout.Alignment.ALIGN_NORMAL, 0.0f, TextUtils.TruncateAt.END, i11, 1, true);
+            StaticLayout c10 = ou0.c(i6.m(this.n, textPaint.getFontMetricsInt(), false, null, 0), textPaint, i11, Layout.Alignment.ALIGN_NORMAL, 0.0f, TextUtils.TruncateAt.END, i11, 1, true);
             this.r = c10;
             this.s = c10.getLineCount() > 0 ? this.r.getLineWidth(0) : 0.0f;
         }
@@ -246,11 +246,11 @@ public final class y extends View implements a6 {
             return;
         }
         if (this.y != z9) {
-            zg0 zg0Var = this.e;
-            zg0Var.stop();
-            zg0Var.h = true;
-            zg0Var.P(z9 ? zg0Var.e[0] : 1);
-            zg0Var.start();
+            ah0 ah0Var = this.e;
+            ah0Var.stop();
+            ah0Var.h = true;
+            ah0Var.P(z9 ? ah0Var.e[0] : 1);
+            ah0Var.start();
             this.y = z9;
         }
     }
@@ -260,24 +260,24 @@ public final class y extends View implements a6 {
         invalidate();
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
         TextPaint textPaint = this.c;
         try {
-            this.b.setColor(k6.x0(null, k6.Rf, false));
-            int x02 = k6.x0(null, k6.Tf, false);
+            this.b.setColor(l6.x0(null, l6.Rf, false));
+            int x02 = l6.x0(null, l6.Tf, false);
             v vVar = this.d;
             vVar.k = x02;
             vVar.j = x02;
-            zg0 zg0Var = this.e;
-            if (zg0Var != null) {
-                if (zg0Var == this.G) {
+            ah0 ah0Var = this.e;
+            if (ah0Var != null) {
+                if (ah0Var == this.G) {
                     if (x02 != this.H) {
                     }
                 }
-                this.G = zg0Var;
+                this.G = ah0Var;
                 this.H = x02;
-                zg0Var.setColorFilter(new PorterDuffColorFilter(x02, PorterDuff.Mode.SRC_IN));
+                ah0Var.setColorFilter(new PorterDuffColorFilter(x02, PorterDuff.Mode.SRC_IN));
             }
             int alpha = textPaint.getAlpha();
             textPaint.setColor(x02);

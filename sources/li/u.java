@@ -4,9 +4,9 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import org.telegram.messenger.id;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.l41;
+import org.telegram.ui.Components.m41;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final class u implements TextWatcher {
     public final /* synthetic */ v a;
@@ -22,9 +22,9 @@ public final class u implements TextWatcher {
         if (richMessage != null && richMessage != null) {
             vVar.a2 = null;
             vVar.X1.i(id.M0(2131754059, null), true, true);
-            l41 l41Var = vVar.R1;
-            if (l41Var != null) {
-                l41Var.O(true);
+            m41 m41Var = vVar.R1;
+            if (m41Var != null) {
+                m41Var.O(true);
             }
         }
         vVar.d1();

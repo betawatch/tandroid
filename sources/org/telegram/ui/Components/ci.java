@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class ci extends View {
     public final /* synthetic */ int a = 0;
@@ -21,40 +21,40 @@ public final class ci extends View {
     public ci(ViewGroup viewGroup, int i7) {
         super(viewGroup.getContext());
         this.c = new ArrayList();
-        this.e = new org.telegram.ui.ef0(this, 0);
+        this.e = new org.telegram.ui.gf0(this, 0);
         this.d = viewGroup;
         this.b = i7;
     }
 
     public void a() {
-        org.telegram.ui.ef0 ef0Var = (org.telegram.ui.ef0) this.e;
+        org.telegram.ui.gf0 gf0Var = (org.telegram.ui.gf0) this.e;
         ArrayList arrayList = (ArrayList) this.c;
         boolean isEmpty = arrayList.isEmpty();
         int i7 = this.b;
         if (isEmpty && getVisibility() != 8) {
-            org.telegram.messenger.qs.f(i7).e.remove(ef0Var);
-            org.telegram.messenger.qs.f(i7).d(ef0Var);
+            org.telegram.messenger.qs.f(i7).e.remove(gf0Var);
+            org.telegram.messenger.qs.f(i7).d(gf0Var);
         } else {
             if (arrayList.isEmpty() || getVisibility() == 0) {
                 return;
             }
-            org.telegram.messenger.qs.f(i7).e.remove(ef0Var);
+            org.telegram.messenger.qs.f(i7).e.remove(gf0Var);
             setVisibility(0);
         }
     }
 
-    public void b(sh.c cVar, boolean z9) {
-        sh.c cVar2;
-        sh.c cVar3;
-        ((te.a) this.d).a(cVar != null, z9);
-        if (isAttachedToWindow() && (cVar3 = (sh.c) this.e) != null) {
-            cVar3.b();
+    public void b(sh.d dVar, boolean z9) {
+        sh.d dVar2;
+        sh.d dVar3;
+        ((te.a) this.d).a(dVar != null, z9);
+        if (isAttachedToWindow() && (dVar3 = (sh.d) this.e) != null) {
+            dVar3.b();
         }
-        this.e = cVar;
-        if (!isAttachedToWindow() || (cVar2 = (sh.c) this.e) == null) {
+        this.e = dVar;
+        if (!isAttachedToWindow() || (dVar2 = (sh.d) this.e) == null) {
             return;
         }
-        cVar2.a(this);
+        dVar2.a(this);
     }
 
     @Override // android.view.View
@@ -62,9 +62,9 @@ public final class ci extends View {
         switch (this.a) {
             case 2:
                 super.onAttachedToWindow();
-                sh.c cVar = (sh.c) this.e;
-                if (cVar != null) {
-                    cVar.a(this);
+                sh.d dVar = (sh.d) this.e;
+                if (dVar != null) {
+                    dVar.a(this);
                     break;
                 }
                 break;
@@ -79,9 +79,9 @@ public final class ci extends View {
         switch (this.a) {
             case 2:
                 super.onDetachedFromWindow();
-                sh.c cVar = (sh.c) this.e;
-                if (cVar != null) {
-                    cVar.b();
+                sh.d dVar = (sh.d) this.e;
+                if (dVar != null) {
+                    dVar.b();
                     break;
                 }
                 break;
@@ -96,19 +96,19 @@ public final class ci extends View {
         switch (this.a) {
             case 0:
                 bg.c0 c0Var = (bg.c0) this.d;
-                org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) this.c;
+                org.telegram.ui.ActionBar.g6 g6Var = (org.telegram.ui.ActionBar.g6) this.c;
                 int i7 = this.b;
-                c0Var.b(org.telegram.ui.ActionBar.k6.r1(0.5f, org.telegram.ui.ActionBar.k6.w0(i7, f6Var)));
+                c0Var.b(org.telegram.ui.ActionBar.l6.r1(0.5f, org.telegram.ui.ActionBar.l6.w0(i7, g6Var)));
                 c0Var.draw(canvas);
                 bg.c0 c0Var2 = (bg.c0) this.e;
-                c0Var2.b(org.telegram.ui.ActionBar.k6.r1(0.95f, org.telegram.ui.ActionBar.k6.w0(i7, f6Var)));
+                c0Var2.b(org.telegram.ui.ActionBar.l6.r1(0.95f, org.telegram.ui.ActionBar.l6.w0(i7, g6Var)));
                 c0Var2.draw(canvas);
                 break;
             case 1:
                 ArrayList arrayList = (ArrayList) this.c;
                 if (!arrayList.isEmpty()) {
                     for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                        ((org.telegram.ui.ff0) arrayList.get(i10)).a(canvas);
+                        ((org.telegram.ui.hf0) arrayList.get(i10)).a(canvas);
                     }
                     break;
                 }
@@ -133,9 +133,9 @@ public final class ci extends View {
                     canvas.save();
                     canvas.translate(width2, height2);
                     canvas.scale(f10, f10, org.telegram.messenger.g0.L(f12) / 2.0f, org.telegram.messenger.g0.L(f12) / 2.0f);
-                    sh.c cVar = (sh.c) this.e;
-                    if (cVar != null) {
-                        cVar.c(canvas, org.telegram.messenger.g0.L(f12), org.telegram.messenger.g0.L(f12));
+                    sh.d dVar = (sh.d) this.e;
+                    if (dVar != null) {
+                        dVar.c(canvas, org.telegram.messenger.g0.L(f12), org.telegram.messenger.g0.L(f12));
                     }
                     canvas.restore();
                     break;
@@ -177,14 +177,14 @@ public final class ci extends View {
         this.b = i7;
         Drawable h = jg.g.h(context, R.drawable.outline_poll_attach_24);
         this.c = h;
-        org.telegram.ui.ActionBar.r6.y(this, h, org.telegram.ui.ActionBar.k6.o7, null, PorterDuff.Mode.SRC_IN);
+        org.telegram.ui.ActionBar.s6.x(this, h, org.telegram.ui.ActionBar.l6.o7, null, PorterDuff.Mode.SRC_IN);
     }
 
-    public ci(int i7, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+    public ci(int i7, Context context, org.telegram.ui.ActionBar.g6 g6Var) {
         super(context);
         this.d = new bg.c0(2);
         this.e = new bg.c0(2);
-        this.c = f6Var;
+        this.c = g6Var;
         this.b = i7;
     }
 }

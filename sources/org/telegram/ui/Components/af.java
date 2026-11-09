@@ -4,7 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class af extends AnimatorListenerAdapter {
     public final /* synthetic */ ChatActivityEnterView a;
@@ -16,13 +16,13 @@ public final class af extends AnimatorListenerAdapter {
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
         ChatActivityEnterView chatActivityEnterView = this.a;
-        h61 h61Var = chatActivityEnterView.f1;
-        if (h61Var != null) {
-            h61Var.setVisibility(8);
+        i61 i61Var = chatActivityEnterView.f1;
+        if (i61Var != null) {
+            i61Var.setVisibility(8);
         }
-        ji0 ji0Var = chatActivityEnterView.h1;
-        if (ji0Var != null) {
-            ji0Var.setVisibility(8);
+        ki0 ki0Var = chatActivityEnterView.h1;
+        if (ki0Var != null) {
+            ki0Var.setVisibility(8);
         }
         chatActivityEnterView.p4 = 0.0f;
         chatActivityEnterView.w0();

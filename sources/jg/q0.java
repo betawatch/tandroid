@@ -21,18 +21,18 @@ import org.telegram.messenger.g5;
 import org.telegram.messenger.id;
 import org.telegram.messenger.p10;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.a6;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.ActionBar.b6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.ActionBar.s6;
 import org.telegram.ui.ActionBar.t6;
-import org.telegram.ui.Components.pj0;
+import org.telegram.ui.ActionBar.u6;
+import org.telegram.ui.Components.qj0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class q0 extends pj0 implements a6 {
-    public static final o0[] j3 = {new o0(R.drawable.search_media_filled, 2131745410, new TLRPC.TL_inputMessagesFilterPhotoVideo(), 0), new o0(R.drawable.search_links_filled, 2131745413, new TLRPC.TL_inputMessagesFilterUrl(), 2), new o0(R.drawable.search_files_filled, 2131745417, new TLRPC.TL_inputMessagesFilterDocument(), 1), new o0(R.drawable.search_music_filled, 2131745408, new TLRPC.TL_inputMessagesFilterMusic(), 3), new o0(R.drawable.search_voice_filled, 2131745405, new TLRPC.TL_inputMessagesFilterRoundVoice(), 5)};
+public final class q0 extends qj0 implements b6 {
+    public static final o0[] j3 = {new o0(R.drawable.search_media_filled, 2131745407, new TLRPC.TL_inputMessagesFilterPhotoVideo(), 0), new o0(R.drawable.search_links_filled, 2131745410, new TLRPC.TL_inputMessagesFilterUrl(), 2), new o0(R.drawable.search_files_filled, 2131745414, new TLRPC.TL_inputMessagesFilterDocument(), 1), new o0(R.drawable.search_music_filled, 2131745405, new TLRPC.TL_inputMessagesFilterMusic(), 3), new o0(R.drawable.search_voice_filled, 2131745402, new TLRPC.TL_inputMessagesFilterRoundVoice(), 5)};
     public static final Pattern k3 = Pattern.compile("20[0-9]{1,2}");
     public static final Pattern l3 = Pattern.compile("(\\w{3,}) ([0-9]{0,4})");
     public static final Pattern m3 = Pattern.compile("([0-9]{0,4}) (\\w{2,})");
@@ -45,8 +45,8 @@ public final class q0 extends pj0 implements a6 {
     public boolean h3;
     public final l0 i3;
 
-    public q0(Context context, f6 f6Var) {
-        super(context, f6Var);
+    public q0(Context context, g6 g6Var) {
+        super(context, g6Var);
         this.e3 = new ArrayList();
         this.f3 = new ArrayList();
         this.h3 = true;
@@ -61,7 +61,7 @@ public final class q0 extends pj0 implements a6 {
         setWillNotDraw(false);
         setHideIfEmpty(false);
         setSelectorRadius(org.telegram.messenger.g0.L(28.0f));
-        r6.m(this, 20, k6.i6, f6Var);
+        s6.l(this, 20, l6.i6, g6Var);
     }
 
     public static void A1(int i7, int i10, ArrayList arrayList) {
@@ -89,7 +89,7 @@ public final class q0 extends pj0 implements a6 {
         if (trim.length() < 3) {
             return;
         }
-        if (id.M0(2131745711, null).toLowerCase().startsWith(trim) || "today".startsWith(trim)) {
+        if (id.M0(2131745708, null).toLowerCase().startsWith(trim) || "today".startsWith(trim)) {
             Calendar calendar = Calendar.getInstance();
             int i7 = calendar.get(1);
             int i10 = calendar.get(2);
@@ -97,10 +97,10 @@ public final class q0 extends pj0 implements a6 {
             calendar.set(i7, i10, i11, 0, 0, 0);
             long timeInMillis = calendar.getTimeInMillis();
             calendar.set(i7, i10, i11 + 1, 0, 0, 0);
-            arrayList.add(new m0(timeInMillis, id.M0(2131745711, null), calendar.getTimeInMillis() - 1));
+            arrayList.add(new m0(timeInMillis, id.M0(2131745708, null), calendar.getTimeInMillis() - 1));
             return;
         }
-        if (id.M0(2131745710, null).toLowerCase().startsWith(trim) || "yesterday".startsWith(trim)) {
+        if (id.M0(2131745707, null).toLowerCase().startsWith(trim) || "yesterday".startsWith(trim)) {
             Calendar calendar2 = Calendar.getInstance();
             int i12 = calendar2.get(1);
             int i13 = calendar2.get(2);
@@ -108,7 +108,7 @@ public final class q0 extends pj0 implements a6 {
             calendar2.set(i12, i13, i14, 0, 0, 0);
             long timeInMillis2 = calendar2.getTimeInMillis() - 86400000;
             calendar2.set(i12, i13, i14 + 1, 0, 0, 0);
-            arrayList.add(new m0(timeInMillis2, id.M0(2131745710, null), calendar2.getTimeInMillis() - 86400001));
+            arrayList.add(new m0(timeInMillis2, id.M0(2131745707, null), calendar2.getTimeInMillis() - 86400001));
             return;
         }
         Calendar calendar3 = Calendar.getInstance();
@@ -263,7 +263,7 @@ public final class q0 extends pj0 implements a6 {
     }
 
     public static int C1(String str) {
-        String[] strArr = {id.M0(2131749087, null).toLowerCase(), id.M0(2131750830, null).toLowerCase(), id.M0(2131748684, null).toLowerCase(), id.M0(2131754173, null).toLowerCase(), id.M0(2131748663, null).toLowerCase(), id.M0(2131749065, null).toLowerCase(), id.M0(2131749067, null).toLowerCase(), id.M0(2131753895, null).toLowerCase(), id.M0(2131745568, null).toLowerCase(), id.M0(2131747831, null).toLowerCase(), id.M0(2131747836, null).toLowerCase(), id.M0(2131751606, null).toLowerCase()};
+        String[] strArr = {id.M0(2131749086, null).toLowerCase(), id.M0(2131750829, null).toLowerCase(), id.M0(2131748683, null).toLowerCase(), id.M0(2131754173, null).toLowerCase(), id.M0(2131748662, null).toLowerCase(), id.M0(2131749064, null).toLowerCase(), id.M0(2131749066, null).toLowerCase(), id.M0(2131753895, null).toLowerCase(), id.M0(2131745565, null).toLowerCase(), id.M0(2131747830, null).toLowerCase(), id.M0(2131747835, null).toLowerCase(), id.M0(2131751605, null).toLowerCase()};
         String[] strArr2 = new String[12];
         Calendar calendar = Calendar.getInstance();
         for (int i7 = 1; i7 <= 12; i7++) {
@@ -319,7 +319,7 @@ public final class q0 extends pj0 implements a6 {
                 Object obj = arrayList.get(i7);
                 if (obj instanceof TLRPC.User) {
                     TLRPC.User user = (TLRPC.User) obj;
-                    o0 o0Var = new o0(R.drawable.search_users_filled, 4, p10.i(p10.s0).f().id == user.id ? id.M0(2131745904, null) : g5.m(10, user.first_name, user.last_name));
+                    o0 o0Var = new o0(R.drawable.search_users_filled, 4, p10.i(p10.s0).f().id == user.id ? id.M0(2131745901, null) : g5.m(10, user.first_name, user.last_name));
                     o0Var.f = user;
                     arrayList4.add(o0Var);
                 } else if (obj instanceof TLRPC.Chat) {
@@ -355,10 +355,10 @@ public final class q0 extends pj0 implements a6 {
         }
     }
 
-    public ArrayList<t6> getThemeDescriptions() {
-        ArrayList<t6> arrayList = new ArrayList<>();
-        arrayList.add(new t6(this, 0, (Class[]) null, (Paint) null, (Drawable[]) null, (s6) null, k6.e7));
-        arrayList.add(new t6(this, 0, (Class[]) null, (Paint) null, (Drawable[]) null, (s6) null, k6.f7));
+    public ArrayList<u6> getThemeDescriptions() {
+        ArrayList<u6> arrayList = new ArrayList<>();
+        arrayList.add(new u6(this, 0, (Class[]) null, (Paint) null, (Drawable[]) null, (t6) null, l6.e7));
+        arrayList.add(new u6(this, 0, (Class[]) null, (Paint) null, (Drawable[]) null, (t6) null, l6.f7));
         return arrayList;
     }
 
@@ -366,11 +366,11 @@ public final class q0 extends pj0 implements a6 {
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (this.h3) {
-            canvas.drawRect(0.0f, getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight(), k6.k0);
+            canvas.drawRect(0.0f, getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight(), l6.k0);
         }
     }
 
-    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.qj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         if (isEnabled()) {
             return super.onInterceptTouchEvent(motionEvent);
@@ -378,7 +378,7 @@ public final class q0 extends pj0 implements a6 {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.qj0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         if (isEnabled()) {
             return super.onTouchEvent(motionEvent);
@@ -386,7 +386,7 @@ public final class q0 extends pj0 implements a6 {
         return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
         for (int i7 = 0; i7 < getCachedChildCount(); i7++) {
             View P = P(i7);
@@ -402,7 +402,7 @@ public final class q0 extends pj0 implements a6 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

@@ -46,14 +46,14 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.Components.jb;
-import org.telegram.ui.Components.w70;
+import org.telegram.ui.Components.x70;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ci0;
+import org.telegram.ui.ei0;
 import org.telegram.ui.s9;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public class s0 extends f2 {
     public boolean D;
@@ -166,13 +166,13 @@ public class s0 extends f2 {
                 g1Var.n2 = gcVar2;
                 viewGroup.addView(gcVar2, indexOfChild, ha.c(-1.0f, -1));
             }
-            w70 w70Var = g1Var.o2;
-            if (w70Var != null) {
-                String M0 = id.M0(2131750289, null);
+            x70 x70Var = g1Var.o2;
+            if (x70Var != null) {
+                String M0 = id.M0(2131750288, null);
                 jb jbVar = g1Var.c2;
                 jbVar.setText(M0);
                 jbVar.setBreakStrategy(2);
-                w70Var.setVisibility(8);
+                x70Var.setVisibility(8);
             }
             g1Var.Q1.O(false);
         }
@@ -306,11 +306,11 @@ public class s0 extends f2 {
             }
         }
         Activity parentActivity = getParentActivity();
-        ci0 ci0Var = parentActivity instanceof LaunchActivity ? ((LaunchActivity) parentActivity).s1 : null;
-        if (ci0Var != null && this.c == null) {
-            org.telegram.ui.f fVar2 = new org.telegram.ui.f(ci0Var, 27);
-            ci0Var.b.add(fVar2);
-            ci0Var.a();
+        ei0 ei0Var = parentActivity instanceof LaunchActivity ? ((LaunchActivity) parentActivity).s1 : null;
+        if (ei0Var != null && this.c == null) {
+            org.telegram.ui.f fVar2 = new org.telegram.ui.f(ei0Var, 27);
+            ei0Var.b.add(fVar2);
+            ei0Var.a();
             this.c = fVar2;
         }
         int i10 = this.currentAccount;
@@ -534,7 +534,7 @@ public class s0 extends f2 {
         this.d.setScanHidden(true);
         i0 i0Var = new i0(getParentActivity(), rectF, rectF2, new d6.i(this, 4));
         this.F = i0Var;
-        i0Var.setButtonLabel(id.M0(2131746471, null));
+        i0Var.setButtonLabel(id.M0(2131746470, null));
         i0 i0Var2 = this.F;
         i0Var2.setOnGallery(new a1.e(15, this, i0Var2));
         this.f.addView(this.F, ha.c(-1.0f, -1));
@@ -669,7 +669,7 @@ public class s0 extends f2 {
             intent.putExtra("android.intent.extra.TEXT", str);
         }
         try {
-            getParentActivity().startActivity(Intent.createChooser(intent, id.M0(2131749171, null)));
+            getParentActivity().startActivity(Intent.createChooser(intent, id.M0(2131749170, null)));
         } catch (ActivityNotFoundException e10) {
             a8.g(e10, true);
         }
@@ -834,9 +834,9 @@ public class s0 extends f2 {
         l0();
         org.telegram.ui.f fVar = this.c;
         if (fVar != null) {
-            ci0 ci0Var = (ci0) fVar.b;
-            if (ci0Var.b.remove(fVar)) {
-                ci0Var.a();
+            ei0 ei0Var = (ei0) fVar.b;
+            if (ei0Var.b.remove(fVar)) {
+                ei0Var.a();
             }
             this.c = null;
         }
@@ -906,11 +906,11 @@ public class s0 extends f2 {
             return;
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity());
-        alertDialog$Builder.a.T = org.telegram.messenger.g0.X2(id.M0(2131746504, null));
-        alertDialog$Builder.k(id.M0(2131747301, null), new j0(this));
+        alertDialog$Builder.a.T = org.telegram.messenger.g0.X2(id.M0(2131746503, null));
+        alertDialog$Builder.k(id.M0(2131747300, null), new j0(this));
         alertDialog$Builder.h(id.M0(2131751772, null), null);
-        int i10 = k6.L5;
-        alertDialog$Builder.m(R.raw.permission_request_camera, 72, k6.x0(null, i10, false), null);
+        int i10 = l6.L5;
+        alertDialog$Builder.m(R.raw.permission_request_camera, 72, l6.x0(null, i10, false), null);
         alertDialog$Builder.n(i10, null);
         alertDialog$Builder.p();
     }

@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public abstract class xr extends l41 {
+public abstract class xr extends m41 {
     public final int P;
     public final int Q;
     public final ArrayList R;
@@ -25,16 +25,16 @@ public abstract class xr extends l41 {
     public String d0;
     public final gp e0;
 
-    public xr(pj0 pj0Var, Context context, int i7, int i10) {
-        super(pj0Var, context, i7, 0, false, null, null);
+    public xr(qj0 qj0Var, Context context, int i7, int i10) {
+        super(qj0Var, context, i7, 0, false, null, null);
         this.R = new ArrayList();
         this.S = new ArrayList();
         this.T = new ArrayList();
         this.U = new ArrayList();
         this.X = new ArrayList();
-        am0 am0Var = (am0) this;
-        this.e0 = new gp(am0Var, 6);
-        this.w = new d(am0Var, 9);
+        bm0 bm0Var = (bm0) this;
+        this.e0 = new gp(bm0Var, 6);
+        this.w = new d(bm0Var, 9);
         this.P = i7;
         this.Q = i10;
         O(false);
@@ -67,7 +67,7 @@ public abstract class xr extends l41 {
             if (!arrayList.isEmpty()) {
                 org.telegram.messenger.ij ijVar = (org.telegram.messenger.ij) jg.g.i(1, arrayList);
                 tL_messages_searchGlobal.offset_rate = this.b0;
-                tL_messages_searchGlobal.offset_id = ijVar.f1();
+                tL_messages_searchGlobal.offset_id = ijVar.e1();
                 if (ijVar.k.peer_id == null) {
                     tL_messages_searchGlobal.offset_peer = new TLRPC.TL_inputPeerEmpty();
                 } else {

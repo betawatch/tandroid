@@ -17,7 +17,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class jm implements Runnable {
     public final /* synthetic */ int a;
@@ -218,9 +218,9 @@ public final /* synthetic */ class jm implements Runnable {
                                                     tL_messageMediaPoll.poll = poll;
                                                 }
                                                 if (pollResults2 != null) {
-                                                    ij.e6(tL_messageMediaPoll, pollResults2);
+                                                    ij.d6(tL_messageMediaPoll, pollResults2);
                                                 }
-                                                ij.r5(TLdeserialize);
+                                                ij.q5(TLdeserialize);
                                                 NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(TLdeserialize.getObjectSize());
                                                 TLdeserialize.serializeToStream(nativeByteBuffer);
                                                 sQLitePreparedStatement3.requery();
@@ -375,9 +375,9 @@ public final /* synthetic */ class jm implements Runnable {
                                                             tL_messageMediaPoll2.poll = poll;
                                                         }
                                                         if (pollResults3 != null) {
-                                                            ij.e6(tL_messageMediaPoll2, pollResults3);
+                                                            ij.d6(tL_messageMediaPoll2, pollResults3);
                                                         }
-                                                        ij.r5(TLdeserialize2);
+                                                        ij.q5(TLdeserialize2);
                                                         NativeByteBuffer nativeByteBuffer2 = new NativeByteBuffer(TLdeserialize2.getObjectSize());
                                                         TLdeserialize2.serializeToStream(nativeByteBuffer2);
                                                         sQLitePreparedStatement.requery();
@@ -797,7 +797,7 @@ public final /* synthetic */ class jm implements Runnable {
                     if (arrayList == null) {
                         arrayList = new ArrayList(1);
                     }
-                    if (arrayList.size() > 0 && arrayList.get(0) != null && ((ij) arrayList.get(0)).A2() && ((ij) arrayList.get(0)).e1() != ijVar.e1()) {
+                    if (arrayList.size() > 0 && arrayList.get(0) != null && ((ij) arrayList.get(0)).z2() && ((ij) arrayList.get(0)).d1() != ijVar.d1()) {
                         arrayList.clear();
                     }
                     arrayList.add(ijVar);
@@ -814,18 +814,18 @@ public final /* synthetic */ class jm implements Runnable {
             case 2:
                 i3 i3Var = (i3) obj3;
                 ij ijVar2 = (ij) obj2;
-                boolean h32 = ijVar2.h3();
-                org.telegram.ui.an anVar = i3Var.a;
-                di.l7.b(anVar.getCurrentAccount(), j10, ijVar2, (TL_stories.StoryItem) obj);
+                boolean g32 = ijVar2.g3();
+                org.telegram.ui.cn cnVar = i3Var.a;
+                di.m7.b(cnVar.getCurrentAccount(), j10, ijVar2, (TL_stories.StoryItem) obj);
                 ArrayList arrayList2 = new ArrayList();
                 ijVar2.K1 = true;
                 arrayList2.add(ijVar2);
-                anVar.getMessagesStorage().a.c(new b4(17, i3Var, arrayList2));
-                if (!h32 && ijVar2.h3() && ijVar2.D == 24) {
-                    anVar.Xc(arrayList2, true);
+                cnVar.getMessagesStorage().a.c(new b4(17, i3Var, arrayList2));
+                if (!g32 && ijVar2.g3() && ijVar2.D == 24) {
+                    cnVar.ad(arrayList2, true);
                     return;
                 } else {
-                    anVar.Xc(arrayList2, false);
+                    cnVar.ad(arrayList2, false);
                     return;
                 }
             case 3:
@@ -941,13 +941,13 @@ public final /* synthetic */ class jm implements Runnable {
                         while (true) {
                             if (i16 < arrayList7.size()) {
                                 ij ijVar4 = (ij) arrayList7.get(i16);
-                                if (ijVar3.f1() == ijVar4.f1()) {
+                                if (ijVar3.e1() == ijVar4.e1()) {
                                     arrayList9.set(i15, ijVar4);
                                     if (ijVar4.k.peer_id.channel_id == 0) {
-                                        ij ijVar5 = (ij) sparseArray.get(ijVar4.f1());
-                                        sparseArray.remove(ijVar4.f1());
+                                        ij ijVar5 = (ij) sparseArray.get(ijVar4.e1());
+                                        sparseArray.remove(ijVar4.e1());
                                         if (ijVar5 != null) {
-                                            sparseArray.put(ijVar5.f1(), ijVar5);
+                                            sparseArray.put(ijVar5.e1(), ijVar5);
                                         }
                                     }
                                     qpVar6.getNotificationCenter().k(3, new Object[0]);

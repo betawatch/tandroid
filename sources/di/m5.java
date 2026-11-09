@@ -1,87 +1,58 @@
 package di;
 
 import android.content.Context;
-import android.view.MotionEvent;
+import android.graphics.drawable.GradientDrawable;
+import android.view.GestureDetector;
+import android.view.animation.OvershootInterpolator;
+import android.widget.Scroller;
+import java.util.ArrayList;
+import org.telegram.messenger.qs;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class m5 extends c5.k {
-    public boolean w0;
-    public final /* synthetic */ s5 x0;
-    public final /* synthetic */ s5 y0;
+public final class m5 extends p4 {
+    public final /* synthetic */ q9 N;
+    public final /* synthetic */ t5 O;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m5(s5 s5Var, Context context) {
+    public m5(Context context, t5 t5Var, q9 q9Var) {
         super(context);
-        this.y0 = s5Var;
-        this.x0 = s5Var;
+        this.O = t5Var;
+        this.N = q9Var;
+        this.x = -1;
+        this.E = new ArrayList();
+        this.F = new ArrayList();
+        this.G = new ArrayList();
+        this.I = new GestureDetector(new m4(this));
+        this.d = new Scroller(context, new OvershootInterpolator());
+        this.H = new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[]{0, i0.a.o(-16777216, qs.q2)});
     }
 
-    public final boolean A(MotionEvent motionEvent) {
-        if (motionEvent.getAction() == 0) {
-            this.w0 = true;
+    @Override // di.p4
+    public final void b(int i7) {
+        m9 m9Var;
+        t5 t5Var = this.O;
+        n5 n5Var = t5Var.E;
+        if (t5Var.x) {
+            return;
         }
-        if (this.w0 && this.x0.y <= 0) {
+        if (n5Var.getCurrentItem() != i7) {
             try {
-                return super.onInterceptTouchEvent(motionEvent);
-            } catch (Exception unused) {
+                n5Var.x(i7, false);
+            } catch (Throwable th2) {
+                org.telegram.messenger.a8.g(th2, true);
+                n5Var.getAdapter().g();
+                n5Var.x(i7, false);
             }
         }
-        return false;
-    }
-
-    public final boolean B(MotionEvent motionEvent) {
-        if (motionEvent.getAction() == 0) {
-            this.w0 = true;
+        q9 q9Var = this.N;
+        if (q9Var.N0 == null || (m9Var = q9Var.t0) == null) {
+            return;
         }
-        if (!this.w0 || this.x0.y > 0) {
-            return false;
+        if (i7 < 10) {
+            m9Var.b(false);
+        } else if (i7 >= this.E.size() - 10) {
+            q9Var.t0.b(true);
         }
-        return super.onTouchEvent(motionEvent);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        float currentTopOffset;
-        float y10 = motionEvent.getY();
-        currentTopOffset = this.y0.getCurrentTopOffset();
-        if (y10 >= currentTopOffset || motionEvent.getAction() != 0) {
-            return super.dispatchTouchEvent(motionEvent);
-        }
-        return false;
-    }
-
-    @Override // c5.k, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        float currentTopOffset;
-        float currentTopOffset2;
-        float y10 = motionEvent.getY();
-        s5 s5Var = this.y0;
-        currentTopOffset = s5Var.getCurrentTopOffset();
-        if (y10 < currentTopOffset) {
-            return false;
-        }
-        currentTopOffset2 = s5Var.getCurrentTopOffset();
-        if (Math.abs(currentTopOffset2 - s5Var.d) > org.telegram.messenger.g0.L(1.0f)) {
-            return false;
-        }
-        return A(motionEvent);
-    }
-
-    @Override // c5.k, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        float currentTopOffset;
-        float currentTopOffset2;
-        float y10 = motionEvent.getY();
-        s5 s5Var = this.y0;
-        currentTopOffset = s5Var.getCurrentTopOffset();
-        if (y10 < currentTopOffset) {
-            return false;
-        }
-        currentTopOffset2 = s5Var.getCurrentTopOffset();
-        if (Math.abs(currentTopOffset2 - s5Var.d) > org.telegram.messenger.g0.L(1.0f)) {
-            return false;
-        }
-        return B(motionEvent);
     }
 }

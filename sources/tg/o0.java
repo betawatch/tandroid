@@ -18,15 +18,15 @@ import org.telegram.messenger.id;
 import org.telegram.messenger.q5;
 import org.telegram.messenger.ye;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.o6;
+import org.telegram.ui.ActionBar.s6;
 import org.telegram.ui.BubbleActivity;
-import org.telegram.ui.Components.mt0;
+import org.telegram.ui.Components.ot0;
 import org.telegram.ui.Components.rt;
 import org.telegram.ui.Components.vy;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public abstract class o0 extends FrameLayout {
     public boolean D;
@@ -37,10 +37,10 @@ public abstract class o0 extends FrameLayout {
     public final ArrayList I;
     public final Rect J;
     public final int a;
-    public final sg.m1 b;
+    public final sg.l1 b;
     public final q5 c;
     public final ye d;
-    public final sg.w0 e;
+    public final sg.v0 e;
     public final Bitmap f;
     public final int h;
     public final boolean n;
@@ -48,7 +48,7 @@ public abstract class o0 extends FrameLayout {
     public final TextView s;
     public final TextView w;
     public final m1 x;
-    public mt0 y;
+    public ot0 y;
 
     public o0(Context context, int i7, Bitmap bitmap, Bitmap bitmap2, int i10, ye yeVar) {
         super(context);
@@ -57,9 +57,9 @@ public abstract class o0 extends FrameLayout {
         this.J = new Rect();
         this.a = i7;
         this.n = context instanceof BubbleActivity;
-        sg.m1 m1Var = new sg.m1();
-        this.b = m1Var;
-        m1Var.a = new w7.s(24, false);
+        sg.l1 l1Var = new sg.l1();
+        this.b = l1Var;
+        l1Var.a = new w7.s(24, false);
         q5 q5Var = new q5("MaskPaint", true);
         this.c = q5Var;
         this.d = yeVar;
@@ -67,26 +67,26 @@ public abstract class o0 extends FrameLayout {
         this.h = i10;
         sg.j0 j0Var = new sg.j0(getPaintingSize(), bitmap2, i10, null);
         j0Var.G = true;
-        sg.w0 w0Var = new sg.w0(context, j0Var, bitmap, null, null);
-        this.e = w0Var;
-        w0Var.setAlpha(0.0f);
-        w0Var.setDelegate(new rt(this, 17));
-        w0Var.setUndoStore(m1Var);
-        w0Var.setQueue(q5Var);
-        w0Var.setVisibility(4);
-        w0Var.setBrush(new sg.f());
-        w0Var.setBrushSize(vyVar.get());
-        w0Var.setColor(-65536);
-        addView(w0Var, ha.e(-1, -1, 51));
-        m1 m1Var2 = new m1(context);
-        this.x = m1Var2;
-        m1Var2.b(0.05f, 1.0f);
-        m1Var2.setBrushWeight(vyVar.get());
-        m1Var2.setRenderView(w0Var);
-        m1Var2.setValueOverride(vyVar);
-        m1Var2.setTranslationX(-org.telegram.messenger.g0.L(18.0f));
-        m1Var2.setAlpha(0.0f);
-        addView(m1Var2, ha.c(-1.0f, -1));
+        sg.v0 v0Var = new sg.v0(context, j0Var, bitmap, null, null);
+        this.e = v0Var;
+        v0Var.setAlpha(0.0f);
+        v0Var.setDelegate(new rt(this, 17));
+        v0Var.setUndoStore(l1Var);
+        v0Var.setQueue(q5Var);
+        v0Var.setVisibility(4);
+        v0Var.setBrush(new sg.f());
+        v0Var.setBrushSize(vyVar.get());
+        v0Var.setColor(-65536);
+        addView(v0Var, ha.e(-1, -1, 51));
+        m1 m1Var = new m1(context);
+        this.x = m1Var;
+        m1Var.b(0.05f, 1.0f);
+        m1Var.setBrushWeight(vyVar.get());
+        m1Var.setRenderView(v0Var);
+        m1Var.setValueOverride(vyVar);
+        m1Var.setTranslationX(-org.telegram.messenger.g0.L(18.0f));
+        m1Var.setAlpha(0.0f);
+        addView(m1Var, ha.c(-1.0f, -1));
         FrameLayout frameLayout = new FrameLayout(context);
         this.r = frameLayout;
         frameLayout.setAlpha(0.0f);
@@ -96,7 +96,7 @@ public abstract class o0 extends FrameLayout {
         this.s = textView;
         textView.setTextSize(1, 15.0f);
         textView.setTypeface(org.telegram.messenger.g0.o());
-        textView.setBackground(k6.h0(k6.r1(0.15f, -1), 3, -1));
+        textView.setBackground(l6.h0(l6.r1(0.15f, -1), 3, -1));
         textView.setPadding(org.telegram.messenger.g0.L(28.0f), 0, org.telegram.messenger.g0.L(28.0f), 0);
         textView.setText(id.M0(2131752589, null).toUpperCase());
         textView.setTextColor(-1);
@@ -104,50 +104,50 @@ public abstract class o0 extends FrameLayout {
         TextView i11 = org.telegram.ui.Cells.f1.i(frameLayout, textView, ha.d(-2, 44.0f, 3, -8.0f, 0.0f, 0.0f, 0.0f), context);
         this.w = i11;
         com.google.android.recaptcha.internal.a.q(i11, 1, 15.0f);
-        int i12 = k6.ng;
-        org.telegram.ui.Cells.y h02 = k6.h0(k6.r1(0.15f, k6.x0(null, i12, false)), 3, -1);
-        n6 L = r6.L(0.15f, i12);
+        int i12 = l6.ng;
+        org.telegram.ui.Cells.y h02 = l6.h0(l6.r1(0.15f, l6.x0(null, i12, false)), 3, -1);
+        o6 K = s6.K(0.15f, i12);
         i11.setBackground(h02);
-        r6.k(i11, h02, null, L, null);
+        s6.j(i11, h02, null, K, null);
         i11.setPadding(org.telegram.messenger.g0.L(28.0f), 0, org.telegram.messenger.g0.L(28.0f), 0);
-        i11.setText(id.M0(2131745949, null).toUpperCase());
-        r6.V(i11, i12, null);
+        i11.setText(id.M0(2131745946, null).toUpperCase());
+        s6.U(i11, i12, null);
         i11.setGravity(17);
         frameLayout.addView(i11, ha.d(-2, 44.0f, 5, 0.0f, 0.0f, -8.0f, 0.0f));
     }
 
-    private mt0 getPaintingSize() {
-        mt0 mt0Var = this.y;
-        if (mt0Var != null) {
-            return mt0Var;
+    private ot0 getPaintingSize() {
+        ot0 ot0Var = this.y;
+        if (ot0Var != null) {
+            return ot0Var;
         }
         Bitmap bitmap = this.f;
-        mt0 mt0Var2 = new mt0(bitmap.getWidth(), bitmap.getHeight());
+        ot0 ot0Var2 = new ot0(bitmap.getWidth(), bitmap.getHeight());
         float f10 = 1280;
-        mt0Var2.a = f10;
+        ot0Var2.a = f10;
         float floor = (float) Math.floor((f10 * r0) / r1);
-        mt0Var2.b = floor;
+        ot0Var2.b = floor;
         if (floor > f10) {
-            mt0Var2.b = f10;
-            mt0Var2.a = (float) Math.floor((f10 * r1) / r0);
+            ot0Var2.b = f10;
+            ot0Var2.a = (float) Math.floor((f10 * r1) / r0);
         }
-        this.y = mt0Var2;
-        return mt0Var2;
+        this.y = ot0Var2;
+        return ot0Var2;
     }
 
     public final void a(MotionEvent motionEvent) {
         float x10 = motionEvent.getX();
-        sg.w0 w0Var = this.e;
-        float translationX = ((x10 - w0Var.getTranslationX()) - (getMeasuredWidth() / 2.0f)) / w0Var.getScaleX();
-        float y10 = ((motionEvent.getY() - w0Var.getTranslationY()) - (getMeasuredHeight() / 2.0f)) / w0Var.getScaleY();
+        sg.v0 v0Var = this.e;
+        float translationX = ((x10 - v0Var.getTranslationX()) - (getMeasuredWidth() / 2.0f)) / v0Var.getScaleX();
+        float y10 = ((motionEvent.getY() - v0Var.getTranslationY()) - (getMeasuredHeight() / 2.0f)) / v0Var.getScaleY();
         double d = translationX;
-        double radians = (float) Math.toRadians(-w0Var.getRotation());
+        double radians = (float) Math.toRadians(-v0Var.getRotation());
         double d2 = y10;
-        float measuredWidth = (w0Var.getMeasuredWidth() / 2.0f) + ((float) ((Math.cos(radians) * d) - (Math.sin(radians) * d2)));
-        float measuredHeight = (w0Var.getMeasuredHeight() / 2.0f) + ((float) jg.g.d(radians, d2, Math.sin(radians) * d));
+        float measuredWidth = (v0Var.getMeasuredWidth() / 2.0f) + ((float) ((Math.cos(radians) * d) - (Math.sin(radians) * d2)));
+        float measuredHeight = (v0Var.getMeasuredHeight() / 2.0f) + ((float) jg.g.d(radians, d2, Math.sin(radians) * d));
         MotionEvent obtain = MotionEvent.obtain(motionEvent);
         obtain.setLocation(measuredWidth, measuredHeight);
-        w0Var.e(obtain);
+        v0Var.e(obtain);
         obtain.recycle();
     }
 
@@ -157,12 +157,12 @@ public abstract class o0 extends FrameLayout {
         this.E = f11;
         float f18 = 0.0f + f12;
         this.F = f18;
-        sg.w0 w0Var = this.e;
+        sg.v0 v0Var = this.e;
         ye yeVar = this.d;
         if (yeVar != null) {
             float f19 = yeVar.c * 1.0f;
-            int measuredWidth = w0Var.getMeasuredWidth();
-            int measuredHeight = w0Var.getMeasuredHeight();
+            int measuredWidth = v0Var.getMeasuredWidth();
+            int measuredHeight = v0Var.getMeasuredHeight();
             if (measuredWidth == 0 || measuredHeight == 0) {
                 return;
             }
@@ -184,12 +184,12 @@ public abstract class o0 extends FrameLayout {
         }
         float f21 = f10 * f16;
         float f22 = Float.isNaN(f21) ? 1.0f : f21;
-        w0Var.setScaleX(f22);
-        w0Var.setScaleY(f22);
-        w0Var.setTranslationX(f11);
-        w0Var.setTranslationY(f18);
-        w0Var.setRotation(f17);
-        w0Var.invalidate();
+        v0Var.setScaleX(f22);
+        v0Var.setScaleY(f22);
+        v0Var.setTranslationX(f11);
+        v0Var.setTranslationY(f18);
+        v0Var.setRotation(f17);
+        v0Var.invalidate();
         invalidate();
     }
 
@@ -252,7 +252,7 @@ public abstract class o0 extends FrameLayout {
         return createBitmap;
     }
 
-    public sg.w0 getRenderView() {
+    public sg.v0 getRenderView() {
         return this.e;
     }
 
@@ -264,10 +264,10 @@ public abstract class o0 extends FrameLayout {
         if (!this.n) {
             Typeface typeface = org.telegram.messenger.g0.a;
         }
-        sg.w0 w0Var = this.e;
-        int ceil = (int) Math.ceil((i13 - w0Var.getMeasuredWidth()) / 2.0f);
-        int measuredHeight = (i14 - w0Var.getMeasuredHeight()) / 2;
-        w0Var.layout(ceil, measuredHeight, w0Var.getMeasuredWidth() + ceil, w0Var.getMeasuredHeight() + measuredHeight);
+        sg.v0 v0Var = this.e;
+        int ceil = (int) Math.ceil((i13 - v0Var.getMeasuredWidth()) / 2.0f);
+        int measuredHeight = (i14 - v0Var.getMeasuredHeight()) / 2;
+        v0Var.layout(ceil, measuredHeight, v0Var.getMeasuredWidth() + ceil, v0Var.getMeasuredHeight() + measuredHeight);
         FrameLayout frameLayout = this.r;
         frameLayout.layout(0, i14 - frameLayout.getMeasuredHeight(), frameLayout.getMeasuredWidth(), i14);
     }

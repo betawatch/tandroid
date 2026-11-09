@@ -14,15 +14,15 @@ import java.util.HashSet;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.a6;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.b6;
+import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.ActionBar.m2;
-import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.ActionBar.s6;
 import org.telegram.ui.Components.i5;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
-public final class n1 extends FrameLayout implements a6 {
+public final class n1 extends FrameLayout implements b6 {
     public final ImageView a;
     public final TextView b;
     public final m2 c;
@@ -38,7 +38,7 @@ public final class n1 extends FrameLayout implements a6 {
         addView(imageView, ha.d(32, 32.0f, 19, 16.0f, 0.0f, 0.0f, 0.0f));
         TextView textView = new TextView(context);
         this.b = textView;
-        r6.V(textView, k6.G6, null);
+        s6.U(textView, l6.G6, null);
         textView.setTextSize(1, 16.0f);
         textView.setMaxLines(1);
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
@@ -46,7 +46,7 @@ public final class n1 extends FrameLayout implements a6 {
         addView(textView, ha.d(-1, -2.0f, 55, 68.0f, 7.0f, 54.0f, 0.0f));
         m2 m2Var = new m2(11, context, this);
         this.c = m2Var;
-        r6.V(m2Var, k6.y6, null);
+        s6.U(m2Var, l6.y6, null);
         m2Var.setTextSize(1, 13.0f);
         m2Var.setMaxLines(1);
         m2Var.setEllipsize(truncateAt);
@@ -55,7 +55,7 @@ public final class n1 extends FrameLayout implements a6 {
         ImageView imageView2 = new ImageView(context);
         imageView2.setScaleType(ImageView.ScaleType.CENTER);
         imageView2.setImageResource(R.drawable.ic_ab_other);
-        r6.t(imageView2, k6.A6, null, PorterDuff.Mode.SRC_IN);
+        s6.s(imageView2, l6.A6, null, PorterDuff.Mode.SRC_IN);
         addView(imageView2, ha.d(32, 32.0f, 21, 0.0f, 0.0f, 18.0f, 0.0f));
     }
 
@@ -63,7 +63,7 @@ public final class n1 extends FrameLayout implements a6 {
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
         if (this.f) {
-            canvas.drawRect(org.telegram.messenger.g0.L(64.0f), getHeight() - 1, getWidth(), getHeight(), k6.k0);
+            canvas.drawRect(org.telegram.messenger.g0.L(64.0f), getHeight() - 1, getWidth(), getHeight(), l6.k0);
         }
     }
 
@@ -72,12 +72,12 @@ public final class n1 extends FrameLayout implements a6 {
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(56.0f), TLObject.FLAG_30));
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
         try {
             ShapeDrawable shapeDrawable = this.h;
             if (shapeDrawable != null) {
-                k6.C1(k6.r1(0.1f, k6.x0(null, k6.G6, false)), shapeDrawable);
+                l6.C1(l6.r1(0.1f, l6.x0(null, l6.G6, false)), shapeDrawable);
                 ImageView imageView = this.a;
                 if (imageView != null) {
                     imageView.invalidate();
@@ -88,7 +88,7 @@ public final class n1 extends FrameLayout implements a6 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

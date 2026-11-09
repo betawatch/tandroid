@@ -25,9 +25,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.u31;
+import org.telegram.ui.Components.v31;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class s8 extends org.telegram.ui.ActionBar.v2 implements ls {
     public static final /* synthetic */ int U1 = 0;
@@ -80,8 +80,8 @@ public final class s8 extends org.telegram.ui.ActionBar.v2 implements ls {
     /* JADX WARN: Type inference failed for: r5v15 */
     /* JADX WARN: Type inference failed for: r5v16, types: [int] */
     /* JADX WARN: Type inference failed for: r5v20 */
-    public s8(int i7, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(1, context, f6Var, true);
+    public s8(int i7, Context context, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(1, context, g6Var, true);
         boolean z9;
         char c10;
         boolean z10 = true;
@@ -316,7 +316,7 @@ public final class s8 extends org.telegram.ui.ActionBar.v2 implements ls {
             }
             y7 y7Var = this.K1;
             if (y7Var != null) {
-                y7Var.k(q8Var, this.s1, this.t1, this.u1, this.x1, this.j1, this.y1, new f2.h(20, dVar, runnable), new di.s7(dVar, 28));
+                y7Var.i(q8Var, this.s1, this.t1, this.u1, this.x1, this.j1, this.y1, new f2.h(20, dVar, runnable), new di.f8(dVar, 27));
                 return;
             } else {
                 runnable.run();
@@ -329,15 +329,15 @@ public final class s8 extends org.telegram.ui.ActionBar.v2 implements ls {
                 spannableStringBuilder.append((CharSequence) ", ");
             }
             SpannableString spannableString = new SpannableString("@" + ((String) arrayList.get(i10)));
-            spannableString.setSpan(new u31(org.telegram.messenger.g0.o()), 0, spannableString.length(), 33);
+            spannableString.setSpan(new v31(org.telegram.messenger.g0.o()), 0, spannableString.length(), 33);
             spannableStringBuilder.append((CharSequence) spannableString);
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, getContext(), this.I0);
-        String M0 = id.M0(2131744492, null);
+        String M0 = id.M0(2131744489, null);
         org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
         u1Var.R = M0;
-        u1Var.T = org.telegram.messenger.g0.K2(id.M0(2131744491, null), spannableStringBuilder, "%s");
-        alertDialog$Builder.k(id.M0(2131746744, null), new a3.h(this, q8Var, runnable, 9));
+        u1Var.T = org.telegram.messenger.g0.K2(id.M0(2131744488, null), spannableStringBuilder, "%s");
+        alertDialog$Builder.k(id.M0(2131746743, null), new a3.h(this, q8Var, runnable, 9));
         jg.g.w(null, 2131752589, alertDialog$Builder, null);
     }
 
@@ -365,8 +365,8 @@ public final class s8 extends org.telegram.ui.ActionBar.v2 implements ls {
         qs.f(this.a).c(this, qs.O);
         qs.f(this.a).c(this, qs.a3);
         qs.f(this.a).c(this, qs.c3);
-        int i7 = org.telegram.ui.ActionBar.k6.h5;
-        this.I1.setColor(org.telegram.ui.ActionBar.k6.w0(i7, this.I0));
+        int i7 = org.telegram.ui.ActionBar.l6.h5;
+        this.I1.setColor(org.telegram.ui.ActionBar.l6.w0(i7, this.I0));
         P(i7);
         this.b = new x7(this, context);
         g1 g1Var = new g1(1, context, this);
@@ -620,7 +620,7 @@ public final class s8 extends org.telegram.ui.ActionBar.v2 implements ls {
     public final void s0() {
         super.s0();
         try {
-            this.I1.setColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.h5, this.I0));
+            this.I1.setColor(org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.h5, this.I0));
             ViewGroup viewGroup = this.b;
             if (viewGroup != null) {
                 viewGroup.invalidate();
@@ -630,8 +630,8 @@ public final class s8 extends org.telegram.ui.ActionBar.v2 implements ls {
         }
     }
 
-    public s8(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(1, context, f6Var, true);
+    public s8(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(1, context, g6Var, true);
         this.k1 = new ArrayList();
         this.l1 = new HashMap();
         this.m1 = 0;

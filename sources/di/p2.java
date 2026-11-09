@@ -12,51 +12,51 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.o40;
+import org.telegram.ui.Components.p40;
 import org.telegram.ui.Components.wf;
-import org.telegram.ui.Components.y20;
-import org.telegram.ui.qm;
+import org.telegram.ui.Components.z20;
+import org.telegram.ui.sm;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class p2 implements wf {
-    public final /* synthetic */ i4 a;
+    public final /* synthetic */ j4 a;
 
-    public p2(i4 i4Var) {
-        this.a = i4Var;
+    public p2(j4 j4Var) {
+        this.a = j4Var;
     }
 
     @Override // org.telegram.ui.Components.wf
     public final void F(CharSequence charSequence, boolean z9, int i7, int i10, long j3) {
-        i4 i4Var = this.a;
-        if (i4Var.p2) {
+        j4 j4Var = this.a;
+        if (j4Var.p2) {
             org.telegram.messenger.g0.i3(new bi.r3(this, j3, 3), 200L);
         } else {
-            i4Var.i0(j3 <= 0);
+            j4Var.i0(j3 <= 0);
         }
     }
 
     @Override // org.telegram.ui.Components.wf
     public final TLRPC.TL_channels_sendAsPeers I() {
         g1 g1Var;
-        i4 i4Var = this.a;
-        if (!i4Var.x1.f) {
+        j4 j4Var = this.a;
+        if (!j4Var.x1.f) {
             return null;
         }
-        p9 p9Var = i4Var.s0;
-        if (p9Var != null && (g1Var = p9Var.A0) != null) {
+        q9 q9Var = j4Var.s0;
+        if (q9Var != null && (g1Var = q9Var.A0) != null) {
             if (g1Var.w == null ? false : !r1.messages_enabled) {
                 return null;
             }
         }
-        return i4Var.x3;
+        return j4Var.x3;
     }
 
     @Override // org.telegram.ui.Components.wf
     public final void M(float f10, int i7) {
-        o40 o40Var = this.a.s2;
-        if (o40Var != null) {
-            o40Var.b(f10, i7);
+        p40 p40Var = this.a.s2;
+        if (p40Var != null) {
+            p40Var.b(f10, i7);
         }
     }
 
@@ -72,95 +72,95 @@ public final class p2 implements wf {
 
     @Override // org.telegram.ui.Components.wf
     public final boolean V0(long j3) {
-        i4 i4Var = this.a;
-        g4 g4Var = i4Var.x1;
-        TL_stories.StoryItem storyItem = g4Var.a;
+        j4 j4Var = this.a;
+        h4 h4Var = j4Var.x1;
+        TL_stories.StoryItem storyItem = h4Var.a;
         if (storyItem != null && (storyItem.media instanceof TLRPC.TL_messageMediaVideoStream)) {
             TL_phone.saveDefaultSendAs savedefaultsendas = new TL_phone.saveDefaultSendAs();
-            savedefaultsendas.call = ((TLRPC.TL_messageMediaVideoStream) g4Var.a.media).call;
-            savedefaultsendas.send_as = qp.s1(i4Var.l2).j1(j3);
-            ConnectionsManager.getInstance(i4Var.l2).sendRequest(savedefaultsendas, null);
-            g1 g1Var = i4Var.s0.A0;
+            savedefaultsendas.call = ((TLRPC.TL_messageMediaVideoStream) h4Var.a.media).call;
+            savedefaultsendas.send_as = qp.s1(j4Var.l2).j1(j3);
+            ConnectionsManager.getInstance(j4Var.l2).sendRequest(savedefaultsendas, null);
+            g1 g1Var = j4Var.s0.A0;
             if (g1Var != null) {
-                TLRPC.Peer z12 = qp.s1(i4Var.l2).z1(j3);
+                TLRPC.Peer z12 = qp.s1(j4Var.l2).z1(j3);
                 TLRPC.GroupCall groupCall = g1Var.w;
                 if (groupCall != null) {
                     groupCall.flags = TLObject.setFlag(groupCall.flags, TLObject.FLAG_21, true);
                     g1Var.w.default_send_as = z12;
                 }
             }
-            i4Var.p0(true);
-            i4Var.K1.R1(true);
-            i4Var.K1.E(true);
-            i4Var.d1(false);
+            j4Var.p0(true);
+            j4Var.K1.R1(true);
+            j4Var.K1.E(true);
+            j4Var.d1(false);
         }
         return true;
     }
 
     @Override // org.telegram.ui.Components.wf
     public final boolean X0() {
-        o40 o40Var = this.a.s2;
-        return (o40Var == null || o40Var.i0) ? false : true;
+        p40 p40Var = this.a.s2;
+        return (p40Var == null || p40Var.i0) ? false : true;
     }
 
     @Override // org.telegram.ui.Components.wf
     public final void X1() {
         String str;
-        i4 i4Var = this.a;
-        if (i4Var.n1) {
-            i4.f0(i4Var);
+        j4 j4Var = this.a;
+        if (j4Var.n1) {
+            j4.f0(j4Var);
             return;
         }
-        if (i4Var.F2 == null) {
-            y20 y20Var = new y20(9, i4Var.getContext(), i4Var.k0, false);
-            i4Var.F2 = y20Var;
-            y20Var.setVisibility(8);
-            i4Var.addView(i4Var.F2, ha.d(-2, -2.0f, 51, 10.0f, 0.0f, 10.0f, 0.0f));
+        if (j4Var.F2 == null) {
+            z20 z20Var = new z20(9, j4Var.getContext(), j4Var.k0, false);
+            j4Var.F2 = z20Var;
+            z20Var.setVisibility(8);
+            j4Var.addView(j4Var.F2, ha.d(-2, -2.0f, 51, 10.0f, 0.0f, 10.0f, 0.0f));
         }
-        if (i4Var.k1 >= 0) {
-            str = t10.j(qp.s1(i4Var.l2).a2(Long.valueOf(i4Var.k1)), true);
+        if (j4Var.k1 >= 0) {
+            str = t10.j(qp.s1(j4Var.l2).a2(Long.valueOf(j4Var.k1)), true);
         } else {
-            TLRPC.Chat M0 = qp.s1(i4Var.l2).M0(Long.valueOf(-i4Var.k1));
+            TLRPC.Chat M0 = qp.s1(j4Var.l2).M0(Long.valueOf(-j4Var.k1));
             str = M0 != null ? M0.title : "";
         }
-        i4Var.F2.setText(org.telegram.messenger.g0.X2(id.a0(null, null, i4Var.K1.c1 ? 2131743597 : 2131743523, str)));
-        i4Var.F2.c(i4Var.K1.getAudioVideoButtonContainer());
+        j4Var.F2.setText(org.telegram.messenger.g0.X2(id.a0(null, null, j4Var.K1.c1 ? 2131743594 : 2131743520, str)));
+        j4Var.F2.c(j4Var.K1.getAudioVideoButtonContainer());
     }
 
     @Override // org.telegram.ui.Components.wf
     public final void Z1(int i7, int i10, int i11, long j3, long j10, boolean z9) {
-        i4 i4Var = this.a;
-        if (i4Var.s2 == null && CameraView.isCameraAllowed()) {
-            i4Var.s2 = new o40(i4Var.getContext(), new c3(i4Var), i4Var.k0, false);
-            i4Var.addView(i4Var.s2, Math.min(i4Var.indexOfChild(i4Var.K1.getRecordCircle()), i4Var.indexOfChild(i4Var.K1.O1)), ha.e(-1, -1, 51));
+        j4 j4Var = this.a;
+        if (j4Var.s2 == null && CameraView.isCameraAllowed()) {
+            j4Var.s2 = new p40(j4Var.getContext(), new c3(j4Var), j4Var.k0, false);
+            j4Var.addView(j4Var.s2, Math.min(j4Var.indexOfChild(j4Var.K1.getRecordCircle()), j4Var.indexOfChild(j4Var.K1.O1)), ha.e(-1, -1, 51));
         }
-        o40 o40Var = i4Var.s2;
-        if (o40Var != null) {
+        p40 p40Var = j4Var.s2;
+        if (p40Var != null) {
             if (i7 == 0) {
-                o40Var.j(false);
+                p40Var.j(false);
                 return;
             }
             if (i7 == 1 || i7 == 3 || i7 == 4) {
-                o40Var.h(i7, i10, i11, j3, j10, z9);
+                p40Var.h(i7, i10, i11, j3, j10, z9);
             } else if (i7 == 2 || i7 == 5) {
-                o40Var.a(i7 == 2);
+                p40Var.a(i7 == 2);
             }
         }
     }
 
     @Override // org.telegram.ui.Components.wf
     public final void a1(CharSequence charSequence, boolean z9, boolean z10) {
-        i4 i4Var = this.a;
-        if (i4Var.M2 == null) {
-            q2 q2Var = new q2(i4Var, i4Var.getContext(), i4Var.k1, i4Var.s0.f, i4Var.k0);
-            i4Var.M2 = q2Var;
-            q2Var.p(new t2(i4Var));
-            i4Var.addView(i4Var.M2, ha.e(-1, -1, 83));
+        j4 j4Var = this.a;
+        if (j4Var.M2 == null) {
+            q2 q2Var = new q2(j4Var, j4Var.getContext(), j4Var.k1, j4Var.s0.f, j4Var.k0);
+            j4Var.M2 = q2Var;
+            q2Var.p(new t2(j4Var));
+            j4Var.addView(j4Var.M2, ha.e(-1, -1, 83));
         }
-        if (i4Var.M2.getAdapter() != null) {
-            i4Var.M2.setDialogId(i4Var.k1);
-            if (i4Var.x1.f) {
-                jg.i1 adapter = i4Var.M2.getAdapter();
+        if (j4Var.M2.getAdapter() != null) {
+            j4Var.M2.setDialogId(j4Var.k1);
+            if (j4Var.x1.f) {
+                jg.i1 adapter = j4Var.M2.getAdapter();
                 if (adapter.j0 == 0 && adapter.u0 == 0 && adapter.t0 == 0 && adapter.E0 == 0) {
                     adapter.w0 = null;
                     adapter.F = null;
@@ -197,15 +197,15 @@ public final class p2 implements wf {
                     adapter.f();
                 }
             } else {
-                jg.i1 adapter2 = i4Var.M2.getAdapter();
-                qp.s1(i4Var.l2).a2(Long.valueOf(i4Var.k1));
-                TLRPC.Chat M0 = qp.s1(i4Var.l2).M0(Long.valueOf(-i4Var.k1));
+                jg.i1 adapter2 = j4Var.M2.getAdapter();
+                qp.s1(j4Var.l2).a2(Long.valueOf(j4Var.k1));
+                TLRPC.Chat M0 = qp.s1(j4Var.l2).M0(Long.valueOf(-j4Var.k1));
                 adapter2.getClass();
                 adapter2.l0 = M0;
-                i4Var.M2.getAdapter().U(charSequence, i4Var.K1.getCursorPosition(), null, false, false);
+                j4Var.M2.getAdapter().U(charSequence, j4Var.K1.getCursorPosition(), null, false, false);
             }
         }
-        i4Var.invalidate();
+        j4Var.invalidate();
     }
 
     @Override // org.telegram.ui.Components.wf
@@ -215,17 +215,17 @@ public final class p2 implements wf {
 
     @Override // org.telegram.ui.Components.wf
     public final void c1() {
-        o40 o40Var = this.a.s2;
-        if (o40Var != null) {
-            o40Var.k();
+        p40 p40Var = this.a.s2;
+        if (p40Var != null) {
+            p40Var.k();
         }
     }
 
     @Override // org.telegram.ui.Components.wf
     public final boolean d1() {
         TLRPC.User a22;
-        i4 i4Var = this.a;
-        return (i4Var.k1 < 0 || (a22 = qp.s1(i4Var.l2).a2(Long.valueOf(i4Var.k1))) == null || t10.B(a22) || a22.bot) ? false : true;
+        j4 j4Var = this.a;
+        return (j4Var.k1 < 0 || (a22 = qp.s1(j4Var.l2).a2(Long.valueOf(j4Var.k1))) == null || t10.B(a22) || a22.bot) ? false : true;
     }
 
     @Override // org.telegram.ui.Components.wf
@@ -254,15 +254,15 @@ public final class p2 implements wf {
     }
 
     @Override // org.telegram.ui.Components.wf
-    public final /* synthetic */ qm o0() {
+    public final /* synthetic */ sm o0() {
         return null;
     }
 
     @Override // org.telegram.ui.Components.wf
     public final TLRPC.Peer s() {
         g1 g1Var;
-        p9 p9Var = this.a.s0;
-        if (p9Var == null || (g1Var = p9Var.A0) == null) {
+        q9 q9Var = this.a.s0;
+        if (q9Var == null || (g1Var = q9Var.A0) == null) {
             return null;
         }
         if (g1Var.w == null ? false : !r1.messages_enabled) {

@@ -1,51 +1,52 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.SurfaceView;
+import android.animation.AnimatorSet;
+import android.graphics.drawable.Drawable;
 import android.view.View;
-import android.widget.ImageView;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class co0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
+public final /* synthetic */ class co0 implements Runnable {
+    public final /* synthetic */ PhotoViewer a;
     public final /* synthetic */ View b;
-    public final /* synthetic */ PhotoViewer c;
+    public final /* synthetic */ hp0 c;
+    public final /* synthetic */ float d;
+    public final /* synthetic */ float e;
+    public final /* synthetic */ AnimatorSet f;
 
-    public /* synthetic */ co0(PhotoViewer photoViewer, View view, int i7) {
-        this.a = i7;
-        this.c = photoViewer;
+    public /* synthetic */ co0(PhotoViewer photoViewer, View view, hp0 hp0Var, float f10, float f11, AnimatorSet animatorSet) {
+        this.a = photoViewer;
         this.b = view;
+        this.c = hp0Var;
+        this.d = f10;
+        this.e = f11;
+        this.f = animatorSet;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                PhotoViewer photoViewer = this.c;
-                photoViewer.A3 = false;
-                this.b.setOutlineProvider(null);
-                ImageView imageView = photoViewer.w3;
-                if (imageView != null) {
-                    imageView.setOutlineProvider(null);
-                }
-                oq0 oq0Var = photoViewer.E2;
-                if (oq0Var != null) {
-                    oq0Var.setOutlineProvider(null);
-                }
-                SurfaceView surfaceView = photoViewer.C2;
-                if (surfaceView != null) {
-                    surfaceView.setVisibility(0);
-                    break;
-                }
-                break;
-            default:
-                PhotoViewer photoViewer2 = this.c;
-                photoViewer2.A3 = false;
-                photoViewer2.h4.run();
-                org.telegram.messenger.g0.i3(new qn0(2, this, this.b), 100L);
-                break;
+    @Override // java.lang.Runnable
+    public final void run() {
+        Drawable[] drawableArr = PhotoViewer.Y8;
+        View view = this.b;
+        hp0 hp0Var = this.c;
+        view.setOutlineProvider(hp0Var);
+        view.setClipToOutline(true);
+        PhotoViewer photoViewer = this.a;
+        photoViewer.w3.setOutlineProvider(hp0Var);
+        photoViewer.w3.setClipToOutline(true);
+        qq0 qq0Var = photoViewer.E2;
+        if (qq0Var != null) {
+            qq0Var.setOutlineProvider(hp0Var);
+            photoViewer.E2.setClipToOutline(true);
         }
+        photoViewer.w3.setTranslationY(this.d);
+        float f10 = this.e;
+        view.setTranslationY(f10);
+        qq0 qq0Var2 = photoViewer.E2;
+        if (qq0Var2 != null) {
+            qq0Var2.setTranslationY(f10);
+        }
+        photoViewer.X5 = 0.0f;
+        photoViewer.e0.invalidate();
+        this.f.start();
     }
 }

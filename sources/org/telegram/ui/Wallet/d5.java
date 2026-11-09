@@ -1,49 +1,59 @@
 package org.telegram.ui.Wallet;
 
-import java.util.ArrayList;
+import android.view.View;
+import java.io.Serializable;
 import org.telegram.messenger.ls;
 import org.telegram.messenger.qs;
+import org.telegram.messenger.v10;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
-public final class d5 implements ls {
-    public final /* synthetic */ int a;
+public final class d5 implements View.OnAttachStateChangeListener {
+    public final /* synthetic */ di.r a;
     public final /* synthetic */ TL_wallet.walletTransaction[] b;
-    public final /* synthetic */ di.r c;
+    public final /* synthetic */ ls c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ v10 e;
+    public final /* synthetic */ y2[] f;
+    public final /* synthetic */ String[] h;
+    public final /* synthetic */ boolean[] n;
 
-    public d5(int i7, TL_wallet.walletTransaction[] wallettransactionArr, di.r rVar) {
-        this.a = i7;
+    public d5(di.r rVar, TL_wallet.walletTransaction[] wallettransactionArr, c5 c5Var, int i7, v10 v10Var, y2[] y2VarArr, String[] strArr, boolean[] zArr) {
+        this.a = rVar;
         this.b = wallettransactionArr;
-        this.c = rVar;
+        this.c = c5Var;
+        this.d = i7;
+        this.e = v10Var;
+        this.f = y2VarArr;
+        this.h = strArr;
+        this.n = zArr;
     }
 
-    @Override // org.telegram.messenger.ls
-    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        TL_wallet.walletTransaction[] wallettransactionArr;
-        TL_wallet.walletTransaction wallettransaction;
-        if (i7 == qs.a4 || i7 == qs.b4) {
-            ArrayList arrayList = m0.x(this.a).B().c;
-            int size = arrayList.size();
-            int i11 = 0;
-            while (true) {
-                wallettransactionArr = this.b;
-                if (i11 >= size) {
-                    wallettransaction = null;
-                    break;
-                }
-                Object obj = arrayList.get(i11);
-                i11++;
-                wallettransaction = (TL_wallet.walletTransaction) obj;
-                TL_wallet.walletTransaction wallettransaction2 = wallettransactionArr[0];
-                if (wallettransaction == wallettransaction2 || m0.i0(wallettransaction2, wallettransaction)) {
-                    break;
-                }
-            }
-            if (wallettransaction != null) {
-                wallettransactionArr[0] = wallettransaction;
-                this.c.a(wallettransaction);
-            }
+    /* JADX WARN: Type inference failed for: r3v0, types: [java.io.Serializable, java.lang.String[]] */
+    /* JADX WARN: Type inference failed for: r4v0, types: [boolean[], java.io.Serializable] */
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewAttachedToWindow(View view) {
+        this.a.a(this.b[0]);
+        ls lsVar = this.c;
+        if (lsVar != null) {
+            int i7 = this.d;
+            qs.f(i7).c(lsVar, qs.a4);
+            qs.f(i7).c(lsVar, qs.b4);
+        }
+        v10 v10Var = this.e;
+        if (v10Var != null) {
+            this.f[0].n(new g(v10Var, (Serializable) this.h, (Serializable) this.n, 14));
+        }
+    }
+
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewDetachedFromWindow(View view) {
+        ls lsVar = this.c;
+        if (lsVar != null) {
+            int i7 = this.d;
+            qs.f(i7).n(lsVar, qs.a4);
+            qs.f(i7).n(lsVar, qs.b4);
         }
     }
 }

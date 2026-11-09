@@ -18,10 +18,10 @@ import java.util.UUID;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.qs;
 import org.telegram.ui.Components.ic;
-import org.telegram.ui.Components.ki0;
+import org.telegram.ui.Components.li0;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public abstract class j extends FrameLayout {
     public static final List p0 = Arrays.asList(-90, 0, 90, Integer.valueOf(qs.K2));
@@ -35,7 +35,7 @@ public abstract class j extends FrameLayout {
     public boolean K;
     public int L;
     public int M;
-    public org.telegram.ui.Wallet.g2 N;
+    public org.telegram.ui.Wallet.f2 N;
     public float O;
     public ValueAnimator P;
     public ValueAnimator Q;
@@ -310,9 +310,9 @@ public abstract class j extends FrameLayout {
         this.r = true;
         this.y = false;
         this.M = this.L;
-        org.telegram.ui.Wallet.g2 g2Var = this.N;
-        if (g2Var != null) {
-            org.telegram.messenger.g0.r(g2Var);
+        org.telegram.ui.Wallet.f2 f2Var = this.N;
+        if (f2Var != null) {
+            org.telegram.messenger.g0.r(f2Var);
             this.N = null;
         }
         this.V = this.R;
@@ -437,22 +437,22 @@ public abstract class j extends FrameLayout {
                 if (Math.abs(intValue - f10) < 4.0f) {
                     if (this.M != intValue) {
                         this.M = intValue;
-                        org.telegram.ui.Wallet.g2 g2Var = this.N;
-                        if (g2Var != null) {
-                            org.telegram.messenger.g0.r(g2Var);
+                        org.telegram.ui.Wallet.f2 f2Var = this.N;
+                        if (f2Var != null) {
+                            org.telegram.messenger.g0.r(f2Var);
                         }
-                        org.telegram.ui.Wallet.g2 g2Var2 = new org.telegram.ui.Wallet.g2(this, intValue, 6);
-                        this.N = g2Var2;
-                        org.telegram.messenger.g0.i3(g2Var2, 250L);
+                        org.telegram.ui.Wallet.f2 f2Var2 = new org.telegram.ui.Wallet.f2(this, intValue, 6);
+                        this.N = f2Var2;
+                        org.telegram.messenger.g0.i3(f2Var2, 250L);
                     }
                 }
             }
         } else if (z9) {
             if (Math.abs(this.L - f10) >= 12.0f || this.c0) {
                 this.M = -1;
-                org.telegram.ui.Wallet.g2 g2Var3 = this.N;
-                if (g2Var3 != null) {
-                    org.telegram.messenger.g0.r(g2Var3);
+                org.telegram.ui.Wallet.f2 f2Var3 = this.N;
+                if (f2Var3 != null) {
+                    org.telegram.messenger.g0.r(f2Var3);
                     this.N = null;
                 }
                 ValueAnimator valueAnimator = this.P;
@@ -561,8 +561,8 @@ public abstract class j extends FrameLayout {
         return getScaleX();
     }
 
-    public ki0 getSelectionBounds() {
-        return new ki0(0.0f, 0.0f, 0.0f, 0.0f);
+    public li0 getSelectionBounds() {
+        return new li0(0.0f, 0.0f, 0.0f, 0.0f);
     }
 
     public float getStickyPaddingBottom() {

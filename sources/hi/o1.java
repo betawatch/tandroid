@@ -9,20 +9,20 @@ import org.telegram.messenger.t10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.hc;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.w91;
-import org.telegram.ui.ww;
+import org.telegram.ui.y91;
+import org.telegram.ui.yw;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o1 implements c20 {
-    public final /* synthetic */ w91 a;
-    public final /* synthetic */ ww b;
+    public final /* synthetic */ y91 a;
+    public final /* synthetic */ yw b;
     public final /* synthetic */ long c;
     public final /* synthetic */ int d;
 
-    public /* synthetic */ o1(w91 w91Var, ww wwVar, long j3, int i7) {
-        this.a = w91Var;
-        this.b = wwVar;
+    public /* synthetic */ o1(y91 y91Var, yw ywVar, long j3, int i7) {
+        this.a = y91Var;
+        this.b = ywVar;
         this.c = j3;
         this.d = i7;
     }
@@ -33,13 +33,13 @@ public final /* synthetic */ class o1 implements c20 {
         String str;
         TLRPC.Chat chat;
         Boolean bool = (Boolean) obj;
-        w91 w91Var = this.a;
-        ww wwVar = this.b;
-        if (w91Var != null) {
-            w91Var.finishFragment();
-            wwVar.removeSelfFromStack();
+        y91 y91Var = this.a;
+        yw ywVar = this.b;
+        if (y91Var != null) {
+            y91Var.finishFragment();
+            ywVar.removeSelfFromStack();
         } else {
-            wwVar.finishFragment();
+            ywVar.finishFragment();
         }
         org.telegram.ui.ActionBar.f2 T = LaunchActivity.T();
         if (T == null) {

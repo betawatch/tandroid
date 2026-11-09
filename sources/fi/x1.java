@@ -34,11 +34,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.ui.Components.AnimatedFileNative;
-import org.telegram.ui.Components.g31;
+import org.telegram.ui.Components.h31;
 import org.telegram.ui.Components.hc;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x1 implements Runnable {
     public final /* synthetic */ int a;
@@ -239,7 +239,7 @@ public final /* synthetic */ class x1 implements Runnable {
                 }
                 s8Var.M0();
                 if (s8Var.Q1) {
-                    s8Var.N0(new q8(1, s8Var.a, (ArrayList) null), new di.w3(s8Var, i12), false);
+                    s8Var.N0(new q8(1, s8Var.a, (ArrayList) null), new di.x3(s8Var, i12), false);
                     return;
                 } else {
                     s8Var.M0();
@@ -249,9 +249,9 @@ public final /* synthetic */ class x1 implements Runnable {
             case 7:
                 va vaVar = (va) this.c;
                 ((e7) this.b).O0 = (File) this.d;
-                o9 o9Var = vaVar.d1;
-                if (o9Var != null) {
-                    o9Var.b.f3.O(false);
+                n9 n9Var = vaVar.d1;
+                if (n9Var != null) {
+                    n9Var.b.f3.O(false);
                     return;
                 }
                 return;
@@ -312,13 +312,13 @@ public final /* synthetic */ class x1 implements Runnable {
                 }
             case 10:
                 m9.e0 e0Var2 = (m9.e0) this.c;
-                org.telegram.ui.web.w wVar = (org.telegram.ui.web.w) this.b;
+                org.telegram.ui.web.s sVar = (org.telegram.ui.web.s) this.b;
                 p4.m1 m1Var = (p4.m1) this.d;
                 try {
                     if (e0Var2.a instanceof m9.a) {
                         return;
                     }
-                    wVar.run();
+                    sVar.run();
                     e0Var2.m(m1Var);
                     return;
                 } catch (Throwable th3) {
@@ -489,12 +489,12 @@ public final /* synthetic */ class x1 implements Runnable {
                 String str7 = tL_messages_searchStickerSets.q;
                 jg.d2 d2Var = b2Var.a;
                 String str8 = d2Var.R;
-                g31 g31Var = d2Var.e;
+                h31 h31Var = d2Var.e;
                 if (str7.equals(str8)) {
                     b2Var.a();
-                    g31Var.b.h.getProgressDrawable().e = false;
+                    h31Var.b.h.getProgressDrawable().e = false;
                     d2Var.N = 0;
-                    g31Var.b(true);
+                    h31Var.b(true);
                     d2Var.E.addAll(tL_messages_foundStickerSets.sets);
                     d2Var.f();
                     return;
@@ -513,7 +513,7 @@ public final /* synthetic */ class x1 implements Runnable {
                     return;
                 } else {
                     cVar.a.b(false);
-                    org.telegram.messenger.k5.p(null, 2131743882, hc.a0(cVar), null);
+                    org.telegram.messenger.k5.p(null, 2131743879, hc.a0(cVar), null);
                     return;
                 }
             case 23:
@@ -526,7 +526,7 @@ public final /* synthetic */ class x1 implements Runnable {
                     return;
                 } else if (tLObject8 instanceof TLRPC.TL_boolFalse) {
                     mVar.f.b(false);
-                    org.telegram.messenger.k5.p(null, 2131743882, hc.a0(mVar), null);
+                    org.telegram.messenger.k5.p(null, 2131743879, hc.a0(mVar), null);
                     return;
                 } else {
                     if (mVar.E != null) {
@@ -584,7 +584,7 @@ public final /* synthetic */ class x1 implements Runnable {
                     return;
                 } else {
                     s0Var.a.b(false);
-                    org.telegram.messenger.k5.p(null, 2131743882, hc.a0(s0Var), null);
+                    org.telegram.messenger.k5.p(null, 2131743879, hc.a0(s0Var), null);
                     return;
                 }
             case 28:

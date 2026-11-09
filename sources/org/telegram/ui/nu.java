@@ -1,43 +1,39 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import java.util.HashSet;
+import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class nu implements Runnable {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ ww b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ ArrayList d;
-    public final /* synthetic */ boolean e;
-    public final /* synthetic */ HashSet f;
+public final /* synthetic */ class nu implements DialogInterface.OnDismissListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ yw b;
 
-    public /* synthetic */ nu(ww wwVar, int i7, ArrayList arrayList, boolean z9, HashSet hashSet) {
-        this.b = wwVar;
-        this.c = i7;
-        this.d = arrayList;
-        this.e = z9;
-        this.f = hashSet;
+    public /* synthetic */ nu(yw ywVar, int i7) {
+        this.a = i7;
+        this.b = ywVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                this.b.D4(this.d, this.c, false, this.e, this.f);
+                yw ywVar = this.b;
+                if (ywVar.S3 != null) {
+                    ywVar.getMessagesController().k4(0L, ywVar.S3);
+                    ywVar.S3 = null;
+                    ywVar.X4();
+                    break;
+                }
+                break;
+            case 1:
+                this.b.n4(true);
+                break;
+            case 2:
+                this.b.n4(true);
                 break;
             default:
-                ww.r0(this.b, this.c, this.d, this.e, this.f);
+                yw.l0(this.b);
                 break;
         }
-    }
-
-    public /* synthetic */ nu(ww wwVar, ArrayList arrayList, int i7, boolean z9, HashSet hashSet) {
-        this.b = wwVar;
-        this.d = arrayList;
-        this.c = i7;
-        this.e = z9;
-        this.f = hashSet;
     }
 }

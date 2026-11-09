@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class u7 {
     public final /* synthetic */ Object a;
@@ -76,7 +76,7 @@ public final class u7 {
         if (qbVar != null) {
             qbVar.b.u.remove(str);
             i10 = i7;
-            g0.h3(new l2.a0(qbVar, str, i10, qbVar.a, 1));
+            g0.h3(new l2.z(qbVar, str, i10, qbVar.a, 1));
         } else {
             i10 = i7;
         }

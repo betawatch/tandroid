@@ -8,14 +8,14 @@ import org.telegram.messenger.voip.GroupCallMessagesController;
 import org.telegram.messenger.xr;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.Components.hy0;
+import org.telegram.ui.Components.iy0;
 import org.telegram.ui.Components.yn;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.an;
-import org.telegram.ui.w91;
-import org.telegram.ui.ww;
+import org.telegram.ui.cn;
+import org.telegram.ui.y91;
+import org.telegram.ui.yw;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h4 implements Runnable {
     public final /* synthetic */ int a;
@@ -73,19 +73,19 @@ public final /* synthetic */ class h4 implements Runnable {
                 ((yn) this.d).e(this.b, this.c, (HashSet) this.e);
                 return;
             case 6:
-                ww wwVar = (ww) this.d;
+                yw ywVar = (yw) this.d;
                 long j13 = this.b;
                 long j14 = this.c;
-                w91 w91Var = (w91) this.e;
-                if (wwVar.C2 == null) {
-                    wwVar.finishFragment();
+                y91 y91Var = (y91) this.e;
+                if (ywVar.D2 == null) {
+                    ywVar.finishFragment();
                     return;
                 }
                 ArrayList arrayList = new ArrayList();
                 arrayList.add(xr.a(j13, j14));
-                wwVar.C2.y(wwVar, arrayList, null, false, wwVar.J2, wwVar.K2, wwVar.L2, w91Var);
-                if (wwVar.i2) {
-                    wwVar.C2 = null;
+                ywVar.D2.y(ywVar, arrayList, null, false, ywVar.K2, ywVar.L2, ywVar.M2, y91Var);
+                if (ywVar.j2) {
+                    ywVar.D2 = null;
                     return;
                 }
                 return;
@@ -93,7 +93,7 @@ public final /* synthetic */ class h4 implements Runnable {
                 LaunchActivity launchActivity = (LaunchActivity) this.d;
                 long j15 = this.b;
                 long j16 = this.c;
-                an anVar = (an) this.e;
+                cn cnVar = (cn) this.e;
                 String str5 = LaunchActivity.B1;
                 TLRPC.TL_forumTopic f10 = qp.s1(launchActivity.O).q7.f(j15, j16);
                 StringBuilder t6 = a8.p0.t(j15, "LaunchActivity openForum after load ", " ");
@@ -102,8 +102,8 @@ public final /* synthetic */ class h4 implements Runnable {
                 t6.append(f10);
                 org.telegram.messenger.a8.b(t6.toString());
                 if (launchActivity.o0 != null) {
-                    qg.d.a(anVar, xr.a(-j15, j16));
-                    ((ActionBarLayout) launchActivity.M()).S(anVar);
+                    qg.d.a(cnVar, xr.a(-j15, j16));
+                    ((ActionBarLayout) launchActivity.M()).S(cnVar);
                     return;
                 }
                 return;
@@ -114,7 +114,7 @@ public final /* synthetic */ class h4 implements Runnable {
                 long j18 = this.c;
                 synchronized (t0Var.g) {
                     if (!p0Var.d && !p0Var.e) {
-                        ((hy0) t0Var.e).a(p0Var.a, p0Var.b, j17, j18);
+                        ((iy0) t0Var.e).a(p0Var.a, p0Var.b, j17, j18);
                         return;
                     }
                     return;

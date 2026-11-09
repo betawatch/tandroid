@@ -1,91 +1,32 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
-import android.os.Parcelable;
-import android.util.SparseArray;
-import android.widget.TextView;
-import java.util.ArrayList;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.view.View;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class ph0 extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ Context a;
-    public final /* synthetic */ sh0 b;
+public final /* synthetic */ class ph0 implements org.telegram.ui.Components.dj0, org.telegram.ui.ActionBar.r1 {
+    public final /* synthetic */ NotificationsSettingsActivity a;
 
-    public ph0(sh0 sh0Var, Context context) {
-        this.b = sh0Var;
-        this.a = context;
+    public /* synthetic */ ph0(NotificationsSettingsActivity notificationsSettingsActivity) {
+        this.a = notificationsSettingsActivity;
     }
 
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i7) {
-        int i10;
-        int i11;
-        org.telegram.ui.ActionBar.y4 y4Var;
-        sh0 sh0Var = this.b;
-        org.telegram.ui.ActionBar.f6 f6Var = sh0Var.f;
-        SparseArray sparseArray = sh0Var.I;
-        if (i7 == -1) {
-            y4Var = ((org.telegram.ui.ActionBar.f2) sh0Var).simpleActionBar;
-            if (y4Var.s()) {
-                sh0.b0(sh0Var);
-                return;
-            } else {
-                sh0Var.finishFragment();
-                return;
-            }
-        }
-        if (i7 == 1) {
-            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, sh0Var.getParentActivity(), f6Var);
-            String G = org.telegram.messenger.id.G(sparseArray.size(), "DeleteTones", new Object[0]);
-            org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
-            u1Var.R = G;
-            u1Var.T = org.telegram.messenger.g0.X2(org.telegram.messenger.id.G(sparseArray.size(), "DeleteTonesMessage", new Object[0]));
-            alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), new org.telegram.ui.Components.il0(27));
-            alertDialog$Builder.k(org.telegram.messenger.id.M0(2131751599, null), new wr(this, 28));
-            TextView textView = (TextView) alertDialog$Builder.p().d(-1);
-            if (textView != null) {
-                org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.q7, f6Var);
-                return;
-            }
-            return;
-        }
-        if (i7 == 2) {
-            int size = sparseArray.size();
-            Context context = this.a;
-            if (size == 1) {
-                Intent intent = new Intent(context, (Class<?>) LaunchActivity.class);
-                intent.setAction("android.intent.action.SEND");
-                qh0 qh0Var = (qh0) sparseArray.valueAt(0);
-                i11 = ((org.telegram.ui.ActionBar.f2) sh0Var).currentAccount;
-                Uri a10 = qh0Var.a(i11);
-                if (a10 != null) {
-                    intent.putExtra("android.intent.extra.STREAM", a10);
-                    context.startActivity(intent);
-                }
-            } else {
-                Intent intent2 = new Intent(context, (Class<?>) LaunchActivity.class);
-                intent2.setAction("android.intent.action.SEND_MULTIPLE");
-                ArrayList<? extends Parcelable> arrayList = new ArrayList<>();
-                for (int i12 = 0; i12 < sparseArray.size(); i12++) {
-                    qh0 qh0Var2 = (qh0) sparseArray.valueAt(i12);
-                    i10 = ((org.telegram.ui.ActionBar.f2) sh0Var).currentAccount;
-                    Uri a11 = qh0Var2.a(i10);
-                    if (a11 != null) {
-                        arrayList.add(a11);
-                    }
-                }
-                if (!arrayList.isEmpty()) {
-                    intent2.putParcelableArrayListExtra("android.intent.extra.STREAM", arrayList);
-                    context.startActivity(intent2);
-                }
-            }
-            sh0.b0(sh0Var);
-            sh0Var.i0();
-            sh0Var.e.f();
-        }
+    @Override // org.telegram.ui.Components.dj0
+    public void f(float f10, float f11, int i7, View view) {
+        NotificationsSettingsActivity.d0(this.a, view, i7, f10);
+    }
+
+    @Override // org.telegram.ui.Components.dj0
+    public /* synthetic */ boolean f1(View view) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ActionBar.r1
+    public void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+        NotificationsSettingsActivity.e0(this.a);
+    }
+
+    @Override // org.telegram.ui.Components.dj0
+    public /* synthetic */ void r0(View view, float f10, float f11) {
     }
 }

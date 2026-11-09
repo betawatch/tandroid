@@ -13,13 +13,13 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.d2;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.s6;
 import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.Components.hr;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -65,7 +65,7 @@ public final /* synthetic */ class t implements View.OnClickListener {
                     if (i10 == 19 || i10 == 32 || i0Var.s1()) {
                         e3 e3Var = i0Var.U1;
                         if (!e3Var.a) {
-                            if (!e3Var.d || !wg.s.i() || i0Var.U1.m) {
+                            if (!e3Var.d || !wg.r.i() || i0Var.U1.m) {
                                 i0Var.dismiss();
                                 break;
                             } else {
@@ -109,11 +109,11 @@ public final /* synthetic */ class t implements View.OnClickListener {
                                     u1Var.T = org.telegram.messenger.g0.X2(id.a0("ChatsLeaveAlert", null, 2131752176, new Object[0]));
                                 }
                                 alertDialog$Builder.h(id.M0(2131752589, null), null);
-                                alertDialog$Builder.k(id.M0(2131743367, null), new hr(i0Var, arrayList, a22, 12));
+                                alertDialog$Builder.k(id.M0(2131743364, null), new hr(i0Var, arrayList, a22, 12));
                                 u1Var.show();
                                 TextView textView = (TextView) u1Var.d(-1);
                                 if (textView != null) {
-                                    r6.V(textView, k6.q7, i0Var.I0);
+                                    s6.U(textView, l6.q7, i0Var.I0);
                                     break;
                                 }
                             }

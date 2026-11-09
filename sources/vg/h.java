@@ -7,9 +7,9 @@ import android.view.MotionEvent;
 import java.security.SecureRandom;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.g0;
-import org.telegram.ui.Components.fj0;
+import org.telegram.ui.Components.gj0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class h implements GestureDetector.OnGestureListener {
     public final /* synthetic */ int a;
@@ -70,7 +70,7 @@ public final class h implements GestureDetector.OnGestureListener {
     public final boolean onSingleTapUp(MotionEvent motionEvent) {
         float measuredWidth = this.b.getMeasuredWidth() / 2.0f;
         SecureRandom secureRandom = Utilities.b;
-        g0.i3(new fj0(this, ((measuredWidth - motionEvent.getX()) * (secureRandom.nextInt(30) + 40)) / measuredWidth, ((measuredWidth - motionEvent.getY()) * (secureRandom.nextInt(30) + 40)) / measuredWidth, 1), 16L);
+        g0.i3(new gj0(this, ((measuredWidth - motionEvent.getX()) * (secureRandom.nextInt(30) + 40)) / measuredWidth, ((measuredWidth - motionEvent.getY()) * (secureRandom.nextInt(30) + 40)) / measuredWidth, 1), 16L);
         return true;
     }
 

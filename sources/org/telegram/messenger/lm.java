@@ -16,10 +16,10 @@ import java.util.zip.ZipInputStream;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.k21;
-import org.telegram.ui.b80;
+import org.telegram.ui.Components.l21;
+import org.telegram.ui.d80;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class lm implements Runnable {
     public final /* synthetic */ int a;
@@ -58,14 +58,14 @@ public final /* synthetic */ class lm implements Runnable {
             }
         } else if (tL_error == null || !"TO_LANG_INVALID".equals(tL_error.text)) {
             if (tL_error != null && "QUOTA_EXCEEDED".equals(tL_error.text)) {
-                qs.e().k(qs.P4, 1, id.M0(2131743950, null));
+                qs.e().k(qs.P4, 1, id.M0(2131743947, null));
             }
             for (int i10 = 0; i10 < arrayList2.size(); i10++) {
                 ((x10) arrayList2.get(i10)).a((Integer) arrayList.get(i10), null, a10Var.d);
             }
         } else {
             f10Var.K(j3, false);
-            qs.e().k(qs.P4, 1, id.M0(2131743949, null));
+            qs.e().k(qs.P4, 1, id.M0(2131743946, null));
         }
         synchronized (f10Var) {
             for (int i11 = 0; i11 < arrayList.size(); i11++) {
@@ -169,7 +169,7 @@ public final /* synthetic */ class lm implements Runnable {
                 ArrayList arrayList5 = (ArrayList) this.d;
                 long j12 = this.c;
                 Uri uri2 = (Uri) this.e;
-                final b80 b80Var = (b80) this.f;
+                final d80 d80Var = (d80) this.f;
                 if (arrayList5 == null) {
                     arrayList5 = new ArrayList();
                 }
@@ -193,15 +193,15 @@ public final /* synthetic */ class lm implements Runnable {
                                 public final void run() {
                                     switch (i13) {
                                         case 0:
-                                            b80Var.run(0L);
+                                            d80Var.run(0L);
                                             break;
                                         case 1:
-                                            b80Var.run(0L);
+                                            d80Var.run(0L);
                                             break;
                                         default:
-                                            b80 b80Var2 = b80Var;
-                                            Toast.makeText(t0.b, id.M0(2131749251, null), 0).show();
-                                            b80Var2.run(0L);
+                                            d80 d80Var2 = d80Var;
+                                            Toast.makeText(t0.b, id.M0(2131749250, null), 0).show();
+                                            d80Var2.run(0L);
                                             break;
                                     }
                                 }
@@ -347,15 +347,15 @@ public final /* synthetic */ class lm implements Runnable {
                                                 public final void run() {
                                                     switch (i14) {
                                                         case 0:
-                                                            b80Var.run(0L);
+                                                            d80Var.run(0L);
                                                             break;
                                                         case 1:
-                                                            b80Var.run(0L);
+                                                            d80Var.run(0L);
                                                             break;
                                                         default:
-                                                            b80 b80Var2 = b80Var;
-                                                            Toast.makeText(t0.b, id.M0(2131749251, null), 0).show();
-                                                            b80Var2.run(0L);
+                                                            d80 d80Var2 = d80Var;
+                                                            Toast.makeText(t0.b, id.M0(2131749250, null), 0).show();
+                                                            d80Var2.run(0L);
                                                             break;
                                                     }
                                                 }
@@ -375,15 +375,15 @@ public final /* synthetic */ class lm implements Runnable {
                                     public final void run() {
                                         switch (i15) {
                                             case 0:
-                                                b80Var.run(0L);
+                                                d80Var.run(0L);
                                                 break;
                                             case 1:
-                                                b80Var.run(0L);
+                                                d80Var.run(0L);
                                                 break;
                                             default:
-                                                b80 b80Var2 = b80Var;
-                                                Toast.makeText(t0.b, id.M0(2131749251, null), 0).show();
-                                                b80Var2.run(0L);
+                                                d80 d80Var2 = d80Var;
+                                                Toast.makeText(t0.b, id.M0(2131749250, null), 0).show();
+                                                d80Var2.run(0L);
                                                 break;
                                         }
                                     }
@@ -395,19 +395,19 @@ public final /* synthetic */ class lm implements Runnable {
                     i12 = i7 + 1;
                     uri2 = uri;
                 }
-                g0.h3(new lm(gzVar, hashMap, j12, xyVar, b80Var, 4));
+                g0.h3(new lm(gzVar, hashMap, j12, xyVar, d80Var, 4));
                 return;
             case 4:
                 gz gzVar2 = (gz) this.b;
                 HashMap hashMap2 = (HashMap) this.d;
                 long j13 = this.c;
                 xy xyVar2 = (xy) this.e;
-                b80 b80Var2 = (b80) this.f;
+                d80 d80Var2 = (d80) this.f;
                 gzVar2.y.putAll(hashMap2);
                 gzVar2.D.k(xyVar2, j13);
                 gzVar2.getFileLoader().g0(xyVar2.a, false, true, 0L, 67108864, true);
                 gzVar2.getNotificationCenter().k(qs.v1, Long.valueOf(j13));
-                b80Var2.run(j13);
+                d80Var2.run(j13);
                 try {
                     t0.b.startService(new Intent(t0.b, (Class<?>) ImportingService.class));
                     return;
@@ -451,7 +451,7 @@ public final /* synthetic */ class lm implements Runnable {
                                 tL_textWithEntities = arrayList7.get(i16);
                                 i16++;
                             }
-                            c10Var3.a = k21.P0(c10Var.a, tL_textWithEntities);
+                            c10Var3.a = l21.P0(c10Var.a, tL_textWithEntities);
                         }
                         if (c10Var.b.size() != (c10Var2 == null ? 0 : c10Var2.b.size())) {
                             ArrayList arrayList9 = c10Var.b;
@@ -494,7 +494,7 @@ public final /* synthetic */ class lm implements Runnable {
                                 i16++;
                                 tL_textWithEntities2 = tL_textWithEntities6;
                             }
-                            c10Var3.c = k21.P0(c10Var.c, tL_textWithEntities2);
+                            c10Var3.c = l21.P0(c10Var.c, tL_textWithEntities2);
                         }
                         arrayList8.add(c10Var3);
                         size2 = i10;
@@ -505,14 +505,14 @@ public final /* synthetic */ class lm implements Runnable {
                     }
                 } else if (tL_error == null || !"TO_LANG_INVALID".equals(tL_error.text)) {
                     if (tL_error != null && "QUOTA_EXCEEDED".equals(tL_error.text)) {
-                        qs.e().k(qs.P4, 1, id.M0(2131743950, null));
+                        qs.e().k(qs.P4, 1, id.M0(2131743947, null));
                     }
                     for (int i21 = 0; i21 < arrayList2.size(); i21++) {
                         ((x10) arrayList2.get(i21)).a((Integer) arrayList.get(i21), null, z00Var.e);
                     }
                 } else {
                     f10Var.K(j14, false);
-                    qs.e().k(qs.P4, 1, id.M0(2131743949, null));
+                    qs.e().k(qs.P4, 1, id.M0(2131743946, null));
                 }
                 synchronized (f10Var) {
                     for (int i22 = 0; i22 < arrayList.size(); i22++) {

@@ -16,19 +16,19 @@ import org.telegram.messenger.g0;
 import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Components.a80;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.Components.b80;
 import org.telegram.ui.Components.di;
-import org.telegram.ui.Components.r70;
+import org.telegram.ui.Components.s70;
 import org.telegram.ui.Components.voip.i1;
 import org.telegram.ui.Components.voip.t0;
-import org.telegram.ui.u50;
+import org.telegram.ui.w50;
 import ug.h0;
 import ug.i0;
 import ug.p1;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class k extends TextView {
     public final /* synthetic */ int a;
@@ -42,25 +42,25 @@ public final class k extends TextView {
         this.b = new RectF();
         this.c = i1Var;
         i1Var.a(this);
-        setText(id.M0(2131743306, null));
-        setContentDescription(id.M0(2131743306, null));
+        setText(id.M0(2131743303, null));
+        setContentDescription(id.M0(2131743303, null));
         setTextColor(-1);
         setTypeface(g0.o());
         setPadding(g0.L(14.0f), g0.L(4.0f), g0.L(14.0f), g0.L(4.0f));
     }
 
     public void a() {
-        a80 a80Var = (a80) this.c;
-        r70 r70Var = (r70) this.b;
-        if (r70Var == null || a80Var == null) {
+        b80 b80Var = (b80) this.c;
+        s70 s70Var = (s70) this.b;
+        if (s70Var == null || b80Var == null) {
             return;
         }
-        r70Var.rewind();
+        s70Var.rewind();
         if (getLayout() != null && getLayout().getText() != null) {
-            r70Var.e(getLayout(), 0, getPaddingLeft(), getPaddingTop());
-            getLayout().getSelectionPath(0, getLayout().getText().length(), r70Var);
+            s70Var.e(getLayout(), 0, getPaddingLeft(), getPaddingTop());
+            getLayout().getSelectionPath(0, getLayout().getText().length(), s70Var);
         }
-        a80Var.l();
+        b80Var.l();
     }
 
     @Override // android.view.View
@@ -74,7 +74,7 @@ public final class k extends TextView {
                 int max = Math.max(1, g0.L(0.66f));
                 Layout layout = getLayout();
                 if (layout != null) {
-                    paint.setColor(k6.r1(0.45f, k6.w0(k6.y6, ((n) obj).W.c)));
+                    paint.setColor(l6.r1(0.45f, l6.w0(l6.y6, ((n) obj).W.c)));
                     float f10 = L;
                     float f11 = max / 2.0f;
                     float f12 = f10 - f11;
@@ -90,7 +90,7 @@ public final class k extends TextView {
                 int max2 = Math.max(1, g0.L(0.66f));
                 Layout layout2 = getLayout();
                 if (layout2 != null) {
-                    paint2.setColor(k6.r1(0.45f, k6.w0(k6.y6, (f6) obj)));
+                    paint2.setColor(l6.r1(0.45f, l6.w0(l6.y6, (g6) obj)));
                     float f14 = L2;
                     float f15 = max2 / 2.0f;
                     float f16 = f14 - f15;
@@ -102,10 +102,10 @@ public final class k extends TextView {
                 break;
             case 11:
                 Paint paint3 = (Paint) this.b;
-                int i10 = k6.z6;
+                int i10 = l6.z6;
                 i0 i0Var = ((h0) obj).e;
                 int i11 = i0.O2;
-                paint3.setColor(k6.r1(0.8f, k6.w0(i10, i0Var.I0)));
+                paint3.setColor(l6.r1(0.8f, l6.w0(i10, i0Var.I0)));
                 paint3.setStyle(Paint.Style.STROKE);
                 paint3.setStrokeWidth(1.0f);
                 float height = getHeight() / 2.0f;
@@ -133,7 +133,7 @@ public final class k extends TextView {
                 super.draw(canvas);
                 break;
             case 10:
-                ((u50) this.c).h.draw(canvas);
+                ((w50) this.c).h.draw(canvas);
                 super.draw(canvas);
                 break;
             default:
@@ -147,7 +147,7 @@ public final class k extends TextView {
         switch (this.a) {
             case 7:
                 super.onDetachedFromWindow();
-                ((a80) this.c).b = -1L;
+                ((b80) this.c).b = -1L;
                 break;
             default:
                 super.onDetachedFromWindow();
@@ -160,7 +160,7 @@ public final class k extends TextView {
         switch (this.a) {
             case 2:
                 Paint paint = (Paint) this.b;
-                paint.setColor(((ii.p) this.c).getThemedColor(k6.Ci));
+                paint.setColor(((ii.p) this.c).getThemedColor(l6.Ci));
                 canvas.drawRoundRect(0.0f, (getHeight() / 2.0f) - g0.L(14.0f), getWidth(), (getHeight() / 2.0f) + g0.L(14.0f), g0.L(14.0f), g0.L(14.0f), paint);
                 super.onDraw(canvas);
                 break;
@@ -188,7 +188,7 @@ public final class k extends TextView {
                 break;
             case 5:
                 Paint paint3 = (Paint) this.b;
-                paint3.setColor(k6.w0(k6.Ci, ((di) this.c).I0));
+                paint3.setColor(l6.w0(l6.Ci, ((di) this.c).I0));
                 canvas.drawRoundRect(0.0f, (getHeight() / 2.0f) - g0.L(14.0f), getWidth(), (getHeight() / 2.0f) + g0.L(14.0f), g0.L(14.0f), g0.L(14.0f), paint3);
                 super.onDraw(canvas);
                 break;
@@ -241,7 +241,7 @@ public final class k extends TextView {
                 break;
             case 12:
                 Paint paint4 = (Paint) this.b;
-                paint4.setColor(k6.w0(k6.Ci, ((vh.g) this.c).I0));
+                paint4.setColor(l6.w0(l6.Ci, ((vh.g) this.c).I0));
                 canvas.drawRoundRect(0.0f, (getHeight() / 2.0f) - g0.L(14.0f), getWidth(), (getHeight() / 2.0f) + g0.L(14.0f), g0.L(14.0f), g0.L(14.0f), paint4);
                 super.onDraw(canvas);
                 break;
@@ -349,9 +349,9 @@ public final class k extends TextView {
                 break;
             case 10:
                 super.onSizeChanged(i7, i10, i11, i12);
-                u50 u50Var = (u50) this.c;
-                u50Var.h.setBounds(0, 0, i7, i10);
-                u50Var.h.setCornerRadius(Math.min(i7, i10) / 2.0f);
+                w50 w50Var = (w50) this.c;
+                w50Var.h.setBounds(0, 0, i7, i10);
+                w50Var.h.setCornerRadius(Math.min(i7, i10) / 2.0f);
                 ((org.telegram.ui.Components.voip.n) this.b).f = i7;
                 break;
             default:
@@ -377,8 +377,8 @@ public final class k extends TextView {
     public void setTextColor(int i7) {
         switch (this.a) {
             case 7:
-                super.setTextColor(k6.r1(0.2f, i7));
-                ((a80) this.c).g(k6.r1(0.03f, i7), k6.r1(0.175f, i7), k6.r1(0.2f, i7), k6.r1(0.45f, i7));
+                super.setTextColor(l6.r1(0.2f, i7));
+                ((b80) this.c).g(l6.r1(0.03f, i7), l6.r1(0.175f, i7), l6.r1(0.2f, i7), l6.r1(0.45f, i7));
                 break;
             default:
                 super.setTextColor(i7);
@@ -418,14 +418,14 @@ public final class k extends TextView {
         switch (i7) {
             case 7:
                 super(context);
-                r70 r70Var = new r70(0);
-                this.b = r70Var;
-                a80 a80Var = new a80();
-                this.c = a80Var;
-                a80Var.y = r70Var;
-                a80Var.u = 0.65f;
-                a80Var.k(4.0f);
-                setBackground(a80Var);
+                s70 s70Var = new s70(0);
+                this.b = s70Var;
+                b80 b80Var = new b80();
+                this.c = b80Var;
+                b80Var.y = s70Var;
+                b80Var.u = 0.65f;
+                b80Var.k(4.0f);
+                setBackground(b80Var);
                 break;
             default:
                 this.c = new Path();
@@ -450,10 +450,10 @@ public final class k extends TextView {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k(u50 u50Var, Context context) {
+    public k(w50 w50Var, Context context) {
         super(context);
         this.a = 10;
-        this.c = u50Var;
+        this.c = w50Var;
         org.telegram.ui.Components.voip.n nVar = new org.telegram.ui.Components.voip.n();
         this.b = nVar;
         nVar.k = false;
@@ -480,10 +480,10 @@ public final class k extends TextView {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k(Context context, f6 f6Var) {
+    public k(Context context, g6 g6Var) {
         super(context);
         this.a = 1;
-        this.c = f6Var;
+        this.c = g6Var;
         this.b = new Paint(1);
     }
 

@@ -1,18 +1,20 @@
 package org.telegram.ui;
 
-import androidx.recyclerview.widget.RecyclerView;
-
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class k10 extends v4.s0 {
-    public final /* synthetic */ c40 a;
+public final class k10 extends g.p {
+    public final /* synthetic */ e40 c;
 
-    public k10(c40 c40Var) {
-        this.a = c40Var;
+    public k10(e40 e40Var) {
+        this.c = e40Var;
     }
 
-    @Override // v4.s0
-    public final void b(RecyclerView recyclerView, int i7, int i10) {
-        this.a.b.invalidate();
+    @Override // g.p
+    public final int i(int i7) {
+        int size = this.c.f4.e.size();
+        if (size > 1 && size != 2) {
+            return (size != 3 || i7 == 0 || i7 == 1) ? 3 : 6;
+        }
+        return 6;
     }
 }

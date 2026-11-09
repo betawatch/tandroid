@@ -20,7 +20,7 @@ import org.webrtc.ThreadUtils;
 import org.webrtc.VideoEncoder;
 import org.webrtc.VideoFrame;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 class HardwareVideoEncoder implements VideoEncoder {
     private static final int DEQUEUE_OUTPUT_BUFFER_TIMEOUT_US = 100000;
@@ -66,7 +66,7 @@ class HardwareVideoEncoder implements VideoEncoder {
     private final VideoFrameDrawer videoFrameDrawer = new VideoFrameDrawer();
     private final BlockingDeque<EncodedImage.Builder> outputBuilders = new LinkedBlockingDeque();
 
-    /* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+    /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
     public static class BusyCount {
         private int count;
         private final Object countLock;
@@ -376,7 +376,7 @@ class HardwareVideoEncoder implements VideoEncoder {
 
     @Override // org.webrtc.VideoEncoder
     public final /* synthetic */ long createNativeVideoEncoder() {
-        return x.a(this);
+        return w.a(this);
     }
 
     public void deliverEncodedImage() {
@@ -511,7 +511,7 @@ class HardwareVideoEncoder implements VideoEncoder {
 
     @Override // org.webrtc.VideoEncoder
     public final /* synthetic */ VideoEncoder.ResolutionBitrateLimits[] getResolutionBitrateLimits() {
-        return x.c(this);
+        return w.c(this);
     }
 
     @Override // org.webrtc.VideoEncoder
@@ -558,7 +558,7 @@ class HardwareVideoEncoder implements VideoEncoder {
 
     @Override // org.webrtc.VideoEncoder
     public final /* synthetic */ boolean isHardwareEncoder() {
-        return x.d(this);
+        return w.d(this);
     }
 
     public boolean isSemiPlanar(int i7) {

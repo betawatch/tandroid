@@ -9,19 +9,19 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class q2 extends View implements org.telegram.ui.Cells.h9, c3 {
-    public final o50 a;
+    public final q50 a;
     public final e4 b;
     public z2 c;
     public int d;
     public int e;
     public TL_iv.pageBlockSubtitle f;
 
-    public q2(Context context, o50 o50Var, e4 e4Var) {
+    public q2(Context context, q50 q50Var, e4 e4Var) {
         super(context);
-        this.a = o50Var;
+        this.a = q50Var;
         this.b = e4Var;
     }
 
@@ -115,23 +115,23 @@ public final class q2 extends View implements org.telegram.ui.Cells.h9, c3 {
     public final void onMeasure(int i7, int i10) {
         int i11;
         int size = View.MeasureSpec.getSize(i7);
-        o50 o50Var = this.a;
-        o50Var.getClass();
+        q50 q50Var = this.a;
+        q50Var.getClass();
         this.d = org.telegram.messenger.g0.L(18);
-        o50Var.getClass();
+        q50Var.getClass();
         this.e = org.telegram.messenger.g0.L(8);
         TL_iv.pageBlockSubtitle pageblocksubtitle = this.f;
         if (pageblocksubtitle != null) {
             TL_iv.RichText richText = pageblocksubtitle.text;
-            o50 o50Var2 = this.a;
-            o50Var2.getClass();
+            q50 q50Var2 = this.a;
+            q50Var2.getClass();
             int L = size - org.telegram.messenger.g0.L(36);
             TL_iv.pageBlockSubtitle pageblocksubtitle2 = this.f;
             e4 e4Var = this.b;
-            z2 n10 = g4.n(o50Var2, this, null, richText, L, 0, pageblocksubtitle2, (e4Var == null || !e4Var.G) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.mu0.a(), 0, this.b);
+            z2 n10 = g4.n(q50Var2, this, null, richText, L, 0, pageblocksubtitle2, (e4Var == null || !e4Var.G) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.ou0.a(), 0, this.b);
             this.c = n10;
             if (n10 != null) {
-                o50Var.getClass();
+                q50Var.getClass();
                 i11 = this.c.d.getHeight() + org.telegram.messenger.g0.L(16);
                 z2 z2Var = this.c;
                 z2Var.s = this.d;

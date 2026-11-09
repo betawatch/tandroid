@@ -62,7 +62,7 @@ import org.telegram.ui.Cells.j9;
 import org.telegram.ui.Cells.l1;
 import org.telegram.ui.Cells.q1;
 import org.telegram.ui.Components.r5;
-import org.telegram.ui.fr0;
+import org.telegram.ui.hr0;
 import org.xml.sax.Attributes;
 import pb.h;
 import q2.f;
@@ -74,7 +74,7 @@ import w7.o;
 import w7.q;
 import w7.s;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class a implements k, eg.a, g, fg.a, d, ja.a, b, Continuation, u9.d, IMapsProvider, gh.a, l1, m, u, x5.a {
     public static final /* synthetic */ a b = new a(14);
@@ -369,7 +369,7 @@ public final class a implements k, eg.a, g, fg.a, d, ja.a, b, Continuation, u9.d
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ fr0 N1() {
+    public /* synthetic */ hr0 N1() {
         return null;
     }
 
@@ -519,7 +519,7 @@ public final class a implements k, eg.a, g, fg.a, d, ja.a, b, Continuation, u9.d
 
     @Override // org.telegram.messenger.IMapsProvider
     public int getInstallMapsString() {
-        return 2131749197;
+        return 2131749196;
     }
 
     @Override // org.telegram.messenger.IMapsProvider

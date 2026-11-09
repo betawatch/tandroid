@@ -1,56 +1,12 @@
 package org.telegram.ui.Wallet;
 
-import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
-import org.telegram.ui.Components.v61;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
-public final class z4 extends z2 {
-    public final /* synthetic */ ViewGroup T1;
-    public final /* synthetic */ View[] U1;
-    public final /* synthetic */ Context V1;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z4(Context context, ViewGroup viewGroup, org.telegram.ui.ActionBar.f6 f6Var, ViewGroup viewGroup2, View[] viewArr, Context context2) {
-        super(context, viewGroup, f6Var);
-        this.T1 = viewGroup2;
-        this.U1 = viewArr;
-        this.V1 = context2;
-    }
-
-    @Override // org.telegram.ui.Wallet.z2, org.telegram.ui.Components.na
-    public final void T0(float f10) {
-        super.T0(f10);
-        if (this.T1 instanceof v61) {
-            this.r0.setBounds(0, (int) f10, this.b.getWidth(), this.b.getHeight());
-        }
-    }
-
-    @Override // org.telegram.ui.Components.na
-    public final boolean Z0() {
-        return !(this.T1 instanceof v61);
-    }
-
-    @Override // org.telegram.ui.Wallet.z2
-    public final int d1() {
-        return org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.d6, this.I0);
-    }
-
-    @Override // org.telegram.ui.Wallet.z2, org.telegram.ui.ActionBar.v2, android.app.Dialog
-    public final void show() {
-        super.show();
-        if (this.T1 instanceof v61) {
-            View[] viewArr = this.U1;
-            if (viewArr[0] == null) {
-                jh.h hVar = new jh.h(this, this.V1);
-                viewArr[0] = hVar;
-                this.b.addView(hVar, 0, c8.ha.e(-1, 50, 80));
-            }
-            this.b.setBackground(null);
-            this.b.setPadding(0, 0, 0, 0);
-            this.k1.setPadding(0, 0, 0, 0);
-        }
+public final class z4 extends TextView {
+    @Override // android.view.View
+    public final boolean canScrollHorizontally(int i7) {
+        return false;
     }
 }

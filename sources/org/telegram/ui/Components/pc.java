@@ -13,7 +13,7 @@ import android.view.View;
 import android.view.ViewConfiguration;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class pc {
     public static final int[] p = {R.attr.state_enabled, R.attr.state_pressed};
@@ -50,7 +50,7 @@ public final class pc {
         Paint paint3 = new Paint(1);
         paint3.setFilterBitmap(true);
         paint3.setColor(-1);
-        org.telegram.ui.Cells.y yVar = new org.telegram.ui.Cells.y(new ColorStateList(new int[][]{StateSet.WILD_CARD}, new int[]{org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.i6, false) & 436207615}), null, new oc(this, paint3));
+        org.telegram.ui.Cells.y yVar = new org.telegram.ui.Cells.y(new ColorStateList(new int[][]{StateSet.WILD_CARD}, new int[]{org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.i6, false) & 436207615}), null, new oc(this, paint3));
         this.e = yVar;
         yVar.setCallback(view);
     }
@@ -194,7 +194,7 @@ public final class pc {
         this.g.setColor(i7);
         org.telegram.ui.Cells.y yVar = this.e;
         if (yVar != null) {
-            org.telegram.ui.ActionBar.k6.H1(yVar, i7, true);
+            org.telegram.ui.ActionBar.l6.H1(yVar, i7, true);
         }
     }
 

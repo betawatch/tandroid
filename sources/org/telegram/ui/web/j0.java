@@ -32,7 +32,7 @@ import org.telegram.messenger.r2;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.v2;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final class j0 extends WebViewClient {
     public boolean a = true;
@@ -274,7 +274,7 @@ public final class j0 extends WebViewClient {
             org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
             u1Var.R = id.M0(2131752104, null);
             u1Var.T = org.telegram.messenger.g0.U2(id.M0(2131752105, null), new i0(this, 2));
-            alertDialog$Builder.k(id.M0(2131747832, null), null);
+            alertDialog$Builder.k(id.M0(2131747831, null), null);
             u1Var.setOnDismissListener(new eb(this, 11));
             alertDialog$Builder.p();
             return true;

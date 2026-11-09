@@ -16,10 +16,10 @@ import android.widget.TextView;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.Components.xq;
-import org.telegram.ui.er0;
-import org.telegram.ui.fr0;
+import org.telegram.ui.gr0;
+import org.telegram.ui.hr0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class t5 extends FrameLayout {
     public final /* synthetic */ int a = 0;
@@ -60,7 +60,7 @@ public final class t5 extends FrameLayout {
         linearLayout.addView(f10, c8.ha.k(4.0f, 0.0f, 7.0f, 5.0f, -2, -1));
         View view = new View(context);
         this.e = view;
-        view.setBackgroundDrawable(org.telegram.ui.ActionBar.k6.N0(false));
+        view.setBackgroundDrawable(org.telegram.ui.ActionBar.l6.N0(false));
         addView(view, c8.ha.c(-1.0f, -1));
     }
 
@@ -74,94 +74,94 @@ public final class t5 extends FrameLayout {
     public void a(Canvas canvas) {
         float f10;
         FrameLayout frameLayout = (FrameLayout) this.c;
-        fr0 fr0Var = (fr0) this.f;
-        float[] fArr = fr0Var.m;
-        xh.f fVar = fr0Var.j;
-        Path path = fr0Var.l;
-        if (!fr0Var.n || fr0Var.e == null || fr0Var.a == null) {
+        hr0 hr0Var = (hr0) this.f;
+        float[] fArr = hr0Var.m;
+        xh.f fVar = hr0Var.j;
+        Path path = hr0Var.l;
+        if (!hr0Var.n || hr0Var.e == null || hr0Var.a == null) {
             return;
         }
-        fr0Var.i();
-        float left = fr0Var.o - getLeft();
-        float top = fr0Var.p - getTop();
+        hr0Var.i();
+        float left = hr0Var.o - getLeft();
+        float top = hr0Var.p - getTop();
         canvas.save();
-        float f11 = fr0Var.O;
-        float f12 = fr0Var.A;
+        float f11 = hr0Var.O;
+        float f12 = hr0Var.A;
         float f13 = ((f11 * f12) + 1.0f) - f12;
-        canvas.scale(f13, f13, fr0Var.s + left, fr0Var.t + top);
-        float f14 = fr0Var.J;
-        float f15 = fr0Var.A;
-        canvas.translate((f14 * f15) + left, (fr0Var.K * f15) + top);
-        ImageReceiver imageReceiver = fr0Var.g;
+        canvas.scale(f13, f13, hr0Var.s + left, hr0Var.t + top);
+        float f14 = hr0Var.J;
+        float f15 = hr0Var.A;
+        canvas.translate((f14 * f15) + left, (hr0Var.K * f15) + top);
+        ImageReceiver imageReceiver = hr0Var.g;
         if (imageReceiver != null && imageReceiver.L()) {
-            float f16 = fr0Var.B;
+            float f16 = hr0Var.B;
             if (f16 != 1.0f) {
                 float f17 = f16 + 0.10666667f;
-                fr0Var.B = f17;
+                hr0Var.B = f17;
                 if (f17 > 1.0f) {
-                    fr0Var.B = 1.0f;
+                    hr0Var.B = 1.0f;
                 } else {
-                    fr0Var.e();
+                    hr0Var.e();
                 }
             }
-            fr0Var.g.setAlpha(fr0Var.B);
+            hr0Var.g.setAlpha(hr0Var.B);
         }
-        float f18 = fr0Var.u;
-        float f19 = fr0Var.v;
-        float f20 = fr0Var.w;
-        float f21 = fr0Var.y;
+        float f18 = hr0Var.u;
+        float f19 = hr0Var.v;
+        float f20 = hr0Var.w;
+        float f21 = hr0Var.y;
         if (f20 == f21) {
             f10 = 1.0f;
         } else {
             f10 = 1.0f;
         }
         float f22 = f13 < f10 ? 0.0f : f13 < 1.4f ? (f13 - f10) / 0.4f : f10;
-        float f23 = fr0Var.z;
-        float f24 = fr0Var.x;
+        float f23 = hr0Var.z;
+        float f24 = hr0Var.x;
         float f25 = ((f23 - f24) / 2.0f) * f22;
         f18 -= f25;
         float f26 = ((f21 - f20) / 2.0f) * f22;
         f19 -= f26;
-        ImageReceiver imageReceiver2 = fr0Var.f;
+        ImageReceiver imageReceiver2 = hr0Var.f;
         if (imageReceiver2 != null) {
             imageReceiver2.y0(f18, f19, (f25 * 2.0f) + f24, (f26 * 2.0f) + f20);
         }
-        if (fr0Var.R) {
-            frameLayout.setPivotX(fr0Var.s - fr0Var.u);
-            frameLayout.setPivotY(fr0Var.t - fr0Var.v);
+        if (hr0Var.R) {
+            frameLayout.setPivotX(hr0Var.s - hr0Var.u);
+            frameLayout.setPivotY(hr0Var.t - hr0Var.v);
             frameLayout.setScaleY(f13);
             frameLayout.setScaleX(f13);
-            frameLayout.setTranslationX((fr0Var.J * f13 * fr0Var.A) + f18 + left);
-            frameLayout.setTranslationY((fr0Var.K * f13 * fr0Var.A) + f19 + top);
+            frameLayout.setTranslationX((hr0Var.J * f13 * hr0Var.A) + f18 + left);
+            frameLayout.setTranslationY((hr0Var.K * f13 * hr0Var.A) + f19 + top);
         } else {
-            ImageReceiver imageReceiver3 = fr0Var.f;
+            ImageReceiver imageReceiver3 = hr0Var.f;
             if (imageReceiver3 != null) {
-                if (fr0Var.B != f10) {
-                    if (imageReceiver3.B() != null || fr0Var.f.m() != null || fr0Var.g.B() != null || fr0Var.g.m() != null) {
+                if (hr0Var.B != f10) {
+                    if (imageReceiver3.B() != null || hr0Var.f.m() != null || hr0Var.g.B() != null || hr0Var.g.m() != null) {
                         invalidate();
                     }
-                    fr0Var.f.h(canvas, null);
-                    ImageReceiver imageReceiver4 = fr0Var.g;
-                    ImageReceiver imageReceiver5 = fr0Var.f;
+                    hr0Var.f.h(canvas, null);
+                    ImageReceiver imageReceiver4 = hr0Var.g;
+                    ImageReceiver imageReceiver5 = hr0Var.f;
                     imageReceiver4.y0(imageReceiver5.K0, imageReceiver5.L0, imageReceiver5.M0, imageReceiver5.N0);
-                    fr0Var.g.h(canvas, null);
+                    hr0Var.g.h(canvas, null);
                 } else {
-                    fr0Var.g.y0(imageReceiver3.K0, imageReceiver3.L0, imageReceiver3.M0, imageReceiver3.N0);
-                    fr0Var.g.h(canvas, null);
-                    if (fr0Var.g.B() != null || fr0Var.g.m() != null) {
+                    hr0Var.g.y0(imageReceiver3.K0, imageReceiver3.L0, imageReceiver3.M0, imageReceiver3.N0);
+                    hr0Var.g.h(canvas, null);
+                    if (hr0Var.g.B() != null || hr0Var.g.m() != null) {
                         invalidate();
                     }
                 }
             }
         }
-        if (fr0Var.i) {
-            fr0Var.h.setAlpha(fr0Var.f.getAlpha());
-            fr0Var.h.L0(fr0Var.f.E());
-            ImageReceiver imageReceiver6 = fr0Var.h;
-            ImageReceiver imageReceiver7 = fr0Var.f;
+        if (hr0Var.i) {
+            hr0Var.h.setAlpha(hr0Var.f.getAlpha());
+            hr0Var.h.L0(hr0Var.f.E());
+            ImageReceiver imageReceiver6 = hr0Var.h;
+            ImageReceiver imageReceiver7 = hr0Var.f;
             imageReceiver6.y0(imageReceiver7.K0, imageReceiver7.L0, imageReceiver7.M0, imageReceiver7.N0);
-            fr0Var.h.h(canvas, null);
-            int[] E = fr0Var.f.E();
+            hr0Var.h.h(canvas, null);
+            int[] E = hr0Var.f.E();
             float f27 = E[0];
             fArr[1] = f27;
             fArr[0] = f27;
@@ -175,23 +175,23 @@ public final class t5 extends FrameLayout {
             fArr[7] = f30;
             fArr[6] = f30;
             RectF rectF = org.telegram.messenger.g0.P;
-            ImageReceiver imageReceiver8 = fr0Var.f;
-            rectF.set(imageReceiver8.K0, imageReceiver8.L0, imageReceiver8.y(), fr0Var.f.A());
+            ImageReceiver imageReceiver8 = hr0Var.f;
+            rectF.set(imageReceiver8.K0, imageReceiver8.L0, imageReceiver8.y(), hr0Var.f.A());
             path.rewind();
             path.addRoundRect(rectF, fArr, Path.Direction.CW);
             canvas.save();
             canvas.clipPath(path);
-            if (fr0Var.k != null) {
-                ImageReceiver imageReceiver9 = fr0Var.f;
+            if (hr0Var.k != null) {
+                ImageReceiver imageReceiver9 = hr0Var.f;
                 canvas.translate(imageReceiver9.K0, imageReceiver9.L0);
-                xh.e eVar = fr0Var.k;
-                t5 t5Var = fr0Var.d;
-                ImageReceiver imageReceiver10 = fr0Var.f;
+                xh.e eVar = hr0Var.k;
+                t5 t5Var = hr0Var.d;
+                ImageReceiver imageReceiver10 = hr0Var.f;
                 eVar.c(canvas, t5Var, (int) imageReceiver10.M0, (int) imageReceiver10.N0, 1.0f, false);
             } else {
-                fVar.h(i0.a.o(-1, (int) (fr0Var.f.getAlpha() * Color.alpha(-1) * 0.325f)));
-                ImageReceiver imageReceiver11 = fr0Var.f;
-                fVar.setBounds((int) imageReceiver11.K0, (int) imageReceiver11.L0, (int) imageReceiver11.y(), (int) fr0Var.f.A());
+                fVar.h(i0.a.o(-1, (int) (hr0Var.f.getAlpha() * Color.alpha(-1) * 0.325f)));
+                ImageReceiver imageReceiver11 = hr0Var.f;
+                fVar.setBounds((int) imageReceiver11.K0, (int) imageReceiver11.L0, (int) imageReceiver11.y(), (int) hr0Var.f.A());
                 fVar.draw(canvas);
             }
             canvas.restore();
@@ -203,32 +203,32 @@ public final class t5 extends FrameLayout {
     @Override // android.view.ViewGroup, android.view.View
     public void dispatchDraw(Canvas canvas) {
         float f10;
-        er0 er0Var;
+        gr0 gr0Var;
         switch (this.a) {
             case 1:
-                fr0 fr0Var = (fr0) this.f;
-                float[] fArr = fr0Var.Q;
-                if (fr0Var.C == null) {
-                    float f11 = fr0Var.P;
+                hr0 hr0Var = (hr0) this.f;
+                float[] fArr = hr0Var.Q;
+                if (hr0Var.C == null) {
+                    float f11 = hr0Var.P;
                     if (f11 != 1.0f) {
                         float f12 = f11 + 0.07272727f;
-                        fr0Var.P = f12;
+                        hr0Var.P = f12;
                         if (f12 > 1.0f) {
-                            fr0Var.P = 1.0f;
+                            hr0Var.P = 1.0f;
                         } else {
-                            fr0Var.e();
+                            hr0Var.e();
                         }
                     }
                 }
-                float interpolation = xq.f.getInterpolation(fr0Var.P) * fr0Var.A;
+                float interpolation = xq.f.getInterpolation(hr0Var.P) * hr0Var.A;
                 float measuredHeight = getMeasuredHeight();
                 float f13 = 0.0f;
-                if (interpolation == 1.0f || (er0Var = fr0Var.F) == null) {
+                if (interpolation == 1.0f || (gr0Var = hr0Var.F) == null) {
                     a(canvas);
                     super.dispatchDraw(canvas);
                     f10 = measuredHeight;
                 } else {
-                    er0Var.a(fArr);
+                    gr0Var.a(fArr);
                     canvas.save();
                     float f14 = 1.0f - interpolation;
                     float f15 = fArr[0] * f14;
@@ -240,7 +240,7 @@ public final class t5 extends FrameLayout {
                     f10 = measuredHeight2;
                     f13 = f15;
                 }
-                fr0Var.c(canvas, 1.0f - interpolation, fr0Var.o - getLeft(), fr0Var.p - getTop(), f13, f10);
+                hr0Var.c(canvas, 1.0f - interpolation, hr0Var.o - getLeft(), hr0Var.p - getTop(), f13, f10);
                 break;
             default:
                 super.dispatchDraw(canvas);
@@ -255,7 +255,7 @@ public final class t5 extends FrameLayout {
                 v5 v5Var = (v5) this.f;
                 org.telegram.ui.Components.l9 l9Var = this.b;
                 if (!l9Var.getImageReceiver().L() || l9Var.getImageReceiver().h1 != 1.0f) {
-                    v5Var.e.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.X9, false));
+                    v5Var.e.setColor(org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.X9, false));
                     canvas.drawRect(0.0f, 0.0f, l9Var.getMeasuredWidth(), l9Var.getMeasuredHeight(), v5Var.e);
                     break;
                 }
@@ -278,9 +278,9 @@ public final class t5 extends FrameLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t5(fr0 fr0Var, Context context) {
+    public t5(hr0 hr0Var, Context context) {
         super(context);
-        this.f = fr0Var;
+        this.f = hr0Var;
         new Path();
         new Paint(1);
         FrameLayout frameLayout = new FrameLayout(context);

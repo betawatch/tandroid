@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class vv extends FrameLayout {
     public final Paint a;
@@ -30,7 +30,7 @@ public final class vv extends FrameLayout {
         if (L != 0.0f) {
             canvas.clipRect(0.0f, L, getMeasuredWidth(), getMeasuredHeight());
         }
-        int z9 = hyVar.z(org.telegram.ui.ActionBar.k6.wf);
+        int z9 = hyVar.z(org.telegram.ui.ActionBar.l6.wf);
         Paint paint = this.a;
         paint.setColor(z9);
         canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), uvVar.getExpandedOffset() + org.telegram.messenger.g0.L(36.0f), paint);

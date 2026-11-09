@@ -1,51 +1,32 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class qn0 extends v4.s0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ mo0 b;
+public final class qn0 extends g.p {
+    public final /* synthetic */ int c;
+    public final /* synthetic */ no0 d;
 
-    public /* synthetic */ qn0(mo0 mo0Var, int i7) {
-        this.a = i7;
-        this.b = mo0Var;
+    public /* synthetic */ qn0(no0 no0Var, int i7) {
+        this.c = i7;
+        this.d = no0Var;
     }
 
-    @Override // v4.s0
-    public final void b(RecyclerView recyclerView, int i7, int i10) {
-        gb gbVar;
-        switch (this.a) {
+    @Override // g.p
+    public final int i(int i7) {
+        switch (this.c) {
             case 0:
-                mo0 mo0Var = this.b;
-                if (i10 != 0) {
-                    mo0.I0(mo0Var);
-                    mo0Var.i2 = mo0Var.h2;
+                if (i7 == 0) {
+                    return this.d.z1.J;
                 }
-                cc ccVar = cc.w;
-                if (ccVar != null && (gbVar = ccVar.e) != null && (gbVar.getParent() instanceof View) && ((View) cc.w.e.getParent()).getParent() == mo0Var.t1) {
-                    cc.e();
-                    break;
-                }
-                break;
+                return 1;
             case 1:
-                if (i10 != 0) {
-                    mo0 mo0Var2 = this.b;
-                    mo0.I0(mo0Var2);
-                    mo0Var2.i2 = mo0Var2.h2;
-                    break;
-                }
-                break;
+                ko0 ko0Var = this.d.E1;
+                return (i7 == ko0Var.x || i7 == ko0Var.y || i7 == ko0Var.D || i7 == ko0Var.F || ko0Var.d(i7) == 0) ? 4 : 1;
             default:
-                if (i10 != 0) {
-                    mo0 mo0Var3 = this.b;
-                    mo0.I0(mo0Var3);
-                    mo0Var3.i2 = mo0Var3.h2;
-                    break;
+                if (i7 == 0) {
+                    return this.d.A1.J;
                 }
-                break;
+                return 1;
         }
     }
 }

@@ -14,7 +14,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public class LocationSharingService extends Service implements ls {
     public static final /* synthetic */ int d = 0;
@@ -65,18 +65,18 @@ public class LocationSharingService extends Service implements ls {
                     intent.addCategory("android.intent.category.LAUNCHER");
                     PendingIntent activity = PendingIntent.getActivity(context, 0, intent, 167772160);
                     Intent intent2 = new Intent(context, (Class<?>) StopLiveLocationReceiver.class);
-                    String M0 = id.M0(2131748840, null);
+                    String M0 = id.M0(2131748839, null);
                     dt.i();
                     e0.q qVar = new e0.q(context, dt.j0);
                     qVar.F.icon = R.drawable.live_loc;
-                    qVar.g(id.M0(2131748839, null));
+                    qVar.g(id.M0(2131748838, null));
                     qVar.f(M0);
                     e0.l lVar = new e0.l(z9);
                     lVar.f = e0.q.d(M0);
                     qVar.n(lVar);
                     qVar.g = activity;
                     qVar.h(16, true);
-                    qVar.a(0, PendingIntent.getBroadcast(context, 2, intent2, 167772160), id.M0(2131744841, null));
+                    qVar.a(0, PendingIntent.getBroadcast(context, 2, intent2, 167772160), id.M0(2131744838, null));
                     if (!z11) {
                         qVar.B = j3;
                     }
@@ -178,7 +178,7 @@ public class LocationSharingService extends Service implements ls {
                 qVar3.y = dt.j0;
                 qVar3.g(id.M0(R.string.AppName, null));
                 Intent intent3 = new Intent(t0.b, (Class<?>) StopLiveLocationReceiver.class);
-                this.a.a(0, PendingIntent.getBroadcast(t0.b, 2, intent3, 167772160), id.M0(2131744841, null));
+                this.a.a(0, PendingIntent.getBroadcast(t0.b, 2, intent3, 167772160), id.M0(2131744838, null));
             }
             c(false);
             Notification b10 = this.a.b();

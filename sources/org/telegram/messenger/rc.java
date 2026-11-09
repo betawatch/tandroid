@@ -11,7 +11,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class rc implements Runnable {
     public final /* synthetic */ int a;
@@ -52,7 +52,7 @@ public final /* synthetic */ class rc implements Runnable {
                     return;
                 }
             case 6:
-                org.telegram.ui.ActionBar.k6.F(false);
+                org.telegram.ui.ActionBar.l6.F(false);
                 break;
             case 7:
                 qs.e().k(qs.d4, new Object[0]);
@@ -97,9 +97,9 @@ public final /* synthetic */ class rc implements Runnable {
                     gc.D().i(new rc(i11));
                     iz.b = true;
                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(Q.getParentActivity());
-                    alertDialog$Builder.a.R = id.M0(2131745841, null);
-                    alertDialog$Builder.a.S = id.M0(2131745840, null);
-                    alertDialog$Builder.k(id.M0(2131751356, null), new ch(i11));
+                    alertDialog$Builder.a.R = id.M0(2131745838, null);
+                    alertDialog$Builder.a.S = id.M0(2131745837, null);
+                    alertDialog$Builder.k(id.M0(2131751355, null), new ch(i11));
                     org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                     u1Var.setCanceledOnTouchOutside(false);
                     u1Var.show();
@@ -113,10 +113,10 @@ public final /* synthetic */ class rc implements Runnable {
                 rz.y = null;
                 break;
             case 13:
-                org.telegram.ui.ActionBar.k6.F(false);
+                org.telegram.ui.ActionBar.l6.F(false);
                 break;
             case 14:
-                int i13 = org.telegram.ui.an.id;
+                int i13 = org.telegram.ui.cn.kd;
                 break;
             case 15:
                 ch.k0.b(true);
@@ -181,7 +181,7 @@ public final /* synthetic */ class rc implements Runnable {
                     Bundle bundle = new Bundle();
                     bundle.putLong("user_id", p10.i(Q2.getCurrentAccount()).e());
                     bundle.putInt("chatMode", 1);
-                    Q2.presentFragment(new org.telegram.ui.an(bundle));
+                    Q2.presentFragment(new org.telegram.ui.cn(bundle));
                     break;
                 }
                 break;

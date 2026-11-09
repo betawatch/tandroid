@@ -7,7 +7,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x2 implements org.telegram.ui.ActionBar.r1 {
     public final /* synthetic */ int a;
@@ -55,13 +55,13 @@ public final /* synthetic */ class x2 implements org.telegram.ui.ActionBar.r1 {
                         org.telegram.messenger.qp.s1(currentAccount).X3(user, true, false);
                         Bundle bundle = new Bundle();
                         bundle.putLong("user_id", user.id);
-                        f2Var.presentFragment(new org.telegram.ui.an(bundle));
+                        f2Var.presentFragment(new org.telegram.ui.cn(bundle));
                         break;
                     } else {
                         org.telegram.ui.ActionBar.u1 u1Var2 = new org.telegram.ui.ActionBar.u1(3, f2Var.getParentActivity(), null);
                         u1Var2.i0 = false;
                         u1Var2.show();
-                        ConnectionsManager.getInstance(currentAccount).sendRequest(new TLRPC.TL_help_getSupport(), new di.i8(sharedPreferences, u1Var2, currentAccount, f2Var, 3));
+                        ConnectionsManager.getInstance(currentAccount).sendRequest(new TLRPC.TL_help_getSupport(), new di.j8(sharedPreferences, u1Var2, currentAccount, f2Var, 3));
                         break;
                     }
                 }

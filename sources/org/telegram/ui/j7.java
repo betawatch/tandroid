@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class j7 extends f7 {
     public final ArrayList f;
@@ -19,7 +19,7 @@ public final class j7 extends f7 {
         this.f = new ArrayList();
     }
 
-    @Override // org.telegram.ui.Components.oj0
+    @Override // org.telegram.ui.Components.pj0
     public final boolean D(v4.d1 d1Var) {
         return true;
     }
@@ -82,7 +82,7 @@ public final class j7 extends f7 {
             if (woVar == null) {
                 org.telegram.ui.Components.wo woVar2 = new org.telegram.ui.Components.wo(21, x6Var.getContext(), x6Var.b);
                 x6Var.n = woVar2;
-                woVar2.b(-1, org.telegram.ui.ActionBar.k6.d6, org.telegram.ui.ActionBar.k6.k7);
+                woVar2.b(-1, org.telegram.ui.ActionBar.l6.d6, org.telegram.ui.ActionBar.l6.k7);
                 x6Var.n.setDrawUnchecked(false);
                 x6Var.n.setDrawBackgroundAsArc(3);
                 x6Var.addView(x6Var.n, c8.ha.d(24, 24.0f, (org.telegram.messenger.id.a0 ? 5 : 3) | 48, 38.0f, 25.0f, 38.0f, 0.0f));
@@ -93,6 +93,6 @@ public final class j7 extends f7 {
 
     @Override // v4.g0
     public final v4.d1 x(ViewGroup viewGroup, int i7) {
-        return new org.telegram.ui.Components.xi0(i7 == 1 ? new x6(this.h.getContext(), null) : null);
+        return new org.telegram.ui.Components.yi0(i7 == 1 ? new x6(this.h.getContext(), null) : null);
     }
 }

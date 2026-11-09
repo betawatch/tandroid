@@ -1,433 +1,257 @@
 package di;
 
-import android.graphics.Canvas;
-import android.graphics.Path;
-import android.graphics.PorterDuffColorFilter;
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import android.text.TextUtils;
+import android.content.Context;
+import android.graphics.LinearGradient;
+import android.graphics.Shader;
+import android.view.ViewGroup;
+import fi.ua;
 import java.util.ArrayList;
-import java.util.Stack;
-import java.util.concurrent.atomic.AtomicReference;
-import org.telegram.messenger.id;
-import org.telegram.ui.Components.a80;
-import org.telegram.ui.Components.x70;
-import org.telegram.ui.Components.xq;
-import org.telegram.ui.Components.zj0;
+import java.util.Arrays;
+import org.telegram.messenger.qs;
+import org.telegram.messenger.ui;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.cc;
+import org.telegram.ui.Components.di;
+import org.telegram.ui.Components.tp0;
+import org.telegram.ui.Stories.recorder.FfmpegAudioWaveformLoader;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class f8 {
-    public x70 a;
-    public org.telegram.ui.Components.r5 b;
-    public final n2.n0 c;
-    public org.telegram.ui.Components.n5 d;
-    public StaticLayout e;
-    public org.telegram.ui.Components.n5 f;
-    public StaticLayout g;
-    public d8[] h;
-    public final ArrayList i;
-    public final Stack j;
-    public final gf.c k;
-    public int l;
-    public int m;
-    public CharSequence n;
-    public c8 o;
-    public c8 p;
-    public boolean q;
-    public final org.telegram.ui.Components.w5 r;
-    public final a80 s;
-    public final Path t;
-    public final AtomicReference u;
-    public final /* synthetic */ g8 v;
+public final /* synthetic */ class f8 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public f8(g8 g8Var) {
-        this.v = g8Var;
-        this.c = new n2.n0(g8Var);
-        ArrayList arrayList = new ArrayList();
-        this.i = arrayList;
-        this.j = new Stack();
-        this.n = "";
-        this.r = new org.telegram.ui.Components.w5(g8Var.J, 0L, 400L, xq.h);
-        Path path = new Path();
-        this.t = path;
-        this.u = new AtomicReference();
-        this.k = new gf.c(g8Var, arrayList, new q4(this, 3));
-        a80 a80Var = new a80();
-        this.s = a80Var;
-        a80Var.y = path;
-        a80Var.k(4.0f);
-        a80Var.g(org.telegram.ui.ActionBar.k6.r1(0.3f, -1), org.telegram.ui.ActionBar.k6.r1(0.1f, -1), org.telegram.ui.ActionBar.k6.r1(0.2f, -1), org.telegram.ui.ActionBar.k6.r1(0.7f, -1));
-        a80Var.setCallback(g8Var);
+    public /* synthetic */ f8(Object obj, int i7) {
+        this.a = i7;
+        this.b = obj;
     }
 
-    public final int a(int i7) {
-        int i10;
-        c8 c8Var = this.o;
-        int i11 = 0;
-        if (c8Var != null) {
-            i10 = org.telegram.messenger.g0.L(8.0f) + c8Var.b();
-        } else {
-            i10 = 0;
-        }
-        c8 c8Var2 = this.p;
-        if (c8Var2 != null) {
-            i11 = org.telegram.messenger.g0.L(8.0f) + c8Var2.b();
-        }
-        int i12 = i10 + i11;
-        StaticLayout staticLayout = this.e;
-        g8 g8Var = this.v;
-        if (staticLayout == null) {
-            return i7 - ((g8Var.F * 2) + this.l);
-        }
-        int lineCount = staticLayout.getLineCount();
-        if (!g8Var.b) {
-            return i7 - ((g8Var.F * 2) + this.l);
-        }
-        return (i7 - ((Math.min(3, lineCount) + 1) * g8Var.c.getFontMetricsInt(null))) - i12;
-    }
-
-    public final void b(Canvas canvas, float f10) {
-        Canvas canvas2;
-        g8 g8Var = this.v;
-        h8 h8Var = g8Var.J;
-        float d = this.r.d(this.q);
-        if (f10 <= 0.0f) {
-            return;
-        }
-        float T1 = org.telegram.messenger.g0.T1(f10, 0.7f * f10, d);
-        if (T1 >= 1.0f) {
-            c(canvas, d);
-            canvas2 = canvas;
-        } else {
-            canvas2 = canvas;
-            canvas2.saveLayerAlpha(0.0f, 0.0f, h8Var.getWidth(), h8Var.getHeight(), (int) (T1 * 255.0f), 31);
-            c(canvas2, d);
-            canvas2.restore();
-        }
-        if (d > 0.0f || this.q) {
-            int i7 = (int) (d * 255.0f * T1);
-            a80 a80Var = this.s;
-            a80Var.setAlpha(i7);
-            a80Var.draw(canvas2);
-            g8Var.invalidate();
-        }
-    }
-
-    public final void c(Canvas canvas, float f10) {
-        int i7;
-        ArrayList arrayList;
-        ArrayList arrayList2;
-        int i10;
-        g8 g8Var = this.v;
-        PorterDuffColorFilter porterDuffColorFilter = g8Var.a;
-        h8 h8Var = g8Var.J;
-        if (this.o != null) {
-            canvas.save();
-            canvas.translate(g8Var.E, g8Var.F);
-            c8 c8Var = this.o;
-            int width = g8Var.getWidth();
-            int i11 = g8Var.E;
-            c8Var.a(canvas, (width - i11) - i11);
-            int L = org.telegram.messenger.g0.L(8.0f) + this.o.b();
-            canvas.restore();
-            i7 = L;
-        } else {
-            i7 = 0;
-        }
-        canvas.save();
-        canvas.translate(g8Var.E, g8Var.F + i7);
-        if (this.c.h(canvas)) {
-            g8Var.invalidate();
-        }
-        canvas.restore();
-        float f11 = 0.0f;
-        boolean z9 = f10 > 0.0f;
-        this.t.rewind();
-        ArrayList arrayList3 = this.i;
-        if (arrayList3.isEmpty() && this.g != null) {
-            if (h8Var.W.x()) {
-                canvas.save();
-                canvas.translate(g8Var.E, g8Var.F + i7);
-                h8Var.W.W(canvas);
-                canvas.restore();
-            }
-            if (this.g != null) {
-                canvas.save();
-                canvas.translate(g8Var.E, g8Var.F + i7);
-                d(this.g, canvas, arrayList3);
-                org.telegram.ui.Components.n5 update = org.telegram.ui.Components.r5.update(0, g8Var, this.f, this.g);
-                this.f = update;
-                org.telegram.ui.Components.r5.drawAnimatedEmojis(canvas, this.g, update, 0.0f, arrayList3, 0.0f, 0.0f, 0.0f, 1.0f, porterDuffColorFilter);
-                arrayList = arrayList3;
-                canvas.restore();
-                if (z9) {
-                    f(this.g, g8Var.E, g8Var.F + i7);
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = 8;
+        int i10 = 0;
+        switch (this.a) {
+            case 0:
+                ((n2.n0) this.b).f(true);
+                break;
+            case 1:
+                ((l8) this.b).requestLayout();
+                break;
+            case 2:
+                u8 u8Var = (u8) this.b;
+                fi.m3 m3Var = u8Var.c;
+                if (m3Var != null) {
+                    m3Var.f(true);
+                    u8Var.c = null;
                 }
-            } else {
-                arrayList = arrayList3;
-            }
-            if (this.h != null) {
-                int i12 = 0;
-                while (true) {
-                    d8[] d8VarArr = this.h;
-                    if (i12 >= d8VarArr.length) {
-                        break;
-                    }
-                    d8 d8Var = d8VarArr[i12];
-                    if (d8Var != null) {
-                        canvas.save();
-                        float f12 = d8Var.c;
-                        float f13 = d8Var.e;
-                        if (f12 != f13) {
-                            arrayList2 = arrayList;
-                            i10 = i12;
-                            float T1 = org.telegram.messenger.g0.T1(f12, f13, g8Var.x);
-                            float T12 = org.telegram.messenger.g0.T1(d8Var.d, d8Var.f, xq.g.getInterpolation(g8Var.x));
-                            canvas.translate(g8Var.E + T1, g8Var.F + i7 + T12);
-                            if (z9) {
-                                f(d8Var.b, g8Var.E + T1, g8Var.F + i7 + T12);
-                            }
-                            d8Var.b.draw(canvas);
-                            org.telegram.ui.Components.n5 update2 = org.telegram.ui.Components.r5.update(0, g8Var, d8Var.a, d8Var.b);
-                            d8Var.a = update2;
-                            org.telegram.ui.Components.r5.drawAnimatedEmojis(canvas, d8Var.b, update2, 0.0f, arrayList2, 0.0f, 0.0f, 0.0f, 1.0f, porterDuffColorFilter);
-                        } else if (g8Var.x != f11) {
-                            canvas.translate(g8Var.E + f13, g8Var.F + i7 + d8Var.f);
-                            canvas.saveLayerAlpha(0.0f, 0.0f, d8Var.b.getWidth(), d8Var.b.getHeight(), (int) (g8Var.x * 255.0f), 31);
-                            d(d8Var.b, canvas, arrayList);
-                            if (z9) {
-                                f(d8Var.b, g8Var.E + d8Var.e, g8Var.F + i7 + d8Var.f);
-                            }
-                            d8Var.b.draw(canvas);
-                            org.telegram.ui.Components.n5 update3 = org.telegram.ui.Components.r5.update(0, g8Var, d8Var.a, d8Var.b);
-                            d8Var.a = update3;
-                            arrayList2 = arrayList;
-                            i10 = i12;
-                            org.telegram.ui.Components.r5.drawAnimatedEmojis(canvas, d8Var.b, update3, 0.0f, arrayList2, 0.0f, 0.0f, 0.0f, g8Var.x, porterDuffColorFilter);
-                            canvas.restore();
-                        }
-                        canvas.restore();
-                        i12 = i10 + 1;
-                        arrayList = arrayList2;
-                        f11 = 0.0f;
-                    }
-                    arrayList2 = arrayList;
-                    i10 = i12;
-                    i12 = i10 + 1;
-                    arrayList = arrayList2;
-                    f11 = 0.0f;
+                u8Var.b(false);
+                break;
+            case 3:
+                s8 s8Var = (s8) this.b;
+                if (s8Var.w) {
+                    s8Var.E = true;
+                    s8Var.F = System.currentTimeMillis();
+                    Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+                    s8Var.e = new LinearGradient(0.0f, 0.0f, 40.0f, 0.0f, new int[]{16777215, 771751935, 771751935, 16777215}, new float[]{0.0f, 0.4f, 0.6f, 1.0f}, tileMode);
+                    s8Var.f = new LinearGradient(0.0f, 0.0f, 40.0f, 0.0f, new int[]{16777215, 553648127, 553648127, 16777215}, new float[]{0.0f, 0.4f, 0.6f, 1.0f}, tileMode);
+                    s8Var.invalidate();
+                    break;
                 }
-            }
-        } else if (this.e != null) {
-            canvas.save();
-            canvas.translate(g8Var.E, g8Var.F + i7);
-            if (h8Var.W.x()) {
-                h8Var.W.W(canvas);
-            }
-            d(this.e, canvas, arrayList3);
-            org.telegram.ui.Components.n5 update4 = org.telegram.ui.Components.r5.update(0, g8Var, this.d, this.e);
-            this.d = update4;
-            org.telegram.ui.Components.r5.drawAnimatedEmojis(canvas, this.e, update4, 0.0f, arrayList3, 0.0f, 0.0f, 0.0f, 1.0f, porterDuffColorFilter);
-            canvas.restore();
-            if (z9) {
-                f(this.e, g8Var.E, g8Var.F + i7);
-            }
-        }
-        if (this.p != null) {
-            canvas.save();
-            canvas.translate(g8Var.E, (org.telegram.messenger.g0.W1(g8Var.x, this.m, this.l) + g8Var.F) - this.p.b());
-            c8 c8Var2 = this.p;
-            int width2 = g8Var.getWidth();
-            int i13 = g8Var.E;
-            c8Var2.a(canvas, (width2 - i13) - i13);
-            canvas.restore();
-        }
-    }
-
-    public final void d(StaticLayout staticLayout, Canvas canvas, ArrayList arrayList) {
-        if (arrayList.isEmpty()) {
-            staticLayout.draw(canvas);
-        } else {
-            xh.f.g(this.v, false, -1, 0, this.u, 0, staticLayout, arrayList, canvas, false);
-        }
-    }
-
-    public final void e(int i7) {
-        int i10;
-        g8 g8Var = this.v;
-        h8 h8Var = g8Var.J;
-        TextPaint textPaint = g8Var.d;
-        f8[] f8VarArr = g8Var.r;
-        TextPaint textPaint2 = g8Var.c;
-        boolean isEmpty = TextUtils.isEmpty(this.n);
-        Stack stack = this.j;
-        ArrayList arrayList = this.i;
-        if (isEmpty) {
-            this.e = null;
-            this.l = 0;
-            c8 c8Var = this.o;
-            if (c8Var != null) {
-                this.l = org.telegram.messenger.g0.L(4.0f) + c8Var.b();
-            }
-            c8 c8Var2 = this.p;
-            if (c8Var2 != null) {
-                this.l = org.telegram.messenger.k5.C(4.0f, c8Var2.b(), this.l);
-            }
-            this.m = this.l;
-            if (this == f8VarArr[0]) {
-                g8Var.w = null;
-            }
-            this.g = null;
-            stack.addAll(arrayList);
-            arrayList.clear();
-            return;
-        }
-        StaticLayout a10 = g8.a(g8Var, textPaint2, this.n, i7);
-        this.e = a10;
-        this.l = a10.getHeight();
-        c8 c8Var3 = this.o;
-        int L = c8Var3 != null ? org.telegram.messenger.g0.L(8.0f) + c8Var3.b() : 0;
-        c8 c8Var4 = this.p;
-        if (c8Var4 != null) {
-            this.l = org.telegram.messenger.k5.C(8.0f, c8Var4.b(), this.l);
-        }
-        this.l += L;
-        float measureText = textPaint2.measureText(" ");
-        boolean z9 = this.e.getLineCount() > 3;
-        g8Var.b = z9;
-        if (z9) {
-            i10 = 3;
-            if (this.e.getLineCount() == 4) {
-                if (TextUtils.getTrimmedLength(this.n.subSequence(this.e.getLineStart(2), this.e.getLineEnd(2))) == 0) {
-                    g8Var.b = false;
-                }
-            }
-        } else {
-            i10 = 3;
-        }
-        if (g8Var.b) {
-            float topPadding = this.e.getTopPadding() + this.e.getLineTop(2);
-            if (this == f8VarArr[0]) {
-                String M0 = id.M0(2131745342, null);
-                g8Var.w = g8.a(g8Var, textPaint, M0, i7);
-                g8Var.h = ((g8Var.F + L) + topPadding) - org.telegram.messenger.g0.N(0.3f);
-                g8Var.n = (g8Var.E + i7) - textPaint.measureText(M0);
-            }
-            int topPadding2 = this.e.getTopPadding() + this.e.getLineBottom(2);
-            c8 c8Var5 = this.o;
-            int L2 = topPadding2 + (c8Var5 != null ? org.telegram.messenger.g0.L(8.0f) + c8Var5.b() : 0);
-            c8 c8Var6 = this.p;
-            this.m = L2 + (c8Var6 != null ? org.telegram.messenger.g0.L(8.0f) + c8Var6.b() : 0);
-            this.g = g8.a(g8Var, textPaint2, this.n.subSequence(0, this.e.getLineEnd(2)), i7);
-            stack.addAll(arrayList);
-            arrayList.clear();
-            xh.f.c(h8Var, this.e, stack, arrayList);
-            float lineRight = this.e.getLineRight(2) + measureText;
-            if (this.h != null) {
-                int i11 = 0;
-                while (true) {
-                    d8[] d8VarArr = this.h;
-                    if (i11 >= d8VarArr.length) {
-                        break;
-                    }
-                    d8 d8Var = d8VarArr[i11];
-                    if (d8Var != null) {
-                        org.telegram.ui.Components.r5.release(h8Var, d8Var.a);
-                    }
-                    i11++;
-                }
-            }
-            this.h = new d8[this.e.getLineCount() - 3];
-            if (arrayList.isEmpty()) {
-                for (int i12 = i10; i12 < this.e.getLineCount(); i12++) {
-                    int lineStart = this.e.getLineStart(i12);
-                    int lineEnd = this.e.getLineEnd(i12);
-                    CharSequence subSequence = this.n.subSequence(Math.min(lineStart, lineEnd), Math.max(lineStart, lineEnd));
-                    if (TextUtils.isEmpty(subSequence)) {
-                        this.h[i12 - 3] = null;
-                    } else {
-                        StaticLayout a11 = g8.a(g8Var, textPaint2, subSequence, i7);
-                        d8 d8Var2 = new d8();
-                        this.h[i12 - 3] = d8Var2;
-                        d8Var2.b = a11;
-                        d8Var2.e = this.e.getLineLeft(i12);
-                        d8Var2.f = this.e.getTopPadding() + this.e.getLineTop(i12);
-                        if (lineRight < g8Var.n - org.telegram.messenger.g0.L(16.0f)) {
-                            d8Var2.d = topPadding;
-                            d8Var2.c = lineRight;
-                            lineRight = Math.abs(a11.getLineRight(0) - a11.getLineLeft(0)) + measureText + lineRight;
+                break;
+            case 4:
+                q9 q9Var = ((z8) this.b).b;
+                try {
+                    e9 e9Var = q9Var.s;
+                    if (e9Var != null) {
+                        if (q9Var.b) {
+                            org.telegram.messenger.g0.E2(e9Var);
                         } else {
-                            d8Var2.d = d8Var2.f;
-                            d8Var2.c = d8Var2.e;
+                            q9Var.n.removeView(e9Var);
                         }
+                        q9Var.s = null;
+                        q9Var.v();
+                        break;
+                    } else {
+                        break;
                     }
+                } catch (Exception unused) {
+                    return;
                 }
-            }
-        } else {
-            if (this == f8VarArr[0]) {
-                g8Var.w = null;
-            }
-            this.g = null;
-            this.m = this.l;
-            stack.addAll(arrayList);
-            arrayList.clear();
-            xh.f.c(g8Var, this.e, stack, arrayList);
+            case 5:
+                ((e9) this.b).r0.Q(true);
+                break;
+            case 6:
+                ((z9) this.b).c();
+                break;
+            case 7:
+                ((di) this.b).hide();
+                break;
+            case 8:
+                ei.n nVar = (ei.n) this.b;
+                tp0 tp0Var = nVar.W;
+                k6 k6Var = nVar.a;
+                tp0Var.a(k6Var == null ? "" : k6Var.E);
+                break;
+            case 9:
+                ab.q qVar = (ab.q) this.b;
+                ((Context) qVar.b).unregisterReceiver((f2.a) qVar.c);
+                break;
+            case 10:
+                f2.a aVar = (f2.a) this.b;
+                if (aVar.c.a) {
+                    aVar.a.a.C1(3, false);
+                    break;
+                }
+                break;
+            case 11:
+                ((fi.h) this.b).c.W = false;
+                break;
+            case 12:
+                ((fi.l) this.b).invalidateSelf();
+                break;
+            case 13:
+                ((fi.d0) this.b).g = -1L;
+                break;
+            case 14:
+                fi.m0 m0Var = (fi.m0) this.b;
+                tg.i iVar = m0Var.b.H;
+                if (iVar != null) {
+                    iVar.b();
+                }
+                m0Var.b.k();
+                break;
+            case 15:
+                ((fi.u0) this.b).a(false);
+                break;
+            case 16:
+                fi.c5 c5Var = (fi.c5) this.b;
+                cc.e();
+                ug.w0 w0Var = new ug.w0((org.telegram.ui.ActionBar.f2) new bi.w4(c5Var), 14, false);
+                w0Var.setOnDismissListener(new fi.d1(i10));
+                w0Var.show();
+                break;
+            case 17:
+                ((fi.r1) this.b).G();
+                break;
+            case 18:
+                fi.y1 y1Var = (fi.y1) this.b;
+                ArrayList arrayList = y1Var.w;
+                ArrayList arrayList2 = y1Var.s;
+                fi.z1 z1Var = y1Var.N;
+                fi.k2 k2Var = z1Var.s;
+                int i11 = fi.k2.y1;
+                ui b02 = ui.b0(k2Var.a);
+                String str = y1Var.H;
+                if (!"premium".equalsIgnoreCase(str)) {
+                    if (z1Var.a != 1 || !org.telegram.messenger.i6.d(y1Var.H)) {
+                        String[] G0 = org.telegram.messenger.g0.G0();
+                        String[] strArr = y1Var.J;
+                        if (strArr == null || !Arrays.equals(G0, strArr)) {
+                            ui.b0(k2Var.a).M(G0, false);
+                        }
+                        y1Var.J = G0;
+                        b02.V(G0, y1Var.H, false, new a3.h(y1Var, str, b02, i7), false, false, false, true, 50);
+                        break;
+                    } else {
+                        TLRPC.TL_messages_getStickers tL_messages_getStickers = new TLRPC.TL_messages_getStickers();
+                        tL_messages_getStickers.emoticon = y1Var.H;
+                        tL_messages_getStickers.hash = 0L;
+                        ConnectionsManager.getInstance(k2Var.a).sendRequest(tL_messages_getStickers, new bi.j(12, y1Var, str));
+                        break;
+                    }
+                } else {
+                    ArrayList i02 = b02.i0(7, false);
+                    y1Var.y = 0;
+                    arrayList2.clear();
+                    arrayList.clear();
+                    y1Var.D.clear();
+                    y1Var.n.clear();
+                    y1Var.y++;
+                    arrayList2.add(null);
+                    arrayList.add(0L);
+                    arrayList2.addAll(i02);
+                    y1Var.y = i02.size() + y1Var.y;
+                    y1Var.I = y1Var.H;
+                    y1Var.f();
+                    fi.m1.z1(z1Var.b, 0, 0);
+                    z1Var.f.c(false);
+                    z1Var.e.n(false);
+                    break;
+                }
+                break;
+            case 19:
+                fi.e2 e2Var = (fi.e2) ((ah.j) this.b).b;
+                if (!e2Var.n) {
+                    e2Var.r.setVisibility(8);
+                    break;
+                }
+                break;
+            case 20:
+                fi.i2 i2Var = (fi.i2) ((fi.h2) this.b).b;
+                ArrayList arrayList3 = i2Var.o;
+                if (!arrayList3.isEmpty()) {
+                    i2Var.l.e(true, 0.0f);
+                    int i12 = i2Var.k + 1;
+                    i2Var.k = i12;
+                    if (i12 > arrayList3.size() - 1) {
+                        i2Var.k = 0;
+                    }
+                    ch.f0 f0Var = i2Var.j;
+                    f0Var.e((ch.o0) arrayList3.get(i2Var.k));
+                    i2Var.j = i2Var.i;
+                    i2Var.i = f0Var;
+                    i2Var.p.invalidate();
+                    break;
+                }
+                break;
+            case 21:
+                ((FfmpegAudioWaveformLoader) this.b).lambda$destroy$2();
+                break;
+            case 22:
+                ((fi.b3) this.b).b(null);
+                break;
+            case 23:
+                ((fi.e3) this.b).E();
+                break;
+            case 24:
+                fi.n9 n9Var = (fi.n9) this.b;
+                if (n9Var.I) {
+                    n9Var.I = false;
+                    n9Var.invalidate();
+                    break;
+                }
+                break;
+            case 25:
+                fi.g6 g6Var = (fi.g6) ((fi.f6) this.b).q;
+                g6Var.Q = System.currentTimeMillis();
+                g6Var.R = 0L;
+                g6Var.r0 = true;
+                ((fi.r9) g6Var.a).a.J0.a(0L, true);
+                g6Var.invalidate();
+                break;
+            case 26:
+                fi.p pVar = (fi.p) this.b;
+                if (pVar.getParent() instanceof ViewGroup) {
+                    ((ViewGroup) pVar.getParent()).removeView(pVar);
+                    break;
+                }
+                break;
+            case 27:
+                fi.d dVar = (fi.d) this.b;
+                if (dVar != null) {
+                    dVar.setLoading(false);
+                    break;
+                }
+                break;
+            case 28:
+                ((fi.p8) ((ah.n) this.b).n).fullScroll(qs.O1);
+                break;
+            default:
+                ua uaVar = (ua) this.b;
+                uaVar.g0.onTouchEvent(org.telegram.messenger.g0.R());
+                uaVar.f0.n0(org.telegram.messenger.g0.R());
+                break;
         }
-        int i13 = g8Var.E;
-        int i14 = g8Var.F;
-        gf.c cVar = this.k;
-        cVar.a = i13;
-        cVar.c = i14;
-    }
-
-    public final void f(Layout layout, float f10, float f11) {
-        float f12 = 0.0f;
-        int i7 = 0;
-        while (i7 < layout.getLineCount()) {
-            float lineLeft = layout.getLineLeft(i7);
-            g8 g8Var = this.v;
-            float f13 = lineLeft - (g8Var.E / 3.0f);
-            float lineRight = (g8Var.E / 3.0f) + layout.getLineRight(i7);
-            if (i7 == 0) {
-                f12 = layout.getLineTop(i7) - (g8Var.F / 3.0f);
-            }
-            float lineBottom = layout.getLineBottom(i7);
-            float f14 = i7 >= layout.getLineCount() + (-1) ? (g8Var.F / 3.0f) + lineBottom : lineBottom;
-            this.t.addRect(f10 + f13, f11 + f12, f10 + lineRight, f11 + f14, Path.Direction.CW);
-            i7++;
-            f12 = f14;
-        }
-    }
-
-    public final void g(CharSequence charSequence, c8 c8Var, c8 c8Var2) {
-        this.n = charSequence;
-        this.o = c8Var;
-        this.p = c8Var2;
-        g8 g8Var = this.v;
-        if (c8Var != null) {
-            e8 e8Var = new e8(this, 0);
-            c8Var.r = g8Var;
-            c8Var.s = e8Var;
-            new zj0(g8Var);
-            c8Var.j.setCallback(g8Var);
-            c8Var.h.a = g8Var;
-            c8Var.i.a = g8Var;
-            c8Var.c();
-        }
-        c8 c8Var3 = this.p;
-        if (c8Var3 != null) {
-            e8 e8Var2 = new e8(this, 1);
-            c8Var3.r = g8Var;
-            c8Var3.s = e8Var2;
-            new zj0(g8Var);
-            c8Var3.j.setCallback(g8Var);
-            c8Var3.h.a = g8Var;
-            c8Var3.i.a = g8Var;
-            c8Var3.c();
-        }
-        g8Var.s = 0;
-        g8Var.requestLayout();
     }
 }

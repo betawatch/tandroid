@@ -21,16 +21,16 @@ import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.ij;
 import org.telegram.ui.Components.aq;
-import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.qj0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public abstract class v9 {
     public final g9 A;
     public final Rect B;
     public u9 C;
     public c8.da D;
-    public pj0 E;
+    public qj0 E;
     public ViewGroup F;
     public Magnifier G;
     public float H;
@@ -65,7 +65,7 @@ public abstract class v9 {
     public float f;
     public final d9 f0;
     public float g;
-    public org.telegram.ui.ActionBar.f6 g0;
+    public org.telegram.ui.ActionBar.g6 g0;
     public final int[] h = new int[2];
     public boolean h0;
     public boolean i;
@@ -361,8 +361,8 @@ public abstract class v9 {
     }
 
     public final void S(ViewGroup viewGroup) {
-        if (viewGroup instanceof pj0) {
-            this.E = (pj0) viewGroup;
+        if (viewGroup instanceof qj0) {
+            this.E = (qj0) viewGroup;
         }
         this.F = viewGroup;
     }
@@ -717,7 +717,7 @@ public abstract class v9 {
         return 0;
     }
 
-    public org.telegram.ui.ActionBar.f6 q() {
+    public org.telegram.ui.ActionBar.g6 q() {
         return this.g0;
     }
 
@@ -732,7 +732,7 @@ public abstract class v9 {
     public abstract CharSequence s(q9 q9Var, boolean z9);
 
     public int t(int i7) {
-        return org.telegram.ui.ActionBar.k6.w0(i7, this.g0);
+        return org.telegram.ui.ActionBar.l6.w0(i7, this.g0);
     }
 
     public final void u() {
@@ -774,7 +774,7 @@ public abstract class v9 {
     }
 
     public boolean z(ij ijVar) {
-        return ijVar != null && this.w == ijVar.f1();
+        return ijVar != null && this.w == ijVar.e1();
     }
 
     public void E(boolean z9) {

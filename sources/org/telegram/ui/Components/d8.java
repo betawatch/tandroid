@@ -2,15 +2,15 @@ package org.telegram.ui.Components;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d8 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ve0 b;
+    public final /* synthetic */ we0 b;
 
-    public /* synthetic */ d8(ve0 ve0Var, int i7) {
+    public /* synthetic */ d8(we0 we0Var, int i7) {
         this.a = i7;
-        this.b = ve0Var;
+        this.b = we0Var;
     }
 
     @Override // android.view.View.OnClickListener

@@ -1,6 +1,6 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class eo implements Runnable {
     public final /* synthetic */ int a;
@@ -22,17 +22,17 @@ public final /* synthetic */ class eo implements Runnable {
                 break;
             case 2:
                 vo voVar = this.b;
-                org.telegram.ui.an anVar = voVar.r1;
-                org.telegram.ui.ActionBar.f2 g02 = org.telegram.ui.c51.g0(anVar.getMessagesController().M0(Long.valueOf(-anVar.a())), true);
+                org.telegram.ui.cn cnVar = voVar.r1;
+                org.telegram.ui.ActionBar.f2 g02 = org.telegram.ui.d51.g0(cnVar.getMessagesController().M0(Long.valueOf(-cnVar.a())), true);
                 org.telegram.ui.ActionBar.d2 d2Var = new org.telegram.ui.ActionBar.d2();
                 d2Var.a = true;
-                g02.setResourceProvider(anVar.getResourceProvider());
+                g02.setResourceProvider(cnVar.getResourceProvider());
                 d2Var.c = new org.telegram.messenger.rc(28);
                 d2Var.d = new eo(voVar, 3);
                 d2Var.b = new eo(voVar, 4);
                 d2Var.e = true;
                 voVar.N1 = g02;
-                anVar.showAsSheet(g02, d2Var);
+                cnVar.showAsSheet(g02, d2Var);
                 break;
             case 3:
                 this.b.O0();

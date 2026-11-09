@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.concurrent.CountDownLatch;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public class AnimatedFileDrawableStream implements j7 {
     public final int D;
@@ -68,7 +68,7 @@ public class AnimatedFileDrawableStream implements j7 {
                 if (obj instanceof ij) {
                     ij ijVar = (ij) obj;
                     z5 q10 = z5.q(ijVar.I1);
-                    int f12 = ijVar.f1();
+                    int e12 = ijVar.e1();
                     ArrayList arrayList = q10.G;
                     int i7 = 0;
                     while (true) {
@@ -76,7 +76,7 @@ public class AnimatedFileDrawableStream implements j7 {
                             z10 = false;
                             break;
                         } else {
-                            if (((ij) arrayList.get(i7)).k.id == f12) {
+                            if (((ij) arrayList.get(i7)).k.id == e12) {
                                 z10 = true;
                                 break;
                             }

@@ -8,7 +8,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.ImageView;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class qx extends ImageView {
     public int a;
@@ -24,11 +24,11 @@ public final class qx extends ImageView {
         super(context);
         this.f = new org.telegram.messenger.ic[2];
         setScaleType(ImageView.ScaleType.CENTER);
-        int i7 = org.telegram.ui.ActionBar.k6.i6;
-        org.telegram.ui.Cells.y a02 = org.telegram.ui.ActionBar.k6.a0(org.telegram.ui.ActionBar.k6.x0(null, i7, false), org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f));
-        org.telegram.ui.ActionBar.n6 N = org.telegram.ui.ActionBar.r6.N(i7);
+        int i7 = org.telegram.ui.ActionBar.l6.i6;
+        org.telegram.ui.Cells.y a02 = org.telegram.ui.ActionBar.l6.a0(org.telegram.ui.ActionBar.l6.x0(null, i7, false), org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f));
+        org.telegram.ui.ActionBar.o6 M = org.telegram.ui.ActionBar.s6.M(i7);
         setBackground(a02);
-        org.telegram.ui.ActionBar.r6.k(this, a02, null, N, null);
+        org.telegram.ui.ActionBar.s6.j(this, a02, null, M, null);
     }
 
     public final void a(org.telegram.messenger.e6 e6Var, boolean z9) {

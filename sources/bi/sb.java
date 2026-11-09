@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class sb implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -73,16 +73,16 @@ public final /* synthetic */ class sb implements Runnable {
                 org.telegram.ui.ActionBar.f2 T = LaunchActivity.T();
                 if (T != null) {
                     if (z10 && !TextUtils.isEmpty(starsSubscription.title)) {
-                        a02 = org.telegram.messenger.id.a0(null, null, 2131745003, org.telegram.messenger.id.u(starsSubscription.until_date, false), starsSubscription.title);
+                        a02 = org.telegram.messenger.id.a0(null, null, 2131745000, org.telegram.messenger.id.u(starsSubscription.until_date, false), starsSubscription.title);
                         z9 = false;
                     } else if (!z11 || TextUtils.isEmpty(starsSubscription.title)) {
                         z9 = false;
-                        a02 = org.telegram.messenger.id.a0(null, null, 2131744999, org.telegram.messenger.id.u(starsSubscription.until_date, false));
+                        a02 = org.telegram.messenger.id.a0(null, null, 2131744996, org.telegram.messenger.id.u(starsSubscription.until_date, false));
                     } else {
                         z9 = false;
-                        a02 = org.telegram.messenger.id.a0(null, null, 2131745002, org.telegram.messenger.id.u(starsSubscription.until_date, false), starsSubscription.title);
+                        a02 = org.telegram.messenger.id.a0(null, null, 2131744999, org.telegram.messenger.id.u(starsSubscription.until_date, false), starsSubscription.title);
                     }
-                    org.telegram.ui.Components.hc.a0(T).V(Collections.singletonList(tLObject), org.telegram.messenger.id.M0(2131745000, null), org.telegram.messenger.g0.X2(a02), null).k(z9);
+                    org.telegram.ui.Components.hc.a0(T).V(Collections.singletonList(tLObject), org.telegram.messenger.id.M0(2131744997, null), org.telegram.messenger.g0.X2(a02), null).k(z9);
                     return;
                 }
                 return;

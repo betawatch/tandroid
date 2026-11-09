@@ -1,32 +1,29 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
+import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class py extends FrameLayout {
-    public ImageView a;
-    public TextView b;
-    public int c;
-    public boolean d;
-    public Boolean e;
+public final /* synthetic */ class py implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ iz b;
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        TextView textView = this.b;
-        super.onDraw(canvas);
-        if (this.d) {
-            canvas.drawRect(textView.getLeft(), getMeasuredHeight() - 1, textView.getRight(), getMeasuredHeight(), org.telegram.ui.ActionBar.k6.k0);
-        }
+    public /* synthetic */ py(iz izVar, int i7) {
+        this.a = i7;
+        this.b = izVar;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(48.0f), TLObject.FLAG_30));
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                org.telegram.messenger.g0.h3(new org.telegram.ui.Components.m51(23, this.b, tLObject));
+                break;
+            default:
+                org.telegram.messenger.g0.h3(new tp(this.b, tL_error, tLObject, 6));
+                break;
+        }
     }
 }

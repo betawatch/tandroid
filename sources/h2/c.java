@@ -28,10 +28,10 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.jc;
 import org.telegram.messenger.p5;
-import org.telegram.ui.Components.qd0;
-import org.telegram.ui.qk;
+import org.telegram.ui.Components.rd0;
+import org.telegram.ui.sk;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class c {
     public int a;
@@ -100,7 +100,7 @@ public final class c {
     }
 
     public boolean F() {
-        return ((qd0) this.b).b() && ((qd0) this.c).b() && ((qd0) this.d).b() && ((qd0) this.e).b();
+        return ((rd0) this.b).b() && ((rd0) this.c).b() && ((rd0) this.d).b() && ((rd0) this.e).b();
     }
 
     public void G(Object obj) {
@@ -555,8 +555,8 @@ public final class c {
 
     public void o() {
         this.b = null;
-        if (((qk) this.f) != null) {
-            Utilities.e.a((qk) this.f);
+        if (((sk) this.f) != null) {
+            Utilities.e.a((sk) this.f);
         }
         Bitmap bitmap = (Bitmap) this.c;
         if (bitmap != null && !bitmap.isRecycled()) {
@@ -592,26 +592,26 @@ public final class c {
     public void q() {
         ByteBuffer byteBuffer = (ByteBuffer) this.f;
         byteBuffer.position(0);
-        qd0 qd0Var = (qd0) this.b;
-        if (qd0Var.f == null) {
-            qd0Var.a();
+        rd0 rd0Var = (rd0) this.b;
+        if (rd0Var.f == null) {
+            rd0Var.a();
         }
-        float[] fArr = qd0Var.f;
-        qd0 qd0Var2 = (qd0) this.c;
-        if (qd0Var2.f == null) {
-            qd0Var2.a();
+        float[] fArr = rd0Var.f;
+        rd0 rd0Var2 = (rd0) this.c;
+        if (rd0Var2.f == null) {
+            rd0Var2.a();
         }
-        float[] fArr2 = qd0Var2.f;
-        qd0 qd0Var3 = (qd0) this.d;
-        if (qd0Var3.f == null) {
-            qd0Var3.a();
+        float[] fArr2 = rd0Var2.f;
+        rd0 rd0Var3 = (rd0) this.d;
+        if (rd0Var3.f == null) {
+            rd0Var3.a();
         }
-        float[] fArr3 = qd0Var3.f;
-        qd0 qd0Var4 = (qd0) this.e;
-        if (qd0Var4.f == null) {
-            qd0Var4.a();
+        float[] fArr3 = rd0Var3.f;
+        rd0 rd0Var4 = (rd0) this.e;
+        if (rd0Var4.f == null) {
+            rd0Var4.a();
         }
-        float[] fArr4 = qd0Var4.f;
+        float[] fArr4 = rd0Var4.f;
         for (int i7 = 0; i7 < 200; i7++) {
             byteBuffer.put((byte) (fArr2[i7] * 255.0f));
             byteBuffer.put((byte) (fArr3[i7] * 255.0f));
@@ -648,7 +648,7 @@ public final class c {
 
     /* JADX WARN: Code restructure failed: missing block: B:11:0x001f, code lost:
     
-        if (((org.telegram.ui.qk) r8.f) != null) goto L5;
+        if (((org.telegram.ui.sk) r8.f) != null) goto L5;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -661,14 +661,14 @@ public final class c {
                     return bitmap2;
                 }
             }
-            if (((qk) this.f) != null) {
-                Utilities.e.a((qk) this.f);
+            if (((sk) this.f) != null) {
+                Utilities.e.a((sk) this.f);
             }
             this.b = str;
             p5 p5Var = Utilities.e;
-            qk qkVar = new qk(this, bitmap, i7, i10, str, z9);
-            this.f = qkVar;
-            p5Var.c(qkVar);
+            sk skVar = new sk(this, bitmap, i7, i10, str, z9);
+            this.f = skVar;
+            p5Var.c(skVar);
             return (Bitmap) this.c;
         }
         return null;
@@ -776,10 +776,10 @@ public final class c {
     }
 
     public c() {
-        this.b = new qd0();
-        this.c = new qd0();
-        this.d = new qd0();
-        this.e = new qd0();
+        this.b = new rd0();
+        this.c = new rd0();
+        this.d = new rd0();
+        this.e = new rd0();
         ByteBuffer allocateDirect = ByteBuffer.allocateDirect(800);
         this.f = allocateDirect;
         allocateDirect.order(ByteOrder.LITTLE_ENDIAN);

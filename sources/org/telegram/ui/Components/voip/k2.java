@@ -22,12 +22,12 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
-import org.telegram.ui.Components.qa0;
+import org.telegram.ui.Components.ra0;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.va;
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public class k2 extends FrameLayout {
     public float D;
@@ -491,7 +491,7 @@ public class k2 extends FrameLayout {
         }
         FrameLayout frameLayout = new FrameLayout(getContext());
         this.r = frameLayout;
-        frameLayout.setBackground(new qa0(true, -14602694, -13935795, -14395293, -14203560));
+        frameLayout.setBackground(new ra0(true, -14602694, -13935795, -14395293, -14203560));
         addView(frameLayout, ha.c(-1.0f, -1));
         int i7 = 8;
         frameLayout.setVisibility(8);
@@ -502,7 +502,7 @@ public class k2 extends FrameLayout {
         frameLayout.addView(imageView2, ha.d(82, 82.0f, 17, 0.0f, 0.0f, 0.0f, 60.0f));
         TextView textView = new TextView(getContext());
         this.w = textView;
-        textView.setText(id.M0(2131743225, null));
+        textView.setText(id.M0(2131743222, null));
         textView.setGravity(17);
         textView.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
         textView.setTextColor(-1);

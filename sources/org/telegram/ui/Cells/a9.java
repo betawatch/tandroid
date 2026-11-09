@@ -9,7 +9,7 @@ import android.widget.TextView;
 import org.telegram.messenger.id;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class a9 extends FrameLayout {
     public final TextView a;
@@ -49,17 +49,17 @@ public final class a9 extends FrameLayout {
             textView2.setVisibility(4);
         }
         if (z9) {
-            int i7 = org.telegram.ui.ActionBar.k6.G6;
+            int i7 = org.telegram.ui.ActionBar.l6.G6;
             setTag(Integer.valueOf(i7));
-            org.telegram.ui.ActionBar.r6.V(textView, i7, null);
-            org.telegram.ui.ActionBar.r6.V(textView2, i7, null);
+            org.telegram.ui.ActionBar.s6.U(textView, i7, null);
+            org.telegram.ui.ActionBar.s6.U(textView2, i7, null);
             textView.setTypeface(org.telegram.messenger.g0.o());
             textView2.setTypeface(org.telegram.messenger.g0.o());
         } else {
-            int i10 = org.telegram.ui.ActionBar.k6.z6;
+            int i10 = org.telegram.ui.ActionBar.l6.z6;
             setTag(Integer.valueOf(i10));
-            org.telegram.ui.ActionBar.r6.V(textView, i10, null);
-            org.telegram.ui.ActionBar.r6.V(textView2, i10, null);
+            org.telegram.ui.ActionBar.s6.U(textView, i10, null);
+            org.telegram.ui.ActionBar.s6.U(textView2, i10, null);
             Typeface typeface = Typeface.DEFAULT;
             textView.setTypeface(typeface);
             textView2.setTypeface(typeface);

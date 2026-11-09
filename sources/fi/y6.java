@@ -20,9 +20,9 @@ import org.telegram.messenger.c20;
 import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
 import org.telegram.ui.Components.xq;
-import org.telegram.ui.l61;
+import org.telegram.ui.m61;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public class y6 extends View {
     public final org.telegram.ui.Components.i6 D;
@@ -108,11 +108,11 @@ public class y6 extends View {
             i6Var2.setCallback(this);
             i6Var2.u(-1);
             if (i7 == 1) {
-                i6Var2.t(id.M0(2131750692, null), true, true);
+                i6Var2.t(id.M0(2131750691, null), true, true);
             } else if (i7 == 2) {
-                i6Var2.t(id.M0(2131750693, null), true, true);
+                i6Var2.t(id.M0(2131750692, null), true, true);
             } else if (i7 == 3) {
-                i6Var2.t(id.M0(2131742957, null), true, true);
+                i6Var2.t(id.M0(2131742954, null), true, true);
             }
         }
         i6Var.t("", true, true);
@@ -132,8 +132,8 @@ public class y6 extends View {
         this.c = 0.9f;
     }
 
-    public final void c(l61 l61Var) {
-        this.h = l61Var;
+    public final void c(m61 m61Var) {
+        this.h = m61Var;
     }
 
     public final void d(float f10) {
@@ -275,7 +275,7 @@ public class y6 extends View {
             this.O = i11;
             this.P = org.telegram.messenger.g0.L(48.0f);
         } else if (i12 == 0) {
-            this.O = (int) Math.min(textPaint.measureText(id.M0(2131744723, null)) + org.telegram.messenger.g0.L(88.0f), View.MeasureSpec.getSize(i7));
+            this.O = (int) Math.min(textPaint.measureText(id.M0(2131744720, null)) + org.telegram.messenger.g0.L(88.0f), View.MeasureSpec.getSize(i7));
             this.P = org.telegram.messenger.g0.L(48.0f);
         } else {
             this.O = org.telegram.messenger.g0.L(190.0f);

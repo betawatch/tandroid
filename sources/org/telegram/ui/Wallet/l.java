@@ -2,9 +2,9 @@ package org.telegram.ui.Wallet;
 
 import android.view.View;
 import c8.va;
-import org.telegram.ui.Components.q41;
+import org.telegram.ui.Components.r41;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l implements Runnable {
     public final /* synthetic */ int a;
@@ -16,16 +16,16 @@ public final /* synthetic */ class l implements Runnable {
     }
 
     private final void a() {
-        c0 c0Var = (c0) this.b;
-        synchronized (c0Var) {
-            if (c0Var.a) {
+        b0 b0Var = (b0) this.b;
+        synchronized (b0Var) {
+            if (b0Var.a) {
                 return;
             }
-            c0Var.a = true;
-            Runnable runnable = c0Var.b;
+            b0Var.a = true;
+            Runnable runnable = b0Var.b;
             if (runnable != null) {
                 runnable.run();
-                c0Var.b = null;
+                b0Var.b = null;
             }
         }
     }
@@ -35,16 +35,16 @@ public final /* synthetic */ class l implements Runnable {
         View d;
         switch (this.a) {
             case 0:
-                a0 a0Var = (a0) this.b;
-                synchronized (a0Var) {
-                    if (a0Var.a) {
+                z zVar = (z) this.b;
+                synchronized (zVar) {
+                    if (zVar.a) {
                         return;
                     }
-                    a0Var.a = true;
-                    Runnable runnable = a0Var.b;
+                    zVar.a = true;
+                    Runnable runnable = zVar.b;
                     if (runnable != null) {
                         runnable.run();
-                        a0Var.b = null;
+                        zVar.b = null;
                     }
                     return;
                 }
@@ -52,22 +52,22 @@ public final /* synthetic */ class l implements Runnable {
                 a();
                 return;
             case 2:
-                ((j0) this.b).close();
+                ((i0) this.b).close();
                 return;
             case 3:
                 ((boolean[]) this.b)[0] = true;
                 return;
             case 4:
-                v0 v0Var = (v0) this.b;
-                v0Var.c("AUTH_CANCELED");
-                v0Var.e();
-                if (va.b == v0Var) {
+                u0 u0Var = (u0) this.b;
+                u0Var.c("AUTH_CANCELED");
+                u0Var.e();
+                if (va.b == u0Var) {
                     va.b = null;
                     return;
                 }
                 return;
             case 5:
-                ((y2) this.b).dismiss();
+                ((x2) this.b).dismiss();
                 return;
             case 6:
                 ((org.telegram.ui.Cells.t0) this.b).invalidate();
@@ -76,18 +76,18 @@ public final /* synthetic */ class l implements Runnable {
                 org.telegram.messenger.g0.E2((fi.m3) this.b);
                 return;
             case 8:
-                t5 t5Var = (t5) this.b;
-                fi.w3 w3Var = t5Var.c;
+                s5 s5Var = (s5) this.b;
+                fi.w3 w3Var = s5Var.c;
                 if (w3Var == null || w3Var.getScrollState() != 0) {
                     return;
                 }
-                q41 y02 = t5Var.j.y0();
-                if ((y02 == null || y02.getScrollState() == 0) && (d = t5Var.d(t5Var.c.e3)) != null) {
-                    v4.b0 b0Var = t5Var.c.e3;
+                r41 y02 = s5Var.j.y0();
+                if ((y02 == null || y02.getScrollState() == 0) && (d = s5Var.d(s5Var.c.e3)) != null) {
+                    v4.b0 b0Var = s5Var.c.e3;
                     b0Var.getClass();
                     int i7 = new int[]{0, v4.n0.z(d) - b0Var.F()}[1];
                     if (i7 != 0) {
-                        t5Var.c.w0(0, i7, null);
+                        s5Var.c.w0(0, i7, null);
                         return;
                     }
                     return;
@@ -109,25 +109,25 @@ public final /* synthetic */ class l implements Runnable {
                 ((WalletEngine2) this.b).lambda$close$53();
                 return;
             case 11:
-                o8 o8Var = (o8) this.b;
-                boolean z9 = o8Var.h != -1;
-                if (!z9 && !o8Var.s) {
-                    o8Var.c = o8Var.c();
-                    o8Var.d = 0.0f;
+                n8 n8Var = (n8) this.b;
+                boolean z9 = n8Var.h != -1;
+                if (!z9 && !n8Var.s) {
+                    n8Var.c = n8Var.c();
+                    n8Var.d = 0.0f;
                 }
-                boolean z10 = z9 || o8Var.s || o8Var.e > 1.001f;
-                b4 b4Var = o8Var.b;
-                float f10 = o8Var.c;
-                float f11 = o8Var.d;
-                b4Var.r = f10;
-                b4Var.s = f11;
-                b4Var.w = z10;
-                b4Var.x = z10;
+                boolean z10 = z9 || n8Var.s || n8Var.e > 1.001f;
+                a4 a4Var = n8Var.b;
+                float f10 = n8Var.c;
+                float f11 = n8Var.d;
+                a4Var.r = f10;
+                a4Var.s = f11;
+                a4Var.w = z10;
+                a4Var.x = z10;
                 return;
             case 12:
-                u8 u8Var = (u8) this.b;
-                u8Var.removeSelfFromStack();
-                Runnable runnable2 = u8Var.f;
+                t8 t8Var = (t8) this.b;
+                t8Var.removeSelfFromStack();
+                Runnable runnable2 = t8Var.f;
                 if (runnable2 != null) {
                     runnable2.run();
                     return;
@@ -137,7 +137,7 @@ public final /* synthetic */ class l implements Runnable {
                 ((org.telegram.ui.Cells.w3) this.b).requestLayout();
                 return;
             default:
-                ((ea) this.b).Z();
+                ((da) this.b).Z();
                 return;
         }
     }

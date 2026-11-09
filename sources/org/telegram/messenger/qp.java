@@ -76,18 +76,18 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.qa0;
-import org.telegram.ui.Components.s11;
-import org.telegram.ui.Components.t60;
+import org.telegram.ui.Components.ra0;
+import org.telegram.ui.Components.t11;
+import org.telegram.ui.Components.u60;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.Wallet.WalletEngine2;
-import org.telegram.ui.je0;
-import org.telegram.ui.m80;
-import org.telegram.ui.mc0;
-import org.telegram.ui.w91;
+import org.telegram.ui.le0;
+import org.telegram.ui.o80;
+import org.telegram.ui.oc0;
+import org.telegram.ui.y91;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class qp extends c1 implements ls {
     public static volatile long A8;
@@ -249,7 +249,7 @@ public final class qp extends c1 implements ls {
     public final a0.h R;
     public final ArrayList R0;
     public final ArrayList R1;
-    public org.telegram.ui.ActionBar.c6 R2;
+    public org.telegram.ui.ActionBar.d6 R2;
     public String R3;
     public int R4;
     public long R5;
@@ -397,7 +397,7 @@ public final class qp extends c1 implements ls {
     public volatile boolean g7;
     public boolean g8;
     public final HashMap h;
-    public di.y6 h0;
+    public di.z6 h0;
     public long h1;
     public boolean h2;
     public int h3;
@@ -1584,11 +1584,11 @@ public final class qp extends c1 implements ls {
             return;
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, f2Var.getParentActivity(), f2Var.getResourceProvider());
-        String M0 = id.M0(2131751455, null);
+        String M0 = id.M0(2131751454, null);
         org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
         u1Var.R = M0;
         HashMap hashMap = new HashMap();
-        int i7 = org.telegram.ui.ActionBar.k6.L5;
+        int i7 = org.telegram.ui.ActionBar.l6.L5;
         hashMap.put("info1", Integer.valueOf(f2Var.getThemedColor(i7)));
         hashMap.put("info2", Integer.valueOf(f2Var.getThemedColor(i7)));
         alertDialog$Builder.m(R.raw.not_available, 52, f2Var.getThemedColor(i7), hashMap);
@@ -1823,35 +1823,35 @@ public final class qp extends c1 implements ls {
         return s1(0).d7;
     }
 
-    public static TLRPC.TL_wallPaperSettings g2(org.telegram.ui.ActionBar.c6 c6Var) {
+    public static TLRPC.TL_wallPaperSettings g2(org.telegram.ui.ActionBar.d6 d6Var) {
         TLRPC.TL_wallPaperSettings tL_wallPaperSettings = new TLRPC.TL_wallPaperSettings();
-        tL_wallPaperSettings.blur = c6Var.i;
-        tL_wallPaperSettings.motion = c6Var.j;
-        int i7 = c6Var.d;
+        tL_wallPaperSettings.blur = d6Var.i;
+        tL_wallPaperSettings.motion = d6Var.j;
+        int i7 = d6Var.d;
         if (i7 != 0) {
             tL_wallPaperSettings.background_color = i7 & 16777215;
             int i10 = tL_wallPaperSettings.flags;
-            tL_wallPaperSettings.intensity = (int) (c6Var.k * 100.0f);
+            tL_wallPaperSettings.intensity = (int) (d6Var.k * 100.0f);
             tL_wallPaperSettings.flags = i10 | 9;
         } else {
-            float f10 = c6Var.k;
+            float f10 = d6Var.k;
             if (f10 > 0.0f) {
                 tL_wallPaperSettings.intensity = (int) (f10 * 100.0f);
                 tL_wallPaperSettings.flags |= 8;
             }
         }
-        int i11 = c6Var.e;
+        int i11 = d6Var.e;
         if (i11 != 0) {
             tL_wallPaperSettings.second_background_color = i11 & 16777215;
-            tL_wallPaperSettings.rotation = g0.s1(c6Var.h, true);
+            tL_wallPaperSettings.rotation = g0.s1(d6Var.h, true);
             tL_wallPaperSettings.flags |= 16;
         }
-        int i12 = c6Var.f;
+        int i12 = d6Var.f;
         if (i12 != 0) {
             tL_wallPaperSettings.third_background_color = i12 & 16777215;
             tL_wallPaperSettings.flags |= 32;
         }
-        int i13 = c6Var.g;
+        int i13 = d6Var.g;
         if (i13 != 0) {
             tL_wallPaperSettings.fourth_background_color = i13 & 16777215;
             tL_wallPaperSettings.flags |= 64;
@@ -1969,15 +1969,15 @@ public final class qp extends c1 implements ls {
         return tL_emojiStatusCollectible;
     }
 
-    public static TLRPC.InputWallPaper r1(org.telegram.ui.ActionBar.c6 c6Var) {
-        if (c6Var.l <= 0) {
+    public static TLRPC.InputWallPaper r1(org.telegram.ui.ActionBar.d6 d6Var) {
+        if (d6Var.l <= 0) {
             TLRPC.TL_inputWallPaperSlug tL_inputWallPaperSlug = new TLRPC.TL_inputWallPaperSlug();
-            tL_inputWallPaperSlug.slug = c6Var.c;
+            tL_inputWallPaperSlug.slug = d6Var.c;
             return tL_inputWallPaperSlug;
         }
         TLRPC.TL_inputWallPaper tL_inputWallPaper = new TLRPC.TL_inputWallPaper();
-        tL_inputWallPaper.id = c6Var.l;
-        tL_inputWallPaper.access_hash = c6Var.m;
+        tL_inputWallPaper.id = d6Var.l;
+        tL_inputWallPaper.access_hash = d6Var.m;
         return tL_inputWallPaper;
     }
 
@@ -2099,9 +2099,9 @@ public final class qp extends c1 implements ls {
     }
 
     public final void A() {
-        org.telegram.ui.ActionBar.c6 c6Var = this.R2;
-        if (c6Var != null) {
-            if (c6Var.s != null) {
+        org.telegram.ui.ActionBar.d6 d6Var = this.R2;
+        if (d6Var != null) {
+            if (d6Var.s != null) {
                 for (int i7 = 0; i7 < this.R2.s.size(); i7++) {
                     ConnectionsManager.getInstance(this.currentAccount).cancelRequest(((Integer) this.R2.s.get(i7)).intValue(), true);
                 }
@@ -2168,17 +2168,17 @@ public final class qp extends c1 implements ls {
             int i11 = this.currentAccount;
             long e10 = getUserConfig().e();
             if (e10 == 0) {
-                Object obj = org.telegram.ui.Wallet.q0.f;
+                Object obj = org.telegram.ui.Wallet.p0.f;
             } else {
-                synchronized (org.telegram.ui.Wallet.q0.f) {
+                synchronized (org.telegram.ui.Wallet.p0.f) {
                     try {
-                        ArrayList n10 = org.telegram.ui.Wallet.q0.n(context, e10);
+                        ArrayList n10 = org.telegram.ui.Wallet.p0.n(context, e10);
                         int size = n10.size();
                         int i12 = 0;
                         while (i12 < size) {
                             Object obj2 = n10.get(i12);
                             i12++;
-                            new org.telegram.ui.Wallet.q0(i11, context, (String) obj2).B();
+                            new org.telegram.ui.Wallet.p0(i11, context, (String) obj2).B();
                         }
                     } catch (Throwable th2) {
                         throw th2;
@@ -2195,7 +2195,7 @@ public final class qp extends c1 implements ls {
                         unregisterdevice.other_uids.add(Long.valueOf(i14.e()));
                     }
                 }
-                getConnectionsManager().sendRequest(unregisterdevice, new di.u5(13));
+                getConnectionsManager().sendRequest(unregisterdevice, new di.v5(13));
             }
             getConnectionsManager().sendRequest(new TLRPC.TL_auth_logOut(), new rj(this, 20));
         } else {
@@ -2296,7 +2296,7 @@ public final class qp extends c1 implements ls {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    public final void B(long j3, TLRPC.TL_inputChatPhoto tL_inputChatPhoto, TLRPC.InputFile inputFile, TLRPC.InputFile inputFile2, TLRPC.VideoSize videoSize, double d, String str, TLRPC.FileLocation fileLocation, TLRPC.FileLocation fileLocation2, org.telegram.ui.hz hzVar) {
+    public final void B(long j3, TLRPC.TL_inputChatPhoto tL_inputChatPhoto, TLRPC.InputFile inputFile, TLRPC.InputFile inputFile2, TLRPC.VideoSize videoSize, double d, String str, TLRPC.FileLocation fileLocation, TLRPC.FileLocation fileLocation2, org.telegram.ui.jz jzVar) {
         TLRPC.InputChatPhoto inputChatPhoto;
         TLRPC.TL_messages_editChatPhoto tL_messages_editChatPhoto;
         if (tL_inputChatPhoto != null) {
@@ -2332,7 +2332,7 @@ public final class qp extends c1 implements ls {
             tL_messages_editChatPhoto2.photo = inputChatPhoto;
             tL_messages_editChatPhoto = tL_messages_editChatPhoto2;
         }
-        getConnectionsManager().sendRequest(tL_messages_editChatPhoto, new mm(this, tL_inputChatPhoto, fileLocation, fileLocation2, str, j3, hzVar), 64);
+        getConnectionsManager().sendRequest(tL_messages_editChatPhoto, new mm(this, tL_inputChatPhoto, fileLocation, fileLocation2, str, j3, jzVar), 64);
     }
 
     public final void B0(long j3, boolean z9) {
@@ -2771,7 +2771,7 @@ public final class qp extends c1 implements ls {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    public final boolean E(Bundle bundle, final org.telegram.ui.ActionBar.f2 f2Var, ij ijVar, org.telegram.ui.hi hiVar) {
+    public final boolean E(Bundle bundle, final org.telegram.ui.ActionBar.f2 f2Var, ij ijVar, org.telegram.ui.ji jiVar) {
         TLRPC.User user;
         TLRPC.Chat chat;
         org.telegram.ui.ActionBar.u1 u1Var;
@@ -2801,19 +2801,19 @@ public final class qp extends c1 implements ls {
             return false;
         }
         if (i7 == 0 || ijVar == null || chat == null || chat.access_hash != 0) {
-            if (i7 == 0 || ijVar == null || hiVar == null) {
+            if (i7 == 0 || ijVar == null || jiVar == null) {
                 return true;
             }
-            hiVar.d();
-            hiVar.b = s0(-j10, i7, new h6.m(hiVar, f2Var, bundle, 21));
+            jiVar.d();
+            jiVar.b = s0(-j10, i7, new h6.m(jiVar, f2Var, bundle, 21));
             return false;
         }
         long B0 = ij.B0(ijVar.k);
         if (m5.C(B0)) {
             return true;
         }
-        if (hiVar != null) {
-            hiVar.d();
+        if (jiVar != null) {
+            jiVar.d();
             u1Var = null;
         } else {
             u1Var = new org.telegram.ui.ActionBar.u1(3, f2Var.getParentActivity(), null);
@@ -2823,19 +2823,19 @@ public final class qp extends c1 implements ls {
         }
         if (B0 > 0 || !t3.T(chat)) {
             TLRPC.TL_messages_getMessages tL_messages_getMessages2 = new TLRPC.TL_messages_getMessages();
-            tL_messages_getMessages2.id.add(Integer.valueOf(ijVar.f1()));
+            tL_messages_getMessages2.id.add(Integer.valueOf(ijVar.e1()));
             tL_messages_getMessages = tL_messages_getMessages2;
         } else {
             TLRPC.Chat M0 = M0(Long.valueOf(-B0));
             TLRPC.TL_channels_getMessages tL_channels_getMessages = new TLRPC.TL_channels_getMessages();
             tL_channels_getMessages.channel = i1(M0);
-            tL_channels_getMessages.id.add(Integer.valueOf(ijVar.f1()));
+            tL_channels_getMessages.id.add(Integer.valueOf(ijVar.e1()));
             tL_messages_getMessages = tL_channels_getMessages;
         }
-        final int sendRequest = getConnectionsManager().sendRequest(tL_messages_getMessages, new eo(this, u1Var, hiVar, f2Var, bundle, 1));
+        final int sendRequest = getConnectionsManager().sendRequest(tL_messages_getMessages, new eo(this, u1Var, jiVar, f2Var, bundle, 1));
         if (u1Var == null) {
-            hiVar.b = new l7(this, sendRequest, f2Var, 15);
-            hiVar.d();
+            jiVar.b = new l7(this, sendRequest, f2Var, 15);
+            jiVar.d();
             return false;
         }
         u1Var.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.messenger.ko
@@ -3053,7 +3053,7 @@ public final class qp extends c1 implements ls {
         }
         TL_account.setContentSettings setcontentsettings = new TL_account.setContentSettings();
         setcontentsettings.sensitive_enabled = z9;
-        getConnectionsManager().sendRequest(setcontentsettings, new di.u5(12));
+        getConnectionsManager().sendRequest(setcontentsettings, new di.v5(12));
     }
 
     public final void G(long j3, boolean z9) {
@@ -3125,10 +3125,10 @@ public final class qp extends c1 implements ls {
         if (message == null || m5.o(message.peer_id) != getUserConfig().e() || (tL_messageReactions = message.reactions) == null || !tL_messageReactions.reactions_as_tags || tL_messageReactions.results == null) {
             return false;
         }
-        long R1 = ij.R1(getUserConfig().e(), message);
+        long Q1 = ij.Q1(getUserConfig().e(), message);
         boolean z9 = false;
         for (int i7 = 0; i7 < message.reactions.results.size(); i7++) {
-            if (s5(R1, ch.o0.d(message.reactions.results.get(i7).reaction), false)) {
+            if (s5(Q1, ch.o0.d(message.reactions.results.get(i7).reaction), false)) {
                 z9 = true;
             }
         }
@@ -3316,7 +3316,7 @@ public final class qp extends c1 implements ls {
         boolean z9 = false;
         for (int i7 = 0; i7 < tL_channels_channelParticipants.participants.size(); i7++) {
             TLRPC.ChannelParticipant channelParticipant = tL_channels_channelParticipants.participants.get(i7);
-            hVar.k(channelParticipant, ij.C1(channelParticipant.peer));
+            hVar.k(channelParticipant, ij.B1(channelParticipant.peer));
         }
         yr messagesStorage = getMessagesStorage();
         messagesStorage.a.c(new a4(messagesStorage, j3, hVar, 24));
@@ -4136,7 +4136,7 @@ public final class qp extends c1 implements ls {
                      */
                     /* JADX WARN: Code restructure failed: missing block: B:191:0x023f, code lost:
                     
-                        r9.remove(r7.f1());
+                        r9.remove(r7.e1());
                      */
                     /* JADX WARN: Code restructure failed: missing block: B:192:0x0246, code lost:
                     
@@ -4200,7 +4200,7 @@ public final class qp extends c1 implements ls {
                      */
                     /* JADX WARN: Code restructure failed: missing block: B:213:0x028c, code lost:
                     
-                        if (r13.f1() != r7.f1()) goto L361;
+                        if (r13.e1() != r7.e1()) goto L361;
                      */
                     /* JADX WARN: Code restructure failed: missing block: B:215:0x028e, code lost:
                     
@@ -4208,7 +4208,7 @@ public final class qp extends c1 implements ls {
                      */
                     /* JADX WARN: Code restructure failed: missing block: B:216:0x029c, code lost:
                     
-                        r9.put(r7.f1(), r7);
+                        r9.put(r7.e1(), r7);
                         r13 = r7.k.random_id;
                      */
                     /* JADX WARN: Code restructure failed: missing block: B:217:0x02a9, code lost:
@@ -4396,7 +4396,7 @@ public final class qp extends c1 implements ls {
                                                 arrayList19 = arrayList20;
                                                 i57 = i70;
                                                 if (ijVar4.k.peer_id.channel_id == 0) {
-                                                    sparseArray6.put(ijVar4.f1(), ijVar4);
+                                                    sparseArray6.put(ijVar4.e1(), ijVar4);
                                                     long j27 = ijVar4.k.random_id;
                                                     if (j27 != 0) {
                                                         hVar22 = hVar26;
@@ -4468,7 +4468,7 @@ public final class qp extends c1 implements ls {
                                             ij ijVar5 = (ij) arrayList24.get(i72);
                                             if (ijVar5 != null) {
                                                 if (ijVar5.k.peer_id.channel_id == 0) {
-                                                    sparseArray6.remove(ijVar5.f1());
+                                                    sparseArray6.remove(ijVar5.e1());
                                                 }
                                                 long j28 = ijVar5.k.random_id;
                                                 if (j28 != 0) {
@@ -4489,7 +4489,7 @@ public final class qp extends c1 implements ls {
                                                     ij ijVar7 = (ij) arrayList24.get(i74);
                                                     if (ijVar7 != null) {
                                                         i56 = i73;
-                                                        if (ijVar7.f1() == ijVar6.f1()) {
+                                                        if (ijVar7.e1() == ijVar6.e1()) {
                                                             ijVar6.Z = ijVar7.Z;
                                                             break;
                                                         }
@@ -4500,7 +4500,7 @@ public final class qp extends c1 implements ls {
                                                     i73 = i56;
                                                 }
                                                 i56 = i73;
-                                                sparseArray6.put(ijVar6.f1(), ijVar6);
+                                                sparseArray6.put(ijVar6.e1(), ijVar6);
                                                 long j29 = ijVar6.k.random_id;
                                                 if (j29 != 0) {
                                                     hVar21.k(ijVar6, j29);
@@ -4747,7 +4747,7 @@ public final class qp extends c1 implements ls {
         chatParticipant = null;
         boolean z9 = chatParticipant != null;
         TLRPC.ChatParticipants chatParticipants2 = N0.participants;
-        dpVar.a(z9, (chatParticipants2 == null || chatParticipants2.admin_id != user.id) ? null : org.telegram.ui.kp.t0(true), null);
+        dpVar.a(z9, (chatParticipants2 == null || chatParticipants2.admin_id != user.id) ? null : org.telegram.ui.mp.t0(true), null);
     }
 
     public final void K0(TLRPC.Chat chat, TLRPC.User user, c20 c20Var) {
@@ -5252,28 +5252,28 @@ public final class qp extends c1 implements ls {
                         if (z9) {
                             if (message5.legacy && message5.layer < 233) {
                                 arrayList3.add(Integer.valueOf(message5.id));
-                            } else if ((ij.o1(message5) instanceof TLRPC.TL_messageMediaUnsupported) && ij.o1(message5).bytes != null) {
-                                if (ij.o1(message5).bytes.length != 0 && (ij.o1(message5).bytes.length != 1 || ij.o1(message5).bytes[i26] >= 233)) {
-                                    if (ij.o1(message5).bytes.length == 4) {
-                                        byte[] bArr = ij.o1(message5).bytes;
+                            } else if ((ij.n1(message5) instanceof TLRPC.TL_messageMediaUnsupported) && ij.n1(message5).bytes != null) {
+                                if (ij.n1(message5).bytes.length != 0 && (ij.n1(message5).bytes.length != 1 || ij.n1(message5).bytes[i26] >= 233)) {
+                                    if (ij.n1(message5).bytes.length == 4) {
+                                        byte[] bArr = ij.n1(message5).bytes;
                                         Pattern pattern = Utilities.a;
                                     }
                                 }
-                                if (!ij.d3(message5)) {
+                                if (!ij.c3(message5)) {
                                     arrayList3.add(Integer.valueOf(message5.id));
                                 }
                             }
-                            if (ij.o1(message5) instanceof TLRPC.TL_messageMediaWebPage) {
-                                if (!(ij.o1(message5).webpage instanceof TLRPC.TL_webPagePending) || ij.o1(message5).webpage.date > qpVar3.getConnectionsManager().getCurrentTime()) {
-                                    if (ij.o1(message5).webpage instanceof TLRPC.TL_webPageUrlPending) {
-                                        ArrayList arrayList4 = (ArrayList) hashMap.get(ij.o1(message5).webpage.url);
+                            if (ij.n1(message5) instanceof TLRPC.TL_messageMediaWebPage) {
+                                if (!(ij.n1(message5).webpage instanceof TLRPC.TL_webPagePending) || ij.n1(message5).webpage.date > qpVar3.getConnectionsManager().getCurrentTime()) {
+                                    if (ij.n1(message5).webpage instanceof TLRPC.TL_webPageUrlPending) {
+                                        ArrayList arrayList4 = (ArrayList) hashMap.get(ij.n1(message5).webpage.url);
                                         if (arrayList4 == null) {
                                             arrayList4 = new ArrayList();
-                                            hashMap.put(ij.o1(message5).webpage.url, arrayList4);
+                                            hashMap.put(ij.n1(message5).webpage.url, arrayList4);
                                         }
                                         arrayList4.add(ijVar);
                                     }
-                                } else if (!ij.d3(message5)) {
+                                } else if (!ij.c3(message5)) {
                                     arrayList3.add(Integer.valueOf(message5.id));
                                 }
                             }
@@ -5305,14 +5305,14 @@ public final class qp extends c1 implements ls {
                             Collections.sort(arrayList2, new jl(2));
                             for (int i39 = 0; i39 < arrayList2.size(); i39++) {
                                 ij ijVar2 = (ij) arrayList2.get(i39);
-                                if (ijVar2.f4()) {
+                                if (ijVar2.e4()) {
                                     int i40 = ijVar2.k.reply_to.reply_to_msg_id;
                                     int i41 = 0;
                                     while (true) {
                                         if (i41 >= arrayList2.size()) {
                                             break;
                                         }
-                                        if (i39 == i41 || arrayList2.get(i41) == ijVar2 || ((ij) arrayList2.get(i41)).f1() != i40) {
+                                        if (i39 == i41 || arrayList2.get(i41) == ijVar2 || ((ij) arrayList2.get(i41)).e1() != i40) {
                                             i41++;
                                         } else {
                                             ijVar2.C = (ij) arrayList2.get(i41);
@@ -8066,20 +8066,20 @@ public final class qp extends c1 implements ls {
         return toVar2;
     }
 
-    public final di.y6 P1() {
-        di.y6 y6Var = this.h0;
-        if (y6Var != null) {
-            return y6Var;
+    public final di.z6 P1() {
+        di.z6 z6Var = this.h0;
+        if (z6Var != null) {
+            return z6Var;
         }
         synchronized (F8[this.currentAccount]) {
             try {
-                di.y6 y6Var2 = this.h0;
-                if (y6Var2 != null) {
-                    return y6Var2;
+                di.z6 z6Var2 = this.h0;
+                if (z6Var2 != null) {
+                    return z6Var2;
                 }
-                di.y6 y6Var3 = new di.y6(this.currentAccount);
-                this.h0 = y6Var3;
-                return y6Var3;
+                di.z6 z6Var3 = new di.z6(this.currentAccount);
+                this.h0 = z6Var3;
+                return z6Var3;
             } catch (Throwable th2) {
                 throw th2;
             }
@@ -8472,17 +8472,17 @@ public final class qp extends c1 implements ls {
                                                 if (a26 == null || !x1(qpVar.currentAccount).getBoolean("EnableReactionsPreview", true)) {
                                                     z18 = false;
                                                     c12 = 2;
-                                                    message.message = id.Z(2131746524, new Object[0]);
+                                                    message.message = id.Z(2131746523, new Object[0]);
                                                 } else {
                                                     ch.o0 a10 = ch.o0.d(tL_updateNewStoryReaction.reaction).a();
                                                     if (a10.f != null) {
                                                         c12 = 2;
-                                                        message.message = id.Z(2131746525, t10.i(a26), a10.f);
+                                                        message.message = id.Z(2131746524, t10.i(a26), a10.f);
                                                         z18 = false;
                                                     } else {
                                                         z18 = false;
                                                         c12 = 2;
-                                                        message.message = id.Z(2131746524, new Object[0]);
+                                                        message.message = id.Z(2131746523, new Object[0]);
                                                     }
                                                 }
                                                 ArrayList arrayList23 = new ArrayList();
@@ -8491,7 +8491,7 @@ public final class qp extends c1 implements ls {
                                                 ijVar2.J = true;
                                                 ijVar2.a = 1;
                                                 if (a26 == null || t10.x(a26)) {
-                                                    ijVar2.c = id.L0(2131746523);
+                                                    ijVar2.c = id.L0(2131746522);
                                                 } else {
                                                     ijVar2.c = t10.i(a26);
                                                 }
@@ -8763,7 +8763,7 @@ public final class qp extends c1 implements ls {
                                                                 }
                                                             } else if (update instanceof TL_update.TL_updateBotCommands) {
                                                                 TL_update.TL_updateBotCommands tL_updateBotCommands = (TL_update.TL_updateBotCommands) update;
-                                                                qpVar.getMediaDataController().j2(ij.C1(tL_updateBotCommands.peer), tL_updateBotCommands);
+                                                                qpVar.getMediaDataController().j2(ij.B1(tL_updateBotCommands.peer), tL_updateBotCommands);
                                                             } else if (update instanceof TL_update.TL_updateStickerSets) {
                                                                 qpVar.getMediaDataController().a1(0, false, true);
                                                             } else if (update instanceof TL_update.TL_updateStickerSetsOrder) {
@@ -8779,13 +8779,13 @@ public final class qp extends c1 implements ls {
                                                                     qpVar.I1(0L, true);
                                                                 } else {
                                                                     if (update instanceof TL_update.TL_updateSentWalletTransaction) {
-                                                                        org.telegram.ui.Wallet.m0.x(qpVar.currentAccount).O((TL_update.TL_updateSentWalletTransaction) update);
+                                                                        org.telegram.ui.Wallet.l0.x(qpVar.currentAccount).O((TL_update.TL_updateSentWalletTransaction) update);
                                                                     } else if (update instanceof TL_update.TL_updateWalletGaslessInfo) {
-                                                                        org.telegram.ui.Wallet.m0.x(qpVar.currentAccount).P((TL_update.TL_updateWalletGaslessInfo) update);
+                                                                        org.telegram.ui.Wallet.l0.x(qpVar.currentAccount).P((TL_update.TL_updateWalletGaslessInfo) update);
                                                                     } else if (update instanceof TL_update.TL_updateWalletState) {
-                                                                        org.telegram.ui.Wallet.m0.x(qpVar.currentAccount).Q((TL_update.TL_updateWalletState) update);
+                                                                        org.telegram.ui.Wallet.l0.x(qpVar.currentAccount).Q((TL_update.TL_updateWalletState) update);
                                                                     } else if (update instanceof TL_update.TL_updateWalletTonConnectSession) {
-                                                                        org.telegram.ui.Wallet.m0.x(qpVar.currentAccount).g.p(((TL_update.TL_updateWalletTonConnectSession) update).session);
+                                                                        org.telegram.ui.Wallet.l0.x(qpVar.currentAccount).g.p(((TL_update.TL_updateWalletTonConnectSession) update).session);
                                                                     } else {
                                                                         if (update instanceof TL_update.TL_updateFavedStickers) {
                                                                             qpVar.getMediaDataController().V0(2, false, false, true);
@@ -9032,20 +9032,20 @@ public final class qp extends c1 implements ls {
                                                                                         qpVar.getNotificationCenter().k(qs.i1, update);
                                                                                     } else if (update instanceof TL_update.TL_updateMessageReactions) {
                                                                                         TL_update.TL_updateMessageReactions tL_updateMessageReactions = (TL_update.TL_updateMessageReactions) update;
-                                                                                        long C1 = ij.C1(tL_updateMessageReactions.peer);
-                                                                                        long D = bi.ea.w(qpVar.currentAccount).D(tL_updateMessageReactions.msg_id, C1);
+                                                                                        long B1 = ij.B1(tL_updateMessageReactions.peer);
+                                                                                        long D = bi.ea.w(qpVar.currentAccount).D(tL_updateMessageReactions.msg_id, B1);
                                                                                         if (D != 0) {
-                                                                                            j15 = C1;
-                                                                                            ij.g(qpVar.currentAccount, tL_updateMessageReactions.reactions, (int) D, bi.ea.w(qpVar.currentAccount).A(bi.x9.a(tL_updateMessageReactions.msg_id, C1), tL_updateMessageReactions.reactions), true);
+                                                                                            j15 = B1;
+                                                                                            ij.g(qpVar.currentAccount, tL_updateMessageReactions.reactions, (int) D, bi.ea.w(qpVar.currentAccount).A(bi.x9.a(tL_updateMessageReactions.msg_id, B1), tL_updateMessageReactions.reactions), true);
                                                                                         } else {
-                                                                                            j15 = C1;
+                                                                                            j15 = B1;
                                                                                         }
                                                                                         qpVar.getNotificationCenter().k(qs.o1, Long.valueOf(j15), Integer.valueOf(tL_updateMessageReactions.msg_id), tL_updateMessageReactions.reactions);
                                                                                     } else if (update instanceof TL_update.TL_updateMessageExtendedMedia) {
                                                                                         TL_update.TL_updateMessageExtendedMedia tL_updateMessageExtendedMedia = (TL_update.TL_updateMessageExtendedMedia) update;
                                                                                         qpVar.getNotificationCenter().k(qs.p1, Long.valueOf(m5.o(tL_updateMessageExtendedMedia.peer)), Integer.valueOf(tL_updateMessageExtendedMedia.msg_id), tL_updateMessageExtendedMedia.extended_media);
                                                                                     } else if (update instanceof TL_update.TL_updateTheme) {
-                                                                                        org.telegram.ui.ActionBar.k6.I1(null, null, (TLRPC.TL_theme) ((TL_update.TL_updateTheme) update).theme, qpVar.currentAccount, true);
+                                                                                        org.telegram.ui.ActionBar.l6.I1(null, null, (TLRPC.TL_theme) ((TL_update.TL_updateTheme) update).theme, qpVar.currentAccount, true);
                                                                                     } else if (update instanceof TL_update.TL_updateDialogFilter) {
                                                                                         qpVar.c3(true, null);
                                                                                     } else if (update instanceof TL_update.TL_updateDialogFilterOrder) {
@@ -9092,9 +9092,9 @@ public final class qp extends c1 implements ls {
                                                                                                     } else {
                                                                                                         if (update instanceof TL_update.TL_updatePeerHistoryTTL) {
                                                                                                             TL_update.TL_updatePeerHistoryTTL tL_updatePeerHistoryTTL = (TL_update.TL_updatePeerHistoryTTL) update;
-                                                                                                            long C12 = ij.C1(tL_updatePeerHistoryTTL.peer);
-                                                                                                            if (C12 > 0) {
-                                                                                                                TLRPC.UserFull b22 = qpVar.b2(C12);
+                                                                                                            long B12 = ij.B1(tL_updatePeerHistoryTTL.peer);
+                                                                                                            if (B12 > 0) {
+                                                                                                                TLRPC.UserFull b22 = qpVar.b2(B12);
                                                                                                                 if (b22 != null) {
                                                                                                                     int i67 = tL_updatePeerHistoryTTL.ttl_period;
                                                                                                                     b22.ttl_period = i67;
@@ -9109,7 +9109,7 @@ public final class qp extends c1 implements ls {
                                                                                                                 N0 = null;
                                                                                                             } else {
                                                                                                                 i23 = i28;
-                                                                                                                N0 = qpVar.N0(-C12);
+                                                                                                                N0 = qpVar.N0(-B12);
                                                                                                                 if (N0 != null) {
                                                                                                                     int i68 = tL_updatePeerHistoryTTL.ttl_period;
                                                                                                                     N0.ttl_period = i68;
@@ -9130,12 +9130,12 @@ public final class qp extends c1 implements ls {
                                                                                                             if (N0 != null) {
                                                                                                                 qs notificationCenter = qpVar.getNotificationCenter();
                                                                                                                 int i69 = qs.T;
-                                                                                                                j14 = C12;
+                                                                                                                j14 = B12;
                                                                                                                 Boolean bool4 = Boolean.FALSE;
                                                                                                                 notificationCenter.k(i69, N0, 0, bool4, bool4);
                                                                                                                 qpVar.getMessagesStorage().N1(N0, false);
                                                                                                             } else {
-                                                                                                                j14 = C12;
+                                                                                                                j14 = B12;
                                                                                                                 if (userFull != null) {
                                                                                                                     i30 = i22;
                                                                                                                     qpVar.getNotificationCenter().k(i30, Long.valueOf(j14), userFull);
@@ -9179,7 +9179,7 @@ public final class qp extends c1 implements ls {
                                                                                                                         sb2.append(" text=");
                                                                                                                         org.telegram.ui.Cells.f1.u(tL_updateTranscribedAudio.text, sb2);
                                                                                                                     }
-                                                                                                                    if (!(tL_updateTranscribedAudio.pending && TextUtils.isEmpty(tL_updateTranscribedAudio.text)) && (tL_updateTranscribedAudio.pending || !s11.f(null, tL_updateTranscribedAudio.transcription_id, tL_updateTranscribedAudio.text))) {
+                                                                                                                    if (!(tL_updateTranscribedAudio.pending && TextUtils.isEmpty(tL_updateTranscribedAudio.text)) && (tL_updateTranscribedAudio.pending || !t11.f(null, tL_updateTranscribedAudio.transcription_id, tL_updateTranscribedAudio.text))) {
                                                                                                                         qpVar.getMessagesStorage().b2(tL_updateTranscribedAudio.msg_id, m5.o(tL_updateTranscribedAudio.peer), tL_updateTranscribedAudio.transcription_id, tL_updateTranscribedAudio.text, !tL_updateTranscribedAudio.pending);
                                                                                                                         c11 = 2;
                                                                                                                         qpVar.getNotificationCenter().k(qs.A1, null, Long.valueOf(tL_updateTranscribedAudio.transcription_id), tL_updateTranscribedAudio.text, null, Boolean.valueOf(!tL_updateTranscribedAudio.pending));
@@ -9482,9 +9482,9 @@ public final class qp extends c1 implements ls {
                 Object obj = arrayList3.get(i70);
                 i70++;
                 TLRPC.Message message2 = (TLRPC.Message) obj;
-                long C13 = ij.C1(message2.peer_id);
-                long C14 = ij.C1(message2.from_id);
-                TLRPC.UserFull b23 = qpVar.b2(C13);
+                long B13 = ij.B1(message2.peer_id);
+                long B14 = ij.B1(message2.from_id);
+                TLRPC.UserFull b23 = qpVar.b2(B13);
                 if (b23 != null) {
                     TLRPC.MessageAction messageAction = message2.action;
                     if (messageAction instanceof TLRPC.TL_messageActionNoForwardsToggle) {
@@ -9492,7 +9492,7 @@ public final class qp extends c1 implements ls {
                             b23.noforwards_peer_enabled = false;
                             b23.noforwards_my_enabled = false;
                             z14 = true;
-                        } else if (C14 == C13) {
+                        } else if (B14 == B13) {
                             z14 = true;
                             b23.noforwards_peer_enabled = true;
                         } else {
@@ -9502,7 +9502,7 @@ public final class qp extends c1 implements ls {
                         qs notificationCenter2 = qpVar.getNotificationCenter();
                         boolean z31 = z14;
                         Object[] objArr = new Object[2];
-                        objArr[0] = Long.valueOf(C13);
+                        objArr[0] = Long.valueOf(B13);
                         objArr[z31 ? 1 : 0] = b23;
                         notificationCenter2.k(i12, objArr);
                         qpVar.getMessagesStorage().j2(b23, false);
@@ -9650,7 +9650,7 @@ public final class qp extends c1 implements ls {
                                 if (sparseBooleanArray2 == null) {
                                     sparseBooleanArray2 = new SparseBooleanArray();
                                 }
-                                int f12 = ijVar3.f1();
+                                int e12 = ijVar3.e1();
                                 i19 = m14;
                                 TLRPC.Message message3 = ijVar3.k;
                                 if (message3 != null && (tL_messageReactions = message3.reactions) != null) {
@@ -9662,7 +9662,7 @@ public final class qp extends c1 implements ls {
                                     }
                                 }
                                 z13 = false;
-                                sparseBooleanArray2.put(f12, z13);
+                                sparseBooleanArray2.put(e12, z13);
                                 TLRPC.Message message4 = ijVar3.k;
                                 if ((message4 instanceof TLRPC.TL_messageService) && (message4.action instanceof TLRPC.TL_messageActionConferenceCall) && VoIPService.getSharedInstance() != null) {
                                     VoIPService.getSharedInstance().processMessageUpdate(ijVar3);
@@ -9693,13 +9693,13 @@ public final class qp extends c1 implements ls {
                                 while (i87 < size8) {
                                     ij ijVar5 = (ij) arrayList28.get(i87);
                                     j11 = j10;
-                                    if (ijVar4.f1() == ijVar5.f1()) {
+                                    if (ijVar4.e1() == ijVar5.e1()) {
                                         arrayList29.set(i86, ijVar5);
                                         TLRPC.Peer peer10 = ijVar5.k.peer_id;
                                         if (peer10 != null && peer10.channel_id == j3) {
-                                            qpVar.U.put(ijVar5.f1(), ijVar5);
+                                            qpVar.U.put(ijVar5.e1(), ijVar5);
                                         }
-                                    } else if (ijVar4.A0() == ijVar5.A0() && (ijVar4.k.action instanceof TLRPC.TL_messageActionPinMessage) && (ijVar = ijVar4.C) != null && ijVar.f1() == ijVar5.f1()) {
+                                    } else if (ijVar4.A0() == ijVar5.A0() && (ijVar4.k.action instanceof TLRPC.TL_messageActionPinMessage) && (ijVar = ijVar4.C) != null && ijVar.e1() == ijVar5.e1()) {
                                         ijVar4.C = ijVar5;
                                         ijVar4.q0(null, null);
                                     } else {
@@ -10159,61 +10159,61 @@ public final class qp extends c1 implements ls {
         getColorPalette().a();
         this.s7.i();
         G1().a();
-        org.telegram.ui.Wallet.m0 m0Var = org.telegram.ui.Wallet.m0.O[this.currentAccount];
-        if (m0Var != null) {
-            org.telegram.ui.Wallet.q0.z(m0Var.J);
-            m0Var.G.clear();
-            m0Var.N.clear();
-            WalletEngine2 walletEngine2 = m0Var.b;
+        org.telegram.ui.Wallet.l0 l0Var = org.telegram.ui.Wallet.l0.O[this.currentAccount];
+        if (l0Var != null) {
+            org.telegram.ui.Wallet.p0.z(l0Var.J);
+            l0Var.G.clear();
+            l0Var.N.clear();
+            WalletEngine2 walletEngine2 = l0Var.b;
             if (walletEngine2 != null) {
                 walletEngine2.close();
-                m0Var.b = null;
-                m0Var.d = null;
+                l0Var.b = null;
+                l0Var.d = null;
             }
-            org.telegram.ui.Wallet.e0 e0Var = m0Var.o;
-            if (e0Var != null) {
-                e0Var.c();
+            org.telegram.ui.Wallet.d0 d0Var = l0Var.o;
+            if (d0Var != null) {
+                d0Var.c();
             }
-            int i12 = m0Var.a;
-            if (m0Var.A >= 0) {
-                ConnectionsManager.getInstance(i12).cancelRequest(m0Var.A, true);
-                m0Var.A = -1;
+            int i12 = l0Var.a;
+            if (l0Var.A >= 0) {
+                ConnectionsManager.getInstance(i12).cancelRequest(l0Var.A, true);
+                l0Var.A = -1;
             }
-            if (m0Var.B >= 0) {
-                ConnectionsManager.getInstance(i12).cancelRequest(m0Var.B, true);
-                m0Var.B = -1;
+            if (l0Var.B >= 0) {
+                ConnectionsManager.getInstance(i12).cancelRequest(l0Var.B, true);
+                l0Var.B = -1;
             }
-            if (m0Var.C >= 0) {
-                ConnectionsManager.getInstance(i12).cancelRequest(m0Var.C, true);
-                m0Var.C = -1;
+            if (l0Var.C >= 0) {
+                ConnectionsManager.getInstance(i12).cancelRequest(l0Var.C, true);
+                l0Var.C = -1;
             }
-            m0Var.f0();
-            m0Var.E.clear();
-            org.telegram.ui.Wallet.z0 z0Var = m0Var.s;
-            if (z0Var != null) {
-                z0Var.h();
-                m0Var.s = null;
+            l0Var.f0();
+            l0Var.E.clear();
+            org.telegram.ui.Wallet.y0 y0Var = l0Var.s;
+            if (y0Var != null) {
+                y0Var.h();
+                l0Var.s = null;
             }
-            g0.r(m0Var.F);
-            synchronized (org.telegram.ui.Wallet.m0.class) {
+            g0.r(l0Var.F);
+            synchronized (org.telegram.ui.Wallet.l0.class) {
                 try {
-                    if (org.telegram.ui.Wallet.m0.O[m0Var.a] == m0Var) {
-                        org.telegram.ui.Wallet.m0.O[m0Var.a] = null;
+                    if (org.telegram.ui.Wallet.l0.O[l0Var.a] == l0Var) {
+                        org.telegram.ui.Wallet.l0.O[l0Var.a] = null;
                     }
                 } finally {
                 }
             }
         }
-        di.y6 y6Var = this.h0;
-        if (y6Var != null) {
-            y6Var.q();
+        di.z6 z6Var = this.h0;
+        if (z6Var != null) {
+            z6Var.q();
         }
         m10 m10Var = this.j0;
         if (m10Var != null) {
             m10Var.a();
         }
         this.J3 = false;
-        org.telegram.ui.ww.y4[this.currentAccount] = false;
+        org.telegram.ui.yw.z4[this.currentAccount] = false;
         this.d7.edit().clear().commit();
         this.f7.edit().putLong("lastGifLoadTime", 0L).putLong("lastStickersLoadTime", 0L).putLong("lastStickersLoadTimeMask", 0L).putLong("lastStickersLoadTimeFavs", 0L).commit();
         k5.d(this.e7.edit().remove("archivehint").remove("proximityhint").remove("archivehint_l").remove("gifhint"), "reminderhint", "soundHint", "dcDomainName2", "webFileDatacenterId").remove("themehint").remove("showFiltersTooltip").remove("transcribeButtonPressed").commit();
@@ -10708,7 +10708,7 @@ public final class qp extends c1 implements ls {
             tL_messages_readDiscussion.msg_id = (int) ipVar.b;
             tL_messages_readDiscussion.peer = j1(ipVar.a);
             tL_messages_readDiscussion.read_max_id = ipVar.d;
-            getConnectionsManager().sendRequest(tL_messages_readDiscussion, new di.u5(13));
+            getConnectionsManager().sendRequest(tL_messages_readDiscussion, new di.v5(13));
             return;
         }
         if (m5.C(ipVar.a)) {
@@ -10723,7 +10723,7 @@ public final class qp extends c1 implements ls {
             tL_inputEncryptedChat.chat_id = a12.id;
             tL_inputEncryptedChat.access_hash = a12.access_hash;
             tL_messages_readEncryptedHistory.max_date = ipVar.e;
-            getConnectionsManager().sendRequest(tL_messages_readEncryptedHistory, new di.u5(13));
+            getConnectionsManager().sendRequest(tL_messages_readEncryptedHistory, new di.v5(13));
             return;
         }
         TLRPC.InputPeer j12 = j1(ipVar.a);
@@ -10847,11 +10847,11 @@ public final class qp extends c1 implements ls {
         return set == null || set.contains("sensitive");
     }
 
-    public final void T(Context context, long j3, org.telegram.ui.ActionBar.f2 f2Var, tr trVar, org.telegram.ui.qf qfVar) {
+    public final void T(Context context, long j3, org.telegram.ui.ActionBar.f2 f2Var, tr trVar, org.telegram.ui.rf rfVar) {
         TLRPC.TL_messages_migrateChat tL_messages_migrateChat = new TLRPC.TL_messages_migrateChat();
         tL_messages_migrateChat.chat_id = j3;
         org.telegram.ui.ActionBar.u1 u1Var = context != null ? new org.telegram.ui.ActionBar.u1(3, context, null) : null;
-        int sendRequest = getConnectionsManager().sendRequest(tL_messages_migrateChat, new bi.x7(this, context, u1Var, trVar, j3, qfVar, f2Var, tL_messages_migrateChat));
+        int sendRequest = getConnectionsManager().sendRequest(tL_messages_migrateChat, new bi.x7(this, context, u1Var, trVar, j3, rfVar, f2Var, tL_messages_migrateChat));
         if (u1Var != null) {
             u1Var.setOnCancelListener(new gm(this, sendRequest, 0));
             try {
@@ -11018,7 +11018,7 @@ public final class qp extends c1 implements ls {
                     }
                 } else if (j12 > 0) {
                     TLRPC.User a22 = a2(Long.valueOf(j12));
-                    if (t3.u0(this.currentAccount, a22)) {
+                    if (t3.v0(this.currentAccount, a22)) {
                         long j14 = a22.linked_community_id;
                         longSparseIntArray3.put(j14, Math.max(longSparseIntArray3.get(j14), dialog4.last_message_date));
                         longSparseIntArray4.put(j14, V0(dialog4) + longSparseIntArray4.get(j14));
@@ -11256,7 +11256,7 @@ public final class qp extends c1 implements ls {
                                     arrayList7.add(dialog8);
                                     int i23 = this.currentAccount;
                                     long j22 = dialog8.id;
-                                    z11 = (j22 > j18 ? 1 : (j22 == j18 ? 0 : -1)) > 0 ? t3.u0(i23, s1(i23).a2(Long.valueOf(j22))) : t3.X(i23, s1(i23).M0(Long.valueOf(-j22))) ? false : true;
+                                    z11 = (j22 > j18 ? 1 : (j22 == j18 ? 0 : -1)) > 0 ? t3.v0(i23, s1(i23).a2(Long.valueOf(j22))) : t3.X(i23, s1(i23).M0(Long.valueOf(-j22))) ? false : true;
                                 }
                             }
                         } else {
@@ -11483,12 +11483,12 @@ public final class qp extends c1 implements ls {
                     if (arrayList != null) {
                         for (int i15 = 0; i15 < arrayList.size(); i15++) {
                             ij ijVar2 = (ij) arrayList.get(i15);
-                            if (ijVar2 != null && (ijVar == null || ijVar2.f1() > ijVar.f1())) {
+                            if (ijVar2 != null && (ijVar == null || ijVar2.e1() > ijVar.e1())) {
                                 ijVar = (ij) arrayList.get(i15);
                             }
                         }
                     }
-                    if (ijVar != null && ijVar.f1() > 0) {
+                    if (ijVar != null && ijVar.e1() > 0) {
                         TLRPC.Message message = ijVar.k;
                         tL_messages_getDialogs.offset_date = message.date;
                         tL_messages_getDialogs.offset_id = message.id;
@@ -11639,7 +11639,7 @@ public final class qp extends c1 implements ls {
                     TLRPC.TL_messages_chatFull tL_messages_chatFull = (TLRPC.TL_messages_chatFull) tLObject;
                     qpVar.getMessagesStorage().m1(tL_messages_chatFull.users, tL_messages_chatFull.chats, true, true);
                     qpVar.getMessagesStorage().N1(tL_messages_chatFull.full_chat, false);
-                    di.y6 P1 = qpVar.P1();
+                    di.z6 P1 = qpVar.P1();
                     TL_stories.PeerStories peerStories = tL_messages_chatFull.full_chat.stories;
                     long j12 = j10;
                     P1.p0(j12, peerStories);
@@ -12133,21 +12133,21 @@ public final class qp extends c1 implements ls {
                 z13 = true;
                 getNotificationCenter().k(qs.y1, Long.valueOf(j12), 0);
                 getNotificationsController().l(j12, 0L);
-                if (t60.C1 == this.currentAccount && (arrayList = t60.z1) != null && j12 <= 0) {
+                if (u60.C1 == this.currentAccount && (arrayList = u60.z1) != null && j12 <= 0) {
                     int size = arrayList.size();
                     int i21 = 0;
                     while (true) {
                         if (i21 >= size) {
                             break;
                         }
-                        if (ij.C1((TLRPC.Peer) t60.z1.get(i21)) == j12) {
-                            t60.z1.remove(i21);
+                        if (ij.B1((TLRPC.Peer) u60.z1.get(i21)) == j12) {
+                            u60.z1.remove(i21);
                             break;
                         }
                         i21++;
                     }
-                    if (t60.z1.isEmpty()) {
-                        t60.z1 = null;
+                    if (u60.z1.isEmpty()) {
+                        u60.z1 = null;
                     }
                 }
             } else {
@@ -12212,18 +12212,18 @@ public final class qp extends c1 implements ls {
                             }
                         }
                     } else {
-                        i17 = ((ij) arrayList3.get(0)).f1();
+                        i17 = ((ij) arrayList3.get(0)).e1();
                         int i24 = 0;
                         while (i24 < arrayList3.size()) {
                             ij ijVar2 = (ij) arrayList3.get(i24);
-                            if (ijVar2 != null && ijVar2.f1() > i17) {
-                                i17 = ijVar2.f1();
+                            if (ijVar2 != null && ijVar2.e1() > i17) {
+                                i17 = ijVar2.e1();
                             }
                             if (ijVar2 != null) {
                                 z17 = z15;
                                 arrayList2 = arrayList3;
                                 if (ijVar2.k.peer_id.channel_id == j11) {
-                                    sparseArray.remove(ijVar2.f1());
+                                    sparseArray.remove(ijVar2.e1());
                                 }
                             } else {
                                 z17 = z15;
@@ -13398,7 +13398,7 @@ public final class qp extends c1 implements ls {
         }
     }
 
-    public final void d5(long j3, int i7, boolean z9, fi.m9 m9Var) {
+    public final void d5(long j3, int i7, boolean z9, fi.l9 l9Var) {
         TLRPC.TL_messages_toggleNoForwards tL_messages_toggleNoForwards = new TLRPC.TL_messages_toggleNoForwards();
         tL_messages_toggleNoForwards.peer = j1(j3);
         tL_messages_toggleNoForwards.enabled = z9;
@@ -13406,15 +13406,15 @@ public final class qp extends c1 implements ls {
             tL_messages_toggleNoForwards.request_msg_id = i7;
             tL_messages_toggleNoForwards.flags |= 1;
         }
-        getConnectionsManager().sendRequestTyped(tL_messages_toggleNoForwards, null, new ml(this, m9Var, 1), 64);
+        getConnectionsManager().sendRequestTyped(tL_messages_toggleNoForwards, null, new ml(this, l9Var, 1), 64);
     }
 
     @Override // org.telegram.messenger.ls
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         ij ijVar;
-        org.telegram.ui.ActionBar.j6 j6Var;
+        org.telegram.ui.ActionBar.k6 k6Var;
         TLRPC.InputFile inputFile;
-        org.telegram.ui.ActionBar.h6 h6Var;
+        org.telegram.ui.ActionBar.i6 i6Var;
         TLRPC.InputFile inputFile2;
         TLRPC.TL_theme tL_theme;
         TLRPC.TL_inputThemeSettings tL_inputThemeSettings;
@@ -13430,37 +13430,37 @@ public final class qp extends c1 implements ls {
                 String str3 = qpVar.Q2;
                 if (str3 == null || !str3.equals(str)) {
                     Object obj = hashMap.get(str);
-                    if (obj instanceof org.telegram.ui.ActionBar.j6) {
-                        j6Var = (org.telegram.ui.ActionBar.j6) obj;
-                        if (str.equals(j6Var.H)) {
-                            j6Var.J = inputFile3;
-                            j6Var.H = null;
-                        } else if (str.equals(j6Var.I)) {
-                            j6Var.K = inputFile3;
-                            j6Var.I = null;
+                    if (obj instanceof org.telegram.ui.ActionBar.k6) {
+                        k6Var = (org.telegram.ui.ActionBar.k6) obj;
+                        if (str.equals(k6Var.H)) {
+                            k6Var.J = inputFile3;
+                            k6Var.H = null;
+                        } else if (str.equals(k6Var.I)) {
+                            k6Var.K = inputFile3;
+                            k6Var.I = null;
                         }
-                        inputFile = j6Var.J;
-                        inputFile2 = j6Var.K;
-                        h6Var = null;
-                    } else if (obj instanceof org.telegram.ui.ActionBar.h6) {
-                        org.telegram.ui.ActionBar.h6 h6Var2 = (org.telegram.ui.ActionBar.h6) obj;
-                        if (str.equals(h6Var2.u)) {
-                            h6Var2.w = inputFile3;
-                            h6Var2.u = null;
-                        } else if (str.equals(h6Var2.v)) {
-                            h6Var2.x = inputFile3;
-                            h6Var2.v = null;
+                        inputFile = k6Var.J;
+                        inputFile2 = k6Var.K;
+                        i6Var = null;
+                    } else if (obj instanceof org.telegram.ui.ActionBar.i6) {
+                        org.telegram.ui.ActionBar.i6 i6Var2 = (org.telegram.ui.ActionBar.i6) obj;
+                        if (str.equals(i6Var2.u)) {
+                            i6Var2.w = inputFile3;
+                            i6Var2.u = null;
+                        } else if (str.equals(i6Var2.v)) {
+                            i6Var2.x = inputFile3;
+                            i6Var2.v = null;
                         }
-                        org.telegram.ui.ActionBar.j6 j6Var2 = h6Var2.b;
-                        TLRPC.InputFile inputFile4 = h6Var2.w;
-                        inputFile2 = h6Var2.x;
-                        h6Var = h6Var2;
-                        j6Var = j6Var2;
+                        org.telegram.ui.ActionBar.k6 k6Var2 = i6Var2.b;
+                        TLRPC.InputFile inputFile4 = i6Var2.w;
+                        inputFile2 = i6Var2.x;
+                        i6Var = i6Var2;
+                        k6Var = k6Var2;
                         inputFile = inputFile4;
                     } else {
-                        j6Var = null;
+                        k6Var = null;
                         inputFile = null;
-                        h6Var = null;
+                        i6Var = null;
                         inputFile2 = null;
                     }
                     hashMap.remove(str);
@@ -13474,13 +13474,13 @@ public final class qp extends c1 implements ls {
                         uploadtheme.thumb = inputFile;
                         inputFile.name = "theme-preview.jpg";
                         uploadtheme.flags |= 1;
-                        if (h6Var != null) {
-                            h6Var.x = null;
-                            h6Var.w = null;
-                            tL_theme = h6Var.r;
+                        if (i6Var != null) {
+                            i6Var.x = null;
+                            i6Var.w = null;
+                            tL_theme = i6Var.r;
                             TLRPC.TL_inputThemeSettings tL_inputThemeSettings2 = new TLRPC.TL_inputThemeSettings();
-                            String str4 = j6Var.a;
-                            int i12 = org.telegram.ui.ActionBar.k6.a;
+                            String str4 = k6Var.a;
+                            int i12 = org.telegram.ui.ActionBar.l6.a;
                             if ("Blue".equals(str4)) {
                                 baseTheme = new TLRPC.TL_baseThemeClassic();
                             } else if ("Day".equals(str4)) {
@@ -13493,64 +13493,64 @@ public final class qp extends c1 implements ls {
                                 baseTheme = new TLRPC.TL_baseThemeNight();
                             }
                             tL_inputThemeSettings2.base_theme = baseTheme;
-                            tL_inputThemeSettings2.accent_color = h6Var.c;
-                            int i13 = h6Var.d;
+                            tL_inputThemeSettings2.accent_color = i6Var.c;
+                            int i13 = i6Var.d;
                             if (i13 != 0) {
                                 tL_inputThemeSettings2.flags |= 8;
                                 tL_inputThemeSettings2.outbox_accent_color = i13;
                             }
-                            int i14 = h6Var.e;
+                            int i14 = i6Var.e;
                             if (i14 != 0) {
                                 tL_inputThemeSettings2.message_colors.add(Integer.valueOf(i14));
                                 tL_inputThemeSettings2.flags |= 1;
-                                int i15 = h6Var.f;
+                                int i15 = i6Var.f;
                                 if (i15 != 0) {
                                     tL_inputThemeSettings2.message_colors.add(Integer.valueOf(i15));
-                                    int i16 = h6Var.g;
+                                    int i16 = i6Var.g;
                                     if (i16 != 0) {
                                         tL_inputThemeSettings2.message_colors.add(Integer.valueOf(i16));
-                                        int i17 = h6Var.h;
+                                        int i17 = i6Var.h;
                                         if (i17 != 0) {
                                             tL_inputThemeSettings2.message_colors.add(Integer.valueOf(i17));
                                         }
                                     }
                                 }
-                                tL_inputThemeSettings2.message_colors_animated = h6Var.i;
+                                tL_inputThemeSettings2.message_colors_animated = i6Var.i;
                             }
                             tL_inputThemeSettings2.flags |= 2;
                             tL_inputThemeSettings2.wallpaper_settings = new TLRPC.TL_wallPaperSettings();
-                            if (TextUtils.isEmpty(h6Var.o)) {
+                            if (TextUtils.isEmpty(i6Var.o)) {
                                 TLRPC.TL_inputWallPaperNoFile tL_inputWallPaperNoFile = new TLRPC.TL_inputWallPaperNoFile();
                                 tL_inputWallPaperNoFile.id = 0L;
                                 tL_inputThemeSettings2.wallpaper = tL_inputWallPaperNoFile;
                             } else {
                                 TLRPC.TL_inputWallPaperSlug tL_inputWallPaperSlug = new TLRPC.TL_inputWallPaperSlug();
-                                tL_inputWallPaperSlug.slug = h6Var.o;
+                                tL_inputWallPaperSlug.slug = i6Var.o;
                                 tL_inputThemeSettings2.wallpaper = tL_inputWallPaperSlug;
                                 TLRPC.WallPaperSettings wallPaperSettings = tL_inputThemeSettings2.wallpaper_settings;
-                                wallPaperSettings.intensity = (int) (h6Var.p * 100.0f);
+                                wallPaperSettings.intensity = (int) (i6Var.p * 100.0f);
                                 wallPaperSettings.flags |= 8;
                             }
                             TLRPC.WallPaperSettings wallPaperSettings2 = tL_inputThemeSettings2.wallpaper_settings;
-                            wallPaperSettings2.motion = h6Var.q;
-                            long j3 = h6Var.j;
+                            wallPaperSettings2.motion = i6Var.q;
+                            long j3 = i6Var.j;
                             if (j3 != 0) {
                                 wallPaperSettings2.background_color = (int) j3;
                                 wallPaperSettings2.flags |= 1;
                             }
-                            long j10 = h6Var.k;
+                            long j10 = i6Var.k;
                             if (j10 != 0) {
                                 wallPaperSettings2.second_background_color = (int) j10;
                                 wallPaperSettings2.flags |= 16;
-                                wallPaperSettings2.rotation = g0.s1(h6Var.n, true);
+                                wallPaperSettings2.rotation = g0.s1(i6Var.n, true);
                             }
-                            long j11 = h6Var.l;
+                            long j11 = i6Var.l;
                             if (j11 != 0) {
                                 TLRPC.WallPaperSettings wallPaperSettings3 = tL_inputThemeSettings2.wallpaper_settings;
                                 wallPaperSettings3.third_background_color = (int) j11;
                                 wallPaperSettings3.flags |= 32;
                             }
-                            long j12 = h6Var.m;
+                            long j12 = i6Var.m;
                             if (j12 != 0) {
                                 TLRPC.WallPaperSettings wallPaperSettings4 = tL_inputThemeSettings2.wallpaper_settings;
                                 wallPaperSettings4.fourth_background_color = (int) j12;
@@ -13558,29 +13558,29 @@ public final class qp extends c1 implements ls {
                             }
                             tL_inputThemeSettings = tL_inputThemeSettings2;
                         } else {
-                            j6Var.K = null;
-                            j6Var.J = null;
-                            tL_theme = j6Var.F;
+                            k6Var.K = null;
+                            k6Var.J = null;
+                            tL_theme = k6Var.F;
                             tL_inputThemeSettings = null;
                         }
-                        org.telegram.ui.ActionBar.j6 j6Var3 = j6Var;
+                        org.telegram.ui.ActionBar.k6 k6Var3 = k6Var;
                         qpVar = this;
-                        getConnectionsManager().sendRequest(uploadtheme, new eo(qpVar, tL_theme, j6Var3, tL_inputThemeSettings, h6Var, 0));
+                        getConnectionsManager().sendRequest(uploadtheme, new eo(qpVar, tL_theme, k6Var3, tL_inputThemeSettings, i6Var, 0));
                     }
                 } else {
                     TL_account.uploadWallPaper uploadwallpaper = new TL_account.uploadWallPaper();
                     uploadwallpaper.file = inputFile3;
                     uploadwallpaper.mime_type = "image/jpeg";
-                    org.telegram.ui.ActionBar.c6 c6Var = qpVar.R2;
+                    org.telegram.ui.ActionBar.d6 d6Var = qpVar.R2;
                     String str5 = qpVar.Q2;
                     TLRPC.TL_wallPaperSettings tL_wallPaperSettings = new TLRPC.TL_wallPaperSettings();
-                    tL_wallPaperSettings.blur = c6Var.i;
-                    tL_wallPaperSettings.motion = c6Var.j;
+                    tL_wallPaperSettings.blur = d6Var.i;
+                    tL_wallPaperSettings.motion = d6Var.j;
                     uploadwallpaper.settings = tL_wallPaperSettings;
-                    org.telegram.ui.ActionBar.c6 c6Var2 = qpVar.R2;
-                    c6Var2.r = 1.0f;
-                    c6Var2.s = new ArrayList();
-                    qpVar.R2.s.add(Integer.valueOf(qpVar.getConnectionsManager().sendRequest(uploadwallpaper, new q6(qpVar, c6Var, tL_wallPaperSettings, str5, 3))));
+                    org.telegram.ui.ActionBar.d6 d6Var2 = qpVar.R2;
+                    d6Var2.r = 1.0f;
+                    d6Var2.s = new ArrayList();
+                    qpVar.R2.s.add(Integer.valueOf(qpVar.getConnectionsManager().sendRequest(uploadwallpaper, new q6(qpVar, d6Var, tL_wallPaperSettings, str5, 3))));
                 }
                 qpVar = this;
             } else {
@@ -13596,17 +13596,17 @@ public final class qp extends c1 implements ls {
                 String str8 = qpVar.Q2;
                 if (str8 == null || !str8.equals(str6)) {
                     Object remove = hashMap.remove(str6);
-                    boolean z9 = remove instanceof org.telegram.ui.ActionBar.j6;
+                    boolean z9 = remove instanceof org.telegram.ui.ActionBar.k6;
                     int i18 = qs.N2;
                     if (z9) {
-                        org.telegram.ui.ActionBar.j6 j6Var4 = (org.telegram.ui.ActionBar.j6) remove;
-                        j6Var4.K = null;
-                        j6Var4.J = null;
-                        qpVar.getNotificationCenter().k(i18, j6Var4, null);
-                    } else if (remove instanceof org.telegram.ui.ActionBar.h6) {
-                        org.telegram.ui.ActionBar.h6 h6Var3 = (org.telegram.ui.ActionBar.h6) remove;
-                        h6Var3.u = null;
-                        qpVar.getNotificationCenter().k(i18, h6Var3.b, h6Var3);
+                        org.telegram.ui.ActionBar.k6 k6Var4 = (org.telegram.ui.ActionBar.k6) remove;
+                        k6Var4.K = null;
+                        k6Var4.J = null;
+                        qpVar.getNotificationCenter().k(i18, k6Var4, null);
+                    } else if (remove instanceof org.telegram.ui.ActionBar.i6) {
+                        org.telegram.ui.ActionBar.i6 i6Var3 = (org.telegram.ui.ActionBar.i6) remove;
+                        i6Var3.u = null;
+                        qpVar.getNotificationCenter().k(i18, i6Var3.b, i6Var3);
                     }
                 } else {
                     qpVar.Q2 = null;
@@ -13644,10 +13644,10 @@ public final class qp extends c1 implements ls {
             if (message.peer_id.channel_id != 0 || (ijVar = (ij) sparseArray.get(message.id)) == null) {
                 return;
             }
-            ijVar.k.media = ij.o1(message);
-            if (ij.o1(message).ttl_seconds != 0) {
-                if ((ij.o1(message).photo instanceof TLRPC.TL_photoEmpty) || (ij.o1(message).document instanceof TLRPC.TL_documentEmpty)) {
-                    ijVar.M5();
+            ijVar.k.media = ij.n1(message);
+            if (ij.n1(message).ttl_seconds != 0) {
+                if ((ij.n1(message).photo instanceof TLRPC.TL_photoEmpty) || (ij.n1(message).document instanceof TLRPC.TL_documentEmpty)) {
+                    ijVar.L5();
                     qpVar.getNotificationCenter().k(qs.f0, new Object[0]);
                     return;
                 }
@@ -13664,7 +13664,7 @@ public final class qp extends c1 implements ls {
         ArrayList arrayList = (ArrayList) qpVar.R.f(l10.longValue());
         for (int i20 = 0; arrayList != null && i20 < arrayList.size(); i20++) {
             ij ijVar2 = (ij) arrayList.get(i20);
-            if (ijVar2 != null && (ijVar2.f1() == num.intValue() || ijVar2.k.local_id == num.intValue())) {
+            if (ijVar2 != null && (ijVar2.e1() == num.intValue() || ijVar2.k.local_id == num.intValue())) {
                 ijVar2.k.id = num2.intValue();
                 ijVar2.k.send_state = 0;
             }
@@ -13682,7 +13682,7 @@ public final class qp extends c1 implements ls {
         if (m5.z(l10.longValue())) {
             TLRPC.ChatFull chatFull = (TLRPC.ChatFull) qpVar.l1.f(-l10.longValue());
             TLRPC.Chat M0 = qpVar.M0(Long.valueOf(-l10.longValue()));
-            if (M0 == null || t3.N(M0) || ij.g3(num2.intValue()) || chatFull == null || chatFull.slowmode_seconds == 0) {
+            if (M0 == null || t3.N(M0) || ij.f3(num2.intValue()) || chatFull == null || chatFull.slowmode_seconds == 0) {
                 return;
             }
             chatFull.slowmode_next_send_date = qpVar.getConnectionsManager().getCurrentTime() + chatFull.slowmode_seconds;
@@ -14190,7 +14190,7 @@ public final class qp extends c1 implements ls {
         } else if (z9) {
             TLRPC.TL_messages_deleteChat tL_messages_deleteChat = new TLRPC.TL_messages_deleteChat();
             tL_messages_deleteChat.chat_id = j3;
-            getConnectionsManager().sendRequest(tL_messages_deleteChat, new di.u5(13));
+            getConnectionsManager().sendRequest(tL_messages_deleteChat, new di.v5(13));
             return;
         } else {
             TLRPC.TL_messages_deleteChatUser tL_messages_deleteChatUser3 = new TLRPC.TL_messages_deleteChatUser();
@@ -14205,7 +14205,7 @@ public final class qp extends c1 implements ls {
         getConnectionsManager().sendRequest(tL_messages_deleteChatUser, new el(this, T, user, j3), 64);
     }
 
-    public final r3 g1(long j3, boolean z9, m80 m80Var) {
+    public final r3 g1(long j3, boolean z9, o80 o80Var) {
         TLRPC.InputGroupCall inputGroupCall;
         TLRPC.ChatFull N0 = N0(j3);
         if (N0 == null || (inputGroupCall = N0.call) == null) {
@@ -14221,7 +14221,7 @@ public final class qp extends c1 implements ls {
                     TL_phone.getGroupCall getgroupcall = new TL_phone.getGroupCall();
                     getgroupcall.call = N0.call;
                     getgroupcall.limit = 20;
-                    getConnectionsManager().sendRequest(getgroupcall, new oj(this, j3, m80Var, 5));
+                    getConnectionsManager().sendRequest(getgroupcall, new oj(this, j3, o80Var, 5));
                 }
             }
         }
@@ -14310,7 +14310,7 @@ public final class qp extends c1 implements ls {
         arrayList.add(ijVar2);
         gz sendMessagesHelper = getSendMessagesHelper();
         long B0 = ij.B0(ijVar2.k);
-        boolean z9 = !ij.m3(ijVar2.k);
+        boolean z9 = !ij.l3(ijVar2.k);
         TLRPC.Message message = ijVar2.k;
         if (message.suggested_post == null) {
             ijVar2 = null;
@@ -14391,7 +14391,7 @@ public final class qp extends c1 implements ls {
         } else {
             tL_messages_hidePeerSettingsBar.peer = j1(-chat.id);
         }
-        getConnectionsManager().sendRequest(tL_messages_hidePeerSettingsBar, new di.u5(13));
+        getConnectionsManager().sendRequest(tL_messages_hidePeerSettingsBar, new di.v5(13));
     }
 
     public final void i3() {
@@ -14547,7 +14547,7 @@ public final class qp extends c1 implements ls {
         }
         TLRPC.TL_help_hidePromoData tL_help_hidePromoData = new TLRPC.TL_help_hidePromoData();
         tL_help_hidePromoData.peer = j1(this.x2.id);
-        getConnectionsManager().sendRequest(tL_help_hidePromoData, new di.u5(13));
+        getConnectionsManager().sendRequest(tL_help_hidePromoData, new di.v5(13));
         Utilities.d.c(new vj(this, 20));
         j4();
     }
@@ -14710,11 +14710,11 @@ public final class qp extends c1 implements ls {
         getConnectionsManager().sendRequest(tL_channels_deleteParticipantHistory, new q6(this, chat, user, chat2, 2));
     }
 
-    public final void k2(org.telegram.ui.ActionBar.j6 j6Var, org.telegram.ui.ActionBar.h6 h6Var, boolean z9) {
-        TLRPC.TL_theme tL_theme = h6Var != null ? h6Var.r : j6Var.F;
-        String str = h6Var != null ? h6Var.o : j6Var.e;
-        boolean z10 = h6Var == null && j6Var.h;
-        boolean z11 = h6Var != null ? h6Var.q : j6Var.n;
+    public final void k2(org.telegram.ui.ActionBar.k6 k6Var, org.telegram.ui.ActionBar.i6 i6Var, boolean z9) {
+        TLRPC.TL_theme tL_theme = i6Var != null ? i6Var.r : k6Var.F;
+        String str = i6Var != null ? i6Var.o : k6Var.e;
+        boolean z10 = i6Var == null && k6Var.h;
+        boolean z11 = i6Var != null ? i6Var.q : k6Var.n;
         TL_account.installTheme installtheme = new TL_account.installTheme();
         installtheme.dark = z9;
         if (tL_theme != null) {
@@ -14725,7 +14725,7 @@ public final class qp extends c1 implements ls {
             installtheme.theme = tL_inputTheme;
             installtheme.flags |= 2;
         }
-        getConnectionsManager().sendRequest(installtheme, new di.u5(13));
+        getConnectionsManager().sendRequest(installtheme, new di.v5(13));
         if (TextUtils.isEmpty(str)) {
             return;
         }
@@ -14737,7 +14737,7 @@ public final class qp extends c1 implements ls {
         installwallpaper.settings = tL_wallPaperSettings;
         tL_wallPaperSettings.blur = z10;
         tL_wallPaperSettings.motion = z11;
-        getConnectionsManager().sendRequest(installwallpaper, new di.u5(13));
+        getConnectionsManager().sendRequest(installwallpaper, new di.v5(13));
     }
 
     public final void k3(long j3, TLRPC.InputPeer inputPeer, long j10) {
@@ -14843,7 +14843,7 @@ public final class qp extends c1 implements ls {
         } else {
             tL_help_dismissSuggestion.peer = j1(j3);
         }
-        getConnectionsManager().sendRequest(tL_help_dismissSuggestion, new di.u5(13));
+        getConnectionsManager().sendRequest(tL_help_dismissSuggestion, new di.v5(13));
     }
 
     public final void k5(vo voVar) {
@@ -14918,12 +14918,12 @@ public final class qp extends c1 implements ls {
                             i11 = Math.min(i11, i7 - currentTime);
                         }
                     }
-                    int f12 = ijVar.f1();
-                    ij ijVar2 = (ij) sparseArray.get(f12);
+                    int e12 = ijVar.e1();
+                    ij ijVar2 = (ij) sparseArray.get(e12);
                     if (ijVar2 != null) {
                         ijVar2.t0 = true;
                     } else {
-                        sparseArray.put(f12, ijVar);
+                        sparseArray.put(e12, ijVar);
                     }
                 }
             }
@@ -14982,7 +14982,7 @@ public final class qp extends c1 implements ls {
                     int i10 = 0;
                     while (true) {
                         if (i10 < arrayList.size()) {
-                            if (ijVar.f1() == ((Integer) arrayList.get(i10)).intValue()) {
+                            if (ijVar.e1() == ((Integer) arrayList.get(i10)).intValue()) {
                                 ijVar.Z = true;
                                 break;
                             }
@@ -15288,7 +15288,7 @@ public final class qp extends c1 implements ls {
             ij ijVar4 = null;
             while (i12 < arrayList.size()) {
                 ij ijVar5 = (ij) arrayList.get(i12);
-                if (ijVar4 == null || ((!C && ijVar5.f1() > ijVar4.f1()) || (((C || (ijVar5.f1() < 0 && ijVar4.f1() < 0)) && ijVar5.f1() < ijVar4.f1()) || ijVar5.k.date > ijVar4.k.date))) {
+                if (ijVar4 == null || ((!C && ijVar5.e1() > ijVar4.e1()) || (((C || (ijVar5.e1() < 0 && ijVar4.e1() < 0)) && ijVar5.e1() < ijVar4.e1()) || ijVar5.k.date > ijVar4.k.date))) {
                     z14 = z15;
                     long j12 = ijVar5.k.peer_id.channel_id;
                     if (j12 != 0) {
@@ -15302,22 +15302,22 @@ public final class qp extends c1 implements ls {
                 if ((message2.action instanceof TLRPC.TL_messageActionGroupCall) && (N0 = N0(message2.peer_id.channel_id)) != null && ((inputGroupCall = N0.call) == null || inputGroupCall.id != ijVar5.k.action.call.id)) {
                     V2(0, ijVar5.k.peer_id.channel_id, true);
                 }
-                if (!z16 && !ijVar5.O3()) {
+                if (!z16 && !ijVar5.N3()) {
                     z16 = true;
                 }
-                if (ijVar5.O3() && !ijVar5.p4() && !ij.m3(ijVar5.k)) {
-                    if (ijVar5.M3()) {
-                        if (ij.W2(ijVar5.k.media.document) ? getMessagesController().Q3 : true) {
+                if (ijVar5.N3() && !ijVar5.o4() && !ij.l3(ijVar5.k)) {
+                    if (ijVar5.L3()) {
+                        if (ij.V2(ijVar5.k.media.document) ? getMessagesController().Q3 : true) {
                             ui mediaDataController = getMediaDataController();
                             TLRPC.Message message3 = ijVar5.k;
                             mediaDataController.c(message3.media.document, message3.date, ijVar5.V1);
                         }
-                    } else if (!ijVar5.H2() && (ijVar5.u4() || ijVar5.K2())) {
+                    } else if (!ijVar5.G2() && (ijVar5.t4() || ijVar5.J2())) {
                         ui mediaDataController2 = getMediaDataController();
                         TLRPC.Message message4 = ijVar5.k;
                         ijVar2 = ijVar5;
                         mediaDataController2.d(0, ijVar2, message4.media.document, message4.date, false);
-                        if (ijVar2.O3() && ijVar2.r4()) {
+                        if (ijVar2.N3() && ijVar2.q4()) {
                             z10 = true;
                         }
                         i12++;
@@ -15325,7 +15325,7 @@ public final class qp extends c1 implements ls {
                     }
                 }
                 ijVar2 = ijVar5;
-                if (ijVar2.O3()) {
+                if (ijVar2.N3()) {
                     z10 = true;
                 }
                 i12++;
@@ -15346,10 +15346,10 @@ public final class qp extends c1 implements ls {
                 Object obj = arrayList.get(i13);
                 i13++;
                 ij ijVar6 = (ij) obj;
-                if (ijVar6.p4()) {
+                if (ijVar6.o4()) {
                     ij ijVar7 = ijVar;
-                    if (f10.c(ij.J1(ijVar6.k)) == null && ij.K1(ijVar6.k) != null && f10.d(ij.K1(ijVar6.k)) == null) {
-                        String K1 = ij.K1(ijVar6.k);
+                    if (f10.c(ij.I1(ijVar6.k)) == null && ij.J1(ijVar6.k) != null && f10.d(ij.J1(ijVar6.k)) == null) {
+                        String J1 = ij.J1(ijVar6.k);
                         int size2 = arrayList2.size();
                         int i14 = 0;
                         while (true) {
@@ -15360,21 +15360,21 @@ public final class qp extends c1 implements ls {
                             Object obj2 = arrayList2.get(i14);
                             i14++;
                             s1Var = (kg.s1) obj2;
-                            if (TextUtils.equals(K1, s1Var.b)) {
+                            if (TextUtils.equals(J1, s1Var.b)) {
                                 break;
                             }
                         }
                         if (s1Var == null) {
                             s1Var = new kg.s1();
                             s1Var.g = true;
-                            s1Var.b = ij.K1(ijVar6.k);
+                            s1Var.b = ij.J1(ijVar6.k);
                             s1Var.a = -1;
                             s1Var.e = ijVar6;
-                            s1Var.d = ijVar6.f1();
+                            s1Var.d = ijVar6.e1();
                             arrayList2.add(s1Var);
                         }
-                        s1Var.h.add(Integer.valueOf(ijVar6.f1()));
-                        g0.h3(new fi.h9(f10, 29));
+                        s1Var.h.add(Integer.valueOf(ijVar6.e1()));
+                        g0.h3(new fi.v9(f10, 28));
                     }
                     ijVar = ijVar7;
                 }
@@ -15389,7 +15389,7 @@ public final class qp extends c1 implements ls {
                 Object obj3 = arrayList.get(i15);
                 i15++;
                 ij ijVar9 = (ij) obj3;
-                if (ijVar9.f1() > 0 && (ijVar9.k.action instanceof TLRPC.TL_messageActionGramTransfer)) {
+                if (ijVar9.e1() > 0 && (ijVar9.k.action instanceof TLRPC.TL_messageActionGramTransfer)) {
                     if (arrayList3 == null) {
                         arrayList3 = new ArrayList();
                     }
@@ -15424,8 +15424,8 @@ public final class qp extends c1 implements ls {
                         }
                         TLRPC.TL_dialog tL_dialog3 = new TLRPC.TL_dialog();
                         tL_dialog3.id = j13;
-                        int f12 = ijVar8.f1();
-                        tL_dialog3.top_message = f12;
+                        int e12 = ijVar8.e1();
+                        tL_dialog3.top_message = e12;
                         tL_dialog3.last_message_date = ijVar8.k.date;
                         tL_dialog3.flags = t3.T(M02) ? 1 : 0;
                         LongSparseIntArray longSparseIntArray = this.a0;
@@ -15433,7 +15433,7 @@ public final class qp extends c1 implements ls {
                             tL_dialog3.unread_count = longSparseIntArray.get(j13);
                             longSparseIntArray.delete(j13);
                             tL_dialog = tL_dialog3;
-                            i10 = f12;
+                            i10 = e12;
                             r2(j13, 0L, null);
                             for (vo voVar : voVarArr) {
                                 if (voVar != null && (voVar.g & 64) != 0) {
@@ -15443,7 +15443,7 @@ public final class qp extends c1 implements ls {
                             }
                         } else {
                             tL_dialog = tL_dialog3;
-                            i10 = f12;
+                            i10 = e12;
                         }
                         z12 = false;
                         hVar.k(tL_dialog, j13);
@@ -15451,10 +15451,10 @@ public final class qp extends c1 implements ls {
                         ArrayList arrayList5 = new ArrayList();
                         for (int i16 = 0; i16 < arrayList.size(); i16++) {
                             ij ijVar10 = (ij) arrayList.get(i16);
-                            if (ijVar10 != null && (ijVar10.f1() == ijVar8.f1() || (ijVar10.A2() && ijVar8.A2() && ijVar10.e1() == ijVar8.e1()))) {
+                            if (ijVar10 != null && (ijVar10.e1() == ijVar8.e1() || (ijVar10.z2() && ijVar8.z2() && ijVar10.d1() == ijVar8.d1()))) {
                                 arrayList5.add(ijVar10);
                                 if (ijVar10.k.peer_id.channel_id == 0) {
-                                    sparseArray.put(ijVar10.f1(), ijVar10);
+                                    sparseArray.put(ijVar10.e1(), ijVar10);
                                     long j14 = ijVar10.k.random_id;
                                     if (j14 != 0) {
                                         hVar2.k(ijVar10, j14);
@@ -15500,7 +15500,7 @@ public final class qp extends c1 implements ls {
                     }
                 } else {
                     qpVar = this;
-                    if ((tL_dialog2.top_message <= 0 || ijVar8.f1() <= 0 || ijVar8.f1() <= tL_dialog2.top_message) && ((tL_dialog2.top_message >= 0 || ijVar8.f1() >= 0 || ijVar8.f1() >= tL_dialog2.top_message) && hVar3.h(j13) >= 0 && tL_dialog2.top_message >= 0 && tL_dialog2.last_message_date > ijVar8.k.date)) {
+                    if ((tL_dialog2.top_message <= 0 || ijVar8.e1() <= 0 || ijVar8.e1() <= tL_dialog2.top_message) && ((tL_dialog2.top_message >= 0 || ijVar8.e1() >= 0 || ijVar8.e1() >= tL_dialog2.top_message) && hVar3.h(j13) >= 0 && tL_dialog2.top_message >= 0 && tL_dialog2.last_message_date > ijVar8.k.date)) {
                         z11 = false;
                     } else {
                         ij ijVar11 = (ij) sparseArray.get(tL_dialog2.top_message);
@@ -15513,20 +15513,20 @@ public final class qp extends c1 implements ls {
                                 hVar2.l(j15);
                             }
                         }
-                        tL_dialog2.top_message = ijVar8.f1();
+                        tL_dialog2.top_message = ijVar8.e1();
                         tL_dialog2.last_message_date = ijVar8.k.date;
                         z11 = true;
                         ArrayList arrayList6 = new ArrayList(1);
                         for (int i18 = 0; i18 < arrayList.size(); i18++) {
                             ij ijVar12 = (ij) arrayList.get(i18);
-                            if (ijVar12 != null && (ijVar12.f1() == ijVar8.f1() || (ijVar12.A2() && ijVar8.A2() && ijVar12.e1() == ijVar8.e1()))) {
+                            if (ijVar12 != null && (ijVar12.e1() == ijVar8.e1() || (ijVar12.z2() && ijVar8.z2() && ijVar12.d1() == ijVar8.d1()))) {
                                 arrayList6.add(ijVar12);
                             }
                         }
                         hVar3.k(arrayList6, j13);
                         f10Var.d(j13);
                         if (ijVar8.k.peer_id.channel_id == 0) {
-                            sparseArray.put(ijVar8.f1(), ijVar8);
+                            sparseArray.put(ijVar8.e1(), ijVar8);
                             long j16 = ijVar8.k.random_id;
                             if (j16 != 0) {
                                 hVar2.k(ijVar8, j16);
@@ -15977,7 +15977,7 @@ public final class qp extends c1 implements ls {
             TLRPC.TL_channels_readMessageContents tL_channels_readMessageContents = new TLRPC.TL_channels_readMessageContents();
             tL_channels_readMessageContents.channel = h1(j3);
             tL_channels_readMessageContents.id.add(Integer.valueOf(i7));
-            getConnectionsManager().sendRequest(tL_channels_readMessageContents, new di.u5(13));
+            getConnectionsManager().sendRequest(tL_channels_readMessageContents, new di.v5(13));
         }
     }
 
@@ -16036,40 +16036,40 @@ public final class qp extends c1 implements ls {
                         boolean z9 = l10.longValue() < 0 && !C;
                         TLRPC.SendMessageAction sendMessageAction = hpVar.c;
                         if (sendMessageAction instanceof TLRPC.TL_sendMessageRecordAudioAction) {
-                            str = z9 ? id.a0("IsRecordingAudio", null, 2131749100, c2(a22)) : id.M0(2131746352, null);
+                            str = z9 ? id.a0("IsRecordingAudio", null, 2131749099, c2(a22)) : id.M0(2131746351, null);
                             i7 = 1;
                         } else {
                             if (sendMessageAction instanceof TLRPC.TL_sendMessageRecordRoundAction) {
-                                str = z9 ? id.a0("IsRecordingRound", null, 2131749099, c2(a22)) : id.M0(2131746351, null);
+                                str = z9 ? id.a0("IsRecordingRound", null, 2131749098, c2(a22)) : id.M0(2131746350, null);
                             } else if (sendMessageAction instanceof TLRPC.TL_sendMessageUploadRoundAction) {
-                                str = z9 ? id.a0("IsSendingVideo", null, 2131749091, c2(a22)) : id.M0(2131745578, null);
+                                str = z9 ? id.a0("IsSendingVideo", null, 2131749090, c2(a22)) : id.M0(2131745575, null);
                             } else {
                                 if (sendMessageAction instanceof TLRPC.TL_sendMessageUploadAudioAction) {
-                                    a04 = z9 ? id.a0("IsSendingAudio", null, 2131749095, c2(a22)) : id.M0(2131745585, null);
+                                    a04 = z9 ? id.a0("IsSendingAudio", null, 2131749094, c2(a22)) : id.M0(2131745582, null);
                                 } else if (sendMessageAction instanceof TLRPC.TL_sendMessageUploadVideoAction) {
-                                    a04 = z9 ? id.a0("IsSendingVideo", null, 2131749091, c2(a22)) : id.M0(2131745578, null);
+                                    a04 = z9 ? id.a0("IsSendingVideo", null, 2131749090, c2(a22)) : id.M0(2131745575, null);
                                 } else if (sendMessageAction instanceof TLRPC.TL_sendMessageRecordVideoAction) {
-                                    a04 = z9 ? id.a0("IsRecordingVideo", null, 2131749098, c2(a22)) : id.M0(2131746348, null);
+                                    a04 = z9 ? id.a0("IsRecordingVideo", null, 2131749097, c2(a22)) : id.M0(2131746347, null);
                                 } else if (sendMessageAction instanceof TLRPC.TL_sendMessageUploadDocumentAction) {
-                                    a04 = z9 ? id.a0("IsSendingFile", null, 2131749094, c2(a22)) : id.M0(2131745584, null);
+                                    a04 = z9 ? id.a0("IsSendingFile", null, 2131749093, c2(a22)) : id.M0(2131745581, null);
                                 } else if (sendMessageAction instanceof TLRPC.TL_sendMessageUploadPhotoAction) {
-                                    a04 = z9 ? id.a0("IsSendingPhoto", null, 2131749092, c2(a22)) : id.M0(2131745581, null);
+                                    a04 = z9 ? id.a0("IsSendingPhoto", null, 2131749091, c2(a22)) : id.M0(2131745578, null);
                                 } else if (sendMessageAction instanceof TLRPC.TL_sendMessageGamePlayAction) {
                                     i7 = 3;
-                                    str = z9 ? id.a0("IsSendingGame", null, 2131749093, c2(a22)) : id.M0(2131745583, null);
+                                    str = z9 ? id.a0("IsSendingGame", null, 2131749092, c2(a22)) : id.M0(2131745580, null);
                                 } else {
                                     if (sendMessageAction instanceof TLRPC.TL_sendMessageGeoLocationAction) {
-                                        a02 = z9 ? id.a0("IsSelectingLocation", null, 2131749096, c2(a22)) : id.M0(2131745649, null);
+                                        a02 = z9 ? id.a0("IsSelectingLocation", null, 2131749095, c2(a22)) : id.M0(2131745646, null);
                                     } else if (sendMessageAction instanceof TLRPC.TL_sendMessageChooseContactAction) {
-                                        a02 = z9 ? id.a0("IsSelectingContact", null, 2131749097, c2(a22)) : id.M0(2131745650, null);
+                                        a02 = z9 ? id.a0("IsSelectingContact", null, 2131749096, c2(a22)) : id.M0(2131745647, null);
                                     } else {
                                         if (sendMessageAction instanceof TLRPC.TL_sendMessageEmojiInteractionSeen) {
                                             String str2 = ((TLRPC.TL_sendMessageEmojiInteractionSeen) sendMessageAction).emoticon;
-                                            a03 = z9 ? id.a0("IsEnjoyngAnimations", null, 2131749101, c2(a22), str2) : id.a0("EnjoyngAnimations", null, 2131751126, str2);
+                                            a03 = z9 ? id.a0("IsEnjoyngAnimations", null, 2131749100, c2(a22), str2) : id.a0("EnjoyngAnimations", null, 2131751125, str2);
                                         } else if (sendMessageAction instanceof TLRPC.TL_sendMessageChooseStickerAction) {
-                                            a03 = z9 ? id.a0("IsChoosingSticker", null, 2131749102, c2(a22)) : id.M0(2131752106, null);
+                                            a03 = z9 ? id.a0("IsChoosingSticker", null, 2131749101, c2(a22)) : id.M0(2131752106, null);
                                         } else {
-                                            a02 = z9 ? id.a0("IsTypingGroup", null, 2131749089, c2(a22)) : id.M0(2131743921, null);
+                                            a02 = z9 ? id.a0("IsTypingGroup", null, 2131749088, c2(a22)) : id.M0(2131743918, null);
                                         }
                                         str = a03;
                                         i7 = 5;
@@ -16122,7 +16122,7 @@ public final class qp extends c1 implements ls {
                     }
                     if (sb2.length() != 0) {
                         if (i11 == 1) {
-                            a05 = id.a0("IsTypingGroup", null, 2131749089, sb2.toString());
+                            a05 = id.a0("IsTypingGroup", null, 2131749088, sb2.toString());
                         } else if (arrayList.size() > 2) {
                             try {
                                 a05 = String.format(id.K0(arrayList.size() - 2, "AndMoreTypingGroup"), sb2.toString(), Integer.valueOf(arrayList.size() - 2));
@@ -16140,7 +16140,7 @@ public final class qp extends c1 implements ls {
                     }
                 }
                 if (str != null) {
-                    Paint paint = org.telegram.ui.ActionBar.k6.G0;
+                    Paint paint = org.telegram.ui.ActionBar.l6.G0;
                     if (paint == null) {
                         paint = new Paint();
                         paint.setTypeface(g0.o());
@@ -16156,7 +16156,7 @@ public final class qp extends c1 implements ls {
         }
     }
 
-    public final void o(TLRPC.Chat chat, org.telegram.ui.ActionBar.f2 f2Var, ArrayList arrayList, int i7, q0.a aVar, q0.a aVar2, mc0 mc0Var) {
+    public final void o(TLRPC.Chat chat, org.telegram.ui.ActionBar.f2 f2Var, ArrayList arrayList, int i7, q0.a aVar, q0.a aVar2, oc0 oc0Var) {
         int size = arrayList.size();
         int[] iArr = {0};
         TLRPC.TL_messages_invitedUsers tL_messages_invitedUsers = new TLRPC.TL_messages_invitedUsers();
@@ -16165,7 +16165,7 @@ public final class qp extends c1 implements ls {
         long j3 = chat2.id;
         for (int i10 = 0; i10 < size; i10++) {
             TLRPC.User user = (TLRPC.User) arrayList.get(i10);
-            m(j3, user, i7, null, f2Var, false, new hi(24, aVar, user), new o(4, aVar2, user), new jk(this, tL_messages_invitedUsers, iArr, size, chat2, mc0Var));
+            m(j3, user, i7, null, f2Var, false, new hi(24, aVar, user), new o(4, aVar2, user), new jk(this, tL_messages_invitedUsers, iArr, size, chat2, oc0Var));
             X3(user, false, false);
             chat2 = chat;
         }
@@ -16229,7 +16229,7 @@ public final class qp extends c1 implements ls {
             tL_messages_reportEncryptedSpam.peer = tL_inputEncryptedChat;
             tL_inputEncryptedChat.chat_id = encryptedChat.id;
             tL_inputEncryptedChat.access_hash = encryptedChat.access_hash;
-            getConnectionsManager().sendRequest(tL_messages_reportEncryptedSpam, new di.u5(13), 2);
+            getConnectionsManager().sendRequest(tL_messages_reportEncryptedSpam, new di.v5(13), 2);
             return;
         }
         if (!z9) {
@@ -16239,7 +16239,7 @@ public final class qp extends c1 implements ls {
             } else if (user != null) {
                 tL_messages_reportSpam.peer = j1(user.id);
             }
-            getConnectionsManager().sendRequest(tL_messages_reportSpam, new di.u5(13), 2);
+            getConnectionsManager().sendRequest(tL_messages_reportSpam, new di.v5(13), 2);
             return;
         }
         TL_account.reportPeer reportpeer = new TL_account.reportPeer();
@@ -16250,7 +16250,7 @@ public final class qp extends c1 implements ls {
         }
         reportpeer.message = "";
         reportpeer.reason = new TLRPC.TL_inputReportReasonGeoIrrelevant();
-        getConnectionsManager().sendRequest(reportpeer, new di.u5(13), 2);
+        getConnectionsManager().sendRequest(reportpeer, new di.v5(13), 2);
     }
 
     public final boolean o5(ArrayList arrayList, long j3) {
@@ -16269,7 +16269,7 @@ public final class qp extends c1 implements ls {
                 Object obj = arrayList.get(i7);
                 i7++;
                 ij ijVar = (ij) obj;
-                if (ijVar.q3() && !arrayList2.contains(Long.valueOf(ijVar.k.from_id.user_id))) {
+                if (ijVar.p3() && !arrayList2.contains(Long.valueOf(ijVar.k.from_id.user_id))) {
                     arrayList2.add(Long.valueOf(ijVar.k.from_id.user_id));
                 }
             }
@@ -24353,24 +24353,24 @@ public final class qp extends c1 implements ls {
             if (dialog.peer != null && (dialog.notify_settings instanceof TLRPC.TL_peerNotifySettings)) {
                 et etVar = getNotificationsController().g0;
                 etVar.getClass();
-                long C1 = ij.C1(dialog.peer);
+                long B1 = ij.B1(dialog.peer);
                 if ((dialog.notify_settings.flags & 2) != 0) {
-                    edit.putBoolean(a8.p0.o(C1, "silent_"), dialog.notify_settings.silent);
+                    edit.putBoolean(a8.p0.o(B1, "silent_"), dialog.notify_settings.silent);
                 } else {
-                    edit.remove("silent_" + C1);
+                    edit.remove("silent_" + B1);
                 }
                 ConnectionsManager connectionsManager = ConnectionsManager.getInstance(etVar.a);
                 TLRPC.PeerNotifySettings peerNotifySettings = dialog.notify_settings;
                 if ((peerNotifySettings.flags & 4) == 0) {
-                    edit.remove("notify2_" + C1);
+                    edit.remove("notify2_" + B1);
                 } else if (peerNotifySettings.mute_until <= connectionsManager.getCurrentTime()) {
-                    edit.putInt("notify2_" + C1, 0);
+                    edit.putInt("notify2_" + B1, 0);
                 } else if (dialog.notify_settings.mute_until > connectionsManager.getCurrentTime() + 31536000) {
-                    edit.putInt("notify2_" + C1, 2);
+                    edit.putInt("notify2_" + B1, 2);
                     dialog.notify_settings.mute_until = ConnectionsManager.DEFAULT_DATACENTER_ID;
                 } else {
-                    edit.putInt("notify2_" + C1, 3);
-                    edit.putInt(a8.p0.o(C1, "notifyuntil_"), dialog.notify_settings.mute_until);
+                    edit.putInt("notify2_" + B1, 3);
+                    edit.putInt(a8.p0.o(B1, "notifyuntil_"), dialog.notify_settings.mute_until);
                 }
             }
         }
@@ -24457,25 +24457,25 @@ public final class qp extends c1 implements ls {
         ArrayList arrayList = new ArrayList();
         if (ijVar.k.mentioned) {
             yr messagesStorage = getMessagesStorage();
-            messagesStorage.a.c(new yq(messagesStorage, ijVar.f1(), -ijVar.k.peer_id.channel_id, ij.B0(ijVar.k), 0));
+            messagesStorage.a.c(new yq(messagesStorage, ijVar.e1(), -ijVar.k.peer_id.channel_id, ij.B0(ijVar.k), 0));
         }
-        arrayList.add(Integer.valueOf(ijVar.f1()));
+        arrayList.add(Integer.valueOf(ijVar.e1()));
         long B0 = ij.B0(ijVar.k);
         getMessagesStorage().S0(0, 0, B0, arrayList);
         getNotificationCenter().k(qs.C0, Long.valueOf(B0), arrayList);
-        if (ijVar.f1() < 0) {
+        if (ijVar.e1() < 0) {
             p3(ij.B0(ijVar.k), TLObject.FLAG_31, ijVar.k.random_id);
             return;
         }
         if (ijVar.k.peer_id.channel_id == 0) {
             TLRPC.TL_messages_readMessageContents tL_messages_readMessageContents = new TLRPC.TL_messages_readMessageContents();
-            tL_messages_readMessageContents.id.add(Integer.valueOf(ijVar.f1()));
+            tL_messages_readMessageContents.id.add(Integer.valueOf(ijVar.e1()));
             getConnectionsManager().sendRequest(tL_messages_readMessageContents, new rj(this, 5));
         } else {
             TLRPC.TL_channels_readMessageContents tL_channels_readMessageContents = new TLRPC.TL_channels_readMessageContents();
             tL_channels_readMessageContents.channel = h1(ijVar.k.peer_id.channel_id);
-            tL_channels_readMessageContents.id.add(Integer.valueOf(ijVar.f1()));
-            getConnectionsManager().sendRequest(tL_channels_readMessageContents, new di.u5(13));
+            tL_channels_readMessageContents.id.add(Integer.valueOf(ijVar.e1()));
+            getConnectionsManager().sendRequest(tL_channels_readMessageContents, new di.v5(13));
         }
     }
 
@@ -24610,7 +24610,7 @@ public final class qp extends c1 implements ls {
             tL_messages_readPollVotes.top_msg_id = (int) j10;
             tL_messages_readPollVotes.flags |= 1;
         }
-        getConnectionsManager().sendRequest(tL_messages_readPollVotes, new di.u5(13));
+        getConnectionsManager().sendRequest(tL_messages_readPollVotes, new di.v5(13));
         qs.f(this.currentAccount).k(qs.r, Integer.valueOf(TLObject.FLAG_20));
     }
 
@@ -24762,12 +24762,12 @@ public final class qp extends c1 implements ls {
                 tL_messages_readReactions.flags |= 1;
             }
         }
-        getConnectionsManager().sendRequest(tL_messages_readReactions, new di.u5(13));
+        getConnectionsManager().sendRequest(tL_messages_readReactions, new di.v5(13));
         qs.f(this.currentAccount).k(qs.r, Integer.valueOf(TLObject.FLAG_20));
     }
 
     public final void t4(Object obj, TLRPC.Document document) {
-        if (obj == null || !ij.t3(document, false)) {
+        if (obj == null || !ij.s3(document, false)) {
             return;
         }
         TLRPC.TL_messages_saveGif tL_messages_saveGif = new TLRPC.TL_messages_saveGif();
@@ -25565,7 +25565,7 @@ public final class qp extends c1 implements ls {
         } else {
             tL_contacts_block.id = l1(M0);
         }
-        getConnectionsManager().sendRequest(tL_contacts_block, new di.u5(13));
+        getConnectionsManager().sendRequest(tL_contacts_block, new di.v5(13));
     }
 
     public final ArrayList w0(ArrayList arrayList) {
@@ -25756,7 +25756,7 @@ public final class qp extends c1 implements ls {
         int i7 = 0;
         for (int i10 = 0; i10 < tL_messages_stickerSet.documents.size(); i10++) {
             try {
-                if (ij.Y3(tL_messages_stickerSet.documents.get(i10))) {
+                if (ij.X3(tL_messages_stickerSet.documents.get(i10))) {
                     NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(tL_messages_stickerSet.getObjectSize());
                     tL_messages_stickerSet.serializeToStream(nativeByteBuffer);
                     nativeByteBuffer.position(0);
@@ -25766,7 +25766,7 @@ public final class qp extends c1 implements ls {
                     nativeByteBuffer.reuse();
                     while (i7 < tL_messages_stickerSet2.documents.size()) {
                         try {
-                            if (ij.Y3(tL_messages_stickerSet2.documents.get(i7))) {
+                            if (ij.X3(tL_messages_stickerSet2.documents.get(i7))) {
                                 tL_messages_stickerSet2.documents.remove(i7);
                                 tL_messages_stickerSet2.packs.remove(i7);
                                 i7--;
@@ -25838,8 +25838,8 @@ public final class qp extends c1 implements ls {
         }
     }
 
-    public final void x4(org.telegram.ui.ActionBar.j6 j6Var, org.telegram.ui.ActionBar.h6 h6Var, boolean z9, boolean z10) {
-        TLRPC.TL_theme tL_theme = h6Var != null ? h6Var.r : j6Var.F;
+    public final void x4(org.telegram.ui.ActionBar.k6 k6Var, org.telegram.ui.ActionBar.i6 i6Var, boolean z9, boolean z10) {
+        TLRPC.TL_theme tL_theme = i6Var != null ? i6Var.r : k6Var.F;
         if (tL_theme != null) {
             TL_account.saveTheme savetheme = new TL_account.saveTheme();
             TLRPC.TL_inputTheme tL_inputTheme = new TLRPC.TL_inputTheme();
@@ -25847,13 +25847,13 @@ public final class qp extends c1 implements ls {
             tL_inputTheme.access_hash = tL_theme.access_hash;
             savetheme.theme = tL_inputTheme;
             savetheme.unsave = z10;
-            getConnectionsManager().sendRequest(savetheme, new di.u5(13));
+            getConnectionsManager().sendRequest(savetheme, new di.v5(13));
             getConnectionsManager().resumeNetworkMaybe();
         }
         if (z10) {
             return;
         }
-        k2(j6Var, h6Var, z9);
+        k2(k6Var, i6Var, z9);
     }
 
     public final boolean y(TLRPC.Dialog dialog) {
@@ -25872,7 +25872,7 @@ public final class qp extends c1 implements ls {
         }
         long j3 = dialog.id;
         if (j3 > 0) {
-            return !t3.u0(this.currentAccount, a2(Long.valueOf(j3)));
+            return !t3.v0(this.currentAccount, a2(Long.valueOf(j3)));
         }
         return true;
     }
@@ -25961,7 +25961,7 @@ public final class qp extends c1 implements ls {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void y4(org.telegram.ui.ActionBar.j6 j6Var, org.telegram.ui.ActionBar.h6 h6Var) {
+    public final void y4(org.telegram.ui.ActionBar.k6 k6Var, org.telegram.ui.ActionBar.i6 i6Var) {
         String str;
         File file;
         String str2;
@@ -25977,43 +25977,43 @@ public final class qp extends c1 implements ls {
         String str4;
         String str5;
         String str6;
-        if (j6Var == null) {
+        if (k6Var == null) {
             return;
         }
-        if (h6Var != 0) {
+        if (i6Var != 0) {
             File g12 = g0.g1();
             g12.mkdirs();
             Locale locale = Locale.US;
-            File file2 = new File(g12, h6Var.b.m() + "_" + h6Var.a + ".attheme");
-            SparseIntArray T0 = org.telegram.ui.ActionBar.k6.T0(null, h6Var.b.d, null);
+            File file2 = new File(g12, i6Var.b.m() + "_" + i6Var.a + ".attheme");
+            SparseIntArray T0 = org.telegram.ui.ActionBar.l6.T0(null, i6Var.b.d, null);
             SparseIntArray clone = T0.clone();
-            h6Var.d(T0, clone);
-            if (TextUtils.isEmpty(h6Var.o)) {
+            i6Var.d(T0, clone);
+            if (TextUtils.isEmpty(i6Var.o)) {
                 z9 = true;
                 i7 = 0;
                 str3 = null;
             } else {
                 StringBuilder sb2 = new StringBuilder();
-                if (h6Var.q) {
+                if (i6Var.q) {
                     sb2.append("motion");
                 }
-                int i10 = clone.get(org.telegram.ui.ActionBar.k6.Be);
+                int i10 = clone.get(org.telegram.ui.ActionBar.l6.Be);
                 if (i10 == 0) {
                     i10 = -1;
                 }
-                int i11 = clone.get(org.telegram.ui.ActionBar.k6.Ce);
+                int i11 = clone.get(org.telegram.ui.ActionBar.l6.Ce);
                 if (i11 == 0) {
                     i11 = 0;
                 }
-                int i12 = clone.get(org.telegram.ui.ActionBar.k6.De);
+                int i12 = clone.get(org.telegram.ui.ActionBar.l6.De);
                 if (i12 == 0) {
                     i12 = 0;
                 }
-                int i13 = clone.get(org.telegram.ui.ActionBar.k6.Ee);
+                int i13 = clone.get(org.telegram.ui.ActionBar.l6.Ee);
                 if (i13 == 0) {
                     i13 = 0;
                 }
-                int i14 = clone.get(org.telegram.ui.ActionBar.k6.Fe);
+                int i14 = clone.get(org.telegram.ui.ActionBar.l6.Fe);
                 if (i14 == 0) {
                     i14 = 45;
                 }
@@ -26067,7 +26067,7 @@ public final class qp extends c1 implements ls {
                 } else {
                     lowerCase = lowerCase + "~" + str4 + "~" + str5;
                 }
-                str3 = "https://attheme.org?slug=" + h6Var.o + "&intensity=" + ((int) (h6Var.p * 100.0f)) + "&bg_color=" + lowerCase;
+                str3 = "https://attheme.org?slug=" + i6Var.o + "&intensity=" + ((int) (i6Var.p * 100.0f)) + "&bg_color=" + lowerCase;
                 if (sb2.length() > 0) {
                     StringBuilder j3 = rf.b.j(str3, "&mode=");
                     j3.append(sb2.toString());
@@ -26078,7 +26078,7 @@ public final class qp extends c1 implements ls {
             for (int i15 = i7; i15 < clone.size(); i15++) {
                 int keyAt = clone.keyAt(i15);
                 int valueAt = clone.valueAt(i15);
-                if (str3 == null || (org.telegram.ui.ActionBar.k6.Be != keyAt && org.telegram.ui.ActionBar.k6.Ce != keyAt && org.telegram.ui.ActionBar.k6.De != keyAt && org.telegram.ui.ActionBar.k6.Ee != keyAt)) {
+                if (str3 == null || (org.telegram.ui.ActionBar.l6.Be != keyAt && org.telegram.ui.ActionBar.l6.Ce != keyAt && org.telegram.ui.ActionBar.l6.De != keyAt && org.telegram.ui.ActionBar.l6.Ee != keyAt)) {
                     jg.g.x(sb4, keyAt, "=", valueAt, "\n");
                 }
             }
@@ -26104,13 +26104,13 @@ public final class qp extends c1 implements ls {
                                         }
                                     }
                                     str = file2.getAbsolutePath();
-                                    file = h6Var.e();
+                                    file = i6Var.e();
                                     str2 = str;
                                     if (str2 == null) {
                                         return;
                                     }
-                                    this.P2.put(str2, h6Var == 0 ? h6Var : j6Var);
-                                    Utilities.e.c(new mn(this, str2, file, h6Var, j6Var, 6));
+                                    this.P2.put(str2, i6Var == 0 ? i6Var : k6Var);
+                                    Utilities.e.c(new mn(this, str2, file, i6Var, k6Var, 6));
                                 } catch (Throwable th4) {
                                     th3 = th4;
                                     fileOutputStream = fileOutputStream2;
@@ -26141,7 +26141,7 @@ public final class qp extends c1 implements ls {
                         if (fileOutputStream2 != null) {
                         }
                         str = file2.getAbsolutePath();
-                        file = h6Var.e();
+                        file = i6Var.e();
                         str2 = str;
                         if (str2 == null) {
                         }
@@ -26162,17 +26162,17 @@ public final class qp extends c1 implements ls {
                 }
             }
             str = file2.getAbsolutePath();
-            file = h6Var.e();
+            file = i6Var.e();
         } else {
-            str = j6Var.b;
+            str = k6Var.b;
             file = null;
         }
         str2 = str;
         if (str2 == null || this.P2.containsKey(str2)) {
             return;
         }
-        this.P2.put(str2, h6Var == 0 ? h6Var : j6Var);
-        Utilities.e.c(new mn(this, str2, file, h6Var, j6Var, 6));
+        this.P2.put(str2, i6Var == 0 ? i6Var : k6Var);
+        Utilities.e.c(new mn(this, str2, file, i6Var, k6Var, 6));
     }
 
     public final void z(long j3, int i7, long j10) {
@@ -26237,7 +26237,7 @@ public final class qp extends c1 implements ls {
                     i7 = 1;
                 }
                 org.telegram.ui.ActionBar.f2 Q = LaunchActivity.Q();
-                boolean z11 = !(Q instanceof org.telegram.ui.ww) || (Q instanceof je0);
+                boolean z11 = !(Q instanceof org.telegram.ui.yw) || (Q instanceof le0);
                 if (F1 == null) {
                     R4(F1, f2Var);
                     return;
@@ -26254,24 +26254,24 @@ public final class qp extends c1 implements ls {
                 }
                 if (i7 == 2) {
                     if (!t3.c0(chat)) {
-                        f2Var.presentFragment(new org.telegram.ui.an(bundle), !z11, true);
+                        f2Var.presentFragment(new org.telegram.ui.cn(bundle), !z11, true);
                         return;
                     } else {
-                        HashSet hashSet = w91.q1;
-                        f2Var.presentFragment(w91.I0(f2Var.getMessagesController(), f2Var.getMessagesStorage(), bundle), !z11, true);
+                        HashSet hashSet = y91.q1;
+                        f2Var.presentFragment(y91.I0(f2Var.getMessagesController(), f2Var.getMessagesStorage(), bundle), !z11, true);
                         return;
                     }
                 }
                 if (!t3.c0(chat)) {
-                    org.telegram.ui.an anVar = new org.telegram.ui.an(bundle);
+                    org.telegram.ui.cn cnVar = new org.telegram.ui.cn(bundle);
                     if (z9 && !z11) {
                         z10 = true;
                     }
-                    f2Var.presentFragment(anVar, z10);
+                    f2Var.presentFragment(cnVar, z10);
                     return;
                 }
-                HashSet hashSet2 = w91.q1;
-                org.telegram.ui.ActionBar.f2 I0 = w91.I0(f2Var.getMessagesController(), f2Var.getMessagesStorage(), bundle);
+                HashSet hashSet2 = y91.q1;
+                org.telegram.ui.ActionBar.f2 I0 = y91.I0(f2Var.getMessagesController(), f2Var.getMessagesStorage(), bundle);
                 if (z9 && !z11) {
                     z10 = true;
                 }
@@ -26281,7 +26281,7 @@ public final class qp extends c1 implements ls {
         }
         z9 = false;
         org.telegram.ui.ActionBar.f2 Q2 = LaunchActivity.Q();
-        if (Q2 instanceof org.telegram.ui.ww) {
+        if (Q2 instanceof org.telegram.ui.yw) {
         }
         if (F1 == null) {
         }
@@ -26299,7 +26299,7 @@ public final class qp extends c1 implements ls {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void z4(File file, org.telegram.ui.ActionBar.c6 c6Var, boolean z9, long j3) {
+    public final void z4(File file, org.telegram.ui.ActionBar.d6 d6Var, boolean z9, long j3) {
         TL_account.saveWallPaper savewallpaper;
         NativeByteBuffer nativeByteBuffer;
         TLRPC.WallPaper tL_wallPaper;
@@ -26310,9 +26310,9 @@ public final class qp extends c1 implements ls {
         int i12;
         NativeByteBuffer nativeByteBuffer2 = null;
         if (this.Q2 != null) {
-            File file2 = new File(t0.h(), c6Var.b);
+            File file2 = new File(t0.h(), d6Var.b);
             if (file != null && (file.getAbsolutePath().equals(this.Q2) || file.equals(file2))) {
-                this.R2 = c6Var;
+                this.R2 = d6Var;
                 return;
             } else {
                 getFileLoader().b(this.Q2, false);
@@ -26322,11 +26322,11 @@ public final class qp extends c1 implements ls {
         }
         if (file != null) {
             this.Q2 = file.getAbsolutePath();
-            this.R2 = c6Var;
+            this.R2 = d6Var;
             getFileLoader().h0(false, 16777216, this.Q2, true);
-        } else if (!"d".equals(c6Var.c) && !"c".equals(c6Var.c) && c6Var.l > 0 && !"t".equals(c6Var.c)) {
-            TLRPC.InputWallPaper r12 = r1(c6Var);
-            TLRPC.TL_wallPaperSettings g22 = g2(c6Var);
+        } else if (!"d".equals(d6Var.c) && !"c".equals(d6Var.c) && d6Var.l > 0 && !"t".equals(d6Var.c)) {
+            TLRPC.InputWallPaper r12 = r1(d6Var);
+            TLRPC.TL_wallPaperSettings g22 = g2(d6Var);
             if (z9) {
                 TL_account.installWallPaper installwallpaper = new TL_account.installWallPaper();
                 installwallpaper.wallpaper = r12;
@@ -26346,15 +26346,15 @@ public final class qp extends c1 implements ls {
                 }
                 try {
                     nativeByteBuffer.writeInt32(21);
-                    nativeByteBuffer.writeBool(c6Var.i);
-                    nativeByteBuffer.writeBool(c6Var.j);
-                    nativeByteBuffer.writeInt32(c6Var.d);
-                    nativeByteBuffer.writeInt32(c6Var.e);
-                    nativeByteBuffer.writeInt32(c6Var.h);
-                    nativeByteBuffer.writeDouble(c6Var.k);
+                    nativeByteBuffer.writeBool(d6Var.i);
+                    nativeByteBuffer.writeBool(d6Var.j);
+                    nativeByteBuffer.writeInt32(d6Var.d);
+                    nativeByteBuffer.writeInt32(d6Var.e);
+                    nativeByteBuffer.writeInt32(d6Var.h);
+                    nativeByteBuffer.writeDouble(d6Var.k);
                     nativeByteBuffer.writeBool(z9);
-                    nativeByteBuffer.writeString(c6Var.c);
-                    nativeByteBuffer.writeString(c6Var.b);
+                    nativeByteBuffer.writeString(d6Var.c);
+                    nativeByteBuffer.writeString(d6Var.b);
                     nativeByteBuffer.limit(nativeByteBuffer.position());
                 } catch (Exception e11) {
                     e = e11;
@@ -26363,29 +26363,29 @@ public final class qp extends c1 implements ls {
                     nativeByteBuffer = nativeByteBuffer2;
                     j3 = getMessagesStorage().z(nativeByteBuffer);
                     getConnectionsManager().sendRequest(savewallpaper, new pj(this, j3, 8));
-                    if ("c".equals(c6Var.c)) {
+                    if ("c".equals(d6Var.c)) {
                     }
-                    if ("c".equals(c6Var.c)) {
+                    if ("c".equals(d6Var.c)) {
                     }
-                    j10 = c6Var.l;
+                    j10 = d6Var.l;
                     if (j10 != 0) {
                     }
-                    tL_wallPaper.dark = qa0.j(c6Var.d, c6Var.e, c6Var.f, c6Var.g);
+                    tL_wallPaper.dark = ra0.j(d6Var.d, d6Var.e, d6Var.f, d6Var.g);
                     tL_wallPaper.flags |= 4;
                     TLRPC.TL_wallPaperSettings tL_wallPaperSettings = new TLRPC.TL_wallPaperSettings();
                     tL_wallPaper.settings = tL_wallPaperSettings;
-                    tL_wallPaperSettings.blur = c6Var.i;
-                    tL_wallPaperSettings.motion = c6Var.j;
-                    i7 = c6Var.d;
+                    tL_wallPaperSettings.blur = d6Var.i;
+                    tL_wallPaperSettings.motion = d6Var.j;
+                    i7 = d6Var.d;
                     if (i7 != 0) {
                     }
-                    i10 = c6Var.e;
+                    i10 = d6Var.e;
                     if (i10 != 0) {
                     }
-                    i11 = c6Var.f;
+                    i11 = d6Var.f;
                     if (i11 != 0) {
                     }
-                    i12 = c6Var.g;
+                    i12 = d6Var.g;
                     if (i12 != 0) {
                     }
                     ArrayList arrayList = new ArrayList();
@@ -26397,15 +26397,15 @@ public final class qp extends c1 implements ls {
             }
             getConnectionsManager().sendRequest(savewallpaper, new pj(this, j3, 8));
         }
-        if (!("c".equals(c6Var.c) && c6Var.f == 0) && c6Var.l <= 0) {
-            if ("c".equals(c6Var.c)) {
+        if (!("c".equals(d6Var.c) && d6Var.f == 0) && d6Var.l <= 0) {
+            if ("c".equals(d6Var.c)) {
                 tL_wallPaper = new TLRPC.TL_wallPaper();
-                tL_wallPaper.slug = c6Var.c;
+                tL_wallPaper.slug = d6Var.c;
                 tL_wallPaper.document = new TLRPC.TL_documentEmpty();
             } else {
                 tL_wallPaper = new TLRPC.TL_wallPaperNoFile();
             }
-            j10 = c6Var.l;
+            j10 = d6Var.l;
             if (j10 != 0) {
                 long nextLong = Utilities.b.nextLong();
                 tL_wallPaper.id = nextLong;
@@ -26415,32 +26415,32 @@ public final class qp extends c1 implements ls {
             } else {
                 tL_wallPaper.id = j10;
             }
-            tL_wallPaper.dark = qa0.j(c6Var.d, c6Var.e, c6Var.f, c6Var.g);
+            tL_wallPaper.dark = ra0.j(d6Var.d, d6Var.e, d6Var.f, d6Var.g);
             tL_wallPaper.flags |= 4;
             TLRPC.TL_wallPaperSettings tL_wallPaperSettings2 = new TLRPC.TL_wallPaperSettings();
             tL_wallPaper.settings = tL_wallPaperSettings2;
-            tL_wallPaperSettings2.blur = c6Var.i;
-            tL_wallPaperSettings2.motion = c6Var.j;
-            i7 = c6Var.d;
+            tL_wallPaperSettings2.blur = d6Var.i;
+            tL_wallPaperSettings2.motion = d6Var.j;
+            i7 = d6Var.d;
             if (i7 != 0) {
                 tL_wallPaperSettings2.background_color = i7;
                 int i13 = tL_wallPaperSettings2.flags;
-                tL_wallPaperSettings2.intensity = (int) (c6Var.k * 100.0f);
+                tL_wallPaperSettings2.intensity = (int) (d6Var.k * 100.0f);
                 tL_wallPaperSettings2.flags = i13 | 9;
             }
-            i10 = c6Var.e;
+            i10 = d6Var.e;
             if (i10 != 0) {
                 tL_wallPaperSettings2.second_background_color = i10;
-                tL_wallPaperSettings2.rotation = g0.s1(c6Var.h, true);
+                tL_wallPaperSettings2.rotation = g0.s1(d6Var.h, true);
                 tL_wallPaper.settings.flags |= 16;
             }
-            i11 = c6Var.f;
+            i11 = d6Var.f;
             if (i11 != 0) {
                 TLRPC.WallPaperSettings wallPaperSettings = tL_wallPaper.settings;
                 wallPaperSettings.third_background_color = i11;
                 wallPaperSettings.flags |= 32;
             }
-            i12 = c6Var.g;
+            i12 = d6Var.g;
             if (i12 != 0) {
                 TLRPC.WallPaperSettings wallPaperSettings2 = tL_wallPaper.settings;
                 wallPaperSettings2.fourth_background_color = i12;

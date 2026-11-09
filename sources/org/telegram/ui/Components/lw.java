@@ -7,14 +7,14 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class lw extends bv {
     public final /* synthetic */ hy g0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public lw(hy hyVar, Context context, org.telegram.ui.ActionBar.f6 f6Var, boolean z9, cv cvVar, boolean z10) {
-        super(context, f6Var, true, false, true, z9, 0, cvVar, org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.v6, f6Var), z10);
+    public lw(hy hyVar, Context context, org.telegram.ui.ActionBar.g6 g6Var, boolean z9, cv cvVar, boolean z10) {
+        super(context, g6Var, true, false, true, z9, 0, cvVar, org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.v6, g6Var), z10);
         this.g0 = hyVar;
     }
 

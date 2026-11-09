@@ -4,9 +4,9 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import c8.xb;
 import java.util.Arrays;
-import org.telegram.ui.hy0;
+import org.telegram.ui.ky0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class k extends l {
     public static final Parcelable.Creator<k> CREATOR = new t0(6);
@@ -37,18 +37,18 @@ public final class k extends l {
     }
 
     public final String toString() {
-        hy0 hy0Var = new hy0(getClass().getSimpleName(), 9);
+        ky0 ky0Var = new ky0(getClass().getSimpleName(), 9);
         String valueOf = String.valueOf(this.a.a);
         q7.c cVar = new q7.c(8, false);
-        ((hy0) hy0Var.d).d = cVar;
-        hy0Var.d = cVar;
+        ((ky0) ky0Var.d).d = cVar;
+        ky0Var.d = cVar;
         cVar.c = valueOf;
         cVar.b = "errorCode";
         String str = this.b;
         if (str != null) {
-            hy0Var.N(str, "errorMessage");
+            ky0Var.N(str, "errorMessage");
         }
-        return hy0Var.toString();
+        return ky0Var.toString();
     }
 
     @Override // android.os.Parcelable

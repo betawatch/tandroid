@@ -9,7 +9,7 @@ import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class p10 extends c1 {
     public static int s0;
@@ -181,7 +181,7 @@ public final class p10 extends c1 {
                             qs.e().k(qs.h5, new Object[0]);
                             p10Var.getMediaDataController().R0(false);
                             p10Var.getMediaDataController().S0(false, null);
-                            di.y6 P1 = p10Var.getMessagesController().P1();
+                            di.z6 P1 = p10Var.getMessagesController().P1();
                             P1.R = false;
                             P1.S = null;
                             break;
@@ -213,7 +213,7 @@ public final class p10 extends c1 {
                             qs.e().k(qs.h5, new Object[0]);
                             p10Var.getMediaDataController().R0(false);
                             p10Var.getMediaDataController().S0(false, null);
-                            di.y6 P1 = p10Var.getMessagesController().P1();
+                            di.z6 P1 = p10Var.getMessagesController().P1();
                             P1.R = false;
                             P1.S = null;
                             break;

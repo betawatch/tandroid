@@ -5,38 +5,38 @@ import gh.d;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.sc;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a implements d {
     public final /* synthetic */ int a;
-    public final /* synthetic */ f6 b;
+    public final /* synthetic */ g6 b;
 
-    public /* synthetic */ a(int i7, f6 f6Var) {
+    public /* synthetic */ a(int i7, g6 g6Var) {
         this.a = i7;
-        this.b = f6Var;
+        this.b = g6Var;
     }
 
     @Override // gh.d
-    public final int k(f6 f6Var, boolean z9) {
+    public final int k(g6 g6Var, boolean z9) {
         switch (this.a) {
             case 0:
                 if (g0.c(p10.s0, this.b)) {
-                    return k6.r1(sc.e(262144) ? 0.85f : 0.76f, k6.w0(k6.Ge, f6Var));
+                    return l6.r1(sc.e(262144) ? 0.85f : 0.76f, l6.w0(l6.Ge, g6Var));
                 }
-                return i0.a.o(k6.w0(k6.Ge, f6Var), qs.e4);
+                return i0.a.o(l6.w0(l6.Ge, g6Var), qs.e4);
             case 1:
                 if (g0.c(p10.s0, this.b)) {
-                    return k6.r1(sc.e(262144) ? 0.85f : 0.76f, k6.w0(k6.Qe, f6Var));
+                    return l6.r1(sc.e(262144) ? 0.85f : 0.76f, l6.w0(l6.Qe, g6Var));
                 }
-                return i0.a.o(k6.w0(z9 ? k6.s8 : k6.Qe, f6Var), qs.e4);
+                return i0.a.o(l6.w0(z9 ? l6.s8 : l6.Qe, g6Var), qs.e4);
             default:
                 if (g0.c(p10.s0, this.b)) {
-                    return k6.r1(sc.e(262144) ? 0.85f : 0.76f, k6.w0(k6.Qe, f6Var));
+                    return l6.r1(sc.e(262144) ? 0.85f : 0.76f, l6.w0(l6.Qe, g6Var));
                 }
-                return i0.a.o(k6.w0(z9 ? k6.s8 : k6.Qe, f6Var), qs.e4);
+                return i0.a.o(l6.w0(z9 ? l6.s8 : l6.Qe, g6Var), qs.e4);
         }
     }
 }

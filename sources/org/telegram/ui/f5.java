@@ -8,7 +8,7 @@ import android.view.View;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class f5 extends ReplacementSpan {
     public final Paint a;
@@ -85,7 +85,7 @@ public final class f5 extends ReplacementSpan {
                 int alpha2 = paint.getAlpha();
                 this.s = alpha2;
                 paint2.setAlpha(alpha2);
-                paint2.setShadowLayer(org.telegram.messenger.g0.L(1.0f), 0.0f, org.telegram.messenger.g0.L(0.66f), org.telegram.ui.ActionBar.k6.r1(this.s / 255.0f, 855638016));
+                paint2.setShadowLayer(org.telegram.messenger.g0.L(1.0f), 0.0f, org.telegram.messenger.g0.L(0.66f), org.telegram.ui.ActionBar.l6.r1(this.s / 255.0f, 855638016));
             }
             canvas.drawCircle((org.telegram.messenger.g0.L(this.d) / 2.0f) + 0.0f + f10, ((i11 + i13) / 2.0f) + this.r, org.telegram.messenger.g0.L(this.d) / 2.0f, paint2);
         }
@@ -119,7 +119,7 @@ public final class f5 extends ReplacementSpan {
         ImageReceiver imageReceiver = new ImageReceiver(view);
         this.b = imageReceiver;
         imageReceiver.J0 = true;
-        this.c = new org.telegram.ui.Components.w8((org.telegram.ui.ActionBar.f6) null);
+        this.c = new org.telegram.ui.Components.w8((org.telegram.ui.ActionBar.g6) null);
         imageReceiver.J0(org.telegram.messenger.g0.L(f10));
         this.d = f10;
         Paint paint = new Paint(1);

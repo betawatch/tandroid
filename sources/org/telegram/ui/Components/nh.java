@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.content.Intent;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class nh implements mj {
     public final /* synthetic */ di a;
@@ -25,13 +25,13 @@ public final class nh implements mj {
             ((mj) obj).A();
             return;
         }
-        if (obj instanceof org.telegram.ui.bk0) {
-            org.telegram.ui.bk0 bk0Var = (org.telegram.ui.bk0) obj;
+        if (obj instanceof org.telegram.ui.dk0) {
+            org.telegram.ui.dk0 dk0Var = (org.telegram.ui.dk0) obj;
             try {
                 Intent intent = new Intent("android.intent.action.GET_CONTENT");
                 intent.putExtra("android.intent.extra.ALLOW_MULTIPLE", true);
                 intent.setType("*/*");
-                bk0Var.startActivityForResult(intent, 21);
+                dk0Var.startActivityForResult(intent, 21);
             } catch (Exception e10) {
                 org.telegram.messenger.a8.g(e10, true);
             }
@@ -56,8 +56,8 @@ public final class nh implements mj {
             ((mj) obj).n(arrayList, str, arrayList2, arrayList3, z9, i7, j3, z10, j10);
             return;
         }
-        if (obj instanceof org.telegram.ui.bk0) {
-            org.telegram.ui.bk0 bk0Var = (org.telegram.ui.bk0) obj;
+        if (obj instanceof org.telegram.ui.dk0) {
+            org.telegram.ui.dk0 dk0Var = (org.telegram.ui.dk0) obj;
             ArrayList arrayList4 = new ArrayList();
             int size = arrayList.size();
             for (int i10 = 0; i10 < size; i10++) {
@@ -65,7 +65,7 @@ public final class nh implements mj {
                 fzVar.c = (String) arrayList.get(i10);
                 arrayList4.add(fzVar);
             }
-            bk0Var.K1(arrayList4);
+            dk0Var.K1(arrayList4);
         }
     }
 
@@ -78,10 +78,10 @@ public final class nh implements mj {
             return;
         }
         org.telegram.ui.ActionBar.f2 f2Var = diVar.W1;
-        if (f2Var instanceof org.telegram.ui.an) {
-            ((org.telegram.ui.an) f2Var).p(arrayList, z9, i7, j3);
-        } else if (f2Var instanceof org.telegram.ui.bk0) {
-            ((org.telegram.ui.bk0) f2Var).K1(arrayList);
+        if (f2Var instanceof org.telegram.ui.cn) {
+            ((org.telegram.ui.cn) f2Var).p(arrayList, z9, i7, j3);
+        } else if (f2Var instanceof org.telegram.ui.dk0) {
+            ((org.telegram.ui.dk0) f2Var).K1(arrayList);
         }
     }
 }

@@ -12,9 +12,9 @@ import android.util.Base64;
 import android.util.SparseArray;
 import java.util.Calendar;
 import java.util.HashMap;
-import org.telegram.ui.hy0;
+import org.telegram.ui.ky0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public class MrzRecognizer {
     public static String a(String str) {
@@ -365,14 +365,14 @@ public class MrzRecognizer {
             float max = 1500.0f / Math.max(bitmap.getWidth(), bitmap.getHeight());
             bitmap = Bitmap.createScaledBitmap(bitmap, Math.round(bitmap.getWidth() * max), Math.round(bitmap.getHeight() * max), true);
         }
-        hy0 hy0Var = new hy0(17);
+        ky0 ky0Var = new ky0(17);
         int width = bitmap.getWidth();
         int height = bitmap.getHeight();
-        hy0Var.d = bitmap;
-        b7.d dVar = (b7.d) hy0Var.b;
+        ky0Var.d = bitmap;
+        b7.d dVar = (b7.d) ky0Var.b;
         dVar.a = width;
         dVar.b = height;
-        SparseArray e12 = nVar.e1(hy0Var);
+        SparseArray e12 = nVar.e1(ky0Var);
         int i7 = 0;
         for (int i10 = 0; i10 < e12.size(); i10++) {
             u8.m mVar = (u8.m) e12.valueAt(i10);

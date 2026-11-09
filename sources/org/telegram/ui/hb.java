@@ -6,7 +6,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class hb implements org.telegram.ui.Cells.q0 {
     public final /* synthetic */ jb a;
@@ -25,7 +25,7 @@ public final class hb implements org.telegram.ui.Cells.q0 {
             bundle.putLong("chat_id", -j3);
             i10 = ((org.telegram.ui.ActionBar.f2) mbVar).currentAccount;
             if (org.telegram.messenger.qp.s1(i10).E(bundle, mbVar, null, null)) {
-                mbVar.presentFragment(new an(bundle), true);
+                mbVar.presentFragment(new cn(bundle), true);
                 return;
             }
             return;
@@ -35,7 +35,7 @@ public final class hb implements org.telegram.ui.Cells.q0 {
             Bundle j10 = a8.p0.j(j3, "user_id");
             mb.u0(mbVar, j10, j3);
             ProfileActivity profileActivity = new ProfileActivity(j10, null);
-            profileActivity.g5(0);
+            profileActivity.j5(0);
             mbVar.presentFragment(profileActivity);
         }
     }
@@ -99,7 +99,7 @@ public final class hb implements org.telegram.ui.Cells.q0 {
                 mb.F0(mbVar, (TLRPC.TL_messages_exportedChatInvite) obj, mbVar.z0);
                 return;
             } else {
-                org.telegram.messenger.k5.o(null, 2131748914, org.telegram.ui.Components.hc.a0(mbVar), R.raw.linkbroken, 36);
+                org.telegram.messenger.k5.o(null, 2131748913, org.telegram.ui.Components.hc.a0(mbVar), R.raw.linkbroken, 36);
                 return;
             }
         }

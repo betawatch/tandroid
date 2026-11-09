@@ -25,10 +25,10 @@ import com.google.android.gms.common.api.internal.p0;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
-import di.k4;
 import di.l3;
-import di.l9;
+import di.l4;
 import di.m9;
+import di.n9;
 import fi.m0;
 import fi.va;
 import fi.w5;
@@ -60,22 +60,22 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.lc;
 import org.telegram.messenger.qs;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.Components.et0;
-import org.telegram.ui.Components.q51;
-import org.telegram.ui.Components.t51;
-import org.telegram.ui.Components.zg0;
+import org.telegram.ui.Components.ah0;
+import org.telegram.ui.Components.gt0;
+import org.telegram.ui.Components.r51;
+import org.telegram.ui.Components.u51;
 import org.telegram.ui.Stories.ProfileStoriesView;
-import org.telegram.ui.cv0;
-import org.telegram.ui.n00;
-import org.telegram.ui.o11;
-import org.telegram.ui.wv0;
+import org.telegram.ui.ev0;
+import org.telegram.ui.p00;
+import org.telegram.ui.q11;
+import org.telegram.ui.yv0;
 import q7.l1;
 import q7.m1;
 import tg.r1;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
-public final class n implements androidx.lifecycle.a0, androidx.activity.result.b, et0, lc, o11, o0, l9, WebMessageListenerBoundaryInterface, com.google.android.gms.common.api.internal.p, og.n, tg.c, q51, j1, OnCompleteListener, ib.b {
+public final class n implements androidx.lifecycle.a0, androidx.activity.result.b, gt0, lc, q11, o0, m9, WebMessageListenerBoundaryInterface, com.google.android.gms.common.api.internal.p, og.n, tg.c, r51, j1, OnCompleteListener, ib.b {
     public final /* synthetic */ int a;
     public final Object b;
 
@@ -311,7 +311,7 @@ public final class n implements androidx.lifecycle.a0, androidx.activity.result.
         }
     }
 
-    @Override // org.telegram.ui.Components.et0
+    @Override // org.telegram.ui.Components.gt0
     public void F(boolean z9) {
         switch (this.a) {
             case 6:
@@ -327,9 +327,9 @@ public final class n implements androidx.lifecycle.a0, androidx.activity.result.
                 if (aVar2 != null) {
                     aVar2.a(z9, true);
                 }
-                n00 n00Var = fVar.s;
-                if (n00Var != null) {
-                    n00Var.invalidate();
+                p00 p00Var = fVar.s;
+                if (p00Var != null) {
+                    p00Var.invalidate();
                     break;
                 }
                 break;
@@ -350,7 +350,7 @@ public final class n implements androidx.lifecycle.a0, androidx.activity.result.
         handler.postDelayed(raVar, 2000L);
     }
 
-    @Override // org.telegram.ui.Components.et0
+    @Override // org.telegram.ui.Components.gt0
     public float Y0() {
         i0.b bVar;
         int d;
@@ -425,15 +425,15 @@ public final class n implements androidx.lifecycle.a0, androidx.activity.result.
         }
     }
 
-    @Override // di.l9
+    @Override // di.m9
     public void e(long j3, int i7, l3 l3Var) {
-        cv0 cv0Var = (cv0) this.b;
+        ev0 ev0Var = (ev0) this.b;
         int i10 = ProfileStoriesView.s0;
-        cv0Var.f(true, false);
+        ev0Var.f(true, false);
         l3Var.run();
     }
 
-    @Override // org.telegram.ui.Components.et0
+    @Override // org.telegram.ui.Components.gt0
     public int e1() {
         i0.b bVar;
         switch (this.a) {
@@ -499,7 +499,7 @@ public final class n implements androidx.lifecycle.a0, androidx.activity.result.
 
     @Override // org.telegram.messenger.lc
     public void f0(ImageReceiver imageReceiver, boolean z9, boolean z10, boolean z11) {
-        zg0 B;
+        ah0 B;
         boolean[] zArr = (boolean[]) this.b;
         if (!z9 || (B = imageReceiver.B()) == null || zArr[0]) {
             return;
@@ -1246,61 +1246,61 @@ public final class n implements androidx.lifecycle.a0, androidx.activity.result.
         ((androidx.fragment.app.t) this.b).d.R();
     }
 
-    @Override // di.l9
-    public boolean o(long j3, int i7, int i10, int i11, m9 m9Var) {
+    @Override // di.m9
+    public boolean o(long j3, int i7, int i10, int i11, n9 n9Var) {
         ImageReceiver imageReceiver;
-        k4 k4Var;
-        k4 k4Var2;
-        m9Var.b = null;
-        m9Var.c = null;
-        cv0 cv0Var = (cv0) this.b;
-        wv0 wv0Var = cv0Var.h;
-        ArrayList arrayList = cv0Var.x;
-        if (cv0Var.N < 0.2f) {
-            m9Var.b = wv0Var.getImageReceiver();
-            m9Var.c = null;
-            m9Var.a = wv0Var;
-            m9Var.h = 0.0f;
-            m9Var.i = org.telegram.messenger.g0.q.y;
-            m9Var.g = (View) cv0Var.getParent();
-            m9Var.d = cv0Var.D;
-            m9Var.n = true;
+        l4 l4Var;
+        l4 l4Var2;
+        n9Var.b = null;
+        n9Var.c = null;
+        ev0 ev0Var = (ev0) this.b;
+        yv0 yv0Var = ev0Var.h;
+        ArrayList arrayList = ev0Var.x;
+        if (ev0Var.N < 0.2f) {
+            n9Var.b = yv0Var.getImageReceiver();
+            n9Var.c = null;
+            n9Var.a = yv0Var;
+            n9Var.h = 0.0f;
+            n9Var.i = org.telegram.messenger.g0.q.y;
+            n9Var.g = (View) ev0Var.getParent();
+            n9Var.d = ev0Var.D;
+            n9Var.n = true;
             return true;
         }
         int i12 = 0;
         while (true) {
             if (i12 >= arrayList.size()) {
                 imageReceiver = null;
-                k4Var = null;
-                k4Var2 = null;
+                l4Var = null;
+                l4Var2 = null;
                 break;
             }
-            k4 k4Var3 = (k4) arrayList.get(i12);
-            if (k4Var3.e < 1.0f || k4Var3.a != i10) {
+            l4 l4Var3 = (l4) arrayList.get(i12);
+            if (l4Var3.e < 1.0f || l4Var3.a != i10) {
                 i12++;
             } else {
                 int i13 = i12 - 1;
                 int i14 = i12 - 2;
-                k4 d = ProfileStoriesView.d(i13 >= 0 ? (k4) arrayList.get(i13) : null, i14 >= 0 ? (k4) arrayList.get(i14) : null, k4Var3);
-                imageReceiver = k4Var3.b;
-                k4Var2 = d;
-                k4Var = k4Var3;
+                l4 d = ProfileStoriesView.d(i13 >= 0 ? (l4) arrayList.get(i13) : null, i14 >= 0 ? (l4) arrayList.get(i14) : null, l4Var3);
+                imageReceiver = l4Var3.b;
+                l4Var2 = d;
+                l4Var = l4Var3;
             }
         }
         if (imageReceiver == null) {
             return false;
         }
-        m9Var.c = imageReceiver;
-        m9Var.b = null;
-        m9Var.a = cv0Var;
-        m9Var.h = 0.0f;
-        m9Var.i = org.telegram.messenger.g0.q.y;
-        m9Var.g = (View) cv0Var.getParent();
-        if (k4Var == null || k4Var2 == null) {
-            m9Var.f = null;
+        n9Var.c = imageReceiver;
+        n9Var.b = null;
+        n9Var.a = ev0Var;
+        n9Var.h = 0.0f;
+        n9Var.i = org.telegram.messenger.g0.q.y;
+        n9Var.g = (View) ev0Var.getParent();
+        if (l4Var == null || l4Var2 == null) {
+            n9Var.f = null;
             return true;
         }
-        m9Var.f = new q7(this, new RectF(k4Var.m), k4Var, new RectF(k4Var2.m), k4Var2);
+        n9Var.f = new q7(this, new RectF(l4Var.m), l4Var, new RectF(l4Var2.m), l4Var2);
         return true;
     }
 
@@ -1352,31 +1352,31 @@ public final class n implements androidx.lifecycle.a0, androidx.activity.result.
         }
     }
 
-    @Override // org.telegram.ui.Components.q51
+    @Override // org.telegram.ui.Components.r51
     public /* synthetic */ void onRenderedFirstFrame(m2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.q51
+    @Override // org.telegram.ui.Components.r51
     public void onStateChanged(boolean z9, int i7) {
         y5 y5Var = (y5) this.b;
         w5 w5Var = y5Var.M;
-        t51 t51Var = y5Var.y;
-        if (t51Var == null) {
+        u51 u51Var = y5Var.y;
+        if (u51Var == null) {
             return;
         }
-        if (t51Var.d0()) {
+        if (u51Var.d0()) {
             org.telegram.messenger.g0.h3(w5Var);
         } else {
             org.telegram.messenger.g0.r(w5Var);
         }
     }
 
-    @Override // org.telegram.ui.Components.q51
+    @Override // org.telegram.ui.Components.r51
     public /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.q51
+    @Override // org.telegram.ui.Components.r51
     public void onVideoSizeChanged(int i7, int i10, int i11, float f10) {
         r1 r1Var = ((y5) this.b).x;
         if (r1Var != null) {
@@ -1478,7 +1478,7 @@ public final class n implements androidx.lifecycle.a0, androidx.activity.result.
         t((int) j3);
     }
 
-    @Override // org.telegram.ui.Components.q51
+    @Override // org.telegram.ui.Components.r51
     public void onRenderedFirstFrame() {
     }
 
@@ -1533,24 +1533,24 @@ public final class n implements androidx.lifecycle.a0, androidx.activity.result.
     public void Z(boolean z9) {
     }
 
-    @Override // di.l9
+    @Override // di.m9
     public /* synthetic */ void b(boolean z9) {
     }
 
-    @Override // org.telegram.ui.Components.q51
+    @Override // org.telegram.ui.Components.r51
     public /* synthetic */ void onSeekFinished(m2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.q51
+    @Override // org.telegram.ui.Components.r51
     public /* synthetic */ void onSeekStarted(m2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.q51
+    @Override // org.telegram.ui.Components.r51
     public /* synthetic */ void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
     }
 
-    @Override // org.telegram.ui.Components.q51
-    public void onError(t51 t51Var, Exception exc) {
+    @Override // org.telegram.ui.Components.r51
+    public void onError(u51 u51Var, Exception exc) {
     }
 
     @Override // org.telegram.messenger.lc

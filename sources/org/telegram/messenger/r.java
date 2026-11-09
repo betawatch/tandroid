@@ -9,9 +9,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.telegram.ui.Components.d41;
+import org.telegram.ui.Components.e41;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class r implements u10 {
     public final /* synthetic */ SpannableStringBuilder a;
@@ -52,7 +52,7 @@ public final /* synthetic */ class r implements u10 {
                         break;
                     }
                     URLSpan uRLSpan = uRLSpanArr[length];
-                    if (!(uRLSpan instanceof d41) || z9) {
+                    if (!(uRLSpan instanceof e41) || z9) {
                         spannableStringBuilder.removeSpan(uRLSpan);
                     }
                     length--;
@@ -146,7 +146,7 @@ public final /* synthetic */ class r implements u10 {
                             for (int i24 = i7; i24 < uRLSpanArr2.length; i24++) {
                                 URLSpan uRLSpan2 = uRLSpanArr2[i24];
                                 spannableStringBuilder.removeSpan(uRLSpan2);
-                                if (!(uRLSpan2 instanceof d41) || z9) {
+                                if (!(uRLSpan2 instanceof e41) || z9) {
                                     spannableStringBuilder.removeSpan(uRLSpan2);
                                 }
                             }

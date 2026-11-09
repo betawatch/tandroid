@@ -15,7 +15,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a implements Runnable {
     public final /* synthetic */ int a;
@@ -132,7 +132,7 @@ public final /* synthetic */ class a implements Runnable {
                 g4.f.remove(Integer.valueOf(g4Var.c));
                 return;
             case 6:
-                ((di.h4) this.b).d(true);
+                ((di.i4) this.b).d(true);
                 return;
             case 7:
                 x6 x6Var = (x6) this.b;
@@ -166,17 +166,17 @@ public final /* synthetic */ class a implements Runnable {
                 }
             case 9:
                 TLRPC.TL_theme tL_theme = (TLRPC.TL_theme) this.b;
-                ArrayList arrayList2 = org.telegram.ui.ActionBar.k6.F;
+                ArrayList arrayList2 = org.telegram.ui.ActionBar.l6.F;
                 int size = arrayList2.size();
                 for (int i12 = 0; i12 < size; i12++) {
-                    TLRPC.TL_theme tL_theme2 = ((org.telegram.ui.ActionBar.j6) arrayList2.get(i12)).F;
+                    TLRPC.TL_theme tL_theme2 = ((org.telegram.ui.ActionBar.k6) arrayList2.get(i12)).F;
                     if (tL_theme2 != null && tL_theme2.id == tL_theme.id) {
                         TLRPC.Document document2 = tL_theme2.document;
                         if (document2 == null || (document = tL_theme.document) == null) {
                             return;
                         }
                         document2.file_reference = document.file_reference;
-                        org.telegram.ui.ActionBar.k6.y1(true, false);
+                        org.telegram.ui.ActionBar.l6.y1(true, false);
                         return;
                     }
                 }

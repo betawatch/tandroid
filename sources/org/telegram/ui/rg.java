@@ -1,38 +1,44 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class rg implements org.telegram.messenger.c20 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ Long d;
-    public final /* synthetic */ Object e;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-    public /* synthetic */ rg(Object obj, long j3, long j10, Long l10, int i7) {
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class rg implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ EditTextBoldCursor b;
+
+    public /* synthetic */ rg(EditTextBoldCursor editTextBoldCursor, int i7) {
         this.a = i7;
-        this.e = obj;
-        this.b = j3;
-        this.c = j10;
-        this.d = l10;
+        this.b = editTextBoldCursor;
     }
 
-    @Override // org.telegram.messenger.c20
-    public final void a(Object obj) {
-        int i7;
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                an.q1((an) this.e, this.b, this.c, this.d, (Boolean) obj);
+                org.telegram.messenger.g0.K3(this.b);
+                break;
+            case 1:
+                EditTextBoldCursor editTextBoldCursor = this.b;
+                editTextBoldCursor.requestFocus();
+                org.telegram.messenger.g0.K3(editTextBoldCursor);
+                break;
+            case 2:
+                EditTextBoldCursor editTextBoldCursor2 = this.b;
+                editTextBoldCursor2.requestFocus();
+                org.telegram.messenger.g0.K3(editTextBoldCursor2);
+                break;
+            case 3:
+                org.telegram.messenger.g0.K3(this.b);
+                break;
+            case 4:
+                org.telegram.messenger.g0.K3(this.b);
                 break;
             default:
-                Boolean bool = (Boolean) obj;
-                i7 = ((org.telegram.ui.ActionBar.f2) ((si) this.e).b).currentAccount;
-                boolean z9 = false;
-                bi.ea y10 = bi.ea.y(i7, false);
-                if (this.d.longValue() > 0 && bool.booleanValue()) {
-                    z9 = true;
-                }
-                y10.g0(this.b, this.c, z9, true);
+                EditTextBoldCursor editTextBoldCursor3 = this.b;
+                editTextBoldCursor3.requestFocus();
+                org.telegram.messenger.g0.K3(editTextBoldCursor3);
                 break;
         }
     }

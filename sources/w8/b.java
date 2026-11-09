@@ -9,10 +9,10 @@ import com.google.android.gms.internal.vision.f3;
 import com.google.android.gms.internal.vision.t2;
 import java.nio.ByteBuffer;
 import java.util.HashSet;
-import org.telegram.ui.hy0;
+import org.telegram.ui.ky0;
 import q6.m;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class b extends b1 {
     public final t8.a b;
@@ -43,10 +43,10 @@ public final class b extends b1 {
         }
     }
 
-    public final SparseArray e1(hy0 hy0Var) {
+    public final SparseArray e1(ky0 ky0Var) {
         ByteBuffer y10;
         a[] n10;
-        Bitmap bitmap = (Bitmap) hy0Var.d;
+        Bitmap bitmap = (Bitmap) ky0Var.d;
         if (bitmap != null) {
             int width = bitmap.getWidth();
             int height = bitmap.getHeight();
@@ -71,7 +71,7 @@ public final class b extends b1 {
                 }
             }
         } else {
-            y10 = hy0Var.y();
+            y10 = ky0Var.y();
         }
         synchronized (this.d) {
             if (!this.e) {
@@ -79,7 +79,7 @@ public final class b extends b1 {
             }
             t2 t2Var = this.c;
             m.g(y10);
-            n10 = t2Var.n(y10, f3.b(hy0Var));
+            n10 = t2Var.n(y10, f3.b(ky0Var));
         }
         HashSet hashSet = new HashSet();
         SparseArray sparseArray = new SparseArray(n10.length);

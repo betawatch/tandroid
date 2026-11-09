@@ -6,7 +6,7 @@ import org.telegram.messenger.c20;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.qs;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v0 implements c20 {
     public final /* synthetic */ int a;
@@ -41,14 +41,14 @@ public final /* synthetic */ class v0 implements c20 {
                 z0Var.c(arrayList3);
                 z0Var.f = false;
                 z0Var.e = true;
-                di.y6 P1 = qp.s1(z0Var.a).P1();
+                di.z6 P1 = qp.s1(z0Var.a).P1();
                 int size = arrayList4.size();
                 int i10 = 0;
                 while (i10 < size) {
                     Object obj2 = arrayList4.get(i10);
                     i10++;
-                    di.x6 x6Var = new di.x6(P1, (e7) obj2);
-                    P1.d(x6Var.J, x6Var, P1.b, false);
+                    di.y6 y6Var = new di.y6(P1, (e7) obj2);
+                    P1.d(y6Var.J, y6Var, P1.b, false);
                 }
                 qs.f(P1.a).k(qs.v5, new Object[0]);
                 break;

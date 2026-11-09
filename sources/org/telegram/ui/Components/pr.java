@@ -9,9 +9,9 @@ import android.view.MotionEvent;
 import android.view.View;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public class pr extends y5 implements org.telegram.ui.ActionBar.a6 {
+public class pr extends y5 implements org.telegram.ui.ActionBar.b6 {
     public FragmentContextView D;
     public boolean E;
     public boolean F;
@@ -76,11 +76,11 @@ public class pr extends y5 implements org.telegram.ui.ActionBar.a6 {
             View view4 = ((x5) i13.a).a;
             float min = Math.min(1.0f, i13.c.a) * i13.c();
             if (min > 0.0f && view3 != view4) {
-                int alpha = org.telegram.ui.ActionBar.k6.k0.getAlpha();
-                org.telegram.ui.ActionBar.k6.k0.setAlpha((int) (alpha * min));
+                int alpha = org.telegram.ui.ActionBar.l6.k0.getAlpha();
+                org.telegram.ui.ActionBar.l6.k0.setAlpha((int) (alpha * min));
                 float f10 = 1.0f - min;
-                canvas2.drawLine(getPaddingLeft() + (org.telegram.messenger.g0.L(16.0f) * f10), paddingTop2, getWidth() - ((org.telegram.messenger.g0.L(16.0f) * f10) + getPaddingRight()), paddingTop2, org.telegram.ui.ActionBar.k6.k0);
-                org.telegram.ui.ActionBar.k6.k0.setAlpha(alpha);
+                canvas2.drawLine(getPaddingLeft() + (org.telegram.messenger.g0.L(16.0f) * f10), paddingTop2, getWidth() - ((org.telegram.messenger.g0.L(16.0f) * f10) + getPaddingRight()), paddingTop2, org.telegram.ui.ActionBar.l6.k0);
+                org.telegram.ui.ActionBar.l6.k0.setAlpha(alpha);
             }
             i12++;
             canvas2 = canvas;
@@ -157,7 +157,7 @@ public class pr extends y5 implements org.telegram.ui.ActionBar.a6 {
         this.y = i7;
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
         fh.g gVar = this.s;
         if (gVar != null) {
@@ -175,7 +175,7 @@ public class pr extends y5 implements org.telegram.ui.ActionBar.a6 {
         return fragmentContextView != null && fragmentContextView.getCapsuleBlobDrawable() == drawable;
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

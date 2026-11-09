@@ -1,55 +1,91 @@
 package org.telegram.ui.Components;
 
+import android.animation.AnimatorSet;
+import android.animation.ValueAnimator;
 import android.view.View;
+import android.view.animation.OvershootInterpolator;
+import org.telegram.ui.t81;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class gj0 implements Runnable {
-    public final /* synthetic */ View a;
-    public final /* synthetic */ int b;
+public final /* synthetic */ class gj0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ float b;
     public final /* synthetic */ float c;
-    public final /* synthetic */ float d;
-    public final /* synthetic */ hj0 e;
+    public final /* synthetic */ Object d;
 
-    public gj0(hj0 hj0Var, View view, int i7, float f10, float f11) {
-        this.e = hj0Var;
-        this.a = view;
-        this.b = i7;
-        this.c = f10;
-        this.d = f11;
+    public /* synthetic */ gj0(Object obj, float f10, float f11, int i7) {
+        this.a = i7;
+        this.d = obj;
+        this.b = f10;
+        this.c = f11;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        ij0 ij0Var = this.e.b;
-        pj0 pj0Var = (pj0) ij0Var.b;
-        if (this == pj0Var.Q1) {
-            pj0Var.Q1 = null;
-        }
-        View view = this.a;
-        if (view != null) {
-            pj0Var.j1(view, 0.0f, 0.0f, false);
-            if (((pj0) ij0Var.b).P1) {
-                return;
-            }
-            try {
-                view.playSoundEffect(0);
-            } catch (Exception unused) {
-            }
-            view.sendAccessibilityEvent(1);
-            int i7 = this.b;
-            if (i7 != -1) {
-                pj0 pj0Var2 = (pj0) ij0Var.b;
-                bj0 bj0Var = pj0Var2.T0;
-                if (bj0Var != null) {
-                    bj0Var.c(i7, view);
-                    return;
+        View view;
+        int i7 = this.a;
+        float f10 = this.c;
+        float f11 = this.b;
+        Object obj = this.d;
+        switch (i7) {
+            case 0:
+                qj0 qj0Var = (qj0) ((jj0) obj).b;
+                if (qj0Var.c1 != null && (view = qj0Var.L1) != null) {
+                    qj0Var.j1(view, f11, f10, true);
+                    qj0Var.c1 = null;
+                    break;
                 }
-                cj0 cj0Var = pj0Var2.U0;
-                if (cj0Var != null) {
-                    cj0Var.f(this.c - view.getX(), this.d - view.getY(), i7, view);
+                break;
+            default:
+                vg.h hVar = (vg.h) obj;
+                vg.m mVar = hVar.b;
+                ValueAnimator valueAnimator = mVar.c0;
+                vg.g gVar = mVar.h0;
+                vg.g gVar2 = mVar.g0;
+                if (valueAnimator != null) {
+                    valueAnimator.removeAllListeners();
+                    mVar.c0.cancel();
+                    mVar.c0 = null;
                 }
-            }
+                AnimatorSet animatorSet = mVar.d0;
+                if (animatorSet != null) {
+                    animatorSet.removeAllListeners();
+                    mVar.d0.cancel();
+                    mVar.d0 = null;
+                }
+                if (Math.abs(mVar.b.d) <= 10.0f) {
+                    org.telegram.messenger.g0.r(mVar.e0);
+                    mVar.d0 = new AnimatorSet();
+                    ValueAnimator ofFloat = ValueAnimator.ofFloat(mVar.b.d, f11);
+                    ofFloat.addUpdateListener(gVar2);
+                    long j3 = org.telegram.messenger.qs.x3;
+                    ofFloat.setDuration(j3);
+                    xq xqVar = xq.h;
+                    ofFloat.setInterpolator(xqVar);
+                    ValueAnimator ofFloat2 = ValueAnimator.ofFloat(f11, 0.0f);
+                    ofFloat2.addUpdateListener(gVar2);
+                    ofFloat2.setStartDelay(j3);
+                    ofFloat2.setDuration(600L);
+                    OvershootInterpolator overshootInterpolator = org.telegram.messenger.g0.H;
+                    ofFloat2.setInterpolator(overshootInterpolator);
+                    ValueAnimator ofFloat3 = ValueAnimator.ofFloat(mVar.b.i, f10);
+                    ofFloat3.addUpdateListener(gVar);
+                    ofFloat3.setDuration(j3);
+                    ofFloat3.setInterpolator(xqVar);
+                    ValueAnimator ofFloat4 = ValueAnimator.ofFloat(f10, 0.0f);
+                    ofFloat4.addUpdateListener(gVar);
+                    ofFloat4.setStartDelay(j3);
+                    ofFloat4.setDuration(600L);
+                    ofFloat4.setInterpolator(overshootInterpolator);
+                    mVar.d0.playTogether(ofFloat, ofFloat2, ofFloat3, ofFloat4);
+                    mVar.d0.addListener(new t81(hVar, 22));
+                    mVar.d0.start();
+                    break;
+                } else {
+                    mVar.l();
+                    break;
+                }
         }
     }
 }

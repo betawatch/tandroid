@@ -21,7 +21,7 @@ import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.qs;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class r0 implements Handler.Callback, x2.d0, l1, d3.w {
     public static final long w0 = h2.m0.h0(10000);
@@ -148,7 +148,7 @@ public final class r0 implements Handler.Callback, x2.d0, l1, d3.w {
         this.p0 = true;
         h2.i0 a10 = g0Var.a(looper, null);
         this.N = a10;
-        this.H = new a1(eVar, a10, new y(this, 3));
+        this.H = new a1(eVar, a10, new x(this, 3));
         this.I = new j1(this, eVar, a10, jVar);
         m6.n nVar = new m6.n(7);
         this.r = nVar;
@@ -2052,7 +2052,7 @@ public final class r0 implements Handler.Callback, x2.d0, l1, d3.w {
     public final void a0(n1 n1Var) {
         Looper looper = n1Var.e;
         if (looper.getThread().isAlive()) {
-            this.F.a(looper, null).d(new w(this, n1Var));
+            this.F.a(looper, null).d(new a0(this, n1Var));
         } else {
             h2.a.l("TAG", "Trying to send message on a dead thread.");
             n1Var.a(false);

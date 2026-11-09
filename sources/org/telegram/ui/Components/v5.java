@@ -27,7 +27,7 @@ import org.telegram.messenger.AnimatedFileDrawableStream;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class v5 extends BitmapDrawable implements Animatable, bg.g {
     public static final float[] V0 = new float[8];
@@ -818,7 +818,7 @@ public final class v5 extends BitmapDrawable implements Animatable, bg.g {
         }
         if (this.D0 != null) {
             bg.i.c();
-            zg0.T0.cancelRunnable(this.D0);
+            ah0.T0.cancelRunnable(this.D0);
             this.D0 = null;
         }
         if (this.e == null) {

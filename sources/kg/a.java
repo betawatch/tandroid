@@ -9,10 +9,10 @@ import org.telegram.ui.Cells.m8;
 import org.telegram.ui.Cells.r8;
 import org.telegram.ui.Components.t4;
 import org.telegram.ui.Components.v4;
-import org.telegram.ui.Components.x31;
-import org.telegram.ui.an;
+import org.telegram.ui.Components.y31;
+import org.telegram.ui.cn;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a implements a20, org.telegram.ui.ActionBar.r1 {
     public final /* synthetic */ int a;
@@ -37,19 +37,19 @@ public final /* synthetic */ class a implements a20, org.telegram.ui.ActionBar.r
 
     @Override // org.telegram.messenger.a20
     public void i(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-        x31 x31Var = (x31) obj;
+        y31 y31Var = (y31) obj;
         final View view = (View) obj2;
         final c cVar = this.b;
-        if (cVar.c.h(x31Var)) {
+        if (cVar.c.h(y31Var)) {
             return;
         }
-        int i7 = x31Var.d;
-        if (i7 == 2 || x31Var.a == 17) {
+        int i7 = y31Var.d;
+        if (i7 == 2 || y31Var.a == 17) {
             Bundle bundle = new Bundle();
             bundle.putLong("user_id", cVar.getUserConfig().e());
             bundle.putInt("chatMode", 5);
             bundle.putString("quick_reply", "away");
-            cVar.presentFragment(new an(bundle));
+            cVar.presentFragment(new cn(bundle));
             return;
         }
         final int i10 = 1;

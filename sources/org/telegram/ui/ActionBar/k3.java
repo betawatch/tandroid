@@ -35,11 +35,11 @@ import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.z8;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.my0;
+import org.telegram.ui.Components.ny0;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class k3 extends View {
     public float D;
@@ -74,7 +74,7 @@ public final class k3 extends View {
     public final RectF e0;
     public final org.telegram.ui.Components.w5 f;
     public final Path f0;
-    public my0 g0;
+    public ny0 g0;
     public final OverScroller h;
     public boolean h0;
     public org.telegram.ui.Cells.y i0;
@@ -106,7 +106,7 @@ public final class k3 extends View {
         this.w = f6Var;
         r0.i0.j(this, f6Var);
         setImportantForAccessibility(2);
-        r0.a0.i(this, new l2.y(this, 29));
+        r0.a0.i(this, new l2.x(this, 29));
     }
 
     public static void g(ViewGroup viewGroup, float f10, final org.telegram.messenger.voip.k kVar) {
@@ -231,7 +231,7 @@ public final class k3 extends View {
             b3Var.i();
         }
         this.c = a3Var;
-        post(new l2.w(h3Var, 24));
+        post(new l2.a0(h3Var, 23));
         invalidate();
         this.e = 0.0f;
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
@@ -482,7 +482,7 @@ public final class k3 extends View {
                         float W1 = org.telegram.messenger.g0.W1(f31, org.telegram.messenger.g0.L(18.0f), org.telegram.messenger.g0.L(18.0f));
                         if (i18 != 0) {
                             paint4.setColor(i17);
-                            paint4.setShadowLayer(org.telegram.messenger.g0.L(30.0f), 0.0f, org.telegram.messenger.g0.L(10.0f), k6.r1(i19 * f31 * 1.0f, TLObject.FLAG_29));
+                            paint4.setShadowLayer(org.telegram.messenger.g0.L(30.0f), 0.0f, org.telegram.messenger.g0.L(10.0f), l6.r1(i19 * f31 * 1.0f, TLObject.FLAG_29));
                             canvas.drawRoundRect(rectF6, W1, W1, paint4);
                             paint3.setAlpha((int) (i19 * f10));
                             canvas.drawRoundRect(rectF6, W1, W1, paint3);
@@ -494,7 +494,7 @@ public final class k3 extends View {
                             path2.addRoundRect(rectF6, W1, W1, Path.Direction.CW);
                             canvas.save();
                             paint4.setColor(0);
-                            paint4.setShadowLayer(org.telegram.messenger.g0.L(30.0f), 0.0f, org.telegram.messenger.g0.L(10.0f), k6.r1(i19 * f31 * 1.0f, TLObject.FLAG_29));
+                            paint4.setShadowLayer(org.telegram.messenger.g0.L(30.0f), 0.0f, org.telegram.messenger.g0.L(10.0f), l6.r1(i19 * f31 * 1.0f, TLObject.FLAG_29));
                             canvas.drawPath(path2, paint4);
                             canvas.clipPath(path2);
                             float f33 = i19 * f10 * f31;
@@ -563,15 +563,15 @@ public final class k3 extends View {
         canvas.restore();
         canvas.restore();
         if (this.g0 == null) {
-            this.g0 = new my0(id.M0(2131753099, null), 14.0f, org.telegram.messenger.g0.o());
+            this.g0 = new ny0(id.M0(2131753099, null), 14.0f, org.telegram.messenger.g0.o());
         }
-        if (this.i0 == null || this.h0 != k6.I.q()) {
-            boolean q10 = k6.I.q();
+        if (this.i0 == null || this.h0 != l6.I.q()) {
+            boolean q10 = l6.I.q();
             this.h0 = q10;
             if (q10) {
-                this.i0 = k6.k0(64, 64, 64, 64, 553648127, 872415231, 872415231);
+                this.i0 = l6.k0(64, 64, 64, 64, 553648127, 872415231, 872415231);
             } else {
-                this.i0 = k6.k0(64, 64, 64, 64, 771751936, 1140850688, 1140850688);
+                this.i0 = l6.k0(64, 64, 64, 64, 771751936, 1140850688, 1140850688);
             }
             this.i0.setCallback(this);
         }
@@ -1011,7 +1011,7 @@ public final class k3 extends View {
             while (it.hasNext()) {
                 ((hi.a3) it.next()).o(true);
             }
-            org.telegram.messenger.g0.i3(new l2.w(this, 25), 100L);
+            org.telegram.messenger.g0.i3(new l2.a0(this, 24), 100L);
             return;
         }
         ValueAnimator valueAnimator = this.d;
@@ -1043,7 +1043,7 @@ public final class k3 extends View {
         this.N = bitmapShader;
         paint.setShader(bitmapShader);
         ColorMatrix colorMatrix = new ColorMatrix();
-        org.telegram.messenger.g0.i(colorMatrix, k6.I.q() ? 0.08f : 0.25f);
+        org.telegram.messenger.g0.i(colorMatrix, l6.I.q() ? 0.08f : 0.25f);
         this.O.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
         this.P = new Matrix();
         ArrayList arrayList = this.R;

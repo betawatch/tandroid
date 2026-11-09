@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.Switch;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public class h5 extends FrameLayout {
     public final TextView a;
@@ -38,7 +38,7 @@ public class h5 extends FrameLayout {
         ImageView imageView = this.d;
         if (imageView != null) {
             imageView.setImageResource(i7);
-            org.telegram.ui.ActionBar.r6.t(imageView, org.telegram.ui.ActionBar.k6.J5, null, PorterDuff.Mode.MULTIPLY);
+            org.telegram.ui.ActionBar.s6.s(imageView, org.telegram.ui.ActionBar.l6.J5, null, PorterDuff.Mode.MULTIPLY);
         }
         boolean z13 = this.s;
         g5 g5Var = this.e;
@@ -84,11 +84,11 @@ public class h5 extends FrameLayout {
             } else {
                 i7 = 0;
             }
-            canvas.drawLine(f10, measuredHeight, measuredWidth - i7, getMeasuredHeight() - 1, org.telegram.ui.ActionBar.k6.k0);
+            canvas.drawLine(f10, measuredHeight, measuredWidth - i7, getMeasuredHeight() - 1, org.telegram.ui.ActionBar.l6.k0);
         }
         if (this.h) {
             int L2 = id.a0 ? org.telegram.messenger.g0.L(76.0f) : org.telegram.messenger.k5.z(76.0f, getMeasuredWidth(), 1);
-            canvas.drawRect(L2, org.telegram.messenger.camera.q.y(22.0f, getMeasuredHeight(), 2), L2 + 2, org.telegram.messenger.g0.L(22.0f) + r2, org.telegram.ui.ActionBar.k6.k0);
+            canvas.drawRect(L2, org.telegram.messenger.camera.q.y(22.0f, getMeasuredHeight(), 2), L2 + 2, org.telegram.messenger.g0.L(22.0f) + r2, org.telegram.ui.ActionBar.l6.k0);
         }
     }
 
@@ -160,7 +160,7 @@ public class h5 extends FrameLayout {
         }
     }
 
-    public h5(Context context, int i7, int i10, boolean z9, org.telegram.ui.ActionBar.f6 f6Var) {
+    public h5(Context context, int i7, int i10, boolean z9, org.telegram.ui.ActionBar.g6 g6Var) {
         super(context);
         float f10;
         float f11;
@@ -180,7 +180,7 @@ public class h5 extends FrameLayout {
         }
         TextView textView = new TextView(context);
         this.a = textView;
-        org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.G6, f6Var);
+        org.telegram.ui.ActionBar.s6.U(textView, org.telegram.ui.ActionBar.l6.G6, g6Var);
         org.telegram.messenger.camera.q.n(textView, 1, 16.0f, 1, 1);
         textView.setSingleLine(true);
         textView.setGravity((id.a0 ? 5 : 3) | 16);
@@ -203,8 +203,8 @@ public class h5 extends FrameLayout {
         org.telegram.ui.Components.j6 j6Var = new org.telegram.ui.Components.j6(context, false, false, false);
         this.b = j6Var;
         j6Var.b(0.55f, 320L, xq.h);
-        int i13 = org.telegram.ui.ActionBar.k6.z6;
-        org.telegram.ui.ActionBar.r6.Z(j6Var, i13, f6Var);
+        int i13 = org.telegram.ui.ActionBar.l6.z6;
+        org.telegram.ui.ActionBar.s6.Y(j6Var, i13, g6Var);
         j6Var.setTextSize(org.telegram.messenger.g0.L(13.0f));
         j6Var.setGravity(id.a0 ? 5 : 3);
         j6Var.setPadding(0, 0, 0, 0);
@@ -225,7 +225,7 @@ public class h5 extends FrameLayout {
         addView(j6Var, c8.ha.d(-1, -2.0f, i14, f12, f17, f13, 0.0f));
         TextView textView2 = new TextView(context);
         this.c = textView2;
-        org.telegram.ui.ActionBar.r6.V(textView2, i13, f6Var);
+        org.telegram.ui.ActionBar.s6.U(textView2, i13, g6Var);
         textView2.setTextSize(1, 13.0f);
         textView2.setGravity(id.a0 ? 5 : 3);
         textView2.setLines(0);
@@ -248,11 +248,11 @@ public class h5 extends FrameLayout {
             f15 = 80.0f;
         }
         addView(textView2, c8.ha.d(-2, -2.0f, i15, f14, f18, f15, 0.0f));
-        g5 g5Var = new g5(this, context, f6Var);
+        g5 g5Var = new g5(this, context, g6Var);
         this.e = g5Var;
-        int i16 = org.telegram.ui.ActionBar.k6.M6;
-        int i17 = org.telegram.ui.ActionBar.k6.N6;
-        int i18 = org.telegram.ui.ActionBar.k6.d6;
+        int i16 = org.telegram.ui.ActionBar.l6.M6;
+        int i17 = org.telegram.ui.ActionBar.l6.N6;
+        int i18 = org.telegram.ui.ActionBar.l6.d6;
         g5Var.d(i16, i17, i18, i18);
         addView(g5Var, c8.ha.d(37, 40.0f, (id.a0 ? 3 : 5) | 16, 21.0f, 0.0f, 21.0f, 0.0f));
         g5Var.setFocusable(false);

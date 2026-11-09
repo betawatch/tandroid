@@ -6,14 +6,14 @@ import android.view.ViewGroup;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import l2.w;
+import l2.a0;
 import org.telegram.messenger.camera.q;
 import org.telegram.messenger.g0;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.voip.n2;
 import te.c;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public abstract class b extends ViewGroup {
     public int a;
@@ -27,7 +27,7 @@ public abstract class b extends ViewGroup {
 
     public final void a(n2 n2Var) {
         addView(n2Var);
-        this.c.put(n2Var, new a(n2Var, new w(this, 10)));
+        this.c.put(n2Var, new a(n2Var, new a0(this, 9)));
     }
 
     public final void b(boolean z9, boolean z10) {

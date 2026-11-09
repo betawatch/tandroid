@@ -7,14 +7,14 @@ import java.util.ArrayList;
 import org.telegram.messenger.id;
 import org.telegram.messenger.ls;
 import org.telegram.messenger.qp;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.s6;
 import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.Components.v4;
-import org.telegram.ui.an;
+import org.telegram.ui.cn;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m implements Runnable {
     public final /* synthetic */ int a;
@@ -48,23 +48,23 @@ public final /* synthetic */ class m implements Runnable {
                 } else if (z9) {
                     i10 = 2131751916;
                 }
-                v4.s0(pVar, M0, id.M0(i10, null), id.M0(2131746322, null), true, new h(pVar, j3, 0));
+                v4.s0(pVar, M0, id.M0(i10, null), id.M0(2131746321, null), true, new h(pVar, j3, 0));
                 break;
             case 1:
                 d0 d0Var = (d0) lsVar;
                 Context context = d0Var.getContext();
-                f6 f6Var = d0Var.I0;
+                g6 g6Var = d0Var.I0;
                 String M02 = id.M0(2131751915, null);
                 if (z10) {
                     i10 = 2131751917;
                 } else if (z9) {
                     i10 = 2131751916;
                 }
-                u1 M = v4.M(context, f6Var, M02, id.M0(i10, null), id.M0(2131746322, null), new r3(d0Var, j3, 10));
+                u1 M = v4.M(context, g6Var, M02, id.M0(i10, null), id.M0(2131746321, null), new r3(d0Var, j3, 10));
                 M.show();
                 TextView textView = (TextView) M.d(-1);
                 if (textView != null) {
-                    r6.V(textView, k6.q7, null);
+                    s6.U(textView, l6.q7, null);
                     break;
                 }
                 break;
@@ -80,14 +80,14 @@ public final /* synthetic */ class m implements Runnable {
                 }
                 break;
             default:
-                an.u1((an) lsVar, j3, z10, z9);
+                cn.y1((cn) lsVar, j3, z10, z9);
                 break;
         }
     }
 
-    public /* synthetic */ m(an anVar, long j3, boolean z9, boolean z10) {
+    public /* synthetic */ m(cn cnVar, long j3, boolean z9, boolean z10) {
         this.a = 3;
-        this.e = anVar;
+        this.e = cnVar;
         this.d = j3;
         this.b = z9;
         this.c = z10;

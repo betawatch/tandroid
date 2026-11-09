@@ -23,12 +23,12 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.ui.Cells.f1;
-import org.telegram.ui.hy0;
+import org.telegram.ui.ky0;
 import tc.d;
 import tc.e;
 import tc.f;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final c a = new c();
@@ -118,13 +118,13 @@ public abstract class b {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static hy0 c(HashMap hashMap, l lVar) {
+    public static ky0 c(HashMap hashMap, l lVar) {
         String str;
         int i7;
         String str2;
         String str3;
         Boolean bool = Boolean.TRUE;
-        hy0 hy0Var = null;
+        ky0 ky0Var = null;
         try {
             str = Security.getProperty("networkaddress.cache.ttl");
         } catch (SecurityException unused) {
@@ -164,10 +164,10 @@ public abstract class b {
             g(i7, str2, str3);
             throw null;
         }
-        hy0Var = yc.a(str2);
+        ky0Var = yc.a(str2);
         if (bool.booleanValue()) {
         }
-        return hy0Var;
+        return ky0Var;
     }
 
     public static LinkedList d(String str, Map map) {

@@ -15,7 +15,7 @@ import org.telegram.messenger.qs;
 import org.telegram.messenger.r2;
 import org.telegram.messenger.t0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public class StoryUploadingService extends Service implements ls {
     public q a;
@@ -112,8 +112,8 @@ public class StoryUploadingService extends Service implements ls {
             q qVar2 = this.a;
             qVar2.y = dt.j0;
             qVar2.g(id.M0(org.telegram.messenger.beta.R.string.AppName, null));
-            this.a.p(id.M0(2131744454, null));
-            this.a.f(id.M0(2131744454, null));
+            this.a.p(id.M0(2131744451, null));
+            this.a.f(id.M0(2131744451, null));
         }
         this.c = 0.0f;
         q qVar3 = this.a;

@@ -1,155 +1,47 @@
 package org.telegram.ui;
 
-import android.content.Context;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLRPC;
+import java.util.ArrayList;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class rt0 extends org.telegram.ui.Components.oj0 {
-    public final Context c;
-    public final /* synthetic */ st0 d;
+public final /* synthetic */ class rt0 implements org.telegram.messenger.k9, org.telegram.ui.Components.ej0, u40 {
+    public final /* synthetic */ ut0 a;
 
-    public rt0(st0 st0Var, Context context) {
-        this.d = st0Var;
-        this.c = context;
+    public /* synthetic */ rt0(ut0 ut0Var) {
+        this.a = ut0Var;
     }
 
-    @Override // org.telegram.ui.Components.oj0
-    public final boolean D(v4.d1 d1Var) {
-        int i7 = d1Var.f;
-        return i7 == 0 || i7 == 2 || i7 == 4;
+    @Override // org.telegram.ui.u40
+    public void a(ArrayList arrayList, boolean z9, boolean z10) {
+        Iterator it = arrayList.iterator();
+        if (it.hasNext()) {
+            throw null;
+        }
+        this.a.a0();
     }
 
-    @Override // v4.g0
-    public final int b() {
-        return this.d.e;
+    @Override // org.telegram.ui.Components.ej0
+    public boolean c(int i7, View view) {
+        ut0 ut0Var = this.a;
+        if (i7 < ut0Var.r || i7 >= ut0Var.s) {
+            return false;
+        }
+        if (ut0Var.D != 1) {
+            throw null;
+        }
+        ut0Var.Z(Long.valueOf(ut0Var.getMessagesController().G0.keyAt(i7 - ut0Var.r)), view);
+        return true;
     }
 
-    @Override // v4.g0
-    public final int d(int i7) {
-        st0 st0Var = this.d;
-        if (i7 == st0Var.x) {
-            return 4;
+    @Override // org.telegram.messenger.k9
+    public Object j(Object obj) {
+        ut0 ut0Var = this.a;
+        ut0Var.getClass();
+        if (((Integer) obj).intValue() == ut0Var.x) {
+            return Integer.valueOf(org.telegram.ui.ActionBar.l6.r1(0.12f, org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.p7, false)));
         }
-        if (i7 == st0Var.n) {
-            return 3;
-        }
-        if (i7 == st0Var.f) {
-            return 2;
-        }
-        return (i7 == st0Var.h || i7 == st0Var.w) ? 1 : 0;
-    }
-
-    @Override // v4.g0
-    public final void t(v4.d1 d1Var, int i7) {
-        String M0;
-        st0 st0Var = this.d;
-        int i10 = st0Var.D;
-        int i11 = d1Var.f;
-        View view = d1Var.a;
-        if (i11 == 0) {
-            org.telegram.ui.Cells.a5 a5Var = (org.telegram.ui.Cells.a5) view;
-            if (i10 != 1) {
-                throw null;
-            }
-            long keyAt = st0Var.getMessagesController().G0.keyAt(i7 - st0Var.r);
-            a5Var.setTag(Long.valueOf(keyAt));
-            if (keyAt <= 0) {
-                TLRPC.Chat M02 = st0Var.getMessagesController().M0(Long.valueOf(-keyAt));
-                if (M02 != null) {
-                    int i12 = M02.participants_count;
-                    a5Var.c(M02, null, i12 != 0 ? org.telegram.messenger.id.G(i12, "Members", new Object[0]) : M02.has_geo ? org.telegram.messenger.id.M0(2131748643, null) : !org.telegram.messenger.t3.t0(M02) ? org.telegram.messenger.id.M0(2131748642, null) : org.telegram.messenger.id.M0(2131748639, null), i7 != st0Var.s - 1);
-                    return;
-                }
-                return;
-            }
-            TLRPC.User a22 = st0Var.getMessagesController().a2(Long.valueOf(keyAt));
-            if (a22 != null) {
-                if (a22.bot) {
-                    M0 = org.telegram.messenger.id.M0(2131753156, null).substring(0, 1).toUpperCase() + org.telegram.messenger.id.M0(2131753156, null).substring(1);
-                } else {
-                    String str = a22.phone;
-                    M0 = (str == null || str.length() == 0) ? org.telegram.messenger.id.M0(2131747833, null) : org.telegram.messenger.k5.i(new StringBuilder("+"), a22.phone, pf.b.c());
-                }
-                a5Var.c(a22, null, M0, i7 != st0Var.s - 1);
-                return;
-            }
-            return;
-        }
-        if (i11 == 1) {
-            org.telegram.ui.Cells.z8 z8Var = (org.telegram.ui.Cells.z8) view;
-            if (i7 != st0Var.h) {
-                if (i7 == st0Var.w) {
-                    z8Var.setFixedSize(12);
-                    z8Var.setText("");
-                    return;
-                }
-                return;
-            }
-            if (i10 == 1) {
-                z8Var.setFixedSize(0);
-                z8Var.setText(org.telegram.messenger.id.M0(2131753677, null));
-                return;
-            } else {
-                z8Var.setFixedSize(8);
-                z8Var.setText(null);
-                return;
-            }
-        }
-        if (i11 == 2) {
-            org.telegram.ui.Cells.x4 x4Var = (org.telegram.ui.Cells.x4) view;
-            x4Var.a(org.telegram.ui.ActionBar.k6.v6, org.telegram.ui.ActionBar.k6.u6);
-            if (i10 == 1) {
-                x4Var.b(R.drawable.msg_contact_add, 5, org.telegram.messenger.id.M0(2131753692, null), false);
-                return;
-            } else {
-                org.telegram.messenger.id.M0(2131746869, null);
-                throw null;
-            }
-        }
-        if (i11 != 3) {
-            return;
-        }
-        org.telegram.ui.Cells.n4 n4Var = (org.telegram.ui.Cells.n4) view;
-        if (i7 == st0Var.n) {
-            if (i10 == 1) {
-                n4Var.setText(org.telegram.messenger.id.G(st0Var.getMessagesController().H0, "BlockedUsersCount", new Object[0]));
-            } else {
-                n4Var.setText(org.telegram.messenger.id.M0(2131746841, null));
-            }
-        }
-    }
-
-    @Override // v4.g0
-    public final v4.d1 x(ViewGroup viewGroup, int i7) {
-        FrameLayout frameLayout;
-        FrameLayout z8Var;
-        if (i7 != 0) {
-            Context context = this.c;
-            if (i7 == 1) {
-                z8Var = new org.telegram.ui.Cells.z8(context);
-            } else if (i7 == 2) {
-                z8Var = new org.telegram.ui.Cells.x4(context);
-            } else if (i7 != 4) {
-                org.telegram.ui.Cells.n4 n4Var = new org.telegram.ui.Cells.n4(this.c, org.telegram.ui.ActionBar.k6.L6, 21, 11, false, null);
-                n4Var.setHeight(43);
-                frameLayout = n4Var;
-            } else {
-                org.telegram.ui.Cells.m8 m8Var = new org.telegram.ui.Cells.m8(viewGroup.getContext());
-                m8Var.k(org.telegram.messenger.id.M0(2131747916, null), false);
-                m8Var.g(-1, org.telegram.ui.ActionBar.k6.p7);
-                frameLayout = m8Var;
-            }
-            frameLayout = z8Var;
-        } else {
-            org.telegram.ui.Cells.a5 a5Var = new org.telegram.ui.Cells.a5(this.c, 7, 6, true, null);
-            a5Var.setDelegate(new li0(this, 9));
-            frameLayout = a5Var;
-        }
-        return new org.telegram.ui.Components.xi0(frameLayout);
+        return null;
     }
 }

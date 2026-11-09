@@ -22,7 +22,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class hr implements org.telegram.messenger.f20, org.telegram.messenger.ri, t4, org.telegram.ui.ActionBar.r1, org.telegram.messenger.lc, org.telegram.messenger.qr, p4.l0, m9.q, w5.b, v5.e, h2.j {
     public final /* synthetic */ int a;
@@ -47,28 +47,28 @@ public final /* synthetic */ class hr implements org.telegram.messenger.f20, org
     */
     public void L(int i7, int i10, boolean z9) {
         int i11;
-        g40 g40Var = (g40) this.b;
-        d40 d40Var = (d40) this.c;
+        h40 h40Var = (h40) this.b;
+        e40 e40Var = (e40) this.c;
         org.telegram.messenger.j20 j20Var = (org.telegram.messenger.j20) this.d;
-        o40 o40Var = g40Var.H0;
-        org.telegram.messenger.gf gfVar = new org.telegram.messenger.gf(0, g40Var.a.getAbsolutePath(), 0, true, 0, 0);
-        if (d40Var != null) {
-            gfVar.x = d40Var.c;
-            gfVar.y = d40Var.d;
+        p40 p40Var = h40Var.H0;
+        org.telegram.messenger.gf gfVar = new org.telegram.messenger.gf(0, h40Var.a.getAbsolutePath(), 0, true, 0, 0);
+        if (e40Var != null) {
+            gfVar.x = e40Var.c;
+            gfVar.y = e40Var.d;
         }
-        b40 b40Var = o40Var.h;
-        boolean z10 = z9 || d40Var == null || d40Var.a;
+        c40 c40Var = p40Var.h;
+        boolean z10 = z9 || e40Var == null || e40Var.a;
         if (i7 == 0) {
-            if (d40Var == null) {
+            if (e40Var == null) {
                 i11 = 0;
-                b40Var.u(gfVar, j20Var, z10, i11, i10 == 0 ? i10 : 0, false, d40Var == null ? d40Var.e : 0L);
-                o40Var.s(false, false);
+                c40Var.u(gfVar, j20Var, z10, i11, i10 == 0 ? i10 : 0, false, e40Var == null ? e40Var.e : 0L);
+                p40Var.s(false, false);
             }
-            i7 = d40Var.b;
+            i7 = e40Var.b;
         }
         i11 = i7;
-        b40Var.u(gfVar, j20Var, z10, i11, i10 == 0 ? i10 : 0, false, d40Var == null ? d40Var.e : 0L);
-        o40Var.s(false, false);
+        c40Var.u(gfVar, j20Var, z10, i11, i10 == 0 ? i10 : 0, false, e40Var == null ? e40Var.e : 0L);
+        p40Var.s(false, false);
     }
 
     @Override // org.telegram.messenger.f20
@@ -383,14 +383,14 @@ public final /* synthetic */ class hr implements org.telegram.messenger.f20, org
         }
         m9.w n10 = d0Var.n(vVar);
         if (resultReceiver != null) {
-            n10.b(new org.telegram.ui.web.w(11, n10, resultReceiver), m9.r.a);
+            n10.b(new org.telegram.ui.web.s(12, n10, resultReceiver), m9.r.a);
         }
     }
 
     @Override // org.telegram.messenger.lc
     public void f0(ImageReceiver imageReceiver, boolean z9, boolean z10, boolean z11) {
         Bitmap bitmap;
-        zz0 zz0Var = (zz0) this.b;
+        a01 a01Var = (a01) this.b;
         uo uoVar = (uo) this.c;
         TLRPC.WallPaper wallPaper = (TLRPC.WallPaper) this.d;
         org.telegram.messenger.jc p10 = imageReceiver.p();
@@ -398,12 +398,12 @@ public final /* synthetic */ class hr implements org.telegram.messenger.f20, org
             return;
         }
         Drawable drawable = uoVar.b;
-        if (drawable instanceof qa0) {
-            qa0 qa0Var = (qa0) drawable;
+        if (drawable instanceof ra0) {
+            ra0 ra0Var = (ra0) drawable;
             TLRPC.WallPaperSettings wallPaperSettings = wallPaper.settings;
-            qa0Var.s((wallPaperSettings == null || wallPaperSettings.intensity >= 0) ? 100 : -100, zz0.e(bitmap));
-            qa0Var.t(zz0Var.L);
-            zz0Var.invalidate();
+            ra0Var.s((wallPaperSettings == null || wallPaperSettings.intensity >= 0) ? 100 : -100, a01.e(bitmap));
+            ra0Var.t(a01Var.L);
+            a01Var.invalidate();
         }
     }
 
@@ -415,11 +415,11 @@ public final /* synthetic */ class hr implements org.telegram.messenger.f20, org
         Object obj3 = this.b;
         switch (i10) {
             case 4:
-                xs0 xs0Var = (xs0) obj3;
+                zs0 zs0Var = (zs0) obj3;
                 ArrayList arrayList = (ArrayList) obj2;
-                ((di.j6) obj).F(arrayList);
-                hc.a0(xs0Var.x1).Q(R.raw.ic_delete, 36, org.telegram.messenger.id.G(arrayList.size(), "BotPreviewsDeleted", new Object[0])).j();
-                xs0Var.V(false);
+                ((di.k6) obj).F(arrayList);
+                hc.a0(zs0Var.x1).Q(R.raw.ic_delete, 36, org.telegram.messenger.id.G(arrayList.size(), "BotPreviewsDeleted", new Object[0])).j();
+                zs0Var.V(false);
                 break;
             case 7:
                 boolean[] zArr = (boolean[]) obj3;
@@ -476,10 +476,10 @@ public final /* synthetic */ class hr implements org.telegram.messenger.f20, org
         org.telegram.ui.Components.voip.y1.l(chat, null, true, null, f2Var.getParentActivity(), f2Var, (org.telegram.messenger.c) this.d);
     }
 
-    public /* synthetic */ hr(xs0 xs0Var, di.j6 j6Var, ArrayList arrayList) {
+    public /* synthetic */ hr(zs0 zs0Var, di.k6 k6Var, ArrayList arrayList) {
         this.a = 4;
-        this.b = xs0Var;
-        this.d = j6Var;
+        this.b = zs0Var;
+        this.d = k6Var;
         this.c = arrayList;
     }
 
@@ -509,22 +509,22 @@ public final /* synthetic */ class hr implements org.telegram.messenger.f20, org
             case 9:
                 p4.d0 d0Var = (p4.d0) obj4;
                 Handler handler = d0Var.l;
-                org.telegram.ui.web.w wVar = new org.telegram.ui.web.w(d0Var, (p4.v) obj3, new r31(d0Var, (p4.r0) obj2, (p4.w) obj, 14));
+                org.telegram.ui.web.s sVar = new org.telegram.ui.web.s(d0Var, (p4.v) obj3, new s31(d0Var, (p4.r0) obj2, (p4.w) obj, 14));
                 p4.m1 m1Var = new p4.m1(0);
                 String str = h2.m0.a;
                 m9.e0 e0Var = new m9.e0();
-                h2.m0.W(handler, new fi.x1(e0Var, wVar, m1Var, i10));
+                h2.m0.W(handler, new fi.x1(e0Var, sVar, m1Var, i10));
                 return e0Var;
             default:
                 p4.d0 d0Var2 = (p4.d0) obj4;
                 p4.v vVar = (p4.v) obj3;
                 List list = (List) obj;
                 Handler handler2 = d0Var2.l;
-                org.telegram.ui.web.w wVar2 = new org.telegram.ui.web.w(d0Var2, vVar, new org.telegram.ui.jo0(d0Var2, (p4.z0) obj2, vVar, list, 25));
+                org.telegram.ui.web.s sVar2 = new org.telegram.ui.web.s(d0Var2, vVar, new org.telegram.ui.lo0(d0Var2, (p4.z0) obj2, vVar, list, 25));
                 p4.m1 m1Var2 = new p4.m1(0);
                 String str2 = h2.m0.a;
                 m9.e0 e0Var2 = new m9.e0();
-                h2.m0.W(handler2, new fi.x1(e0Var2, wVar2, m1Var2, i10));
+                h2.m0.W(handler2, new fi.x1(e0Var2, sVar2, m1Var2, i10));
                 return e0Var2;
         }
     }

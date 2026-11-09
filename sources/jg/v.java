@@ -12,10 +12,10 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.ui.ActionBar.f2;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.bu0;
 import org.telegram.ui.c9;
+import org.telegram.ui.du0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -64,8 +64,8 @@ public final /* synthetic */ class v implements RequestDelegate {
                 org.telegram.messenger.g0.h3(new ai.a1(obj2, this.b, (Object) tLObject, (String) obj, 27));
                 break;
             case 8:
-                RectF rectF = ProfileActivity.S6;
-                org.telegram.messenger.g0.i3(new bu0((ProfileActivity) obj2, tL_error, tLObject, (TLRPC.TL_channels_getParticipants) obj, 0), i10);
+                RectF rectF = ProfileActivity.V6;
+                org.telegram.messenger.g0.i3(new du0((ProfileActivity) obj2, tL_error, tLObject, (TLRPC.TL_channels_getParticipants) obj, 0), i10);
                 break;
             default:
                 TLRPC.Chat chat = (TLRPC.Chat) obj2;
@@ -87,7 +87,7 @@ public final /* synthetic */ class v implements RequestDelegate {
                     }
                     boolean isEmpty = arrayList2.isEmpty();
                     int i12 = this.b;
-                    if (isEmpty || !wg.s.h()) {
+                    if (isEmpty || !wg.r.h()) {
                         org.telegram.messenger.g0.h3(new wg.m(chat, i12, arrayList, c20Var, 1));
                         break;
                     } else {

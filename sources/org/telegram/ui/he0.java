@@ -1,59 +1,80 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.text.TextPaint;
-import android.text.style.ReplacementSpan;
+import android.os.Build;
+import android.os.Bundle;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class he0 extends ReplacementSpan {
-    public final String a;
-    public final boolean b;
-    public final TextPaint c;
-    public final Paint d;
-    public final float e;
-    public final /* synthetic */ je0 f;
+public final /* synthetic */ class he0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ le0 b;
 
-    public he0(je0 je0Var, int i7, boolean z9) {
-        this.f = je0Var;
-        TextPaint textPaint = new TextPaint(1);
-        this.c = textPaint;
-        this.d = new Paint(1);
-        String valueOf = String.valueOf(i7);
-        this.a = valueOf;
-        this.b = z9;
-        textPaint.setTextSize(org.telegram.messenger.g0.N(11.0f));
-        textPaint.setTypeface(org.telegram.messenger.g0.o());
-        this.e = Math.max(org.telegram.messenger.g0.L(7.333f), textPaint.measureText(valueOf)) + org.telegram.messenger.g0.L(10.0f);
+    public /* synthetic */ he0(le0 le0Var, int i7) {
+        this.a = i7;
+        this.b = le0Var;
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i7, int i10, float f10, int i11, int i12, int i13, Paint paint) {
-        float L = f10 + org.telegram.messenger.g0.L(5.0f);
-        float L2 = ((i11 + i13) / 2.0f) + org.telegram.messenger.g0.L(1.0f);
-        float L3 = org.telegram.messenger.g0.L(17.333f) / 2.0f;
-        int i14 = this.b ? org.telegram.ui.ActionBar.k6.Ci : org.telegram.ui.ActionBar.k6.U9;
-        je0 je0Var = this.f;
-        int themedColor = je0Var.getThemedColor(i14);
-        Paint paint2 = this.d;
-        paint2.setColor(themedColor);
-        int themedColor2 = je0Var.getThemedColor(org.telegram.ui.ActionBar.k6.s8);
-        TextPaint textPaint = this.c;
-        textPaint.setColor(themedColor2);
-        RectF rectF = org.telegram.messenger.g0.P;
-        float f11 = this.e;
-        rectF.set(L, L2 - L3, L + f11, L2 + L3);
-        canvas.drawRoundRect(rectF, L3, L3, paint2);
-        Paint.FontMetrics fontMetrics = textPaint.getFontMetrics();
-        float f12 = L2 - ((fontMetrics.ascent + fontMetrics.descent) / 2.0f);
-        String str = this.a;
-        canvas.drawText(str, ((f11 - textPaint.measureText(str)) / 2.0f) + L, f12, textPaint);
-    }
-
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i7, int i10, Paint.FontMetricsInt fontMetricsInt) {
-        return (int) Math.ceil(org.telegram.messenger.g0.L(5.0f) + this.e);
+    @Override // java.lang.Runnable
+    public final void run() {
+        ri.f fVar;
+        qh.b[] bVarArr;
+        int i7 = this.a;
+        le0 le0Var = this.b;
+        switch (i7) {
+            case 0:
+                if (Build.VERSION.SDK_INT >= 31 && (fVar = le0Var.S) != null) {
+                    fVar.c.d = 0L;
+                    le0Var.T.c.d = 0L;
+                    le0Var.i0();
+                    break;
+                }
+                break;
+            case 1:
+                le0.g0(le0Var);
+                break;
+            case 2:
+                le0Var.getClass();
+                i9.l0(le0Var);
+                break;
+            case 3:
+                le0.h0(le0Var);
+                break;
+            case 4:
+                le0.f0(le0Var);
+                break;
+            case 5:
+                org.telegram.messenger.g0.E2(le0Var.P);
+                break;
+            case 6:
+                le0Var.getClass();
+                new ch0(le0Var.getParentActivity(), le0Var).show();
+                break;
+            case 7:
+                le0Var.getClass();
+                Bundle bundle = new Bundle();
+                bundle.putBoolean("needFinishFragment", false);
+                le0Var.presentFragment(new i9(bundle));
+                break;
+            default:
+                if (le0Var.getParentActivity() != null && (bVarArr = le0Var.K) != null) {
+                    float width = ((r0.getWidth() / 2.0f) + (le0Var.b.getWidth() - ((bVarArr[4].getX() + le0Var.F.getX()) + r0.getWidth()))) / org.telegram.messenger.g0.p;
+                    fi.m3 m3Var = new fi.m3(le0Var.getParentActivity(), 3);
+                    le0Var.P = m3Var;
+                    m3Var.setTranslationY(org.telegram.messenger.g0.L(4.0f) + (-le0Var.L));
+                    le0Var.P.setPadding(org.telegram.messenger.g0.L(7.33f), 0, org.telegram.messenger.g0.L(7.33f), 0);
+                    le0Var.P.r(false);
+                    le0Var.P.k(true);
+                    le0Var.P.u(org.telegram.messenger.id.M0(2131744301, null));
+                    le0Var.P.o(1.0f, (-width) + 7.33f);
+                    le0Var.b.addView(le0Var.P, c8.ha.d(-1, 100.0f, 87, 0.0f, 0.0f, 0.0f, 72.0f));
+                    fi.m3 m3Var2 = le0Var.P;
+                    m3Var2.q0 = new he0(le0Var, 5);
+                    m3Var2.d = 8000L;
+                    m3Var2.w();
+                    org.telegram.ui.Components.a30.r.b();
+                    break;
+                }
+                break;
+        }
     }
 }

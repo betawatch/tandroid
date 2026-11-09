@@ -8,7 +8,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class uv extends ow {
     public static final /* synthetic */ int H0 = 0;
@@ -17,14 +17,14 @@ public final class uv extends ow {
     public final /* synthetic */ hy G0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public uv(hy hyVar, Context context, org.telegram.ui.ActionBar.f6 f6Var, org.telegram.ui.ActionBar.f2 f2Var, boolean z9) {
-        super(hyVar, context, f6Var);
+    public uv(hy hyVar, Context context, org.telegram.ui.ActionBar.g6 g6Var, org.telegram.ui.ActionBar.f2 f2Var, boolean z9) {
+        super(hyVar, context, g6Var);
         this.G0 = hyVar;
         this.E0 = f2Var;
         this.F0 = z9;
     }
 
-    @Override // org.telegram.ui.Components.rk0
+    @Override // org.telegram.ui.Components.sk0
     public final void j() {
         vv vvVar = this.G0.C0;
         if (vvVar != null) {
@@ -33,7 +33,7 @@ public final class uv extends ow {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // org.telegram.ui.Components.rk0
+    @Override // org.telegram.ui.Components.sk0
     public final void o(int i7, int i10) {
         hy hyVar = this.G0;
         et etVar = hyVar.f2;
@@ -61,24 +61,24 @@ public final class uv extends ow {
         tL_messages_reorderStickerSets.emojis = false;
         for (int i16 = hyVar.e0; i16 < arrayList.size(); i16 = com.google.android.recaptcha.internal.a.g(i16, 1, ((TLRPC.TL_messages_stickerSet) arrayList.get(i16)).set.id, tL_messages_reorderStickerSets.order)) {
         }
-        ConnectionsManager.getInstance(i14).sendRequest(tL_messages_reorderStickerSets, new di.u5(19));
+        ConnectionsManager.getInstance(i14).sendRequest(tL_messages_reorderStickerSets, new di.v5(19));
         org.telegram.messenger.qs.f(i14).k(org.telegram.messenger.qs.x0, 0, Boolean.TRUE);
         hyVar.X(true);
         if (org.telegram.messenger.iz.X) {
             org.telegram.messenger.iz.P();
             org.telegram.ui.ActionBar.f2 f2Var = this.E0;
             if (f2Var != null) {
-                hc.a0(f2Var).L(R.raw.filter_reorder, org.telegram.messenger.id.M0(2131751338, null), org.telegram.messenger.id.M0(2131751337, null), org.telegram.messenger.id.N0("Settings"), new dd(i15, f2Var)).j();
+                hc.a0(f2Var).L(R.raw.filter_reorder, org.telegram.messenger.id.M0(2131751337, null), org.telegram.messenger.id.M0(2131751336, null), org.telegram.messenger.id.N0("Settings"), new dd(i15, f2Var)).j();
                 return;
             }
             FrameLayout frameLayout = hyVar.r;
             if (frameLayout != null) {
-                new hc(frameLayout, hyVar.Z1).I(R.raw.filter_reorder, org.telegram.messenger.id.M0(2131751338, null), org.telegram.messenger.id.M0(2131751337, null)).j();
+                new hc(frameLayout, hyVar.Z1).I(R.raw.filter_reorder, org.telegram.messenger.id.M0(2131751337, null), org.telegram.messenger.id.M0(2131751336, null)).j();
             }
         }
     }
 
-    @Override // org.telegram.ui.Components.rk0
+    @Override // org.telegram.ui.Components.sk0
     public final void p() {
         hy hyVar = this.G0;
         hyVar.Z();

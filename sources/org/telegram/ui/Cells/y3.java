@@ -12,12 +12,12 @@ import org.telegram.messenger.id;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public abstract class y3 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
+public abstract class y3 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public org.telegram.ui.Components.l9 a;
-    public org.telegram.ui.ActionBar.k5 b;
-    public org.telegram.ui.ActionBar.k5 c;
+    public org.telegram.ui.ActionBar.l5 b;
+    public org.telegram.ui.ActionBar.l5 c;
     public ImageView d;
     public org.telegram.ui.Components.w8 e;
     public TLRPC.User f;
@@ -31,7 +31,7 @@ public abstract class y3 extends FrameLayout implements org.telegram.ui.ActionBa
         ImageView imageView = this.d;
         imageView.setColorFilter(new PorterDuffColorFilter(i10, PorterDuff.Mode.MULTIPLY));
         this.c.setTextColor(i10);
-        org.telegram.ui.ActionBar.k6.H1(imageView.getDrawable(), i10 & 620756991, true);
+        org.telegram.ui.ActionBar.l6.H1(imageView.getDrawable(), i10 & 620756991, true);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -69,12 +69,12 @@ public abstract class y3 extends FrameLayout implements org.telegram.ui.ActionBa
         invalidate();
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
         int x02;
         try {
-            this.h.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Ug, false));
-            if (this.d != null && this.c != null && (x02 = org.telegram.ui.ActionBar.k6.x0(null, this.n, false)) != this.s) {
+            this.h.setColor(org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.Ug, false));
+            if (this.d != null && this.c != null && (x02 = org.telegram.ui.ActionBar.l6.x0(null, this.n, false)) != this.s) {
                 this.s = x02;
                 a(this.n, x02);
             }
@@ -84,7 +84,7 @@ public abstract class y3 extends FrameLayout implements org.telegram.ui.ActionBa
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

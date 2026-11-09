@@ -1,99 +1,143 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.widget.FrameLayout;
-import org.telegram.messenger.Utilities;
+import android.graphics.Bitmap;
+import android.text.TextUtils;
+import android.view.KeyEvent;
+import android.view.View;
+import java.util.HashMap;
 import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class ud0 extends FrameLayout {
-    public final fi.fb a;
-    public final fi.d b;
-    public final ps c;
-    public t51 d;
-    public long e;
-    public float f;
-    public fi.j3 h;
-    public org.telegram.messenger.c20 n;
-    public Runnable r;
+public final /* synthetic */ class ud0 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ KeyEvent.Callback b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public ud0(Context context, org.telegram.ui.ActionBar.f6 f6Var, y9 y9Var) {
-        super(context);
-        this.e = -1L;
-        this.f = 1.39f;
-        org.telegram.ui.ActionBar.k kVar = new org.telegram.ui.ActionBar.k(context, f6Var);
-        kVar.setBackButtonImage(R.drawable.ic_ab_back);
-        kVar.setTitle(org.telegram.messenger.id.M0(2131751206, null));
-        kVar.D(-1, false);
-        kVar.C(587202559, false);
-        kVar.setActionBarMenuOnItemClick(new org.telegram.ui.w9(this, 15));
-        addView(kVar, c8.ha.e(-1, -2, 55));
-        fi.fb fbVar = new fi.fb(context, null, null, f6Var, y9Var);
-        this.a = fbVar;
-        fbVar.X0 = true;
-        addView(fbVar, c8.ha.d(-1, 388, 87, 0.0f, 0.0f, 0.0f, 74.0f));
-        fi.d dVar = new fi.d(context, f6Var, true);
-        this.b = dVar;
-        dVar.i(org.telegram.messenger.id.M0(2131751207, null), false, true);
-        dVar.f();
-        addView(dVar, c8.ha.d(-1, 48.0f, 87, 16.0f, 10.0f, 16.0f, 16.0f));
-        ps psVar = new ps(context, org.telegram.messenger.id.M0(2131751208, null));
-        this.c = psVar;
-        psVar.setOnClickListener(new td0(this, context, f6Var, 0));
-        addView(psVar, c8.ha.d(-1, 32.0f, 87, 60.0f, 0.0f, 60.0f, 134.0f));
-        fbVar.setDelegate(new j2.n(this));
+    public /* synthetic */ ud0(KeyEvent.Callback callback, Object obj, Object obj2, int i7) {
+        this.a = i7;
+        this.b = callback;
+        this.c = obj;
+        this.d = obj2;
     }
 
-    public final void a(org.telegram.messenger.gf gfVar, t51 t51Var, org.telegram.ui.ActionBar.f6 f6Var) {
-        int i7;
-        fi.d dVar = this.b;
-        dVar.a = f6Var;
-        dVar.E = false;
-        dVar.updateColors();
-        int i10 = gfVar.F;
-        if (i10 <= 0 || (i7 = gfVar.G) <= 0) {
-            this.f = 1.39f;
-        } else {
-            this.f = Utilities.i(i7 / i10, 1.39f, 0.85f);
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        int i7 = this.a;
+        int i10 = 0;
+        Object obj = this.d;
+        Object obj2 = this.c;
+        KeyEvent.Callback callback = this.b;
+        switch (i7) {
+            case 0:
+                vd0 vd0Var = (vd0) callback;
+                Context context = (Context) obj2;
+                org.telegram.ui.ActionBar.g6 g6Var = (org.telegram.ui.ActionBar.g6) obj;
+                if (vd0Var.h == null) {
+                    fi.j3 j3Var = new fi.j3(context, g6Var, org.telegram.messenger.id.M0(2131743607, null), vd0Var.f);
+                    vd0Var.h = j3Var;
+                    j3Var.n(new pb0(vd0Var, 5));
+                    vd0Var.h.m1 = vd0Var.n;
+                }
+                vd0Var.h.show();
+                break;
+            case 1:
+                j21 j21Var = (j21) callback;
+                org.telegram.messenger.fd fdVar = (org.telegram.messenger.fd) obj;
+                l21 l21Var = j21Var.n;
+                Runnable runnable = ((Runnable[]) obj2)[0];
+                if (runnable != null) {
+                    runnable.run();
+                }
+                String str = l21Var.r1;
+                k21 k21Var = l21Var.E1;
+                if (!TextUtils.equals(str, fdVar.f)) {
+                    View view2 = k21Var.d;
+                    if (view2 == l21Var.v1 || view2 == l21Var.p1) {
+                        l21Var.s1 = l21Var.r1;
+                    }
+                    h21 h21Var = j21Var.e;
+                    String str2 = fdVar.f;
+                    l21Var.r1 = str2;
+                    h21Var.setText(l21.K0(l21.O0(str2, null, null)));
+                    k21Var.D(l21Var.n1 != null ? l21Var.o1 : l21Var.u1);
+                    l21.S0(l21Var.r1);
+                    l21Var.W0();
+                    break;
+                }
+                break;
+            case 2:
+                org.telegram.ui.dk dkVar = (org.telegram.ui.dk) callback;
+                org.telegram.messenger.f10 f10Var = (org.telegram.messenger.f10) obj2;
+                org.telegram.ui.ActionBar.g1 g1Var = (org.telegram.ui.ActionBar.g1) obj;
+                long j3 = dkVar.b;
+                f10Var.J(j3, true, false);
+                TLRPC.Chat M0 = org.telegram.messenger.qp.s1(dkVar.a).M0(Long.valueOf(-j3));
+                hc.a0(dkVar.c).K(R.raw.msg_translate, org.telegram.messenger.g0.X2((M0 == null || !org.telegram.messenger.t3.V(M0)) ? M0 != null ? org.telegram.messenger.id.M0(2131743948, null) : org.telegram.messenger.id.M0(2131743949, null) : org.telegram.messenger.id.M0(2131743950, null)), org.telegram.messenger.id.M0(2131743885, null), new w80(27, dkVar, f10Var)).j();
+                g1Var.d(true);
+                break;
+            case 3:
+                org.telegram.ui.wp0 wp0Var = (org.telegram.ui.wp0) callback;
+                Context context2 = (Context) obj2;
+                Bitmap bitmap = (Bitmap) obj;
+                if (!wp0Var.u1) {
+                    Runnable runnable2 = wp0Var.D1;
+                    if (runnable2 != null) {
+                        runnable2.run();
+                        break;
+                    }
+                } else {
+                    sg.q qVar = new sg.q(context2, wp0Var.z1);
+                    qVar.I0(wp0Var.t1.a, 2);
+                    qVar.o1 = new androidx.activity.n(wp0Var, bitmap, 6);
+                    qVar.n1 = new tg.m(wp0Var, 1);
+                    qVar.show();
+                    break;
+                }
+                break;
+            case 4:
+                new zh.l((Context) obj2, null, null, (org.telegram.messenger.s9) obj).show();
+                ((zh.f) callback).dismiss();
+                break;
+            case 5:
+                zh.l lVar = (zh.l) callback;
+                boolean[] zArr = (boolean[]) obj2;
+                org.telegram.ui.ActionBar.g6 g6Var2 = (org.telegram.ui.ActionBar.g6) obj;
+                if (!zArr[0]) {
+                    zArr[0] = true;
+                    org.telegram.messenger.w9.c(lVar.a).e(lVar.P1, new bi.v3(lVar, zArr, g6Var2, 12));
+                    break;
+                }
+                break;
+            case 6:
+                zh.u uVar = (zh.u) callback;
+                int i11 = uVar.a;
+                org.telegram.messenger.s9 s9Var = uVar.e2;
+                new bi.w1((Context) obj2, (org.telegram.ui.ActionBar.g6) obj, i11, s9Var.d.title, s9Var.h, false).show();
+                uVar.dismiss();
+                break;
+            case 7:
+                zh.u uVar2 = (zh.u) callback;
+                boolean[] zArr2 = (boolean[]) obj2;
+                org.telegram.ui.ActionBar.g6 g6Var3 = (org.telegram.ui.ActionBar.g6) obj;
+                if (!zArr2[0]) {
+                    zArr2[0] = true;
+                    org.telegram.messenger.w9.c(uVar2.a).e(uVar2.Q1, new bi.v3(uVar2, zArr2, g6Var3, 13));
+                    break;
+                }
+                break;
+            default:
+                zh.z1 z1Var = (zh.z1) callback;
+                ((l60) obj2).u();
+                vp0 vp0Var = z1Var.a;
+                zh.s1 s1Var = new zh.s1(z1Var, (TL_stars.SavedStarGift) obj, i10);
+                HashMap hashMap = zh.d2.U;
+                vp0Var.h(null, s1Var);
+                break;
         }
-        this.d = t51Var;
-        long j3 = gfVar.d;
-        if (j3 >= 0) {
-            this.e = j3;
-            t51Var.q0(j3, false);
-        } else {
-            this.e = t51Var.S();
-        }
-        String path = t51Var.F.getPath();
-        long U = t51Var.U();
-        l2.i0 i0Var = t51Var.d;
-        i0Var.F1();
-        this.a.o(false, path, U, i0Var.b0);
-        long U2 = t51Var.U();
-        float max = 2.8f / Math.max(60L, U2);
-        float max2 = (1.0f - max) * (this.e / Math.max(1L, t51Var.U()));
-        fi.fb fbVar = this.a;
-        fbVar.setVideoLeft(max2);
-        fbVar.setVideoRight(max2 + max);
-        fbVar.Z0 = 0L;
-        fbVar.a1 = U2;
-        fi.ab abVar = fbVar.h;
-        if (abVar != null) {
-            fi.ab.a(abVar, true);
-        }
-        fbVar.k();
-    }
-
-    public long getTime() {
-        return this.e;
-    }
-
-    public void setOnClose(Runnable runnable) {
-        this.r = runnable;
-    }
-
-    public void setOnGalleryImage(org.telegram.messenger.c20 c20Var) {
-        this.n = c20Var;
     }
 }

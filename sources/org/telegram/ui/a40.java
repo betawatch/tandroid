@@ -1,50 +1,86 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.LinearGradient;
-import android.graphics.Shader;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
+import android.os.SystemClock;
+import android.view.View;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class a40 extends LinearLayout {
-    public final org.telegram.ui.Components.j6 a;
-    public float b;
-    public final /* synthetic */ c40 c;
+public final class a40 extends Drawable {
+    public long b;
+    public int d;
+    public final View e;
+    public final Paint a = new Paint(1);
+    public float c = 1.0f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a40(c40 c40Var, Context context) {
-        super(context);
-        this.c = c40Var;
-        this.b = 0.0f;
-        setOrientation(1);
-        setGravity(17);
-        org.telegram.ui.Components.j6 j6Var = new org.telegram.ui.Components.j6(context, true, false, false);
-        this.a = j6Var;
-        j6Var.setTextColor(-1);
-        j6Var.setTextSize(org.telegram.messenger.g0.L(46.0f));
-        j6Var.setTypeface(org.telegram.messenger.g0.o());
-        j6Var.setGravity(1);
-        TextView textView = new TextView(context);
-        textView.setTextColor(-1);
-        textView.setTextSize(1, 14.0f);
-        textView.setTypeface(org.telegram.messenger.g0.o());
-        textView.setText(org.telegram.messenger.id.M0(2131743449, null));
-        addView(j6Var, c8.ha.o(-1, 46));
-        addView(textView, c8.ha.o(-2, -2));
+    public a40(View view) {
+        this.e = view;
     }
 
-    public void setWatchersCount(int i7) {
-        String E = org.telegram.messenger.id.E(i7, ',');
-        org.telegram.ui.Components.j6 j6Var = this.a;
-        float measureText = j6Var.getPaint().measureText((CharSequence) E, 0, E.length());
-        if (this.b != measureText) {
-            int i10 = org.telegram.ui.ActionBar.k6.zk;
-            c40 c40Var = this.c;
-            j6Var.getPaint().setShader(new LinearGradient(0.0f, 0.0f, measureText, 0.0f, new int[]{org.telegram.ui.ActionBar.k6.w0(i10, c40Var.I0), org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Bk, c40Var.I0)}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
-            this.b = measureText;
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        int L;
+        int centerX = getBounds().centerX();
+        int centerY = getBounds().centerY();
+        View view = this.e;
+        if (view instanceof org.telegram.ui.ActionBar.l5) {
+            L = org.telegram.messenger.g0.L(1.0f) + centerY;
+            centerX -= org.telegram.messenger.g0.L(3.0f);
+        } else {
+            L = org.telegram.messenger.g0.L(2.0f) + centerY;
         }
-        j6Var.setText(E);
+        Paint paint = this.a;
+        paint.setColor(-1147527);
+        paint.setAlpha((int) (this.c * 255.0f));
+        canvas.drawCircle(centerX, L, org.telegram.messenger.g0.L(4.0f), paint);
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        long j3 = elapsedRealtime - this.b;
+        if (j3 > 17) {
+            j3 = 17;
+        }
+        this.b = elapsedRealtime;
+        int i7 = this.d;
+        if (i7 == 0) {
+            float f10 = (j3 / 2000.0f) + this.c;
+            this.c = f10;
+            if (f10 >= 1.0f) {
+                this.c = 1.0f;
+                this.d = 1;
+            }
+        } else if (i7 == 1) {
+            float f11 = this.c - (j3 / 2000.0f);
+            this.c = f11;
+            if (f11 < 0.5f) {
+                this.c = 0.5f;
+                this.d = 0;
+            }
+        }
+        view.invalidate();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return org.telegram.messenger.g0.L(24.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return org.telegram.messenger.g0.L(24.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i7) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

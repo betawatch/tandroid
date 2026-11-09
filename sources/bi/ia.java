@@ -19,11 +19,11 @@ import org.telegram.messenger.yr;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.xs0;
+import org.telegram.ui.Components.zs0;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.an;
+import org.telegram.ui.cn;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ia implements Runnable {
     public final /* synthetic */ int a;
@@ -630,25 +630,25 @@ public final /* synthetic */ class ia implements Runnable {
                 Long l10 = (Long) obj;
                 org.telegram.ui.ActionBar.f2 T = LaunchActivity.T();
                 if (T != null) {
-                    an ra2 = an.ra(l10.longValue());
-                    T.presentFragment(ra2);
+                    cn ta2 = cn.ta(l10.longValue());
+                    T.presentFragment(ta2);
                     TLRPC.Chat M0 = qp.s1(i10).M0(Long.valueOf(-l10.longValue()));
                     if (M0 != null) {
-                        org.telegram.messenger.g0.i3(new ja(ra2, this.b, M0, 0), 250L);
+                        org.telegram.messenger.g0.i3(new ja(ta2, this.b, M0, 0), 250L);
                         break;
                     }
                 }
                 break;
             case 1:
-                di.y6 y6Var = (di.y6) obj;
-                int max = Math.max(y6Var.f.get(j3, 0), i10);
-                y6Var.f.put(j3, max);
-                y6Var.k.i(max, j3);
-                TL_stories.PeerStories y10 = y6Var.y(j3);
+                di.z6 z6Var = (di.z6) obj;
+                int max = Math.max(z6Var.f.get(j3, 0), i10);
+                z6Var.f.put(j3, max);
+                z6Var.k.i(max, j3);
+                TL_stories.PeerStories y10 = z6Var.y(j3);
                 if (y10 != null && i10 > y10.max_read_id) {
                     y10.max_read_id = i10;
-                    Collections.sort(y6Var.g, y6Var.J);
-                    qs.f(y6Var.a).k(qs.v5, new Object[0]);
+                    Collections.sort(z6Var.g, z6Var.J);
+                    qs.f(z6Var.a).k(qs.v5, new Object[0]);
                     break;
                 }
                 break;
@@ -691,7 +691,7 @@ public final /* synthetic */ class ia implements Runnable {
                 if (arrayList != null && !arrayList.isEmpty()) {
                     sy syVar = (sy) arrayList.get(0);
                     ij ijVar = (ij) jg.g.i(1, syVar.x);
-                    syVar.G = ijVar.f1();
+                    syVar.G = ijVar.e1();
                     ijVar.k.params.put("final", "1");
                     TLRPC.TL_messages_messages tL_messages_messages = new TLRPC.TL_messages_messages();
                     tL_messages_messages.messages.add(ijVar.k);
@@ -715,7 +715,7 @@ public final /* synthetic */ class ia implements Runnable {
                 }
                 break;
             default:
-                xs0.e((xs0) obj, j3, i10);
+                zs0.e((zs0) obj, j3, i10);
                 break;
         }
     }

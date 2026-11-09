@@ -6,13 +6,13 @@ import android.graphics.drawable.Drawable;
 import android.text.TextPaint;
 import fi.e5;
 import org.telegram.messenger.iz;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.ActionBar.t4;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class t0 implements f6 {
+public final class t0 implements g6 {
     public final TextPaint a;
     public final TextPaint b;
     public final TextPaint c;
@@ -39,22 +39,22 @@ public final class t0 implements f6 {
         paint.setColor(352321536);
     }
 
-    @Override // org.telegram.ui.ActionBar.f6
+    @Override // org.telegram.ui.ActionBar.g6
     public final boolean a() {
         return this.f.B0;
     }
 
-    @Override // org.telegram.ui.ActionBar.f6
+    @Override // org.telegram.ui.ActionBar.g6
     public final void b(float f10, float f11, int i7, int i10) {
-        k6.r(f10, f11, i7, i10);
+        l6.r(f10, f11, i7, i10);
     }
 
-    @Override // org.telegram.ui.ActionBar.f6
+    @Override // org.telegram.ui.ActionBar.g6
     public final ColorFilter c() {
-        return k6.v3;
+        return l6.v3;
     }
 
-    @Override // org.telegram.ui.ActionBar.f6
+    @Override // org.telegram.ui.ActionBar.g6
     public final Paint d(String str) {
         str.getClass();
         switch (str) {
@@ -69,26 +69,26 @@ public final class t0 implements f6 {
             case "paintChatActionText":
                 return this.a;
             default:
-                return k6.V0(str);
+                return l6.V0(str);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.f6
+    @Override // org.telegram.ui.ActionBar.g6
     public final boolean e() {
         return iz.H0;
     }
 
-    @Override // org.telegram.ui.ActionBar.f6
+    @Override // org.telegram.ui.ActionBar.g6
     public final int f(int i7) {
         return h(i7);
     }
 
-    @Override // org.telegram.ui.ActionBar.f6
+    @Override // org.telegram.ui.ActionBar.g6
     public final /* synthetic */ boolean g() {
         return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.f6
+    @Override // org.telegram.ui.ActionBar.g6
     public final Drawable getDrawable(String str) {
         e5 e5Var = this.f;
         t0 t0Var = e5Var.D0;
@@ -136,7 +136,7 @@ public final class t0 implements f6 {
             return e5Var.K0;
         }
         if (!str.equals("drawableMsgOutMediaSelected")) {
-            return k6.R0(str);
+            return l6.R0(str);
         }
         if (e5Var.L0 == null) {
             e5Var.L0 = new t4(1, true, true, t0Var);
@@ -144,17 +144,17 @@ public final class t0 implements f6 {
         return e5Var.L0;
     }
 
-    @Override // org.telegram.ui.ActionBar.f6
+    @Override // org.telegram.ui.ActionBar.g6
     public final int h(int i7) {
-        return this.f.C0.get(i7, k6.x0(null, i7, false));
+        return this.f.C0.get(i7, l6.x0(null, i7, false));
     }
 
-    @Override // org.telegram.ui.ActionBar.f6
+    @Override // org.telegram.ui.ActionBar.g6
     public final int j(int i7) {
         return h(i7);
     }
 
-    @Override // org.telegram.ui.ActionBar.f6
+    @Override // org.telegram.ui.ActionBar.g6
     public final /* synthetic */ void i(int i7, int i10) {
     }
 }

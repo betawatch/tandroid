@@ -2,79 +2,32 @@ package org.telegram.ui.Components;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class a60 implements View.OnClickListener {
+public final /* synthetic */ class a60 implements View.OnLayoutChangeListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ k60 b;
-    public final /* synthetic */ Runnable c;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ a60(k60 k60Var, Runnable runnable, int i7) {
+    public /* synthetic */ a60(Object obj, int i7) {
         this.a = i7;
-        this.b = k60Var;
-        this.c = runnable;
+        this.b = obj;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // android.view.View.OnLayoutChangeListener
+    public final void onLayoutChange(View view, int i7, int i10, int i11, int i12, int i13, int i14, int i15, int i16) {
         switch (this.a) {
             case 0:
-                this.b.u();
-                Runnable runnable = this.c;
-                if (runnable != null) {
-                    runnable.run();
-                    break;
-                }
-                break;
-            case 1:
-                this.c.run();
-                k60 k60Var = this.b;
-                if (k60Var.J) {
-                    k60Var.u();
-                    break;
-                }
-                break;
-            case 2:
-                this.c.run();
-                k60 k60Var2 = this.b;
-                if (k60Var2.J) {
-                    k60Var2.u();
-                    break;
-                }
-                break;
-            case 3:
-                k60 k60Var3 = this.b;
-                Runnable runnable2 = this.c;
-                if (runnable2 == null) {
-                    k60Var3.getClass();
-                    break;
-                } else {
-                    int i7 = -k60Var3.K;
-                    k60Var3.K = i7;
-                    org.telegram.messenger.g0.G3(i7, view, null);
-                    org.telegram.messenger.p2.D.a();
-                    runnable2.run();
-                    break;
-                }
-            case 4:
-                Runnable runnable3 = this.c;
-                if (runnable3 != null) {
-                    runnable3.run();
-                }
-                k60 k60Var4 = this.b;
-                if (k60Var4.J) {
-                    k60Var4.u();
+                l60 l60Var = (l60) this.b;
+                if (l60Var.D()) {
+                    l60Var.O();
                     break;
                 }
                 break;
             default:
-                Runnable runnable4 = this.c;
-                if (runnable4 != null) {
-                    runnable4.run();
-                }
-                k60 k60Var5 = this.b;
-                if (k60Var5.J) {
-                    k60Var5.u();
+                hv0 hv0Var = (hv0) this.b;
+                bi.md mdVar = hv0Var.h;
+                if (mdVar != null && mdVar.getLayout() != null) {
+                    hv0Var.F = mdVar.getLayout().getLineWidth(0);
                     break;
                 }
                 break;

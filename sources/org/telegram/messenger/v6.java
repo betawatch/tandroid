@@ -5,7 +5,7 @@ import android.text.TextWatcher;
 import android.widget.TextView;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class v6 implements TextWatcher {
     public boolean a;
@@ -45,8 +45,8 @@ public final class v6 implements TextWatcher {
             if (editable.length() <= 0 && this.e != null) {
                 z9 = false;
             }
-            textViewArr[0].setText(id.M0(z9 ? 2131751355 : 2131746322, null));
-            textViewArr[0].setTextColor(org.telegram.ui.ActionBar.k6.x0(null, z9 ? org.telegram.ui.ActionBar.k6.H5 : org.telegram.ui.ActionBar.k6.q7, false));
+            textViewArr[0].setText(id.M0(z9 ? 2131751354 : 2131746321, null));
+            textViewArr[0].setTextColor(org.telegram.ui.ActionBar.l6.x0(null, z9 ? org.telegram.ui.ActionBar.l6.H5 : org.telegram.ui.ActionBar.l6.q7, false));
         }
     }
 

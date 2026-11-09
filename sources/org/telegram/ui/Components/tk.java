@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class tk extends v4.s0 {
     public final /* synthetic */ int a;
@@ -16,7 +16,7 @@ public final class tk extends v4.s0 {
 
     @Override // v4.s0
     public final void a(RecyclerView recyclerView, int i7) {
-        xi0 xi0Var;
+        yi0 yi0Var;
         switch (this.a) {
             case 0:
                 wk wkVar = this.b;
@@ -30,8 +30,8 @@ public final class tk extends v4.s0 {
                     int L = org.telegram.messenger.g0.L(13.0f);
                     di diVar = wkVar.b;
                     int i10 = diVar.s0;
-                    if (((diVar.V3[0] - i10) - L) + i10 < org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() && (xi0Var = (xi0) q1Var.K(0)) != null) {
-                        View view = xi0Var.a;
+                    if (((diVar.V3[0] - i10) - L) + i10 < org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() && (yi0Var = (yi0) q1Var.K(0)) != null) {
+                        View view = yi0Var.a;
                         if (view.getTop() > 0) {
                             q1Var.w0(0, view.getTop(), null);
                             break;

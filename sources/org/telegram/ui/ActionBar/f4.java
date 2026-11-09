@@ -5,7 +5,7 @@ import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qs;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class f4 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -20,10 +20,10 @@ public final class f4 extends AnimatorListenerAdapter {
     public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                qs.f(p10.s0).d(new l2.w(this, 27));
+                qs.f(p10.s0).d(new l2.a0(this, 26));
                 break;
             default:
-                qs.f(p10.s0).d(new l2.w(this, 28));
+                qs.f(p10.s0).d(new l2.a0(this, 27));
                 break;
         }
     }

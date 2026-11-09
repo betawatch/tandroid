@@ -13,22 +13,22 @@ import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.id;
-import org.telegram.ui.ActionBar.a6;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.b6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class c extends FrameLayout implements a6 {
-    public final f6 a;
+public final class c extends FrameLayout implements b6 {
+    public final g6 a;
     public final ImageView b;
     public final TextView c;
     public int d;
     public boolean e;
 
-    public c(Context context, f6 f6Var) {
+    public c(Context context, g6 g6Var) {
         super(context);
-        this.a = f6Var;
+        this.a = g6Var;
         ImageView imageView = new ImageView(context);
         this.b = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
@@ -36,7 +36,7 @@ public final class c extends FrameLayout implements a6 {
         addView(imageView, ha.d(48, 48.0f, 8388627, 6.0f, 0.0f, 0.0f, 0.0f));
         TextView textView = new TextView(context);
         this.c = textView;
-        textView.setText(id.M0(2131751167, null));
+        textView.setText(id.M0(2131751166, null));
         textView.setTextSize(1, 15.0f);
         textView.setTypeface(g0.o());
         textView.setSingleLine(true);
@@ -46,19 +46,19 @@ public final class c extends FrameLayout implements a6 {
     }
 
     public final int a(float f10) {
-        return i0.a.o(k6.w0(k6.Kl, this.a), (int) (f10 * 255.0f));
+        return i0.a.o(l6.w0(l6.Kl, this.a), (int) (f10 * 255.0f));
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(k6.Kl));
+        hashSet.add(Integer.valueOf(l6.Kl));
     }
 
     public void setOnBackClickListener(View.OnClickListener onClickListener) {
         this.b.setOnClickListener(onClickListener);
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
         this.c.setTextColor(a(0.6f));
         int a10 = a(1.0f);
@@ -71,9 +71,9 @@ public final class c extends FrameLayout implements a6 {
         ImageView imageView = this.b;
         imageView.setColorFilter(porterDuffColorFilter);
         if (imageView.getBackground() != null) {
-            k6.H1(imageView.getBackground(), a(0.1f), true);
+            l6.H1(imageView.getBackground(), a(0.1f), true);
         } else {
-            imageView.setBackground(k6.h0(a(0.1f), 1, -1));
+            imageView.setBackground(l6.h0(a(0.1f), 1, -1));
         }
     }
 }

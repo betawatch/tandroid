@@ -3,9 +3,9 @@ package hi;
 import android.content.Context;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
-import fi.h9;
+import fi.v9;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final class v0 {
     public final SensorManager a;
@@ -20,10 +20,10 @@ public final class v0 {
     public long j;
     public org.telegram.ui.web.u0 k;
     public boolean l;
-    public h9 m;
-    public h9 o;
-    public h9 q;
-    public h9 s;
+    public v9 m;
+    public v9 o;
+    public v9 q;
+    public v9 s;
     public final s0 n = new s0(this, 0);
     public final s0 p = new s0(this, 1);
     public final t0 r = new t0(this);
@@ -51,18 +51,18 @@ public final class v0 {
             if (sensor != null) {
                 sensorManager.unregisterListener(this.n, sensor);
             }
-            h9 h9Var = this.m;
-            if (h9Var != null) {
-                org.telegram.messenger.g0.r(h9Var);
+            v9 v9Var = this.m;
+            if (v9Var != null) {
+                org.telegram.messenger.g0.r(v9Var);
                 this.m = null;
             }
             Sensor sensor2 = this.d;
             if (sensor2 != null) {
                 sensorManager.unregisterListener(this.p, sensor2);
             }
-            h9 h9Var2 = this.o;
-            if (h9Var2 != null) {
-                org.telegram.messenger.g0.r(h9Var2);
+            v9 v9Var2 = this.o;
+            if (v9Var2 != null) {
+                org.telegram.messenger.g0.r(v9Var2);
                 this.o = null;
             }
             Sensor sensor3 = this.g;
@@ -74,18 +74,18 @@ public final class v0 {
             if (sensor4 != null) {
                 sensorManager.unregisterListener(t0Var, sensor4);
             }
-            h9 h9Var3 = this.q;
-            if (h9Var3 != null) {
-                org.telegram.messenger.g0.r(h9Var3);
+            v9 v9Var3 = this.q;
+            if (v9Var3 != null) {
+                org.telegram.messenger.g0.r(v9Var3);
                 this.q = null;
             }
             Sensor sensor5 = this.i;
             if (sensor5 != null) {
                 sensorManager.unregisterListener(this.t, sensor5);
             }
-            h9 h9Var4 = this.s;
-            if (h9Var4 != null) {
-                org.telegram.messenger.g0.r(h9Var4);
+            v9 v9Var4 = this.s;
+            if (v9Var4 != null) {
+                org.telegram.messenger.g0.r(v9Var4);
                 this.s = null;
             }
         }
@@ -139,9 +139,9 @@ public final class v0 {
         t0 t0Var = this.r;
         if (z9) {
             if (this.i != null) {
-                h9 h9Var = this.s;
-                if (h9Var != null) {
-                    org.telegram.messenger.g0.r(h9Var);
+                v9 v9Var = this.s;
+                if (v9Var != null) {
+                    org.telegram.messenger.g0.r(v9Var);
                     this.s = null;
                 }
                 if (!this.l && (sensor = this.i) != null) {
@@ -166,9 +166,9 @@ public final class v0 {
             }
         } else {
             if (this.f != null || this.g != null) {
-                h9 h9Var2 = this.q;
-                if (h9Var2 != null) {
-                    org.telegram.messenger.g0.r(h9Var2);
+                v9 v9Var2 = this.q;
+                if (v9Var2 != null) {
+                    org.telegram.messenger.g0.r(v9Var2);
                     this.q = null;
                 }
                 if (!this.l) {
@@ -211,9 +211,9 @@ public final class v0 {
         if (!this.l) {
             sensorManager.unregisterListener(this.n, sensor);
         }
-        h9 h9Var = this.m;
-        if (h9Var != null) {
-            org.telegram.messenger.g0.r(h9Var);
+        v9 v9Var = this.m;
+        if (v9Var != null) {
+            org.telegram.messenger.g0.r(v9Var);
             this.m = null;
         }
         this.b = null;
@@ -232,9 +232,9 @@ public final class v0 {
         if (!this.l) {
             sensorManager.unregisterListener(this.p, sensor);
         }
-        h9 h9Var = this.o;
-        if (h9Var != null) {
-            org.telegram.messenger.g0.r(h9Var);
+        v9 v9Var = this.o;
+        if (v9Var != null) {
+            org.telegram.messenger.g0.r(v9Var);
             this.o = null;
         }
         this.d = null;
@@ -264,14 +264,14 @@ public final class v0 {
                 sensorManager.unregisterListener(this.t, sensor3);
             }
         }
-        h9 h9Var = this.q;
-        if (h9Var != null) {
-            org.telegram.messenger.g0.r(h9Var);
+        v9 v9Var = this.q;
+        if (v9Var != null) {
+            org.telegram.messenger.g0.r(v9Var);
             this.q = null;
         }
-        h9 h9Var2 = this.s;
-        if (h9Var2 != null) {
-            org.telegram.messenger.g0.r(h9Var2);
+        v9 v9Var2 = this.s;
+        if (v9Var2 != null) {
+            org.telegram.messenger.g0.r(v9Var2);
             this.s = null;
         }
         this.g = null;

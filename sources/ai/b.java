@@ -9,7 +9,7 @@ import bi.ad;
 import bi.dd;
 import bi.k7;
 import bi.q1;
-import di.k5;
+import di.l5;
 import fi.e2;
 import fi.k2;
 import fi.m3;
@@ -30,15 +30,15 @@ import org.telegram.ui.Components.di;
 import org.telegram.ui.Components.mz;
 import org.telegram.ui.Components.n7;
 import org.telegram.ui.Components.ni;
-import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.q41;
 import org.telegram.ui.Components.qi;
-import org.telegram.ui.Components.rt0;
+import org.telegram.ui.Components.qj0;
+import org.telegram.ui.Components.r41;
+import org.telegram.ui.Components.tt0;
 import org.telegram.ui.Components.ve;
-import org.telegram.ui.Components.xi0;
-import org.telegram.ui.pv;
+import org.telegram.ui.Components.yi0;
+import org.telegram.ui.rv;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class b extends v4.s0 {
     public final /* synthetic */ int a;
@@ -51,8 +51,8 @@ public final class b extends v4.s0 {
 
     @Override // v4.s0
     public void a(RecyclerView recyclerView, int i7) {
-        xi0 xi0Var;
-        xi0 xi0Var2;
+        yi0 yi0Var;
+        yi0 yi0Var2;
         switch (this.a) {
             case 0:
                 d dVar = (d) this.b;
@@ -69,21 +69,21 @@ public final class b extends v4.s0 {
                 }
                 break;
             case 9:
-                k5 k5Var = (k5) this.b;
+                l5 l5Var = (l5) this.b;
                 if (i7 == 0) {
-                    k5Var.V = true;
-                    k5Var.invalidate();
+                    l5Var.V = true;
+                    l5Var.invalidate();
                 }
                 if (i7 == 1) {
-                    k5Var.V = false;
-                    wa waVar = k5Var.d;
+                    l5Var.V = false;
+                    wa waVar = l5Var.d;
                     ValueAnimator valueAnimator = (ValueAnimator) waVar.c;
                     if (valueAnimator != null) {
                         valueAnimator.removeAllListeners();
                         ((ValueAnimator) waVar.c).cancel();
                         waVar.c = null;
                     }
-                    org.telegram.messenger.g0.v1(k5Var);
+                    org.telegram.messenger.g0.v1(l5Var);
                     break;
                 }
                 break;
@@ -132,8 +132,8 @@ public final class b extends v4.s0 {
                     int L = org.telegram.messenger.g0.L(13.0f);
                     int i10 = b8Var.q2;
                     int i11 = b8Var.s0;
-                    if (((i10 - i11) - L) + i11 < org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() && n7Var.canScrollVertically(1) && (xi0Var = (xi0) n7Var.K(b8Var.l2 ? 1 : 0)) != null) {
-                        View view = xi0Var.a;
+                    if (((i10 - i11) - L) + i11 < org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() && n7Var.canScrollVertically(1) && (yi0Var = (yi0) n7Var.K(b8Var.l2 ? 1 : 0)) != null) {
+                        View view = yi0Var.a;
                         if (view.getTop() > org.telegram.messenger.g0.L(7.0f)) {
                             n7Var.w0(0, view.getTop() - org.telegram.messenger.g0.L(7.0f), null);
                             break;
@@ -150,8 +150,8 @@ public final class b extends v4.s0 {
                     org.telegram.ui.ActionBar.r0 r0Var = diVar.U2;
                     int L3 = L2 + (r0Var != null ? org.telegram.messenger.g0.L(r0Var.getAlpha() * 26.0f) : 0);
                     int i12 = diVar.s0;
-                    if (((diVar.V3[0] - i12) - L3) + i12 < org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() && (xi0Var2 = (xi0) q1Var.K(0)) != null) {
-                        View view2 = xi0Var2.a;
+                    if (((diVar.V3[0] - i12) - L3) + i12 < org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() && (yi0Var2 = (yi0) q1Var.K(0)) != null) {
+                        View view2 = yi0Var2.a;
                         if (view2.getTop() > org.telegram.messenger.g0.L(7.0f)) {
                             q1Var.w0(0, view2.getTop() - org.telegram.messenger.g0.L(7.0f), null);
                             break;
@@ -164,11 +164,11 @@ public final class b extends v4.s0 {
 
     /* JADX WARN: Code restructure failed: missing block: B:167:0x026c, code lost:
     
-        if (r10.s() != false) goto L149;
+        if (r10.t() != false) goto L149;
      */
     /* JADX WARN: Code restructure failed: missing block: B:79:0x0144, code lost:
     
-        if (r10.s() != false) goto L75;
+        if (r10.t() != false) goto L75;
      */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:187:0x02c3  */
@@ -229,9 +229,9 @@ public final class b extends v4.s0 {
                 bi.w1 w1Var = (bi.w1) obj;
                 View view = w1Var.i2;
                 FrameLayout frameLayout = w1Var.d2;
-                pj0 pj0Var = w1Var.k1;
-                for (int childCount = pj0Var.getChildCount() - 1; childCount >= 0; childCount--) {
-                    View childAt = pj0Var.getChildAt(childCount);
+                qj0 qj0Var = w1Var.k1;
+                for (int childCount = qj0Var.getChildCount() - 1; childCount >= 0; childCount--) {
+                    View childAt = qj0Var.getChildAt(childCount);
                     int R = RecyclerView.R(childAt);
                     if (R >= 0) {
                         if (R == 2) {
@@ -297,10 +297,10 @@ public final class b extends v4.s0 {
                 break;
             case 6:
                 ad adVar = (ad) obj;
-                q41 q41Var = adVar.a;
-                if (q41Var.canScrollVertically(1)) {
-                    for (int i18 = 0; i18 < q41Var.getChildCount(); i18++) {
-                        if (!(q41Var.getChildAt(i18) instanceof mz)) {
+                r41 r41Var = adVar.a;
+                if (r41Var.canScrollVertically(1)) {
+                    for (int i18 = 0; i18 < r41Var.getChildCount(); i18++) {
+                        if (!(r41Var.getChildAt(i18) instanceof mz)) {
                         }
                     }
                     break;
@@ -311,19 +311,19 @@ public final class b extends v4.s0 {
                 ((ch.r) obj).c(true);
                 break;
             case 8:
-                pv pvVar = (pv) obj;
-                pvVar.invalidate();
-                pvVar.c();
-                m3 m3Var = pvVar.J;
+                rv rvVar = (rv) obj;
+                rvVar.invalidate();
+                rvVar.c();
+                m3 m3Var = rvVar.J;
                 if (m3Var != null) {
                     m3Var.f(true);
                     break;
                 }
                 break;
             case 9:
-                k5 k5Var = (k5) obj;
-                k5Var.c();
-                k5Var.invalidate();
+                l5 l5Var = (l5) obj;
+                l5Var.c();
+                l5Var.invalidate();
                 break;
             case 10:
                 t1 t1Var = (t1) obj;
@@ -488,7 +488,7 @@ public final class b extends v4.s0 {
                 }
                 break;
             case 27:
-                ((rt0) obj).invalidate();
+                ((tt0) obj).invalidate();
                 break;
             case 28:
                 ni niVar = (ni) obj;

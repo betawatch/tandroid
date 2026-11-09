@@ -8,17 +8,17 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class g2 extends u0 {
-    public final /* synthetic */ p9 h0;
-    public final /* synthetic */ i4 i0;
+    public final /* synthetic */ q9 h0;
+    public final /* synthetic */ j4 i0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g2(i4 i4Var, Context context, p9 p9Var, e9 e9Var, View view, FrameLayout frameLayout, p9 p9Var2) {
-        super(context, p9Var, e9Var, view, frameLayout);
-        this.i0 = i4Var;
-        this.h0 = p9Var2;
+    public g2(j4 j4Var, Context context, q9 q9Var, f9 f9Var, View view, FrameLayout frameLayout, q9 q9Var2) {
+        super(context, q9Var, f9Var, view, frameLayout);
+        this.i0 = j4Var;
+        this.h0 = q9Var2;
     }
 
     @Override // di.u0
@@ -58,9 +58,9 @@ public final class g2 extends u0 {
 
     @Override // di.u0
     public final void j() {
-        i4 i4Var = this.i0;
-        i4Var.I1.setCount((int) getStarsCount());
-        i4Var.I1.setFilled(this.W != null);
+        j4 j4Var = this.i0;
+        j4Var.I1.setCount((int) getStarsCount());
+        j4Var.I1.setFilled(this.W != null);
     }
 
     @Override // di.u0

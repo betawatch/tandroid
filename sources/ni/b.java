@@ -15,18 +15,18 @@ import org.telegram.messenger.voip.VoIPPreNotificationService;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.Wallet.m0;
-import org.telegram.ui.Wallet.r2;
-import org.telegram.ui.Wallet.u2;
+import org.telegram.ui.Wallet.l0;
+import org.telegram.ui.Wallet.q2;
+import org.telegram.ui.Wallet.t2;
 import org.telegram.utils.twidget.i0;
 import org.telegram.utils.twidget.i1;
 import org.telegram.utils.twidget.k0;
 import org.telegram.utils.twidget.n0;
 import org.telegram.utils.twidget.v0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -154,20 +154,20 @@ public final /* synthetic */ class b implements Runnable {
                         byte[] bytes = jSONObject.optString("data").getBytes(StandardCharsets.UTF_8);
                         Context context = T.getContext();
                         int i12 = h7.b;
-                        f6 resourceProvider = T.getResourceProvider();
+                        g6 resourceProvider = T.getResourceProvider();
                         i0 i0Var = new i0(h7, v0Var, j10, bytes);
-                        ArrayList arrayList = u2.a;
-                        r2 r2Var = new r2(new boolean[]{false}, i0Var);
-                        m0 x10 = m0.x(i12);
+                        ArrayList arrayList = t2.a;
+                        q2 q2Var = new q2(new boolean[]{false}, i0Var);
+                        l0 x10 = l0.x(i12);
                         boolean[] zArr = {false};
-                        c1 c1Var = new c1(zArr, context, i12, user, jSONObject, resourceProvider, r2Var, 16);
+                        c1 c1Var = new c1(zArr, context, i12, user, jSONObject, resourceProvider, q2Var, 16);
                         if (x10.G()) {
                             c1Var.run();
                             return;
                         }
-                        u2.a.add(c1Var);
+                        t2.a.add(c1Var);
                         x10.m0(c1Var);
-                        g0.i3(new org.telegram.ui.Wallet.g(c1Var, zArr, r2Var, 8), 10000L);
+                        g0.i3(new org.telegram.ui.Wallet.g(c1Var, zArr, q2Var, 8), 10000L);
                         return;
                     }
                 }

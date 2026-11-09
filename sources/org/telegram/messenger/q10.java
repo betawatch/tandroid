@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class q10 implements Runnable {
     public final /* synthetic */ int a;
@@ -48,10 +48,10 @@ public final /* synthetic */ class q10 implements Runnable {
                         qp.s1(i11).Y3(tL_contacts_resolvedPeer.users, false);
                         qp.s1(i11).S3(tL_contacts_resolvedPeer.chats, false);
                         yr.a0(i11).m1(tL_contacts_resolvedPeer.users, tL_contacts_resolvedPeer.chats, false, true);
-                        long C1 = ij.C1(tL_contacts_resolvedPeer.peer);
-                        s10Var.b.put(str, new r10(C1));
+                        long B1 = ij.B1(tL_contacts_resolvedPeer.peer);
+                        s10Var.b.put(str, new r10(B1));
                         while (i10 < arrayList.size()) {
-                            ((c20) arrayList.get(i10)).a(Long.valueOf(C1));
+                            ((c20) arrayList.get(i10)).a(Long.valueOf(B1));
                             i10++;
                         }
                         break;
@@ -70,7 +70,7 @@ public final /* synthetic */ class q10 implements Runnable {
                             }
                             String str3 = tL_error.text;
                             if (str3 != null && str3.contains("FLOOD_WAIT") && (Q = LaunchActivity.Q()) != null) {
-                                k5.p(null, 2131750688, org.telegram.ui.Components.hc.a0(Q), null);
+                                k5.p(null, 2131750687, org.telegram.ui.Components.hc.a0(Q), null);
                                 break;
                             }
                         }

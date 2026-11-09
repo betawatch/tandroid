@@ -16,7 +16,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class dw extends c1 {
     public static volatile dw[] r = new dw[4];
@@ -832,7 +832,7 @@ public final class dw extends c1 {
                             TLRPC.Document document6 = tL_message_secret.media.document;
                             document6.flags |= 1;
                             document6.dc_id = encryptedFile.dc_id;
-                            if (ij.S4(tL_message_secret) || ij.k4(tL_message_secret)) {
+                            if (ij.R4(tL_message_secret) || ij.j4(tL_message_secret)) {
                                 tL_message_secret.media_unread = true;
                             }
                         }
@@ -858,7 +858,7 @@ public final class dw extends c1 {
                         if (document8.mime_type == null) {
                             document8.mime_type = "";
                         }
-                        if (ij.M2(tL_message_secret)) {
+                        if (ij.L2(tL_message_secret)) {
                             tL_message_secret.stickerVerified = 0;
                             getMediaDataController().n2(tL_message_secret, true);
                         }

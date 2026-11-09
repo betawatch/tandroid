@@ -7,11 +7,11 @@ import org.telegram.messenger.c20;
 import org.telegram.messenger.id;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.hc;
-import org.telegram.ui.Components.u61;
-import org.telegram.ui.Components.up0;
+import org.telegram.ui.Components.v61;
+import org.telegram.ui.Components.vp0;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s1 implements c20 {
     public final /* synthetic */ int a;
@@ -36,23 +36,23 @@ public final /* synthetic */ class s1 implements c20 {
                 break;
             default:
                 TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) obj;
-                up0 up0Var = z1Var.a;
-                t9 t9Var = up0Var.e;
+                vp0 vp0Var = z1Var.a;
+                t9 t9Var = vp0Var.e;
                 int i11 = tL_starGiftCollection.collection_id;
                 t9Var.getClass();
                 ArrayList arrayList = new ArrayList();
                 arrayList.add(savedStarGift);
                 t9Var.a(i11, arrayList);
-                up0Var.f(true);
-                u61 u61Var = up0Var.n;
+                vp0Var.f(true);
+                v61 v61Var = vp0Var.n;
                 int i12 = tL_starGiftCollection.collection_id;
-                u61Var.d(i12, up0Var.e.f(i12) + 1);
-                org.telegram.ui.ActionBar.f2 f2Var = up0Var.a;
+                v61Var.d(i12, vp0Var.e.f(i12) + 1);
+                org.telegram.ui.ActionBar.f2 f2Var = vp0Var.a;
                 if (f2Var instanceof ProfileActivity) {
-                    ((ProfileActivity) f2Var).U4(true);
+                    ((ProfileActivity) f2Var).X4(true);
                 }
-                up0Var.o();
-                hc.a0(f2Var).R(savedStarGift.gift.getDocument(), org.telegram.messenger.g0.X2(id.a0(null, null, 2131750394, k7.A1(savedStarGift.gift), tL_starGiftCollection.title))).j();
+                vp0Var.o();
+                hc.a0(f2Var).R(savedStarGift.gift.getDocument(), org.telegram.messenger.g0.X2(id.a0(null, null, 2131750393, k7.z1(savedStarGift.gift), tL_starGiftCollection.title))).j();
                 break;
         }
     }

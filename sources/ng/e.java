@@ -24,17 +24,17 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.id;
 import org.telegram.messenger.r1;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.q6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.ActionBar.s6;
 import org.telegram.ui.Cells.y;
 import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.Components.q5;
 import org.telegram.ui.Components.xp;
 import org.telegram.ui.zd;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public class e extends FrameLayout {
     public boolean D;
@@ -43,7 +43,7 @@ public class e extends FrameLayout {
     public boolean G;
     public Drawable H;
     public y I;
-    public final f6 J;
+    public final g6 J;
     public final f3 K;
     public DecimalFormat L;
     public boolean a;
@@ -60,7 +60,7 @@ public class e extends FrameLayout {
     public final SimpleDateFormat x;
     public boolean y;
 
-    public e(Context context, f6 f6Var) {
+    public e(Context context, g6 g6Var) {
         super(context);
         this.n = new SimpleDateFormat("E, ");
         this.r = new SimpleDateFormat("MMM dd");
@@ -69,7 +69,7 @@ public class e extends FrameLayout {
         this.x = new SimpleDateFormat(" HH:mm");
         this.G = true;
         this.K = new f3(this, 2);
-        this.J = f6Var;
+        this.J = g6Var;
         setPadding(g0.L(8.0f), g0.L(8.0f), g0.L(8.0f), g0.L(8.0f));
         LinearLayout linearLayout = new LinearLayout(getContext());
         this.b = linearLayout;
@@ -106,17 +106,17 @@ public class e extends FrameLayout {
     }
 
     public void b() {
-        int i7 = k6.j5;
+        int i7 = l6.j5;
         TextView textView = this.d;
-        f6 f6Var = this.J;
-        r6.V(textView, i7, f6Var);
-        r6.V(this.e, i7, f6Var);
-        int i10 = k6.Uj;
-        r6.t(this.f, i10, f6Var, PorterDuff.Mode.SRC_ATOP);
-        this.h.setProgressColor(k6.w0(i10, f6Var));
+        g6 g6Var = this.J;
+        s6.U(textView, i7, g6Var);
+        s6.U(this.e, i7, g6Var);
+        int i10 = l6.Uj;
+        s6.s(this.f, i10, g6Var, PorterDuff.Mode.SRC_ATOP);
+        this.h.setProgressColor(l6.w0(i10, g6Var));
         this.H = getContext().getResources().getDrawable(R.drawable.stats_tooltip).mutate();
         int L = g0.L(4.0f);
-        this.I = k6.k0(L, L, L, L, k6.w0(k6.h5, f6Var), k6.w0(k6.i6, f6Var), -16777216);
+        this.I = l6.k0(L, L, L, L, l6.w0(l6.h5, g6Var), l6.w0(l6.i6, g6Var), -16777216);
         xp xpVar = new xp(this.H, this.I, g0.L(3.0f), g0.L(3.0f));
         xpVar.x = true;
         setBackground(xpVar);
@@ -229,23 +229,23 @@ public class e extends FrameLayout {
                     textView3.setText(aVar.d);
                 }
                 int i23 = aVar.g;
-                f6 f6Var = this.J;
-                if (i23 < 0 || !k6.f1(i23)) {
-                    q6 q6Var = r6.a;
+                g6 g6Var = this.J;
+                if (i23 < 0 || !l6.f1(i23)) {
+                    r6 r6Var = s6.a;
                     q5Var.setTag(R.id.theme_bind, null);
-                    q5Var.setTextColor(k6.D0().q() ? aVar.i : aVar.h);
+                    q5Var.setTextColor(l6.D0().q() ? aVar.i : aVar.h);
                 } else {
-                    r6.V(q5Var, aVar.g, f6Var);
+                    s6.U(q5Var, aVar.g, g6Var);
                 }
-                int i24 = k6.j5;
-                r6.V(textView3, i24, f6Var);
+                int i24 = l6.j5;
+                s6.U(textView3, i24, g6Var);
                 if (!this.E || textView2 == null) {
                     i11 = i21;
                     i12 = 2;
                     i13 = 1;
                 } else {
                     textView2.setVisibility(0);
-                    r6.V(textView2, i24, f6Var);
+                    s6.U(textView2, i24, g6Var);
                     i11 = i21;
                     float f12 = ((f) arrayList.get(i11)).a.a[i7] / j10;
                     if (f12 >= 0.1f || f12 == 0.0f) {

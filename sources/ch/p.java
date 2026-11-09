@@ -2,9 +2,9 @@ package ch;
 
 import c8.ha;
 import org.telegram.messenger.id;
-import org.telegram.ui.an;
+import org.telegram.ui.cn;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p implements Runnable {
     public final /* synthetic */ int a;
@@ -26,9 +26,9 @@ public final /* synthetic */ class p implements Runnable {
                 rVar.e = rVar.b();
                 int i7 = rVar.f;
                 int i10 = rVar.h;
-                an anVar = rVar.a;
+                cn cnVar = rVar.a;
                 if (rVar.b == null) {
-                    q qVar = new q((anVar.getUserConfig().e() > anVar.a() ? 1 : (anVar.getUserConfig().e() == anVar.a() ? 0 : -1)) == 0 ? 3 : 0, anVar.getCurrentAccount(), rVar.getContext(), rVar.a, anVar.getResourceProvider());
+                    q qVar = new q((cnVar.getUserConfig().e() > cnVar.a() ? 1 : (cnVar.getUserConfig().e() == cnVar.a() ? 0 : -1)) == 0 ? 3 : 0, cnVar.getCurrentAccount(), rVar.getContext(), rVar.a, cnVar.getResourceProvider());
                     qVar.m1 = 1.0f;
                     qVar.setWillNotDraw(false);
                     rVar.b = qVar;
@@ -51,7 +51,7 @@ public final /* synthetic */ class p implements Runnable {
                     break;
                 } else {
                     rVar.y = true;
-                    rVar.b.p(rVar.e, anVar.p8, true);
+                    rVar.b.p(rVar.e, cnVar.p8, true);
                     rVar.b.r(false);
                     break;
                 }

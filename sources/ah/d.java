@@ -15,13 +15,13 @@ import bi.sc;
 import bi.uc;
 import bi.w1;
 import ch.b0;
+import di.f8;
 import di.g2;
-import di.i9;
-import di.p9;
-import di.s7;
-import di.t8;
-import di.w5;
-import di.y8;
+import di.j9;
+import di.q9;
+import di.u8;
+import di.x5;
+import di.z8;
 import fi.a8;
 import fi.d8;
 import fi.la;
@@ -36,13 +36,13 @@ import org.telegram.ui.ActionBar.d2;
 import org.telegram.ui.ActionBar.f2;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.jd;
-import org.telegram.ui.Components.m20;
+import org.telegram.ui.Components.n20;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.af;
 import ug.w0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -72,7 +72,7 @@ public final /* synthetic */ class d implements View.OnClickListener {
                 ((androidx.mediarouter.app.g) this.b).dismiss();
                 break;
             case 3:
-                ((m20) this.b).dismiss();
+                ((n20) this.b).dismiss();
                 break;
             case 4:
                 ((e1) this.b).dismiss();
@@ -108,7 +108,7 @@ public final /* synthetic */ class d implements View.OnClickListener {
                 ((oa) this.b).run();
                 break;
             case 12:
-                if (((sc) ((a) this.b).c).f > 0 && (Q = LaunchActivity.Q()) != null) {
+                if (((sc) ((a) this.b).c).e > 0 && (Q = LaunchActivity.Q()) != null) {
                     d2 d2Var = new d2();
                     d2Var.a = true;
                     Q.showAsSheet(new dd(), d2Var);
@@ -126,10 +126,10 @@ public final /* synthetic */ class d implements View.OnClickListener {
                 ((g2) this.b).q(!r5.f0, true);
                 break;
             case 15:
-                ((p9) this.b).T();
+                ((q9) this.b).T();
                 break;
             case 16:
-                ((w5) this.b).dismiss();
+                ((x5) this.b).dismiss();
                 f2 Q2 = LaunchActivity.Q();
                 if (Q2 != null) {
                     Q2.showDialog(new w0(Q2, 14, false));
@@ -137,15 +137,15 @@ public final /* synthetic */ class d implements View.OnClickListener {
                 }
                 break;
             case 17:
-                t8 t8Var = (t8) this.b;
-                t8Var.onClick(t8Var.b);
+                u8 u8Var = (u8) this.b;
+                u8Var.onClick(u8Var.b);
                 break;
             case 18:
-                y8 y8Var = (y8) this.b;
-                y8Var.b.t1.animate().alpha(0.0f).setDuration(150L).setListener(new i9(y8Var, 0)).start();
+                z8 z8Var = (z8) this.b;
+                z8Var.b.t1.animate().alpha(0.0f).setDuration(150L).setListener(new j9(z8Var, 0)).start();
                 break;
             case 19:
-                ((s7) this.b).run();
+                ((f8) this.b).run();
                 break;
             case 20:
                 fi.m mVar = (fi.m) this.b;

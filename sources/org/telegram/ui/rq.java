@@ -1,26 +1,32 @@
 package org.telegram.ui;
 
-import android.view.View;
-
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class rq implements View.OnClickListener {
+public final /* synthetic */ class rq implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.Components.ve0 b;
+    public final /* synthetic */ sq b;
 
-    public /* synthetic */ rq(org.telegram.ui.Components.ve0 ve0Var, int i7) {
+    public /* synthetic */ rq(sq sqVar, int i7) {
         this.a = i7;
-        this.b = ve0Var;
+        this.b = sqVar;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.b(true);
+                fi.w3 w3Var = this.b.a;
+                if (w3Var != null) {
+                    w3Var.f3.O(true);
+                    break;
+                }
                 break;
             default:
-                this.b.b(true);
+                fi.w3 w3Var2 = this.b.a;
+                if (w3Var2 != null) {
+                    w3Var2.f3.O(true);
+                    break;
+                }
                 break;
         }
     }

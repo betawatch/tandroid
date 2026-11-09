@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public class VoIPFeedbackActivity extends Activity {
     @Override // android.app.Activity
@@ -20,6 +20,6 @@ public class VoIPFeedbackActivity extends Activity {
         super.onCreate(bundle);
         overridePendingTransition(0, 0);
         setContentView(new View(this));
-        org.telegram.ui.Components.voip.y1.k(this, new ru0(this, 23), getIntent().getBooleanExtra("call_video", false), getIntent().getLongExtra("call_id", 0L), getIntent().getLongExtra("call_access_hash", 0L), getIntent().getIntExtra("account", 0), false);
+        org.telegram.ui.Components.voip.y1.k(this, new tu0(this, 23), getIntent().getBooleanExtra("call_video", false), getIntent().getLongExtra("call_id", 0L), getIntent().getLongExtra("call_access_hash", 0L), getIntent().getIntExtra("account", 0), false);
     }
 }

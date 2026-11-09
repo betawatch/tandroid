@@ -1,25 +1,39 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class z01 extends ug.z0 {
-    public final /* synthetic */ a11 M;
+public final /* synthetic */ class z01 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ c11 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z01(a11 a11Var, Context context) {
-        super(2, context, null);
-        this.M = a11Var;
+    public /* synthetic */ z01(c11 c11Var, int i7) {
+        this.a = i7;
+        this.b = c11Var;
     }
 
-    @Override // android.view.View
-    public final void invalidate() {
-        super.invalidate();
-        a11 a11Var = this.M;
-        if (a11Var.getParent() instanceof View) {
-            ((View) a11Var.getParent()).invalidate();
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                c11 c11Var = this.b;
+                c11Var.N = floatValue;
+                c11Var.V.h0.invalidate();
+                break;
+            case 1:
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                c11 c11Var2 = this.b;
+                c11Var2.N = floatValue2;
+                c11Var2.V.h0.invalidate();
+                break;
+            default:
+                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                c11 c11Var3 = this.b;
+                c11Var3.N = floatValue3;
+                c11Var3.V.h0.invalidate();
+                break;
         }
     }
 }

@@ -17,9 +17,9 @@ import com.google.android.gms.tasks.TaskCompletionSource;
 import h2.w;
 import java.util.Collections;
 import java.util.Set;
-import org.telegram.ui.hy0;
+import org.telegram.ui.ky0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public abstract class j {
     public final Context a;
@@ -38,17 +38,17 @@ public abstract class j {
         this(context, eVar, aVar, new i(qVar, Looper.getMainLooper()));
     }
 
-    public final hy0 a() {
-        hy0 hy0Var = new hy0(7, false);
+    public final ky0 a() {
+        ky0 ky0Var = new ky0(7, false);
         Set set = Collections.EMPTY_SET;
-        if (((a0.g) hy0Var.b) == null) {
-            hy0Var.b = new a0.g(0);
+        if (((a0.g) ky0Var.b) == null) {
+            ky0Var.b = new a0.g(0);
         }
-        ((a0.g) hy0Var.b).addAll(set);
+        ((a0.g) ky0Var.b).addAll(set);
         Context context = this.a;
-        hy0Var.d = context.getClass().getName();
-        hy0Var.c = context.getPackageName();
-        return hy0Var;
+        ky0Var.d = context.getClass().getName();
+        ky0Var.c = context.getPackageName();
+        return ky0Var;
     }
 
     public final Task b(y0 y0Var) {

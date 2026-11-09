@@ -12,7 +12,7 @@ import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class h1 extends FrameLayout implements org.telegram.ui.Cells.h9 {
     public final bi.q1 a;
@@ -186,7 +186,7 @@ public final class h1 extends FrameLayout implements org.telegram.ui.Cells.h9 {
             TL_iv.pageBlockCollage pageblockcollage3 = h1Var.s;
             TL_iv.RichText richText2 = pageblockcollage3.caption.credit;
             if (h1Var.x.G) {
-                alignment = org.telegram.ui.Components.mu0.a();
+                alignment = org.telegram.ui.Components.ou0.a();
             }
             z2 n11 = g4.n(g4Var, h1Var, null, richText2, L, 0, pageblockcollage3, alignment, 0, h1Var.x);
             h1Var.d = n11;

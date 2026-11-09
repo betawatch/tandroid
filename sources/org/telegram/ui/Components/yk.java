@@ -2,9 +2,9 @@ package org.telegram.ui.Components;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class yk implements t4, dj0, q71 {
+public final /* synthetic */ class yk implements t4, ej0, r71 {
     public final /* synthetic */ int a;
     public final /* synthetic */ ChatAttachAlertPhotoLayout b;
 
@@ -33,7 +33,7 @@ public final /* synthetic */ class yk implements t4, dj0, q71 {
         }
     }
 
-    @Override // org.telegram.ui.Components.q71
+    @Override // org.telegram.ui.Components.r71
     public void b(float f10) {
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.b;
         ql qlVar = chatAttachAlertPhotoLayout.P;
@@ -44,7 +44,7 @@ public final /* synthetic */ class yk implements t4, dj0, q71 {
         chatAttachAlertPhotoLayout.w0(true);
     }
 
-    @Override // org.telegram.ui.Components.dj0
+    @Override // org.telegram.ui.Components.ej0
     public boolean c(int i7, View view) {
         boolean z9 = ChatAttachAlertPhotoLayout.q1;
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.b;
@@ -58,10 +58,10 @@ public final /* synthetic */ class yk implements t4, dj0, q71 {
                 return true;
             }
             if (view instanceof org.telegram.ui.Cells.q5) {
-                tj0 tj0Var = chatAttachAlertPhotoLayout.I;
+                uj0 uj0Var = chatAttachAlertPhotoLayout.I;
                 boolean z10 = !((org.telegram.ui.Cells.q5) view).a();
                 chatAttachAlertPhotoLayout.K = z10;
-                tj0Var.d(i7, view, z10);
+                uj0Var.d(i7, view, z10);
             }
         }
         return false;

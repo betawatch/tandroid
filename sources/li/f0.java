@@ -20,31 +20,31 @@ import org.telegram.messenger.iz;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.s6;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
-public final class f0 extends y implements org.telegram.ui.ActionBar.a6 {
+public final class f0 extends y implements org.telegram.ui.ActionBar.b6 {
     public final ArrayList D;
     public d0 E;
     public int F;
     public int G;
     public final ra H;
     public final int n;
-    public final f6 r;
+    public final g6 r;
     public final HorizontalScrollView s;
     public final LinearLayout w;
     public final x1 x;
     public final TextView y;
 
-    public f0(int i7, Context context, f6 f6Var) {
+    public f0(int i7, Context context, g6 g6Var) {
         super(context);
         this.D = new ArrayList();
         this.H = new ra(this, 28);
         this.n = i7;
-        this.r = f6Var;
+        this.r = g6Var;
         f(org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(4.0f));
         HorizontalScrollView horizontalScrollView = new HorizontalScrollView(context);
         this.s = horizontalScrollView;
@@ -55,7 +55,7 @@ public final class f0 extends y implements org.telegram.ui.ActionBar.a6 {
         linearLayout.setOrientation(0);
         horizontalScrollView.addView(linearLayout, new FrameLayout.LayoutParams(-2, -1));
         addView(horizontalScrollView, ha.e(-1, -1, 23));
-        x1 x1Var = new x1(R.drawable.msg_add, context, f6Var);
+        x1 x1Var = new x1(R.drawable.msg_add, context, g6Var);
         x1Var.e = 19;
         x1Var.updateColors();
         this.x = x1Var;
@@ -100,7 +100,7 @@ public final class f0 extends y implements org.telegram.ui.ActionBar.a6 {
         addView(x1Var, ha.e(38, 38, 21));
         TextView textView = new TextView(context);
         this.y = textView;
-        textView.setText(id.M0(2131746015, null));
+        textView.setText(id.M0(2131746012, null));
         textView.setTextSize(1, 14.0f);
         textView.setTypeface(org.telegram.messenger.g0.o());
         textView.setGravity(17);
@@ -142,13 +142,13 @@ public final class f0 extends y implements org.telegram.ui.ActionBar.a6 {
             }
         });
         addView(textView, ha.e(-2, 38, 17));
-        int i12 = k6.Ci;
-        int w02 = k6.w0(i12, f6Var);
-        int w10 = k6.w(k6.w0(k6.d6, f6Var), k6.r1(0.1f, w02));
-        r6.V(textView, i12, f6Var);
-        textView.setBackground(k6.b0(w10, k6.r1(0.16f, w02), org.telegram.messenger.g0.L(19.0f), org.telegram.messenger.g0.L(19.0f)));
+        int i12 = l6.Ci;
+        int w02 = l6.w0(i12, g6Var);
+        int w10 = l6.w(l6.w0(l6.d6, g6Var), l6.r1(0.1f, w02));
+        s6.U(textView, i12, g6Var);
+        textView.setBackground(l6.b0(w10, l6.r1(0.16f, w02), org.telegram.messenger.g0.L(19.0f), org.telegram.messenger.g0.L(19.0f)));
         Drawable mutate = getContext().getResources().getDrawable(R.drawable.msg_add).mutate();
-        r6.y(this, mutate, i12, f6Var, PorterDuff.Mode.SRC_IN);
+        s6.x(this, mutate, i12, g6Var, PorterDuff.Mode.SRC_IN);
         textView.setCompoundDrawablesRelativeWithIntrinsicBounds(mutate, (Drawable) null, (Drawable) null, (Drawable) null);
     }
 
@@ -166,9 +166,9 @@ public final class f0 extends y implements org.telegram.ui.ActionBar.a6 {
         return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(k6.d6));
+        hashSet.add(Integer.valueOf(l6.d6));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:13:0x0029  */
@@ -353,14 +353,14 @@ public final class f0 extends y implements org.telegram.ui.ActionBar.a6 {
         setMeasuredDimension(size, paddingBottom);
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
         this.x.updateColors();
-        int i7 = k6.Ci;
-        f6 f6Var = this.r;
-        int w02 = k6.w0(i7, f6Var);
-        int i10 = k6.d6;
-        int w03 = k6.w0(i10, f6Var);
+        int i7 = l6.Ci;
+        g6 g6Var = this.r;
+        int w02 = l6.w0(i7, g6Var);
+        int i10 = l6.d6;
+        int w03 = l6.w0(i10, g6Var);
         if (w02 == this.F && w03 == this.G) {
             return;
         }
@@ -368,15 +368,15 @@ public final class f0 extends y implements org.telegram.ui.ActionBar.a6 {
         this.G = w03;
         TextView textView = this.y;
         Drawable background = textView.getBackground();
-        k6.H1(background, k6.w(w03, k6.r1(0.1f, w02)), false);
-        k6.H1(background, k6.r1(0.16f, w02), true);
+        l6.H1(background, l6.w(w03, l6.r1(0.1f, w02)), false);
+        l6.H1(background, l6.r1(0.16f, w02), true);
         textView.invalidate();
         ra raVar = this.H;
         removeCallbacks(raVar);
         postDelayed(raVar, 100L);
         try {
             if (getBackground() instanceof y1) {
-                ((y1) getBackground()).a(k6.w0(i10, f6Var));
+                ((y1) getBackground()).a(l6.w0(i10, g6Var));
             }
         } catch (Exception e10) {
             a8.g(e10, true);

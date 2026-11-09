@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final class f2 {
     public final gf.g a;
@@ -20,7 +20,7 @@ public final class f2 {
     public boolean f;
     public final ArrayDeque b = new ArrayDeque();
     public final ArrayDeque c = new ArrayDeque();
-    public final l2.w g = new l2.w(this, 8);
+    public final l2.a0 g = new l2.a0(this, 7);
     public e2 d = b();
 
     public f2(gf.g gVar) {
@@ -378,9 +378,9 @@ public final class f2 {
             return;
         }
         this.e = true;
-        l2.w wVar = this.g;
-        org.telegram.messenger.g0.r(wVar);
-        org.telegram.messenger.g0.i3(wVar, 800L);
+        l2.a0 a0Var = this.g;
+        org.telegram.messenger.g0.r(a0Var);
+        org.telegram.messenger.g0.i3(a0Var, 800L);
         ((t3) this.a.b).o3.N();
     }
 

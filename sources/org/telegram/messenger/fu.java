@@ -21,19 +21,19 @@ import java.util.Arrays;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.CheckBoxBase;
-import org.telegram.ui.rg0;
 import org.telegram.ui.tg0;
+import org.telegram.ui.vg0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
-public abstract class fu implements rg0 {
+public abstract class fu implements tg0 {
     public boolean D;
     public int E;
     public int F;
     public TLObject G;
     public boolean I;
     public org.telegram.ui.Components.ic J;
-    public tg0 K;
+    public vg0 K;
     public lu L;
     public float M;
     public int N;
@@ -239,7 +239,7 @@ public abstract class fu implements rg0 {
         }
     }
 
-    @Override // org.telegram.ui.rg0
+    @Override // org.telegram.ui.tg0
     public Layout a() {
         return null;
     }
@@ -263,7 +263,7 @@ public abstract class fu implements rg0 {
         if (this.r == null) {
             CheckBoxBase checkBoxBase = new CheckBoxBase(20, null, this.a.D);
             this.r = checkBoxBase;
-            checkBoxBase.h(org.telegram.ui.ActionBar.k6.Vl, org.telegram.ui.ActionBar.k6.z5, org.telegram.ui.ActionBar.k6.k7);
+            checkBoxBase.h(org.telegram.ui.ActionBar.l6.Vl, org.telegram.ui.ActionBar.l6.z5, org.telegram.ui.ActionBar.l6.k7);
             this.r.d(10);
             this.r.k(true);
             this.r.i(g0.L(5.0f));
@@ -312,7 +312,7 @@ public abstract class fu implements rg0 {
         this.R = this.Q;
     }
 
-    @Override // org.telegram.ui.rg0
+    @Override // org.telegram.ui.tg0
     public final View e() {
         return null;
     }
@@ -480,7 +480,7 @@ public abstract class fu implements rg0 {
         float L = (((kvVar.C + kvVar.T) - g0.L(14.0f)) - rect.right) - rect.left;
         if (this.d != null) {
             textPaint.setTextSize(g0.L(iz.W0));
-            textPaint.setColor(org.telegram.ui.ActionBar.k6.w0(kvVar.E() ? org.telegram.ui.ActionBar.k6.Tc : org.telegram.ui.ActionBar.k6.Sc, kvVar.D));
+            textPaint.setColor(org.telegram.ui.ActionBar.l6.w0(kvVar.E() ? org.telegram.ui.ActionBar.l6.Tc : org.telegram.ui.ActionBar.l6.Sc, kvVar.D));
             canvas.save();
             if (!this.x && !this.y) {
                 float N2 = g0.N(5.0f);
@@ -548,16 +548,16 @@ public abstract class fu implements rg0 {
     }
 
     public void t(Canvas canvas) {
-        tg0 tg0Var = this.K;
-        if (tg0Var != null && tg0Var.h && tg0Var.d(this) >= 0) {
-            if (!tg0Var.i(this)) {
+        vg0 vg0Var = this.K;
+        if (vg0Var != null && vg0Var.h && vg0Var.d(this) >= 0) {
+            if (!vg0Var.i(this)) {
                 return;
             }
-            if (tg0Var.g(this)) {
-                r(canvas, tg0Var.g(this) ? tg0Var.e : -1, tg0Var.g(this) ? tg0Var.f : 0.0f);
+            if (vg0Var.g(this)) {
+                r(canvas, vg0Var.g(this) ? vg0Var.e : -1, vg0Var.g(this) ? vg0Var.f : 0.0f);
                 return;
             }
-            float c10 = tg0Var.c(this);
+            float c10 = vg0Var.c(this);
             if (c10 <= 0.0f) {
                 return;
             }

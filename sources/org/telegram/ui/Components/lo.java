@@ -1,11 +1,11 @@
 package org.telegram.ui.Components;
 
 import android.graphics.Bitmap;
-import org.telegram.ui.v71;
+import org.telegram.ui.w71;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class lo extends v71 {
+public final class lo extends w71 {
     public final /* synthetic */ int l2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -14,7 +14,7 @@ public final class lo extends v71 {
         this.l2 = i7;
     }
 
-    @Override // org.telegram.ui.v71
+    @Override // org.telegram.ui.w71
     public final boolean Z0() {
         switch (this.l2) {
         }

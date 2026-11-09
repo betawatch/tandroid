@@ -8,22 +8,22 @@ import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class wj extends vh {
     public final hy n;
-    public final pj0 r;
+    public final qj0 r;
     public final v4.b0 s;
     public final HorizontalScrollView w;
     public final boolean x;
 
-    public wj(di diVar, Context context, org.telegram.ui.ActionBar.f6 f6Var, boolean z9) {
-        super(context, f6Var, diVar);
+    public wj(di diVar, Context context, org.telegram.ui.ActionBar.g6 g6Var, boolean z9) {
+        super(context, g6Var, diVar);
         this.x = z9;
         this.f = true;
         org.telegram.ui.ActionBar.f2 f2Var = diVar.W1;
         boolean z10 = !z9;
-        hy hyVar = new hy(f2Var, z10, z9, false, getContext(), true, null, null, false, f6Var, false, true);
+        hy hyVar = new hy(f2Var, z10, z9, false, getContext(), true, null, null, false, g6Var, false, true);
         this.n = hyVar;
         hyVar.w0 = false;
         hyVar.I(z10, z9, false, false);
@@ -41,7 +41,7 @@ public final class wj extends vh {
         addView(hyVar, c8.ha.c(-1.0f, -1));
         HorizontalScrollView y10 = hyVar.y(z10 ? 1 : 0);
         this.w = y10;
-        pj0 x10 = hyVar.x(z10 ? 1 : 0);
+        qj0 x10 = hyVar.x(z10 ? 1 : 0);
         this.r = x10;
         x10.j(new ui(this, 2));
         this.s = (v4.b0) x10.getLayoutManager();
@@ -59,7 +59,7 @@ public final class wj extends vh {
         int i11;
         int L;
         int L2;
-        pj0 pj0Var;
+        qj0 qj0Var;
         ((FrameLayout.LayoutParams) getLayoutParams()).topMargin = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
         if (!org.telegram.messenger.g0.Q1()) {
             Point point = org.telegram.messenger.g0.q;
@@ -70,9 +70,9 @@ public final class wj extends vh {
                     L = 0;
                 }
                 L2 = org.telegram.messenger.g0.L(36.0f) + L;
-                pj0Var = this.r;
-                if (pj0Var.getPaddingTop() == L2) {
-                    pj0Var.setPadding(org.telegram.messenger.g0.L(6.0f), L2, org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(48.0f));
+                qj0Var = this.r;
+                if (qj0Var.getPaddingTop() == L2) {
+                    qj0Var.setPadding(org.telegram.messenger.g0.L(6.0f), L2, org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(48.0f));
                     return;
                 }
                 return;
@@ -83,8 +83,8 @@ public final class wj extends vh {
         if (L < 0) {
         }
         L2 = org.telegram.messenger.g0.L(36.0f) + L;
-        pj0Var = this.r;
-        if (pj0Var.getPaddingTop() == L2) {
+        qj0Var = this.r;
+        if (qj0Var.getPaddingTop() == L2) {
         }
     }
 
@@ -95,7 +95,7 @@ public final class wj extends vh {
             diVar.R2.getTitleTextView().setBuildFullLayout(true);
         } catch (Exception unused) {
         }
-        diVar.R2.setTitle(org.telegram.messenger.id.M0(this.x ? 2131745655 : 2131745661, null));
+        diVar.R2.setTitle(org.telegram.messenger.id.M0(this.x ? 2131745652 : 2131745658, null));
         this.s.h1(0, 0);
     }
 
@@ -106,19 +106,19 @@ public final class wj extends vh {
 
     @Override // org.telegram.ui.Components.vh
     public int getCurrentItemTop() {
-        pj0 pj0Var = this.r;
-        if (pj0Var.getChildCount() <= 0) {
-            pj0Var.setTopGlowOffset(pj0Var.getPaddingTop());
+        qj0 qj0Var = this.r;
+        if (qj0Var.getChildCount() <= 0) {
+            qj0Var.setTopGlowOffset(qj0Var.getPaddingTop());
             return ConnectionsManager.DEFAULT_DATACENTER_ID;
         }
-        View childAt = pj0Var.getChildAt(0);
-        xi0 xi0Var = (xi0) pj0Var.G(childAt);
+        View childAt = qj0Var.getChildAt(0);
+        yi0 yi0Var = (yi0) qj0Var.G(childAt);
         int top = childAt.getTop() - org.telegram.messenger.g0.L(36.0f);
         int L = org.telegram.messenger.g0.L(7.0f);
-        if (top < org.telegram.messenger.g0.L(7.0f) || xi0Var == null || xi0Var.b() != 0) {
+        if (top < org.telegram.messenger.g0.L(7.0f) || yi0Var == null || yi0Var.b() != 0) {
             top = L;
         }
-        pj0Var.setTopGlowOffset(top);
+        qj0Var.setTopGlowOffset(top);
         return top;
     }
 

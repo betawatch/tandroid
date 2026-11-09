@@ -4,9 +4,9 @@ import android.os.Bundle;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.an;
+import org.telegram.ui.cn;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class oa implements Runnable {
     public final /* synthetic */ int a;
@@ -32,10 +32,10 @@ public final /* synthetic */ class oa implements Runnable {
                     int i7 = starsTransaction.flags & TLObject.FLAG_13;
                     long j3 = this.d;
                     if (i7 == 0) {
-                        T.presentFragment(an.ra(j3));
+                        T.presentFragment(cn.ta(j3));
                         break;
                     } else {
-                        T.presentFragment(an.qa(starsTransaction.giveaway_post_id, j3));
+                        T.presentFragment(cn.sa(starsTransaction.giveaway_post_id, j3));
                         break;
                     }
                 }
@@ -48,10 +48,10 @@ public final /* synthetic */ class oa implements Runnable {
                     int i10 = starsTransaction2.flags & TLObject.FLAG_13;
                     long j10 = this.d;
                     if (i10 == 0) {
-                        T2.presentFragment(an.ra(j10));
+                        T2.presentFragment(cn.ta(j10));
                         break;
                     } else {
-                        T2.presentFragment(an.qa(starsTransaction2.giveaway_post_id, j10));
+                        T2.presentFragment(cn.sa(starsTransaction2.giveaway_post_id, j10));
                         break;
                     }
                 }
@@ -64,10 +64,10 @@ public final /* synthetic */ class oa implements Runnable {
                     int i11 = starsTransaction3.flags & TLObject.FLAG_13;
                     long j11 = this.d;
                     if (i11 == 0) {
-                        T3.presentFragment(an.ra(j11));
+                        T3.presentFragment(cn.ta(j11));
                         break;
                     } else {
-                        T3.presentFragment(an.qa(starsTransaction3.giveaway_post_id, j11));
+                        T3.presentFragment(cn.sa(starsTransaction3.giveaway_post_id, j11));
                         break;
                     }
                 }
@@ -79,7 +79,7 @@ public final /* synthetic */ class oa implements Runnable {
                     Bundle bundle = new Bundle();
                     bundle.putLong("chat_id", -this.d);
                     bundle.putInt("message_id", this.c.msg_id);
-                    T4.presentFragment(new an(bundle));
+                    T4.presentFragment(new cn(bundle));
                     break;
                 }
                 break;
@@ -91,10 +91,10 @@ public final /* synthetic */ class oa implements Runnable {
                     int i12 = starsTransaction4.flags & TLObject.FLAG_13;
                     long j12 = this.d;
                     if (i12 == 0) {
-                        T5.presentFragment(an.ra(j12));
+                        T5.presentFragment(cn.ta(j12));
                         break;
                     } else {
-                        T5.presentFragment(an.qa(starsTransaction4.giveaway_post_id, j12));
+                        T5.presentFragment(cn.sa(starsTransaction4.giveaway_post_id, j12));
                         break;
                     }
                 }

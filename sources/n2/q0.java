@@ -9,7 +9,7 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
-import di.h4;
+import di.i4;
 import h9.t1;
 import java.math.RoundingMode;
 import java.nio.ByteBuffer;
@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class q0 implements x {
     public static final AtomicInteger c0 = new AtomicInteger();
@@ -79,14 +79,14 @@ public final class q0 implements x {
     public boolean y;
     public long z;
 
-    public q0(h4 h4Var) {
+    public q0(i4 i4Var) {
         int deviceId;
-        Context context = (Context) h4Var.b;
+        Context context = (Context) i4Var.b;
         this.a = context == null ? null : context.getApplicationContext();
         this.u = e2.e.i;
-        this.b = (h6.m) h4Var.d;
+        this.b = (h6.m) i4Var.d;
         this.i = 0;
-        this.r = (h0) h4Var.f;
+        this.r = (h0) i4Var.f;
         j0 j0Var = new j0();
         this.c = j0Var;
         z0 z0Var = new z0();
@@ -815,7 +815,7 @@ public final class q0 implements x {
                 this.b0 = new Handler(Looper.myLooper());
             }
             this.b0.removeCallbacksAndMessages(null);
-            this.b0.postDelayed(new l2.w(this, 13), 100L);
+            this.b0.postDelayed(new l2.a0(this, 12), 100L);
         }
         return Y;
     }

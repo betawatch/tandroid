@@ -2,9 +2,9 @@ package fi;
 
 import android.text.TextUtils;
 import org.telegram.messenger.id;
-import org.telegram.ui.Components.av0;
+import org.telegram.ui.Components.cv0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class x2 extends e3 {
     public final /* synthetic */ f3 y;
@@ -27,14 +27,14 @@ public final class x2 extends e3 {
 
     @Override // v4.g0
     public final void f() {
-        av0 av0Var = this.y.s;
+        cv0 cv0Var = this.y.s;
         super.f();
         if (TextUtils.isEmpty(this.f)) {
-            av0Var.setStickerType(11);
-            av0Var.d.setText(id.M0(2131745763, null));
+            cv0Var.setStickerType(11);
+            cv0Var.d.setText(id.M0(2131745760, null));
         } else {
-            av0Var.setStickerType(1);
-            av0Var.d.setText(id.a0(null, null, 2131748167, this.f));
+            cv0Var.setStickerType(1);
+            cv0Var.d.setText(id.a0(null, null, 2131748166, this.f));
         }
     }
 }

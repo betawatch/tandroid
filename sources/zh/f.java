@@ -12,22 +12,22 @@ import org.telegram.messenger.u9;
 import org.telegram.messenger.w9;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Components.l41;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.Components.m41;
 import org.telegram.ui.Components.na;
-import org.telegram.ui.Components.oj0;
 import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.td0;
-import org.telegram.ui.Components.x31;
+import org.telegram.ui.Components.qj0;
+import org.telegram.ui.Components.ud0;
+import org.telegram.ui.Components.y31;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class f extends na implements u9 {
-    public final x31 P1;
+    public final y31 P1;
     public final LongSparseArray Q1;
     public ArrayList R1;
     public boolean S1;
-    public l41 T1;
+    public m41 T1;
     public int U1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -36,7 +36,7 @@ public final class f extends na implements u9 {
         int i7 = 0;
         this.Q1 = new LongSparseArray();
         this.R1 = new ArrayList();
-        int x02 = k6.x0(null, k6.a7, false);
+        int x02 = l6.x0(null, l6.a7, false);
         this.U1 = x02;
         v0(x02);
         w9.c(this.a).f.add(this);
@@ -48,7 +48,7 @@ public final class f extends na implements u9 {
         linearLayout.setClipChildren(false);
         linearLayout.setClipToPadding(false);
         linearLayout.setClickable(true);
-        this.P1 = x31.j(-1, linearLayout);
+        this.P1 = y31.j(-1, linearLayout);
         this.k1.setPadding(this.t0, org.telegram.messenger.g0.L(9.0f), this.t0, org.telegram.messenger.g0.L(9.0f));
         this.k1.setOverScrollMode(2);
         this.T1.O(false);
@@ -59,7 +59,7 @@ public final class f extends na implements u9 {
             i7++;
             s9 s9Var = (s9) obj;
             e eVar = new e(context, s9Var);
-            eVar.a.setOnClickListener(new td0(this, context, s9Var, 4));
+            eVar.a.setOnClickListener(new ud0(this, context, s9Var, 4));
             linearLayout.addView(eVar, ha.o(-1, -2));
             this.Q1.put(s9Var.b, eVar);
         }
@@ -67,11 +67,11 @@ public final class f extends na implements u9 {
     }
 
     @Override // org.telegram.ui.Components.na
-    public final oj0 L0(pj0 pj0Var) {
-        l41 l41Var = new l41(this.k1, getContext(), this.a, 0, true, new hi.u1(this, 26), this.I0);
-        this.T1 = l41Var;
-        l41Var.r = false;
-        return l41Var;
+    public final pj0 L0(qj0 qj0Var) {
+        m41 m41Var = new m41(this.k1, getContext(), this.a, 0, true, new hi.u1(this, 26), this.I0);
+        this.T1 = m41Var;
+        m41Var.r = false;
+        return m41Var;
     }
 
     @Override // org.telegram.ui.Components.na
@@ -80,7 +80,7 @@ public final class f extends na implements u9 {
         if (arrayList == null) {
             return null;
         }
-        return id.a0(null, null, 2131750419, Integer.valueOf(arrayList.size()));
+        return id.a0(null, null, 2131750418, Integer.valueOf(arrayList.size()));
     }
 
     @Override // org.telegram.ui.ActionBar.v2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.b2
@@ -115,7 +115,7 @@ public final class f extends na implements u9 {
     public final void s0() {
         try {
             super.s0();
-            int x02 = k6.x0(null, k6.a7, false);
+            int x02 = l6.x0(null, l6.a7, false);
             if (x02 != this.U1) {
                 this.U1 = x02;
                 v0(x02);

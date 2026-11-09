@@ -2,18 +2,18 @@ package org.telegram.ui.Components;
 
 import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class jo implements ValueAnimator.AnimatorUpdateListener {
     public boolean a = false;
-    public final /* synthetic */ xz0 b;
+    public final /* synthetic */ yz0 b;
     public final /* synthetic */ float c;
     public final /* synthetic */ boolean d;
     public final /* synthetic */ vo e;
 
-    public jo(vo voVar, xz0 xz0Var, float f10, boolean z9) {
+    public jo(vo voVar, yz0 yz0Var, float f10, boolean z9) {
         this.e = voVar;
-        this.b = xz0Var;
+        this.b = yz0Var;
         this.c = f10;
         this.d = z9;
     }

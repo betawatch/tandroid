@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.TextView;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class qe implements Runnable {
     public final /* synthetic */ int a;
@@ -83,7 +83,7 @@ public final class qe implements Runnable {
                     a8Var.e = animatorSet;
                     animatorSet.setDuration(150L);
                     ((AnimatorSet) a8Var.e).playTogether(arrayList);
-                    ((AnimatorSet) a8Var.e).addListener(new e60(this, 8));
+                    ((AnimatorSet) a8Var.e).addListener(new f60(this, 8));
                     ((AnimatorSet) a8Var.e).start();
                     break;
                 }

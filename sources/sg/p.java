@@ -5,13 +5,13 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import c8.ha;
 import org.telegram.messenger.id;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.l2;
-import org.telegram.ui.aj0;
+import org.telegram.ui.cj0;
 import org.telegram.ui.t4;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class p extends LinearLayout {
     public final t4 a;
@@ -46,21 +46,21 @@ public final class p extends LinearLayout {
         TextView textView = new TextView(context);
         textView.setTextColor(-1711276033);
         textView.setTextSize(1, 16.0f);
-        textView.setText(id.M0(2131747666, null).toUpperCase());
+        textView.setText(id.M0(2131747665, null).toUpperCase());
         textView.setTypeface(org.telegram.messenger.g0.o());
         linearLayout.addView(textView, ha.k(0.0f, 0.0f, 8.0f, 0.0f, -2, -2));
         EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
         this.d = editTextBoldCursor;
         editTextBoldCursor.setTextSize(1, 16.0f);
-        editTextBoldCursor.setBackground(k6.d0(org.telegram.messenger.g0.L(10.0f), 436207615));
+        editTextBoldCursor.setBackground(l6.d0(org.telegram.messenger.g0.L(10.0f), 436207615));
         editTextBoldCursor.setPadding(0, 0, 0, 0);
         editTextBoldCursor.setTextColor(-1);
         editTextBoldCursor.setGravity(17);
         editTextBoldCursor.setSingleLine();
         editTextBoldCursor.setImeOptions(6);
-        editTextBoldCursor.setImeActionLabel(id.M0(2131751355, null), 6);
+        editTextBoldCursor.setImeActionLabel(id.M0(2131751354, null), 6);
         editTextBoldCursor.setTypeface(org.telegram.messenger.g0.o());
-        editTextBoldCursor.addTextChangedListener(new aj0(this));
+        editTextBoldCursor.addTextChangedListener(new cj0(this));
         editTextBoldCursor.setOnFocusChangeListener(new bi.n(this, 7));
         editTextBoldCursor.setOnEditorActionListener(new l2(5));
         linearLayout.addView(editTextBoldCursor, ha.o(72, 36));

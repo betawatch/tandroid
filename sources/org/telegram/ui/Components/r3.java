@@ -8,7 +8,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class r3 extends LinearLayout {
     public final /* synthetic */ int a = 1;
@@ -74,7 +74,7 @@ public final class r3 extends LinearLayout {
         }
     }
 
-    public r3(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+    public r3(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
         super(context);
         TextView textView = new TextView(context);
         this.c = textView;
@@ -83,7 +83,7 @@ public final class r3 extends LinearLayout {
         setOrientation(1);
         setGravity(17);
         addView(imageView, c8.ha.o(-2, -2));
-        org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.z6, f6Var);
+        org.telegram.ui.ActionBar.s6.U(textView, org.telegram.ui.ActionBar.l6.z6, g6Var);
         textView.setGravity(17);
         textView.setTextSize(1, 17.0f);
         textView.setPadding(org.telegram.messenger.g0.L(40.0f), 0, org.telegram.messenger.g0.L(40.0f), org.telegram.messenger.g0.L(128.0f));

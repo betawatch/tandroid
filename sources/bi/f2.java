@@ -1,5 +1,6 @@
 package bi;
 
+import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.messenger.c20;
 import org.telegram.messenger.ij;
@@ -13,12 +14,14 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ay;
 import org.telegram.ui.Components.dx;
-import org.telegram.ui.Components.jv0;
+import org.telegram.ui.Components.kw0;
 import org.telegram.ui.Components.ng;
+import org.telegram.ui.Components.o10;
 import org.telegram.ui.Components.wz;
-import org.telegram.ui.c01;
+import org.telegram.ui.Components.zv0;
+import org.telegram.ui.qw0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f2 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -33,8 +36,8 @@ public final /* synthetic */ class f2 implements RequestDelegate {
         this.c = getgroupcallstreamrtmpurl;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:87:0x0385  */
-    /* JADX WARN: Removed duplicated region for block: B:89:0x0390  */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x0383  */
+    /* JADX WARN: Removed duplicated region for block: B:89:0x038e  */
     @Override // org.telegram.tgnet.RequestDelegate
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -54,7 +57,7 @@ public final /* synthetic */ class f2 implements RequestDelegate {
                         TLRPC.Message message = messages_messages.messages.get(i7);
                         if (message != null && !(message instanceof TLRPC.TL_messageEmpty) && message.id == tL_messageActionStarGift.upgrade_msg_id) {
                             ijVar = new ij(k7Var.a, message, false, false);
-                            ijVar.M5();
+                            ijVar.L5();
                             if (ijVar == null) {
                                 org.telegram.messenger.g0.h3(new aa.s(k7Var, u1Var, ijVar, 14));
                                 break;
@@ -97,7 +100,7 @@ public final /* synthetic */ class f2 implements RequestDelegate {
                 org.telegram.messenger.g0.h3(new u0(this.b, tL_error, this.c, (Object) tLObject, (TLObject) this.d, 1));
                 break;
             case 5:
-                org.telegram.messenger.g0.h3(new ai.d0((di.z3) this.b, tLObject, (TL_stories.StoryItem) this.c, (c20) this.d, 11));
+                org.telegram.messenger.g0.h3(new ai.d0((di.a4) this.b, tLObject, (TL_stories.StoryItem) this.c, (c20) this.d, 11));
                 break;
             case 6:
                 org.telegram.messenger.g0.h3(new u0(this.b, (org.telegram.ui.ActionBar.u1) this.d, tLObject, (TLObject) this.c, (Object) tL_error, 12));
@@ -118,7 +121,7 @@ public final /* synthetic */ class f2 implements RequestDelegate {
                 org.telegram.messenger.g0.h3(new u0((kg.t1) this.b, tLObject, (ArrayList) this.c, (TLRPC.TL_messages_sendQuickReplyMessages) this.d, tL_error, 16));
                 break;
             case 12:
-                org.telegram.messenger.g0.h3(new ai.d0(tLObject, (org.telegram.ui.ActionBar.h6) this.b, (org.telegram.ui.ActionBar.j6) this.c, (TLRPC.TL_theme) this.d, 28));
+                org.telegram.messenger.g0.h3(new ai.d0(tLObject, (org.telegram.ui.ActionBar.i6) this.b, (org.telegram.ui.ActionBar.k6) this.c, (TLRPC.TL_theme) this.d, 28));
                 break;
             case 13:
                 org.telegram.messenger.g0.h3(new org.telegram.ui.m6((dx) this.b, (org.telegram.ui.ActionBar.u1[]) this.c, tLObject, (h9.f1) this.d, 19));
@@ -133,10 +136,10 @@ public final /* synthetic */ class f2 implements RequestDelegate {
                 org.telegram.messenger.g0.h3(new org.telegram.ui.m6(tL_error, (fi.d) this.b, (org.telegram.ui.p6) this.c, (Runnable) this.d, 27));
                 break;
             case 17:
-                org.telegram.messenger.g0.h3(new jv0(this.b, this.c, (Object) tL_error, (Object) tLObject, this.d, 0));
+                org.telegram.messenger.g0.h3(new o10((zv0) this.b, (String) this.c, tL_error, tLObject, (TextView) this.d, 1));
                 break;
             case 18:
-                org.telegram.messenger.g0.h3(new jv0(this.b, this.c, tL_error, tLObject, this.d, 1));
+                org.telegram.messenger.g0.h3(new o10((kw0) this.b, tLObject, (TLRPC.UserFull) this.c, (TL_account.TL_birthday) this.d, tL_error, 2));
                 break;
             case 19:
                 org.telegram.messenger.g0.h3(new org.telegram.ui.web.x((org.telegram.ui.web.x0) this.b, tL_error, (String) this.c, (TLRPC.TL_inputInvoiceSlug) this.d, tLObject));
@@ -145,32 +148,32 @@ public final /* synthetic */ class f2 implements RequestDelegate {
                 org.telegram.messenger.g0.h3(new org.telegram.ui.web.x((org.telegram.ui.web.x0) this.b, tLObject, (String[]) this.c, tL_error, (org.telegram.ui.ActionBar.u1) this.d));
                 break;
             case 21:
-                org.telegram.messenger.g0.h3(new c01(tL_error, (c20) this.b, tLObject, (qp) this.c, (c20) this.d, 10));
+                org.telegram.messenger.g0.h3(new qw0(tL_error, (c20) this.b, tLObject, (qp) this.c, (c20) this.d, 11));
                 break;
             case 22:
-                org.telegram.messenger.g0.h3(new c01(tLObject, (qp) this.b, (di.s2) this.c, (wg.e) this.d, tL_error, 11));
+                org.telegram.messenger.g0.h3(new qw0(tLObject, (qp) this.b, (di.s2) this.c, (wg.e) this.d, tL_error, 12));
                 break;
             case 23:
-                wg.v vVar = (wg.v) this.b;
+                wg.u uVar = (wg.u) this.b;
                 qp qpVar = (qp) this.c;
-                wg.y yVar = (wg.y) this.d;
+                wg.x xVar = (wg.x) this.d;
                 if (tL_error != null) {
-                    org.telegram.messenger.g0.h3(new u9.f(16, vVar, tL_error));
+                    org.telegram.messenger.g0.h3(new u9.f(17, uVar, tL_error));
                     break;
                 } else if (tLObject != null) {
                     qpVar.O3((TLRPC.Updates) tLObject, false);
-                    org.telegram.messenger.g0.h3(new sg.t0(yVar, 29));
+                    org.telegram.messenger.g0.h3(new sh.b(xVar, 27));
                     break;
                 }
                 break;
             case 24:
-                org.telegram.messenger.g0.h3(new c01(tL_error, (org.telegram.messenger.g1) this.b, tLObject, (qp) this.c, (org.telegram.messenger.d3) this.d, 9));
+                org.telegram.messenger.g0.h3(new qw0(tL_error, (org.telegram.messenger.g1) this.b, tLObject, (qp) this.c, (org.telegram.messenger.d3) this.d, 10));
                 break;
             case 25:
-                org.telegram.messenger.g0.h3(new c01((wg.f1) this.b, tLObject, (TLRPC.UserFull) this.c, (TL_account.TL_birthday) this.d, tL_error, 12));
+                org.telegram.messenger.g0.h3(new qw0((wg.f1) this.b, tLObject, (TLRPC.UserFull) this.c, (TL_account.TL_birthday) this.d, tL_error, 13));
                 break;
             default:
-                org.telegram.messenger.g0.h3(new c01((zh.a4) this.b, tLObject, (TLRPC.TL_inputStorePaymentGiftPremium) this.c, tL_error, (TLRPC.TL_payments_canPurchaseStore) this.d, 13));
+                org.telegram.messenger.g0.h3(new qw0((zh.b4) this.b, tLObject, (TLRPC.TL_inputStorePaymentGiftPremium) this.c, tL_error, (TLRPC.TL_payments_canPurchaseStore) this.d, 14));
                 break;
         }
     }

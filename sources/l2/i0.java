@@ -14,8 +14,9 @@ import android.util.SparseBooleanArray;
 import android.view.Surface;
 import android.view.SurfaceHolder;
 import android.view.TextureView;
-import di.q4;
+import di.r4;
 import e2.x1;
+import fi.v9;
 import hi.x3;
 import j$.util.Objects;
 import java.util.ArrayList;
@@ -26,9 +27,9 @@ import java.util.Locale;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CopyOnWriteArraySet;
 import jg.a2;
-import org.telegram.ui.Components.k51;
+import org.telegram.ui.Components.l51;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class i0 extends bi.b1 implements p {
     public final ci.a A;
@@ -93,7 +94,7 @@ public final class i0 extends bi.b1 implements p {
     public final x2.f0 r;
     public long r0;
     public final m2.e s;
-    public k51 s0;
+    public l51 s0;
     public final Looper t;
     public final ArrayList t0;
     public final b3.d u;
@@ -108,10 +109,10 @@ public final class i0 extends bi.b1 implements p {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x0337  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x036c A[Catch: all -> 0x00b8, TryCatch #1 {all -> 0x00b8, blocks: (B:3:0x001f, B:6:0x009e, B:7:0x00a7, B:9:0x00ad, B:11:0x00bb, B:13:0x0156, B:15:0x0166, B:16:0x018a, B:18:0x0192, B:20:0x01a1, B:21:0x0278, B:23:0x027e, B:25:0x0288, B:31:0x0292, B:38:0x02bd, B:45:0x02c5, B:47:0x031c, B:49:0x0320, B:51:0x0324, B:55:0x032c, B:58:0x033f, B:60:0x036c, B:61:0x0373, B:66:0x0338), top: B:2:0x001f }] */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x0372  */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x0338 A[Catch: all -> 0x00b8, TryCatch #1 {all -> 0x00b8, blocks: (B:3:0x001f, B:6:0x009e, B:7:0x00a7, B:9:0x00ad, B:11:0x00bb, B:13:0x0156, B:15:0x0166, B:16:0x018a, B:18:0x0192, B:20:0x01a1, B:21:0x0278, B:23:0x027e, B:25:0x0288, B:31:0x0292, B:38:0x02bd, B:45:0x02c5, B:47:0x031c, B:49:0x0320, B:51:0x0324, B:55:0x032c, B:58:0x033f, B:60:0x036c, B:61:0x0373, B:66:0x0338), top: B:2:0x001f }] */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x033c  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x0371 A[Catch: all -> 0x00b8, TryCatch #1 {all -> 0x00b8, blocks: (B:3:0x001f, B:6:0x009e, B:7:0x00a7, B:9:0x00ad, B:11:0x00bb, B:13:0x0156, B:15:0x0166, B:16:0x018a, B:18:0x0192, B:20:0x01a3, B:21:0x027c, B:23:0x0282, B:25:0x028c, B:31:0x0296, B:38:0x02c1, B:45:0x02c9, B:47:0x0321, B:49:0x0325, B:51:0x0329, B:55:0x0331, B:58:0x0344, B:60:0x0371, B:61:0x0378, B:66:0x033d), top: B:2:0x001f }] */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x0377  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x033d A[Catch: all -> 0x00b8, TryCatch #1 {all -> 0x00b8, blocks: (B:3:0x001f, B:6:0x009e, B:7:0x00a7, B:9:0x00ad, B:11:0x00bb, B:13:0x0156, B:15:0x0166, B:16:0x018a, B:18:0x0192, B:20:0x01a3, B:21:0x027c, B:23:0x0282, B:25:0x028c, B:31:0x0296, B:38:0x02c1, B:45:0x02c9, B:47:0x0321, B:49:0x0325, B:51:0x0329, B:55:0x0331, B:58:0x0344, B:60:0x0371, B:61:0x0378, B:66:0x033d), top: B:2:0x001f }] */
     /* JADX WARN: Type inference failed for: r1v0, types: [bi.b1, java.lang.Object, l2.i0] */
     /* JADX WARN: Type inference failed for: r1v1 */
     /* JADX WARN: Type inference failed for: r1v3, types: [java.lang.Object, l2.i0] */
@@ -265,7 +266,7 @@ public final class i0 extends bi.b1 implements p {
             cVar2.f = 0;
             cVar2.d = vVar2;
             b1Var.C = cVar2;
-            cVar2.A(new w((Object) b1Var, 0));
+            cVar2.A(new v9(b1Var, 29));
             Context context3 = nVar.a;
             Looper looper3 = nVar.h;
             c0 c0Var2 = b1Var.w;
@@ -281,7 +282,7 @@ public final class i0 extends bi.b1 implements p {
                 b1Var.z = p0Var;
                 if (p0Var.b == z9) {
                     p0Var.b = z9;
-                    p0Var.b(z9, p0Var.c);
+                    p0Var.a(z9, p0Var.c);
                 }
                 ci.a aVar = new ci.a();
                 new sa.d(context.getApplicationContext(), 10);
@@ -478,7 +479,7 @@ public final class i0 extends bi.b1 implements p {
         if (!equals) {
             this.a0 = eVar;
             t1(1, 3, eVar);
-            rVar.c(20, new q4(eVar, 28));
+            rVar.c(20, new r4(eVar, 28));
         }
         e2.e eVar2 = this.a0;
         h2.i0 i0Var = this.l.n;
@@ -1147,7 +1148,7 @@ public final class i0 extends bi.b1 implements p {
                 if (u() && !z10) {
                     z9 = true;
                 }
-                p0Var.c(z9);
+                p0Var.b(z9);
                 aVar.a(u());
                 return;
             }
@@ -1155,7 +1156,7 @@ public final class i0 extends bi.b1 implements p {
                 throw new IllegalStateException();
             }
         }
-        p0Var.c(false);
+        p0Var.b(false);
         aVar.a(false);
     }
 
@@ -1373,7 +1374,7 @@ public final class i0 extends bi.b1 implements p {
         h2.a.g("ExoPlayerImpl", "Release " + Integer.toHexString(System.identityHashCode(this)) + " [AndroidXMedia3/1.10.1] [" + h2.m0.a + "] [" + e2.m0.b() + "]");
         F1();
         this.y.y();
-        this.z.c(false);
+        this.z.b(false);
         this.A.a(false);
         h0 h0Var = this.E;
         if (h0Var != null && Build.VERSION.SDK_INT >= 34) {
@@ -1420,7 +1421,7 @@ public final class i0 extends bi.b1 implements p {
         m2.e eVar2 = this.s;
         h2.i0 i0Var = eVar2.n;
         i0Var.getClass();
-        i0Var.d(new w(eVar2, 9));
+        i0Var.d(new a0(eVar2, 8));
         s1();
         Surface surface = this.U;
         if (surface != null) {
@@ -1444,7 +1445,7 @@ public final class i0 extends bi.b1 implements p {
             if (!eVar.r) {
                 m2.a Q = eVar.Q();
                 eVar.r = true;
-                eVar.V(Q, -1, new y(Q, 14));
+                eVar.V(Q, -1, new x(Q, 14));
             }
             this.J++;
             if (p()) {
@@ -2028,7 +2029,7 @@ public final class i0 extends bi.b1 implements p {
         if (E0.equals(q1Var)) {
             return;
         }
-        this.m.e(19, new q4(q1Var, 29));
+        this.m.e(19, new r4(q1Var, 29));
     }
 
     public final void q1(int i7, int i10) {
@@ -2037,9 +2038,9 @@ public final class i0 extends bi.b1 implements p {
             return;
         }
         this.Z = new h2.y(i7, i10);
-        k51 k51Var = this.s0;
-        if (k51Var != null) {
-            k51Var.execute(new jg.r(this, i7, i10, 1));
+        l51 l51Var = this.s0;
+        if (l51Var != null) {
+            l51Var.execute(new jg.r(this, i7, i10, 1));
             return;
         }
         this.m.e(24, new gh.c(i7, i10, 1));
@@ -2301,9 +2302,9 @@ public final class i0 extends bi.b1 implements p {
             h2.h0 c10 = h2.i0.c();
             c10.a = i0Var.a.obtainMessage(12, z9 ? 1 : 0, 0);
             c10.b();
-            x xVar = new x(0, z9);
+            w wVar = new w(0, z9);
             h2.r rVar = this.m;
-            rVar.c(9, xVar);
+            rVar.c(9, wVar);
             B1();
             rVar.b();
         }

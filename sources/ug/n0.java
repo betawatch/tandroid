@@ -8,28 +8,28 @@ import c8.ha;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.Components.xq;
-import org.telegram.ui.w80;
+import org.telegram.ui.y80;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class n0 extends FrameLayout implements l0 {
-    public final f6 a;
+    public final g6 a;
     public final ArrayList b;
     public final m0 c;
     public final m0 d;
     public final m0 e;
     public final boolean f;
 
-    public n0(Context context, f6 f6Var) {
+    public n0(Context context, g6 g6Var) {
         super(context);
         this.b = new ArrayList();
-        this.a = f6Var;
-        for (w80 w80Var : w80.values()) {
-            if (w80Var.e) {
-                this.b.add(w80Var);
+        this.a = g6Var;
+        for (y80 y80Var : y80.values()) {
+            if (y80Var.e) {
+                this.b.add(y80Var);
             }
             if (this.b.size() == 3) {
                 break;
@@ -47,7 +47,7 @@ public final class n0 extends FrameLayout implements l0 {
     }
 
     public final m0 a(Context context, int i7) {
-        w80 w80Var = (w80) this.b.get(i7);
+        y80 y80Var = (y80) this.b.get(i7);
         m0 m0Var = new m0(context);
         p1 p1Var = new p1(20);
         m0Var.e = p1Var;
@@ -63,12 +63,12 @@ public final class n0 extends FrameLayout implements l0 {
             p1Var.O = 1002;
         }
         p1Var.P = this.a;
-        p1Var.Q = k6.Nk;
+        p1Var.Q = l6.Nk;
         p1Var.c();
         paint.setColor(-1);
         m0Var.setLayoutParams(ha.d(-2, -2.0f, 17, 0.0f, 52.0f, 0.0f, 0.0f));
-        m0Var.setForeground(w80Var.c);
-        m0Var.setBackgroundResource(w80Var.b);
+        m0Var.setForeground(y80Var.c);
+        m0Var.setBackgroundResource(y80Var.b);
         m0Var.setPadding(org.telegram.messenger.g0.L(8.0f));
         m0Var.setBackgroundOuterPadding(org.telegram.messenger.g0.L(32.0f));
         addView(m0Var);

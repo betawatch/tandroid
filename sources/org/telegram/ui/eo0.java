@@ -1,35 +1,51 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.SurfaceView;
+import android.view.View;
+import android.widget.ImageView;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class eo0 implements ri.a, dh.b {
-    public final org.telegram.ui.Components.ca a;
-    public final /* synthetic */ PhotoViewer b;
+public final class eo0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ View b;
+    public final /* synthetic */ PhotoViewer c;
 
-    public eo0(PhotoViewer photoViewer) {
-        this.b = photoViewer;
-        this.a = new org.telegram.ui.Components.ca(photoViewer.b0, photoViewer.e0, 0, false);
+    public /* synthetic */ eo0(PhotoViewer photoViewer, View view, int i7) {
+        this.a = i7;
+        this.c = photoViewer;
+        this.b = view;
     }
 
-    @Override // dh.b
-    public final fh.g b() {
-        fh.g gVar = new fh.g(this, this, this);
-        this.b.Z.add(gVar);
-        return gVar;
-    }
-
-    @Override // ri.a
-    public final void e(Canvas canvas, float f10, float f11, float f12, float f13) {
-        canvas.save();
-        canvas.clipRect(f10, f11, f12, f13);
-        this.b.N0(canvas, this.a, -14277082, 855638016, false, true, true);
-        canvas.drawColor(637534208);
-        canvas.restore();
-    }
-
-    @Override // dh.b
-    public final /* synthetic */ void c(fh.g gVar) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                PhotoViewer photoViewer = this.c;
+                photoViewer.A3 = false;
+                this.b.setOutlineProvider(null);
+                ImageView imageView = photoViewer.w3;
+                if (imageView != null) {
+                    imageView.setOutlineProvider(null);
+                }
+                qq0 qq0Var = photoViewer.E2;
+                if (qq0Var != null) {
+                    qq0Var.setOutlineProvider(null);
+                }
+                SurfaceView surfaceView = photoViewer.C2;
+                if (surfaceView != null) {
+                    surfaceView.setVisibility(0);
+                    break;
+                }
+                break;
+            default:
+                PhotoViewer photoViewer2 = this.c;
+                photoViewer2.A3 = false;
+                photoViewer2.h4.run();
+                org.telegram.messenger.g0.i3(new sn0(2, this, this.b), 100L);
+                break;
+        }
     }
 }

@@ -13,11 +13,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.y21;
+import org.telegram.ui.Components.z21;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.bi0;
+import org.telegram.ui.di0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q2 implements v10 {
     public final /* synthetic */ int a;
@@ -84,10 +84,10 @@ public final /* synthetic */ class q2 implements v10 {
                 } else if (tL_error != null) {
                     if ("STARGIFT_CRAFT_UNAVAILABLE".equalsIgnoreCase(tL_error.text)) {
                         alertDialog$Builder = new AlertDialog$Builder(0, k7Var.getContext(), new di.b());
-                        String M0 = org.telegram.messenger.id.M0(2131749756, null);
+                        String M0 = org.telegram.messenger.id.M0(2131749755, null);
                         org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                         u1Var.R = M0;
-                        u1Var.T = org.telegram.messenger.g0.X2(org.telegram.messenger.id.M0(2131749758, null));
+                        u1Var.T = org.telegram.messenger.g0.X2(org.telegram.messenger.id.M0(2131749757, null));
                     } else {
                         String str = tL_error.text;
                         if (str == null || !str.startsWith("STARGIFT_CRAFT_TOO_EARLY_")) {
@@ -97,13 +97,13 @@ public final /* synthetic */ class q2 implements v10 {
                         } else {
                             long parseLong = Long.parseLong(tL_error.text.substring(25)) + ConnectionsManager.getInstance(k7Var.a).getCurrentTime();
                             alertDialog$Builder = new AlertDialog$Builder(0, k7Var.getContext(), new di.b());
-                            String M02 = org.telegram.messenger.id.M0(2131749756, null);
+                            String M02 = org.telegram.messenger.id.M0(2131749755, null);
                             org.telegram.ui.ActionBar.u1 u1Var2 = alertDialog$Builder.a;
                             u1Var2.R = M02;
-                            u1Var2.T = org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, 2131749757, org.telegram.messenger.id.x(parseLong, true)));
+                            u1Var2.T = org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, 2131749756, org.telegram.messenger.id.x(parseLong, true)));
                         }
                     }
-                    jg.g.C(null, 2131747832, alertDialog$Builder, null);
+                    jg.g.C(null, 2131747831, alertDialog$Builder, null);
                     runnable.run();
                 }
                 break;
@@ -123,43 +123,43 @@ public final /* synthetic */ class q2 implements v10 {
                     break;
                 }
             case 2:
-                y21 y21Var = (y21) obj5;
+                z21 z21Var = (z21) obj5;
                 String str2 = (String) obj4;
-                org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) obj3;
+                org.telegram.ui.ActionBar.g6 g6Var = (org.telegram.ui.ActionBar.g6) obj3;
                 ((org.telegram.ui.ActionBar.u1) obj6).dismiss();
                 if (!(((TLRPC.Bool) obj) instanceof TLRPC.TL_boolTrue)) {
-                    org.telegram.ui.ActionBar.v2 v2Var = bi0.a;
+                    org.telegram.ui.ActionBar.v2 v2Var = di0.a;
                     if (v2Var != null) {
                         v2Var.dismiss();
-                        bi0.a = null;
+                        di0.a = null;
                     }
-                    bi0.a().I(R.raw.error, org.telegram.messenger.id.M0(2131753128, null), TextUtils.isEmpty(str2) ? org.telegram.messenger.id.M0(2131753129, null) : org.telegram.messenger.g0.P2(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.uj, f6Var), org.telegram.messenger.id.a0(null, null, 2131753130, str2))).j();
+                    di0.a().I(R.raw.error, org.telegram.messenger.id.M0(2131753128, null), TextUtils.isEmpty(str2) ? org.telegram.messenger.id.M0(2131753129, null) : org.telegram.messenger.g0.P2(org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.uj, g6Var), org.telegram.messenger.id.a0(null, null, 2131753130, str2))).j();
                     break;
                 } else {
-                    y21Var.run();
+                    z21Var.run();
                     break;
                 }
             default:
                 org.telegram.ui.web.x0 x0Var = (org.telegram.ui.web.x0) obj6;
-                di.o7 o7Var = (di.o7) obj5;
+                di.p7 p7Var = (di.p7) obj5;
                 String str3 = (String) obj4;
                 TLRPC.User user = (TLRPC.User) obj3;
                 TLRPC.Updates updates2 = (TLRPC.Updates) obj;
                 TLRPC.TL_error tL_error3 = (TLRPC.TL_error) obj2;
-                org.telegram.ui.ActionBar.f6 f6Var2 = x0Var.e;
+                org.telegram.ui.ActionBar.g6 g6Var2 = x0Var.e;
                 if (updates2 == null) {
                     if (tL_error3 == null) {
-                        new org.telegram.ui.Components.hc(x0Var, f6Var2).e0("UNKNOWN_BUTTON", false);
-                        x0Var.x(o7Var, "requested_chat_failed", org.telegram.ui.web.x0.A(str3, "req_id"));
+                        new org.telegram.ui.Components.hc(x0Var, g6Var2).e0("UNKNOWN_BUTTON", false);
+                        x0Var.x(p7Var, "requested_chat_failed", org.telegram.ui.web.x0.A(str3, "req_id"));
                         break;
                     } else {
-                        new org.telegram.ui.Components.hc(x0Var, f6Var2).f0(tL_error3, false);
-                        x0Var.x(o7Var, "requested_chat_failed", org.telegram.ui.web.x0.A(str3, "req_id"));
+                        new org.telegram.ui.Components.hc(x0Var, g6Var2).f0(tL_error3, false);
+                        x0Var.x(p7Var, "requested_chat_failed", org.telegram.ui.web.x0.A(str3, "req_id"));
                         break;
                     }
                 } else {
                     qp.s1(x0Var.M).O3(updates2, false);
-                    x0Var.x(o7Var, "requested_chat_sent", org.telegram.ui.web.x0.A(str3, "req_id"));
+                    x0Var.x(p7Var, "requested_chat_sent", org.telegram.ui.web.x0.A(str3, "req_id"));
                     long j3 = x0Var.U.id;
                     Bundle bundle = new Bundle();
                     bundle.putLong("user_id", user.id);

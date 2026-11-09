@@ -35,9 +35,9 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.BubbleActivity;
 import org.telegram.ui.Components.Crop.CropAreaView;
-import org.telegram.ui.Components.h51;
+import org.telegram.ui.Components.i51;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public class o extends FrameLayout implements a {
     public float D;
@@ -55,7 +55,7 @@ public class o extends FrameLayout implements a {
     public final CropAreaView a;
     public final ImageView b;
     public final Matrix c;
-    public h51 d;
+    public i51 d;
     public g e;
     public final RectF f;
     public final RectF h;
@@ -542,9 +542,9 @@ public class o extends FrameLayout implements a {
     }
 
     public int getCurrentHeight() {
-        h51 h51Var = this.d;
-        if (h51Var != null) {
-            return h51Var.getVideoHeight();
+        i51 i51Var = this.d;
+        if (i51Var != null) {
+            return i51Var.getVideoHeight();
         }
         Bitmap bitmap = this.x;
         if (bitmap == null) {
@@ -555,9 +555,9 @@ public class o extends FrameLayout implements a {
     }
 
     public int getCurrentWidth() {
-        h51 h51Var = this.d;
-        if (h51Var != null) {
-            return h51Var.getVideoWidth();
+        i51 i51Var = this.d;
+        if (i51Var != null) {
+            return i51Var.getVideoWidth();
         }
         Bitmap bitmap = this.x;
         if (bitmap == null) {
@@ -756,8 +756,8 @@ public class o extends FrameLayout implements a {
         String[] strArr = new String[8];
         int i10 = 0;
         Integer[][] numArr = {new Integer[]{3, 2}, new Integer[]{5, 3}, new Integer[]{4, 3}, new Integer[]{5, 4}, new Integer[]{7, 5}, new Integer[]{16, 9}};
-        strArr[0] = id.M0(2131751698, null);
-        strArr[1] = id.M0(2131751696, null);
+        strArr[0] = id.M0(2131751697, null);
+        strArr[1] = id.M0(2131751695, null);
         int i11 = 2;
         for (int i12 = 0; i12 < 6; i12++) {
             Integer[] numArr2 = numArr[i12];

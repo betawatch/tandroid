@@ -24,13 +24,13 @@ import org.telegram.messenger.g0;
 import org.telegram.messenger.k5;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.Components.xq;
-import org.telegram.ui.l41;
-import org.telegram.ui.li0;
+import org.telegram.ui.m41;
+import org.telegram.ui.ni0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public abstract class g extends View implements i {
     public static final boolean A1;
@@ -94,7 +94,7 @@ public abstract class g extends View implements i {
     public final Rect V;
     public float V0;
     public final Path W;
-    public final f6 W0;
+    public final g6 W0;
     public int X0;
     public int Y0;
     public final Rect Z0;
@@ -156,7 +156,7 @@ public abstract class g extends View implements i {
 
     /* JADX WARN: Type inference failed for: r1v10, types: [lg.b] */
     /* JADX WARN: Type inference failed for: r1v9, types: [lg.b] */
-    public g(Context context, f6 f6Var) {
+    public g(Context context, g6 g6Var) {
         super(context);
         this.b = new ArrayList(10);
         this.c = new ArrayList(25);
@@ -269,7 +269,7 @@ public abstract class g extends View implements i {
         arrayList.add(rect);
         this.b1 = 0L;
         this.i1 = false;
-        this.W0 = f6Var;
+        this.W0 = g6Var;
         t();
         this.A0 = ViewConfiguration.get(context).getScaledTouchSlop();
     }
@@ -404,9 +404,9 @@ public abstract class g extends View implements i {
             e eVar = this.Q0;
             if (eVar != null) {
                 getSelectedDate();
-                l41 l41Var = (l41) ((li0) eVar).b;
-                l41Var.f();
-                l41Var.b.t0.d(false, false);
+                m41 m41Var = (m41) ((ni0) eVar).b;
+                m41Var.f();
+                m41Var.b.t0.d(false, false);
             }
             B();
             invalidate();
@@ -608,23 +608,23 @@ public abstract class g extends View implements i {
     }
 
     public final void G() {
-        int i7 = this.x0 ? k6.Nj : k6.Mj;
-        f6 f6Var = this.W0;
-        int w02 = k6.w0(i7, f6Var);
+        int i7 = this.x0 ? l6.Nj : l6.Mj;
+        g6 g6Var = this.W0;
+        int w02 = l6.w0(i7, g6Var);
         this.N.setColor(w02);
-        this.O.setColor(k6.w0(this.x0 ? k6.Nj : k6.Mj, f6Var));
-        int w03 = k6.w0(k6.Mj, f6Var);
+        this.O.setColor(l6.w0(this.x0 ? l6.Nj : l6.Mj, g6Var));
+        int w03 = l6.w0(l6.Mj, g6Var);
         this.P.setColor(w03);
-        int w04 = k6.w0(k6.Oj, f6Var);
+        int w04 = l6.w0(l6.Oj, g6Var);
         Paint paint = this.L;
         paint.setColor(w04);
-        int w05 = k6.w0(k6.Pj, f6Var);
+        int w05 = l6.w0(l6.Pj, g6Var);
         Paint paint2 = this.M;
         paint2.setColor(w05);
-        this.Q.setColor(k6.w0(k6.Rj, f6Var));
-        this.R.setColor(k6.w0(k6.Qj, f6Var));
-        this.S.setColor(k6.w0(k6.d6, f6Var));
-        this.T.setColor(k6.w0(k6.Sj, f6Var));
+        this.Q.setColor(l6.w0(l6.Rj, g6Var));
+        this.R.setColor(l6.w0(l6.Qj, g6Var));
+        this.S.setColor(l6.w0(l6.d6, g6Var));
+        this.T.setColor(l6.w0(l6.Sj, g6Var));
         this.t0.b();
         this.n = paint.getAlpha();
         this.r = paint2.getAlpha();

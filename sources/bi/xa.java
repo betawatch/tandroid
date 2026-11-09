@@ -1,9 +1,9 @@
 package bi;
 
 import android.content.Context;
-import org.telegram.ui.Components.hu0;
+import org.telegram.ui.Components.ju0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xa implements Runnable {
     public final /* synthetic */ int a;
@@ -25,11 +25,11 @@ public final /* synthetic */ class xa implements Runnable {
         org.telegram.ui.ActionBar.v2[] v2VarArr = this.b;
         switch (i7) {
             case 0:
-                hu0 hu0Var = new hu0(context);
+                ju0 ju0Var = new ju0(context);
                 if (!org.telegram.messenger.g0.Q1() && !org.telegram.messenger.g0.u1(v2VarArr[0].f1) && (v2Var = v2VarArr[0]) != null && (f2Var = v2Var.f1) != null) {
-                    hu0Var.a0(f2Var);
+                    ju0Var.a0(f2Var);
                 }
-                hu0Var.show();
+                ju0Var.show();
                 break;
             case 1:
                 v2VarArr[0].dismiss();

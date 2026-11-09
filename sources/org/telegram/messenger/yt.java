@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class yt implements x5 {
     public static ColorMatrixColorFilter U;
@@ -255,7 +255,7 @@ public final class yt implements x5 {
 
     public final CharSequence f() {
         String M0 = id.M0(this.y ? 2131753933 : 2131753948, null);
-        return (!h() || this.T.b()) ? M0 : TextUtils.concat(M0, ", ", id.M0(2131745265, null));
+        return (!h() || this.T.b()) ? M0 : TextUtils.concat(M0, ", ", id.M0(2131745262, null));
     }
 
     public final boolean g(float f10, float f11) {
@@ -566,9 +566,9 @@ public final class yt implements x5 {
         this.r = null;
         TLRPC.Document s5 = kvVar.s(pageblockvideo.video_id);
         this.s = s5;
-        boolean L4 = ij.L4(s5);
-        this.D = L4;
-        this.y = L4 || ij.t3(s5, false);
+        boolean K4 = ij.K4(s5);
+        this.D = K4;
+        this.y = K4 || ij.s3(s5, false);
         if (s5 != null) {
             this.w = w7.w(s5.thumbs, qs.r5, false, null, true);
             this.x = w7.Q(s5.thumbs);

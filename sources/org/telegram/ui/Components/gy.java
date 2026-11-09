@@ -9,7 +9,7 @@ import android.widget.FrameLayout;
 import android.widget.HorizontalScrollView;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public class gy extends v4.s0 {
     public final int a;
@@ -74,7 +74,7 @@ public class gy extends v4.s0 {
                 float N = org.telegram.messenger.g0.N(i10 == 1 ? 36.0f : 48.0f);
                 float f10 = iArr[i10] / (-N);
                 if (f10 <= 0.0f || f10 >= 1.0f) {
-                    pj0 x10 = hyVar.x(i10);
+                    qj0 x10 = hyVar.x(i10);
                     int L = org.telegram.messenger.g0.L(i10 == 1 ? 38.0f : 48.0f);
                     v4.d1 K = x10.K(0);
                     if (K != null) {

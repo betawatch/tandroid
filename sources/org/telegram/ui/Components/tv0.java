@@ -1,23 +1,34 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.graphics.drawable.ShapeDrawable;
 import android.view.View;
-import org.telegram.tgnet.TLObject;
+import android.widget.FrameLayout;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class tv0 extends org.telegram.ui.Cells.z7 {
-    public final /* synthetic */ uv0 O;
+public final class tv0 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
+    public org.telegram.ui.ActionBar.g6 a;
+    public ShapeDrawable b;
+    public View c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public tv0(uv0 uv0Var, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, f6Var, false);
-        this.O = uv0Var;
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void updateColors() {
+        try {
+            ShapeDrawable shapeDrawable = this.b;
+            if (shapeDrawable != null) {
+                org.telegram.ui.ActionBar.l6.C1(org.telegram.ui.ActionBar.l6.r1(0.12f, org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.Bf, this.a)), shapeDrawable);
+                View view = this.c;
+                if (view != null) {
+                    view.invalidate();
+                }
+            }
+        } catch (Exception e10) {
+            org.telegram.messenger.a8.g(e10, true);
+        }
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        uv0 uv0Var = this.O;
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(uv0Var.r.F1, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(uv0Var.r.F1, TLObject.FLAG_30));
+    @Override // org.telegram.ui.ActionBar.b6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

@@ -30,23 +30,23 @@ import ch.o0;
 import ch.q0;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import d3.h0;
-import di.d7;
+import di.a4;
+import di.e7;
+import di.f8;
 import di.g3;
-import di.g4;
-import di.g9;
 import di.h3;
+import di.h4;
+import di.h9;
 import di.i3;
-import di.i4;
-import di.i6;
+import di.j4;
 import di.j6;
+import di.k6;
 import di.l2;
-import di.n6;
-import di.p9;
-import di.q6;
-import di.s7;
-import di.y6;
-import di.y9;
-import di.z3;
+import di.o6;
+import di.q9;
+import di.r6;
+import di.z6;
+import di.z9;
 import h2.m0;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -74,22 +74,22 @@ import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.ActionBar.v2;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.hc;
 import org.telegram.ui.Components.i5;
-import org.telegram.ui.Components.qx0;
-import org.telegram.ui.Components.tx0;
+import org.telegram.ui.Components.rx0;
+import org.telegram.ui.Components.ux0;
 import org.telegram.ui.Components.v4;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
 import wg.f1;
 import zh.p1;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class s implements Runnable {
     public final /* synthetic */ int a;
@@ -115,7 +115,7 @@ public final /* synthetic */ class s implements Runnable {
     /* JADX WARN: Type inference failed for: r10v27 */
     /* JADX WARN: Type inference failed for: r17v8 */
     /* JADX WARN: Type inference failed for: r3v56, types: [org.telegram.messenger.c20] */
-    /* JADX WARN: Type inference failed for: r4v64, types: [android.view.View, di.i4] */
+    /* JADX WARN: Type inference failed for: r4v64, types: [android.view.View, di.j4] */
     /* JADX WARN: Type inference failed for: r5v34, types: [org.telegram.ui.Components.i5] */
     /* JADX WARN: Type inference failed for: r5v61, types: [ch.d] */
     /* JADX WARN: Type inference failed for: r5v65, types: [org.telegram.ui.Components.i5] */
@@ -155,7 +155,7 @@ public final /* synthetic */ class s implements Runnable {
         TLRPC.MessageMedia messageMedia2;
         TLRPC.Photo photo;
         ij ijVar;
-        int f12;
+        int e12;
         int i13 = 6;
         boolean z13 = true;
         switch (this.a) {
@@ -319,11 +319,11 @@ public final /* synthetic */ class s implements Runnable {
                 try {
                     androidx.car.app.utils.g.d(str6.concat(" onSuccess"), new a3.h((Object) iOnDoneCallback, ((androidx.car.app.utils.a) this.d).a(), str6, 2));
                     return;
-                } catch (RuntimeException e12) {
-                    androidx.car.app.utils.g.f(iOnDoneCallback, str6, e12);
-                    throw new RuntimeException(e12);
-                } catch (w.f e13) {
+                } catch (RuntimeException e13) {
                     androidx.car.app.utils.g.f(iOnDoneCallback, str6, e13);
+                    throw new RuntimeException(e13);
+                } catch (w.f e14) {
+                    androidx.car.app.utils.g.f(iOnDoneCallback, str6, e14);
                     return;
                 }
             case 6:
@@ -358,7 +358,7 @@ public final /* synthetic */ class s implements Runnable {
             case 8:
                 k7 k7Var = (k7) this.b;
                 Long l10 = (Long) this.c;
-                k7Var.Y1(l10.longValue(), new b3(k7Var, l10, (f1[]) this.d, 0));
+                k7Var.X1(l10.longValue(), new b3(k7Var, l10, (f1[]) this.d, 0));
                 return;
             case 9:
                 k7 k7Var2 = (k7) this.b;
@@ -373,7 +373,7 @@ public final /* synthetic */ class s implements Runnable {
                 if (p1Var != null) {
                     p1Var.run();
                 }
-                k7Var2.k().Q(R.raw.contact_check, 36, id.a0(null, null, 2131750030, k7Var2.z1())).j();
+                k7Var2.k().Q(R.raw.contact_check, 36, id.a0(null, null, 2131750029, k7Var2.y1())).j();
                 return;
             case 10:
                 k7 k7Var3 = (k7) this.b;
@@ -400,7 +400,7 @@ public final /* synthetic */ class s implements Runnable {
                         ((TLRPC.TL_messageActionStarGiftUnique) messageAction).saved = true ^ bool.booleanValue();
                     }
                 }
-                k7Var4.i2(ijVar2, null);
+                k7Var4.h2(ijVar2, null);
                 return;
             case 12:
                 Runnable runnable = (Runnable) this.b;
@@ -408,7 +408,7 @@ public final /* synthetic */ class s implements Runnable {
                 TwoStepVerificationActivity twoStepVerificationActivity = (TwoStepVerificationActivity) this.d;
                 runnable.run();
                 bVar3.c(false);
-                k7.c2(twoStepVerificationActivity);
+                k7.b2(twoStepVerificationActivity);
                 return;
             case 13:
                 Runnable runnable2 = (Runnable) this.b;
@@ -416,7 +416,7 @@ public final /* synthetic */ class s implements Runnable {
                 CharSequence charSequence = (CharSequence) this.d;
                 f2 T = LaunchActivity.T();
                 hc a02 = T != null ? hc.a0(T) : hc.X();
-                cc q10 = runnable2 == null ? document3 != null ? a02.q(document3, charSequence) : a02.Q(R.raw.contact_check, 36, charSequence) : document3 != null ? a02.r(document3, charSequence, id.M0(2131749889, null), runnable2) : a02.K(R.raw.contact_check, charSequence, id.M0(2131749889, null), runnable2);
+                cc q10 = runnable2 == null ? document3 != null ? a02.q(document3, charSequence) : a02.Q(R.raw.contact_check, 36, charSequence) : document3 != null ? a02.r(document3, charSequence, id.M0(2131749888, null), runnable2) : a02.K(R.raw.contact_check, charSequence, id.M0(2131749888, null), runnable2);
                 q10.t = true;
                 q10.j();
                 return;
@@ -429,7 +429,7 @@ public final /* synthetic */ class s implements Runnable {
                 final String str7 = (String) this.c;
                 final long j3 = tL_starGiftUnique2.gift_id;
                 final String str8 = tL_starGiftUnique2.title;
-                final String z14 = k7Var5.z1();
+                final String y12 = k7Var5.y1();
                 final TLRPC.Document document4 = tL_starGiftUnique2.getDocument();
                 String str9 = tL_starGiftUnique2.slug;
                 final u1 u1Var = new u1(3, t0.b, null);
@@ -444,7 +444,7 @@ public final /* synthetic */ class s implements Runnable {
                         final TLRPC.Document document5 = document4;
                         final String str10 = str7;
                         final String str11 = str8;
-                        final String str12 = z14;
+                        final String str12 = y12;
                         final long j10 = j3;
                         org.telegram.messenger.g0.h3(new Runnable() { // from class: bi.l3
                             /* JADX WARN: Removed duplicated region for block: B:14:0x021c  */
@@ -458,10 +458,10 @@ public final /* synthetic */ class s implements Runnable {
                                 Code decompiled incorrectly, please refer to instructions dump.
                             */
                             public final void run() {
-                                tx0 tx0Var;
+                                ux0 ux0Var;
                                 TLRPC.Document document6;
                                 String str13;
-                                tx0 tx0Var2;
+                                ux0 ux0Var2;
                                 t0 t0Var;
                                 String str14;
                                 CharSequence charSequence2;
@@ -469,12 +469,12 @@ public final /* synthetic */ class s implements Runnable {
                                 k7 k7Var7;
                                 float f10;
                                 float f11;
-                                boolean z15;
+                                boolean z14;
                                 u1Var2.dismiss();
                                 TLObject tLObject4 = tLObject3;
-                                boolean z16 = tLObject4 instanceof TL_stars.UniqueStarGiftValueInfo;
+                                boolean z15 = tLObject4 instanceof TL_stars.UniqueStarGiftValueInfo;
                                 k7 k7Var8 = k7.this;
-                                if (!z16) {
+                                if (!z15) {
                                     TLRPC.TL_error tL_error3 = tL_error2;
                                     if (tL_error3 != null) {
                                         k7Var8.k().f0(tL_error3, false);
@@ -497,75 +497,75 @@ public final /* synthetic */ class s implements Runnable {
                                 linearLayout.addView(l9Var, c8.ha.t(qs.q2, qs.q2, 1, 0, 0, 0, 0));
                                 TextView textView = new TextView(k7Var8.getContext());
                                 textView.setTextSize(1, 20.0f);
-                                org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.Gi, k7Var8.I0);
+                                org.telegram.ui.ActionBar.s6.U(textView, org.telegram.ui.ActionBar.l6.Gi, k7Var8.I0);
                                 textView.setTypeface(org.telegram.messenger.g0.o());
                                 textView.setPadding(org.telegram.messenger.g0.L(20.0f), 0, org.telegram.messenger.g0.L(20.0f), 0);
                                 int L = org.telegram.messenger.g0.L(21.0f);
-                                int i16 = org.telegram.ui.ActionBar.k6.Ci;
-                                ShapeDrawable d02 = org.telegram.ui.ActionBar.k6.d0(L, org.telegram.ui.ActionBar.k6.w0(i16, k7Var8.I0));
-                                org.telegram.ui.ActionBar.n6 N = org.telegram.ui.ActionBar.r6.N(i16);
-                                org.telegram.ui.ActionBar.f6 f6Var = k7Var8.I0;
+                                int i16 = org.telegram.ui.ActionBar.l6.Ci;
+                                ShapeDrawable d02 = org.telegram.ui.ActionBar.l6.d0(L, org.telegram.ui.ActionBar.l6.w0(i16, k7Var8.I0));
+                                org.telegram.ui.ActionBar.o6 M = org.telegram.ui.ActionBar.s6.M(i16);
+                                org.telegram.ui.ActionBar.g6 g6Var = k7Var8.I0;
                                 textView.setBackground(d02);
-                                org.telegram.ui.ActionBar.r6.k(textView, d02, N, null, f6Var);
+                                org.telegram.ui.ActionBar.s6.j(textView, d02, M, null, g6Var);
                                 textView.setGravity(17);
                                 linearLayout.addView(textView, c8.ha.t(-2, 42, 1, 0, 12, 0, 15));
                                 textView.setText(str10);
                                 TextView textView2 = new TextView(k7Var8.getContext());
                                 textView2.setTextSize(1, 14.0f);
-                                org.telegram.ui.ActionBar.r6.V(textView2, org.telegram.ui.ActionBar.k6.j5, k7Var8.I0);
+                                org.telegram.ui.ActionBar.s6.U(textView2, org.telegram.ui.ActionBar.l6.j5, k7Var8.I0);
                                 textView2.setGravity(17);
                                 linearLayout.addView(textView2, c8.ha.t(-2, -2, 1, 16, 0, 16, 19));
-                                boolean z17 = uniqueStarGiftValueInfo.value_is_average;
+                                boolean z16 = uniqueStarGiftValueInfo.value_is_average;
                                 String str15 = str11;
-                                if (z17) {
-                                    org.telegram.messenger.k5.r(null, null, 2131749590, new Object[]{str15}, textView2);
+                                if (z16) {
+                                    org.telegram.messenger.k5.r(null, null, 2131749589, new Object[]{str15}, textView2);
                                 } else {
-                                    boolean z18 = uniqueStarGiftValueInfo.last_sale_on_fragment;
+                                    boolean z17 = uniqueStarGiftValueInfo.last_sale_on_fragment;
                                     String str16 = str12;
-                                    if (z18) {
-                                        org.telegram.messenger.k5.r(null, null, 2131749585, new Object[]{str16}, textView2);
+                                    if (z17) {
+                                        org.telegram.messenger.k5.r(null, null, 2131749584, new Object[]{str16}, textView2);
                                     } else {
-                                        org.telegram.messenger.k5.r(null, null, 2131749582, new Object[]{str16}, textView2);
+                                        org.telegram.messenger.k5.r(null, null, 2131749581, new Object[]{str16}, textView2);
                                     }
                                 }
                                 FrameLayout frameLayout = new FrameLayout(k7Var8.getContext());
                                 frameLayout.setClipChildren(false);
                                 frameLayout.setClipToPadding(false);
                                 t0 t0Var2 = new t0(k7Var8, new fi.m3[1], frameLayout, i15);
-                                tx0 tx0Var3 = new tx0(k7Var8.getContext(), k7Var8.I0);
-                                frameLayout.addView(tx0Var3, c8.ha.e(-1, -1, qs.E1));
-                                tx0Var3.c(org.telegram.messenger.id.M0(2131749586, null), org.telegram.messenger.id.f0(uniqueStarGiftValueInfo.initial_sale_date), null, null);
-                                String M0 = org.telegram.messenger.id.M0(2131749587, null);
+                                ux0 ux0Var3 = new ux0(k7Var8.getContext(), k7Var8.I0);
+                                frameLayout.addView(ux0Var3, c8.ha.e(-1, -1, qs.E1));
+                                ux0Var3.c(org.telegram.messenger.id.M0(2131749585, null), org.telegram.messenger.id.f0(uniqueStarGiftValueInfo.initial_sale_date), null, null);
+                                String M0 = org.telegram.messenger.id.M0(2131749586, null);
                                 StringBuilder sb2 = new StringBuilder("⭐️");
                                 sb2.append(uniqueStarGiftValueInfo.initial_sale_stars);
                                 sb2.append(" (~");
-                                tx0Var3.c(M0, dd.a1(false, a8.p0.s(sb2, org.telegram.messenger.r1.i().f(uniqueStarGiftValueInfo.initial_sale_price, uniqueStarGiftValueInfo.currency), ")"), 0.8f, null), null, null);
+                                ux0Var3.c(M0, dd.a1(false, a8.p0.s(sb2, org.telegram.messenger.r1.i().f(uniqueStarGiftValueInfo.initial_sale_price, uniqueStarGiftValueInfo.currency), ")"), 0.8f, null), null, null);
                                 if (TLObject.hasFlag(uniqueStarGiftValueInfo.flags, 1)) {
-                                    tx0Var3.c(org.telegram.messenger.id.M0(2131749583, null), org.telegram.messenger.id.f0(uniqueStarGiftValueInfo.last_sale_date), null, null);
+                                    ux0Var3.c(org.telegram.messenger.id.M0(2131749582, null), org.telegram.messenger.id.f0(uniqueStarGiftValueInfo.last_sale_date), null, null);
                                     int round = ((int) (Math.round((uniqueStarGiftValueInfo.last_sale_price / uniqueStarGiftValueInfo.initial_sale_price) * 1000.0d) / 10)) - 100;
                                     if (round <= 0) {
-                                        tx0Var = tx0Var3;
-                                        tx0Var.c(org.telegram.messenger.id.M0(2131749584, null), org.telegram.messenger.r1.i().f(uniqueStarGiftValueInfo.last_sale_price, uniqueStarGiftValueInfo.currency), null, null);
+                                        ux0Var = ux0Var3;
+                                        ux0Var.c(org.telegram.messenger.id.M0(2131749583, null), org.telegram.messenger.r1.i().f(uniqueStarGiftValueInfo.last_sale_price, uniqueStarGiftValueInfo.currency), null, null);
                                         if (TLObject.hasFlag(uniqueStarGiftValueInfo.flags, 4)) {
                                             document6 = document7;
                                             str13 = null;
-                                            tx0Var2 = tx0Var;
+                                            ux0Var2 = ux0Var;
                                             t0Var = t0Var2;
                                         } else {
                                             document6 = document7;
                                             str13 = null;
                                             t0Var = t0Var2;
-                                            o3 o3Var = new o3(t0Var, new org.telegram.ui.Components.jc[]{(org.telegram.ui.Components.jc) ((qx0) r3.getChildAt(1)).getChildAt(0)}, uniqueStarGiftValueInfo, str15, 0);
-                                            tx0 tx0Var4 = tx0Var;
-                                            TableRow e14 = tx0Var4.e(org.telegram.messenger.id.M0(2131749581, null), org.telegram.messenger.r1.i().f(uniqueStarGiftValueInfo.floor_price, uniqueStarGiftValueInfo.currency), "?", o3Var, null);
-                                            tx0Var2 = tx0Var4;
-                                            e14.setOnClickListener(new ah.d(o3Var, 7));
+                                            o3 o3Var = new o3(t0Var, new org.telegram.ui.Components.jc[]{(org.telegram.ui.Components.jc) ((rx0) r3.getChildAt(1)).getChildAt(0)}, uniqueStarGiftValueInfo, str15, 0);
+                                            ux0 ux0Var4 = ux0Var;
+                                            TableRow e15 = ux0Var4.e(org.telegram.messenger.id.M0(2131749580, null), org.telegram.messenger.r1.i().f(uniqueStarGiftValueInfo.floor_price, uniqueStarGiftValueInfo.currency), "?", o3Var, null);
+                                            ux0Var2 = ux0Var4;
+                                            e15.setOnClickListener(new ah.d(o3Var, 7));
                                         }
                                         int i17 = 8;
                                         if (TLObject.hasFlag(uniqueStarGiftValueInfo.flags, 8)) {
-                                            o3 o3Var2 = new o3(t0Var, new org.telegram.ui.Components.jc[]{(org.telegram.ui.Components.jc) ((qx0) r3.getChildAt(1)).getChildAt(0)}, uniqueStarGiftValueInfo, str15, 1);
-                                            TableRow e15 = tx0Var2.e(org.telegram.messenger.id.M0(2131749589, str13), org.telegram.messenger.r1.i().f(uniqueStarGiftValueInfo.average_price, uniqueStarGiftValueInfo.currency), "?", o3Var2, null);
-                                            e15.setOnClickListener(new ah.d(o3Var2, i17));
+                                            o3 o3Var2 = new o3(t0Var, new org.telegram.ui.Components.jc[]{(org.telegram.ui.Components.jc) ((rx0) r3.getChildAt(1)).getChildAt(0)}, uniqueStarGiftValueInfo, str15, 1);
+                                            TableRow e16 = ux0Var2.e(org.telegram.messenger.id.M0(2131749588, str13), org.telegram.messenger.r1.i().f(uniqueStarGiftValueInfo.average_price, uniqueStarGiftValueInfo.currency), "?", o3Var2, null);
+                                            e16.setOnClickListener(new ah.d(o3Var2, i17));
                                         }
                                         linearLayout.addView(frameLayout, c8.ha.t(-1, -2, 7, 0, 0, 0, 12));
                                         if (uniqueStarGiftValueInfo.listed_count <= 0) {
@@ -578,9 +578,9 @@ public final /* synthetic */ class s implements Runnable {
                                             spannableStringBuilder.append((CharSequence) "e");
                                             spannableStringBuilder.setSpan(new org.telegram.ui.Components.r5(document6, 1.5f, dVar2.getTextPaint().getFontMetricsInt()), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
                                             spannableStringBuilder.append((CharSequence) " ");
-                                            spannableStringBuilder.append((CharSequence) org.telegram.messenger.id.M0(2131749578, null));
+                                            spannableStringBuilder.append((CharSequence) org.telegram.messenger.id.M0(2131749577, null));
                                             dVar2.i(org.telegram.messenger.g0.I2(spannableStringBuilder, false, org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(1.0f)), false, true);
-                                            z15 = true;
+                                            z14 = true;
                                             charSequence2 = "e";
                                             str14 = null;
                                             charSequence3 = " ";
@@ -594,7 +594,7 @@ public final /* synthetic */ class s implements Runnable {
                                             k7Var7 = k7Var8;
                                             f10 = 1.0f;
                                             f11 = 2.0f;
-                                            z15 = true;
+                                            z14 = true;
                                         }
                                         if (uniqueStarGiftValueInfo.fragment_listed_count > 0) {
                                             fi.d dVar3 = new fi.d(k7Var7.getContext(), k7Var7.I0, false);
@@ -603,17 +603,17 @@ public final /* synthetic */ class s implements Runnable {
                                             spannableStringBuilder2.append(charSequence2);
                                             spannableStringBuilder2.setSpan(new org.telegram.ui.Components.r5(document6, 1.5f, dVar3.getTextPaint().getFontMetricsInt()), spannableStringBuilder2.length() - 1, spannableStringBuilder2.length(), 33);
                                             spannableStringBuilder2.append(charSequence3);
-                                            spannableStringBuilder2.append((CharSequence) org.telegram.messenger.id.M0(2131749579, str14));
-                                            dVar3.i(org.telegram.messenger.g0.I2(spannableStringBuilder2, false, org.telegram.messenger.g0.L(f11), org.telegram.messenger.g0.L(f10)), false, z15);
+                                            spannableStringBuilder2.append((CharSequence) org.telegram.messenger.id.M0(2131749578, str14));
+                                            dVar3.i(org.telegram.messenger.g0.I2(spannableStringBuilder2, false, org.telegram.messenger.g0.L(f11), org.telegram.messenger.g0.L(f10)), false, z14);
                                             dVar3.setOnClickListener(new r(6, k7Var7, uniqueStarGiftValueInfo));
                                             linearLayout.addView(dVar3, c8.ha.t(-1, 42, 7, 0, 0, 0, 0));
                                         }
                                         l11.N = linearLayout;
                                         l11.show();
                                     }
-                                    tx0Var3.e(org.telegram.messenger.id.M0(2131749584, null), org.telegram.messenger.r1.i().f(uniqueStarGiftValueInfo.last_sale_price, uniqueStarGiftValueInfo.currency), "+" + org.telegram.messenger.id.E(round, ' ') + "%", null, null);
+                                    ux0Var3.e(org.telegram.messenger.id.M0(2131749583, null), org.telegram.messenger.r1.i().f(uniqueStarGiftValueInfo.last_sale_price, uniqueStarGiftValueInfo.currency), "+" + org.telegram.messenger.id.E(round, ' ') + "%", null, null);
                                 }
-                                tx0Var = tx0Var3;
+                                ux0Var = ux0Var3;
                                 if (TLObject.hasFlag(uniqueStarGiftValueInfo.flags, 4)) {
                                 }
                                 int i172 = 8;
@@ -670,11 +670,11 @@ public final /* synthetic */ class s implements Runnable {
                 boolean[] zArr = eaVar.r;
                 ArrayList[] arrayListArr = eaVar.q;
                 int i15 = eaVar.a;
-                boolean z15 = !eaVar.e;
+                boolean z14 = !eaVar.e;
                 eaVar.c = System.currentTimeMillis();
                 if (tLObject5 instanceof TL_stars.StarsStatus) {
                     TL_stars.StarsStatus starsStatus = (TL_stars.StarsStatus) tLObject5;
-                    boolean z16 = false;
+                    boolean z15 = false;
                     qp.s1(i15).Y3(starsStatus.users, false);
                     qp.s1(i15).S3(starsStatus.chats, false);
                     if (arrayListArr[0].isEmpty()) {
@@ -684,24 +684,24 @@ public final /* synthetic */ class s implements Runnable {
                         while (i16 < size) {
                             TL_stars.StarsTransaction starsTransaction = arrayList3.get(i16);
                             i16++;
-                            boolean z17 = z16;
+                            boolean z16 = z15;
                             TL_stars.StarsTransaction starsTransaction2 = starsTransaction;
-                            arrayListArr[z17 ? 1 : 0].add(starsTransaction2);
-                            boolean z18 = z13;
+                            arrayListArr[z16 ? 1 : 0].add(starsTransaction2);
+                            boolean z17 = z13;
                             int i17 = i15;
-                            arrayListArr[starsTransaction2.amount.amount > 0 ? z18 : 2].add(starsTransaction2);
-                            z13 = z18;
+                            arrayListArr[starsTransaction2.amount.amount > 0 ? z17 : 2].add(starsTransaction2);
+                            z13 = z17;
                             i15 = i17;
-                            z16 = false;
+                            z15 = false;
                         }
                         z9 = z13;
                         i12 = i15;
                         for (int i18 = 0; i18 < 3; i18++) {
                             zArr[i18] = (!arrayListArr[i18].isEmpty() || zArr[i18]) ? z9 : false;
                             boolean[] zArr2 = eaVar.u;
-                            boolean z19 = (starsStatus.flags & 1) == 0 ? z9 : false;
-                            zArr2[i18] = z19;
-                            if (z19) {
+                            boolean z18 = (starsStatus.flags & 1) == 0 ? z9 : false;
+                            zArr2[i18] = z18;
+                            if (z18) {
                                 eaVar.t[i18] = false;
                             }
                             eaVar.s[i18] = zArr2[i18] ? null : starsStatus.next_offset;
@@ -724,7 +724,7 @@ public final /* synthetic */ class s implements Runnable {
                     long j10 = eaVar.f.amount;
                     TL_stars.StarsAmount starsAmount = starsStatus.balance;
                     if (j10 != starsAmount.amount) {
-                        z15 = z9;
+                        z14 = z9;
                     }
                     eaVar.f = starsAmount;
                     eaVar.g = 0L;
@@ -737,7 +737,7 @@ public final /* synthetic */ class s implements Runnable {
                 }
                 eaVar.d = false;
                 eaVar.e = z9;
-                if (z15) {
+                if (z14) {
                     qs.f(i12).k(qs.y3, new Object[0]);
                 }
                 if (z11) {
@@ -791,15 +791,15 @@ public final /* synthetic */ class s implements Runnable {
                 View view = (View) this.d;
                 ?? r42 = i3Var.a;
                 r42.d3 = true;
-                g4 g4Var = r42.x1;
+                h4 h4Var = r42.x1;
                 ImageReceiver imageReceiver = r42.U2;
                 boolean[] zArr4 = {false};
-                d7 d7Var = r42.n0;
-                d7Var.animate().alpha(0.0f).scaleX(0.8f).scaleY(0.8f).setListener(new l2(1, d7Var)).setDuration(150L).start();
+                e7 e7Var = r42.n0;
+                e7Var.animate().alpha(0.0f).scaleX(0.8f).scaleY(0.8f).setListener(new l2(1, e7Var)).setDuration(150L).start();
                 int L = org.telegram.messenger.g0.L(8.0f);
-                d7 d7Var2 = new d7(r42.getContext(), r42.g1);
-                r42.n0 = d7Var2;
-                d7Var2.setPadding(L, L, L, L);
+                e7 e7Var2 = new e7(r42.getContext(), r42.g1);
+                r42.n0 = e7Var2;
+                e7Var2.setPadding(L, L, L, L);
                 r42.m0.addView(r42.n0, ha.e(40, 40, 3));
                 ?? r52 = r42.X2;
                 if (r52 != 0) {
@@ -829,12 +829,12 @@ public final /* synthetic */ class s implements Runnable {
                 }
                 r42.n0.setReaction(o0Var);
                 if (r42.m1) {
-                    TL_stories.StoryItem storyItem3 = g4Var.a;
+                    TL_stories.StoryItem storyItem3 = h4Var.a;
                     if (storyItem3.sent_reaction == null) {
                         if (storyItem3.views == null) {
                             storyItem3.views = new TL_stories.TL_storyViews();
                         }
-                        TL_stories.StoryItem storyItem4 = g4Var.a;
+                        TL_stories.StoryItem storyItem4 = h4Var.a;
                         TL_stories.StoryViews storyViews = storyItem4.views;
                         storyViews.reactions_count++;
                         q0.b(null, storyItem4.sent_reaction, storyViews);
@@ -846,7 +846,7 @@ public final /* synthetic */ class s implements Runnable {
                     r42.V2 = a11;
                     a11.f(r42);
                 }
-                r42.B1.j0(r42.k1, g4Var.a, o0Var);
+                r42.B1.j0(r42.k1, h4Var.a, o0Var);
                 int[] iArr = new int[2];
                 view.getLocationInWindow(iArr);
                 int[] iArr2 = new int[2];
@@ -857,9 +857,9 @@ public final /* synthetic */ class s implements Runnable {
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
                 r42.e3 = 0.0f;
                 r42.invalidate();
-                d7 d7Var3 = r42.n0;
-                d7Var3.setAllowDrawReaction(false);
-                ?? r63 = d7Var3.e;
+                e7 e7Var3 = r42.n0;
+                e7Var3.setAllowDrawReaction(false);
+                ?? r63 = e7Var3.e;
                 if (o0Var.g != 0 || (tL_availableReaction2 = (TLRPC.TL_availableReaction) ui.b0(p10.s0).r.get(o0Var.f)) == null) {
                     r10 = 0;
                 } else {
@@ -868,29 +868,29 @@ public final /* synthetic */ class s implements Runnable {
                     r63.W(0);
                 }
                 ofFloat.addUpdateListener(new g3(i3Var, ofFloat, zArr4, r10));
-                ofFloat.addListener(new h3(i3Var, zArr4, d7Var3, r10));
+                ofFloat.addListener(new h3(i3Var, zArr4, e7Var3, r10));
                 ofFloat.setDuration(220L);
                 ofFloat.start();
                 r42.Z0(r10);
                 return;
             case 23:
-                z3 z3Var = (z3) this.b;
-                f6 f6Var = (f6) this.c;
+                a4 a4Var = (a4) this.b;
+                g6 g6Var = (g6) this.c;
                 TL_stories.StoryItem storyItem5 = (TL_stories.StoryItem) this.d;
-                i4 i4Var = z3Var.x;
-                v4.P(i4Var.getContext(), null, f6Var, new a3.h(z3Var, storyItem5, f6Var, i13));
-                z3 z3Var2 = i4Var.c1;
-                if (z3Var2 != null) {
-                    z3Var2.a();
+                j4 j4Var = a4Var.x;
+                v4.P(j4Var.getContext(), null, g6Var, new a3.h(a4Var, storyItem5, g6Var, i13));
+                a4 a4Var2 = j4Var.c1;
+                if (a4Var2 != null) {
+                    a4Var2.a();
                     return;
                 }
                 return;
             case 24:
-                j6 j6Var = (j6) this.b;
+                k6 k6Var = (k6) this.b;
                 TL_stories.StoryItem storyItem6 = (TL_stories.StoryItem) this.c;
                 ?? r32 = (c20) this.d;
-                for (int i19 = 0; i19 < j6Var.i.size(); i19++) {
-                    ij ijVar3 = (ij) j6Var.i.get(i19);
+                for (int i19 = 0; i19 < k6Var.i.size(); i19++) {
+                    ij ijVar3 = (ij) k6Var.i.get(i19);
                     if (ijVar3 != null && (storyItem = ijVar3.l) != null && (messageMedia = storyItem.media) != null && (document = storyItem6.media.document) != null && (document2 = messageMedia.document) != null && document2.id == document.id) {
                         r32.a(document2);
                         return;
@@ -899,45 +899,45 @@ public final /* synthetic */ class s implements Runnable {
                 r32.a(null);
                 return;
             case 25:
-                y6 y6Var = (y6) this.b;
+                z6 z6Var = (z6) this.b;
                 TLObject tLObject6 = (TLObject) this.c;
                 TLRPC.TL_error tL_error3 = (TLRPC.TL_error) this.d;
-                int i20 = y6Var.a;
-                y6Var.R = true;
+                int i20 = z6Var.a;
+                z6Var.R = true;
                 if (tLObject6 instanceof TLRPC.TL_boolTrue) {
-                    y6Var.S = null;
+                    z6Var.S = null;
                     qs.f(i20).k(qs.b3, new Object[0]);
                     return;
                 } else if (!(tLObject6 instanceof TL_stories.canSendStoryCount)) {
-                    y6Var.n(tL_error3);
+                    z6Var.n(tL_error3);
                     return;
                 } else {
-                    y6Var.S = new di.s6(1, ((TL_stories.canSendStoryCount) tLObject6).count_remains, -1L);
+                    z6Var.S = new di.t6(1, ((TL_stories.canSendStoryCount) tLObject6).count_remains, -1L);
                     qs.f(i20).k(qs.b3, new Object[0]);
                     return;
                 }
             case 26:
-                j6 j6Var2 = (j6) this.b;
-                i6 i6Var = (i6) this.c;
+                k6 k6Var2 = (k6) this.b;
+                j6 j6Var = (j6) this.c;
                 d3 d3Var = (d3) this.d;
-                ArrayList arrayList4 = j6Var2.i;
+                ArrayList arrayList4 = k6Var2.i;
                 for (int i21 = 0; i21 < arrayList4.size(); i21++) {
                     ij ijVar4 = (ij) arrayList4.get(i21);
                     if (ijVar4 != null && (storyItem2 = ijVar4.l) != null && (messageMedia2 = storyItem2.media) != null) {
-                        TLRPC.MessageMedia messageMedia3 = i6Var.media;
+                        TLRPC.MessageMedia messageMedia3 = j6Var.media;
                         TLRPC.Document document5 = messageMedia3.document;
                         if (document5 != null) {
                             TLRPC.Document document6 = messageMedia2.document;
                             if (document6 == null) {
                                 continue;
                             } else if (document6.id == document5.id) {
-                                d3Var.a((i6) storyItem2);
+                                d3Var.a((j6) storyItem2);
                                 return;
                             }
                         }
                         TLRPC.Photo photo2 = messageMedia3.photo;
                         if (photo2 != null && (photo = messageMedia2.photo) != null && photo.id == photo2.id) {
-                            d3Var.a((i6) storyItem2);
+                            d3Var.a((j6) storyItem2);
                             return;
                         }
                     }
@@ -945,17 +945,17 @@ public final /* synthetic */ class s implements Runnable {
                 d3Var.a(null);
                 return;
             case 27:
-                j6 j6Var3 = (j6) this.b;
+                k6 k6Var3 = (k6) this.b;
                 TLObject tLObject7 = (TLObject) this.c;
                 Runnable runnable5 = (Runnable) this.d;
-                n6 n6Var = j6Var3.q;
-                ArrayList arrayList5 = j6Var3.G;
-                ArrayList arrayList6 = j6Var3.i;
-                ArrayList arrayList7 = j6Var3.H;
-                j6Var3.F = 0;
-                j6Var3.C = false;
-                j6Var3.D = true;
-                j6Var3.r = true;
+                o6 o6Var = k6Var3.q;
+                ArrayList arrayList5 = k6Var3.G;
+                ArrayList arrayList6 = k6Var3.i;
+                ArrayList arrayList7 = k6Var3.H;
+                k6Var3.F = 0;
+                k6Var3.C = false;
+                k6Var3.D = true;
+                k6Var3.r = true;
                 ArrayList arrayList8 = new ArrayList();
                 if (tLObject7 instanceof Vector) {
                     ArrayList arrayList9 = ((Vector) tLObject7).objects;
@@ -984,7 +984,7 @@ public final /* synthetic */ class s implements Runnable {
                     Object obj2 = arrayList8.get(i23);
                     i23++;
                     TL_bots.botPreviewMedia botpreviewmedia = (TL_bots.botPreviewMedia) obj2;
-                    ij ijVar5 = new ij(j6Var3.c, new i6(j6Var3, j6Var3.d, botpreviewmedia));
+                    ij ijVar5 = new ij(k6Var3.c, new j6(k6Var3, k6Var3.d, botpreviewmedia));
                     int i24 = 0;
                     while (true) {
                         if (i24 >= arrayList10.size()) {
@@ -998,56 +998,56 @@ public final /* synthetic */ class s implements Runnable {
                     TL_stories.StoryItem storyItem7 = ijVar5.l;
                     TLRPC.Message message2 = ijVar5.k;
                     if (ijVar == null) {
-                        f12 = j6Var3.I;
-                        j6Var3.I = f12 + 1;
+                        e12 = k6Var3.I;
+                        k6Var3.I = e12 + 1;
                     } else {
-                        f12 = ijVar.f1();
+                        e12 = ijVar.e1();
                     }
-                    message2.id = f12;
-                    storyItem7.id = f12;
-                    ijVar5.j = j6Var3;
+                    message2.id = e12;
+                    storyItem7.id = e12;
+                    ijVar5.j = k6Var3;
                     ijVar5.r0(false);
                     if (arrayList7.isEmpty()) {
                         arrayList7.add(new ArrayList());
                     }
-                    ((ArrayList) arrayList7.get(0)).add(Integer.valueOf(ijVar5.f1()));
+                    ((ArrayList) arrayList7.get(0)).add(Integer.valueOf(ijVar5.e1()));
                     arrayList6.add(ijVar5);
                 }
-                org.telegram.messenger.g0.r(n6Var);
-                org.telegram.messenger.g0.h3(n6Var);
+                org.telegram.messenger.g0.r(o6Var);
+                org.telegram.messenger.g0.h3(o6Var);
                 if (runnable5 != null) {
                     org.telegram.messenger.g0.h3(runnable5);
                     return;
                 }
                 return;
             case 28:
-                g9 g9Var = (g9) this.b;
-                q6 q6Var = (q6) this.c;
+                h9 h9Var = (h9) this.b;
+                r6 r6Var = (r6) this.c;
                 ArrayList arrayList11 = (ArrayList) this.d;
-                p9 p9Var = g9Var.d;
-                p9Var.n0.D(p9Var.h, q6Var.d, arrayList11);
+                q9 q9Var = h9Var.d;
+                q9Var.n0.D(q9Var.h, r6Var.d, arrayList11);
                 return;
             default:
-                y9 y9Var = (y9) this.b;
+                z9 z9Var = (z9) this.b;
                 TLObject tLObject8 = (TLObject) this.c;
                 TL_stories.TL_stories_getStoriesViews tL_stories_getStoriesViews = (TL_stories.TL_stories_getStoriesViews) this.d;
-                s7 s7Var = y9Var.f;
-                int i25 = y9Var.b;
-                y9.g = System.currentTimeMillis();
+                f8 f8Var = z9Var.f;
+                int i25 = z9Var.b;
+                z9.g = System.currentTimeMillis();
                 if (tLObject8 != null) {
                     TL_stories.TL_stories_storyViews tL_stories_storyViews = (TL_stories.TL_stories_storyViews) tLObject8;
                     qp.s1(i25).Y3(tL_stories_storyViews.users, false);
-                    if (!y9Var.d(tL_stories_getStoriesViews.id, tL_stories_storyViews)) {
-                        y9Var.d = 0;
-                        y9Var.e = false;
+                    if (!z9Var.d(tL_stories_getStoriesViews.id, tL_stories_storyViews)) {
+                        z9Var.d = 0;
+                        z9Var.e = false;
                         return;
                     }
                     qs.f(i25).k(qs.v5, new Object[0]);
                 }
-                y9Var.d = 0;
-                if (y9Var.e) {
-                    org.telegram.messenger.g0.r(s7Var);
-                    org.telegram.messenger.g0.i3(s7Var, 10000L);
+                z9Var.d = 0;
+                if (z9Var.e) {
+                    org.telegram.messenger.g0.r(f8Var);
+                    org.telegram.messenger.g0.i3(f8Var, 10000L);
                     return;
                 }
                 return;

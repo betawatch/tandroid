@@ -11,11 +11,11 @@ import android.text.TextPaint;
 import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.messenger.id;
+import org.telegram.ui.Components.ah0;
 import org.telegram.ui.Components.ic;
 import org.telegram.ui.Components.xq;
-import org.telegram.ui.Components.zg0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class s0 extends View {
     public float D;
@@ -39,7 +39,7 @@ public final class s0 extends View {
     public final Paint e;
     public final Paint f;
     public final ic h;
-    public zg0 n;
+    public ah0 n;
     public final StaticLayout r;
     public final float s;
     public final float w;
@@ -106,14 +106,14 @@ public final class s0 extends View {
     }
 
     public final void b(int i7, int i10, CharSequence charSequence) {
-        zg0 zg0Var = this.n;
-        if (zg0Var != null) {
-            zg0Var.setCallback(null);
+        ah0 ah0Var = this.n;
+        if (ah0Var != null) {
+            ah0Var.setCallback(null);
             this.n.C(true);
         }
-        zg0 zg0Var2 = new zg0(i7, org.telegram.messenger.g0.L(36.0f), org.telegram.messenger.g0.L(36.0f));
-        this.n = zg0Var2;
-        zg0Var2.setCallback(this);
+        ah0 ah0Var2 = new ah0(i7, org.telegram.messenger.g0.L(36.0f), org.telegram.messenger.g0.L(36.0f));
+        this.n = ah0Var2;
+        ah0Var2.setCallback(this);
         this.n.start();
         StaticLayout staticLayout = new StaticLayout(charSequence, this.c, org.telegram.messenger.g0.q.x, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
         this.x = staticLayout;
@@ -216,9 +216,9 @@ public final class s0 extends View {
         }
         if (e11 > 0.0f) {
             float f14 = e11 * e10;
-            zg0 zg0Var = this.n;
-            if (zg0Var != null) {
-                zg0Var.setAlpha((int) (f14 * f11));
+            ah0 ah0Var = this.n;
+            if (ah0Var != null) {
+                ah0Var.setAlpha((int) (f14 * f11));
                 this.n.setBounds((int) (rectF.left + org.telegram.messenger.g0.L(9.0f)), (int) (rectF.top + org.telegram.messenger.g0.L(6.0f)), (int) (rectF.left + org.telegram.messenger.g0.L(45.0f)), (int) (rectF.top + org.telegram.messenger.g0.L(f10)));
                 this.n.draw(canvas2);
             }
@@ -284,6 +284,6 @@ public final class s0 extends View {
     }
 
     public s0(Context context) {
-        this(context, id.M0(2131746919, null));
+        this(context, id.M0(2131746918, null));
     }
 }

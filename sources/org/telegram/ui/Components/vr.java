@@ -7,9 +7,9 @@ import java.util.ArrayList;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public class vr extends l41 {
+public class vr extends m41 {
     public final int P;
     public final int Q;
     public final boolean R;
@@ -32,8 +32,8 @@ public class vr extends l41 {
     public boolean i0;
     public final s2 j0;
 
-    public vr(pj0 pj0Var, Context context, int i7, int i10, boolean z9, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(pj0Var, context, i7, 0, true, null, f6Var);
+    public vr(qj0 qj0Var, Context context, int i7, int i10, boolean z9, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(qj0Var, context, i7, 0, true, null, g6Var);
         this.T = new ArrayList();
         this.U = new ArrayList();
         this.V = new ArrayList();
@@ -45,19 +45,19 @@ public class vr extends l41 {
         this.Q = i10;
         this.R = z9;
         this.S = new ur(i7, new rr(this, 1));
-        this.Y = org.telegram.messenger.g0.H2(org.telegram.messenger.g0.U2(org.telegram.messenger.id.M0(2131754177, null), new bi.b(this, f6Var, context)), true);
+        this.Y = org.telegram.messenger.g0.H2(org.telegram.messenger.g0.U2(org.telegram.messenger.id.M0(2131754177, null), new bi.b(this, g6Var, context)), true);
         O(false);
         org.telegram.messenger.ui.b0(i7).M0(true);
     }
 
     public final void W() {
         boolean isEmpty = TextUtils.isEmpty(this.g0);
-        pj0 pj0Var = this.d;
+        qj0 qj0Var = this.d;
         if (isEmpty) {
             if (!this.i0) {
-                if (pj0Var != null) {
-                    for (int i7 = 0; i7 < pj0Var.getChildCount(); i7++) {
-                        if (!(pj0Var.getChildAt(i7) instanceof mz)) {
+                if (qj0Var != null) {
+                    for (int i7 = 0; i7 < qj0Var.getChildCount(); i7++) {
+                        if (!(qj0Var.getChildAt(i7) instanceof mz)) {
                         }
                     }
                 }
@@ -65,13 +65,13 @@ public class vr extends l41 {
             this.S.a();
             break;
         }
-        if (this.d0 && !this.b0 && pj0Var != null) {
+        if (this.d0 && !this.b0 && qj0Var != null) {
             int i10 = 0;
             while (true) {
-                if (i10 >= pj0Var.getChildCount()) {
+                if (i10 >= qj0Var.getChildCount()) {
                     break;
                 }
-                if (!(pj0Var.getChildAt(i10) instanceof mz)) {
+                if (!(qj0Var.getChildAt(i10) instanceof mz)) {
                     i10++;
                 } else if (this.d0 && !this.b0 && !TextUtils.isEmpty(this.g0)) {
                     X(true);
@@ -108,7 +108,7 @@ public class vr extends l41 {
             if (!arrayList.isEmpty()) {
                 org.telegram.messenger.ij ijVar = (org.telegram.messenger.ij) jg.g.i(1, arrayList);
                 tL_messages_searchGlobal.offset_rate = this.e0;
-                tL_messages_searchGlobal.offset_id = ijVar.f1();
+                tL_messages_searchGlobal.offset_id = ijVar.e1();
                 if (ijVar.k.peer_id == null) {
                     tL_messages_searchGlobal.offset_peer = new TLRPC.TL_inputPeerEmpty();
                 } else {

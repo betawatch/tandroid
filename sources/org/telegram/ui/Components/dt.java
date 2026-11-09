@@ -18,7 +18,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.Stack;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public abstract class dt extends EditText {
     public static Boolean W;
@@ -35,7 +35,7 @@ public abstract class dt extends EditText {
     public Integer N;
     public float O;
     public boolean P;
-    public ab0 Q;
+    public bb0 Q;
     public int R;
     public int S;
     public boolean[] T;
@@ -63,10 +63,10 @@ public abstract class dt extends EditText {
         boolean z9 = false;
         if (text instanceof Spannable) {
             Spannable spannable = (Spannable) text;
-            for (vy0 vy0Var : (vy0[]) spannable.getSpans(0, spannable.length(), vy0.class)) {
-                int spanStart = spannable.getSpanStart(vy0Var);
-                int spanEnd = spannable.getSpanEnd(vy0Var);
-                if (vy0Var.c() && ((spanStart > (i7 = this.r) && spanEnd < this.s) || ((i7 > spanStart && i7 < spanEnd) || ((i10 = this.s) > spanStart && i10 < spanEnd)))) {
+            for (wy0 wy0Var : (wy0[]) spannable.getSpans(0, spannable.length(), wy0.class)) {
+                int spanStart = spannable.getSpanStart(wy0Var);
+                int spanEnd = spannable.getSpanEnd(wy0Var);
+                if (wy0Var.c() && ((spanStart > (i7 = this.r) && spanEnd < this.s) || ((i7 > spanStart && i7 < spanEnd) || ((i10 = this.s) > spanStart && i10 < spanEnd)))) {
                     removeCallbacks(btVar);
                     this.y = false;
                     z9 = true;
@@ -97,16 +97,16 @@ public abstract class dt extends EditText {
             while (i7 < size) {
                 Object obj = arrayList.get(i7);
                 i7++;
-                qg0 qg0Var = (qg0) obj;
-                e0.g gVar = qg0Var.e.J;
-                boolean z11 = qg0Var.b() && qg0Var.g.contains(motionEvent.getX(), motionEvent.getY() - ((float) paddingTop));
+                rg0 rg0Var = (rg0) obj;
+                e0.g gVar = rg0Var.e.J;
+                boolean z11 = rg0Var.b() && rg0Var.g.contains(motionEvent.getX(), motionEvent.getY() - ((float) paddingTop));
                 if (motionEvent.getAction() == 0) {
                     if (gVar != null) {
                         gVar.g(z11);
                     }
                 } else if (motionEvent.getAction() == 1) {
                     if (gVar != null && gVar.c && z11) {
-                        qg0Var.e.e = !r5.e;
+                        rg0Var.e.e = !r5.e;
                         g(true);
                         z9 = true;
                     }
@@ -144,14 +144,14 @@ public abstract class dt extends EditText {
     public final void f() {
         Editable text = getText();
         if (text != null) {
-            for (vy0 vy0Var : (vy0[]) text.getSpans(0, text.length(), vy0.class)) {
-                if (vy0Var.c()) {
+            for (wy0 wy0Var : (wy0[]) text.getSpans(0, text.length(), wy0.class)) {
+                if (wy0Var.c()) {
                     boolean z9 = this.d;
-                    uy0 uy0Var = vy0Var.b;
+                    vy0 vy0Var = wy0Var.b;
                     if (z9) {
-                        uy0Var.a |= 512;
+                        vy0Var.a |= 512;
                     } else {
-                        uy0Var.a &= -513;
+                        vy0Var.a &= -513;
                     }
                 }
             }
@@ -177,9 +177,9 @@ public abstract class dt extends EditText {
             this.T[0] = false;
             this.V = false;
             this.U = true;
-            this.c = ug0.d(this, getLayout(), this.c, this.T);
+            this.c = vg0.d(this, getLayout(), this.c, this.T);
             if (this.V) {
-                this.c = ug0.d(this, getLayout(), this.c, this.T);
+                this.c = vg0.d(this, getLayout(), this.c, this.T);
             }
             this.U = false;
             this.V = false;
@@ -206,12 +206,12 @@ public abstract class dt extends EditText {
             return null;
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(text);
-        sg0[] sg0VarArr = (sg0[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), sg0.class);
-        for (int length = sg0VarArr.length - 1; length >= 0; length--) {
-            sg0 sg0Var = sg0VarArr[length];
-            int spanStart = spannableStringBuilder.getSpanStart(sg0Var);
-            int spanEnd = spannableStringBuilder.getSpanEnd(sg0Var);
-            spannableStringBuilder.removeSpan(sg0Var);
+        tg0[] tg0VarArr = (tg0[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), tg0.class);
+        for (int length = tg0VarArr.length - 1; length >= 0; length--) {
+            tg0 tg0Var = tg0VarArr[length];
+            int spanStart = spannableStringBuilder.getSpanStart(tg0Var);
+            int spanEnd = spannableStringBuilder.getSpanEnd(tg0Var);
+            spannableStringBuilder.removeSpan(tg0Var);
             spannableStringBuilder.delete(spanStart, spanEnd);
         }
         return spannableStringBuilder;
@@ -282,13 +282,13 @@ public abstract class dt extends EditText {
         this.d = z9;
         Editable text = getText();
         if (text != null) {
-            for (vy0 vy0Var : (vy0[]) text.getSpans(0, text.length(), vy0.class)) {
-                if (vy0Var.c()) {
-                    uy0 uy0Var = vy0Var.b;
+            for (wy0 wy0Var : (wy0[]) text.getSpans(0, text.length(), wy0.class)) {
+                if (wy0Var.c()) {
+                    vy0 vy0Var = wy0Var.b;
                     if (z9) {
-                        uy0Var.a |= 512;
+                        vy0Var.a |= 512;
                     } else {
-                        uy0Var.a &= -513;
+                        vy0Var.a &= -513;
                     }
                 }
             }
@@ -359,20 +359,20 @@ public abstract class dt extends EditText {
         }
         g(false);
         for (int i12 = 0; i12 < this.c.size(); i12++) {
-            qg0 qg0Var = (qg0) this.c.get(i12);
+            rg0 rg0Var = (rg0) this.c.get(i12);
             int width = getWidth();
             int i13 = this.D;
             getPaint();
-            qg0Var.a(canvas, width, i13);
+            rg0Var.a(canvas, width, i13);
         }
         k(false);
         if (z9) {
             if (this.Q == null) {
-                this.Q = new ab0();
+                this.Q = new bb0();
             }
-            ab0 ab0Var = this.Q;
-            ab0Var.a = canvas;
-            super.onDraw(ab0Var);
+            bb0 bb0Var = this.Q;
+            bb0Var.a = canvas;
+            super.onDraw(bb0Var);
         } else {
             super.onDraw(canvas);
         }
@@ -399,11 +399,11 @@ public abstract class dt extends EditText {
             canvas.translate(0.0f, -getPaddingTop());
             if (z9) {
                 if (this.Q == null) {
-                    this.Q = new ab0();
+                    this.Q = new bb0();
                 }
-                ab0 ab0Var2 = this.Q;
-                ab0Var2.a = canvas;
-                super.onDraw(ab0Var2);
+                bb0 bb0Var2 = this.Q;
+                bb0Var2.a = canvas;
+                super.onDraw(bb0Var2);
             } else {
                 super.onDraw(canvas);
             }

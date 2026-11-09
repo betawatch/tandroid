@@ -21,12 +21,12 @@ import org.telegram.messenger.a8;
 import org.telegram.messenger.camera.CameraView;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.i60;
+import org.telegram.ui.Components.j60;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public abstract class s2 extends FrameLayout implements a6 {
+public abstract class s2 extends FrameLayout implements b6 {
     public float D;
     public boolean E;
     public final Paint F;
@@ -72,7 +72,7 @@ public abstract class s2 extends FrameLayout implements a6 {
         this.G.r0();
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void addColorKeys(HashSet hashSet) {
         this.G.D(hashSet);
     }
@@ -106,7 +106,7 @@ public abstract class s2 extends FrameLayout implements a6 {
         if (i7 >= 26) {
             int i10 = v2Var.F0;
             if (i10 >= 0) {
-                paint.setColor(k6.w0(i10, v2Var.I0));
+                paint.setColor(l6.w0(i10, v2Var.I0));
             } else {
                 paint.setColor(v2Var.G0);
             }
@@ -305,7 +305,7 @@ public abstract class s2 extends FrameLayout implements a6 {
         if (i12 >= 26) {
             int i13 = v2Var.F0;
             if (i13 >= 0) {
-                paint3.setColor(k6.w0(i13, v2Var.I0));
+                paint3.setColor(l6.w0(i13, v2Var.I0));
             } else {
                 paint3.setColor(v2Var.G0);
             }
@@ -331,7 +331,7 @@ public abstract class s2 extends FrameLayout implements a6 {
         if (v2Var.r) {
             if ((getMeasuredHeight() - v2Var.b.getY()) - v2Var.b.getMeasuredHeight() > org.telegram.messenger.g0.L(48.0f)) {
                 int i14 = v2Var.a0;
-                paint3.setColor(i14 >= 0 ? k6.w0(i14, v2Var.I0) : 0);
+                paint3.setColor(i14 >= 0 ? l6.w0(i14, v2Var.I0) : 0);
                 canvas.drawRect(v2Var.b.getLeft() + v2Var.t0, v2Var.b.getMeasuredHeight() + v2Var.b.getY(), v2Var.b.getRight() - v2Var.t0, getMeasuredHeight(), paint3);
                 return;
             }
@@ -353,7 +353,7 @@ public abstract class s2 extends FrameLayout implements a6 {
                 }
                 if (v2Var.b.getY() + v2Var.b.getMeasuredHeight() >= getMeasuredHeight()) {
                     int i15 = v2Var.a0;
-                    paint.setColor(i15 >= 0 ? k6.w0(i15, v2Var.I0) : 0);
+                    paint.setColor(i15 >= 0 ? l6.w0(i15, v2Var.I0) : 0);
                     canvas.drawRect(v2Var.b.getLeft() + v2Var.t0, v2Var.b.getMeasuredHeight() + v2Var.b.getY(), v2Var.b.getRight() - v2Var.t0, getMeasuredHeight(), paint);
                     return;
                 }
@@ -415,7 +415,7 @@ public abstract class s2 extends FrameLayout implements a6 {
         super.onDraw(canvas2);
         if (v2Var.n && v2Var.h != null && v2Var.f != 0) {
             int i7 = v2Var.a0;
-            paint.setColor(i7 >= 0 ? k6.w0(i7, v2Var.I0) : 0);
+            paint.setColor(i7 >= 0 ? l6.w0(i7, v2Var.I0) : 0);
             canvas2.drawRect(v2Var.b.getLeft() + v2Var.t0, (getMeasuredHeight() - v2Var.f) - (v2Var.n ? v2Var.Q() : 0), v2Var.b.getRight() - v2Var.t0, getMeasuredHeight() - (v2Var.n ? v2Var.Q() : 0), paint);
         }
         v2Var.d0();
@@ -663,7 +663,7 @@ public abstract class s2 extends FrameLayout implements a6 {
                 for (int i16 = 0; i16 < childCount; i16++) {
                     View childAt = getChildAt(i16);
                     if (childAt.getVisibility() != 8 && childAt != v2Var.b) {
-                        if (childAt instanceof i60) {
+                        if (childAt instanceof j60) {
                             measureChildWithMargins(childAt, View.MeasureSpec.makeMeasureSpec(i15, TLObject.FLAG_30), 0, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), 0);
                         } else if (!v2Var.l0(childAt, i15, i14)) {
                             measureChildWithMargins(childAt, View.MeasureSpec.makeMeasureSpec(i15, TLObject.FLAG_30), 0, View.MeasureSpec.makeMeasureSpec(i14, TLObject.FLAG_30), 0);
@@ -782,7 +782,7 @@ public abstract class s2 extends FrameLayout implements a6 {
         super.requestDisallowInterceptTouchEvent(z9);
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
         v2 v2Var = this.G;
         try {

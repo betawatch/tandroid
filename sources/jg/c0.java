@@ -7,30 +7,30 @@ import org.telegram.messenger.qs;
 import org.telegram.messenger.t10;
 import org.telegram.messenger.ui;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Cells.l2;
 import org.telegram.ui.Cells.o4;
-import org.telegram.ui.Components.oj0;
-import org.telegram.ui.Components.xi0;
+import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.yi0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public class c0 extends oj0 {
+public class c0 extends pj0 {
     public final Context c;
     public final int d;
     public final boolean e;
     public final boolean f;
-    public final f6 h;
+    public final g6 h;
 
-    public c0(int i7, Context context, f6 f6Var, boolean z9, boolean z10) {
+    public c0(int i7, Context context, g6 g6Var, boolean z9, boolean z10) {
         this.e = z9;
         this.c = context;
         this.d = i7;
         this.f = z10;
-        this.h = f6Var;
+        this.h = g6Var;
     }
 
-    @Override // org.telegram.ui.Components.oj0
+    @Override // org.telegram.ui.Components.pj0
     public final boolean D(v4.d1 d1Var) {
         return true;
     }
@@ -82,6 +82,6 @@ public class c0 extends oj0 {
             qs.f(o4Var.h).h(o4Var, qs.i3, new l2(o4Var, 1));
         }
         o4Var.setLayoutParams(new v4.o0(org.telegram.messenger.g0.L(80.0f), org.telegram.messenger.g0.L(86.0f)));
-        return new xi0(o4Var);
+        return new yi0(o4Var);
     }
 }

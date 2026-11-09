@@ -11,25 +11,25 @@ import org.telegram.messenger.aj;
 import org.telegram.messenger.dj;
 import org.telegram.messenger.ij;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
-import org.telegram.ui.Components.ca0;
+import org.telegram.ui.Components.da0;
 import org.telegram.ui.Components.hy;
 import org.telegram.ui.Components.ky;
-import org.telegram.ui.Components.l41;
+import org.telegram.ui.Components.m41;
 import org.telegram.ui.Components.mx;
 import org.telegram.ui.Components.nx;
 import org.telegram.ui.Components.qi;
-import org.telegram.ui.Components.x31;
-import org.telegram.ui.Components.yv0;
-import org.telegram.ui.an;
-import org.telegram.ui.bg0;
-import org.telegram.ui.bm0;
-import org.telegram.ui.c21;
-import org.telegram.ui.jl;
-import org.telegram.ui.xm0;
-import zh.k3;
-import zh.n3;
+import org.telegram.ui.Components.y31;
+import org.telegram.ui.Components.zv0;
+import org.telegram.ui.cn;
+import org.telegram.ui.dg0;
+import org.telegram.ui.dm0;
+import org.telegram.ui.e21;
+import org.telegram.ui.ll;
+import org.telegram.ui.zm0;
+import zh.l3;
+import zh.o3;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class l extends g.p {
     public final /* synthetic */ int c;
@@ -45,7 +45,7 @@ public final class l extends g.p {
         int i10;
         int i11;
         ij ijVar;
-        dj s9;
+        dj t92;
         ij ijVar2;
         dj a10;
         int i12;
@@ -67,7 +67,7 @@ public final class l extends g.p {
                 if (p1Var == null || i7 == 0) {
                     return kyVar.J;
                 }
-                x31 G = p1Var.G(i7 - 1);
+                y31 G = p1Var.G(i7 - 1);
                 return (G == null || (i10 = G.u) == -1) ? kyVar.J : i10;
             case 2:
                 s1 s1Var = (s1) this.d;
@@ -85,13 +85,13 @@ public final class l extends g.p {
             case 4:
                 return (i7 == 0 || i7 == 1 || i7 == ((f3) this.d).f.b() - 1) ? 3 : 1;
             case 5:
-                an anVar = (an) this.d;
-                jl jlVar = anVar.C0;
-                int i16 = jlVar.J;
-                if (i7 < i16 || i7 >= jlVar.K || (i11 = i7 - i16) < 0 || i11 >= jlVar.L().size() || (s9 = anVar.s9((ijVar = (ij) anVar.C0.L().get(i11)))) == null) {
+                cn cnVar = (cn) this.d;
+                ll llVar = cnVar.C0;
+                int i16 = llVar.J;
+                if (i7 < i16 || i7 >= llVar.K || (i11 = i7 - i16) < 0 || i11 >= llVar.L().size() || (t92 = cnVar.t9((ijVar = (ij) cnVar.C0.L().get(i11)))) == null) {
                     return 1000;
                 }
-                return s9.d(ijVar).i;
+                return t92.d(ijVar).i;
             case 6:
                 qi qiVar = (qi) this.d;
                 int i17 = qiVar.r;
@@ -123,47 +123,47 @@ public final class l extends g.p {
                 nxVar.B1();
                 return nxVar.R.get(i7);
             case 9:
-                ca0 ca0Var = (ca0) this.d;
-                if (i7 < 0 || i7 >= ca0Var.r.f.size() || (a10 = ca0.a(ca0Var, (ijVar2 = (ij) ca0Var.r.f.get(i7)))) == null) {
+                da0 da0Var = (da0) this.d;
+                if (i7 < 0 || i7 >= da0Var.r.f.size() || (a10 = da0.a(da0Var, (ijVar2 = (ij) da0Var.r.f.get(i7)))) == null) {
                     return 1000;
                 }
                 return a10.d(ijVar2).i;
             case 10:
-                yv0 yv0Var = (yv0) this.d;
-                if ((yv0Var.N1 == null || !(yv0Var.k1.e.get(i7) instanceof Integer)) && i7 != yv0Var.k1.h) {
+                zv0 zv0Var = (zv0) this.d;
+                if ((zv0Var.N1 == null || !(zv0Var.k1.e.get(i7) instanceof Integer)) && i7 != zv0Var.k1.h) {
                     return 1;
                 }
-                return yv0Var.k1.d;
+                return zv0Var.k1.d;
             case 11:
-                bg0 bg0Var = (bg0) this.d;
-                ij ijVar3 = (ij) bg0Var.M.get((r1.size() - 1) - i7);
-                dj k10 = bg0Var.k(ijVar3);
+                dg0 dg0Var = (dg0) this.d;
+                ij ijVar3 = (ij) dg0Var.M.get((r1.size() - 1) - i7);
+                dj k10 = dg0Var.k(ijVar3);
                 if (k10 != null) {
                     return k10.d(ijVar3).i;
                 }
                 return 1000;
             case 12:
-                bm0 bm0Var = (bm0) this.d;
-                if (i7 < bm0Var.b0 || i7 >= bm0Var.c0) {
-                    return (i7 < bm0Var.d0 || i7 >= bm0Var.e0) ? 3 : 1;
+                dm0 dm0Var = (dm0) this.d;
+                if (i7 < dm0Var.b0 || i7 >= dm0Var.c0) {
+                    return (i7 < dm0Var.d0 || i7 >= dm0Var.e0) ? 3 : 1;
                 }
                 return 1;
             case 13:
-                xm0 xm0Var = (xm0) this.d;
-                if (xm0Var.L.d(i7) == 1 || xm0Var.Y || (xm0Var.J == null && TextUtils.isEmpty(xm0Var.w))) {
-                    return xm0Var.M.J;
+                zm0 zm0Var = (zm0) this.d;
+                if (zm0Var.L.d(i7) == 1 || zm0Var.Y || (zm0Var.J == null && TextUtils.isEmpty(zm0Var.w))) {
+                    return zm0Var.M.J;
                 }
-                int i21 = xm0Var.R;
-                int i22 = xm0Var.g0;
+                int i21 = zm0Var.R;
+                int i22 = zm0Var.g0;
                 return i21 + (i7 % i22 != i22 - 1 ? org.telegram.messenger.g0.L(2.0f) : 0);
             case 14:
-                c21 c21Var = (c21) this.d;
-                ky kyVar2 = c21Var.P1;
-                l41 l41Var = c21Var.V1;
-                if (l41Var == null) {
+                e21 e21Var = (e21) this.d;
+                ky kyVar2 = e21Var.P1;
+                m41 m41Var = e21Var.V1;
+                if (m41Var == null) {
                     return kyVar2.J;
                 }
-                x31 G2 = l41Var.G(i7 - 1);
+                y31 G2 = m41Var.G(i7 - 1);
                 return (G2 == null || (i12 = G2.u) == -1) ? kyVar2.J : i12;
             case 15:
                 int size = (r0.s0.size() - 1) - i7;
@@ -175,26 +175,26 @@ public final class l extends g.p {
             case 16:
                 zh.g1 g1Var = (zh.g1) this.d;
                 ky kyVar3 = g1Var.a2;
-                l41 l41Var2 = g1Var.Q1;
-                if (l41Var2 == null || i7 == 0) {
+                m41 m41Var2 = g1Var.Q1;
+                if (m41Var2 == null || i7 == 0) {
                     return kyVar3.J;
                 }
-                x31 G3 = l41Var2.G(i7 - 1);
+                y31 G3 = m41Var2.G(i7 - 1);
                 return (G3 == null || (i13 = G3.u) == -1) ? kyVar3.J : i13;
             case 17:
-                x31 G4 = ((k3) this.d).a2.G(i7 - 1);
+                y31 G4 = ((l3) this.d).a2.G(i7 - 1);
                 if (G4 == null || (i14 = G4.u) == -1) {
                     return 3;
                 }
                 return i14;
             default:
-                n3 n3Var = (n3) this.d;
-                ky kyVar4 = n3Var.S1;
-                l41 l41Var3 = n3Var.Y1;
-                if (l41Var3 == null) {
+                o3 o3Var = (o3) this.d;
+                ky kyVar4 = o3Var.S1;
+                m41 m41Var3 = o3Var.Y1;
+                if (m41Var3 == null) {
                     return kyVar4.J;
                 }
-                x31 G5 = l41Var3.G(i7 - 1);
+                y31 G5 = m41Var3.G(i7 - 1);
                 return (G5 == null || (i15 = G5.u) == -1) ? kyVar4.J : i15;
         }
     }

@@ -16,9 +16,9 @@ import android.widget.FrameLayout;
 import java.util.WeakHashMap;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class qh extends rt0 {
+public final class qh extends tt0 {
     public int f0;
     public final RectF g0;
     public boolean h0;
@@ -34,7 +34,7 @@ public final class qh extends rt0 {
         this.j0 = new ph(this, this);
     }
 
-    @Override // org.telegram.ui.Components.rt0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.tt0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         float f10;
         int L;
@@ -115,32 +115,32 @@ public final class qh extends rt0 {
             diVar.r0.draw(canvas);
             RectF rectF = this.g0;
             if (j3 == 2) {
-                org.telegram.ui.ActionBar.k6.t0.setColor(customBackground);
-                org.telegram.ui.ActionBar.k6.t0.setAlpha(alpha2);
+                org.telegram.ui.ActionBar.l6.t0.setColor(customBackground);
+                org.telegram.ui.ActionBar.l6.t0.setAlpha(alpha2);
                 f13 = 24.0f;
                 rectF.set(diVar.t0, diVar.s0 + c12, getMeasuredWidth() - diVar.t0, org.telegram.messenger.g0.L(24.0f) + diVar.s0 + c12);
             } else {
                 f13 = 24.0f;
             }
             if ((f12 != f10 && j3 != 2) || diVar.s2.g()) {
-                Paint paint = org.telegram.ui.ActionBar.k6.t0;
+                Paint paint = org.telegram.ui.ActionBar.l6.t0;
                 if (diVar.s2.g()) {
                     customBackground = diVar.s2.getCustomActionBarBackground();
                 }
                 paint.setColor(customBackground);
-                org.telegram.ui.ActionBar.k6.t0.setAlpha(alpha2);
+                org.telegram.ui.ActionBar.l6.t0.setAlpha(alpha2);
                 rectF.set(diVar.t0, diVar.s0 + c12, getMeasuredWidth() - diVar.t0, org.telegram.messenger.g0.L(f13) + diVar.s0 + c12);
             }
             if (diVar.s2.g()) {
-                org.telegram.ui.ActionBar.k6.t0.setColor(diVar.s2.getCustomActionBarBackground());
-                org.telegram.ui.ActionBar.k6.t0.setAlpha(alpha2);
+                org.telegram.ui.ActionBar.l6.t0.setColor(diVar.s2.getCustomActionBarBackground());
+                org.telegram.ui.ActionBar.l6.t0.setAlpha(alpha2);
                 int c13 = diVar.c1(0);
                 if (!z9) {
                     c13 += org.telegram.messenger.g0.m;
                 }
                 rectF.set(diVar.t0, (org.telegram.messenger.g0.L(12.0f) + diVar.s0 + c12) * f12, getMeasuredWidth() - diVar.t0, org.telegram.messenger.g0.L(12.0f) + c13);
                 canvas.save();
-                canvas.drawRect(rectF, org.telegram.ui.ActionBar.k6.t0);
+                canvas.drawRect(rectF, org.telegram.ui.ActionBar.l6.t0);
                 canvas.restore();
             }
             if ((dhVar == null || dhVar.getAlpha() != f10) && f12 != 0.0f) {
@@ -158,7 +158,7 @@ public final class qh extends rt0 {
                     }
                     f14 = f10;
                 } else {
-                    w02 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.wj, diVar.I0);
+                    w02 = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.wj, diVar.I0);
                     if (dhVar != null) {
                         alpha = dhVar.getAlpha();
                         f14 = f10 - alpha;
@@ -166,9 +166,9 @@ public final class qh extends rt0 {
                     f14 = f10;
                 }
                 int alpha4 = Color.alpha(w02);
-                org.telegram.ui.ActionBar.k6.t0.setColor(w02);
-                org.telegram.ui.ActionBar.k6.t0.setAlpha((int) (vhVar2.getAlpha() * alpha4 * f14 * f12));
-                canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f), org.telegram.ui.ActionBar.k6.t0);
+                org.telegram.ui.ActionBar.l6.t0.setColor(w02);
+                org.telegram.ui.ActionBar.l6.t0.setAlpha((int) (vhVar2.getAlpha() * alpha4 * f14 * f12));
+                canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f), org.telegram.ui.ActionBar.l6.t0);
             }
             canvas.restore();
         }
@@ -333,8 +333,8 @@ public final class qh extends rt0 {
             diVar.r0.setBounds(0, c13, getMeasuredWidth(), i13);
             diVar.r0.draw(canvas);
             if (j11 == 2) {
-                org.telegram.ui.ActionBar.k6.t0.setColor(customBackground);
-                org.telegram.ui.ActionBar.k6.t0.setAlpha(alpha3);
+                org.telegram.ui.ActionBar.l6.t0.setColor(customBackground);
+                org.telegram.ui.ActionBar.l6.t0.setAlpha(alpha3);
                 rectF.set(diVar.t0, diVar.s0 + c13, getMeasuredWidth() - diVar.t0, org.telegram.messenger.g0.L(24.0f) + diVar.s0 + c13);
             }
         } else {
@@ -350,8 +350,8 @@ public final class qh extends rt0 {
         }
         if (z10) {
             if (f14 != 1.0f && j11 != 2) {
-                org.telegram.ui.ActionBar.k6.t0.setColor(customBackground);
-                org.telegram.ui.ActionBar.k6.t0.setAlpha(alpha3);
+                org.telegram.ui.ActionBar.l6.t0.setColor(customBackground);
+                org.telegram.ui.ActionBar.l6.t0.setAlpha(alpha3);
                 rectF.set(diVar.t0, diVar.s0 + c13, getMeasuredWidth() - diVar.t0, org.telegram.messenger.g0.L(f15) + diVar.s0 + c13);
             }
             if ((dhVar == null || dhVar.getAlpha() != 1.0f) && f14 != f12) {
@@ -361,20 +361,20 @@ public final class qh extends rt0 {
                     w02 = TLObject.FLAG_29;
                     alpha = f14;
                 } else {
-                    w02 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.wj, diVar.I0);
+                    w02 = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.wj, diVar.I0);
                     alpha = dhVar == null ? 1.0f : 1.0f - dhVar.getAlpha();
                 }
                 int alpha4 = Color.alpha(w02);
-                org.telegram.ui.ActionBar.k6.t0.setColor(w02);
-                org.telegram.ui.ActionBar.k6.t0.setAlpha((int) (view.getAlpha() * alpha4 * alpha * f14));
-                canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f), org.telegram.ui.ActionBar.k6.t0);
+                org.telegram.ui.ActionBar.l6.t0.setColor(w02);
+                org.telegram.ui.ActionBar.l6.t0.setAlpha((int) (view.getAlpha() * alpha4 * alpha * f14));
+                canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f), org.telegram.ui.ActionBar.l6.t0);
             }
         }
         canvas.restore();
         return drawChild;
     }
 
-    @Override // org.telegram.ui.Components.rt0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.tt0, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         ph phVar = this.j0;
@@ -385,7 +385,7 @@ public final class qh extends rt0 {
         diVar.J2.setAdjustPanLayoutHelper(phVar);
     }
 
-    @Override // org.telegram.ui.Components.rt0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.tt0, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.j0.d();
@@ -430,7 +430,7 @@ public final class qh extends rt0 {
     /* JADX WARN: Removed duplicated region for block: B:77:0x012b  */
     /* JADX WARN: Removed duplicated region for block: B:84:0x0156  */
     /* JADX WARN: Removed duplicated region for block: B:88:0x015f  */
-    @Override // org.telegram.ui.Components.rt0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.tt0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -837,7 +837,7 @@ public final class qh extends rt0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.rt0
+    @Override // org.telegram.ui.Components.tt0
     public final void H(Canvas canvas, float f10, Rect rect, Paint paint, boolean z9) {
     }
 }

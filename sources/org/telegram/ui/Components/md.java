@@ -2,26 +2,26 @@ package org.telegram.ui.Components;
 
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class md implements org.telegram.messenger.z10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ ChatActivityEnterView b;
     public final /* synthetic */ long c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f6 d;
+    public final /* synthetic */ org.telegram.ui.ActionBar.g6 d;
 
-    public /* synthetic */ md(ChatActivityEnterView chatActivityEnterView, long j3, org.telegram.ui.ActionBar.f6 f6Var, int i7) {
+    public /* synthetic */ md(ChatActivityEnterView chatActivityEnterView, long j3, org.telegram.ui.ActionBar.g6 g6Var, int i7) {
         this.a = i7;
         this.b = chatActivityEnterView;
         this.c = j3;
-        this.d = f6Var;
+        this.d = g6Var;
     }
 
     @Override // org.telegram.messenger.z10
     public final void a(Object obj, Object obj2, Object obj3, Object obj4) {
         int i7 = this.a;
         int i10 = 0;
-        org.telegram.ui.ActionBar.f6 f6Var = this.d;
+        org.telegram.ui.ActionBar.g6 g6Var = this.d;
         long j3 = this.c;
         switch (i7) {
             case 0:
@@ -35,7 +35,7 @@ public final /* synthetic */ class md implements org.telegram.messenger.z10 {
                     chatActivityEnterView.T0(bool.booleanValue(), num.intValue(), num2.intValue(), 0L, true);
                     break;
                 } else {
-                    v4.J(chatActivityEnterView.O2, j3, new zd(chatActivityEnterView, 0), f6Var);
+                    v4.J(chatActivityEnterView.O2, j3, new zd(chatActivityEnterView, 0), g6Var);
                     break;
                 }
                 break;
@@ -50,7 +50,7 @@ public final /* synthetic */ class md implements org.telegram.messenger.z10 {
                         chatActivityEnterView2.T0(bool2.booleanValue(), num3.intValue(), num4.intValue(), 0L, true);
                         break;
                     } else {
-                        v4.J(chatActivityEnterView2.O2, j3, new ae(chatActivityEnterView2, i10), f6Var);
+                        v4.J(chatActivityEnterView2.O2, j3, new ae(chatActivityEnterView2, i10), g6Var);
                         break;
                     }
                 } else {

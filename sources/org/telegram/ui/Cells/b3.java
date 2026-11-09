@@ -15,15 +15,15 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.w70;
+import org.telegram.ui.Components.x70;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class b3 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
+public final class b3 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public final LinearLayout a;
     public final LinearLayout b;
     public final org.telegram.ui.Components.q5 c;
-    public final w70 d;
+    public final x70 d;
     public final ImageView e;
     public final ImageView f;
     public final org.telegram.ui.Components.l9 h;
@@ -54,14 +54,14 @@ public final class b3 extends FrameLayout implements org.telegram.ui.ActionBar.a
         q5Var.setTypeface(org.telegram.messenger.g0.o());
         q5Var.setMaxLines(5);
         linearLayout.addView(q5Var, c8.ha.p(-2, -2, 0.0f, (id.a0 ? 5 : 3) | 48));
-        w70 w70Var = new w70(context, null);
-        this.d = w70Var;
-        w70Var.setTextSize(1, 13.0f);
-        w70Var.setEllipsize(truncateAt);
-        w70Var.setMaxLines(5);
-        linearLayout.addView(w70Var, c8.ha.p(-1, -2, 0.0f, 48));
+        x70 x70Var = new x70(context, null);
+        this.d = x70Var;
+        x70Var.setTextSize(1, 13.0f);
+        x70Var.setEllipsize(truncateAt);
+        x70Var.setMaxLines(5);
+        linearLayout.addView(x70Var, c8.ha.p(-1, -2, 0.0f, 48));
         qs.i(q5Var);
-        qs.i(w70Var);
+        qs.i(x70Var);
         LinearLayout linearLayout2 = new LinearLayout(context);
         this.a = linearLayout2;
         linearLayout2.setOrientation(0);
@@ -176,24 +176,24 @@ public final class b3 extends FrameLayout implements org.telegram.ui.ActionBar.a
         imageView.setOnClickListener(onClickListener);
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
-        this.c.setTextColor(org.telegram.ui.ActionBar.k6.x0(null, this.r ? org.telegram.ui.ActionBar.k6.q7 : org.telegram.ui.ActionBar.k6.G6, false));
-        int i7 = org.telegram.ui.ActionBar.k6.y6;
-        int x02 = org.telegram.ui.ActionBar.k6.x0(null, i7, false);
-        w70 w70Var = this.d;
-        w70Var.setTextColor(x02);
-        w70Var.setLinkTextColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Uc, false));
-        int x03 = org.telegram.ui.ActionBar.k6.x0(null, i7, false);
+        this.c.setTextColor(org.telegram.ui.ActionBar.l6.x0(null, this.r ? org.telegram.ui.ActionBar.l6.q7 : org.telegram.ui.ActionBar.l6.G6, false));
+        int i7 = org.telegram.ui.ActionBar.l6.y6;
+        int x02 = org.telegram.ui.ActionBar.l6.x0(null, i7, false);
+        x70 x70Var = this.d;
+        x70Var.setTextColor(x02);
+        x70Var.setLinkTextColor(org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.Uc, false));
+        int x03 = org.telegram.ui.ActionBar.l6.x0(null, i7, false);
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
         this.e.setColorFilter(x03, mode);
-        int x04 = org.telegram.ui.ActionBar.k6.x0(null, i7, false);
+        int x04 = org.telegram.ui.ActionBar.l6.x0(null, i7, false);
         ImageView imageView = this.f;
         imageView.setColorFilter(x04, mode);
-        imageView.setBackground(org.telegram.ui.ActionBar.z5.c(null, org.telegram.ui.ActionBar.z5.b(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.z5.a, false))));
+        imageView.setBackground(org.telegram.ui.ActionBar.a6.c(null, org.telegram.ui.ActionBar.a6.b(org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.a6.a, false))));
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 

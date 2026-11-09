@@ -6,7 +6,7 @@ import org.telegram.SQLite.SQLiteCursor;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class fg implements Runnable {
     public final /* synthetic */ int a;
@@ -211,7 +211,7 @@ public final /* synthetic */ class fg implements Runnable {
                                                 i11 = i7;
                                                 sQLiteCursor2 = sQLiteCursor;
                                                 i10 = 0;
-                                                g0.h3(new l2.a0(uiVar9, sQLiteCursor2, i11, i10, 2));
+                                                g0.h3(new l2.z(uiVar9, sQLiteCursor2, i11, i10, 2));
                                                 return;
                                             }
                                         }
@@ -234,7 +234,7 @@ public final /* synthetic */ class fg implements Runnable {
                                         i11 = i7;
                                         sQLiteCursor2 = sQLiteCursor;
                                         i10 = 0;
-                                        g0.h3(new l2.a0(uiVar9, sQLiteCursor2, i11, i10, 2));
+                                        g0.h3(new l2.z(uiVar9, sQLiteCursor2, i11, i10, 2));
                                         return;
                                     }
                                 } else {
@@ -261,7 +261,7 @@ public final /* synthetic */ class fg implements Runnable {
                         sQLiteCursor = null;
                         i7 = 0;
                     }
-                    g0.h3(new l2.a0(uiVar9, sQLiteCursor2, i11, i10, 2));
+                    g0.h3(new l2.z(uiVar9, sQLiteCursor2, i11, i10, 2));
                     return;
                 } catch (Throwable th3) {
                     th = th3;

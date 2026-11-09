@@ -6,11 +6,11 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.text.TextPaint;
-import di.m4;
+import di.n4;
 import java.util.ArrayList;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.l6;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class k extends g {
     @Override // lg.g
@@ -46,7 +46,7 @@ public final class k extends g {
                     if (animator != null) {
                         animator.cancel();
                     }
-                    ValueAnimator e10 = g.e(this.j0, this.l0, new m4(this, 4));
+                    ValueAnimator e10 = g.e(this.j0, this.l0, new n4(this, 4));
                     this.d0 = e10;
                     e10.start();
                 }
@@ -441,7 +441,7 @@ public final class k extends g {
                     } else {
                         if (charSequenceArr == null || arrayList.size() < 2) {
                             i13 = i19;
-                            textPaint2.setColor(k6.w0(k6.Mj, this.W0));
+                            textPaint2.setColor(l6.w0(l6.Mj, this.W0));
                             textPaint2.setAlpha((int) com.google.android.recaptcha.internal.a.D(dVar2.f, this.f, f13, f10));
                         } else {
                             i13 = i19;

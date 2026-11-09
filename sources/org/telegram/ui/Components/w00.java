@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ScrollView;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public class w00 extends ScrollView {
     public final int a;
@@ -34,13 +34,13 @@ public class w00 extends ScrollView {
         addView(v00Var, c8.ha.c(-2.0f, -1));
     }
 
-    public void a(c20 c20Var) {
+    public void a(d20 d20Var) {
         v00 v00Var = this.d;
         ArrayList arrayList = v00Var.c;
         w00 w00Var = v00Var.r;
-        w00Var.c.add(c20Var);
-        if (!c20Var.d) {
-            w00Var.b.k(c20Var, c20Var.getUid());
+        w00Var.c.add(d20Var);
+        if (!d20Var.d) {
+            w00Var.b.k(d20Var, d20Var.getUid());
         }
         AnimatorSet animatorSet = v00Var.a;
         if (animatorSet != null && animatorSet.isRunning()) {
@@ -52,12 +52,12 @@ public class w00 extends ScrollView {
         v00Var.a = animatorSet2;
         animatorSet2.addListener(new u00(v00Var, 1));
         v00Var.a.setDuration(150L);
-        v00Var.d = c20Var;
+        v00Var.d = d20Var;
         arrayList.clear();
-        arrayList.add(ObjectAnimator.ofFloat(v00Var.d, (Property<c20, Float>) View.SCALE_X, 0.01f, 1.0f));
-        arrayList.add(ObjectAnimator.ofFloat(v00Var.d, (Property<c20, Float>) View.SCALE_Y, 0.01f, 1.0f));
-        arrayList.add(ObjectAnimator.ofFloat(v00Var.d, (Property<c20, Float>) View.ALPHA, 0.0f, 1.0f));
-        v00Var.addView(c20Var);
+        arrayList.add(ObjectAnimator.ofFloat(v00Var.d, (Property<d20, Float>) View.SCALE_X, 0.01f, 1.0f));
+        arrayList.add(ObjectAnimator.ofFloat(v00Var.d, (Property<d20, Float>) View.SCALE_Y, 0.01f, 1.0f));
+        arrayList.add(ObjectAnimator.ofFloat(v00Var.d, (Property<d20, Float>) View.ALPHA, 0.0f, 1.0f));
+        v00Var.addView(d20Var);
     }
 
     public void b() {
@@ -72,7 +72,7 @@ public class w00 extends ScrollView {
         arrayList4.clear();
         arrayList4.addAll(arrayList3);
         for (int i7 = 0; i7 < arrayList3.size(); i7++) {
-            ((c20) arrayList3.get(i7)).setOnClickListener(null);
+            ((d20) arrayList3.get(i7)).setOnClickListener(null);
         }
         AnimatorSet animatorSet = v00Var.a;
         if (animatorSet != null && animatorSet.isRunning()) {
@@ -85,25 +85,25 @@ public class w00 extends ScrollView {
         animatorSet2.addListener(new ah.l(29, v00Var, arrayList3));
         arrayList.clear();
         for (int i10 = 0; i10 < arrayList3.size(); i10++) {
-            c20 c20Var = (c20) arrayList3.get(i10);
-            arrayList.add(ObjectAnimator.ofFloat(c20Var, (Property<c20, Float>) View.SCALE_X, 1.0f, 0.01f));
-            arrayList.add(ObjectAnimator.ofFloat(c20Var, (Property<c20, Float>) View.SCALE_Y, 1.0f, 0.01f));
-            arrayList.add(ObjectAnimator.ofFloat(c20Var, (Property<c20, Float>) View.ALPHA, 1.0f, 0.0f));
+            d20 d20Var = (d20) arrayList3.get(i10);
+            arrayList.add(ObjectAnimator.ofFloat(d20Var, (Property<d20, Float>) View.SCALE_X, 1.0f, 0.01f));
+            arrayList.add(ObjectAnimator.ofFloat(d20Var, (Property<d20, Float>) View.SCALE_Y, 1.0f, 0.01f));
+            arrayList.add(ObjectAnimator.ofFloat(d20Var, (Property<d20, Float>) View.ALPHA, 1.0f, 0.0f));
         }
         v00Var.requestLayout();
     }
 
-    public void c(c20 c20Var) {
+    public void c(d20 d20Var) {
         v00 v00Var = this.d;
         ArrayList arrayList = v00Var.e;
         ArrayList arrayList2 = v00Var.c;
         w00 w00Var = v00Var.r;
         w00Var.h = true;
-        if (!c20Var.d) {
-            w00Var.b.l(c20Var.getUid());
+        if (!d20Var.d) {
+            w00Var.b.l(d20Var.getUid());
         }
-        w00Var.c.remove(c20Var);
-        c20Var.setOnClickListener(null);
+        w00Var.c.remove(d20Var);
+        d20Var.setOnClickListener(null);
         AnimatorSet animatorSet = v00Var.a;
         if (animatorSet != null) {
             animatorSet.setupEndValues();
@@ -112,14 +112,14 @@ public class w00 extends ScrollView {
         v00Var.b = false;
         AnimatorSet animatorSet2 = new AnimatorSet();
         v00Var.a = animatorSet2;
-        animatorSet2.addListener(new ah.l(28, v00Var, c20Var));
+        animatorSet2.addListener(new ah.l(28, v00Var, d20Var));
         v00Var.a.setDuration(150L);
         arrayList.clear();
-        arrayList.add(c20Var);
+        arrayList.add(d20Var);
         arrayList2.clear();
-        arrayList2.add(ObjectAnimator.ofFloat(c20Var, (Property<c20, Float>) View.SCALE_X, 1.0f, 0.01f));
-        arrayList2.add(ObjectAnimator.ofFloat(c20Var, (Property<c20, Float>) View.SCALE_Y, 1.0f, 0.01f));
-        arrayList2.add(ObjectAnimator.ofFloat(c20Var, (Property<c20, Float>) View.ALPHA, 1.0f, 0.0f));
+        arrayList2.add(ObjectAnimator.ofFloat(d20Var, (Property<d20, Float>) View.SCALE_X, 1.0f, 0.01f));
+        arrayList2.add(ObjectAnimator.ofFloat(d20Var, (Property<d20, Float>) View.SCALE_Y, 1.0f, 0.01f));
+        arrayList2.add(ObjectAnimator.ofFloat(d20Var, (Property<d20, Float>) View.ALPHA, 1.0f, 0.0f));
         v00Var.requestLayout();
     }
 

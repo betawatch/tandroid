@@ -1,60 +1,202 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
+import android.R;
+import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.RippleDrawable;
+import android.text.TextUtils;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.ScrollView;
-import android.widget.TextView;
-import org.telegram.tgnet.TLObject;
+import android.widget.LinearLayout;
+import org.telegram.tgnet.tl.TL_chatlists;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public abstract class yx extends FrameLayout {
-    public float[] D;
-    public FrameLayout a;
-    public org.telegram.ui.ActionBar.k5 b;
-    public org.telegram.ui.ActionBar.k5 c;
-    public ImageView d;
-    public xx e;
-    public bi.md f;
-    public bi.md h;
-    public TextView n;
-    public org.telegram.ui.ActionBar.f2 r;
-    public String s;
-    public float w;
-    public ValueAnimator x;
-    public org.telegram.ui.ActionBar.g1 y;
+public final /* synthetic */ class yx implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ gy b;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r3v0, types: [android.widget.FrameLayout] */
-    /* JADX WARN: Type inference failed for: r3v1, types: [android.view.View] */
-    /* JADX WARN: Type inference failed for: r3v9, types: [android.view.View] */
-    public static void a(FrameLayout frameLayout, FrameLayout frameLayout2, float[] fArr) {
-        float f10 = 0.0f;
-        float f11 = 0.0f;
-        while (frameLayout != frameLayout2) {
-            float y10 = frameLayout.getY() + f10;
-            f11 += frameLayout.getX();
-            if (frameLayout instanceof ScrollView) {
-                y10 -= frameLayout.getScrollY();
-            }
-            f10 = y10;
-            if (!(frameLayout.getParent() instanceof View)) {
-                break;
-            }
-            frameLayout = (View) frameLayout.getParent();
-            if (!(frameLayout instanceof ViewGroup)) {
-                return;
-            }
-        }
-        fArr[0] = f11 - frameLayout2.getPaddingLeft();
-        fArr[1] = f10 - frameLayout2.getPaddingTop();
+    public /* synthetic */ yx(gy gyVar, int i7) {
+        this.a = i7;
+        this.b = gyVar;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(127.0f), TLObject.FLAG_30));
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        float f10;
+        int i7 = this.a;
+        int i10 = 6;
+        int i11 = 0;
+        gy gyVar = this.b;
+        int i12 = 1;
+        switch (i7) {
+            case 0:
+                String str = gyVar.s;
+                if (str != null) {
+                    org.telegram.messenger.g0.g(str);
+                    org.telegram.messenger.camera.q.r(null, 2131748921, org.telegram.ui.Components.hc.a0(gyVar.r));
+                    break;
+                }
+                break;
+            case 1:
+                gy gyVar2 = this.b;
+                FrameLayout frameLayout = gyVar2.a;
+                if (frameLayout.getBackground() instanceof RippleDrawable) {
+                    frameLayout.getBackground().setState(new int[]{R.attr.state_pressed, R.attr.state_enabled});
+                    gyVar2.postDelayed(new dh(gyVar2, 29), 180L);
+                }
+                float[] fArr = gyVar2.D;
+                if (gyVar2.y == null && gyVar2.s != null) {
+                    ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(gyVar2.getContext(), null);
+                    org.telegram.ui.ActionBar.z0 z0Var = new org.telegram.ui.ActionBar.z0(gyVar2.getContext(), true, false);
+                    z0Var.j(org.telegram.messenger.id.M0(2131751264, null), org.telegram.messenger.beta.R.drawable.msg_edit, null);
+                    actionBarPopupWindow$ActionBarPopupWindowLayout.a(z0Var, c8.ha.o(-1, 48));
+                    z0Var.setOnClickListener(new yx(gyVar2, 4));
+                    org.telegram.ui.ActionBar.z0 z0Var2 = new org.telegram.ui.ActionBar.z0(gyVar2.getContext(), false, false);
+                    z0Var2.j(org.telegram.messenger.id.M0(2131750472, null), org.telegram.messenger.beta.R.drawable.msg_qrcode, null);
+                    actionBarPopupWindow$ActionBarPopupWindowLayout.a(z0Var2, c8.ha.o(-1, 48));
+                    z0Var2.setOnClickListener(new yx(gyVar2, 5));
+                    org.telegram.ui.ActionBar.z0 z0Var3 = new org.telegram.ui.ActionBar.z0(gyVar2.getContext(), false, true);
+                    z0Var3.j(org.telegram.messenger.id.M0(2131751534, null), org.telegram.messenger.beta.R.drawable.msg_delete, null);
+                    int i13 = org.telegram.ui.ActionBar.l6.p7;
+                    z0Var3.c(i13, i13);
+                    z0Var3.h(0.12f, i13);
+                    z0Var3.setOnClickListener(new yx(gyVar2, i10));
+                    actionBarPopupWindow$ActionBarPopupWindowLayout.a(z0Var3, c8.ha.o(-1, 48));
+                    FrameLayout overlayContainerView = gyVar2.r.getParentLayout().getOverlayContainerView();
+                    if (overlayContainerView != null) {
+                        ay.a(frameLayout, overlayContainerView, fArr);
+                        float f11 = fArr[1];
+                        fi.p5 p5Var = new fi.p5(gyVar2, gyVar2.getContext(), overlayContainerView, 11);
+                        e7 e7Var = new e7(p5Var, i12);
+                        overlayContainerView.getViewTreeObserver().addOnPreDrawListener(e7Var);
+                        overlayContainerView.addView(p5Var, c8.ha.c(-1.0f, -1));
+                        p5Var.setAlpha(0.0f);
+                        p5Var.animate().alpha(1.0f).setDuration(150L);
+                        actionBarPopupWindow$ActionBarPopupWindowLayout.measure(View.MeasureSpec.makeMeasureSpec(overlayContainerView.getMeasuredWidth(), 0), View.MeasureSpec.makeMeasureSpec(overlayContainerView.getMeasuredHeight(), 0));
+                        org.telegram.ui.ActionBar.g1 g1Var = new org.telegram.ui.ActionBar.g1(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
+                        gyVar2.y = g1Var;
+                        g1Var.setOnDismissListener(new org.telegram.ui.Components.n70(gyVar2, p5Var, overlayContainerView, e7Var, 1));
+                        gyVar2.y.setOutsideTouchable(true);
+                        gyVar2.y.setFocusable(true);
+                        gyVar2.y.setBackgroundDrawable(new ColorDrawable(0));
+                        gyVar2.y.setAnimationStyle(org.telegram.messenger.beta.R.style.PopupContextAnimation);
+                        gyVar2.y.setInputMethodMode(2);
+                        gyVar2.y.setSoftInputMode(0);
+                        actionBarPopupWindow$ActionBarPopupWindowLayout.setDispatchKeyEventListener(new yr(gyVar2, 11));
+                        if (org.telegram.messenger.g0.Q1()) {
+                            f11 += overlayContainerView.getPaddingTop();
+                            f10 = 0.0f - overlayContainerView.getPaddingLeft();
+                        } else {
+                            f10 = 0.0f;
+                        }
+                        gyVar2.y.showAtLocation(overlayContainerView, 0, (int) (overlayContainerView.getX() + ((overlayContainerView.getMeasuredWidth() - actionBarPopupWindow$ActionBarPopupWindowLayout.getMeasuredWidth()) - org.telegram.messenger.g0.L(16.0f)) + f10), (int) (overlayContainerView.getY() + f11 + frameLayout.getMeasuredHeight()));
+                        break;
+                    }
+                }
+                break;
+            case 2:
+                String str2 = gyVar.s;
+                if (str2 != null) {
+                    org.telegram.messenger.g0.g(str2);
+                    org.telegram.messenger.camera.q.r(null, 2131748921, org.telegram.ui.Components.hc.a0(gyVar.r));
+                    break;
+                }
+                break;
+            case 3:
+                if (gyVar.s != null) {
+                    try {
+                        Intent intent = new Intent("android.intent.action.SEND");
+                        intent.setType("text/plain");
+                        intent.putExtra("android.intent.extra.TEXT", gyVar.s);
+                        gyVar.r.startActivityForResult(Intent.createChooser(intent, org.telegram.messenger.id.M0(2131749110, null)), 500);
+                        break;
+                    } catch (Exception e10) {
+                        org.telegram.messenger.a8.g(e10, true);
+                        return;
+                    }
+                }
+                break;
+            case 4:
+                org.telegram.ui.ActionBar.g1 g1Var2 = gyVar.y;
+                if (g1Var2 != null) {
+                    g1Var2.d(true);
+                }
+                iy iyVar = gyVar.E.c;
+                TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite = iyVar.d;
+                if (tL_exportedChatlistInvite != null && tL_exportedChatlistInvite.url != null) {
+                    EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(gyVar.getContext());
+                    editTextBoldCursor.setBackgroundDrawable(org.telegram.ui.ActionBar.l6.U(gyVar.getContext()));
+                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(gyVar.getContext());
+                    int i14 = org.telegram.ui.ActionBar.l6.H5;
+                    org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
+                    u1Var.I = i14;
+                    u1Var.R = org.telegram.messenger.id.M0(2131750764, null);
+                    alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), new cy(editTextBoldCursor, i11));
+                    LinearLayout linearLayout = new LinearLayout(gyVar.getContext());
+                    linearLayout.setOrientation(1);
+                    alertDialog$Builder.o(linearLayout);
+                    editTextBoldCursor.setTextSize(1, 16.0f);
+                    int i15 = org.telegram.ui.ActionBar.l6.j5;
+                    org.telegram.ui.ActionBar.s6.U(editTextBoldCursor, i15, null);
+                    editTextBoldCursor.setMaxLines(1);
+                    editTextBoldCursor.setLines(1);
+                    editTextBoldCursor.setInputType(16385);
+                    editTextBoldCursor.setGravity(51);
+                    editTextBoldCursor.setSingleLine(true);
+                    editTextBoldCursor.setImeOptions(6);
+                    editTextBoldCursor.setHint(iyVar.c.b);
+                    org.telegram.ui.ActionBar.s6.D(editTextBoldCursor, org.telegram.ui.ActionBar.l6.t5, null);
+                    org.telegram.ui.ActionBar.s6.l(editTextBoldCursor, 30, i15, null);
+                    editTextBoldCursor.setCursorSize(org.telegram.messenger.g0.L(20.0f));
+                    editTextBoldCursor.setCursorWidth(1.5f);
+                    editTextBoldCursor.setPadding(0, org.telegram.messenger.g0.L(4.0f), 0, 0);
+                    linearLayout.addView(editTextBoldCursor, c8.ha.t(-1, 36, 51, 24, 6, 24, 0));
+                    editTextBoldCursor.setOnEditorActionListener(new dy(alertDialog$Builder, i11));
+                    editTextBoldCursor.addTextChangedListener(new fy(editTextBoldCursor, i11));
+                    if (!TextUtils.isEmpty(tL_exportedChatlistInvite.title)) {
+                        editTextBoldCursor.setText(tL_exportedChatlistInvite.title);
+                        editTextBoldCursor.setSelection(editTextBoldCursor.length());
+                    }
+                    alertDialog$Builder.k(org.telegram.messenger.id.M0(2131745946, null), new a7(gyVar, editTextBoldCursor, alertDialog$Builder, 13));
+                    u1Var.setOnShowListener(new hp(i12, editTextBoldCursor));
+                    u1Var.setOnDismissListener(new ey(editTextBoldCursor, i11));
+                    u1Var.show();
+                    u1Var.p(org.telegram.ui.ActionBar.l6.x0(null, i15, false));
+                    editTextBoldCursor.requestFocus();
+                    break;
+                }
+                break;
+            case 5:
+                org.telegram.ui.ActionBar.g1 g1Var3 = gyVar.y;
+                if (g1Var3 != null) {
+                    g1Var3.d(true);
+                }
+                if (gyVar.s != null) {
+                    org.telegram.ui.Components.mg0 mg0Var = new org.telegram.ui.Components.mg0(gyVar.getContext(), org.telegram.messenger.id.M0(2131749170, null), gyVar.s, org.telegram.messenger.id.M0(2131746506, null), false);
+                    mg0Var.I0();
+                    mg0Var.show();
+                    break;
+                }
+                break;
+            default:
+                org.telegram.ui.ActionBar.g1 g1Var4 = gyVar.y;
+                if (g1Var4 != null) {
+                    g1Var4.d(true);
+                }
+                TL_chatlists.TL_chatlists_deleteExportedInvite tL_chatlists_deleteExportedInvite = new TL_chatlists.TL_chatlists_deleteExportedInvite();
+                TL_chatlists.TL_inputChatlistDialogFilter tL_inputChatlistDialogFilter = new TL_chatlists.TL_inputChatlistDialogFilter();
+                tL_chatlists_deleteExportedInvite.chatlist = tL_inputChatlistDialogFilter;
+                iy iyVar2 = gyVar.E.c;
+                tL_inputChatlistDialogFilter.filter_id = iyVar2.c.a;
+                tL_chatlists_deleteExportedInvite.slug = iyVar2.g0();
+                org.telegram.ui.ActionBar.u1 u1Var2 = new org.telegram.ui.ActionBar.u1(3, gyVar.getContext(), null);
+                u1Var2.r(180L);
+                iyVar2.getConnectionsManager().sendRequest(tL_chatlists_deleteExportedInvite, new ld(25, gyVar, u1Var2));
+                break;
+        }
     }
 }

@@ -5,7 +5,7 @@ import java.util.Comparator;
 import org.telegram.messenger.ij;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class a1 implements Comparator {
     public final /* synthetic */ ArrayList a;
@@ -45,8 +45,8 @@ public final class a1 implements Comparator {
     public final int compare(Object obj, Object obj2) {
         h1 h1Var = (h1) obj;
         h1 h1Var2 = (h1) obj2;
-        boolean L2 = ij.L2(h1Var.a, true);
-        if (L2 == ij.L2(h1Var2.a, true)) {
+        boolean K2 = ij.K2(h1Var.a, true);
+        if (K2 == ij.K2(h1Var2.a, true)) {
             int a10 = a(h1Var);
             int a11 = a(h1Var2);
             if (a10 > a11) {
@@ -55,7 +55,7 @@ public final class a1 implements Comparator {
             if (a10 >= a11) {
                 return 0;
             }
-        } else if (L2) {
+        } else if (K2) {
             return -1;
         }
         return 1;

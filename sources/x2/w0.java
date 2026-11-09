@@ -11,14 +11,14 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import l2.t1;
-import org.telegram.ui.hy0;
+import org.telegram.ui.ky0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class w0 implements e0, f3.q, b3.j, b3.m, a1 {
     public static final Map i0;
     public static final e2.u j0;
-    public final hy0 D;
+    public final ky0 D;
     public final h2.i E;
     public final p0 F;
     public final p0 G;
@@ -73,7 +73,7 @@ public final class w0 implements e0, f3.q, b3.j, b3.m, a1 {
         j0 = new e2.u(tVar);
     }
 
-    public w0(Uri uri, j2.h hVar, hy0 hy0Var, q2.m mVar, q2.j jVar, pb.b bVar, wa waVar, y0 y0Var, h6.m mVar2, String str, int i7, e2.u uVar, long j3, c3.a aVar) {
+    public w0(Uri uri, j2.h hVar, ky0 ky0Var, q2.m mVar, q2.j jVar, pb.b bVar, wa waVar, y0 y0Var, h6.m mVar2, String str, int i7, e2.u uVar, long j3, c3.a aVar) {
         this.a = uri;
         this.b = hVar;
         this.c = mVar;
@@ -86,7 +86,7 @@ public final class w0 implements e0, f3.q, b3.j, b3.m, a1 {
         this.s = i7;
         this.w = uVar;
         this.y = aVar != null ? new b3.o(aVar) : new b3.o("ProgressiveMediaPeriod");
-        this.D = hy0Var;
+        this.D = ky0Var;
         this.x = j3;
         this.E = new h2.i();
         this.F = new p0(this, 1);
@@ -226,13 +226,13 @@ public final class w0 implements e0, f3.q, b3.j, b3.m, a1 {
                 b1Var.g = null;
             }
         }
-        hy0 hy0Var = this.D;
-        f3.o oVar = (f3.o) hy0Var.c;
+        ky0 ky0Var = this.D;
+        f3.o oVar = (f3.o) ky0Var.c;
         if (oVar != null) {
             oVar.release();
-            hy0Var.c = null;
+            ky0Var.c = null;
         }
-        hy0Var.d = null;
+        ky0Var.d = null;
     }
 
     @Override // x2.e1
@@ -242,7 +242,7 @@ public final class w0 implements e0, f3.q, b3.j, b3.m, a1 {
 
     @Override // f3.q
     public final void f(f3.c0 c0Var) {
-        this.H.post(new u9.f(28, this, c0Var));
+        this.H.post(new u9.f(29, this, c0Var));
     }
 
     @Override // x2.e1

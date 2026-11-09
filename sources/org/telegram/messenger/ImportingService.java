@@ -5,7 +5,7 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public class ImportingService extends Service implements ls {
     public e0.q a;
@@ -81,13 +81,13 @@ public class ImportingService extends Service implements ls {
             int i12 = 0;
             while (true) {
                 if (i12 >= 4) {
-                    this.a.p(id.M0(2131749267, null));
-                    this.a.f(id.M0(2131749267, null));
+                    this.a.p(id.M0(2131749266, null));
+                    this.a.f(id.M0(2131749266, null));
                     break;
                 }
                 if (gz.C(i12).D.m() != 0) {
-                    this.a.p(id.M0(2131749268, null));
-                    this.a.f(id.M0(2131749268, null));
+                    this.a.p(id.M0(2131749267, null));
+                    this.a.f(id.M0(2131749267, null));
                     break;
                 }
                 i12++;

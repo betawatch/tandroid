@@ -8,7 +8,7 @@ import android.os.SystemClock;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class zl {
     public long i;
@@ -19,7 +19,7 @@ public final class zl {
     public float q;
     public float r;
     public float s;
-    public my0 u;
+    public ny0 u;
     public long v;
     public final org.telegram.ui.ActionBar.t4 x;
     public final m.c3 y;
@@ -40,9 +40,9 @@ public final class zl {
 
     public zl(am amVar) {
         this.z = amVar;
-        org.telegram.ui.ActionBar.f6 f6Var = amVar.P.n;
-        Drawable drawable = f6Var != null ? f6Var.getDrawable("drawableMsgOutMedia") : null;
-        this.x = (org.telegram.ui.ActionBar.t4) (drawable == null ? org.telegram.ui.ActionBar.k6.R0("drawableMsgOutMedia") : drawable);
+        org.telegram.ui.ActionBar.g6 g6Var = amVar.P.n;
+        Drawable drawable = g6Var != null ? g6Var.getDrawable("drawableMsgOutMedia") : null;
+        this.x = (org.telegram.ui.ActionBar.t4) (drawable == null ? org.telegram.ui.ActionBar.l6.R0("drawableMsgOutMedia") : drawable);
         this.y = new m.c3();
     }
 

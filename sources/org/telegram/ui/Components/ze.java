@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.text.style.ImageSpan;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class ze implements TextWatcher {
     public boolean a;
@@ -79,7 +79,7 @@ public final class ze implements TextWatcher {
                 chatActivityEnterView.b0.animate().setListener(null).cancel();
                 chatActivityEnterView.b0.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(100L).start();
                 if (i10 >= 0) {
-                    chatActivityEnterView.b0.setTextColor(chatActivityEnterView.f0(org.telegram.ui.ActionBar.k6.y6));
+                    chatActivityEnterView.b0.setTextColor(chatActivityEnterView.f0(org.telegram.ui.ActionBar.l6.y6));
                     z9 = true;
                     if (chatActivityEnterView.q3 != z9) {
                         chatActivityEnterView.q3 = z9;
@@ -98,7 +98,7 @@ public final class ze implements TextWatcher {
                     chatActivityEnterView.B(true);
                     chatActivityEnterView.v1(chatActivityEnterView.T <= 2 && !TextUtils.isEmpty(editable.toString().trim()));
                 }
-                chatActivityEnterView.b0.setTextColor(chatActivityEnterView.f0(org.telegram.ui.ActionBar.k6.p7));
+                chatActivityEnterView.b0.setTextColor(chatActivityEnterView.f0(org.telegram.ui.ActionBar.l6.p7));
                 z9 = false;
                 if (chatActivityEnterView.q3 != z9 && (geVar = chatActivityEnterView.F1) != null) {
                     chatActivityEnterView.q3 = z9;
@@ -156,7 +156,7 @@ public final class ze implements TextWatcher {
         mf mfVar = chatActivityEnterView.U0;
         boolean z9 = (mfVar == null ? org.telegram.messenger.qp.d1().getInt("selected_page", 0) : mfVar.getCurrentPage()) != 0 && (chatActivityEnterView.J2 || chatActivityEnterView.K2);
         if (((i10 == 0 && !TextUtils.isEmpty(charSequence)) || (i10 != 0 && TextUtils.isEmpty(charSequence))) && z9) {
-            chatActivityEnterView.c1(false, true);
+            chatActivityEnterView.d1(false, true);
         }
         if (chatActivityEnterView.T != chatActivityEnterView.E0.getLineCount()) {
             this.e = (chatActivityEnterView.E0.getLineCount() >= 4) != (chatActivityEnterView.T >= 4);

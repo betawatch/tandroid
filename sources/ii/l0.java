@@ -21,24 +21,24 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_communities;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.s6;
 import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.Components.ac;
 import org.telegram.ui.Components.bc;
 import org.telegram.ui.Components.hc;
-import org.telegram.ui.Components.q41;
+import org.telegram.ui.Components.r41;
 import org.telegram.ui.Components.v4;
-import org.telegram.ui.Components.w70;
-import org.telegram.ui.Components.x31;
+import org.telegram.ui.Components.x70;
+import org.telegram.ui.Components.y31;
 import org.telegram.ui.Components.z8;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final class l0 implements ji.e {
     public final Context a;
-    public final f6 b;
+    public final g6 b;
     public final hc c;
     public final int d;
     public final long e;
@@ -56,9 +56,9 @@ public final class l0 implements ji.e {
     public final a0.h g = new a0.h();
     public ArrayList j = new ArrayList();
 
-    public l0(Context context, f6 f6Var, hc hcVar, int i7, long j3) {
+    public l0(Context context, g6 g6Var, hc hcVar, int i7, long j3) {
         this.a = context;
-        this.b = f6Var;
+        this.b = g6Var;
         this.c = hcVar;
         this.d = i7;
         this.e = j3;
@@ -84,8 +84,8 @@ public final class l0 implements ji.e {
         }
     }
 
-    public final void b(q41 q41Var) {
-        if (this.m || this.n || q41Var.e3.N0() + 10 <= q41Var.f3.D.size()) {
+    public final void b(r41 r41Var) {
+        if (this.m || this.n || r41Var.e3.N0() + 10 <= r41Var.f3.D.size()) {
             return;
         }
         d();
@@ -109,7 +109,7 @@ public final class l0 implements ji.e {
                     boolean z9 = !communityPeerRequest.visible;
                     boolean z10 = i7 < size + (-1);
                     int i10 = ji.g.b;
-                    x31 K = x31.K(ji.g.class);
+                    y31 K = y31.K(ji.g.class);
                     K.G = new ji.f(o4, a22, z9);
                     K.H = this;
                     K.j = !z10;
@@ -121,7 +121,7 @@ public final class l0 implements ji.e {
         if (this.n) {
             return;
         }
-        arrayList.add(x31.p(29));
+        arrayList.add(y31.p(29));
     }
 
     public final void d() {
@@ -152,12 +152,12 @@ public final class l0 implements ji.e {
         if (this.q == null && this.r == 0) {
             int i7 = 0;
             if (z10) {
-                u1 M = v4.M(this.a, this.b, id.M0(z9 ? 2131751983 : 2131751935, null), org.telegram.messenger.g0.X2(id.G(this.l, z9 ? "CommunityAddAllChatsMessage" : "CommunityDeclineAllMessage", new Object[0])), id.M0(z9 ? 2131754486 : 2131751605, null), new k1(11, this, z9));
+                u1 M = v4.M(this.a, this.b, id.M0(z9 ? 2131751983 : 2131751935, null), org.telegram.messenger.g0.X2(id.G(this.l, z9 ? "CommunityAddAllChatsMessage" : "CommunityDeclineAllMessage", new Object[0])), id.M0(z9 ? 2131754486 : 2131751604, null), new k1(11, this, z9));
                 M.show();
                 if (z9 || (textView = (TextView) M.d(-1)) == null) {
                     return;
                 }
-                r6.V(textView, k6.q7, null);
+                s6.U(textView, l6.q7, null);
                 return;
             }
             kd kdVar = this.i;
@@ -197,8 +197,8 @@ public final class l0 implements ji.e {
         }
         this.i = new kd(this, j3, z9, 2);
         Context context = this.a;
-        f6 f6Var = this.b;
-        bc bcVar = new bc(context, f6Var, false);
+        g6 g6Var = this.b;
+        bc bcVar = new bc(context, g6Var, false);
         TLObject e22 = qp.s1(i11).e2(j3);
         z8 z8Var = bcVar.a;
         if (e22 != null) {
@@ -212,24 +212,24 @@ public final class l0 implements ji.e {
         z8Var.setScaleX(1.333f);
         z8Var.setScaleY(1.333f);
         z8Var.a(false);
-        w70 w70Var = bcVar.b;
-        w70Var.setSingleLine(false);
-        w70Var.setMaxLines(2);
-        w70Var.setTextSize(1, 14.0f);
-        w70Var.setText(X2);
-        if (w70Var.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
+        x70 x70Var = bcVar.b;
+        x70Var.setSingleLine(false);
+        x70Var.setMaxLines(2);
+        x70Var.setTextSize(1, 14.0f);
+        x70Var.setText(X2);
+        if (x70Var.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
             int L = org.telegram.messenger.g0.L(74 - ((3 - i7) * 12));
             if (id.a0) {
-                ((ViewGroup.MarginLayoutParams) w70Var.getLayoutParams()).rightMargin = L;
+                ((ViewGroup.MarginLayoutParams) x70Var.getLayoutParams()).rightMargin = L;
             } else {
-                ((ViewGroup.MarginLayoutParams) w70Var.getLayoutParams()).leftMargin = L;
+                ((ViewGroup.MarginLayoutParams) x70Var.getLayoutParams()).leftMargin = L;
             }
         }
         if (id.a0) {
             z8Var.setTranslationX(org.telegram.messenger.g0.L(32 - ((i7 - 1) * 12)));
         }
-        ac acVar = new ac(context, f6Var, true, true);
-        acVar.e(id.M0(2131743888, null));
+        ac acVar = new ac(context, g6Var, true, true);
+        acVar.e(id.M0(2131743885, null));
         acVar.b = new r3(this, j3, 11);
         acVar.c = this.i;
         bcVar.setButton(acVar);

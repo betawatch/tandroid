@@ -1,19 +1,45 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
 import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class yn0 implements ValueAnimator.AnimatorUpdateListener {
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        org.telegram.ui.Components.gb gbVar;
-        Drawable[] drawableArr = PhotoViewer.Y8;
-        org.telegram.ui.Components.cc ccVar = org.telegram.ui.Components.cc.w;
-        if (ccVar == null || (gbVar = ccVar.e) == null) {
-            return;
+public final /* synthetic */ class yn0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ PhotoViewer b;
+
+    public /* synthetic */ yn0(PhotoViewer photoViewer, int i7) {
+        this.a = i7;
+        this.b = photoViewer;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = this.a;
+        PhotoViewer photoViewer = this.b;
+        switch (i7) {
+            case 0:
+                photoViewer.m7 = null;
+                break;
+            case 1:
+                Drawable[] drawableArr = PhotoViewer.Y8;
+                photoViewer.x3();
+                break;
+            case 2:
+                photoViewer.D1.e(photoViewer.I2, photoViewer.J2, photoViewer.K2, photoViewer.O2, photoViewer.Q2, photoViewer.N2, photoViewer.o2(true), photoViewer.o2(true), photoViewer.L2, photoViewer.M2, 0.0f, 0.0f, photoViewer.P2);
+                photoViewer.b3(0);
+                break;
+            case 3:
+                Drawable[] drawableArr2 = PhotoViewer.Y8;
+                photoViewer.z0(true, false);
+                break;
+            case 4:
+                Drawable[] drawableArr3 = PhotoViewer.Y8;
+                photoViewer.c3(1, false);
+                break;
+            default:
+                PhotoViewer.K(photoViewer);
+                break;
         }
-        gbVar.updatePosition();
     }
 }

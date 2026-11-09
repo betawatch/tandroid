@@ -21,14 +21,14 @@ import org.telegram.messenger.id;
 import org.telegram.messenger.rz;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ch0;
+import org.telegram.ui.Components.dh0;
 import org.telegram.ui.Components.l9;
 import org.telegram.ui.Components.wo;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public class z0 extends FrameLayout implements a6 {
+public class z0 extends FrameLayout implements b6 {
     public int D;
     public int E;
     public int F;
@@ -40,7 +40,7 @@ public class z0 extends FrameLayout implements a6 {
     public boolean L;
     public boolean M;
     public int N;
-    public final f6 O;
+    public final g6 O;
     public Runnable P;
     public boolean Q;
     public ValueAnimator R;
@@ -49,7 +49,7 @@ public class z0 extends FrameLayout implements a6 {
     public float U;
     public final org.telegram.ui.Components.q5 a;
     public TextView b;
-    public final ch0 c;
+    public final dh0 c;
     public boolean d;
     public wo e;
     public ImageView f;
@@ -70,7 +70,7 @@ public class z0 extends FrameLayout implements a6 {
             wo woVar = new wo(26, getContext(), this.O);
             this.e = woVar;
             woVar.setDrawUnchecked(false);
-            this.e.b(-1, -1, k6.E8);
+            this.e.b(-1, -1, l6.E8);
             this.e.setDrawBackgroundAsArc(-1);
             org.telegram.ui.Components.q5 q5Var = this.a;
             if (i7 != 1) {
@@ -85,7 +85,7 @@ public class z0 extends FrameLayout implements a6 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void addColorKeys(HashSet hashSet) {
         int i7 = this.x;
         if (i7 >= 0) {
@@ -109,8 +109,8 @@ public class z0 extends FrameLayout implements a6 {
     }
 
     public final void c(int i7, int i10) {
-        f6 f6Var = this.O;
-        d(k6.w0(i7, f6Var), k6.w0(i10, f6Var));
+        g6 g6Var = this.O;
+        d(l6.w0(i7, g6Var), l6.w0(i10, g6Var));
         this.x = i7;
         this.y = i10;
         this.E = this.n;
@@ -195,7 +195,7 @@ public class z0 extends FrameLayout implements a6 {
 
     public final void h(float f10, int i7) {
         this.U = f10;
-        setSelectorColor(k6.r1(f10, k6.w0(i7, this.O)));
+        setSelectorColor(l6.r1(f10, l6.w0(i7, this.O)));
         this.D = i7;
         this.G = this.w;
     }
@@ -209,21 +209,21 @@ public class z0 extends FrameLayout implements a6 {
         int L2;
         org.telegram.ui.Components.q5 q5Var = this.a;
         q5Var.setText(charSequence);
-        ch0 ch0Var = this.c;
+        dh0 dh0Var = this.c;
         if (i7 == 0 && drawable == null && this.e == null) {
             this.T = 0;
-            ch0Var.setVisibility(4);
+            dh0Var.setVisibility(4);
             q5Var.setPadding(0, 0, 0, 0);
             return;
         }
         if (drawable != null) {
             this.T = 0;
-            ch0Var.setImageDrawable(drawable);
+            dh0Var.setImageDrawable(drawable);
         } else {
             this.T = i7;
-            ch0Var.setImageResource(i7);
+            dh0Var.setImageResource(i7);
         }
-        ch0Var.setVisibility(0);
+        dh0Var.setVisibility(0);
         if (this.d) {
             L = this.e != null ? org.telegram.messenger.g0.L(43.0f) : 0;
         } else {
@@ -252,7 +252,7 @@ public class z0 extends FrameLayout implements a6 {
     }
 
     public void l() {
-        org.telegram.ui.Cells.y a02 = k6.a0(this.w, this.L ? this.K : 0, this.M ? this.K : 0);
+        org.telegram.ui.Cells.y a02 = l6.a0(this.w, this.L ? this.K : 0, this.M ? this.K : 0);
         this.J = a02;
         setBackground(a02);
     }
@@ -386,7 +386,7 @@ public class z0 extends FrameLayout implements a6 {
                 Drawable background = getBackground();
                 org.telegram.ui.Cells.y yVar = this.J;
                 if (background == yVar) {
-                    k6.H1(yVar, i7, true);
+                    l6.H1(yVar, i7, true);
                     return;
                 }
             }
@@ -402,7 +402,7 @@ public class z0 extends FrameLayout implements a6 {
             this.b.setSingleLine(true);
             this.b.setGravity(3);
             this.b.setEllipsize(TextUtils.TruncateAt.END);
-            r6.V(this.b, k6.Oi, this.O);
+            s6.U(this.b, l6.Oi, this.O);
             this.b.setVisibility(8);
             this.b.setTextSize(1, 13.0f);
             this.b.setPadding(id.a0 ? 0 : org.telegram.messenger.g0.L(43.0f), 0, id.a0 ? org.telegram.messenger.g0.L(43.0f) : 0, 0);
@@ -422,7 +422,7 @@ public class z0 extends FrameLayout implements a6 {
     public void setSubtextColor(int i7) {
         TextView textView = this.b;
         if (textView != null) {
-            r6.r(textView);
+            s6.q(textView);
             this.b.setTextColor(i7);
         }
     }
@@ -438,21 +438,21 @@ public class z0 extends FrameLayout implements a6 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
-        ch0 ch0Var;
+        dh0 dh0Var;
         PorterDuff.Mode mode;
         org.telegram.ui.Components.q5 q5Var;
         try {
             int i7 = this.x;
-            f6 f6Var = this.O;
+            g6 g6Var = this.O;
             if (i7 >= 0 && this.n == this.E && (q5Var = this.a) != null && q5Var.getCurrentTextColor() == this.n) {
-                int w02 = k6.w0(this.x, f6Var);
+                int w02 = l6.w0(this.x, g6Var);
                 setTextColor(w02);
                 this.E = w02;
             }
-            if (this.y >= 0 && this.r == this.F && (ch0Var = this.c) != null && ch0Var.getColorFilter() == this.I) {
-                int w03 = k6.w0(this.y, f6Var);
+            if (this.y >= 0 && this.r == this.F && (dh0Var = this.c) != null && dh0Var.getColorFilter() == this.I) {
+                int w03 = l6.w0(this.y, g6Var);
                 if (w03 != this.r) {
                     this.r = w03;
                     if (!this.H || (mode = this.s) == null) {
@@ -460,7 +460,7 @@ public class z0 extends FrameLayout implements a6 {
                     }
                     PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(w03, mode);
                     this.I = porterDuffColorFilter;
-                    ch0Var.setColorFilter(porterDuffColorFilter);
+                    dh0Var.setColorFilter(porterDuffColorFilter);
                     ImageView imageView = this.f;
                     if (imageView != null) {
                         imageView.setColorFilter(w03, PorterDuff.Mode.MULTIPLY);
@@ -472,7 +472,7 @@ public class z0 extends FrameLayout implements a6 {
             if (i10 < 0 || this.w != this.G) {
                 return;
             }
-            int r12 = k6.r1(this.U, k6.w0(i10, f6Var));
+            int r12 = l6.r1(this.U, l6.w0(i10, g6Var));
             if (r12 != this.w) {
                 this.w = r12;
                 Drawable background = getBackground();
@@ -486,8 +486,8 @@ public class z0 extends FrameLayout implements a6 {
         }
     }
 
-    public z0(Context context, f6 f6Var, boolean z9, boolean z10) {
-        this(0, context, f6Var, z9, z10);
+    public z0(Context context, g6 g6Var, boolean z9, boolean z10) {
+        this(0, context, g6Var, z9, z10);
     }
 
     public void setIcon(Drawable drawable) {
@@ -495,37 +495,37 @@ public class z0 extends FrameLayout implements a6 {
         this.c.setImageDrawable(drawable);
     }
 
-    public z0(int i7, Context context, f6 f6Var, boolean z9, boolean z10) {
+    public z0(int i7, Context context, g6 g6Var, boolean z9, boolean z10) {
         super(context);
-        int i10 = k6.E8;
+        int i10 = l6.E8;
         this.x = i10;
-        int i11 = k6.F8;
+        int i11 = l6.F8;
         this.y = i11;
-        int i12 = k6.I5;
+        int i12 = l6.I5;
         this.D = i12;
         this.K = 12;
         this.N = 48;
         this.U = 1.0f;
-        this.O = f6Var;
+        this.O = g6Var;
         this.L = z9;
         this.M = z10;
-        this.n = k6.w0(i10, f6Var);
-        this.r = k6.w0(i11, f6Var);
+        this.n = l6.w0(i10, g6Var);
+        this.r = l6.w0(i11, g6Var);
         this.s = PorterDuff.Mode.MULTIPLY;
-        int w02 = k6.w0(i12, f6Var);
+        int w02 = l6.w0(i12, g6Var);
         this.w = w02;
         this.E = this.n;
         this.F = this.r;
         this.G = w02;
         l();
         setPadding(org.telegram.messenger.g0.L(18.0f), 0, org.telegram.messenger.g0.L(18.0f), 0);
-        ch0 ch0Var = new ch0(context);
-        this.c = ch0Var;
-        ch0Var.setScaleType(ImageView.ScaleType.CENTER);
+        dh0 dh0Var = new dh0(context);
+        this.c = dh0Var;
+        dh0Var.setScaleType(ImageView.ScaleType.CENTER);
         PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(this.r, PorterDuff.Mode.SRC_IN);
         this.I = porterDuffColorFilter;
-        ch0Var.setColorFilter(porterDuffColorFilter);
-        addView(ch0Var, ha.e(-2, 40, (id.a0 ? 5 : 3) | 16));
+        dh0Var.setColorFilter(porterDuffColorFilter);
+        addView(dh0Var, ha.e(-2, 40, (id.a0 ? 5 : 3) | 16));
         org.telegram.ui.Components.q5 q5Var = new org.telegram.ui.Components.q5(context);
         this.a = q5Var;
         q5Var.setLines(1);

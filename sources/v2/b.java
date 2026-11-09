@@ -16,10 +16,10 @@ import java.util.ArrayList;
 import jg.g;
 import l2.c0;
 import l2.i0;
-import l2.y;
+import l2.x;
 import x2.g0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class b extends l2.b implements Handler.Callback {
     public final a I;
@@ -113,9 +113,9 @@ public final class b extends l2.b implements Handler.Callback {
         o0 f12 = i0Var.f1();
         if (!f12.equals(i0Var.Q)) {
             i0Var.Q = f12;
-            rVar.c(14, new y(c0Var, 1));
+            rVar.c(14, new x(c0Var, 1));
         }
-        rVar.c(28, new y(q0Var, 2));
+        rVar.c(28, new x(q0Var, 2));
         rVar.b();
     }
 

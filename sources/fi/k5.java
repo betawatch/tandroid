@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class k5 extends FrameLayout {
     public float a;
@@ -36,7 +36,7 @@ public final class k5 extends FrameLayout {
         Canvas canvas2 = canvas;
         super.onDraw(canvas);
         x9 x9Var = this.d;
-        sg.j1 j1Var = x9Var.j1;
+        sg.i1 i1Var = x9Var.j1;
         Paint paint = x9Var.h1;
         Paint paint2 = x9Var.g1;
         Paint paint3 = x9Var.i1;
@@ -63,7 +63,7 @@ public final class k5 extends FrameLayout {
             int height = (childAt.getHeight() - childAt.getPaddingTop()) - childAt.getPaddingBottom();
             float x10 = (width / 2.0f) + childAt.getX() + childAt.getPaddingLeft();
             float y10 = (height / 2.0f) + childAt.getY() + childAt.getPaddingTop();
-            int i7 = j1Var.a;
+            int i7 = i1Var.a;
             int i10 = x9Var.I0;
             View view = childAt;
             if (i10 != -1) {
@@ -79,7 +79,7 @@ public final class k5 extends FrameLayout {
                 View childAt3 = w4Var.getChildAt(0);
                 x10 = org.telegram.messenger.g0.T1(x10, (childAt3.getWidth() / 2.0f) + childAt3.getX() + (w4Var.getX() - barView.getLeft()), x9Var.m1);
                 y10 = org.telegram.messenger.g0.T1(y10, (childAt3.getHeight() / 2.0f) + childAt3.getY() + (w4Var.getY() - barView.getTop()), x9Var.m1);
-                i7 = i0.a.f(x9Var.m1, j1Var.a, this.c.b(0));
+                i7 = i0.a.f(x9Var.m1, i1Var.a, this.c.b(0));
             }
             float f10 = x10;
             float f11 = y10;

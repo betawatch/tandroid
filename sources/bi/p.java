@@ -4,7 +4,7 @@ import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p implements TextView.OnEditorActionListener {
     public final /* synthetic */ int a;
@@ -73,7 +73,7 @@ public final /* synthetic */ class p implements TextView.OnEditorActionListener 
                 }
                 break;
             default:
-                org.telegram.ui.ActionBar.y4.e((org.telegram.ui.ActionBar.y4) this.b, i7, keyEvent);
+                org.telegram.ui.ActionBar.y4.c((org.telegram.ui.ActionBar.y4) this.b, i7, keyEvent);
                 break;
         }
         return false;

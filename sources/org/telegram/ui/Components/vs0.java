@@ -1,33 +1,10 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class vs0 extends us0 {
-    public final /* synthetic */ ws0 G;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public vs0(ws0 ws0Var, Context context, int i7) {
-        super(ws0Var.e, context, i7, false);
-        this.G = ws0Var;
-    }
-
-    @Override // org.telegram.ui.Components.us0, v4.g0
-    public final void f() {
-        super.f();
-        ws0 ws0Var = this.G;
-        xs0 xs0Var = ws0Var.e;
-        int i7 = ws0Var.a;
-        int[] iArr = xs0.s2;
-        sr0 g02 = xs0Var.g0(i7);
-        if (g02 != null && g02.n.getVisibility() == 0) {
-            ws0Var.d.f();
-        }
-        if (g02 != null) {
-            nq0 nq0Var = g02.w;
-            di.q6 q6Var = this.s;
-            nq0Var.e(q6Var != null && (q6Var.k() || (xs0Var.t0() && this.s.g() > 0)), true);
-        }
+public final class vs0 extends org.telegram.messenger.ij {
+    @Override // org.telegram.messenger.ij
+    public final float G1() {
+        return this.m.h;
     }
 }

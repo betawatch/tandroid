@@ -6,7 +6,7 @@ import java.io.File;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class ev extends ru {
     public final TL_iv.pageBlockVideo q0;
@@ -23,10 +23,10 @@ public final class ev extends ru {
         this.q0 = pageblockvideo;
         TLRPC.Document s5 = kvVar.s(pageblockvideo.video_id);
         this.r0 = s5;
-        boolean L4 = ij.L4(s5);
-        this.v0 = L4;
+        boolean K4 = ij.K4(s5);
+        this.v0 = K4;
         int i12 = 0;
-        this.u0 = L4 || ij.t3(s5, false);
+        this.u0 = K4 || ij.s3(s5, false);
         if (s5 != null) {
             this.s0 = w7.w(s5.thumbs, qs.r5, false, null, true);
             this.t0 = w7.Q(s5.thumbs);

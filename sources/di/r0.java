@@ -10,7 +10,7 @@ import org.telegram.messenger.qp;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class r0 extends FrameLayout {
     public final o0 a;
@@ -27,7 +27,7 @@ public final class r0 extends FrameLayout {
         this.a = o0Var;
         o0Var.setOrientation(0);
         addView(o0Var, ha.d(-2, -2.0f, qs.E1, 0.0f, 0.0f, 6.0f, 0.0f));
-        this.c = new org.telegram.ui.Components.w8((org.telegram.ui.ActionBar.f6) null);
+        this.c = new org.telegram.ui.Components.w8((org.telegram.ui.ActionBar.g6) null);
         org.telegram.ui.Components.l9 l9Var = new org.telegram.ui.Components.l9(context);
         this.b = l9Var;
         l9Var.setRoundRadius(org.telegram.messenger.g0.L(11.0f));

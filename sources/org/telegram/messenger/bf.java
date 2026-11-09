@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.concurrent.CountDownLatch;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class bf implements Runnable {
     public final /* synthetic */ int a;
@@ -61,14 +61,14 @@ public final /* synthetic */ class bf implements Runnable {
                                     }
                                     if (TextUtils.isEmpty(str)) {
                                         w7.G(cVar.a);
-                                        TLRPC.MessageMedia n1 = ij.n1(ijVar);
+                                        TLRPC.MessageMedia m12 = ij.m1(ijVar);
                                         TLRPC.Document document2 = ijVar.d3;
                                         if (document2 != null) {
                                             file2 = w7.J(document2, null, false, true);
                                         } else {
                                             File M = w7.M(ijVar.k, false, true);
-                                            if (n1 instanceof TLRPC.TL_messageMediaDocument) {
-                                                TLRPC.TL_messageMediaDocument tL_messageMediaDocument = (TLRPC.TL_messageMediaDocument) n1;
+                                            if (m12 instanceof TLRPC.TL_messageMediaDocument) {
+                                                TLRPC.TL_messageMediaDocument tL_messageMediaDocument = (TLRPC.TL_messageMediaDocument) m12;
                                                 if (!tL_messageMediaDocument.alt_documents.isEmpty()) {
                                                     file2 = w7.J(tL_messageMediaDocument.alt_documents.get(0), null, false, true);
                                                 }
@@ -149,7 +149,7 @@ public final /* synthetic */ class bf implements Runnable {
                                         cfVar3.r.await();
                                     }
                                     if (file.exists()) {
-                                        cfVar3.a(file, file4, ijVar2.u1());
+                                        cfVar3.a(file, file4, ijVar2.t1());
                                         cfVar3.n++;
                                     }
                                 }

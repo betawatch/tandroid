@@ -10,10 +10,10 @@ import org.telegram.messenger.p10;
 import org.telegram.messenger.r3;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.c40;
+import org.telegram.ui.e40;
 import org.telegram.ui.oe;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public abstract class g {
     public static boolean a;
@@ -30,19 +30,19 @@ public abstract class g {
             r3 r3Var2 = sharedInstance.groupCall;
             TLRPC.GroupCallParticipant groupCallParticipant = r3Var2 != null ? (TLRPC.GroupCallParticipant) r3Var2.d.f(sharedInstance.getSelfId()) : null;
             boolean z10 = (groupCallParticipant == null || groupCallParticipant.raise_hand_rating == 0) ? false : true;
-            arrayList.add(new f(new ti.l(1, R.drawable.msg_voice_muted, id.M0(z10 ? 2131743397 : 2131743293, null), !z10), 100, 0));
+            arrayList.add(new f(new ti.l(1, R.drawable.msg_voice_muted, id.M0(z10 ? 2131743394 : 2131743290, null), !z10), 100, 0));
         } else if (sharedInstance.isMicMute()) {
-            arrayList.add(new f(new ti.l(1, R.drawable.msg_voice_muted, id.M0(2131743233, null), true), 100, 0));
+            arrayList.add(new f(new ti.l(1, R.drawable.msg_voice_muted, id.M0(2131743230, null), true), 100, 0));
         } else {
-            arrayList.add(new f(new ti.l(1, R.drawable.msg_voice_unmuted, id.M0(2131743296, null), true), 100, 0));
+            arrayList.add(new f(new ti.l(1, R.drawable.msg_voice_unmuted, id.M0(2131743293, null), true), 100, 0));
         }
         int videoState = sharedInstance.getVideoState(false);
         if (videoState == 2) {
-            arrayList.add(new f(new ti.l(2, R.drawable.pip_camera_on, id.M0(2131743240, null), true), 90, 1));
+            arrayList.add(new f(new ti.l(2, R.drawable.pip_camera_on, id.M0(2131743237, null), true), 90, 1));
         } else if (a || videoState == 1) {
-            arrayList.add(new f(new ti.l(2, R.drawable.pip_camera_off, id.M0(2131743241, null), org.telegram.messenger.t0.b.checkSelfPermission("android.permission.CAMERA") == 0 && (!z9 || ((r3Var = sharedInstance.groupCall) != null && r3Var.c()))), 60, 1));
+            arrayList.add(new f(new ti.l(2, R.drawable.pip_camera_off, id.M0(2131743238, null), org.telegram.messenger.t0.b.checkSelfPermission("android.permission.CAMERA") == 0 && (!z9 || ((r3Var = sharedInstance.groupCall) != null && r3Var.c()))), 60, 1));
         }
-        arrayList.add(new f(new ti.l(3, R.drawable.msg_endcall, id.M0(z9 ? 2131743367 : 2131743415, null), true), 80, 2));
+        arrayList.add(new f(new ti.l(3, R.drawable.msg_endcall, id.M0(z9 ? 2131743364 : 2131743412, null), true), 80, 2));
         Collections.sort(arrayList, new oe(21));
         while (arrayList.size() > i7) {
             a8.p0.z(1, arrayList);
@@ -81,7 +81,7 @@ public abstract class g {
         if (i7 != 2) {
             if (i7 == 3) {
                 if (z9) {
-                    c40.w1(org.telegram.messenger.t0.b, null, false, true);
+                    e40.w1(org.telegram.messenger.t0.b, null, false, true);
                     return;
                 } else {
                     sharedInstance.hangUp();

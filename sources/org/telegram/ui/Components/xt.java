@@ -11,10 +11,10 @@ import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class xt extends View {
-    public final org.telegram.ui.ActionBar.f6 D;
+    public final org.telegram.ui.ActionBar.g6 D;
     public org.telegram.messenger.v10 E;
     public int F;
     public boolean G;
@@ -34,7 +34,7 @@ public final class xt extends View {
     public final w5 x;
     public final w5 y;
 
-    public xt(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+    public xt(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
         super(context);
         this.a = org.telegram.messenger.g0.L(org.telegram.messenger.g0.Q1() ? 40.0f : 32.0f);
         this.b = new Drawable[11];
@@ -47,18 +47,18 @@ public final class xt extends View {
         this.y = new w5(this, 125L, xqVar);
         this.F = -1;
         this.G = true;
-        this.D = f6Var;
+        this.D = g6Var;
         this.c = getResources().getDrawable(R.drawable.stickers_back_all);
         this.d = getResources().getDrawable(R.drawable.stickers_back_arrow);
         a();
     }
 
     public final void a() {
-        int i7 = org.telegram.ui.ActionBar.k6.h5;
-        org.telegram.ui.ActionBar.f6 f6Var = this.D;
-        org.telegram.ui.ActionBar.k6.C1(org.telegram.ui.ActionBar.k6.w0(i7, f6Var), this.c);
-        org.telegram.ui.ActionBar.k6.C1(org.telegram.ui.ActionBar.k6.w0(i7, f6Var), this.d);
-        org.telegram.messenger.h4.b.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Bf, f6Var), PorterDuff.Mode.SRC_IN));
+        int i7 = org.telegram.ui.ActionBar.l6.h5;
+        org.telegram.ui.ActionBar.g6 g6Var = this.D;
+        org.telegram.ui.ActionBar.l6.C1(org.telegram.ui.ActionBar.l6.w0(i7, g6Var), this.c);
+        org.telegram.ui.ActionBar.l6.C1(org.telegram.ui.ActionBar.l6.w0(i7, g6Var), this.d);
+        org.telegram.messenger.h4.b.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.Bf, g6Var), PorterDuff.Mode.SRC_IN));
     }
 
     public String getEmoji() {
@@ -84,7 +84,7 @@ public final class xt extends View {
         drawable2.draw(canvas);
         if (xtVar.e != null) {
             boolean z10 = xtVar.f;
-            org.telegram.ui.ActionBar.f6 f6Var = xtVar.D;
+            org.telegram.ui.ActionBar.g6 g6Var = xtVar.D;
             int[] iArr = xtVar.n;
             w5 w5Var = xtVar.x;
             Paint paint = xtVar.s;
@@ -98,7 +98,7 @@ public final class xt extends View {
                 float f11 = L3;
                 rectF.set((int) ((i7 * e10) + org.telegram.messenger.g0.L((e10 * 4.0f) + 5.0f)), f11, r3 + i7, L3 + i7);
                 rectF.inset(org.telegram.messenger.g0.L(-2.0f), org.telegram.messenger.g0.L(-2.0f));
-                paint.setColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.i6, f6Var));
+                paint.setColor(org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.i6, g6Var));
                 canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), paint);
                 for (int i10 = 0; i10 < 6; i10++) {
                     Drawable drawable3 = drawableArr[i10];
@@ -121,7 +121,7 @@ public final class xt extends View {
                 float max = Math.max(0.0f, Math.min(f10, -e11));
                 rectF.set((int) ((i7 * (e11 + f10)) + org.telegram.messenger.g0.L((r6 * 4.0f) + (Math.max(0.0f, Math.min(f10, r6)) * 3.0f) + 5.0f)), org.telegram.messenger.g0.W1(max, ((org.telegram.messenger.g0.L(f10) + i7) * i11) + org.telegram.messenger.g0.L(3.0f), (xtVar.getMeasuredHeight() - i7) / 2), r6 + i7, r9 + i7);
                 rectF.inset(org.telegram.messenger.g0.L(-2.0f), org.telegram.messenger.g0.L(max * (-2.0f)));
-                paint.setColor(org.telegram.ui.ActionBar.k6.r1(org.telegram.messenger.g0.T1(f10, 0.5f, max), org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.i6, f6Var)));
+                paint.setColor(org.telegram.ui.ActionBar.l6.r1(org.telegram.messenger.g0.T1(f10, 0.5f, max), org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.i6, g6Var)));
                 canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), paint);
                 int i13 = i12;
                 while (i13 < 5) {
@@ -140,7 +140,7 @@ public final class xt extends View {
             char c10 = z9;
             drawableArr[c10].setBounds(org.telegram.messenger.g0.L(5.0f), (getMeasuredHeight() - i7) / 2, org.telegram.messenger.g0.L(5.0f) + i7, (getMeasuredHeight() + i7) / 2);
             drawableArr[c10].draw(canvas);
-            canvas.drawRect(org.telegram.messenger.g0.L(8.45f) + i7, org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(8.45f) + i7 + 1, getMeasuredHeight() - org.telegram.messenger.g0.L(6.0f), org.telegram.ui.ActionBar.k6.k0);
+            canvas.drawRect(org.telegram.messenger.g0.L(8.45f) + i7, org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(8.45f) + i7 + 1, getMeasuredHeight() - org.telegram.messenger.g0.L(6.0f), org.telegram.ui.ActionBar.l6.k0);
         }
     }
 

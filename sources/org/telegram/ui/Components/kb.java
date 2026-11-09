@@ -7,19 +7,19 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public class kb extends za {
-    public final ch0 a;
+    public final dh0 a;
     public TextView b;
     public int c;
 
-    public kb(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, f6Var);
-        ch0 ch0Var = new ch0(context);
-        this.a = ch0Var;
-        ch0Var.setScaleType(ImageView.ScaleType.CENTER);
-        addView(ch0Var, c8.ha.h(56.0f, 48.0f, 8388627));
+    public kb(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(context, g6Var);
+        dh0 dh0Var = new dh0(context);
+        this.a = dh0Var;
+        dh0Var.setScaleType(ImageView.ScaleType.CENTER);
+        addView(dh0Var, c8.ha.h(56.0f, 48.0f, 8388627));
         jb jbVar = new jb(0, context, null);
         jbVar.setDisablePaddingsOffset(true);
         this.b = jbVar;
@@ -30,16 +30,16 @@ public class kb extends za {
         this.b.setEllipsize(TextUtils.TruncateAt.END);
         this.b.setPadding(0, org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f));
         addView(this.b, c8.ha.i(-2.0f, -2.0f, 8388627, 56.0f, 0.0f, 16.0f, 0.0f));
-        org.telegram.ui.ActionBar.r6.H(this.b, org.telegram.ui.ActionBar.k6.uj, f6Var);
-        setTextColor(getThemedColor(org.telegram.ui.ActionBar.k6.vj));
-        setBackground(getThemedColor(org.telegram.ui.ActionBar.k6.tj));
+        org.telegram.ui.ActionBar.s6.G(this.b, org.telegram.ui.ActionBar.l6.uj, g6Var);
+        setTextColor(getThemedColor(org.telegram.ui.ActionBar.l6.vj));
+        setBackground(getThemedColor(org.telegram.ui.ActionBar.l6.tj));
     }
 
     public final void c(int i7, int i10, int i11, String... strArr) {
-        ch0 ch0Var = this.a;
-        ch0Var.f(i7, i10, i11, null);
+        dh0 dh0Var = this.a;
+        dh0Var.f(i7, i10, i11, null);
         for (String str : strArr) {
-            ch0Var.h(this.c, str);
+            dh0Var.h(this.c, str);
         }
     }
 
@@ -48,11 +48,11 @@ public class kb extends za {
     }
 
     public final void e(TLRPC.Document document, String... strArr) {
-        ch0 ch0Var = this.a;
-        ch0Var.setAutoRepeat(true);
-        ch0Var.g(36, 36, document);
+        dh0 dh0Var = this.a;
+        dh0Var.setAutoRepeat(true);
+        dh0Var.g(36, 36, document);
         for (String str : strArr) {
-            ch0Var.h(this.c, str);
+            dh0Var.h(this.c, str);
         }
     }
 
@@ -76,8 +76,8 @@ public class kb extends za {
         this.b.setTextColor(i7);
     }
 
-    public kb(int i7, int i10, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        this(context, f6Var);
+    public kb(int i7, int i10, Context context, org.telegram.ui.ActionBar.g6 g6Var) {
+        this(context, g6Var);
         setBackground(i7);
         setTextColor(i10);
     }

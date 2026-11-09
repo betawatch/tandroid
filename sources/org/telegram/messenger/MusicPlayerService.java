@@ -27,7 +27,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public class MusicPlayerService extends Service implements ls {
     public static final boolean w = !TextUtils.isEmpty(g0.k1("ro.miui.ui.version.code"));
@@ -53,7 +53,7 @@ public class MusicPlayerService extends Service implements ls {
         if (ijVar == null) {
             return 1.0f;
         }
-        if (ij.S4(ijVar.k) || ijVar.i4()) {
+        if (ij.R4(ijVar.k) || ijVar.h4()) {
             return MediaController.B().p0;
         }
         return 1.0f;
@@ -91,14 +91,14 @@ public class MusicPlayerService extends Service implements ls {
         String str7;
         Bitmap bitmap3;
         int i12;
-        String z12 = ijVar.z1(true);
-        String x12 = ijVar.x1(true);
+        String y12 = ijVar.y1(true);
+        String w12 = ijVar.w1(true);
         rf.a aVar3 = MediaController.B().D0;
         Intent intent = new Intent(t0.b, (Class<?>) LaunchActivity.class);
-        if (ijVar.J3()) {
+        if (ijVar.I3()) {
             intent.setAction("com.tmessages.openplayer");
             intent.addCategory("android.intent.category.LAUNCHER");
-        } else if (ij.S4(ijVar.k) || ijVar.i4()) {
+        } else if (ij.R4(ijVar.k) || ijVar.h4()) {
             intent.setAction("android.intent.action.VIEW");
             TLRPC.Peer peer = ijVar.k.peer_id;
             boolean z10 = peer instanceof TLRPC.TL_peerUser;
@@ -106,18 +106,18 @@ public class MusicPlayerService extends Service implements ls {
             if (j10 != 0) {
                 if (z10) {
                     StringBuilder t6 = a8.p0.t(j10, "tg://openmessage?user_id=", "&message_id=");
-                    t6.append(ijVar.f1());
+                    t6.append(ijVar.e1());
                     intent.setData(Uri.parse(t6.toString()));
                 } else {
                     StringBuilder t10 = a8.p0.t(j10, "tg://openmessage?chat_id=", "&message_id=");
-                    t10.append(ijVar.f1());
+                    t10.append(ijVar.e1());
                     intent.setData(Uri.parse(t10.toString()));
                 }
             }
         }
         PendingIntent activity = PendingIntent.getActivity(t0.b, 0, intent, b(33554432));
         long L0 = (long) (ijVar.L0() * 1000.0d);
-        if (ijVar.J3()) {
+        if (ijVar.I3()) {
             String u02 = ijVar.u0(true);
             String u03 = ijVar.u0(false);
             bitmap2 = aVar3 != null ? aVar3.p : null;
@@ -138,40 +138,40 @@ public class MusicPlayerService extends Service implements ls {
                     bitmap = e10;
                 }
             }
-        } else if (ij.S4(ijVar.k) || ijVar.i4()) {
-            long S1 = ijVar.S1();
-            if (ijVar.q3()) {
-                TLRPC.User a22 = qp.s1(p10.s0).a2(Long.valueOf(S1));
+        } else if (ij.R4(ijVar.k) || ijVar.h4()) {
+            long R1 = ijVar.R1();
+            if (ijVar.p3()) {
+                TLRPC.User a22 = qp.s1(p10.s0).a2(Long.valueOf(R1));
                 if (a22 != null) {
-                    z12 = t10.p(a22);
-                    boolean z13 = !z9;
-                    bitmap = c(a22, true, z13);
-                    c10 = c(a22, false, z13);
+                    y12 = t10.p(a22);
+                    boolean z12 = !z9;
+                    bitmap = c(a22, true, z12);
+                    c10 = c(a22, false, z12);
                 } else {
                     c10 = null;
                     bitmap = null;
                 }
             } else {
-                TLRPC.Chat M0 = qp.s1(p10.s0).M0(Long.valueOf(-S1));
+                TLRPC.Chat M0 = qp.s1(p10.s0).M0(Long.valueOf(-R1));
                 if (M0 != null) {
-                    z12 = M0.title;
-                    boolean z14 = !z9;
-                    bitmap = c(M0, true, z14);
-                    c10 = c(M0, false, z14);
+                    y12 = M0.title;
+                    boolean z13 = !z9;
+                    bitmap = c(M0, true, z13);
+                    c10 = c(M0, false, z13);
                 } else {
                     bitmap = null;
                     bitmap2 = null;
                     if (bitmap == null && bitmap2 != null) {
                         bitmap = bitmap2;
                     }
-                    x12 = !ij.S4(ijVar.k) ? id.M0(2131753982, null) : id.M0(2131753941, null);
+                    w12 = !ij.R4(ijVar.k) ? id.M0(2131753982, null) : id.M0(2131753941, null);
                 }
             }
             bitmap2 = c10;
             if (bitmap == null) {
                 bitmap = bitmap2;
             }
-            if (!ij.S4(ijVar.k)) {
+            if (!ij.R4(ijVar.k)) {
             }
         } else {
             bitmap = null;
@@ -179,7 +179,7 @@ public class MusicPlayerService extends Service implements ls {
         }
         int i13 = Build.VERSION.SDK_INT;
         boolean H = MediaController.B().H();
-        boolean z15 = !H;
+        boolean z14 = !H;
         Bitmap bitmap4 = bitmap;
         PendingIntent broadcast = PendingIntent.getBroadcast(getApplicationContext(), 0, new Intent("org.telegram.android.musicplayer.previous").setComponent(new ComponentName(this, (Class<?>) MusicPlayerReceiver.class)), b(301989888));
         PendingIntent service = PendingIntent.getService(getApplicationContext(), 0, new Intent(this, getClass()).setAction(getPackageName() + ".STOP_PLAYER"), b(301989888));
@@ -189,7 +189,7 @@ public class MusicPlayerService extends Service implements ls {
         PendingIntent broadcast4 = PendingIntent.getBroadcast(getApplicationContext(), 0, new Intent("org.telegram.android.musicplayer.repeat").setComponent(new ComponentName(this, (Class<?>) MusicPlayerReceiver.class)), b(301989888));
         PendingIntent broadcast5 = PendingIntent.getBroadcast(getApplicationContext(), 0, new Intent("org.telegram.android.musicplayer.shuffle").setComponent(new ComponentName(this, (Class<?>) MusicPlayerReceiver.class)), b(301989888));
         Notification.MediaStyle mediaSession = new Notification.MediaStyle().setMediaSession((MediaSession.Token) ((android.support.v4.media.session.u) this.c.b).c.b);
-        if (ijVar.J3()) {
+        if (ijVar.I3()) {
             pendingIntent = broadcast;
             pendingIntent2 = broadcast5;
             str = "org.telegram.android.musicplayer.shuffle";
@@ -198,12 +198,12 @@ public class MusicPlayerService extends Service implements ls {
             pendingIntent = broadcast;
             pendingIntent2 = broadcast5;
             str = "org.telegram.android.musicplayer.shuffle";
-            if (ij.S4(ijVar.k) || ijVar.i4()) {
+            if (ij.R4(ijVar.k) || ijVar.h4()) {
                 mediaSession.setShowActionsInCompactView(0);
             }
         }
         Notification.Builder builder = new Notification.Builder(this);
-        builder.setSmallIcon(R.drawable.player).setOngoing(z15).setContentTitle(z12).setContentText(x12).setSubText((aVar3 == null || !ijVar.J3()) ? null : aVar3.f).setContentIntent(activity).setDeleteIntent(service).setShowWhen(false).setCategory("transport").setPriority(2).setStyle(mediaSession);
+        builder.setSmallIcon(R.drawable.player).setOngoing(z14).setContentTitle(y12).setContentText(w12).setSubText((aVar3 == null || !ijVar.I3()) ? null : aVar3.f).setContentIntent(activity).setDeleteIntent(service).setShowWhen(false).setCategory("transport").setPriority(2).setStyle(mediaSession);
         if (i13 >= 26) {
             dt.i();
             builder.setChannelId(dt.j0);
@@ -213,7 +213,7 @@ public class MusicPlayerService extends Service implements ls {
         } else {
             builder.setLargeIcon(this.e);
         }
-        String M02 = id.M0(2131748251, null);
+        String M02 = id.M0(2131748250, null);
         String M03 = id.M0(2131754800, null);
         this.d = new android.support.v4.media.session.d0();
         if (MediaController.B().A0) {
@@ -221,22 +221,22 @@ public class MusicPlayerService extends Service implements ls {
             j3 = 1000;
             d0Var.c(6, 0L, 1.0f);
             d0Var.e = 0L;
-            if (ijVar.J3()) {
+            if (ijVar.I3()) {
                 builder.addAction(new Notification.Action.Builder(R.drawable.ic_action_previous, M03, pendingIntent).build());
             }
-            builder.addAction(new Notification.Action.Builder(R.drawable.loading_animation2, id.M0(2131748780, null), (PendingIntent) null).build());
-            if (ijVar.J3()) {
+            builder.addAction(new Notification.Action.Builder(R.drawable.loading_animation2, id.M0(2131748779, null), (PendingIntent) null).build());
+            if (ijVar.I3()) {
                 builder.addAction(new Notification.Action.Builder(R.drawable.ic_action_next, M02, broadcast3).build());
             }
-            str2 = z12;
-            str3 = x12;
+            str2 = y12;
+            str3 = w12;
             aVar = aVar3;
             i7 = i13;
         } else {
             PendingIntent pendingIntent3 = pendingIntent;
             j3 = 1000;
-            long j11 = ijVar.J3() ? 2360118L : 2360070L;
-            if (ijVar.J3()) {
+            long j11 = ijVar.I3() ? 2360118L : 2360070L;
+            if (ijVar.I3()) {
                 if (iz.N0) {
                     i7 = i13;
                     i11 = R.drawable.player_new_shuffle;
@@ -246,9 +246,9 @@ public class MusicPlayerService extends Service implements ls {
                 }
                 aVar = aVar3;
                 android.support.v4.media.session.d0 d0Var2 = this.d;
-                str2 = z12;
-                str3 = x12;
-                String M04 = id.M0(2131745325, null);
+                str2 = y12;
+                str3 = w12;
+                String M04 = id.M0(2131745322, null);
                 if (TextUtils.isEmpty(str)) {
                     throw new IllegalArgumentException("You must specify an action to build a CustomAction");
                 }
@@ -258,22 +258,22 @@ public class MusicPlayerService extends Service implements ls {
                 str4 = M02;
                 d0Var2.a(new PlaybackStateCompat.CustomAction(str, M04, i11, null));
             } else {
-                str2 = z12;
-                str3 = x12;
+                str2 = y12;
+                str3 = w12;
                 aVar = aVar3;
                 str4 = M02;
                 i7 = i13;
             }
             android.support.v4.media.session.d0 d0Var3 = this.d;
-            d0Var3.c(!H ? 3 : 2, MediaController.B().u0.g0 * 1000, d(ijVar, z15));
+            d0Var3.c(!H ? 3 : 2, MediaController.B().u0.g0 * 1000, d(ijVar, z14));
             d0Var3.e = j11;
-            boolean J3 = ijVar.J3();
+            boolean I3 = ijVar.I3();
             int i14 = R.drawable.player_new_repeatall;
-            if (J3) {
+            if (I3) {
                 int i15 = iz.S0;
                 int i16 = i15 != 1 ? i15 != 2 ? R.drawable.player_new_repeat_off : R.drawable.player_new_repeatone : R.drawable.player_new_repeatall;
                 android.support.v4.media.session.d0 d0Var4 = this.d;
-                String M05 = id.M0(2131746274, null);
+                String M05 = id.M0(2131746273, null);
                 if (TextUtils.isEmpty("org.telegram.android.musicplayer.repeat")) {
                     throw new IllegalArgumentException("You must specify an action to build a CustomAction");
                 }
@@ -290,19 +290,19 @@ public class MusicPlayerService extends Service implements ls {
                 str5 = null;
             }
             String M06 = id.M0(i10, str5);
-            if (ijVar.J3()) {
-                builder.addAction(new Notification.Action.Builder(iz.N0 ? R.drawable.player_new_shuffle : R.drawable.player_new_shuffle_off, id.M0(2131745325, str5), pendingIntent2).build());
+            if (ijVar.I3()) {
+                builder.addAction(new Notification.Action.Builder(iz.N0 ? R.drawable.player_new_shuffle : R.drawable.player_new_shuffle_off, id.M0(2131745322, str5), pendingIntent2).build());
                 builder.addAction(new Notification.Action.Builder(R.drawable.ic_action_previous, M03, pendingIntent3).build());
             }
             builder.addAction(new Notification.Action.Builder(!H ? R.drawable.ic_action_pause : R.drawable.ic_action_play, M06, broadcast2).build());
-            if (ijVar.J3()) {
+            if (ijVar.I3()) {
                 builder.addAction(new Notification.Action.Builder(R.drawable.ic_action_next, str4, broadcast3).build());
                 int i17 = iz.S0;
                 if (i17 != 1) {
                     i14 = i17 != 2 ? R.drawable.player_new_repeat_off : R.drawable.player_new_repeatone;
                 }
                 str6 = null;
-                builder.addAction(new Notification.Action.Builder(i14, id.M0(2131746274, null), broadcast4).build());
+                builder.addAction(new Notification.Action.Builder(i14, id.M0(2131746273, null), broadcast4).build());
                 this.c.u(this.d.b());
                 g();
                 a0Var = this.c;
@@ -316,7 +316,7 @@ public class MusicPlayerService extends Service implements ls {
                 cVar.z(L0);
                 String str9 = str2;
                 cVar.B("android.media.metadata.TITLE", str9);
-                if (aVar == null && ijVar.J3()) {
+                if (aVar == null && ijVar.I3()) {
                     aVar2 = aVar;
                     str7 = aVar2.f;
                 } else {
@@ -347,9 +347,9 @@ public class MusicPlayerService extends Service implements ls {
                     startForeground(5, build);
                 }
                 if (this.a == null) {
-                    int f12 = MediaController.B().u0.f1();
-                    if (this.f != f12) {
-                        this.f = f12;
+                    int e12 = MediaController.B().u0.e1();
+                    if (this.f != e12) {
+                        this.f = e12;
                         RemoteControlClient.MetadataEditor editMetadata = this.a.editMetadata(true);
                         i12 = 2;
                         editMetadata.putString(2, str8);
@@ -461,7 +461,7 @@ public class MusicPlayerService extends Service implements ls {
         if (z9) {
             return null;
         }
-        org.telegram.ui.ActionBar.k6.T(this);
+        org.telegram.ui.ActionBar.l6.T(this);
         org.telegram.ui.Components.w8 w8Var = tLObject instanceof TLRPC.User ? new org.telegram.ui.Components.w8(0, (TLRPC.User) tLObject) : new org.telegram.ui.Components.w8((TLRPC.Chat) tLObject);
         w8Var.r = 1;
         float f12 = i7;
@@ -544,12 +544,12 @@ public class MusicPlayerService extends Service implements ls {
             d0Var.e = 0L;
         } else {
             ij ijVar = MediaController.B().u0;
-            if (ijVar == null || !ijVar.J3()) {
+            if (ijVar == null || !ijVar.I3()) {
                 j10 = 2360070;
             } else {
                 int i7 = iz.N0 ? R.drawable.player_new_shuffle : R.drawable.player_new_shuffle_off;
                 android.support.v4.media.session.d0 d0Var2 = this.d;
-                String M0 = id.M0(2131745325, null);
+                String M0 = id.M0(2131745322, null);
                 if (TextUtils.isEmpty("org.telegram.android.musicplayer.shuffle")) {
                     throw new IllegalArgumentException("You must specify an action to build a CustomAction");
                 }
@@ -562,11 +562,11 @@ public class MusicPlayerService extends Service implements ls {
             android.support.v4.media.session.d0 d0Var3 = this.d;
             d0Var3.c(!H ? 3 : 2, j3, d(ijVar, z9));
             d0Var3.e = j10;
-            if (ijVar != null && ijVar.J3()) {
+            if (ijVar != null && ijVar.I3()) {
                 int i10 = iz.S0;
                 int i11 = i10 != 1 ? i10 != 2 ? R.drawable.player_new_repeat_off : R.drawable.player_new_repeatone : R.drawable.player_new_repeatall;
                 android.support.v4.media.session.d0 d0Var4 = this.d;
-                String M02 = id.M0(2131746274, null);
+                String M02 = id.M0(2131746273, null);
                 if (TextUtils.isEmpty("org.telegram.android.musicplayer.repeat")) {
                     throw new IllegalArgumentException("You must specify an action to build a CustomAction");
                 }

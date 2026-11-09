@@ -29,13 +29,13 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Cells.q8;
 import org.telegram.ui.Components.uo;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.an;
-import org.telegram.ui.iq;
+import org.telegram.ui.cn;
 import org.telegram.ui.kq;
-import org.telegram.ui.ll;
-import org.telegram.ui.oq;
+import org.telegram.ui.mq;
+import org.telegram.ui.nl;
+import org.telegram.ui.qq;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class u implements Runnable {
     public final /* synthetic */ int a;
@@ -493,10 +493,10 @@ public final class u implements Runnable {
                 org.telegram.messenger.g0.h3(new hi(i7, this, arrayList2));
                 return;
             case 28:
-                an anVar = ((ll) this.c).b;
-                if (this == anVar.Z5) {
-                    anVar.yb((CharSequence) this.b, false);
-                    anVar.Z5 = null;
+                cn cnVar = ((nl) this.c).b;
+                if (this == cnVar.Z5) {
+                    cnVar.Bb((CharSequence) this.b, false);
+                    cnVar.Z5 = null;
                     return;
                 }
                 return;
@@ -504,8 +504,8 @@ public final class u implements Runnable {
                 q8 q8Var = (q8) this.b;
                 boolean z19 = q8Var.d.h;
                 q8Var.setChecked(!z19);
-                oq oqVar = ((kq) this.c).d;
-                TLRPC.TL_chatBannedRights tL_chatBannedRights = oqVar.D;
+                qq qqVar = ((mq) this.c).d;
+                TLRPC.TL_chatBannedRights tL_chatBannedRights = qqVar.D;
                 tL_chatBannedRights.send_media = z19;
                 tL_chatBannedRights.send_gifs = z19;
                 tL_chatBannedRights.send_inline = z19;
@@ -520,10 +520,10 @@ public final class u implements Runnable {
                 tL_chatBannedRights.embed_links = z19;
                 tL_chatBannedRights.send_polls = z19;
                 tL_chatBannedRights.send_reactions = z19;
-                org.telegram.messenger.g0.b4(oqVar.c);
-                iq B0 = oqVar.B0();
-                oqVar.G0();
-                oqVar.F0(B0);
+                org.telegram.messenger.g0.b4(qqVar.c);
+                kq B0 = qqVar.B0();
+                qqVar.G0();
+                qqVar.F0(B0);
                 return;
         }
     }

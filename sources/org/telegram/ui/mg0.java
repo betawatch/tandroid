@@ -1,34 +1,28 @@
 package org.telegram.ui;
 
-import android.content.Context;
-
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class mg0 extends ah.e {
-    public final /* synthetic */ int n;
+public final /* synthetic */ class mg0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ sg0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ mg0(int i7, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, f6Var);
-        this.n = i7;
+    public /* synthetic */ mg0(sg0 sg0Var, int i7) {
+        this.a = i7;
+        this.b = sg0Var;
     }
 
-    @Override // ah.e
-    public final int getHeaderHeight() {
-        switch (this.n) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
             case 0:
-                if (getResources().getConfiguration().orientation != 2) {
-                    break;
-                } else {
-                    break;
-                }
+                this.b.dismiss();
+                break;
+            case 1:
+                this.b.g1(true, false);
+                break;
             default:
-                if (getResources().getConfiguration().orientation != 2) {
-                    break;
-                } else {
-                    break;
-                }
+                this.b.g1(true, false);
+                break;
         }
-        return org.telegram.messenger.g0.L(54.0f);
     }
 }

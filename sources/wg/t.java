@@ -1,128 +1,70 @@
 package wg;
 
-import android.content.DialogInterface;
-import org.telegram.messenger.p10;
-import org.telegram.messenger.qs;
+import android.view.View;
+import org.telegram.messenger.id;
+import org.telegram.messenger.t3;
+import org.telegram.ui.Components.j6;
+import org.telegram.ui.Components.t4;
+import org.telegram.ui.Components.wt0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class t implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ a0 b;
+public final /* synthetic */ class t implements t4, wt0, yg.f, yg.k {
+    public final /* synthetic */ z a;
 
-    public /* synthetic */ t(a0 a0Var, int i7) {
-        this.a = i7;
-        this.b = a0Var;
+    public /* synthetic */ t(z zVar) {
+        this.a = zVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i7 = this.a;
-        final int i10 = 1;
-        final int i11 = 0;
-        final a0 a0Var = this.b;
-        switch (i7) {
-            case 0:
-                org.telegram.messenger.g0.v1(a0Var.k1);
-                break;
-            case 1:
-                qs.f(p10.s0).k(qs.V2, a0Var.T1, Boolean.TRUE);
-                break;
-            case 2:
-                qs.f(p10.s0).k(qs.V2, a0Var.T1, Boolean.FALSE);
-                break;
-            case 3:
-                ug.f1 f1Var = new ug.f1(a0Var.o1, a0Var.a, null, a0Var.I0);
-                f1Var.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: wg.w
-                    @Override // android.content.DialogInterface.OnDismissListener
-                    public final void onDismiss(DialogInterface dialogInterface) {
-                        switch (i10) {
-                            case 0:
-                                yg.r rVar = a0Var.Y1.r;
-                                if (rVar != null) {
-                                    rVar.setPaused(false);
-                                    break;
-                                }
-                                break;
-                            default:
-                                yg.r rVar2 = a0Var.Y1.r;
-                                if (rVar2 != null) {
-                                    rVar2.setPaused(false);
-                                    break;
-                                }
-                                break;
-                        }
-                    }
-                });
-                f1Var.setOnShowListener(new DialogInterface.OnShowListener() { // from class: wg.x
-                    @Override // android.content.DialogInterface.OnShowListener
-                    public final void onShow(DialogInterface dialogInterface) {
-                        switch (i10) {
-                            case 0:
-                                yg.r rVar = a0Var.Y1.r;
-                                if (rVar != null) {
-                                    rVar.setPaused(true);
-                                    break;
-                                }
-                                break;
-                            default:
-                                yg.r rVar2 = a0Var.Y1.r;
-                                if (rVar2 != null) {
-                                    rVar2.setPaused(true);
-                                    break;
-                                }
-                                break;
-                        }
-                    }
-                });
-                f1Var.show();
-                break;
-            default:
-                ug.f1 f1Var2 = new ug.f1(a0Var.o1, a0Var.a, null, a0Var.I0);
-                f1Var2.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: wg.w
-                    @Override // android.content.DialogInterface.OnDismissListener
-                    public final void onDismiss(DialogInterface dialogInterface) {
-                        switch (i11) {
-                            case 0:
-                                yg.r rVar = a0Var.Y1.r;
-                                if (rVar != null) {
-                                    rVar.setPaused(false);
-                                    break;
-                                }
-                                break;
-                            default:
-                                yg.r rVar2 = a0Var.Y1.r;
-                                if (rVar2 != null) {
-                                    rVar2.setPaused(false);
-                                    break;
-                                }
-                                break;
-                        }
-                    }
-                });
-                f1Var2.setOnShowListener(new DialogInterface.OnShowListener() { // from class: wg.x
-                    @Override // android.content.DialogInterface.OnShowListener
-                    public final void onShow(DialogInterface dialogInterface) {
-                        switch (i11) {
-                            case 0:
-                                yg.r rVar = a0Var.Y1.r;
-                                if (rVar != null) {
-                                    rVar.setPaused(true);
-                                    break;
-                                }
-                                break;
-                            default:
-                                yg.r rVar2 = a0Var.Y1.r;
-                                if (rVar2 != null) {
-                                    rVar2.setPaused(true);
-                                    break;
-                                }
-                                break;
-                        }
-                    }
-                });
-                f1Var2.show();
-                break;
+    @Override // org.telegram.ui.Components.t4
+    public void L(int i7, int i10, boolean z9) {
+        z zVar = this.a;
+        zVar.e2 = i7 * 1000;
+        zVar.k1(false, true);
+    }
+
+    @Override // org.telegram.ui.Components.wt0
+    public void m(int i7) {
+        z zVar = this.a;
+        int i10 = zVar.Z1;
+        int i11 = yg.d.w;
+        if (i10 == 2) {
+            zVar.f2 = i7;
+        } else {
+            zVar.g2 = i7;
         }
+        zVar.i2.a.c(zVar.f1(), true);
+        if (zVar.Z1 == 3) {
+            zVar.k1(true, true);
+        } else {
+            zVar.k1(false, false);
+        }
+        xg.c cVar = zVar.Y1;
+        int f12 = zVar.f1();
+        for (int i12 = 0; i12 < cVar.f.getChildCount(); i12++) {
+            View childAt = cVar.f.getChildAt(i12);
+            if (childAt instanceof yg.x) {
+                j6 j6Var = ((yg.x) childAt).r;
+                String G = f12 <= 0 ? "" : id.G(f12, "BoostingBoostsCountTitle", Integer.valueOf(f12));
+                j6Var.a();
+                j6Var.c(G, true, true);
+            }
+            if (childAt instanceof yg.g) {
+                yg.g gVar = (yg.g) childAt;
+                int F = cVar.F(gVar.getChat());
+                boolean V = t3.V(gVar.x);
+                if (gVar.y) {
+                    gVar.setSubtitle(F >= 1 ? id.G(F, V ? "Subscribers" : "Members", new Object[0]) : id.M0(V ? 2131751390 : 2131754876, null));
+                } else {
+                    gVar.setSubtitle(id.G(f12, V ? "BoostingChannelWillReceiveBoost" : "BoostingGroupWillReceiveBoost", new Object[0]));
+                }
+            }
+        }
+        cVar.g(8);
+        cVar.k(cVar.e.size() - 12, 12);
+    }
+
+    @Override // org.telegram.ui.Components.wt0
+    public /* synthetic */ void n() {
     }
 }

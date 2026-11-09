@@ -5,21 +5,21 @@ import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import di.m4;
+import di.n4;
 import java.util.ArrayList;
 import m4.d0;
 import org.telegram.messenger.qs;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.l41;
-import org.telegram.ui.li0;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.m41;
+import org.telegram.ui.ni0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class p extends g {
     public long[] D1;
 
-    public p(Context context, f6 f6Var) {
-        super(context, f6Var);
+    public p(Context context, g6 g6Var) {
+        super(context, g6Var);
         this.w0 = true;
         this.x0 = true;
     }
@@ -60,9 +60,9 @@ public final class p extends g {
             e eVar = this.Q0;
             if (eVar != null) {
                 getSelectedDate();
-                l41 l41Var = (l41) ((li0) eVar).b;
-                l41Var.f();
-                l41Var.b.t0.d(false, false);
+                m41 m41Var = (m41) ((ni0) eVar).b;
+                m41Var.f();
+                m41Var.b.t0.d(false, false);
             }
             invalidate();
             B();
@@ -96,7 +96,7 @@ public final class p extends g {
                     if (animator != null) {
                         animator.cancel();
                     }
-                    ValueAnimator e10 = g.e(this.j0, this.l0, new m4(this, 5));
+                    ValueAnimator e10 = g.e(this.j0, this.l0, new n4(this, 5));
                     this.d0 = e10;
                     e10.start();
                 }

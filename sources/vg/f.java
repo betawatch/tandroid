@@ -9,9 +9,9 @@ import android.opengl.GLUtils;
 import android.opengl.Matrix;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.l6;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class f implements GLSurfaceView.Renderer {
     public final int D;
@@ -43,10 +43,10 @@ public final class f implements GLSurfaceView.Renderer {
     public final float[] n = new float[16];
     public final float[] o = new float[16];
     public final float[] p = new float[16];
-    public int z = k6.Jk;
-    public int A = k6.Kk;
-    public final int B = k6.Tk;
-    public final int C = k6.Uk;
+    public int z = l6.Jk;
+    public int A = l6.Kk;
+    public final int B = l6.Tk;
+    public final int C = l6.Uk;
 
     public f(Context context, int i7, int i10) {
         this.l = 0.0f;
@@ -75,12 +75,12 @@ public final class f implements GLSurfaceView.Renderer {
     }
 
     public final void b() {
-        int i7 = k6.h5;
+        int i7 = l6.h5;
         boolean z9 = false;
-        this.w = i0.a.h(k6.x0(null, i7, false)) < 0.5d;
-        this.x = i0.a.f(this.l, k6.x0(null, this.z, false), k6.x0(null, this.B, false));
-        this.y = i0.a.f(this.l, k6.x0(null, this.A, false), k6.x0(null, this.C, false));
-        if (this.D == 1 && i0.a.h(k6.x0(null, i7, false)) < 0.5d) {
+        this.w = i0.a.h(l6.x0(null, i7, false)) < 0.5d;
+        this.x = i0.a.f(this.l, l6.x0(null, this.z, false), l6.x0(null, this.B, false));
+        this.y = i0.a.f(this.l, l6.x0(null, this.A, false), l6.x0(null, this.C, false));
+        if (this.D == 1 && i0.a.h(l6.x0(null, i7, false)) < 0.5d) {
             z9 = true;
         }
         this.F = z9;

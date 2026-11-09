@@ -3,9 +3,9 @@ package org.telegram.messenger;
 import android.animation.ValueAnimator;
 import android.view.View;
 import android.view.Window;
-import org.telegram.ui.Components.t51;
+import org.telegram.ui.Components.u51;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class q implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -38,7 +38,7 @@ public final /* synthetic */ class q implements ValueAnimator.AnimatorUpdateList
                     return;
                 }
             case 1:
-                ((t51) this.c).B0(((Float) valueAnimator.getAnimatedValue()).floatValue() * (((MediaController) this.b).X != 1 ? 1.0f : 0.2f));
+                ((u51) this.c).B0(((Float) valueAnimator.getAnimatedValue()).floatValue() * (((MediaController) this.b).X != 1 ? 1.0f : 0.2f));
                 break;
             default:
                 fv fvVar = (fv) this.b;

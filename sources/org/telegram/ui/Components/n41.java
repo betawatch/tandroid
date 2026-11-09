@@ -1,53 +1,20 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import android.view.View;
-import java.util.ArrayList;
+import java.io.Serializable;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public abstract class n41 extends org.telegram.ui.ActionBar.f2 {
-    public fi.w3 a;
-    public kg.l1 b;
-    public int c;
-    public int d;
+public final /* synthetic */ class n41 implements org.telegram.messenger.a20, org.telegram.messenger.b20 {
+    public final /* synthetic */ o41 a;
 
-    public n41() {
-        super(null);
-        this.c = -1;
+    @Override // org.telegram.messenger.b20
+    public Boolean a(y31 y31Var, View view, Integer num, Float f10, Float f11) {
+        return Boolean.valueOf(this.a.c0(y31Var, view));
     }
 
-    public abstract void Z(ArrayList arrayList, l41 l41Var);
-
-    public abstract CharSequence a0();
-
-    public abstract void b0(x31 x31Var, View view);
-
-    public abstract boolean c0(x31 x31Var, View view);
-
-    @Override // org.telegram.ui.ActionBar.f2
-    public View createView(Context context) {
-        org.telegram.ui.w9 w9Var = new org.telegram.ui.w9(this, 18);
-        org.telegram.ui.ActionBar.y4 y4Var = this.simpleActionBar;
-        if (y4Var != null) {
-            y4Var.setBackButtonDrawable(new org.telegram.ui.ActionBar.y1(false));
-            this.simpleActionBar.setTitle(a0());
-            this.simpleActionBar.setActionBarMenuOnItemClick(w9Var);
-        } else {
-            this.actionBar.setBackButtonDrawable(new org.telegram.ui.ActionBar.y1(false));
-            this.actionBar.setAllowOverlayTitle(true);
-            this.actionBar.setTitle(a0());
-            this.actionBar.setActionBarMenuOnItemClick(w9Var);
-        }
-        this.b = new kg.l1(context, null, 1);
-        if (!useSimpleActionBar()) {
-            org.telegram.ui.ActionBar.r6.i(org.telegram.ui.ActionBar.k6.a7, this.b, null);
-        }
-        fi.w3 w3Var = new fi.w3(this, this, new d(this, 22), new m41(this), new m41(this));
-        this.a = w3Var;
-        this.b.addView(w3Var, c8.ha.c(-1.0f, -1));
-        kg.l1 l1Var = this.b;
-        this.fragmentView = l1Var;
-        return l1Var;
+    @Override // org.telegram.messenger.a20
+    public void i(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
+        this.a.b0((y31) obj, (View) obj2);
     }
 }

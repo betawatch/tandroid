@@ -2,12 +2,12 @@ package fi;
 
 import android.graphics.drawable.Drawable;
 import android.widget.FrameLayout;
-import org.telegram.ui.Components.ed0;
 import org.telegram.ui.Components.fd0;
+import org.telegram.ui.Components.gd0;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.ro0;
+import org.telegram.ui.to0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class h0 implements og.e {
     public final /* synthetic */ int a;
@@ -32,11 +32,11 @@ public final class h0 implements og.e {
                 m0Var.e.invalidate();
                 return m0Var.h.j();
             default:
-                ed0 ed0Var = ((fd0) frameLayout).a;
-                if (ed0Var == null) {
+                fd0 fd0Var = ((gd0) frameLayout).a;
+                if (fd0Var == null) {
                     return false;
                 }
-                PhotoViewer photoViewer = ((ro0) ed0Var).a;
+                PhotoViewer photoViewer = ((to0) fd0Var).a;
                 Drawable[] drawableArr = PhotoViewer.Y8;
                 return photoViewer.H0();
         }
@@ -52,7 +52,7 @@ public final class h0 implements og.e {
                 ((m0) this.b).h.o();
                 break;
             default:
-                ((fd0) this.b).b.o();
+                ((gd0) this.b).b.o();
                 break;
         }
     }
@@ -67,7 +67,7 @@ public final class h0 implements og.e {
                 ((m0) this.b).h.a.g(1, true);
                 break;
             default:
-                ((fd0) this.b).b.a.g(1, true);
+                ((gd0) this.b).b.a.g(1, true);
                 break;
         }
     }
@@ -92,11 +92,11 @@ public final class h0 implements og.e {
                 m0Var.e.invalidate();
                 return m11;
             default:
-                ed0 ed0Var = ((fd0) frameLayout).a;
-                if (ed0Var == null) {
+                fd0 fd0Var = ((gd0) frameLayout).a;
+                if (fd0Var == null) {
                     return false;
                 }
-                PhotoViewer photoViewer = ((ro0) ed0Var).a;
+                PhotoViewer photoViewer = ((to0) fd0Var).a;
                 Drawable[] drawableArr = PhotoViewer.Y8;
                 return photoViewer.I0(-90.0f, false, null);
         }
@@ -112,7 +112,7 @@ public final class h0 implements og.e {
                 ((m0) this.b).h.k();
                 break;
             default:
-                ((fd0) this.b).b.k();
+                ((gd0) this.b).b.k();
                 break;
         }
     }
@@ -127,12 +127,12 @@ public final class h0 implements og.e {
                 ((m0) this.b).h.setRotation(f10);
                 break;
             default:
-                fd0 fd0Var = (fd0) this.b;
-                fd0Var.b.setRotation(f10);
-                fd0Var.getClass();
-                ed0 ed0Var = fd0Var.a;
-                if (ed0Var != null) {
-                    ((ro0) ed0Var).m(false);
+                gd0 gd0Var = (gd0) this.b;
+                gd0Var.b.setRotation(f10);
+                gd0Var.getClass();
+                fd0 fd0Var = gd0Var.a;
+                if (fd0Var != null) {
+                    ((to0) fd0Var).m(false);
                     break;
                 }
                 break;

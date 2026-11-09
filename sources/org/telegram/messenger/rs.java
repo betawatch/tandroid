@@ -12,7 +12,7 @@ import java.util.Map;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class rs implements Runnable {
     public final /* synthetic */ int a;
@@ -36,7 +36,7 @@ public final /* synthetic */ class rs implements Runnable {
                     ij ijVar = (ij) arrayList.get(i11);
                     long B0 = ij.B0(ijVar.k);
                     TLRPC.Message message = ijVar.k;
-                    if ((!message.mentioned || !(message.action instanceof TLRPC.TL_messageActionPinMessage)) && !m5.C(B0) && (ijVar.k.peer_id.channel_id == 0 || ijVar.B4())) {
+                    if ((!message.mentioned || !(message.action instanceof TLRPC.TL_messageActionPinMessage)) && !m5.C(B0) && (ijVar.k.peer_id.channel_id == 0 || ijVar.A4())) {
                         arrayList2.add(0, ijVar);
                     }
                 }
@@ -147,7 +147,7 @@ public final /* synthetic */ class rs implements Runnable {
                         i14--;
                         SparseArray sparseArray = (SparseArray) hVar2.f(ij.B0(ijVar2.k));
                         if (sparseArray != null) {
-                            sparseArray.remove(ijVar2.f1());
+                            sparseArray.remove(ijVar2.e1());
                         }
                         if (sparseArray != null && sparseArray.size() <= 0) {
                             hVar2.l(ij.B0(ijVar2.k));

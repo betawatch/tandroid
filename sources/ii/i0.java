@@ -8,26 +8,26 @@ import org.telegram.messenger.qp;
 import org.telegram.messenger.t3;
 import org.telegram.messenger.uo;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Cells.p2;
 import org.telegram.ui.Cells.t2;
-import org.telegram.ui.Components.l41;
-import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.q41;
-import org.telegram.ui.Components.w31;
+import org.telegram.ui.Components.m41;
+import org.telegram.ui.Components.qj0;
+import org.telegram.ui.Components.r41;
 import org.telegram.ui.Components.x31;
+import org.telegram.ui.Components.y31;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
-public final class i0 extends w31 {
+public final class i0 extends x31 {
     static {
-        w31.h(new i0());
+        x31.h(new i0());
     }
 
-    public static x31 i(uo uoVar, p2 p2Var) {
+    public static y31 i(uo uoVar, p2 p2Var) {
         TLRPC.User user = uoVar.c;
         if (user != null) {
-            x31 K = x31.K(i0.class);
+            y31 K = y31.K(i0.class);
             long j3 = user.id;
             K.B = j3;
             K.d = (int) (j3 ^ (j3 >>> 32));
@@ -36,7 +36,7 @@ public final class i0 extends w31 {
             return K;
         }
         TLRPC.Chat chat = uoVar.b;
-        x31 K2 = x31.K(i0.class);
+        y31 K2 = y31.K(i0.class);
         long j10 = chat != null ? -chat.id : 0L;
         K2.B = j10;
         K2.d = (int) (j10 ^ (j10 >>> 32));
@@ -45,11 +45,11 @@ public final class i0 extends w31 {
         return K2;
     }
 
-    @Override // org.telegram.ui.Components.w31
-    public final void b(View view, x31 x31Var, boolean z9, l41 l41Var, q41 q41Var) {
+    @Override // org.telegram.ui.Components.x31
+    public final void b(View view, y31 y31Var, boolean z9, m41 m41Var, r41 r41Var) {
         t2 t2Var = (t2) view;
-        t2Var.setDialogCellDelegate((p2) x31Var.H);
-        Object obj = x31Var.G;
+        t2Var.setDialogCellDelegate((p2) y31Var.H);
+        Object obj = y31Var.G;
         if (obj instanceof TLRPC.Chat) {
             TLRPC.Chat chat = (TLRPC.Chat) obj;
             t2Var.Q0 = t3.e0(p10.s0, chat);
@@ -80,20 +80,20 @@ public final class i0 extends w31 {
         }
     }
 
-    @Override // org.telegram.ui.Components.w31
-    public final boolean c(x31 x31Var, x31 x31Var2) {
-        return x31Var.d == x31Var2.d;
+    @Override // org.telegram.ui.Components.x31
+    public final boolean c(y31 y31Var, y31 y31Var2) {
+        return y31Var.d == y31Var2.d;
     }
 
-    @Override // org.telegram.ui.Components.w31
-    public final View d(Context context, pj0 pj0Var, int i7, f6 f6Var) {
-        t2 t2Var = new t2(null, context, false, i7, f6Var);
+    @Override // org.telegram.ui.Components.x31
+    public final View d(Context context, qj0 qj0Var, int i7, g6 g6Var) {
+        t2 t2Var = new t2(null, context, false, i7, g6Var);
         t2Var.O0 = true;
         return t2Var;
     }
 
-    @Override // org.telegram.ui.Components.w31
-    public final boolean e(x31 x31Var, x31 x31Var2) {
-        return x31Var.d == x31Var2.d;
+    @Override // org.telegram.ui.Components.x31
+    public final boolean e(y31 y31Var, y31 y31Var2) {
+        return y31Var.d == y31Var2.d;
     }
 }

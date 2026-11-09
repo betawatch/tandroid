@@ -4,27 +4,27 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public abstract class pl extends org.telegram.ui.nq0 {
+public abstract class pl extends org.telegram.ui.pq0 {
     public final /* synthetic */ ChatAttachAlertPhotoLayout a;
 
     public pl(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout) {
         this.a = chatAttachAlertPhotoLayout;
     }
 
-    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
+    @Override // org.telegram.ui.pq0, org.telegram.ui.wq0
     public final int H() {
         return ChatAttachAlertPhotoLayout.s1.size();
     }
 
-    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
+    @Override // org.telegram.ui.pq0, org.telegram.ui.wq0
     public final boolean O() {
         di diVar = this.a.b;
         return diVar != null && diVar.Z1;
     }
 
-    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
+    @Override // org.telegram.ui.pq0, org.telegram.ui.wq0
     public final int S(int i7) {
         boolean z9 = ChatAttachAlertPhotoLayout.q1;
         org.telegram.messenger.gf e02 = this.a.e0(i7);
@@ -34,12 +34,12 @@ public abstract class pl extends org.telegram.ui.nq0 {
         return ChatAttachAlertPhotoLayout.t1.indexOf(Integer.valueOf(e02.C));
     }
 
-    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
+    @Override // org.telegram.ui.pq0, org.telegram.ui.wq0
     public final ArrayList c() {
         return ChatAttachAlertPhotoLayout.t1;
     }
 
-    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
+    @Override // org.telegram.ui.pq0, org.telegram.ui.wq0
     public final int k(int i7, org.telegram.messenger.j20 j20Var) {
         boolean z9;
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.a;
@@ -69,7 +69,7 @@ public abstract class pl extends org.telegram.ui.nq0 {
                         View childAt = jlVar2.getChildAt(i10);
                         if (!(childAt instanceof org.telegram.ui.Cells.q5) || ((Integer) childAt.getTag()).intValue() != i7) {
                             i10++;
-                        } else if ((diVar.W1 instanceof org.telegram.ui.an) && diVar.N3) {
+                        } else if ((diVar.W1 instanceof org.telegram.ui.cn) && diVar.N3) {
                             ((org.telegram.ui.Cells.q5) childAt).b(S, z9, false);
                         } else {
                             ((org.telegram.ui.Cells.q5) childAt).b(-1, z9, false);
@@ -84,7 +84,7 @@ public abstract class pl extends org.telegram.ui.nq0 {
                         View childAt2 = jlVar.getChildAt(i11);
                         if (!(childAt2 instanceof org.telegram.ui.Cells.q5) || ((Integer) childAt2.getTag()).intValue() != i7) {
                             i11++;
-                        } else if ((diVar.W1 instanceof org.telegram.ui.an) && diVar.N3) {
+                        } else if ((diVar.W1 instanceof org.telegram.ui.cn) && diVar.N3) {
                             ((org.telegram.ui.Cells.q5) childAt2).b(S, z9, false);
                         } else {
                             ((org.telegram.ui.Cells.q5) childAt2).b(-1, z9, false);
@@ -98,18 +98,18 @@ public abstract class pl extends org.telegram.ui.nq0 {
         return -1;
     }
 
-    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
+    @Override // org.telegram.ui.pq0, org.telegram.ui.wq0
     public final void m() {
         boolean z9 = ChatAttachAlertPhotoLayout.q1;
         this.a.y0();
     }
 
-    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
+    @Override // org.telegram.ui.pq0, org.telegram.ui.wq0
     public final HashMap v() {
         return ChatAttachAlertPhotoLayout.s1;
     }
 
-    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
+    @Override // org.telegram.ui.pq0, org.telegram.ui.wq0
     public final boolean x(int i7) {
         boolean z9 = ChatAttachAlertPhotoLayout.q1;
         org.telegram.messenger.gf e02 = this.a.e0(i7);

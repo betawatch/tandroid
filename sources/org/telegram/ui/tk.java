@@ -1,60 +1,93 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.drawable.ShapeDrawable;
-import android.text.TextPaint;
-import android.view.animation.OvershootInterpolator;
+import android.content.SharedPreferences;
+import java.util.ArrayList;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class tk extends org.telegram.ui.Components.ty0 {
-    public final /* synthetic */ an K;
+public final class tk implements ml {
+    public final /* synthetic */ cn a;
+    public final /* synthetic */ cn b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public tk(Activity activity, org.telegram.ui.ActionBar.f6 f6Var, an anVar) {
-        super(activity);
-        this.K = anVar;
-        TextPaint textPaint = new TextPaint(1);
-        this.b = textPaint;
-        Paint paint = new Paint(1);
-        this.c = paint;
-        this.d = org.telegram.messenger.g0.L(24.0f);
-        this.e = new OvershootInterpolator();
-        this.H = new org.telegram.ui.Components.ir0(this, 12);
-        this.J = new Path();
-        int w02 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.vj, f6Var);
-        int alpha = Color.alpha(w02);
-        textPaint.setTextSize(org.telegram.messenger.g0.L(15.0f));
-        textPaint.setColor(w02);
-        paint.setColor(w02);
-        paint.setAlpha((int) (alpha * 0.14d));
-        int L = org.telegram.messenger.g0.L(6.0f);
-        int i7 = org.telegram.ui.ActionBar.k6.tj;
-        ShapeDrawable d02 = org.telegram.ui.ActionBar.k6.d0(L, org.telegram.ui.ActionBar.k6.w0(i7, f6Var));
-        org.telegram.ui.ActionBar.n6 N = org.telegram.ui.ActionBar.r6.N(i7);
-        setBackground(d02);
-        org.telegram.ui.ActionBar.r6.k(this, d02, N, null, f6Var);
+    public tk(cn cnVar, cn cnVar2) {
+        this.b = cnVar;
+        this.a = cnVar2;
     }
 
-    public final void d() {
-        int i7 = -(org.telegram.messenger.g0.L(16.0f) + getMeasuredHeight());
-        an anVar = this.K;
-        setTranslationY((anVar.Z.getTop() - anVar.l1.getMeasuredHeight()) - ((1.0f - getPrepareProgress()) * (r2 + i7)));
+    @Override // org.telegram.ui.ml
+    public final void T0(int i7) {
+        this.b.l(i7, 0, true, 0, true, 0);
     }
 
-    @Override // org.telegram.ui.Components.ty0, android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        d();
+    @Override // org.telegram.ui.ml
+    public final void Y(boolean z9, boolean z10) {
+        org.telegram.ui.Components.za zaVar;
+        int i7;
+        cn cnVar = this.b;
+        if (!z9) {
+            org.telegram.messenger.ij ijVar = (org.telegram.messenger.ij) cnVar.V4.get(Integer.valueOf(cnVar.X4));
+            if (ijVar == null) {
+                ijVar = (org.telegram.messenger.ij) cnVar.E6[0].get(cnVar.X4);
+            }
+            cnVar.Jc(ijVar);
+            return;
+        }
+        ArrayList arrayList = new ArrayList(cnVar.T4);
+        ArrayList arrayList2 = new ArrayList(cnVar.V4.values());
+        org.telegram.ui.Components.cc ccVar = null;
+        if (z10) {
+            i7 = ((org.telegram.ui.ActionBar.f2) cnVar).currentAccount;
+            SharedPreferences sharedPreferences = org.telegram.messenger.qp.s1(i7).d7;
+            if (cnVar.T4.isEmpty()) {
+                sharedPreferences.edit().remove("pin_" + cnVar.j6).commit();
+            } else {
+                sharedPreferences.edit().putInt("pin_" + cnVar.j6, ((Integer) cnVar.T4.get(0)).intValue()).commit();
+            }
+            cnVar.fd(0, true);
+        } else {
+            cnVar.getNotificationCenter().k(org.telegram.messenger.qs.t0, Long.valueOf(cnVar.j6), arrayList, Boolean.FALSE, null, null, 0, 0, Boolean.TRUE);
+        }
+        org.telegram.ui.Components.cc ccVar2 = cnVar.O3;
+        if (ccVar2 != null) {
+            ccVar2.b();
+        }
+        cnVar.P3 = true;
+        int i10 = cnVar.Q3 + 1;
+        cnVar.Q3 = i10;
+        boolean z11 = cnVar.v4;
+        cn cnVar2 = this.a;
+        int b92 = z11 ? cnVar2.b9() : cnVar.b9();
+        ArrayList arrayList3 = new ArrayList(cnVar.v4 ? cnVar2.T4 : cnVar.T4);
+        sk skVar = new sk(this, z10, arrayList, arrayList2, b92, i10);
+        org.telegram.messenger.voip.k0 k0Var = new org.telegram.messenger.voip.k0(this, z10, arrayList3, i10);
+        an anVar = cnVar.za;
+        if (cnVar.getParentActivity() == null) {
+            k0Var.run();
+        } else {
+            if (z10) {
+                org.telegram.ui.Components.zb zbVar = new org.telegram.ui.Components.zb(cnVar.getParentActivity(), anVar);
+                zbVar.c(R.raw.ic_unpin, 28, 28, "Pin", "Line");
+                zbVar.b.setText(org.telegram.messenger.id.M0(2131747224, null));
+                zbVar.c.setText(org.telegram.messenger.id.M0(2131747223, null));
+                zaVar = zbVar;
+            } else {
+                org.telegram.ui.Components.kb kbVar = new org.telegram.ui.Components.kb(cnVar.getParentActivity(), anVar);
+                kbVar.c(R.raw.ic_unpin, 28, 28, "Pin", "Line");
+                kbVar.b.setText(org.telegram.messenger.id.G(b92, "MessagesUnpinned", new Object[0]));
+                zaVar = kbVar;
+            }
+            org.telegram.ui.Components.ac acVar = new org.telegram.ui.Components.ac(cnVar.getParentActivity(), anVar, true);
+            acVar.b = skVar;
+            acVar.c = k0Var;
+            zaVar.setButton(acVar);
+            ccVar = org.telegram.ui.Components.cc.g(cnVar, zaVar, 5000);
+        }
+        cnVar.O3 = ccVar;
     }
 
-    @Override // org.telegram.ui.Components.ty0, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(i7, i10);
-        d();
+    @Override // org.telegram.ui.ml
+    public final void w0(String str) {
+        this.b.Fa(str, false);
     }
 }

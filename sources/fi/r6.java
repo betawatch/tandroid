@@ -11,11 +11,11 @@ import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.v10;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.li;
-import org.telegram.ui.Components.x31;
+import org.telegram.ui.Components.m41;
+import org.telegram.ui.Components.y31;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r6 implements v10 {
     public final /* synthetic */ int a;
@@ -32,22 +32,22 @@ public final /* synthetic */ class r6 implements v10 {
         switch (this.a) {
             case 0:
                 ArrayList arrayList = (ArrayList) obj;
-                l41 l41Var = (l41) obj2;
+                m41 m41Var = (m41) obj2;
                 w6 w6Var = this.b;
                 kp kpVar = w6Var.W1;
-                l41Var.F = 1;
+                m41Var.F = 1;
                 int L = org.telegram.messenger.g0.L(64.0f);
-                arrayList.add(x31.D(org.telegram.messenger.g0.L(64.0f)));
+                arrayList.add(y31.D(org.telegram.messenger.g0.L(64.0f)));
                 if (w6Var.R1 || w6Var.Z1) {
                     L += w6Var.d1(true, arrayList, id.M0(2131753905, null), w6Var.T1, false, false, -1);
                 }
                 if (!w6Var.R1) {
                     if (TextUtils.isEmpty(w6Var.j2) && !w6Var.Z1) {
-                        l41Var.V();
-                        x31 c10 = x31.c(1, R.drawable.msg2_folder, id.M0(2131744612, null));
+                        m41Var.V();
+                        y31 c10 = y31.c(1, R.drawable.msg2_folder, id.M0(2131744609, null));
                         c10.q = true;
                         arrayList.add(c10);
-                        l41Var.U();
+                        m41Var.U();
                         L += org.telegram.messenger.g0.L(50.0f);
                     }
                     if (!w6Var.Z1 && kpVar != null) {
@@ -57,25 +57,25 @@ public final /* synthetic */ class r6 implements v10 {
                 }
                 if (arrayList.size() <= ((w6Var.R1 || !TextUtils.isEmpty(w6Var.j2) || w6Var.Z1) ? 1 : 2)) {
                     if (TextUtils.isEmpty(w6Var.j2)) {
-                        String M0 = id.M0(2131748244, null);
-                        String M02 = id.M0(2131748245, null);
+                        String M0 = id.M0(2131748243, null);
+                        String M02 = id.M0(2131748244, null);
                         int i7 = li.b;
-                        x31 K = x31.K(li.class);
+                        y31 K = y31.K(li.class);
                         K.l = M0;
                         K.m = M02;
                         arrayList.add(K);
                     } else {
-                        String M03 = id.M0(2131748244, null);
-                        SpannableStringBuilder X2 = org.telegram.messenger.g0.X2(id.a0(null, null, w6Var.j2.length() >= 3 ? 2131748242 : 2131748243, w6Var.j2));
+                        String M03 = id.M0(2131748243, null);
+                        SpannableStringBuilder X2 = org.telegram.messenger.g0.X2(id.a0(null, null, w6Var.j2.length() >= 3 ? 2131748241 : 2131748242, w6Var.j2));
                         int i10 = li.b;
-                        x31 K2 = x31.K(li.class);
+                        y31 K2 = y31.K(li.class);
                         K2.l = M03;
                         K2.m = X2;
                         arrayList.add(K2);
                     }
                 }
-                arrayList.add(x31.C(null));
-                arrayList.add(x31.D(Math.max(0, org.telegram.messenger.g0.L(24.0f) + (((org.telegram.messenger.g0.q.y - (org.telegram.messenger.g0.L(12.0f) + L)) - org.telegram.messenger.g0.m) - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()))));
+                arrayList.add(y31.C(null));
+                arrayList.add(y31.D(Math.max(0, org.telegram.messenger.g0.L(24.0f) + (((org.telegram.messenger.g0.q.y - (org.telegram.messenger.g0.L(12.0f) + L)) - org.telegram.messenger.g0.m) - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()))));
                 break;
             default:
                 TLRPC.messages_BotResults messages_botresults = (TLRPC.messages_BotResults) obj;

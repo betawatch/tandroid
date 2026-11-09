@@ -3,16 +3,16 @@ package org.telegram.ui;
 import android.animation.ValueAnimator;
 import android.view.View;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class te implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ an b;
+    public final /* synthetic */ cn b;
     public final /* synthetic */ View c;
 
-    public /* synthetic */ te(an anVar, org.telegram.ui.Cells.t0 t0Var, int i7) {
+    public /* synthetic */ te(cn cnVar, org.telegram.ui.Cells.t0 t0Var, int i7) {
         this.a = i7;
-        this.b = anVar;
+        this.b = cnVar;
         this.c = t0Var;
     }
 
@@ -20,20 +20,20 @@ public final /* synthetic */ class te implements ValueAnimator.AnimatorUpdateLis
     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                an anVar = this.b;
-                anVar.getClass();
+                cn cnVar = this.b;
+                cnVar.getClass();
                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                anVar.T9 = org.telegram.messenger.g0.L(30.0f) * floatValue;
-                anVar.K9();
+                cnVar.V9 = org.telegram.messenger.g0.L(30.0f) * floatValue;
+                cnVar.L9();
                 this.c.setAlpha(floatValue);
                 break;
             default:
-                an anVar2 = this.b;
-                anVar2.getClass();
+                cn cnVar2 = this.b;
+                cnVar2.getClass();
                 float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                anVar2.T9 = org.telegram.messenger.g0.L(30.0f) * floatValue2;
-                anVar2.K9();
-                anVar2.M9();
+                cnVar2.V9 = org.telegram.messenger.g0.L(30.0f) * floatValue2;
+                cnVar2.L9();
+                cnVar2.N9();
                 this.c.setAlpha(floatValue2);
                 break;
         }

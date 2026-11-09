@@ -10,9 +10,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
-import org.telegram.ui.Components.k60;
+import org.telegram.ui.Components.l60;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a0 implements Runnable {
     public final /* synthetic */ int a;
@@ -69,11 +69,11 @@ public final /* synthetic */ class a0 implements Runnable {
                         imageView.setScaleType(ImageView.ScaleType.CENTER);
                         frameLayout.addView(imageView, c8.ha.d(24, 24.0f, 19, 12.0f, 12.0f, 12.0f, 12.0f));
                         TextView textView = new TextView(e0Var.getContext());
-                        textView.setText(id.M0(2131744708, null));
+                        textView.setText(id.M0(2131744705, null));
                         textView.setTextSize(1, 13.0f);
                         textView.setTextColor(-1);
                         frameLayout.addView(textView, c8.ha.d(-1, -2.0f, 23, 47.0f, 8.0f, 24.0f, 8.0f));
-                        k60 F = k60.F(e0Var.a, e0Var.b, e0Var);
+                        l60 F = l60.F(e0Var.a, e0Var.b, e0Var);
                         if (e0Var.j0.n.K) {
                             y6 y6Var = new y6(e0Var.getContext(), 0);
                             y6Var.b = 0.0f;
@@ -85,8 +85,8 @@ public final /* synthetic */ class a0 implements Runnable {
                             F.o();
                         }
                         F.T = qs.x3;
-                        F.c(R.drawable.menu_camera_retake, id.M0(2131744814, null), new a0(e0Var, 4), false);
-                        F.c(R.drawable.msg_delete, id.M0(2131751599, null), new a0(e0Var, 5), true);
+                        F.c(R.drawable.menu_camera_retake, id.M0(2131744811, null), new a0(e0Var, 4), false);
+                        F.c(R.drawable.msg_delete, id.M0(2131751598, null), new a0(e0Var, 5), true);
                         F.o();
                         F.r(frameLayout, c8.ha.o(qs.x3, -2));
                         F.p = new ai.m0(10);
@@ -160,7 +160,7 @@ public final /* synthetic */ class a0 implements Runnable {
                                         if (Math.abs((d0Var4.g >= 0 ? d0Var4.g : d0Var4.d.getCurrentPosition()) - k10) <= 450 && d0Var4.g < 0) {
                                             c0 c0Var6 = d0Var4.d;
                                             d0Var4.g = k10;
-                                            c0Var6.seekTo(k10, e0Var3.p0, new di.s7(d0Var4, 14));
+                                            c0Var6.seekTo(k10, e0Var3.p0, new di.f8(d0Var4, 13));
                                         }
                                     }
                                 }
@@ -169,7 +169,7 @@ public final /* synthetic */ class a0 implements Runnable {
                                 if (Math.abs((d0Var4.g >= 0 ? d0Var4.g : d0Var4.d.getCurrentPosition()) - k10) <= 450) {
                                     c0 c0Var62 = d0Var4.d;
                                     d0Var4.g = k10;
-                                    c0Var62.seekTo(k10, e0Var3.p0, new di.s7(d0Var4, 14));
+                                    c0Var62.seekTo(k10, e0Var3.p0, new di.f8(d0Var4, 13));
                                 }
                             }
                         }

@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p4 implements v10 {
     public final /* synthetic */ int a;
@@ -34,7 +34,7 @@ public final /* synthetic */ class p4 implements v10 {
                 TL_stars.StarsAmount o4 = aVar.o();
                 TL_stars.updateStarGiftPrice updatestargiftprice = new TL_stars.updateStarGiftPrice();
                 final k7 k7Var = this.b;
-                updatestargiftprice.stargift = k7Var.B1();
+                updatestargiftprice.stargift = k7Var.A1();
                 updatestargiftprice.resell_amount = o4;
                 ConnectionsManager connectionsManager = ConnectionsManager.getInstance(k7Var.a);
                 final int i7 = 0;
@@ -126,7 +126,7 @@ public final /* synthetic */ class p4 implements v10 {
                                                     if (runnable3 != null) {
                                                         runnable3.run();
                                                     }
-                                                    k7Var3.k().Q(R.raw.contact_check, 36, org.telegram.messenger.id.a0(null, null, 2131750029, k7Var3.z1())).j();
+                                                    k7Var3.k().Q(R.raw.contact_check, 36, org.telegram.messenger.id.a0(null, null, 2131750028, k7Var3.y1())).j();
                                                     break;
                                             }
                                         }
@@ -214,7 +214,7 @@ public final /* synthetic */ class p4 implements v10 {
                                                     if (runnable32 != null) {
                                                         runnable32.run();
                                                     }
-                                                    k7Var32.k().Q(R.raw.contact_check, 36, org.telegram.messenger.id.a0(null, null, 2131750029, k7Var32.z1())).j();
+                                                    k7Var32.k().Q(R.raw.contact_check, 36, org.telegram.messenger.id.a0(null, null, 2131750028, k7Var32.y1())).j();
                                                     break;
                                             }
                                         }
@@ -230,25 +230,25 @@ public final /* synthetic */ class p4 implements v10 {
                 c20 c20Var = (c20) obj;
                 Boolean bool = (Boolean) obj2;
                 k7 k7Var2 = this.b;
-                zh.j3 j3Var = k7Var2.O2;
+                zh.k3 k3Var = k7Var2.O2;
                 TL_stars.TL_starGiftUnique tL_starGiftUnique2 = this.c;
-                if (j3Var == null) {
-                    zh.j3 j3Var2 = new zh.j3(k7Var2.a, tL_starGiftUnique2.gift_id);
-                    k7Var2.O2 = j3Var2;
-                    j3Var2.a();
+                if (k3Var == null) {
+                    zh.k3 k3Var2 = new zh.k3(k7Var2.a, tL_starGiftUnique2.gift_id);
+                    k7Var2.O2 = k3Var2;
+                    k3Var2.a();
                 }
                 HashSet hashSet = new HashSet();
                 int i10 = 0;
                 while (true) {
                     b6[] b6VarArr = k7Var2.X1.M.n;
                     if (i10 >= b6VarArr.length) {
-                        zh.k3 k3Var = new zh.k3(k7Var2.getContext(), tL_starGiftUnique2.title, k7Var2.O2);
-                        k3Var.Y1.addAll(hashSet);
-                        k3Var.a2.O(true);
-                        k3Var.Z1 = bool.booleanValue();
-                        k3Var.W1.set(org.telegram.messenger.g0.X2(org.telegram.messenger.id.G(4 - hashSet.size(), "GiftCraftSelect", new Object[0])));
-                        k3Var.X1 = new n2(c20Var, 0);
-                        k3Var.show();
+                        zh.l3 l3Var = new zh.l3(k7Var2.getContext(), tL_starGiftUnique2.title, k7Var2.O2);
+                        l3Var.Y1.addAll(hashSet);
+                        l3Var.a2.O(true);
+                        l3Var.Z1 = bool.booleanValue();
+                        l3Var.W1.set(org.telegram.messenger.g0.X2(org.telegram.messenger.id.G(4 - hashSet.size(), "GiftCraftSelect", new Object[0])));
+                        l3Var.X1 = new n2(c20Var, 0);
+                        l3Var.show();
                         break;
                     } else {
                         TL_stars.StarGift starGift = b6VarArr[i10].h;
@@ -267,7 +267,7 @@ public final /* synthetic */ class p4 implements v10 {
                 TL_stars.StarsAmount o10 = aVar2.o();
                 TL_stars.updateStarGiftPrice updatestargiftprice2 = new TL_stars.updateStarGiftPrice();
                 final k7 k7Var3 = this.b;
-                updatestargiftprice2.stargift = k7Var3.B1();
+                updatestargiftprice2.stargift = k7Var3.A1();
                 updatestargiftprice2.resell_amount = o10;
                 ConnectionsManager connectionsManager2 = ConnectionsManager.getInstance(k7Var3.a);
                 final int i11 = 1;
@@ -359,7 +359,7 @@ public final /* synthetic */ class p4 implements v10 {
                                                     if (runnable32 != null) {
                                                         runnable32.run();
                                                     }
-                                                    k7Var32.k().Q(R.raw.contact_check, 36, org.telegram.messenger.id.a0(null, null, 2131750029, k7Var32.z1())).j();
+                                                    k7Var32.k().Q(R.raw.contact_check, 36, org.telegram.messenger.id.a0(null, null, 2131750028, k7Var32.y1())).j();
                                                     break;
                                             }
                                         }
@@ -447,7 +447,7 @@ public final /* synthetic */ class p4 implements v10 {
                                                     if (runnable32 != null) {
                                                         runnable32.run();
                                                     }
-                                                    k7Var322.k().Q(R.raw.contact_check, 36, org.telegram.messenger.id.a0(null, null, 2131750029, k7Var322.z1())).j();
+                                                    k7Var322.k().Q(R.raw.contact_check, 36, org.telegram.messenger.id.a0(null, null, 2131750028, k7Var322.y1())).j();
                                                     break;
                                             }
                                         }

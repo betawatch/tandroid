@@ -19,11 +19,11 @@ import java.util.HashSet;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.qs;
-import org.telegram.ui.ActionBar.a6;
+import org.telegram.ui.ActionBar.b6;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class d extends Drawable implements a6 {
+public final class d extends Drawable implements b6 {
     public final Paint D;
     public int E;
     public boolean F;
@@ -189,7 +189,7 @@ public final class d extends Drawable implements a6 {
         this.G = i7;
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
         try {
             this.b.updateColors();
@@ -199,7 +199,7 @@ public final class d extends Drawable implements a6 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 

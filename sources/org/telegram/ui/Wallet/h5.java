@@ -1,33 +1,36 @@
 package org.telegram.ui.Wallet;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.ShapeDrawable;
-import org.telegram.ui.Components.pr;
+import android.view.View;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
-public final class h5 extends pr {
-    public final ShapeDrawable G;
-    public final /* synthetic */ x5 H;
+public final class h5 extends View {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ w5 b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h5(x5 x5Var, Context context) {
+    public /* synthetic */ h5(w5 w5Var, Context context, int i7) {
         super(context);
-        this.H = x5Var;
-        this.G = org.telegram.ui.ActionBar.k6.d0(org.telegram.messenger.g0.L(22.0f), x5Var.getThemedColor(org.telegram.ui.ActionBar.k6.d6));
+        this.a = i7;
+        this.b = w5Var;
     }
 
-    @Override // org.telegram.ui.Components.pr, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        int ceil = (int) Math.ceil(getMetadata().g.a);
-        if (ceil > 0) {
-            ShapeDrawable shapeDrawable = this.G;
-            shapeDrawable.getPaint().setColor(this.H.getThemedColor(org.telegram.ui.ActionBar.k6.d6));
-            shapeDrawable.setBounds(0, 0, getWidth(), ceil);
-            shapeDrawable.setAlpha((int) (getMetadata().c.a * 255.0f));
-            shapeDrawable.draw(canvas);
+    @Override // android.view.View
+    public final void onMeasure(int i7, int i10) {
+        switch (this.a) {
+            case 0:
+                int size = View.MeasureSpec.getSize(i7);
+                w5 w5Var = this.b;
+                w5Var.Z.measure(View.MeasureSpec.makeMeasureSpec(Math.max(0, size - org.telegram.messenger.g0.L(24.0f)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
+                setMeasuredDimension(size, org.telegram.messenger.g0.L(36.0f) + w5Var.Z.getMeasuredHeight());
+                break;
+            default:
+                w5 w5Var2 = this.b;
+                w5Var2.e.measure(i7, View.MeasureSpec.makeMeasureSpec(0, 0));
+                setMeasuredDimension(View.MeasureSpec.getSize(i7), w5Var2.e.getMeasuredHeight());
+                break;
         }
-        super.dispatchDraw(canvas);
     }
 }

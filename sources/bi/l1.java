@@ -12,7 +12,7 @@ import org.telegram.messenger.qs;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.ui.Components.FragmentContextView;
 import org.telegram.ui.Components.br;
-import org.telegram.ui.Components.t51;
+import org.telegram.ui.Components.u51;
 import org.telegram.ui.Components.vp;
 import org.telegram.ui.ExternalActionActivity;
 import org.telegram.ui.LaunchActivity;
@@ -20,7 +20,7 @@ import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l1 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -82,9 +82,9 @@ public final /* synthetic */ class l1 implements View.OnClickListener {
             case 12:
                 float[] fArr = FragmentContextView.W0;
                 MediaController B = MediaController.B();
-                t51 t51Var = B.E0;
-                if (t51Var != null) {
-                    t51Var.s0(false);
+                u51 u51Var = B.E0;
+                if (u51Var != null) {
+                    u51Var.s0(false);
                 }
                 B.n0();
                 B.m();
@@ -92,7 +92,7 @@ public final /* synthetic */ class l1 implements View.OnClickListener {
                 if (ijVar != null) {
                     qs f10 = qs.f(ijVar.I1);
                     ij ijVar2 = B.u0;
-                    f10.k(qs.g2, Integer.valueOf(ijVar2 != null ? ijVar2.f1() : 0));
+                    f10.k(qs.g2, Integer.valueOf(ijVar2 != null ? ijVar2.e1() : 0));
                     break;
                 }
                 break;
@@ -122,7 +122,7 @@ public final /* synthetic */ class l1 implements View.OnClickListener {
             case 19:
                 break;
             case 20:
-                RectF rectF = ProfileActivity.S6;
+                RectF rectF = ProfileActivity.V6;
                 try {
                     view.getContext().startActivity(new Intent("android.intent.action.VIEW", Uri.parse("https://fragment.com")));
                     break;
@@ -131,7 +131,7 @@ public final /* synthetic */ class l1 implements View.OnClickListener {
                     return;
                 }
             case 21:
-                int i17 = org.telegram.ui.Wallet.o3.W;
+                int i17 = org.telegram.ui.Wallet.n3.W;
                 break;
             case 22:
                 PhotoViewer.p1().c0(1.0f, 0.0f, 0.0f, false);

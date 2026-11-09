@@ -5,17 +5,17 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
-import org.telegram.ui.Components.mc0;
+import org.telegram.ui.Components.nc0;
 import org.telegram.ui.Components.ng;
 import org.telegram.ui.WallpapersListActivity;
-import org.telegram.ui.g60;
-import org.telegram.ui.lm;
-import org.telegram.ui.ln;
-import org.telegram.ui.pn;
-import org.telegram.ui.vn;
-import org.telegram.ui.xm0;
+import org.telegram.ui.i60;
+import org.telegram.ui.nm;
+import org.telegram.ui.nn;
+import org.telegram.ui.rn;
+import org.telegram.ui.xn;
+import org.telegram.ui.zm0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d3 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -58,45 +58,45 @@ public final /* synthetic */ class d3 implements RequestDelegate {
                 }
                 break;
             case 3:
-                org.telegram.messenger.g0.h3(new bi.u7((lm) this.c, tLObject, this.b, 15));
+                org.telegram.messenger.g0.h3(new bi.u7((nm) this.c, tLObject, this.b, 15));
                 break;
             case 4:
-                pn pnVar = (pn) this.c;
+                rn rnVar = (rn) this.c;
                 if (!(tLObject instanceof TLRPC.Updates)) {
-                    org.telegram.messenger.g0.h3(new ln(pnVar, 3));
+                    org.telegram.messenger.g0.h3(new nn(rnVar, 3));
                     break;
                 } else {
-                    pnVar.getMessagesController().O3((TLRPC.Updates) tLObject, false);
-                    org.telegram.messenger.g0.h3(new bi.k1(21, pnVar, this.b));
+                    rnVar.getMessagesController().O3((TLRPC.Updates) tLObject, false);
+                    org.telegram.messenger.g0.h3(new bi.k1(21, rnVar, this.b));
                     break;
                 }
             case 5:
-                org.telegram.messenger.g0.h3(new vn(this.c, (Object) tL_error, (Object) tLObject, this.b, 0));
+                org.telegram.messenger.g0.h3(new xn(this.c, (Object) tL_error, (Object) tLObject, this.b, 0));
                 break;
             case 6:
-                org.telegram.messenger.g0.h3(new ng((mc0) this.c, tL_error, tLObject, this.b));
+                org.telegram.messenger.g0.h3(new ng((nc0) this.c, tL_error, tLObject, this.b));
                 break;
             case 7:
-                org.telegram.messenger.g0.h3(new vn(this.c, (Object) tL_error, (Object) tLObject, this.b, 9));
+                org.telegram.messenger.g0.h3(new xn(this.c, (Object) tL_error, (Object) tLObject, this.b, 9));
                 break;
             case 8:
-                org.telegram.messenger.g0.h3(new vn(this.c, (Object) tL_error, (Object) tLObject, this.b, 10));
+                org.telegram.messenger.g0.h3(new xn(this.c, (Object) tL_error, (Object) tLObject, this.b, 10));
                 break;
             case 9:
-                org.telegram.messenger.g0.h3(new vn(this.c, (Object) tL_error, (Object) tLObject, this.b, 13));
+                org.telegram.messenger.g0.h3(new xn(this.c, (Object) tL_error, (Object) tLObject, this.b, 13));
                 break;
             case 10:
-                xm0 xm0Var = (xm0) this.c;
+                zm0 zm0Var = (zm0) this.c;
                 if (tLObject != null) {
-                    org.telegram.messenger.g0.h3(new g60(xm0Var, tLObject, this.b, 5));
+                    org.telegram.messenger.g0.h3(new i60(zm0Var, tLObject, this.b, 5));
                     break;
                 }
                 break;
             case 11:
-                org.telegram.messenger.g0.h3(new vn(this.c, (Object) tL_error, (Object) tLObject, this.b, 14));
+                org.telegram.messenger.g0.h3(new xn(this.c, (Object) tL_error, (Object) tLObject, this.b, 14));
                 break;
             default:
-                org.telegram.messenger.g0.h3(new g60((WallpapersListActivity) this.c, tLObject, this.b, 14));
+                org.telegram.messenger.g0.h3(new i60((WallpapersListActivity) this.c, tLObject, this.b, 14));
                 break;
         }
     }

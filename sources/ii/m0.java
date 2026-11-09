@@ -20,10 +20,10 @@ import org.telegram.ui.ActionBar.f2;
 import org.telegram.ui.ActionBar.q4;
 import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.Components.hc;
-import org.telegram.ui.an;
-import org.telegram.ui.ww;
+import org.telegram.ui.cn;
+import org.telegram.ui.yw;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public abstract class m0 {
     public static SpannableStringBuilder a(ij ijVar, String str, String str2, boolean z9, boolean z10) {
@@ -37,7 +37,7 @@ public abstract class m0 {
             }
             return org.telegram.messenger.g0.X2(id.a0(null, null, z10 ? 2131751870 : z9 ? 2131751864 : 2131751858, str));
         }
-        if (ijVar.O3()) {
+        if (ijVar.N3()) {
             if (z12) {
                 return org.telegram.messenger.g0.X2(id.M0(z10 ? 2131751866 : z9 ? 2131751860 : 2131751854, null));
             }
@@ -112,12 +112,12 @@ public abstract class m0 {
     */
     public static void d(f2 f2Var, long j3, int i7) {
         q4 q4Var;
-        an anVar;
+        cn cnVar;
         int i10;
         List list = null;
         if (org.telegram.messenger.g0.Q1()) {
             q4Var = null;
-            anVar = null;
+            cnVar = null;
         } else {
             q4Var = f2Var.getParentLayout();
             if (q4Var != null) {
@@ -125,14 +125,14 @@ public abstract class m0 {
                 i10 = fragmentStack.size() - 2;
                 while (true) {
                     if (i10 < 0) {
-                        anVar = null;
+                        cnVar = null;
                         i10 = -1;
                         break;
                     }
                     f2 f2Var2 = (f2) fragmentStack.get(i10);
-                    if (f2Var2 instanceof an) {
-                        anVar = (an) f2Var2;
-                        if (anVar.a() == j3) {
+                    if (f2Var2 instanceof cn) {
+                        cnVar = (cn) f2Var2;
+                        if (cnVar.a() == j3) {
                             break;
                         }
                     }
@@ -141,7 +141,7 @@ public abstract class m0 {
                 list = fragmentStack;
                 boolean U = t3.U(f2Var.getCurrentAccount(), j3);
                 if (i10 != -1) {
-                    if (!(f2Var instanceof ww)) {
+                    if (!(f2Var instanceof yw)) {
                         f2Var.finishFragment();
                     }
                     f(hc.X(), i7, U);
@@ -151,10 +151,10 @@ public abstract class m0 {
                     ((ActionBarLayout) q4Var).d0((f2) list.get(size), false);
                 }
                 f2Var.finishFragment();
-                org.telegram.messenger.g0.i3(new h0(i7, anVar, U), 250L);
+                org.telegram.messenger.g0.i3(new h0(i7, cnVar, U), 250L);
                 return;
             }
-            anVar = null;
+            cnVar = null;
         }
         i10 = -1;
         boolean U2 = t3.U(f2Var.getCurrentAccount(), j3);

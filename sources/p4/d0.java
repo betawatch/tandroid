@@ -29,10 +29,10 @@ import org.telegram.messenger.df;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.re;
 import org.telegram.ui.ActionBar.m3;
-import org.telegram.ui.Components.r31;
-import org.telegram.ui.vn;
+import org.telegram.ui.Components.s31;
+import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public class d0 {
     public static final m1 B = new m1(1);
@@ -95,7 +95,7 @@ public class d0 {
         this.j = new n1(Process.myUid(), context.getPackageName(), c1Var2, bundle, ((q4.l) m0Var.n.b).c.b);
         g1 g1Var = new g1(c1Var);
         this.t = g1Var;
-        h2.m0.W(handler, new org.telegram.ui.web.w(9, this, g1Var));
+        h2.m0.W(handler, new org.telegram.ui.web.s(10, this, g1Var));
         this.w = 3000L;
         this.n = new y(this, 2);
         h2.m0.W(handler, new y(this, 3));
@@ -181,11 +181,11 @@ public class d0 {
             } else {
                 eVar = new e(this, e10, 1);
             }
-            h2.m0.W(this.l, new vn(this, z10, e10, eVar, 15));
+            h2.m0.W(this.l, new xn(this, z10, e10, eVar, 15));
             return true;
         }
         eVar = this.t.u() ? new e(this, e10, 7) : new e(this, e10, 8);
-        h2.m0.W(this.l, new vn(this, z10, e10, eVar, 15));
+        h2.m0.W(this.l, new xn(this, z10, e10, eVar, 15));
         return true;
     }
 
@@ -394,9 +394,9 @@ public class d0 {
                 }
                 this.v = true;
                 a0 a0Var = this.d;
-                r31 r31Var = a0Var.a;
-                if (r31Var != null) {
-                    a0Var.removeCallbacks(r31Var);
+                s31 s31Var = a0Var.a;
+                if (s31Var != null) {
+                    a0Var.removeCallbacks(s31Var);
                     a0Var.a = null;
                 }
                 this.l.removeCallbacksAndMessages(null);

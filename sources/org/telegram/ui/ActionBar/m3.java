@@ -20,7 +20,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import c8.ec;
 import com.google.android.gms.tasks.OnSuccessListener;
-import di.o7;
+import di.p7;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -32,17 +32,17 @@ import org.telegram.messenger.a8;
 import org.telegram.messenger.lc;
 import org.telegram.messenger.qs;
 import org.telegram.ui.Components.Switch;
+import org.telegram.ui.Components.ah0;
 import org.telegram.ui.Components.hr;
-import org.telegram.ui.Components.l51;
+import org.telegram.ui.Components.m51;
 import org.telegram.ui.Components.rt;
-import org.telegram.ui.Components.zg0;
-import org.telegram.ui.cn0;
-import org.telegram.ui.up0;
+import org.telegram.ui.en0;
+import org.telegram.ui.wp0;
 import org.webrtc.GlGenericDrawer;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class m3 implements r0.m, GlGenericDrawer.TextureCallback, org.telegram.ui.Components.voip.b1, lc, d5.a, r1, c0.j, p4.c0, p4.a1, h2.j, p4.y0, g9.k, sg.z, te.b, t0.e, sg.l1, OnSuccessListener, w5.b {
+public final /* synthetic */ class m3 implements r0.m, GlGenericDrawer.TextureCallback, org.telegram.ui.Components.voip.b1, lc, d5.a, r1, c0.j, p4.c0, p4.a1, h2.j, p4.y0, g9.k, sg.z, te.b, t0.e, sg.k1, OnSuccessListener, w5.b {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -89,7 +89,7 @@ public final /* synthetic */ class m3 implements r0.m, GlGenericDrawer.TextureCa
     public void Y(int i7, float f10, float f11, te.c cVar) {
         switch (this.a) {
             case 17:
-                sh.b.a((sh.b) this.b);
+                sh.c.a((sh.c) this.b);
                 break;
             default:
                 ((Switch) this.b).invalidate();
@@ -164,16 +164,16 @@ public final /* synthetic */ class m3 implements r0.m, GlGenericDrawer.TextureCa
     @Override // c0.j
     public Object d(c0.i iVar) {
         p4.d0 d0Var = (p4.d0) this.b;
-        d0Var.o.post(new org.telegram.ui.web.w(10, d0Var, iVar));
+        d0Var.o.post(new org.telegram.ui.web.s(11, d0Var, iVar));
         return "onPlayRequested";
     }
 
-    @Override // sg.l1
+    @Override // sg.k1
     public void f() {
-        up0 up0Var = (up0) this.b;
-        TextView textView = up0Var.h1;
-        boolean a10 = up0Var.o0.a();
-        ImageView imageView = up0Var.f1;
+        wp0 wp0Var = (wp0) this.b;
+        TextView textView = wp0Var.h1;
+        boolean a10 = wp0Var.o0.a();
+        ImageView imageView = wp0Var.f1;
         imageView.animate().cancel();
         imageView.animate().alpha(a10 ? 1.0f : 0.6f).translationY(0.0f).setDuration(150L).start();
         imageView.setClickable(a10);
@@ -184,7 +184,7 @@ public final /* synthetic */ class m3 implements r0.m, GlGenericDrawer.TextureCa
 
     @Override // org.telegram.messenger.lc
     public void f0(ImageReceiver imageReceiver, boolean z9, boolean z10, boolean z11) {
-        zg0 B;
+        ah0 B;
         switch (this.a) {
             case 3:
                 org.telegram.ui.Components.voip.e1 e1Var = (org.telegram.ui.Components.voip.e1) this.b;
@@ -210,7 +210,7 @@ public final /* synthetic */ class m3 implements r0.m, GlGenericDrawer.TextureCa
                 ((org.telegram.ui.web.x) this.b).run();
                 break;
             case 21:
-                ((cn0) this.b).run();
+                ((en0) this.b).run();
                 break;
             default:
                 ((tg.a0) this.b).a.O1.r();
@@ -296,7 +296,7 @@ public final /* synthetic */ class m3 implements r0.m, GlGenericDrawer.TextureCa
             x0Var.g("onBotWebMessage ignored: untrusted origin");
             return;
         }
-        o7 f10 = x0Var.f();
+        p7 f10 = x0Var.f();
         try {
             waVar.f(0);
             String str = (String) waVar.c;
@@ -429,7 +429,7 @@ public final /* synthetic */ class m3 implements r0.m, GlGenericDrawer.TextureCa
             return;
         }
         Utilities.stackBlurBitmap(bitmap, Math.max(7, Math.max(bitmap.getWidth(), bitmap.getHeight()) / qs.K2));
-        org.telegram.messenger.g0.h3(new l51(5, yVar, bitmap));
+        org.telegram.messenger.g0.h3(new m51(5, yVar, bitmap));
     }
 
     @Override // org.telegram.messenger.lc

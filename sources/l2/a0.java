@@ -1,346 +1,260 @@
 package l2;
 
-import android.content.SharedPreferences;
+import android.content.DialogInterface;
+import android.content.res.Resources;
+import android.graphics.Rect;
 import android.graphics.SurfaceTexture;
-import android.view.Surface;
-import android.view.View;
-import java.util.ArrayList;
-import java.util.List;
-import org.telegram.SQLite.SQLitePreparedStatement;
+import android.graphics.drawable.Drawable;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import hi.m2;
+import java.util.concurrent.CountDownLatch;
+import li.f2;
+import li.y1;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.gc;
-import org.telegram.messenger.ib;
-import org.telegram.messenger.ij;
-import org.telegram.messenger.iz;
-import org.telegram.messenger.qb;
-import org.telegram.messenger.qp;
 import org.telegram.messenger.qs;
-import org.telegram.messenger.ui;
-import org.telegram.messenger.yo;
-import org.telegram.messenger.yr;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.NativeByteBuffer;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Cells.t2;
-import org.telegram.ui.Components.UndoView;
-import org.telegram.ui.an;
-import org.telegram.ui.el;
-import org.telegram.ui.jl;
-import org.telegram.ui.lm;
-import org.telegram.ui.q8;
-import org.telegram.ui.uw;
-import org.telegram.ui.vw;
-import org.telegram.ui.ww;
+import org.telegram.messenger.voip.GroupCallMessage;
+import org.telegram.tgnet.TLParseException;
+import org.telegram.ui.ActionBar.ActionBarLayout;
+import org.telegram.ui.ActionBar.f4;
+import org.telegram.ui.ActionBar.h3;
+import org.telegram.ui.ActionBar.i4;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.ActionBar.v1;
+import org.telegram.ui.ActionBar.v2;
+import org.telegram.ui.ActionBar.x1;
+import org.telegram.ui.Cells.i3;
+import org.telegram.ui.Cells.k3;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ a0(int i7, int i10, String str, String str2) {
-        this.a = 9;
-        this.b = i7;
-        this.d = str;
-        this.e = str2;
-        this.c = i10;
+    public /* synthetic */ a0(Object obj, int i7) {
+        this.a = i7;
+        this.b = obj;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        int i7;
-        int i10 = this.a;
-        final int i11 = 1;
-        int i12 = this.b;
-        int i13 = this.c;
-        Object obj = this.e;
-        Object obj2 = this.d;
-        switch (i10) {
+        int i7 = this.a;
+        Animation animation = null;
+        Object obj = this.b;
+        switch (i7) {
             case 0:
-                i0 i0Var = ((c0) obj2).a;
-                Surface surface = new Surface((SurfaceTexture) obj);
-                i0Var.x1(surface);
-                i0Var.U = surface;
-                i0Var.q1(i12, i13);
-                break;
+                i0 i0Var = ((c0) obj).a;
+                i0Var.x1(null);
+                i0Var.q1(0, 0);
+                return;
             case 1:
-                String str = (String) obj;
-                gc gcVar = ((qb) obj2).b;
-                if (i12 != 1) {
-                    gcVar.s.c(new ib(gcVar, str, i11));
+                try {
+                    r0.h((n1) obj);
+                    return;
+                } catch (l e10) {
+                    h2.a.d("ExoPlayerImplInternal", "Unexpected error delivering message on external thread.", e10);
+                    throw new RuntimeException(e10);
                 }
-                qs.f(i13).k(qs.Z1, str, Integer.valueOf(i12));
-                break;
             case 2:
-                ((ui) obj2).x1((List) obj, i12, i13, true);
-                break;
+                i3 i3Var = ((k3) obj).d;
+                i3Var.requestFocus();
+                org.telegram.messenger.g0.K3(i3Var);
+                return;
             case 3:
-                ui uiVar = (ui) obj2;
-                ArrayList arrayList = (ArrayList) obj;
-                try {
-                    if (arrayList != null) {
-                        uiVar.getMessagesStorage().b.executeFast("DELETE FROM reactions").stepThis().dispose();
-                        SQLitePreparedStatement executeFast = uiVar.getMessagesStorage().b.executeFast("REPLACE INTO reactions VALUES(?, ?, ?)");
-                        executeFast.requery();
-                        int i14 = 4;
-                        for (int i15 = 0; i15 < arrayList.size(); i15++) {
-                            i14 += ((TLRPC.TL_availableReaction) arrayList.get(i15)).getObjectSize();
-                        }
-                        NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(i14);
-                        nativeByteBuffer.writeInt32(arrayList.size());
-                        while (r6 < arrayList.size()) {
-                            ((TLRPC.TL_availableReaction) arrayList.get(r6)).serializeToStream(nativeByteBuffer);
-                            r6++;
-                        }
-                        executeFast.bindByteBuffer(1, nativeByteBuffer);
-                        executeFast.bindInteger(2, i12);
-                        executeFast.bindInteger(3, i13);
-                        executeFast.step();
-                        nativeByteBuffer.reuse();
-                        executeFast.dispose();
-                        break;
-                    } else {
-                        SQLitePreparedStatement executeFast2 = uiVar.getMessagesStorage().b.executeFast("UPDATE reactions SET date = ?");
-                        executeFast2.requery();
-                        executeFast2.bindLong(1, i13);
-                        executeFast2.step();
-                        executeFast2.dispose();
-                        break;
-                    }
-                } catch (Exception e10) {
-                    a8.g(e10, true);
-                    return;
-                }
+                org.telegram.messenger.g0.K3(((li.v) obj).W1.d);
+                return;
             case 4:
-                qp qpVar = (qp) obj2;
-                qpVar.r1.clear();
-                qpVar.w1.clear();
-                yr messagesStorage = qpVar.getMessagesStorage();
-                messagesStorage.H();
-                qpVar.q4(true, messagesStorage.w, ((TLRPC.updates_Difference) obj).pts, this.b, this.c);
-                qpVar.P1().q();
-                break;
+                ((li.c0) obj).invalidate();
+                return;
             case 5:
-                yo yoVar = (yo) obj2;
-                TLRPC.photos_Photos photos_photos = (TLRPC.photos_Photos) obj;
-                yoVar.h.Y3(photos_photos.users, false);
-                yoVar.d(i12, i13, photos_photos);
-                break;
+                ga.d dVar = (ga.d) obj;
+                dVar.d = null;
+                dVar.e = null;
+                dVar.f = null;
+                dVar.h = null;
+                dVar.j(null);
+                return;
             case 6:
-                yo yoVar2 = (yo) obj2;
-                TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) obj;
-                qp qpVar2 = yoVar2.h;
-                qpVar2.Y3(messages_messages.users, false);
-                qpVar2.S3(messages_messages.chats, false);
-                TLRPC.TL_photos_photos tL_photos_photos = new TLRPC.TL_photos_photos();
-                tL_photos_photos.count = messages_messages.count;
-                int i16 = 0;
-                while (r6 < messages_messages.messages.size()) {
-                    TLRPC.MessageAction messageAction = messages_messages.messages.get(r6).action;
-                    if (messageAction != null) {
-                        TLRPC.Photo photo = messageAction.photo;
-                        if (photo instanceof TLRPC.TL_photo) {
-                            tL_photos_photos.photos.add(photo);
-                            r6++;
-                        }
-                    }
-                    i16++;
-                    r6++;
-                }
-                if (i12 == 0 && messages_messages.messages.size() >= messages_messages.count) {
-                    tL_photos_photos.count -= i16;
-                }
-                yoVar2.d(i12, i13, tL_photos_photos);
-                break;
+                ((y1) obj).invalidateSelf();
+                return;
             case 7:
-                yr yrVar = (yr) obj2;
-                byte[] bArr = (byte[]) obj;
-                yrVar.getClass();
-                try {
-                    SQLitePreparedStatement executeFast3 = yrVar.b.executeFast("UPDATE params SET lsv = ?, sg = ?, pbytes = ? WHERE id = 1");
-                    executeFast3.bindInteger(1, i12);
-                    executeFast3.bindInteger(2, i13);
-                    NativeByteBuffer nativeByteBuffer2 = new NativeByteBuffer(bArr != null ? bArr.length : 1);
-                    if (bArr != null) {
-                        nativeByteBuffer2.writeBytes(bArr);
-                    }
-                    executeFast3.bindByteBuffer(3, nativeByteBuffer2);
-                    executeFast3.step();
-                    executeFast3.dispose();
-                    nativeByteBuffer2.reuse();
-                    break;
-                } catch (Exception e11) {
-                    yrVar.o(e11, true);
+                ((f2) obj).c();
+                return;
+            case 8:
+                m2.e eVar = (m2.e) obj;
+                m2.a Q = eVar.Q();
+                eVar.V(Q, 1028, new m2.c(Q));
+                eVar.f.d();
+                return;
+            case 9:
+                ((mh.b) obj).invalidate();
+                return;
+            case 10:
+                ((n2.e) obj).c();
+                return;
+            case 11:
+                h2.r rVar = (h2.r) obj;
+                rVar.getClass();
+                if (Thread.currentThread() == rVar.a) {
+                    rVar.e(-1, new m2.d(24));
                     return;
                 }
-            case 8:
-                qs qsVar = (qs) obj2;
-                qsVar.l((Object[]) obj, i12, false);
-                qsVar.q.remove(i13);
-                break;
-            case 9:
-                ConnectionsManager.lambda$onIntegrityCheckClassic$27(i12, (String) obj2, (String) obj, i13);
-                break;
-            case 10:
-                ((an) obj2).didReceivedNotification(i12, i13, (Object[]) obj);
-                break;
-            case 11:
-                el elVar = (el) obj2;
-                elVar.getClass();
-                ij messageObject = ((org.telegram.ui.Cells.t0) obj).getMessageObject();
-                jl jlVar = elVar.a;
-                jlVar.Q.xb(this.b, messageObject.f1(), true, ij.B0(messageObject.k) == jlVar.Q.b7 ? 1 : 0, true, 0, Integer.valueOf(i13), null, null);
-                break;
+                return;
             case 12:
-                org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) obj;
-                an anVar = ((lm) obj2).a;
-                if (anVar.O1 != null) {
-                    q1Var.getLocationInWindow(new int[2]);
-                    anVar.O1.setTranslationY(org.telegram.messenger.camera.q.D(520.0f, r2[1] - r3.getTop(), i12));
-                    anVar.O1.p(0.0f, (-org.telegram.messenger.g0.L(16.0f)) + r2[0] + i13);
-                    anVar.O1.w();
-                    break;
+                n2.q0 q0Var = (n2.q0) obj;
+                if (q0Var.a0 >= 300000) {
+                    q0Var.n.I();
+                    q0Var.a0 = 0L;
+                    return;
                 }
-                break;
+                return;
+            case 13:
+                nh.c cVar = (nh.c) obj;
+                GroupCallMessage groupCallMessage = cVar.H;
+                if (groupCallMessage != null) {
+                    cVar.a.a(groupCallMessage.isSendDelayed(), true);
+                    cVar.b.a(cVar.H.isSendError(), true);
+                    return;
+                }
+                return;
+            case 14:
+                TLParseException.lambda$doThrowOrLog$0((TLParseException) obj);
+                return;
+            case 15:
+                Drawable drawable = ActionBarLayout.v1;
+                org.telegram.messenger.g0.h3((ai.a1) obj);
+                return;
+            case 16:
+                ((org.telegram.ui.ActionBar.q0) obj).setSelectedForDelete(false);
+                return;
+            case 17:
+                org.telegram.ui.ActionBar.w0 w0Var = (org.telegram.ui.ActionBar.w0) obj;
+                w0Var.W = true;
+                org.telegram.messenger.g0.l2(new ii.c(w0Var, 13), 8.0f);
+                return;
+            case 18:
+                ((org.telegram.ui.ActionBar.i1) obj).c();
+                return;
+            case 19:
+                org.telegram.ui.ActionBar.q1 q1Var = (org.telegram.ui.ActionBar.q1) obj;
+                org.telegram.ui.ActionBar.u1 u1Var = q1Var.d;
+                int i10 = org.telegram.messenger.g0.q.x;
+                u1Var.L = i10;
+                int min = Math.min(org.telegram.messenger.g0.Q1() ? org.telegram.messenger.g0.P1() ? org.telegram.messenger.g0.L(446.0f) : org.telegram.messenger.g0.L(496.0f) : org.telegram.messenger.g0.L(356.0f), i10 - org.telegram.messenger.g0.L(56.0f));
+                Rect rect = u1Var.A0;
+                int i11 = min + rect.left + rect.right;
+                if (u1Var.X0) {
+                    ViewGroup.LayoutParams layoutParams = q1Var.getLayoutParams();
+                    if (layoutParams == null || layoutParams.width == i11) {
+                        return;
+                    }
+                    layoutParams.width = i11;
+                    q1Var.requestLayout();
+                    return;
+                }
+                Window window = u1Var.getWindow();
+                WindowManager.LayoutParams layoutParams2 = new WindowManager.LayoutParams();
+                layoutParams2.copyFrom(window.getAttributes());
+                layoutParams2.width = i11;
+                try {
+                    window.setAttributes(layoutParams2);
+                    return;
+                } catch (Throwable th2) {
+                    a8.g(th2, true);
+                    return;
+                }
+            case 20:
+                x1 x1Var = (x1) obj;
+                x1Var.m1.setVisibility(0);
+                x1Var.o1.setAlpha(0.0f);
+                int i12 = x1Var.k1;
+                if (i12 != 0 && i12 != -1) {
+                    try {
+                        animation = AnimationUtils.loadAnimation(x1Var.getContext(), i12);
+                    } catch (Resources.NotFoundException e11) {
+                        a8.g(e11, true);
+                    }
+                }
+                if (animation != null) {
+                    x1Var.n1.startAnimation(animation);
+                } else {
+                    x1Var.n1.setAlpha(0.0f);
+                    x1Var.n1.animate().setDuration(300L).alpha(1.0f).start();
+                }
+                x1Var.o1.animate().setDuration(300L).alpha(1.0f).setListener(new v1(x1Var, 0)).start();
+                return;
+            case 21:
+                v2 v2Var = (v2) ((m2) obj).c;
+                DialogInterface.OnDismissListener onDismissListener = v2Var.H0;
+                if (onDismissListener != null) {
+                    onDismissListener.onDismiss(v2Var);
+                }
+                try {
+                    v2Var.K();
+                    return;
+                } catch (Exception e12) {
+                    a8.g(e12, true);
+                    return;
+                }
+            case 22:
+                try {
+                    ((n2) obj).b.K();
+                    return;
+                } catch (Exception e13) {
+                    a8.g(e13, true);
+                    return;
+                }
+            case 23:
+                h3 h3Var = (h3) obj;
+                if (h3Var.d() != null) {
+                    h3Var.d().setDrawingFromOverlay(true);
+                    return;
+                }
+                return;
+            case 24:
+                ((org.telegram.ui.ActionBar.k3) obj).f();
+                return;
+            case 25:
+                i4 i4Var = (i4) ((androidx.mediarouter.app.f0) obj).b;
+                i4Var.k();
+                i4Var.j();
+                return;
+            case 26:
+                i4 i4Var2 = ((f4) obj).b;
+                i4Var2.c.dismiss();
+                i4Var2.f.removeAllViews();
+                return;
+            case 27:
+                ((f4) obj).b.c.dismiss();
+                return;
+            case 28:
+                Drawable drawable2 = (Drawable) obj;
+                l6.d = null;
+                l6.P();
+                if (!l6.b) {
+                    l6.j(drawable2);
+                    l6.h(drawable2);
+                }
+                qs.e().k(qs.z4, new Object[0]);
+                return;
             default:
-                final uw uwVar = (uw) obj2;
-                TLRPC.Dialog dialog = (TLRPC.Dialog) obj;
-                vw vwVar = uwVar.g;
-                ww wwVar = uwVar.h;
-                ArrayList arrayList2 = wwVar.R1;
-                if (arrayList2 != null) {
-                    arrayList2.remove(dialog);
-                    int i17 = dialog.pinnedNum;
-                    wwVar.W0 = null;
-                    vwVar.a.invalidate();
-                    int N0 = vwVar.c.N0();
-                    if (N0 == i12 - 1) {
-                        vwVar.c.m(N0).requestLayout();
-                    }
-                    if (wwVar.getMessagesController().C2(dialog.id, false)) {
-                        wwVar.getMessagesController().j2();
-                        vwVar.y.D();
-                        vwVar.q(true);
-                        break;
-                    } else {
-                        int d = wwVar.getMessagesController().d(wwVar.W2 == 0 ? 1 : 0, -1, dialog.id);
-                        if (d != 2 || i13 != 0) {
-                            vwVar.y.D();
-                            vwVar.q(true);
-                        }
-                        if (wwVar.W2 == 0) {
-                            if (d == 2) {
-                                boolean z9 = iz.q1;
-                                if (z9) {
-                                    iz.q1 = !z9;
-                                    SharedPreferences.Editor edit = qp.e1().edit();
-                                    edit.putBoolean("archiveHidden", iz.q1);
-                                    edit.apply();
-                                }
-                                vwVar.y.D();
-                                if (i13 == 0) {
-                                    wwVar.M4(true, true);
-                                    vwVar.q(true);
-                                    wwVar.z3();
-                                } else {
-                                    vwVar.q(true);
-                                    if (!iz.q1 && vwVar.c.L0() == 0) {
-                                        wwVar.e2 = true;
-                                        vwVar.a.w0(0, -org.telegram.messenger.g0.L(iz.p1 ? 76.0f : 70.0f), null);
-                                    }
-                                }
-                                i7 = ((f2) wwVar).currentAccount;
-                                wwVar.R1.add(0, (TLRPC.Dialog) wwVar.d4(i7, vwVar.s, wwVar.W2, false).get(0));
-                                vwVar.q(true);
-                                org.telegram.messenger.g0.i3(new Runnable() { // from class: org.telegram.ui.tw
-                                    @Override // java.lang.Runnable
-                                    public final void run() {
-                                        switch (r2) {
-                                            case 0:
-                                                uwVar.h.M4(false, true);
-                                                break;
-                                            default:
-                                                uwVar.h.M4(false, true);
-                                                break;
-                                        }
-                                    }
-                                }, 300L);
-                            } else if (d == 1) {
-                                v4.d1 K = vwVar.a.K(0);
-                                if (K != null) {
-                                    View view = K.a;
-                                    if (view instanceof t2) {
-                                        t2 t2Var = (t2) view;
-                                        if (t2Var.a2.n == 2) {
-                                            t2Var.b2 = true;
-                                            t2Var.c2 = 0.0f;
-                                            k6.u1.T(true, 0.0f);
-                                            k6.u1.start();
-                                            t2Var.invalidate();
-                                        }
-                                    }
-                                }
-                                org.telegram.messenger.g0.i3(new Runnable() { // from class: org.telegram.ui.tw
-                                    @Override // java.lang.Runnable
-                                    public final void run() {
-                                        switch (i11) {
-                                            case 0:
-                                                uwVar.h.M4(false, true);
-                                                break;
-                                            default:
-                                                uwVar.h.M4(false, true);
-                                                break;
-                                        }
-                                    }
-                                }, 300L);
-                            }
-                            SharedPreferences e12 = qp.e1();
-                            r6 = (e12.getBoolean("archivehint_l", false) || iz.q1) ? 1 : 0;
-                            if (r6 == 0) {
-                                e12.edit().putBoolean("archivehint_l", true).commit();
-                            }
-                            UndoView k42 = wwVar.k4();
-                            if (k42 != null) {
-                                k42.l(dialog.id, r6 != 0 ? 2 : 3, null, new q8(uwVar, dialog, i17, 29));
-                            }
-                        }
-                        if (wwVar.W2 != 0 && wwVar.R1.isEmpty()) {
-                            vwVar.a.setEmptyView(null);
-                            vwVar.x.setVisibility(4);
-                            break;
-                        }
-                    }
-                }
-                break;
+                ((CountDownLatch) obj).countDown();
+                return;
         }
     }
 
-    public /* synthetic */ a0(Object obj, int i7, int i10, Object obj2, int i11) {
-        this.a = i11;
-        this.d = obj;
-        this.b = i7;
-        this.c = i10;
-        this.e = obj2;
+    public /* synthetic */ a0(c0 c0Var, SurfaceTexture surfaceTexture) {
+        this.a = 0;
+        this.b = c0Var;
     }
 
-    public /* synthetic */ a0(Object obj, Object obj2, int i7, int i10, int i11) {
-        this.a = i11;
-        this.d = obj;
-        this.e = obj2;
-        this.b = i7;
-        this.c = i10;
-    }
-
-    public /* synthetic */ a0(qs qsVar, int i7, Object[] objArr, int i10) {
-        this.a = 8;
-        this.d = qsVar;
-        this.b = i7;
-        this.e = objArr;
-        this.c = i10;
+    public /* synthetic */ a0(r0 r0Var, n1 n1Var) {
+        this.a = 1;
+        this.b = n1Var;
     }
 }

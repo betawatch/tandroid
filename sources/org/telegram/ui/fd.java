@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.view.View;
 import android.widget.EditText;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class fd implements View.OnFocusChangeListener {
     public final /* synthetic */ int a;
@@ -26,79 +26,79 @@ public final /* synthetic */ class fd implements View.OnFocusChangeListener {
                 uVar.b(f10, f10, true);
                 break;
             case 1:
-                ww wwVar = (ww) obj;
+                yw ywVar = (yw) obj;
                 if (z9) {
-                    wwVar.Y.b(true);
+                    ywVar.Y.b(true);
                     break;
                 }
                 break;
             case 2:
-                ce0 ce0Var = ((ob0) obj).W;
+                ee0 ee0Var = ((qb0) obj).W;
                 if (z9) {
-                    ce0Var.c.setEditText((EditText) view);
-                    ce0Var.c.setDispatchBackWhenEmpty(true);
+                    ee0Var.c.setEditText((EditText) view);
+                    ee0Var.c.setDispatchBackWhenEmpty(true);
                     break;
                 }
                 break;
             case 3:
-                org.telegram.ui.Components.lb0 lb0Var = (org.telegram.ui.Components.lb0) obj;
+                org.telegram.ui.Components.mb0 mb0Var = (org.telegram.ui.Components.mb0) obj;
                 f10 = z9 ? 1.0f : 0.0f;
-                lb0Var.b(f10, f10, true);
+                mb0Var.b(f10, f10, true);
                 break;
             case 4:
-                org.telegram.ui.Components.lb0 lb0Var2 = ((xb0) obj).y;
+                org.telegram.ui.Components.mb0 mb0Var2 = ((zb0) obj).y;
                 f10 = z9 ? 1.0f : 0.0f;
-                lb0Var2.b(f10, f10, true);
+                mb0Var2.b(f10, f10, true);
                 break;
             case 5:
-                org.telegram.ui.Components.lb0 lb0Var3 = ((ec0) obj).b;
+                org.telegram.ui.Components.mb0 mb0Var3 = ((gc0) obj).b;
                 f10 = z9 ? 1.0f : 0.0f;
-                lb0Var3.b(f10, f10, true);
+                mb0Var3.b(f10, f10, true);
                 break;
             case 6:
-                ce0 ce0Var2 = ((hc0) obj).D;
+                ee0 ee0Var2 = ((jc0) obj).D;
                 if (z9) {
-                    ce0Var2.c.setEditText((EditText) view);
-                    ce0Var2.c.setDispatchBackWhenEmpty(true);
+                    ee0Var2.c.setEditText((EditText) view);
+                    ee0Var2.c.setDispatchBackWhenEmpty(true);
                     break;
                 }
                 break;
             case 7:
-                org.telegram.ui.Components.lb0 lb0Var4 = ((sc0) obj).a;
+                org.telegram.ui.Components.mb0 mb0Var4 = ((uc0) obj).a;
                 f10 = z9 ? 1.0f : 0.0f;
-                lb0Var4.b(f10, f10, true);
+                mb0Var4.b(f10, f10, true);
                 break;
             case 8:
-                ce0 ce0Var3 = ((gd0) obj).u0;
+                ee0 ee0Var3 = ((id0) obj).u0;
                 if (z9) {
-                    ce0Var3.c.setEditText((EditText) view);
-                    ce0Var3.c.setDispatchBackWhenEmpty(true);
+                    ee0Var3.c.setEditText((EditText) view);
+                    ee0Var3.c.setDispatchBackWhenEmpty(true);
                     break;
                 }
                 break;
             case 9:
-                org.telegram.ui.Components.lb0 lb0Var5 = ((be0) obj).e;
+                org.telegram.ui.Components.mb0 mb0Var5 = ((de0) obj).e;
                 f10 = z9 ? 1.0f : 0.0f;
-                lb0Var5.b(f10, f10, true);
+                mb0Var5.b(f10, f10, true);
                 break;
             case 10:
-                org.telegram.ui.Components.lb0 lb0Var6 = ((PasscodeActivity) obj).f;
+                org.telegram.ui.Components.mb0 mb0Var6 = ((PasscodeActivity) obj).f;
                 f10 = z9 ? 1.0f : 0.0f;
-                lb0Var6.b(f10, f10, true);
+                mb0Var6.b(f10, f10, true);
                 break;
             case 11:
-                y71 y71Var = (y71) obj;
+                z71 z71Var = (z71) obj;
                 if (!z9) {
-                    y71Var.d.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.M0(2131744188, null)));
+                    z71Var.d.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.M0(2131744185, null)));
                     break;
                 } else {
-                    y71Var.d.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.M0(2131744187, null)));
+                    z71Var.d.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.M0(2131744184, null)));
                     break;
                 }
             default:
-                org.telegram.ui.Components.lb0 lb0Var7 = ((TwoStepVerificationActivity) obj).w;
+                org.telegram.ui.Components.mb0 mb0Var7 = ((TwoStepVerificationActivity) obj).w;
                 f10 = z9 ? 1.0f : 0.0f;
-                lb0Var7.b(f10, f10, true);
+                mb0Var7.b(f10, f10, true);
                 break;
         }
     }

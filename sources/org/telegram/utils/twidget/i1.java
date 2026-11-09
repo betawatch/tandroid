@@ -14,9 +14,9 @@ import org.telegram.messenger.a8;
 import org.telegram.messenger.id;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
-import org.telegram.ui.p31;
+import org.telegram.ui.q31;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final class i1 {
     public static boolean U;
@@ -280,14 +280,14 @@ public final class i1 {
                 String str4 = this.f;
                 String str5 = this.B;
                 float f10 = this.l;
-                j3 = r0Var.f(context, str4, str5, i7 / f10, f10, this.g, this.h, this.i, str3, id.M0(2131742870, null), this.F, this.b);
+                j3 = r0Var.f(context, str4, str5, i7 / f10, f10, this.g, this.h, this.i, str3, id.M0(2131742867, null), this.F, this.b);
                 try {
                     this.a.post(new bi.d0(this, j3, i7, this.B, str));
                     Trace.endSection();
                 } catch (Exception e10) {
                     e = e10;
                     if (j3 != 0) {
-                        a1.a.execute(new p31(this, j3, 2));
+                        a1.a.execute(new q31(this, j3, 2));
                     }
                     this.a.post(new f0(5, this, e));
                     throw e;

@@ -18,11 +18,11 @@ import org.telegram.messenger.qs;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final class o5 extends ViewGroup {
     public final RectF D;
@@ -39,7 +39,7 @@ public final class o5 extends ViewGroup {
     public int O;
     public int P;
     public e6 a;
-    public final f6 b;
+    public final g6 b;
     public int[] c;
     public int[] d;
     public int[] e;
@@ -52,7 +52,7 @@ public final class o5 extends ViewGroup {
     public final Paint x;
     public final Paint y;
 
-    public o5(Context context, f6 f6Var) {
+    public o5(Context context, g6 g6Var) {
         super(context);
         this.c = new int[0];
         this.d = new int[0];
@@ -69,7 +69,7 @@ public final class o5 extends ViewGroup {
         this.D = new RectF();
         this.E = new RectF();
         this.F = new Path();
-        this.b = f6Var;
+        this.b = g6Var;
         setClipChildren(false);
         setClipToPadding(false);
         setWillNotDraw(false);
@@ -112,7 +112,7 @@ public final class o5 extends ViewGroup {
                 Object obj = arrayList.get(i10);
                 i10++;
                 TL_iv.pageTableCell pagetablecell3 = (TL_iv.pageTableCell) obj;
-                if (((LinkedHashSet) ((l2.y) this.h).b).contains(pagetablecell3)) {
+                if (((LinkedHashSet) ((l2.x) this.h).b).contains(pagetablecell3)) {
                     int b10 = this.a.b(pagetablecell3);
                     int a10 = this.a.a(pagetablecell3);
                     if (b10 < i7 || (b10 == i7 && a10 < i11)) {
@@ -127,27 +127,27 @@ public final class o5 extends ViewGroup {
     }
 
     public final void b() {
-        int i7 = k6.ei;
-        f6 f6Var = this.b;
-        this.n.setColor(k6.w0(i7, f6Var));
-        int w02 = k6.w0(k6.M6, f6Var);
+        int i7 = l6.ei;
+        g6 g6Var = this.b;
+        this.n.setColor(l6.w0(i7, g6Var));
+        int w02 = l6.w0(l6.M6, g6Var);
         int red = Color.red(w02);
         int green = Color.green(w02);
         int blue = Color.blue(w02);
-        this.r.setColor(k6.w0(k6.di, f6Var));
+        this.r.setColor(l6.w0(l6.di, g6Var));
         this.s.setColor(Color.argb(20, red, green, blue));
         this.H = qs.e4;
-        int i10 = k6.Ci;
-        this.w.setColor(k6.w0(i10, f6Var));
+        int i10 = l6.Ci;
+        this.w.setColor(l6.w0(i10, g6Var));
         Paint.Style style = Paint.Style.FILL;
         Paint paint = this.x;
         paint.setStyle(style);
-        this.O = k6.w0(k6.E6, f6Var);
-        this.P = k6.w0(k6.Gi, f6Var);
+        this.O = l6.w0(l6.E6, g6Var);
+        this.P = l6.w0(l6.Gi, g6Var);
         paint.setColor(this.O);
         Paint paint2 = this.y;
         paint2.setStyle(style);
-        paint2.setColor(k6.w0(i10, f6Var));
+        paint2.setColor(l6.w0(i10, g6Var));
         invalidate();
     }
 
@@ -721,7 +721,7 @@ public final class o5 extends ViewGroup {
             while (i7 < size) {
                 Object obj = arrayList.get(i7);
                 i7++;
-                if (((LinkedHashSet) ((l2.y) this.h).b).contains((TL_iv.pageTableCell) obj)) {
+                if (((LinkedHashSet) ((l2.x) this.h).b).contains((TL_iv.pageTableCell) obj)) {
                     return true;
                 }
             }
@@ -976,7 +976,7 @@ public final class o5 extends ViewGroup {
         if (e6Var == null || (n5Var = this.h) == null || i7 < 0 || i7 >= e6Var.b || i10 < 0 || i10 >= e6Var.c) {
             return false;
         }
-        return ((LinkedHashSet) ((l2.y) n5Var).b).contains(e6Var.d[i7][i10]);
+        return ((LinkedHashSet) ((l2.x) n5Var).b).contains(e6Var.d[i7][i10]);
     }
 
     public final int q() {

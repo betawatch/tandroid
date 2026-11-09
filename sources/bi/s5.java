@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s5 implements Comparator {
     public final /* synthetic */ int a;
@@ -39,18 +39,18 @@ public final /* synthetic */ class s5 implements Comparator {
                 float[] fArr = ((w5) this.b).r;
                 return Float.compare(fArr[((Integer) obj).intValue()], fArr[((Integer) obj2).intValue()]);
             case 1:
-                di.y6 y6Var = (di.y6) this.b;
-                int i7 = y6Var.a;
+                di.z6 z6Var = (di.z6) this.b;
+                int i7 = z6Var.a;
                 TL_stories.PeerStories peerStories = (TL_stories.PeerStories) obj;
                 TL_stories.PeerStories peerStories2 = (TL_stories.PeerStories) obj2;
                 long o4 = org.telegram.messenger.m5.o(peerStories.peer);
                 long o10 = org.telegram.messenger.m5.o(peerStories2.peer);
-                boolean M = y6Var.M(o4);
-                boolean M2 = y6Var.M(o10);
-                boolean L = y6Var.L(o4);
-                boolean L2 = y6Var.L(o10);
-                boolean H = y6Var.H(o4);
-                boolean H2 = y6Var.H(o10);
+                boolean M = z6Var.M(o4);
+                boolean M2 = z6Var.M(o10);
+                boolean L = z6Var.L(o4);
+                boolean L2 = z6Var.L(o10);
+                boolean H = z6Var.H(o4);
+                boolean H2 = z6Var.H(o10);
                 if (H != H2) {
                     return (H2 ? 1 : 0) - (H ? 1 : 0);
                 }

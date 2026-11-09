@@ -1,40 +1,37 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class z20 extends org.telegram.ui.ActionBar.k {
-    public final /* synthetic */ org.telegram.ui.Components.ap F1;
-    public final /* synthetic */ c40 G1;
+public final class z20 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ e40 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z20(c40 c40Var, LaunchActivity launchActivity, org.telegram.ui.Components.ap apVar) {
-        super(launchActivity, null);
-        this.G1 = c40Var;
-        this.F1 = apVar;
+    public /* synthetic */ z20(e40 e40Var, int i7) {
+        this.a = i7;
+        this.b = e40Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.k, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        if (getAdditionalSubtitleTextView().getVisibility() == 0) {
-            canvas.save();
-            canvas.translate(getSubtitleTextView().getLeft(), getSubtitleTextView().getY() - org.telegram.messenger.g0.L(1.0f));
-            int alpha = (int) (getAdditionalSubtitleTextView().getAlpha() * 255.0f);
-            org.telegram.ui.Components.ap apVar = this.F1;
-            apVar.f = alpha;
-            apVar.draw(canvas);
-            canvas.restore();
-            invalidate();
-        }
-    }
-
-    @Override // android.view.View
-    public final void setAlpha(float f10) {
-        if (getAlpha() != f10) {
-            super.setAlpha(f10);
-            this.G1.b.invalidate();
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                e40 e40Var = this.b;
+                e40Var.M1.setVisibility(4);
+                e40Var.N1.setVisibility(4);
+                e40Var.L1.setVisibility(4);
+                break;
+            case 1:
+                this.b.Y1 = null;
+                break;
+            default:
+                e40 e40Var2 = this.b;
+                e40Var2.Y2 = null;
+                e40Var2.X2.setColor(e40Var2.K3 == 3 ? -1163700 : -12761513);
+                e40Var2.W2.invalidate();
+                break;
         }
     }
 }

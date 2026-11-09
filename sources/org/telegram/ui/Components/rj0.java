@@ -1,147 +1,29 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.MotionEvent;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public class rj0 extends v61 {
-    public final ht0 V;
-    public boolean W;
-    public View a0;
-    public View b0;
+public final class rj0 {
+    public float a;
+    public float b;
+    public float c;
+    public float d;
+    public float e;
+    public boolean f;
 
-    public rj0(Context context, org.telegram.ui.ActionBar.f6 f6Var, ht0 ht0Var) {
-        super(context, f6Var);
-        this.V = ht0Var;
-        setClipChildren(false);
-        setClipToPadding(false);
+    public final void a(float f10, float f11, float f12, float f13) {
+        this.a = f10;
+        this.d = f12;
+        this.b = f10 - Math.max(0.0f, Math.min(f11, Math.max(0.0f, f12 - f13)));
+        this.c = Math.max(f10, f12);
+        this.f = this.b <= f13 + 0.5f;
+        this.e = 0.0f;
     }
 
-    @Override // org.telegram.ui.Components.v61
-    public final void A(int i7) {
-        ht0 ht0Var = this.V;
-        ht0Var.g("PAGER_TAB_END");
-        ht0Var.p();
-    }
-
-    @Override // org.telegram.ui.Components.v61
-    public final boolean B(MotionEvent motionEvent) {
-        boolean z9 = this.H;
-        boolean B = super.B(motionEvent);
-        if (z9 && !this.H && motionEvent != null && motionEvent.getActionMasked() == 2) {
-            View[] viewPages = getViewPages();
-            View view = viewPages[0];
-            View view2 = viewPages[1];
-            if (view != null && view2 != null && view.getTranslationX() == 0.0f && view.getMeasuredWidth() > 0 && Math.abs(view2.getTranslationX()) >= view.getMeasuredWidth()) {
-                this.a0 = view;
-                this.b0 = view2;
-                ht0 ht0Var = this.V;
-                ht0Var.g("PAGER_DRAG_ABORTED");
-                ht0Var.p();
-            }
+    public final float b() {
+        if (this.f) {
+            return this.c;
         }
-        return B;
-    }
-
-    @Override // org.telegram.ui.Components.v61
-    public final void F(View view, float f10) {
-        if (view.getTranslationX() == f10) {
-            return;
-        }
-        super.F(view, f10);
-        invalidate();
-    }
-
-    public final void L(View view) {
-        this.a0 = null;
-        this.b0 = null;
-        ht0 ht0Var = this.V;
-        ht0Var.f("PAGE_BOUND", view, 0, 0, true);
-        if (ht0Var.O == null) {
-            return;
-        }
-        if (ht0Var.d0) {
-            ht0Var.i("page_bound");
-        }
-        RecyclerView l10 = ht0Var.O.l(view);
-        ht0Var.b(l10);
-        ht0Var.O.s(l10);
-        ht0Var.p();
-    }
-
-    public final void M(MotionEvent motionEvent) {
-        if (motionEvent == null || motionEvent.getActionMasked() != 0) {
-            return;
-        }
-        float x10 = motionEvent.getX();
-        float y10 = motionEvent.getY();
-        ht0 ht0Var = this.V;
-        boolean j3 = ht0Var.j(x10, y10);
-        this.W = j3;
-        ht0Var.g(j3 ? "PAGER_DOWN_COMMON" : "PAGER_DOWN_PAGE");
-    }
-
-    @Override // org.telegram.ui.Components.v61
-    public final boolean b(MotionEvent motionEvent) {
-        return !this.W && this.V.c();
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j3) {
-        int save = canvas.save();
-        float x10 = view.getX();
-        ht0 ht0Var = this.V;
-        canvas.clipRect(x10, -ht0Var.getTopBleed(), view.getX() + view.getWidth(), ht0Var.getBottomBleed() + getHeight());
-        boolean drawChild = super.drawChild(canvas, view, j3);
-        canvas.restoreToCount(save);
-        return drawChild;
-    }
-
-    @Override // org.telegram.ui.Components.v61
-    public float getAvailableTranslationX() {
-        return Math.max(1, getMeasuredWidth());
-    }
-
-    @Override // org.telegram.ui.Components.v61, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        M(motionEvent);
-        return !this.W && super.onInterceptTouchEvent(motionEvent);
-    }
-
-    @Override // org.telegram.ui.Components.v61, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        ht0 ht0Var = this.V;
-        if (motionEvent == null) {
-            ht0Var.g("PAGER_CANCEL_NULL");
-            this.W = false;
-            return B(null);
-        }
-        M(motionEvent);
-        if (motionEvent.getActionMasked() == 1 || motionEvent.getActionMasked() == 3) {
-            ht0Var.g(motionEvent.getActionMasked() == 1 ? "PAGER_UP" : "PAGER_CANCEL");
-        }
-        return !this.W && B(motionEvent);
-    }
-
-    @Override // org.telegram.ui.Components.v61
-    public final void u() {
-        ht0 ht0Var = this.V;
-        ht0Var.g("PAGER_SCROLL_END");
-        ht0Var.p();
-    }
-
-    @Override // org.telegram.ui.Components.v61
-    public final void v() {
-        this.a0 = null;
-        this.b0 = null;
-    }
-
-    @Override // org.telegram.ui.Components.v61
-    public final void w(boolean z9) {
-        this.V.p();
+        float f10 = this.b;
+        return ((this.c - f10) * this.e) + f10;
     }
 }

@@ -10,12 +10,12 @@ import org.telegram.messenger.qp;
 import org.telegram.messenger.z10;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.Components.ch0;
-import org.telegram.ui.Components.js0;
-import org.telegram.ui.pv;
-import org.telegram.ui.ww;
+import org.telegram.ui.Components.dh0;
+import org.telegram.ui.Components.ls0;
+import org.telegram.ui.rv;
+import org.telegram.ui.yw;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b2 implements z10 {
     public final /* synthetic */ int a;
@@ -34,79 +34,79 @@ public final /* synthetic */ class b2 implements z10 {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void a(Object obj, Object obj2, Object obj3, Object obj4) {
-        pv pvVar;
+        rv rvVar;
         org.telegram.ui.ActionBar.f2 f2Var;
         org.telegram.ui.ActionBar.q4 parentLayout;
         switch (this.a) {
             case 0:
-                i4 i4Var = (i4) this.b;
+                j4 j4Var = (j4) this.b;
                 va vaVar = (va) this.c;
                 Long l10 = (Long) obj;
                 Runnable runnable = (Runnable) obj2;
                 Boolean bool = (Boolean) obj3;
                 Long l11 = (Long) obj4;
-                p9 p9Var = i4Var.s0;
+                q9 q9Var = j4Var.s0;
                 if (!bool.booleanValue()) {
                     long currentTimeMillis = System.currentTimeMillis();
-                    h4 h4Var = i4Var.v2;
-                    if (h4Var == null || ((o9) h4Var.c) != null) {
-                        o9 o9Var = (o9) h4Var.c;
-                        o9Var.firstFrameRendered = false;
-                        h4Var.a = false;
-                        o9Var.setOnReadyListener(new e2(0, currentTimeMillis, runnable));
-                        ((g9) i4Var.z1).g(false);
-                        ch0 ch0Var = i4Var.i0;
-                        if (ch0Var != null) {
-                            ch0Var.setAnimation(i4Var.g1.u);
+                    i4 i4Var = j4Var.v2;
+                    if (i4Var == null || ((p9) i4Var.c) != null) {
+                        p9 p9Var = (p9) i4Var.c;
+                        p9Var.firstFrameRendered = false;
+                        i4Var.a = false;
+                        p9Var.setOnReadyListener(new e2(0, currentTimeMillis, runnable));
+                        ((h9) j4Var.z1).g(false);
+                        dh0 dh0Var = j4Var.i0;
+                        if (dh0Var != null) {
+                            dh0Var.setAnimation(j4Var.g1.u);
                         }
-                        if (i4Var.A2 > 0 && l10.longValue() > i4Var.A2 - 1400) {
+                        if (j4Var.A2 > 0 && l10.longValue() > j4Var.A2 - 1400) {
                             l10 = 0L;
                         }
-                        i4Var.R0(l10.longValue(), true);
-                        i4Var.D3 = false;
+                        j4Var.R0(l10.longValue(), true);
+                        j4Var.D3 = false;
                         org.telegram.messenger.g0.i3(runnable, 400L);
                         if (bool.booleanValue()) {
-                            i4Var.d1(false);
+                            j4Var.d1(false);
                             break;
                         }
                     } else {
-                        ((g9) i4Var.z1).g(false);
-                        i4Var.setActive(true);
-                        i4Var.D3 = false;
-                        i4Var.R0 = new d2(0, runnable);
+                        ((h9) j4Var.z1).g(false);
+                        j4Var.setActive(true);
+                        j4Var.D3 = false;
+                        j4Var.R0 = new d2(0, runnable);
                         if (bool.booleanValue()) {
-                            i4Var.d1(false);
+                            j4Var.d1(false);
                         }
                         org.telegram.messenger.g0.i3(runnable, 400L);
                         break;
                     }
                 } else {
-                    org.telegram.ui.ActionBar.f2 f2Var2 = p9Var.f;
+                    org.telegram.ui.ActionBar.f2 f2Var2 = q9Var.f;
                     if (f2Var2 != null && (parentLayout = f2Var2.getParentLayout()) != null) {
                         List fragmentStack = parentLayout.getFragmentStack();
                         ArrayList arrayList = new ArrayList();
                         for (int size = fragmentStack.size() - 1; size >= 0; size--) {
                             org.telegram.ui.ActionBar.f2 f2Var3 = (org.telegram.ui.ActionBar.f2) fragmentStack.get(size);
-                            if (f2Var3 instanceof ww) {
-                                ww wwVar = (ww) f2Var3;
-                                wwVar.W3();
-                                pvVar = wwVar.E0;
-                                r3 = pvVar != null ? pvVar.e(l11.longValue()) : null;
+                            if (f2Var3 instanceof yw) {
+                                yw ywVar = (yw) f2Var3;
+                                ywVar.W3();
+                                rvVar = ywVar.E0;
+                                r3 = rvVar != null ? rvVar.e(l11.longValue()) : null;
                                 for (int i7 = 0; i7 < arrayList.size(); i7++) {
                                     ((ActionBarLayout) parentLayout).d0((org.telegram.ui.ActionBar.f2) arrayList.get(i7), false);
                                 }
-                                f2Var = p9Var.f;
+                                f2Var = q9Var.f;
                                 if (f2Var != null) {
                                     f2Var.clearSheets();
                                 }
-                                p9Var.B();
-                                i4Var.D3 = false;
-                                if (pvVar != null || !pvVar.k(l11.longValue())) {
+                                q9Var.B();
+                                j4Var.D3 = false;
+                                if (rvVar != null || !rvVar.k(l11.longValue())) {
                                     vaVar.X(qa.c(r3));
                                     org.telegram.messenger.g0.i3(runnable, 400L);
                                     break;
                                 } else {
-                                    pvVar.b0.add(new bi.u0(r3, pvVar, l11, vaVar, runnable, 8));
+                                    rvVar.b0.add(new bi.u0(r3, rvVar, l11, vaVar, runnable, 8));
                                     break;
                                 }
                             } else {
@@ -114,58 +114,58 @@ public final /* synthetic */ class b2 implements z10 {
                             }
                         }
                     }
-                    pvVar = null;
-                    f2Var = p9Var.f;
+                    rvVar = null;
+                    f2Var = q9Var.f;
                     if (f2Var != null) {
                     }
-                    p9Var.B();
-                    i4Var.D3 = false;
-                    if (pvVar != null) {
+                    q9Var.B();
+                    j4Var.D3 = false;
+                    if (rvVar != null) {
                     }
                     vaVar.X(qa.c(r3));
                     org.telegram.messenger.g0.i3(runnable, 400L);
                 }
                 break;
             case 1:
-                js0 js0Var = (js0) this.b;
+                ls0 ls0Var = (ls0) this.b;
                 org.telegram.ui.q8 q8Var = (org.telegram.ui.q8) this.c;
                 ArrayList arrayList2 = (ArrayList) obj;
-                int i10 = js0Var.d;
+                int i10 = ls0Var.d;
                 qp.s1(i10).Y3((ArrayList) obj2, true);
                 qp.s1(i10).S3((ArrayList) obj3, true);
                 org.telegram.ui.Components.i5.g(i10).d((ArrayList) obj4);
                 for (int i11 = 0; i11 < arrayList2.size(); i11++) {
                     ij ijVar = (ij) arrayList2.get(i11);
-                    if (ijVar.A2() && ijVar.k.reactions != null) {
+                    if (ijVar.z2() && ijVar.k.reactions != null) {
                         ijVar.Q2 = true;
                     }
-                    ijVar.L5(js0Var.x, true);
-                    js0Var.n.add(ijVar);
+                    ijVar.K5(ls0Var.x, true);
+                    ls0Var.n.add(ijVar);
                 }
-                js0Var.G(true);
+                ls0Var.G(true);
                 org.telegram.messenger.g0.i3(q8Var, 540L);
                 break;
             default:
-                org.telegram.ui.Wallet.m0 m0Var = (org.telegram.ui.Wallet.m0) this.b;
-                org.telegram.ui.Wallet.g8 g8Var = (org.telegram.ui.Wallet.g8) this.c;
+                org.telegram.ui.Wallet.l0 l0Var = (org.telegram.ui.Wallet.l0) this.b;
+                org.telegram.ui.Wallet.f8 f8Var = (org.telegram.ui.Wallet.f8) this.c;
                 TL_wallet.sendTransfer sendtransfer = (TL_wallet.sendTransfer) obj;
-                org.telegram.ui.Wallet.j0 j0Var = (org.telegram.ui.Wallet.j0) obj2;
+                org.telegram.ui.Wallet.i0 i0Var = (org.telegram.ui.Wallet.i0) obj2;
                 byte[] bArr = (byte[]) obj3;
                 String str = (String) obj4;
-                if (sendtransfer != null && j0Var != null && bArr != null) {
-                    org.telegram.ui.Wallet.m0.H("prepare disable backup: transfer ready, initing storage with new secret phrase!");
-                    org.telegram.ui.Wallet.h0 h0Var = new org.telegram.ui.Wallet.h0();
-                    h0Var.c = bArr;
-                    h0Var.b = j0Var.b();
-                    h0Var.a = sendtransfer;
-                    m0Var.c.p(p10.i(m0Var.a).e(), bArr, j0Var, new org.telegram.ui.Wallet.t(m0Var, h0Var, g8Var));
+                if (sendtransfer != null && i0Var != null && bArr != null) {
+                    org.telegram.ui.Wallet.l0.H("prepare disable backup: transfer ready, initing storage with new secret phrase!");
+                    org.telegram.ui.Wallet.g0 g0Var = new org.telegram.ui.Wallet.g0();
+                    g0Var.c = bArr;
+                    g0Var.b = i0Var.b();
+                    g0Var.a = sendtransfer;
+                    l0Var.c.p(p10.i(l0Var.a).e(), bArr, i0Var, new org.telegram.ui.Wallet.s(l0Var, g0Var, f8Var));
                     break;
                 } else {
-                    org.telegram.ui.Wallet.m0.j("prepare disable backup, failed to prepare transfer: ".concat(str == null ? "NULL_ERROR" : str));
+                    org.telegram.ui.Wallet.l0.j("prepare disable backup, failed to prepare transfer: ".concat(str == null ? "NULL_ERROR" : str));
                     if (str == null) {
                         str = "NULL_ERROR";
                     }
-                    g8Var.a(null, str);
+                    f8Var.a(null, str);
                     break;
                 }
         }

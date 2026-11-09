@@ -5,7 +5,7 @@ import android.text.TextPaint;
 import android.text.style.MetricAffectingSpan;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class gv extends MetricAffectingSpan {
     public final kv a;
@@ -97,11 +97,11 @@ public final class gv extends MetricAffectingSpan {
             if (i10 != 8) {
                 kv kvVar = this.a;
                 if (i10 == 11) {
-                    w02 = org.telegram.ui.ActionBar.k6.w0(kvVar.E() ? org.telegram.ui.ActionBar.k6.Qb : org.telegram.ui.ActionBar.k6.Kd, kvVar.D);
+                    w02 = org.telegram.ui.ActionBar.l6.w0(kvVar.E() ? org.telegram.ui.ActionBar.l6.Qb : org.telegram.ui.ActionBar.l6.Kd, kvVar.D);
                 } else if (i10 == 10) {
-                    w02 = org.telegram.ui.ActionBar.k6.r1(0.5f, org.telegram.ui.ActionBar.k6.w0(kvVar.E() ? org.telegram.ui.ActionBar.k6.Tc : org.telegram.ui.ActionBar.k6.Sc, kvVar.D));
+                    w02 = org.telegram.ui.ActionBar.l6.r1(0.5f, org.telegram.ui.ActionBar.l6.w0(kvVar.E() ? org.telegram.ui.ActionBar.l6.Tc : org.telegram.ui.ActionBar.l6.Sc, kvVar.D));
                 } else {
-                    w02 = org.telegram.ui.ActionBar.k6.w0(kvVar.E() ? org.telegram.ui.ActionBar.k6.Tc : org.telegram.ui.ActionBar.k6.Sc, kvVar.D);
+                    w02 = org.telegram.ui.ActionBar.l6.w0(kvVar.E() ? org.telegram.ui.ActionBar.l6.Tc : org.telegram.ui.ActionBar.l6.Sc, kvVar.D);
                 }
                 textPaint.setColor(w02);
             }

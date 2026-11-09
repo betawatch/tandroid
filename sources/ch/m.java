@@ -11,27 +11,27 @@ import org.telegram.messenger.a8;
 import org.telegram.messenger.id;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.hc;
 import org.telegram.ui.Components.i5;
 import org.telegram.ui.Components.r5;
-import org.telegram.ui.q11;
+import org.telegram.ui.s11;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class m extends q11 {
+public final class m extends s11 {
     public boolean e2;
     public final /* synthetic */ o f2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m(o oVar, o oVar2, Activity activity, f6 f6Var, int i7) {
-        super(oVar2, activity, false, null, 6, false, f6Var, 16, i7);
+    public m(o oVar, o oVar2, Activity activity, g6 g6Var, int i7) {
+        super(oVar2, activity, false, null, 6, false, g6Var, 16, i7);
         this.f2 = oVar;
         this.e2 = true;
         setDrawBackground(false);
     }
 
-    @Override // org.telegram.ui.q11, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.s11, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
         super.onLayout(z9, i7, i10, i11, i12);
         if (this.e2) {
@@ -40,7 +40,7 @@ public final class m extends q11 {
         }
     }
 
-    @Override // org.telegram.ui.q11
+    @Override // org.telegram.ui.s11
     public final void p(View view, Long l10, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
         o oVar = this.f2;
         int i7 = oVar.N;

@@ -3,9 +3,9 @@ package fi;
 import android.animation.ValueAnimator;
 import android.view.MotionEvent;
 import org.telegram.ui.Components.c10;
-import org.telegram.ui.Components.r71;
+import org.telegram.ui.Components.s71;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class sa extends c10 {
     public final /* synthetic */ ua a;
@@ -66,12 +66,12 @@ public final class sa extends c10 {
     public final boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent2, float f10, float f11) {
         q6 q6Var;
         y9 y9Var;
-        r71 r71Var;
+        s71 s71Var;
         ia iaVar;
         ua uaVar = this.a;
         va vaVar = uaVar.n0;
         ValueAnimator valueAnimator = vaVar.E;
-        if ((valueAnimator != null && valueAnimator.isRunning()) || (((q6Var = vaVar.D0) != null && (q6Var.y.i || q6Var.L)) || vaVar.O0.x0 || (((y9Var = vaVar.B0) != null && y9Var.s) || uaVar.j0 || (((r71Var = vaVar.V0) != null && (r71Var.F || r71Var.G)) || vaVar.H())))) {
+        if ((valueAnimator != null && valueAnimator.isRunning()) || (((q6Var = vaVar.D0) != null && (q6Var.y.i || q6Var.L)) || vaVar.O0.x0 || (((y9Var = vaVar.B0) != null && y9Var.s) || uaVar.j0 || (((s71Var = vaVar.V0) != null && (s71Var.F || s71Var.G)) || vaVar.H())))) {
             return false;
         }
         boolean z9 = true;
@@ -118,13 +118,13 @@ public final class sa extends c10 {
     public final boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f10, float f11) {
         q6 q6Var;
         y9 y9Var;
-        r71 r71Var;
+        s71 s71Var;
         i3 i3Var;
         float f12;
         ua uaVar = this.a;
         va vaVar = uaVar.n0;
         ValueAnimator valueAnimator = vaVar.E;
-        if ((valueAnimator != null && valueAnimator.isRunning()) || vaVar.o2 != null || vaVar.n2 != null || (((q6Var = vaVar.D0) != null && (q6Var.y.i || q6Var.L)) || vaVar.O0.x0 || (((y9Var = vaVar.B0) != null && y9Var.s) || uaVar.j0 || (((r71Var = vaVar.V0) != null && (r71Var.F || r71Var.G)) || vaVar.H() || vaVar.Q1 || vaVar.P1 || vaVar.f0 != 0)))) {
+        if ((valueAnimator != null && valueAnimator.isRunning()) || vaVar.o2 != null || vaVar.n2 != null || (((q6Var = vaVar.D0) != null && (q6Var.y.i || q6Var.L)) || vaVar.O0.x0 || (((y9Var = vaVar.B0) != null && y9Var.s) || uaVar.j0 || (((s71Var = vaVar.V0) != null && (s71Var.F || s71Var.G)) || vaVar.H() || vaVar.Q1 || vaVar.P1 || vaVar.f0 != 0)))) {
             return false;
         }
         if (!vaVar.X) {

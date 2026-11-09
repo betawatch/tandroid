@@ -1,58 +1,83 @@
 package org.telegram.ui;
 
-import java.util.Collections;
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class su implements Runnable {
+public final /* synthetic */ class su implements View.OnLongClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ww b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ boolean d;
+    public final /* synthetic */ yw b;
 
-    public /* synthetic */ su(ww wwVar, long j3, boolean z9, int i7) {
+    public /* synthetic */ su(yw ywVar, int i7) {
         this.a = i7;
-        this.b = wwVar;
-        this.c = j3;
-        this.d = z9;
+        this.b = ywVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        String str;
-        TLRPC.Chat chat;
+    @Override // android.view.View.OnLongClickListener
+    public final boolean onLongClick(View view) {
         int i7 = this.a;
-        boolean z9 = this.d;
-        long j3 = this.c;
-        ww wwVar = this.b;
+        yw ywVar = this.b;
         switch (i7) {
             case 0:
-                ww wwVar2 = this.b;
-                di.y6 P1 = wwVar2.getMessagesController().P1();
-                long j10 = this.c;
-                boolean z10 = this.d;
-                P1.l0(j10, z10, false);
-                m4.d0 d0Var = new m4.d0();
-                d0Var.a = new su(wwVar2, j10, z10, 1);
-                d0Var.b = new su(wwVar2, j10, z10, 2);
-                if (j10 >= 0) {
-                    TLRPC.User a22 = wwVar2.getMessagesController().a2(Long.valueOf(j10));
-                    str = org.telegram.messenger.g5.m(15, a22.first_name, null);
-                    chat = a22;
+                ArrayList arrayList = ywVar.J2;
+                if (ywVar.getParentActivity() == null) {
+                    break;
                 } else {
-                    TLRPC.Chat M0 = wwVar2.getMessagesController().M0(Long.valueOf(-j10));
-                    str = M0.title;
-                    chat = M0;
+                    boolean z9 = !arrayList.isEmpty();
+                    boolean z10 = true;
+                    for (int i10 = 0; i10 < arrayList.size(); i10++) {
+                        long longValue = ((Long) arrayList.get(i10)).longValue();
+                        if (z9 && longValue != ywVar.getUserConfig().e()) {
+                            z9 = false;
+                        }
+                        if (org.telegram.messenger.m5.C(longValue)) {
+                            z10 = false;
+                        }
+                        TLRPC.Chat M0 = ywVar.getMessagesController().M0(Long.valueOf(-longValue));
+                        if (M0 != null && !org.telegram.messenger.t3.B(M0)) {
+                            z10 = false;
+                        }
+                    }
+                    boolean z11 = ywVar.m4() && ywVar.x3();
+                    if (z11) {
+                        ArrayList arrayList2 = ywVar.E2;
+                        int size = arrayList2.size();
+                        int i11 = 0;
+                        while (true) {
+                            if (i11 < size) {
+                                Object obj = arrayList2.get(i11);
+                                i11++;
+                                if (((org.telegram.messenger.gf) obj).b()) {
+                                    z11 = false;
+                                }
+                            }
+                        }
+                    }
+                    ArrayList arrayList3 = ywVar.E2;
+                    boolean z12 = arrayList3 != null && arrayList3.size() > 1;
+                    org.telegram.ui.Components.l60 H = org.telegram.ui.Components.l60.H(ywVar, view);
+                    H.l(R.drawable.msg_sendfile, org.telegram.messenger.id.M0(z12 ? 2131745635 : 2131745636, null), new eu(ywVar, 5), z11);
+                    H.c(R.drawable.input_notify_off, org.telegram.messenger.id.M0(2131745583, null), new eu(ywVar, 6), false);
+                    H.l(R.drawable.msg_calendar2, org.telegram.messenger.id.M0(z9 ? 2131745514 : 2131745859, null), new org.telegram.ui.Components.up0(6, ywVar, z9), z10);
+                    H.Z();
+                    break;
                 }
-                wwVar2.S = org.telegram.ui.Components.hc.X().V(Collections.singletonList(chat), wwVar2.q4() ? org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0("StoriesMovedToDialogs", null, 2131744761, str)) : org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0("StoriesMovedToContacts", null, 2131744762, org.telegram.messenger.g5.m(15, str, null))), null, d0Var).j();
                 break;
             case 1:
-                wwVar.getMessagesController().P1().l0(j3, !z9, false);
+                yw ywVar2 = this.b;
+                ywVar2.D4(ywVar2.J2, org.telegram.messenger.qs.p1, true, true, null);
+                break;
+            case 2:
+                ywVar.B4(view);
                 break;
             default:
-                wwVar.getMessagesController().P1().l0(j3, z9, true);
+                ywVar.getContactsController().B();
+                ywVar.W4();
                 break;
         }
+        return true;
     }
 }

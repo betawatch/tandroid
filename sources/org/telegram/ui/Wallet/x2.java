@@ -1,23 +1,111 @@
 package org.telegram.ui.Wallet;
 
 import android.content.Context;
+import android.view.MotionEvent;
+import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import org.telegram.messenger.qs;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
-public final class x2 extends FrameLayout implements w2 {
-    public final FrameLayout a;
+public final class x2 extends org.telegram.ui.ActionBar.v2 {
+    public final fi.g1 i1;
+    public final ArrayList j1;
+    public boolean k1;
+    public FrameLayout l1;
+    public Integer m1;
 
-    public x2(Context context) {
-        super(context);
-        setClipChildren(false);
-        setClipToPadding(false);
-        FrameLayout frameLayout = new FrameLayout(context);
-        this.a = frameLayout;
-        addView(frameLayout, c8.ha.e(-1, -2, 80));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public x2(Context context, org.telegram.ui.ActionBar.g6 g6Var, View... viewArr) {
+        super(1, context, g6Var, true);
+        List asList = Arrays.asList(viewArr);
+        ArrayList arrayList = new ArrayList();
+        this.j1 = arrayList;
+        if (asList != null) {
+            arrayList.addAll(asList);
+        }
+        u2 u2Var = new u2(this, context);
+        this.b = u2Var;
+        fi.g1 g1Var = new fi.g1(8, context, this);
+        this.i1 = g1Var;
+        int i7 = this.t0;
+        g1Var.setPadding(i7, 0, i7, org.telegram.messenger.g0.n);
+        u2Var.addView(g1Var, c8.ha.e(-1, -1, qs.E1));
     }
 
-    public FrameLayout getContent() {
-        return this.a;
+    @Override // org.telegram.ui.ActionBar.v2
+    public final boolean G() {
+        return this.i1.getCurrentPosition() == 0;
+    }
+
+    @Override // org.telegram.ui.ActionBar.v2
+    public final boolean I(MotionEvent motionEvent) {
+        return this.i1.getCurrentPosition() == 0;
+    }
+
+    public final void I0(w2 w2Var) {
+        this.j1.add(w2Var);
+        if (this.k1) {
+            fi.g1 g1Var = this.i1;
+            g1Var.D(false);
+            g1Var.o(false);
+        }
+    }
+
+    public final void J0(int i7) {
+        this.m1 = Integer.valueOf(i7);
+        v0(i7);
+        O(i7);
+        ((u2) this.b).invalidate();
+    }
+
+    public final void K0(LinearLayout linearLayout) {
+        FrameLayout frameLayout = this.l1;
+        if (frameLayout == null) {
+            FrameLayout frameLayout2 = new FrameLayout(getContext());
+            this.l1 = frameLayout2;
+            frameLayout2.setClipChildren(false);
+            this.l1.setClipToPadding(false);
+            this.b.addView(this.l1, c8.ha.e(-1, -2, 80));
+        } else {
+            frameLayout.removeAllViews();
+        }
+        this.l1.addView(linearLayout, c8.ha.e(-1, -2, 80));
+        fi.g1 g1Var = this.i1;
+        int i7 = this.t0;
+        g1Var.setPadding(i7, 0, i7, 0);
+        ((u2) this.b).requestLayout();
+    }
+
+    @Override // org.telegram.ui.ActionBar.v2, android.app.Dialog
+    public final void onBackPressed() {
+        fi.g1 g1Var = this.i1;
+        if (g1Var.getCurrentPosition() <= 0) {
+            super.onBackPressed();
+            return;
+        }
+        for (View view : g1Var.getViewPages()) {
+            if (view != null) {
+                org.telegram.messenger.g0.v1(view);
+            }
+        }
+        g1Var.E(g1Var.getCurrentPosition() - 1);
+    }
+
+    @Override // org.telegram.ui.ActionBar.v2, android.app.Dialog
+    public final void show() {
+        if (!this.k1) {
+            this.k1 = true;
+            this.i1.setAdapter(new ii.x(this, 3));
+        }
+        super.show();
+        Integer num = this.m1;
+        if (num != null) {
+            E0(num.intValue());
+        }
     }
 }

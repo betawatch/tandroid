@@ -16,9 +16,9 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
 import m9.y;
-import org.telegram.ui.fx;
+import org.telegram.ui.hx;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class e implements Runnable {
     public final /* synthetic */ int a;
@@ -136,7 +136,7 @@ public final class e implements Runnable {
                                         if (f10 != null) {
                                             h hVar = new h(shortcutInfoCompatSaverImpl2, f10, str2, false, 11);
                                             m mVar = new m();
-                                            shortcutInfoCompatSaverImpl2.e.submit(new fx(mVar, hVar, false, 11));
+                                            shortcutInfoCompatSaverImpl2.e.submit(new hx(mVar, hVar, false, 11));
                                             y yVar2 = (y) shortcutInfoCompatSaverImpl2.c.put(str4, mVar);
                                             if (yVar2 != null) {
                                                 yVar2.cancel(false);

@@ -15,7 +15,7 @@ import java.util.HashMap;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class bm extends vh {
     public static final HashMap U = new HashMap();
@@ -36,7 +36,7 @@ public final class bm extends vh {
     public int R;
     public boolean S;
     public boolean T;
-    public org.telegram.ui.ActionBar.f6 n;
+    public org.telegram.ui.ActionBar.g6 n;
     public bi.q1 r;
     public v4.b0 s;
     public am w;
@@ -191,9 +191,9 @@ public final class bm extends vh {
     public final void dispatchDraw(Canvas canvas) {
         Drawable m10;
         int i7;
-        org.telegram.ui.ym ymVar = this.b.p1;
+        org.telegram.ui.an anVar = this.b.p1;
         boolean z9 = false;
-        if (ymVar != null && (m10 = ymVar.m()) != null) {
+        if (anVar != null && (m10 = anVar.m()) != null) {
             int currentItemTop = getCurrentItemTop();
             if (org.telegram.messenger.g0.Q1()) {
                 i7 = 16;
@@ -225,10 +225,10 @@ public final class bm extends vh {
             return ConnectionsManager.DEFAULT_DATACENTER_ID;
         }
         View childAt = q1Var.getChildAt(0);
-        xi0 xi0Var = (xi0) q1Var.G(childAt);
+        yi0 yi0Var = (yi0) q1Var.G(childAt);
         int top = childAt.getTop();
         int L = org.telegram.messenger.g0.L(8.0f);
-        if (top < org.telegram.messenger.g0.L(8.0f) || xi0Var == null || xi0Var.b() != 0) {
+        if (top < org.telegram.messenger.g0.L(8.0f) || yi0Var == null || yi0Var.b() != 0) {
             top = L;
         }
         q1Var.setTopGlowOffset(top);

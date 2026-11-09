@@ -1,81 +1,67 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
 import android.content.Context;
-import android.graphics.ColorFilter;
-import android.util.SparseIntArray;
-import org.telegram.messenger.beta.R;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class n01 extends org.telegram.ui.Components.bv {
-    public final /* synthetic */ int g0;
-    public final /* synthetic */ q11 h0;
+public final class n01 extends FrameLayout {
+    public final Path a;
+    public final Paint b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ org.telegram.ui.ActionBar.g6 e;
+    public final /* synthetic */ Integer f;
+    public final /* synthetic */ s11 h;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n01(q11 q11Var, Context context, org.telegram.ui.ActionBar.f6 f6Var, boolean z9, boolean z10, int i7, by0 by0Var, int i10, int i11) {
-        super(context, f6Var, z9, z10, false, true, i7, by0Var, i10, false);
-        this.h0 = q11Var;
-        this.g0 = i11;
+    public n01(s11 s11Var, Context context, boolean z9, boolean z10, org.telegram.ui.ActionBar.g6 g6Var, Integer num) {
+        super(context);
+        this.h = s11Var;
+        this.c = z9;
+        this.d = z10;
+        this.e = g6Var;
+        this.f = num;
+        this.a = new Path();
+        this.b = new Paint(1);
     }
 
-    @Override // org.telegram.ui.Components.bv
-    public final ColorFilter getEmojiColorFilter() {
-        return this.h0.k1;
-    }
-
-    @Override // org.telegram.ui.Components.bv
-    public final boolean h(int i7) {
-        int i10;
-        f11 f11Var;
-        q11 q11Var = this.h0;
-        SparseIntArray sparseIntArray = q11Var.x0;
-        if (q11Var.x1) {
-            return false;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        s11 s11Var = this.h;
+        if (!s11Var.Q0) {
+            super.dispatchDraw(canvas);
+            return;
         }
-        int i11 = this.g0;
-        if (i11 == 4 && i7 == 0) {
-            q11Var.Q = !q11Var.Q;
-            q11Var.d0.setVisibility(8);
-            org.telegram.ui.Components.bv bvVar = q11Var.c0[q11Var.Q ? 1 : 0];
-            q11Var.d0 = bvVar;
-            bvVar.setVisibility(0);
-            q11Var.d0.y.setDrawable(getContext().getDrawable(q11Var.Q ? R.drawable.msg_emoji_stickers : R.drawable.msg_emoji_smiles));
-            q11Var.d0.y.setContentDescription(org.telegram.messenger.id.M0(q11Var.Q ? 2131754756 : 2131751197, null));
-            q11Var.B(true, false, false);
-            q11Var.r0.h1(0, 0);
-            return true;
+        if (!this.c) {
+            super.dispatchDraw(canvas);
+            return;
         }
-        org.telegram.ui.Components.xu xuVar = this.E;
-        int i12 = ((xuVar == null || !this.b0) ? 0 : 1) + 1;
-        if (xuVar != null && this.b0 && i7 == 1) {
-            i10 = q11Var.n;
+        canvas.save();
+        boolean z9 = this.d;
+        Paint paint = this.b;
+        if (z9) {
+            org.telegram.ui.ActionBar.l6.n(paint);
+        }
+        paint.setColor(org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.G8, this.e));
+        paint.setAlpha((int) (getAlpha() * 255.0f));
+        float width = (this.f == null ? getWidth() / 2.0f : r1.intValue()) + org.telegram.messenger.g0.L(20.0f);
+        float width2 = (getWidth() - getPaddingLeft()) - getPaddingRight();
+        float height = (getHeight() - getPaddingBottom()) - getPaddingTop();
+        if (s11Var.n()) {
+            org.telegram.messenger.g0.P.set((width - (s11Var.a1 * width)) + getPaddingLeft(), com.google.android.recaptcha.internal.a.z(1.0f, s11Var.b1, height, getPaddingTop()), ((width2 - width) * s11Var.a1) + getPaddingLeft() + width, getPaddingTop() + height);
         } else {
-            if ((i11 != 4 || i7 != 0) && i7 > 0) {
-                int i13 = i7 - i12;
-                if (sparseIntArray.indexOfKey(i13) >= 0) {
-                    i10 = sparseIntArray.get(i13);
-                }
-            }
-            i10 = 0;
+            org.telegram.messenger.g0.P.set((width - (s11Var.a1 * width)) + getPaddingLeft(), getPaddingTop(), ((width2 - width) * s11Var.a1) + getPaddingLeft() + width, (height * s11Var.b1) + getPaddingTop());
         }
-        q11.a(q11Var, i10, org.telegram.messenger.g0.L((i11 == 6 ? 7 : 0) - 2));
-        q11Var.d0.j(i7, true);
-        q11Var.h0.J1 = true;
-        q11Var.v(null, true, true);
-        i01 i01Var = q11Var.f0;
-        if (i01Var != null && (f11Var = i01Var.n) != null) {
-            f11Var.I1(null);
-        }
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.bv
-    public final void i(org.telegram.ui.Components.xu xuVar) {
-        ValueAnimator valueAnimator = this.h0.V1;
-        if (valueAnimator == null || valueAnimator.isRunning()) {
-            xuVar.setScaleX(0.0f);
-            xuVar.setScaleY(0.0f);
-        }
+        Path path = this.a;
+        path.rewind();
+        path.addRoundRect(org.telegram.messenger.g0.P, org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(12.0f), Path.Direction.CW);
+        canvas.drawPath(path, paint);
+        canvas.clipPath(path);
+        super.dispatchDraw(canvas);
+        canvas.restore();
     }
 }

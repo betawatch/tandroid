@@ -6,7 +6,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.view.View;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class cc extends View {
     public final /* synthetic */ int a;
@@ -64,46 +64,46 @@ public final class cc extends View {
                 break;
             case 1:
                 super.onDraw(canvas);
-                hm0 hm0Var = (hm0) this.w;
-                boolean z10 = hm0Var.S;
+                jm0 jm0Var = (jm0) this.w;
+                boolean z10 = jm0Var.S;
                 Paint paint2 = this.n;
                 float f14 = this.e;
                 float f15 = this.d;
                 float f16 = this.c;
                 if (z10) {
-                    float f17 = hm0Var.Y;
+                    float f17 = jm0Var.Y;
                     if (f17 > 0.0f) {
                         this.b.drawCircle(f16, f15, f14 * f17, this.f);
                     }
                     canvas.drawBitmap(this.h, 0.0f, 0.0f, paint2);
                 } else {
-                    canvas.drawCircle(f16, f15, (1.0f - hm0Var.Y) * f14, paint2);
+                    canvas.drawCircle(f16, f15, (1.0f - jm0Var.Y) * f14, paint2);
                 }
                 canvas.save();
                 canvas.translate(this.r, this.s);
-                hm0Var.K.draw(canvas);
+                jm0Var.K.draw(canvas);
                 canvas.restore();
                 break;
             default:
                 super.onDraw(canvas);
-                v71 v71Var = (v71) this.w;
-                boolean a10 = v71Var.a.a();
+                w71 w71Var = (w71) this.w;
+                boolean a10 = w71Var.a.a();
                 Paint paint3 = this.n;
                 float f18 = this.e;
                 float f19 = this.d;
                 float f20 = this.c;
                 if (a10) {
-                    float f21 = v71Var.j2;
+                    float f21 = w71Var.j2;
                     if (f21 > 0.0f) {
                         this.b.drawCircle(f20, f19, f18 * f21, this.f);
                     }
                     canvas.drawBitmap(this.h, 0.0f, 0.0f, paint3);
                 } else {
-                    canvas.drawCircle(f20, f19, (1.0f - v71Var.j2) * f18, paint3);
+                    canvas.drawCircle(f20, f19, (1.0f - w71Var.j2) * f18, paint3);
                 }
                 canvas.save();
                 canvas.translate(this.r, this.s);
-                v71Var.P1.draw(canvas);
+                w71Var.P1.draw(canvas);
                 canvas.restore();
                 break;
         }

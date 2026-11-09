@@ -1,138 +1,76 @@
 package org.telegram.ui;
 
-import android.widget.TextView;
-import java.util.ArrayList;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.app.Activity;
+import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class hw {
-    public final /* synthetic */ ww a;
+public final class hw extends org.telegram.ui.Components.gm0 {
+    public final bg.c0 b1;
+    public final bg.c0 c1;
+    public final /* synthetic */ yw d1;
 
-    public hw(ww wwVar) {
-        this.a = wwVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public hw(yw ywVar, Activity activity, yw ywVar2, int i7, int i10, int i11, long j3, fv fvVar) {
+        super(activity, ywVar2, i7, i10, i11, j3, fvVar);
+        this.d1 = ywVar;
+        this.b1 = new bg.c0(2);
+        this.c1 = new bg.c0(8);
     }
 
-    public final long a() {
-        ww wwVar = this.a;
-        sv svVar = wwVar.F3;
-        if (svVar == null || !(svVar.getFragment() instanceof w91)) {
-            return 0L;
-        }
-        return -((w91) wwVar.F3.getFragment()).a;
+    public final void T() {
+        oi.q qVar;
+        qVar = ((org.telegram.ui.ActionBar.f2) this.d1).glassEngine;
+        qVar.g++;
     }
 
-    public final void b() {
-        ww wwVar = this.a;
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(wwVar.getParentActivity());
-        org.telegram.ui.Components.yl0 yl0Var = wwVar.C0.d0;
-        boolean z9 = yl0Var.N;
-        org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
-        if (z9 && yl0Var.O()) {
-            u1Var.R = org.telegram.messenger.id.M0(2131752059, null);
-            org.telegram.ui.Components.yl0 yl0Var2 = wwVar.C0.d0;
-            ArrayList arrayList = yl0Var2.N ? yl0Var2.v0 : yl0Var2.u0;
-            final int i7 = 0;
-            u1Var.T = org.telegram.messenger.id.G(arrayList != null ? arrayList.size() : 0, "ClearSearchAlertPartial", new Object[0]);
-            alertDialog$Builder.k(org.telegram.messenger.id.M0(2131752101, null), new org.telegram.ui.ActionBar.r1(this) { // from class: org.telegram.ui.gw
-                public final /* synthetic */ hw b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // org.telegram.ui.ActionBar.r1
-                public final void g(org.telegram.ui.ActionBar.u1 u1Var2, int i10) {
-                    switch (i7) {
-                        case 0:
-                            this.b.a.C0.d0.E();
-                            break;
-                        default:
-                            ww wwVar2 = this.b.a;
-                            if (!wwVar2.C0.d0.O()) {
-                                org.telegram.ui.Components.yl0 yl0Var3 = wwVar2.C0.d0;
-                                yl0Var3.j0.c();
-                                yl0Var3.J.clear();
-                                yl0Var3.f();
-                                break;
-                            } else {
-                                wwVar2.C0.d0.E();
-                                break;
-                            }
-                    }
-                }
-            });
-        } else {
-            u1Var.R = org.telegram.messenger.id.M0(2131752056, null);
-            u1Var.T = org.telegram.messenger.id.M0(2131752061, null);
-            final int i10 = 1;
-            alertDialog$Builder.k(org.telegram.messenger.id.M0(2131752099, null), new org.telegram.ui.ActionBar.r1(this) { // from class: org.telegram.ui.gw
-                public final /* synthetic */ hw b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // org.telegram.ui.ActionBar.r1
-                public final void g(org.telegram.ui.ActionBar.u1 u1Var2, int i102) {
-                    switch (i10) {
-                        case 0:
-                            this.b.a.C0.d0.E();
-                            break;
-                        default:
-                            ww wwVar2 = this.b.a;
-                            if (!wwVar2.C0.d0.O()) {
-                                org.telegram.ui.Components.yl0 yl0Var3 = wwVar2.C0.d0;
-                                yl0Var3.j0.c();
-                                yl0Var3.J.clear();
-                                yl0Var3.f();
-                                break;
-                            } else {
-                                wwVar2.C0.d0.E();
-                                break;
-                            }
-                    }
-                }
-            });
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        org.telegram.ui.ActionBar.k kVar;
+        super.dispatchDraw(canvas);
+        yw ywVar = this.d1;
+        if (ywVar.a0 != null || ywVar.Z2 != 0) {
+            int L = org.telegram.messenger.g0.L(54.0f);
+            kVar = ((org.telegram.ui.ActionBar.f2) ywVar).actionBar;
+            int L2 = ((org.telegram.messenger.g0.L(ywVar.a) + kVar.getMeasuredHeight()) - org.telegram.messenger.g0.L(2.0f)) - (ywVar.Z2 != 0 ? L : 0);
+            org.telegram.ui.Components.pr prVar = ywVar.K1;
+            int c10 = L2 + (prVar != null ? (int) prVar.c(org.telegram.messenger.g0.L(7.0f)) : 0);
+            int r12 = org.telegram.ui.ActionBar.l6.r1(0.7f, ywVar.getThemedColor(org.telegram.ui.ActionBar.l6.d6));
+            bg.c0 c0Var = this.b1;
+            c0Var.b(r12);
+            c0Var.c(c10, 0);
+            c0Var.setBounds(0, 0, getMeasuredWidth(), c10 + L);
+            c0Var.draw(canvas);
         }
-        alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), null);
-        wwVar.showDialog(u1Var);
-        TextView textView = (TextView) u1Var.d(-1);
-        if (textView != null) {
-            org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.q7, wwVar.getResourceProvider());
+        if (ywVar.g4 > org.telegram.messenger.g0.L(32.0f)) {
+            int r13 = org.telegram.ui.ActionBar.l6.r1(0.9f, ywVar.getThemedColor(org.telegram.ui.ActionBar.l6.d6));
+            bg.c0 c0Var2 = this.c1;
+            c0Var2.b(r13);
+            c0Var2.setBounds(0, getMeasuredHeight() - ywVar.g4, getMeasuredWidth(), getMeasuredHeight());
+            c0Var2.draw(canvas);
         }
     }
 
-    public final void c() {
-        fw fwVar = this.a.C0;
-        if (fwVar != null) {
-            org.telegram.ui.Components.si0 si0Var = fwVar.f0;
-            int i7 = fwVar.U0;
-            si0Var.b(i7 > 0 ? i7 + 1 : 0);
-            fwVar.U0 = fwVar.d0.b();
+    @Override // android.view.View
+    public final void setAlpha(float f10) {
+        oi.q qVar;
+        super.setAlpha(f10);
+        qVar = ((org.telegram.ui.ActionBar.f2) this.d1).glassEngine;
+        qVar.g();
+    }
+
+    @Override // android.view.View
+    public final void setTranslationY(float f10) {
+        super.setTranslationY(f10);
+        fz0 fz0Var = this.d1.Z;
+        if (fz0Var != null) {
+            fz0Var.setTranslationY(f10);
         }
     }
 
-    public final void d(boolean z9, boolean z10) {
-        ww wwVar = this.a;
-        if (wwVar.C0.b0.getVisibility() == 0) {
-            z10 = true;
-        }
-        if (wwVar.j2 && wwVar.k2) {
-            fw fwVar = wwVar.C0;
-            if (fwVar.b0 != null) {
-                if (z9 || fwVar.d0.b() != 0) {
-                    wwVar.C0.b0.e(true, z10);
-                } else {
-                    wwVar.C0.b0.e(false, z10);
-                }
-            }
-        }
-        if (z9 && wwVar.C0.d0.b() == 0) {
-            fw fwVar2 = wwVar.C0;
-            fwVar2.f0.a();
-            fwVar2.a0.invalidate();
-            fwVar2.U0 = 0;
-        }
+    @Override // org.telegram.ui.Components.w61
+    public final void y(int i7) {
+        bi.g5 g5Var = this.V;
+        this.d1.q5(g5Var != null && g5Var.h(i7) == 2);
     }
 }

@@ -1,147 +1,151 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.RectF;
-import android.view.MotionEvent;
-import android.view.VelocityTracker;
+import android.text.TextUtils;
+import android.util.SparseArray;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+import java.util.ArrayList;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class qu0 extends org.telegram.ui.Components.pj0 implements di.f7 {
-    public final /* synthetic */ ProfileActivity e3;
-    public VelocityTracker f3;
-    public final /* synthetic */ ProfileActivity g3;
+public final /* synthetic */ class qu0 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qu0(ProfileActivity profileActivity, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, f6Var);
-        this.g3 = profileActivity;
-        this.e3 = profileActivity;
+    public /* synthetic */ qu0(Object obj, int i7, int i10) {
+        this.a = i10;
+        this.c = obj;
+        this.b = i7;
     }
 
-    @Override // org.telegram.ui.Components.pj0
-    public final boolean F0(View view) {
-        return view != this.g3.N;
-    }
-
-    @Override // org.telegram.ui.Components.pj0
-    public final boolean H0(View view, float f10, float f11) {
-        return !(view instanceof org.telegram.ui.Cells.j);
-    }
-
-    @Override // di.f7
-    public final void a(int[] iArr) {
-        org.telegram.ui.ActionBar.k kVar;
-        kVar = ((org.telegram.ui.ActionBar.f2) this.e3).actionBar;
-        iArr[0] = kVar.getMeasuredHeight();
-        iArr[1] = getMeasuredHeight() - getPaddingBottom();
-    }
-
-    @Override // android.view.View
-    public final void invalidate() {
-        super.invalidate();
-        View view = this.g3.fragmentView;
-        if (view != null) {
-            view.invalidate();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        ProfileActivity profileActivity = this.g3;
-        vv0 vv0Var = profileActivity.N;
-        if (vv0Var != null) {
-            if (vv0Var.H()) {
-                vv0 vv0Var2 = profileActivity.N;
-                if (vv0Var2.E1 && vv0Var2.getClosestTab() == 13) {
-                    return false;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        int i7;
+        int i10 = this.a;
+        int i11 = this.b;
+        Object obj = this.c;
+        switch (i10) {
+            case 0:
+                ProfileActivity profileActivity = (ProfileActivity) obj;
+                if (i11 == 0) {
+                    xv0 xv0Var = profileActivity.N;
+                    if (!xv0Var.E1) {
+                        if (org.telegram.ui.Components.zs0.J0(xv0Var.getClosestTab())) {
+                            xv0 xv0Var2 = profileActivity.N;
+                            profileActivity.N.a1(profileActivity, profileActivity.a(), xv0Var2.w1(xv0Var2.getClosestTab()));
+                            break;
+                        } else if (profileActivity.getMessagesController().W4()) {
+                            profileActivity.getMessagesController().e7.edit().putBoolean("story_keep", true).apply();
+                            fi.va D = fi.va.D(profileActivity.getParentActivity(), profileActivity.getCurrentAccount());
+                            D.y = new wv0(profileActivity);
+                            D.Q(null);
+                            break;
+                        } else {
+                            profileActivity.showDialog(new ug.w0((org.telegram.ui.ActionBar.f2) profileActivity, 14, true));
+                            break;
+                        }
+                    }
                 }
-            }
-            if (profileActivity.N.H()) {
-                vv0 vv0Var3 = profileActivity.N;
-                if (vv0Var3.E1 && (vv0Var3.getClosestTab() == 8 || org.telegram.ui.Components.xs0.I0(profileActivity.N.getClosestTab()))) {
-                    return false;
+                if (!org.telegram.ui.Components.zs0.J0(profileActivity.N.getClosestTab())) {
+                    long e10 = profileActivity.getUserConfig().e();
+                    org.telegram.messenger.video.n nVar = profileActivity.z5;
+                    if (nVar != null) {
+                        nVar.run();
+                        profileActivity.z5 = null;
+                    }
+                    org.telegram.ui.Components.cc.e();
+                    boolean z9 = profileActivity.N.getClosestTab() == 9;
+                    ArrayList arrayList = new ArrayList();
+                    SparseArray<org.telegram.messenger.ij> actionModeSelected = profileActivity.N.getActionModeSelected();
+                    if (actionModeSelected != null) {
+                        int i12 = 0;
+                        for (int i13 = 0; i13 < actionModeSelected.size(); i13++) {
+                            TL_stories.StoryItem storyItem = actionModeSelected.valueAt(i13).l;
+                            if (storyItem != null) {
+                                arrayList.add(storyItem);
+                                i12++;
+                            }
+                        }
+                        i7 = i12;
+                    } else {
+                        i7 = 0;
+                    }
+                    profileActivity.N.V(false);
+                    if (z9) {
+                        profileActivity.N.k1(8);
+                    }
+                    if (!arrayList.isEmpty()) {
+                        boolean[] zArr = new boolean[arrayList.size()];
+                        for (int i14 = 0; i14 < arrayList.size(); i14++) {
+                            TL_stories.StoryItem storyItem2 = (TL_stories.StoryItem) arrayList.get(i14);
+                            zArr[i14] = storyItem2.pinned;
+                            storyItem2.pinned = z9;
+                        }
+                        profileActivity.getMessagesController().P1().q0(e10, arrayList, false);
+                        boolean[] zArr2 = {false};
+                        boolean z10 = z9;
+                        profileActivity.z5 = new org.telegram.messenger.video.n(profileActivity, e10, arrayList, z9);
+                        bi.i0 i0Var = new bi.i0(profileActivity, zArr2, arrayList, zArr, e10, 15);
+                        (z10 ? org.telegram.ui.Components.hc.a0(profileActivity).L(R.raw.contact_check, org.telegram.messenger.id.G(i7, "StorySavedTitle", new Object[0]), org.telegram.messenger.id.M0(2131744484, null), org.telegram.messenger.id.M0(2131743885, null), i0Var).j() : org.telegram.ui.Components.hc.a0(profileActivity).J(R.raw.chats_archived, org.telegram.messenger.id.G(i7, "StoryArchived", new Object[0]), org.telegram.messenger.id.M0(2131743885, null), 5000, false, i0Var).j()).v = new sn0(23, profileActivity, zArr2);
+                        break;
+                    }
+                } else {
+                    long a10 = profileActivity.a();
+                    xv0 xv0Var3 = profileActivity.N;
+                    int w12 = xv0Var3.w1(xv0Var3.getClosestTab());
+                    String w10 = profileActivity.getMessagesController().P1().w(w12, a10);
+                    org.telegram.messenger.video.n nVar2 = profileActivity.z5;
+                    if (nVar2 != null) {
+                        nVar2.run();
+                        profileActivity.z5 = null;
+                    }
+                    org.telegram.ui.Components.cc.e();
+                    ArrayList arrayList2 = new ArrayList();
+                    SparseArray<org.telegram.messenger.ij> actionModeSelected2 = profileActivity.N.getActionModeSelected();
+                    if (actionModeSelected2 != null) {
+                        for (int i15 = 0; i15 < actionModeSelected2.size(); i15++) {
+                            TL_stories.StoryItem storyItem3 = actionModeSelected2.valueAt(i15).l;
+                            if (storyItem3 != null) {
+                                arrayList2.add(storyItem3);
+                            }
+                        }
+                    }
+                    profileActivity.N.V(false);
+                    if (!arrayList2.isEmpty()) {
+                        bi.f9 f9Var = new bi.f9(profileActivity, a10, w12, arrayList2);
+                        profileActivity.getMessagesController().P1().f0(w12, a10, arrayList2);
+                        org.telegram.ui.Components.hc.a0(profileActivity).K(R.raw.chats_archived, org.telegram.messenger.g0.X2(org.telegram.messenger.id.G(arrayList2.size(), "StoryRemovedFromAlbumTitle", w10)), org.telegram.messenger.id.M0(2131743885, null), f9Var).j();
+                        break;
+                    }
                 }
-            }
-            org.telegram.ui.Components.up0 up0Var = profileActivity.N.a0;
-            if (up0Var != null && up0Var.g()) {
-                return false;
-            }
-            org.telegram.ui.Components.yp0 yp0Var = profileActivity.N.b0;
-            if (yp0Var != null && yp0Var.f) {
-                return false;
-            }
+                break;
+            case 1:
+                d51 d51Var = (d51) obj;
+                d51Var.h0.E(i11);
+                d51Var.p0(i11, true);
+                break;
+            default:
+                org.telegram.ui.Wallet.ma maVar = (org.telegram.ui.Wallet.ma) obj;
+                EditText editText = maVar.a;
+                TextView[] textViewArr = maVar.N;
+                TextView textView = textViewArr[i11];
+                if (textView != null && !TextUtils.isEmpty(textView.getText())) {
+                    String charSequence = textViewArr[i11].getText().toString();
+                    editText.setText(charSequence);
+                    editText.setSelection(charSequence.length());
+                    maVar.a();
+                    maVar.a();
+                    Runnable runnable = maVar.r;
+                    if (runnable != null) {
+                        editText.post(runnable);
+                        break;
+                    }
+                }
+                break;
         }
-        return super.onInterceptTouchEvent(motionEvent);
-    }
-
-    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
-        super.onLayout(z9, i7, i10, i11, i12);
-        RectF rectF = ProfileActivity.S6;
-        this.g3.p5();
-    }
-
-    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        VelocityTracker velocityTracker;
-        View m10;
-        org.telegram.ui.ActionBar.k kVar;
-        int e42;
-        int action = motionEvent.getAction();
-        ProfileActivity profileActivity = this.g3;
-        if (action == 0) {
-            VelocityTracker velocityTracker2 = this.f3;
-            if (velocityTracker2 == null) {
-                this.f3 = VelocityTracker.obtain();
-            } else {
-                velocityTracker2.clear();
-            }
-            this.f3.addMovement(motionEvent);
-        } else if (action == 2) {
-            VelocityTracker velocityTracker3 = this.f3;
-            if (velocityTracker3 != null) {
-                velocityTracker3.addMovement(motionEvent);
-                this.f3.computeCurrentVelocity(1000);
-                profileActivity.h2 = this.f3.getYVelocity(motionEvent.getPointerId(motionEvent.getActionIndex()));
-            }
-        } else if ((action == 1 || action == 3) && (velocityTracker = this.f3) != null) {
-            if (action == 1) {
-                velocityTracker.addMovement(motionEvent);
-                this.f3.computeCurrentVelocity(1000);
-                profileActivity.h2 = this.f3.getYVelocity(motionEvent.getPointerId(motionEvent.getActionIndex()));
-            }
-            this.f3.recycle();
-            this.f3 = null;
-        }
-        boolean onTouchEvent = super.onTouchEvent(motionEvent);
-        if (action == 2) {
-            int currentActionBarHeight = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
-            kVar = ((org.telegram.ui.ActionBar.f2) profileActivity).actionBar;
-            int i7 = currentActionBarHeight + (kVar.getOccupyStatusBar() ? org.telegram.messenger.g0.m : 0);
-            if (!profileActivity.m2 || profileActivity.I0) {
-                i7 = profileActivity.a.getMeasuredWidth();
-                e42 = profileActivity.e4();
-            } else {
-                e42 = profileActivity.j4();
-            }
-            if (profileActivity.P1 >= (e42 + i7) - 1.0f) {
-                profileActivity.K4(true);
-                onTouchEvent = false;
-            }
-        }
-        if ((action == 1 || action == 3) && (m10 = profileActivity.c.m(0)) != null) {
-            if (profileActivity.N1) {
-                profileActivity.N1 = false;
-                profileActivity.a.O0 = true;
-            }
-            ProfileActivity.R0(profileActivity, m10, profileActivity.h2);
-        }
-        return onTouchEvent;
-    }
-
-    @Override // androidx.recyclerview.widget.RecyclerView
-    public final void r0(View view, View view2) {
     }
 }

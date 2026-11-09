@@ -16,13 +16,13 @@ import org.telegram.messenger.p10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.r70;
+import org.telegram.ui.Components.s70;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class j5 extends View {
     public final TextPaint a;
-    public final r70 b;
+    public final s70 b;
     public final Paint c;
     public final Paint d;
     public StaticLayout e;
@@ -48,7 +48,7 @@ public final class j5 extends View {
         Paint paint2 = new Paint(1);
         this.d = paint2;
         paint2.setPathEffect(new CornerPathEffect(org.telegram.messenger.g0.L(9.66f)));
-        this.b = new r70(0);
+        this.b = new s70(0);
     }
 
     public final void a(int i7, CharSequence charSequence) {
@@ -57,14 +57,14 @@ public final class j5 extends View {
             return;
         }
         this.e = new StaticLayout(charSequence, this.a, i7 - org.telegram.messenger.g0.L(18.0f), Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
-        r70 r70Var = this.b;
-        r70Var.rewind();
+        s70 s70Var = this.b;
+        s70Var.rewind();
         int i10 = this.h;
         int i11 = this.n;
-        r70Var.e = i10;
-        r70Var.f = i11;
+        s70Var.e = i10;
+        s70Var.f = i11;
         if (this.f) {
-            r70Var.e(null, 0, 0.0f, 0.0f);
+            s70Var.e(null, 0, 0.0f, 0.0f);
             float f10 = Float.MAX_VALUE;
             float width = this.e.getWidth();
             float f11 = Float.MIN_VALUE;
@@ -77,10 +77,10 @@ public final class j5 extends View {
             }
             this.b.addRect(width, f11, f12, this.e.getHeight(), Path.Direction.CW);
         } else {
-            r70Var.e(this.e, 0, 0.0f, 0.0f);
+            s70Var.e(this.e, 0, 0.0f, 0.0f);
             StaticLayout staticLayout = this.e;
-            staticLayout.getSelectionPath(0, staticLayout.getText().length(), r70Var);
-            r70Var.a();
+            staticLayout.getSelectionPath(0, staticLayout.getText().length(), s70Var);
+            s70Var.a();
         }
         invalidate();
     }
@@ -95,11 +95,11 @@ public final class j5 extends View {
         long o4 = org.telegram.messenger.m5.o(savedStarGift.from_id);
         long o10 = org.telegram.messenger.m5.o(savedStarGift.gift.owner_id);
         if (e10 == o4) {
-            set(org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, savedStarGift.gift.crafted ? 2131749612 : 2131749613, org.telegram.messenger.id.r(savedStarGift.date, false))));
+            set(org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, savedStarGift.gift.crafted ? 2131749611 : 2131749612, org.telegram.messenger.id.r(savedStarGift.date, false))));
         } else if (e10 == o10) {
-            set(org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, 2131749594, org.telegram.messenger.m5.s(i7, o4), org.telegram.messenger.id.r(savedStarGift.date, false))));
+            set(org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, 2131749593, org.telegram.messenger.m5.s(i7, o4), org.telegram.messenger.id.r(savedStarGift.date, false))));
         } else {
-            set(org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, 2131749593, org.telegram.messenger.m5.s(i7, o4), org.telegram.messenger.m5.s(i7, o10), org.telegram.messenger.id.r(savedStarGift.date, false))));
+            set(org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, 2131749592, org.telegram.messenger.m5.s(i7, o4), org.telegram.messenger.m5.s(i7, o10), org.telegram.messenger.id.r(savedStarGift.date, false))));
         }
     }
 
@@ -124,12 +124,12 @@ public final class j5 extends View {
                 this.r.setLocalMatrix(this.s);
             }
             Paint paint = this.c;
-            r70 r70Var = this.b;
-            canvas.drawPath(r70Var, paint);
-            int r12 = org.telegram.ui.ActionBar.k6.r1(0.35f, -16777216);
+            s70 s70Var = this.b;
+            canvas.drawPath(s70Var, paint);
+            int r12 = org.telegram.ui.ActionBar.l6.r1(0.35f, -16777216);
             Paint paint2 = this.d;
             paint2.setColor(r12);
-            canvas.drawPath(r70Var, paint2);
+            canvas.drawPath(s70Var, paint2);
             this.e.draw(canvas);
             canvas.restore();
         }
@@ -175,11 +175,11 @@ public final class j5 extends View {
         long o4 = org.telegram.messenger.m5.o(peer);
         long o10 = org.telegram.messenger.m5.o(tL_messageActionStarGiftUnique.peer);
         if (e10 == o4) {
-            set(org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, (tL_messageActionStarGiftUnique.craft || tL_messageActionStarGiftUnique.gift.crafted) ? 2131749612 : 2131749613, org.telegram.messenger.id.r(ijVar.k.date, false))));
+            set(org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, (tL_messageActionStarGiftUnique.craft || tL_messageActionStarGiftUnique.gift.crafted) ? 2131749611 : 2131749612, org.telegram.messenger.id.r(ijVar.k.date, false))));
         } else if (e10 == o10) {
-            set(org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, 2131749594, org.telegram.messenger.m5.s(i7, o4), org.telegram.messenger.id.r(ijVar.k.date, false))));
+            set(org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, 2131749593, org.telegram.messenger.m5.s(i7, o4), org.telegram.messenger.id.r(ijVar.k.date, false))));
         } else {
-            set(org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, 2131749593, org.telegram.messenger.m5.s(i7, o4), org.telegram.messenger.m5.s(i7, o10), org.telegram.messenger.id.r(ijVar.k.date, false))));
+            set(org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, 2131749592, org.telegram.messenger.m5.s(i7, o4), org.telegram.messenger.m5.s(i7, o10), org.telegram.messenger.id.r(ijVar.k.date, false))));
         }
         setVisibility(0);
     }

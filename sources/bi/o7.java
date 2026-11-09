@@ -7,11 +7,11 @@ import android.graphics.PorterDuff;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.ye;
 import org.telegram.ui.Components.Crop.CropAreaView;
-import org.telegram.ui.Components.fd0;
+import org.telegram.ui.Components.gd0;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.n30;
+import org.telegram.ui.p30;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class o7 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -81,9 +81,9 @@ public final class o7 extends AnimatorListenerAdapter {
                 vaVar.h0.invalidate();
                 break;
             case 4:
-                n30 n30Var = (n30) obj;
-                n30Var.h = f10;
-                n30Var.a.invalidate();
+                p30 p30Var = (p30) obj;
+                p30Var.h = f10;
+                p30Var.a.invalidate();
                 if (runnable != null) {
                     runnable.run();
                     break;
@@ -108,14 +108,14 @@ public final class o7 extends AnimatorListenerAdapter {
                 cropAreaView.invalidate();
                 photoViewer.C1.c.setRotated(false);
                 if (Math.abs(f10) > 0.0f) {
-                    fd0 fd0Var = photoViewer.C1;
-                    og.f fVar = fd0Var.c;
+                    gd0 gd0Var = photoViewer.C1;
+                    og.f fVar = gd0Var.c;
                     if (fVar != null) {
                         fVar.b(0.0f);
                         fVar.setRotated(false);
                     }
-                    if (fd0Var.b.m(f10)) {
-                        org.telegram.ui.ActionBar.r6.t(photoViewer.b1, org.telegram.ui.ActionBar.k6.ng, photoViewer.v2, PorterDuff.Mode.MULTIPLY);
+                    if (gd0Var.b.m(f10)) {
+                        org.telegram.ui.ActionBar.s6.s(photoViewer.b1, org.telegram.ui.ActionBar.l6.ng, photoViewer.v2, PorterDuff.Mode.MULTIPLY);
                     } else {
                         photoViewer.b1.setColorFilter((ColorFilter) null);
                     }

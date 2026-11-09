@@ -4,14 +4,14 @@ import android.text.TextUtils;
 import android.view.ViewGroup;
 import org.telegram.messenger.voip.GroupCallMessage;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class m00 implements we.a {
     public final ViewGroup a;
     public final nh.c b;
 
-    public m00(di.a4 a4Var, GroupCallMessage groupCallMessage) {
-        nh.c cVar = new nh.c(a4Var.getContext());
+    public m00(di.b4 b4Var, GroupCallMessage groupCallMessage) {
+        nh.c cVar = new nh.c(b4Var.getContext());
         this.b = cVar;
         cVar.setBackgroundColor(i0.a.o(-16777216, 34));
         xh.l lVar = cVar.w;
@@ -20,8 +20,8 @@ public final class m00 implements we.a {
         lVar.setEllipsize(TextUtils.TruncateAt.END);
         cVar.set(groupCallMessage);
         cVar.setAlpha(0.0f);
-        this.a = a4Var;
-        a4Var.addView(cVar);
+        this.a = b4Var;
+        b4Var.addView(cVar);
     }
 
     @Override // we.a

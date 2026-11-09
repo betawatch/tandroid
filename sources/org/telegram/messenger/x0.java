@@ -14,9 +14,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.l71;
+import org.telegram.ui.Components.m71;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class x0 implements Runnable {
     public final /* synthetic */ int a;
@@ -57,8 +57,8 @@ public final /* synthetic */ class x0 implements Runnable {
         long j10;
         long j11;
         File[] fileArr;
-        l71 l71Var;
-        l71 l71Var2;
+        m71 m71Var;
+        m71 m71Var2;
         SQLiteCursor sQLiteCursor;
         SQLiteCursor sQLiteCursor2;
         int i12 = 3;
@@ -354,7 +354,7 @@ public final /* synthetic */ class x0 implements Runnable {
                 FilesMigrationService filesMigrationService = (FilesMigrationService) this.c;
                 int i37 = this.b;
                 boolean z12 = FilesMigrationService.c;
-                ((NotificationManager) filesMigrationService.getSystemService("notification")).notify(qs.Y4, z8.a(filesMigrationService, dt.j0).setContentTitle(id.M0(2131748431, null)).setContentText(i37 + "/" + filesMigrationService.a).setSmallIcon(R.drawable.notification).setAutoCancel(false).setProgress(filesMigrationService.a, i37, false).build());
+                ((NotificationManager) filesMigrationService.getSystemService("notification")).notify(qs.Y4, z8.a(filesMigrationService, dt.j0).setContentTitle(id.M0(2131748430, null)).setContentText(i37 + "/" + filesMigrationService.a).setSmallIcon(R.drawable.notification).setAutoCancel(false).setProgress(filesMigrationService.a, i37, false).build());
                 return;
             case 3:
                 org.telegram.ui.ActionBar.u1 u1Var = (org.telegram.ui.ActionBar.u1) this.c;
@@ -378,10 +378,10 @@ public final /* synthetic */ class x0 implements Runnable {
                         mediaController.B0(2, 0, false, false);
                     }
                     org.telegram.ui.Components.wt wtVar = org.telegram.ui.Components.wt.O1;
-                    if (wtVar != null && (l71Var2 = wtVar.j1) != null && l71Var2.x) {
-                        l71Var2.a.g0();
-                        l71Var2.n();
-                        l71Var2.f0.d(true, true);
+                    if (wtVar != null && (m71Var2 = wtVar.j1) != null && m71Var2.x) {
+                        m71Var2.a.g0();
+                        m71Var2.n();
+                        m71Var2.f0.d(true, true);
                     }
                     mediaController.W = true;
                     return;
@@ -392,10 +392,10 @@ public final /* synthetic */ class x0 implements Runnable {
                 }
                 if (i39 == 2) {
                     org.telegram.ui.Components.wt wtVar2 = org.telegram.ui.Components.wt.O1;
-                    if (wtVar2 != null && (l71Var = wtVar2.j1) != null && l71Var.x) {
-                        l71Var.a.g0();
-                        l71Var.n();
-                        l71Var.f0.d(true, true);
+                    if (wtVar2 != null && (m71Var = wtVar2.j1) != null && m71Var.x) {
+                        m71Var.a.g0();
+                        m71Var.n();
+                        m71Var.f0.d(true, true);
                     }
                     mediaController.W = true;
                     return;
@@ -524,7 +524,7 @@ public final /* synthetic */ class x0 implements Runnable {
                     return;
                 }
             case 9:
-                ((org.telegram.ui.fg) this.c).a(this.b);
+                ((org.telegram.ui.dg) this.c).a(this.b);
                 return;
             case 10:
                 PushListenerController.lambda$sendRegistrationToServer$1((String) this.c, this.b);
@@ -537,7 +537,7 @@ public final /* synthetic */ class x0 implements Runnable {
                 c cVar = (c) this.c;
                 try {
                     if (i44 == 1) {
-                        qs.e().k(qs.P4, 1, id.M0(2131743836, null));
+                        qs.e().k(qs.P4, 1, id.M0(2131743833, null));
                     } else if (i44 != 2) {
                         return;
                     } else {

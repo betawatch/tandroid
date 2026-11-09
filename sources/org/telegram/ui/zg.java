@@ -1,39 +1,33 @@
 package org.telegram.ui;
 
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class zg implements Runnable {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ an b;
+public final /* synthetic */ class zg implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ cn b;
     public final /* synthetic */ TLRPC.TL_attachMenuBot c;
-    public final /* synthetic */ TLRPC.TL_error d;
-    public final /* synthetic */ TLRPC.User e;
+    public final /* synthetic */ TLRPC.User d;
 
-    public /* synthetic */ zg(an anVar, TLRPC.TL_attachMenuBot tL_attachMenuBot, TLRPC.TL_error tL_error, TLRPC.User user) {
-        this.b = anVar;
+    public /* synthetic */ zg(cn cnVar, TLRPC.TL_attachMenuBot tL_attachMenuBot, TLRPC.User user, int i7) {
+        this.a = i7;
+        this.b = cnVar;
         this.c = tL_attachMenuBot;
-        this.d = tL_error;
-        this.e = user;
+        this.d = user;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                an.i0(this.b, this.c, this.d, this.e);
+                org.telegram.messenger.g0.h3(new ch(this.b, this.c, tL_error, this.d));
                 break;
             default:
-                an.t0(this.b, this.c, this.d, this.e);
+                org.telegram.messenger.g0.h3(new ch(this.b, tL_error, this.c, this.d));
                 break;
         }
-    }
-
-    public /* synthetic */ zg(an anVar, TLRPC.TL_error tL_error, TLRPC.TL_attachMenuBot tL_attachMenuBot, TLRPC.User user) {
-        this.b = anVar;
-        this.d = tL_error;
-        this.c = tL_attachMenuBot;
-        this.e = user;
     }
 }

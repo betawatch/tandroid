@@ -3,10 +3,10 @@ package v4;
 import android.animation.Animator;
 import android.animation.ValueAnimator;
 import android.view.View;
-import di.m4;
-import org.telegram.ui.fx;
+import di.n4;
+import org.telegram.ui.hx;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class u implements Animator.AnimatorListener {
     public final /* synthetic */ int D;
@@ -38,7 +38,7 @@ public final class u implements Animator.AnimatorListener {
         this.d = f13;
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         this.h = ofFloat;
-        ofFloat.addUpdateListener(new m4(this, 14));
+        ofFloat.addUpdateListener(new n4(this, 14));
         ofFloat.setTarget(d1Var.a);
         ofFloat.addListener(this);
         this.y = 0.0f;
@@ -71,7 +71,7 @@ public final class u implements Animator.AnimatorListener {
             yVar.a.add(d1Var.a);
             this.n = true;
             if (i7 > 0) {
-                yVar.H.post(new fx(yVar, this, i7));
+                yVar.H.post(new hx(yVar, this, i7));
             }
         }
         View view = yVar.M;

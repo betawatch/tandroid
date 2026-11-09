@@ -11,11 +11,11 @@ import android.provider.Settings;
 import h9.t1;
 import java.util.List;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class e {
     public final Context a;
-    public final l2.y b;
+    public final l2.x b;
     public final Handler c;
     public final c d;
     public final androidx.mediarouter.app.f e;
@@ -26,10 +26,10 @@ public final class e {
     public e2.e j;
     public boolean k;
 
-    public e(Context context, l2.y yVar, e2.e eVar, AudioDeviceInfo audioDeviceInfo) {
+    public e(Context context, l2.x xVar, e2.e eVar, AudioDeviceInfo audioDeviceInfo) {
         Context applicationContext = context.getApplicationContext();
         this.a = applicationContext;
-        this.b = yVar;
+        this.b = xVar;
         this.j = eVar;
         this.i = audioDeviceInfo;
         String str = h2.m0.a;

@@ -9,14 +9,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class zm extends org.telegram.ui.Cells.a6 {
     public final /* synthetic */ org.telegram.ui.l4 F;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zm(org.telegram.ui.l4 l4Var, Context context, int i7, um umVar, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, i7, umVar, f6Var);
+    public zm(org.telegram.ui.l4 l4Var, Context context, int i7, um umVar, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(context, i7, umVar, g6Var);
         this.F = l4Var;
         ((bn) l4Var.e).s.getChildCount();
     }
@@ -24,9 +24,9 @@ public final class zm extends org.telegram.ui.Cells.a6 {
     @Override // org.telegram.ui.Cells.a6
     public final boolean e() {
         bn bnVar = (bn) this.F.e;
-        org.telegram.ui.e61 e61Var = bnVar.s;
-        View F = e61Var.F(this);
-        v4.d1 T = F == null ? null : e61Var.T(F);
+        org.telegram.ui.f61 f61Var = bnVar.s;
+        View F = f61Var.F(this);
+        v4.d1 T = F == null ? null : f61Var.T(F);
         if (T != null) {
             int b10 = T.b();
             int i7 = bnVar.M;
@@ -41,9 +41,9 @@ public final class zm extends org.telegram.ui.Cells.a6 {
     public final boolean f(org.telegram.ui.Cells.a6 a6Var) {
         int b10;
         bn bnVar = (bn) this.F.e;
-        org.telegram.ui.e61 e61Var = bnVar.s;
-        View F = e61Var.F(a6Var);
-        v4.d1 T = F == null ? null : e61Var.T(F);
+        org.telegram.ui.f61 f61Var = bnVar.s;
+        View F = f61Var.F(a6Var);
+        v4.d1 T = F == null ? null : f61Var.T(F);
         if (T == null || (b10 = T.b()) == -1) {
             return false;
         }
@@ -58,7 +58,7 @@ public final class zm extends org.telegram.ui.Cells.a6 {
             if (menu.findItem(R.id.copy) == null) {
                 return;
             }
-            org.telegram.ui.an.A8(menu, ((org.telegram.ui.an) bnVar.b.W1).h, false, true, true, true);
+            org.telegram.ui.cn.B8(menu, ((org.telegram.ui.cn) bnVar.b.W1).h, false, true, true, true);
         }
     }
 
@@ -79,9 +79,9 @@ public final class zm extends org.telegram.ui.Cells.a6 {
             }
         }
         super.h(a6Var, z9);
-        org.telegram.ui.e61 e61Var = bnVar.s;
-        View F = e61Var.F(a6Var);
-        v4.d1 T = F == null ? null : e61Var.T(F);
+        org.telegram.ui.f61 f61Var = bnVar.s;
+        View F = f61Var.F(a6Var);
+        v4.d1 T = F == null ? null : f61Var.T(F);
         if (T != null && (b10 = T.b()) != -1) {
             bnVar.L[b10 - bnVar.t0] = z9;
         }

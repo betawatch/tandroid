@@ -17,9 +17,9 @@ import bi.w6;
 import bi.ya;
 import bi.z5;
 import c8.ha;
-import di.f9;
 import di.g9;
-import di.p9;
+import di.h9;
+import di.q9;
 import fi.o5;
 import hi.c4;
 import java.util.ArrayList;
@@ -52,16 +52,16 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.ActionBar.v2;
-import org.telegram.ui.Components.ch0;
+import org.telegram.ui.Components.dh0;
 import org.telegram.ui.Components.r5;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.Stories.recorder.FfmpegAudioWaveformLoader;
 import org.telegram.ui.e4;
 import org.telegram.ui.g4;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e0 implements Runnable {
     public final /* synthetic */ int a;
@@ -93,15 +93,15 @@ public final /* synthetic */ class e0 implements Runnable {
                 w5 w5Var = d6Var.h;
                 if (starGift == null) {
                     FrameLayout frameLayout = new FrameLayout(d6Var.getContext());
-                    ch0 ch0Var = new ch0(d6Var.getContext());
-                    ch0Var.f(R.raw.gift_broken, 32, 32, null);
-                    frameLayout.addView(ch0Var, ha.e(32, 32, 17));
-                    ch0Var.setScaleX(0.5f);
-                    ch0Var.setScaleY(0.5f);
-                    ch0Var.setAlpha(0.0f);
-                    ch0Var.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).start();
-                    d6Var.l0 = ch0Var;
-                    frameLayout.setBackground(new t6(org.telegram.messenger.g0.L(12.0f), k6.r1(0.075f, -1)));
+                    dh0 dh0Var = new dh0(d6Var.getContext());
+                    dh0Var.f(R.raw.gift_broken, 32, 32, null);
+                    frameLayout.addView(dh0Var, ha.e(32, 32, 17));
+                    dh0Var.setScaleX(0.5f);
+                    dh0Var.setScaleY(0.5f);
+                    dh0Var.setAlpha(0.0f);
+                    dh0Var.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).start();
+                    d6Var.l0 = dh0Var;
+                    frameLayout.setBackground(new t6(org.telegram.messenger.g0.L(12.0f), l6.r1(0.075f, -1)));
                     w5Var.a[i11].setVisibility(8);
                     frameLayout.setRotation(180.0f);
                     w5Var.f(i11, frameLayout);
@@ -131,7 +131,7 @@ public final /* synthetic */ class e0 implements Runnable {
                     break;
                 }
             case 2:
-                ((x10) this.d).a(id.a0(null, null, 2131750047, hi.j.J0(this.b)), (w6) this.c, Boolean.FALSE);
+                ((x10) this.d).a(id.a0(null, null, 2131750046, hi.j.J0(this.b)), (w6) this.c, Boolean.FALSE);
                 break;
             case 3:
                 ea eaVar = (ea) this.c;
@@ -199,18 +199,18 @@ public final /* synthetic */ class e0 implements Runnable {
                 yaVar.a(null);
                 break;
             case 8:
-                g9 g9Var = (g9) this.c;
+                h9 h9Var = (h9) this.c;
                 ArrayList arrayList2 = (ArrayList) this.d;
                 int i18 = this.b;
-                p9 p9Var = g9Var.d;
-                f9 f9Var = p9Var.n0;
-                int i19 = p9Var.h;
-                f9Var.A0 = arrayList2;
-                f9Var.y0 = i19;
-                f9Var.setAdapter(null);
-                f9Var.setAdapter(f9Var.z0);
-                f9Var.setCurrentItem(i18);
-                f9Var.C0 = true;
+                q9 q9Var = h9Var.d;
+                g9 g9Var = q9Var.n0;
+                int i19 = q9Var.h;
+                g9Var.A0 = arrayList2;
+                g9Var.y0 = i19;
+                g9Var.setAdapter(null);
+                g9Var.setAdapter(g9Var.z0);
+                g9Var.setCurrentItem(i18);
+                g9Var.C0 = true;
                 break;
             case 9:
                 ((FfmpegAudioWaveformLoader) this.c).lambda$new$0((String) this.d, this.b);

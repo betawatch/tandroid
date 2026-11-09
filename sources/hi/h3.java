@@ -11,25 +11,25 @@ import org.telegram.messenger.qp;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_payments;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.Components.k60;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.Components.l60;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class h3 implements View.OnClickListener {
     public final /* synthetic */ int a = 1;
     public final /* synthetic */ int b;
     public final /* synthetic */ org.telegram.ui.ActionBar.v2 c;
-    public final /* synthetic */ f6 d;
+    public final /* synthetic */ g6 d;
     public final /* synthetic */ long e;
     public final /* synthetic */ Context f;
     public final /* synthetic */ TL_payments.connectedBotStarRef h;
     public final /* synthetic */ Object n;
 
-    public /* synthetic */ h3(int i7, org.telegram.ui.ActionBar.v2 v2Var, f6 f6Var, LinearLayout linearLayout, long j3, Context context, TL_payments.connectedBotStarRef connectedbotstarref) {
+    public /* synthetic */ h3(int i7, org.telegram.ui.ActionBar.v2 v2Var, g6 g6Var, LinearLayout linearLayout, long j3, Context context, TL_payments.connectedBotStarRef connectedbotstarref) {
         this.b = i7;
         this.c = v2Var;
-        this.d = f6Var;
+        this.d = g6Var;
         this.n = linearLayout;
         this.e = j3;
         this.f = context;
@@ -73,8 +73,8 @@ public final /* synthetic */ class h3 implements View.OnClickListener {
                 arrayList.add(0, p10.i(i10).f());
                 org.telegram.ui.ActionBar.v2 v2Var = this.c;
                 ViewGroup viewGroup = v2Var.b;
-                f6 f6Var = this.d;
-                k60 k60Var = new k60(viewGroup, f6Var, linearLayout, false, false, true);
+                g6 g6Var = this.d;
+                l60 l60Var = new l60(viewGroup, g6Var, linearLayout, false, false, true);
                 int size = arrayList.size();
                 int i11 = 0;
                 while (i11 < size) {
@@ -91,27 +91,27 @@ public final /* synthetic */ class h3 implements View.OnClickListener {
                     }
                     long j10 = j3;
                     int i12 = i10;
-                    f6 f6Var2 = f6Var;
-                    k60Var.g(tLObject, j10 == this.e, new d9(i12, j10, this.f, this.h, v2Var, f6Var2));
+                    g6 g6Var2 = g6Var;
+                    l60Var.g(tLObject, j10 == this.e, new d9(i12, j10, this.f, this.h, v2Var, g6Var2));
                     i10 = i12;
-                    f6Var = f6Var2;
+                    g6Var = g6Var2;
                 }
-                k60Var.t = false;
-                k60Var.s = 0;
-                k60Var.V(5);
-                k60Var.a0(org.telegram.messenger.g0.L(24.0f), 0.0f);
-                k60Var.Z();
+                l60Var.t = false;
+                l60Var.s = 0;
+                l60Var.V(5);
+                l60Var.a0(org.telegram.messenger.g0.L(24.0f), 0.0f);
+                l60Var.Z();
                 break;
         }
     }
 
-    public /* synthetic */ h3(TL_payments.connectedBotStarRef connectedbotstarref, int i7, org.telegram.ui.ActionBar.v2 v2Var, Context context, long j3, f6 f6Var, ai.d0 d0Var) {
+    public /* synthetic */ h3(TL_payments.connectedBotStarRef connectedbotstarref, int i7, org.telegram.ui.ActionBar.v2 v2Var, Context context, long j3, g6 g6Var, ai.d0 d0Var) {
         this.h = connectedbotstarref;
         this.b = i7;
         this.c = v2Var;
         this.f = context;
         this.e = j3;
-        this.d = f6Var;
+        this.d = g6Var;
         this.n = d0Var;
     }
 }

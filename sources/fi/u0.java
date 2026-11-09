@@ -13,7 +13,7 @@ import android.view.View;
 import org.telegram.messenger.id;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class u0 extends View {
     public final Paint a;
@@ -22,7 +22,7 @@ public final class u0 extends View {
     public final float d;
     public final float e;
     public final Path f;
-    public di.s7 h;
+    public di.f8 h;
     public boolean n;
     public final org.telegram.ui.Components.w5 r;
 
@@ -47,9 +47,9 @@ public final class u0 extends View {
     }
 
     public final void a(boolean z9) {
-        di.s7 s7Var;
-        if (!z9 && (s7Var = this.h) != null) {
-            org.telegram.messenger.g0.r(s7Var);
+        di.f8 f8Var;
+        if (!z9 && (f8Var = this.h) != null) {
+            org.telegram.messenger.g0.r(f8Var);
             this.h = null;
         }
         this.n = z9;

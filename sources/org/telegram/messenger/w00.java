@@ -7,7 +7,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class w00 implements c20 {
     public final /* synthetic */ int a;
@@ -89,7 +89,7 @@ public final /* synthetic */ class w00 implements c20 {
                     qpVar.V7.add(Long.valueOf(j3));
                     qpVar.F4(true);
                     if (T != null) {
-                        org.telegram.ui.Components.hc.a0(T).P(R.raw.chats_infotip, g0.H2(g0.x2(id.M0(2131745577, null), new rn(i10, T)), true)).k(true);
+                        org.telegram.ui.Components.hc.a0(T).P(R.raw.chats_infotip, g0.H2(g0.x2(id.M0(2131745574, null), new rn(i10, T)), true)).k(true);
                     }
                     zArr[0] = true;
                     aeVar.run();

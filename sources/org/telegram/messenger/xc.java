@@ -1,20 +1,20 @@
 package org.telegram.messenger;
 
-import org.telegram.ui.f60;
+import org.telegram.ui.h60;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class xc implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ id b;
     public final /* synthetic */ String c;
-    public final /* synthetic */ f60 d;
+    public final /* synthetic */ h60 d;
 
-    public /* synthetic */ xc(id idVar, String str, f60 f60Var, int i7) {
+    public /* synthetic */ xc(id idVar, String str, h60 h60Var, int i7) {
         this.a = i7;
         this.b = idVar;
         this.c = str;
-        this.d = f60Var;
+        this.d = h60Var;
     }
 
     @Override // java.lang.Runnable

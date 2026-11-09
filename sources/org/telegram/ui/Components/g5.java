@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.animation.OvershootInterpolator;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public class g5 extends Drawable implements o5 {
     public boolean D;
@@ -29,7 +29,7 @@ public class g5 extends Drawable implements o5 {
     public final w5 e;
     public final Drawable[] f;
     public View h;
-    public org.telegram.ui.q11 n;
+    public org.telegram.ui.s11 n;
     public final boolean r;
     public final int s;
     public int w;
@@ -95,7 +95,7 @@ public class g5 extends Drawable implements o5 {
             this.E.d();
             bi.ud udVar2 = this.E;
             Integer num = this.F;
-            udVar2.a(canvas, org.telegram.ui.ActionBar.k6.r1(d, num == null ? -1 : num.intValue()));
+            udVar2.a(canvas, org.telegram.ui.ActionBar.l6.r1(d, num == null ? -1 : num.intValue()));
             bg.k.d().a(15, xfVar);
         } else {
             bg.k.d().f(xfVar);
@@ -297,9 +297,9 @@ public class g5 extends Drawable implements o5 {
                 this.h.invalidate();
             }
         }
-        org.telegram.ui.q11 q11Var = this.n;
-        if (q11Var != null) {
-            q11Var.invalidate();
+        org.telegram.ui.s11 s11Var = this.n;
+        if (s11Var != null) {
+            s11Var.invalidate();
         }
         invalidateSelf();
     }

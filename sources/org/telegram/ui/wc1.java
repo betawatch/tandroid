@@ -1,48 +1,29 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import com.google.android.gms.tasks.OnFailureListener;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class wc1 {
-    public org.telegram.ui.Cells.c2 a;
-    public org.telegram.ui.ActionBar.u1 b;
-    public TextView c;
+public final /* synthetic */ class wc1 implements OnFailureListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ fi.d b;
 
-    public static void a(Context context, org.telegram.messenger.c20 c20Var, Runnable runnable) {
-        wc1 wc1Var = new wc1();
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context);
-        String M0 = org.telegram.messenger.id.M0(2131744198, null);
-        org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
-        u1Var.R = M0;
-        LinearLayout f10 = org.telegram.messenger.k5.f(context, 1);
-        TextView textView = new TextView(context);
-        textView.setLetterSpacing(0.025f);
-        org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.j5, null);
-        textView.setTextSize(1, 14.0f);
-        f10.addView(textView, c8.ha.t(-1, -2, 0, 24, 0, 24, 0));
-        org.telegram.ui.Cells.c2 c2Var = new org.telegram.ui.Cells.c2(1, context, null);
-        wc1Var.a = c2Var;
-        c2Var.getTextView().getLayoutParams().width = -1;
-        wc1Var.a.getTextView().setTextSize(1, 14.0f);
-        f10.addView(wc1Var.a, c8.ha.t(-1, 48, 3, 8, 0, 8, 0));
-        boolean[] zArr = new boolean[1];
-        textView.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.M0(2131752919, null)));
-        wc1Var.a.e(org.telegram.messenger.g0.U2(org.telegram.messenger.id.M0(2131752920, null), new bu(context, 8)), "", false, false, false);
-        alertDialog$Builder.o(f10);
-        alertDialog$Builder.k(org.telegram.messenger.id.M0(2131751771, null), new org.telegram.ui.Components.u2(1, c20Var, zArr));
-        alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), new go0(15));
-        wc1Var.b = u1Var;
-        u1Var.show();
-        TextView textView2 = (TextView) wc1Var.b.d(-1);
-        wc1Var.c = textView2;
-        textView2.setEnabled(false);
-        wc1Var.c.setAlpha(0.5f);
-        wc1Var.a.setOnClickListener(new my0(wc1Var, 11));
-        wc1Var.a.setBackground(org.telegram.ui.ActionBar.k6.h0(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.i6, false), 7, -1));
-        wc1Var.b.setOnDismissListener(new org.telegram.ui.Components.z1(zArr, runnable));
+    public /* synthetic */ wc1(fi.d dVar, int i7) {
+        this.a = i7;
+        this.b = dVar;
+    }
+
+    @Override // com.google.android.gms.tasks.OnFailureListener
+    public final void onFailure(Exception exc) {
+        switch (this.a) {
+            case 0:
+                org.telegram.messenger.a8.d("wear-auth: /answer send failed: " + exc.getMessage());
+                this.b.setLoading(false);
+                break;
+            default:
+                org.telegram.messenger.a8.d("wear-auth: /token send failed: " + exc.getMessage());
+                this.b.setLoading(false);
+                break;
+        }
     }
 }

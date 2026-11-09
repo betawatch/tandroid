@@ -6,7 +6,7 @@ import f3.j0;
 import java.util.List;
 import org.telegram.ui.Cells.f1;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class c0 {
     public final /* synthetic */ int a;
@@ -20,14 +20,14 @@ public final class c0 {
             case 1:
                 this.b = list;
                 this.c = new j0[list.size()];
-                h2.c cVar = new h2.c(new l2.y(this, 18));
+                h2.c cVar = new h2.c(new l2.x(this, 18));
                 this.d = cVar;
                 cVar.C(3);
                 break;
             default:
                 this.b = list;
                 this.c = new j0[list.size()];
-                this.d = new h2.c(new l2.y(this, 17));
+                this.d = new h2.c(new l2.x(this, 17));
                 break;
         }
     }

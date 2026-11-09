@@ -12,20 +12,20 @@ import fi.h7;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.id;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.s6;
 import org.telegram.ui.Cells.z5;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class i extends zd {
     public final /* synthetic */ l m0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i(l lVar, Context context, f6 f6Var) {
-        super(context, f6Var);
+    public i(l lVar, Context context, g6 g6Var) {
+        super(context, g6Var);
         this.m0 = lVar;
     }
 
@@ -43,19 +43,19 @@ public final class i extends zd {
         }
         View[] viewArr = new View[1];
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, lVar.I0);
-        String M0 = id.M0(2131750344, null);
+        String M0 = id.M0(2131750343, null);
         org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
         u1Var.R = M0;
-        u1Var.T = id.a0(null, null, 2131750343, Integer.valueOf(lVar.d2.d.gifts_per_round));
+        u1Var.T = id.a0(null, null, 2131750342, Integer.valueOf(lVar.d2.d.gifts_per_round));
         z5 z5Var = new z5(context, lVar.I0, jg.g.h(context, R.drawable.star_small_inner));
         z5Var.setTextSize(1, 18.0f);
-        r6.V(z5Var, k6.j5, lVar.I0);
-        r6.m(z5Var, 34, k6.Li, lVar.I0);
-        z5Var.setHintText(id.M0(2131750342, null));
+        s6.U(z5Var, l6.j5, lVar.I0);
+        s6.l(z5Var, 34, l6.Li, lVar.I0);
+        z5Var.setHintText(id.M0(2131750341, null));
         z5Var.setFocusable(true);
         z5Var.setInputType(2);
         z5Var.setFilters(new InputFilter[]{new InputFilter.LengthFilter(9)});
-        r6.G(z5Var, k6.k6, k6.l6, k6.p7, lVar.I0);
+        s6.F(z5Var, l6.k6, l6.l6, l6.p7, lVar.I0);
         z5Var.setImeOptions(268435462);
         z5Var.setBackgroundDrawable(null);
         z5Var.k1 = org.telegram.messenger.g0.L(24.0f);
@@ -67,7 +67,7 @@ public final class i extends zd {
         alertDialog$Builder.c();
         alertDialog$Builder.o(linearLayout);
         u1Var.a = org.telegram.messenger.g0.L(300.0f);
-        alertDialog$Builder.k(id.M0(2131750346, null), new org.telegram.ui.web.a0(26, lVar, z5Var));
+        alertDialog$Builder.k(id.M0(2131750345, null), new org.telegram.ui.web.a0(26, lVar, z5Var));
         alertDialog$Builder.h(id.M0(2131752589, null), new z3.j(1));
         org.telegram.ui.ActionBar.u1[] u1VarArr = {u1Var};
         if (Q != null) {

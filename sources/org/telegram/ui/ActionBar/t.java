@@ -3,7 +3,7 @@ package org.telegram.ui.ActionBar;
 import c8.j9;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class t implements Runnable {
     public final /* synthetic */ boolean a;
@@ -94,7 +94,7 @@ public final class t implements Runnable {
                     actionBarLayout.J.setScaleY(f14);
                 }
                 actionBarLayout.r.setAlpha((int) (46.0f * a10));
-                k6.s0.setAlpha((int) (a10 * 255.0f));
+                l6.s0.setAlpha((int) (a10 * 255.0f));
                 actionBarLayout.s.invalidate();
                 actionBarLayout.invalidate();
             } else {
@@ -110,7 +110,7 @@ public final class t implements Runnable {
                 actionBarLayout.w.setScaleY(f16);
                 actionBarLayout.r.setAlpha((int) (46.0f * a11));
                 if (actionBarLayout.J == null) {
-                    k6.s0.setAlpha((int) (a11 * 255.0f));
+                    l6.s0.setAlpha((int) (a11 * 255.0f));
                 }
                 actionBarLayout.s.invalidate();
                 actionBarLayout.invalidate();

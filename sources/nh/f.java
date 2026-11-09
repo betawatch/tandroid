@@ -7,12 +7,12 @@ import ch.o0;
 import java.util.List;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.voip.GroupCallMessage;
-import org.telegram.ui.c40;
-import org.telegram.ui.f20;
+import org.telegram.ui.e40;
+import org.telegram.ui.h20;
 import v4.d1;
 import v4.k;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class f extends k {
     public final /* synthetic */ h F;
@@ -45,12 +45,12 @@ public final class f extends k {
         if (!(view instanceof c) || (gVar = hVar.X0) == null) {
             return;
         }
-        c40 c40Var = ((f20) gVar).a;
-        k0 k0Var = new k0(c40Var.getContext(), null, c40Var.B1, (c) view, null, 0.0f, 0.0f, o0Var, c40Var.a, 1, false);
+        e40 e40Var = ((h20) gVar).a;
+        k0 k0Var = new k0(e40Var.getContext(), null, e40Var.B1, (c) view, null, 0.0f, 0.0f, o0Var, e40Var.a, 1, false);
         k0.B = k0Var;
         h0 h0Var = k0Var.i;
         h0Var.setTag(R.id.parent_tag, 1);
-        c40Var.c.addView(h0Var);
+        e40Var.c.addView(h0Var);
         k0Var.s = true;
         k0Var.y = System.currentTimeMillis();
     }

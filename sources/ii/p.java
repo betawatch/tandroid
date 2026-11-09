@@ -31,34 +31,34 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.s6;
 import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.ActionBar.y1;
 import org.telegram.ui.Cells.h6;
 import org.telegram.ui.Components.RadialProgressView;
-import org.telegram.ui.Components.i30;
 import org.telegram.ui.Components.j30;
-import org.telegram.ui.Components.k60;
-import org.telegram.ui.Components.l41;
+import org.telegram.ui.Components.k30;
+import org.telegram.ui.Components.l60;
 import org.telegram.ui.Components.l9;
-import org.telegram.ui.Components.q41;
+import org.telegram.ui.Components.m41;
+import org.telegram.ui.Components.r41;
 import org.telegram.ui.Components.v4;
 import org.telegram.ui.Components.w8;
-import org.telegram.ui.Components.x31;
 import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.y31;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.an;
-import org.telegram.ui.oq;
-import org.telegram.ui.wq0;
+import org.telegram.ui.cn;
+import org.telegram.ui.qq;
+import org.telegram.ui.yq0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
-public final class p extends f2 implements i30, ls, te.b {
+public final class p extends f2 implements j30, ls, te.b {
     public RadialProgressView D;
     public w8 E;
-    public j30 F;
+    public k30 F;
     public TLRPC.FileLocation G;
     public ei.k H;
     public TLRPC.Chat I;
@@ -69,7 +69,7 @@ public final class p extends f2 implements i30, ls, te.b {
     public final te.a b;
     public long c;
     public s1 d;
-    public q41 e;
+    public r41 e;
     public String f;
     public boolean h;
     public boolean n;
@@ -86,12 +86,12 @@ public final class p extends f2 implements i30, ls, te.b {
         this.L = new n(this);
     }
 
-    public static boolean Z(p pVar, x31 x31Var, View view) {
+    public static boolean Z(p pVar, y31 y31Var, View view) {
         long j3;
         boolean t6;
         boolean z9;
         boolean z10;
-        Object obj = x31Var.G;
+        Object obj = y31Var.G;
         int i7 = 1;
         if (!(obj instanceof TLRPC.Chat)) {
             if (obj instanceof TLRPC.User) {
@@ -115,7 +115,7 @@ public final class p extends f2 implements i30, ls, te.b {
         int b10 = m0.b(pVar.currentAccount, j3);
         boolean z12 = b10 == 1 || b10 == 2;
         if (z11 || z12) {
-            k60 F = k60.F(pVar.d, null, view);
+            l60 F = l60.F(pVar.d, null, view);
             F.l(R.drawable.msg_viewintopic, id.M0(t6 ? 2131751910 : z10 ? 2131751909 : 2131751908, null), new h(pVar, j3, i7), z12);
             F.m(R.drawable.msg_cancel, new m(pVar, t6, z10, j3, 0), id.M0(2131751915, null), z11, true);
             F.W(pVar.e.U0(view, true));
@@ -125,10 +125,10 @@ public final class p extends f2 implements i30, ls, te.b {
         return false;
     }
 
-    public static void a0(p pVar, x31 x31Var) {
+    public static void a0(p pVar, y31 y31Var) {
         TLRPC.Chat M0;
         TLRPC.ChatPhoto chatPhoto;
-        int i7 = x31Var.d;
+        int i7 = y31Var.d;
         if (i7 == 140) {
             if (pVar.F.g() || (chatPhoto = (M0 = pVar.getMessagesController().M0(Long.valueOf(pVar.c))).photo) == null || chatPhoto.photo_big == null) {
                 return;
@@ -158,18 +158,18 @@ public final class p extends f2 implements i30, ls, te.b {
             Bundle bundle = new Bundle();
             bundle.putLong("chat_id", pVar.c);
             bundle.putInt(TeXSymbolParser.TYPE_ATTR, 1);
-            oq oqVar = new oq(bundle);
-            oqVar.C0(pVar.J);
-            pVar.presentFragment(oqVar);
+            qq qqVar = new qq(bundle);
+            qqVar.C0(pVar.J);
+            pVar.presentFragment(qqVar);
             return;
         }
         if (i7 == 144) {
             Bundle bundle2 = new Bundle();
             bundle2.putLong("chat_id", pVar.c);
             bundle2.putInt(TeXSymbolParser.TYPE_ATTR, 0);
-            oq oqVar2 = new oq(bundle2);
-            oqVar2.C0(pVar.J);
-            pVar.presentFragment(oqVar2);
+            qq qqVar2 = new qq(bundle2);
+            qqVar2.C0(pVar.J);
+            pVar.presentFragment(qqVar2);
             return;
         }
         if (i7 == 143) {
@@ -194,11 +194,11 @@ public final class p extends f2 implements i30, ls, te.b {
             m0.e(pVar.K, pVar, pVar.currentAccount, pVar.I);
             return;
         }
-        Object obj = x31Var.G;
+        Object obj = y31Var.G;
         if (obj instanceof TLRPC.Chat) {
-            pVar.presentFragment(an.ra(-((TLRPC.Chat) obj).id));
+            pVar.presentFragment(cn.ta(-((TLRPC.Chat) obj).id));
         } else if (obj instanceof TLRPC.User) {
-            pVar.presentFragment(an.ra(((TLRPC.User) obj).id));
+            pVar.presentFragment(cn.ta(((TLRPC.User) obj).id));
         }
     }
 
@@ -213,7 +213,7 @@ public final class p extends f2 implements i30, ls, te.b {
         qp.s1(pVar.currentAccount).Q2(j3, pVar.c, true, false, new j(pVar, 0));
     }
 
-    @Override // org.telegram.ui.Components.i30
+    @Override // org.telegram.ui.Components.j30
     public final void H(float f10) {
         RadialProgressView radialProgressView = this.D;
         if (radialProgressView == null) {
@@ -222,7 +222,7 @@ public final class p extends f2 implements i30, ls, te.b {
         radialProgressView.setProgress(f10);
     }
 
-    @Override // org.telegram.ui.Components.i30
+    @Override // org.telegram.ui.Components.j30
     public final void O(boolean z9, boolean z10) {
         RadialProgressView radialProgressView = this.D;
         if (radialProgressView == null) {
@@ -231,7 +231,7 @@ public final class p extends f2 implements i30, ls, te.b {
         radialProgressView.setProgress(0.0f);
     }
 
-    @Override // org.telegram.ui.Components.i30
+    @Override // org.telegram.ui.Components.j30
     public final void U(TLRPC.InputFile inputFile, TLRPC.InputFile inputFile2, double d, String str, TLRPC.PhotoSize photoSize, TLRPC.PhotoSize photoSize2, boolean z9, TLRPC.VideoSize videoSize) {
         org.telegram.messenger.g0.h3(new l(this, photoSize2, inputFile, inputFile2, videoSize, d, str, photoSize));
     }
@@ -258,12 +258,12 @@ public final class p extends f2 implements i30, ls, te.b {
         this.actionBar.setActionBarMenuOnItemClick(new bi.s(this, i10));
         ri.c cVar = new ri.c();
         this.a = cVar;
-        cVar.a(getThemedColor(k6.d6));
-        this.actionBar.M(new dh.c(cVar, cVar, cVar), c8.g0.p(this.resourceProvider), false);
+        cVar.a(getThemedColor(l6.d6));
+        this.actionBar.N(new dh.c(cVar, cVar, cVar), c8.g0.o(this.resourceProvider), false);
         this.actionBar.Q0 = true;
         s1 s1Var = new s1(this, context);
         this.d = s1Var;
-        r6.i(k6.a7, s1Var, null);
+        s6.h(l6.a7, s1Var, null);
         this.E = new w8(this.I);
         o oVar = new o(context);
         this.s = oVar;
@@ -271,13 +271,13 @@ public final class p extends f2 implements i30, ls, te.b {
         this.x = this.s.a;
         String m10 = m5.m(this.I);
         this.f = m10;
-        f6 f6Var = this.resourceProvider;
+        g6 g6Var = this.resourceProvider;
         e5 e5Var = new e5(i10, context, false);
         bi.v vVar = new bi.v(context, 2);
         e5Var.b = vVar;
-        r6.V(vVar, k6.G6, f6Var);
-        r6.H(vVar, k6.Uc, f6Var);
-        r6.E(vVar, k6.H6, f6Var);
+        s6.U(vVar, l6.G6, g6Var);
+        s6.G(vVar, l6.Uc, g6Var);
+        s6.D(vVar, l6.H6, g6Var);
         vVar.setTextSize(1, 16.0f);
         vVar.setMaxLines(ConnectionsManager.DEFAULT_DATACENTER_ID);
         vVar.setBackground(null);
@@ -292,8 +292,8 @@ public final class p extends f2 implements i30, ls, te.b {
         ((bi.v) this.r.b).addTextChangedListener(new ah.j(this, 7));
         ei.k kVar = new ei.k(this, context);
         this.H = kVar;
-        r6.V(kVar, k6.Gi, getResourceProvider());
-        this.H.setText(id.M0(2131745949, null));
+        s6.U(kVar, l6.Gi, getResourceProvider());
+        this.H.setText(id.M0(2131745946, null));
         this.H.setTypeface(org.telegram.messenger.g0.o());
         this.H.setTextSize(1, 14.0f);
         this.H.setGravity(17);
@@ -312,14 +312,14 @@ public final class p extends f2 implements i30, ls, te.b {
         this.D.setNoProgress(false);
         this.s.addView(this.D, ha.d(64, 64.0f, 81, 0.0f, 0.0f, 0.0f, 32.0f));
         f0(false, false);
-        q41 q41Var = new q41(this, new j(this, i7), new k(this), new k(this));
-        this.e = q41Var;
-        q41Var.setClipToPadding(false);
-        q41 q41Var2 = this.e;
-        l41 l41Var = q41Var2.f3;
-        l41Var.r = false;
-        l41Var.s = true;
-        q41Var2.r1();
+        r41 r41Var = new r41(this, new j(this, i7), new k(this), new k(this));
+        this.e = r41Var;
+        r41Var.setClipToPadding(false);
+        r41 r41Var2 = this.e;
+        m41 m41Var = r41Var2.f3;
+        m41Var.r = false;
+        m41Var.s = true;
+        r41Var2.r1();
         this.actionBar.setBackground(null);
         this.d.addView(this.e, ha.c(-1.0f, -1));
         this.d.addView(this.actionBar, ha.e(-1, -2, 48));
@@ -365,7 +365,7 @@ public final class p extends f2 implements i30, ls, te.b {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.i30
+    @Override // org.telegram.ui.Components.j30
     public final /* synthetic */ boolean e() {
         return true;
     }
@@ -428,12 +428,12 @@ public final class p extends f2 implements i30, ls, te.b {
         this.y.start();
     }
 
-    @Override // org.telegram.ui.Components.i30
-    public final /* synthetic */ wq0 getCloseIntoObject() {
+    @Override // org.telegram.ui.Components.j30
+    public final /* synthetic */ yq0 getCloseIntoObject() {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.i30
+    @Override // org.telegram.ui.Components.j30
     public final String getInitialSearchString() {
         return ((bi.v) this.r.b).getText().toString();
     }
@@ -458,10 +458,10 @@ public final class p extends f2 implements i30, ls, te.b {
         this.h = z9;
         this.n = z9;
         this.J = getMessagesController().N0(this.c);
-        j30 j30Var = new j30(3, true, true);
-        this.F = j30Var;
-        j30Var.a = this;
-        j30Var.b = this;
+        k30 k30Var = new k30(3, true, true);
+        this.F = k30Var;
+        k30Var.a = this;
+        k30Var.b = this;
         getNotificationCenter().c(this, qs.T);
         return super.onFragmentCreate();
     }
@@ -470,9 +470,9 @@ public final class p extends f2 implements i30, ls, te.b {
     public final void onFragmentDestroy() {
         super.onFragmentDestroy();
         getNotificationCenter().n(this, qs.T);
-        j30 j30Var = this.F;
-        if (j30Var != null) {
-            j30Var.d();
+        k30 k30Var = this.F;
+        if (k30Var != null) {
+            k30Var.d();
         }
     }
 
@@ -499,7 +499,7 @@ public final class p extends f2 implements i30, ls, te.b {
         try {
             ri.c cVar = this.a;
             if (cVar != null) {
-                cVar.a(getThemedColor(k6.d6));
+                cVar.a(getThemedColor(l6.d6));
             }
             org.telegram.ui.ActionBar.k kVar = this.actionBar;
             if (kVar != null) {
@@ -512,17 +512,17 @@ public final class p extends f2 implements i30, ls, te.b {
 
     @Override // org.telegram.ui.ActionBar.f2
     public final void restoreSelfArgs(Bundle bundle) {
-        j30 j30Var = this.F;
-        if (j30Var != null) {
-            j30Var.f = bundle.getString("path");
+        k30 k30Var = this.F;
+        if (k30Var != null) {
+            k30Var.f = bundle.getString("path");
         }
     }
 
     @Override // org.telegram.ui.ActionBar.f2
     public final void saveSelfArgs(Bundle bundle) {
         String str;
-        j30 j30Var = this.F;
-        if (j30Var != null && (str = j30Var.f) != null) {
+        k30 k30Var = this.F;
+        if (k30Var != null && (str = k30Var.f) != null) {
             bundle.putString("path", str);
         }
         e5 e5Var = this.r;
@@ -535,12 +535,12 @@ public final class p extends f2 implements i30, ls, te.b {
         }
     }
 
-    @Override // org.telegram.ui.Components.i30
+    @Override // org.telegram.ui.Components.j30
     public final /* synthetic */ boolean x() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.i30
+    @Override // org.telegram.ui.Components.j30
     public final /* synthetic */ void T() {
     }
 

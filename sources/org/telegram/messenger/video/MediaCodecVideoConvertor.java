@@ -24,7 +24,7 @@ import org.telegram.messenger.re;
 import org.telegram.messenger.ye;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public class MediaCodecVideoConvertor {
     private static final int MAX_DECODER_INPUTS_PER_LOOP = 8;
@@ -43,14 +43,14 @@ public class MediaCodecVideoConvertor {
     private Muxer muxer;
     private String outputMimeType;
 
-    /* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+    /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
     public class ConversionCanceledException extends RuntimeException {
         public ConversionCanceledException() {
             super("canceled conversion");
         }
     }
 
-    /* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+    /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
     public static class ConvertVideoParams {
         int account;
         long avatarStartTime;
@@ -143,7 +143,7 @@ public class MediaCodecVideoConvertor {
         }
     }
 
-    /* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+    /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
     public class DecoderFeeder extends Thread {
         private ByteBuffer audioBuffer;
         private final int audioIndex;
@@ -266,7 +266,7 @@ public class MediaCodecVideoConvertor {
         }
     }
 
-    /* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+    /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
     public static class MixedSoundInfo {
         final String audioFile;
         public long audioOffset;
@@ -818,7 +818,7 @@ public class MediaCodecVideoConvertor {
         return this.endPresentationTime;
     }
 
-    /* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+    /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
     public static class Muxer {
         public final MediaMuxer mediaMuxer;
         public final MP4Builder mp4Builder;

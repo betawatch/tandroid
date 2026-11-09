@@ -10,11 +10,11 @@ import android.view.MotionEvent;
 import android.view.ViewConfiguration;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class mt extends xh.l {
     public final n2.n0 U;
-    public x70 V;
+    public y70 V;
     public boolean W;
     public boolean a0;
     public boolean b0;
@@ -66,22 +66,22 @@ public final class mt extends xh.l {
             Layout layout = getLayout();
             ClickableSpan a10 = a((int) motionEvent.getX(), (int) motionEvent.getY());
             if (a10 != null && motionEvent.getAction() == 0) {
-                x70 x70Var = new x70(a10, null, motionEvent.getX(), motionEvent.getY(), 0);
-                this.V = x70Var;
-                n0Var.b(x70Var, null);
+                y70 y70Var = new y70(a10, null, motionEvent.getX(), motionEvent.getY(), 0);
+                this.V = y70Var;
+                n0Var.b(y70Var, null);
                 SpannableString spannableString = new SpannableString(layout.getText());
                 int spanStart = spannableString.getSpanStart(this.V.i);
                 int spanEnd = spannableString.getSpanEnd(this.V.i);
-                r70 b10 = this.V.b();
+                s70 b10 = this.V.b();
                 b10.d(layout, spanStart, getPaddingTop());
                 layout.getSelectionPath(spanStart, spanEnd, b10);
-                org.telegram.messenger.g0.i3(new gp(this, x70Var, a10), ViewConfiguration.getLongPressTimeout());
+                org.telegram.messenger.g0.i3(new gp(this, y70Var, a10), ViewConfiguration.getLongPressTimeout());
                 return true;
             }
             if (motionEvent.getAction() == 1) {
                 n0Var.f(true);
-                x70 x70Var2 = this.V;
-                if (x70Var2 != null && (characterStyle = x70Var2.i) == a10) {
+                y70 y70Var2 = this.V;
+                if (y70Var2 != null && (characterStyle = y70Var2.i) == a10) {
                     if (characterStyle != null) {
                         ((ClickableSpan) characterStyle).onClick(this);
                     }

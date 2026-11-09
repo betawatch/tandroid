@@ -54,7 +54,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.messaging.FirebaseMessagingService;
-import di.s7;
+import di.f8;
 import fi.d7;
 import fi.e7;
 import fi.ha;
@@ -108,17 +108,17 @@ import org.telegram.ui.ActionBar.f2;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.bi;
 import org.telegram.ui.Components.di;
-import org.telegram.ui.Components.h51;
+import org.telegram.ui.Components.i51;
 import org.telegram.ui.Components.oy;
-import org.telegram.ui.Components.q51;
 import org.telegram.ui.Components.qg;
+import org.telegram.ui.Components.r51;
 import org.telegram.ui.Components.sy;
-import org.telegram.ui.Components.t51;
-import org.telegram.ui.lm0;
+import org.telegram.ui.Components.u51;
+import org.telegram.ui.nm0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
-public class a0 implements oa.a, lm0, bi, com.google.android.gms.common.api.internal.p, q51, ib.b {
+public class a0 implements oa.a, nm0, bi, com.google.android.gms.common.api.internal.p, r51, ib.b {
     public static int e;
     public static a0 f;
     public final /* synthetic */ int a;
@@ -246,7 +246,7 @@ public class a0 implements oa.a, lm0, bi, com.google.android.gms.common.api.inte
         return this;
     }
 
-    @Override // org.telegram.ui.lm0
+    @Override // org.telegram.ui.nm0
     public void c(ArrayList arrayList) {
         String str = !arrayList.isEmpty() ? ((fz) arrayList.get(0)).c : null;
         if (str == null) {
@@ -804,57 +804,57 @@ public class a0 implements oa.a, lm0, bi, com.google.android.gms.common.api.inte
                     D.d();
                 }
             }
-            g0.i3(new s7(diVar, 8), 400L);
+            g0.i3(new f8(diVar, 7), 400L);
         }
     }
 
-    @Override // org.telegram.ui.Components.q51
-    public void onError(t51 t51Var, Exception exc) {
+    @Override // org.telegram.ui.Components.r51
+    public void onError(u51 u51Var, Exception exc) {
         u8 u8Var = ((y5) this.d).N;
         if (u8Var != null) {
             u8Var.run();
         }
     }
 
-    @Override // org.telegram.ui.Components.q51
+    @Override // org.telegram.ui.Components.r51
     public /* synthetic */ void onRenderedFirstFrame(m2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.q51
+    @Override // org.telegram.ui.Components.r51
     public void onStateChanged(boolean z9, int i7) {
         y5 y5Var = (y5) this.d;
         w5 w5Var = y5Var.K;
-        t51 t51Var = y5Var.e;
-        if (t51Var == null) {
+        u51 u51Var = y5Var.e;
+        if (u51Var == null) {
             return;
         }
-        if (t51Var.d0()) {
+        if (u51Var.d0()) {
             g0.h3(w5Var);
         } else {
             g0.r(w5Var);
         }
     }
 
-    @Override // org.telegram.ui.Components.q51
+    @Override // org.telegram.ui.Components.r51
     public /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.q51
+    @Override // org.telegram.ui.Components.r51
     public void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
         ((y5) this.d).i();
     }
 
-    @Override // org.telegram.ui.Components.q51
+    @Override // org.telegram.ui.Components.r51
     public void onVideoSizeChanged(int i7, int i10, int i11, float f10) {
         y5 y5Var = (y5) this.d;
         e7 e7Var = (e7) this.b;
         if (e7Var != null) {
             d7 V = y5Var.e.V(e7Var.d1);
             e7Var.d1 = V;
-            h51 h51Var = y5Var.n;
-            if (h51Var != null) {
-                h51Var.setHDRInfo(V);
+            i51 i51Var = y5Var.n;
+            if (i51Var != null) {
+                i51Var.setHDRInfo(V);
             }
         }
         int i12 = (int) (i7 * f10);
@@ -867,13 +867,13 @@ public class a0 implements oa.a, lm0, bi, com.google.android.gms.common.api.inte
             e7Var.A();
         }
         y5Var.b();
-        h51 h51Var2 = y5Var.n;
-        if (h51Var2 != null) {
+        i51 i51Var2 = y5Var.n;
+        if (i51Var2 != null) {
             int i14 = y5Var.f;
             int i15 = y5Var.h;
-            h51Var2.d = i14;
-            h51Var2.e = i15;
-            sy syVar = h51Var2.b;
+            i51Var2.d = i14;
+            i51Var2.e = i15;
+            sy syVar = i51Var2.b;
             if (syVar == null) {
                 return;
             }
@@ -1146,7 +1146,7 @@ public class a0 implements oa.a, lm0, bi, com.google.android.gms.common.api.inte
         this.c = serializable;
     }
 
-    @Override // org.telegram.ui.Components.q51
+    @Override // org.telegram.ui.Components.r51
     public void onRenderedFirstFrame() {
         e7 e7Var = (e7) this.b;
         Runnable[] runnableArr = (Runnable[]) this.c;
@@ -1165,10 +1165,10 @@ public class a0 implements oa.a, lm0, bi, com.google.android.gms.common.api.inte
         }
         Runnable runnable = runnableArr[0];
         if (runnable == null) {
-            h51 h51Var = y5Var.n;
-            if (h51Var != null) {
+            i51 i51Var = y5Var.n;
+            if (i51Var != null) {
                 if (x5Var == null || !x5Var.g) {
-                    h51Var.animate().alpha(1.0f).setDuration(180L).withEndAction(new f2.h(9, this, e7Var)).start();
+                    i51Var.animate().alpha(1.0f).setDuration(180L).withEndAction(new f2.h(9, this, e7Var)).start();
                     return;
                 }
                 return;
@@ -1258,7 +1258,7 @@ public class a0 implements oa.a, lm0, bi, com.google.android.gms.common.api.inte
     public /* synthetic */ void F0() {
     }
 
-    @Override // org.telegram.ui.lm0
+    @Override // org.telegram.ui.nm0
     public void m() {
     }
 
@@ -1281,11 +1281,11 @@ public class a0 implements oa.a, lm0, bi, com.google.android.gms.common.api.inte
     public /* synthetic */ void Y0(TLRPC.User user) {
     }
 
-    @Override // org.telegram.ui.Components.q51
+    @Override // org.telegram.ui.Components.r51
     public /* synthetic */ void onSeekFinished(m2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.q51
+    @Override // org.telegram.ui.Components.r51
     public /* synthetic */ void onSeekStarted(m2.a aVar) {
     }
 

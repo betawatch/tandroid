@@ -1,58 +1,48 @@
 package org.telegram.ui;
 
-import android.view.View;
+import android.content.Intent;
+import android.net.Uri;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class ia0 implements org.telegram.ui.Components.mr0 {
-    public final /* synthetic */ pa0 a;
+public final class ia0 extends org.telegram.ui.ActionBar.j {
+    public final /* synthetic */ ra0 a;
 
-    public ia0(pa0 pa0Var) {
-        this.a = pa0Var;
+    public ia0(ra0 ra0Var) {
+        this.a = ra0Var;
     }
 
-    @Override // org.telegram.ui.Components.mr0
-    public final void V() {
-        pa0 pa0Var = this.a;
-        ja0 ja0Var = pa0Var.L0;
-        int m0 = ja0Var == null ? 0 : ja0Var.m0(8);
-        pa0Var.M0.setText(org.telegram.messenger.id.G(m0, "LocationStories", new Object[0]));
-        ha0 ha0Var = pa0Var.P;
-        boolean z9 = m0 > 0;
-        if (ha0Var.Z != z9) {
-            ha0Var.Z = z9;
-            ha0Var.f();
-            pa0Var.Q.w0(0, org.telegram.messenger.g0.L(200.0f), null);
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i7) {
+        ra0 ra0Var = this.a;
+        if (i7 == -1) {
+            ra0Var.finishFragment();
+            return;
         }
-    }
-
-    @Override // org.telegram.ui.Components.mr0
-    public final boolean X() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.mr0
-    public final org.telegram.ui.Components.pj0 f() {
-        return this.a.Q;
-    }
-
-    @Override // org.telegram.ui.Components.mr0
-    public final TLRPC.Chat g() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.mr0
-    public final boolean h(TLRPC.ChatParticipant chatParticipant, boolean z9, boolean z10, View view) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.mr0
-    public final boolean t() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.mr0
-    public final void I() {
+        if (i7 != 1) {
+            if (i7 == 5) {
+                ra0Var.C0(false);
+                return;
+            }
+            if (i7 == 6) {
+                ra0Var.B0(null);
+                return;
+            }
+            if ((i7 == 2 || i7 == 3 || i7 == 4) && ra0Var.E != null) {
+                ra0Var.D0();
+                ra0Var.E.j(i7 != 3 ? i7 == 4 ? 2 : 0 : 1);
+                return;
+            }
+            return;
+        }
+        try {
+            TLRPC.GeoPoint geoPoint = ra0Var.D0.k.media.geo;
+            double d = geoPoint.lat;
+            double d2 = geoPoint._long;
+            ra0Var.getParentActivity().startActivity(new Intent("android.intent.action.VIEW", Uri.parse("geo:" + d + "," + d2 + "?q=" + d + "," + d2)));
+        } catch (Exception e10) {
+            org.telegram.messenger.a8.g(e10, true);
+        }
     }
 }

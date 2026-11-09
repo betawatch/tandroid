@@ -10,10 +10,10 @@ import org.telegram.messenger.hc;
 import org.telegram.messenger.w7;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final class v4 {
     public static ColorMatrixColorFilter f;
@@ -23,10 +23,10 @@ public final class v4 {
     public final RadialProgress2 d;
     public s e;
 
-    public v4(s4 s4Var, f6 f6Var) {
+    public v4(s4 s4Var, g6 g6Var) {
         this.a = new ImageReceiver(s4Var);
         this.b = new ImageReceiver(s4Var);
-        RadialProgress2 radialProgress2 = new RadialProgress2(s4Var, f6Var);
+        RadialProgress2 radialProgress2 = new RadialProgress2(s4Var, g6Var);
         this.d = radialProgress2;
         radialProgress2.d = -1;
         radialProgress2.setColors(1711276032, 2130706432, -1, -2500135);

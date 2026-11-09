@@ -11,10 +11,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import org.telegram.messenger.beta.R;
+import org.telegram.ui.Components.ah0;
 import org.telegram.ui.Components.xq;
-import org.telegram.ui.Components.zg0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class e5 extends LinearLayout {
     public final y4 a;
@@ -77,8 +77,8 @@ public final class e5 extends LinearLayout {
             layoutParams.rightMargin = L;
             layoutParams.leftMargin = L;
         } else {
-            if (drawable instanceof zg0) {
-                f5Var.y.setAnimation((zg0) drawable);
+            if (drawable instanceof ah0) {
+                f5Var.y.setAnimation((ah0) drawable);
             } else if (drawable != null) {
                 f5Var.y.setImageDrawable(drawable);
             } else if (i10 != 0) {
@@ -176,7 +176,7 @@ public final class e5 extends LinearLayout {
                 if (textView != null) {
                     textView.setTextColor(i7);
                 }
-                r0Var.setBackground(k6.h0(i10, textView != null ? 5 : 1, -1));
+                r0Var.setBackground(l6.h0(i10, textView != null ? 5 : 1, -1));
             }
         }
     }

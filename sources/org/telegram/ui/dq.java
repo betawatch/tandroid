@@ -1,64 +1,39 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class dq implements hq {
-    public final /* synthetic */ oq a;
+public final class dq extends v4.k {
+    public final h2.f F = new h2.f((int[]) null);
+    public final /* synthetic */ qq G;
 
-    public dq(oq oqVar) {
-        this.a = oqVar;
+    public dq(qq qqVar) {
+        this.G = qqVar;
     }
 
-    @Override // org.telegram.ui.hq
-    public final void a(TLRPC.User user) {
-        oq.h0(this.a, user);
+    @Override // v4.k
+    public final void N() {
+        this.F.e();
     }
 
-    @Override // org.telegram.ui.hq
-    public final void b(long j3) {
-        oq oqVar = this.a;
-        ArrayList arrayList = oqVar.E;
-        a0.h hVar = oqVar.J;
-        TLRPC.User a22 = oqVar.getMessagesController().a2(Long.valueOf(j3));
-        if (a22 != null) {
-            org.telegram.messenger.g0.i3(new qf(29, this, a22), 200L);
+    @Override // v4.k
+    public final void O() {
+        this.G.c.invalidate();
+    }
+
+    @Override // v4.k
+    public final void P(v4.d1 d1Var) {
+        this.G.c.invalidate();
+    }
+
+    @Override // v4.k, v4.l0
+    public final void m() {
+        boolean isEmpty = this.p.isEmpty();
+        boolean isEmpty2 = this.r.isEmpty();
+        boolean isEmpty3 = this.s.isEmpty();
+        boolean isEmpty4 = this.q.isEmpty();
+        if (!isEmpty || !isEmpty2 || !isEmpty4 || !isEmpty3) {
+            this.F.d();
         }
-        if (hVar.f(j3) == null) {
-            iq B0 = oqVar.B0();
-            TLRPC.TL_channelParticipantAdmin tL_channelParticipantAdmin = new TLRPC.TL_channelParticipantAdmin();
-            TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
-            tL_channelParticipantAdmin.peer = tL_peerUser;
-            tL_peerUser.user_id = a22.id;
-            tL_channelParticipantAdmin.date = oqVar.getConnectionsManager().getCurrentTime();
-            tL_channelParticipantAdmin.promoted_by = org.telegram.messenger.p10.i(oqVar.getAccountInstance().a).n;
-            arrayList.add(tL_channelParticipantAdmin);
-            hVar.k(tL_channelParticipantAdmin, a22.id);
-            Collections.sort(arrayList, new oe(4));
-            oqVar.F0(B0);
-        }
-    }
-
-    @Override // org.telegram.ui.hq
-    public final void c(long j3, TLObject tLObject) {
-        oq oqVar = this.a;
-        ArrayList arrayList = oqVar.E;
-        a0.h hVar = oqVar.J;
-        if (tLObject == null || hVar.f(j3) != null) {
-            return;
-        }
-        iq B0 = oqVar.B0();
-        arrayList.add(tLObject);
-        hVar.k(tLObject, j3);
-        Collections.sort(arrayList, new oe(4));
-        oqVar.F0(B0);
-    }
-
-    @Override // org.telegram.ui.hq
-    public final /* synthetic */ void d(long j3) {
+        super.m();
     }
 }

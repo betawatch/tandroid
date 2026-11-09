@@ -1,26 +1,36 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.text.Editable;
-import android.text.TextUtils;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class ly0 extends org.telegram.ui.Cells.k3 {
-    public final /* synthetic */ ny0 E;
+public final class ly0 implements my0 {
+    public final /* synthetic */ org.telegram.messenger.video.a a;
+    public final /* synthetic */ org.telegram.ui.Components.hc b;
+    public final /* synthetic */ Context c;
+    public final /* synthetic */ di.i0 d;
+    public final /* synthetic */ org.telegram.messenger.video.d e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ly0(ny0 ny0Var, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, "", true, false, 1024, f6Var);
-        this.E = ny0Var;
+    public ly0(org.telegram.messenger.video.a aVar, org.telegram.ui.Components.hc hcVar, Context context, di.i0 i0Var, org.telegram.messenger.video.d dVar) {
+        this.a = aVar;
+        this.b = hcVar;
+        this.c = context;
+        this.d = i0Var;
+        this.e = dVar;
     }
 
-    @Override // org.telegram.ui.Cells.k3
-    public final void b(Editable editable) {
-        ny0 ny0Var = this.E;
-        fi.d dVar = ny0Var.s;
-        if (dVar != null) {
-            dVar.setEnabled(ny0Var.d.optional || !TextUtils.isEmpty(ny0Var.n.getText()));
-        }
+    @Override // org.telegram.ui.my0
+    public final void a() {
+        org.telegram.messenger.g0.i3(new iy0(this.a, this.b, this.c, this.d, 2), 200L);
+    }
+
+    @Override // org.telegram.ui.my0
+    public final void d() {
+        org.telegram.messenger.g0.i3(new ax0(4, this.a, this.b), 200L);
+    }
+
+    @Override // org.telegram.ui.my0
+    public final void g() {
+        this.e.run();
     }
 }

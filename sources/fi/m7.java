@@ -10,11 +10,11 @@ import org.telegram.messenger.ls;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.oj0;
 import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.qj0;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class m7 extends org.telegram.ui.Components.na implements ls {
     public bi.o0 P1;
@@ -45,7 +45,7 @@ public final class m7 extends org.telegram.ui.Components.na implements ls {
         Y0();
         this.z1 = org.telegram.messenger.g0.L(4.0f);
         this.A1 = org.telegram.messenger.g0.L(-15.0f);
-        org.telegram.ui.Cells.k3 k3Var = new org.telegram.ui.Cells.k3(context, id.M0(2131744635, null), true, false, -1, g5Var);
+        org.telegram.ui.Cells.k3 k3Var = new org.telegram.ui.Cells.k3(context, id.M0(2131744632, null), true, false, -1, g5Var);
         this.Q1 = k3Var;
         int i10 = 1;
         g7 g7Var = new g7(this, i10);
@@ -60,27 +60,27 @@ public final class m7 extends org.telegram.ui.Components.na implements ls {
         TextView textView = new TextView(getContext());
         textView.setTextSize(1, 12.0f);
         textView.setTypeface(org.telegram.messenger.g0.o());
-        textView.setText(id.M0(2131747436, null));
+        textView.setText(id.M0(2131747435, null));
         textView.setPadding(org.telegram.messenger.g0.L(10.0f), 0, org.telegram.messenger.g0.L(10.0f), 0);
         textView.setGravity(17);
-        int i12 = org.telegram.ui.ActionBar.k6.o6;
-        int w02 = org.telegram.ui.ActionBar.k6.w0(i12, this.I0);
-        org.telegram.ui.ActionBar.r6.V(textView, i12, g5Var);
+        int i12 = org.telegram.ui.ActionBar.l6.o6;
+        int w02 = org.telegram.ui.ActionBar.l6.w0(i12, this.I0);
+        org.telegram.ui.ActionBar.s6.U(textView, i12, g5Var);
         int L = org.telegram.messenger.g0.L(6.0f);
-        int r12 = org.telegram.ui.ActionBar.k6.r1(0.12f, w02);
-        int r13 = org.telegram.ui.ActionBar.k6.r1(0.15f, w02);
-        org.telegram.ui.Cells.y k02 = org.telegram.ui.ActionBar.k6.k0(L, L, L, L, r12, r13, r13);
-        org.telegram.ui.ActionBar.n6 L2 = org.telegram.ui.ActionBar.r6.L(0.12f, i12);
-        org.telegram.ui.ActionBar.n6 L3 = org.telegram.ui.ActionBar.r6.L(0.15f, i12);
+        int r12 = org.telegram.ui.ActionBar.l6.r1(0.12f, w02);
+        int r13 = org.telegram.ui.ActionBar.l6.r1(0.15f, w02);
+        org.telegram.ui.Cells.y k02 = org.telegram.ui.ActionBar.l6.k0(L, L, L, L, r12, r13, r13);
+        org.telegram.ui.ActionBar.o6 K = org.telegram.ui.ActionBar.s6.K(0.12f, i12);
+        org.telegram.ui.ActionBar.o6 K2 = org.telegram.ui.ActionBar.s6.K(0.15f, i12);
         textView.setBackground(k02);
-        org.telegram.ui.ActionBar.r6.k(textView, k02, L2, L3, g5Var);
+        org.telegram.ui.ActionBar.s6.j(textView, k02, K, K2, g5Var);
         c8.ka.b(textView, 0.1f, 1.5f);
         k3Var.addView(textView, c8.ha.d(-2, 26.0f, 21, 0.0f, 4.0f, 24.0f, 3.0f));
         f2.h hVar = new f2.h(17, this, textView);
         textView.setOnClickListener(new bi.r(14, this, hVar));
         hVar.run();
         i3Var.addTextChangedListener(new h7(i7, this, hVar));
-        org.telegram.ui.Cells.k3 k3Var2 = new org.telegram.ui.Cells.k3(context, id.M0(2131744639, null), true, false, -1, g5Var);
+        org.telegram.ui.Cells.k3 k3Var2 = new org.telegram.ui.Cells.k3(context, id.M0(2131744636, null), true, false, -1, g5Var);
         this.R1 = k3Var2;
         g7 g7Var2 = new g7(this, i10);
         org.telegram.ui.Cells.i3 i3Var2 = k3Var2.d;
@@ -90,7 +90,7 @@ public final class m7 extends org.telegram.ui.Components.na implements ls {
         this.S1 = frameLayout;
         d dVar = new d(context, g5Var, true);
         this.T1 = dVar;
-        dVar.i(id.M0(2131744648, null), false, true);
+        dVar.i(id.M0(2131744645, null), false, true);
         dVar.setOnClickListener(new f7(this, 1));
         dVar.setEnabled(f1(k3Var.getText().toString()));
         frameLayout.addView(dVar, c8.ha.d(-1, 48.0f, qs.E1, 10.0f, 10.0f, 10.0f, 10.0f));
@@ -104,9 +104,9 @@ public final class m7 extends org.telegram.ui.Components.na implements ls {
         i7Var.o(xq.h);
         i7Var.n(350L);
         this.k1.setItemAnimator(i7Var);
-        pj0 pj0Var = this.k1;
+        qj0 qj0Var = this.k1;
         int i13 = this.t0;
-        pj0Var.setPadding(i13, 0, i13, 0);
+        qj0Var.setPadding(i13, 0, i13, 0);
         this.k1.setOnItemClickListener(new di.f0(this, context, y5Var, i11));
         bi.o0 o0Var = this.P1;
         if (o0Var != null) {
@@ -155,7 +155,7 @@ public final class m7 extends org.telegram.ui.Components.na implements ls {
     }
 
     @Override // org.telegram.ui.Components.na
-    public final oj0 L0(pj0 pj0Var) {
+    public final pj0 L0(qj0 qj0Var) {
         bi.o0 o0Var = new bi.o0(this.k1, getContext(), this.a, 0, true, new ai.e(this, 21), this.I0, 1);
         this.P1 = o0Var;
         return o0Var;
@@ -163,7 +163,7 @@ public final class m7 extends org.telegram.ui.Components.na implements ls {
 
     @Override // org.telegram.ui.Components.na
     public final CharSequence O0() {
-        return id.M0(2131744645, null);
+        return id.M0(2131744642, null);
     }
 
     @Override // org.telegram.messenger.ls

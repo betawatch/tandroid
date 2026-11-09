@@ -7,7 +7,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import org.telegram.ui.Components.CheckBoxBase;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class e9 extends FrameLayout {
     public final int a;
@@ -41,24 +41,24 @@ public final class e9 extends FrameLayout {
         addView(z8Var, c8.ha.d(72, -1.0f, org.telegram.messenger.id.a0 ? 5 : 3, -2.0f, 0.0f, 0.0f, 0.0f));
         ImageView imageView = new ImageView(context);
         this.c = imageView;
-        org.telegram.ui.ActionBar.r6.t(imageView, org.telegram.ui.ActionBar.k6.Wl, null, PorterDuff.Mode.SRC_IN);
-        int i11 = org.telegram.ui.ActionBar.k6.i6;
-        org.telegram.ui.Cells.y h02 = org.telegram.ui.ActionBar.k6.h0(org.telegram.ui.ActionBar.k6.x0(null, i11, false), 1, -1);
-        org.telegram.ui.ActionBar.n6 N = org.telegram.ui.ActionBar.r6.N(i11);
+        org.telegram.ui.ActionBar.s6.s(imageView, org.telegram.ui.ActionBar.l6.Wl, null, PorterDuff.Mode.SRC_IN);
+        int i11 = org.telegram.ui.ActionBar.l6.i6;
+        org.telegram.ui.Cells.y h02 = org.telegram.ui.ActionBar.l6.h0(org.telegram.ui.ActionBar.l6.x0(null, i11, false), 1, -1);
+        org.telegram.ui.ActionBar.o6 M = org.telegram.ui.ActionBar.s6.M(i11);
         imageView.setBackground(h02);
-        org.telegram.ui.ActionBar.r6.k(imageView, h02, null, N, null);
+        org.telegram.ui.ActionBar.s6.j(imageView, h02, null, M, null);
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setContentDescription(org.telegram.messenger.id.M0(2131752634, null));
         addView(imageView, c8.ha.d(48, 48.0f, (org.telegram.messenger.id.a0 ? 3 : 5) | 16, 8.0f, 0.0f, 8.0f, 0.0f));
         org.telegram.ui.Components.wo woVar = new org.telegram.ui.Components.wo(21, context, null);
         this.e = woVar;
         CheckBoxBase checkBoxBase = woVar.getCheckBoxBase();
-        int x02 = org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Vl, false);
+        int x02 = org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.Vl, false);
         if (checkBoxBase.x != x02) {
             checkBoxBase.x = x02;
             checkBoxBase.b();
         }
-        woVar.b(-1, org.telegram.ui.ActionBar.k6.d6, org.telegram.ui.ActionBar.k6.k7);
+        woVar.b(-1, org.telegram.ui.ActionBar.l6.d6, org.telegram.ui.ActionBar.l6.k7);
         woVar.setDrawUnchecked(false);
         woVar.setDrawBackgroundAsArc(3);
         addView(woVar, c8.ha.d(24, 24.0f, (org.telegram.messenger.id.a0 ? 5 : 3) | 48, 42.0f, 32.0f, 42.0f, 0.0f));

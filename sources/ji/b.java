@@ -20,24 +20,24 @@ import org.telegram.messenger.m5;
 import org.telegram.messenger.qp;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.a6;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.b6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.Components.l9;
 import org.telegram.ui.Components.w8;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
-public final class b extends FrameLayout implements a6 {
-    public final f6 a;
+public final class b extends FrameLayout implements b6 {
+    public final g6 a;
     public final l9 b;
     public final TextView c;
     public final TextView d;
     public final ImageView e;
 
-    public b(Context context, f6 f6Var) {
+    public b(Context context, g6 g6Var) {
         super(context);
-        this.a = f6Var;
+        this.a = g6Var;
         l9 l9Var = new l9(context);
         this.b = l9Var;
         l9Var.setRoundRadius(g0.L(7.3125f));
@@ -77,22 +77,22 @@ public final class b extends FrameLayout implements a6 {
         this.b.e(chat, new w8(chat));
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(k6.z6));
-        hashSet.add(Integer.valueOf(k6.G6));
+        hashSet.add(Integer.valueOf(l6.z6));
+        hashSet.add(Integer.valueOf(l6.G6));
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        Drawable drawable = k6.S0;
+        Drawable drawable = l6.S0;
         l9 l9Var = this.b;
         s.a(canvas, drawable, (l9Var.getWidth() / 2.0f) + l9Var.getLeft(), (l9Var.getHeight() / 2.0f) + l9Var.getTop(), l9Var.getHeight());
         super.dispatchDraw(canvas);
-        f6 f6Var = this.a;
-        Paint d = f6Var != null ? f6Var.d("paintDivider") : null;
+        g6 g6Var = this.a;
+        Paint d = g6Var != null ? g6Var.d("paintDivider") : null;
         if (d == null) {
-            d = k6.k0;
+            d = l6.k0;
         }
         canvas.drawLine(g0.L(58.0f), getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, d);
     }
@@ -110,12 +110,12 @@ public final class b extends FrameLayout implements a6 {
         this.c.setText(charSequence);
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
-        int i7 = k6.z6;
-        f6 f6Var = this.a;
-        this.e.setColorFilter(k6.w0(i7, f6Var));
-        this.c.setTextColor(k6.w0(k6.G6, f6Var));
-        this.d.setTextColor(k6.w0(i7, f6Var));
+        int i7 = l6.z6;
+        g6 g6Var = this.a;
+        this.e.setColorFilter(l6.w0(i7, g6Var));
+        this.c.setTextColor(l6.w0(l6.G6, g6Var));
+        this.d.setTextColor(l6.w0(i7, g6Var));
     }
 }

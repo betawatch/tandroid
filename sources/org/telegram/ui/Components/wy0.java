@@ -1,44 +1,62 @@
 package org.telegram.ui.Components;
 
-import android.text.TextUtils;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
-import android.widget.ViewSwitcher;
+import android.text.TextPaint;
+import android.text.style.MetricAffectingSpan;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public class wy0 extends ViewSwitcher {
-    public final void a(CharSequence charSequence, boolean z9, boolean z10) {
-        if (z10 || !TextUtils.equals(charSequence, getCurrentView().getText())) {
-            if (!z9) {
-                getCurrentView().setText(charSequence);
-            } else {
-                getNextView().setText(charSequence);
-                showNext();
+public final class wy0 extends MetricAffectingSpan {
+    public final int a;
+    public final vy0 b;
+
+    public wy0(vy0 vy0Var, int i7) {
+        this.b = vy0Var;
+        if (i7 > 0) {
+            this.a = i7;
+        }
+    }
+
+    public final void a(TextPaint textPaint) {
+        vy0 vy0Var = this.b;
+        if (c8.zc.a(vy0Var.a, 49152)) {
+            float textSize = textPaint.getTextSize();
+            textPaint.setTextSize(0.75f * textSize);
+            if (c8.zc.a(vy0Var.a, 32768)) {
+                textPaint.baselineShift -= (int) (textSize * 0.35f);
+            } else if (c8.zc.a(vy0Var.a, TLObject.FLAG_14)) {
+                textPaint.baselineShift += (int) (textSize * 0.12f);
             }
         }
     }
 
-    @Override // android.widget.ViewSwitcher, android.widget.ViewAnimator, android.view.ViewGroup
-    public final void addView(View view, int i7, ViewGroup.LayoutParams layoutParams) {
-        if (!(view instanceof TextView)) {
-            throw new IllegalArgumentException();
+    public final vy0 b() {
+        return this.b;
+    }
+
+    public final boolean c() {
+        return (this.b.a & 256) > 0;
+    }
+
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        int i7 = this.a;
+        if (i7 != 0) {
+            textPaint.setTextSize(i7);
         }
-        super.addView(view, i7, layoutParams);
+        a(textPaint);
+        textPaint.setFlags(textPaint.getFlags() | 128);
+        this.b.a(textPaint);
     }
 
-    public void setText(CharSequence charSequence) {
-        a(charSequence, true, false);
-    }
-
-    @Override // android.widget.ViewAnimator
-    public TextView getCurrentView() {
-        return (TextView) super.getCurrentView();
-    }
-
-    @Override // android.widget.ViewSwitcher
-    public TextView getNextView() {
-        return (TextView) super.getNextView();
+    @Override // android.text.style.MetricAffectingSpan
+    public final void updateMeasureState(TextPaint textPaint) {
+        int i7 = this.a;
+        if (i7 != 0) {
+            textPaint.setTextSize(i7);
+        }
+        a(textPaint);
+        textPaint.setFlags(textPaint.getFlags() | 128);
+        this.b.a(textPaint);
     }
 }

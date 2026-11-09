@@ -12,7 +12,7 @@ import android.view.View;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.AnimatedArrowDrawable;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class lu extends fu {
     public final TL_iv.pageBlockDetails W;
@@ -32,7 +32,7 @@ public final class lu extends fu {
         jv jvVar = new jv(kvVar, spannableStringBuilder, jg.g.e(16.0f, this.c - g0.L(53.0f), 0));
         this.X = jvVar;
         this.Y = new jv[]{jvVar};
-        AnimatedArrowDrawable animatedArrowDrawable = new AnimatedArrowDrawable(org.telegram.ui.ActionBar.k6.w0(kvVar.E() ? org.telegram.ui.ActionBar.k6.sl : org.telegram.ui.ActionBar.k6.rl, kvVar.D));
+        AnimatedArrowDrawable animatedArrowDrawable = new AnimatedArrowDrawable(org.telegram.ui.ActionBar.l6.w0(kvVar.E() ? org.telegram.ui.ActionBar.l6.sl : org.telegram.ui.ActionBar.l6.rl, kvVar.D));
         this.Z = animatedArrowDrawable;
         animatedArrowDrawable.setAnimationProgress(pageblockdetails.open ? 0.0f : 1.0f);
     }
@@ -116,7 +116,7 @@ public final class lu extends fu {
             canvas.save();
             canvas.scale(a10, a10, (f10 + f11) / 2.0f, i0() / 2.0f);
         }
-        int w02 = org.telegram.ui.ActionBar.k6.w0(kvVar.E() ? org.telegram.ui.ActionBar.k6.sl : org.telegram.ui.ActionBar.k6.rl, kvVar.D);
+        int w02 = org.telegram.ui.ActionBar.l6.w0(kvVar.E() ? org.telegram.ui.ActionBar.l6.sl : org.telegram.ui.ActionBar.l6.rl, kvVar.D);
         AnimatedArrowDrawable animatedArrowDrawable = this.Z;
         animatedArrowDrawable.a.setColor(w02);
         animatedArrowDrawable.invalidateSelf();
@@ -135,7 +135,7 @@ public final class lu extends fu {
         if (this.W.open || kvVar.s) {
             return;
         }
-        int w03 = org.telegram.ui.ActionBar.k6.w0(kvVar.E() ? org.telegram.ui.ActionBar.k6.ul : org.telegram.ui.ActionBar.k6.tl, kvVar.D);
+        int w03 = org.telegram.ui.ActionBar.l6.w0(kvVar.E() ? org.telegram.ui.ActionBar.l6.ul : org.telegram.ui.ActionBar.l6.tl, kvVar.D);
         Paint paint = this.a0;
         paint.setColor(w03);
         canvas.drawRect(f10, i0() - 1.0f, f11, i0(), paint);

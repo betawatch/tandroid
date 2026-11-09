@@ -1,194 +1,30 @@
 package zh;
 
-import bi.w9;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import org.telegram.messenger.c20;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.n41;
-
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class b3 implements w9 {
-    public final int a;
-    public final long b;
-    public final c20 c;
-    public int e;
-    public long i;
-    public String q;
-    public boolean r;
-    public boolean s;
-    public boolean t;
-    public final ArrayList d = new ArrayList();
-    public final ArrayList f = new ArrayList();
-    public final ArrayList g = new ArrayList();
-    public final ArrayList h = new ArrayList();
-    public final HashSet j = new HashSet();
-    public final HashSet k = new HashSet();
-    public final HashSet l = new HashSet();
-    public final HashMap m = new HashMap();
-    public final HashMap n = new HashMap();
-    public final HashMap o = new HashMap();
-    public a3 p = a3.a;
-    public boolean u = false;
-    public int v = -1;
+public final class b3 {
+    public static final b3 a;
+    public static final b3 b;
+    public static final b3 c;
+    public static final /* synthetic */ b3[] d;
 
-    public b3(int i7, long j3, c20 c20Var) {
-        this.a = i7;
-        this.b = j3;
-        this.c = c20Var;
+    static {
+        b3 b3Var = new b3("BY_PRICE", 0);
+        a = b3Var;
+        b3 b3Var2 = new b3("BY_DATE", 1);
+        b = b3Var2;
+        b3 b3Var3 = new b3("BY_NUMBER", 2);
+        c = b3Var3;
+        d = new b3[]{b3Var, b3Var2, b3Var3};
     }
 
-    @Override // bi.w9
-    public final void a() {
-        g(false);
+    public static b3 valueOf(String str) {
+        return (b3) Enum.valueOf(b3.class, str);
     }
 
-    @Override // bi.w9
-    public final int b(int i7) {
-        return -1;
-    }
-
-    @Override // bi.w9
-    public final int c() {
-        return this.e;
-    }
-
-    @Override // bi.w9
-    public final int e() {
-        return this.d.size();
-    }
-
-    public final void f() {
-        if (this.v >= 0) {
-            ConnectionsManager.getInstance(this.a).cancelRequest(this.v, true);
-            this.v = -1;
-        }
-        this.t = false;
-    }
-
-    public final void g(boolean z9) {
-        if (this.t) {
-            return;
-        }
-        if (z9 || !this.u) {
-            this.t = true;
-            TL_stars.getResaleStarGifts getresalestargifts = new TL_stars.getResaleStarGifts();
-            getresalestargifts.gift_id = this.b;
-            String str = this.q;
-            if (str == null) {
-                str = "";
-            }
-            getresalestargifts.offset = str;
-            getresalestargifts.limit = 15;
-            getresalestargifts.for_craft = this.s;
-            getresalestargifts.stars_only = this.r;
-            a3 a3Var = this.p;
-            int i7 = 0;
-            if (a3Var == a3.c) {
-                getresalestargifts.sort_by_num = true;
-                getresalestargifts.sort_by_price = false;
-            } else if (a3Var == a3.b) {
-                getresalestargifts.sort_by_num = false;
-                getresalestargifts.sort_by_price = false;
-            } else if (a3Var == a3.a) {
-                getresalestargifts.sort_by_num = false;
-                getresalestargifts.sort_by_price = true;
-            }
-            long j3 = this.i;
-            ArrayList arrayList = this.h;
-            ArrayList arrayList2 = this.g;
-            ArrayList arrayList3 = this.f;
-            if (j3 != 0) {
-                getresalestargifts.flags = 1 | getresalestargifts.flags;
-                getresalestargifts.attributes_hash = j3;
-            } else if (arrayList3.isEmpty() && arrayList2.isEmpty() && arrayList.isEmpty()) {
-                getresalestargifts.flags = 1 | getresalestargifts.flags;
-                getresalestargifts.attributes_hash = 0L;
-            }
-            HashSet hashSet = this.j;
-            boolean isEmpty = hashSet.isEmpty();
-            HashSet hashSet2 = this.l;
-            HashSet hashSet3 = this.k;
-            if (!isEmpty || !hashSet3.isEmpty() || !hashSet2.isEmpty()) {
-                getresalestargifts.flags |= 8;
-                if (!hashSet.isEmpty()) {
-                    int size = arrayList3.size();
-                    int i10 = 0;
-                    while (i10 < size) {
-                        Object obj = arrayList3.get(i10);
-                        i10++;
-                        TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) obj;
-                        if (!hashSet.contains(Long.valueOf(stargiftattributemodel.document.id))) {
-                            TL_stars.starGiftAttributeIdModel stargiftattributeidmodel = new TL_stars.starGiftAttributeIdModel();
-                            stargiftattributeidmodel.document_id = stargiftattributemodel.document.id;
-                            getresalestargifts.attributes.add(stargiftattributeidmodel);
-                        }
-                    }
-                }
-                if (!hashSet3.isEmpty()) {
-                    int size2 = arrayList2.size();
-                    int i11 = 0;
-                    while (i11 < size2) {
-                        Object obj2 = arrayList2.get(i11);
-                        i11++;
-                        TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) obj2;
-                        if (!hashSet3.contains(Integer.valueOf(stargiftattributebackdrop.backdrop_id))) {
-                            TL_stars.starGiftAttributeIdBackdrop stargiftattributeidbackdrop = new TL_stars.starGiftAttributeIdBackdrop();
-                            stargiftattributeidbackdrop.backdrop_id = stargiftattributebackdrop.backdrop_id;
-                            getresalestargifts.attributes.add(stargiftattributeidbackdrop);
-                        }
-                    }
-                }
-                if (!hashSet2.isEmpty()) {
-                    int size3 = arrayList.size();
-                    while (i7 < size3) {
-                        Object obj3 = arrayList.get(i7);
-                        i7++;
-                        TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) obj3;
-                        if (!hashSet2.contains(Long.valueOf(stargiftattributepattern.document.id))) {
-                            TL_stars.starGiftAttributeIdPattern stargiftattributeidpattern = new TL_stars.starGiftAttributeIdPattern();
-                            stargiftattributeidpattern.document_id = stargiftattributepattern.document.id;
-                            getresalestargifts.attributes.add(stargiftattributeidpattern);
-                        }
-                    }
-                }
-            }
-            this.v = ConnectionsManager.getInstance(this.a).sendRequest(getresalestargifts, new n41(11, this, getresalestargifts));
-        }
-    }
-
-    @Override // bi.w9
-    public final Object get(int i7) {
-        return this.d.get(i7);
-    }
-
-    public final void h() {
-        f();
-        this.q = null;
-        this.d.clear();
-        g(true);
-        c20 c20Var = this.c;
-        if (c20Var != null) {
-            c20Var.a(Boolean.TRUE);
-        }
-    }
-
-    public final void i(a3 a3Var) {
-        if (this.p != a3Var) {
-            this.p = a3Var;
-            h();
-        }
-    }
-
-    @Override // bi.w9
-    public final int indexOf(Object obj) {
-        return this.d.indexOf(obj);
-    }
-
-    @Override // bi.w9
-    public final void d() {
+    public static b3[] values() {
+        return (b3[]) d.clone();
     }
 }

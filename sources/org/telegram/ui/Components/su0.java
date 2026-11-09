@@ -1,36 +1,37 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class su0 extends AnimatorListenerAdapter {
+public final /* synthetic */ class su0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ tu0 b;
+    public final /* synthetic */ vu0 b;
 
-    public /* synthetic */ su0(tu0 tu0Var, int i7) {
+    public /* synthetic */ su0(vu0 vu0Var, int i7) {
         this.a = i7;
-        this.b = tu0Var;
+        this.b = vu0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                tu0 tu0Var = this.b;
-                tu0Var.D = 1.0f;
-                tu0Var.invalidate();
-                tu0Var.G = null;
+                vu0 vu0Var = this.b;
+                vu0Var.getClass();
+                vu0Var.E = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                vu0Var.invalidate();
                 break;
             case 1:
-                tu0 tu0Var2 = this.b;
-                tu0Var2.m(((Float) tu0Var2.w.getAnimatedValue()).floatValue());
-                tu0Var2.w = null;
+                vu0 vu0Var2 = this.b;
+                vu0Var2.getClass();
+                vu0Var2.m(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             default:
-                super.onAnimationEnd(animator);
-                this.b.F = null;
+                vu0 vu0Var3 = this.b;
+                vu0Var3.getClass();
+                vu0Var3.D = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                vu0Var3.invalidate();
                 break;
         }
     }

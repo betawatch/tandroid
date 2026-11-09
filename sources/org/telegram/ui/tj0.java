@@ -1,29 +1,28 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class tj0 implements org.telegram.ui.ActionBar.r1 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ xj0 b;
+import android.text.TextPaint;
+import android.text.style.ClickableSpan;
+import android.view.View;
 
-    public /* synthetic */ tj0(xj0 xj0Var, int i7) {
-        this.a = i7;
-        this.b = xj0Var;
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* loaded from: classes3.dex */
+public final class tj0 extends ClickableSpan {
+    public final /* synthetic */ dk0 a;
+
+    public tj0(dk0 dk0Var) {
+        this.a = dk0Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.r1
-    public final void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
-        switch (this.a) {
-            case 0:
-                xj0 xj0Var = this.b;
-                xj0Var.c(true);
-                xj0Var.Q.finishFragment();
-                break;
-            default:
-                xj0 xj0Var2 = this.b;
-                xj0Var2.c(true);
-                xj0Var2.Q.O1(null, 0, true);
-                break;
-        }
+    @Override // android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        dk0 dk0Var = this.a;
+        vf.c.t(dk0Var.getParentActivity(), dk0Var.D.privacy_policy_url);
+    }
+
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        super.updateDrawState(textPaint);
+        textPaint.setUnderlineText(true);
+        textPaint.setTypeface(org.telegram.messenger.g0.o());
     }
 }

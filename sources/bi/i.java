@@ -20,19 +20,19 @@ import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.cj0;
+import org.telegram.ui.Components.dj0;
 import org.telegram.ui.Components.pq;
 import org.telegram.ui.Components.tq;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.c40;
-import org.telegram.ui.ma1;
-import org.telegram.ui.rv0;
-import org.telegram.ui.ww;
+import org.telegram.ui.e40;
+import org.telegram.ui.oa1;
+import org.telegram.ui.tv0;
+import org.telegram.ui.yw;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class i implements ma1, org.telegram.ui.ActionBar.r1, org.telegram.messenger.lc, cj0, dp, w5.b, v5.e, ua.a {
+public final /* synthetic */ class i implements oa1, org.telegram.ui.ActionBar.r1, org.telegram.messenger.lc, dj0, dp, w5.b, v5.e, ua.a {
     public final /* synthetic */ int a;
     public final /* synthetic */ long b;
     public final /* synthetic */ Object c;
@@ -47,7 +47,7 @@ public final /* synthetic */ class i implements ma1, org.telegram.ui.ActionBar.r
 
     @Override // org.telegram.messenger.dp
     public void a(boolean z9, TLRPC.TL_chatAdminRights tL_chatAdminRights, String str) {
-        org.telegram.messenger.g0.h3(new o((rv0) this.c, this.b, tL_chatAdminRights, str, z9, (ww) this.d));
+        org.telegram.messenger.g0.h3(new o((tv0) this.c, this.b, tL_chatAdminRights, str, z9, (yw) this.d));
     }
 
     @Override // v5.e
@@ -81,9 +81,9 @@ public final /* synthetic */ class i implements ma1, org.telegram.ui.ActionBar.r
         ((x9.a) bVar.get()).d((String) this.c, this.b, (da.p1) this.d);
     }
 
-    @Override // org.telegram.ui.Components.cj0
+    @Override // org.telegram.ui.Components.dj0
     public void f(float f10, float f11, int i7, View view) {
-        ProfileActivity.k0((ProfileActivity) this.c, (Context) this.d, this.b, view, i7, f10, f11);
+        ProfileActivity.h0((ProfileActivity) this.c, (Context) this.d, this.b, view, i7, f10, f11);
     }
 
     @Override // org.telegram.messenger.lc
@@ -112,7 +112,7 @@ public final /* synthetic */ class i implements ma1, org.telegram.ui.ActionBar.r
         }
     }
 
-    @Override // org.telegram.ui.Components.cj0
+    @Override // org.telegram.ui.Components.dj0
     public /* synthetic */ boolean f1(View view) {
         return false;
     }
@@ -149,8 +149,8 @@ public final /* synthetic */ class i implements ma1, org.telegram.ui.ActionBar.r
             case 3:
             case 4:
             default:
-                c40 c40Var = (c40) this.c;
-                qp.s1(c40Var.k1.a).n(c40Var.l1(), (TLRPC.User) this.d, null, (org.telegram.ui.ActionBar.f2) c40Var.Z1.M().getFragmentStack().get(c40Var.Z1.M().getFragmentStack().size() - 1), new r3(c40Var, this.b, 26));
+                e40 e40Var = (e40) this.c;
+                qp.s1(e40Var.k1.a).n(e40Var.l1(), (TLRPC.User) this.d, null, (org.telegram.ui.ActionBar.f2) e40Var.Z1.M().getFragmentStack().get(e40Var.Z1.M().getFragmentStack().size() - 1), new r3(e40Var, this.b, 26));
                 break;
             case 5:
                 tq tqVar = (tq) this.c;
@@ -179,7 +179,7 @@ public final /* synthetic */ class i implements ma1, org.telegram.ui.ActionBar.r
         return null;
     }
 
-    @Override // org.telegram.ui.ma1
+    @Override // org.telegram.ui.oa1
     public void j(TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP) {
         ((z) this.c).u0(true, this.b, tL_inputCheckPasswordSRP, (TwoStepVerificationActivity) this.d);
     }
@@ -199,7 +199,7 @@ public final /* synthetic */ class i implements ma1, org.telegram.ui.ActionBar.r
     public /* synthetic */ void t0(int i7, Drawable drawable) {
     }
 
-    @Override // org.telegram.ui.Components.cj0
+    @Override // org.telegram.ui.Components.dj0
     public /* synthetic */ void r0(View view, float f10, float f11) {
     }
 }

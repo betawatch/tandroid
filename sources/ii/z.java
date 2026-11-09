@@ -8,14 +8,14 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.id;
 import org.telegram.messenger.m5;
 import org.telegram.messenger.t3;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.s6;
 import org.telegram.ui.Components.l9;
-import org.telegram.ui.Components.q41;
+import org.telegram.ui.Components.r41;
 import org.telegram.ui.Components.w8;
 import org.telegram.ui.Components.wp;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final class z extends b0 {
     public final l9 h;
@@ -27,12 +27,12 @@ public final class z extends b0 {
         super(d0Var, context);
         this.r = d0Var;
         int i7 = 4;
-        q41 q41Var = new q41(context, d0Var.a, 0, false, new t(d0Var, i7), new u(d0Var, 3), new u(d0Var, i7), d0Var.I0);
-        this.d = q41Var;
-        q41Var.r1();
-        q41 q41Var2 = this.d;
-        q41Var2.f3.r = false;
-        q41Var2.setClipToPadding(false);
+        r41 r41Var = new r41(context, d0Var.a, 0, false, new t(d0Var, i7), new u(d0Var, 3), new u(d0Var, i7), d0Var.I0);
+        this.d = r41Var;
+        r41Var.r1();
+        r41 r41Var2 = this.d;
+        r41Var2.f3.r = false;
+        r41Var2.setClipToPadding(false);
         this.d.setPadding(0, 0, 0, org.telegram.messenger.g0.L(60.0f) + org.telegram.messenger.g0.n);
         org.telegram.messenger.g0.E2(this.b);
         this.c.addView(d0Var.w1, ha.g());
@@ -41,10 +41,10 @@ public final class z extends b0 {
         org.telegram.ui.ActionBar.k kVar = new org.telegram.ui.ActionBar.k(context, d0Var.I0);
         this.a = kVar;
         kVar.setOccupyStatusBar(false);
-        r6.m(this.a, 5, k6.G6, d0Var.I0);
-        r6.m(this.a, 3, k6.z8, d0Var.I0);
+        s6.l(this.a, 5, l6.G6, d0Var.I0);
+        s6.l(this.a, 3, l6.z8, d0Var.I0);
         this.a.setBackButtonImage(R.drawable.ic_ab_back);
-        r6.m(this.a, 1, k6.y8, d0Var.I0);
+        s6.l(this.a, 1, l6.y8, d0Var.I0);
         this.a.setTitle(m5.m(d0Var.m1));
         this.a.getTitleTextView().setTranslationX(-org.telegram.messenger.g0.L(18.0f));
         this.a.setActionBarMenuOnItemClick(new bi.s(this, 9));
@@ -57,13 +57,13 @@ public final class z extends b0 {
         this.a.addView(l9Var, ha.b(27.33f, 27.33f, 83, 14.33f, 0.0f, 0.0f, 14.33f));
         this.c.addView(this.a, ha.e(-1, 56, 48));
         this.c.addView(d0Var.u1, ha.d(-1, 40.0f, 48, 11.0f, 0.0f, 11.0f, 0.0f));
-        org.telegram.ui.ActionBar.y q10 = this.a.q();
-        q10.setGlassMode(true);
-        q10.setTranslationX(-org.telegram.messenger.g0.L(7.0f));
-        q10.a(3, R.drawable.outline_header_search);
+        org.telegram.ui.ActionBar.y r10 = this.a.r();
+        r10.setGlassMode(true);
+        r10.setTranslationX(-org.telegram.messenger.g0.L(7.0f));
+        r10.a(3, R.drawable.outline_header_search);
         int i10 = 2;
         if (t3.N(d0Var.m1)) {
-            q10.a(2, R.drawable.msg_download_settings);
+            r10.a(2, R.drawable.msg_download_settings);
         }
         fi.d dVar = new fi.d(getContext(), d0Var.I0, true);
         dVar.f();
@@ -74,7 +74,7 @@ public final class z extends b0 {
             spannableStringBuilder.setSpan(wpVar, 0, 1, 33);
             dVar.setText(spannableStringBuilder);
         } else {
-            dVar.setText(id.M0(2131747832, null));
+            dVar.setText(id.M0(2131747831, null));
         }
         d0Var.o1 = dVar;
         dVar.setOnClickListener(new g(this, i10));

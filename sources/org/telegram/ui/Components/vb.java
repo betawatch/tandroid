@@ -10,7 +10,7 @@ import android.text.TextPaint;
 import android.view.View;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public class vb extends View {
     public final Paint a;
@@ -26,7 +26,7 @@ public class vb extends View {
     public long w;
     public final RectF x;
 
-    public vb(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+    public vb(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
         super(context);
         this.r = 1.0f;
         this.x = new RectF();
@@ -39,7 +39,7 @@ public class vb extends View {
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(org.telegram.messenger.g0.L(2.0f));
         paint.setStrokeCap(Paint.Cap.ROUND);
-        setColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.vj, f6Var));
+        setColor(org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.vj, g6Var));
     }
 
     @Override // android.view.View

@@ -9,7 +9,7 @@ import org.telegram.SQLite.SQLitePreparedStatement;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class vp implements Runnable {
     public final /* synthetic */ int a;
@@ -149,7 +149,7 @@ public final /* synthetic */ class vp implements Runnable {
                                             boolean y10 = t10.y(j16);
                                             long j17 = this.d;
                                             if (y10) {
-                                                if (ij.C1(TLdeserialize.fwd_from.from_id) != j17) {
+                                                if (ij.B1(TLdeserialize.fwd_from.from_id) != j17) {
                                                 }
                                                 arrayList.add(Integer.valueOf(TLdeserialize.id));
                                                 yrVar5.b(TLdeserialize, arrayList4, arrayList6, arrayList5, false);
@@ -157,7 +157,7 @@ public final /* synthetic */ class vp implements Runnable {
                                                 arrayList3 = arrayList5;
                                                 byteBufferValue.reuse();
                                             }
-                                            if (ij.C1(TLdeserialize.from_id) == j17) {
+                                            if (ij.B1(TLdeserialize.from_id) == j17) {
                                                 break;
                                             }
                                         }

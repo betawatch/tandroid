@@ -12,7 +12,7 @@ import java.text.DecimalFormatSymbols;
 import java.util.Locale;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class xd extends LinearLayout {
     public final LinearLayout a;
@@ -22,7 +22,7 @@ public final class xd extends LinearLayout {
     public final TextView e;
     public final DecimalFormat f;
 
-    public xd(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+    public xd(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
         super(context);
         this.b = new LinearLayout[2];
         this.c = new org.telegram.ui.Components.q5[2];
@@ -39,17 +39,17 @@ public final class xd extends LinearLayout {
             this.c[i7] = new org.telegram.ui.Components.q5(context);
             this.c[i7].setTypeface(org.telegram.messenger.g0.o());
             this.c[i7].setTextSize(1, 16.0f);
-            org.telegram.ui.ActionBar.r6.V(this.c[i7], org.telegram.ui.ActionBar.k6.G6, f6Var);
+            org.telegram.ui.ActionBar.s6.U(this.c[i7], org.telegram.ui.ActionBar.l6.G6, g6Var);
             this.b[i7].addView(this.c[i7], c8.ha.t(-2, -2, 80, 0, 0, 5, 0));
             this.d[i7] = new org.telegram.ui.Components.q5(context);
             this.d[i7].setTextSize(1, 11.5f);
-            org.telegram.ui.ActionBar.r6.V(this.d[i7], org.telegram.ui.ActionBar.k6.y6, f6Var);
+            org.telegram.ui.ActionBar.s6.U(this.d[i7], org.telegram.ui.ActionBar.l6.y6, g6Var);
             this.b[i7].addView(this.d[i7], c8.ha.r(-2, -2, 80));
         }
         TextView textView = new TextView(context);
         this.e = textView;
         textView.setTextSize(1, 13.0f);
-        org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.y6, f6Var);
+        org.telegram.ui.ActionBar.s6.U(textView, org.telegram.ui.ActionBar.l6.y6, g6Var);
         addView(textView, c8.ha.t(-1, -2, 55, 22, 5, 22, 9));
         DecimalFormatSymbols decimalFormatSymbols = new DecimalFormatSymbols(Locale.US);
         decimalFormatSymbols.setDecimalSeparator('.');

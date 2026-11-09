@@ -6,7 +6,7 @@ import ch.o0;
 import ch.p0;
 import da.h0;
 import da.v1;
-import di.k4;
+import di.l4;
 import di.t0;
 import fi.ab;
 import h9.r1;
@@ -20,7 +20,7 @@ import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Stories.ProfileStoriesView;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c implements Comparator {
     public final /* synthetic */ int a;
@@ -124,7 +124,7 @@ public final /* synthetic */ class c implements Comparator {
                 return ((Integer) ((Pair) obj).first).intValue() - ((Integer) ((Pair) obj2).first).intValue();
             case 24:
                 int i14 = ProfileStoriesView.s0;
-                return (int) (((k4) obj2).i - ((k4) obj).i);
+                return (int) (((l4) obj2).i - ((l4) obj).i);
             case 25:
                 return (int) (((Long) obj2).longValue() - ((Long) obj).longValue());
             case 26:

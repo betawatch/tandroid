@@ -4,13 +4,12 @@ import java.util.HashMap;
 import org.telegram.messenger.c20;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import zh.a4;
+import zh.b4;
 import zh.d1;
-import zh.f3;
-import zh.j3;
-import zh.l3;
+import zh.g3;
+import zh.k3;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a implements c20 {
     public final /* synthetic */ int a;
@@ -41,19 +40,16 @@ public final /* synthetic */ class a implements c20 {
                 ((d1) this.b).a();
                 break;
             case 4:
-                ((l3) this.b).j0(((Boolean) obj).booleanValue());
-                break;
-            case 5:
-                j3 j3Var = (j3) this.b;
+                k3 k3Var = (k3) this.b;
                 ((Boolean) obj).getClass();
-                f3 f3Var = j3Var.d;
-                if (f3Var != null) {
-                    f3Var.run();
+                g3 g3Var = k3Var.d;
+                if (g3Var != null) {
+                    g3Var.run();
                     break;
                 }
                 break;
             default:
-                wg.h.j(((a4) this.b).getContext(), (TLRPC.TL_error) obj);
+                wg.h.j(((b4) this.b).getContext(), (TLRPC.TL_error) obj);
                 break;
         }
     }

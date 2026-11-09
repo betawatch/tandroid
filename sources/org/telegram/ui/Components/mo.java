@@ -9,23 +9,23 @@ import java.util.HashMap;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.qc1;
+import org.telegram.ui.tc1;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class mo implements bi {
     public final /* synthetic */ di a;
     public final /* synthetic */ TL_stories.TL_premium_boostsStatus b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f6 c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.g6 c;
     public final /* synthetic */ org.telegram.ui.f d;
     public final /* synthetic */ long e;
     public final /* synthetic */ org.telegram.ui.wb f;
     public final /* synthetic */ org.telegram.ui.rc h;
 
-    public mo(di diVar, TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus, org.telegram.ui.ActionBar.f6 f6Var, org.telegram.ui.f fVar, long j3, org.telegram.ui.wb wbVar, org.telegram.ui.rc rcVar) {
+    public mo(di diVar, TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus, org.telegram.ui.ActionBar.g6 g6Var, org.telegram.ui.f fVar, long j3, org.telegram.ui.wb wbVar, org.telegram.ui.rc rcVar) {
         this.a = diVar;
         this.b = tL_premium_boostsStatus;
-        this.c = f6Var;
+        this.c = g6Var;
         this.d = fVar;
         this.e = j3;
         this.f = wbVar;
@@ -80,7 +80,7 @@ public final class mo implements bi {
                 Point c12 = org.telegram.messenger.g0.c1();
                 Bitmap K = org.telegram.messenger.gc.K(str, null, (float) c12.x, (float) c12.y, true);
                 K.compress(Bitmap.CompressFormat.JPEG, 87, new FileOutputStream(file));
-                lo loVar = new lo(new qc1(file, file, ""), K, false, 0);
+                lo loVar = new lo(new tc1(file, file, ""), K, false, 0);
                 loVar.W1 = this.b;
                 loVar.a.a = this.c;
                 loVar.q1 = this.d;

@@ -30,35 +30,35 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.CheckBoxBase;
-import org.telegram.ui.Components.a80;
-import org.telegram.ui.Components.b41;
-import org.telegram.ui.Components.ck0;
-import org.telegram.ui.Components.d41;
+import org.telegram.ui.Components.ak0;
+import org.telegram.ui.Components.b80;
+import org.telegram.ui.Components.c41;
+import org.telegram.ui.Components.dk0;
 import org.telegram.ui.Components.e41;
-import org.telegram.ui.Components.eu0;
-import org.telegram.ui.Components.mx0;
-import org.telegram.ui.Components.my0;
+import org.telegram.ui.Components.f41;
+import org.telegram.ui.Components.gu0;
+import org.telegram.ui.Components.nx0;
 import org.telegram.ui.Components.ny0;
-import org.telegram.ui.Components.uy0;
+import org.telegram.ui.Components.oy0;
 import org.telegram.ui.Components.vy0;
-import org.telegram.ui.Components.y31;
-import org.telegram.ui.Components.zj0;
-import org.telegram.ui.rg0;
+import org.telegram.ui.Components.wy0;
+import org.telegram.ui.Components.z31;
 import org.telegram.ui.tg0;
+import org.telegram.ui.vg0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class kv {
     public int A;
     public final int B;
     public int C;
-    public org.telegram.ui.ActionBar.f6 D;
+    public org.telegram.ui.ActionBar.g6 D;
     public org.telegram.ui.Cells.q1 E;
     public org.telegram.ui.Cells.l1 F;
     public org.telegram.ui.Components.ic G;
     public Paint H;
-    public my0 I;
-    public a80 J;
+    public ny0 I;
+    public b80 J;
     public final RectF K;
     public boolean L;
     public int M;
@@ -91,14 +91,14 @@ public final class kv {
     public final ArrayList o;
     public final ArrayList p;
     public Object q;
-    public tg0 r;
+    public vg0 r;
     public boolean s;
     public float t;
     public boolean u;
     public boolean v;
     public final TextPaint w;
     public final TextPaint x;
-    public final zj0 y;
+    public final ak0 y;
     public final h6.m z;
 
     public kv(ij ijVar, int i7, kv kvVar) {
@@ -117,7 +117,7 @@ public final class kv {
         this.t = 1.0f;
         this.w = new TextPaint(1);
         this.x = new TextPaint(1);
-        this.y = new zj0(null);
+        this.y = new ak0(null);
         this.z = new h6.m(28);
         this.K = new RectF();
         this.b = ijVar;
@@ -228,9 +228,9 @@ public final class kv {
                     i10 |= 65536;
                 }
                 if (i10 != 0) {
-                    uy0 uy0Var = new uy0();
-                    uy0Var.a = i10;
-                    spannableStringBuilder.setSpan(new vy0(uy0Var, 0), spanStart, spanEnd, 33);
+                    vy0 vy0Var = new vy0();
+                    vy0Var.a = i10;
+                    spannableStringBuilder.setSpan(new wy0(vy0Var, 0), spanStart, spanEnd, 33);
                 }
             }
         }
@@ -659,10 +659,10 @@ public final class kv {
         }
     }
 
-    public static uy0 z(int i7) {
-        uy0 uy0Var = new uy0();
-        uy0Var.a = i7;
-        return uy0Var;
+    public static vy0 z(int i7) {
+        vy0 vy0Var = new vy0();
+        vy0Var.a = i7;
+        return vy0Var;
     }
 
     public final boolean B() {
@@ -691,17 +691,17 @@ public final class kv {
 
     public final boolean D() {
         ij ijVar = this.b;
-        return (ijVar == null || !ijVar.Q2() || ijVar.Q3()) ? false : true;
+        return (ijVar == null || !ijVar.P2() || ijVar.P3()) ? false : true;
     }
 
     public final boolean E() {
         ij ijVar = this.b;
-        return ijVar != null && ijVar.Q3();
+        return ijVar != null && ijVar.P3();
     }
 
     public final boolean F() {
-        tg0 tg0Var = this.r;
-        return tg0Var == null || !tg0Var.h;
+        vg0 vg0Var = this.r;
+        return vg0Var == null || !vg0Var.h;
     }
 
     public final boolean G() {
@@ -827,7 +827,7 @@ public final class kv {
         int actionMasked = motionEvent.getActionMasked();
         boolean Y = Y();
         ArrayList arrayList = this.g;
-        if (Y && (arrayList.get(0) instanceof ck0)) {
+        if (Y && (arrayList.get(0) instanceof dk0)) {
             i7 = -this.S;
         } else {
             if (D()) {
@@ -976,9 +976,9 @@ public final class kv {
                 Rect rect = yuVar.b;
                 int max = Math.max(i12, Math.min(i13, Math.max(0, (i11 - rect.left) - rect.right)));
                 yuVar.f0 = max;
-                mx0 mx0Var = yuVar.X;
-                mx0Var.setRenderWidth(max);
-                yuVar.g0 = mx0Var.getRenderHeight();
+                nx0 nx0Var = yuVar.X;
+                nx0Var.setRenderWidth(max);
+                yuVar.g0 = nx0Var.getRenderHeight();
             }
         }
         StringBuilder sb2 = new StringBuilder();
@@ -1083,15 +1083,15 @@ public final class kv {
         }
     }
 
-    public final void W(tg0 tg0Var) {
-        this.r = tg0Var;
+    public final void W(vg0 vg0Var) {
+        this.r = vg0Var;
         int i7 = 0;
         while (true) {
             ArrayList arrayList = this.g;
             if (i7 >= arrayList.size()) {
                 return;
             }
-            ((fu) arrayList.get(i7)).K = tg0Var;
+            ((fu) arrayList.get(i7)).K = vg0Var;
             arrayList.get(i7);
             ((fu) arrayList.get(i7)).getClass();
             i7++;
@@ -1116,7 +1116,7 @@ public final class kv {
             return false;
         }
         fu fuVar = (fu) arrayList.get(0);
-        return (fuVar instanceof su) || (fuVar instanceof ev) || (fuVar instanceof ku) || (fuVar instanceof wu) || (fuVar instanceof ck0);
+        return (fuVar instanceof su) || (fuVar instanceof ev) || (fuVar instanceof ku) || (fuVar instanceof wu) || (fuVar instanceof dk0);
     }
 
     public final void b(View view) {
@@ -1171,21 +1171,21 @@ public final class kv {
         TLRPC.PeerColor peerColor;
         this.y.a(this.b, user, chat, this.D, 1);
         ij ijVar = this.b;
-        if (ijVar == null || ijVar.Q3() || ijVar.Q5()) {
+        if (ijVar == null || ijVar.P3() || ijVar.P5()) {
             return;
         }
         boolean z9 = true;
-        if (ijVar.c1 < 0 && ijVar.e1 == null && (!ijVar.s4() || (peerColor = ijVar.X0) == null || peerColor.color == -1)) {
+        if (ijVar.c1 < 0 && ijVar.e1 == null && (!ijVar.r4() || (peerColor = ijVar.X0) == null || peerColor.color == -1)) {
             TLRPC.Message message = ijVar.k;
             int i7 = this.a;
             if (message != null && (messageFwdHeader = message.fwd_from) != null && (peer = messageFwdHeader.from_id) != null) {
                 long o4 = m5.o(peer);
                 z9 = o4 >= 0 ? false : false;
-            } else if (m5.C(ij.B0(message)) || ijVar.q3()) {
+            } else if (m5.C(ij.B0(message)) || ijVar.p3()) {
                 if (user != null) {
                 }
             } else {
-                if (ijVar.o3() && chat != null) {
+                if (ijVar.n3() && chat != null) {
                     if (chat.signature_profiles) {
                         long Z0 = ijVar.Z0();
                         if (Z0 < 0) {
@@ -1199,8 +1199,8 @@ public final class kv {
         if (z9) {
             return;
         }
-        org.telegram.ui.ActionBar.f6 f6Var = this.D;
-        this.y.r(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Ci, this.D), f6Var != null ? f6Var.a() : org.telegram.ui.ActionBar.k6.I.q());
+        org.telegram.ui.ActionBar.g6 g6Var = this.D;
+        this.y.r(org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.Ci, this.D), g6Var != null ? g6Var.a() : org.telegram.ui.ActionBar.l6.I.q());
     }
 
     public final void f(View view) {
@@ -1242,7 +1242,7 @@ public final class kv {
         float f11;
         org.telegram.ui.Cells.l1 l1Var;
         S(i7, i10);
-        this.w.linkColor = org.telegram.ui.ActionBar.k6.w0(E() ? org.telegram.ui.ActionBar.k6.Vc : org.telegram.ui.ActionBar.k6.Uc, this.D);
+        this.w.linkColor = org.telegram.ui.ActionBar.l6.w0(E() ? org.telegram.ui.ActionBar.l6.Vc : org.telegram.ui.ActionBar.l6.Uc, this.D);
         boolean z9 = this.d;
         int min = Math.min(this.A, g0.L(900.0f));
         if (z9) {
@@ -1264,9 +1264,9 @@ public final class kv {
             rectF.set(-i7, min - g0.L(32.0f), this.C + i10, min);
             this.z.m(canvas, rectF, 3, 1.0f);
             canvas.restore();
-            int w02 = org.telegram.ui.ActionBar.k6.w0(E() ? org.telegram.ui.ActionBar.k6.Lb : org.telegram.ui.ActionBar.k6.yd, this.D);
+            int w02 = org.telegram.ui.ActionBar.l6.w0(E() ? org.telegram.ui.ActionBar.l6.Lb : org.telegram.ui.ActionBar.l6.yd, this.D);
             if (this.I == null) {
-                this.I = new my0(id.M0(2131745342, null), 16.0f, g0.o());
+                this.I = new ny0(id.M0(2131745339, null), 16.0f, g0.o());
             }
             org.telegram.ui.Components.ic icVar = this.G;
             if (icVar == null) {
@@ -1281,7 +1281,7 @@ public final class kv {
             if (this.H == null) {
                 this.H = new Paint(1);
             }
-            this.H.setColor(org.telegram.ui.ActionBar.k6.r1(0.1f, w02));
+            this.H.setColor(org.telegram.ui.ActionBar.l6.r1(0.1f, w02));
             float L = g0.L(42.0f);
             float f13 = this.I.c;
             float L2 = ((this.C + this.S) + this.T) - g0.L(24.0f);
@@ -1293,24 +1293,24 @@ public final class kv {
             rectF2.set(f14 - f15, L3, f14 + f15, L + L3);
             org.telegram.ui.Cells.q1 q1Var2 = this.E;
             boolean z11 = (q1Var2 == null || (l1Var = this.F) == null || !l1Var.p1(q1Var2, 7)) ? false : true;
-            a80 a80Var = this.J;
-            if (a80Var != null && !z11 && !a80Var.c() && !this.J.d()) {
+            b80 b80Var = this.J;
+            if (b80Var != null && !z11 && !b80Var.c() && !this.J.d()) {
                 this.J.a();
             }
-            a80 a80Var2 = this.J;
-            if (a80Var2 == null && z11) {
-                a80 a80Var3 = new a80();
-                this.J = a80Var3;
-                a80Var3.x.setStrokeWidth(g0.L(1.25f));
+            b80 b80Var2 = this.J;
+            if (b80Var2 == null && z11) {
+                b80 b80Var3 = new b80();
+                this.J = b80Var3;
+                b80Var3.x.setStrokeWidth(g0.L(1.25f));
                 this.J.D = true;
-            } else if (a80Var2 != null && z11 && (a80Var2.c() || this.J.d())) {
-                a80 a80Var4 = this.J;
-                a80Var4.b = -1L;
-                a80Var4.c = -1L;
+            } else if (b80Var2 != null && z11 && (b80Var2.c() || this.J.d())) {
+                b80 b80Var4 = this.J;
+                b80Var4.b = -1L;
+                b80Var4.c = -1L;
             }
-            a80 a80Var5 = this.J;
-            if (a80Var5 != null) {
-                a80Var5.g(org.telegram.ui.ActionBar.k6.r1(0.1f, w02), org.telegram.ui.ActionBar.k6.r1(0.3f, w02), org.telegram.ui.ActionBar.k6.r1(0.3f, w02), org.telegram.ui.ActionBar.k6.r1(1.2f, w02));
+            b80 b80Var5 = this.J;
+            if (b80Var5 != null) {
+                b80Var5.g(org.telegram.ui.ActionBar.l6.r1(0.1f, w02), org.telegram.ui.ActionBar.l6.r1(0.3f, w02), org.telegram.ui.ActionBar.l6.r1(0.3f, w02), org.telegram.ui.ActionBar.l6.r1(1.2f, w02));
             }
             float a10 = this.G.a(0.075f);
             boolean z12 = a10 != 1.0f;
@@ -1319,8 +1319,8 @@ public final class kv {
                 canvas.scale(a10, a10, rectF2.centerX(), rectF2.centerY());
             }
             canvas.drawRoundRect(rectF2, g0.L(8.0f), g0.L(8.0f), this.H);
-            a80 a80Var6 = this.J;
-            if (a80Var6 != null && !a80Var6.c()) {
+            b80 b80Var6 = this.J;
+            if (b80Var6 != null && !b80Var6.c()) {
                 this.J.e(rectF2);
                 this.J.k(8.0f);
                 this.J.draw(canvas);
@@ -2036,7 +2036,7 @@ public final class kv {
                 pageblockaudio.mid = i43;
                 tL_message.id = i43;
                 ij ijVar = this.b;
-                tL_message.realId = ijVar.M1();
+                tL_message.realId = ijVar.L1();
                 tL_message.dialog_id = ij.B0(ijVar.k);
                 TLRPC.Peer peer = ijVar.k.peer_id;
                 tL_message.peer_id = peer;
@@ -2085,21 +2085,21 @@ public final class kv {
         }
         if (pageBlock instanceof TL_iv.pageBlockEmbed) {
             TL_iv.pageBlockEmbed pageblockembed = (TL_iv.pageBlockEmbed) pageBlock;
-            AtomicInteger atomicInteger = ck0.s0;
+            AtomicInteger atomicInteger = dk0.s0;
             if (pageblockembed.html != null && org.telegram.utils.twidget.n0.n(pageblockembed.url)) {
                 if (org.telegram.utils.twidget.n0.n(pageblockembed.url)) {
                     String str3 = pageblockembed.url;
-                    int j02 = (ck0.j0() * 2) + i17;
+                    int j02 = (dk0.j0() * 2) + i17;
                     org.telegram.utils.twidget.k0 k0Var = org.telegram.utils.twidget.n0.n(str3) ? (org.telegram.utils.twidget.k0) org.telegram.utils.twidget.n0.a.get(str3) : null;
                     if (k0Var != null && (i11 = k0Var.e) != 0) {
                         j02 = Math.min(j02, g0.L(Math.max(qs.e3, i11)));
                     }
-                    i17 = j02 - (ck0.j0() * 2);
+                    i17 = j02 - (dk0.j0() * 2);
                 }
-                ck0 ck0Var = new ck0(this, rect, i17, pageblockembed, arrayList.isEmpty());
-                arrayList.add(ck0Var);
+                dk0 dk0Var = new dk0(this, rect, i17, pageblockembed, arrayList.isEmpty());
+                arrayList.add(dk0Var);
                 k(pageblockembed.caption, rect, i35);
-                return ck0Var;
+                return dk0Var;
             }
         }
         if (pageBlock instanceof TL_iv.pageBlockUnsupported) {
@@ -2174,11 +2174,11 @@ public final class kv {
                     boolean j3 = li.c6.j(textdiff.text);
                     boolean j10 = li.c6.j(textdiff.old_text);
                     if (j3 && !j10) {
-                        n(textdiff.old_text, spannableStringBuilder, i7, new vy0(z(TLObject.FLAG_13), 0));
+                        n(textdiff.old_text, spannableStringBuilder, i7, new wy0(z(TLObject.FLAG_13), 0));
                     } else if (!j3 && j10) {
-                        n(textdiff.text, spannableStringBuilder, i7, new vy0(z(TLObject.FLAG_12), 0));
+                        n(textdiff.text, spannableStringBuilder, i7, new wy0(z(TLObject.FLAG_12), 0));
                     } else if (!j3) {
-                        n(textdiff.text, spannableStringBuilder, i7, new eu0());
+                        n(textdiff.text, spannableStringBuilder, i7, new gu0());
                     }
                 } else if (richText instanceof TL_iv.textBold) {
                     int i10 = i7 | 16;
@@ -2196,9 +2196,9 @@ public final class kv {
                     int i14 = i7 | 256;
                     n(richText.text, spannableStringBuilder, i14, new gv(this, i14, false));
                 } else if (richText instanceof TL_iv.textUrl) {
-                    n(richText.text, spannableStringBuilder, i7, new d41(((TL_iv.textUrl) richText).url, z(1024)));
+                    n(richText.text, spannableStringBuilder, i7, new e41(((TL_iv.textUrl) richText).url, z(1024)));
                 } else if (richText instanceof TL_iv.textEmail) {
-                    n(richText.text, spannableStringBuilder, i7, new d41("mailto:" + ((TL_iv.textEmail) richText).email, z(1024)));
+                    n(richText.text, spannableStringBuilder, i7, new e41("mailto:" + ((TL_iv.textEmail) richText).email, z(1024)));
                 } else if (richText instanceof TL_iv.textConcat) {
                     for (int i15 = 0; i15 < richText.texts.size(); i15++) {
                         m(richText.texts.get(i15), spannableStringBuilder, i7);
@@ -2218,7 +2218,7 @@ public final class kv {
                     if (textphone.phone.startsWith("+")) {
                         d = rf.b.i("+", d);
                     }
-                    n(richText.text, spannableStringBuilder, i7, new d41(rf.b.i("tel:", d), z(1024)));
+                    n(richText.text, spannableStringBuilder, i7, new e41(rf.b.i("tel:", d), z(1024)));
                 } else if (richText instanceof TL_iv.textAnchor) {
                     TL_iv.textAnchor textanchor = (TL_iv.textAnchor) richText;
                     String str = textanchor.name;
@@ -2238,7 +2238,7 @@ public final class kv {
                     if (str2 != null) {
                         str2.toLowerCase();
                     }
-                    n(richText2, spannableStringBuilder, i7, new fi.t9(3));
+                    n(richText2, spannableStringBuilder, i7, new fi.s9(3));
                 } else if (richText instanceof TL_iv.textMath) {
                     TL_iv.textMath textmath = (TL_iv.textMath) richText;
                     if (textmath.bitmap == null && !textmath.tried) {
@@ -2255,7 +2255,7 @@ public final class kv {
                         int length2 = spannableStringBuilder.length();
                         spannableStringBuilder.append(" ");
                         int length3 = spannableStringBuilder.length();
-                        spannableStringBuilder.setSpan(new ny0(null, textmath.bitmap, textmath.w, textmath.h, org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.G6, this.D), textmath.depth), length2, length3, 33);
+                        spannableStringBuilder.setSpan(new oy0(null, textmath.bitmap, textmath.w, textmath.h, org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.G6, this.D), textmath.depth), length2, length3, 33);
                         String str3 = textmath.source;
                         if (str3 != null && !str3.isEmpty()) {
                             spannableStringBuilder.setSpan(new org.telegram.ui.Cells.o9(textmath.source), length2, length3, 33);
@@ -2278,41 +2278,41 @@ public final class kv {
                     }
                     spannableStringBuilder.setSpan(size, length4, length5, 33);
                 } else if (richText instanceof TL_iv.textSpoiler) {
-                    n(richText.text, spannableStringBuilder, i7, new vy0(z(256), 0));
+                    n(richText.text, spannableStringBuilder, i7, new wy0(z(256), 0));
                 } else if (richText instanceof TL_iv.textMention) {
                     TLRPC.TL_messageEntityMention tL_messageEntityMention = new TLRPC.TL_messageEntityMention();
-                    uy0 uy0Var = new uy0();
-                    uy0Var.d = tL_messageEntityMention;
-                    n(richText.text, spannableStringBuilder, i7, new b41(x(richText), uy0Var));
+                    vy0 vy0Var = new vy0();
+                    vy0Var.d = tL_messageEntityMention;
+                    n(richText.text, spannableStringBuilder, i7, new c41(x(richText), vy0Var));
                 } else if (richText instanceof TL_iv.textHashtag) {
                     TLRPC.TL_messageEntityHashtag tL_messageEntityHashtag = new TLRPC.TL_messageEntityHashtag();
-                    uy0 uy0Var2 = new uy0();
-                    uy0Var2.d = tL_messageEntityHashtag;
-                    n(richText.text, spannableStringBuilder, i7, new b41(x(richText), uy0Var2));
+                    vy0 vy0Var2 = new vy0();
+                    vy0Var2.d = tL_messageEntityHashtag;
+                    n(richText.text, spannableStringBuilder, i7, new c41(x(richText), vy0Var2));
                 } else if (richText instanceof TL_iv.textBotCommand) {
-                    n(richText.text, spannableStringBuilder, i7, new y31(x(richText), E() ? 1 : 0, null));
+                    n(richText.text, spannableStringBuilder, i7, new z31(x(richText), E() ? 1 : 0, null));
                 } else if (richText instanceof TL_iv.textCashtag) {
                     TLRPC.TL_messageEntityCashtag tL_messageEntityCashtag = new TLRPC.TL_messageEntityCashtag();
-                    uy0 uy0Var3 = new uy0();
-                    uy0Var3.d = tL_messageEntityCashtag;
-                    n(richText.text, spannableStringBuilder, i7, new b41(x(richText), uy0Var3));
+                    vy0 vy0Var3 = new vy0();
+                    vy0Var3.d = tL_messageEntityCashtag;
+                    n(richText.text, spannableStringBuilder, i7, new c41(x(richText), vy0Var3));
                 } else if (richText instanceof TL_iv.textAutoUrl) {
-                    n(richText.text, spannableStringBuilder, i7, new d41(x(richText), z(1024)));
+                    n(richText.text, spannableStringBuilder, i7, new e41(x(richText), z(1024)));
                 } else if (richText instanceof TL_iv.textAutoEmail) {
-                    n(richText.text, spannableStringBuilder, i7, new d41(rf.b.i("mailto:", x(richText)), z(1024)));
+                    n(richText.text, spannableStringBuilder, i7, new e41(rf.b.i("mailto:", x(richText)), z(1024)));
                 } else if (richText instanceof TL_iv.textAutoPhone) {
                     String x10 = x(richText);
                     String d2 = pf.b.d(x10, false);
                     if (x10.startsWith("+")) {
                         d2 = rf.b.i("+", d2);
                     }
-                    n(richText.text, spannableStringBuilder, i7, new d41(rf.b.i("tel:", d2), z(1024)));
+                    n(richText.text, spannableStringBuilder, i7, new e41(rf.b.i("tel:", d2), z(1024)));
                 } else if (richText instanceof TL_iv.textTonAddress) {
-                    n(richText.text, spannableStringBuilder, i7, new b41(rf.b.i("tonaddress:", x(richText)), (uy0) null));
+                    n(richText.text, spannableStringBuilder, i7, new c41(rf.b.i("tonaddress:", x(richText)), (vy0) null));
                 } else if (richText instanceof TL_iv.textBankCard) {
-                    n(richText.text, spannableStringBuilder, i7, new b41(rf.b.i("card:", x(richText)), (uy0) null));
+                    n(richText.text, spannableStringBuilder, i7, new c41(rf.b.i("card:", x(richText)), (vy0) null));
                 } else if (richText instanceof TL_iv.textMentionName) {
-                    n(richText.text, spannableStringBuilder, i7, new e41("" + ((TL_iv.textMentionName) richText).user_id, E() ? 1 : 0, null));
+                    n(richText.text, spannableStringBuilder, i7, new f41("" + ((TL_iv.textMentionName) richText).user_id, E() ? 1 : 0, null));
                 } else if (richText instanceof TL_iv.textDate) {
                     TL_iv.textDate textdate = (TL_iv.textDate) richText;
                     TLRPC.TL_messageEntityFormattedDate tL_messageEntityFormattedDate = new TLRPC.TL_messageEntityFormattedDate();
@@ -2376,7 +2376,7 @@ public final class kv {
             ((fu) arrayList.get(i7)).p(arrayList2);
         }
         for (int i10 = 0; i10 < arrayList2.size(); i10++) {
-            ((rg0) arrayList2.get(i10)).getClass();
+            ((tg0) arrayList2.get(i10)).getClass();
         }
         return arrayList2;
     }
@@ -2633,7 +2633,7 @@ public final class kv {
         return sb2.toString();
     }
 
-    public kv(int i7, int i10, org.telegram.ui.ActionBar.f6 f6Var) {
+    public kv(int i7, int i10, org.telegram.ui.ActionBar.g6 g6Var) {
         this.e = new ArrayList();
         this.f = new ArrayList();
         this.g = new ArrayList();
@@ -2651,13 +2651,13 @@ public final class kv {
         this.w = textPaint;
         TextPaint textPaint2 = new TextPaint(1);
         this.x = textPaint2;
-        this.y = new zj0(null);
+        this.y = new ak0(null);
         this.z = new h6.m(28);
         this.K = new RectF();
         this.b = null;
         this.a = i7;
         this.B = i10;
-        this.D = f6Var;
+        this.D = g6Var;
         this.M = iz.W0;
         this.N = g0.p;
         textPaint.setTextSize(g0.L(r6));

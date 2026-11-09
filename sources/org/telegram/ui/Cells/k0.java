@@ -12,9 +12,9 @@ import org.telegram.messenger.t10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ic;
-import org.telegram.ui.Components.my0;
+import org.telegram.ui.Components.ny0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class k0 {
     public final q1 a;
@@ -27,7 +27,7 @@ public final class k0 {
     public final Drawable h;
     public final Paint i;
     public final Paint j;
-    public final my0 k;
+    public final ny0 k;
     public boolean l;
     public boolean m;
     public final ic n;
@@ -48,10 +48,10 @@ public final class k0 {
             this.c[i10] = new ImageReceiver(q1Var);
             this.c[i10].H0(q1Var);
             this.c[i10].J0(org.telegram.messenger.g0.L(54.0f));
-            this.b[i10] = new org.telegram.ui.Components.w8((org.telegram.ui.ActionBar.f6) null);
+            this.b[i10] = new org.telegram.ui.Components.w8((org.telegram.ui.ActionBar.g6) null);
             if (i10 >= tLObjectArr.length || (tLObject = tLObjectArr[i10]) == null) {
                 Paint paint = new Paint(1);
-                int[] iArr = {org.telegram.ui.ActionBar.k6.w(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.ra, q1Var.Pb), org.telegram.ui.ActionBar.k6.r1(0.5f, org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.y6, q1Var.Pb)))};
+                int[] iArr = {org.telegram.ui.ActionBar.l6.w(org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.ra, q1Var.Pb), org.telegram.ui.ActionBar.l6.r1(0.5f, org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.y6, q1Var.Pb)))};
                 paint.setColor(iArr[0]);
                 this.c[i10].w0(new org.telegram.ui.ActionBar.u2(q1Var, iArr, paint));
             } else {
@@ -64,14 +64,14 @@ public final class k0 {
         }
         this.d.setTextSize(org.telegram.messenger.g0.L(11.0f));
         boolean q10 = p10.i(q1Var.Z5).q();
-        this.e = id.M0(q10 ? 2131748331 : 2131743857, null);
+        this.e = id.M0(q10 ? 2131748330 : 2131743854, null);
         this.i.setStyle(Paint.Style.STROKE);
         this.g = true;
         this.h = q10 ? null : q1Var.getContext().getResources().getDrawable(R.drawable.mini_switch_lock).mutate();
         if (b(this.o) == null) {
             this.k = null;
         } else {
-            this.k = new my0(jg.g.j(i7, "+"), 9.33f, org.telegram.messenger.g0.o());
+            this.k = new ny0(jg.g.j(i7, "+"), 9.33f, org.telegram.messenger.g0.o());
         }
     }
 
@@ -120,7 +120,7 @@ public final class k0 {
         }
         org.telegram.ui.Components.w8[] w8VarArr = {r3};
         this.b = w8VarArr;
-        org.telegram.ui.Components.w8 w8Var = new org.telegram.ui.Components.w8((org.telegram.ui.ActionBar.f6) null);
+        org.telegram.ui.Components.w8 w8Var = new org.telegram.ui.Components.w8((org.telegram.ui.ActionBar.g6) null);
         w8Var.p(tLObject);
         imageReceiverArr[0].i0(tLObject, w8VarArr[0], null);
         textPaint.setTextSize(org.telegram.messenger.g0.L(11.0f));
@@ -142,7 +142,7 @@ public final class k0 {
         if (b(tLObject) == null) {
             this.k = null;
         } else {
-            this.k = new my0(b(tLObject), 9.33f, org.telegram.messenger.g0.o());
+            this.k = new ny0(b(tLObject), 9.33f, org.telegram.messenger.g0.o());
         }
     }
 }

@@ -14,10 +14,10 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.messenger.id;
 import org.telegram.messenger.qp;
-import org.telegram.ui.Components.he0;
+import org.telegram.ui.Components.ie0;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w8 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -81,7 +81,7 @@ public final /* synthetic */ class w8 implements View.OnClickListener {
                         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
                         vaVar2.E2 = ofFloat;
                         ofFloat.addUpdateListener(new ea(vaVar2, 0));
-                        vaVar2.E2.addListener(new v9(vaVar2, 2));
+                        vaVar2.E2.addListener(new u9(vaVar2, 2));
                         vaVar2.E2.setStartDelay(80L);
                         vaVar2.E2.setDuration(z10 ? 320L : 450L);
                         vaVar2.E2.setInterpolator(z10 ? xq.i : xq.h);
@@ -118,9 +118,9 @@ public final /* synthetic */ class w8 implements View.OnClickListener {
                     if (vaVar.g0 == -1) {
                         m3 m3Var = vaVar.k1;
                         if (e7Var2.Y) {
-                            M0 = id.M0((!isEmpty || z11) ? 2131744595 : 2131744463, null);
+                            M0 = id.M0((!isEmpty || z11) ? 2131744592 : 2131744460, null);
                         } else {
-                            M0 = id.M0((!isEmpty || z11) ? 2131744594 : 2131744462, null);
+                            M0 = id.M0((!isEmpty || z11) ? 2131744591 : 2131744459, null);
                         }
                         boolean z12 = vaVar.k1.V;
                         if (m3Var.getMeasuredWidth() < 0) {
@@ -142,7 +142,7 @@ public final /* synthetic */ class w8 implements View.OnClickListener {
             case 3:
                 boolean k10 = vaVar.X0.k();
                 vaVar.X0.x(-9982, k10);
-                ((he0) vaVar.j1.c).a(!k10, true);
+                ((ie0) vaVar.j1.c).a(!k10, true);
                 break;
             case 4:
                 if (vaVar.B0 != null && !vaVar.S1) {

@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class hi implements Runnable {
     public final /* synthetic */ int a;
@@ -209,16 +209,16 @@ public final /* synthetic */ class hi implements Runnable {
                 ij ijVar2 = (ij) obj;
                 qpVar11.getClass();
                 long B0 = ij.B0(ijVar2.k);
-                int f12 = ijVar2.f1();
+                int e12 = ijVar2.e1();
                 a0.h hVar = qpVar11.J0;
                 ArrayList arrayList4 = (ArrayList) hVar.f(B0);
                 if (arrayList4 == null) {
                     arrayList4 = k5.j(hVar, B0);
                 }
-                if (arrayList4.contains(Integer.valueOf(f12))) {
+                if (arrayList4.contains(Integer.valueOf(e12))) {
                     return;
                 }
-                arrayList4.add(Integer.valueOf(f12));
+                arrayList4.add(Integer.valueOf(e12));
                 return;
             case 26:
                 qp qpVar12 = (qp) obj2;

@@ -11,7 +11,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class r8 extends View {
     public p8 a;
@@ -67,7 +67,7 @@ public final class r8 extends View {
             if (this.s == null) {
                 Paint paint2 = new Paint(1);
                 this.s = paint2;
-                paint2.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.wf, false));
+                paint2.setColor(org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.wf, false));
             }
             paint = this.s;
         }
@@ -86,7 +86,7 @@ public final class r8 extends View {
             this.h = getContext().getResources().getDrawable(R.drawable.msg_mini_lock2).mutate();
             boolean z9 = this.d && this.a == null;
             this.n = z9;
-            this.h.setColorFilter(new PorterDuffColorFilter(z9 ? org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.yf, false) : -1, PorterDuff.Mode.SRC_IN));
+            this.h.setColorFilter(new PorterDuffColorFilter(z9 ? org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.yf, false) : -1, PorterDuff.Mode.SRC_IN));
             this.h.setBounds((int) (measuredWidth - (r1.getIntrinsicWidth() / 2.0f)), (int) (measuredHeight - (this.h.getIntrinsicHeight() / 2.0f)), (int) ((this.h.getIntrinsicWidth() / 2.0f) + measuredWidth), (int) ((this.h.getIntrinsicHeight() / 2.0f) + measuredHeight));
             float T1 = org.telegram.messenger.g0.T1(1.05f, 0.92f, w5Var.c);
             canvas.save();
@@ -100,7 +100,7 @@ public final class r8 extends View {
                 if (this.f == null) {
                     Drawable drawable = getContext().getDrawable(R.drawable.msg_filled_plus);
                     this.f = drawable;
-                    drawable.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.yf, false), PorterDuff.Mode.MULTIPLY));
+                    drawable.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.yf, false), PorterDuff.Mode.MULTIPLY));
                 }
                 this.f.setBounds((int) (measuredWidth - (r1.getIntrinsicWidth() / 2.0f)), (int) (measuredHeight - (this.f.getIntrinsicHeight() / 2.0f)), (int) ((this.f.getIntrinsicWidth() / 2.0f) + measuredWidth), (int) ((this.f.getIntrinsicHeight() / 2.0f) + measuredHeight));
                 this.f.draw(canvas);

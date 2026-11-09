@@ -5,7 +5,7 @@ import android.view.View;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class fi implements org.telegram.messenger.d20 {
     public final /* synthetic */ int a;
@@ -28,9 +28,9 @@ public final /* synthetic */ class fi implements org.telegram.messenger.d20 {
                 th.f fVar = (th.f) obj2;
                 View view = (View) obj;
                 ImageReceiver imageReceiver = new ImageReceiver(view);
-                org.telegram.messenger.rz c11 = org.telegram.messenger.t5.c((org.telegram.ui.ActionBar.k6.I.q() ? 3 : 6) * 0.12f, org.telegram.ui.ActionBar.k6.Dc);
+                org.telegram.messenger.rz c11 = org.telegram.messenger.t5.c((org.telegram.ui.ActionBar.l6.I.q() ? 3 : 6) * 0.12f, org.telegram.ui.ActionBar.l6.Dc);
                 c11.t = true;
-                c11.m = org.telegram.ui.ActionBar.k6.ef;
+                c11.m = org.telegram.ui.ActionBar.l6.ef;
                 imageReceiver.s0(org.telegram.messenger.hc.p(org.telegram.messenger.m20.b(fVar.b.geo, org.telegram.messenger.qs.X4, org.telegram.messenger.qs.y2, 15, Math.min(2, (int) Math.ceil(org.telegram.messenger.g0.p)))), null, null, null, new np(c11), null, 0);
                 view.addOnAttachStateChangeListener(new org.telegram.ui.Cells.l8(imageReceiver, c10 == true ? 1 : 0));
                 imageReceiver.J0(org.telegram.messenger.g0.L(14.0f));
@@ -42,10 +42,10 @@ public final /* synthetic */ class fi implements org.telegram.messenger.d20 {
                 }
                 return Boolean.valueOf(i10 == 1);
             default:
-                q41 q41Var = (q41) obj2;
+                r41 r41Var = (r41) obj2;
                 View view2 = (View) obj;
-                q41Var.getClass();
-                return view2.getParent() != q41Var ? Boolean.FALSE : Boolean.valueOf(!l41.K(q41Var.T(view2).f));
+                r41Var.getClass();
+                return view2.getParent() != r41Var ? Boolean.FALSE : Boolean.valueOf(!m41.K(r41Var.T(view2).f));
         }
     }
 }

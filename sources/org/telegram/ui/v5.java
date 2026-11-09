@@ -7,7 +7,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class v5 extends rg.b {
     public final /* synthetic */ x5 d;
@@ -16,7 +16,7 @@ public final class v5 extends rg.b {
         this.d = x5Var;
     }
 
-    @Override // org.telegram.ui.Components.oj0
+    @Override // org.telegram.ui.Components.pj0
     public final boolean D(v4.d1 d1Var) {
         int i7 = d1Var.f;
         return i7 == 1 || i7 == 2 || i7 == 4;
@@ -43,7 +43,7 @@ public final class v5 extends rg.b {
             String str = null;
             if (e22 instanceof TLRPC.User) {
                 TLRPC.User user = (TLRPC.User) e22;
-                str = user.self ? org.telegram.messenger.id.M0(2131745904, null) : org.telegram.messenger.g5.m(0, user.first_name, user.last_name);
+                str = user.self ? org.telegram.messenger.id.M0(2131745901, null) : org.telegram.messenger.g5.m(0, user.first_name, user.last_name);
             } else if (e22 instanceof TLRPC.Chat) {
                 str = ((TLRPC.Chat) e22).title;
             }
@@ -59,23 +59,23 @@ public final class v5 extends rg.b {
         if (i7 != 1) {
             if (i7 == 2) {
                 View paVar = new org.telegram.ui.Cells.pa(4, 0, viewGroup.getContext(), null, false, false);
-                org.telegram.ui.ActionBar.r6.i(org.telegram.ui.ActionBar.k6.d6, paVar, null);
+                org.telegram.ui.ActionBar.s6.h(org.telegram.ui.ActionBar.l6.d6, paVar, null);
                 view2 = paVar;
             } else if (i7 == 3) {
                 view = new org.telegram.ui.Cells.y6(viewGroup.getContext(), (org.telegram.ui.Cells.f1) null);
             } else if (i7 == 4) {
                 org.telegram.ui.Cells.m8 m8Var = new org.telegram.ui.Cells.m8(viewGroup.getContext());
-                m8Var.k(org.telegram.messenger.id.M0(2131747916, null), false);
-                m8Var.g(-1, org.telegram.ui.ActionBar.k6.p7);
-                org.telegram.ui.ActionBar.r6.i(org.telegram.ui.ActionBar.k6.d6, m8Var, null);
+                m8Var.k(org.telegram.messenger.id.M0(2131747915, null), false);
+                m8Var.g(-1, org.telegram.ui.ActionBar.l6.p7);
+                org.telegram.ui.ActionBar.s6.h(org.telegram.ui.ActionBar.l6.d6, m8Var, null);
                 view = m8Var;
             }
             return jg.g.r(view2, view2, -1, -2);
         }
         org.telegram.ui.Cells.m8 m8Var2 = new org.telegram.ui.Cells.m8(viewGroup.getContext());
-        m8Var2.o(R.drawable.msg_contact_add, org.telegram.messenger.id.M0(2131747924, null), true);
-        m8Var2.g(org.telegram.ui.ActionBar.k6.v6, org.telegram.ui.ActionBar.k6.u6);
-        org.telegram.ui.ActionBar.r6.i(org.telegram.ui.ActionBar.k6.d6, m8Var2, null);
+        m8Var2.o(R.drawable.msg_contact_add, org.telegram.messenger.id.M0(2131747923, null), true);
+        m8Var2.g(org.telegram.ui.ActionBar.l6.v6, org.telegram.ui.ActionBar.l6.u6);
+        org.telegram.ui.ActionBar.s6.h(org.telegram.ui.ActionBar.l6.d6, m8Var2, null);
         view = m8Var2;
         view2 = view;
         return jg.g.r(view2, view2, -1, -2);

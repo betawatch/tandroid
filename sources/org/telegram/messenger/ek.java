@@ -7,7 +7,7 @@ import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.NotificationsSettingsActivity;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ek implements Runnable {
     public final /* synthetic */ int a;
@@ -115,8 +115,8 @@ public final /* synthetic */ class ek implements Runnable {
                             if (dialog != null && (i12 = dialog.top_message) > 0 && i12 <= valueAt && (arrayList2 = (ArrayList) hVar10.f(dialog.id)) != null) {
                                 for (int i21 = 0; i21 < arrayList2.size(); i21++) {
                                     ij ijVar = (ij) arrayList2.get(i21);
-                                    if (ijVar != null && !ijVar.O3()) {
-                                        ijVar.J5();
+                                    if (ijVar != null && !ijVar.N3()) {
+                                        ijVar.I5();
                                         i19 = 256;
                                     }
                                 }
@@ -155,8 +155,8 @@ public final /* synthetic */ class ek implements Runnable {
                             if (dialog2 != null && (i11 = dialog2.top_message) > 0 && i11 <= valueAt2 && (arrayList = (ArrayList) hVar10.f(dialog2.id)) != null) {
                                 for (int i24 = i7; i24 < arrayList.size(); i24++) {
                                     ij ijVar2 = (ij) arrayList.get(i24);
-                                    if (ijVar2 != null && ijVar2.O3()) {
-                                        ijVar2.J5();
+                                    if (ijVar2 != null && ijVar2.N3()) {
+                                        ijVar2.I5();
                                         i22 = 256;
                                     }
                                 }
@@ -186,7 +186,7 @@ public final /* synthetic */ class ek implements Runnable {
                             for (int i29 = i7; i29 < arrayList3.size(); i29++) {
                                 ij ijVar3 = (ij) arrayList3.get(i29);
                                 if (ijVar3 != null && ijVar3.k.date <= valueAt3) {
-                                    ijVar3.J5();
+                                    ijVar3.I5();
                                     i28 = 256;
                                 }
                             }
@@ -236,7 +236,7 @@ public final /* synthetic */ class ek implements Runnable {
                                     ij ijVar4 = (ij) qpVar.U.get(((Integer) arrayList5.get(i34)).intValue());
                                     if (ijVar4 != null) {
                                         if (r2.a) {
-                                            a8.b("mark messages " + ijVar4.f1() + " deleted");
+                                            a8.b("mark messages " + ijVar4.e1() + " deleted");
                                         }
                                         ijVar4.Z = true;
                                     }
@@ -252,7 +252,7 @@ public final /* synthetic */ class ek implements Runnable {
                                             int i36 = i7;
                                             while (i36 < size5) {
                                                 i15 = i32;
-                                                if (ijVar5.f1() == ((Integer) arrayList5.get(i36)).intValue()) {
+                                                if (ijVar5.e1() == ((Integer) arrayList5.get(i36)).intValue()) {
                                                     ijVar5.Z = true;
                                                     i35++;
                                                     i32 = i15;
@@ -341,7 +341,7 @@ public final /* synthetic */ class ek implements Runnable {
                                     break;
                                 }
                                 ij ijVar6 = (ij) arrayList10.get(i40);
-                                if (ijVar6 == null || ijVar6.f1() > valueAt4) {
+                                if (ijVar6 == null || ijVar6.e1() > valueAt4) {
                                     i40++;
                                 } else {
                                     ijVar6.Z = true;

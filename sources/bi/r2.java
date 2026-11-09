@@ -15,13 +15,13 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.cn0;
-import org.telegram.ui.pn;
-import org.telegram.ui.qw;
-import org.telegram.ui.ww;
-import org.telegram.ui.xv;
+import org.telegram.ui.en0;
+import org.telegram.ui.rn;
+import org.telegram.ui.sw;
+import org.telegram.ui.yw;
+import org.telegram.ui.zv;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r2 implements c20 {
     public final /* synthetic */ int a;
@@ -30,9 +30,9 @@ public final /* synthetic */ class r2 implements c20 {
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ r2(di.y6 y6Var, c20 c20Var, long j3, TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus) {
+    public /* synthetic */ r2(di.z6 z6Var, c20 c20Var, long j3, TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus) {
         this.a = 3;
-        this.c = y6Var;
+        this.c = z6Var;
         this.e = c20Var;
         this.b = j3;
         this.d = tL_premium_boostsStatus;
@@ -77,14 +77,14 @@ public final /* synthetic */ class r2 implements c20 {
                 }
                 break;
             case 2:
-                di.y6 y6Var = (di.y6) obj4;
+                di.z6 z6Var = (di.z6) obj4;
                 c20 c20Var = (c20) obj3;
                 qp qpVar = (qp) obj2;
                 TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = (TL_stories.TL_premium_boostsStatus) obj;
                 if (tL_premium_boostsStatus != null) {
                     org.telegram.messenger.f3 G0 = qpVar.G0();
                     long j10 = this.b;
-                    G0.b(j10, tL_premium_boostsStatus, new r2(y6Var, c20Var, j10, tL_premium_boostsStatus));
+                    G0.b(j10, tL_premium_boostsStatus, new r2(z6Var, c20Var, j10, tL_premium_boostsStatus));
                     c20Var.a(Boolean.FALSE);
                     break;
                 } else {
@@ -92,13 +92,13 @@ public final /* synthetic */ class r2 implements c20 {
                     break;
                 }
             case 3:
-                di.y6 y6Var2 = (di.y6) obj4;
+                di.z6 z6Var2 = (di.z6) obj4;
                 c20 c20Var2 = (c20) obj2;
                 TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus2 = (TL_stories.TL_premium_boostsStatus) obj3;
                 org.telegram.messenger.e3 e3Var = (org.telegram.messenger.e3) obj;
                 if (e3Var != null) {
                     org.telegram.ui.ActionBar.f2 Q = LaunchActivity.Q();
-                    r3 r3Var = y6Var2.j(j3) ? new r3(y6Var2, j3, 5) : null;
+                    r3 r3Var = z6Var2.j(j3) ? new r3(z6Var2, j3, 5) : null;
                     int i11 = ug.i0.O2;
                     if (Q != null && tL_premium_boostsStatus2 != null && Q.getContext() != null) {
                         ug.i0 i0Var2 = new ug.i0(18, Q.getCurrentAccount(), Q.getContext(), Q, Q.getResourceProvider());
@@ -115,25 +115,25 @@ public final /* synthetic */ class r2 implements c20 {
                     break;
                 }
             case 4:
-                pn.d0((pn) obj4, (org.telegram.ui.ActionBar.u1) obj2, (TL_stories.TL_premium_boostsStatus) obj3, this.b, (org.telegram.messenger.e3) obj);
+                rn.d0((rn) obj4, (org.telegram.ui.ActionBar.u1) obj2, (TL_stories.TL_premium_boostsStatus) obj3, this.b, (org.telegram.messenger.e3) obj);
                 break;
             case 5:
                 org.telegram.ui.ActionBar.f2[] f2VarArr = (org.telegram.ui.ActionBar.f2[]) obj2;
                 ((org.telegram.ui.ActionBar.u1) obj3).dismiss();
-                ww wwVar = ((xv) obj4).b;
-                wwVar.getMessagesController().T2(Long.valueOf(j3), null, 32);
-                qw qwVar = wwVar.C2;
-                wwVar.removeSelfFromStack();
+                yw ywVar = ((zv) obj4).b;
+                ywVar.getMessagesController().T2(Long.valueOf(j3), null, 32);
+                sw swVar = ywVar.D2;
+                ywVar.removeSelfFromStack();
                 if (f2VarArr[1] != null) {
                     f2VarArr[0].removeSelfFromStack();
                     f2VarArr[1].finishFragment();
                 } else {
                     f2VarArr[0].finishFragment();
                 }
-                if (qwVar != null) {
+                if (swVar != null) {
                     ArrayList arrayList = new ArrayList();
                     arrayList.add(xr.a(-j3, 0L));
-                    qwVar.y(wwVar, arrayList, null, false, wwVar.J2, wwVar.K2, wwVar.L2, null);
+                    swVar.y(ywVar, arrayList, null, false, ywVar.K2, ywVar.L2, ywVar.M2, null);
                     break;
                 }
                 break;
@@ -144,7 +144,7 @@ public final /* synthetic */ class r2 implements c20 {
                 Bitmap bitmap = (Bitmap) obj;
                 Drawable[] drawableArr = PhotoViewer.Y8;
                 if (bitmap == null) {
-                    org.telegram.messenger.g0.h3(new cn0(photoViewer, 18));
+                    org.telegram.messenger.g0.h3(new en0(photoViewer, 18));
                     break;
                 } else {
                     try {
@@ -162,7 +162,7 @@ public final /* synthetic */ class r2 implements c20 {
                         break;
                     } catch (Exception e10) {
                         org.telegram.messenger.a8.g(e10, true);
-                        org.telegram.messenger.g0.h3(new cn0(photoViewer, 19));
+                        org.telegram.messenger.g0.h3(new en0(photoViewer, 19));
                         return;
                     }
                 }
@@ -170,7 +170,7 @@ public final /* synthetic */ class r2 implements c20 {
                 i5 i5Var = (i5) obj3;
                 vf.b bVar = (vf.b) obj;
                 bVar.d();
-                i5Var.s1(j3, new di.s2((zh.g1) obj4, bVar, (c20) obj2, i5Var, 19));
+                i5Var.r1(j3, new di.s2((zh.g1) obj4, bVar, (c20) obj2, i5Var, 19));
                 break;
         }
     }
@@ -191,9 +191,9 @@ public final /* synthetic */ class r2 implements c20 {
         this.b = j3;
     }
 
-    public /* synthetic */ r2(pn pnVar, org.telegram.ui.ActionBar.u1 u1Var, TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus, long j3) {
+    public /* synthetic */ r2(rn rnVar, org.telegram.ui.ActionBar.u1 u1Var, TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus, long j3) {
         this.a = 4;
-        this.c = pnVar;
+        this.c = rnVar;
         this.e = u1Var;
         this.d = tL_premium_boostsStatus;
         this.b = j3;

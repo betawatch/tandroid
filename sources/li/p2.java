@@ -28,13 +28,13 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.RLottieNative;
-import org.telegram.ui.Components.xt0;
-import org.telegram.ui.Components.yt0;
+import org.telegram.ui.Components.au0;
+import org.telegram.ui.Components.bu0;
 import org.telegram.ui.Components.zt0;
 import org.telegram.ui.Wallet.WalletEngine2;
-import org.telegram.ui.xm0;
+import org.telegram.ui.zm0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p2 implements Runnable {
     public final /* synthetic */ int a = 2;
@@ -454,15 +454,15 @@ public final /* synthetic */ class p2 implements Runnable {
                 });
                 return;
             case 1:
-                zt0 zt0Var = (zt0) this.d;
+                bu0 bu0Var = (bu0) this.d;
                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) this.e;
                 ij ijVar = (ij) this.f;
                 org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) this.h;
-                RLottieNative[] rLottieNativeArr = zt0Var.f1;
-                RLottieNative[] rLottieNativeArr2 = zt0Var.i1;
-                int[] iArr = zt0Var.e;
-                if (zt0Var.W0) {
-                    org.telegram.messenger.g0.h3(new xt0(zt0Var, 0));
+                RLottieNative[] rLottieNativeArr = bu0Var.f1;
+                RLottieNative[] rLottieNativeArr2 = bu0Var.i1;
+                int[] iArr = bu0Var.e;
+                if (bu0Var.W0) {
+                    org.telegram.messenger.g0.h3(new zt0(bu0Var, 0));
                     return;
                 }
                 boolean z11 = false;
@@ -472,23 +472,23 @@ public final /* synthetic */ class p2 implements Runnable {
                     int i24 = this.b;
                     if (i23 >= length) {
                         if (z11) {
-                            org.telegram.messenger.g0.h3(new xt0(zt0Var, 1));
+                            org.telegram.messenger.g0.h3(new zt0(bu0Var, 1));
                             return;
                         } else {
-                            org.telegram.messenger.g0.h3(new org.telegram.messenger.voip.k0(zt0Var, this.c, i24, q1Var));
+                            org.telegram.messenger.g0.h3(new org.telegram.messenger.voip.k0(bu0Var, this.c, i24, q1Var));
                             return;
                         }
                     }
                     if (i23 <= 2) {
                         if (rLottieNativeArr2[i23] == null) {
                             if (i23 == 0) {
-                                int i25 = zt0Var.b1;
+                                int i25 = bu0Var.b1;
                                 i17 = i25 == 1 ? 5 : i25 == 2 ? 6 : i25 == 3 ? 7 : i25 == 4 ? 4 : 3;
                             } else if (i23 == 1) {
-                                int i26 = zt0Var.c1;
+                                int i26 = bu0Var.c1;
                                 i17 = i26 == 1 ? 11 : i26 == 2 ? 12 : i26 == 3 ? 13 : i26 == 4 ? 10 : 9;
                             } else {
-                                int i27 = zt0Var.d1;
+                                int i27 = bu0Var.d1;
                                 i17 = i27 == 1 ? 17 : i27 == 2 ? 18 : i27 == 3 ? 19 : i27 == 4 ? 16 : 15;
                             }
                             TLRPC.Document document = tL_messages_stickerSet.documents.get(i17);
@@ -498,13 +498,13 @@ public final /* synthetic */ class p2 implements Runnable {
                                 RLottieNative b10 = RLottieNative.b(y22, iArr, null, null);
                                 if (i23 <= 2) {
                                     rLottieNativeArr2[i23] = b10;
-                                    zt0Var.j1[i23] = iArr[0];
+                                    bu0Var.j1[i23] = iArr[0];
                                 } else {
                                     rLottieNativeArr[i23 == 3 ? (char) 0 : (char) 4] = b10;
-                                    zt0Var.g1[i23 == 3 ? (char) 0 : (char) 4] = iArr[0];
+                                    bu0Var.g1[i23 == 3 ? (char) 0 : (char) 4] = iArr[0];
                                 }
                             } else {
-                                org.telegram.messenger.g0.h3(new yt0(document, i24, ijVar, q1Var, tL_messages_stickerSet, 0));
+                                org.telegram.messenger.g0.h3(new au0(document, i24, ijVar, q1Var, tL_messages_stickerSet, 0));
                                 z11 = true;
                             }
                         }
@@ -527,13 +527,13 @@ public final /* synthetic */ class p2 implements Runnable {
                 org.telegram.ui.Components.voip.y1.g(activity, this.b, inputGroupCall, this.c, groupCall, hashSet);
                 return;
             case 3:
-                xm0 xm0Var = (xm0) this.d;
+                zm0 zm0Var = (zm0) this.d;
                 String str4 = (String) this.f;
                 TLObject tLObject = (TLObject) this.e;
                 TLRPC.User user2 = (TLRPC.User) this.h;
-                HashMap hashMap = xm0Var.h;
-                ArrayList arrayList = xm0Var.f;
-                ArrayList arrayList2 = xm0Var.n;
+                HashMap hashMap = zm0Var.h;
+                ArrayList arrayList = zm0Var.f;
+                ArrayList arrayList2 = zm0Var.n;
                 int size = arrayList2.size();
                 int i28 = 0;
                 int i29 = 0;
@@ -550,14 +550,14 @@ public final /* synthetic */ class p2 implements Runnable {
                 while (arrayList2.size() > 20) {
                     a8.p0.z(1, arrayList2);
                 }
-                xm0Var.h0();
-                if (this.b != xm0Var.D) {
+                zm0Var.h0();
+                if (this.b != zm0Var.D) {
                     return;
                 }
                 int size2 = arrayList.size();
                 if (tLObject != null) {
                     TLRPC.messages_BotResults messages_botresults = (TLRPC.messages_BotResults) tLObject;
-                    xm0Var.x = messages_botresults.next_offset;
+                    zm0Var.x = messages_botresults.next_offset;
                     int size3 = messages_botresults.results.size();
                     int i30 = 0;
                     i18 = 0;
@@ -615,7 +615,7 @@ public final /* synthetic */ class p2 implements Runnable {
                                         if (photo2 == null) {
                                             user = user2;
                                             i19 = size3;
-                                            TLRPC.PhotoSize w12 = w7.w(photo2.sizes, xm0Var.R, true, null, false);
+                                            TLRPC.PhotoSize w12 = w7.w(photo2.sizes, zm0Var.R, true, null, false);
                                             if (w12 != null) {
                                                 botInlineResult.document.thumbs.add(w12);
                                                 botInlineResult.document.flags |= 1;
@@ -652,18 +652,18 @@ public final /* synthetic */ class p2 implements Runnable {
                         size3 = i19;
                         i28 = 0;
                     }
-                    xm0Var.s = size2 == arrayList.size() || xm0Var.x == null;
+                    zm0Var.s = size2 == arrayList.size() || zm0Var.x == null;
                 } else {
                     i18 = 0;
                 }
-                xm0Var.r = false;
+                zm0Var.r = false;
                 if (i18 != 0) {
-                    xm0Var.L.o(size2, i18);
-                } else if (xm0Var.s) {
+                    zm0Var.L.o(size2, i18);
+                } else if (zm0Var.s) {
                     z9 = true;
-                    xm0Var.L.s(arrayList.size() - 1);
+                    zm0Var.L.s(arrayList.size() - 1);
                     if (arrayList.size() > 0) {
-                        xm0Var.N.e(false, z9);
+                        zm0Var.N.e(false, z9);
                         return;
                     }
                     return;
@@ -673,8 +673,8 @@ public final /* synthetic */ class p2 implements Runnable {
                 }
                 break;
             default:
-                org.telegram.ui.Wallet.m0 m0Var = (org.telegram.ui.Wallet.m0) this.d;
-                org.telegram.ui.Wallet.j0 j0Var = (org.telegram.ui.Wallet.j0) this.e;
+                org.telegram.ui.Wallet.l0 l0Var = (org.telegram.ui.Wallet.l0) this.d;
+                org.telegram.ui.Wallet.i0 i0Var = (org.telegram.ui.Wallet.i0) this.e;
                 TL_wallet.proofChallenge proofchallenge = (TL_wallet.proofChallenge) this.f;
                 v10 v10Var = (v10) this.h;
                 boolean z13 = this.c;
@@ -682,19 +682,19 @@ public final /* synthetic */ class p2 implements Runnable {
                 WalletEngine2.ImportedWalletProof importedWalletProof = null;
                 try {
                     try {
-                        WalletEngine2.ImportedWalletProof createImportProof = z13 ? WalletEngine2.createImportProof(j0Var, proofchallenge.domain, proofchallenge.payload, i33) : WalletEngine2.createOwnershipProof(j0Var, proofchallenge.domain, proofchallenge.payload, i33);
-                        j0Var.close();
+                        WalletEngine2.ImportedWalletProof createImportProof = z13 ? WalletEngine2.createImportProof(i0Var, proofchallenge.domain, proofchallenge.payload, i33) : WalletEngine2.createOwnershipProof(i0Var, proofchallenge.domain, proofchallenge.payload, i33);
+                        i0Var.close();
                         importedWalletProof = createImportProof;
                         e = null;
                     } catch (Exception e21) {
                         e = e21;
-                        org.telegram.ui.Wallet.m0.k("createImportProof", e);
-                        j0Var.close();
+                        org.telegram.ui.Wallet.l0.k("createImportProof", e);
+                        i0Var.close();
                     }
-                    org.telegram.messenger.g0.h3(new org.telegram.ui.Wallet.g(m0Var, importedWalletProof, e, v10Var));
+                    org.telegram.messenger.g0.h3(new org.telegram.ui.Wallet.g(l0Var, importedWalletProof, e, v10Var));
                     return;
                 } catch (Throwable th7) {
-                    j0Var.close();
+                    i0Var.close();
                     throw th7;
                 }
         }
@@ -709,8 +709,8 @@ public final /* synthetic */ class p2 implements Runnable {
         this.h = aVar;
     }
 
-    public /* synthetic */ p2(zt0 zt0Var, TLRPC.TL_messages_stickerSet tL_messages_stickerSet, int i7, ij ijVar, org.telegram.ui.Cells.q1 q1Var, boolean z9) {
-        this.d = zt0Var;
+    public /* synthetic */ p2(bu0 bu0Var, TLRPC.TL_messages_stickerSet tL_messages_stickerSet, int i7, ij ijVar, org.telegram.ui.Cells.q1 q1Var, boolean z9) {
+        this.d = bu0Var;
         this.e = tL_messages_stickerSet;
         this.b = i7;
         this.f = ijVar;
@@ -718,8 +718,8 @@ public final /* synthetic */ class p2 implements Runnable {
         this.c = z9;
     }
 
-    public /* synthetic */ p2(xm0 xm0Var, String str, int i7, TLObject tLObject, boolean z9, TLRPC.User user) {
-        this.d = xm0Var;
+    public /* synthetic */ p2(zm0 zm0Var, String str, int i7, TLObject tLObject, boolean z9, TLRPC.User user) {
+        this.d = zm0Var;
         this.f = str;
         this.b = i7;
         this.e = tLObject;
@@ -727,10 +727,10 @@ public final /* synthetic */ class p2 implements Runnable {
         this.h = user;
     }
 
-    public /* synthetic */ p2(org.telegram.ui.Wallet.m0 m0Var, boolean z9, org.telegram.ui.Wallet.j0 j0Var, TL_wallet.proofChallenge proofchallenge, int i7, v10 v10Var) {
-        this.d = m0Var;
+    public /* synthetic */ p2(org.telegram.ui.Wallet.l0 l0Var, boolean z9, org.telegram.ui.Wallet.i0 i0Var, TL_wallet.proofChallenge proofchallenge, int i7, v10 v10Var) {
+        this.d = l0Var;
         this.c = z9;
-        this.e = j0Var;
+        this.e = i0Var;
         this.f = proofchallenge;
         this.b = i7;
         this.h = v10Var;

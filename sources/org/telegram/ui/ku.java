@@ -1,56 +1,32 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import android.view.View;
-import java.util.ArrayList;
-import org.scilab.forge.jlatexmath.TeXSymbolParser;
-
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ku implements org.telegram.ui.Components.bj0 {
+public final /* synthetic */ class ku implements org.telegram.messenger.sr {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ww b;
+    public final /* synthetic */ yw b;
 
-    public /* synthetic */ ku(ww wwVar, int i7) {
+    public /* synthetic */ ku(yw ywVar, int i7) {
         this.a = i7;
-        this.b = wwVar;
+        this.b = ywVar;
     }
 
-    @Override // org.telegram.ui.Components.bj0
-    public final void c(int i7, View view) {
+    @Override // org.telegram.messenger.sr
+    public final void a(int i7) {
         switch (this.a) {
             case 0:
-                ww wwVar = this.b;
-                Object obj = wwVar.C0.x0.G(i7).G;
-                if (!(obj instanceof org.telegram.messenger.ij)) {
-                    if (obj instanceof di.k6) {
-                        di.k6 k6Var = (di.k6) obj;
-                        Bundle f10 = rf.b.f(3, TeXSymbolParser.TYPE_ATTR);
-                        f10.putString("hashtag", k6Var.C);
-                        f10.putInt("storiesCount", k6Var.J);
-                        wwVar.presentFragment(new org.telegram.ui.Components.u80(f10, null));
-                        break;
-                    }
-                } else {
-                    org.telegram.messenger.ij ijVar = (org.telegram.messenger.ij) obj;
-                    Bundle bundle = new Bundle();
-                    if (org.telegram.messenger.ij.B0(ijVar.k) >= 0) {
-                        bundle.putLong("user_id", org.telegram.messenger.ij.B0(ijVar.k));
-                    } else {
-                        bundle.putLong("chat_id", -org.telegram.messenger.ij.B0(ijVar.k));
-                    }
-                    bundle.putInt("message_id", ijVar.f1());
-                    an anVar = new an(bundle);
-                    ww.p4(anVar, ijVar);
-                    wwVar.presentFragment(anVar);
-                    break;
-                }
+                yw ywVar = this.b;
+                ywVar.getClass();
+                ywVar.V1 = i7 != 0;
+                org.telegram.messenger.qp.f1().edit().putBoolean("askAboutContacts", ywVar.V1).apply();
+                ywVar.u3(false);
                 break;
             default:
-                ww wwVar2 = this.b;
-                wwVar2.b0.I0(true);
-                ArrayList arrayList = wwVar2.b0.e3;
-                wwVar2.t3(arrayList.isEmpty() ? jg.q0.j3[i7] : (jg.o0) arrayList.get(i7));
+                yw ywVar2 = this.b;
+                ywVar2.getClass();
+                ywVar2.V1 = i7 != 0;
+                org.telegram.messenger.qp.f1().edit().putBoolean("askAboutContacts", ywVar2.V1).commit();
+                ywVar2.u3(false);
                 break;
         }
     }

@@ -27,12 +27,12 @@ import org.telegram.messenger.g0;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.k5;
 import org.telegram.messenger.qs;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.Cells.o8;
 import org.telegram.ui.Cells.q1;
 import org.telegram.ui.Components.kb;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class h extends Drawable implements Animator.AnimatorListener {
     public static final RectF b0 = new RectF();
@@ -93,8 +93,8 @@ public final class h extends Drawable implements Animator.AnimatorListener {
                 this.y = mutate;
                 q1Var.setHideSideButtonByQuickShare(true);
                 iVar.performHapticFeedback(3, 1);
-                int w02 = k6.w0(k6.G8, this.D.getResourcesProvider());
-                mutate.setColorFilter(new PorterDuffColorFilter(k6.x0(null, k6.He, false), PorterDuff.Mode.MULTIPLY));
+                int w02 = l6.w0(l6.G8, this.D.getResourcesProvider());
+                mutate.setColorFilter(new PorterDuffColorFilter(l6.x0(null, l6.He, false), PorterDuff.Mode.MULTIPLY));
                 LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, 0.0f, g0.L(100.0f), new int[]{w02, 16777215 & w02}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
                 this.f = linearGradient;
                 this.c.setShader(linearGradient);
@@ -339,10 +339,10 @@ public final class h extends Drawable implements Animator.AnimatorListener {
                                         Z1.setAlpha(alpha2);
                                     }
                                     if (g22 || paint != null) {
-                                        int alpha3 = k6.h2.getAlpha();
-                                        k6.h2.setAlpha((int) (alpha3 * f25));
-                                        canvas3.drawRoundRect(rectF3, L4, L4, k6.h2);
-                                        k6.h2.setAlpha(alpha3);
+                                        int alpha3 = l6.h2.getAlpha();
+                                        l6.h2.setAlpha((int) (alpha3 * f25));
+                                        canvas3.drawRoundRect(rectF3, L4, L4, l6.h2);
+                                        l6.h2.setAlpha(alpha3);
                                     }
                                     canvas3.save();
                                     canvas3.translate(f23 + g0.L(f26), ((g0.L(f22) - dVar2.h.getHeight()) / 2.0f) + f24);
@@ -509,10 +509,10 @@ public final class h extends Drawable implements Animator.AnimatorListener {
                                                     Z1.setAlpha(alpha2);
                                                 }
                                                 if (g22 || paint2 != null) {
-                                                    int alpha3 = k6.h2.getAlpha();
-                                                    k6.h2.setAlpha((int) (alpha3 * f252));
-                                                    canvas3.drawRoundRect(rectF32, L42, L42, k6.h2);
-                                                    k6.h2.setAlpha(alpha3);
+                                                    int alpha3 = l6.h2.getAlpha();
+                                                    l6.h2.setAlpha((int) (alpha3 * f252));
+                                                    canvas3.drawRoundRect(rectF32, L42, L42, l6.h2);
+                                                    l6.h2.setAlpha(alpha3);
                                                 }
                                                 canvas3.save();
                                                 canvas3.translate(f232 + g0.L(f262), ((g0.L(f222) - dVar22.h.getHeight()) / 2.0f) + f242);

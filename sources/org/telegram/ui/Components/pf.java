@@ -13,7 +13,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.StickersActivity;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class pf implements ix {
     public final /* synthetic */ ChatActivityEnterView a;
@@ -30,14 +30,14 @@ public final class pf implements ix {
     public final void B(View view, Object obj, String str, Object obj2, boolean z9, int i7, int i10, org.telegram.messenger.gf gfVar, boolean z10) {
         ChatActivityEnterView chatActivityEnterView = this.a;
         eg egVar = chatActivityEnterView.F0;
-        org.telegram.ui.an anVar = chatActivityEnterView.P2;
-        org.telegram.ui.qm qmVar = chatActivityEnterView.V2;
-        if (qmVar != null && anVar != null && qmVar.f) {
-            anVar.uc();
+        org.telegram.ui.cn cnVar = chatActivityEnterView.P2;
+        org.telegram.ui.sm smVar = chatActivityEnterView.V2;
+        if (smVar != null && cnVar != null && smVar.f) {
+            cnVar.xc();
             return;
         }
         if (c() && i7 == 0) {
-            v4.J(chatActivityEnterView.O2, anVar.a(), new org.telegram.ui.pp(this, view, obj, str, obj2, gfVar, z10), chatActivityEnterView.W3);
+            v4.J(chatActivityEnterView.O2, cnVar.a(), new org.telegram.ui.rp(this, view, obj, str, obj2, gfVar, z10), chatActivityEnterView.W3);
             return;
         }
         if (chatActivityEnterView.G0 <= 0 || c()) {
@@ -46,7 +46,7 @@ public final class pf implements ix {
         }
         wf wfVar = chatActivityEnterView.Z2;
         if (wfVar != null) {
-            wfVar.i1(view != null ? view : egVar, ((org.telegram.ui.ActionBar.k5) egVar.c).getText(), true);
+            wfVar.i1(view != null ? view : egVar, ((org.telegram.ui.ActionBar.l5) egVar.c).getText(), true);
         }
     }
 
@@ -57,14 +57,14 @@ public final class pf implements ix {
 
     @Override // org.telegram.ui.Components.ix
     public final boolean b() {
-        org.telegram.ui.an anVar = this.a.P2;
-        return anVar != null && anVar.R6();
+        org.telegram.ui.cn cnVar = this.a.P2;
+        return cnVar != null && cnVar.S6();
     }
 
     @Override // org.telegram.ui.Components.ix
     public final boolean c() {
-        org.telegram.ui.an anVar = this.a.P2;
-        return anVar != null && anVar.c();
+        org.telegram.ui.cn cnVar = this.a.P2;
+        return cnVar != null && cnVar.c();
     }
 
     @Override // org.telegram.ui.Components.ix
@@ -88,10 +88,10 @@ public final class pf implements ix {
             inputStickerSet.access_hash = stickerSet.access_hash;
             inputStickerSet.id = stickerSet.id;
         }
-        yv0 yv0Var = new yv0(chatActivityEnterView.O2, f2Var2, inputStickerSet, null, chatActivityEnterView, chatActivityEnterView.W3);
-        f2Var2.showDialog(yv0Var);
+        zv0 zv0Var = new zv0(chatActivityEnterView.O2, f2Var2, inputStickerSet, null, chatActivityEnterView, chatActivityEnterView.W3);
+        f2Var2.showDialog(zv0Var);
         if (z9) {
-            yv0Var.N0();
+            zv0Var.N0();
         }
     }
 
@@ -99,11 +99,11 @@ public final class pf implements ix {
     public final void e(Object obj, Object obj2) {
         File file;
         ChatActivityEnterView chatActivityEnterView = this.a;
-        org.telegram.ui.an anVar = chatActivityEnterView.P2;
-        if (anVar == null) {
+        org.telegram.ui.cn cnVar = chatActivityEnterView.P2;
+        if (cnVar == null) {
             return;
         }
-        PhotoViewer.p1().H2(null, anVar, anVar.xa);
+        PhotoViewer.p1().H2(null, cnVar, cnVar.za);
         if (obj instanceof TLRPC.Document) {
             org.telegram.messenger.w7.G(chatActivityEnterView.Q);
             file = org.telegram.messenger.w7.I((TLRPC.Document) obj);
@@ -225,7 +225,7 @@ public final class pf implements ix {
                 if (view == null) {
                     view = egVar;
                 }
-                wfVar.i1(view, ((org.telegram.ui.ActionBar.k5) egVar.c).getText(), true);
+                wfVar.i1(view, ((org.telegram.ui.ActionBar.l5) egVar.c).getText(), true);
                 return;
             }
             return;
@@ -258,7 +258,7 @@ public final class pf implements ix {
             chatActivityEnterView.n1(false, true, false, true);
         }
         chatActivityEnterView.a(document, str, obj, ejVar, false, z9, i7, 0);
-        if (org.telegram.messenger.m5.C(chatActivityEnterView.Q2) && org.telegram.messenger.ij.t3(document, false)) {
+        if (org.telegram.messenger.m5.C(chatActivityEnterView.Q2) && org.telegram.messenger.ij.s3(document, false)) {
             org.telegram.messenger.qp.s1(chatActivityEnterView.R.a).t4(obj, document);
         }
     }
@@ -267,8 +267,8 @@ public final class pf implements ix {
     public final void n() {
         Activity activity;
         ChatActivityEnterView chatActivityEnterView = this.a;
-        org.telegram.ui.an anVar = chatActivityEnterView.P2;
-        if (anVar == null || (activity = chatActivityEnterView.O2) == null) {
+        org.telegram.ui.cn cnVar = chatActivityEnterView.P2;
+        if (cnVar == null || (activity = chatActivityEnterView.O2) == null) {
             return;
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, activity, chatActivityEnterView.W3);
@@ -278,11 +278,11 @@ public final class pf implements ix {
         u1Var.T = org.telegram.messenger.id.M0(2131752069, null);
         alertDialog$Builder.k(org.telegram.messenger.id.M0(2131752099, null), new u(this, 17));
         alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), null);
-        anVar.showDialog(u1Var);
+        cnVar.showDialog(u1Var);
     }
 
     @Override // org.telegram.ui.Components.ix
-    public final void o(t31 t31Var) {
+    public final void o(u31 u31Var) {
         ChatActivityEnterView chatActivityEnterView = this.a;
         org.telegram.ui.ActionBar.f2 f2Var = chatActivityEnterView.P2;
         if (f2Var == null) {
@@ -290,7 +290,7 @@ public final class pf implements ix {
         }
         org.telegram.ui.ActionBar.f2 f2Var2 = f2Var;
         if (f2Var2 != null) {
-            chatActivityEnterView.a3 = new of(this, chatActivityEnterView.getContext(), f2Var2, t31Var, chatActivityEnterView.W3);
+            chatActivityEnterView.a3 = new of(this, chatActivityEnterView.getContext(), f2Var2, u31Var, chatActivityEnterView.W3);
             wf wfVar = chatActivityEnterView.Z2;
             if (wfVar != null) {
                 wfVar.B(true);
@@ -329,9 +329,9 @@ public final class pf implements ix {
 
     @Override // org.telegram.ui.Components.ix
     public final void t(ArrayList arrayList) {
-        org.telegram.ui.an anVar = this.a.P2;
-        if (anVar != null) {
-            anVar.presentFragment(new StickersActivity(5, arrayList));
+        org.telegram.ui.cn cnVar = this.a.P2;
+        if (cnVar != null) {
+            cnVar.presentFragment(new StickersActivity(5, arrayList));
         }
     }
 
@@ -347,9 +347,9 @@ public final class pf implements ix {
 
     @Override // org.telegram.ui.Components.ix
     public final void w() {
-        org.telegram.ui.an anVar = this.a.P2;
-        if (anVar != null) {
-            anVar.presentFragment(new StickersActivity(0, null));
+        org.telegram.ui.cn cnVar = this.a.P2;
+        if (cnVar != null) {
+            cnVar.presentFragment(new StickersActivity(0, null));
         }
     }
 
@@ -366,14 +366,14 @@ public final class pf implements ix {
     @Override // org.telegram.ui.Components.ix
     public final void y(long j3) {
         ChatActivityEnterView chatActivityEnterView = this.a;
-        org.telegram.ui.an anVar = chatActivityEnterView.P2;
-        if (anVar != null) {
+        org.telegram.ui.cn cnVar = chatActivityEnterView.P2;
+        if (cnVar != null) {
             if (org.telegram.messenger.g0.Q1()) {
                 chatActivityEnterView.k0(false);
             }
-            org.telegram.ui.m50 m50Var = new org.telegram.ui.m50(j3);
-            m50Var.j0(chatActivityEnterView.d2);
-            anVar.presentFragment(m50Var);
+            org.telegram.ui.o50 o50Var = new org.telegram.ui.o50(j3);
+            o50Var.j0(chatActivityEnterView.d2);
+            cnVar.presentFragment(o50Var);
         }
     }
 

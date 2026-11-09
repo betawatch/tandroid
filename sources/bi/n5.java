@@ -6,7 +6,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n5 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -75,7 +75,7 @@ public final /* synthetic */ class n5 implements View.OnClickListener {
                                 d6Var2.T = null;
                             }
                             textView.setText("");
-                            d6Var2.L.setText(org.telegram.messenger.id.a0(null, null, 2131749777, hi.j.J0(d6Var2.getGiftsSuccessChance())));
+                            d6Var2.L.setText(org.telegram.messenger.id.a0(null, null, 2131749776, hi.j.J0(d6Var2.getGiftsSuccessChance())));
                             for (int i10 = 0; i10 < b6VarArr.length; i10++) {
                                 b6 b6Var3 = b6VarArr[i10];
                                 if (b6Var3 != null) {

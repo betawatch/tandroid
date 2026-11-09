@@ -14,7 +14,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.id;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class o2 extends FrameLayout {
     public final org.telegram.ui.Components.q5 a;
@@ -24,23 +24,23 @@ public final class o2 extends FrameLayout {
     public boolean e;
     public boolean f;
 
-    public o2(int i7, Context context, f6 f6Var) {
+    public o2(int i7, Context context, g6 g6Var) {
         super(context);
         this.f = false;
         this.d = i7;
         if (i7 != 4) {
-            setBackgroundDrawable(k6.M0(f6Var, false));
+            setBackgroundDrawable(l6.M0(g6Var, false));
         }
         ImageView imageView = new ImageView(context);
         this.b = imageView;
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
         imageView.setScaleType(scaleType);
-        r6.t(imageView, k6.J5, f6Var, PorterDuff.Mode.MULTIPLY);
+        s6.s(imageView, l6.J5, g6Var, PorterDuff.Mode.MULTIPLY);
         addView(imageView, ha.e(56, 48, (id.a0 ? 5 : 3) | 16));
         ImageView imageView2 = new ImageView(context);
         this.c = imageView2;
         imageView2.setScaleType(scaleType);
-        r6.t(imageView2, k6.h7, f6Var, PorterDuff.Mode.SRC_IN);
+        s6.s(imageView2, l6.h7, g6Var, PorterDuff.Mode.SRC_IN);
         addView(imageView2, ha.e(56, 48, (id.a0 ? 3 : 5) | 16));
         org.telegram.ui.Components.q5 q5Var = new org.telegram.ui.Components.q5(context);
         this.a = q5Var;
@@ -49,14 +49,14 @@ public final class o2 extends FrameLayout {
         q5Var.setGravity(1);
         q5Var.setEllipsize(TextUtils.TruncateAt.END);
         if (i7 == 0 || i7 == 4) {
-            r6.V(q5Var, k6.j5, f6Var);
+            s6.U(q5Var, l6.j5, g6Var);
             q5Var.setTextSize(1, 16.0f);
             addView(q5Var, ha.e(-2, -2, (id.a0 ? 5 : 3) | 16));
             return;
         }
         if (i7 == 1) {
             q5Var.setGravity(17);
-            r6.V(q5Var, k6.j5, f6Var);
+            s6.U(q5Var, l6.j5, g6Var);
             q5Var.setTextSize(1, 14.0f);
             q5Var.setTypeface(org.telegram.messenger.g0.o());
             addView(q5Var, ha.c(-1.0f, -1));
@@ -64,10 +64,10 @@ public final class o2 extends FrameLayout {
         }
         if (i7 == 2) {
             q5Var.setGravity(17);
-            r6.V(q5Var, k6.Gi, f6Var);
+            s6.U(q5Var, l6.Gi, g6Var);
             q5Var.setTextSize(1, 14.0f);
             q5Var.setTypeface(org.telegram.messenger.g0.o());
-            q5Var.setBackground(z5.e(k6.w0(k6.Ci, f6Var), 6.0f));
+            q5Var.setBackground(a6.e(l6.w0(l6.Ci, g6Var), 6.0f));
             addView(q5Var, ha.d(-1, -1.0f, 0, 16.0f, 16.0f, 16.0f, 16.0f));
         }
     }

@@ -28,14 +28,14 @@ import org.telegram.messenger.x5;
 import org.telegram.messenger.z5;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.Components.RadialProgress2;
 import org.telegram.ui.Components.b9;
 import org.telegram.ui.Components.i6;
 import org.telegram.ui.Components.xq;
 import te.g;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class b extends Drawable implements x5 {
     public final te.a D;
@@ -93,7 +93,7 @@ public final class b extends Drawable implements x5 {
     }
 
     public final void b(boolean z9) {
-        if (this.F.p4() || this.F.Z2()) {
+        if (this.F.o4() || this.F.Y2()) {
             return;
         }
         if (TextUtils.isEmpty(this.H) || !w7.G(this.e).S(this.H)) {
@@ -139,7 +139,7 @@ public final class b extends Drawable implements x5 {
                 if (!this.n || this.r) {
                     canvas.drawRoundRect(rectF, g0.L(5.0f), g0.L(5.0f), this.x);
                 } else {
-                    this.y.setColor(i0.a.o(k6.x0(null, this.F.Q3() ? k6.Tc : k6.Sc, false), 16));
+                    this.y.setColor(i0.a.o(l6.x0(null, this.F.P3() ? l6.Tc : l6.Sc, false), 16));
                     canvas.drawRoundRect(rectF, g0.L(5.0f), g0.L(5.0f), this.y);
                 }
             }
@@ -152,7 +152,7 @@ public final class b extends Drawable implements x5 {
                 if (this.r) {
                     x02 = -1;
                 } else {
-                    x02 = k6.x0(null, this.F.Q3() ? k6.gc : k6.be, false);
+                    x02 = l6.x0(null, this.F.P3() ? l6.gc : l6.be, false);
                 }
                 PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
                 waVar.getClass();
@@ -249,7 +249,7 @@ public final class b extends Drawable implements x5 {
                         TLRPC.Document document = tL_messageMediaDocument.document;
                         if (document != null) {
                             this.H = !TextUtils.isEmpty(str) ? str : ij.U0(messageMedia);
-                            if (ij.L4(tL_messageMediaDocument.document)) {
+                            if (ij.K4(tL_messageMediaDocument.document)) {
                                 TLRPC.PhotoSize w10 = w7.w(document.thumbs, 40, false, null, false);
                                 TLRPC.PhotoSize w11 = w7.w(document.thumbs, g0.L(36.0f), false, w10, true);
                                 this.w = true;
@@ -260,10 +260,10 @@ public final class b extends Drawable implements x5 {
                                 imageReceiver.r0(f10, "36_36", f11, "36_36_b", null, w11 != null ? w11.size : 0L, null, ijVar2, 1);
                             } else {
                                 imageReceiver = imageReceiver2;
-                                boolean z12 = ij.v4(document) || ij.O4(document);
-                                boolean L2 = ij.L2(document, true);
-                                if (z12 || L2) {
-                                    imageReceiver.p0(hc.b(document), "36_36", t5.f(document, k6.Zc, 1.0f, null), document.size, z12 ? "webp" : null, ijVar2, 1);
+                                boolean z12 = ij.u4(document) || ij.N4(document);
+                                boolean K2 = ij.K2(document, true);
+                                if (z12 || K2) {
+                                    imageReceiver.p0(hc.b(document), "36_36", t5.f(document, l6.Zc, 1.0f, null), document.size, z12 ? "webp" : null, ijVar2, 1);
                                 }
                                 z10 = false;
                             }
@@ -285,16 +285,16 @@ public final class b extends Drawable implements x5 {
                     z11 = this.w;
                     RadialProgress2 radialProgress2 = this.E;
                     if (z11) {
-                        radialProgress2.setColors(0, 0, k6.x0(null, k6.bf, false), k6.x0(null, k6.cf, false));
+                        radialProgress2.setColors(0, 0, l6.x0(null, l6.bf, false), l6.x0(null, l6.cf, false));
                     } else {
-                        int i10 = k6.Ze;
-                        int x02 = k6.x0(null, i10, false);
-                        int i11 = k6.af;
-                        int x03 = k6.x0(null, i11, false);
-                        int i12 = k6.bf;
-                        int x04 = k6.x0(null, i12, false);
-                        int i13 = k6.cf;
-                        radialProgress2.setColors(x02, x03, x04, k6.x0(null, i13, false));
+                        int i10 = l6.Ze;
+                        int x02 = l6.x0(null, i10, false);
+                        int i11 = l6.af;
+                        int x03 = l6.x0(null, i11, false);
+                        int i12 = l6.bf;
+                        int x04 = l6.x0(null, i12, false);
+                        int i13 = l6.cf;
+                        radialProgress2.setColors(x02, x03, x04, l6.x0(null, i13, false));
                         radialProgress2.g(i10, i11, i12, i13);
                     }
                     if (!TextUtils.equals(str2, this.H)) {

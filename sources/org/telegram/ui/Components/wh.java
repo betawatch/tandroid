@@ -4,7 +4,7 @@ import android.content.Context;
 import android.widget.TextView;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class wh extends yh {
     public TLRPC.User b;
@@ -19,9 +19,9 @@ public final class wh extends yh {
         setFocusable(true);
         setFocusableInTouchMode(true);
         int i7 = di.E4;
-        org.telegram.ui.ActionBar.f6 f6Var = diVar.I0;
+        org.telegram.ui.ActionBar.g6 g6Var = diVar.I0;
         qh.b bVar = new qh.b(context);
-        bVar.d = f6Var;
+        bVar.d = g6Var;
         bVar.Q = true;
         TextView textView = bVar.a;
         textView.setTextSize(1, 11.0f);
@@ -31,9 +31,9 @@ public final class wh extends yh {
         l9 l9Var = new l9(context);
         bVar.c = l9Var;
         bVar.addView(l9Var, c8.ha.d(24, 24.0f, 49, 0.0f, 4.0f, 0.0f, 0.0f));
-        bVar.x = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Ql, f6Var);
-        bVar.s = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Ol, f6Var);
-        bVar.w = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Pl, f6Var);
+        bVar.x = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.Ql, g6Var);
+        bVar.s = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.Ol, g6Var);
+        bVar.w = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.Pl, g6Var);
         bVar.a();
         this.a = bVar;
         bVar.getBackupImageView().a.g1 = new k2(13);
@@ -43,7 +43,7 @@ public final class wh extends yh {
     public final void a(boolean z9) {
         boolean z10 = this.c != null && (-this.b.id) == this.d.Q2;
         this.a.f(z10, z9);
-        zg0 B = this.a.getBackupImageView().getImageReceiver().B();
+        ah0 B = this.a.getBackupImageView().getImageReceiver().B();
         if (!z9) {
             if (B != null) {
                 B.stop();

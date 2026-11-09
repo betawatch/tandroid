@@ -11,10 +11,10 @@ import org.telegram.messenger.p10;
 import org.telegram.tgnet.tl.TL_aicompose;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.hc;
-import org.telegram.ui.Components.k60;
-import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.l60;
+import org.telegram.ui.Components.qj0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u4 implements d20 {
     public final /* synthetic */ int a;
@@ -58,7 +58,7 @@ public final /* synthetic */ class u4 implements d20 {
                 int i13 = 2;
                 if (num.intValue() == 5) {
                     zArr[0] = false;
-                    c8.ia.c(R.raw.permission_request_location, 2131747303, new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new String[]{"android.permission.ACCESS_COARSE_LOCATION"}, new bi.b9(i12, new bi.b9(i13, new ai.f1(10, o5Var, c5Var), c12 == true ? 1 : 0), c11 == true ? 1 : 0));
+                    c8.ia.c(R.raw.permission_request_location, 2131747302, new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new String[]{"android.permission.ACCESS_COARSE_LOCATION"}, new bi.b9(i12, new bi.b9(i13, new ai.f1(10, o5Var, c5Var), c12 == true ? 1 : 0), c11 == true ? 1 : 0));
                     return Boolean.FALSE;
                 }
                 if (num.intValue() == 2) {
@@ -90,7 +90,7 @@ public final /* synthetic */ class u4 implements d20 {
                         l2Var.performHapticFeedback(3);
                     } catch (Exception unused) {
                     }
-                    new hc(l2Var, g5Var).Q(R.raw.star_premium_2, 36, org.telegram.messenger.g0.x2(id.M0(2131744638, null), new m4(o5Var, c10 == true ? 1 : 0))).k(true);
+                    new hc(l2Var, g5Var).Q(R.raw.star_premium_2, 36, org.telegram.messenger.g0.x2(id.M0(2131744635, null), new m4(o5Var, c10 == true ? 1 : 0))).k(true);
                     return Boolean.FALSE;
                 }
                 int i14 = 0;
@@ -100,7 +100,7 @@ public final /* synthetic */ class u4 implements d20 {
                     }
                 }
                 if (i14 >= 3) {
-                    new hc(l2Var, g5Var).I(R.raw.linkbroken, id.M0(2131744641, null), id.G(3, "StoryLinkLimitMessage", new Object[0])).k(true);
+                    new hc(l2Var, g5Var).I(R.raw.linkbroken, id.M0(2131744638, null), id.G(3, "StoryLinkLimitMessage", new Object[0])).k(true);
                     return Boolean.FALSE;
                 }
                 zArr[0] = false;
@@ -109,7 +109,7 @@ public final /* synthetic */ class u4 implements d20 {
                 return Boolean.TRUE;
             case 1:
                 final org.telegram.ui.Components.g0 g0Var = (org.telegram.ui.Components.g0) obj4;
-                final org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) obj3;
+                final org.telegram.ui.ActionBar.g6 g6Var = (org.telegram.ui.ActionBar.g6) obj3;
                 Context context = (Context) obj2;
                 org.telegram.ui.Components.e0 e0Var = (org.telegram.ui.Components.e0) obj;
                 TL_aicompose.AiComposeTone aiComposeTone = e0Var.e;
@@ -117,18 +117,18 @@ public final /* synthetic */ class u4 implements d20 {
                     return Boolean.FALSE;
                 }
                 final TL_aicompose.TL_aiComposeTone tL_aiComposeTone = (TL_aicompose.TL_aiComposeTone) aiComposeTone;
-                k60 F = k60.F(g0Var.c, f6Var, e0Var);
-                F.W(org.telegram.ui.ActionBar.k6.d0(org.telegram.messenger.g0.L(12.0f), org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.d6, f6Var)));
+                l60 F = l60.F(g0Var.c, g6Var, e0Var);
+                F.W(org.telegram.ui.ActionBar.l6.d0(org.telegram.messenger.g0.L(12.0f), org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.d6, g6Var)));
                 F.l(R.drawable.msg_edit, id.M0(2131754996, null), new Runnable() { // from class: org.telegram.ui.Components.e
                     @Override // java.lang.Runnable
                     public final void run() {
                         int i16 = i11;
                         TL_aicompose.TL_aiComposeTone tL_aiComposeTone2 = tL_aiComposeTone;
-                        org.telegram.ui.ActionBar.f6 f6Var2 = f6Var;
+                        org.telegram.ui.ActionBar.g6 g6Var2 = g6Var;
                         g0 g0Var2 = g0Var;
                         switch (i16) {
                             case 0:
-                                a0 a0Var = new a0(g0Var2.getContext(), f6Var2);
+                                a0 a0Var = new a0(g0Var2.getContext(), g6Var2);
                                 a0Var.b2 = tL_aiComposeTone2;
                                 a0Var.Z1 = Long.valueOf(tL_aiComposeTone2.emoji_id);
                                 a0Var.f1();
@@ -143,31 +143,31 @@ public final /* synthetic */ class u4 implements d20 {
                                 a0Var.show();
                                 break;
                             default:
-                                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, g0Var2.getContext(), f6Var2);
+                                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, g0Var2.getContext(), g6Var2);
                                 String M0 = org.telegram.messenger.id.M0(2131754998, null);
                                 org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                                 u1Var.R = M0;
                                 u1Var.T = org.telegram.messenger.id.M0(2131754997, null);
                                 alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), null);
-                                alertDialog$Builder.k(org.telegram.messenger.id.M0(2131751599, null), new ni.c(22, g0Var2, tL_aiComposeTone2));
+                                alertDialog$Builder.k(org.telegram.messenger.id.M0(2131751598, null), new ni.c(22, g0Var2, tL_aiComposeTone2));
                                 alertDialog$Builder.d(-1);
                                 alertDialog$Builder.p();
                                 break;
                         }
                     }
                 }, tL_aiComposeTone.creator);
-                F.c(R.drawable.msg_share, id.M0(2131754983, null), new org.telegram.ui.m6(g0Var, tL_aiComposeTone, context, f6Var, 14), false);
+                F.c(R.drawable.msg_share, id.M0(2131754983, null), new org.telegram.ui.m6(g0Var, tL_aiComposeTone, context, g6Var, 14), false);
                 F.m(R.drawable.msg_delete, new org.telegram.ui.Components.f(i11, g0Var, tL_aiComposeTone), id.M0(2131754985, null), !tL_aiComposeTone.creator, true);
                 F.m(R.drawable.msg_delete, new Runnable() { // from class: org.telegram.ui.Components.e
                     @Override // java.lang.Runnable
                     public final void run() {
                         int i16 = i10;
                         TL_aicompose.TL_aiComposeTone tL_aiComposeTone2 = tL_aiComposeTone;
-                        org.telegram.ui.ActionBar.f6 f6Var2 = f6Var;
+                        org.telegram.ui.ActionBar.g6 g6Var2 = g6Var;
                         g0 g0Var2 = g0Var;
                         switch (i16) {
                             case 0:
-                                a0 a0Var = new a0(g0Var2.getContext(), f6Var2);
+                                a0 a0Var = new a0(g0Var2.getContext(), g6Var2);
                                 a0Var.b2 = tL_aiComposeTone2;
                                 a0Var.Z1 = Long.valueOf(tL_aiComposeTone2.emoji_id);
                                 a0Var.f1();
@@ -182,13 +182,13 @@ public final /* synthetic */ class u4 implements d20 {
                                 a0Var.show();
                                 break;
                             default:
-                                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, g0Var2.getContext(), f6Var2);
+                                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, g0Var2.getContext(), g6Var2);
                                 String M0 = org.telegram.messenger.id.M0(2131754998, null);
                                 org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                                 u1Var.R = M0;
                                 u1Var.T = org.telegram.messenger.id.M0(2131754997, null);
                                 alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), null);
-                                alertDialog$Builder.k(org.telegram.messenger.id.M0(2131751599, null), new ni.c(22, g0Var2, tL_aiComposeTone2));
+                                alertDialog$Builder.k(org.telegram.messenger.id.M0(2131751598, null), new ni.c(22, g0Var2, tL_aiComposeTone2));
                                 alertDialog$Builder.d(-1);
                                 alertDialog$Builder.p();
                                 break;
@@ -202,17 +202,17 @@ public final /* synthetic */ class u4 implements d20 {
                 ij ijVar = ((th.g) obj2).b;
                 return th.c.d(view, (String) obj4, (String) obj3, ijVar.F0(), ijVar);
             default:
-                pj0 pj0Var = (pj0) obj4;
+                qj0 qj0Var = (qj0) obj4;
                 d20 d20Var = (d20) obj3;
                 SparseIntArray sparseIntArray = (SparseIntArray) obj2;
                 View view2 = (View) obj;
                 try {
-                    if (view2.getParent() != pj0Var) {
+                    if (view2.getParent() != qj0Var) {
                         return Boolean.FALSE;
                     }
                     Boolean bool = (Boolean) d20Var.a(view2);
                     boolean booleanValue = bool.booleanValue();
-                    v4.d1 T = pj0Var.T(view2);
+                    v4.d1 T = qj0Var.T(view2);
                     if (T != null) {
                         sparseIntArray.put(T.f, booleanValue ? 1 : 0);
                     }

@@ -10,9 +10,9 @@ import org.telegram.messenger.id;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.ix;
-import org.telegram.ui.Components.t31;
+import org.telegram.ui.Components.u31;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class h5 implements ix {
     public final /* synthetic */ o5 a;
@@ -103,7 +103,7 @@ public final class h5 implements ix {
         org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
         u1Var.R = M0;
         u1Var.T = id.M0(2131752069, null);
-        alertDialog$Builder.k(id.M0(2131752099, null), new di.q4(this, 14));
+        alertDialog$Builder.k(id.M0(2131752099, null), new di.r4(this, 14));
         alertDialog$Builder.h(id.M0(2131752589, null), null);
         alertDialog$Builder.p();
     }
@@ -157,7 +157,7 @@ public final class h5 implements ix {
     }
 
     @Override // org.telegram.ui.Components.ix
-    public final /* synthetic */ void o(t31 t31Var) {
+    public final /* synthetic */ void o(u31 u31Var) {
     }
 
     @Override // org.telegram.ui.Components.ix

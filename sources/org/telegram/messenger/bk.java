@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class bk implements Runnable {
     public final /* synthetic */ int a;
@@ -765,7 +765,7 @@ public final /* synthetic */ class bk implements Runnable {
                                         return;
                                     }
                                 } else {
-                                    M0 = id.M0(2131747596, null);
+                                    M0 = id.M0(2131747595, null);
                                 }
                                 tL_messageMediaVenue2.address = M0;
                                 tL_messageMediaVenue2.geoAddress = tL_geoPointAddress;
@@ -803,7 +803,7 @@ public final /* synthetic */ class bk implements Runnable {
                                     tL_messageMediaVenue4.query_id = -1L;
                                     tL_messageMediaVenue4.title = str5;
                                     tL_messageMediaVenue4.icon = "pin";
-                                    tL_messageMediaVenue4.address = id.M0(2131747461, null);
+                                    tL_messageMediaVenue4.address = id.M0(2131747460, null);
                                     tL_messageMediaVenue4.geoAddress = tL_geoPointAddress2;
                                     tL_geoPointAddress2.country_iso2 = str8;
                                     if (!TextUtils.isEmpty(str4)) {

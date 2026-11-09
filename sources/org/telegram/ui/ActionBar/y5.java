@@ -2,35 +2,44 @@ package org.telegram.ui.ActionBar;
 
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
-import android.graphics.Paint;
 import android.graphics.Rect;
+import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class y5 extends Drawable {
-    public static Paint c;
-    public Paint a;
-    public float b;
+    public final RectF a = new RectF();
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ float f;
+
+    public y5(int i7, int i10, int i11, int i12, float f10) {
+        this.b = i7;
+        this.c = i10;
+        this.d = i11;
+        this.e = i12;
+        this.f = f10;
+    }
 
     @Override // android.graphics.drawable.Drawable
     public final void draw(Canvas canvas) {
-        int L;
         Rect bounds = getBounds();
-        float f10 = this.b;
-        if (Math.abs(f10 - (-1.0f)) < 0.01f) {
-            L = Math.max(bounds.width(), bounds.height()) / 2;
-        } else if (Math.abs(f10 - (-2.0f)) < 0.01f) {
-            L = (int) Math.ceil(Math.sqrt(((bounds.top - bounds.centerY()) * (bounds.top - bounds.centerY())) + ((bounds.left - bounds.centerX()) * (bounds.left - bounds.centerX()))));
-        } else {
-            L = org.telegram.messenger.g0.L(f10);
-        }
-        canvas.drawCircle(bounds.centerX(), bounds.centerY(), L, this.a);
+        RectF rectF = this.a;
+        rectF.set(bounds);
+        rectF.left += this.b;
+        rectF.top += this.c;
+        rectF.right -= this.d;
+        rectF.bottom -= this.e;
+        float f10 = this.f;
+        canvas.drawRoundRect(rectF, f10, f10, l6.z);
     }
 
     @Override // android.graphics.drawable.Drawable
     public final int getOpacity() {
-        return -2;
+        return 0;
     }
 
     @Override // android.graphics.drawable.Drawable

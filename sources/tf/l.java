@@ -9,10 +9,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.telegram.messenger.qs;
 import org.telegram.ui.Components.vy;
-import org.telegram.ui.hy0;
+import org.telegram.ui.ky0;
 import sg.i0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class l extends rf.a {
     public static final Logger r = Logger.getLogger(l.class.getName());
@@ -88,7 +88,7 @@ public final class l extends rf.a {
         byte b10;
         byte b11;
         byte b12;
-        hy0 hy0Var;
+        ky0 ky0Var;
         Logger logger;
         uf.a aVar;
         int i7;
@@ -168,7 +168,7 @@ public final class l extends rf.a {
                 }
                 if (M >= 4 || !hVar.d) {
                     logger = logger2;
-                    hy0Var = new hy0(mVar, i12, (i13 - i12) - hVar.c, hVar);
+                    ky0Var = new ky0(mVar, i12, (i13 - i12) - hVar.c, hVar);
                 } else {
                     int i14 = i13 - i12;
                     byte[] bArr2 = new byte[i14];
@@ -190,18 +190,18 @@ public final class l extends rf.a {
                         }
                         z9 = b13 == -1;
                     }
-                    hy0Var = new hy0(new ByteArrayInputStream(bArr2, 0, i16), i12, i16, hVar);
+                    ky0Var = new ky0(new ByteArrayInputStream(bArr2, 0, i16), i12, i16, hVar);
                     logger = logger2;
                 }
-                vy vyVar2 = (vy) hy0Var.d;
-                uf.a aVar2 = (uf.a) hy0Var.b;
+                vy vyVar2 = (vy) ky0Var.d;
+                uf.a aVar2 = (uf.a) ky0Var.b;
                 while (true) {
                     try {
                         if (aVar2.e() <= 10) {
                             aVar = aVar2;
                             break;
                         }
-                        f fVar = new f(hy0Var);
+                        f fVar = new f(ky0Var);
                         String str6 = fVar.a;
                         int i18 = fVar.c;
                         aVar = aVar2;

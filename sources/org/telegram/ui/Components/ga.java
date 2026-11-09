@@ -4,22 +4,22 @@ import android.content.Context;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public abstract class ga extends na {
     public final LinearLayout P1;
     public FrameLayout Q1;
     public fi.d R1;
 
-    public ga(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, null, false, false, f6Var);
+    public ga(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(context, null, false, false, g6Var);
         LinearLayout linearLayout = new LinearLayout(context);
         this.P1 = linearLayout;
         linearLayout.setOrientation(1);
     }
 
     @Override // org.telegram.ui.Components.na
-    public final oj0 L0(pj0 pj0Var) {
+    public final pj0 L0(qj0 qj0Var) {
         return new bi.k5(this, 2);
     }
 

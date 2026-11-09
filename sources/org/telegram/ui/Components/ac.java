@@ -8,10 +8,10 @@ import android.widget.TextView;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class ac extends ya implements org.telegram.ui.ActionBar.a6 {
-    public final org.telegram.ui.ActionBar.f6 a;
+public final class ac extends ya implements org.telegram.ui.ActionBar.b6 {
+    public final org.telegram.ui.ActionBar.g6 a;
     public Runnable b;
     public Runnable c;
     public cc d;
@@ -20,18 +20,18 @@ public final class ac extends ya implements org.telegram.ui.ActionBar.a6 {
     public final Drawable h;
     public final Drawable n;
 
-    public ac(Context context, org.telegram.ui.ActionBar.f6 f6Var, boolean z9, boolean z10) {
+    public ac(Context context, org.telegram.ui.ActionBar.g6 g6Var, boolean z9, boolean z10) {
         super(context);
-        this.a = f6Var;
-        int i7 = org.telegram.ui.ActionBar.k6.uj;
-        int h = f6Var != null ? f6Var.h(i7) : org.telegram.ui.ActionBar.k6.x0(null, i7, false);
+        this.a = g6Var;
+        int i7 = org.telegram.ui.ActionBar.l6.uj;
+        int h = g6Var != null ? g6Var.h(i7) : org.telegram.ui.ActionBar.l6.x0(null, i7, false);
         if (z9) {
             TextView textView = new TextView(context);
             this.e = textView;
-            textView.setBackground(org.telegram.ui.ActionBar.k6.h0((h & 16777215) | 419430400, 7, -1));
+            textView.setBackground(org.telegram.ui.ActionBar.l6.h0((h & 16777215) | 419430400, 7, -1));
             this.h = textView.getBackground();
             com.google.android.recaptcha.internal.a.q(textView, 1, 14.0f);
-            org.telegram.messenger.camera.q.o(textView, i7, f6Var, null, 2131743888);
+            org.telegram.messenger.camera.q.o(textView, i7, g6Var, null, 2131743885);
             textView.setGravity(16);
             float f10 = z10 ? 34.0f : 12.0f;
             boolean z11 = org.telegram.messenger.id.a0;
@@ -41,9 +41,9 @@ public final class ac extends ya implements org.telegram.ui.ActionBar.a6 {
         if (z10) {
             ImageView imageView = new ImageView(getContext());
             imageView.setImageResource(R.drawable.chats_undo);
-            org.telegram.ui.ActionBar.r6.t(imageView, i7, f6Var, PorterDuff.Mode.MULTIPLY);
+            org.telegram.ui.ActionBar.s6.s(imageView, i7, g6Var, PorterDuff.Mode.MULTIPLY);
             if (!z9) {
-                imageView.setBackground(org.telegram.ui.ActionBar.k6.h0((h & 16777215) | 419430400, 1, -1));
+                imageView.setBackground(org.telegram.ui.ActionBar.l6.h0((h & 16777215) | 419430400, 1, -1));
                 this.n = imageView.getBackground();
             }
             c8.sa.a(imageView, 0.0f, 12.0f, 0.0f, 12.0f);
@@ -88,31 +88,31 @@ public final class ac extends ya implements org.telegram.ui.ActionBar.a6 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
         Drawable drawable;
         try {
-            int i7 = org.telegram.ui.ActionBar.k6.uj;
-            org.telegram.ui.ActionBar.f6 f6Var = this.a;
-            int h = ((f6Var != null ? f6Var.h(i7) : org.telegram.ui.ActionBar.k6.x0(null, i7, false)) & 16777215) | 419430400;
+            int i7 = org.telegram.ui.ActionBar.l6.uj;
+            org.telegram.ui.ActionBar.g6 g6Var = this.a;
+            int h = ((g6Var != null ? g6Var.h(i7) : org.telegram.ui.ActionBar.l6.x0(null, i7, false)) & 16777215) | 419430400;
             TextView textView = this.e;
             if (textView != null && (drawable = this.h) != null && textView.getBackground() == drawable) {
-                org.telegram.ui.ActionBar.k6.H1(drawable, h, true);
+                org.telegram.ui.ActionBar.l6.H1(drawable, h, true);
             }
             Drawable drawable2 = this.n;
             if (drawable2 != null) {
-                org.telegram.ui.ActionBar.k6.H1(drawable2, h, true);
+                org.telegram.ui.ActionBar.l6.H1(drawable2, h, true);
             }
         } catch (Exception e10) {
             org.telegram.messenger.a8.g(e10, true);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 
-    public ac(Context context, org.telegram.ui.ActionBar.f6 f6Var, boolean z9) {
-        this(context, f6Var, z9, !z9);
+    public ac(Context context, org.telegram.ui.ActionBar.g6 g6Var, boolean z9) {
+        this(context, g6Var, z9, !z9);
     }
 }

@@ -10,21 +10,21 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.hc;
-import org.telegram.ui.oy0;
+import org.telegram.ui.ry0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q3 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ z3 b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f6 c;
-    public final /* synthetic */ p9 d;
+    public final /* synthetic */ a4 b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.g6 c;
+    public final /* synthetic */ q9 d;
 
-    public /* synthetic */ q3(z3 z3Var, p9 p9Var, org.telegram.ui.ActionBar.f6 f6Var) {
+    public /* synthetic */ q3(a4 a4Var, q9 q9Var, org.telegram.ui.ActionBar.g6 g6Var) {
         this.a = 0;
-        this.b = z3Var;
-        this.d = p9Var;
-        this.c = f6Var;
+        this.b = a4Var;
+        this.d = q9Var;
+        this.c = g6Var;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:32:0x00d3  */
@@ -40,39 +40,39 @@ public final /* synthetic */ class q3 implements View.OnClickListener {
         View view2;
         View view3;
         int i7 = this.a;
-        org.telegram.ui.ActionBar.f6 f6Var = this.c;
-        p9 p9Var = this.d;
-        z3 z3Var = this.b;
+        org.telegram.ui.ActionBar.g6 g6Var = this.c;
+        q9 q9Var = this.d;
+        a4 a4Var = this.b;
         switch (i7) {
             case 0:
-                i4 i4Var = z3Var.x;
-                p9Var.j1 = true;
-                p9Var.V();
-                int i10 = i4Var.l2;
-                Context context = i4Var.getContext();
-                TL_stories.StoryItem storyItem = i4Var.x1.a;
-                j3 j3Var = i4Var.L0;
-                org.telegram.ui.ActionBar.f6 f6Var2 = this.c;
-                hc hcVar = new hc(j3Var, f6Var2);
-                ai.i iVar = new ai.i(p9Var, 12);
-                int i11 = oy0.s1;
-                oy0.J0(i10, context, storyItem.dialogId, true, false, new ArrayList(Collections.singleton(Integer.valueOf(storyItem.id))), hcVar, f6Var2, new byte[0], null, iVar);
-                z3 z3Var2 = i4Var.c1;
-                if (z3Var2 != null) {
-                    z3Var2.a();
+                j4 j4Var = a4Var.x;
+                q9Var.j1 = true;
+                q9Var.V();
+                int i10 = j4Var.l2;
+                Context context = j4Var.getContext();
+                TL_stories.StoryItem storyItem = j4Var.x1.a;
+                j3 j3Var = j4Var.L0;
+                org.telegram.ui.ActionBar.g6 g6Var2 = this.c;
+                hc hcVar = new hc(j3Var, g6Var2);
+                ai.i iVar = new ai.i(q9Var, 12);
+                int i11 = ry0.s1;
+                ry0.J0(i10, context, storyItem.dialogId, true, false, new ArrayList(Collections.singleton(Integer.valueOf(storyItem.id))), hcVar, g6Var2, new byte[0], null, iVar);
+                a4 a4Var2 = j4Var.c1;
+                if (a4Var2 != null) {
+                    a4Var2.a();
                     break;
                 }
                 break;
             case 1:
-                i4 i4Var2 = z3Var.x;
-                z3 z3Var3 = i4Var2.c1;
-                g4 g4Var = i4Var2.x1;
-                if (z3Var3 != null) {
-                    z3Var3.a();
+                j4 j4Var2 = a4Var.x;
+                a4 a4Var3 = j4Var2.c1;
+                h4 h4Var = j4Var2.x1;
+                if (a4Var3 != null) {
+                    a4Var3.a();
                 }
-                fi.s8 s8Var = new fi.s8(86400, i4Var2.getContext(), f6Var);
+                fi.s8 s8Var = new fi.s8(86400, j4Var2.getContext(), g6Var);
                 s8Var.U0();
-                s8Var.V0(qp.s1(i4Var2.l2).j1(i4Var2.k1));
+                s8Var.V0(qp.s1(j4Var2.l2).j1(j4Var2.k1));
                 s8Var.C1 = true;
                 View[] viewPages = s8Var.i1.getViewPages();
                 View view4 = viewPages[0];
@@ -88,15 +88,15 @@ public final /* synthetic */ class q3 implements View.OnClickListener {
                 s8Var.L0(false);
                 s8Var.S0(1);
                 s8Var.Q0(false);
-                g1 g1Var = p9Var.A0;
+                g1 g1Var = q9Var.A0;
                 if (g1Var != null) {
                     TLRPC.GroupCall groupCall = g1Var.w;
                     if (groupCall == null ? true : groupCall.messages_enabled) {
                         z9 = true;
-                        boolean d = g4Var.d();
-                        TL_stories.StoryItem storyItem2 = g4Var.a;
+                        boolean d = h4Var.d();
+                        TL_stories.StoryItem storyItem2 = h4Var.a;
                         boolean z10 = storyItem2 == null && storyItem2.pinned;
-                        g1 g1Var2 = p9Var.A0;
+                        g1 g1Var2 = q9Var.A0;
                         int j3 = g1Var2 != null ? 0 : (int) g1Var2.j();
                         s8Var.s1 = z9;
                         s8Var.t1 = d;
@@ -113,17 +113,17 @@ public final /* synthetic */ class q3 implements View.OnClickListener {
                             fi.n8 n8Var4 = (fi.n8) view3;
                             n8Var4.b(n8Var4.a);
                         }
-                        s8Var.K1 = new ab.g(12, z3Var, s8Var);
+                        s8Var.K1 = new ab.g(12, a4Var, s8Var);
                         s8Var.show();
                         break;
                     }
                 }
                 z9 = false;
-                boolean d2 = g4Var.d();
-                TL_stories.StoryItem storyItem22 = g4Var.a;
+                boolean d2 = h4Var.d();
+                TL_stories.StoryItem storyItem22 = h4Var.a;
                 if (storyItem22 == null) {
                 }
-                g1 g1Var22 = p9Var.A0;
+                g1 g1Var22 = q9Var.A0;
                 if (g1Var22 != null) {
                 }
                 s8Var.s1 = z9;
@@ -137,20 +137,20 @@ public final /* synthetic */ class q3 implements View.OnClickListener {
                 view3 = viewPages22[1];
                 if (view3 instanceof fi.n8) {
                 }
-                s8Var.K1 = new ab.g(12, z3Var, s8Var);
+                s8Var.K1 = new ab.g(12, a4Var, s8Var);
                 s8Var.show();
             default:
-                i4 i4Var3 = z3Var.x;
-                z3 z3Var4 = i4Var3.c1;
-                if (z3Var4 != null) {
-                    z3Var4.a();
+                j4 j4Var3 = a4Var.x;
+                a4 a4Var4 = j4Var3.c1;
+                if (a4Var4 != null) {
+                    a4Var4.a();
                 }
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, i4Var3.getContext(), f6Var);
-                String M0 = id.M0(2131748818, null);
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, j4Var3.getContext(), g6Var);
+                String M0 = id.M0(2131748817, null);
                 org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                 u1Var.R = M0;
-                u1Var.T = id.M0(2131748819, null);
-                alertDialog$Builder.k(id.M0(2131748820, null), new ab.g(13, z3Var, p9Var));
+                u1Var.T = id.M0(2131748818, null);
+                alertDialog$Builder.k(id.M0(2131748819, null), new ab.g(13, a4Var, q9Var));
                 alertDialog$Builder.h(id.M0(2131752589, null), null);
                 alertDialog$Builder.d(-1);
                 alertDialog$Builder.p();
@@ -158,10 +158,10 @@ public final /* synthetic */ class q3 implements View.OnClickListener {
         }
     }
 
-    public /* synthetic */ q3(z3 z3Var, org.telegram.ui.ActionBar.f6 f6Var, p9 p9Var, int i7) {
+    public /* synthetic */ q3(a4 a4Var, org.telegram.ui.ActionBar.g6 g6Var, q9 q9Var, int i7) {
         this.a = i7;
-        this.b = z3Var;
-        this.c = f6Var;
-        this.d = p9Var;
+        this.b = a4Var;
+        this.c = g6Var;
+        this.d = q9Var;
     }
 }

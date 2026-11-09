@@ -1,33 +1,25 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.View;
+import android.graphics.Bitmap;
+import java.io.File;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class oc1 extends View {
-    public int a;
-    public final /* synthetic */ WallpapersListActivity b;
+public final class oc1 implements org.telegram.ui.Components.b71 {
+    public final /* synthetic */ WallpapersListActivity a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public oc1(WallpapersListActivity wallpapersListActivity, Context context) {
-        super(context);
-        this.b = wallpapersListActivity;
+    public oc1(WallpapersListActivity wallpapersListActivity) {
+        this.a = wallpapersListActivity;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        WallpapersListActivity wallpapersListActivity = this.b;
-        wallpapersListActivity.s.setColor(this.a);
-        canvas.drawCircle(org.telegram.messenger.g0.L(25.0f), org.telegram.messenger.g0.L(31.0f), org.telegram.messenger.g0.L(18.0f), wallpapersListActivity.s);
-        if (this.a == org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.d6, false)) {
-            canvas.drawCircle(org.telegram.messenger.g0.L(25.0f), org.telegram.messenger.g0.L(31.0f), org.telegram.messenger.g0.L(18.0f), wallpapersListActivity.w);
-        }
+    @Override // org.telegram.ui.Components.b71
+    public final void b(File file, Bitmap bitmap, boolean z9) {
+        w71 w71Var = new w71(new tc1(file, file, ""), bitmap, false);
+        w71Var.h1(0L);
+        this.a.presentFragment(w71Var, z9);
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i7, int i10) {
-        setMeasuredDimension(org.telegram.messenger.g0.L(50.0f), org.telegram.messenger.g0.L(62.0f));
+    @Override // org.telegram.ui.Components.b71
+    public final void a() {
     }
 }

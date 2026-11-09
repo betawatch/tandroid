@@ -17,22 +17,22 @@ import org.telegram.messenger.qp;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.r6;
-import org.telegram.ui.Components.w70;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.s6;
 import org.telegram.ui.Components.w8;
+import org.telegram.ui.Components.x70;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.i2;
-import org.telegram.ui.sq0;
+import org.telegram.ui.uq0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class p0 extends LinearLayout {
     public final ArrayList a;
     public final n0 b;
     public final FrameLayout c;
     public final FrameLayout d;
-    public final w70 e;
+    public final x70 e;
 
     public p0(Context context) {
         super(context);
@@ -46,12 +46,12 @@ public final class p0 extends LinearLayout {
         this.d = frameLayout2;
         frameLayout2.setClipChildren(false);
         frameLayout.addView(frameLayout2, ha.d(-1, 70.0f, 0, 0.0f, 0.0f, 0.0f, 0.0f));
-        sq0 sq0Var = new sq0(context, 19);
-        ImageView imageView = new ImageView(sq0Var.getContext());
+        uq0 uq0Var = new uq0(context, 19);
+        ImageView imageView = new ImageView(uq0Var.getContext());
         imageView.setImageResource(R.drawable.msg_arrow_avatar);
-        r6.t(imageView, k6.E6, null, PorterDuff.Mode.SRC_ATOP);
-        sq0Var.addView(imageView);
-        frameLayout.addView(sq0Var, ha.e(24, 24, 17));
+        s6.s(imageView, l6.E6, null, PorterDuff.Mode.SRC_ATOP);
+        uq0Var.addView(imageView);
+        frameLayout.addView(uq0Var, ha.e(24, 24, 17));
         n0 n0Var = new n0(context);
         this.b = n0Var;
         n0Var.setLayerType(2, null);
@@ -61,15 +61,15 @@ public final class p0 extends LinearLayout {
         textView.setTypeface(org.telegram.messenger.g0.o());
         textView.setText(id.M0(2131753321, null));
         textView.setTextSize(1, 20.0f);
-        r6.V(textView, k6.G6, null);
+        s6.U(textView, l6.G6, null);
         addView(textView, ha.t(-2, -2, 1, 0, 15, 0, 7));
-        w70 w70Var = new w70(getContext(), null);
-        this.e = w70Var;
-        w70Var.setTextSize(1, 14.0f);
-        w70Var.setGravity(1);
-        r6.V(w70Var, k6.j5, null);
-        w70Var.setLineSpacing(w70Var.getLineSpacingExtra(), w70Var.getLineSpacingMultiplier() * 1.1f);
-        addView(w70Var, ha.t(-2, -2, 1, 28, 0, 28, 18));
+        x70 x70Var = new x70(getContext(), null);
+        this.e = x70Var;
+        x70Var.setTextSize(1, 14.0f);
+        x70Var.setGravity(1);
+        s6.U(x70Var, l6.j5, null);
+        x70Var.setLineSpacing(x70Var.getLineSpacingExtra(), x70Var.getLineSpacingMultiplier() * 1.1f);
+        addView(x70Var, ha.t(-2, -2, 1, 28, 0, 28, 18));
     }
 
     public final void a(ArrayList arrayList, TLRPC.Chat chat) {

@@ -3,8 +3,8 @@ package jg;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
-import di.k6;
-import fi.h9;
+import di.l6;
+import fi.v9;
 import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.Utilities;
@@ -16,38 +16,38 @@ import org.telegram.messenger.qs;
 import org.telegram.messenger.t3;
 import org.telegram.messenger.ui;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Cells.t2;
 import org.telegram.ui.Components.mz;
-import org.telegram.ui.Components.oj0;
-import org.telegram.ui.an;
+import org.telegram.ui.Components.pj0;
+import org.telegram.ui.cn;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class m1 extends oj0 implements ls {
-    public k6 D;
+public final class m1 extends pj0 implements ls {
+    public l6 D;
     public final Context c;
-    public final an f;
+    public final cn f;
     public int h;
     public int n;
-    public final f6 s;
+    public final g6 s;
     public final int w;
     public final boolean x;
     public String y;
     public final HashSet d = new HashSet();
     public final ArrayList e = new ArrayList();
     public final int r = p10.s0;
-    public final h9 E = new h9(this, 21);
+    public final v9 E = new v9(this, 20);
 
-    public m1(Context context, an anVar, f6 f6Var, int i7, boolean z9) {
-        this.s = f6Var;
+    public m1(Context context, cn cnVar, g6 g6Var, int i7, boolean z9) {
+        this.s = g6Var;
         this.c = context;
-        this.f = anVar;
+        this.f = cnVar;
         this.w = i7;
         this.x = z9;
     }
 
-    @Override // org.telegram.ui.Components.oj0
+    @Override // org.telegram.ui.Components.pj0
     public final boolean D(v4.d1 d1Var) {
         int i7 = d1Var.f;
         return i7 == 0 || i7 == 2;
@@ -94,9 +94,9 @@ public final class m1 extends oj0 implements ls {
         int i11 = 0;
         for (int i12 = 0; i12 < arrayList2.size(); i12++) {
             ij ijVar = (ij) arrayList2.get(i12);
-            if ((!ijVar.A2() || ijVar.Q2) && !hashSet.contains(Integer.valueOf(ijVar.f1()))) {
+            if ((!ijVar.z2() || ijVar.Q2) && !hashSet.contains(Integer.valueOf(ijVar.e1()))) {
                 arrayList.add(ijVar);
-                hashSet.add(Integer.valueOf(ijVar.f1()));
+                hashSet.add(Integer.valueOf(ijVar.e1()));
             }
         }
         int i13 = this.n;
@@ -144,7 +144,7 @@ public final class m1 extends oj0 implements ls {
         int i13 = ijVar.k.date;
         if (this.x) {
             t2Var.r0 = true;
-            long Q1 = ijVar.Q1();
+            long P1 = ijVar.P1();
             TLRPC.Message message = ijVar.k;
             TLRPC.MessageFwdHeader messageFwdHeader = message.fwd_from;
             if (messageFwdHeader == null || ((i10 = messageFwdHeader.date) == 0 && messageFwdHeader.saved_date == 0)) {
@@ -154,13 +154,13 @@ public final class m1 extends oj0 implements ls {
                     i11 = messageFwdHeader.saved_date;
                 }
                 z9 = false;
-                B0 = Q1;
+                B0 = P1;
             }
             i10 = i11;
             z9 = false;
-            B0 = Q1;
+            B0 = P1;
         } else {
-            if (ijVar.Q3() || t3.o0(this.r, B0)) {
+            if (ijVar.P3() || t3.o0(this.r, B0)) {
                 B0 = ijVar.Z0();
             }
             z9 = true;
@@ -175,17 +175,17 @@ public final class m1 extends oj0 implements ls {
         View t2Var;
         View view;
         if (i7 != 0) {
-            f6 f6Var = this.s;
+            g6 g6Var = this.s;
             Context context = this.c;
             if (i7 == 1) {
-                mz mzVar = new mz(context, f6Var);
+                mz mzVar = new mz(context, g6Var);
                 mzVar.setIsSingleCell(true);
                 mzVar.setViewType(7);
                 view = mzVar;
             } else if (i7 != 2) {
                 t2Var = null;
             } else {
-                view = new l1(context, f6Var);
+                view = new l1(context, g6Var);
             }
             t2Var = view;
         } else {

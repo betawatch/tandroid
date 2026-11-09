@@ -5,7 +5,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class yo {
     public final long a;
@@ -58,7 +58,7 @@ public final class yo {
                                 TLRPC.photos_Photos photos_photos = (TLRPC.photos_Photos) tLObject;
                                 yo yoVar = this.b;
                                 yoVar.h.getMessagesStorage().m1(photos_photos.users, null, true, true);
-                                g0.h3(new l2.a0(yoVar, photos_photos, i7, i10, 5));
+                                g0.h3(new l2.z(yoVar, photos_photos, i7, i10, 5));
                                 break;
                             }
                             break;
@@ -67,7 +67,7 @@ public final class yo {
                                 TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
                                 yo yoVar2 = this.b;
                                 yoVar2.h.getMessagesStorage().m1(messages_messages.users, messages_messages.chats, true, true);
-                                g0.h3(new l2.a0(yoVar2, messages_messages, i7, i10, 6));
+                                g0.h3(new l2.z(yoVar2, messages_messages, i7, i10, 6));
                                 break;
                             }
                             break;
@@ -102,7 +102,7 @@ public final class yo {
                             TLRPC.photos_Photos photos_photos = (TLRPC.photos_Photos) tLObject;
                             yo yoVar = this.b;
                             yoVar.h.getMessagesStorage().m1(photos_photos.users, null, true, true);
-                            g0.h3(new l2.a0(yoVar, photos_photos, i7, i10, 5));
+                            g0.h3(new l2.z(yoVar, photos_photos, i7, i10, 5));
                             break;
                         }
                         break;
@@ -111,7 +111,7 @@ public final class yo {
                             TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
                             yo yoVar2 = this.b;
                             yoVar2.h.getMessagesStorage().m1(messages_messages.users, messages_messages.chats, true, true);
-                            g0.h3(new l2.a0(yoVar2, messages_messages, i7, i10, 6));
+                            g0.h3(new l2.z(yoVar2, messages_messages, i7, i10, 6));
                             break;
                         }
                         break;

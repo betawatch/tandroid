@@ -10,7 +10,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v8 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -23,7 +23,7 @@ public final /* synthetic */ class v8 implements Runnable {
     public final /* synthetic */ TLObject n;
     public final /* synthetic */ Object r;
 
-    public /* synthetic */ v8(ea eaVar, boolean[] zArr, TL_stars.StarGift starGift, boolean z9, boolean z10, long j3, TLRPC.TL_textWithEntities tL_textWithEntities, zh.o3 o3Var) {
+    public /* synthetic */ v8(ea eaVar, boolean[] zArr, TL_stars.StarGift starGift, boolean z9, boolean z10, long j3, TLRPC.TL_textWithEntities tL_textWithEntities, zh.p3 p3Var) {
         this.e = eaVar;
         this.f = zArr;
         this.h = starGift;
@@ -31,7 +31,7 @@ public final /* synthetic */ class v8 implements Runnable {
         this.d = z10;
         this.c = j3;
         this.n = tL_textWithEntities;
-        this.r = o3Var;
+        this.r = p3Var;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:27:0x0082  */
@@ -55,14 +55,14 @@ public final /* synthetic */ class v8 implements Runnable {
         switch (i11) {
             case 0:
                 ((boolean[]) obj2)[0] = true;
-                ((ea) obj3).i((TL_stars.StarGift) tLObject2, this.b, this.d, this.c, (TLRPC.TL_textWithEntities) tLObject, (zh.o3) obj);
+                ((ea) obj3).i((TL_stars.StarGift) tLObject2, this.b, this.d, this.c, (TLRPC.TL_textWithEntities) tLObject, (zh.p3) obj);
                 break;
             default:
                 fi.va vaVar = (fi.va) obj3;
                 TLObject tLObject3 = (TLObject) obj2;
                 TL_stories.TL_startLive tL_startLive = (TL_stories.TL_startLive) tLObject2;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) tLObject;
-                di.s7 s7Var = (di.s7) obj;
+                di.f8 f8Var = (di.f8) obj;
                 di.b bVar = vaVar.a;
                 int i13 = vaVar.c;
                 if (!(tLObject3 instanceof TLRPC.Updates)) {
@@ -71,16 +71,16 @@ public final /* synthetic */ class v8 implements Runnable {
                             fi.s8 s8Var = vaVar.q0;
                             if (s8Var != null) {
                                 new org.telegram.ui.Components.hc(s8Var.c, bVar).f0(tL_error, true);
-                                s7Var.run();
+                                f8Var.run();
                                 break;
                             }
                         } else {
                             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, vaVar.b, bVar);
-                            String M0 = org.telegram.messenger.id.M0(2131748827, null);
+                            String M0 = org.telegram.messenger.id.M0(2131748826, null);
                             org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                             u1Var.R = M0;
-                            u1Var.T = org.telegram.messenger.id.M0(2131748828, null);
-                            jg.g.C(null, 2131747832, alertDialog$Builder, null);
+                            u1Var.T = org.telegram.messenger.id.M0(2131748827, null);
+                            jg.g.C(null, 2131747831, alertDialog$Builder, null);
                             break;
                         }
                     }
@@ -135,7 +135,7 @@ public final /* synthetic */ class v8 implements Runnable {
                                                 f10.k(qs.G2, objArr);
                                             }
                                         }
-                                        org.telegram.messenger.g0.i3(new fi.i9(vaVar, this.b, storyItem, this.c, inputGroupCall, this.d), 100L);
+                                        org.telegram.messenger.g0.i3(new fi.h9(vaVar, this.b, storyItem, this.c, inputGroupCall, this.d), 100L);
                                         break;
                                     }
                                 }
@@ -156,7 +156,7 @@ public final /* synthetic */ class v8 implements Runnable {
         }
     }
 
-    public /* synthetic */ v8(fi.va vaVar, TLObject tLObject, TL_stories.TL_startLive tL_startLive, boolean z9, long j3, boolean z10, TLRPC.TL_error tL_error, di.s7 s7Var) {
+    public /* synthetic */ v8(fi.va vaVar, TLObject tLObject, TL_stories.TL_startLive tL_startLive, boolean z9, long j3, boolean z10, TLRPC.TL_error tL_error, di.f8 f8Var) {
         this.e = vaVar;
         this.f = tLObject;
         this.h = tL_startLive;
@@ -164,6 +164,6 @@ public final /* synthetic */ class v8 implements Runnable {
         this.c = j3;
         this.d = z10;
         this.n = tL_error;
-        this.r = s7Var;
+        this.r = f8Var;
     }
 }

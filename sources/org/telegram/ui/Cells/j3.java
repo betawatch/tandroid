@@ -11,9 +11,9 @@ import android.util.Pair;
 import java.util.HashMap;
 import java.util.Map;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.ec0;
+import org.telegram.ui.gc0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class j3 implements TextWatcher {
     public final /* synthetic */ int a = 2;
@@ -72,21 +72,21 @@ public final class j3 implements TextWatcher {
             case 2:
                 break;
             default:
-                ec0 ec0Var = (ec0) this.d;
-                ah.i iVar = ec0Var.c;
+                gc0 gc0Var = (gc0) this.d;
+                ah.i iVar = gc0Var.c;
                 if (!this.b) {
-                    ec0Var.p(true);
-                    org.telegram.messenger.g0.r(ec0Var.V);
-                    ec0Var.n(false);
+                    gc0Var.p(true);
+                    org.telegram.messenger.g0.r(gc0Var.V);
+                    gc0Var.n(false);
                     if (TextUtils.isEmpty(editable)) {
-                        ec0Var.D = false;
+                        gc0Var.D = false;
                     }
-                    if (!ec0Var.o(editable.toString())) {
-                        ec0Var.r(true);
+                    if (!gc0Var.o(editable.toString())) {
+                        gc0Var.r(true);
                         this.b = true;
                         boolean z9 = iVar.getSelectionEnd() >= iVar.getText().length();
-                        if (!ec0Var.D) {
-                            String str = ec0Var.K;
+                        if (!gc0Var.D) {
+                            String str = gc0Var.K;
                             iVar.setText(str.substring(0, Utilities.j(this.c, str.length(), 0)));
                             if (z9) {
                                 iVar.setSelection(iVar.getText().length());
@@ -141,8 +141,8 @@ public final class j3 implements TextWatcher {
                 }
                 break;
             default:
-                if (!this.b && charSequence != null && ((ec0) this.d).K != null) {
-                    this.c = ec0.s(charSequence.toString()).length();
+                if (!this.b && charSequence != null && ((gc0) this.d).K != null) {
+                    this.c = gc0.s(charSequence.toString()).length();
                     break;
                 }
                 break;
@@ -188,8 +188,8 @@ public final class j3 implements TextWatcher {
         this.d = u4Var;
     }
 
-    public j3(ec0 ec0Var) {
-        this.d = ec0Var;
+    public j3(gc0 gc0Var) {
+        this.d = gc0Var;
     }
 
     private final void a(Editable editable) {

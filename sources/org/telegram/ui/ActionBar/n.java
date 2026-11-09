@@ -2,7 +2,7 @@ package org.telegram.ui.ActionBar;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n implements r0.m, oi.n {
     public final /* synthetic */ f2 a;
@@ -20,6 +20,6 @@ public final /* synthetic */ class n implements r0.m, oi.n {
     public int h() {
         f2 f2Var = this.a;
         f2Var.getClass();
-        return f2Var.getThemedColor(k6.a7);
+        return f2Var.getThemedColor(l6.a7);
     }
 }

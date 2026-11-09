@@ -14,7 +14,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import c8.ha;
-import di.a4;
+import di.b4;
 import j$.time.DayOfWeek;
 import j$.time.format.TextStyle;
 import java.util.ArrayList;
@@ -28,19 +28,19 @@ import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.s6;
 import org.telegram.ui.Components.mp;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public abstract class f1 extends LinearLayout {
     public boolean D;
     public boolean E;
     public boolean F;
-    public final f6 a;
+    public final g6 a;
     public final TextView b;
     public final TextView[] c;
     public final ImageView d;
@@ -54,7 +54,7 @@ public abstract class f1 extends LinearLayout {
     public int x;
     public int y;
 
-    public f1(Context context, f6 f6Var) {
+    public f1(Context context, g6 g6Var) {
         super(context);
         this.c = new TextView[2];
         this.f = new ViewGroup[7];
@@ -63,24 +63,24 @@ public abstract class f1 extends LinearLayout {
         this.x = 1;
         this.y = 0;
         this.D = true;
-        this.a = f6Var;
+        this.a = g6Var;
         setOrientation(1);
         setClipChildren(false);
         int i7 = 0;
         for (int i10 = 7; i7 < i10; i10 = 7) {
             if (i7 == 0) {
-                ViewGroup a4Var = new a4(context, 4);
-                a4Var.setMinimumHeight(org.telegram.messenger.g0.L(60.0f));
+                ViewGroup b4Var = new b4(context, 4);
+                b4Var.setMinimumHeight(org.telegram.messenger.g0.L(60.0f));
                 TextView textView = new TextView(context);
                 this.b = textView;
                 textView.setGravity(id.a0 ? 5 : 3);
                 textView.setTextSize(1, 16.0f);
-                a4Var.addView(textView, ha.i(-1.0f, -2.0f, 8388659, 0.0f, 9.33f, 0.0f, 0.0f));
+                b4Var.addView(textView, ha.i(-1.0f, -2.0f, 8388659, 0.0f, 9.33f, 0.0f, 0.0f));
                 this.h[i7] = new TextView(context);
                 this.h[i7].setGravity(id.a0 ? 5 : 3);
                 this.h[i7].setTextSize(1, 13.0f);
-                r6.V(this.h[i7], k6.z6, f6Var);
-                a4Var.addView(this.h[i7], ha.i(-2.0f, -2.0f, 8388659, 0.0f, 33.0f, 0.0f, 10.0f));
+                s6.U(this.h[i7], l6.z6, g6Var);
+                b4Var.addView(this.h[i7], ha.i(-2.0f, -2.0f, 8388659, 0.0f, 33.0f, 0.0f, 10.0f));
                 LinearLayout linearLayout = new LinearLayout(context);
                 this.w = linearLayout;
                 linearLayout.setOrientation(1);
@@ -89,14 +89,14 @@ public abstract class f1 extends LinearLayout {
                 for (int i11 = 0; i11 < 2; i11++) {
                     this.n[i7][i11] = new TextView(context);
                     this.n[i7][i11].setTextSize(1, 14.0f);
-                    r6.V(this.n[i7][i11], k6.z6, f6Var);
+                    s6.U(this.n[i7][i11], l6.z6, g6Var);
                     this.n[i7][i11].setGravity(id.a0 ? 3 : 5);
                     this.s.addView(this.n[i7][i11], ha.i(-1.0f, -1.0f, qs.E1, 0.0f, 0.0f, 20.0f, 0.0f));
                 }
                 for (int i12 = 0; i12 < 2; i12++) {
                     this.c[i12] = new TextView(context);
                     this.c[i12].setTextSize(1, 14.0f);
-                    r6.V(this.c[i12], k6.z6, f6Var);
+                    s6.U(this.c[i12], l6.z6, g6Var);
                     this.c[i12].setGravity(id.a0 ? 3 : 5);
                     this.s.addView(this.c[i12], ha.i(-1.0f, -1.0f, qs.E1, 0.0f, 0.0f, 20.0f, 0.0f));
                 }
@@ -106,7 +106,7 @@ public abstract class f1 extends LinearLayout {
                 imageView.setScaleX(0.6f);
                 imageView.setScaleY(0.6f);
                 imageView.setImageResource(R.drawable.arrow_more);
-                r6.t(imageView, k6.z6, f6Var, PorterDuff.Mode.SRC_IN);
+                s6.s(imageView, l6.z6, g6Var, PorterDuff.Mode.SRC_IN);
                 this.s.addView(imageView, ha.h(20.0f, 20.0f, 8388629));
                 this.w.addView(this.s, new LinearLayout.LayoutParams(ha.z(-1.0f), ha.z(-1.0f), Gravity.getAbsoluteGravity(qs.E1, id.a0 ? 1 : 0)));
                 mp mpVar = new mp(context);
@@ -116,15 +116,15 @@ public abstract class f1 extends LinearLayout {
                 mpVar.setPadding(org.telegram.messenger.g0.L(6.0f), 0, org.telegram.messenger.g0.L(6.0f), 0);
                 mpVar.setGravity(id.a0 ? 3 : 5);
                 int L = org.telegram.messenger.g0.L(8.0f);
-                int i13 = k6.o6;
-                int w02 = k6.w0(i13, f6Var);
+                int i13 = l6.o6;
+                int w02 = l6.w0(i13, g6Var);
                 a(w02);
-                int r12 = k6.r1(0.1f, w02);
-                int w03 = k6.w0(i13, f6Var);
+                int r12 = l6.r1(0.1f, w02);
+                int w03 = l6.w0(i13, g6Var);
                 a(w03);
-                int r13 = k6.r1(0.22f, w03);
-                mpVar.setBackground(k6.k0(L, L, L, L, r12, r13, r13));
-                int w04 = k6.w0(i13, f6Var);
+                int r13 = l6.r1(0.22f, w03);
+                mpVar.setBackground(l6.k0(L, L, L, L, r12, r13, r13));
+                int w04 = l6.w0(i13, g6Var);
                 a(w04);
                 mpVar.setTextColor(w04);
                 mpVar.getDrawable().A = 0.6f;
@@ -133,21 +133,21 @@ public abstract class f1 extends LinearLayout {
                 FrameLayout frameLayout = new FrameLayout(context);
                 this.e = frameLayout;
                 frameLayout.addView(this.w, ha.i(-1.0f, -2.0f, 8388693, 0.0f, 0.0f, 0.0f, 0.0f));
-                a4Var.addView(frameLayout, ha.i(-1.0f, -2.0f, 8388693, 0.0f, 0.0f, 0.0f, 12.0f));
-                this.f[i7] = a4Var;
-                addView(a4Var, ha.i(-1.0f, -2.0f, 51, 18.0f, 0.0f, 8.0f, 0.0f));
+                b4Var.addView(frameLayout, ha.i(-1.0f, -2.0f, 8388693, 0.0f, 0.0f, 0.0f, 12.0f));
+                this.f[i7] = b4Var;
+                addView(b4Var, ha.i(-1.0f, -2.0f, 51, 18.0f, 0.0f, 8.0f, 0.0f));
             } else {
                 ViewGroup f10 = k5.f(context, 0);
                 this.h[i7] = new TextView(context);
                 this.h[i7].setTextSize(1, 14.0f);
-                r6.V(this.h[i7], k6.G6, f6Var);
+                s6.U(this.h[i7], l6.G6, g6Var);
                 this.h[i7].setGravity(id.a0 ? 5 : 3);
                 FrameLayout frameLayout2 = new FrameLayout(context);
                 this.n[i7] = new TextView[2];
                 for (int i14 = 0; i14 < 2; i14++) {
                     this.n[i7][i14] = new TextView(context);
                     this.n[i7][i14].setTextSize(1, 14.0f);
-                    r6.V(this.n[i7][i14], k6.z6, f6Var);
+                    s6.U(this.n[i7][i14], l6.z6, g6Var);
                     this.n[i7][i14].setGravity(id.a0 ? 3 : 5);
                     frameLayout2.addView(this.n[i7][i14], ha.e(-1, -1, qs.E1));
                 }
@@ -437,7 +437,7 @@ public abstract class f1 extends LinearLayout {
             String M0 = id.M0(!z15 ? 2131752742 : 2131752743, null);
             TextView textView = this.b;
             textView.setText(M0);
-            r6.V(textView, !z15 ? k6.l8 : k6.p7, this.a);
+            s6.U(textView, !z15 ? l6.l8 : l6.p7, this.a);
             int i35 = this.y;
             i12 = this.x;
             this.x = 1;
@@ -614,7 +614,7 @@ public abstract class f1 extends LinearLayout {
         String M02 = id.M0(!z15 ? 2131752742 : 2131752743, null);
         TextView textView3 = this.b;
         textView3.setText(M02);
-        r6.V(textView3, !z15 ? k6.l8 : k6.p7, this.a);
+        s6.U(textView3, !z15 ? l6.l8 : l6.p7, this.a);
         int i352 = this.y;
         i12 = this.x;
         this.x = 1;
@@ -639,9 +639,9 @@ public abstract class f1 extends LinearLayout {
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (this.E) {
-            Paint W0 = k6.W0("paintDivider", this.a);
+            Paint W0 = l6.W0("paintDivider", this.a);
             if (W0 == null) {
-                W0 = k6.k0;
+                W0 = l6.k0;
             }
             canvas.drawRect(org.telegram.messenger.g0.L(id.a0 ? 0.0f : 21.33f), getMeasuredHeight() - 1, getWidth() - org.telegram.messenger.g0.L(id.a0 ? 21.33f : 0.0f), getMeasuredHeight(), W0);
         }

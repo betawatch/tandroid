@@ -10,7 +10,7 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class g2 extends Drawable {
     public final long a;
@@ -54,7 +54,7 @@ public final class g2 extends Drawable {
             canvas.translate(-g0.N(8.166f), g0.N(5.0f));
             float f10 = (d * 0.5f) + 0.5f;
             canvas.scale(f10, f10);
-            int r12 = org.telegram.ui.ActionBar.k6.r1(0.4f, -1);
+            int r12 = org.telegram.ui.ActionBar.l6.r1(0.4f, -1);
             Paint paint = this.c;
             paint.setColor(r12);
             Path path = this.d;
@@ -63,13 +63,13 @@ public final class g2 extends Drawable {
             float f11 = 0.5f + currentTimeMillis;
             canvas.save();
             canvas.clipRect(-g0.L(5.0f), g0.T1(-g0.N(3.5f), g0.N(3.5f), currentTimeMillis), g0.L(5.0f), g0.T1(-g0.N(3.5f), g0.N(3.5f), f11));
-            paint.setColor(org.telegram.ui.ActionBar.k6.r1(1.0f, -1));
+            paint.setColor(org.telegram.ui.ActionBar.l6.r1(1.0f, -1));
             canvas.drawPath(path, paint);
             canvas.restore();
             if (f11 > 1.0f) {
                 canvas.save();
                 canvas.clipRect(-g0.L(5.0f), g0.T1(-g0.N(3.5f), g0.N(3.5f), 0.0f), g0.L(5.0f), g0.T1(-g0.N(3.5f), g0.N(3.5f), f11 - 1.0f));
-                paint.setColor(org.telegram.ui.ActionBar.k6.r1(1.0f, -1));
+                paint.setColor(org.telegram.ui.ActionBar.l6.r1(1.0f, -1));
                 canvas.drawPath(path, paint);
                 canvas.restore();
             }

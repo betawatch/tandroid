@@ -2,22 +2,22 @@ package org.telegram.ui.Components;
 
 import j$.time.YearMonth;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p2 implements Runnable {
-    public final /* synthetic */ hb0 a;
+    public final /* synthetic */ ib0 a;
     public final /* synthetic */ int b;
-    public final /* synthetic */ hb0 c;
-    public final /* synthetic */ hb0 d;
+    public final /* synthetic */ ib0 c;
+    public final /* synthetic */ ib0 d;
     public final /* synthetic */ int e;
     public final /* synthetic */ int f;
     public final /* synthetic */ int h;
 
-    public /* synthetic */ p2(hb0 hb0Var, int i7, hb0 hb0Var2, hb0 hb0Var3, int i10, int i11, int i12) {
-        this.a = hb0Var;
+    public /* synthetic */ p2(ib0 ib0Var, int i7, ib0 ib0Var2, ib0 ib0Var3, int i10, int i11, int i12) {
+        this.a = ib0Var;
         this.b = i7;
-        this.c = hb0Var2;
-        this.d = hb0Var3;
+        this.c = ib0Var2;
+        this.d = ib0Var3;
         this.e = i10;
         this.f = i11;
         this.h = i12;
@@ -25,49 +25,49 @@ public final /* synthetic */ class p2 implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        hb0 hb0Var = this.a;
-        int value = hb0Var.getValue();
+        ib0 ib0Var = this.a;
+        int value = ib0Var.getValue();
         int i7 = this.b;
-        hb0 hb0Var2 = this.c;
-        hb0 hb0Var3 = this.d;
+        ib0 ib0Var2 = this.c;
+        ib0 ib0Var3 = this.d;
         if (value == i7) {
-            hb0Var2.setMinValue(1);
+            ib0Var2.setMinValue(1);
             try {
-                hb0Var2.setMaxValue(YearMonth.of(2024, hb0Var3.getValue() + 1).lengthOfMonth());
+                ib0Var2.setMaxValue(YearMonth.of(2024, ib0Var3.getValue() + 1).lengthOfMonth());
             } catch (Exception e10) {
                 org.telegram.messenger.a8.g(e10, true);
-                hb0Var2.setMaxValue(31);
+                ib0Var2.setMaxValue(31);
             }
-            hb0Var3.setMinValue(0);
-            hb0Var3.setMaxValue(11);
+            ib0Var3.setMinValue(0);
+            ib0Var3.setMaxValue(11);
             return;
         }
-        if (hb0Var.getValue() != this.e) {
-            hb0Var2.setMinValue(1);
+        if (ib0Var.getValue() != this.e) {
+            ib0Var2.setMinValue(1);
             try {
-                hb0Var2.setMaxValue(YearMonth.of(hb0Var.getValue(), hb0Var3.getValue() + 1).lengthOfMonth());
+                ib0Var2.setMaxValue(YearMonth.of(ib0Var.getValue(), ib0Var3.getValue() + 1).lengthOfMonth());
             } catch (Exception e11) {
                 org.telegram.messenger.a8.g(e11, true);
-                hb0Var2.setMaxValue(31);
+                ib0Var2.setMaxValue(31);
             }
-            hb0Var3.setMinValue(0);
-            hb0Var3.setMaxValue(11);
+            ib0Var3.setMinValue(0);
+            ib0Var3.setMaxValue(11);
             return;
         }
-        hb0Var3.setMinValue(0);
+        ib0Var3.setMinValue(0);
         int i10 = this.f;
-        hb0Var3.setMaxValue(i10);
-        if (hb0Var3.getValue() == i10) {
-            hb0Var2.setMinValue(1);
-            hb0Var2.setMaxValue(this.h);
+        ib0Var3.setMaxValue(i10);
+        if (ib0Var3.getValue() == i10) {
+            ib0Var2.setMinValue(1);
+            ib0Var2.setMaxValue(this.h);
             return;
         }
-        hb0Var2.setMinValue(1);
+        ib0Var2.setMinValue(1);
         try {
-            hb0Var2.setMaxValue(YearMonth.of(hb0Var.getValue(), hb0Var3.getValue() + 1).lengthOfMonth());
+            ib0Var2.setMaxValue(YearMonth.of(ib0Var.getValue(), ib0Var3.getValue() + 1).lengthOfMonth());
         } catch (Exception e12) {
             org.telegram.messenger.a8.g(e12, true);
-            hb0Var2.setMaxValue(31);
+            ib0Var2.setMaxValue(31);
         }
     }
 }

@@ -41,10 +41,10 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.VoIPPermissionActivity;
-import org.telegram.ui.fc1;
+import org.telegram.ui.ic1;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public class VoIPPreNotificationService {
     public static State currentState;
@@ -54,7 +54,7 @@ public class VoIPPreNotificationService {
     private static final Object sync = new Object();
     private static Vibrator vibrator;
 
-    /* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+    /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
     public static final class State implements VoIPServiceState {
         private final TL_phone.PhoneCall call;
         private final int currentAccount;
@@ -82,9 +82,9 @@ public class VoIPPreNotificationService {
                 return;
             }
             this.destroyed = true;
-            fc1 fc1Var = fc1.l1;
-            if (fc1Var != null) {
-                fc1Var.onStateChanged(getCallState());
+            ic1 ic1Var = ic1.l1;
+            if (ic1Var != null) {
+                ic1Var.onStateChanged(getCallState());
             }
         }
 
@@ -321,9 +321,9 @@ public class VoIPPreNotificationService {
         LaunchActivity launchActivity = LaunchActivity.G1;
         if (launchActivity != null && launchActivity.g1 && VoIPService.getSharedInstance() == null) {
             launchActivity.g1 = false;
-            fc1 fc1Var = fc1.l1;
-            if (fc1Var != null) {
-                fc1Var.e();
+            ic1 ic1Var = ic1.l1;
+            if (ic1Var != null) {
+                ic1Var.e();
             }
             launchActivity.moveTaskToBack(true);
         }
@@ -367,7 +367,7 @@ public class VoIPPreNotificationService {
         TLRPC.User a22 = qp.s1(i7).a2(Long.valueOf(j3));
         NotificationManager notificationManager = (NotificationManager) context.getSystemService("notification");
         Intent action = new Intent(context, (Class<?>) LaunchActivity.class).setAction("voip");
-        Notification.Builder contentIntent = new Notification.Builder(context).setContentTitle(id.M0(z9 ? 2131743300 : 2131743303, null)).setSmallIcon(R.drawable.call).setContentIntent(PendingIntent.getActivity(context, 0, action, 301989888));
+        Notification.Builder contentIntent = new Notification.Builder(context).setContentTitle(id.M0(z9 ? 2131743297 : 2131743300, null)).setSmallIcon(R.drawable.call).setContentIntent(PendingIntent.getActivity(context, 0, action, 301989888));
         SharedPreferences f12 = qp.f1();
         int i13 = f12.getInt("calls_notification_channel", 0);
         NotificationChannel notificationChannel = notificationManager.getNotificationChannel("incoming_calls2" + i13);
@@ -384,7 +384,7 @@ public class VoIPPreNotificationService {
                 z10 = false;
                 if (z10) {
                     AudioAttributes build = new AudioAttributes.Builder().setContentType(4).setLegacyStreamType(2).setUsage(2).build();
-                    NotificationChannel notificationChannel4 = new NotificationChannel("incoming_calls4" + i13, id.M0(2131749204, null), 4);
+                    NotificationChannel notificationChannel4 = new NotificationChannel("incoming_calls4" + i13, id.M0(2131749203, null), 4);
                     try {
                         notificationChannel4.setSound(null, build);
                         z11 = true;
@@ -392,7 +392,7 @@ public class VoIPPreNotificationService {
                         z11 = true;
                         a8.g(e10, true);
                     }
-                    notificationChannel4.setDescription(id.M0(2131749203, null));
+                    notificationChannel4.setDescription(id.M0(2131749202, null));
                     notificationChannel4.enableVibration(false);
                     notificationChannel4.enableLights(false);
                     notificationChannel4.setBypassDnd(z11);
@@ -407,7 +407,7 @@ public class VoIPPreNotificationService {
                 Intent intent = new Intent(context, (Class<?>) VoIPActionsReceiver.class);
                 intent.setAction(context.getPackageName() + ".DECLINE_CALL");
                 intent.putExtra("call_id", j10);
-                String M0 = id.M0(2131743421, null);
+                String M0 = id.M0(2131743418, null);
                 i10 = Build.VERSION.SDK_INT;
                 if (i10 >= 24 || i10 >= 31) {
                     i11 = 0;
@@ -420,7 +420,7 @@ public class VoIPPreNotificationService {
                 Intent intent2 = new Intent(context, (Class<?>) VoIPActionsReceiver.class);
                 intent2.setAction(context.getPackageName() + ".ANSWER_CALL");
                 intent2.putExtra("call_id", j10);
-                String M02 = id.M0(2131743507, null);
+                String M02 = id.M0(2131743504, null);
                 if (i10 >= 24 || i10 >= 31) {
                     i12 = 0;
                 } else {
@@ -463,7 +463,7 @@ public class VoIPPreNotificationService {
         Intent intent4 = new Intent(context, (Class<?>) VoIPActionsReceiver.class);
         intent4.setAction(context.getPackageName() + ".DECLINE_CALL");
         intent4.putExtra("call_id", j10);
-        String M03 = id.M0(2131743421, null);
+        String M03 = id.M0(2131743418, null);
         i10 = Build.VERSION.SDK_INT;
         if (i10 >= 24) {
         }
@@ -472,7 +472,7 @@ public class VoIPPreNotificationService {
         Intent intent22 = new Intent(context, (Class<?>) VoIPActionsReceiver.class);
         intent22.setAction(context.getPackageName() + ".ANSWER_CALL");
         intent22.putExtra("call_id", j10);
-        String M022 = id.M0(2131743507, null);
+        String M022 = id.M0(2131743504, null);
         if (i10 >= 24) {
         }
         i12 = 0;

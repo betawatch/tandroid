@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import c8.ha;
-import di.a4;
+import di.b4;
 import fi.j7;
 import java.util.ArrayList;
 import jg.z1;
@@ -26,19 +26,19 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.b5;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.s6;
 import org.telegram.ui.Cells.c2;
 import org.telegram.ui.Cells.q8;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.hc;
-import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.q41;
-import org.telegram.ui.Components.x31;
+import org.telegram.ui.Components.qj0;
+import org.telegram.ui.Components.r41;
 import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.y31;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class q0 extends f2 {
     public static final int U = -1;
@@ -81,12 +81,12 @@ public final class q0 extends f2 {
     public boolean T;
     public b5 a;
     public j7 b;
-    public q41 c;
+    public r41 c;
     public z1 d;
     public FrameLayout e;
     public EditTextBoldCursor f;
     public View h;
-    public a4 n;
+    public b4 n;
     public TextView r;
     public ImageView s;
     public a0 w;
@@ -115,7 +115,7 @@ public final class q0 extends f2 {
         }
         if (tLObject instanceof TLRPC.TL_boolFalse) {
             q0Var.a.b(false);
-            k5.p(null, 2131743882, hc.a0(q0Var), null);
+            k5.p(null, 2131743879, hc.a0(q0Var), null);
             return;
         }
         if (tLObject instanceof TLRPC.Updates) {
@@ -143,9 +143,9 @@ public final class q0 extends f2 {
         }
     }
 
-    public static void b0(final q0 q0Var, x31 x31Var, final View view) {
-        if (x31Var.g && !q0Var.w.h(x31Var)) {
-            int i7 = x31Var.d;
+    public static void b0(final q0 q0Var, y31 y31Var, final View view) {
+        if (y31Var.g && !q0Var.w.h(y31Var)) {
+            int i7 = y31Var.d;
             final int i10 = 1;
             if (i7 == U) {
                 a0 a0Var = q0Var.w;
@@ -170,8 +170,8 @@ public final class q0 extends f2 {
                 q0Var.d0(true);
                 return;
             }
-            if (x31Var.a == 13) {
-                TLRPC.User user = (TLRPC.User) q0Var.N.get(x31Var.x);
+            if (y31Var.a == 13) {
+                TLRPC.User user = (TLRPC.User) q0Var.N.get(y31Var.x);
                 if (user == null) {
                     return;
                 }
@@ -187,7 +187,7 @@ public final class q0 extends f2 {
                 org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                 u1Var.R = M0;
                 u1Var.T = org.telegram.messenger.g0.X2(id.M0(2131752810, null));
-                alertDialog$Builder.k(id.M0(2131747832, null), null);
+                alertDialog$Builder.k(id.M0(2131747831, null), null);
                 q0Var.showDialog(u1Var);
                 return;
             }
@@ -856,17 +856,17 @@ public final class q0 extends f2 {
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.simpleActionBar.setTitle(id.M0(2131752783, null));
         this.simpleActionBar.setActionBarMenuOnItemClick(new bi.s(this, 13));
-        this.a = this.simpleActionBar.n(id.M0(2131745949, null));
+        this.a = this.simpleActionBar.o(id.M0(2131745946, null));
         d0(false);
         FrameLayout frameLayout = new FrameLayout(context);
         new LinearLayout(getParentActivity()).setOrientation(0);
         EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(getParentActivity());
         this.f = editTextBoldCursor;
         editTextBoldCursor.setTextSize(1, 17.0f);
-        r6.E(this.f, k6.H6, null);
+        s6.D(this.f, l6.H6, null);
         EditTextBoldCursor editTextBoldCursor2 = this.f;
-        int i10 = k6.G6;
-        r6.V(editTextBoldCursor2, i10, null);
+        int i10 = l6.G6;
+        s6.U(editTextBoldCursor2, i10, null);
         this.f.setBackgroundDrawable(null);
         this.f.setMaxLines(1);
         this.f.setLines(1);
@@ -877,7 +877,7 @@ public final class q0 extends f2 {
         this.f.setInputType(180224);
         this.f.setImeOptions(6);
         this.f.setHint(id.M0(2131752816, null));
-        r6.w(this.f, i10, null);
+        s6.v(this.f, i10, null);
         this.f.setCursorSize(org.telegram.messenger.g0.L(19.0f));
         this.f.setCursorWidth(1.5f);
         this.f.setOnEditorActionListener(new bi.p(this, i7));
@@ -886,26 +886,26 @@ public final class q0 extends f2 {
         this.e = frameLayout2;
         frameLayout2.addView(this.f, ha.d(-1, -1.0f, 48, 21.0f, 15.0f, 21.0f, 15.0f));
         FrameLayout frameLayout3 = this.e;
-        int i12 = k6.d6;
-        r6.i(i12, frameLayout3, getResourceProvider());
+        int i12 = l6.d6;
+        s6.h(i12, frameLayout3, getResourceProvider());
         View view = new View(context);
         this.h = view;
-        r6.i(k6.d7, view, getResourceProvider());
+        s6.h(l6.d7, view, getResourceProvider());
         FrameLayout frameLayout4 = this.e;
         View view2 = this.h;
         float f10 = 1.0f / org.telegram.messenger.g0.p;
         boolean z9 = id.a0;
         frameLayout4.addView(view2, ha.d(-1, f10, 87, z9 ? 0 : 21, 0.0f, z9 ? 21 : 0, 0.0f));
-        a4 a4Var = new a4(context, i11);
-        this.n = a4Var;
-        r6.i(i12, a4Var, getResourceProvider());
+        b4 b4Var = new b4(context, i11);
+        this.n = b4Var;
+        s6.h(i12, b4Var, getResourceProvider());
         TextView textView = new TextView(context);
         this.r = textView;
         textView.setText(id.M0(2131752811, null));
         this.r.setTextSize(1, 14.0f);
         TextView textView2 = this.r;
-        int i13 = k6.z6;
-        r6.V(textView2, i13, getResourceProvider());
+        int i13 = l6.z6;
+        s6.U(textView2, i13, getResourceProvider());
         this.n.addView(this.r, ha.e(-2, -2, 17));
         this.s = new ImageView(context);
         j7 j7Var = new j7(getThemedColor(i13));
@@ -923,13 +923,13 @@ public final class q0 extends f2 {
         this.w = a0Var;
         TL_account.TL_connectedBot tL_connectedBot = this.H;
         a0Var.i(tL_connectedBot == null ? null : tL_connectedBot.recipients);
-        q41 q41Var = new q41(this, new hi.u1(this, i14), new n0(this, i11), null);
-        this.c = q41Var;
-        q41Var.r1();
+        r41 r41Var = new r41(this, new hi.u1(this, i14), new n0(this, i11), null);
+        this.c = r41Var;
+        r41Var.r1();
         this.c.setSectionsDrawBackground(true);
-        q41 q41Var2 = this.c;
-        q41Var2.f3.r = false;
-        frameLayout.addView(q41Var2, ha.c(-1.0f, -1));
+        r41 r41Var2 = this.c;
+        r41Var2.f3.r = false;
+        frameLayout.addView(r41Var2, ha.c(-1.0f, -1));
         this.fragmentView = frameLayout;
         return frameLayout;
     }
@@ -1021,7 +1021,7 @@ public final class q0 extends f2 {
     }
 
     @Override // org.telegram.ui.ActionBar.f2
-    public final pj0 getListViewForSimpleGlass() {
+    public final qj0 getListViewForSimpleGlass() {
         return this.c;
     }
 
@@ -1036,12 +1036,12 @@ public final class q0 extends f2 {
         if (e0()) {
             if (z9) {
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity());
-                String M0 = id.M0(2131743838, null);
+                String M0 = id.M0(2131743835, null);
                 org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                 u1Var.R = M0;
                 u1Var.T = id.M0(2131752786, null);
                 alertDialog$Builder.k(id.M0(2131754216, null), new n0(this, i7));
-                alertDialog$Builder.h(id.M0(2131747581, null), new n0(this, 1));
+                alertDialog$Builder.h(id.M0(2131747580, null), new n0(this, 1));
                 showDialog(u1Var);
                 return false;
             }
@@ -1077,7 +1077,7 @@ public final class q0 extends f2 {
         try {
             j7 j7Var = this.b;
             if (j7Var != null) {
-                j7Var.b(getThemedColor(k6.z6));
+                j7Var.b(getThemedColor(l6.z6));
                 ImageView imageView = this.s;
                 if (imageView != null) {
                     imageView.invalidate();

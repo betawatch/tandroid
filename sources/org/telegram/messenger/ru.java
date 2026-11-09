@@ -13,7 +13,7 @@ import android.view.View;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public abstract class ru extends fu implements x5 {
     public static Paint o0;
@@ -78,7 +78,7 @@ public abstract class ru extends fu implements x5 {
     @Override // org.telegram.messenger.fu
     public final CharSequence E(int i7) {
         String M0 = id.M0(q0() ? 2131753933 : 2131753948, null);
-        return (!r0() || this.n0.b()) ? M0 : TextUtils.concat(M0, ", ", id.M0(2131745265, null));
+        return (!r0() || this.n0.b()) ? M0 : TextUtils.concat(M0, ", ", id.M0(2131745262, null));
     }
 
     @Override // org.telegram.messenger.fu

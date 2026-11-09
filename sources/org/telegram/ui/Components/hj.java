@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.animation.ValueAnimator;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class hj implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -49,12 +49,12 @@ public final /* synthetic */ class hj implements ValueAnimator.AnimatorUpdateLis
                     break;
                 }
             default:
-                ca0 ca0Var = (ca0) this.d;
+                da0 da0Var = (da0) this.d;
                 float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 float f13 = 1.0f - floatValue2;
-                int i10 = (int) ((ca0Var.R * floatValue2) + (this.b * f13));
-                ca0Var.T = i10;
-                ca0Var.f((ca0Var.S * floatValue2) + (this.c * f13), i10);
+                int i10 = (int) ((da0Var.R * floatValue2) + (this.b * f13));
+                da0Var.T = i10;
+                da0Var.f((da0Var.S * floatValue2) + (this.c * f13), i10);
                 break;
         }
     }

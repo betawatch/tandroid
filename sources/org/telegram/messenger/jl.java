@@ -9,7 +9,7 @@ import org.telegram.messenger.camera.Size;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class jl implements Comparator {
     public final /* synthetic */ int a;
@@ -29,8 +29,8 @@ public final /* synthetic */ class jl implements Comparator {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final int compare(Object obj, Object obj2) {
-        int f12;
-        int f13;
+        int e12;
+        int e13;
         int i7;
         int i10;
         int i11;
@@ -42,23 +42,23 @@ public final /* synthetic */ class jl implements Comparator {
         int i16;
         switch (this.a) {
             case 0:
-                f12 = ((ij) obj2).f1();
-                f13 = ((ij) obj).f1();
+                e12 = ((ij) obj2).e1();
+                e13 = ((ij) obj).e1();
                 break;
             case 1:
                 ij ijVar = (ij) obj;
                 ij ijVar2 = (ij) obj2;
-                if (ijVar.k.date != ijVar2.k.date || ijVar.f1() < 0 || ijVar2.f1() < 0) {
+                if (ijVar.k.date != ijVar2.k.date || ijVar.e1() < 0 || ijVar2.e1() < 0) {
                     i7 = ijVar2.k.date;
                     i10 = ijVar.k.date;
                 } else {
-                    i7 = ijVar2.f1();
-                    i10 = ijVar.f1();
+                    i7 = ijVar2.e1();
+                    i10 = ijVar.e1();
                 }
                 return i7 - i10;
             case 2:
-                f12 = ((ij) obj2).f1();
-                f13 = ((ij) obj).f1();
+                e12 = ((ij) obj2).e1();
+                e13 = ((ij) obj).e1();
                 break;
             case 3:
                 TLRPC.Update update = (TLRPC.Update) obj;
@@ -122,13 +122,13 @@ public final /* synthetic */ class jl implements Comparator {
             case 10:
                 TLRPC.Message message = (TLRPC.Message) obj;
                 TLRPC.Message message2 = (TLRPC.Message) obj2;
-                if (ij.g3(message.id) || ij.g3(message2.id)) {
+                if (ij.f3(message.id) || ij.f3(message2.id)) {
                     int i25 = message.date;
                     int i26 = message2.date;
                     if (i25 <= i26) {
                         if (i25 >= i26) {
-                            if (!ij.g3(message.id) || ij.g3(message2.id)) {
-                                if ((ij.g3(message.id) || !ij.g3(message2.id)) && (i11 = message.id) <= (i12 = message2.id)) {
+                            if (!ij.f3(message.id) || ij.f3(message2.id)) {
+                                if ((ij.f3(message.id) || !ij.f3(message2.id)) && (i11 = message.id) <= (i12 = message2.id)) {
                                     if (i11 >= i12) {
                                         return 0;
                                     }
@@ -186,14 +186,14 @@ public final /* synthetic */ class jl implements Comparator {
             case 14:
                 return ((bu) obj).d - ((bu) obj2).d;
             case 15:
-                f12 = ((uv) obj2).c();
-                f13 = ((uv) obj).c();
+                e12 = ((uv) obj2).c();
+                e13 = ((uv) obj).c();
                 break;
             case 16:
                 return ((uv) obj).k - ((uv) obj2).k;
             case 17:
-                f12 = ((uv) obj2).c();
-                f13 = ((uv) obj).c();
+                e12 = ((uv) obj2).c();
+                e13 = ((uv) obj).c();
                 break;
             case 18:
                 int i34 = ((cw) obj).b.out_seq_no;
@@ -249,34 +249,34 @@ public final /* synthetic */ class jl implements Comparator {
                 List list = org.telegram.ui.ActionBar.k4.r;
                 return (list.contains(Integer.valueOf(((MenuItem) obj).getItemId())) ? 1 : 0) - (list.contains(Integer.valueOf(((MenuItem) obj2).getItemId())) ? 1 : 0);
             case 25:
-                org.telegram.ui.ActionBar.j6 j6Var = (org.telegram.ui.ActionBar.j6) obj;
-                org.telegram.ui.ActionBar.j6 j6Var2 = (org.telegram.ui.ActionBar.j6) obj2;
-                if (j6Var.b == null && j6Var.d == null) {
+                org.telegram.ui.ActionBar.k6 k6Var = (org.telegram.ui.ActionBar.k6) obj;
+                org.telegram.ui.ActionBar.k6 k6Var2 = (org.telegram.ui.ActionBar.k6) obj2;
+                if (k6Var.b == null && k6Var.d == null) {
                     return -1;
                 }
-                if (j6Var2.b == null && j6Var2.d == null) {
+                if (k6Var2.b == null && k6Var2.d == null) {
                     return 1;
                 }
-                return j6Var.a.compareTo(j6Var2.a);
+                return k6Var.a.compareTo(k6Var2.a);
             case 26:
-                org.telegram.ui.ActionBar.h6 h6Var = (org.telegram.ui.ActionBar.h6) obj;
-                org.telegram.ui.ActionBar.h6 h6Var2 = (org.telegram.ui.ActionBar.h6) obj2;
-                if (!org.telegram.ui.ActionBar.k6.l1(h6Var)) {
-                    if (!org.telegram.ui.ActionBar.k6.l1(h6Var2)) {
-                        ?? r02 = h6Var.z;
-                        ?? r12 = h6Var2.z;
+                org.telegram.ui.ActionBar.i6 i6Var = (org.telegram.ui.ActionBar.i6) obj;
+                org.telegram.ui.ActionBar.i6 i6Var2 = (org.telegram.ui.ActionBar.i6) obj2;
+                if (!org.telegram.ui.ActionBar.l6.l1(i6Var)) {
+                    if (!org.telegram.ui.ActionBar.l6.l1(i6Var2)) {
+                        ?? r02 = i6Var.z;
+                        ?? r12 = i6Var2.z;
                         if (r02 == r12) {
                             if (r02 != 0) {
-                                int i37 = h6Var.a;
-                                int i38 = h6Var2.a;
+                                int i37 = i6Var.a;
+                                int i38 = i6Var2.a;
                                 if (i37 <= i38) {
                                     if (i37 >= i38) {
                                         return 0;
                                     }
                                 }
                             } else {
-                                int i39 = h6Var.a;
-                                int i40 = h6Var2.a;
+                                int i39 = i6Var.a;
+                                int i40 = i6Var2.a;
                                 if (i39 <= i40) {
                                     if (i39 >= i40) {
                                         return 0;
@@ -312,7 +312,7 @@ public final /* synthetic */ class jl implements Comparator {
                 }
                 return -1;
         }
-        return f12 - f13;
+        return e12 - e13;
     }
 
     public /* synthetic */ jl(qp qpVar, int i7) {

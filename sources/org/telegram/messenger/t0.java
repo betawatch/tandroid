@@ -24,10 +24,10 @@ import org.telegram.messenger.PushListenerController;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.w80;
+import org.telegram.ui.y80;
 import org.telegram.utils.twidget.WidgetEngineService;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public abstract class t0 extends Application {
     public static volatile boolean D = true;
@@ -434,12 +434,12 @@ public abstract class t0 extends Application {
             }
             d = new Handler(b.getMainLooper());
             g0.h3(new ai.m0(21));
-            w80[] values = w80.values();
+            y80[] values = y80.values();
             int length = values.length;
             int i11 = 0;
             while (true) {
                 if (i11 >= length) {
-                    c8.ua.b(w80.h);
+                    c8.ua.b(y80.h);
                     break;
                 } else if (c8.ua.a(values[i11])) {
                     break;

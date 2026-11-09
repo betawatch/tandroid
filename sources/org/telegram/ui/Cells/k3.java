@@ -13,11 +13,11 @@ import org.telegram.messenger.ui;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public class k3 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
+public class k3 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public boolean D;
-    public final org.telegram.ui.ActionBar.f6 a;
+    public final org.telegram.ui.ActionBar.g6 a;
     public int b;
     public boolean c;
     public final i3 d;
@@ -31,7 +31,7 @@ public class k3 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     public int x;
     public final org.telegram.ui.Components.i6 y;
 
-    public k3(Context context, String str, boolean z9, boolean z10, int i7, org.telegram.ui.ActionBar.f6 f6Var) {
+    public k3(Context context, String str, boolean z9, boolean z10, int i7, org.telegram.ui.ActionBar.g6 g6Var) {
         super(context);
         this.h = -1;
         this.w = new org.telegram.ui.Components.z4(this);
@@ -41,13 +41,13 @@ public class k3 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
         i6Var.w(org.telegram.messenger.g0.L(15.33f));
         i6Var.b = 5;
         this.e = i7;
-        i3 i3Var = new i3(this, context, f6Var, i7, f6Var, z10);
+        i3 i3Var = new i3(this, context, g6Var, i7, g6Var, z10);
         this.d = i3Var;
         i6Var.setCallback(i3Var);
         i3Var.setTextSize(1, 17.0f);
-        org.telegram.ui.ActionBar.r6.E(i3Var, org.telegram.ui.ActionBar.k6.H6, f6Var);
-        int i10 = org.telegram.ui.ActionBar.k6.G6;
-        org.telegram.ui.ActionBar.r6.V(i3Var, i10, f6Var);
+        org.telegram.ui.ActionBar.s6.D(i3Var, org.telegram.ui.ActionBar.l6.H6, g6Var);
+        int i10 = org.telegram.ui.ActionBar.l6.G6;
+        org.telegram.ui.ActionBar.s6.U(i3Var, i10, g6Var);
         i3Var.setBackground(null);
         if (z9) {
             i3Var.setMaxLines(5);
@@ -61,8 +61,8 @@ public class k3 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
         i3Var.setInputType((z9 ? 131072 : 0) | 573441);
         i3Var.setRawInputType((z9 ? 131072 : 0) | 573441);
         i3Var.setHint(str);
-        this.a = f6Var;
-        int w02 = org.telegram.ui.ActionBar.k6.w0(i10, f6Var);
+        this.a = g6Var;
+        int w02 = org.telegram.ui.ActionBar.l6.w0(i10, g6Var);
         this.b = w02;
         i3Var.setCursorColor(w02);
         i3Var.setCursorSize(org.telegram.messenger.g0.L(19.0f));
@@ -102,7 +102,7 @@ public class k3 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (this.D) {
-            canvas.drawLine(id.a0 ? 0.0f : org.telegram.messenger.g0.L(22.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (id.a0 ? org.telegram.messenger.g0.L(22.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.k6.k0);
+            canvas.drawLine(id.a0 ? 0.0f : org.telegram.messenger.g0.L(22.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (id.a0 ? org.telegram.messenger.g0.L(22.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.l6.k0);
         }
     }
 
@@ -135,14 +135,14 @@ public class k3 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
         this.c = false;
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
         i3 i3Var = this.d;
         if (i3Var == null) {
             return;
         }
         try {
-            int w02 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.G6, this.a);
+            int w02 = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.G6, this.a);
             if (w02 != this.b) {
                 this.b = w02;
                 i3Var.setCursorColor(w02);
@@ -164,7 +164,7 @@ public class k3 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     public void a(boolean z9) {
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 

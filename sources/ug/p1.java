@@ -16,10 +16,10 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.d20;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.sz;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public class p1 {
     public boolean B;
@@ -29,7 +29,7 @@ public class p1 {
     public float[] F;
     public boolean G;
     public boolean N;
-    public f6 P;
+    public g6 P;
     public long R;
     public long S;
     public boolean g;
@@ -66,7 +66,7 @@ public class p1 {
     public boolean L = false;
     public boolean M = true;
     public int O = -1;
-    public int Q = k6.Ik;
+    public int Q = l6.Ik;
     public int T = 0;
 
     public p1(int i7) {
@@ -114,7 +114,7 @@ public class p1 {
             }
             int i13 = this.O;
             if (i13 == 9) {
-                this.d[i12] = sz.d(i12 == 0 ? R.raw.premium_object_folder : i12 == 1 ? R.raw.premium_object_bubble : R.raw.premium_object_settings, L, L, i0.a.o(k6.w0(this.Q, this.P), 30));
+                this.d[i12] = sz.d(i12 == 0 ? R.raw.premium_object_folder : i12 == 1 ? R.raw.premium_object_bubble : R.raw.premium_object_settings, L, L, i0.a.o(l6.w0(this.Q, this.P), 30));
                 this.e[i12] = true;
             } else {
                 int i14 = R.raw.premium_object_star2;
@@ -124,7 +124,7 @@ public class p1 {
                     } else if (i12 == 1) {
                         i14 = R.raw.filled_crown_on;
                     }
-                    this.d[i12] = sz.d(i14, L, L, i0.a.o(k6.w0(this.Q, this.P), 30));
+                    this.d[i12] = sz.d(i14, L, L, i0.a.o(l6.w0(this.Q, this.P), 30));
                     this.e[i12] = true;
                 } else {
                     int i15 = R.raw.premium_object_like;
@@ -134,7 +134,7 @@ public class p1 {
                         } else if (i12 == 1) {
                             i15 = R.raw.premium_object_smile2;
                         }
-                        this.d[i12] = sz.d(i15, L, L, i0.a.o(k6.w0(this.Q, this.P), 30));
+                        this.d[i12] = sz.d(i15, L, L, i0.a.o(l6.w0(this.Q, this.P), 30));
                         this.e[i12] = true;
                     } else {
                         int i16 = R.raw.premium_object_user;
@@ -142,7 +142,7 @@ public class p1 {
                             if (i12 != 0) {
                                 i16 = i12 == 1 ? R.raw.cache_photos : R.raw.cache_profile_photos;
                             }
-                            this.d[i12] = sz.d(i16, L, L, i0.a.o(k6.w0(this.Q, this.P), 30));
+                            this.d[i12] = sz.d(i16, L, L, i0.a.o(l6.w0(this.Q, this.P), 30));
                             this.e[i12] = true;
                         } else if (i13 == i11) {
                             if (i12 == 0) {
@@ -150,7 +150,7 @@ public class p1 {
                             } else if (i12 != 1) {
                                 i15 = R.raw.premium_object_noads;
                             }
-                            this.d[i12] = sz.d(i15, L, L, i0.a.o(k6.w0(this.Q, this.P), 30));
+                            this.d[i12] = sz.d(i15, L, L, i0.a.o(l6.w0(this.Q, this.P), 30));
                             this.e[i12] = true;
                         } else if (i13 == 7) {
                             if (i12 == 0) {
@@ -158,23 +158,23 @@ public class p1 {
                             } else if (i12 == 1) {
                                 i16 = R.raw.premium_object_video;
                             }
-                            this.d[i12] = sz.d(i16, L, L, i0.a.o(k6.w0(this.Q, this.P), 30));
+                            this.d[i12] = sz.d(i16, L, L, i0.a.o(l6.w0(this.Q, this.P), 30));
                             this.e[i12] = true;
                         } else if (i13 == 43) {
-                            this.d[i12] = sz.d(i12 == 0 ? R.raw.premium_object_list : i12 == 1 ? R.raw.premium_object_math : i12 == 2 ? R.raw.premium_object_table : i12 == i11 ? R.raw.premium_object_superscript : i12 == 4 ? R.raw.premium_object_bold : R.raw.premium_object_code, L, L, i0.a.o(k6.w0(this.Q, this.P), 30));
+                            this.d[i12] = sz.d(i12 == 0 ? R.raw.premium_object_list : i12 == 1 ? R.raw.premium_object_math : i12 == 2 ? R.raw.premium_object_table : i12 == i11 ? R.raw.premium_object_superscript : i12 == 4 ? R.raw.premium_object_bold : R.raw.premium_object_code, L, L, i0.a.o(l6.w0(this.Q, this.P), 30));
                             this.e[i12] = true;
                         } else if (i13 == 1001) {
-                            this.d[i12] = sz.d(R.raw.premium_object_fire, L, L, i0.a.o(k6.w0(this.Q, this.P), 30));
+                            this.d[i12] = sz.d(R.raw.premium_object_fire, L, L, i0.a.o(l6.w0(this.Q, this.P), 30));
                             this.e[i12] = true;
                         } else if (i13 == 1002) {
-                            this.d[i12] = sz.d(R.raw.premium_object_star2, L, L, i0.a.o(k6.w0(this.Q, this.P), 30));
+                            this.d[i12] = sz.d(R.raw.premium_object_star2, L, L, i0.a.o(l6.w0(this.Q, this.P), 30));
                             this.e[i12] = true;
                         } else if (i13 == 24) {
-                            this.d[i12] = sz.d(i12 == 0 ? R.raw.premium_object_tag : i12 == 1 ? R.raw.premium_object_check : R.raw.premium_object_star, L, L, i0.a.o(k6.w0(this.Q, this.P), 30));
+                            this.d[i12] = sz.d(i12 == 0 ? R.raw.premium_object_tag : i12 == 1 ? R.raw.premium_object_check : R.raw.premium_object_star, L, L, i0.a.o(l6.w0(this.Q, this.P), 30));
                             this.e[i12] = true;
                         } else if (i13 == 28) {
                             if (i12 == 0) {
-                                this.d[i12] = sz.d(R.raw.filled_premium_dollar, L, L, i0.a.o(k6.w0(this.Q, this.P), qs.e4));
+                                this.d[i12] = sz.d(R.raw.filled_premium_dollar, L, L, i0.a.o(l6.w0(this.Q, this.P), qs.e4));
                                 this.f[i12] = true;
                             }
                             Bitmap createBitmap = Bitmap.createBitmap(L, L, Bitmap.Config.ARGB_8888);
@@ -230,7 +230,7 @@ public class p1 {
                                 }
                             } else {
                                 Drawable drawable = org.telegram.messenger.t0.b.getDrawable(R.drawable.msg_premium_liststar);
-                                drawable.setColorFilter(new PorterDuffColorFilter(k6.w0(this.Q, this.P), PorterDuff.Mode.MULTIPLY));
+                                drawable.setColorFilter(new PorterDuffColorFilter(l6.w0(this.Q, this.P), PorterDuff.Mode.MULTIPLY));
                                 drawable.setBounds(0, 0, L, L);
                                 drawable.draw(canvas);
                             }
@@ -275,7 +275,7 @@ public class p1 {
     }
 
     public int b() {
-        return this.O == 100 ? i0.a.o(k6.w0(this.Q, this.P), qs.e3) : k6.w0(this.Q, this.P);
+        return this.O == 100 ? i0.a.o(l6.w0(this.Q, this.P), qs.e3) : l6.w0(this.Q, this.P);
     }
 
     public final void c() {
@@ -398,7 +398,7 @@ public class p1 {
     }
 
     public final void g() {
-        int w02 = k6.w0(this.Q, this.P);
+        int w02 = l6.w0(this.Q, this.P);
         if (this.z != w02) {
             this.z = w02;
             a();

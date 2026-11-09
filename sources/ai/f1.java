@@ -24,6 +24,7 @@ import bi.b6;
 import bi.d6;
 import bi.e7;
 import bi.h6;
+import bi.k6;
 import bi.k7;
 import bi.nd;
 import bi.t3;
@@ -31,8 +32,8 @@ import bi.u3;
 import bi.w4;
 import bi.y1;
 import c8.ha;
-import di.i4;
-import di.p9;
+import di.j4;
+import di.q9;
 import fi.a5;
 import fi.c5;
 import fi.c6;
@@ -40,9 +41,9 @@ import fi.fb;
 import fi.g2;
 import fi.n8;
 import fi.o5;
-import fi.q9;
+import fi.p9;
+import fi.r9;
 import fi.s8;
-import fi.s9;
 import fi.sb;
 import fi.t8;
 import fi.tb;
@@ -79,21 +80,21 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.o6;
+import org.telegram.ui.ActionBar.s6;
 import org.telegram.ui.ActionBar.u1;
-import org.telegram.ui.Components.b80;
+import org.telegram.ui.Components.c80;
 import org.telegram.ui.Components.di;
-import org.telegram.ui.Components.k60;
+import org.telegram.ui.Components.l60;
 import org.telegram.ui.Components.l9;
 import org.telegram.ui.Components.tq;
 import org.telegram.ui.Components.w8;
 import org.telegram.ui.Components.xq;
 import tg.k2;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f1 implements c20 {
     public final /* synthetic */ int a;
@@ -158,49 +159,49 @@ public final /* synthetic */ class f1 implements c20 {
                 Long l10 = (Long) obj;
                 if (l10.longValue() == -97) {
                     wg.f1 f1Var = f1VarArr[0];
-                    TL_stars.TL_starGiftUnique H1 = k7Var.H1();
-                    if (k7Var.X2 != null && H1 != null && !TextUtils.isEmpty(H1.slug)) {
+                    TL_stars.TL_starGiftUnique G1 = k7Var.G1();
+                    if (k7Var.X2 != null && G1 != null && !TextUtils.isEmpty(G1.slug)) {
                         long e10 = p10.i(k7Var.a).e();
                         TextView textView = new TextView(k7Var.getContext());
                         textView.setTextSize(1, 13.0f);
-                        int i16 = k6.r5;
-                        r6.V(textView, i16, k7Var.I0);
+                        int i16 = l6.r5;
+                        s6.U(textView, i16, k7Var.I0);
                         textView.setGravity(17);
                         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(" ");
-                        spannableStringBuilder.setSpan(new b80(org.telegram.messenger.g0.L(160.0f), textView), 0, spannableStringBuilder.length(), 33);
+                        spannableStringBuilder.setSpan(new c80(org.telegram.messenger.g0.L(160.0f), textView), 0, spannableStringBuilder.length(), 33);
                         textView.setText(spannableStringBuilder);
                         TL_stars.starGiftDepositPayload[] stargiftdepositpayloadArr = new TL_stars.starGiftDepositPayload[1];
                         Runnable[] runnableArr = new Runnable[1];
                         boolean[] zArr = new boolean[1];
                         TL_stars.depositStarGift depositstargift = new TL_stars.depositStarGift();
                         depositstargift.peer = qp.s1(k7Var.a).j1(e10);
-                        depositstargift.slug = H1.slug;
+                        depositstargift.slug = G1.slug;
                         ConnectionsManager.getInstance(k7Var.a).sendRequestTyped(depositstargift, new d3.b(i14), new t3(k7Var, zArr, textView, stargiftdepositpayloadArr, runnableArr, 0));
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, k7Var.getContext(), k7Var.I0);
-                        String M0 = id.M0(2131750108, null);
+                        String M0 = id.M0(2131750107, null);
                         u1 u1Var = alertDialog$Builder.a;
                         u1Var.R = M0;
-                        u1Var.T = id.M0(2131750106, null);
+                        u1Var.T = id.M0(2131750105, null);
                         TLRPC.User f10 = p10.i(k7Var.a).f();
                         LinearLayout linearLayout = new LinearLayout(k7Var.getContext());
                         linearLayout.setOrientation(1);
                         FrameLayout frameLayout = new FrameLayout(k7Var.getContext());
                         int L = org.telegram.messenger.g0.L(20.0f);
-                        int i17 = k6.j5;
-                        ShapeDrawable d02 = k6.d0(L, k6.r1(0.045f, k6.w0(i17, k7Var.I0)));
-                        n6 L2 = r6.L(0.045f, i17);
-                        f6 f6Var = k7Var.I0;
+                        int i17 = l6.j5;
+                        ShapeDrawable d02 = l6.d0(L, l6.r1(0.045f, l6.w0(i17, k7Var.I0)));
+                        o6 K = s6.K(0.045f, i17);
+                        g6 g6Var = k7Var.I0;
                         frameLayout.setBackground(d02);
-                        r6.k(frameLayout, d02, L2, null, f6Var);
+                        s6.j(frameLayout, d02, K, null, g6Var);
                         l9 l9Var = new l9(k7Var.getContext());
                         l9Var.setRoundRadius(org.telegram.messenger.g0.L(21.0f));
-                        w8 w8Var = new w8((f6) null);
+                        w8 w8Var = new w8((g6) null);
                         w8Var.r(f10);
                         l9Var.e(f10, w8Var);
                         frameLayout.addView(l9Var, ha.d(42, 42.0f, 19, 12.0f, 0.0f, 0.0f, 0.0f));
                         TextView textView2 = new TextView(k7Var.getContext());
                         com.google.android.recaptcha.internal.a.q(textView2, 1, 16.0f);
-                        r6.V(textView2, i17, k7Var.I0);
+                        s6.U(textView2, i17, k7Var.I0);
                         textView2.setSingleLine();
                         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
                         textView2.setEllipsize(truncateAt);
@@ -208,7 +209,7 @@ public final /* synthetic */ class f1 implements c20 {
                         frameLayout.addView(textView2, ha.d(-1, -2.0f, 51, 66.0f, 11.0f, 12.0f, 0.0f));
                         TextView textView3 = new TextView(k7Var.getContext());
                         textView3.setTextSize(1, 14.0f);
-                        r6.V(textView3, i16, k7Var.I0);
+                        s6.U(textView3, i16, k7Var.I0);
                         textView3.setSingleLine();
                         textView3.setEllipsize(truncateAt);
                         if (f10 != null && !TextUtils.isEmpty(f10.phone)) {
@@ -220,26 +221,26 @@ public final /* synthetic */ class f1 implements c20 {
                         linearLayout.addView(frameLayout, ha.k(20.0f, 0.0f, 20.0f, 16.0f, -1, 62));
                         TextView textView4 = new TextView(k7Var.getContext());
                         textView4.setTextSize(1, 15.0f);
-                        r6.V(textView4, i17, k7Var.I0);
-                        k5.m(textView4, 17, null, 2131750109);
+                        s6.U(textView4, i17, k7Var.I0);
+                        k5.m(textView4, 17, null, 2131750108);
                         linearLayout.addView(textView4, ha.k(24.0f, 0.0f, 24.0f, 0.0f, -1, -2));
                         LinearLayout linearLayout2 = new LinearLayout(k7Var.getContext());
                         linearLayout2.setOrientation(0);
                         linearLayout2.setGravity(16);
-                        k7Var.l1(linearLayout2, R.drawable.msg_openprofile, 14, i16, id.M0(2131748303, null), true);
-                        k7Var.l1(linearLayout2, R.drawable.menu_gift, 14, i16, id.M0(2131746677, null), false);
+                        k7Var.k1(linearLayout2, R.drawable.msg_openprofile, 14, i16, id.M0(2131748302, null), true);
+                        k7Var.k1(linearLayout2, R.drawable.menu_gift, 14, i16, id.M0(2131746676, null), false);
                         linearLayout.addView(linearLayout2, ha.t(-2, -2, 1, 0, 7, 0, 3));
                         linearLayout.addView(textView, ha.k(24.0f, 4.0f, 24.0f, 4.0f, -1, -2));
                         alertDialog$Builder.o(linearLayout);
                         u1Var.G = 20;
-                        alertDialog$Builder.k(id.M0(2131750110, null), new bg.e0(k7Var, e10, stargiftdepositpayloadArr, f1Var, 1));
+                        alertDialog$Builder.k(id.M0(2131750109, null), new bg.e0(k7Var, e10, stargiftdepositpayloadArr, f1Var, 1));
                         alertDialog$Builder.h(id.M0(2131752589, null), null);
                         u1Var.setOnDismissListener(new u3(0, zArr, runnableArr));
                         u1Var.show();
                         break;
                     }
                 } else if (l10.longValue() != -99 && l10.longValue() != -98) {
-                    k7Var.X1(l10.longValue(), 0L, false, new b3(k7Var, l10, f1VarArr, 1));
+                    k7Var.W1(l10.longValue(), 0L, false, new b3(k7Var, l10, f1VarArr, 1));
                     break;
                 }
                 break;
@@ -256,14 +257,14 @@ public final /* synthetic */ class f1 implements c20 {
                 if (stargiftupgradepreview != null) {
                     e7Var.setPreviewingAttributes(stargiftupgradepreview.sample_attributes);
                     k7Var2.s2(1, false, null);
-                    e7Var.i(1, id.M0(2131750137, null), id.a0(null, null, 2131750138, str), null);
-                    iVarArr[0].setText(id.M0(2131749867, null));
-                    iVarArr[1].setText(id.M0(2131749864, null));
-                    iVarArr[2].setText(id.M0(2131749861, null));
+                    e7Var.i(1, id.M0(2131750136, null), id.a0(null, null, 2131750137, str), null);
+                    iVarArr[0].setText(id.M0(2131749866, null));
+                    iVarArr[1].setText(id.M0(2131749863, null));
+                    iVarArr[2].setText(id.M0(2131749860, null));
                     k7Var2.n2.setVisibility(8);
                     k7Var2.m2.setVisibility(8);
                     dVar.setFilled(true);
-                    dVar.i(id.M0(2131747832, null), false, true);
+                    dVar.i(id.M0(2131747831, null), false, true);
                     dVar.g(null, false);
                     dVar.setOnClickListener(new y1(k7Var2, 9));
                     k7Var2.show();
@@ -277,7 +278,7 @@ public final /* synthetic */ class f1 implements c20 {
                 d6Var.d(true);
                 break;
             case 5:
-                bi.k6 k6Var = (bi.k6) obj3;
+                k6 k6Var = (k6) obj3;
                 cg.b bVar = (cg.b) obj2;
                 TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift = (TLRPC.TL_payments_paymentFormStarGift) obj;
                 vf.b bVar2 = k6Var.n;
@@ -295,14 +296,14 @@ public final /* synthetic */ class f1 implements c20 {
                 ((v10) obj3).a((cg.a) obj, new ab((bi.h1[]) obj2, i13));
                 break;
             case 7:
-                i4 i4Var = (i4) obj3;
+                j4 j4Var = (j4) obj3;
                 e3 e3Var = (e3) obj;
-                i4Var.t3 = e3Var;
-                ug.i0.w1(new w4(i4Var, i14), (TL_stories.TL_premium_boostsStatus) obj2, e3Var, i4Var.k1, true);
-                p9 p9Var = i4Var.s0;
-                if (p9Var != null) {
-                    p9Var.j1 = false;
-                    p9Var.V();
+                j4Var.t3 = e3Var;
+                ug.i0.w1(new w4(j4Var, i14), (TL_stories.TL_premium_boostsStatus) obj2, e3Var, j4Var.k1, true);
+                q9 q9Var = j4Var.s0;
+                if (q9Var != null) {
+                    q9Var.j1 = false;
+                    q9Var.V();
                     break;
                 }
                 break;
@@ -431,7 +432,7 @@ public final /* synthetic */ class f1 implements c20 {
                 }
             case 12:
                 n8 n8Var = (n8) obj3;
-                ((k60) obj2).u();
+                ((l60) obj2).u();
                 n8Var.h(true);
                 s8 s8Var = n8Var.W;
                 v8 v8Var = s8Var.O1;
@@ -447,10 +448,10 @@ public final /* synthetic */ class f1 implements c20 {
                 n8Var2.h(true);
                 break;
             case 14:
-                s9 s9Var = (s9) obj3;
+                r9 r9Var = (r9) obj3;
                 c20 c20Var = (c20) obj2;
                 Integer num = (Integer) obj;
-                va vaVar = s9Var.a;
+                va vaVar = r9Var.a;
                 boolean p02 = vaVar.p0();
                 int i19 = vaVar.c;
                 if (p02) {
@@ -503,7 +504,7 @@ public final /* synthetic */ class f1 implements c20 {
                         t8.a(i19, m112);
                         vaVar.L1 = false;
                         if (c20Var != null) {
-                            c20Var.a(new q9(s9Var, i13));
+                            c20Var.a(new p9(r9Var, i13));
                             break;
                         } else {
                             vaVar.J(1, true);

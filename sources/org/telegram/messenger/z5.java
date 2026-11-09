@@ -13,9 +13,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.r51;
+import org.telegram.ui.Components.s51;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class z5 extends c1 implements ls {
     public static volatile z5[] T = new z5[4];
@@ -262,12 +262,12 @@ public final class z5 extends c1 implements ls {
         if (message == null || (message.media instanceof TLRPC.TL_messageMediaStory)) {
             return f() ? 2 : 0;
         }
-        boolean M4 = ij.M4(message);
-        if (M4 || ij.u3(message) || ij.k4(message) || (ij.o1(message) instanceof TLRPC.TL_messageMediaGame)) {
+        boolean L4 = ij.L4(message);
+        if (L4 || ij.t3(message) || ij.j4(message) || (ij.n1(message) instanceof TLRPC.TL_messageMediaGame)) {
             i7 = 4;
-        } else if (ij.S4(message)) {
+        } else if (ij.R4(message)) {
             i7 = 2;
-        } else if (ij.T3(message) || ij.x4(message) || ij.M2(message)) {
+        } else if (ij.S3(message) || ij.w4(message) || ij.L2(message)) {
             i7 = 1;
         } else {
             if (ij.G0(message) == null) {
@@ -313,8 +313,8 @@ public final class z5 extends c1 implements ls {
                 long[] jArr = n10.b;
                 int i10 = iArr[c10];
                 long max = i7 == 2 ? Math.max(524288L, jArr[x(i7)]) : jArr[x(i7)];
-                long q12 = ij.q1(ij.o1(message));
-                return (M4 || !n10.c || q12 <= max || max <= 2097152) ? ((i7 != 1 || (q12 != 0 && q12 <= max)) && (i7 == 2 || (i10 & i7) != 0)) ? 1 : 0 : (i10 & i7) != 0 ? 2 : 0;
+                long p12 = ij.p1(ij.n1(message));
+                return (L4 || !n10.c || p12 <= max || max <= 2097152) ? ((i7 != 1 || (p12 != 0 && p12 <= max)) && (i7 == 2 || (i10 & i7) != 0)) ? 1 : 0 : (i10 & i7) != 0 ? 2 : 0;
             }
             c10 = 0;
             e10 = t0.e();
@@ -325,8 +325,8 @@ public final class z5 extends c1 implements ls {
             int i102 = iArr2[c10];
             if (i7 == 2) {
             }
-            long q122 = ij.q1(ij.o1(message));
-            if (M4) {
+            long p122 = ij.p1(ij.n1(message));
+            if (L4) {
             }
         }
         c10 = 1;
@@ -338,8 +338,8 @@ public final class z5 extends c1 implements ls {
         int i1022 = iArr22[c10];
         if (i7 == 2) {
         }
-        long q1222 = ij.q1(ij.o1(message));
-        if (M4) {
+        long p1222 = ij.p1(ij.n1(message));
+        if (L4) {
         }
     }
 
@@ -375,12 +375,12 @@ public final class z5 extends c1 implements ls {
         TLRPC.MessageMedia messageMedia;
         if (ijVar.D == 23) {
             int i7 = iz.a;
-            return (!sc.e(1024) || (storyItem = ((TLRPC.TL_messageMediaStory) ij.n1(ijVar)).storyItem) == null || (messageMedia = storyItem.media) == null || messageMedia.document == null || !storyItem.isPublic) ? false : true;
+            return (!sc.e(1024) || (storyItem = ((TLRPC.TL_messageMediaStory) ij.m1(ijVar)).storyItem) == null || (messageMedia = storyItem.media) == null || messageMedia.document == null || !storyItem.isPublic) ? false : true;
         }
         if (ijVar.Y0 != null) {
             return true;
         }
-        return !ijVar.y3() && e(ijVar) == 1;
+        return !ijVar.x3() && e(ijVar) == 1;
     }
 
     @Override // org.telegram.messenger.ls
@@ -495,7 +495,7 @@ public final class z5 extends c1 implements ls {
                                 if (l14 != null && l14.longValue() + 4000 >= System.currentTimeMillis()) {
                                 }
                                 ij ijVar = (ij) syVar.E.get(str3 + "_i");
-                                if (ijVar != null && ij.M4(ijVar.k)) {
+                                if (ijVar != null && ij.L4(ijVar.k)) {
                                     getMessagesController().C4(5, 0, j3, 0, null);
                                 } else if (ijVar == null || ijVar.F0() == null) {
                                     getMessagesController().C4(4, 0, j3, 0, null);
@@ -506,11 +506,11 @@ public final class z5 extends c1 implements ls {
                             } else {
                                 syVar.m.F0();
                                 if (l14 == null || l14.longValue() + 4000 < System.currentTimeMillis()) {
-                                    if (syVar.m.i4()) {
+                                    if (syVar.m.h4()) {
                                         getMessagesController().C4(8, 0, j3, 0, null);
-                                    } else if (ij.M4(syVar.m.k)) {
+                                    } else if (ij.L4(syVar.m.k)) {
                                         getMessagesController().C4(5, 0, j3, 0, null);
-                                    } else if (ij.S4(syVar.m.k)) {
+                                    } else if (ij.R4(syVar.m.k)) {
                                         getMessagesController().C4(9, 0, j3, 0, null);
                                     } else if (syVar.m.F0() != null) {
                                         getMessagesController().C4(3, 0, j3, 0, null);
@@ -558,20 +558,20 @@ public final class z5 extends c1 implements ls {
         char c10;
         int e10;
         y5 n10;
-        r51 r51Var;
-        long q12;
+        s51 s51Var;
+        long p12;
         if (ijVar == null || (message = ijVar.k) == null) {
             return 0;
         }
         if (message.media instanceof TLRPC.TL_messageMediaStory) {
             return f() ? 2 : 0;
         }
-        boolean M4 = ij.M4(message);
-        if (M4 || ij.u3(message) || ij.k4(message) || (ij.o1(message) instanceof TLRPC.TL_messageMediaGame)) {
+        boolean L4 = ij.L4(message);
+        if (L4 || ij.t3(message) || ij.j4(message) || (ij.n1(message) instanceof TLRPC.TL_messageMediaGame)) {
             i7 = 4;
-        } else if (ij.S4(message)) {
+        } else if (ij.R4(message)) {
             i7 = 2;
-        } else if (ij.T3(message) || ij.x4(message) || ij.M2(message)) {
+        } else if (ij.S3(message) || ij.w4(message) || ij.L2(message)) {
             i7 = 1;
         } else {
             if (ij.G0(message) == null) {
@@ -617,14 +617,14 @@ public final class z5 extends c1 implements ls {
                 long[] jArr = n10.b;
                 int i10 = iArr[c10];
                 long max = i7 == 2 ? Math.max(524288L, jArr[x(i7)]) : jArr[x(i7)];
-                r51Var = ijVar.e3;
-                if (r51Var != null) {
-                    q12 = r51Var.g.size;
+                s51Var = ijVar.e3;
+                if (s51Var != null) {
+                    p12 = s51Var.g.size;
                 } else {
-                    r51 r51Var2 = ijVar.f3;
-                    q12 = r51Var2 != null ? r51Var2.g.size : ij.q1(ij.o1(message));
+                    s51 s51Var2 = ijVar.f3;
+                    p12 = s51Var2 != null ? s51Var2.g.size : ij.p1(ij.n1(message));
                 }
-                return (M4 || !n10.c || q12 <= max || max <= 2097152) ? ((i7 != 1 || (q12 != 0 && q12 <= max)) && (i7 == 2 || (i10 & i7) != 0)) ? 1 : 0 : (i10 & i7) != 0 ? 2 : 0;
+                return (L4 || !n10.c || p12 <= max || max <= 2097152) ? ((i7 != 1 || (p12 != 0 && p12 <= max)) && (i7 == 2 || (i10 & i7) != 0)) ? 1 : 0 : (i10 & i7) != 0 ? 2 : 0;
             }
             c10 = 0;
             e10 = t0.e();
@@ -635,10 +635,10 @@ public final class z5 extends c1 implements ls {
             int i102 = iArr2[c10];
             if (i7 == 2) {
             }
-            r51Var = ijVar.e3;
-            if (r51Var != null) {
+            s51Var = ijVar.e3;
+            if (s51Var != null) {
             }
-            if (M4) {
+            if (L4) {
             }
         }
         c10 = 1;
@@ -650,10 +650,10 @@ public final class z5 extends c1 implements ls {
         int i1022 = iArr22[c10];
         if (i7 == 2) {
         }
-        r51Var = ijVar.e3;
-        if (r51Var != null) {
+        s51Var = ijVar.e3;
+        if (s51Var != null) {
         }
-        if (M4) {
+        if (L4) {
         }
     }
 
@@ -845,14 +845,14 @@ public final class z5 extends c1 implements ls {
                         if (i11 >= arrayList3.size()) {
                             break;
                         }
-                        if (((ij) arrayList.get(i7)).f1() == ((ij) arrayList3.get(i11)).f1() && ij.B0(((ij) arrayList3.get(i11)).k) == ij.B0(((ij) arrayList.get(i7)).k)) {
+                        if (((ij) arrayList.get(i7)).e1() == ((ij) arrayList3.get(i11)).e1() && ij.B0(((ij) arrayList3.get(i11)).k) == ij.B0(((ij) arrayList.get(i7)).k)) {
                             arrayList3.remove(i11);
                             break;
                         }
                         i11++;
                     }
                 } else {
-                    if (((ij) arrayList.get(i7)).f1() == ((ij) arrayList2.get(i10)).f1() && ij.B0(((ij) arrayList2.get(i10)).k) == ij.B0(((ij) arrayList.get(i7)).k)) {
+                    if (((ij) arrayList.get(i7)).e1() == ((ij) arrayList2.get(i10)).e1() && ij.B0(((ij) arrayList2.get(i10)).k) == ij.B0(((ij) arrayList.get(i7)).k)) {
                         arrayList2.remove(i10);
                         break;
                     }
@@ -1091,7 +1091,7 @@ public final class z5 extends c1 implements ls {
         tL_autoDownloadSettings2.photo_size_max = z11 ? (int) jArr[0] : 0;
         tL_autoDownloadSettings2.video_size_max = z12 ? jArr[1] : 0L;
         tL_autoDownloadSettings2.file_size_max = z13 ? jArr[2] : 0L;
-        getConnectionsManager().sendRequest(saveautodownloadsettings, new di.u5(9));
+        getConnectionsManager().sendRequest(saveautodownloadsettings, new di.v5(9));
     }
 
     public final void y() {

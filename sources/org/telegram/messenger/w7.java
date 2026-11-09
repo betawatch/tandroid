@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class w7 extends c1 {
     public static Pattern I;
@@ -154,10 +154,10 @@ public final class w7 extends c1 {
             }
             ij ijVar = (ij) obj;
             e8 e8Var2 = new e8();
-            e8Var2.b = ijVar.f1();
+            e8Var2.b = ijVar.e1();
             e8Var2.a = ij.B0(ijVar.k);
             e8Var2.c = ijVar.D;
-            e8Var2.d = ijVar.T1();
+            e8Var2.d = ijVar.S1();
             return e8Var2;
         }
         String str = (String) obj;
@@ -238,7 +238,7 @@ public final class w7 extends c1 {
                 if (!TextUtils.isEmpty(document.localPath)) {
                     return new File(document.localPath);
                 }
-                int i15 = document.key == null ? ij.R4(document) ? 1 : ij.L4(document) ? 2 : 3 : 4;
+                int i15 = document.key == null ? ij.Q4(document) ? 1 : ij.K4(document) ? 2 : 3 : 4;
                 j3 = document.id;
                 i7 = document.dc_id;
                 z11 = z(i15);
@@ -348,26 +348,26 @@ public final class w7 extends c1 {
                 }
             }
         } else {
-            if (ij.o1(message) instanceof TLRPC.TL_messageMediaDocument) {
-                return J(ij.o1(message).document, null, z9 || ij.o1(message).ttl_seconds != 0, z10);
+            if (ij.n1(message) instanceof TLRPC.TL_messageMediaDocument) {
+                return J(ij.n1(message).document, null, z9 || ij.n1(message).ttl_seconds != 0, z10);
             }
-            if (ij.o1(message) instanceof TLRPC.TL_messageMediaPhoto) {
-                ArrayList<TLRPC.PhotoSize> arrayList2 = ij.o1(message).photo.sizes;
+            if (ij.n1(message) instanceof TLRPC.TL_messageMediaPhoto) {
+                ArrayList<TLRPC.PhotoSize> arrayList2 = ij.n1(message).photo.sizes;
                 if (arrayList2.size() > 0 && (w11 = w(arrayList2, g0.Z0(true), false, null, true)) != null) {
-                    return J(w11, null, z9 || ij.o1(message).ttl_seconds != 0, z10);
+                    return J(w11, null, z9 || ij.n1(message).ttl_seconds != 0, z10);
                 }
-            } else if (ij.o1(message) instanceof TLRPC.TL_messageMediaWebPage) {
-                if (ij.o1(message).webpage.document != null) {
-                    return J(ij.o1(message).webpage.document, null, z9, z10);
+            } else if (ij.n1(message) instanceof TLRPC.TL_messageMediaWebPage) {
+                if (ij.n1(message).webpage.document != null) {
+                    return J(ij.n1(message).webpage.document, null, z9, z10);
                 }
-                if (ij.o1(message).webpage.photo != null) {
-                    ArrayList<TLRPC.PhotoSize> arrayList3 = ij.o1(message).webpage.photo.sizes;
+                if (ij.n1(message).webpage.photo != null) {
+                    ArrayList<TLRPC.PhotoSize> arrayList3 = ij.n1(message).webpage.photo.sizes;
                     if (arrayList3.size() > 0 && (w10 = w(arrayList3, g0.Z0(false), false, null, false)) != null) {
                         return J(w10, null, z9, z10);
                     }
                 }
-            } else if (ij.o1(message) instanceof TLRPC.TL_messageMediaInvoice) {
-                return J(((TLRPC.TL_messageMediaInvoice) ij.o1(message)).photo, null, true, z10);
+            } else if (ij.n1(message) instanceof TLRPC.TL_messageMediaInvoice) {
+                return J(((TLRPC.TL_messageMediaInvoice) ij.n1(message)).photo, null, true, z10);
             }
         }
         return new File("");
@@ -842,7 +842,7 @@ public final class w7 extends c1 {
         }
         if (document != null && (obj instanceof ij)) {
             ij ijVar2 = (ij) obj;
-            if (ijVar2.P && !ijVar2.N2()) {
+            if (ijVar2.P && !ijVar2.M2()) {
                 z5 downloadController = getDownloadController();
                 downloadController.getClass();
                 TLRPC.Document F0 = ijVar2.F0();
@@ -912,11 +912,11 @@ public final class w7 extends c1 {
             obj2 = obj;
             if (document != null) {
                 i7Var2 = new i7(obj2, document);
-                if (ij.R4(document)) {
+                if (ij.Q4(document)) {
                     i16 = 0;
                     i18 = i11;
                     j12 = 0;
-                } else if (ij.L4(document)) {
+                } else if (ij.K4(document)) {
                     long j17 = document.id;
                     i16 = document.dc_id;
                     j12 = j17;
@@ -926,7 +926,7 @@ public final class w7 extends c1 {
                     i16 = document.dc_id;
                     j12 = j18;
                 }
-                if (!ij.j4(document)) {
+                if (!ij.i4(document)) {
                     i7Var = i7Var2;
                     i15 = i16;
                     j11 = j12;
@@ -950,7 +950,7 @@ public final class w7 extends c1 {
                         j11 = 0;
                         i14 = 2;
                         r12 = z16;
-                    } else if (!ij.s3(m20Var) && m20Var.e.startsWith("image/")) {
+                    } else if (!ij.r3(m20Var) && m20Var.e.startsWith("image/")) {
                         i7Var = i7Var2;
                         i14 = 0;
                         i15 = 0;
@@ -1015,7 +1015,7 @@ public final class w7 extends c1 {
                                 if (!getMessagesController().A2(j20) && !m5.C(j20)) {
                                     if (obj2 instanceof ij) {
                                         ij ijVar3 = (ij) obj2;
-                                        if (!ijVar3.i4() && !ij.S4(ijVar3.k) && !ijVar3.N2() && !ijVar3.k.noforwards) {
+                                        if (!ijVar3.h4() && !ij.R4(ijVar3.k) && !ijVar3.M2() && !ijVar3.k.noforwards) {
                                             ijVar = ijVar3;
                                             if (b6.k(j20 < 0 ? 1 : t3.V(getMessagesController().M0(Long.valueOf(-j20))) ? 4 : 2, E, ijVar, this.currentAccount)) {
                                                 File z20 = i17 == 0 ? z(100) : z(101);
@@ -1041,14 +1041,14 @@ public final class w7 extends c1 {
                             }
                             if (!TextUtils.isEmpty(B(document)) && (obj2 instanceof ij)) {
                                 ij ijVar4 = (ij) obj2;
-                                if (ijVar4.V2() && !ijVar4.i4() && !ij.S4(ijVar4.k)) {
+                                if (ijVar4.U2() && !ijVar4.h4() && !ij.R4(ijVar4.k)) {
                                     str3 = B(document);
                                     File z21 = z(5);
                                     if (z21 != null) {
                                         file = z21;
                                         z12 = true;
                                         if (z12) {
-                                            i7Var.c1 = new di.s6(j13, i20, i17);
+                                            i7Var.c1 = new di.t6(j13, i20, i17);
                                         }
                                     } else {
                                         file = file2;
@@ -1238,7 +1238,7 @@ public final class w7 extends c1 {
         f8 f8Var = this.d;
         if (z9) {
             TLRPC.Document document = (TLRPC.Document) tLObject;
-            int i7 = document.key == null ? ij.R4(document) ? 1 : ij.L4(document) ? 2 : 3 : 4;
+            int i7 = document.key == null ? ij.Q4(document) ? 1 : ij.K4(document) ? 2 : 3 : 4;
             long j3 = document.id;
             int i10 = document.dc_id;
             f8Var.getClass();
@@ -1461,7 +1461,7 @@ public final class w7 extends c1 {
     }
 
     public final void n(String str, boolean z9, long j3, long j10, Float f10) {
-        J.c(new di.d6(this, z9, str, j3, j10, f10));
+        J.c(new di.e6(this, z9, str, j3, j10, f10));
     }
 
     public final float t(String str, float f10) {

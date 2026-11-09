@@ -9,7 +9,7 @@ import java.util.HashMap;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class y4 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -263,7 +263,7 @@ public final /* synthetic */ class y4 implements Runnable {
                     z9 = false;
                     for (int i25 = 0; i25 < size2; i25++) {
                         if (i24 < 0 ? syVar.y.get(i25) != null : i24 == i25) {
-                            gzVar.i0(((ij) arrayList11.get(i25)).f1(), z13);
+                            gzVar.i0(((ij) arrayList11.get(i25)).e1(), z13);
                             TLRPC.TL_inputSingleMedia tL_inputSingleMedia = tL_messages_sendMultiMedia.multi_media.get(i25);
                             TLRPC.InputMedia inputMedia3 = tL_inputSingleMedia.media;
                             if (inputMedia3 instanceof TLRPC.TL_inputMediaPhoto) {
@@ -292,7 +292,7 @@ public final /* synthetic */ class y4 implements Runnable {
                         for (0; i13 < size3; i13 + 1) {
                             if (i24 >= 0) {
                                 i13 = i24 != i13 ? i13 + 1 : 0;
-                                gzVar.i0(((ij) arrayList11.get(i13)).f1(), z13);
+                                gzVar.i0(((ij) arrayList11.get(i13)).e1(), z13);
                                 inputMedia = tL_inputMediaPaidMedia.extended_media.get(i13);
                                 if (inputMedia instanceof TLRPC.TL_inputMediaPhoto) {
                                     if (inputMedia instanceof TLRPC.TL_inputMediaDocument) {
@@ -327,7 +327,7 @@ public final /* synthetic */ class y4 implements Runnable {
                             } else {
                                 if (syVar.y.get(i13) == null) {
                                 }
-                                gzVar.i0(((ij) arrayList11.get(i13)).f1(), z13);
+                                gzVar.i0(((ij) arrayList11.get(i13)).e1(), z13);
                                 inputMedia = tL_inputMediaPaidMedia.extended_media.get(i13);
                                 if (inputMedia instanceof TLRPC.TL_inputMediaPhoto) {
                                 }

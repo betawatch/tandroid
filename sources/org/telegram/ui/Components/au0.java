@@ -1,60 +1,43 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.PointF;
-import android.view.View;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public class au0 extends v4.c0 {
-    public final xq r;
-    public int s;
-    public float t;
+public final /* synthetic */ class au0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ TLRPC.Document b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ org.telegram.messenger.ij d;
+    public final /* synthetic */ org.telegram.ui.Cells.q1 e;
+    public final /* synthetic */ TLRPC.TL_messages_stickerSet f;
 
-    public au0(Context context) {
-        super(context);
-        this.r = xq.f;
-        this.t = 1.0f;
+    public /* synthetic */ au0(TLRPC.Document document, int i7, org.telegram.messenger.ij ijVar, org.telegram.ui.Cells.q1 q1Var, TLRPC.TL_messages_stickerSet tL_messages_stickerSet, int i10) {
+        this.a = i10;
+        this.b = document;
+        this.c = i7;
+        this.d = ijVar;
+        this.e = q1Var;
+        this.f = tL_messages_stickerSet;
     }
 
-    @Override // v4.c0, v4.z0
-    public final void g(View view, v4.y0 y0Var) {
-        int j3 = j(o(), view);
-        int k10 = k(p(), view);
-        int m10 = m((int) Math.sqrt((k10 * k10) + (j3 * j3)));
-        if (m10 > 0) {
-            y0Var.b(-j3, -k10, m10, this.r);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                TLRPC.Document document = this.b;
+                String r10 = org.telegram.messenger.w7.r(null, document);
+                int i7 = this.c;
+                org.telegram.messenger.z5.q(i7).a(r10, this.d, this.e);
+                org.telegram.messenger.w7.G(i7).W(document, this.f, 1, 1);
+                break;
+            default:
+                TLRPC.Document document2 = this.b;
+                String r11 = org.telegram.messenger.w7.r(null, document2);
+                int i10 = this.c;
+                org.telegram.messenger.z5.q(i10).a(r11, this.d, this.e);
+                org.telegram.messenger.w7.G(i10).W(document2, this.f, 1, 1);
+                break;
         }
-        org.telegram.messenger.g0.i3(new ir0(this, 5), Math.max(0, m10));
-    }
-
-    @Override // v4.c0
-    public final int k(int i7, View view) {
-        return super.k(i7, view) - this.s;
-    }
-
-    @Override // v4.c0
-    public final int m(int i7) {
-        return Math.round(Math.min(super.m(i7), 500) * this.t);
-    }
-
-    @Override // v4.c0
-    public final int n(int i7) {
-        return Math.round(Math.min(super.n(i7), org.telegram.messenger.qs.g2) * this.t);
-    }
-
-    @Override // v4.c0
-    public final void q(v4.y0 y0Var) {
-        PointF a10 = a(this.a);
-        if (a10 == null || (a10.x == 0.0f && a10.y == 0.0f)) {
-            y0Var.d = this.a;
-            h();
-            return;
-        }
-        v4.z0.b(a10);
-        this.k = a10;
-        this.o = (int) (a10.x * 10000.0f);
-        this.p = (int) (a10.y * 10000.0f);
-        y0Var.b((int) (this.o * 1.2f), (int) (this.p * 1.2f), (int) (n(10000) * 1.2f), this.r);
     }
 }

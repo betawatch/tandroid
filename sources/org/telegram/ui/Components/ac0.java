@@ -1,10 +1,47 @@
 package org.telegram.ui.Components;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class ac0 {
-    public AnimatorSet a;
-    public float b;
+public final class ac0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ fi.a8 b;
+
+    public /* synthetic */ ac0(fi.a8 a8Var, int i7) {
+        this.a = i7;
+        this.b = a8Var;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                fi.a8 a8Var = this.b;
+                AnimatorSet animatorSet = (AnimatorSet) a8Var.e;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    a8Var.e = null;
+                    break;
+                }
+                break;
+            case 1:
+                fi.a8 a8Var2 = this.b;
+                AnimatorSet animatorSet2 = (AnimatorSet) a8Var2.e;
+                if (animatorSet2 != null && animatorSet2.equals(animator)) {
+                    a8Var2.e = null;
+                    break;
+                }
+                break;
+            default:
+                fi.a8 a8Var3 = this.b;
+                AnimatorSet animatorSet3 = (AnimatorSet) a8Var3.e;
+                if (animatorSet3 != null && animatorSet3.equals(animator)) {
+                    a8Var3.e = null;
+                    break;
+                }
+                break;
+        }
+    }
 }

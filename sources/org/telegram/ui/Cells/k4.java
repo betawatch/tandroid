@@ -11,9 +11,9 @@ import org.telegram.messenger.iz;
 import org.telegram.messenger.sc;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadialProgress2;
-import org.telegram.ui.Components.my0;
+import org.telegram.ui.Components.ny0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class k4 implements org.telegram.messenger.x5 {
     public boolean D;
@@ -24,7 +24,7 @@ public final class k4 implements org.telegram.messenger.x5 {
     public final int I;
     public final int J;
     public int K;
-    public my0 L;
+    public ny0 L;
     public boolean M;
     public int a;
     public int b;
@@ -51,7 +51,7 @@ public final class k4 implements org.telegram.messenger.x5 {
         this.y = false;
         if (messageExtendedMedia instanceof TLRPC.TL_messageExtendedMedia) {
             TLRPC.MessageMedia messageMedia = ((TLRPC.TL_messageExtendedMedia) messageExtendedMedia).media;
-            this.y = (messageMedia instanceof TLRPC.TL_messageMediaDocument) && ij.L4(messageMedia.document);
+            this.y = (messageMedia instanceof TLRPC.TL_messageMediaDocument) && ij.K4(messageMedia.document);
             this.J = (int) Math.max(1L, Math.round(ij.H0(messageMedia.document)));
         } else if (messageExtendedMedia instanceof TLRPC.TL_messageExtendedMediaPreview) {
             TLRPC.TL_messageExtendedMediaPreview tL_messageExtendedMediaPreview = (TLRPC.TL_messageExtendedMediaPreview) messageExtendedMedia;
@@ -61,7 +61,7 @@ public final class k4 implements org.telegram.messenger.x5 {
         if (this.y) {
             int i11 = this.J;
             this.K = i11;
-            this.L = new my0(org.telegram.messenger.g0.g0(i11, true, false), 12.0f, null);
+            this.L = new ny0(org.telegram.messenger.g0.g0(i11, true, false), 12.0f, null);
         }
         ImageReceiver imageReceiver = new ImageReceiver(q1Var);
         this.f = imageReceiver;

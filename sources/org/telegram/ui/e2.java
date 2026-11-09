@@ -15,10 +15,10 @@ import java.util.regex.Pattern;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class e2 extends FrameLayout implements org.telegram.ui.Cells.h9, c3 {
-    public final o50 a;
+    public final q50 a;
     public final e4 b;
     public z2 c;
     public final c2 d;
@@ -29,16 +29,16 @@ public final class e2 extends FrameLayout implements org.telegram.ui.Cells.h9, c
     public int r;
     public final Paint s;
 
-    public e2(Context context, final o50 o50Var, e4 e4Var) {
+    public e2(Context context, final q50 q50Var, e4 e4Var) {
         super(context);
         this.s = new Paint();
-        this.a = o50Var;
+        this.a = q50Var;
         this.b = e4Var;
-        c2 c2Var = new c2(this, context, o50Var);
+        c2 c2Var = new c2(this, context, q50Var);
         this.d = c2Var;
         c2Var.setPadding(0, org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f));
         addView(c2Var, c8.ha.c(-2.0f, -1));
-        d2 d2Var = new d2(this, context, o50Var, e4Var);
+        d2 d2Var = new d2(this, context, q50Var, e4Var);
         this.e = d2Var;
         FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-2, -1);
         int L = org.telegram.messenger.g0.L(16.0f);
@@ -52,7 +52,7 @@ public final class e2 extends FrameLayout implements org.telegram.ui.Cells.h9, c
         c2Var.setOnScrollChangeListener(new View.OnScrollChangeListener() { // from class: org.telegram.ui.b2
             @Override // android.view.View.OnScrollChangeListener
             public final void onScrollChange(View view, int i7, int i10, int i11, int i12) {
-                org.telegram.ui.Cells.i9 i9Var = ((g4) o50.this).P0;
+                org.telegram.ui.Cells.i9 i9Var = ((g4) q50.this).P0;
                 if (i9Var == null || !i9Var.x()) {
                     return;
                 }
@@ -73,12 +73,12 @@ public final class e2 extends FrameLayout implements org.telegram.ui.Cells.h9, c
     public static SpannableString b(e2 e2Var, CharSequence charSequence, String str) {
         SpannableString spannableString = new SpannableString(charSequence);
         setDiffMarkerSpans(spannableString);
-        Pattern pattern = org.telegram.ui.Components.n80.a;
+        Pattern pattern = org.telegram.ui.Components.o80.a;
         char[] cArr = new char[spannableString.length()];
         int i7 = 0;
         for (int i10 = 0; i10 <= spannableString.length(); i10++) {
             if (i10 >= spannableString.length() || spannableString.charAt(i10) == '\n') {
-                int h = org.telegram.ui.Components.n80.h(i7, spannableString);
+                int h = org.telegram.ui.Components.o80.h(i7, spannableString);
                 int i11 = i7;
                 while (i11 < i10) {
                     cArr[i11] = (h == 3 || i11 == i7) ? ' ' : spannableString.charAt(i11);
@@ -96,7 +96,7 @@ public final class e2 extends FrameLayout implements org.telegram.ui.Cells.h9, c
         if (str2.length() == spannableString.length()) {
             String b10 = ni.s.b(str);
             if (!b10.isEmpty() && !str2.isEmpty()) {
-                ni.m.a.d(str2, b10, new zh.i3(spannableString, pVar));
+                ni.m.a.d(str2, b10, new zh.j3(spannableString, pVar));
             }
         }
         return spannableString;
@@ -109,7 +109,7 @@ public final class e2 extends FrameLayout implements org.telegram.ui.Cells.h9, c
             if (indexOf < 0) {
                 indexOf = spannableString.length();
             }
-            int h = org.telegram.ui.Components.n80.h(i7, spannableString);
+            int h = org.telegram.ui.Components.o80.h(i7, spannableString);
             if (h == 1) {
                 spannableString.setSpan(new ni.f(19), i7, i7 + 1, 33);
             } else if (h == 2) {
@@ -207,7 +207,7 @@ public final class e2 extends FrameLayout implements org.telegram.ui.Cells.h9, c
         int lineCount = staticLayout.getLineCount();
         int i7 = 0;
         while (i7 < lineCount) {
-            int h = org.telegram.ui.Components.n80.h(staticLayout.getLineStart(i7), text);
+            int h = org.telegram.ui.Components.o80.h(staticLayout.getLineStart(i7), text);
             Paint paint = this.s;
             if (h == 1) {
                 paint.setColor(640993113);

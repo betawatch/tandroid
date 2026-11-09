@@ -12,12 +12,12 @@ import org.telegram.tgnet.RequestTimeDelegate;
 import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.WriteToSocketDelegate;
-import org.telegram.ui.Components.im0;
-import org.telegram.ui.za1;
+import org.telegram.ui.Components.jm0;
+import org.telegram.ui.bb1;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class j1 implements ResultCallback, WriteToSocketDelegate, OnTokenCanceledListener, OnSuccessListener, OnFailureListener, fi.c7, lc, RequestTimeDelegate, im0, org.telegram.ui.ActionBar.r1 {
+public final /* synthetic */ class j1 implements ResultCallback, WriteToSocketDelegate, OnTokenCanceledListener, OnSuccessListener, OnFailureListener, fi.c7, lc, RequestTimeDelegate, jm0, org.telegram.ui.ActionBar.r1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -26,7 +26,7 @@ public final /* synthetic */ class j1 implements ResultCallback, WriteToSocketDe
         this.b = obj;
     }
 
-    @Override // org.telegram.ui.Components.im0
+    @Override // org.telegram.ui.Components.jm0
     public void a(float f10) {
         ij ijVar = ((du) this.b).W;
         if (ijVar == null) {
@@ -65,7 +65,7 @@ public final /* synthetic */ class j1 implements ResultCallback, WriteToSocketDe
 
     @Override // org.telegram.ui.ActionBar.r1
     public void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
-        ((org.telegram.ui.an) this.b).presentFragment(new za1(6, null));
+        ((org.telegram.ui.cn) this.b).presentFragment(new bb1(6, null));
     }
 
     @Override // com.google.android.gms.tasks.OnTokenCanceledListener
@@ -138,7 +138,7 @@ public final /* synthetic */ class j1 implements ResultCallback, WriteToSocketDe
     public /* synthetic */ void O(ImageReceiver imageReceiver) {
     }
 
-    @Override // org.telegram.ui.Components.im0
+    @Override // org.telegram.ui.Components.jm0
     public /* synthetic */ void d(float f10) {
     }
 

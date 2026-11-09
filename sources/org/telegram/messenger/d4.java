@@ -17,7 +17,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class d4 extends c1 {
     public static volatile p5 s = new p5("chatThemeQueue");
@@ -128,7 +128,7 @@ public final class d4 extends c1 {
                 f10.k(qs.T, N0, 0, bool, bool);
             }
         }
-        getConnectionsManager().sendRequest(tL_messages_setChatWallPaper, new di.u5(8));
+        getConnectionsManager().sendRequest(tL_messages_setChatWallPaper, new di.v5(8));
     }
 
     public final ArrayList b() {
@@ -583,7 +583,7 @@ public final class d4 extends c1 {
         hashMap2.remove(l11);
     }
 
-    public final int u(long j3, String str, org.telegram.ui.ActionBar.c6 c6Var, ij ijVar, ai.m0 m0Var) {
+    public final int u(long j3, String str, org.telegram.ui.ActionBar.d6 d6Var, ij ijVar, ai.m0 m0Var) {
         boolean z9;
         TLRPC.ChatFull N0;
         TLRPC.UserFull userFull;
@@ -594,14 +594,14 @@ public final class d4 extends c1 {
         } else {
             tL_messages_setChatWallPaper.peer = qp.l1(qp.s1(this.currentAccount).M0(Long.valueOf(-j3)));
         }
-        tL_messages_setChatWallPaper.for_both = c6Var.o;
+        tL_messages_setChatWallPaper.for_both = d6Var.o;
         if (ijVar == null || !(ijVar.k.action instanceof TLRPC.TL_messageActionSetChatWallPaper)) {
             tL_messages_setChatWallPaper.flags |= 1;
-            tL_messages_setChatWallPaper.wallpaper = qp.r1(c6Var);
+            tL_messages_setChatWallPaper.wallpaper = qp.r1(d6Var);
             z9 = true;
         } else {
             tL_messages_setChatWallPaper.flags |= 2;
-            tL_messages_setChatWallPaper.id = ijVar.f1();
+            tL_messages_setChatWallPaper.id = ijVar.e1();
             if (j3 >= 0) {
                 userFull = qp.s1(this.currentAccount).b2(j3);
                 N0 = null;
@@ -616,14 +616,14 @@ public final class d4 extends c1 {
             tL_wallPaper.document = wallPaper.document;
             TLRPC.TL_wallPaperSettings tL_wallPaperSettings = new TLRPC.TL_wallPaperSettings();
             tL_wallPaper.settings = tL_wallPaperSettings;
-            tL_wallPaperSettings.intensity = (int) (c6Var.k * 100.0f);
-            tL_wallPaperSettings.motion = c6Var.j;
-            tL_wallPaperSettings.blur = c6Var.i;
-            tL_wallPaperSettings.background_color = c6Var.d;
-            tL_wallPaperSettings.second_background_color = c6Var.e;
-            tL_wallPaperSettings.third_background_color = c6Var.f;
-            tL_wallPaperSettings.fourth_background_color = c6Var.g;
-            tL_wallPaperSettings.rotation = c6Var.h;
+            tL_wallPaperSettings.intensity = (int) (d6Var.k * 100.0f);
+            tL_wallPaperSettings.motion = d6Var.j;
+            tL_wallPaperSettings.blur = d6Var.i;
+            tL_wallPaperSettings.background_color = d6Var.d;
+            tL_wallPaperSettings.second_background_color = d6Var.e;
+            tL_wallPaperSettings.third_background_color = d6Var.f;
+            tL_wallPaperSettings.fourth_background_color = d6Var.g;
+            tL_wallPaperSettings.rotation = d6Var.h;
             tL_wallPaper.uploadingImage = str;
             TLRPC.WallPaper wallPaper2 = userFull != null ? userFull.wallpaper : N0 != null ? N0.wallpaper : null;
             if (wallPaper2 != null && (str2 = wallPaper2.uploadingImage) != null && str2.equals(str)) {
@@ -661,7 +661,7 @@ public final class d4 extends c1 {
             }
         }
         tL_messages_setChatWallPaper.flags |= 4;
-        tL_messages_setChatWallPaper.settings = qp.g2(c6Var);
+        tL_messages_setChatWallPaper.settings = qp.g2(d6Var);
         return ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_setChatWallPaper, new y3(this, j3, z9, str, m0Var));
     }
 }

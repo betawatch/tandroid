@@ -18,7 +18,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_ephemeral;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ln implements Runnable {
     public final /* synthetic */ int a;
@@ -216,13 +216,13 @@ public final /* synthetic */ class ln implements Runnable {
                                                             int size4 = messageReplies.recent_repliers.size();
                                                             int i19 = 0;
                                                             while (i19 < size4) {
-                                                                long C1 = ij.C1(messageReplies.recent_repliers.get(i19));
+                                                                long B1 = ij.B1(messageReplies.recent_repliers.get(i19));
                                                                 int i20 = i17;
                                                                 int size5 = TLdeserialize.recent_repliers.size();
                                                                 int i21 = 0;
                                                                 while (i21 < size5) {
                                                                     int i22 = size5;
-                                                                    if (C1 == ij.C1(TLdeserialize.recent_repliers.get(i21))) {
+                                                                    if (B1 == ij.B1(TLdeserialize.recent_repliers.get(i21))) {
                                                                         TLdeserialize.recent_repliers.remove(i21);
                                                                         i21--;
                                                                         size5 = i22 - 1;
@@ -525,7 +525,7 @@ public final /* synthetic */ class ln implements Runnable {
                             if (message2.dialog_id == 0) {
                             }
                             yr.J(message2);
-                            ij.r5(message2);
+                            ij.q5(message2);
                             NativeByteBuffer nativeByteBuffer6 = new NativeByteBuffer(message2.getObjectSize());
                             message2.serializeToStream(nativeByteBuffer6);
                             long e14 = yrVar4.getUserConfig().e();
@@ -556,7 +556,7 @@ public final /* synthetic */ class ln implements Runnable {
                             ij.B0(message2);
                         }
                         yr.J(message2);
-                        ij.r5(message2);
+                        ij.q5(message2);
                         NativeByteBuffer nativeByteBuffer62 = new NativeByteBuffer(message2.getObjectSize());
                         message2.serializeToStream(nativeByteBuffer62);
                         long e142 = yrVar4.getUserConfig().e();
@@ -565,14 +565,14 @@ public final /* synthetic */ class ln implements Runnable {
                         while (i10 < i23) {
                             int i24 = i10 == i22 ? i22 : 0;
                             int i25 = i7;
-                            long a22 = ij.a2(yrVar4.currentAccount, message2, yrVar4.Z(message2.dialog_id));
+                            long Z1 = ij.Z1(yrVar4.currentAccount, message2, yrVar4.Z(message2.dialog_id));
                             yr yrVar5 = yrVar4;
                             long j10 = message2.dialog_id;
                             if (i24 == 0) {
                                 z11 = z12;
                                 i13 = i10;
                                 executeFast = yrVar5.b.executeFast("REPLACE INTO messages_v2 VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, ?, ?, ?)");
-                            } else if (a22 == 0) {
+                            } else if (Z1 == 0) {
                                 z11 = z12;
                                 i13 = i10;
                                 i7 = i25;
@@ -586,7 +586,7 @@ public final /* synthetic */ class ln implements Runnable {
                                 executeFast = yrVar5.b.executeFast("REPLACE INTO messages_topics VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, ?, ?)");
                                 if (j10 == e142) {
                                     try {
-                                        if (ij.R1(e142, message2) != 0) {
+                                        if (ij.Q1(e142, message2) != 0) {
                                             if (arrayList == null) {
                                                 arrayList = new ArrayList();
                                             }
@@ -641,7 +641,7 @@ public final /* synthetic */ class ln implements Runnable {
                             executeFast.bindInteger(1, message2.id);
                             executeFast.bindLong(2, j10);
                             if (i24 != 0) {
-                                executeFast.bindLong(3, a22);
+                                executeFast.bindLong(3, Z1);
                                 i14 = 4;
                             } else {
                                 i14 = 3;
@@ -800,8 +800,8 @@ public final /* synthetic */ class ln implements Runnable {
                             int i34 = 2;
                             while (i33 < i34) {
                                 boolean z13 = i33 == 1;
-                                long a23 = ij.a2(yrVar2.currentAccount, message2, yrVar2.Z(message2.dialog_id));
-                                if (z13 && a23 == 0) {
+                                long Z12 = ij.Z1(yrVar2.currentAccount, message2, yrVar2.Z(message2.dialog_id));
+                                if (z13 && Z12 == 0) {
                                     i11 = 2;
                                 } else {
                                     SQLitePreparedStatement executeFast2 = i33 == 0 ? yrVar2.b.executeFast("REPLACE INTO media_v4 VALUES(?, ?, ?, ?, ?)") : yrVar2.b.executeFast("REPLACE INTO media_topics VALUES(?, ?, ?, ?, ?, ?)");
@@ -811,7 +811,7 @@ public final /* synthetic */ class ln implements Runnable {
                                         i11 = 2;
                                         executeFast2.bindLong(2, message2.dialog_id);
                                         if (i33 != 0) {
-                                            executeFast2.bindLong(3, a23);
+                                            executeFast2.bindLong(3, Z12);
                                             i12 = 4;
                                         } else {
                                             i12 = 3;
@@ -947,7 +947,7 @@ public final /* synthetic */ class ln implements Runnable {
                     Utilities.d.c(new x4(r32, x6Var, tLObject));
                     org.telegram.ui.ActionBar.f2 T = LaunchActivity.T();
                     if (T != null && ((isEmpty = TextUtils.isEmpty(tL_textWithEntities.text)) || !z14)) {
-                        k5.o(null, isEmpty ? 2131750854 : 2131750852, org.telegram.ui.Components.hc.a0(T), isEmpty ? R.raw.ic_delete : R.raw.contact_check, 36);
+                        k5.o(null, isEmpty ? 2131750853 : 2131750851, org.telegram.ui.Components.hc.a0(T), isEmpty ? R.raw.ic_delete : R.raw.contact_check, 36);
                     }
                 }
                 u1Var.dismiss();

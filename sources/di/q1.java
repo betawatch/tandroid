@@ -11,10 +11,10 @@ import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
+import org.telegram.ui.Components.ah0;
 import org.telegram.ui.Components.xq;
-import org.telegram.ui.Components.zg0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class q1 extends View {
     public final int a;
@@ -100,15 +100,15 @@ public final class q1 extends View {
             if (i10 >= size) {
                 break;
             }
-            zg0 zg0Var = (zg0) arrayList.get(i10);
-            if (zg0Var.a0 >= zg0Var.e[0]) {
+            ah0 ah0Var = (ah0) arrayList.get(i10);
+            if (ah0Var.a0 >= ah0Var.e[0]) {
                 arrayList.remove(i10);
                 i10--;
             } else {
                 float f14 = L / 2.0f;
-                zg0Var.setBounds((int) (((org.telegram.messenger.g0.L(15.0f) * T1) + rectF.left) - f14), (int) (rectF.centerY() - f14), (int) rf.b.d(org.telegram.messenger.g0.L(15.0f), T1, rectF.left, f14), (int) (rectF.centerY() + f14));
-                zg0Var.setAlpha((int) (q1Var.n * 255.0f));
-                zg0Var.draw(canvas2);
+                ah0Var.setBounds((int) (((org.telegram.messenger.g0.L(15.0f) * T1) + rectF.left) - f14), (int) (rectF.centerY() - f14), (int) rf.b.d(org.telegram.messenger.g0.L(15.0f), T1, rectF.left, f14), (int) (rectF.centerY() + f14));
+                ah0Var.setAlpha((int) (q1Var.n * 255.0f));
+                ah0Var.draw(canvas2);
             }
             i10++;
         }
@@ -139,9 +139,9 @@ public final class q1 extends View {
             Paint paint = p1Var.e;
             int i12 = (int) (T12 * f18);
             paint.setAlpha(i12);
-            zg0 zg0Var2 = p1Var.d;
-            if (zg0Var2 != null) {
-                zg0Var2.setAlpha(i12);
+            ah0 ah0Var2 = p1Var.d;
+            if (ah0Var2 != null) {
+                ah0Var2.setAlpha(i12);
             }
             imageReceiver.setAlpha(T12);
             canvas2.save();
@@ -165,7 +165,7 @@ public final class q1 extends View {
             p1Var.g.c(org.telegram.messenger.g0.L(18.0f), f23, T12, -1, canvas3);
             canvas2 = canvas3;
             canvas2.restore();
-            if (zg0Var2 != null) {
+            if (ah0Var2 != null) {
                 canvas2.save();
                 canvas2.translate(org.telegram.messenger.g0.L(4.0f) * f21, 0.0f);
                 canvas2.rotate(f22);
@@ -174,8 +174,8 @@ public final class q1 extends View {
                 int L5 = org.telegram.messenger.g0.L(f17);
                 int i14 = (-L5) / 2;
                 int i15 = L5 / 2;
-                zg0Var2.setBounds(i14, org.telegram.messenger.g0.L(8.0f) + i14, i15, org.telegram.messenger.g0.L(8.0f) + i15);
-                zg0Var2.draw(canvas2);
+                ah0Var2.setBounds(i14, org.telegram.messenger.g0.L(8.0f) + i14, i15, org.telegram.messenger.g0.L(8.0f) + i15);
+                ah0Var2.draw(canvas2);
                 canvas2.restore();
             }
             if (e10 >= 1.0f || d >= 1.0f) {

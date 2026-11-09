@@ -1,11 +1,11 @@
 package zh;
 
-import org.telegram.ui.Components.q41;
+import org.telegram.ui.Components.r41;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class b2 extends q41 {
-    @Override // org.telegram.ui.Components.pj0
+public final class b2 extends r41 {
+    @Override // org.telegram.ui.Components.qj0
     public final Integer V0(int i7) {
         return 0;
     }

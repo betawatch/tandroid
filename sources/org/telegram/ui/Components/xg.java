@@ -4,10 +4,10 @@ import android.view.KeyEvent;
 import android.widget.LinearLayout;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xg implements r1.d {
-    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ int a = 0;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ float c;
     public final /* synthetic */ float d;
@@ -47,21 +47,21 @@ public final /* synthetic */ class xg implements r1.d {
                 linearLayout2.setTranslationX(f13 * org.telegram.messenger.g0.L(16.0f));
                 break;
             default:
-                cn0 cn0Var = (cn0) this.e;
+                dn0 dn0Var = (dn0) this.e;
                 boolean z9 = this.b;
                 if (z9) {
-                    if (f10 > this.c / 2.0f || !cn0Var.s) {
+                    if (f10 > this.c / 2.0f || !dn0Var.s) {
                     }
-                } else if (f10 < this.d / 2.0f || !cn0Var.r) {
+                } else if (f10 < this.d / 2.0f || !dn0Var.r) {
                 }
-                cn0Var.s = !z9;
-                cn0Var.r = z9;
+                dn0Var.s = !z9;
+                dn0Var.r = z9;
                 break;
         }
     }
 
-    public /* synthetic */ xg(cn0 cn0Var, boolean z9, float f10, float f11) {
-        this.e = cn0Var;
+    public /* synthetic */ xg(dn0 dn0Var, boolean z9, float f10, float f11) {
+        this.e = dn0Var;
         this.b = z9;
         this.c = f10;
         this.d = f11;

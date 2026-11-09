@@ -1,68 +1,100 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import android.content.Context;
+import android.view.MotionEvent;
 import android.view.View;
-import android.widget.TextView;
-import java.util.HashSet;
-import org.telegram.tgnet.TLObject;
+import java.util.ArrayList;
+import java.util.Collections;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class pm extends TextView implements org.telegram.ui.ActionBar.a6 {
-    public final org.telegram.ui.Cells.y a;
-    public int b;
-    public boolean c;
-    public final /* synthetic */ an d;
+public final class pm extends View {
+    public final ArrayList a;
+    public final ArrayList b;
+    public final /* synthetic */ cn c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public pm(an anVar, Activity activity) {
-        super(activity);
-        this.d = anVar;
-        setSingleLine(true);
-        setLines(1);
-        setMaxLines(1);
-        setEllipsize(TextUtils.TruncateAt.END);
-        org.telegram.ui.ActionBar.r6.V(this, org.telegram.ui.ActionBar.k6.Gi, anVar.getResourceProvider());
-        int themedColor = anVar.getThemedColor(org.telegram.ui.ActionBar.k6.Ci);
-        this.b = themedColor;
-        org.telegram.ui.Cells.y e10 = org.telegram.ui.ActionBar.z5.e(themedColor, 16.0f);
-        this.a = e10;
-        setBackground(e10);
-        setTextSize(1, 14.0f);
-        setTypeface(org.telegram.messenger.g0.o());
-        setGravity(17);
-        setPadding(org.telegram.messenger.g0.L(14.0f), 0, org.telegram.messenger.g0.L(14.0f), 0);
+    public pm(cn cnVar, Context context) {
+        super(context);
+        this.c = cnVar;
+        this.a = new ArrayList();
+        this.b = new ArrayList();
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i7), (int) (org.telegram.messenger.g0.q.x * 0.45f)), TLObject.FLAG_31), i10);
+    public final void a() {
+        ArrayList arrayList = this.a;
+        arrayList.clear();
+        cn cnVar = this.c;
+        arrayList.add(cnVar.Y1);
+        arrayList.add(cnVar.z0);
+        arrayList.add(cnVar.Y);
+        arrayList.add(cnVar.Y3);
+        arrayList.add(cnVar.W1);
+        arrayList.add(cnVar.l3);
+        arrayList.add(cnVar.Z);
+        arrayList.add(cnVar.x1);
+        arrayList.add(cnVar.T);
+        arrayList.add(cnVar.f2);
+        arrayList.removeAll(Collections.singleton(null));
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
-    public final void updateColors() {
-        try {
-            int themedColor = this.d.getThemedColor(org.telegram.ui.ActionBar.k6.Ci);
-            if (themedColor == this.b && this.c == org.telegram.ui.ActionBar.k6.I.q()) {
-                return;
-            }
-            Drawable background = getBackground();
-            org.telegram.ui.Cells.y yVar = this.a;
-            if (background == yVar) {
-                this.c = org.telegram.ui.ActionBar.k6.I.q();
-                org.telegram.ui.ActionBar.k6.H1(yVar, themedColor, false);
-                org.telegram.ui.ActionBar.k6.H1(yVar, org.telegram.ui.ActionBar.z5.b(themedColor), true);
-                this.b = themedColor;
-                invalidate();
-            }
-        } catch (Exception e10) {
-            org.telegram.messenger.a8.g(e10, true);
+    @Override // android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        return false;
+    }
+
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        cn cnVar = this.c;
+        cnVar.Xc = true;
+        ArrayList arrayList = this.b;
+        int size = arrayList.size();
+        int i7 = 0;
+        while (i7 < size) {
+            Object obj = arrayList.get(i7);
+            i7++;
+            ((View) obj).setVisibility(0);
         }
+        arrayList.clear();
+        cnVar.Xc = false;
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        a();
+        cn cnVar = this.c;
+        cnVar.Xc = true;
+        ArrayList arrayList = this.a;
+        int size = arrayList.size();
+        int i7 = 0;
+        while (i7 < size) {
+            Object obj = arrayList.get(i7);
+            i7++;
+            View view = (View) obj;
+            if (view.getVisibility() == 0) {
+                view.setVisibility(8);
+                this.b.add(view);
+            }
+        }
+        cnVar.Xc = false;
+    }
+
+    @Override // android.view.View
+    public void setTranslationX(float f10) {
+        super.setTranslationX(f10);
+        a();
+        ArrayList arrayList = this.a;
+        int size = arrayList.size();
+        int i7 = 0;
+        while (i7 < size) {
+            Object obj = arrayList.get(i7);
+            i7++;
+            View view = (View) obj;
+            if (view != null) {
+                view.setTranslationX(f10);
+            }
+        }
     }
 }

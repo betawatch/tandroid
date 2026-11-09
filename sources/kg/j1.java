@@ -15,13 +15,13 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.qw;
-import org.telegram.ui.w91;
-import org.telegram.ui.ww;
+import org.telegram.ui.sw;
+import org.telegram.ui.y91;
+import org.telegram.ui.yw;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class j1 implements org.telegram.ui.ActionBar.r1, qw {
+public final /* synthetic */ class j1 implements org.telegram.ui.ActionBar.r1, sw {
     public final /* synthetic */ int a;
     public final /* synthetic */ KeyEvent.Callback b;
     public final /* synthetic */ Object c;
@@ -38,13 +38,13 @@ public final /* synthetic */ class j1 implements org.telegram.ui.ActionBar.r1, q
         this.f = c20Var;
     }
 
-    @Override // org.telegram.ui.qw
+    @Override // org.telegram.ui.sw
     public /* synthetic */ boolean G() {
         return false;
     }
 
-    @Override // org.telegram.ui.qw
-    public /* synthetic */ boolean N(ww wwVar) {
+    @Override // org.telegram.ui.sw
+    public /* synthetic */ boolean N(yw ywVar) {
         return false;
     }
 
@@ -74,14 +74,14 @@ public final /* synthetic */ class j1 implements org.telegram.ui.ActionBar.r1, q
         }
     }
 
-    @Override // org.telegram.ui.qw
-    public boolean y(ww wwVar, ArrayList arrayList, CharSequence charSequence, boolean z9, boolean z10, int i7, int i10, w91 w91Var) {
+    @Override // org.telegram.ui.sw
+    public boolean y(yw ywVar, ArrayList arrayList, CharSequence charSequence, boolean z9, boolean z10, int i7, int i10, y91 y91Var) {
         TLRPC.TL_chatAdminRights tL_chatAdminRights;
         final LaunchActivity launchActivity = (LaunchActivity) this.b;
         final TLRPC.User user = (TLRPC.User) this.c;
         final String str = (String) this.d;
         final String str2 = (String) this.e;
-        final ww wwVar2 = (ww) this.f;
+        final yw ywVar2 = (yw) this.f;
         String str3 = LaunchActivity.B1;
         final long j3 = ((xr) arrayList.get(0)).a;
         final TLRPC.Chat M0 = qp.s1(launchActivity.O).M0(Long.valueOf(-j3));
@@ -93,39 +93,39 @@ public final /* synthetic */ class j1 implements org.telegram.ui.ActionBar.r1, q
             u1Var.R = M02;
             u1Var.T = org.telegram.messenger.g0.X2(id.a0("AddMembersAlertNamesText", null, 2131754399, t10.p(user), M0 == null ? "" : M0.title));
             alertDialog$Builder.h(id.M0(2131752589, null), null);
-            alertDialog$Builder.k(id.M0(2131754463, null), new org.telegram.ui.ActionBar.r1() { // from class: org.telegram.ui.f70
+            alertDialog$Builder.k(id.M0(2131754463, null), new org.telegram.ui.ActionBar.r1() { // from class: org.telegram.ui.h70
                 @Override // org.telegram.ui.ActionBar.r1
                 public final void g(org.telegram.ui.ActionBar.u1 u1Var2, int i12) {
                     String str4 = LaunchActivity.B1;
                     Bundle k10 = a8.p0.k("scrollToTopOnResume", true);
                     long j10 = -j3;
                     k10.putLong("chat_id", j10);
-                    an anVar = new an(k10);
+                    cn cnVar = new cn(k10);
                     int i13 = i11;
                     org.telegram.messenger.qs.f(i13).k(org.telegram.messenger.qs.t, new Object[0]);
-                    org.telegram.messenger.qp.s1(i13).n(j10, user, str2, anVar, null);
-                    ((ActionBarLayout) LaunchActivity.this.M()).V(anVar, true, false);
+                    org.telegram.messenger.qp.s1(i13).n(j10, user, str2, cnVar, null);
+                    ((ActionBarLayout) LaunchActivity.this.M()).V(cnVar, true, false);
                 }
             });
             alertDialog$Builder.p();
         } else {
-            qp.s1(i11).K(M0, user, new dp() { // from class: org.telegram.ui.e70
+            qp.s1(i11).K(M0, user, new dp() { // from class: org.telegram.ui.g70
                 @Override // org.telegram.messenger.dp
                 public final void a(boolean z11, TLRPC.TL_chatAdminRights tL_chatAdminRights2, String str4) {
                     String str5 = LaunchActivity.B1;
-                    org.telegram.messenger.g0.h3(new org.telegram.messenger.gi(LaunchActivity.this, str, tL_chatAdminRights2, z11, str2, i11, M0, wwVar2, user, j3, str4));
+                    org.telegram.messenger.g0.h3(new org.telegram.messenger.gi(LaunchActivity.this, str, tL_chatAdminRights2, z11, str2, i11, M0, ywVar2, user, j3, str4));
                 }
             });
         }
         return true;
     }
 
-    public /* synthetic */ j1(LaunchActivity launchActivity, int i7, TLRPC.User user, String str, String str2, ww wwVar) {
+    public /* synthetic */ j1(LaunchActivity launchActivity, int i7, TLRPC.User user, String str, String str2, yw ywVar) {
         this.b = launchActivity;
         this.a = i7;
         this.c = user;
         this.d = str;
         this.e = str2;
-        this.f = wwVar;
+        this.f = ywVar;
     }
 }

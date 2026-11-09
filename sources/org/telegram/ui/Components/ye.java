@@ -4,7 +4,7 @@ import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class ye implements View.OnKeyListener {
     public final /* synthetic */ ChatActivityEnterView a;
@@ -40,14 +40,14 @@ public final class ye implements View.OnKeyListener {
             chatActivityEnterView.C0 = keyEvent.isCtrlPressed();
         }
         if (i7 == 4 && !chatActivityEnterView.z2 && chatActivityEnterView.s0() && keyEvent.getAction() == 1) {
-            if (org.telegram.ui.ks.g0 != null && org.telegram.ui.ks.p().E) {
-                org.telegram.ui.ks.p().n();
+            if (org.telegram.ui.ms.g0 != null && org.telegram.ui.ms.p().E) {
+                org.telegram.ui.ms.p().n();
                 return true;
             }
             if (chatActivityEnterView.f2 != 1 || chatActivityEnterView.m2 == null) {
                 if (keyEvent.getAction() == 1) {
                     if (chatActivityEnterView.f2 == 1 && chatActivityEnterView.m2 != null) {
-                        org.telegram.messenger.qp.s1(chatActivityEnterView.Q).e7.edit().putInt("hidekeyboard_" + chatActivityEnterView.Q2, chatActivityEnterView.m2.f1()).commit();
+                        org.telegram.messenger.qp.s1(chatActivityEnterView.Q).e7.edit().putInt("hidekeyboard_" + chatActivityEnterView.Q2, chatActivityEnterView.m2.e1()).commit();
                     }
                     if (chatActivityEnterView.R1 != 0) {
                         chatActivityEnterView.m1(0, true);

@@ -6,10 +6,10 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
-import org.telegram.ui.Components.xo0;
-import org.telegram.ui.Components.xs0;
+import org.telegram.ui.Components.yo0;
+import org.telegram.ui.Components.zs0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class fe implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -40,7 +40,7 @@ public final /* synthetic */ class fe implements RequestDelegate {
                 if (tL_error == null) {
                     TLRPC.updates_Difference updates_difference = (TLRPC.updates_Difference) tLObject;
                     if (updates_difference instanceof TLRPC.TL_updates_differenceTooLong) {
-                        g0.h3(new l2.a0(qpVar, updates_difference, this.b, this.c, 4));
+                        g0.h3(new l2.z(qpVar, updates_difference, this.b, this.c, 4));
                         break;
                     } else {
                         if (updates_difference instanceof TLRPC.TL_updates_differenceSlice) {
@@ -93,7 +93,7 @@ public final /* synthetic */ class fe implements RequestDelegate {
                 }
                 break;
             default:
-                g0.h3(new xo0((xs0) lsVar, tL_error, this.b, this.c, tLObject, 0));
+                g0.h3(new yo0((zs0) lsVar, tL_error, this.b, this.c, tLObject, 0));
                 break;
         }
     }

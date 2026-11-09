@@ -9,7 +9,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class vs implements Runnable {
     public final /* synthetic */ int a;
@@ -50,20 +50,20 @@ public final /* synthetic */ class vs implements Runnable {
                 }
                 break;
             case 6:
-                int i7 = ny0.f;
+                int i7 = oy0.f;
                 break;
             case 7:
                 SharedPreferences.Editor edit = org.telegram.messenger.qp.e1().edit();
-                dz0.f = Boolean.TRUE;
+                ez0.f = Boolean.TRUE;
                 edit.putBoolean("nothanos", true).apply();
                 break;
             case 8:
                 SharedPreferences.Editor edit2 = org.telegram.messenger.qp.e1().edit();
-                dz0.f = Boolean.TRUE;
+                ez0.f = Boolean.TRUE;
                 edit2.putBoolean("nothanos", true).apply();
                 break;
             case 9:
-                int i10 = m11.l0;
+                int i10 = n11.l0;
                 break;
             case 10:
                 org.telegram.messenger.vv.h();
@@ -84,12 +84,12 @@ public final /* synthetic */ class vs implements Runnable {
                 org.telegram.ui.Components.voip.f2.d();
                 break;
             case 16:
-                di.w5.I0();
+                di.x5.I0();
                 break;
             case 17:
-                org.telegram.ui.c40 c40Var = org.telegram.ui.c40.u5;
-                if (c40Var != null) {
-                    c40Var.show();
+                org.telegram.ui.e40 e40Var = org.telegram.ui.e40.u5;
+                if (e40Var != null) {
+                    e40Var.show();
                     break;
                 }
                 break;
@@ -119,10 +119,10 @@ public final /* synthetic */ class vs implements Runnable {
                 CallReceiver.a();
                 break;
             case 25:
-                hc.X().N(org.telegram.messenger.id.M0(2131745864, null), org.telegram.messenger.id.M0(2131751106, null)).j();
+                hc.X().N(org.telegram.messenger.id.M0(2131745861, null), org.telegram.messenger.id.M0(2131751105, null)).j();
                 break;
             case 26:
-                hc.X().N(org.telegram.messenger.id.M0(2131745864, null), org.telegram.messenger.id.M0(2131751106, null)).j();
+                hc.X().N(org.telegram.messenger.id.M0(2131745861, null), org.telegram.messenger.id.M0(2131751105, null)).j();
                 break;
             case 27:
                 Drawable[] drawableArr = PhotoViewer.Y8;
@@ -130,14 +130,14 @@ public final /* synthetic */ class vs implements Runnable {
             case 28:
                 org.telegram.ui.ActionBar.f2 T = LaunchActivity.T();
                 if (T != null && (a02 = hc.a0(T)) != null) {
-                    cc I = a02.I(R.raw.msg_antispam, org.telegram.messenger.id.M0(2131746225, null), org.telegram.messenger.id.M0(2131746188, null));
+                    cc I = a02.I(R.raw.msg_antispam, org.telegram.messenger.id.M0(2131746222, null), org.telegram.messenger.id.M0(2131746185, null));
                     I.j = 5000;
                     I.j();
                     break;
                 }
                 break;
             default:
-                int i11 = org.telegram.ui.t31.V1;
+                int i11 = org.telegram.ui.u31.V1;
                 break;
         }
     }

@@ -8,15 +8,15 @@ import org.telegram.messenger.id;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.b41;
-import org.telegram.ui.Components.uy0;
-import org.telegram.ui.Components.w70;
+import org.telegram.ui.Components.c41;
+import org.telegram.ui.Components.vy0;
+import org.telegram.ui.Components.x70;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public abstract class x6 extends LinearLayout {
     public TextView a;
-    public w70 b;
+    public x70 b;
     public TextView c;
     public TextView d;
     public int e;
@@ -30,23 +30,23 @@ public abstract class x6 extends LinearLayout {
     public void setType(int i7) {
         int i10 = this.f;
         TextView textView = this.c;
-        w70 w70Var = this.b;
+        x70 x70Var = this.b;
         TextView textView2 = this.a;
         TextView textView3 = this.d;
         this.e = i7;
         if (i7 != 0) {
             if (i7 == 1) {
-                textView2.setText(id.M0(2131742806, null));
-                w70Var.setText(id.M0(2131742805, null));
-                textView.setText(id.M0(2131742803, null));
+                textView2.setText(id.M0(2131742803, null));
+                x70Var.setText(id.M0(2131742802, null));
+                textView.setText(id.M0(2131742800, null));
                 textView3.setVisibility(0);
-                textView3.setText(id.M0(2131742804, null));
+                textView3.setText(id.M0(2131742801, null));
                 return;
             }
             if (i7 == 2) {
-                textView2.setText(id.M0(2131749527, null));
-                w70Var.setText(id.M0(2131749528, null));
-                textView.setText(id.M0(2131749529, null));
+                textView2.setText(id.M0(2131749526, null));
+                x70Var.setText(id.M0(2131749527, null));
+                textView.setText(id.M0(2131749528, null));
                 textView3.setVisibility(8);
                 return;
             }
@@ -61,12 +61,12 @@ public abstract class x6 extends LinearLayout {
             spannableStringBuilder.replace(lastIndexOf, lastIndexOf + 2, (CharSequence) "");
             spannableStringBuilder.replace(indexOf, indexOf + 2, (CharSequence) "");
             try {
-                spannableStringBuilder.setSpan(new b41(id.M0(2131752154, null), (uy0) null), indexOf, lastIndexOf - 2, 33);
+                spannableStringBuilder.setSpan(new c41(id.M0(2131752154, null), (vy0) null), indexOf, lastIndexOf - 2, 33);
             } catch (Exception e10) {
                 org.telegram.messenger.a8.g(e10, true);
             }
         }
-        w70Var.setText(spannableStringBuilder);
+        x70Var.setText(spannableStringBuilder);
         textView.setText(id.M0(2131752152, null));
         textView3.setVisibility(0);
         textView3.setText(id.M0(2131752153, null));

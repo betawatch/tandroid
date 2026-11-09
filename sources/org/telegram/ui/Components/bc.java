@@ -5,16 +5,16 @@ import android.graphics.Typeface;
 import android.text.TextUtils;
 import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class bc extends za {
     public final z8 a;
-    public final w70 b;
-    public final w70 c;
+    public final x70 b;
+    public final x70 c;
     public final LinearLayout d;
 
-    public bc(Context context, org.telegram.ui.ActionBar.f6 f6Var, boolean z9) {
-        super(context, f6Var);
+    public bc(Context context, org.telegram.ui.ActionBar.g6 g6Var, boolean z9) {
+        super(context, g6Var);
         z8 z8Var = new z8(context, false);
         this.a = z8Var;
         z8Var.setStyle(11);
@@ -36,15 +36,15 @@ public final class bc extends za {
             jbVar.setEllipsize(truncateAt);
             jbVar.setMaxLines(1);
             linearLayout.addView(jbVar);
-            w70 w70Var = new w70(context, null);
-            this.c = w70Var;
-            w70Var.setTypeface(typeface);
-            w70Var.setTextSize(1, 12.0f);
-            w70Var.setEllipsize(truncateAt);
-            w70Var.setSingleLine(false);
-            w70Var.setMaxLines(3);
-            org.telegram.ui.ActionBar.r6.H(w70Var, org.telegram.ui.ActionBar.k6.uj, f6Var);
-            linearLayout.addView(w70Var, c8.ha.t(-2, -2, 0, 0, 0, 0, 0));
+            x70 x70Var = new x70(context, null);
+            this.c = x70Var;
+            x70Var.setTypeface(typeface);
+            x70Var.setTextSize(1, 12.0f);
+            x70Var.setEllipsize(truncateAt);
+            x70Var.setSingleLine(false);
+            x70Var.setMaxLines(3);
+            org.telegram.ui.ActionBar.s6.G(x70Var, org.telegram.ui.ActionBar.l6.uj, g6Var);
+            linearLayout.addView(x70Var, c8.ha.t(-2, -2, 0, 0, 0, 0, 0));
         } else {
             jb jbVar2 = new jb(1, context, null);
             this.b = jbVar2;
@@ -56,9 +56,9 @@ public final class bc extends za {
             jbVar2.setGravity(org.telegram.messenger.id.a0 ? 5 : 3);
             addView(jbVar2, c8.ha.i(-2.0f, -2.0f, 8388627, 70.0f, 0.0f, 12.0f, 0.0f));
         }
-        org.telegram.ui.ActionBar.r6.H(this.b, org.telegram.ui.ActionBar.k6.uj, f6Var);
-        setTextColor(getThemedColor(org.telegram.ui.ActionBar.k6.vj));
-        setBackground(getThemedColor(org.telegram.ui.ActionBar.k6.tj));
+        org.telegram.ui.ActionBar.s6.G(this.b, org.telegram.ui.ActionBar.l6.uj, g6Var);
+        setTextColor(getThemedColor(org.telegram.ui.ActionBar.l6.vj));
+        setBackground(getThemedColor(org.telegram.ui.ActionBar.l6.tj));
     }
 
     @Override // org.telegram.ui.Components.gb
@@ -68,9 +68,9 @@ public final class bc extends za {
 
     public void setTextColor(int i7) {
         this.b.setTextColor(i7);
-        w70 w70Var = this.c;
-        if (w70Var != null) {
-            w70Var.setTextColor(i7);
+        x70 x70Var = this.c;
+        if (x70Var != null) {
+            x70Var.setTextColor(i7);
         }
     }
 }

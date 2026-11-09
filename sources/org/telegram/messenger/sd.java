@@ -12,7 +12,7 @@ import java.util.Locale;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class sd extends c1 implements ls, pa, qa {
     public static volatile sd[] O = new sd[4];
@@ -332,14 +332,14 @@ public final class sd extends c1 implements ls, pa, qa {
                 boolean z9 = false;
                 for (int i12 = 0; i12 < arrayList3.size(); i12++) {
                     ij ijVar = (ij) arrayList3.get(i12);
-                    if (ijVar.D3()) {
+                    if (ijVar.C3()) {
                         int i13 = 0;
                         while (true) {
                             if (i13 >= arrayList2.size()) {
                                 arrayList2.add(ijVar.k);
                                 break;
                             } else {
-                                if (ij.C1(((TLRPC.Message) arrayList2.get(i13)).from_id) == ijVar.Z0()) {
+                                if (ij.B1(((TLRPC.Message) arrayList2.get(i13)).from_id) == ijVar.Z0()) {
                                     arrayList2.set(i13, ijVar.k);
                                     break;
                                 }
@@ -407,8 +407,8 @@ public final class sd extends c1 implements ls, pa, qa {
                         if (i17 >= arrayList.size()) {
                             break;
                         }
-                        if (ij.C1(((TLRPC.Message) arrayList.get(i17)).from_id) == ijVar3.Z0()) {
-                            if (ijVar3.D3()) {
+                        if (ij.B1(((TLRPC.Message) arrayList.get(i17)).from_id) == ijVar3.Z0()) {
+                            if (ijVar3.C3()) {
                                 arrayList.set(i17, ijVar3.k);
                             } else {
                                 arrayList.remove(i17);

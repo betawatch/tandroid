@@ -3,7 +3,7 @@ package org.telegram.ui.ActionBar;
 import android.content.Context;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class f5 extends r0 {
     public boolean A0;
@@ -12,8 +12,8 @@ public final class f5 extends r0 {
     public boolean D0;
     public final e5 z0;
 
-    public f5(Context context, e5 e5Var, int i7, int i10, boolean z9, f6 f6Var) {
-        super(context, null, i7, i10, z9, f6Var);
+    public f5(Context context, e5 e5Var, int i7, int i10, boolean z9, g6 g6Var) {
+        super(context, null, i7, i10, z9, g6Var);
         this.C0 = true;
         this.D0 = true;
         this.z0 = e5Var;
@@ -30,7 +30,7 @@ public final class f5 extends r0 {
 
     @Override // org.telegram.ui.ActionBar.r0
     public final void F(boolean z9) {
-        this.z0.a.v(z9, true);
+        this.z0.a.w(z9, true);
     }
 
     @Override // org.telegram.ui.ActionBar.r0
@@ -61,9 +61,9 @@ public final class f5 extends r0 {
     public final boolean T(boolean z9) {
         y4 y4Var = this.z0.a;
         if (!y4Var.F) {
-            return y4Var.v(z9, true);
+            return y4Var.w(z9, true);
         }
-        y4Var.j(z9);
+        y4Var.k(z9);
         return false;
     }
 
@@ -103,7 +103,7 @@ public final class f5 extends r0 {
         } else if (!z10 || !isLaidOut() || !e5Var.isLaidOut()) {
             super.setVisibility(8);
         }
-        if (!z10 || !e5Var.a.t()) {
+        if (!z10 || !e5Var.a.u()) {
             e5Var.f = true;
         }
         e5Var.requestLayout();
@@ -123,7 +123,7 @@ public final class f5 extends r0 {
     }
 
     @Override // org.telegram.ui.ActionBar.r0
-    public i5 getSubMenuOverlay() {
+    public j5 getSubMenuOverlay() {
         return this.z0.a.getMenuOverlay();
     }
 
@@ -135,7 +135,7 @@ public final class f5 extends r0 {
     @Override // org.telegram.ui.ActionBar.r0
     public final boolean i() {
         e5 e5Var = this.z0;
-        return !e5Var.b || e5Var.a.s();
+        return !e5Var.b || e5Var.a.t();
     }
 
     @Override // org.telegram.ui.ActionBar.r0
@@ -164,7 +164,7 @@ public final class f5 extends r0 {
         boolean z9 = false;
         boolean z10 = i7 == 0;
         y4 y4Var = e5Var.a;
-        if (e5Var.isLaidOut() && y4Var.t() && (!e5Var.b || (y4Var.s() && y4Var.getActionModeFactor() > 0.0f))) {
+        if (e5Var.isLaidOut() && y4Var.u() && (!e5Var.b || (y4Var.t() && y4Var.getActionModeFactor() > 0.0f))) {
             z9 = true;
         }
         Y(z10, z9);

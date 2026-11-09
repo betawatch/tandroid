@@ -9,10 +9,10 @@ import android.widget.TextView;
 import org.telegram.messenger.id;
 import org.telegram.messenger.p10;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.g70;
+import org.telegram.ui.Components.h70;
 import org.telegram.ui.Components.xp;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class e7 extends FrameLayout {
     public final org.telegram.ui.Components.l9 a;
@@ -21,12 +21,12 @@ public final class e7 extends FrameLayout {
     public long d;
     public long e;
     public final int f;
-    public final org.telegram.ui.ActionBar.f6 h;
+    public final org.telegram.ui.ActionBar.g6 h;
 
-    public e7(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+    public e7(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
         super(context);
         this.f = p10.s0;
-        this.h = f6Var;
+        this.h = g6Var;
         setWillNotDraw(false);
         org.telegram.ui.Components.l9 l9Var = new org.telegram.ui.Components.l9(context);
         this.a = l9Var;
@@ -34,19 +34,19 @@ public final class e7 extends FrameLayout {
         addView(l9Var, c8.ha.d(56, 56.0f, 49, 0.0f, 7.0f, 0.0f, 0.0f));
         TextView textView = new TextView(context);
         this.c = textView;
-        org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.j5, f6Var);
+        org.telegram.ui.ActionBar.s6.U(textView, org.telegram.ui.ActionBar.l6.j5, g6Var);
         textView.setTextSize(1, 12.0f);
         textView.setMaxLines(2);
         textView.setGravity(49);
         textView.setLines(2);
         textView.setEllipsize(TextUtils.TruncateAt.END);
         addView(textView, c8.ha.d(-1, -2.0f, 51, 6.0f, 66.0f, 6.0f, 0.0f));
-        this.b = new b7(this, f6Var, 1);
-        int i7 = org.telegram.ui.ActionBar.k6.i6;
-        Drawable a02 = org.telegram.ui.ActionBar.k6.a0(org.telegram.ui.ActionBar.k6.x0(null, i7, false), org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f));
-        org.telegram.ui.ActionBar.n6 N = org.telegram.ui.ActionBar.r6.N(i7);
+        this.b = new b7(this, g6Var, 1);
+        int i7 = org.telegram.ui.ActionBar.l6.i6;
+        Drawable a02 = org.telegram.ui.ActionBar.l6.a0(org.telegram.ui.ActionBar.l6.x0(null, i7, false), org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f));
+        org.telegram.ui.ActionBar.o6 M = org.telegram.ui.ActionBar.s6.M(i7);
         setBackground(a02);
-        org.telegram.ui.ActionBar.r6.k(this, a02, null, N, null);
+        org.telegram.ui.ActionBar.s6.j(this, a02, null, M, null);
     }
 
     public long getCurrentDialog() {
@@ -63,14 +63,14 @@ public final class e7 extends FrameLayout {
     }
 
     public void setAsNewBotForumTopic(boolean z9) {
-        this.c.setText(id.M0(z9 ? 2131745438 : 2131745437, null));
+        this.c.setText(id.M0(z9 ? 2131745435 : 2131745434, null));
         org.telegram.ui.Components.l9 l9Var = this.a;
         l9Var.setAnimatedEmojiDrawable(null);
         qg.a aVar = new qg.a(qg.a.k[0]);
-        g70 g70Var = new g70(1, null);
-        g70Var.a("");
-        g70Var.i = 1.8f;
-        xp xpVar = new xp(aVar, g70Var, 0, 0);
+        h70 h70Var = new h70(1, null);
+        h70Var.a("");
+        h70Var.i = 1.8f;
+        xp xpVar = new xp(aVar, h70Var, 0, 0);
         xpVar.x = true;
         l9Var.setImageDrawable(xpVar);
     }

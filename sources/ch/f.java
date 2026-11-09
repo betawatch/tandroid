@@ -11,12 +11,12 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.c20;
 import org.telegram.messenger.id;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.o6;
+import org.telegram.ui.ActionBar.s6;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class f extends FrameLayout {
     public static final /* synthetic */ int e = 0;
@@ -25,25 +25,25 @@ public final class f extends FrameLayout {
     public boolean c;
     public c20 d;
 
-    public f(Activity activity, f6 f6Var) {
+    public f(Activity activity, g6 g6Var) {
         super(activity);
         e eVar = new e(this, activity);
         this.a = eVar;
         eVar.setHapticFeedbackEnabled(true);
         eVar.setImageResource(R.drawable.smiles_tab_clear);
-        r6.t(eVar, k6.Gf, f6Var, PorterDuff.Mode.MULTIPLY);
+        s6.s(eVar, l6.Gf, g6Var, PorterDuff.Mode.MULTIPLY);
         eVar.setScaleType(ImageView.ScaleType.CENTER);
         eVar.setContentDescription(id.M0(2131754920, null));
         eVar.setFocusable(true);
         eVar.setOnClickListener(new l1(1));
         addView(eVar, ha.e(36, 36, 17));
-        int x02 = k6.x0(null, k6.i6, false);
+        int x02 = l6.x0(null, l6.i6, false);
         int L = org.telegram.messenger.g0.L(36.0f);
-        int i7 = k6.d6;
-        org.telegram.ui.Cells.y j02 = k6.j0(L, f6Var != null ? f6Var.h(i7) : k6.x0(null, i7, false), x02);
-        n6 N = r6.N(i7);
+        int i7 = l6.d6;
+        org.telegram.ui.Cells.y j02 = l6.j0(L, g6Var != null ? g6Var.h(i7) : l6.x0(null, i7, false), x02);
+        o6 M = s6.M(i7);
         eVar.setBackground(j02);
-        r6.k(eVar, j02, N, null, f6Var);
+        s6.j(eVar, j02, M, null, g6Var);
         eVar.setOutlineProvider(new bg.r0(18));
         eVar.setElevation(org.telegram.messenger.g0.L(1.0f));
         eVar.setClipToOutline(true);

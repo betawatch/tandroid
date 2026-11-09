@@ -1,9 +1,9 @@
 package bi;
 
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.vv0;
+import org.telegram.ui.xv0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w8 implements Runnable {
     public final /* synthetic */ int a;
@@ -19,18 +19,18 @@ public final /* synthetic */ class w8 implements Runnable {
         switch (this.a) {
             case 0:
                 ProfileActivity profileActivity = this.b;
-                vv0 vv0Var = profileActivity.N;
-                if (vv0Var != null) {
-                    vv0Var.i1(14);
-                    profileActivity.U4(false);
+                xv0 xv0Var = profileActivity.N;
+                if (xv0Var != null) {
+                    xv0Var.k1(14);
+                    profileActivity.X4(false);
                     break;
                 }
                 break;
             case 1:
-                this.b.U4(true);
+                this.b.X4(true);
                 break;
             default:
-                this.b.U4(true);
+                this.b.X4(true);
                 break;
         }
     }

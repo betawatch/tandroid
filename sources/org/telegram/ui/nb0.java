@@ -1,29 +1,40 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.view.View;
-import android.widget.ViewSwitcher;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class nb0 extends ViewSwitcher {
-    public final /* synthetic */ int a;
+public final class nb0 extends ar {
+    public final /* synthetic */ int h;
+    public final /* synthetic */ Object n;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ nb0(Context context, int i7) {
+    public /* synthetic */ nb0(int i7, Context context, Object obj) {
         super(context);
-        this.a = i7;
+        this.h = i7;
+        this.n = obj;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        switch (this.a) {
+    @Override // org.telegram.ui.ar
+    public final void a() {
+        switch (this.h) {
             case 0:
-                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(100.0f), TLObject.FLAG_31));
+                ((qb0) this.n).h(null);
                 break;
+            case 1:
+                ((jc0) this.n).h(null);
+                break;
+            case 2:
+                PasscodeActivity passcodeActivity = (PasscodeActivity) this.n;
+                if (passcodeActivity.E != 0) {
+                    passcodeActivity.u0();
+                    break;
+                } else {
+                    postDelayed(new gf0(this, 3), 260L);
+                    break;
+                }
             default:
-                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(100.0f), TLObject.FLAG_31));
+                ((bb1) this.n).H0();
                 break;
         }
     }

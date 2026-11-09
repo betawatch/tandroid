@@ -6,9 +6,9 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.Button;
 import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class l00 extends ch0 {
+public final class l00 extends dh0 {
     public boolean r;
     public boolean s;
     public final k00 w;
@@ -44,7 +44,7 @@ public final class l00 extends ch0 {
                                 }
                             }
                             fragmentContextView2.D.d();
-                            org.telegram.ui.ActionBar.k6.G0().c(true);
+                            org.telegram.ui.ActionBar.l6.G0().c(true);
                             fragmentContextView2.a.h(true);
                             break;
                         }
@@ -91,7 +91,7 @@ public final class l00 extends ch0 {
                                 }
                             }
                             fragmentContextView2.D.d();
-                            org.telegram.ui.ActionBar.k6.G0().c(true);
+                            org.telegram.ui.ActionBar.l6.G0().c(true);
                             fragmentContextView2.a.h(true);
                             break;
                         }
@@ -121,7 +121,7 @@ public final class l00 extends ch0 {
     public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
         accessibilityNodeInfo.setClassName(Button.class.getName());
-        accessibilityNodeInfo.setText(org.telegram.messenger.id.M0(this.y.P ? 2131743233 : 2131743296, null));
+        accessibilityNodeInfo.setText(org.telegram.messenger.id.M0(this.y.P ? 2131743230 : 2131743293, null));
     }
 
     @Override // android.view.View
@@ -167,7 +167,7 @@ public final class l00 extends ch0 {
                     }
                 }
                 this.s = false;
-                org.telegram.ui.ActionBar.k6.G0().c(true);
+                org.telegram.ui.ActionBar.l6.G0().c(true);
                 fragmentContextView.a.h(true);
                 MotionEvent obtain = MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0);
                 super.onTouchEvent(obtain);

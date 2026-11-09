@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.content.Intent;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class x4 implements org.telegram.messenger.ls {
     public final /* synthetic */ int a;
@@ -25,15 +25,15 @@ public final class x4 implements org.telegram.messenger.ls {
                 }
                 break;
             case 1:
-                ob0 ob0Var = (ob0) this.b;
+                qb0 qb0Var = (qb0) this.b;
                 int intValue = ((Integer) objArr[0]).intValue();
                 ((Integer) objArr[1]).getClass();
                 Intent intent = (Intent) objArr[2];
                 org.telegram.messenger.qs.e().n(this, org.telegram.messenger.qs.c5);
                 if (intValue == 200) {
                     try {
-                        ob0Var.F = (GoogleSignInAccount) a8.u7.b(intent).getResult(com.google.android.gms.common.api.f.class);
-                        ob0Var.h(null);
+                        qb0Var.F = (GoogleSignInAccount) a8.u7.b(intent).getResult(com.google.android.gms.common.api.f.class);
+                        qb0Var.h(null);
                         break;
                     } catch (com.google.android.gms.common.api.f e10) {
                         org.telegram.messenger.a8.g(e10, true);
@@ -42,15 +42,15 @@ public final class x4 implements org.telegram.messenger.ls {
                 }
                 break;
             default:
-                sc0 sc0Var = (sc0) this.b;
+                uc0 uc0Var = (uc0) this.b;
                 int intValue2 = ((Integer) objArr[0]).intValue();
                 ((Integer) objArr[1]).getClass();
                 Intent intent2 = (Intent) objArr[2];
                 org.telegram.messenger.qs.e().n(this, org.telegram.messenger.qs.c5);
                 if (intValue2 == 200) {
                     try {
-                        sc0Var.D = (GoogleSignInAccount) a8.u7.b(intent2).getResult(com.google.android.gms.common.api.f.class);
-                        sc0Var.h(null);
+                        uc0Var.D = (GoogleSignInAccount) a8.u7.b(intent2).getResult(com.google.android.gms.common.api.f.class);
+                        uc0Var.h(null);
                         break;
                     } catch (com.google.android.gms.common.api.f e11) {
                         org.telegram.messenger.a8.g(e11, true);

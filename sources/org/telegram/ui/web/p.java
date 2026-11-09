@@ -1,11 +1,11 @@
 package org.telegram.ui.web;
 
-import di.o7;
+import di.p7;
 import org.json.JSONObject;
 import org.telegram.messenger.a8;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p implements Runnable {
     public final /* synthetic */ int a;
@@ -48,7 +48,7 @@ public final /* synthetic */ class p implements Runnable {
                 break;
             default:
                 x0 x0Var2 = this.b;
-                o7 o7Var = x0Var2.J0;
+                p7 p7Var = x0Var2.J0;
                 hi.r0 r0Var = x0Var2.k0;
                 r0Var.getClass();
                 JSONObject jSONObject = new JSONObject();
@@ -63,7 +63,7 @@ public final /* synthetic */ class p implements Runnable {
                 } catch (Exception e10) {
                     a8.g(e10, true);
                 }
-                x0Var2.x(o7Var, "location_checked", jSONObject);
+                x0Var2.x(p7Var, "location_checked", jSONObject);
                 break;
         }
     }

@@ -20,7 +20,7 @@ import org.telegram.messenger.qp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public abstract class j9 extends v9 {
     public final SparseArray p0 = new SparseArray();
@@ -60,9 +60,9 @@ public abstract class j9 extends v9 {
             return;
         }
         q1 q1Var = (q1) this.W;
-        int f12 = q1Var.getMessageObject().f1();
+        int e12 = q1Var.getMessageObject().e1();
         SparseArray sparseArray = this.p0;
-        Animator animator = (Animator) sparseArray.get(f12);
+        Animator animator = (Animator) sparseArray.get(e12);
         if (animator != null) {
             animator.removeAllListeners();
             animator.cancel();
@@ -70,19 +70,19 @@ public abstract class j9 extends v9 {
         q1Var.setSelectedBackgroundProgress(0.01f);
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.01f, 1.0f);
         int i7 = 1;
-        ofFloat.addUpdateListener(new org.telegram.ui.ActionBar.i2(q1Var, f12, i7));
+        ofFloat.addUpdateListener(new org.telegram.ui.ActionBar.i2(q1Var, e12, i7));
         ofFloat.addListener(new k1(q1Var, i7));
         ofFloat.setDuration(300L);
         ofFloat.start();
-        sparseArray.put(f12, ofFloat);
+        sparseArray.put(e12, ofFloat);
     }
 
     @Override // org.telegram.ui.Cells.v9
     public final void L(q9 q9Var, q9 q9Var2) {
         q1 q1Var = (q1) q9Var;
         q1 q1Var2 = (q1) q9Var2;
-        boolean z9 = q1Var2 == null || !(q1Var2.getMessageObject() == null || q1Var2.getMessageObject().f1() == q1Var.getMessageObject().f1());
-        this.w = q1Var.getMessageObject().f1();
+        boolean z9 = q1Var2 == null || !(q1Var2.getMessageObject() == null || q1Var2.getMessageObject().e1() == q1Var.getMessageObject().e1());
+        this.w = q1Var.getMessageObject().e1();
         try {
             int i7 = q1Var.getMessageObject().k.edit_date;
         } catch (Exception unused) {
@@ -117,7 +117,7 @@ public abstract class j9 extends v9 {
             int i7 = ijVar.k.edit_date;
         } catch (Exception unused) {
         }
-        if (this.w == ijVar.f1()) {
+        if (this.w == ijVar.e1()) {
             f(true);
         }
     }
@@ -125,7 +125,7 @@ public abstract class j9 extends v9 {
     public final void X(ij ijVar, fj fjVar, Canvas canvas) {
         ij messageObject;
         q9 q9Var = this.W;
-        if (q9Var == null || ((q1) q9Var).getMessageObject() == null || this.q0 || this.s0 || this.u0 || (messageObject = ((q1) this.W).getMessageObject()) == null || messageObject.z2 == null || ijVar.f1() != this.w) {
+        if (q9Var == null || ((q1) q9Var).getMessageObject() == null || this.q0 || this.s0 || this.u0 || (messageObject = ((q1) this.W).getMessageObject()) == null || messageObject.z2 == null || ijVar.e1() != this.w) {
             return;
         }
         int i7 = this.u;
@@ -135,15 +135,15 @@ public abstract class j9 extends v9 {
         int j3 = Utilities.j(i7 - i10, fjVar.e.getText().length(), 0);
         int j10 = Utilities.j(i11, fjVar.e.getText().length(), 0);
         if (j3 != j10) {
-            boolean Q3 = messageObject.Q3();
+            boolean P3 = messageObject.P3();
             Paint paint = this.p;
             Paint paint2 = this.o;
-            if (Q3) {
-                int i13 = org.telegram.ui.ActionBar.k6.Jc;
+            if (P3) {
+                int i13 = org.telegram.ui.ActionBar.l6.Jc;
                 paint2.setColor(t(i13));
                 paint.setColor(t(i13));
             } else {
-                int i14 = org.telegram.ui.ActionBar.k6.ig;
+                int i14 = org.telegram.ui.ActionBar.l6.ig;
                 paint2.setColor(t(i14));
                 paint.setColor(t(i14));
             }
@@ -161,11 +161,11 @@ public abstract class j9 extends v9 {
             Paint paint = this.p;
             Paint paint2 = this.o;
             if (z9) {
-                int i7 = org.telegram.ui.ActionBar.k6.Jc;
+                int i7 = org.telegram.ui.ActionBar.l6.Jc;
                 paint2.setColor(t(i7));
                 paint.setColor(t(i7));
             } else {
-                int i10 = org.telegram.ui.ActionBar.k6.ig;
+                int i10 = org.telegram.ui.ActionBar.l6.ig;
                 paint2.setColor(t(i10));
                 paint.setColor(t(i10));
             }
@@ -180,18 +180,18 @@ public abstract class j9 extends v9 {
         }
         ArrayList arrayList = kvVar.n;
         q9 q9Var = this.W;
-        if (q9Var == null || ((q1) q9Var).getMessageObject() == null || ((q1) this.W).getMessageObject().f1() != ijVar.f1()) {
+        if (q9Var == null || ((q1) q9Var).getMessageObject() == null || ((q1) this.W).getMessageObject().e1() != ijVar.e1()) {
             return;
         }
-        boolean Q3 = ijVar.Q3();
+        boolean P3 = ijVar.P3();
         Paint paint = this.p;
         Paint paint2 = this.o;
-        if (Q3) {
-            int i7 = org.telegram.ui.ActionBar.k6.Jc;
+        if (P3) {
+            int i7 = org.telegram.ui.ActionBar.l6.Jc;
             paint2.setColor(t(i7));
             paint.setColor(t(i7));
         } else {
-            int i10 = org.telegram.ui.ActionBar.k6.ig;
+            int i10 = org.telegram.ui.ActionBar.l6.ig;
             paint2.setColor(t(i10));
             paint.setColor(t(i10));
         }
@@ -226,7 +226,7 @@ public abstract class j9 extends v9 {
             return;
         }
         this.W = q1Var;
-        this.w = q1Var.getMessageObject().f1();
+        this.w = q1Var.getMessageObject().e1();
         boolean z9 = ((q1) this.W).getMessageObject().D == 36 && ((q1) this.W).getMessageObject().w2 != null;
         this.u0 = z9;
         if (z9) {

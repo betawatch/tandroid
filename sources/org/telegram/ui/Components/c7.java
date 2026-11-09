@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.widget.FrameLayout;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c7 implements Runnable {
     public final /* synthetic */ int a;
@@ -19,29 +19,29 @@ public final /* synthetic */ class c7 implements Runnable {
     @Override // java.lang.Runnable
     public final void run() {
         FrameLayout frameLayout;
-        org.telegram.ui.ActionBar.f6 f6Var;
+        org.telegram.ui.ActionBar.g6 g6Var;
         switch (this.a) {
             case 0:
                 b8 b8Var = this.b;
                 frameLayout = (FrameLayout) b8Var.b;
-                f6Var = b8Var.I0;
+                g6Var = b8Var.I0;
                 break;
             case 1:
                 b8 b8Var2 = this.b;
                 frameLayout = (FrameLayout) b8Var2.b;
-                f6Var = b8Var2.I0;
+                g6Var = b8Var2.I0;
                 break;
             case 2:
                 b8 b8Var3 = this.b;
                 frameLayout = (FrameLayout) b8Var3.b;
-                f6Var = b8Var3.I0;
+                g6Var = b8Var3.I0;
                 break;
             default:
                 b8 b8Var4 = this.b;
                 frameLayout = (FrameLayout) b8Var4.b;
-                f6Var = b8Var4.I0;
+                g6Var = b8Var4.I0;
                 break;
         }
-        org.telegram.ui.Cells.f1.r(frameLayout, f6Var, this.c, false);
+        org.telegram.ui.Cells.f1.r(frameLayout, g6Var, this.c, false);
     }
 }

@@ -10,18 +10,18 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.id;
 import org.telegram.messenger.t10;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.o6;
+import org.telegram.ui.ActionBar.s6;
 import org.telegram.ui.Components.j6;
 import org.telegram.ui.Components.l9;
 import org.telegram.ui.Components.mp;
 import org.telegram.ui.Components.w8;
 import org.telegram.ui.Components.xq;
-import org.telegram.ui.an;
+import org.telegram.ui.cn;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class e extends FrameLayout {
     public float D;
@@ -39,14 +39,14 @@ public final class e extends FrameLayout {
     public int x;
     public String y;
 
-    public e(Activity activity, f6 f6Var, an anVar) {
+    public e(Activity activity, g6 g6Var, cn cnVar) {
         super(activity);
-        this.a = anVar.getCurrentAccount();
+        this.a = cnVar.getCurrentAccount();
         this.r = false;
         l9 l9Var = new l9(activity);
         this.c = l9Var;
-        TLRPC.User a22 = anVar.getMessagesController().a2(Long.valueOf(this.w));
-        w8 w8Var = new w8((f6) null);
+        TLRPC.User a22 = cnVar.getMessagesController().a2(Long.valueOf(this.w));
+        w8 w8Var = new w8((g6) null);
         this.b = w8Var;
         w8Var.r(a22);
         l9Var.setRoundRadius(org.telegram.messenger.g0.L(16.0f));
@@ -62,7 +62,7 @@ public final class e extends FrameLayout {
         j6Var.setTypeface(org.telegram.messenger.g0.o());
         j6Var.setTextSize(org.telegram.messenger.g0.L(14.0f));
         j6Var.setText(t10.p(a22));
-        r6.Z(j6Var, k6.G6, f6Var);
+        s6.Y(j6Var, l6.G6, g6Var);
         j6Var.setEllipsizeByGradient(true);
         linearLayout.addView(j6Var, ha.k(0.0f, 0.0f, 0.0f, 1.0f, -1, 17));
         j6 j6Var2 = new j6(activity, false, false, false);
@@ -71,7 +71,7 @@ public final class e extends FrameLayout {
         j6Var2.getDrawable().r(true, false);
         j6Var2.setTextSize(org.telegram.messenger.g0.L(13.0f));
         j6Var2.setText(id.M0(2131753700, null));
-        r6.Z(j6Var2, k6.Ue, f6Var);
+        s6.Y(j6Var2, l6.Ue, g6Var);
         j6Var2.setEllipsizeByGradient(true);
         linearLayout.addView(j6Var2, ha.o(-1, 17));
         addView(linearLayout, ha.d(-2, -2.0f, 16, 52.0f, 0.0f, 49.0f, 0.0f));
@@ -82,16 +82,16 @@ public final class e extends FrameLayout {
         mpVar.setScaleProperty(0.6f);
         mpVar.setTypeface(org.telegram.messenger.g0.o());
         int L = org.telegram.messenger.g0.L(14.0f);
-        int i7 = k6.Ci;
-        int w02 = k6.w0(i7, f6Var);
-        int w10 = k6.w(k6.w0(i7, f6Var), k6.r1(0.12f, -1));
-        org.telegram.ui.Cells.y k02 = k6.k0(L, L, L, L, w02, w10, w10);
-        n6 N = r6.N(i7);
+        int i7 = l6.Ci;
+        int w02 = l6.w0(i7, g6Var);
+        int w10 = l6.w(l6.w0(i7, g6Var), l6.r1(0.12f, -1));
+        org.telegram.ui.Cells.y k02 = l6.k0(L, L, L, L, w02, w10, w10);
+        o6 M = s6.M(i7);
         mpVar.setBackground(k02);
-        r6.k(mpVar, k02, N, null, f6Var);
+        s6.j(mpVar, k02, M, null, g6Var);
         mpVar.setTextSize(org.telegram.messenger.g0.L(14.0f));
         mpVar.setGravity(5);
-        r6.Z(mpVar, k6.Gi, f6Var);
+        s6.Y(mpVar, l6.Gi, g6Var);
         mpVar.setPadding(org.telegram.messenger.g0.L(13.0f), 0, org.telegram.messenger.g0.L(13.0f), 0);
         mpVar.setOnClickListener(new ii.g(this, 7));
         mpVar.setOnWidthUpdatedListener(new d(this, 0));
@@ -101,13 +101,13 @@ public final class e extends FrameLayout {
         this.n = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setImageResource(R.drawable.msg_mini_customize);
-        int i10 = k6.i6;
-        org.telegram.ui.Cells.y O = k6.O(k6.w0(i10, f6Var), 0, 0);
-        n6 N2 = r6.N(i10);
+        int i10 = l6.i6;
+        org.telegram.ui.Cells.y O = l6.O(l6.w0(i10, g6Var), 0, 0);
+        o6 M2 = s6.M(i10);
         imageView.setBackground(O);
-        r6.k(imageView, O, null, N2, f6Var);
-        r6.t(imageView, k6.Re, f6Var, PorterDuff.Mode.MULTIPLY);
-        imageView.setOnClickListener(new ah.g(this, anVar, f6Var, 11));
+        s6.j(imageView, O, null, M2, g6Var);
+        s6.s(imageView, l6.Re, g6Var, PorterDuff.Mode.MULTIPLY);
+        imageView.setOnClickListener(new ah.g(this, cnVar, g6Var, 11));
         addView(imageView, ha.d(32, 32.0f, 21, 8.0f, 0.0f, 6.0f, 0.0f));
     }
 

@@ -15,9 +15,9 @@ import java.util.List;
 import org.telegram.messenger.qs;
 import org.telegram.ui.Components.rt;
 import org.telegram.ui.Components.vy;
-import org.telegram.ui.hy0;
+import org.telegram.ui.ky0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class t {
     public Context a;
@@ -116,10 +116,10 @@ public final class t {
         jVar.e = a10;
         sa.d dVar = new sa.d(24);
         e.a aVar3 = jVar.b;
-        hy0 hy0Var = new hy0(aVar3, a10, dVar, 16);
+        ky0 ky0Var = new ky0(aVar3, a10, dVar, 16);
         fd.a aVar4 = jVar.a;
         fd.a aVar5 = jVar.c;
-        jVar.f = q5.a.a(new h6.m(new r7(aVar4, aVar5, hy0Var, a10, a10, 21), new ga.d(aVar3, aVar5, a10, hy0Var, aVar4, a10, a10, 5), new ab.b0(aVar4, a10, hy0Var, a10, 14), 17));
+        jVar.f = q5.a.a(new h6.m(new r7(aVar4, aVar5, ky0Var, a10, a10, 21), new ga.d(aVar3, aVar5, a10, ky0Var, aVar4, a10, a10, 5), new ab.b0(aVar4, a10, ky0Var, a10, 14), 17));
         return jVar;
     }
 

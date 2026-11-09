@@ -14,7 +14,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.ui.Components.cp;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class b5 extends View implements te.b {
     public int D;
@@ -64,7 +64,7 @@ public final class b5 extends View implements te.b {
     @Override // te.b
     public final void Y(int i7, float f10, float f11, te.c cVar) {
         if (i7 == 0) {
-            this.a.g();
+            this.a.h();
         }
         invalidate();
     }
@@ -76,22 +76,22 @@ public final class b5 extends View implements te.b {
             return;
         }
         y4 y4Var = this.a;
-        aVar.a(z9, z10 && y4Var.t());
+        aVar.a(z9, z10 && y4Var.u());
         Y(0, aVar.e, 0.0f, null);
         y4Var.requestLayout();
     }
 
     public final void b(boolean z9) {
-        this.y.a(z9, this.a.t());
+        this.y.a(z9, this.a.u());
         invalidate();
     }
 
     public final void c() {
         y4 y4Var = this.a;
-        f6 f6Var = y4Var.a;
-        this.D = k6.w0(k6.Ci, f6Var);
-        this.E = i0.a.f(0.5f, k6.w0(k6.a7, f6Var), this.D);
-        int w02 = k6.w0(k6.Gi, f6Var);
+        g6 g6Var = y4Var.a;
+        this.D = l6.w0(l6.Ci, g6Var);
+        this.E = i0.a.f(0.5f, l6.w0(l6.a7, g6Var), this.D);
+        int w02 = l6.w0(l6.Gi, g6Var);
         this.F = w02;
         int i7 = y4Var.f0;
         a5 a5Var = this.c;
@@ -102,7 +102,7 @@ public final class b5 extends View implements te.b {
         this.e.setColorFilter(new PorterDuffColorFilter(w02, PorterDuff.Mode.SRC_IN));
         this.f.b(w02);
         this.h.setColor(w02);
-        setBackground(k6.a0(a5Var == a5Var2 ? k6.r1(0.2f, this.F) : y4Var.h0, org.telegram.messenger.g0.L(23.0f), org.telegram.messenger.g0.L(23.0f)));
+        setBackground(l6.a0(a5Var == a5Var2 ? l6.r1(0.2f, this.F) : y4Var.h0, org.telegram.messenger.g0.L(23.0f), org.telegram.messenger.g0.L(23.0f)));
         invalidate();
     }
 

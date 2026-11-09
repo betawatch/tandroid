@@ -1,11 +1,11 @@
 package org.telegram.ui.Components.voip;
 
 import android.os.SystemClock;
-import org.telegram.ui.ActionBar.m5;
+import org.telegram.ui.ActionBar.o5;
 import org.webrtc.VideoFrame;
 import org.webrtc.VideoSink;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class d1 implements VideoSink {
     public volatile q0 a;
@@ -13,7 +13,7 @@ public final class d1 implements VideoSink {
     public volatile int c;
     public volatile int d;
     public volatile long e;
-    public final m5 f = new m5(this, 5);
+    public final o5 f = new o5(this, 3);
     public final /* synthetic */ g1 h;
 
     public d1(g1 g1Var) {
@@ -49,6 +49,6 @@ public final class d1 implements VideoSink {
 
     @Override // org.webrtc.VideoSink
     public final /* synthetic */ void setParentSink(VideoSink videoSink) {
-        org.webrtc.e0.a(this, videoSink);
+        org.webrtc.d0.a(this, videoSink);
     }
 }

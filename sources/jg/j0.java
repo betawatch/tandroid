@@ -8,15 +8,15 @@ import android.view.View;
 import android.view.ViewPropertyAnimator;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import org.telegram.ui.ActionBar.m5;
+import org.telegram.ui.ActionBar.o5;
 import org.telegram.ui.Components.cs;
 import org.telegram.ui.Components.es;
-import org.telegram.ui.Components.sr0;
+import org.telegram.ui.Components.ur0;
 import org.telegram.ui.Components.voip.h2;
-import org.telegram.ui.Components.xs0;
+import org.telegram.ui.Components.zs0;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class j0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -94,10 +94,10 @@ public final class j0 extends AnimatorListenerAdapter {
                 esVar.A();
                 break;
             case 3:
-                ((xs0) this.e).K1 = false;
+                ((zs0) this.e).K1 = false;
                 View view3 = (View) this.c;
                 if (view3.getParent() != null) {
-                    ((sr0) this.b).removeView(view3);
+                    ((ur0) this.b).removeView(view3);
                     ((Bitmap) this.d).recycle();
                     break;
                 }
@@ -128,7 +128,7 @@ public final class j0 extends AnimatorListenerAdapter {
                         h2Var.e(true);
                     } else {
                         textViewArr[1].setText(h2Var.e);
-                        h2Var.a(textViewArr[0], textViewArr[1], new m5(this, 8));
+                        h2Var.a(textViewArr[0], textViewArr[1], new o5(this, 6));
                     }
                     h2Var.e = null;
                     break;
@@ -158,8 +158,10 @@ public final class j0 extends AnimatorListenerAdapter {
                         profileActivity.n0.setVisibility(0);
                     }
                     profileActivity.W4 = null;
+                    profileActivity.X4 = 0.0f;
                     profileActivity.Y.invalidate();
-                    profileActivity.g5 = null;
+                    profileActivity.i5 = null;
+                    profileActivity.h5 = null;
                     profileActivity.fragmentView.invalidate();
                     break;
                 } else {

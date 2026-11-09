@@ -101,21 +101,21 @@ import org.telegram.ui.Cells.q1;
 import org.telegram.ui.Cells.t0;
 import org.telegram.ui.Cells.z;
 import org.telegram.ui.Components.di;
-import org.telegram.ui.Components.e51;
-import org.telegram.ui.Components.hi0;
+import org.telegram.ui.Components.f51;
 import org.telegram.ui.Components.ii0;
-import org.telegram.ui.Components.mx0;
+import org.telegram.ui.Components.ji0;
+import org.telegram.ui.Components.nx0;
 import org.telegram.ui.Components.rt;
 import org.telegram.ui.Components.v4;
 import org.telegram.ui.Components.vj;
-import org.telegram.ui.Components.yw0;
-import org.telegram.ui.an;
-import org.telegram.ui.wm0;
+import org.telegram.ui.Components.zw0;
+import org.telegram.ui.cn;
+import org.telegram.ui.ym0;
 import org.xmlpull.v1.XmlPullParserException;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
-public final class m implements ib.b, c4.d, a0, OnCompleteListener, q5.b, ILocationServiceProvider, ep, hi0, wm0 {
+public final class m implements ib.b, c4.d, a0, OnCompleteListener, q5.b, ILocationServiceProvider, ep, ii0, ym0 {
     public final /* synthetic */ int a;
     public Object b;
     public Object c;
@@ -132,7 +132,7 @@ public final class m implements ib.b, c4.d, a0, OnCompleteListener, q5.b, ILocat
     public static Object[] l(Object[] objArr, int[] iArr) {
         int length = objArr.length;
         Class<?> componentType = objArr.getClass().getComponentType();
-        yw0 yw0Var = mx0.S;
+        zw0 zw0Var = nx0.S;
         int i7 = -1;
         for (int i10 : iArr) {
             i7 = Math.max(i7, i10);
@@ -289,7 +289,7 @@ public final class m implements ib.b, c4.d, a0, OnCompleteListener, q5.b, ILocat
         }
     }
 
-    @Override // org.telegram.ui.Components.hi0
+    @Override // org.telegram.ui.Components.ii0
     public /* synthetic */ boolean E() {
         return false;
     }
@@ -317,7 +317,7 @@ public final class m implements ib.b, c4.d, a0, OnCompleteListener, q5.b, ILocat
         ((v0) this.c).e(true, f10);
     }
 
-    @Override // org.telegram.ui.Components.hi0
+    @Override // org.telegram.ui.Components.ii0
     public /* synthetic */ boolean U() {
         return false;
     }
@@ -325,7 +325,7 @@ public final class m implements ib.b, c4.d, a0, OnCompleteListener, q5.b, ILocat
     @Override // org.telegram.messenger.ep
     public void a() {
         ((vf.b) this.b).b();
-        ((f2) this.c).presentFragment(new an((Bundle) this.d));
+        ((f2) this.c).presentFragment(new cn((Bundle) this.d));
     }
 
     @Override // m4.a0
@@ -396,7 +396,7 @@ public final class m implements ib.b, c4.d, a0, OnCompleteListener, q5.b, ILocat
         return -1;
     }
 
-    @Override // org.telegram.ui.wm0
+    @Override // org.telegram.ui.ym0
     public /* synthetic */ boolean e() {
         return true;
     }
@@ -404,10 +404,10 @@ public final class m implements ib.b, c4.d, a0, OnCompleteListener, q5.b, ILocat
     @Override // org.telegram.messenger.ep
     public void f(boolean z9) {
         ((vf.b) this.b).b();
-        ((f2) this.c).presentFragment(new an((Bundle) this.d));
+        ((f2) this.c).presentFragment(new cn((Bundle) this.d));
     }
 
-    @Override // org.telegram.ui.wm0
+    @Override // org.telegram.ui.ym0
     public void f0() {
         ((vj) this.d).Q.A();
     }
@@ -444,7 +444,7 @@ public final class m implements ib.b, c4.d, a0, OnCompleteListener, q5.b, ILocat
     }
 
     /* JADX WARN: Removed duplicated region for block: B:9:0x0063  */
-    @Override // org.telegram.ui.Components.hi0
+    @Override // org.telegram.ui.Components.ii0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -455,24 +455,24 @@ public final class m implements ib.b, c4.d, a0, OnCompleteListener, q5.b, ILocat
         float f11;
         int i7;
         float f12;
-        an anVar = (an) this.d;
-        z H8 = anVar.H8(((ij) this.b).f1(), true);
+        cn cnVar = (cn) this.d;
+        z I8 = cnVar.I8(((ij) this.b).e1(), true);
         float f13 = 0.0f;
-        if (H8 instanceof q1) {
-            p0 p0Var2 = ((q1) H8).N;
+        if (I8 instanceof q1) {
+            p0 p0Var2 = ((q1) I8).N;
             ch.m0 k11 = p0Var2.k(o0Var);
             if (k11 == null) {
                 f12 = 0.0f;
                 f10 = f12;
-                anVar.Ab(H8, (ij) this.b, (ii0) this.c, view, f13, f10, o0Var, false, (o0Var == null && o0Var.a) ? true : z9, z10, false);
+                cnVar.Db(I8, (ij) this.b, (ji0) this.c, view, f13, f10, o0Var, false, (o0Var == null && o0Var.a) ? true : z9, z10, false);
             } else {
                 f13 = p0Var2.b + k11.w + (k11.z / 2.0f);
                 f11 = p0Var2.c + k11.x;
                 i7 = k11.A;
             }
-        } else if (!(H8 instanceof t0) || (k10 = (p0Var = ((t0) H8).E0).k(o0Var)) == null) {
+        } else if (!(I8 instanceof t0) || (k10 = (p0Var = ((t0) I8).E0).k(o0Var)) == null) {
             f10 = 0.0f;
-            anVar.Ab(H8, (ij) this.b, (ii0) this.c, view, f13, f10, o0Var, false, (o0Var == null && o0Var.a) ? true : z9, z10, false);
+            cnVar.Db(I8, (ij) this.b, (ji0) this.c, view, f13, f10, o0Var, false, (o0Var == null && o0Var.a) ? true : z9, z10, false);
         } else {
             f13 = p0Var.b + k10.w + (k10.z / 2.0f);
             f11 = p0Var.c + k10.x;
@@ -480,7 +480,7 @@ public final class m implements ib.b, c4.d, a0, OnCompleteListener, q5.b, ILocat
         }
         f12 = f11 + (i7 / 2.0f);
         f10 = f12;
-        anVar.Ab(H8, (ij) this.b, (ii0) this.c, view, f13, f10, o0Var, false, (o0Var == null && o0Var.a) ? true : z9, z10, false);
+        cnVar.Db(I8, (ij) this.b, (ji0) this.c, view, f13, f10, o0Var, false, (o0Var == null && o0Var.a) ? true : z9, z10, false);
     }
 
     @Override // org.telegram.messenger.ILocationServiceProvider
@@ -941,12 +941,12 @@ public final class m implements ib.b, c4.d, a0, OnCompleteListener, q5.b, ILocat
         return paintArr[i7];
     }
 
-    @Override // org.telegram.ui.Components.hi0
+    @Override // org.telegram.ui.Components.ii0
     public /* synthetic */ boolean v() {
         return true;
     }
 
-    @Override // org.telegram.ui.wm0
+    @Override // org.telegram.ui.ym0
     public void v0(int i7, boolean z9, boolean z10) {
         if (z9) {
             return;
@@ -1093,23 +1093,23 @@ public final class m implements ib.b, c4.d, a0, OnCompleteListener, q5.b, ILocat
         Arrays.sort(copyOf);
     }
 
-    @Override // org.telegram.ui.wm0
+    @Override // org.telegram.ui.ym0
     public void A() {
     }
 
-    @Override // org.telegram.ui.Components.hi0
+    @Override // org.telegram.ui.Components.ii0
     public /* synthetic */ void M() {
     }
 
     public m(View view) {
         this.a = 27;
         this.d = view;
-        e51 e51Var = new e51(this, view);
-        this.b = e51Var;
-        view.addOnLayoutChangeListener(e51Var);
+        f51 f51Var = new f51(this, view);
+        this.b = f51Var;
+        view.addOnLayoutChangeListener(f51Var);
     }
 
-    @Override // org.telegram.ui.wm0
+    @Override // org.telegram.ui.ym0
     public void B(Editable editable) {
     }
 
@@ -1287,7 +1287,7 @@ public final class m implements ib.b, c4.d, a0, OnCompleteListener, q5.b, ILocat
         this.d = l(objArr2, iArr);
     }
 
-    @Override // org.telegram.ui.Components.hi0
+    @Override // org.telegram.ui.Components.ii0
     public /* synthetic */ void L(Canvas canvas, RectF rectF, float f10, float f11, float f12, int i7, boolean z9) {
     }
 }

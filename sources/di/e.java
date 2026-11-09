@@ -20,10 +20,10 @@ import org.telegram.ui.Components.wt;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.qy0;
 import org.telegram.ui.rc;
+import org.telegram.ui.ty0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e implements c20 {
     public final /* synthetic */ int a;
@@ -143,7 +143,7 @@ public final /* synthetic */ class e implements c20 {
                 if (l10 != null && l10.longValue() != Long.MAX_VALUE) {
                     org.telegram.ui.ActionBar.f2 T = LaunchActivity.T();
                     if (T != null) {
-                        T.presentFragment(ProfileActivity.A4(l10.longValue()));
+                        T.presentFragment(ProfileActivity.D4(l10.longValue()));
                         break;
                     }
                 } else {
@@ -163,12 +163,12 @@ public final /* synthetic */ class e implements c20 {
                 Drawable[] drawableArr2 = PhotoViewer.Y8;
                 break;
             case 22:
-                RectF rectF = ProfileActivity.S6;
+                RectF rectF = ProfileActivity.V6;
                 break;
             case 23:
                 HashSet hashSet = (HashSet) obj;
                 String str = id.E0().B.f;
-                hashSet.addAll(qy0.d0());
+                hashSet.addAll(ty0.d0());
                 SharedPreferences.Editor edit = qp.e1().edit();
                 if (hashSet.size() == 1 && TextUtils.equals((CharSequence) hashSet.iterator().next(), str)) {
                     edit.remove("translate_button_restricted_languages");
@@ -176,7 +176,7 @@ public final /* synthetic */ class e implements c20 {
                     edit.putStringSet("translate_button_restricted_languages", hashSet);
                 }
                 edit.putInt("translate_button_restricted_languages_version", 2).apply();
-                qy0.s = false;
+                ty0.s = false;
                 for (int i11 = 0; i11 < 4; i11++) {
                     try {
                         qp.s1(i11).s7.g();
@@ -190,13 +190,13 @@ public final /* synthetic */ class e implements c20 {
                 view10.setScaleY(1.0f);
                 break;
             case 25:
-                ArrayList arrayList = org.telegram.ui.Wallet.u2.a;
+                ArrayList arrayList = org.telegram.ui.Wallet.t2.a;
                 break;
             case 26:
-                ((org.telegram.ui.Wallet.s2) obj).a();
+                ((org.telegram.ui.Wallet.r2) obj).a();
                 break;
             case 27:
-                ((org.telegram.ui.Wallet.s2) obj).b();
+                ((org.telegram.ui.Wallet.r2) obj).b();
                 break;
             case 28:
                 View view11 = (View) obj;

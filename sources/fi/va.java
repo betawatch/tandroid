@@ -73,30 +73,30 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.Components.ah0;
 import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.ch0;
 import org.telegram.ui.Components.cp;
-import org.telegram.ui.Components.e41;
-import org.telegram.ui.Components.h51;
+import org.telegram.ui.Components.dh0;
+import org.telegram.ui.Components.f41;
 import org.telegram.ui.Components.hc;
-import org.telegram.ui.Components.he0;
-import org.telegram.ui.Components.jd0;
-import org.telegram.ui.Components.k60;
-import org.telegram.ui.Components.ld0;
-import org.telegram.ui.Components.my0;
-import org.telegram.ui.Components.ob0;
-import org.telegram.ui.Components.r71;
-import org.telegram.ui.Components.rd0;
+import org.telegram.ui.Components.i51;
+import org.telegram.ui.Components.ie0;
+import org.telegram.ui.Components.kd0;
+import org.telegram.ui.Components.l60;
+import org.telegram.ui.Components.md0;
+import org.telegram.ui.Components.ny0;
+import org.telegram.ui.Components.pb0;
+import org.telegram.ui.Components.s71;
 import org.telegram.ui.Components.sd0;
-import org.telegram.ui.Components.t51;
-import org.telegram.ui.Components.vy0;
-import org.telegram.ui.Components.x60;
+import org.telegram.ui.Components.td0;
+import org.telegram.ui.Components.u51;
+import org.telegram.ui.Components.wy0;
 import org.telegram.ui.Components.xp;
 import org.telegram.ui.Components.xq;
-import org.telegram.ui.Components.zg0;
+import org.telegram.ui.Components.y60;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class va implements ls {
     public static va F2;
@@ -104,10 +104,10 @@ public final class va implements ls {
     public View A1;
     public boolean A2;
     public y9 B0;
-    public sd0 B1;
+    public td0 B1;
     public boolean B2;
     public c6 C0;
-    public final rd0 C1;
+    public final sd0 C1;
     public da C2;
     public final bg.v0 D;
     public final q6 D0;
@@ -115,11 +115,11 @@ public final class va implements ls {
     public float D2;
     public ValueAnimator E;
     public final gb E0;
-    public jd0 E1;
+    public kd0 E1;
     public ValueAnimator E2;
     public qa F;
     public final hb F0;
-    public ld0 F1;
+    public md0 F1;
     public float G;
     public final z G0;
     public File G1;
@@ -151,7 +151,7 @@ public final class va implements ls {
     public final d P0;
     public boolean P1;
     public Runnable Q;
-    public final p9 Q0;
+    public final o9 Q0;
     public boolean Q1;
     public z10 R;
     public final n2 R0;
@@ -166,7 +166,7 @@ public final class va implements ls {
     public final k3 U0;
     public int U1;
     public boolean V;
-    public final r71 V0;
+    public final s71 V0;
     public boolean V1;
     public boolean W;
     public final m3 W0;
@@ -194,7 +194,7 @@ public final class va implements ls {
     public boolean c2;
     public boolean d;
     public final RectF d0;
-    public final o9 d1;
+    public final n9 d1;
     public boolean d2;
     public boolean e;
     public final Path e0;
@@ -202,14 +202,14 @@ public final class va implements ls {
     public Runnable e2;
     public final WindowManager f;
     public int f0;
-    public zg0 f1;
+    public ah0 f1;
     public AnimatorSet f2;
     public int g0;
-    public final ch0 g1;
+    public final dh0 g1;
     public a9 g2;
     public final WindowManager.LayoutParams h;
     public final ha h0;
-    public zg0 h1;
+    public ah0 h1;
     public boolean h2;
     public final FrameLayout i0;
     public ImageView i1;
@@ -233,7 +233,7 @@ public final class va implements ls {
     public final x6 o0;
     public final t5 o1;
     public r1.g o2;
-    public final org.telegram.ui.ActionBar.k5 p0;
+    public final org.telegram.ui.ActionBar.l5 p0;
     public final ib p1;
     public Boolean p2;
     public s8 q0;
@@ -258,7 +258,7 @@ public final class va implements ls {
     public FrameLayout v2;
     public boolean w;
     public String w0;
-    public sg.w0 w1;
+    public sg.v0 w1;
     public boolean w2;
     public long x;
     public TLRPC.InputPeer x0;
@@ -284,7 +284,6 @@ public final class va implements ls {
         this.d0 = new RectF();
         this.e0 = new Path();
         new Rect();
-        int i11 = 0;
         this.f0 = 0;
         this.g0 = -1;
         this.y0 = new q8();
@@ -298,7 +297,7 @@ public final class va implements ls {
         this.S1 = false;
         this.U1 = -3;
         this.W1 = false;
-        s9 s9Var = new s9(this);
+        r9 r9Var = new r9(this);
         this.d2 = true;
         this.k2 = true;
         this.t2 = -1;
@@ -315,7 +314,7 @@ public final class va implements ls {
         layoutParams.type = 99;
         org.telegram.messenger.g0.m(layoutParams);
         layoutParams.flags = -2013200128;
-        int i12 = 16;
+        int i11 = 16;
         layoutParams.softInputMode = 16;
         WindowManager windowManager = (WindowManager) activity.getSystemService("window");
         this.f = windowManager;
@@ -325,7 +324,6 @@ public final class va implements ls {
         WeakHashMap weakHashMap = r0.i0.a;
         r0.a0.i(uaVar, d9Var);
         this.n.setFocusable(true);
-        int i13 = 2;
         this.n.setImportantForAccessibility(2);
         p2 p2Var = new p2(activity, windowManager, this.n, layoutParams);
         this.s = p2Var;
@@ -351,68 +349,70 @@ public final class va implements ls {
         this.k0 = frameLayout2;
         naVar4.addView(frameLayout2);
         na naVar5 = this.r;
-        int i14 = 4;
-        bi.e5 e5Var = new bi.e5(i14, activity, this);
+        int i12 = 4;
+        bi.e5 e5Var = new bi.e5(i12, activity, this);
         this.l0 = e5Var;
         naVar5.addView(e5Var);
+        int i13 = 8;
         this.l0.setVisibility(8);
         this.l0.setAlpha(0.0f);
         na naVar6 = this.r;
         FrameLayout frameLayout3 = new FrameLayout(activity);
         this.m0 = frameLayout3;
         naVar6.addView(frameLayout3);
-        cc.a(this.n, new r7(i13));
+        cc.a(this.n, new r7(2));
         ia iaVar = new ia(this, activity, this.r0, this.r, bVar);
         this.A0 = iaVar;
         ua uaVar3 = this.n;
         Objects.requireNonNull(uaVar3);
-        iaVar.setCancelGestures(new h9(uaVar3, i11));
+        iaVar.setCancelGestures(new di.f8(uaVar3, 29));
         this.A0.setResetState(new u8(this, 13));
         this.h0.addView(this.A0, c8.ha.e(-1, -1, qs.E1));
         this.A0.setOnClickListener(new w8(this, 12));
         ha haVar2 = this.h0;
-        int i15 = this.J;
-        haVar2.setBackgroundColor((i15 == 1 || i15 == 0) ? 0 : -14737633);
+        int i14 = this.J;
+        haVar2.setBackgroundColor((i14 == 1 || i14 == 0) ? 0 : -14737633);
         ha haVar3 = this.h0;
         float L = org.telegram.messenger.g0.L(12.0f);
         bg.q0 q0Var = bg.u0.a;
         haVar3.setOutlineProvider(new bg.s0(0, L));
         this.h0.setClipToOutline(true);
         u8 u8Var = new u8(this, 14);
-        rd0 rd0Var = new rd0(activity);
-        rd0Var.a = new TextPaint(1);
-        rd0Var.b = new TextPaint(1);
+        sd0 sd0Var = new sd0(activity);
+        sd0Var.a = new TextPaint(1);
+        sd0Var.b = new TextPaint(1);
         xq xqVar = xq.h;
-        rd0Var.s = new org.telegram.ui.Components.w5(rd0Var, 0L, 350L, xqVar);
-        rd0Var.I = new ob0(rd0Var, i14);
-        rd0Var.y = u8Var;
-        this.C1 = rd0Var;
+        sd0Var.s = new org.telegram.ui.Components.w5(sd0Var, 0L, 350L, xqVar);
+        sd0Var.I = new pb0(sd0Var, i12);
+        sd0Var.y = u8Var;
+        this.C1 = sd0Var;
         ja jaVar = new ja(this, activity, this.r0, this.s0);
         this.X0 = jaVar;
         jaVar.setCollageView(this.A0);
         ja jaVar2 = this.X0;
         jaVar2.w = new u8(this, 15);
-        jaVar2.setOnTapListener(new u8(this, i12));
+        jaVar2.setOnTapListener(new u8(this, i11));
         this.X0.setVisibility(8);
         ja jaVar3 = this.X0;
         jaVar3.N = new u8(this, 17);
         this.h0.addView(jaVar3, c8.ha.e(-1, -1, qs.E1));
         this.h0.addView(this.C1, c8.ha.e(-1, -1, qs.E1));
         ua uaVar4 = this.n;
+        int i15 = 2;
         la laVar = new la(this, activity, uaVar4, uaVar4, this.r, bVar, this.r0);
         this.c1 = laVar;
         laVar.setAccount(i7);
         this.c1.setUiBlurBitmap(new di.a1(24));
-        cc.a(this.l0, new ch.v(this, i14));
+        cc.a(this.l0, new ch.v(this, i12));
         this.c1.setOnHeightUpdate(new v8(this, 13));
-        this.c1.setOnPeriodUpdate(new v8(this, i14));
+        this.c1.setOnPeriodUpdate(new v8(this, i12));
         long j3 = this.N;
         if (j3 != 0) {
             this.c1.setDialogId(j3);
         }
         this.c1.setOnPremiumHint(new v8(this, 5));
         this.c1.setOnKeyboardOpen(new v8(this, 6));
-        ec ecVar = new ec(i13, activity, this);
+        ec ecVar = new ec(i15, activity, this);
         this.t0 = ecVar;
         this.r.addView(ecVar);
         fb fbVar = new fb(activity, this.r, this.h0, bVar, this.r0);
@@ -442,9 +442,9 @@ public final class va implements ls {
         fbVar2.setVisibility(8);
         this.t1.setAlpha(0.0f);
         this.l0.addView(this.t1, c8.ha.d(-1, f10, 87, 0.0f, 0.0f, 0.0f, 6.0f));
-        o9 o9Var = new o9(this, activity, bVar, this.r0);
-        this.d1 = o9Var;
-        o9Var.setVisibility(8);
+        n9 n9Var = new n9(this, activity, bVar, this.r0);
+        this.d1 = n9Var;
+        n9Var.setVisibility(8);
         this.l0.addView(this.d1, c8.ha.e(-1, -2, 85));
         n2 n2Var = new n2(activity);
         this.n0 = n2Var;
@@ -456,7 +456,7 @@ public final class va implements ls {
         n2 n2Var3 = this.n0;
         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
         n2Var3.setColorFilter(new PorterDuffColorFilter(-1, mode));
-        this.n0.setBackground(org.telegram.ui.ActionBar.k6.h0(553648127, 1, -1));
+        this.n0.setBackground(org.telegram.ui.ActionBar.l6.h0(553648127, 1, -1));
         this.n0.setOnClickListener(new w8(this, i10));
         this.i0.addView(this.n0, c8.ha.e(56, 56, 51));
         this.s.a(this.n0);
@@ -465,13 +465,13 @@ public final class va implements ls {
         x6Var.a(false, false);
         this.o0.setOnClickListener(new bi.r(15, this, activity));
         this.i0.addView(this.o0, c8.ha.d(-1, 56.0f, 51, 50.0f, 0.0f, 50.0f, 0.0f));
-        org.telegram.ui.ActionBar.k5 k5Var = new org.telegram.ui.ActionBar.k5(activity);
-        this.p0 = k5Var;
-        k5Var.setTextSize(20);
+        org.telegram.ui.ActionBar.l5 l5Var = new org.telegram.ui.ActionBar.l5(activity);
+        this.p0 = l5Var;
+        l5Var.setTextSize(20);
         this.p0.setGravity(19);
         this.p0.setTextColor(-1);
         this.p0.setTypeface(org.telegram.messenger.g0.o());
-        this.p0.l(id.M0(2131746354, null), false);
+        this.p0.l(id.M0(2131746353, null), false);
         this.p0.getPaint().setShadowLayer(org.telegram.messenger.g0.N(1.0f), 0.0f, 1.0f, TLObject.FLAG_30);
         this.p0.setAlpha(0.0f);
         this.p0.setVisibility(8);
@@ -493,7 +493,7 @@ public final class va implements ls {
         t0Var.b = uaVar5;
         t0Var.setScaleType(scaleType);
         t0Var.setColorFilter(new PorterDuffColorFilter(-1, mode));
-        t0Var.setBackground(org.telegram.ui.ActionBar.k6.h0(553648127, 1, -1));
+        t0Var.setBackground(org.telegram.ui.ActionBar.l6.h0(553648127, 1, -1));
         t0Var.setVisibility(8);
         t0Var.setAlpha(0.0f);
         t0Var.setOnClickListener(new ah.d(t0Var, 22));
@@ -508,20 +508,20 @@ public final class va implements ls {
         this.k1 = m3Var;
         m3Var.setPadding(org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f), 0);
         this.i0.addView(this.k1, c8.ha.d(-1, -1.0f, 48, 0.0f, 52.0f, 0.0f, 0.0f));
-        ch0 ch0Var = new ch0(activity);
-        this.g1 = ch0Var;
-        ch0Var.setScaleType(scaleType);
-        ch0 ch0Var2 = this.g1;
+        dh0 dh0Var = new dh0(activity);
+        this.g1 = dh0Var;
+        dh0Var.setScaleType(scaleType);
+        dh0 dh0Var2 = this.g1;
         e7 e7Var = this.K1;
-        ch0Var2.setImageResource((e7Var == null || !e7Var.Y) ? R.drawable.media_mute : R.drawable.media_unmute);
+        dh0Var2.setImageResource((e7Var == null || !e7Var.Y) ? R.drawable.media_mute : R.drawable.media_unmute);
         this.g1.setColorFilter(new PorterDuffColorFilter(-1, mode));
-        this.g1.setBackground(org.telegram.ui.ActionBar.k6.h0(553648127, 1, -1));
-        this.g1.setOnClickListener(new w8(this, i13));
+        this.g1.setBackground(org.telegram.ui.ActionBar.l6.h0(553648127, 1, -1));
+        this.g1.setOnClickListener(new w8(this, i15));
         this.g1.setVisibility(8);
         this.g1.setAlpha(0.0f);
         p5 p5Var = new p5(activity);
         this.j1 = p5Var;
-        p5Var.setBackground(org.telegram.ui.ActionBar.k6.h0(553648127, 1, -1));
+        p5Var.setBackground(org.telegram.ui.ActionBar.l6.h0(553648127, 1, -1));
         this.j1.setVisibility(8);
         this.j1.setAlpha(0.0f);
         this.j1.setOnClickListener(new w8(this, 3));
@@ -530,7 +530,7 @@ public final class va implements ls {
         this.j0.addView(this.e1, c8.ha.e(46, 56, 53));
         gb gbVar = new gb(activity);
         this.E0 = gbVar;
-        gbVar.setBackground(org.telegram.ui.ActionBar.k6.h0(553648127, 1, -1));
+        gbVar.setBackground(org.telegram.ui.ActionBar.l6.h0(553648127, 1, -1));
         this.E0.setOnClickListener(new w8(this, 4));
         this.E0.setOnLongClickListener(new s4(this, i10));
         this.E0.setVisibility(8);
@@ -549,7 +549,7 @@ public final class va implements ls {
         z zVar = new z(activity);
         this.G0 = zVar;
         zVar.setContentDescription(id.M0(2131754895, null));
-        this.G0.setBackground(org.telegram.ui.ActionBar.k6.h0(553648127, 1, -1));
+        this.G0.setBackground(org.telegram.ui.ActionBar.l6.h0(553648127, 1, -1));
         if (this.z0 == null) {
             this.z0 = (t) t.a().get(6);
         }
@@ -563,7 +563,7 @@ public final class va implements ls {
         gb gbVar2 = new gb(activity);
         this.H0 = gbVar2;
         gbVar2.setContentDescription(id.M0(2131754894, null));
-        this.H0.setBackground(org.telegram.ui.ActionBar.k6.h0(553648127, 1, -1));
+        this.H0.setBackground(org.telegram.ui.ActionBar.l6.h0(553648127, 1, -1));
         this.H0.a(new u(new t("../../.."), true), false);
         this.H0.setVisibility(8);
         this.H0.setAlpha(0.0f);
@@ -574,13 +574,13 @@ public final class va implements ls {
         this.I0 = yVar;
         yVar.a.v0(6);
         this.I0.setSelected((t) null);
-        this.I0.setOnLayoutClick(new v8(this, 8));
+        this.I0.setOnLayoutClick(new v8(this, i13));
         this.i0.addView(this.I0, c8.ha.e(-1, 56, 53));
         m3 m3Var2 = new m3(activity, 1);
         m3Var2.o(1.0f, -20.0f);
         m3Var2.d = 5000L;
         m3Var2.k(true);
-        m3Var2.u(id.M0(2131744716, null));
+        m3Var2.u(id.M0(2131744713, null));
         m3Var2.q0 = new ai.m0(13);
         this.l1 = m3Var2;
         m3Var2.setPadding(org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f), 0);
@@ -594,7 +594,7 @@ public final class va implements ls {
         m3 m3Var4 = new m3(activity, 1);
         m3Var4.o(1.0f, -20.0f);
         m3Var4.d = 5000L;
-        m3Var4.u(id.M0(2131744707, null));
+        m3Var4.u(id.M0(2131744704, null));
         this.n1 = m3Var4;
         m3Var4.setPadding(org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f), 0);
         this.i0.addView(this.n1, c8.ha.d(-1, -1.0f, 48, 0.0f, 52.0f, 0.0f, 0.0f));
@@ -622,7 +622,7 @@ public final class va implements ls {
         MediaController.O(0);
         g6 g6Var = new g6(activity);
         this.O0 = g6Var;
-        g6Var.setDelegate(s9Var);
+        g6Var.setDelegate(r9Var);
         g6 g6Var2 = this.O0;
         boolean z9 = this.O1 == 1;
         g6Var2.n0 = -1.0f;
@@ -635,7 +635,7 @@ public final class va implements ls {
         this.P0 = dVar;
         dVar.setRoundRadius(24);
         this.P0.setColor(-2473124);
-        this.P0.i(id.M0(2131748789, null), false, true);
+        this.P0.i(id.M0(2131748788, null), false, true);
         this.P0.setAlpha(0.0f);
         this.P0.setScaleX(0.8f);
         this.P0.setScaleY(0.8f);
@@ -644,29 +644,29 @@ public final class va implements ls {
         this.P0.setOnClickListener(new w8(this, 8));
         m3 m3Var5 = new m3(activity, 3);
         m3Var5.r(true);
-        m3Var5.u(id.M0(2131744714, null));
+        m3Var5.u(id.M0(2131744711, null));
         m3Var5.h = org.telegram.messenger.g0.L(320.0f);
         m3Var5.d = 5000L;
         m3Var5.K = Layout.Alignment.ALIGN_CENTER;
         this.W0 = m3Var5;
         this.k0.addView(m3Var5, c8.ha.d(-1, -1.0f, 80, 0.0f, 0.0f, 0.0f, 100.0f));
-        r71 r71Var = new r71(activity);
-        this.V0 = r71Var;
-        r71Var.M = false;
-        r71Var.setAlpha(0.0f);
+        s71 s71Var = new s71(activity);
+        this.V0 = s71Var;
+        s71Var.M = false;
+        s71Var.setAlpha(0.0f);
         this.k0.addView(this.V0, c8.ha.d(-1, 50.0f, 81, 0.0f, 0.0f, 0.0f, 108.0f));
         this.V0.setDelegate(new d9(this, 4));
-        r71 r71Var2 = this.V0;
+        s71 s71Var2 = this.V0;
         this.T1 = 0.0f;
-        r71Var2.b(false, 0.0f);
+        s71Var2.b(false, 0.0f);
         int i16 = 12;
         q6 q6Var = new q6(activity, i7, new u8(this, i16));
         this.D0 = q6Var;
         q6Var.c = new v8(this, 9);
         this.k0.addView(q6Var, c8.ha.d(-1, 80.0f, 87, 0.0f, 0.0f, 0.0f, 90.0f));
-        p9 p9Var = new p9(this, activity);
-        this.Q0 = p9Var;
-        p9Var.setOnSwitchModeListener(new v8(this, 10));
+        o9 o9Var = new o9(this, activity);
+        this.Q0 = o9Var;
+        o9Var.setOnSwitchModeListener(new v8(this, 10));
         this.Q0.setOnSwitchingModeListener(new v8(this, 11));
         this.m0.addView(this.Q0, c8.ha.e(-1, 48, 55));
         this.s.a(this.Q0);
@@ -676,17 +676,17 @@ public final class va implements ls {
         this.R0.setImageResource(R.drawable.stream_flip);
         this.R0.setScaleType(scaleType);
         this.R0.setColorFilter(new PorterDuffColorFilter(-1, mode));
-        this.R0.setBackground(org.telegram.ui.ActionBar.k6.h0(553648127, 1, -1));
+        this.R0.setBackground(org.telegram.ui.ActionBar.l6.h0(553648127, 1, -1));
         this.m0.addView(this.R0, c8.ha.d(24, 24.0f, 19, 20.0f, 0.0f, 20.0f, 4.0f));
         this.s.a(this.R0);
         this.R0.setOnClickListener(new w8(this, 9));
         n2 n2Var5 = new n2(activity);
         this.S0 = n2Var5;
-        n2Var5.setContentDescription(id.M0(2131748791, null));
+        n2Var5.setContentDescription(id.M0(2131748790, null));
         this.S0.setImageResource(R.drawable.stream_settings);
         this.S0.setScaleType(scaleType);
         this.S0.setColorFilter(new PorterDuffColorFilter(-1, mode));
-        this.S0.setBackground(org.telegram.ui.ActionBar.k6.h0(553648127, 1, -1));
+        this.S0.setBackground(org.telegram.ui.ActionBar.l6.h0(553648127, 1, -1));
         this.m0.addView(this.S0, c8.ha.d(24, 24.0f, 21, 20.0f, 0.0f, 20.0f, 4.0f));
         this.s.a(this.S0);
         this.S0.setOnClickListener(new w8(this, 10));
@@ -696,7 +696,7 @@ public final class va implements ls {
         this.s.a(this.T0);
         k3 k3Var2 = new k3(activity);
         this.U0 = k3Var2;
-        k3Var2.a.t(id.M0(2131744706, null), false, true);
+        k3Var2.a.t(id.M0(2131744703, null), false, true);
         k3Var2.invalidate();
         this.U0.setAlpha(0.0f);
         this.m0.addView(this.U0, c8.ha.d(-1, 32.0f, 17, 8.0f, 0.0f, 8.0f, 8.0f));
@@ -706,7 +706,7 @@ public final class va implements ls {
         this.u1 = dVar2;
         dVar2.setVisibility(8);
         this.u1.setAlpha(0.0f);
-        this.u1.i(id.M0(2131744692, null), false, true);
+        this.u1.i(id.M0(2131744689, null), false, true);
         this.u1.setOnClickListener(new w8(this, 11));
         this.m0.addView(this.u1, c8.ha.d(-1, 48.0f, qs.E1, 10.0f, 10.0f, 10.0f, 10.0f));
         s5 s5Var = new s5(activity);
@@ -720,14 +720,14 @@ public final class va implements ls {
         s5Var.a(0, R.drawable.media_draw, id.M0(2131754814, null));
         s5Var.a(2, R.drawable.msg_photo_sticker, id.M0(2131754756, null));
         s5Var.a(1, R.drawable.msg_photo_text2, id.M0(2131754807, null));
-        s5Var.a(3, R.drawable.media_crop, id.M0(2131751700, null));
+        s5Var.a(3, R.drawable.media_crop, id.M0(2131751699, null));
         s5Var.a(4, R.drawable.msg_photo_settings, id.M0(2131754811, null));
-        String M0 = id.M0(2131745643, null);
+        String M0 = id.M0(2131745640, null);
         s5Var.d = M0;
         s5Var.e = true;
         r5 r5Var = new r5(s5Var, activity, M0, true);
         s5Var.c = r5Var;
-        r5Var.setContentDescription(id.M0(2131745643, null));
+        r5Var.setContentDescription(id.M0(2131745640, null));
         s5Var.addView(s5Var.c, c8.ha.c(-2.0f, -2));
         s5Var.e();
         this.b1 = s5Var;
@@ -801,10 +801,10 @@ public final class va implements ls {
         naVar.getAlpha();
         ValueAnimator ofFloat = ValueAnimator.ofFloat(1.0f, 0.0f);
         vaVar.j2 = ofFloat;
-        ofFloat.addUpdateListener(new l9(vaVar, f10, f11, i7));
+        ofFloat.addUpdateListener(new k9(vaVar, f10, f11, i7));
         vaVar.j2.setDuration(340L);
         vaVar.j2.setInterpolator(xq.h);
-        vaVar.j2.addListener(new v9(vaVar, i7));
+        vaVar.j2.addListener(new u9(vaVar, i7));
         vaVar.j2.start();
     }
 
@@ -883,20 +883,20 @@ public final class va implements ls {
 
     public final ImageView F() {
         if (this.i1 == null) {
-            zg0 zg0Var = new zg0(R.raw.sun_outline, org.telegram.messenger.g0.L(28.0f), org.telegram.messenger.g0.L(28.0f), true, null);
-            this.h1 = zg0Var;
-            zg0Var.h = true;
+            ah0 ah0Var = new ah0(R.raw.sun_outline, org.telegram.messenger.g0.L(28.0f), org.telegram.messenger.g0.L(28.0f), true, null);
+            this.h1 = ah0Var;
+            ah0Var.h = true;
             e7 e7Var = this.K1;
             int i7 = 0;
             if (e7Var == null || !e7Var.y0) {
-                zg0Var.P(0);
+                ah0Var.P(0);
                 this.h1.M(0);
             } else {
-                zg0Var.M(35);
+                ah0Var.M(35);
                 this.h1.P(36);
             }
             this.h1.Z = true;
-            int w02 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.J9, this.a);
+            int w02 = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.J9, this.a);
             this.h1.Q(w02, "Sunny");
             this.h1.Q(w02, "Path 6");
             this.h1.Q(w02, "Path");
@@ -906,7 +906,7 @@ public final class va implements ls {
             this.i1 = imageView;
             imageView.setScaleType(ImageView.ScaleType.CENTER);
             this.i1.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.MULTIPLY));
-            this.i1.setBackground(org.telegram.ui.ActionBar.k6.h0(553648127, 1, -1));
+            this.i1.setBackground(org.telegram.ui.ActionBar.l6.h0(553648127, 1, -1));
             this.i1.setOnClickListener(new w8(this, i7));
             this.i1.setVisibility(8);
             this.i1.setImageDrawable(this.h1);
@@ -960,7 +960,7 @@ public final class va implements ls {
         e7 e7Var;
         e7 e7Var2;
         d dVar;
-        org.telegram.ui.ActionBar.k5 k5Var;
+        org.telegram.ui.ActionBar.l5 l5Var;
         int i10;
         int i11;
         float L;
@@ -998,18 +998,18 @@ public final class va implements ls {
         l0(z9);
         t0 t0Var = this.e1;
         p5 p5Var = this.j1;
-        ch0 ch0Var = this.g1;
+        dh0 dh0Var = this.g1;
         fb fbVar = this.t1;
         fb fbVar2 = this.Z0;
         d dVar2 = this.u1;
-        org.telegram.ui.ActionBar.k5 k5Var2 = this.p0;
+        org.telegram.ui.ActionBar.l5 l5Var2 = this.p0;
         la laVar = this.c1;
         k3 k3Var = this.U0;
         k3 k3Var2 = this.T0;
         q6 q6Var = this.D0;
         ja jaVar = this.X0;
         bi.e5 e5Var = this.l0;
-        p9 p9Var = this.Q0;
+        o9 o9Var = this.Q0;
         g6 g6Var = this.O0;
         if (!z9) {
             y9 y9Var2 = this.B0;
@@ -1021,14 +1021,14 @@ public final class va implements ls {
             g6Var.setAlpha(i7 == 0 ? 1.0f : 0.0f);
             g6Var.setTranslationY(i7 == 0 ? 0.0f : org.telegram.messenger.g0.L(16.0f));
             q6Var.setAlpha(i7 == 0 ? 1.0f : 0.0f);
-            p9Var.setAlpha((i7 != 0 || H()) ? 0.0f : 1.0f);
-            p9Var.setTranslationY((i7 != 0 || H()) ? org.telegram.messenger.g0.L(16.0f) : 0.0f);
+            o9Var.setAlpha((i7 != 0 || H()) ? 0.0f : 1.0f);
+            o9Var.setTranslationY((i7 != 0 || H()) ? org.telegram.messenger.g0.L(16.0f) : 0.0f);
             k3Var2.setAlpha((i7 == 0 && this.a2 && !H()) ? 1.0f : 0.0f);
             k3Var.setAlpha((i7 == 0 && !this.a2 && H()) ? 0.6f : 0.0f);
             e5Var.setAlpha((i7 == 1 || i7 == 2) ? 1.0f : 0.0f);
             e5Var.setTranslationY((i7 == 1 || i7 == 2) ? 0.0f : org.telegram.messenger.g0.L(12.0f));
             laVar.setAlpha(i7 == 2 ? 0.0f : 1.0f);
-            ch0Var.setAlpha((i7 == 1 && this.O1 == 1) ? 1.0f : 0.0f);
+            dh0Var.setAlpha((i7 == 1 && this.O1 == 1) ? 1.0f : 0.0f);
             p5Var.setAlpha((i7 != 1 || (this.O1 != 1 && ((e7Var2 = this.K1) == null || TextUtils.isEmpty(e7Var2.y)))) ? 0.0f : 1.0f);
             int i13 = 1;
             t0Var.setAlpha(i7 == 1 ? 1.0f : 0.0f);
@@ -1039,7 +1039,7 @@ public final class va implements ls {
             }
             fbVar2.setAlpha(i7 == i13 ? 1.0f : 0.0f);
             fbVar.setAlpha(i7 == 2 ? 1.0f : 0.0f);
-            k5Var2.setAlpha((i7 == i13 || i7 == 2) ? 1.0f : 0.0f);
+            l5Var2.setAlpha((i7 == i13 || i7 == 2) ? 1.0f : 0.0f);
             dVar2.setAlpha(i7 == 2 ? 1.0f : 0.0f);
             M(i12, i7);
             return;
@@ -1049,12 +1049,12 @@ public final class va implements ls {
         y9 y9Var3 = this.B0;
         if (y9Var3 != null) {
             dVar = dVar2;
-            k5Var = k5Var2;
+            l5Var = l5Var2;
             i10 = 1;
             arrayList.add(ObjectAnimator.ofFloat(y9Var3, (Property<y9, Float>) View.ALPHA, i7 == 0 ? 1.0f : 0.0f));
         } else {
             dVar = dVar2;
-            k5Var = k5Var2;
+            l5Var = l5Var2;
             i10 = 1;
         }
         Property property = View.ALPHA;
@@ -1076,8 +1076,8 @@ public final class va implements ls {
         arrayList.add(ObjectAnimator.ofFloat(q6Var, (Property<q6, Float>) property, fArr5));
         float[] fArr6 = new float[i10];
         fArr6[0] = (i7 != 0 || H()) ? 0.0f : 1.0f;
-        arrayList.add(ObjectAnimator.ofFloat(p9Var, (Property<p9, Float>) property, fArr6));
-        arrayList.add(ObjectAnimator.ofFloat(p9Var, (Property<p9, Float>) property2, (i7 != 0 || H()) ? org.telegram.messenger.g0.L(24.0f) : 0.0f));
+        arrayList.add(ObjectAnimator.ofFloat(o9Var, (Property<o9, Float>) property, fArr6));
+        arrayList.add(ObjectAnimator.ofFloat(o9Var, (Property<o9, Float>) property2, (i7 != 0 || H()) ? org.telegram.messenger.g0.L(24.0f) : 0.0f));
         arrayList.add(ObjectAnimator.ofFloat(k3Var2, (Property<k3, Float>) property, (i7 == 0 && this.a2 && !H()) ? 1.0f : 0.0f));
         arrayList.add(ObjectAnimator.ofFloat(k3Var, (Property<k3, Float>) property, (i7 == 0 && !this.a2 && H()) ? 0.6f : 0.0f));
         arrayList.add(ObjectAnimator.ofFloat(e5Var, (Property<bi.e5, Float>) property, ((i7 == 1 && ((e7Var6 = this.K1) == null || e7Var6.J0 == 0)) || i7 == 2) ? 1.0f : 0.0f));
@@ -1089,20 +1089,20 @@ public final class va implements ls {
                 L = org.telegram.messenger.g0.L(12.0f);
                 arrayList.add(ObjectAnimator.ofFloat(e5Var, (Property<bi.e5, Float>) property2, L));
                 arrayList.add(ObjectAnimator.ofFloat(laVar, (Property<la, Float>) property, i7 != i11 ? 0.0f : 1.0f));
-                arrayList.add(ObjectAnimator.ofFloat(k5Var, (Property<org.telegram.ui.ActionBar.k5, Float>) property, (i7 != 1 || i7 == i11) ? 1.0f : 0.0f));
+                arrayList.add(ObjectAnimator.ofFloat(l5Var, (Property<org.telegram.ui.ActionBar.l5, Float>) property, (i7 != 1 || i7 == i11) ? 1.0f : 0.0f));
                 arrayList.add(ObjectAnimator.ofFloat(dVar, (Property<d, Float>) property, i7 != i11 ? 1.0f : 0.0f));
                 arrayList.add(ObjectAnimator.ofFloat(fbVar2, (Property<fb, Float>) property, i7 != 1 ? 1.0f : 0.0f));
                 arrayList.add(ObjectAnimator.ofFloat(fbVar, (Property<fb, Float>) property, i7 != 2 ? 1.0f : 0.0f));
-                arrayList.add(ObjectAnimator.ofFloat(ch0Var, (Property<ch0, Float>) property, (i7 == 1 || this.O1 != 1) ? 0.0f : 1.0f));
+                arrayList.add(ObjectAnimator.ofFloat(dh0Var, (Property<dh0, Float>) property, (i7 == 1 || this.O1 != 1) ? 0.0f : 1.0f));
                 arrayList.add(ObjectAnimator.ofFloat(p5Var, (Property<p5, Float>) property, (i7 == 1 || (this.O1 != 1 && ((e7Var4 = this.K1) == null || TextUtils.isEmpty(e7Var4.y)))) ? 0.0f : 1.0f));
                 arrayList.add(ObjectAnimator.ofFloat(t0Var, (Property<t0, Float>) property, i7 != 1 ? 1.0f : 0.0f));
                 imageView = this.i1;
                 if (imageView != null) {
                     arrayList.add(ObjectAnimator.ofFloat(imageView, (Property<ImageView, Float>) property, (i7 == 1 && (e7Var3 = this.K1) != null && e7Var3.u) ? 1.0f : 0.0f));
                 }
-                arrayList.add(ObjectAnimator.ofFloat(this.V0, (Property<r71, Float>) property, 0.0f));
+                arrayList.add(ObjectAnimator.ofFloat(this.V0, (Property<s71, Float>) property, 0.0f));
                 this.i2.playTogether(arrayList);
-                this.i2.addListener(new u9(this, i12, i7, 0));
+                this.i2.addListener(new t9(this, i12, i7, 0));
                 this.i2.setDuration(460L);
                 this.i2.setInterpolator(xq.h);
                 this.i2.start();
@@ -1111,19 +1111,19 @@ public final class va implements ls {
         L = 0.0f;
         arrayList.add(ObjectAnimator.ofFloat(e5Var, (Property<bi.e5, Float>) property2, L));
         arrayList.add(ObjectAnimator.ofFloat(laVar, (Property<la, Float>) property, i7 != i11 ? 0.0f : 1.0f));
-        arrayList.add(ObjectAnimator.ofFloat(k5Var, (Property<org.telegram.ui.ActionBar.k5, Float>) property, (i7 != 1 || i7 == i11) ? 1.0f : 0.0f));
+        arrayList.add(ObjectAnimator.ofFloat(l5Var, (Property<org.telegram.ui.ActionBar.l5, Float>) property, (i7 != 1 || i7 == i11) ? 1.0f : 0.0f));
         arrayList.add(ObjectAnimator.ofFloat(dVar, (Property<d, Float>) property, i7 != i11 ? 1.0f : 0.0f));
         arrayList.add(ObjectAnimator.ofFloat(fbVar2, (Property<fb, Float>) property, i7 != 1 ? 1.0f : 0.0f));
         arrayList.add(ObjectAnimator.ofFloat(fbVar, (Property<fb, Float>) property, i7 != 2 ? 1.0f : 0.0f));
-        arrayList.add(ObjectAnimator.ofFloat(ch0Var, (Property<ch0, Float>) property, (i7 == 1 || this.O1 != 1) ? 0.0f : 1.0f));
+        arrayList.add(ObjectAnimator.ofFloat(dh0Var, (Property<dh0, Float>) property, (i7 == 1 || this.O1 != 1) ? 0.0f : 1.0f));
         arrayList.add(ObjectAnimator.ofFloat(p5Var, (Property<p5, Float>) property, (i7 == 1 || (this.O1 != 1 && ((e7Var4 = this.K1) == null || TextUtils.isEmpty(e7Var4.y)))) ? 0.0f : 1.0f));
         arrayList.add(ObjectAnimator.ofFloat(t0Var, (Property<t0, Float>) property, i7 != 1 ? 1.0f : 0.0f));
         imageView = this.i1;
         if (imageView != null) {
         }
-        arrayList.add(ObjectAnimator.ofFloat(this.V0, (Property<r71, Float>) property, 0.0f));
+        arrayList.add(ObjectAnimator.ofFloat(this.V0, (Property<s71, Float>) property, 0.0f));
         this.i2.playTogether(arrayList);
-        this.i2.addListener(new u9(this, i12, i7, 0));
+        this.i2.addListener(new t9(this, i12, i7, 0));
         this.i2.setDuration(460L);
         this.i2.setInterpolator(xq.h);
         this.i2.start();
@@ -1176,7 +1176,7 @@ public final class va implements ls {
                     g6Var.r0 = false;
                     g6Var.v0 = SystemClock.elapsedRealtime();
                     g6Var.u0 = true;
-                    ((s9) g6Var.a).e(false);
+                    ((r9) g6Var.a).e(false);
                     g6Var.J.c(false);
                     g6Var.K.c(false);
                     g6Var.L.c(false);
@@ -1184,9 +1184,9 @@ public final class va implements ls {
                     return false;
                 }
             } else if (!this.P1 && !laVar.p()) {
-                o9 o9Var = this.d1;
-                if (o9Var.M) {
-                    o9Var.c(false, true);
+                n9 n9Var = this.d1;
+                if (n9Var.M) {
+                    n9Var.c(false, true);
                     return false;
                 }
                 i3 i3Var = this.M0;
@@ -1202,7 +1202,7 @@ public final class va implements ls {
                         org.telegram.messenger.g0.v1(searchField);
                         return false;
                     }
-                    i3Var.y.y(r0Var.T(true));
+                    i3Var.y.z(r0Var.T(true));
                     return false;
                 }
                 if (this.g0 != 0 || (x9Var3 = this.v1) == null || !x9Var3.v0()) {
@@ -1245,26 +1245,26 @@ public final class va implements ls {
                             Activity activity = this.b;
                             di.b bVar = this.a;
                             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, activity, bVar);
-                            String M0 = id.M0(2131751406, null);
+                            String M0 = id.M0(2131751405, null);
                             org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                             u1Var.R = M0;
-                            u1Var.T = id.M0(2131747279, null);
+                            u1Var.T = id.M0(2131747278, null);
                             e7 e7Var6 = this.K1;
                             if (e7Var6 != null && !e7Var6.g && !e7Var6.o) {
-                                alertDialog$Builder.i(id.M0(e7Var6.c ? 2131744656 : 2131744488, null), new d9(this, 7));
+                                alertDialog$Builder.i(id.M0(e7Var6.c ? 2131744653 : 2131744485, null), new d9(this, 7));
                             }
                             e7 e7Var7 = this.K1;
-                            alertDialog$Builder.k(id.M0((e7Var7 == null || !e7Var7.c || e7Var7.g) ? 2131751407 : 2131744689, null), new d9(this, 8));
+                            alertDialog$Builder.k(id.M0((e7Var7 == null || !e7Var7.c || e7Var7.g) ? 2131751406 : 2131744686, null), new d9(this, 8));
                             alertDialog$Builder.h(id.M0(2131752589, null), null);
                             u1Var.show();
                             View d = u1Var.d(-1);
                             if (d instanceof TextView) {
-                                int i11 = org.telegram.ui.ActionBar.k6.q7;
-                                org.telegram.ui.ActionBar.r6.V((TextView) d, i11, bVar);
-                                org.telegram.ui.Cells.y a02 = org.telegram.ui.ActionBar.k6.a0(i0.a.o(org.telegram.ui.ActionBar.k6.w0(i11, bVar), 51), 6, 6);
-                                org.telegram.ui.ActionBar.n6 h = org.telegram.ui.ActionBar.r6.h(i11, 51);
+                                int i11 = org.telegram.ui.ActionBar.l6.q7;
+                                org.telegram.ui.ActionBar.s6.U((TextView) d, i11, bVar);
+                                org.telegram.ui.Cells.y a02 = org.telegram.ui.ActionBar.l6.a0(i0.a.o(org.telegram.ui.ActionBar.l6.w0(i11, bVar), 51), 6, 6);
+                                org.telegram.ui.ActionBar.o6 g10 = org.telegram.ui.ActionBar.s6.g(i11, 51);
                                 d.setBackground(a02);
-                                org.telegram.ui.ActionBar.r6.k(d, a02, null, h, bVar);
+                                org.telegram.ui.ActionBar.s6.j(d, a02, null, g10, bVar);
                             }
                         }
                     }
@@ -1328,9 +1328,9 @@ public final class va implements ls {
                 t();
                 G();
             }
-            rd0 rd0Var = this.C1;
-            if (rd0Var != null) {
-                rd0Var.setAllowTouch(false);
+            sd0 sd0Var = this.C1;
+            if (sd0Var != null) {
+                sd0Var.setAllowTouch(false);
             }
             this.X0.x(2, false);
             this.X0.x(3, false);
@@ -1349,19 +1349,19 @@ public final class va implements ls {
             u0 C = C();
             C.r.e(true, 0.0f);
             C.a(true);
-            di.s7 s7Var = C.h;
-            if (s7Var != null) {
-                org.telegram.messenger.g0.r(s7Var);
+            di.f8 f8Var = C.h;
+            if (f8Var != null) {
+                org.telegram.messenger.g0.r(f8Var);
             }
-            di.s7 s7Var2 = new di.s7(C, 16);
-            C.h = s7Var2;
-            org.telegram.messenger.g0.i3(s7Var2, 3500L);
+            di.f8 f8Var2 = new di.f8(C, 15);
+            C.h = f8Var2;
+            org.telegram.messenger.g0.i3(f8Var2, 3500L);
             this.O0.h();
         }
         this.V1 = false;
-        rd0 rd0Var2 = this.C1;
-        if (rd0Var2 != null) {
-            rd0Var2.setAllowTouch(i10 == 1 && ((i11 = this.g0) == -1 || i11 == 1));
+        sd0 sd0Var2 = this.C1;
+        if (sd0Var2 != null) {
+            sd0Var2.setAllowTouch(i10 == 1 && ((i11 = this.g0) == -1 || i11 == 1));
         }
         la laVar = this.c1;
         if (laVar != null) {
@@ -1372,7 +1372,7 @@ public final class va implements ls {
             ui.b0(i12).B(0);
             ui.b0(i12).V0(0, false, true, false);
             ui.b0(i12).V0(2, false, true, false);
-            di.y6 P1 = qp.s1(i12).P1();
+            di.z6 P1 = qp.s1(i12).P1();
             if (P1.Q == 0) {
                 P1.S();
             }
@@ -1420,8 +1420,8 @@ public final class va implements ls {
         boolean z9;
         String str2;
         y5 y5Var;
-        k60 k60Var;
-        rd0 rd0Var;
+        l60 l60Var;
+        sd0 sd0Var;
         boolean z10;
         m3 m3Var;
         x9 x9Var;
@@ -1434,9 +1434,9 @@ public final class va implements ls {
         CharSequence charSequence2;
         boolean z12;
         e7 e7Var4;
-        di.s6 o4;
+        di.t6 o4;
         e7 e7Var5;
-        h51 textureView;
+        i51 textureView;
         e7 e7Var6;
         ia iaVar2 = this.A0;
         if (i10 == 0) {
@@ -1447,9 +1447,9 @@ public final class va implements ls {
                 g6Var.g(false);
             }
             this.Q0.setVisibility(0);
-            r71 r71Var = this.V0;
-            r71Var.setVisibility(0);
-            r71Var.setAlpha(0.0f);
+            s71 s71Var = this.V0;
+            s71Var.setVisibility(0);
+            s71Var.setAlpha(0.0f);
             this.J0.a(0L, true);
             e7 e7Var7 = this.K1;
             if (e7Var7 != null) {
@@ -1476,11 +1476,11 @@ public final class va implements ls {
         }
         fb fbVar = this.Z0;
         bi.e5 e5Var = this.l0;
-        ch0 ch0Var = this.g1;
+        dh0 dh0Var = this.g1;
         s5 s5Var = this.b1;
         ja jaVar = this.X0;
         la laVar = this.c1;
-        org.telegram.ui.ActionBar.k5 k5Var = this.p0;
+        org.telegram.ui.ActionBar.l5 l5Var = this.p0;
         int i13 = this.c;
         if (i10 == 1 || i7 == 1) {
             e7 e7Var8 = i10 == 1 ? this.K1 : null;
@@ -1490,25 +1490,25 @@ public final class va implements ls {
             iaVar = iaVar2;
             p5 p5Var = this.j1;
             if (i14 == 1) {
-                ch0Var.setVisibility(0);
+                dh0Var.setVisibility(0);
                 e7 e7Var9 = this.K1;
                 e0(e7Var9 != null && e7Var9.Y, false);
                 p5Var.setVisibility(0);
                 jaVar.x(-9982, false);
-                ((he0) p5Var.c).a(jaVar.k(), false);
-                k5Var.setRightPadding(org.telegram.messenger.g0.L(144.0f));
+                ((ie0) p5Var.c).a(jaVar.k(), false);
+                l5Var.setRightPadding(org.telegram.messenger.g0.L(144.0f));
                 r82 = 0;
             } else {
                 e7 e7Var10 = this.K1;
                 if (e7Var10 == null || TextUtils.isEmpty(e7Var10.y)) {
                     r82 = 0;
-                    k5Var.setRightPadding(org.telegram.messenger.g0.L(48.0f));
+                    l5Var.setRightPadding(org.telegram.messenger.g0.L(48.0f));
                 } else {
-                    ch0Var.setVisibility(8);
+                    dh0Var.setVisibility(8);
                     r82 = 0;
                     p5Var.setVisibility(0);
-                    ((he0) p5Var.c).a(true, false);
-                    k5Var.setRightPadding(org.telegram.messenger.g0.L(48.0f));
+                    ((ie0) p5Var.c).a(true, false);
+                    l5Var.setRightPadding(org.telegram.messenger.g0.L(48.0f));
                 }
             }
             t0Var.setVisibility(r82);
@@ -1553,7 +1553,7 @@ public final class va implements ls {
                         String p10 = t10.p(qp.s1(i13).a2(Long.valueOf(peer.user_id)));
                         e7 e7Var17 = this.K1;
                         charSequence = "";
-                        append = new SpannableStringBuilder(ij.i6()).append((CharSequence) " ").append((CharSequence) p10);
+                        append = new SpannableStringBuilder(ij.h6()).append((CharSequence) " ").append((CharSequence) p10);
                         e7Var17.p = append;
                         i12 = i13;
                     } else {
@@ -1562,14 +1562,14 @@ public final class va implements ls {
                         TLRPC.Chat M0 = qp.s1(i13).M0(Long.valueOf(-org.telegram.messenger.m5.o(peer)));
                         CharSequence charSequence3 = M0 == null ? charSequence : M0.title;
                         e7 e7Var18 = this.K1;
-                        append = new SpannableStringBuilder(ij.i6()).append((CharSequence) " ").append(charSequence3);
+                        append = new SpannableStringBuilder(ij.h6()).append((CharSequence) " ").append(charSequence3);
                         e7Var18.p = append;
                     }
                     String str3 = this.K1.s;
                     if (TextUtils.isEmpty(str3)) {
-                        SpannableString spannableString = new SpannableString(id.M0(2131744738, null));
+                        SpannableString spannableString = new SpannableString(id.M0(2131744735, null));
                         i11 = i12;
-                        spannableString.setSpan(new t9(0), 0, spannableString.length(), 33);
+                        spannableString.setSpan(new s9(0), 0, spannableString.length(), 33);
                         str = spannableString;
                     } else {
                         i11 = i12;
@@ -1594,14 +1594,14 @@ public final class va implements ls {
         int i15 = 2;
         if (i10 == 2 || i7 == 2) {
             z9 = false;
-            k5Var.setVisibility(0);
+            l5Var.setVisibility(0);
             fbVar2.setVisibility(0);
             e7 e7Var20 = this.K1;
             if (e7Var20 == null || !e7Var20.b0) {
                 str2 = null;
             } else {
                 str2 = null;
-                k5Var.l(id.M0(2131746356, null), false);
+                l5Var.l(id.M0(2131746355, null), false);
             }
             e5Var.setVisibility(0);
             dVar.setVisibility(0);
@@ -1611,15 +1611,15 @@ public final class va implements ls {
             str2 = null;
         }
         if (i10 == i15) {
-            k5Var.l(id.M0(2131746356, str2), z9);
+            l5Var.l(id.M0(2131746355, str2), z9);
         }
-        o9 o9Var = this.d1;
+        n9 n9Var = this.d1;
         if (i10 == 1) {
             this.N1 = z9;
             e7 e7Var21 = this.K1;
             boolean z15 = (e7Var21 == null || e7Var21.J0 == 0) ? false : true;
             boolean z16 = e7Var21 != null && e7Var21.g;
-            String M02 = id.M0(z16 ? 2131751355 : z15 ? 2131743807 : 2131748251, null);
+            String M02 = id.M0(z16 ? 2131751354 : z15 ? 2131743804 : 2131748250, null);
             boolean z17 = !z15;
             boolean z18 = z16;
             if (TextUtils.equals(M02, s5Var.d) && z17 == s5Var.e) {
@@ -1648,19 +1648,19 @@ public final class va implements ls {
             }
             this.h2 = false;
             laVar.f.getEditText().setOnPremiumMenuLockClickListener(qp.s1(i11).X4() ? null : new u8(this, 19));
-            o9Var.setVisibility(this.H1 == null ? 8 : 0);
+            n9Var.setVisibility(this.H1 == null ? 8 : 0);
             ArrayList arrayList = this.H1;
             if (arrayList != null) {
                 ArrayList arrayList2 = this.J1;
                 ArrayList arrayList3 = this.I1;
-                o9Var.c(false, false);
-                o9Var.c = arrayList;
-                o9Var.d = arrayList2;
-                o9Var.e = arrayList3;
-                o9Var.x = new my0(Integer.toString(arrayList.size()), 20.0f, org.telegram.messenger.g0.o1("fonts/num.otf"));
-                o9Var.K = new my0(id.H(',', "HintViewStoriesMultiple", arrayList.size()), 14.0f, null);
-                o9Var.b.f3.O(false);
-                o9Var.setSelected(this.H1.indexOf(this.K1));
+                n9Var.c(false, false);
+                n9Var.c = arrayList;
+                n9Var.d = arrayList2;
+                n9Var.e = arrayList3;
+                n9Var.x = new ny0(Integer.toString(arrayList.size()), 20.0f, org.telegram.messenger.g0.o1("fonts/num.otf"));
+                n9Var.K = new ny0(id.H(',', "HintViewStoriesMultiple", arrayList.size()), 14.0f, null);
+                n9Var.b.f3.O(false);
+                n9Var.setSelected(this.H1.indexOf(this.K1));
             }
             fbVar.setMaxCount((z11 || z18 || this.H1 != null || ((e7Var6 = this.K1) != null && (e7Var6.v() || !this.K1.K))) ? 1 : 3);
             if (i7 != 2) {
@@ -1685,31 +1685,31 @@ public final class va implements ls {
                     boolean z19 = org.telegram.messenger.r2.a;
                     s5Var.d(3, false);
                     if (!this.N1 && !laVar.o()) {
-                        di.y6 P1 = qp.s1(i11).P1();
+                        di.z6 P1 = qp.s1(i11).P1();
                         int A = A();
                         o4 = P1.o();
                         if (o4 != null || !o4.a(P1.a, A) || ((e7Var5 = this.K1) != null && (e7Var5.g || e7Var5.J0 != 0))) {
                             z12 = true;
                             s5Var.setShareEnabled(z12);
                             e7 e7Var26 = this.K1;
-                            ch0Var.setImageResource((e7Var26 == null && e7Var26.Y) ? R.drawable.media_unmute : R.drawable.media_mute);
+                            dh0Var.setImageResource((e7Var26 == null && e7Var26.Y) ? R.drawable.media_unmute : R.drawable.media_mute);
                             jaVar.setVisibility(0);
                             fbVar.setVisibility(0);
-                            k5Var.setVisibility(0);
-                            k5Var.setTranslationX(0.0f);
+                            l5Var.setVisibility(0);
+                            l5Var.setTranslationX(0.0f);
                             e7Var4 = this.K1;
                             if (e7Var4 != null || e7Var4.J0 == 0) {
                                 if (e7Var4 == null && e7Var4.g) {
-                                    k5Var.l(id.M0(2131746355, null), false);
-                                    k60Var = null;
+                                    l5Var.l(id.M0(2131746354, null), false);
+                                    l60Var = null;
                                     y5Var = jaVar;
                                 } else if (e7Var4 == null && e7Var4.u) {
-                                    k5Var.l(id.M0(2131746353, null), false);
+                                    l5Var.l(id.M0(2131746352, null), false);
                                 } else if (e7Var4 == null && e7Var4.n) {
                                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                                     int i16 = i11;
-                                    org.telegram.ui.f5 f5Var = new org.telegram.ui.f5(32.0f, i16, k5Var);
-                                    k5Var.setTranslationX(-org.telegram.messenger.g0.L(6.0f));
+                                    org.telegram.ui.f5 f5Var = new org.telegram.ui.f5(32.0f, i16, l5Var);
+                                    l5Var.setTranslationX(-org.telegram.messenger.g0.L(6.0f));
                                     SpannableString spannableString2 = new SpannableString("a");
                                     spannableString2.setSpan(f5Var, 0, 1, 33);
                                     if (this.K1.q instanceof TLRPC.TL_peerUser) {
@@ -1725,22 +1725,22 @@ public final class va implements ls {
                                         spannableStringBuilder.append((CharSequence) spannableString2).append((CharSequence) "  ");
                                         spannableStringBuilder.append(M03 != null ? M03.title : charSequence2);
                                     }
-                                    k5Var.l(spannableStringBuilder, false);
-                                    k60Var = null;
+                                    l5Var.l(spannableStringBuilder, false);
+                                    l60Var = null;
                                 } else {
                                     y5Var = jaVar;
-                                    k60Var = null;
-                                    k5Var.l(id.M0(2131746354, null), false);
+                                    l60Var = null;
+                                    l5Var.l(id.M0(2131746353, null), false);
                                 }
                                 if (i7 == 1) {
-                                    k60 k60Var2 = laVar.U0;
-                                    if (k60Var2 != null) {
-                                        k60Var2.u();
-                                        laVar.U0 = k60Var;
+                                    l60 l60Var2 = laVar.U0;
+                                    if (l60Var2 != null) {
+                                        l60Var2.u();
+                                        laVar.U0 = l60Var;
                                     }
                                     this.k1.f(true);
-                                    if (o9Var.M) {
-                                        o9Var.c(false, true);
+                                    if (n9Var.M) {
+                                        n9Var.c(false, true);
                                     }
                                 }
                                 if (i10 == 2 && (e7Var2 = this.K1) != null) {
@@ -1777,10 +1777,10 @@ public final class va implements ls {
                                     fbVar2.setVideoRight(0.04f + max);
                                     eVar.a(Boolean.TRUE, Float.valueOf(max));
                                 }
-                                rd0Var = this.C1;
+                                sd0Var = this.C1;
                                 z10 = false;
-                                if (rd0Var != null) {
-                                    rd0Var.setAllowTouch(false);
+                                if (sd0Var != null) {
+                                    sd0Var.setAllowTouch(false);
                                 }
                                 m3Var = this.m1;
                                 if (m3Var != null) {
@@ -1809,17 +1809,17 @@ public final class va implements ls {
                                 }
                                 iaVar.setPreview(z10);
                             }
-                            k5Var.l(charSequence2, false);
+                            l5Var.l(charSequence2, false);
                         }
                     }
                     z12 = false;
                     s5Var.setShareEnabled(z12);
                     e7 e7Var262 = this.K1;
-                    ch0Var.setImageResource((e7Var262 == null && e7Var262.Y) ? R.drawable.media_unmute : R.drawable.media_mute);
+                    dh0Var.setImageResource((e7Var262 == null && e7Var262.Y) ? R.drawable.media_unmute : R.drawable.media_mute);
                     jaVar.setVisibility(0);
                     fbVar.setVisibility(0);
-                    k5Var.setVisibility(0);
-                    k5Var.setTranslationX(0.0f);
+                    l5Var.setVisibility(0);
+                    l5Var.setTranslationX(0.0f);
                     e7Var4 = this.K1;
                     if (e7Var4 != null) {
                     }
@@ -1830,8 +1830,8 @@ public final class va implements ls {
                     if (e7Var4 == null) {
                     }
                     y5Var = jaVar;
-                    k60Var = null;
-                    k5Var.l(id.M0(2131746354, null), false);
+                    l60Var = null;
+                    l5Var.l(id.M0(2131746353, null), false);
                     if (i7 == 1) {
                     }
                     if (i10 == 2) {
@@ -1865,9 +1865,9 @@ public final class va implements ls {
                         fbVar2.setVideoRight(0.04f + max2);
                         eVar2.a(Boolean.TRUE, Float.valueOf(max2));
                     }
-                    rd0Var = this.C1;
+                    sd0Var = this.C1;
                     z10 = false;
-                    if (rd0Var != null) {
+                    if (sd0Var != null) {
                     }
                     m3Var = this.m1;
                     if (m3Var != null) {
@@ -1895,7 +1895,7 @@ public final class va implements ls {
             boolean z192 = org.telegram.messenger.r2.a;
             s5Var.d(3, false);
             if (!this.N1) {
-                di.y6 P12 = qp.s1(i11).P1();
+                di.z6 P12 = qp.s1(i11).P1();
                 int A2 = A();
                 o4 = P12.o();
                 if (o4 != null) {
@@ -1903,11 +1903,11 @@ public final class va implements ls {
                 z12 = true;
                 s5Var.setShareEnabled(z12);
                 e7 e7Var2622 = this.K1;
-                ch0Var.setImageResource((e7Var2622 == null && e7Var2622.Y) ? R.drawable.media_unmute : R.drawable.media_mute);
+                dh0Var.setImageResource((e7Var2622 == null && e7Var2622.Y) ? R.drawable.media_unmute : R.drawable.media_mute);
                 jaVar.setVisibility(0);
                 fbVar.setVisibility(0);
-                k5Var.setVisibility(0);
-                k5Var.setTranslationX(0.0f);
+                l5Var.setVisibility(0);
+                l5Var.setTranslationX(0.0f);
                 e7Var4 = this.K1;
                 if (e7Var4 != null) {
                 }
@@ -1918,15 +1918,15 @@ public final class va implements ls {
                 if (e7Var4 == null) {
                 }
                 y5Var = jaVar;
-                k60Var = null;
-                k5Var.l(id.M0(2131746354, null), false);
+                l60Var = null;
+                l5Var.l(id.M0(2131746353, null), false);
                 if (i7 == 1) {
                 }
                 if (i10 == 2) {
                 }
-                rd0Var = this.C1;
+                sd0Var = this.C1;
                 z10 = false;
-                if (rd0Var != null) {
+                if (sd0Var != null) {
                 }
                 m3Var = this.m1;
                 if (m3Var != null) {
@@ -1949,11 +1949,11 @@ public final class va implements ls {
             z12 = false;
             s5Var.setShareEnabled(z12);
             e7 e7Var26222 = this.K1;
-            ch0Var.setImageResource((e7Var26222 == null && e7Var26222.Y) ? R.drawable.media_unmute : R.drawable.media_mute);
+            dh0Var.setImageResource((e7Var26222 == null && e7Var26222.Y) ? R.drawable.media_unmute : R.drawable.media_mute);
             jaVar.setVisibility(0);
             fbVar.setVisibility(0);
-            k5Var.setVisibility(0);
-            k5Var.setTranslationX(0.0f);
+            l5Var.setVisibility(0);
+            l5Var.setTranslationX(0.0f);
             e7Var4 = this.K1;
             if (e7Var4 != null) {
             }
@@ -1964,15 +1964,15 @@ public final class va implements ls {
             if (e7Var4 == null) {
             }
             y5Var = jaVar;
-            k60Var = null;
-            k5Var.l(id.M0(2131746354, null), false);
+            l60Var = null;
+            l5Var.l(id.M0(2131746353, null), false);
             if (i7 == 1) {
             }
             if (i10 == 2) {
             }
-            rd0Var = this.C1;
+            sd0Var = this.C1;
             z10 = false;
-            if (rd0Var != null) {
+            if (sd0Var != null) {
             }
             m3Var = this.m1;
             if (m3Var != null) {
@@ -1993,14 +1993,14 @@ public final class va implements ls {
             iaVar.setPreview(z10);
         }
         y5Var = jaVar;
-        k60Var = null;
+        l60Var = null;
         if (i7 == 1) {
         }
         if (i10 == 2) {
         }
-        rd0Var = this.C1;
+        sd0Var = this.C1;
         z10 = false;
-        if (rd0Var != null) {
+        if (sd0Var != null) {
         }
         m3Var = this.m1;
         if (m3Var != null) {
@@ -2022,7 +2022,7 @@ public final class va implements ls {
     }
 
     public final void O() {
-        sg.u0 u0Var;
+        sg.t0 t0Var;
         boolean z9 = false;
         if (this.f0 == 0) {
             ValueAnimator valueAnimator = this.E;
@@ -2042,14 +2042,14 @@ public final class va implements ls {
         }
         t5 t5Var = this.o1;
         if (t5Var != null) {
-            di.y6 P1 = qp.s1(t5Var.a).P1();
+            di.z6 P1 = qp.s1(t5Var.a).P1();
             TL_stories.PeerStories peerStories = (TL_stories.PeerStories) P1.i.f(p10.i(P1.a).n);
             t5Var.b = P1.b.m() + (peerStories != null ? peerStories.stories.size() : 0) + 1;
             t5Var.c.invalidate();
         }
         x9 x9Var = this.v1;
-        if (x9Var != null && (u0Var = x9Var.x0.d) != null) {
-            u0Var.postRunnable(u0Var.x);
+        if (x9Var != null && (t0Var = x9Var.x0.d) != null) {
+            t0Var.postRunnable(t0Var.x);
         }
         ja jaVar = this.X0;
         if (jaVar != null) {
@@ -2093,12 +2093,12 @@ public final class va implements ls {
         if ((i10 == 0 || i7 == 0) && (x9Var = this.v1) != null) {
             x9Var.M0.setLayerType(0, null);
         }
-        rd0 rd0Var = this.C1;
-        if (rd0Var != null) {
+        sd0 sd0Var = this.C1;
+        if (sd0Var != null) {
             if (i10 != 1 && i10 != -1) {
                 z9 = false;
             }
-            rd0Var.setAllowTouch(z9);
+            sd0Var.setAllowTouch(z9);
         }
         if (i10 == 3) {
             fa faVar2 = this.r1;
@@ -2141,7 +2141,7 @@ public final class va implements ls {
     }
 
     public final void Q(pa paVar) {
-        di.s6 o4;
+        di.t6 o4;
         ua uaVar;
         if (this.d) {
             return;
@@ -2255,7 +2255,7 @@ public final class va implements ls {
         if (e7Var2 != null) {
             this.c1.setText(e7Var2.C0);
         }
-        K(new n9(this, 0), j3);
+        K(new m9(this, 0), j3);
         J(this.K1.b0 ? 2 : 1, false);
         k0(-1, false, false);
         this.b1.b(false, false);
@@ -2265,23 +2265,23 @@ public final class va implements ls {
     }
 
     public final void S() {
-        k60 k60Var;
+        l60 l60Var;
         ja jaVar = this.X0;
         if (jaVar != null) {
             jaVar.x(4, true);
         }
         la laVar = this.c1;
-        if (laVar != null && (k60Var = laVar.U0) != null) {
-            k60Var.u();
+        if (laVar != null && (l60Var = laVar.U0) != null) {
+            l60Var.u();
             laVar.U0 = null;
         }
         ug.w0 w0Var = new ug.w0((org.telegram.ui.ActionBar.f2) new z9(this, 1), 14, false);
-        w0Var.setOnDismissListener(new j9(this, 1));
+        w0Var.setOnDismissListener(new i9(this, 1));
         w0Var.show();
     }
 
     public final void T(oa oaVar, e7 e7Var) {
-        di.s6 o4;
+        di.t6 o4;
         ua uaVar;
         if (this.d) {
             return;
@@ -2349,9 +2349,9 @@ public final class va implements ls {
     }
 
     public final void U() {
-        sg.w0 w0Var = this.w1;
-        if (w0Var != null) {
-            w0Var.bringToFront();
+        sg.v0 v0Var = this.w1;
+        if (v0Var != null) {
+            v0Var.bringToFront();
         }
         View view = this.x1;
         if (view != null) {
@@ -2373,17 +2373,17 @@ public final class va implements ls {
         if (ibVar != null) {
             ibVar.bringToFront();
         }
-        rd0 rd0Var = this.C1;
-        if (rd0Var != null) {
-            rd0Var.bringToFront();
+        sd0 sd0Var = this.C1;
+        if (sd0Var != null) {
+            sd0Var.bringToFront();
         }
-        jd0 jd0Var = this.E1;
-        if (jd0Var != null) {
-            jd0Var.bringToFront();
+        kd0 kd0Var = this.E1;
+        if (kd0Var != null) {
+            kd0Var.bringToFront();
         }
-        ld0 ld0Var = this.F1;
-        if (ld0Var != null) {
-            ld0Var.bringToFront();
+        md0 md0Var = this.F1;
+        if (md0Var != null) {
+            md0Var.bringToFront();
         }
         t5 t5Var = this.o1;
         if (t5Var != null) {
@@ -2417,7 +2417,7 @@ public final class va implements ls {
         org.telegram.messenger.g0.m0 = false;
         canvas.restore();
         Paint paint = new Paint(2);
-        h51 textureView = this.X0.getTextureView();
+        i51 textureView = this.X0.getTextureView();
         if (e7Var.K && !e7Var.u && textureView != null) {
             Bitmap bitmap = textureView.getBitmap();
             Matrix transform = textureView.getTransform(null);
@@ -2504,7 +2504,7 @@ public final class va implements ls {
     /* JADX WARN: Type inference failed for: r16v8 */
     /* JADX WARN: Type inference failed for: r16v9 */
     public final void W() {
-        di.s6 o4;
+        di.t6 o4;
         ?? r16;
         s8 s8Var = this.q0;
         BitmapDrawable bitmapDrawable = null;
@@ -2549,8 +2549,8 @@ public final class va implements ls {
             CharSequence text = laVar.getText();
             if (text instanceof Spannable) {
                 Spannable spannable = (Spannable) text;
-                if (((vy0[]) spannable.getSpans(0, text.length(), vy0.class)).length > 0 || ((URLSpan[]) spannable.getSpans(0, text.length(), URLSpan.class)).length > 0) {
-                    new hc(this.n, bVar).Q(R.raw.voip_invite, 36, org.telegram.messenger.g0.S2(id.M0(2131744584, null), org.telegram.ui.ActionBar.k6.Uc, 0, new u8(this, 27), bVar)).k(true);
+                if (((wy0[]) spannable.getSpans(0, text.length(), wy0.class)).length > 0 || ((URLSpan[]) spannable.getSpans(0, text.length(), URLSpan.class)).length > 0) {
+                    new hc(this.n, bVar).Q(R.raw.voip_invite, 36, org.telegram.messenger.g0.S2(id.M0(2131744581, null), org.telegram.ui.ActionBar.l6.Uc, 0, new u8(this, 27), bVar)).k(true);
                     int i13 = -this.U1;
                     this.U1 = i13;
                     org.telegram.messenger.g0.G3(i13, laVar, null);
@@ -2582,10 +2582,10 @@ public final class va implements ls {
         CharSequence text2 = laVar.getText();
         ArrayList arrayList2 = new ArrayList();
         if (text2 instanceof Spanned) {
-            for (e41 e41Var : (e41[]) ((Spanned) text2).getSpans(0, text2.length(), e41.class)) {
-                if (e41Var != null) {
+            for (f41 f41Var : (f41[]) ((Spanned) text2).getSpans(0, text2.length(), f41.class)) {
+                if (f41Var != null) {
                     try {
-                        TLRPC.User a22 = qp.s1(i11).a2(Long.valueOf(Long.parseLong(e41Var.getURL())));
+                        TLRPC.User a22 = qp.s1(i11).a2(Long.valueOf(Long.parseLong(f41Var.getURL())));
                         if (a22 != null && !t10.B(a22) && t10.n(a22) != null && !arrayList2.contains(a22)) {
                             arrayList2.add(t10.n(a22));
                         }
@@ -2658,11 +2658,11 @@ public final class va implements ls {
             if (jaVar != null && !e7Var3.f0 && this.f0 != 2) {
                 e7Var3.e0 = jaVar.getCurrentPosition();
                 v8 v8Var = new v8(this, 17);
-                sg.w0 w0Var = this.w1;
+                sg.v0 v0Var = this.w1;
                 View view = this.z1;
                 View[] viewArr = new View[3];
                 viewArr[0] = jaVar;
-                viewArr[r16] = w0Var;
+                viewArr[r16] = v0Var;
                 viewArr[2] = view;
                 jaVar.h(v8Var, viewArr);
             }
@@ -2686,7 +2686,7 @@ public final class va implements ls {
                 }
             }
         }
-        this.q0.setOnDismissListener(new j9(this, i12));
+        this.q0.setOnDismissListener(new i9(this, i12));
         this.q0.show();
     }
 
@@ -2732,13 +2732,13 @@ public final class va implements ls {
                     this.A0.setCameraThumb(xpVar);
                     if (activity.shouldShowRequestPermissionRationale("android.permission.CAMERA")) {
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, activity, this.a);
-                        int i10 = org.telegram.ui.ActionBar.k6.L5;
-                        alertDialog$Builder.m(R.raw.permission_request_camera, 72, org.telegram.ui.ActionBar.k6.x0(null, i10, false), null);
+                        int i10 = org.telegram.ui.ActionBar.l6.L5;
+                        alertDialog$Builder.m(R.raw.permission_request_camera, 72, org.telegram.ui.ActionBar.l6.x0(null, i10, false), null);
                         alertDialog$Builder.n(i10, null);
-                        SpannableStringBuilder X2 = org.telegram.messenger.g0.X2(id.M0(2131747309, null));
+                        SpannableStringBuilder X2 = org.telegram.messenger.g0.X2(id.M0(2131747308, null));
                         org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                         u1Var.T = X2;
-                        alertDialog$Builder.k(id.M0(2131747301, null), new d9(this, 12));
+                        alertDialog$Builder.k(id.M0(2131747300, null), new d9(this, 12));
                         alertDialog$Builder.h(id.M0(2131751772, null), null);
                         u1Var.show();
                         return;
@@ -2854,7 +2854,7 @@ public final class va implements ls {
 
     @Override // org.telegram.messenger.ls
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        di.s6 o4;
+        di.t6 o4;
         e7 e7Var;
         boolean z9 = false;
         z9 = false;
@@ -2902,9 +2902,9 @@ public final class va implements ls {
                 return;
             }
             if (!this.N1 && !this.c1.o()) {
-                di.y6 P1 = qp.s1(i14).P1();
+                di.z6 P1 = qp.s1(i14).P1();
                 int A = A();
-                di.s6 o10 = P1.o();
+                di.t6 o10 = P1.o();
                 if (o10 == null || !o10.a(P1.a, A) || ((e7Var = this.K1) != null && (e7Var.g || e7Var.J0 != 0))) {
                     z9 = true;
                 }
@@ -2981,7 +2981,7 @@ public final class va implements ls {
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(translationY, height);
                 this.n2 = ofFloat;
                 ofFloat.addUpdateListener(new g9(this, i7));
-                this.n2.addListener(new v9(this, i10));
+                this.n2.addListener(new u9(this, i10));
                 this.n2.setDuration(450L);
                 this.n2.setInterpolator(xq.h);
                 this.n2.start();
@@ -2998,9 +2998,9 @@ public final class va implements ls {
 
     public final void e0(boolean z9, boolean z10) {
         if (this.f1 == null) {
-            zg0 zg0Var = new zg0(R.raw.media_mute_unmute, org.telegram.messenger.g0.L(28.0f), org.telegram.messenger.g0.L(28.0f), true, null);
-            this.f1 = zg0Var;
-            zg0Var.F *= 1.5f;
+            ah0 ah0Var = new ah0(R.raw.media_mute_unmute, org.telegram.messenger.g0.L(28.0f), org.telegram.messenger.g0.L(28.0f), true, null);
+            this.f1 = ah0Var;
+            ah0Var.F *= 1.5f;
         }
         this.g1.setAnimation(this.f1);
         if (!z10) {
@@ -3008,20 +3008,20 @@ public final class va implements ls {
             return;
         }
         if (z9) {
-            zg0 zg0Var2 = this.f1;
-            if (zg0Var2.a0 > 20) {
-                zg0Var2.N(0, false, false);
+            ah0 ah0Var2 = this.f1;
+            if (ah0Var2.a0 > 20) {
+                ah0Var2.N(0, false, false);
             }
             this.f1.P(20);
             this.f1.start();
             return;
         }
-        zg0 zg0Var3 = this.f1;
-        int i7 = zg0Var3.a0;
+        ah0 ah0Var3 = this.f1;
+        int i7 = ah0Var3.a0;
         if (i7 == 0 || i7 >= 43) {
             return;
         }
-        zg0Var3.P(43);
+        ah0Var3.P(43);
         this.f1.start();
     }
 
@@ -3107,7 +3107,7 @@ public final class va implements ls {
             yVar.a(false, z10);
         }
         l0(z10);
-        p9 p9Var = this.Q0;
+        o9 o9Var = this.Q0;
         k3 k3Var = this.U0;
         k3 k3Var2 = this.T0;
         if (!z10) {
@@ -3115,8 +3115,8 @@ public final class va implements ls {
             k3Var2.setTranslationY((z9 && this.f0 == 0 && !H()) ? 0.0f : org.telegram.messenger.g0.L(16.0f));
             k3Var.setAlpha((!z9 && this.f0 == 0 && H()) ? 0.6f : 0.0f);
             k3Var.setTranslationY((!z9 && this.f0 == 0 && H()) ? 0.0f : org.telegram.messenger.g0.L(16.0f));
-            p9Var.setAlpha((z9 || this.f0 != 0 || H()) ? 0.0f : 1.0f);
-            p9Var.setTranslationY((z9 || this.f0 != 0 || H()) ? org.telegram.messenger.g0.L(16.0f) : 0.0f);
+            o9Var.setAlpha((z9 || this.f0 != 0 || H()) ? 0.0f : 1.0f);
+            o9Var.setTranslationY((z9 || this.f0 != 0 || H()) ? org.telegram.messenger.g0.L(16.0f) : 0.0f);
             return;
         }
         AnimatorSet animatorSet2 = new AnimatorSet();
@@ -3124,19 +3124,19 @@ public final class va implements ls {
         Property property = View.ALPHA;
         ObjectAnimator ofFloat = ObjectAnimator.ofFloat(k3Var2, (Property<k3, Float>) property, (z9 && this.f0 == 0 && !H()) ? 1.0f : 0.0f);
         Property property2 = View.TRANSLATION_Y;
-        animatorSet2.playTogether(ofFloat, ObjectAnimator.ofFloat(k3Var2, (Property<k3, Float>) property2, (z9 && this.f0 == 0 && !H()) ? 0.0f : org.telegram.messenger.g0.L(16.0f)), ObjectAnimator.ofFloat(k3Var, (Property<k3, Float>) property, (!z9 && this.f0 == 0 && H()) ? 0.6f : 0.0f), ObjectAnimator.ofFloat(k3Var, (Property<k3, Float>) property2, (!z9 && this.f0 == 0 && H()) ? 0.0f : org.telegram.messenger.g0.L(16.0f)), ObjectAnimator.ofFloat(p9Var, (Property<p9, Float>) property, (z9 || this.f0 != 0 || H()) ? 0.0f : 1.0f), ObjectAnimator.ofFloat(p9Var, (Property<p9, Float>) property2, (z9 || this.f0 != 0 || H()) ? org.telegram.messenger.g0.L(16.0f) : 0.0f));
+        animatorSet2.playTogether(ofFloat, ObjectAnimator.ofFloat(k3Var2, (Property<k3, Float>) property2, (z9 && this.f0 == 0 && !H()) ? 0.0f : org.telegram.messenger.g0.L(16.0f)), ObjectAnimator.ofFloat(k3Var, (Property<k3, Float>) property, (!z9 && this.f0 == 0 && H()) ? 0.6f : 0.0f), ObjectAnimator.ofFloat(k3Var, (Property<k3, Float>) property2, (!z9 && this.f0 == 0 && H()) ? 0.0f : org.telegram.messenger.g0.L(16.0f)), ObjectAnimator.ofFloat(o9Var, (Property<o9, Float>) property, (z9 || this.f0 != 0 || H()) ? 0.0f : 1.0f), ObjectAnimator.ofFloat(o9Var, (Property<o9, Float>) property2, (z9 || this.f0 != 0 || H()) ? org.telegram.messenger.g0.L(16.0f) : 0.0f));
         this.Z1.setDuration(260L);
         this.Z1.setInterpolator(xq.h);
         this.Z1.start();
     }
 
-    public final void g0(di.s6 s6Var, boolean z9) {
+    public final void g0(di.t6 t6Var, boolean z9) {
         if (this.z2) {
             return;
         }
-        aa aaVar = new aa(s6Var.b(), this.c, this.b, new z9(this, 0), null);
+        aa aaVar = new aa(t6Var.b(), this.c, this.b, new z9(this, 0), null);
         aaVar.P1 = A();
-        aaVar.setOnDismissListener(new x60(2, this, z9));
+        aaVar.setOnDismissListener(new y60(2, this, z9));
         this.X0.x(7, true);
         this.z2 = true;
         aaVar.show();
@@ -3146,23 +3146,23 @@ public final class va implements ls {
         e7 e7Var;
         Runnable runnable2;
         ja jaVar;
-        sd0 sd0Var = this.B1;
-        if (sd0Var == null || (e7Var = this.K1) == null) {
+        td0 td0Var = this.B1;
+        if (td0Var == null || (e7Var = this.K1) == null) {
             if (runnable != null) {
                 runnable.run();
                 return;
             }
             return;
         }
-        e7Var.j = sd0Var.a() | e7Var.j;
+        e7Var.j = td0Var.a() | e7Var.j;
         e7 e7Var2 = this.K1;
-        sd0 sd0Var2 = this.B1;
+        td0 td0Var2 = this.B1;
         File file = e7Var2.Z0;
         if (file != null) {
             file.delete();
             e7Var2.Z0 = null;
         }
-        hf savedFilterState = sd0Var2.getSavedFilterState();
+        hf savedFilterState = td0Var2.getSavedFilterState();
         e7Var2.a1 = savedFilterState;
         if (e7Var2.K) {
             runnable2 = runnable;
@@ -3171,7 +3171,7 @@ public final class va implements ls {
             }
         } else {
             if (!savedFilterState.a()) {
-                Bitmap bitmap = sd0Var2.getBitmap();
+                Bitmap bitmap = td0Var2.getBitmap();
                 if (bitmap != null) {
                     Matrix matrix = new Matrix();
                     int i7 = e7Var2.R;
@@ -3254,8 +3254,8 @@ public final class va implements ls {
     }
 
     public final void i0(boolean z9) {
-        r71 r71Var = this.V0;
-        if ((r71Var.getTag() != null && z9) || (r71Var.getTag() == null && !z9)) {
+        s71 s71Var = this.V0;
+        if ((s71Var.getTag() != null && z9) || (s71Var.getTag() == null && !z9)) {
             if (z9) {
                 Runnable runnable = this.e2;
                 if (runnable != null) {
@@ -3272,14 +3272,14 @@ public final class va implements ls {
         if (animatorSet != null) {
             animatorSet.cancel();
         }
-        r71Var.setTag(z9 ? 1 : null);
+        s71Var.setTag(z9 ? 1 : null);
         AnimatorSet animatorSet2 = new AnimatorSet();
         this.f2 = animatorSet2;
         animatorSet2.setDuration(180L);
         if (z9) {
-            r71Var.setVisibility(0);
+            s71Var.setVisibility(0);
         }
-        this.f2.playTogether(ObjectAnimator.ofFloat(r71Var, (Property<r71, Float>) View.ALPHA, z9 ? 1.0f : 0.0f));
+        this.f2.playTogether(ObjectAnimator.ofFloat(s71Var, (Property<s71, Float>) View.ALPHA, z9 ? 1.0f : 0.0f));
         this.f2.addListener(new ch.y(13, this, z9));
         this.f2.start();
         if (z9) {
@@ -3625,8 +3625,8 @@ public final class va implements ls {
         int i13;
         float f13;
         float f14;
-        ld0 ld0Var;
-        jd0 jd0Var;
+        md0 md0Var;
+        kd0 kd0Var;
         ImageView imageView2;
         int i14;
         e7 e7Var2;
@@ -3646,12 +3646,12 @@ public final class va implements ls {
             animatorSet.cancel();
             this.r2 = null;
         }
-        org.telegram.ui.ActionBar.k5 k5Var = this.p0;
+        org.telegram.ui.ActionBar.l5 l5Var = this.p0;
         fb fbVar = this.Z0;
         t0 t0Var = this.e1;
         n2 n2Var = this.n0;
         p5 p5Var = this.j1;
-        ch0 ch0Var = this.g1;
+        dh0 dh0Var = this.g1;
         if (i15 != i7) {
             if (i7 == -1) {
                 n2Var.setVisibility(0);
@@ -3671,14 +3671,14 @@ public final class va implements ls {
                     F().setVisibility(0);
                     n0(false);
                 }
-                k5Var.setVisibility(0);
+                l5Var.setVisibility(0);
                 if (this.O1 == 1) {
-                    ch0Var.setVisibility(0);
+                    dh0Var.setVisibility(0);
                     p5Var.setVisibility(0);
                 } else {
                     e7 e7Var4 = this.K1;
                     if (e7Var4 != null && !TextUtils.isEmpty(e7Var4.y)) {
-                        ch0Var.setVisibility(8);
+                        dh0Var.setVisibility(8);
                         p5Var.setVisibility(0);
                     }
                 }
@@ -3699,9 +3699,9 @@ public final class va implements ls {
             if (this.B1 != null && i15 == 1) {
                 h(null);
             }
-            rd0 rd0Var = this.C1;
-            if (rd0Var != null) {
-                rd0Var.setAllowTouch(false);
+            sd0 sd0Var = this.C1;
+            if (sd0Var != null) {
+                sd0Var.setAllowTouch(false);
             }
             this.k1.f(true);
             ua uaVar = this.n;
@@ -3745,14 +3745,14 @@ public final class va implements ls {
         }
         this.b1.b((i7 == -1 || i7 == 2) && this.I > 0.0f, z10);
         ArrayList arrayList = new ArrayList();
-        sd0 sd0Var = this.B1;
-        boolean z12 = sd0Var == null && i7 == 1;
+        td0 td0Var = this.B1;
+        boolean z12 = td0Var == null && i7 == 1;
         float f15 = 1.0f;
         if (i7 == 1) {
             r();
-            sd0 sd0Var2 = this.B1;
-            this.v2 = sd0Var2;
-            FrameLayout toolsView = sd0Var2 != null ? sd0Var2.getToolsView() : null;
+            td0 td0Var2 = this.B1;
+            this.v2 = td0Var2;
+            FrameLayout toolsView = td0Var2 != null ? td0Var2.getToolsView() : null;
             if (toolsView != null) {
                 toolsView.setAlpha(0.0f);
                 toolsView.setVisibility(0);
@@ -3764,10 +3764,10 @@ public final class va implements ls {
             }
         } else {
             f10 = 0.0f;
-            if (i15 == 1 && sd0Var != null) {
+            if (i15 == 1 && td0Var != null) {
                 this.v2 = null;
                 z11 = z12;
-                arrayList.add(ObjectAnimator.ofFloat(sd0Var.getToolsView(), (Property<FrameLayout, Float>) View.TRANSLATION_Y, org.telegram.messenger.g0.L(226.0f)));
+                arrayList.add(ObjectAnimator.ofFloat(td0Var.getToolsView(), (Property<FrameLayout, Float>) View.TRANSLATION_Y, org.telegram.messenger.g0.L(226.0f)));
                 arrayList.add(ObjectAnimator.ofFloat(this.B1.getToolsView(), (Property<FrameLayout, Float>) View.ALPHA, 0.0f));
                 if (i7 != 0) {
                     t();
@@ -3901,7 +3901,7 @@ public final class va implements ls {
                         f12 = 1.0f;
                         float[] fArr11 = new float[i11];
                         fArr11[0] = f12;
-                        arrayList.add(ObjectAnimator.ofFloat(ch0Var, (Property<ch0, Float>) property13, fArr11));
+                        arrayList.add(ObjectAnimator.ofFloat(dh0Var, (Property<dh0, Float>) property13, fArr11));
                         arrayList.add(ObjectAnimator.ofFloat(p5Var, (Property<p5, Float>) property13, ((i7 != -1 || i7 == 2) && (this.O1 == i11 || !((e7Var = this.K1) == null || TextUtils.isEmpty(e7Var.y)))) ? 1.0f : f10));
                         arrayList.add(ObjectAnimator.ofFloat(t0Var, (Property<t0, Float>) property13, (i7 != -1 || i7 == 2) ? 1.0f : f10));
                         imageView = this.i1;
@@ -3914,7 +3914,7 @@ public final class va implements ls {
                         int i16 = this.f0;
                         float[] fArr12 = new float[i12];
                         fArr12[0] = ((i16 != i12 || i16 == 2) && i7 == -1) ? 1.0f : f10;
-                        arrayList.add(ObjectAnimator.ofFloat(k5Var, (Property<org.telegram.ui.ActionBar.k5, Float>) property13, fArr12));
+                        arrayList.add(ObjectAnimator.ofFloat(l5Var, (Property<org.telegram.ui.ActionBar.l5, Float>) property13, fArr12));
                         ha haVar = this.h0;
                         if (i7 == i12) {
                             haVar.setPivotY(haVar.getMeasuredHeight() * 0.2f);
@@ -3941,13 +3941,13 @@ public final class va implements ls {
                         } else {
                             f14 = 0.0f;
                         }
-                        ld0Var = this.F1;
-                        if (ld0Var != null) {
-                            arrayList.add(ObjectAnimator.ofFloat(ld0Var, (Property<ld0, Float>) property13, i7 == 1 ? 1.0f : f14));
+                        md0Var = this.F1;
+                        if (md0Var != null) {
+                            arrayList.add(ObjectAnimator.ofFloat(md0Var, (Property<md0, Float>) property13, i7 == 1 ? 1.0f : f14));
                         }
-                        jd0Var = this.E1;
-                        if (jd0Var != null) {
-                            arrayList.add(ObjectAnimator.ofFloat(jd0Var, (Property<jd0, Float>) property13, i7 == 1 ? 1.0f : f14));
+                        kd0Var = this.E1;
+                        if (kd0Var != null) {
+                            arrayList.add(ObjectAnimator.ofFloat(kd0Var, (Property<kd0, Float>) property13, i7 == 1 ? 1.0f : f14));
                         }
                         arrayList.add(ObjectAnimator.ofFloat(laVar, (Property<la, Float>) property13, i7 == -1 ? 1.0f : f14));
                         float[] fArr13 = {(i7 != -1 || i7 == 2) ? 1.0f : f14};
@@ -3966,7 +3966,7 @@ public final class va implements ls {
                         Property property15 = View.ROTATION;
                         arrayList.add(ObjectAnimator.ofFloat(linearLayout, (Property<LinearLayout, Float>) property15, i7 == 2 ? -90.0f : f14));
                         arrayList.add(ObjectAnimator.ofFloat(p5Var, (Property<p5, Float>) property15, i7 == 2 ? 90.0f : f14));
-                        arrayList.add(ObjectAnimator.ofFloat(ch0Var, (Property<ch0, Float>) property15, i7 == 2 ? 90.0f : f14));
+                        arrayList.add(ObjectAnimator.ofFloat(dh0Var, (Property<dh0, Float>) property15, i7 == 2 ? 90.0f : f14));
                         arrayList.add(ObjectAnimator.ofFloat(t0Var, (Property<t0, Float>) property15, i7 == 2 ? 90.0f : f14));
                         imageView2 = this.i1;
                         if (imageView2 != null) {
@@ -4009,7 +4009,7 @@ public final class va implements ls {
                         animatorSet2.playTogether(arrayList);
                         this.r2.setDuration(320L);
                         this.r2.setInterpolator(xq.h);
-                        this.r2.addListener(new u9(this, i15, i7, 1));
+                        this.r2.addListener(new t9(this, i15, i7, 1));
                         if (z11) {
                             this.r2.setStartDelay(120L);
                         }
@@ -4022,7 +4022,7 @@ public final class va implements ls {
                 f12 = f10;
                 float[] fArr112 = new float[i11];
                 fArr112[0] = f12;
-                arrayList.add(ObjectAnimator.ofFloat(ch0Var, (Property<ch0, Float>) property13, fArr112));
+                arrayList.add(ObjectAnimator.ofFloat(dh0Var, (Property<dh0, Float>) property13, fArr112));
                 arrayList.add(ObjectAnimator.ofFloat(p5Var, (Property<p5, Float>) property13, ((i7 != -1 || i7 == 2) && (this.O1 == i11 || !((e7Var = this.K1) == null || TextUtils.isEmpty(e7Var.y)))) ? 1.0f : f10));
                 arrayList.add(ObjectAnimator.ofFloat(t0Var, (Property<t0, Float>) property13, (i7 != -1 || i7 == 2) ? 1.0f : f10));
                 imageView = this.i1;
@@ -4031,7 +4031,7 @@ public final class va implements ls {
                 int i162 = this.f0;
                 float[] fArr122 = new float[i12];
                 fArr122[0] = ((i162 != i12 || i162 == 2) && i7 == -1) ? 1.0f : f10;
-                arrayList.add(ObjectAnimator.ofFloat(k5Var, (Property<org.telegram.ui.ActionBar.k5, Float>) property13, fArr122));
+                arrayList.add(ObjectAnimator.ofFloat(l5Var, (Property<org.telegram.ui.ActionBar.l5, Float>) property13, fArr122));
                 ha haVar2 = this.h0;
                 if (i7 == i12) {
                 }
@@ -4041,11 +4041,11 @@ public final class va implements ls {
                 arrayList.add(ObjectAnimator.ofFloat(haVar2, (Property<ha, Float>) View.SCALE_Y, f13));
                 if (i7 == -1) {
                 }
-                ld0Var = this.F1;
-                if (ld0Var != null) {
+                md0Var = this.F1;
+                if (md0Var != null) {
                 }
-                jd0Var = this.E1;
-                if (jd0Var != null) {
+                kd0Var = this.E1;
+                if (kd0Var != null) {
                 }
                 arrayList.add(ObjectAnimator.ofFloat(laVar, (Property<la, Float>) property13, i7 == -1 ? 1.0f : f14));
                 float[] fArr132 = {(i7 != -1 || i7 == 2) ? 1.0f : f14};
@@ -4064,7 +4064,7 @@ public final class va implements ls {
                 Property property152 = View.ROTATION;
                 arrayList.add(ObjectAnimator.ofFloat(linearLayout2, (Property<LinearLayout, Float>) property152, i7 == 2 ? -90.0f : f14));
                 arrayList.add(ObjectAnimator.ofFloat(p5Var, (Property<p5, Float>) property152, i7 == 2 ? 90.0f : f14));
-                arrayList.add(ObjectAnimator.ofFloat(ch0Var, (Property<ch0, Float>) property152, i7 == 2 ? 90.0f : f14));
+                arrayList.add(ObjectAnimator.ofFloat(dh0Var, (Property<dh0, Float>) property152, i7 == 2 ? 90.0f : f14));
                 arrayList.add(ObjectAnimator.ofFloat(t0Var, (Property<t0, Float>) property152, i7 == 2 ? 90.0f : f14));
                 imageView2 = this.i1;
                 if (imageView2 != null) {
@@ -4095,7 +4095,7 @@ public final class va implements ls {
         f12 = f10;
         float[] fArr1122 = new float[i11];
         fArr1122[0] = f12;
-        arrayList.add(ObjectAnimator.ofFloat(ch0Var, (Property<ch0, Float>) property132, fArr1122));
+        arrayList.add(ObjectAnimator.ofFloat(dh0Var, (Property<dh0, Float>) property132, fArr1122));
         arrayList.add(ObjectAnimator.ofFloat(p5Var, (Property<p5, Float>) property132, ((i7 != -1 || i7 == 2) && (this.O1 == i11 || !((e7Var = this.K1) == null || TextUtils.isEmpty(e7Var.y)))) ? 1.0f : f10));
         arrayList.add(ObjectAnimator.ofFloat(t0Var, (Property<t0, Float>) property132, (i7 != -1 || i7 == 2) ? 1.0f : f10));
         imageView = this.i1;
@@ -4104,7 +4104,7 @@ public final class va implements ls {
         int i1622 = this.f0;
         float[] fArr1222 = new float[i12];
         fArr1222[0] = ((i1622 != i12 || i1622 == 2) && i7 == -1) ? 1.0f : f10;
-        arrayList.add(ObjectAnimator.ofFloat(k5Var, (Property<org.telegram.ui.ActionBar.k5, Float>) property132, fArr1222));
+        arrayList.add(ObjectAnimator.ofFloat(l5Var, (Property<org.telegram.ui.ActionBar.l5, Float>) property132, fArr1222));
         ha haVar22 = this.h0;
         if (i7 == i12) {
         }
@@ -4114,11 +4114,11 @@ public final class va implements ls {
         arrayList.add(ObjectAnimator.ofFloat(haVar22, (Property<ha, Float>) View.SCALE_Y, f13));
         if (i7 == -1) {
         }
-        ld0Var = this.F1;
-        if (ld0Var != null) {
+        md0Var = this.F1;
+        if (md0Var != null) {
         }
-        jd0Var = this.E1;
-        if (jd0Var != null) {
+        kd0Var = this.E1;
+        if (kd0Var != null) {
         }
         arrayList.add(ObjectAnimator.ofFloat(laVar, (Property<la, Float>) property132, i7 == -1 ? 1.0f : f14));
         float[] fArr1322 = {(i7 != -1 || i7 == 2) ? 1.0f : f14};
@@ -4136,7 +4136,7 @@ public final class va implements ls {
         Property property1522 = View.ROTATION;
         arrayList.add(ObjectAnimator.ofFloat(linearLayout22, (Property<LinearLayout, Float>) property1522, i7 == 2 ? -90.0f : f14));
         arrayList.add(ObjectAnimator.ofFloat(p5Var, (Property<p5, Float>) property1522, i7 == 2 ? 90.0f : f14));
-        arrayList.add(ObjectAnimator.ofFloat(ch0Var, (Property<ch0, Float>) property1522, i7 == 2 ? 90.0f : f14));
+        arrayList.add(ObjectAnimator.ofFloat(dh0Var, (Property<dh0, Float>) property1522, i7 == 2 ? 90.0f : f14));
         arrayList.add(ObjectAnimator.ofFloat(t0Var, (Property<t0, Float>) property1522, i7 == 2 ? 90.0f : f14));
         imageView2 = this.i1;
         if (imageView2 != null) {
@@ -4249,14 +4249,14 @@ public final class va implements ls {
     }
 
     public final void n0(boolean z9) {
-        zg0 zg0Var = this.h1;
-        if (zg0Var != null) {
-            int[] iArr = zg0Var.e;
+        ah0 ah0Var = this.h1;
+        if (ah0Var != null) {
+            int[] iArr = ah0Var.e;
             int i7 = 0;
             if (!z9) {
                 e7 e7Var = this.K1;
                 int i10 = (e7Var == null || !e7Var.y0) ? 0 : iArr[0] - 1;
-                zg0Var.N(i10, false, true);
+                ah0Var.N(i10, false, true);
                 this.h1.P(i10);
                 ImageView imageView = this.i1;
                 if (imageView != null) {
@@ -4269,10 +4269,10 @@ public final class va implements ls {
             if (e7Var2 != null && e7Var2.y0) {
                 i7 = iArr[0];
             }
-            zg0Var.P(i7);
-            zg0 zg0Var2 = this.h1;
-            if (zg0Var2 != null) {
-                zg0Var2.start();
+            ah0Var.P(i7);
+            ah0 ah0Var2 = this.h1;
+            if (ah0Var2 != null) {
+                ah0Var2.start();
             }
         }
     }
@@ -4354,22 +4354,22 @@ public final class va implements ls {
                 return;
             }
             this.e = true;
-            t51 t51Var = jaVar.D;
-            if (t51Var != null) {
-                t51Var.g0();
+            u51 u51Var = jaVar.D;
+            if (u51Var != null) {
+                u51Var.g0();
                 jaVar.D.m0();
                 jaVar.D = null;
             }
-            t51 t51Var2 = jaVar.y;
-            if (t51Var2 != null) {
-                j3 = t51Var2.S();
+            u51 u51Var2 = jaVar.y;
+            if (u51Var2 != null) {
+                j3 = u51Var2.S();
                 jaVar.y.g0();
                 jaVar.y.m0();
                 jaVar.y = null;
             }
-            t51 t51Var3 = jaVar.e;
-            if (t51Var3 != null) {
-                j3 = t51Var3.S();
+            u51 u51Var3 = jaVar.e;
+            if (u51Var3 != null) {
+                j3 = u51Var3.S();
                 jaVar.e.g0();
                 jaVar.e.m0();
                 jaVar.e = null;
@@ -4445,15 +4445,15 @@ public final class va implements ls {
             bitmap = q10;
         }
         if (bitmap != null || this.K1.K) {
-            h51 textureView = this.X0.getTextureView();
+            i51 textureView = this.X0.getTextureView();
             int orientation = this.X0.getOrientation();
             e7 e7Var2 = this.K1;
-            sd0 sd0Var = new sd0(this.b, textureView, bitmap, null, orientation, e7Var2 != null ? e7Var2.a1 : null, null, 0, false, false, this.r0, this.a);
-            this.B1 = sd0Var;
-            this.r.addView(sd0Var);
-            rd0 rd0Var = this.C1;
-            if (rd0Var != null) {
-                rd0Var.setFilterView(this.B1);
+            td0 td0Var = new td0(this.b, textureView, bitmap, null, orientation, e7Var2 != null ? e7Var2.a1 : null, null, 0, false, false, this.r0, this.a);
+            this.B1 = td0Var;
+            this.r.addView(td0Var);
+            sd0 sd0Var = this.C1;
+            if (sd0Var != null) {
+                sd0Var.setFilterView(this.B1);
             }
             TextureView myTextureView = this.B1.getMyTextureView();
             this.D1 = myTextureView;
@@ -4467,12 +4467,12 @@ public final class va implements ls {
                 this.D1.animate().alpha(1.0f).setDuration(220L).start();
             }
             i();
-            jd0 blurControl = this.B1.getBlurControl();
+            kd0 blurControl = this.B1.getBlurControl();
             this.E1 = blurControl;
             if (blurControl != null) {
                 this.h0.addView(blurControl);
             }
-            ld0 curveControl = this.B1.getCurveControl();
+            md0 curveControl = this.B1.getCurveControl();
             this.F1 = curveControl;
             if (curveControl != null) {
                 this.h0.addView(curveControl);
@@ -4508,8 +4508,8 @@ public final class va implements ls {
         i3Var.G.setVisibility(8);
         this.M0.setMultipleOnClick(this.A0.j());
         this.M0.setMaxCount(Math.min(10, t.b() - this.A0.getFilledCount()));
-        this.M0.setOnBackClickListener(new n9(this, 1));
-        this.M0.setOnSelectListener(new m9(0, this, z9));
+        this.M0.setOnBackClickListener(new m9(this, 1));
+        this.M0.setOnSelectListener(new l9(0, this, z9));
         this.M0.setOnSelectMultipleListener(new bi.h2(this, 2));
         v4.a0 a0Var = this.l2;
         if (a0Var != null) {
@@ -4545,7 +4545,7 @@ public final class va implements ls {
         Object obj;
         boolean z13;
         e7 e7Var2;
-        sg.w0 renderView;
+        sg.v0 renderView;
         View renderInputView;
         View textDimView;
         View entitiesView;
@@ -4772,11 +4772,11 @@ public final class va implements ls {
     }
 
     public final void x() {
-        sd0 sd0Var = this.B1;
-        if (sd0Var == null) {
+        td0 td0Var = this.B1;
+        if (td0Var == null) {
             return;
         }
-        sd0Var.b();
+        td0Var.b();
         this.C1.setFilterView(null);
         this.r.removeView(this.B1);
         TextureView textureView = this.D1;
@@ -4785,14 +4785,14 @@ public final class va implements ls {
             this.D1 = null;
         }
         this.X0.o(null, null);
-        jd0 jd0Var = this.E1;
-        if (jd0Var != null) {
-            this.h0.removeView(jd0Var);
+        kd0 kd0Var = this.E1;
+        if (kd0Var != null) {
+            this.h0.removeView(kd0Var);
             this.E1 = null;
         }
-        ld0 ld0Var = this.F1;
-        if (ld0Var != null) {
-            this.h0.removeView(ld0Var);
+        md0 md0Var = this.F1;
+        if (md0Var != null) {
+            this.h0.removeView(md0Var);
             this.F1 = null;
         }
         this.B1 = null;
@@ -4819,9 +4819,9 @@ public final class va implements ls {
         }
         this.r.removeView(this.v1);
         this.v1 = null;
-        sg.w0 w0Var = this.w1;
-        if (w0Var != null) {
-            this.h0.removeView(w0Var);
+        sg.v0 v0Var = this.w1;
+        if (v0Var != null) {
+            this.h0.removeView(v0Var);
             this.w1 = null;
         }
         View view = this.y1;

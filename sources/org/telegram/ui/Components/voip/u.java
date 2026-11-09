@@ -17,10 +17,10 @@ import org.telegram.messenger.qs;
 import org.telegram.messenger.r3;
 import org.telegram.messenger.s3;
 import org.telegram.ui.Components.uq;
-import org.telegram.ui.c40;
+import org.telegram.ui.e40;
 import org.telegram.ui.va;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class u extends k2 {
     public float g0;
@@ -32,13 +32,13 @@ public final class u extends k2 {
     public final /* synthetic */ String m0;
     public final /* synthetic */ float n0;
     public final /* synthetic */ StaticLayout o0;
-    public final /* synthetic */ c40 p0;
+    public final /* synthetic */ e40 p0;
     public final /* synthetic */ String q0;
     public final /* synthetic */ float r0;
     public final /* synthetic */ y s0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u(y yVar, Context context, r3 r3Var, k0 k0Var, TextPaint textPaint, StaticLayout staticLayout, TextPaint textPaint2, String str, float f10, StaticLayout staticLayout2, c40 c40Var, String str2, float f11) {
+    public u(y yVar, Context context, r3 r3Var, k0 k0Var, TextPaint textPaint, StaticLayout staticLayout, TextPaint textPaint2, String str, float f10, StaticLayout staticLayout2, e40 e40Var, String str2, float f11) {
         super(context, false, false, true, true);
         this.s0 = yVar;
         this.h0 = r3Var;
@@ -49,7 +49,7 @@ public final class u extends k2 {
         this.m0 = str;
         this.n0 = f10;
         this.o0 = staticLayout2;
-        this.p0 = c40Var;
+        this.p0 = e40Var;
         this.q0 = str2;
         this.r0 = f11;
     }
@@ -247,9 +247,9 @@ public final class u extends k2 {
                         nVar.g = f24;
                         if (f24 > 4.0f) {
                             nVar.g = 0.0f;
-                            sg.t0 t0Var = nVar.p;
-                            if (t0Var != null) {
-                                t0Var.run();
+                            sh.b bVar = nVar.p;
+                            if (bVar != null) {
+                                bVar.run();
                             }
                         }
                         nVar.h = currentTimeMillis;
@@ -290,7 +290,7 @@ public final class u extends k2 {
         float measuredHeight = (getMeasuredHeight() - this.N) - org.telegram.messenger.g0.L(80.0f);
         if (yVar.x != r3Var.z) {
             canvas.save();
-            if ((yVar.b || yVar.r) && !c40.w5 && !c40.x5) {
+            if ((yVar.b || yVar.r) && !e40.w5 && !e40.x5) {
                 measuredHeight = com.google.android.recaptcha.internal.a.v(1.0f, k0Var.W, org.telegram.messenger.g0.L(90.0f) * k0Var.c, measuredHeight);
             }
             f13 = 0.0f;

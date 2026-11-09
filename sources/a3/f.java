@@ -46,16 +46,16 @@ import java.util.Iterator;
 import org.telegram.messenger.g0;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.hu0;
+import org.telegram.ui.Components.ah0;
+import org.telegram.ui.Components.ju0;
 import org.telegram.ui.Components.l9;
-import org.telegram.ui.Components.m20;
+import org.telegram.ui.Components.n20;
 import org.telegram.ui.Components.xq;
-import org.telegram.ui.Components.zg0;
-import org.telegram.ui.Wallet.b8;
+import org.telegram.ui.Wallet.a8;
+import org.telegram.ui.Wallet.e5;
 import org.telegram.ui.Wallet.f5;
-import org.telegram.ui.Wallet.g5;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f implements Runnable {
     public final /* synthetic */ int a;
@@ -266,7 +266,7 @@ public final /* synthetic */ class f implements Runnable {
                 yVar.a();
                 return;
             case 16:
-                new hu0(((m20) this.b).getContext()).show();
+                new ju0(((n20) this.b).getContext()).show();
                 return;
             case 17:
                 g0.K3(((a1) this.b).W1);
@@ -281,22 +281,22 @@ public final /* synthetic */ class f implements Runnable {
                 ((w1) this.b).onBackPressed();
                 return;
             case 21:
-                f5 f5Var = (f5) ((j7) this.b);
-                b8 b8Var = f5Var.c.j0;
-                if (b8Var != null) {
-                    TL_wallet.nftItem nftitem = f5Var.b;
-                    if (b8Var.A()) {
-                        b8Var.c0(b8Var.v(nftitem));
+                e5 e5Var = (e5) ((j7) this.b);
+                a8 a8Var = e5Var.c.j0;
+                if (a8Var != null) {
+                    TL_wallet.nftItem nftitem = e5Var.b;
+                    if (a8Var.A()) {
+                        a8Var.c0(a8Var.v(nftitem));
                         return;
                     }
                     return;
                 }
                 return;
             case 22:
-                g5 g5Var = (g5) ((i7) this.b);
-                b8 b8Var2 = g5Var.b.j0;
-                if (b8Var2 != null) {
-                    b8Var2.b0(g5Var.a);
+                f5 f5Var = (f5) ((i7) this.b);
+                a8 a8Var2 = f5Var.b.j0;
+                if (a8Var2 != null) {
+                    a8Var2.b0(f5Var.a);
                     return;
                 }
                 return;
@@ -451,8 +451,8 @@ public final /* synthetic */ class f implements Runnable {
                     }
                     int i14 = 1 - e7Var.u0;
                     e7Var.u0 = i14;
-                    zg0 B = l9VarArr[2 - i14].getImageReceiver().B();
-                    zg0 B2 = l9VarArr[e7Var.u0 + 1].getImageReceiver().B();
+                    ah0 B = l9VarArr[2 - i14].getImageReceiver().B();
+                    ah0 B2 = l9VarArr[e7Var.u0 + 1].getImageReceiver().B();
                     if (B2 != null && B != null) {
                         B2.T(false, B.t());
                     }

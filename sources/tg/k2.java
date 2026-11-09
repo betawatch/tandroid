@@ -14,17 +14,17 @@ import org.telegram.messenger.f6;
 import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Components.ki0;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.Components.li0;
 import org.telegram.ui.Components.r5;
-import org.telegram.ui.tb0;
+import org.telegram.ui.vb0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class k2 extends j {
     public String A0;
     public final j2 q0;
-    public sg.j1 r0;
+    public sg.i1 r0;
     public int s0;
     public int t0;
     public int u0;
@@ -34,7 +34,7 @@ public final class k2 extends j {
     public Runnable y0;
     public boolean z0;
 
-    public k2(Context context, PointF pointF, int i7, CharSequence charSequence, sg.j1 j1Var, int i10) {
+    public k2(Context context, PointF pointF, int i7, CharSequence charSequence, sg.i1 i1Var, int i10) {
         super(context, pointF);
         this.v0 = sg.b0.e;
         this.t0 = i7;
@@ -51,7 +51,7 @@ public final class k2 extends j {
         j2Var.setCursorSize(org.telegram.messenger.g0.L(this.t0 * 0.4f));
         j2Var.setText(charSequence);
         s();
-        j2Var.setTextColor(j1Var.a);
+        j2Var.setTextColor(i1Var.a);
         j2Var.setTypeface(null, 1);
         j2Var.setHorizontallyScrolling(false);
         int i11 = Build.VERSION.SDK_INT;
@@ -69,10 +69,10 @@ public final class k2 extends j {
         } else {
             j2Var.setBreakStrategy(0);
         }
-        setSwatch(j1Var);
+        setSwatch(i1Var);
         setType(i10);
         k();
-        j2Var.addTextChangedListener(new tb0(2, this));
+        j2Var.addTextChangedListener(new vb0(2, this));
     }
 
     @Override // tg.j
@@ -105,10 +105,10 @@ public final class k2 extends j {
     }
 
     @Override // tg.j
-    public ki0 getSelectionBounds() {
+    public li0 getSelectionBounds() {
         ViewGroup viewGroup = (ViewGroup) getParent();
         if (viewGroup == null) {
-            return new ki0();
+            return new li0();
         }
         float scaleX = viewGroup.getScaleX();
         float L = (org.telegram.messenger.g0.L(64.0f) / scaleX) + (getScale() * getMeasuredWidth());
@@ -116,7 +116,7 @@ public final class k2 extends j {
         float x10 = org.telegram.messenger.camera.q.x(L, 2.0f, getPositionX(), scaleX);
         float positionY = getPositionY();
         j2 j2Var = this.q0;
-        return new ki0(x10, (positionY - (((L2 - j2Var.getExtendedPaddingTop()) - org.telegram.messenger.g0.N(4.0f)) / 2.0f)) * scaleX, ((L * scaleX) + x10) - x10, (L2 - j2Var.getExtendedPaddingBottom()) * scaleX);
+        return new li0(x10, (positionY - (((L2 - j2Var.getExtendedPaddingTop()) - org.telegram.messenger.g0.N(4.0f)) / 2.0f)) * scaleX, ((L * scaleX) + x10) - x10, (L2 - j2Var.getExtendedPaddingBottom()) * scaleX);
     }
 
     @Override // tg.j
@@ -155,7 +155,7 @@ public final class k2 extends j {
         return rectF.top;
     }
 
-    public sg.j1 getSwatch() {
+    public sg.i1 getSwatch() {
         return this.r0;
     }
 
@@ -193,7 +193,7 @@ public final class k2 extends j {
         j2Var.setClickable(true);
         j2Var.requestFocus();
         j2Var.setSelection(j2Var.getText().length());
-        org.telegram.messenger.g0.i3(new sg.t0(this, 8), 300L);
+        org.telegram.messenger.g0.i3(new sh.b(this, 6), 300L);
     }
 
     public final void r() {
@@ -214,7 +214,7 @@ public final class k2 extends j {
         j2Var.setTextColor(i7);
         j2Var.setCursorColor(i7);
         j2Var.setHandlesColor(i7);
-        j2Var.setHighlightColor(k6.r1(0.4f, i7));
+        j2Var.setHighlightColor(l6.r1(0.4f, i7));
     }
 
     public final void s() {
@@ -222,7 +222,7 @@ public final class k2 extends j {
         if (j2Var.getText().length() > 0) {
             j2Var.setHint((CharSequence) null);
         } else {
-            j2Var.setHint(id.M0(2131744196, null));
+            j2Var.setHint(id.M0(2131744193, null));
             j2Var.setHintTextColor(1627389951);
         }
     }
@@ -264,8 +264,8 @@ public final class k2 extends j {
         this.q0.setMaxWidth(i7);
     }
 
-    public void setSwatch(sg.j1 j1Var) {
-        this.r0 = new sg.j1(j1Var.b, j1Var.c, j1Var.a);
+    public void setSwatch(sg.i1 i1Var) {
+        this.r0 = new sg.i1(i1Var.b, i1Var.c, i1Var.a);
         r();
     }
 

@@ -3,12 +3,12 @@ package gh;
 import e2.a1;
 import h2.j;
 import h2.o;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.g6;
 import p4.c0;
 import p4.g1;
 import p4.u;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c implements d, o, c0, j {
     public final /* synthetic */ int a;
@@ -51,7 +51,7 @@ public final /* synthetic */ class c implements d, o, c0, j {
     }
 
     @Override // gh.d
-    public int k(f6 f6Var, boolean z9) {
+    public int k(g6 g6Var, boolean z9) {
         return z9 ? this.b : this.c;
     }
 }

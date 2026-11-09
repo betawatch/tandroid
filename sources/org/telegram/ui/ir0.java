@@ -1,33 +1,30 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class ir0 extends AnimatorListenerAdapter {
+public final /* synthetic */ class ir0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ pr0 b;
+    public final /* synthetic */ rr0 b;
 
-    public /* synthetic */ ir0(pr0 pr0Var, int i7) {
+    public /* synthetic */ ir0(rr0 rr0Var, int i7) {
         this.a = i7;
-        this.b = pr0Var;
+        this.b = rr0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                this.b.R.setTranslationY(0.0f);
-                break;
-            case 1:
-                this.b.R.setTranslationY(0.0f);
+                rr0 rr0Var = this.b;
+                rr0Var.getClass();
+                rr0Var.R.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             default:
-                pr0 pr0Var = this.b;
-                pr0Var.getClass();
-                pr0Var.R.setTranslationY(0.0f);
-                pr0Var.q0();
+                rr0 rr0Var2 = this.b;
+                rr0Var2.getClass();
+                rr0Var2.R.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
         }
     }

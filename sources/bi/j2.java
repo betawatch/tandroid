@@ -13,14 +13,14 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
-import org.telegram.ui.Components.js0;
+import org.telegram.ui.Components.ls0;
 import org.telegram.ui.Components.vs;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.d10;
-import org.telegram.ui.sc1;
-import org.telegram.ui.th;
+import org.telegram.ui.f10;
+import org.telegram.ui.vc1;
+import org.telegram.ui.vh;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j2 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -59,7 +59,7 @@ public final /* synthetic */ class j2 implements RequestDelegate {
                             TLRPC.MessageAction messageAction = message.action;
                             if ((messageAction instanceof TLRPC.TL_messageActionStarGift) || (messageAction instanceof TLRPC.TL_messageActionStarGiftUnique)) {
                                 ijVar = new ij(k7Var.a, message, false, false);
-                                ijVar.M5();
+                                ijVar.L5();
                                 if (ijVar == null) {
                                     org.telegram.messenger.g0.h3(new aa.s(k7Var, tLObject, ijVar, 11));
                                     break;
@@ -190,18 +190,18 @@ public final /* synthetic */ class j2 implements RequestDelegate {
                 org.telegram.messenger.g0.h3(new ai.e0(tLObject, i15, (ya) obj, 7));
                 break;
             case 4:
-                di.q6 q6Var = (di.q6) obj;
+                di.r6 r6Var = (di.r6) obj;
                 if (tLObject instanceof TL_stories.TL_stories_stories) {
                     ArrayList arrayList = new ArrayList();
                     TL_stories.TL_stories_stories tL_stories_stories = (TL_stories.TL_stories_stories) tLObject;
                     while (i13 < tL_stories_stories.stories.size()) {
-                        arrayList.add(q6Var.y(tL_stories_stories.stories.get(i13)));
+                        arrayList.add(r6Var.y(tL_stories_stories.stories.get(i13)));
                         i13++;
                     }
-                    org.telegram.messenger.g0.h3(new ai.a1(q6Var, arrayList, tL_stories_stories, this.b, 3));
+                    org.telegram.messenger.g0.h3(new ai.a1(r6Var, arrayList, tL_stories_stories, this.b, 3));
                     break;
                 } else {
-                    org.telegram.messenger.g0.h3(new di.n6(q6Var, i14));
+                    org.telegram.messenger.g0.h3(new di.o6(r6Var, i14));
                     break;
                 }
             case 5:
@@ -211,7 +211,7 @@ public final /* synthetic */ class j2 implements RequestDelegate {
                 ((VoIPService) obj).lambda$startScreenCapture$60(i15, tLObject, tL_error);
                 break;
             case 7:
-                org.telegram.messenger.g0.h3(new org.telegram.ui.q8((js0) obj, tLObject, i15, i12));
+                org.telegram.messenger.g0.h3(new org.telegram.ui.q8((ls0) obj, tLObject, i15, i12));
                 break;
             case 8:
                 LaunchActivity launchActivity = (LaunchActivity) obj;
@@ -219,7 +219,7 @@ public final /* synthetic */ class j2 implements RequestDelegate {
                 iz.l1 = System.currentTimeMillis();
                 iz.y();
                 if (tLObject instanceof TLRPC.TL_help_appUpdate) {
-                    org.telegram.messenger.g0.h3(new d10(launchActivity, (TLRPC.TL_help_appUpdate) tLObject, i15, i14));
+                    org.telegram.messenger.g0.h3(new f10(launchActivity, (TLRPC.TL_help_appUpdate) tLObject, i15, i14));
                     break;
                 } else if (tLObject instanceof TLRPC.TL_help_noAppUpdate) {
                     org.telegram.messenger.g0.h3(new vs(i12));
@@ -230,10 +230,10 @@ public final /* synthetic */ class j2 implements RequestDelegate {
                 }
                 break;
             case 9:
-                org.telegram.messenger.g0.h3(new d10((th) obj, tLObject, i15, i11));
+                org.telegram.messenger.g0.h3(new f10((vh) obj, tLObject, i15, i11));
                 break;
             default:
-                org.telegram.messenger.g0.h3(new d10((sc1) obj, i15, tLObject, i12));
+                org.telegram.messenger.g0.h3(new f10((vc1) obj, i15, tLObject, i12));
                 break;
         }
     }

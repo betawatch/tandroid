@@ -1,84 +1,80 @@
 package org.telegram.ui;
 
-import android.animation.AnimatorSet;
-import android.app.Activity;
-import android.graphics.Canvas;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.FrameLayout;
+import android.content.Context;
+import android.os.Bundle;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class nk extends FrameLayout {
-    public float a;
-    public float b;
-    public final /* synthetic */ an c;
+public final class nk extends org.telegram.ui.Components.ja0 {
+    public final /* synthetic */ cn H;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public nk(an anVar, Activity activity) {
-        super(activity);
-        this.c = anVar;
-        setOnLongClickListener(new t(this, 2));
+    public nk(cn cnVar, Context context, cn cnVar2, dh.c cVar, org.telegram.messenger.mj mjVar, TLRPC.User user, TLRPC.Chat chat, int i7, org.telegram.ui.Components.fa0 fa0Var, int i10, boolean z9) {
+        super(context, cnVar2, cVar, mjVar, user, chat, i7, fa0Var, i10, z9);
+        this.H = cnVar;
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j3) {
-        an anVar = this.c;
-        if (view == anVar.N2) {
-            canvas.save();
-            canvas.clipRect(0, 0, getMeasuredWidth(), org.telegram.messenger.g0.L(48.0f));
-        }
-        org.telegram.ui.ActionBar.k5[] k5VarArr = anVar.R2;
-        if (view != k5VarArr[0] && view != k5VarArr[1]) {
-            boolean drawChild = super.drawChild(canvas, view, j3);
-            if (view == anVar.N2) {
-                canvas.restore();
-            }
-            return drawChild;
-        }
-        canvas.save();
-        canvas.clipRect(0, 0, getMeasuredWidth() - org.telegram.messenger.g0.L(38.0f), getMeasuredHeight());
-        boolean drawChild2 = super.drawChild(canvas, view, j3);
-        canvas.restore();
-        return drawChild2;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(i7, i10);
-        an anVar = this.c;
-        if (!anVar.O2) {
-            return;
-        }
-        int i11 = 0;
-        while (true) {
-            AnimatorSet[] animatorSetArr = anVar.V2;
-            if (i11 >= animatorSetArr.length) {
-                anVar.O2 = false;
-                return;
-            }
-            AnimatorSet animatorSet = animatorSetArr[i11];
-            if (animatorSet != null) {
-                animatorSet.start();
-            }
-            i11++;
+    @Override // org.telegram.ui.Components.ja0
+    public final void b() {
+        org.telegram.messenger.ij ijVar;
+        sm smVar;
+        cn cnVar = this.H;
+        sm smVar2 = cnVar.B5;
+        if (smVar2 == null || (ijVar = smVar2.a) == null || !((smVar = cnVar.v5.d) == null || smVar.a == null || ijVar.e1() == cnVar.v5.d.a.e1())) {
+            cnVar.B5 = cnVar.v5.d;
         }
     }
 
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        this.a = motionEvent.getY();
-        int action = motionEvent.getAction();
-        an anVar = this.c;
-        if (action == 1) {
-            anVar.finishPreviewFragment();
-        } else if (motionEvent.getAction() == 2) {
-            float f10 = this.b - this.a;
-            anVar.movePreviewFragment(f10);
-            if (f10 < 0.0f) {
-                this.b = this.a;
+    @Override // org.telegram.ui.Components.ja0
+    public final void c(boolean z9) {
+        int i7;
+        boolean z10;
+        org.telegram.messenger.kj kjVar;
+        a(false);
+        cn cnVar = this.H;
+        org.telegram.messenger.mj mjVar = cnVar.v5;
+        if (mjVar != null) {
+            if (!z9) {
+                cnVar.C5 = true;
             }
+            org.telegram.messenger.kj kjVar2 = mjVar.b;
+            if (kjVar2 != null) {
+                int size = kjVar2.e.size();
+                i7 = 0;
+                z10 = false;
+                for (int i10 = 0; i10 < size; i10++) {
+                    org.telegram.messenger.ij ijVar = (org.telegram.messenger.ij) cnVar.v5.b.e.get(i10);
+                    if (ijVar.D4()) {
+                        i7 = 3;
+                    } else if (ijVar.T3()) {
+                        if (i7 != 2) {
+                            i7 = ijVar.Z3() ? 2 : 1;
+                        }
+                    } else if (ijVar.z3()) {
+                        z10 = true;
+                    }
+                    cnVar.m6[0].put(ijVar.e1(), ijVar);
+                }
+            } else {
+                i7 = 0;
+                z10 = false;
+            }
+            Bundle h = org.telegram.ui.Cells.f1.h(3, "onlySelect", "dialogsType", true);
+            h.putBoolean("quote", !z9);
+            boolean z11 = (z9 || (kjVar = cnVar.v5.a) == null || kjVar.e.isEmpty() || cnVar.v5.d != null) ? false : true;
+            h.putBoolean("reply_to", z11);
+            if (z11) {
+                cnVar.fb(h, (org.telegram.messenger.ij) cnVar.v5.a.e.get(0));
+            }
+            h.putInt("hasPoll", i7);
+            h.putBoolean("hasInvoice", z10);
+            org.telegram.messenger.kj kjVar3 = cnVar.v5.b;
+            h.putInt("messagesCount", kjVar3 != null ? kjVar3.e.size() : 0);
+            h.putBoolean("canSelectTopics", true);
+            yw ywVar = new yw(h);
+            ywVar.D2 = cnVar;
+            cnVar.presentFragment(ywVar);
         }
-        return super.onTouchEvent(motionEvent);
     }
 }

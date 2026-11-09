@@ -4,7 +4,7 @@ import android.util.SparseIntArray;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class xj implements Runnable {
     public final /* synthetic */ int a;
@@ -118,7 +118,7 @@ public final /* synthetic */ class xj implements Runnable {
                                                 if (ijVar != null) {
                                                     i11 = i17;
                                                     if (ijVar.k.peer_id.channel_id == 0) {
-                                                        qpVar.U.put(ijVar.f1(), ijVar);
+                                                        qpVar.U.put(ijVar.e1(), ijVar);
                                                         qpVar.N = Math.min(qpVar.N, ijVar.k.date);
                                                         long j3 = ijVar.k.random_id;
                                                         if (j3 != 0) {

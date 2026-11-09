@@ -1,27 +1,90 @@
 package sh;
 
-import android.view.View;
-import c8.j9;
-import org.telegram.messenger.g0;
+import di.u1;
+import java.util.ArrayList;
+import org.telegram.messenger.m5;
+import org.telegram.messenger.qp;
+import org.telegram.messenger.v10;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.Components.q41;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.y31;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class i extends q41 {
-    public final /* synthetic */ int m3;
+public final /* synthetic */ class i implements v10 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ n b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i(f2 f2Var, h hVar, int i7) {
-        super(f2Var, hVar, null, null);
-        this.m3 = i7;
+    public /* synthetic */ i(n nVar, int i7) {
+        this.a = i7;
+        this.b = nVar;
     }
 
-    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        int min = Math.min(g0.L(220.0f), View.MeasureSpec.getSize(i7));
-        View.MeasureSpec.getSize(i10);
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(min, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(g0.L(j9.b(this.m3, 1, 5) * 48), TLObject.FLAG_30));
+    @Override // org.telegram.messenger.v10
+    public final void a(Object obj, Object obj2) {
+        int i7 = this.a;
+        int i10 = 0;
+        n nVar = this.b;
+        switch (i7) {
+            case 0:
+                ArrayList arrayList = (ArrayList) obj;
+                arrayList.clear();
+                ArrayList arrayList2 = nVar.j;
+                int size = arrayList2.size();
+                while (i10 < size) {
+                    Object obj3 = arrayList2.get(i10);
+                    i10++;
+                    TLRPC.MessagePeerVote messagePeerVote = (TLRPC.MessagePeerVote) obj3;
+                    long o4 = m5.o(messagePeerVote.peer);
+                    TLObject e22 = qp.s1(nVar.a).e2(o4);
+                    int i11 = messagePeerVote.date;
+                    u1 u1Var = new u1(nVar, o4, 3);
+                    int i12 = k.b;
+                    y31 K = y31.K(k.class);
+                    K.G = e22;
+                    K.B = o4;
+                    K.z = i11;
+                    K.D = u1Var;
+                    arrayList.add(K);
+                }
+                if (!nVar.h) {
+                    if (!arrayList2.isEmpty()) {
+                        int i13 = m.b;
+                        arrayList.add(y31.K(m.class));
+                        break;
+                    } else {
+                        int i14 = l.b;
+                        arrayList.add(y31.K(l.class));
+                        arrayList.add(y31.K(l.class));
+                        arrayList.add(y31.K(l.class));
+                        arrayList.add(y31.K(l.class));
+                        arrayList.add(y31.K(l.class));
+                        break;
+                    }
+                }
+                break;
+            default:
+                TLRPC.TL_messages_votesList tL_messages_votesList = (TLRPC.TL_messages_votesList) obj;
+                int i15 = nVar.a;
+                nVar.i = false;
+                if (tL_messages_votesList == null) {
+                    nVar.g = null;
+                    nVar.h = true;
+                    break;
+                } else {
+                    qp.s1(i15).Y3(tL_messages_votesList.users, false);
+                    qp.s1(i15).S3(tL_messages_votesList.chats, false);
+                    String str = tL_messages_votesList.next_offset;
+                    nVar.g = str;
+                    nVar.h = str == null;
+                    nVar.j.addAll(tL_messages_votesList.votes);
+                    b bVar = nVar.e;
+                    if (bVar != null) {
+                        bVar.run();
+                        break;
+                    }
+                }
+                break;
+        }
     }
 }

@@ -2,86 +2,181 @@ package org.telegram.ui;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.Point;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.graphics.drawable.BitmapDrawable;
-import android.net.Uri;
-import android.view.MotionEvent;
-import android.view.View;
 import android.widget.FrameLayout;
-import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class pm0 extends org.telegram.ui.ActionBar.f2 {
-    public Bitmap a;
-    public BitmapDrawable b;
-    public om0 c;
-    public nm0 d;
-    public boolean e;
-    public boolean f;
+public final class pm0 extends FrameLayout {
+    public int D;
+    public int E;
+    public int F;
+    public boolean G;
+    public final /* synthetic */ rm0 H;
+    public final Paint a;
+    public final Paint b;
+    public final Paint c;
+    public float d;
+    public float e;
+    public float f;
+    public float h;
+    public int n;
+    public float r;
+    public float s;
+    public int w;
+    public int x;
+    public int y;
 
-    @Override // org.telegram.ui.ActionBar.f2
-    public final View createView(Context context) {
-        this.actionBar.setBackgroundColor(-13421773);
-        this.actionBar.C(-12763843, false);
-        this.actionBar.setTitleColor(-1);
-        this.actionBar.D(-1, false);
-        this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setTitle(org.telegram.messenger.id.M0(2131751699, null));
-        this.actionBar.setActionBarMenuOnItemClick(new ux(this, 23));
-        this.actionBar.q().h(1, R.drawable.ic_ab_done, org.telegram.messenger.g0.L(56.0f), org.telegram.messenger.id.M0(2131751355, null));
-        nm0 nm0Var = new nm0(this, context);
-        this.d = nm0Var;
-        this.fragmentView = nm0Var;
-        nm0Var.G = getArguments().getBoolean("freeform", false);
-        this.fragmentView.setLayoutParams(new FrameLayout.LayoutParams(-1, -1));
-        return this.fragmentView;
-    }
-
-    @Override // org.telegram.ui.ActionBar.f2
-    public final boolean isSwipeBackEnabled(MotionEvent motionEvent) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.ActionBar.f2
-    public final boolean onFragmentCreate() {
-        int max;
-        if (this.a == null) {
-            String string = getArguments().getString("photoPath");
-            Uri uri = (Uri) getArguments().getParcelable("photoUri");
-            if (string == null && uri == null) {
-                return false;
-            }
-            if (string != null && !a8.p0.B(string)) {
-                return false;
-            }
-            if (org.telegram.messenger.g0.Q1()) {
-                max = org.telegram.messenger.g0.L(520.0f);
-            } else {
-                Point point = org.telegram.messenger.g0.q;
-                max = Math.max(point.x, point.y);
-            }
-            float f10 = max;
-            Bitmap K = org.telegram.messenger.gc.K(string, uri, f10, f10, true);
-            this.a = K;
-            if (K == null) {
-                return false;
-            }
-        }
-        this.b = new BitmapDrawable(this.a);
-        super.onFragmentCreate();
-        return true;
-    }
-
-    @Override // org.telegram.ui.ActionBar.f2
-    public final void onFragmentDestroy() {
-        super.onFragmentDestroy();
-        Bitmap bitmap = this.a;
-        if (bitmap != null && !this.e) {
-            bitmap.recycle();
-            this.a = null;
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public pm0(rm0 rm0Var, Context context) {
+        super(context);
+        this.H = rm0Var;
+        this.a = null;
         this.b = null;
+        this.c = null;
+        this.d = 600.0f;
+        this.e = 600.0f;
+        this.f = -1.0f;
+        this.h = -1.0f;
+        this.n = 0;
+        this.r = 0.0f;
+        this.s = 0.0f;
+        Paint paint = new Paint();
+        this.a = paint;
+        paint.setColor(1073412858);
+        this.a.setStrokeWidth(org.telegram.messenger.g0.L(2.0f));
+        this.a.setStyle(Paint.Style.STROKE);
+        Paint paint2 = new Paint();
+        this.b = paint2;
+        paint2.setColor(-1);
+        Paint paint3 = new Paint();
+        this.c = paint3;
+        paint3.setColor(-939524096);
+        setBackgroundColor(-13421773);
+        setOnTouchListener(new d0(this, 4));
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        rm0 rm0Var = this.H;
+        BitmapDrawable bitmapDrawable = rm0Var.b;
+        if (bitmapDrawable != null) {
+            try {
+                int i7 = this.y;
+                int i10 = this.D;
+                bitmapDrawable.setBounds(i7, i10, this.w + i7, this.x + i10);
+                rm0Var.b.draw(canvas);
+            } catch (Throwable th2) {
+                org.telegram.messenger.a8.g(th2, true);
+            }
+        }
+        canvas.drawRect(this.y, this.D, r0 + this.w, this.h, this.c);
+        float f10 = this.y;
+        float f11 = this.h;
+        canvas.drawRect(f10, f11, this.f, f11 + this.e, this.c);
+        float f12 = this.f + this.d;
+        float f13 = this.h;
+        canvas.drawRect(f12, f13, this.y + this.w, f13 + this.e, this.c);
+        canvas.drawRect(this.y, this.h + this.e, r0 + this.w, this.D + this.x, this.c);
+        float f14 = this.f;
+        float f15 = this.h;
+        canvas.drawRect(f14, f15, f14 + this.d, f15 + this.e, this.a);
+        int L = org.telegram.messenger.g0.L(1.0f);
+        float f16 = L;
+        float f17 = this.f + f16;
+        float f18 = L * 3;
+        canvas.drawRect(f17, this.h + f16, f17 + org.telegram.messenger.g0.L(20.0f), this.h + f18, this.b);
+        float f19 = this.f;
+        float f20 = this.h + f16;
+        canvas.drawRect(f19 + f16, f20, f19 + f18, f20 + org.telegram.messenger.g0.L(20.0f), this.b);
+        float L2 = ((this.f + this.d) - f16) - org.telegram.messenger.g0.L(20.0f);
+        float f21 = this.h;
+        canvas.drawRect(L2, f21 + f16, (this.f + this.d) - f16, f21 + f18, this.b);
+        float f22 = this.f + this.d;
+        float f23 = this.h + f16;
+        canvas.drawRect(f22 - f18, f23, f22 - f16, f23 + org.telegram.messenger.g0.L(20.0f), this.b);
+        canvas.drawRect(this.f + f16, ((this.h + this.e) - f16) - org.telegram.messenger.g0.L(20.0f), this.f + f18, (this.h + this.e) - f16, this.b);
+        float f24 = this.f + f16;
+        canvas.drawRect(f24, (this.h + this.e) - f18, f24 + org.telegram.messenger.g0.L(20.0f), (this.h + this.e) - f16, this.b);
+        float L3 = ((this.f + this.d) - f16) - org.telegram.messenger.g0.L(20.0f);
+        float f25 = this.h + this.e;
+        canvas.drawRect(L3, f25 - f18, (this.f + this.d) - f16, f25 - f16, this.b);
+        canvas.drawRect((this.f + this.d) - f18, ((this.h + this.e) - f16) - org.telegram.messenger.g0.L(20.0f), (this.f + this.d) - f16, (this.h + this.e) - f16, this.b);
+        for (int i11 = 1; i11 < 3; i11++) {
+            float f26 = this.f;
+            float f27 = i11;
+            float f28 = (this.d / 3.0f) * f27;
+            float f29 = this.h;
+            canvas.drawRect(f28 + f26, f29 + f16, f26 + f16 + f28, (f29 + this.e) - f16, this.b);
+            float f30 = this.f;
+            float c10 = com.google.android.recaptcha.internal.a.c(this.e, 3.0f, f27, this.h);
+            canvas.drawRect(f30 + f16, c10, (f30 - f16) + this.d, c10 + f16, this.b);
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
+        rm0 rm0Var;
+        Bitmap bitmap;
+        super.onLayout(z9, i7, i10, i11, i12);
+        this.E = (i11 - i7) - org.telegram.messenger.g0.L(28.0f);
+        int L = (i12 - i10) - org.telegram.messenger.g0.L(28.0f);
+        this.F = L;
+        if (this.E == 0 || L == 0 || (bitmap = (rm0Var = this.H).a) == null) {
+            return;
+        }
+        float f10 = this.f - this.y;
+        float f11 = this.w;
+        float f12 = f10 / f11;
+        float f13 = this.h - this.D;
+        float f14 = this.x;
+        float f15 = f13 / f14;
+        float f16 = this.d / f11;
+        float f17 = this.e / f14;
+        float width = bitmap.getWidth();
+        float height = rm0Var.a.getHeight();
+        int i13 = this.E;
+        float f18 = i13 / width;
+        int i14 = this.F;
+        if (f18 > i14 / height) {
+            this.x = i14;
+            this.w = (int) Math.ceil(width * r5);
+        } else {
+            this.w = i13;
+            this.x = (int) Math.ceil(height * f18);
+        }
+        this.y = org.telegram.messenger.g0.L(14.0f) + ((this.E - this.w) / 2);
+        int L2 = org.telegram.messenger.g0.L(14.0f) + ((this.F - this.x) / 2);
+        this.D = L2;
+        if (this.f != -1.0f || this.h != -1.0f) {
+            float f19 = this.w;
+            this.f = (f12 * f19) + this.y;
+            float f20 = this.x;
+            this.h = (f15 * f20) + L2;
+            this.d = f16 * f19;
+            this.e = f17 * f20;
+        } else if (this.G) {
+            this.h = L2;
+            this.f = this.y;
+            this.d = this.w;
+            this.e = this.x;
+        } else {
+            if (this.w > this.x) {
+                this.h = L2;
+                this.f = org.telegram.messenger.g0.L(14.0f) + ((this.E - r11) / 2);
+                float f21 = this.x;
+                this.d = f21;
+                this.e = f21;
+            } else {
+                this.f = this.y;
+                this.h = org.telegram.messenger.g0.L(14.0f) + ((this.F - r9) / 2);
+                float f22 = this.w;
+                this.d = f22;
+                this.e = f22;
+            }
+        }
+        invalidate();
     }
 }

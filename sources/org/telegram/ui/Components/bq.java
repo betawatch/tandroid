@@ -12,7 +12,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.animation.OvershootInterpolator;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class bq {
     public float A;
@@ -22,7 +22,7 @@ public final class bq {
     public final boolean F;
     public boolean G;
     public View H;
-    public final org.telegram.ui.ActionBar.f6 J;
+    public final org.telegram.ui.ActionBar.g6 J;
     public boolean a;
     public Paint d;
     public boolean g;
@@ -46,15 +46,15 @@ public final class bq {
     public TextPaint e = new TextPaint(1);
     public final RectF f = new RectF();
     public float l = 1.0f;
-    public int v = org.telegram.ui.ActionBar.k6.gg;
-    public int w = org.telegram.ui.ActionBar.k6.hg;
+    public int v = org.telegram.ui.ActionBar.l6.gg;
+    public int w = org.telegram.ui.ActionBar.l6.hg;
     public int z = 17;
     public final float C = 11.5f;
     public int I = 0;
 
-    public bq(View view, boolean z9, org.telegram.ui.ActionBar.f6 f6Var) {
+    public bq(View view, boolean z9, org.telegram.ui.ActionBar.g6 g6Var) {
         this.H = view;
-        this.J = f6Var;
+        this.J = g6Var;
         this.F = z9;
         if (z9) {
             Paint paint = new Paint(1);
@@ -72,9 +72,9 @@ public final class bq {
         int i7 = this.I;
         if (i7 != 1 && i7 != 2) {
             int i10 = this.v;
-            org.telegram.ui.ActionBar.f6 f6Var = this.J;
-            int w02 = org.telegram.ui.ActionBar.k6.w0(i10, f6Var);
-            int w03 = org.telegram.ui.ActionBar.k6.w0(this.w, f6Var);
+            org.telegram.ui.ActionBar.g6 g6Var = this.J;
+            int w02 = org.telegram.ui.ActionBar.l6.w0(i10, g6Var);
+            int w03 = org.telegram.ui.ActionBar.l6.w0(this.w, g6Var);
             if (this.u != w02) {
                 this.u = w02;
                 this.e.setColor(w02);
@@ -136,9 +136,9 @@ public final class bq {
         if (this.F && (paint = this.d) != null) {
             float f21 = org.telegram.messenger.g0.p * f16;
             canvas.drawRoundRect(rectF, f21, f21, paint);
-            if (this.g && org.telegram.ui.ActionBar.k6.d1()) {
+            if (this.g && org.telegram.ui.ActionBar.l6.d1()) {
                 float f22 = f16 * org.telegram.messenger.g0.p;
-                canvas.drawRoundRect(rectF, f22, f22, org.telegram.ui.ActionBar.k6.h2);
+                canvas.drawRoundRect(rectF, f22, f22, org.telegram.ui.ActionBar.l6.h2);
             }
         }
         if (z9) {
@@ -209,9 +209,9 @@ public final class bq {
             }
             float f14 = org.telegram.messenger.g0.p * f10;
             canvas.drawRoundRect(rectF, f14, f14, this.d);
-            if (this.g && org.telegram.ui.ActionBar.k6.d1()) {
+            if (this.g && org.telegram.ui.ActionBar.l6.d1()) {
                 float f15 = f10 * org.telegram.messenger.g0.p;
-                canvas.drawRoundRect(rectF, f15, f15, org.telegram.ui.ActionBar.k6.h2);
+                canvas.drawRoundRect(rectF, f15, f15, org.telegram.ui.ActionBar.l6.h2);
             }
             if (z9) {
                 canvas.restore();

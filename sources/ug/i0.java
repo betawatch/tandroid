@@ -41,41 +41,41 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.o6;
+import org.telegram.ui.ActionBar.s6;
 import org.telegram.ui.ActionBar.u1;
+import org.telegram.ui.Components.a80;
 import org.telegram.ui.Components.bq;
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.cq;
 import org.telegram.ui.Components.hc;
 import org.telegram.ui.Components.kz;
 import org.telegram.ui.Components.na;
-import org.telegram.ui.Components.oj0;
 import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.rt0;
-import org.telegram.ui.Components.si0;
+import org.telegram.ui.Components.qj0;
+import org.telegram.ui.Components.ti0;
+import org.telegram.ui.Components.tt0;
 import org.telegram.ui.Components.v4;
 import org.telegram.ui.Components.wp;
-import org.telegram.ui.Components.z70;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.an;
-import org.telegram.ui.fk0;
-import org.telegram.ui.l00;
-import org.telegram.ui.pn;
+import org.telegram.ui.cn;
+import org.telegram.ui.hk0;
+import org.telegram.ui.n00;
 import org.telegram.ui.rc;
-import org.telegram.ui.ww;
+import org.telegram.ui.rn;
+import org.telegram.ui.yw;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public class i0 extends na implements ls {
     public static final /* synthetic */ int O2 = 0;
     public boolean A2;
-    public si0 B2;
+    public ti0 B2;
     public final f2 C2;
-    public l00 D2;
+    public n00 D2;
     public androidx.emoji2.text.p E2;
     public boolean F2;
     public TLRPC.Chat G2;
@@ -125,8 +125,8 @@ public class i0 extends na implements ls {
     public Runnable z2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i0(int i7, int i10, Context context, f2 f2Var, f6 f6Var) {
-        super(context, f2Var, false, p1(i7), f6Var);
+    public i0(int i7, int i10, Context context, f2 f2Var, g6 g6Var) {
+        super(context, f2Var, false, p1(i7), g6Var);
         int i11 = 0;
         this.R1 = -1;
         this.X1 = false;
@@ -150,7 +150,7 @@ public class i0 extends na implements ls {
         this.A2 = false;
         this.J2 = 0;
         this.M2 = -4;
-        O(k6.w0(k6.h5, this.I0));
+        O(l6.w0(l6.h5, this.I0));
         this.L2 = this.G0;
         this.C2 = f2Var;
         this.a = i10;
@@ -176,9 +176,9 @@ public class i0 extends na implements ls {
         }
         if (i7 == 18 || i7 == 20 || i7 == 24 || i7 == 25 || i7 == 26 || i7 == 29 || i7 == 22 || i7 == 23 || i7 == 21 || i7 == 27 || i7 == 28 || i7 == 30 || i7 == 35 || i7 == 31) {
             ((ViewGroup) this.w2.getParent()).removeView(this.w2);
-            l00 l00Var = this.D2;
-            if (l00Var != null) {
-                ((ViewGroup) l00Var.getParent()).removeView(this.D2);
+            n00 n00Var = this.D2;
+            if (n00Var != null) {
+                ((ViewGroup) n00Var.getParent()).removeView(this.D2);
             }
             this.k1.setPadding(0, 0, 0, 0);
             TextView textView = new TextView(context);
@@ -189,22 +189,22 @@ public class i0 extends na implements ls {
             textView.setTextSize(1, 14.0f);
             textView.setTypeface(org.telegram.messenger.g0.o());
             textView.setText(this.w2.getTextView().getText());
-            r6.V(textView, k6.Gi, f6Var);
+            s6.U(textView, l6.Gi, g6Var);
             textView.setOnClickListener(new t(this, i11));
             int L = org.telegram.messenger.g0.L(8.0f);
-            int i14 = k6.Ci;
-            int w02 = k6.w0(i14, f6Var);
-            int i15 = k6.d6;
-            int o4 = i0.a.o(k6.w0(i15, f6Var), 120);
-            org.telegram.ui.Cells.y k02 = k6.k0(L, L, L, L, w02, o4, o4);
-            n6 N = r6.N(i14);
-            n6 h = r6.h(i15, 120);
+            int i14 = l6.Ci;
+            int w02 = l6.w0(i14, g6Var);
+            int i15 = l6.d6;
+            int o4 = i0.a.o(l6.w0(i15, g6Var), 120);
+            org.telegram.ui.Cells.y k02 = l6.k0(L, L, L, L, w02, o4, o4);
+            o6 M = s6.M(i14);
+            o6 g10 = s6.g(i15, 120);
             textView.setBackground(k02);
-            r6.k(textView, k02, N, h, f6Var);
+            s6.j(textView, k02, M, g10, g6Var);
         }
         if (i7 == 32) {
             ((ViewGroup) this.w2.getParent()).removeView(this.w2);
-            fi.d dVar = new fi.d(context, f6Var, true);
+            fi.d dVar = new fi.d(context, g6Var, true);
             this.K2 = dVar;
             dVar.k();
             dVar.i(id.M0(2131753625, null), false, true);
@@ -229,97 +229,97 @@ public class i0 extends na implements ls {
             pVar.b = qp.s1(i10).P4;
             pVar.c = qp.s1(i10).Q4;
             pVar.a = R.drawable.msg_limit_pin;
-            pVar.d = id.a0("LimitReachedPinDialogs", null, 2131748955, Integer.valueOf(pVar.b), Integer.valueOf(pVar.c));
-            pVar.e = id.a0("LimitReachedPinDialogsPremium", null, 2131748953, Integer.valueOf(pVar.c));
-            pVar.f = id.a0("LimitReachedPinDialogsLocked", null, 2131748954, Integer.valueOf(pVar.b));
+            pVar.d = id.a0("LimitReachedPinDialogs", null, 2131748954, Integer.valueOf(pVar.b), Integer.valueOf(pVar.c));
+            pVar.e = id.a0("LimitReachedPinDialogsPremium", null, 2131748952, Integer.valueOf(pVar.c));
+            pVar.f = id.a0("LimitReachedPinDialogsLocked", null, 2131748953, Integer.valueOf(pVar.b));
             return pVar;
         }
         if (i7 == 33) {
             pVar.b = qp.s1(i10).m6;
             pVar.c = qp.s1(i10).n6;
             pVar.a = R.drawable.msg_limit_pin;
-            pVar.d = id.a0(null, null, 2131748952, Integer.valueOf(pVar.b), Integer.valueOf(pVar.c));
-            pVar.e = id.a0(null, null, 2131748950, Integer.valueOf(pVar.c));
-            pVar.f = id.a0(null, null, 2131748951, Integer.valueOf(pVar.b));
+            pVar.d = id.a0(null, null, 2131748951, Integer.valueOf(pVar.b), Integer.valueOf(pVar.c));
+            pVar.e = id.a0(null, null, 2131748949, Integer.valueOf(pVar.c));
+            pVar.f = id.a0(null, null, 2131748950, Integer.valueOf(pVar.b));
             return pVar;
         }
         if (i7 == 2) {
             pVar.b = qp.s1(i10).R4;
             pVar.c = qp.s1(i10).S4;
             pVar.a = R.drawable.msg_limit_links;
-            pVar.d = id.a0("LimitReachedPublicLinks", null, 2131748948, Integer.valueOf(pVar.b), Integer.valueOf(pVar.c));
-            pVar.e = id.a0("LimitReachedPublicLinksPremium", null, 2131748946, Integer.valueOf(pVar.c));
-            pVar.f = id.a0("LimitReachedPublicLinksLocked", null, 2131748947, Integer.valueOf(pVar.b));
+            pVar.d = id.a0("LimitReachedPublicLinks", null, 2131748947, Integer.valueOf(pVar.b), Integer.valueOf(pVar.c));
+            pVar.e = id.a0("LimitReachedPublicLinksPremium", null, 2131748945, Integer.valueOf(pVar.c));
+            pVar.f = id.a0("LimitReachedPublicLinksLocked", null, 2131748946, Integer.valueOf(pVar.b));
             return pVar;
         }
         if (i7 == 12) {
             pVar.b = qp.s1(i10).x6;
             pVar.c = qp.s1(i10).y6;
             pVar.a = R.drawable.msg_limit_links;
-            pVar.d = id.a0("LimitReachedFolderLinks", null, 2131748961, Integer.valueOf(pVar.b), Integer.valueOf(pVar.c));
-            pVar.e = id.a0("LimitReachedFolderLinksPremium", null, 2131748959, Integer.valueOf(pVar.c));
-            pVar.f = id.a0("LimitReachedFolderLinksLocked", null, 2131748960, Integer.valueOf(pVar.b));
+            pVar.d = id.a0("LimitReachedFolderLinks", null, 2131748960, Integer.valueOf(pVar.b), Integer.valueOf(pVar.c));
+            pVar.e = id.a0("LimitReachedFolderLinksPremium", null, 2131748958, Integer.valueOf(pVar.c));
+            pVar.f = id.a0("LimitReachedFolderLinksLocked", null, 2131748959, Integer.valueOf(pVar.b));
             return pVar;
         }
         if (i7 == 13) {
             pVar.b = qp.s1(i10).z6;
             pVar.c = qp.s1(i10).A6;
             pVar.a = R.drawable.msg_limit_folder;
-            pVar.d = id.a0("LimitReachedSharedFolders", null, 2131748944, Integer.valueOf(pVar.b), Integer.valueOf(pVar.c));
-            pVar.e = id.a0("LimitReachedSharedFoldersPremium", null, 2131748942, Integer.valueOf(pVar.c));
-            pVar.f = id.a0("LimitReachedSharedFoldersLocked", null, 2131748943, Integer.valueOf(pVar.b));
+            pVar.d = id.a0("LimitReachedSharedFolders", null, 2131748943, Integer.valueOf(pVar.b), Integer.valueOf(pVar.c));
+            pVar.e = id.a0("LimitReachedSharedFoldersPremium", null, 2131748941, Integer.valueOf(pVar.c));
+            pVar.f = id.a0("LimitReachedSharedFoldersLocked", null, 2131748942, Integer.valueOf(pVar.b));
             return pVar;
         }
         if (i7 == 3) {
             pVar.b = qp.s1(i10).L4;
             pVar.c = qp.s1(i10).M4;
             pVar.a = R.drawable.msg_limit_folder;
-            pVar.d = id.a0("LimitReachedFolders", null, 2131748958, Integer.valueOf(pVar.b), Integer.valueOf(pVar.c));
-            pVar.e = id.a0("LimitReachedFoldersPremium", null, 2131748956, Integer.valueOf(pVar.c));
-            pVar.f = id.a0("LimitReachedFoldersLocked", null, 2131748957, Integer.valueOf(pVar.b));
+            pVar.d = id.a0("LimitReachedFolders", null, 2131748957, Integer.valueOf(pVar.b), Integer.valueOf(pVar.c));
+            pVar.e = id.a0("LimitReachedFoldersPremium", null, 2131748955, Integer.valueOf(pVar.c));
+            pVar.f = id.a0("LimitReachedFoldersLocked", null, 2131748956, Integer.valueOf(pVar.b));
             return pVar;
         }
         if (i7 == 4) {
             pVar.b = qp.s1(i10).N4;
             pVar.c = qp.s1(i10).O4;
             pVar.a = R.drawable.msg_limit_chats;
-            pVar.d = id.a0("LimitReachedChatInFolders", null, 2131748976, Integer.valueOf(pVar.b), Integer.valueOf(pVar.c));
-            pVar.e = id.a0("LimitReachedChatInFoldersPremium", null, 2131748974, Integer.valueOf(pVar.c));
-            pVar.f = id.a0("LimitReachedChatInFoldersLocked", null, 2131748975, Integer.valueOf(pVar.b));
+            pVar.d = id.a0("LimitReachedChatInFolders", null, 2131748975, Integer.valueOf(pVar.b), Integer.valueOf(pVar.c));
+            pVar.e = id.a0("LimitReachedChatInFoldersPremium", null, 2131748973, Integer.valueOf(pVar.c));
+            pVar.f = id.a0("LimitReachedChatInFoldersLocked", null, 2131748974, Integer.valueOf(pVar.b));
             return pVar;
         }
         if (i7 == 5) {
             pVar.b = qp.s1(i10).D4;
             pVar.c = qp.s1(i10).E4;
             pVar.a = R.drawable.msg_limit_groups;
-            pVar.d = id.a0("LimitReachedCommunities", null, 2131748973, Integer.valueOf(pVar.b), Integer.valueOf(pVar.c));
-            pVar.e = id.a0("LimitReachedCommunitiesPremium", null, 2131748971, Integer.valueOf(pVar.c));
-            pVar.f = id.a0("LimitReachedCommunitiesLocked", null, 2131748972, Integer.valueOf(pVar.b));
+            pVar.d = id.a0("LimitReachedCommunities", null, 2131748972, Integer.valueOf(pVar.b), Integer.valueOf(pVar.c));
+            pVar.e = id.a0("LimitReachedCommunitiesPremium", null, 2131748970, Integer.valueOf(pVar.c));
+            pVar.f = id.a0("LimitReachedCommunitiesLocked", null, 2131748971, Integer.valueOf(pVar.b));
             return pVar;
         }
         if (i7 == 6) {
             pVar.b = 100;
             pVar.c = qs.e3;
             pVar.a = R.drawable.msg_limit_folder;
-            pVar.d = id.a0("LimitReachedFileSize", null, 2131748964, "2 GB", "4 GB");
-            pVar.e = id.a0("LimitReachedFileSizePremium", null, 2131748962, "4 GB");
-            pVar.f = id.a0("LimitReachedFileSizeLocked", null, 2131748963, "2 GB");
+            pVar.d = id.a0("LimitReachedFileSize", null, 2131748963, "2 GB", "4 GB");
+            pVar.e = id.a0("LimitReachedFileSizePremium", null, 2131748961, "4 GB");
+            pVar.f = id.a0("LimitReachedFileSizeLocked", null, 2131748962, "2 GB");
             return pVar;
         }
         if (i7 == 7) {
             pVar.b = 3;
             pVar.c = 4;
             pVar.a = R.drawable.msg_limit_accounts;
-            pVar.d = id.a0("LimitReachedAccounts", null, 2131748978, 3, Integer.valueOf(pVar.c));
-            pVar.e = id.a0("LimitReachedAccountsPremium", null, 2131748977, Integer.valueOf(pVar.c));
-            pVar.f = id.a0("LimitReachedAccountsPremium", null, 2131748977, Integer.valueOf(pVar.b));
+            pVar.d = id.a0("LimitReachedAccounts", null, 2131748977, 3, Integer.valueOf(pVar.c));
+            pVar.e = id.a0("LimitReachedAccountsPremium", null, 2131748976, Integer.valueOf(pVar.c));
+            pVar.f = id.a0("LimitReachedAccountsPremium", null, 2131748976, Integer.valueOf(pVar.b));
             return pVar;
         }
         if (i7 == 11) {
             pVar.b = 0;
             pVar.c = 0;
             pVar.a = R.drawable.msg_limit_links;
-            pVar.d = id.a0("LimitReachedAccounts", null, 2131748978, 0, Integer.valueOf(pVar.c));
+            pVar.d = id.a0("LimitReachedAccounts", null, 2131748977, 0, Integer.valueOf(pVar.c));
             pVar.e = "";
             pVar.f = "";
             return pVar;
@@ -337,18 +337,18 @@ public class i0 extends na implements ls {
             pVar.b = qp.s1(i10).k5;
             pVar.c = qp.s1(i10).l5;
             pVar.a = R.drawable.msg_limit_stories;
-            pVar.d = id.a0("LimitReachedStoriesWeekly", null, 2131748930, Integer.valueOf(pVar.b), Integer.valueOf(pVar.c));
-            pVar.e = id.a0("LimitReachedStoriesWeeklyPremium", null, 2131748929, Integer.valueOf(pVar.c));
-            pVar.f = id.a0("LimitReachedStoriesWeeklyPremium", null, 2131748929, Integer.valueOf(pVar.b));
+            pVar.d = id.a0("LimitReachedStoriesWeekly", null, 2131748929, Integer.valueOf(pVar.b), Integer.valueOf(pVar.c));
+            pVar.e = id.a0("LimitReachedStoriesWeeklyPremium", null, 2131748928, Integer.valueOf(pVar.c));
+            pVar.f = id.a0("LimitReachedStoriesWeeklyPremium", null, 2131748928, Integer.valueOf(pVar.b));
             return pVar;
         }
         if (i7 == 16) {
             pVar.b = qp.s1(i10).m5;
             pVar.c = qp.s1(i10).n5;
             pVar.a = R.drawable.msg_limit_stories;
-            pVar.d = id.a0("LimitReachedStoriesMonthly", null, 2131748932, Integer.valueOf(pVar.b), Integer.valueOf(pVar.c));
-            pVar.e = id.a0("LimitReachedStoriesMonthlyPremium", null, 2131748931, Integer.valueOf(pVar.c));
-            pVar.f = id.a0("LimitReachedStoriesMonthlyPremium", null, 2131748931, Integer.valueOf(pVar.b));
+            pVar.d = id.a0("LimitReachedStoriesMonthly", null, 2131748931, Integer.valueOf(pVar.b), Integer.valueOf(pVar.c));
+            pVar.e = id.a0("LimitReachedStoriesMonthlyPremium", null, 2131748930, Integer.valueOf(pVar.c));
+            pVar.f = id.a0("LimitReachedStoriesMonthlyPremium", null, 2131748930, Integer.valueOf(pVar.b));
             return pVar;
         }
         if (i7 != 18 && i7 != 32 && i7 != 20 && i7 != 24 && i7 != 27 && i7 != 28 && i7 != 25 && i7 != 30 && i7 != 35 && i7 != 29 && i7 != 22 && i7 != 23 && i7 != 19 && i7 != 21 && i7 != 26) {
@@ -357,9 +357,9 @@ public class i0 extends na implements ls {
         pVar.b = qp.s1(i10).m5;
         pVar.c = qp.s1(i10).n5;
         pVar.a = R.drawable.filled_limit_boost;
-        pVar.d = id.a0("LimitReachedStoriesMonthly", null, 2131748932, Integer.valueOf(pVar.b), Integer.valueOf(pVar.c));
-        pVar.e = id.a0("LimitReachedStoriesMonthlyPremium", null, 2131748931, Integer.valueOf(pVar.c));
-        pVar.f = id.a0("LimitReachedStoriesMonthlyPremium", null, 2131748931, Integer.valueOf(pVar.b));
+        pVar.d = id.a0("LimitReachedStoriesMonthly", null, 2131748931, Integer.valueOf(pVar.b), Integer.valueOf(pVar.c));
+        pVar.e = id.a0("LimitReachedStoriesMonthlyPremium", null, 2131748930, Integer.valueOf(pVar.c));
+        pVar.f = id.a0("LimitReachedStoriesMonthlyPremium", null, 2131748930, Integer.valueOf(pVar.b));
         return pVar;
     }
 
@@ -461,13 +461,13 @@ public class i0 extends na implements ls {
             if (yVar != null && yVar.getParent() != null) {
                 ((ViewGroup) this.w2.getParent()).removeView(this.w2);
             }
-            l00 l00Var = this.D2;
-            if (l00Var != null && l00Var.getParent() != null) {
+            n00 n00Var = this.D2;
+            if (n00Var != null && n00Var.getParent() != null) {
                 ((ViewGroup) this.D2.getParent()).removeView(this.D2);
             }
-            pj0 pj0Var = this.k1;
-            if (pj0Var != null) {
-                pj0Var.setPadding(0, 0, 0, 0);
+            qj0 qj0Var = this.k1;
+            if (qj0Var != null) {
+                qj0Var.setPadding(0, 0, 0, 0);
             }
         }
     }
@@ -560,7 +560,7 @@ public class i0 extends na implements ls {
     public final void E1() {
         String str = null;
         if (this.b2) {
-            this.w2.c(id.M0(2131749131, null), false, false);
+            this.w2.c(id.M0(2131749130, null), false, false);
             return;
         }
         int i7 = this.Z1;
@@ -588,8 +588,8 @@ public class i0 extends na implements ls {
                 yVar2.I = cqVar;
                 cqVar.setGravity(3);
                 cq cqVar2 = yVar2.I;
-                int i10 = k6.Ci;
-                int i11 = k6.Gi;
+                int i10 = l6.Ci;
+                int i11 = l6.Gi;
                 bq bqVar = cqVar2.a;
                 bqVar.v = i10;
                 bqVar.w = i11;
@@ -600,7 +600,7 @@ public class i0 extends na implements ls {
             if (!this.Q1) {
                 this.w2.c(id.M0(2131752041, null), true, true);
             } else if (hashSet.size() > 0) {
-                this.w2.c(id.M0(2131745622, null), true, true);
+                this.w2.c(id.M0(2131745619, null), true, true);
             } else {
                 this.w2.c(id.M0(2131754557, null), true, true);
             }
@@ -612,7 +612,7 @@ public class i0 extends na implements ls {
         boolean z9 = e3Var.a;
         if ((z9 || e3Var.b) && !e3Var.l && !e3Var.d) {
             if (e3Var.m) {
-                this.w2.c(id.M0(2131747832, null), true, true);
+                this.w2.c(id.M0(2131747831, null), true, true);
                 return;
             }
             y yVar3 = this.w2;
@@ -622,7 +622,7 @@ public class i0 extends na implements ls {
         }
         fi.d dVar = this.K2;
         if (z9) {
-            if (wg.s.i()) {
+            if (wg.r.i()) {
                 this.w2.c(id.M0(2131753591, null), true, true);
             } else {
                 this.w2.c(id.M0(r1() ? 2131753625 : 2131753663, null), true, true);
@@ -635,14 +635,14 @@ public class i0 extends na implements ls {
             return;
         }
         if (e3Var.m) {
-            this.y2.i(id.M0(2131747832, null), true, true);
+            this.y2.i(id.M0(2131747831, null), true, true);
             if (dVar != null) {
-                dVar.i(id.M0(2131747832, null), true, true);
+                dVar.i(id.M0(2131747831, null), true, true);
             }
-            this.w2.c(id.M0(2131747832, null), true, true);
+            this.w2.c(id.M0(2131747831, null), true, true);
             return;
         }
-        if (wg.s.i()) {
+        if (wg.r.i()) {
             if (dVar != null) {
                 dVar.i(id.M0(2131753625, null), true, true);
             }
@@ -651,21 +651,21 @@ public class i0 extends na implements ls {
             return;
         }
         if (dVar != null) {
-            dVar.i(id.M0(2131747832, null), true, true);
+            dVar.i(id.M0(2131747831, null), true, true);
         }
-        this.y2.i(id.M0(2131747832, null), true, true);
-        this.w2.c(id.M0(2131747832, null), true, true);
+        this.y2.i(id.M0(2131747831, null), true, true);
+        this.w2.c(id.M0(2131747831, null), true, true);
     }
 
     public final void F1() {
         String M0;
         if (this.b2) {
-            this.w2.c(id.M0(2131749131, null), false, false);
+            this.w2.c(id.M0(2131749130, null), false, false);
             return;
         }
         int i7 = this.Z1;
         if (i7 == 19 || i7 == 32 || s1()) {
-            if (!wg.s.i()) {
+            if (!wg.r.i()) {
                 this.w2.f.setText(id.M0(r1() ? 2131753625 : 2131753663, null));
                 return;
             }
@@ -681,7 +681,7 @@ public class i0 extends na implements ls {
             if (e3Var2 == null || !e3Var2.m) {
                 return;
             }
-            this.w2.f.setText(id.M0(2131747832, null));
+            this.w2.f.setText(id.M0(2131747831, null));
             return;
         }
         if (i7 == 18 || i7 == 20 || i7 == 24 || i7 == 25 || i7 == 26 || i7 == 29 || i7 == 22 || i7 == 23 || i7 == 21 || i7 == 27 || i7 == 28 || i7 == 30 || i7 == 35) {
@@ -692,13 +692,13 @@ public class i0 extends na implements ls {
             return;
         }
         if (p10.i(this.a).q() || qp.s1(this.a).D3() || this.F2) {
-            this.w2.f.setText(id.M0(2131747832, null));
+            this.w2.f.setText(id.M0(2131747831, null));
             y yVar = this.w2;
             yVar.D.p = null;
             yVar.F.setVisibility(8);
             return;
         }
-        this.w2.f.setText(id.M0(2131749200, null));
+        this.w2.f.setText(id.M0(2131749199, null));
         androidx.emoji2.text.p pVar = this.E2;
         if (pVar == null) {
             y yVar2 = this.w2;
@@ -806,7 +806,7 @@ public class i0 extends na implements ls {
     }
 
     @Override // org.telegram.ui.Components.na
-    public final oj0 L0(pj0 pj0Var) {
+    public final pj0 L0(qj0 qj0Var) {
         return new b0(this);
     }
 
@@ -820,7 +820,7 @@ public class i0 extends na implements ls {
             return id.M0(2131752622, null);
         }
         if (i7 == 35) {
-            return id.M0(2131743877, null);
+            return id.M0(2131743874, null);
         }
         switch (i7) {
             case 18:
@@ -834,7 +834,7 @@ public class i0 extends na implements ls {
             case 27:
             case 28:
             case 29:
-                return id.M0(2131743877, null);
+                return id.M0(2131743874, null);
             case 19:
             case qs.T /* 30 */:
                 return id.M0(r1() ? 2131753625 : 2131753663, null);
@@ -843,14 +843,14 @@ public class i0 extends na implements ls {
             case 32:
                 return id.M0(2131753625, null);
             default:
-                return id.M0(2131748979, null);
+                return id.M0(2131748978, null);
         }
     }
 
     @Override // org.telegram.ui.Components.na
-    public final void U0(rt0 rt0Var) {
+    public final void U0(tt0 tt0Var) {
         int i7;
-        Context context = rt0Var.getContext();
+        Context context = tt0Var.getContext();
         fi.d dVar = new fi.d(context, this.I0, true);
         this.y2 = dVar;
         dVar.setFlickeringLoading(true);
@@ -863,24 +863,24 @@ public class i0 extends na implements ls {
         int i11 = 28;
         int i12 = 21;
         if (!this.p1 && (i7 = this.Z1) != 18 && i7 != 20 && i7 != 24 && i7 != 25 && i7 != 26 && i7 != 29 && i7 != 22 && i7 != 23 && i7 != 21 && i7 != 27 && i7 != 28 && i7 != 30 && i7 != 35) {
-            l00 l00Var = new l00(13, context, this);
-            this.D2 = l00Var;
-            r6.i(k6.h5, l00Var, this.I0);
-            rt0Var.addView(this.D2, ha.d(-1, 72.0f, 80, 0.0f, 0.0f, 0.0f, 0.0f));
+            n00 n00Var = new n00(13, context, this);
+            this.D2 = n00Var;
+            s6.h(l6.h5, n00Var, this.I0);
+            tt0Var.addView(this.D2, ha.d(-1, 72.0f, 80, 0.0f, 0.0f, 0.0f, 0.0f));
         }
         y yVar2 = this.w2;
         float f10 = (this.t0 / org.telegram.messenger.g0.p) + 16.0f;
-        rt0Var.addView(yVar2, ha.d(-1, 48.0f, 80, f10, 0.0f, f10, 12.0f));
+        tt0Var.addView(yVar2, ha.d(-1, 48.0f, 80, f10, 0.0f, f10, 12.0f));
         int L = org.telegram.messenger.g0.L(72.0f);
-        pj0 pj0Var = this.k1;
-        pj0Var.setPadding(0, 0, 0, L);
-        pj0Var.setClipToPadding(false);
-        pj0Var.setClipChildren(false);
-        pj0Var.setOnItemClickListener(new ai.k(this, i12));
-        pj0Var.setOnItemLongClickListener(new w(this, i10));
-        this.w2.w.setOnClickListener(new fk0(i11, this, context));
+        qj0 qj0Var = this.k1;
+        qj0Var.setPadding(0, 0, 0, L);
+        qj0Var.setClipToPadding(false);
+        qj0Var.setClipChildren(false);
+        qj0Var.setOnItemClickListener(new ai.k(this, i12));
+        qj0Var.setOnItemLongClickListener(new w(this, i10));
+        this.w2.w.setOnClickListener(new hk0(i11, this, context));
         this.w2.h.setOnClickListener(new t(this, 3));
-        this.B2 = new si0(pj0Var, true);
+        this.B2 = new ti0(qj0Var, true);
     }
 
     @Override // org.telegram.messenger.ls
@@ -928,7 +928,7 @@ public class i0 extends na implements ls {
             f2 f2Var2 = fragmentStack.size() >= 2 ? (f2) rf.b.g(2, fragmentStack) : null;
             f2 f2Var3 = fragmentStack.size() >= 3 ? (f2) rf.b.g(3, fragmentStack) : null;
             r6 = fragmentStack.size() >= 4 ? (f2) rf.b.g(4, fragmentStack) : null;
-            if (f2Var2 instanceof pn) {
+            if (f2Var2 instanceof rn) {
                 ((ActionBarLayout) f2Var.getParentLayout()).d0(f2Var2, false);
             }
             dismiss();
@@ -945,7 +945,7 @@ public class i0 extends na implements ls {
                 return;
             }
         }
-        if ((lastFragment instanceof an) && booleanValue) {
+        if ((lastFragment instanceof cn) && booleanValue) {
             wg.h.f(lastFragment, chat, true);
             return;
         }
@@ -954,7 +954,7 @@ public class i0 extends na implements ls {
             ArrayList arrayList = new ArrayList();
             for (int size = fragmentStack2.size() - 2; size >= 0; size--) {
                 f2 f2Var4 = (f2) fragmentStack2.get(size);
-                if ((f2Var4 instanceof an) || (f2Var4 instanceof ww)) {
+                if ((f2Var4 instanceof cn) || (f2Var4 instanceof yw)) {
                     r6 = f2Var4;
                     break;
                 }
@@ -982,38 +982,38 @@ public class i0 extends na implements ls {
                 wg.h.f(LaunchActivity.Q(), chat, false);
                 return;
             }
-            an ra2 = an.ra(-chat.id);
-            LaunchActivity.Q().presentFragment(ra2, false, false);
+            cn ta2 = cn.ta(-chat.id);
+            LaunchActivity.Q().presentFragment(ta2, false, false);
             va.w();
             dismiss();
-            wg.h.f(ra2, chat, false);
+            wg.h.f(ta2, chat, false);
             return;
         }
         va vaVar2 = va.F2;
         if (vaVar2 != null && vaVar2.d) {
-            an ra3 = an.ra(-chat.id);
-            LaunchActivity.Q().presentFragment(ra3, false, false);
+            cn ta3 = cn.ta(-chat.id);
+            LaunchActivity.Q().presentFragment(ta3, false, false);
             va.w();
             dismiss();
-            wg.h.f(ra3, chat, true);
+            wg.h.f(ta3, chat, true);
             return;
         }
         List fragmentStack3 = f2Var.getParentLayout().getFragmentStack();
         r6 = fragmentStack3.size() >= 2 ? (f2) rf.b.g(2, fragmentStack3) : null;
         f2Var.finishFragment();
         dismiss();
-        if (r6 instanceof an) {
+        if (r6 instanceof cn) {
             wg.h.f(r6, chat, true);
         }
     }
 
-    public final void h1(final z70 z70Var, boolean z9) {
-        if (!z70Var.a() || z9) {
+    public final void h1(final a80 a80Var, boolean z9) {
+        if (!a80Var.a() || z9) {
             final int i7 = 1;
-            z70Var.setLoading(true);
+            a80Var.setLoading(true);
             qp.s1(this.a).G0();
             final int i10 = 0;
-            wg.s.a(-this.S1, Arrays.asList(Integer.valueOf(this.U1.g)), new c20(this) { // from class: ug.x
+            wg.r.a(-this.S1, Arrays.asList(Integer.valueOf(this.U1.g)), new c20(this) { // from class: ug.x
                 public final /* synthetic */ i0 b;
 
                 {
@@ -1025,22 +1025,22 @@ public class i0 extends na implements ls {
                     switch (i10) {
                         case 0:
                             i0 i0Var = this.b;
-                            qp.s1(i0Var.a).G0().a(i0Var.S1, new v3(i0Var, z70Var, (TL_stories.TL_premium_myBoosts) obj, 11));
+                            qp.s1(i0Var.a).G0().a(i0Var.S1, new v3(i0Var, a80Var, (TL_stories.TL_premium_myBoosts) obj, 11));
                             break;
                         default:
                             TLRPC.TL_error tL_error = (TLRPC.TL_error) obj;
                             boolean startsWith = tL_error.text.startsWith("FLOOD_WAIT");
-                            z70 z70Var2 = z70Var;
+                            a80 a80Var2 = a80Var;
                             if (startsWith) {
                                 int intValue = Utilities.z(tL_error.text).intValue();
                                 if (intValue <= 5) {
-                                    org.telegram.messenger.g0.i3(new u9.f(3, this.b, z70Var2), intValue * 1000);
+                                    org.telegram.messenger.g0.i3(new u9.f(4, this.b, a80Var2), intValue * 1000);
                                     break;
                                 } else {
                                     wg.h.g(intValue);
                                 }
                             }
-                            z70Var2.setLoading(false);
+                            a80Var2.setLoading(false);
                             break;
                     }
                 }
@@ -1056,22 +1056,22 @@ public class i0 extends na implements ls {
                     switch (i7) {
                         case 0:
                             i0 i0Var = this.b;
-                            qp.s1(i0Var.a).G0().a(i0Var.S1, new v3(i0Var, z70Var, (TL_stories.TL_premium_myBoosts) obj, 11));
+                            qp.s1(i0Var.a).G0().a(i0Var.S1, new v3(i0Var, a80Var, (TL_stories.TL_premium_myBoosts) obj, 11));
                             break;
                         default:
                             TLRPC.TL_error tL_error = (TLRPC.TL_error) obj;
                             boolean startsWith = tL_error.text.startsWith("FLOOD_WAIT");
-                            z70 z70Var2 = z70Var;
+                            a80 a80Var2 = a80Var;
                             if (startsWith) {
                                 int intValue = Utilities.z(tL_error.text).intValue();
                                 if (intValue <= 5) {
-                                    org.telegram.messenger.g0.i3(new u9.f(3, this.b, z70Var2), intValue * 1000);
+                                    org.telegram.messenger.g0.i3(new u9.f(4, this.b, a80Var2), intValue * 1000);
                                     break;
                                 } else {
                                     wg.h.g(intValue);
                                 }
                             }
-                            z70Var2.setLoading(false);
+                            a80Var2.setLoading(false);
                             break;
                     }
                 }
@@ -1127,44 +1127,44 @@ public class i0 extends na implements ls {
         TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = this.T1;
         boolean z10 = tL_premium_boostsStatus.boosts == tL_premium_boostsStatus.current_level_boosts;
         if (s1() && this.T1.next_level_boosts != 0 && z9) {
-            i7 = r1() ? 2131749421 : 2131752352;
+            i7 = r1() ? 2131749420 : 2131752352;
             TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus2 = this.T1;
             int i10 = tL_premium_boostsStatus2.next_level_boosts - tL_premium_boostsStatus2.boosts;
             return id.a0(null, null, i7, str, id.G(i10, "MoreBoosts", Integer.valueOf(i10)));
         }
         if (z10 && this.U1.d) {
             if (this.T1.level == 1) {
-                return id.a0(null, null, r1() ? 2131749494 : 2131752450, new Object[0]);
+                return id.a0(null, null, r1() ? 2131749493 : 2131752450, new Object[0]);
             }
-            return id.a0(null, null, r1() ? 2131749493 : 2131752449, Integer.valueOf(this.T1.level), id.G(this.T1.level, "BoostStories", new Object[0]));
+            return id.a0(null, null, r1() ? 2131749492 : 2131752449, Integer.valueOf(this.T1.level), id.G(this.T1.level, "BoostStories", new Object[0]));
         }
         if (this.U1.d) {
             TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus3 = this.T1;
             if (tL_premium_boostsStatus3.level == 0) {
-                i7 = r1() ? 2131749421 : 2131752352;
+                i7 = r1() ? 2131749420 : 2131752352;
                 TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus4 = this.T1;
                 int i11 = tL_premium_boostsStatus4.next_level_boosts - tL_premium_boostsStatus4.boosts;
                 return id.a0(null, null, i7, str, id.G(i11, "MoreBoosts", Integer.valueOf(i11)));
             }
             if (tL_premium_boostsStatus3.next_level_boosts == 0) {
-                return id.a0(null, null, r1() ? 2131749493 : 2131752449, Integer.valueOf(this.T1.level), id.G(this.T1.level + 1, "BoostStories", new Object[0]));
+                return id.a0(null, null, r1() ? 2131749492 : 2131752449, Integer.valueOf(this.T1.level), id.G(this.T1.level + 1, "BoostStories", new Object[0]));
             }
-            i7 = r1() ? 2131749421 : 2131752352;
+            i7 = r1() ? 2131749420 : 2131752352;
             TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus5 = this.T1;
             int i12 = tL_premium_boostsStatus5.next_level_boosts - tL_premium_boostsStatus5.boosts;
             return id.a0(null, null, i7, str, id.G(i12, "MoreBoosts", Integer.valueOf(i12)));
         }
         TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus6 = this.T1;
         if (tL_premium_boostsStatus6.level == 0) {
-            i7 = r1() ? 2131749421 : 2131752352;
+            i7 = r1() ? 2131749420 : 2131752352;
             TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus7 = this.T1;
             int i13 = tL_premium_boostsStatus7.next_level_boosts - tL_premium_boostsStatus7.boosts;
             return id.a0(null, null, i7, str, id.G(i13, "MoreBoosts", Integer.valueOf(i13)));
         }
         if (tL_premium_boostsStatus6.next_level_boosts == 0) {
-            return id.a0(null, null, r1() ? 2131749493 : 2131752449, Integer.valueOf(this.T1.level), id.G(this.T1.level + 1, "BoostStories", new Object[0]));
+            return id.a0(null, null, r1() ? 2131749492 : 2131752449, Integer.valueOf(this.T1.level), id.G(this.T1.level + 1, "BoostStories", new Object[0]));
         }
-        i7 = r1() ? 2131749421 : 2131752352;
+        i7 = r1() ? 2131749420 : 2131752352;
         TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus8 = this.T1;
         int i14 = tL_premium_boostsStatus8.next_level_boosts - tL_premium_boostsStatus8.boosts;
         return id.a0(null, null, i7, str, id.G(i14, "MoreBoosts", Integer.valueOf(i14)));
@@ -1185,7 +1185,7 @@ public class i0 extends na implements ls {
                 return id.M0(r1() ? 2131753625 : 2131753663, null);
             }
             if (this.U1.d) {
-                return id.M0(r1() ? 2131742842 : 2131742844, null);
+                return id.M0(r1() ? 2131742839 : 2131742841, null);
             }
             return id.M0(r1() ? 2131753527 : 2131753528, null);
         }
@@ -1194,7 +1194,7 @@ public class i0 extends na implements ls {
         }
         TLRPC.Chat M0 = qp.s1(this.a).M0(Long.valueOf(-this.S1));
         if (this.U1.d) {
-            return id.a0("YouBoostedChannel2", null, 2131742843, M0.title);
+            return id.a0("YouBoostedChannel2", null, 2131742840, M0.title);
         }
         return id.M0(r1() ? 2131753625 : 2131753663, null);
     }
@@ -1233,7 +1233,7 @@ public class i0 extends na implements ls {
         int w02;
         super.s0();
         try {
-            if (this.F0 >= 0 || this.G0 != this.L2 || (w02 = k6.w0(k6.h5, this.I0)) == this.G0) {
+            if (this.F0 >= 0 || this.G0 != this.L2 || (w02 = l6.w0(l6.h5, this.I0)) == this.G0) {
                 return;
             }
             this.G0 = w02;
@@ -1318,7 +1318,7 @@ public class i0 extends na implements ls {
             h0Var.a = textView;
             textView.setTypeface(org.telegram.messenger.g0.o());
             h0Var.a.setTextSize(1, 20.0f);
-            r6.V(h0Var.a, k6.G6, i0Var.I0);
+            s6.U(h0Var.a, l6.G6, i0Var.I0);
             h0Var.a.setGravity(17);
             h0Var.addView(h0Var.a, indexOfChild3, ha.t(-2, -2, 1, 0, 22, 0, 0));
         }
@@ -1329,7 +1329,7 @@ public class i0 extends na implements ls {
         TextView textView3 = h0Var.b;
         textView3.setLineSpacing(textView3.getLineSpacingExtra(), h0Var.b.getLineSpacingMultiplier() * 1.1f);
         h0Var.b.setGravity(1);
-        r6.V(h0Var.b, k6.G6, i0Var.I0);
+        s6.U(h0Var.b, l6.G6, i0Var.I0);
         h0Var.addView(h0Var.b, indexOfChild, ha.t(-2, -2, 1, 24, -2, 24, 17));
         this.V1.a.setText(m1());
         TextView textView4 = this.V1.b;
@@ -1338,27 +1338,27 @@ public class i0 extends na implements ls {
         int i7 = this.Z1;
         String str = null;
         if (i7 == 20) {
-            str = id.a0(null, null, r12 ? 2131749419 : 2131752349, Integer.valueOf(j1()));
+            str = id.a0(null, null, r12 ? 2131749418 : 2131752349, Integer.valueOf(j1()));
         } else if (i7 == 24) {
-            str = id.a0(null, null, r12 ? 2131749415 : 2131752346, Integer.valueOf(j1()));
+            str = id.a0(null, null, r12 ? 2131749414 : 2131752346, Integer.valueOf(j1()));
         } else if (i7 == 29) {
-            str = id.a0(null, null, 2131749418, Integer.valueOf(s12.x5));
+            str = id.a0(null, null, 2131749417, Integer.valueOf(s12.x5));
         } else if (i7 == 30) {
             str = id.a0(null, null, 2131752343, Integer.valueOf(s12.z4));
         } else if (i7 == 35) {
             str = id.a0(null, null, 2131752350, Integer.valueOf(s12.A4));
         } else if (i7 == 25) {
-            str = id.a0(null, null, r12 ? 2131749416 : 2131752347, Integer.valueOf(r12 ? s12.w5 : s12.s5));
+            str = id.a0(null, null, r12 ? 2131749415 : 2131752347, Integer.valueOf(r12 ? s12.w5 : s12.s5));
         } else if (i7 == 26) {
-            str = id.a0(null, null, r12 ? 2131749411 : 2131752341, Integer.valueOf(r12 ? s12.w5 : s12.s5));
+            str = id.a0(null, null, r12 ? 2131749410 : 2131752341, Integer.valueOf(r12 ? s12.w5 : s12.s5));
         } else if (i7 == 27) {
-            str = id.a0(null, null, r12 ? 2131749413 : 2131752344, Integer.valueOf(s12.q5));
+            str = id.a0(null, null, r12 ? 2131749412 : 2131752344, Integer.valueOf(s12.q5));
         } else if (i7 == 28) {
-            str = id.a0(null, null, r12 ? 2131749414 : 2131752345, Integer.valueOf(r12 ? s12.v5 : s12.r5));
+            str = id.a0(null, null, r12 ? 2131749413 : 2131752345, Integer.valueOf(r12 ? s12.v5 : s12.r5));
         } else if (i7 == 22) {
-            str = id.a0(null, null, r12 ? 2131749412 : 2131752342, Integer.valueOf(r12 ? s12.y5 : s12.t5));
+            str = id.a0(null, null, r12 ? 2131749411 : 2131752342, Integer.valueOf(r12 ? s12.y5 : s12.t5));
         } else if (i7 == 23) {
-            str = id.a0(null, null, r12 ? 2131749417 : 2131752348, Integer.valueOf(r12 ? s12.z5 : s12.u5));
+            str = id.a0(null, null, r12 ? 2131749416 : 2131752348, Integer.valueOf(r12 ? s12.z5 : s12.u5));
         }
         if (str == null) {
             str = l1(false);
@@ -1387,21 +1387,21 @@ public class i0 extends na implements ls {
         if (arrayList.size() == 1) {
             TLRPC.Chat chat = (TLRPC.Chat) arrayList.get(0);
             if (this.n2) {
-                u1Var.T = org.telegram.messenger.g0.X2(id.a0("RevokeLinkAlertChannel", null, 2131746024, qp.s1(this.a).U2 + "/" + t3.K(chat, false), chat.title));
+                u1Var.T = org.telegram.messenger.g0.X2(id.a0("RevokeLinkAlertChannel", null, 2131746021, qp.s1(this.a).U2 + "/" + t3.K(chat, false), chat.title));
             } else {
-                u1Var.T = org.telegram.messenger.g0.X2(id.a0("RevokeLinkAlert", null, 2131746025, qp.s1(this.a).U2 + "/" + t3.K(chat, false), chat.title));
+                u1Var.T = org.telegram.messenger.g0.X2(id.a0("RevokeLinkAlert", null, 2131746022, qp.s1(this.a).U2 + "/" + t3.K(chat, false), chat.title));
             }
         } else if (this.n2) {
-            u1Var.T = org.telegram.messenger.g0.X2(id.a0("RevokeLinksAlertChannel", null, 2131746021, new Object[0]));
+            u1Var.T = org.telegram.messenger.g0.X2(id.a0("RevokeLinksAlertChannel", null, 2131746018, new Object[0]));
         } else {
-            u1Var.T = org.telegram.messenger.g0.X2(id.a0("RevokeLinksAlert", null, 2131746022, new Object[0]));
+            u1Var.T = org.telegram.messenger.g0.X2(id.a0("RevokeLinksAlert", null, 2131746019, new Object[0]));
         }
         alertDialog$Builder.h(id.M0(2131752589, null), null);
-        alertDialog$Builder.k(id.M0(2131746027, null), new org.telegram.ui.web.a0(14, this, arrayList));
+        alertDialog$Builder.k(id.M0(2131746024, null), new org.telegram.ui.web.a0(14, this, arrayList));
         u1Var.show();
         TextView textView = (TextView) u1Var.d(-1);
         if (textView != null) {
-            r6.V(textView, k6.q7, this.I0);
+            s6.U(textView, l6.q7, this.I0);
         }
     }
 

@@ -1,150 +1,26 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.view.View;
-import android.view.ViewTreeObserver;
-import android.view.WindowManager;
-import android.widget.PopupWindow;
-import java.lang.reflect.Field;
+import android.content.Context;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public abstract class h11 extends PopupWindow {
-    public static final Field c;
-    public static final org.telegram.ui.ActionBar.a1 d = new org.telegram.ui.ActionBar.a1(2);
-    public final ViewTreeObserver.OnScrollChangedListener a;
-    public ViewTreeObserver b;
+public final class h11 extends org.telegram.ui.Components.av0 {
+    public final /* synthetic */ k01 G3;
 
-    static {
-        Field field = null;
-        try {
-            field = PopupWindow.class.getDeclaredField("mOnScrollChangedListener");
-            field.setAccessible(true);
-        } catch (NoSuchFieldException unused) {
-        }
-        c = field;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public h11(k01 k01Var, Context context, int i7, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(i7, context, g6Var);
+        this.G3 = k01Var;
     }
 
-    public h11(q11 q11Var) {
-        super(q11Var, -2, -2);
-        setFocusable(true);
-        setAnimationStyle(0);
-        setOutsideTouchable(true);
-        setClippingEnabled(true);
-        setInputMethodMode(0);
-        setSoftInputMode(4);
-        Field field = c;
-        if (field != null) {
-            try {
-                this.a = (ViewTreeObserver.OnScrollChangedListener) field.get(this);
-                field.set(this, d);
-            } catch (Exception unused) {
-                this.a = null;
-            }
-        }
+    @Override // org.telegram.ui.Components.av0
+    public final boolean D1() {
+        return org.telegram.messenger.sc.e(16388) || this.G3.F.W == 4;
     }
 
-    public final void b() {
-        View rootView = getContentView().getRootView();
-        WindowManager windowManager = (WindowManager) getContentView().getContext().getSystemService("window");
-        WindowManager.LayoutParams layoutParams = (WindowManager.LayoutParams) rootView.getLayoutParams();
-        layoutParams.flags |= 2;
-        layoutParams.dimAmount = 0.2f;
-        windowManager.updateViewLayout(rootView, layoutParams);
-    }
-
-    public final void c(View view) {
-        if (getContentView() instanceof q11) {
-            ((q11) getContentView()).s(new g11(this, 1));
-        }
-        if (this.a != null) {
-            ViewTreeObserver viewTreeObserver = view.getWindowToken() != null ? view.getViewTreeObserver() : null;
-            ViewTreeObserver viewTreeObserver2 = this.b;
-            if (viewTreeObserver != viewTreeObserver2) {
-                if (viewTreeObserver2 != null && viewTreeObserver2.isAlive()) {
-                    this.b.removeOnScrollChangedListener(this.a);
-                }
-                this.b = viewTreeObserver;
-                if (viewTreeObserver != null) {
-                    viewTreeObserver.addOnScrollChangedListener(this.a);
-                }
-            }
-        }
-    }
-
-    @Override // android.widget.PopupWindow
-    public void dismiss() {
-        if (!(getContentView() instanceof q11)) {
-            super.dismiss();
-            return;
-        }
-        q11 q11Var = (q11) getContentView();
-        g11 g11Var = new g11(this, 0);
-        Integer num = q11Var.Z1;
-        if (num != null) {
-            q11.d2.put(num, q11Var.r0.e0());
-        }
-        ValueAnimator valueAnimator = q11Var.W1;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-            q11Var.W1 = null;
-        }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        q11Var.W1 = ofFloat;
-        ofFloat.addUpdateListener(new sz0(q11Var, 3));
-        q11Var.W1.addListener(new org.telegram.ui.Components.v50(15, q11Var, g11Var));
-        q11Var.W1.setDuration(200L);
-        q11Var.W1.setInterpolator(org.telegram.ui.Components.xq.h);
-        q11Var.W1.start();
-        i01 i01Var = q11Var.f0;
-        if (i01Var != null) {
-            org.telegram.messenger.g0.v1(i01Var.h);
-        }
-        View rootView = getContentView().getRootView();
-        WindowManager windowManager = (WindowManager) getContentView().getContext().getSystemService("window");
-        if (rootView.getLayoutParams() == null || !(rootView.getLayoutParams() instanceof WindowManager.LayoutParams)) {
-            return;
-        }
-        WindowManager.LayoutParams layoutParams = (WindowManager.LayoutParams) rootView.getLayoutParams();
-        try {
-            int i7 = layoutParams.flags;
-            if ((i7 & 2) != 0) {
-                layoutParams.flags = i7 & (-3);
-                layoutParams.dimAmount = 0.0f;
-                windowManager.updateViewLayout(rootView, layoutParams);
-            }
-        } catch (Exception unused) {
-        }
-    }
-
-    @Override // android.widget.PopupWindow
-    public final void showAsDropDown(View view) {
-        super.showAsDropDown(view);
-        c(view);
-    }
-
-    @Override // android.widget.PopupWindow
-    public final void showAtLocation(View view, int i7, int i10, int i11) {
-        ViewTreeObserver viewTreeObserver;
-        super.showAtLocation(view, i7, i10, i11);
-        if (this.a == null || (viewTreeObserver = this.b) == null) {
-            return;
-        }
-        if (viewTreeObserver.isAlive()) {
-            this.b.removeOnScrollChangedListener(this.a);
-        }
-        this.b = null;
-    }
-
-    @Override // android.widget.PopupWindow
-    public final void showAsDropDown(View view, int i7, int i10) {
-        super.showAsDropDown(view, i7, i10);
-        c(view);
-    }
-
-    @Override // android.widget.PopupWindow
-    public final void showAsDropDown(View view, int i7, int i10, int i11) {
-        super.showAsDropDown(view, i7, i10, i11);
-        c(view);
+    @Override // org.telegram.ui.Components.av0
+    public final void H1(int i7) {
+        super.H1(i7);
+        this.G3.d(false);
     }
 }

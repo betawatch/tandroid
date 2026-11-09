@@ -16,13 +16,13 @@ import org.telegram.messenger.id;
 import org.telegram.messenger.qp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.s6;
 import org.telegram.ui.Cells.y;
 import org.telegram.ui.Components.y8;
 import org.telegram.ui.fe;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class d {
     public final f2 a;
@@ -80,7 +80,7 @@ public final class d {
             FrameLayout frameLayout = new FrameLayout(f2Var.getParentActivity());
             this.d = frameLayout;
             final int i7 = 0;
-            frameLayout.setBackground(k6.N0(false));
+            frameLayout.setBackground(l6.N0(false));
             this.d.setOnClickListener(new View.OnClickListener(this) { // from class: yh.a
                 public final /* synthetic */ d b;
 
@@ -127,19 +127,19 @@ public final class d {
             this.g.setGravity(16);
             this.g.setSingleLine();
             this.g.setText((CharSequence) null);
-            r6.V(this.g, k6.Te, f2Var.getResourceProvider());
+            s6.U(this.g, l6.Te, f2Var.getResourceProvider());
             this.g.setTypeface(g0.o());
             this.f.addView(this.g, ha.d(-1, -1.0f, 48, 0.0f, 0.0f, 0.0f, 0.0f));
             this.h = new ImageView(f2Var.getParentActivity());
-            int i12 = k6.x7;
+            int i12 = l6.x7;
             int themedColor = f2Var.getThemedColor(i12);
-            y h02 = k6.h0(436207615 & themedColor, 1, g0.L(14.0f));
+            y h02 = l6.h0(436207615 & themedColor, 1, g0.L(14.0f));
             if ((themedColor >>> 24) == 255) {
-                r6.R(this.h, h02, null, r6.h(i12, 25), f2Var.getResourceProvider());
+                s6.Q(this.h, h02, null, s6.g(i12, 25), f2Var.getResourceProvider());
             } else {
                 this.h.setBackground(h02);
             }
-            r6.t(this.h, k6.Re, f2Var.getResourceProvider(), PorterDuff.Mode.MULTIPLY);
+            s6.s(this.h, l6.Re, f2Var.getResourceProvider(), PorterDuff.Mode.MULTIPLY);
             this.h.setContentDescription(id.M0(2131752041, null));
             this.h.setImageResource(R.drawable.miniplayer_close);
             this.h.setScaleType(ImageView.ScaleType.CENTER);

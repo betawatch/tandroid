@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class l0 extends org.telegram.ui.web.k1 {
     public final /* synthetic */ g4 B0;
@@ -125,7 +125,7 @@ public final class l0 extends org.telegram.ui.web.k1 {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.a0, z9 ? 1.0f : 0.0f);
             this.w0 = ofFloat;
             ofFloat.addUpdateListener(new fi.v3(this, 23));
-            this.w0.addListener(new z40(13, this, z9));
+            this.w0.addListener(new b50(13, this, z9));
             this.w0.setInterpolator(org.telegram.ui.Components.xq.h);
             this.w0.setDuration(360L);
             this.w0.start();

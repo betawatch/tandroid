@@ -1,16 +1,16 @@
 package sc;
 
-import org.telegram.ui.hy0;
+import org.telegram.ui.ky0;
 import tc.g;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class b {
-    public final hy0 a;
+    public final ky0 a;
     public final Exception b;
 
-    public b(hy0 hy0Var, g gVar) {
+    public b(ky0 ky0Var, g gVar) {
         this.b = gVar;
-        this.a = hy0Var;
+        this.a = ky0Var;
     }
 }

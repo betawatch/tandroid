@@ -1,17 +1,15 @@
 package org.telegram.ui.ActionBar;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+import android.graphics.drawable.Drawable;
+import java.util.ArrayList;
+
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class n6 {
-    public final int a;
-    public final int b;
-    public final int c;
-    public final float d;
-
-    public n6(int i7, int i10, float f10, int i11) {
-        this.a = i7;
-        this.b = i10;
-        this.c = i11;
-        this.d = f10;
-    }
+    public final m6[] a = new m6[6];
+    public ArrayList b;
+    public ArrayList c;
+    public Drawable d;
+    public m6 e;
+    public m6 f;
 }

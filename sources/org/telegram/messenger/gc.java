@@ -43,9 +43,9 @@ import java.util.regex.Pattern;
 import java.util.zip.GZIPInputStream;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.zg0;
+import org.telegram.ui.Components.ah0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class gc {
     public static Bitmap M;
@@ -636,7 +636,7 @@ public final class gc {
             if (t6.h > 50 || t6.w > 50) {
                 w7.G(p10.s0);
                 File J3 = w7.J(t6, null, true, true);
-                if (ij.S5(message)) {
+                if (ij.R5(message)) {
                     J3 = new File(J3.getAbsolutePath() + ".enc");
                     z9 = true;
                 } else {
@@ -766,7 +766,7 @@ public final class gc {
                         if (photoSize.h <= i10 || photoSize.w > i10) {
                             w7.G(p10.s0);
                             J2 = w7.J(photoSize, null, true, true);
-                            if (ij.S5(message)) {
+                            if (ij.R5(message)) {
                                 i7 = i11;
                             } else {
                                 J2 = new File(J2.getAbsolutePath() + ".enc");
@@ -897,7 +897,7 @@ public final class gc {
                         }
                         w7.G(p10.s0);
                         J2 = w7.J(photoSize, null, true, true);
-                        if (ij.S5(message)) {
+                        if (ij.R5(message)) {
                         }
                         if (!J2.exists()) {
                         }
@@ -1083,12 +1083,12 @@ public final class gc {
             org.telegram.ui.Components.v5 v5Var = (org.telegram.ui.Components.v5) bitmapDrawable;
             return Math.max(v5Var.getIntrinsicHeight() * v5Var.getIntrinsicWidth(), v5Var.j0 * v5Var.i0) * 12;
         }
-        if (!(bitmapDrawable instanceof zg0)) {
+        if (!(bitmapDrawable instanceof ah0)) {
             return bitmapDrawable.getBitmap().getByteCount();
         }
-        zg0 zg0Var = (zg0) bitmapDrawable;
-        int i7 = zg0Var.b * zg0Var.c;
-        return zg0Var.G ? i7 * 2 : i7 * 8;
+        ah0 ah0Var = (ah0) bitmapDrawable;
+        int i7 = ah0Var.b * ah0Var.c;
+        return ah0Var.G ? i7 * 2 : i7 * 8;
     }
 
     public static boolean d0(Uri uri, String str) {
@@ -1126,7 +1126,7 @@ public final class gc {
         if (str.endsWith("_firstframe") || str.endsWith("_lastframe")) {
             return false;
         }
-        return (hcVar != null && (ij.L2(hcVar.i, true) || hcVar.p == 1 || ij.O4(hcVar.i))) || I(str);
+        return (hcVar != null && (ij.K2(hcVar.i, true) || hcVar.p == 1 || ij.N4(hcVar.i))) || I(str);
     }
 
     public static boolean f(File file, File file2, int i7) {
@@ -1625,7 +1625,7 @@ public final class gc {
                 }
             }
             Drawable drawable3 = s9;
-            if ((drawable3 instanceof zg0 ? ((zg0) drawable3).u() : drawable3 instanceof org.telegram.ui.Components.v5 ? ((org.telegram.ui.Components.v5) drawable3).s() : true) && drawable3 != null) {
+            if ((drawable3 instanceof ah0 ? ((ah0) drawable3).u() : drawable3 instanceof org.telegram.ui.Components.v5 ? ((org.telegram.ui.Components.v5) drawable3).s() : true) && drawable3 != null) {
                 h(imageReceiver, true);
                 imageReceiver.x0(drawable3, str21, 3, true, i16);
                 if (!imageReceiver.S0) {
@@ -1805,7 +1805,7 @@ public final class gc {
                                                                 str29 = ".mkv";
                                                             }
                                                             q11 = rf.b.r(q11, str29);
-                                                            if (ij.L4(hcVar7.i) || ij.t3(hcVar7.i, false) || ij.j4(hcVar7.i) || ij.y(hcVar7.i)) {
+                                                            if (ij.K4(hcVar7.i) || ij.s3(hcVar7.i, false) || ij.i4(hcVar7.i) || ij.y(hcVar7.i)) {
                                                                 z18 = false;
                                                             }
                                                             z18 = true;
@@ -2745,7 +2745,7 @@ public final class gc {
                         str9 = "athumb";
                         file2 = w7.M(ijVar.k, false, true);
                         str10 = str24;
-                        i18 = ij.M4(ijVar.k) ? 2 : ij.S4(ijVar.k) ? 1 : ij.o1(ijVar.k) instanceof TLRPC.TL_messageMediaDocument ? 3 : ij.o1(ijVar.k) instanceof TLRPC.TL_messageMediaPhoto ? 0 : 4;
+                        i18 = ij.L4(ijVar.k) ? 2 : ij.R4(ijVar.k) ? 1 : ij.n1(ijVar.k) instanceof TLRPC.TL_messageMediaDocument ? 3 : ij.n1(ijVar.k) instanceof TLRPC.TL_messageMediaPhoto ? 0 : 4;
                         document2 = F0;
                         z15 = false;
                     } else {
@@ -2754,7 +2754,7 @@ public final class gc {
                         if (document3 != null) {
                             w7.G(i28);
                             File J2 = w7.J(document3, null, true, true);
-                            int i30 = ij.L4(document3) ? 2 : 3;
+                            int i30 = ij.K4(document3) ? 2 : 3;
                             document2 = document3;
                             file2 = J2;
                             z15 = true;
@@ -2825,7 +2825,7 @@ public final class gc {
                                             int i31 = 2;
                                             if (hcVar2.p == 2) {
                                                 str11 = str8;
-                                            } else if (ij.s3(hcVar2.v) || ij.t3(hcVar2.i, false) || ij.j4(hcVar2.i) || ij.O4(hcVar2.i)) {
+                                            } else if (ij.r3(hcVar2.v) || ij.s3(hcVar2.i, false) || ij.i4(hcVar2.i) || ij.N4(hcVar2.i)) {
                                                 str11 = str8;
                                                 i31 = 2;
                                             } else {
@@ -2888,7 +2888,7 @@ public final class gc {
                                                                             file7 = new File(w7.z(4), str13);
                                                                         } else {
                                                                             gcVar = gcVar2;
-                                                                            file7 = ij.L4(document4) ? new File(w7.z(2), str13) : new File(w7.z(3), str13);
+                                                                            file7 = ij.K4(document4) ? new File(w7.z(2), str13) : new File(w7.z(3), str13);
                                                                         }
                                                                         if ((gc.I(str21) || "g".equals(str21) || "gl".equals(str21)) && !file7.exists()) {
                                                                             File z27 = w7.z(4);

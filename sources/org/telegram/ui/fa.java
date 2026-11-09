@@ -4,7 +4,7 @@ import android.view.KeyEvent;
 import android.widget.TextView;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class fa implements TextView.OnEditorActionListener {
     public final /* synthetic */ int a;
@@ -32,62 +32,62 @@ public final /* synthetic */ class fa implements TextView.OnEditorActionListener
                 }
                 return false;
             case 1:
-                an anVar = (an) this.b;
+                cn cnVar = (cn) this.b;
                 if (i7 == 6) {
-                    sh.b bVar = anVar.gd;
-                    if (bVar != null && (q1Var = bVar.n) != null) {
-                        anVar.Ta(q1Var);
+                    sh.c cVar = cnVar.id;
+                    if (cVar != null && (q1Var = cVar.n) != null) {
+                        cnVar.Va(q1Var);
                         return true;
                     }
                 } else {
-                    anVar.getClass();
+                    cnVar.getClass();
                 }
                 return false;
             case 2:
-                pn pnVar = (pn) this.b;
+                rn rnVar = (rn) this.b;
                 if (i7 == 6) {
-                    org.telegram.ui.ActionBar.b5 b5Var2 = pnVar.a;
+                    org.telegram.ui.ActionBar.b5 b5Var2 = rnVar.a;
                     if (b5Var2 != null) {
                         b5Var2.performClick();
                         return true;
                     }
                 } else {
-                    pnVar.getClass();
+                    rnVar.getClass();
                 }
                 return false;
             case 3:
-                yq yqVar = (yq) this.b;
+                ar arVar = (ar) this.b;
                 if (i7 == 5) {
-                    yqVar.a();
+                    arVar.a();
                     return true;
                 }
-                yqVar.getClass();
+                arVar.getClass();
                 return false;
             case 4:
-                return i7 == 6 && ((w40) this.b).t0();
+                return i7 == 6 && ((y40) this.b).t0();
             case 5:
-                xb0 xb0Var = (xb0) this.b;
+                zb0 zb0Var = (zb0) this.b;
                 if (i7 == 5) {
-                    xb0Var.h(null);
+                    zb0Var.h(null);
                     return true;
                 }
-                xb0Var.getClass();
+                zb0Var.getClass();
                 return false;
             case 6:
-                ec0 ec0Var = (ec0) this.b;
+                gc0 gc0Var = (gc0) this.b;
                 if (i7 == 5) {
-                    ec0Var.h(null);
+                    gc0Var.h(null);
                     return true;
                 }
-                ec0Var.getClass();
+                gc0Var.getClass();
                 return false;
             case 7:
-                sc0 sc0Var = (sc0) this.b;
+                uc0 uc0Var = (uc0) this.b;
                 if (i7 == 5) {
-                    sc0Var.h(null);
+                    uc0Var.h(null);
                     return true;
                 }
-                sc0Var.getClass();
+                uc0Var.getClass();
                 return false;
             case 8:
                 PasscodeActivity passcodeActivity = (PasscodeActivity) this.b;
@@ -102,39 +102,39 @@ public final /* synthetic */ class fa implements TextView.OnEditorActionListener
                 passcodeActivity.u0();
                 return true;
             case 9:
-                xj0 xj0Var = (xj0) this.b;
+                zj0 zj0Var = (zj0) this.b;
                 if (i7 == 5) {
-                    xj0Var.h(null);
+                    zj0Var.h(null);
                     return true;
                 }
-                xj0Var.getClass();
+                zj0Var.getClass();
                 return false;
             case 10:
-                ux0 ux0Var = (ux0) this.b;
-                ux0Var.getClass();
+                yx0 yx0Var = (yx0) this.b;
+                yx0Var.getClass();
                 if (i7 != 5) {
                     if (i7 != 6) {
                         return false;
                     }
-                    ux0Var.finishFragment();
+                    yx0Var.finishFragment();
                     return true;
                 }
                 int intValue = ((Integer) textView.getTag()).intValue() + 1;
-                EditTextBoldCursor[] editTextBoldCursorArr = ux0Var.a;
+                EditTextBoldCursor[] editTextBoldCursorArr = yx0Var.a;
                 if (intValue >= editTextBoldCursorArr.length) {
                     return true;
                 }
                 editTextBoldCursorArr[intValue].requestFocus();
                 return true;
             case 11:
-                a21 a21Var = (a21) this.b;
+                c21 c21Var = (c21) this.b;
                 if (keyEvent == null) {
                     return false;
                 }
                 if ((keyEvent.getAction() != 1 || keyEvent.getKeyCode() != 84) && (keyEvent.getAction() != 0 || keyEvent.getKeyCode() != 66)) {
                     return false;
                 }
-                org.telegram.messenger.g0.v1(a21Var.U1);
+                org.telegram.messenger.g0.v1(c21Var.U1);
                 return false;
             default:
                 TwoStepVerificationActivity twoStepVerificationActivity = (TwoStepVerificationActivity) this.b;

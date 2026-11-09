@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.util.SparseIntArray;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public class ky extends v4.s {
     public final boolean Q;
@@ -21,26 +21,26 @@ public class ky extends v4.s {
         this.Q = z9;
     }
 
-    public static mt0 C1(mt0 mt0Var) {
-        if (mt0Var == null) {
+    public static ot0 C1(ot0 ot0Var) {
+        if (ot0Var == null) {
             return null;
         }
-        if (mt0Var.a == 0.0f) {
-            mt0Var.a = 100.0f;
+        if (ot0Var.a == 0.0f) {
+            ot0Var.a = 100.0f;
         }
-        if (mt0Var.b == 0.0f) {
-            mt0Var.b = 100.0f;
+        if (ot0Var.b == 0.0f) {
+            ot0Var.b = 100.0f;
         }
-        float f10 = mt0Var.a;
-        float f11 = mt0Var.b;
+        float f10 = ot0Var.a;
+        float f11 = ot0Var.b;
         float f12 = f10 / f11;
         if (f12 <= 4.0f && f12 >= 0.2f) {
-            return mt0Var;
+            return ot0Var;
         }
         float max = Math.max(f10, f11);
-        mt0Var.a = max;
-        mt0Var.b = max;
-        return mt0Var;
+        ot0Var.a = max;
+        ot0Var.b = max;
+        return ot0Var;
     }
 
     public final void B1() {
@@ -77,7 +77,7 @@ public class ky extends v4.s {
         int i14 = 0;
         int i15 = i11;
         while (i13 < i12) {
-            mt0 C1 = i13 < A ? C1(D1(i13)) : null;
+            ot0 C1 = i13 < A ? C1(D1(i13)) : null;
             if (C1 == null) {
                 z9 = i14 != 0 ? true : z10;
                 i7 = L;
@@ -152,8 +152,8 @@ public class ky extends v4.s {
         this.V++;
     }
 
-    public mt0 D1(int i7) {
-        return new mt0(100.0f, 100.0f);
+    public ot0 D1(int i7) {
+        return new ot0(100.0f, 100.0f);
     }
 
     public final boolean E1(int i7) {

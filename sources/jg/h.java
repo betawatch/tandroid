@@ -4,14 +4,14 @@ import j$.util.Objects;
 import java.util.ArrayList;
 import org.telegram.messenger.s3;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.kj0;
-import org.telegram.ui.Components.n01;
-import org.telegram.ui.Components.p01;
+import org.telegram.ui.Components.lj0;
+import org.telegram.ui.Components.o01;
+import org.telegram.ui.Components.q01;
 import org.telegram.ui.Components.qw;
-import org.telegram.ui.f40;
-import org.telegram.ui.q11;
+import org.telegram.ui.h40;
+import org.telegram.ui.s11;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class h extends v4.o {
     public final /* synthetic */ int b;
@@ -53,18 +53,18 @@ public final class h extends v4.o {
             case 1:
                 return ((Integer) this.c.get(i7)).equals(((qw) this.d).n.get(i10));
             case 2:
-                return Objects.equals(this.c.get(i7), ((kj0) this.d).n.get(i10));
+                return Objects.equals(this.c.get(i7), ((lj0) this.d).n.get(i10));
             case 3:
-                return ((p01) this.c.get(i7)).a() == ((p01) ((n01) this.d).c.get(i10)).a();
+                return ((q01) this.c.get(i7)).a() == ((q01) ((o01) this.d).c.get(i10)).a();
             case 4:
-                f40 f40Var = (f40) this.d;
+                h40 h40Var = (h40) this.d;
                 ArrayList arrayList = this.c;
-                if (i7 >= arrayList.size() || i10 >= f40Var.e.size()) {
+                if (i7 >= arrayList.size() || i10 >= h40Var.e.size()) {
                     return false;
                 }
-                return ((s3) arrayList.get(i7)).equals(f40Var.e.get(i10));
+                return ((s3) arrayList.get(i7)).equals(h40Var.e.get(i10));
             default:
-                return ((Long) this.c.get(i7)).equals(((q11) this.d).v0.get(i10));
+                return ((Long) this.c.get(i7)).equals(((s11) this.d).v0.get(i10));
         }
     }
 
@@ -76,13 +76,13 @@ public final class h extends v4.o {
             case 1:
                 return ((qw) this.d).n.size();
             case 2:
-                return ((kj0) this.d).n.size();
+                return ((lj0) this.d).n.size();
             case 3:
-                return ((n01) this.d).c.size();
+                return ((o01) this.d).c.size();
             case 4:
-                return ((f40) this.d).e.size();
+                return ((h40) this.d).e.size();
             default:
-                return ((q11) this.d).v0.size();
+                return ((s11) this.d).v0.size();
         }
     }
 

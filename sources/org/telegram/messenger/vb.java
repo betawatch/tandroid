@@ -23,13 +23,13 @@ import java.io.RandomAccessFile;
 import java.util.Arrays;
 import org.telegram.messenger.secretmedia.EncryptedFileInputStream;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.qa0;
-import org.telegram.ui.Components.wz0;
-import org.telegram.ui.Components.xg0;
-import org.telegram.ui.Components.zg0;
-import org.telegram.ui.Components.zt0;
+import org.telegram.ui.Components.ah0;
+import org.telegram.ui.Components.bu0;
+import org.telegram.ui.Components.ra0;
+import org.telegram.ui.Components.xz0;
+import org.telegram.ui.Components.yg0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class vb implements Runnable {
     public Thread a;
@@ -70,12 +70,12 @@ public final class vb implements Runnable {
             int o13 = i0.a.o(wallPaper.settings.third_background_color, qs.e4);
             int i10 = wallPaper.settings.fourth_background_color;
             int o14 = i10 == 0 ? 0 : i0.a.o(i10, qs.e4);
-            int g10 = qa0.g(o11, o12, o13, o14);
-            qa0 qa0Var = new qa0();
-            qa0Var.n(o11, o12, o13, o14);
-            qa0Var.setBounds(0, 0, createBitmap.getWidth(), createBitmap.getHeight());
-            qa0Var.s(wallPaper.settings.intensity, bitmap);
-            qa0Var.draw(canvas);
+            int g10 = ra0.g(o11, o12, o13, o14);
+            ra0 ra0Var = new ra0();
+            ra0Var.n(o11, o12, o13, o14);
+            ra0Var.setBounds(0, 0, createBitmap.getWidth(), createBitmap.getHeight());
+            ra0Var.s(wallPaper.settings.intensity, bitmap);
+            ra0Var.draw(canvas);
             z9 = false;
             i7 = g10;
         }
@@ -88,7 +88,7 @@ public final class vb implements Runnable {
         return createBitmap;
     }
 
-    public final void b(zg0 zg0Var, int i7, int i10, boolean z9, boolean z10) {
+    public final void b(ah0 ah0Var, int i7, int i10, boolean z9, boolean z10) {
         Bitmap createBitmap;
         Canvas canvas;
         BitmapDrawable bitmapDrawable;
@@ -102,11 +102,11 @@ public final class vb implements Runnable {
             createBitmap = Bitmap.createBitmap(i7, i10, Bitmap.Config.ARGB_8888);
             canvas = new Canvas(createBitmap);
         }
-        zg0Var.b();
-        Bitmap createBitmap2 = Bitmap.createBitmap(zg0Var.b, zg0Var.c, Bitmap.Config.ARGB_8888);
-        zg0Var.C0 = z9 ? zg0Var.e[0] - 1 : 0;
-        zg0Var.a(createBitmap2);
-        zg0Var.c();
+        ah0Var.b();
+        Bitmap createBitmap2 = Bitmap.createBitmap(ah0Var.b, ah0Var.c, Bitmap.Config.ARGB_8888);
+        ah0Var.C0 = z9 ? ah0Var.e[0] - 1 : 0;
+        ah0Var.a(createBitmap2);
+        ah0Var.c();
         canvas.save();
         if (!z9 || !z10) {
             canvas.scale(createBitmap2.getWidth() / i7, createBitmap2.getHeight() / i10, i7 / 2.0f, i10 / 2.0f);
@@ -120,7 +120,7 @@ public final class vb implements Runnable {
             canvas.drawBitmap(createBitmap2, 0.0f, 0.0f, paint);
             bitmapDrawable = new BitmapDrawable(createBitmap);
         }
-        zg0Var.C(false);
+        ah0Var.C(false);
         createBitmap2.recycle();
         c(bitmapDrawable);
     }
@@ -255,7 +255,7 @@ public final class vb implements Runnable {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void d() {
-        wz0 wz0Var;
+        xz0 xz0Var;
         boolean z9;
         boolean z10;
         Bitmap bitmap;
@@ -367,8 +367,8 @@ public final class vb implements Runnable {
         bg.f fVar3;
         int i24;
         int i25;
-        zg0 zg0Var;
-        zg0 zg0Var2;
+        ah0 ah0Var;
+        ah0 ah0Var2;
         byte[] bArr3;
         boolean z60;
         int i26;
@@ -400,12 +400,12 @@ public final class vb implements Runnable {
                 if (i31 == 5) {
                     try {
                         ub ubVar2 = this.c;
-                        wz0Var = new wz0(ubVar2.p, (s5) ubVar2.i.i);
+                        xz0Var = new xz0(ubVar2.p, (s5) ubVar2.i.i);
                     } catch (Throwable th3) {
                         a8.f(th3);
-                        wz0Var = null;
+                        xz0Var = null;
                     }
-                    c(wz0Var);
+                    c(xz0Var);
                     return;
                 }
                 boolean z65 = false;
@@ -595,7 +595,7 @@ public final class vb implements Runnable {
                     }
                     try {
                         if (str8 != null) {
-                            zg0Var2 = "🎰".equals(str8) ? new zt0(str8, i21, i20) : new xg0(str8, i21, i20);
+                            ah0Var2 = "🎰".equals(str8) ? new bu0(str8, i21, i20) : new yg0(str8, i21, i20);
                             i24 = i20;
                             i25 = i21;
                         } else {
@@ -630,10 +630,10 @@ public final class vb implements Runnable {
                                     }
                                     if (z59) {
                                     }
-                                    zg0Var2 = zg0Var;
+                                    ah0Var2 = ah0Var;
                                     if (z57) {
                                     }
-                                    b(zg0Var2, i24, i25, z57, z55);
+                                    b(ah0Var2, i24, i25, z57, z55);
                                 }
                             } catch (Exception e12) {
                                 e = e12;
@@ -679,18 +679,18 @@ public final class vb implements Runnable {
                                         fVar3 = null;
                                     }
                                     hc hcVar22 = this.c.i;
-                                    boolean z67 = hcVar22 == null && ij.D4(hcVar22.i);
+                                    boolean z67 = hcVar22 == null && ij.C4(hcVar22.i);
                                     if (z59) {
                                         File file = this.c.p;
                                         i24 = i20;
                                         i25 = i21;
-                                        zg0Var = new zg0(file, gc.o(file), i25, i24, fVar3, z58, i23, z67);
+                                        ah0Var = new ah0(file, gc.o(file), i25, i24, fVar3, z58, i23, z67);
                                     } else {
                                         i24 = i20;
                                         i25 = i21;
-                                        zg0Var = new zg0(this.c.p, null, i25, i24, fVar3, z58, i23, z67);
+                                        ah0Var = new ah0(this.c.p, null, i25, i24, fVar3, z58, i23, z67);
                                     }
-                                    zg0Var2 = zg0Var;
+                                    ah0Var2 = ah0Var;
                                 }
                             }
                             z60 = false;
@@ -711,13 +711,13 @@ public final class vb implements Runnable {
                             }
                             if (z59) {
                             }
-                            zg0Var2 = zg0Var;
+                            ah0Var2 = ah0Var;
                         }
                         if (!z57 || z54) {
-                            b(zg0Var2, i24, i25, z57, z55);
+                            b(ah0Var2, i24, i25, z57, z55);
                         } else {
-                            zg0Var2.K(i22);
-                            c(zg0Var2);
+                            ah0Var2.K(i22);
+                            c(ah0Var2);
                         }
                     } catch (Throwable th5) {
                         randomAccessFile = r22;
@@ -2032,7 +2032,7 @@ public final class vb implements Runnable {
                             ub ubVar8 = this.c;
                             org.telegram.ui.Components.v5 v5Var3 = new org.telegram.ui.Components.v5(ubVar8.p, z50, z49 ? 0L : j10, ubVar8.a, z49 ? null : document2, (document2 != null || z49) ? null : ubVar8.i, ubVar8.j, j3, ubVar8.o, false, 0, 0, fVar, i46, !"gl".equals(ubVar8.f));
                             z51 = z50;
-                            boolean z82 = (document2 != null && "video/webm".equals(document2.mime_type)) || ij.O4(document2) || gc.I(this.c.f);
+                            boolean z82 = (document2 != null && "video/webm".equals(document2.mime_type)) || ij.N4(document2) || gc.I(this.c.f);
                             v5Var3.n0 = z82;
                             if (z82) {
                                 v5Var3.b = false;
@@ -2074,7 +2074,7 @@ public final class vb implements Runnable {
                             ub ubVar9 = this.c;
                             v5Var = new org.telegram.ui.Components.v5(ubVar9.p, z83, 0L, ubVar9.a, !z49 ? null : ubVar9.i.i, null, null, j3, ubVar9.o, false, i17, i18, fVar, i49, true);
                             TLRPC.Document document3 = this.c.i.i;
-                            z52 = !(document3 == null && "video/webm".equals(document3.mime_type)) || ij.O4(this.c.i.i) || gc.I(this.c.f);
+                            z52 = !(document3 == null && "video/webm".equals(document3.mime_type)) || ij.N4(this.c.i.i) || gc.I(this.c.f);
                             v5Var.n0 = z52;
                             if (z52) {
                                 v5Var.b = false;

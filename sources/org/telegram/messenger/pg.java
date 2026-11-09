@@ -6,7 +6,7 @@ import java.util.HashMap;
 import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class pg implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -218,7 +218,7 @@ public final /* synthetic */ class pg implements Runnable {
                         while (i21 < arrayList10.size()) {
                             ij ijVar = (ij) arrayList10.get(i21);
                             TLRPC.Message message = ijVar.k;
-                            if (message.from_scheduled || ij.B0(message) != keyAt || ijVar.f1() > i20 || ijVar.J) {
+                            if (message.from_scheduled || ij.B0(message) != keyAt || ijVar.e1() > i20 || ijVar.J) {
                                 z9 = z10;
                                 longSparseIntArray = longSparseIntArray2;
                             } else {
@@ -237,7 +237,7 @@ public final /* synthetic */ class pg implements Runnable {
                                 SparseArray sparseArray2 = (SparseArray) hVar6.f(j11);
                                 longSparseIntArray = longSparseIntArray2;
                                 if (sparseArray2 != null) {
-                                    sparseArray2.remove(ijVar.f1());
+                                    sparseArray2.remove(ijVar.e1());
                                     if (sparseArray2.size() == 0) {
                                         hVar6.l(j11);
                                     }
@@ -276,7 +276,7 @@ public final /* synthetic */ class pg implements Runnable {
                                     }
                                     sparseArray = (SparseArray) hVar6.f(j10);
                                     if (sparseArray != null) {
-                                        sparseArray.remove(ijVar2.f1());
+                                        sparseArray.remove(ijVar2.e1());
                                         if (sparseArray.size() == 0) {
                                             hVar6.l(j10);
                                         }
@@ -286,7 +286,7 @@ public final /* synthetic */ class pg implements Runnable {
                                     arrayList11.add(ijVar2);
                                     i24--;
                                 } else if (z12) {
-                                    if (ijVar2.f1() != i22 && i22 >= 0) {
+                                    if (ijVar2.e1() != i22 && i22 >= 0) {
                                     }
                                     if (dt.E(ijVar2)) {
                                     }
@@ -300,7 +300,7 @@ public final /* synthetic */ class pg implements Runnable {
                                     arrayList11.add(ijVar2);
                                     i24--;
                                 } else {
-                                    if (ijVar2.f1() > i22 && i22 >= 0) {
+                                    if (ijVar2.e1() > i22 && i22 >= 0) {
                                     }
                                     if (dt.E(ijVar2)) {
                                     }

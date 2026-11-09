@@ -14,13 +14,13 @@ import org.telegram.ui.Cells.d2;
 import org.telegram.ui.Cells.x3;
 import org.telegram.ui.Cells.y6;
 import org.telegram.ui.Cells.z8;
-import org.telegram.ui.Components.l41;
+import org.telegram.ui.Components.m41;
 import org.telegram.ui.Components.xq;
-import org.telegram.ui.Wallet.w9;
-import org.telegram.ui.Wallet.x5;
-import org.telegram.ui.b00;
+import org.telegram.ui.Wallet.v9;
+import org.telegram.ui.Wallet.w5;
+import org.telegram.ui.d00;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c0 implements d20 {
     public final /* synthetic */ int a;
@@ -59,9 +59,9 @@ public final /* synthetic */ class c0 implements d20 {
                 return id.G(((Integer) obj).intValue(), "Minutes", new Object[0]);
             case 7:
                 View view = (View) obj;
-                return Boolean.valueOf(((view instanceof z8) || (view instanceof y6) || (view instanceof b00) || (view instanceof x3) || (view instanceof d2) || Objects.equals(view.getTag(), -33024)) ? false : true);
+                return Boolean.valueOf(((view instanceof z8) || (view instanceof y6) || (view instanceof d00) || (view instanceof x3) || (view instanceof d2) || Objects.equals(view.getTag(), -33024)) ? false : true);
             case 8:
-                return Boolean.valueOf(l41.K(((Integer) obj).intValue()));
+                return Boolean.valueOf(m41.K(((Integer) obj).intValue()));
             case 9:
                 TL_wallet.exportSecretPhrase exportsecretphrase = new TL_wallet.exportSecretPhrase();
                 exportsecretphrase.password = (TLRPC.InputCheckPasswordSRP) obj;
@@ -76,9 +76,9 @@ public final /* synthetic */ class c0 implements d20 {
                 disablebackup.password = (TLRPC.InputCheckPasswordSRP) obj;
                 return disablebackup;
             case 12:
-                return Boolean.valueOf(x5.C0(x5.b1((String) obj)));
+                return Boolean.valueOf(w5.C0(w5.b1((String) obj)));
             default:
-                return Boolean.valueOf(w9.l0((String) obj) != null);
+                return Boolean.valueOf(v9.l0((String) obj) != null);
         }
     }
 }

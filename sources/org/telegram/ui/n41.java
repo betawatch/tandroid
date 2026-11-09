@@ -1,153 +1,80 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.tgnet.tl.TL_stars;
+import android.content.Context;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stats;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n41 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+public abstract class n41 extends m41 {
+    public final int w;
+    public final /* synthetic */ d51 x;
 
-    public /* synthetic */ n41(int i7, Object obj, Object obj2) {
-        this.a = i7;
-        this.b = obj;
-        this.c = obj2;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public n41(d51 d51Var, Context context, int i7, int i10, lg.f fVar) {
+        super(context, i10, fVar, null);
+        this.x = d51Var;
+        this.w = i7;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:73:0x018e  */
-    @Override // org.telegram.tgnet.RequestDelegate
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        String str;
-        String str2;
-        String str3;
-        JSONException jSONException;
-        mg.b h02;
-        long[] jArr;
-        switch (this.a) {
-            case 0:
-                o41 o41Var = (o41) this.b;
-                org.telegram.messenger.u10 u10Var = (org.telegram.messenger.u10) this.c;
-                int i7 = o41Var.i;
-                String str4 = null;
-                if (tL_error == null) {
-                    if (tLObject instanceof TL_stats.TL_statsGraph) {
-                        try {
-                            h02 = c51.h0(new JSONObject(((TL_stats.TL_statsGraph) tLObject).json.data), i7, o41Var.m);
-                        } catch (JSONException e10) {
-                            jSONException = e10;
-                            str3 = null;
-                        }
-                        try {
-                            str4 = ((TL_stats.TL_statsGraph) tLObject).zoom_token;
-                            if (i7 == 4 && (jArr = h02.a) != null && jArr.length > 0) {
-                                long j3 = jArr[jArr.length - 1];
-                                o41Var.e = new mg.e(h02, j3);
-                                o41Var.c = j3;
-                            }
-                            str3 = str4;
-                            str4 = h02;
-                        } catch (JSONException e11) {
-                            jSONException = e11;
-                            str3 = str4;
-                            str4 = h02;
-                            jSONException.printStackTrace();
-                            if (tLObject instanceof TL_stats.TL_statsGraphError) {
-                            }
-                            str = str4;
-                            str2 = str3;
-                            org.telegram.messenger.g0.h3(new jo0(o41Var, str, str2, u10Var, 16));
-                            return;
-                        }
-                    } else {
-                        str3 = null;
-                    }
-                    if (tLObject instanceof TL_stats.TL_statsGraphError) {
-                        o41Var.l = false;
-                        o41Var.a = true;
-                        o41Var.b = ((TL_stats.TL_statsGraphError) tLObject).error;
-                    }
-                    str = str4;
-                    str2 = str3;
-                } else {
-                    str = null;
-                    str2 = null;
-                }
-                org.telegram.messenger.g0.h3(new jo0(o41Var, str, str2, u10Var, 16));
-                break;
-            case 1:
-                org.telegram.messenger.g0.h3(new t21((y71) this.b, (String) this.c, tL_error));
-                break;
-            case 2:
-                y71 y71Var = (y71) this.b;
-                TL_account.updateTheme updatetheme = (TL_account.updateTheme) this.c;
-                if (tLObject instanceof TLRPC.TL_theme) {
-                    org.telegram.messenger.g0.h3(new by0(16, y71Var, (TLRPC.TL_theme) tLObject));
-                    break;
-                } else {
-                    org.telegram.messenger.g0.h3(new t21(y71Var, tL_error, updatetheme, 4));
-                    break;
-                }
-            case 3:
-                org.telegram.messenger.g0.h3(new t21((s91) this.b, (String) this.c, tLObject, 8));
-                break;
-            case 4:
-                org.telegram.messenger.g0.h3(new jo0((za1) this.b, tLObject, (String) this.c, tL_error, 19));
-                break;
-            case 5:
-                za1 za1Var = (za1) this.b;
-                byte[] bArr = (byte[]) this.c;
-                if (tL_error == null) {
-                    org.telegram.messenger.g0.h3(new ta1(za1Var, bArr, 1));
-                    break;
-                } else {
-                    org.telegram.messenger.g0.h3(new va1(za1Var, tL_error, 3));
-                    break;
-                }
-            case 6:
-                org.telegram.messenger.g0.h3(new org.telegram.ui.Wallet.n(25, (nc1) this.b, (int[]) this.c));
-                break;
-            case 7:
-                org.telegram.messenger.g0.h3(new jo0((tg.c2) this.b, tLObject, (tg.a2) this.c, tL_error, 28));
-                break;
-            case 8:
-                org.telegram.messenger.g0.h3(new org.telegram.ui.Components.r31(tLObject, (org.telegram.messenger.qp) this.b, (wg.u0) this.c));
-                break;
-            case 9:
-                org.telegram.messenger.qp qpVar = (org.telegram.messenger.qp) this.b;
-                org.telegram.ui.Components.fx fxVar = (org.telegram.ui.Components.fx) this.c;
-                if (tLObject instanceof TLRPC.TL_contacts_found) {
-                    TLRPC.TL_contacts_found tL_contacts_found = (TLRPC.TL_contacts_found) tLObject;
-                    qpVar.Y3(tL_contacts_found.users, false);
-                    ArrayList arrayList = new ArrayList();
-                    for (int i10 = 0; i10 < tL_contacts_found.users.size(); i10++) {
-                        TLRPC.User user = tL_contacts_found.users.get(i10);
-                        if (!user.self && !org.telegram.messenger.t10.x(user) && !org.telegram.messenger.t10.A(user.id)) {
-                            arrayList.add(user);
-                        }
-                    }
-                    org.telegram.messenger.g0.h3(new u9.f(18, fxVar, arrayList));
-                    break;
-                }
-                break;
-            case 10:
-                org.telegram.messenger.g0.h3(new org.telegram.ui.Components.r31((org.telegram.ui.Components.up0) this.b, tL_error, (org.telegram.ui.ActionBar.f2) this.c, 29));
-                break;
-            default:
-                org.telegram.messenger.g0.h3(new zh.o1((zh.b3) this.b, tLObject, (TL_stars.getResaleStarGifts) this.c, 2));
-                break;
+    @Override // org.telegram.ui.m41
+    public final void b(p41 p41Var) {
+        int i7;
+        d51 d51Var = this.x;
+        i7 = ((org.telegram.ui.ActionBar.f2) d51Var).classGuid;
+        p41Var.a(this.w, i7, d51Var.a.stats_dc, new gh(2, d51Var, this.r));
+    }
+
+    @Override // org.telegram.ui.m41
+    public final void c() {
+        int i7;
+        if (this.r.c > 0) {
+            return;
         }
+        performClick();
+        lg.g gVar = this.b;
+        if (gVar.t0.G) {
+            long selectedDate = gVar.getSelectedDate();
+            if (this.s == 4) {
+                p41 p41Var = this.r;
+                p41Var.e = new mg.e(p41Var.d, selectedDate);
+                g(false);
+                return;
+            }
+            if (this.r.g == null) {
+                return;
+            }
+            d51 d51Var = this.x;
+            d51.c0(d51Var);
+            String str = this.r.g + "_" + selectedDate;
+            mg.b bVar = (mg.b) d51Var.U.f(str);
+            if (bVar != null) {
+                this.r.e = bVar;
+                g(false);
+                return;
+            }
+            TL_stats.TL_loadAsyncGraph tL_loadAsyncGraph = new TL_stats.TL_loadAsyncGraph();
+            tL_loadAsyncGraph.token = this.r.g;
+            if (selectedDate != 0) {
+                tL_loadAsyncGraph.x = selectedDate;
+                tL_loadAsyncGraph.flags |= 1;
+            }
+            c51 c51Var = new c51();
+            d51Var.Y = c51Var;
+            d51Var.S.getClass();
+            c51Var.a = RecyclerView.R(this);
+            gVar.t0.d(true, false);
+            int i10 = this.w;
+            int sendRequest = ConnectionsManager.getInstance(i10).sendRequest(tL_loadAsyncGraph, new no0(this, str, c51Var, 10), null, null, 0, d51Var.a.stats_dc, 1, true);
+            ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i10);
+            i7 = ((org.telegram.ui.ActionBar.f2) d51Var).classGuid;
+            connectionsManager.bindRequestToGuid(sendRequest, i7);
+        }
+    }
+
+    @Override // org.telegram.ui.m41
+    public final void f() {
+        d51.c0(this.x);
     }
 }

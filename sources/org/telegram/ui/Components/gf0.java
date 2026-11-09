@@ -1,53 +1,93 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.os.Build;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.drawable.Drawable;
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.util.Locale;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class gf0 implements ri.a, pi.a {
-    public final dh.c a;
+public final class gf0 extends ag0 {
+    public final Drawable Q;
+    public final Drawable R;
+    public final ny0 S;
+    public ny0 T;
+    public final Paint U;
+    public final Path V;
+    public float W;
+    public final DecimalFormat a0;
 
-    public gf0(dh.c cVar) {
-        this.a = cVar;
+    public gf0(Context context) {
+        super(context);
+        Paint paint = new Paint(1);
+        this.U = paint;
+        Path path = new Path();
+        this.V = path;
+        this.a0 = new DecimalFormat("#,##0.#########", new DecimalFormatSymbols(Locale.US));
+        this.Q = jg.g.h(context, R.drawable.profile_balance_gram);
+        this.R = jg.g.h(context, R.drawable.profile_balance_gram_color);
+        this.S = new ny0(org.telegram.messenger.id.M0(2131745155, null) + ":", 11.0f, null);
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        paint.setStrokeJoin(Paint.Join.ROUND);
+        paint.setStrokeWidth(org.telegram.messenger.g0.N(1.16f));
+        path.moveTo(0.0f, -org.telegram.messenger.g0.N(3.33f));
+        path.lineTo(org.telegram.messenger.g0.N(3.16f), 0.0f);
+        path.lineTo(0.0f, org.telegram.messenger.g0.N(3.33f));
+        setBalance(0L);
     }
 
-    @Override // pi.a
-    public final int a() {
-        return ((pi.a) b()).a();
+    @Override // org.telegram.ui.Components.ag0
+    public final void b(Canvas canvas, float f10) {
+        float height = getHeight() / 2.0f;
+        canvas.translate(0.0f, (-org.telegram.messenger.g0.L(20.0f)) * this.W);
+        float f11 = f10 * 0.85f;
+        this.S.c(0.0f, height, f11, this.E, canvas);
+        canvas.translate(this.S.k() + org.telegram.messenger.g0.L(4.0f), 0.0f);
+        Drawable drawable = (this.F || this.G >= 0.8f) ? this.R : this.Q;
+        int L = org.telegram.messenger.g0.L(13.0f);
+        int i7 = ((int) height) - (L / 2);
+        drawable.setBounds(0, i7, L, i7 + L);
+        drawable.setAlpha((int) (255.0f * f10));
+        drawable.draw(canvas);
+        canvas.translate(org.telegram.messenger.g0.L(2.0f) + L, 0.0f);
+        this.T.c(0.0f, height, f10, this.E, canvas);
+        canvas.translate(org.telegram.messenger.g0.N(4.8f) + this.T.k(), height);
+        int r12 = org.telegram.ui.ActionBar.l6.r1(f11, this.E);
+        Paint paint = this.U;
+        paint.setColor(r12);
+        canvas.drawPath(this.V, paint);
     }
 
-    public final ri.a b() {
-        oi.r f10 = oi.q.f();
-        boolean z9 = f10.a;
-        dh.c cVar = this.a;
-        return !z9 ? cVar.c : (!f10.b || Build.VERSION.SDK_INT < 33) ? cVar.b : cVar.a;
+    @Override // org.telegram.ui.Components.ag0
+    public final float c(float f10) {
+        ny0 ny0Var = this.S;
+        ny0Var.p = -1.0f;
+        this.T.p = -1.0f;
+        float max = Math.max(0.0f, f10 - org.telegram.messenger.g0.L(43.0f));
+        ny0Var.p = Math.max(0.0f, max - this.T.k());
+        this.T.p = Math.max(0.0f, max - ny0Var.k());
+        return this.T.k() + ny0Var.k() + org.telegram.messenger.g0.L(27.0f);
     }
 
-    @Override // pi.a
-    public final void d(float f10, float f11, int i7, Canvas canvas, RectF rectF) {
-        ((pi.a) b()).d(f10, f11, i7, canvas, rectF);
+    public void setBalance(long j3) {
+        String format = this.a0.format(new BigDecimal(org.telegram.ui.Wallet.l0.p(j3, false)));
+        this.T = new ny0(format, 11.0f, org.telegram.messenger.g0.o());
+        setContentDescription(org.telegram.messenger.id.M0(2131745155, null) + ": " + format);
+        invalidate();
     }
 
-    @Override // ri.a
-    public final void e(Canvas canvas, float f10, float f11, float f12, float f13) {
-        b().e(canvas, f10, f11, f12, f13);
-    }
-
-    @Override // pi.a
-    public final int f() {
-        return ((pi.a) b()).f();
-    }
-
-    @Override // pi.a
-    public final int g() {
-        return ((pi.a) b()).g();
-    }
-
-    @Override // pi.a
-    public final boolean h() {
-        ri.a b10 = b();
-        return (b10 instanceof pi.a) && ((pi.a) b10).h();
+    public void setEjectProgress(float f10) {
+        if (this.W == f10) {
+            return;
+        }
+        this.W = f10;
+        invalidate();
     }
 }

@@ -1,70 +1,40 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.text.TextUtils;
-import android.view.MotionEvent;
-import java.util.ArrayList;
-import org.telegram.ui.Components.ChatActivityEnterView;
+import android.content.Context;
+import org.telegram.ui.Components.FragmentContextView;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class jv extends ChatActivityEnterView {
-    public final /* synthetic */ ww t5;
+public final class jv extends FragmentContextView {
+    public final /* synthetic */ int X0;
+    public final /* synthetic */ yw Y0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public jv(ww wwVar, Activity activity, pw pwVar) {
-        super(activity, pwVar, null, false, null);
-        this.t5 = wwVar;
-    }
-
-    @Override // org.telegram.ui.Components.ChatActivityEnterView
-    public final void A0(float f10) {
-        ww wwVar = this.t5;
-        wwVar.y1.setInputBubbleHeight(f10);
-        wwVar.E3();
-        wwVar.F3();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        int i7;
-        if (motionEvent.getAction() == 0) {
-            ww wwVar = this.t5;
-            Activity parentActivity = wwVar.getParentActivity();
-            i7 = ((org.telegram.ui.ActionBar.f2) wwVar).classGuid;
-            org.telegram.messenger.g0.a3(parentActivity, i7);
+    public jv(yw ywVar, Context context, yw ywVar2, int i7) {
+        super(context, ywVar2, true);
+        this.X0 = i7;
+        switch (i7) {
+            case 1:
+                this.Y0 = ywVar;
+                super(context, ywVar2, false);
+                break;
+            default:
+                this.Y0 = ywVar;
+                break;
         }
-        return super.dispatchTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.ChatActivityEnterView
-    public final int getMessagesCount() {
-        ww wwVar = this.t5;
-        int i7 = wwVar.S0;
-        jv jvVar = wwVar.B1;
-        return Math.max(1, i7 + (!TextUtils.isEmpty(jvVar == null ? "" : jvVar.getFieldText()) ? 1 : 0));
-    }
-
-    @Override // org.telegram.ui.Components.ChatActivityEnterView
-    public final long getStarsPrice() {
-        ww wwVar = this.t5;
-        ArrayList arrayList = wwVar.I2;
-        if (arrayList == null) {
-            return 0L;
+    @Override // org.telegram.ui.Components.FragmentContextView, android.view.View
+    public final void setVisibility(int i7) {
+        switch (this.X0) {
+            case 0:
+                yw ywVar = this.Y0;
+                ywVar.K1.i(ywVar.H1, i7 == 0, true);
+                break;
+            default:
+                yw ywVar2 = this.Y0;
+                ywVar2.K1.i(ywVar2.J1, i7 == 0, true);
+                break;
         }
-        int size = arrayList.size();
-        int i7 = 0;
-        long j3 = 0;
-        while (i7 < size) {
-            Object obj = arrayList.get(i7);
-            i7++;
-            long longValue = ((Long) obj).longValue();
-            long N1 = wwVar.getMessagesController().N1(longValue);
-            if (N1 <= 0 && longValue > 0) {
-                N1 = org.telegram.messenger.m5.k(wwVar.getMessagesController().J2(longValue));
-            }
-            j3 += N1;
-        }
-        return j3;
     }
 }

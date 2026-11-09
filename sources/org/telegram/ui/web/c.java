@@ -7,56 +7,56 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Components.l41;
-import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.q41;
-import org.telegram.ui.Components.w31;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.Components.m41;
+import org.telegram.ui.Components.qj0;
+import org.telegram.ui.Components.r41;
 import org.telegram.ui.Components.x31;
+import org.telegram.ui.Components.y31;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
-public final class c extends w31 {
+public final class c extends x31 {
     public static final /* synthetic */ int b = 0;
 
     static {
-        w31.h(new c());
+        x31.h(new c());
     }
 
-    @Override // org.telegram.ui.Components.w31
-    public final void b(View view, x31 x31Var, boolean z9, l41 l41Var, q41 q41Var) {
+    @Override // org.telegram.ui.Components.x31
+    public final void b(View view, y31 y31Var, boolean z9, m41 m41Var, r41 r41Var) {
         d dVar = (d) view;
-        if (x31Var.G == null) {
-            dVar.setAsShowMore((j) x31Var.H);
+        if (y31Var.G == null) {
+            dVar.setAsShowMore((j) y31Var.H);
             return;
         }
-        int i7 = x31Var.z;
-        String charSequence = x31Var.l.toString();
-        View.OnClickListener onClickListener = x31Var.D;
-        j jVar = (j) x31Var.H;
+        int i7 = y31Var.z;
+        String charSequence = y31Var.l.toString();
+        View.OnClickListener onClickListener = y31Var.D;
+        j jVar = (j) y31Var.H;
         ImageView imageView = dVar.a;
         imageView.setVisibility(0);
         int i10 = jVar.F;
         int i11 = jVar.H;
         TextView textView = dVar.b;
         textView.setTextColor(i11);
-        int r12 = k6.r1(0.6f, i11);
+        int r12 = l6.r1(0.6f, i11);
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
         imageView.setColorFilter(new PorterDuffColorFilter(r12, mode));
         ImageView imageView2 = dVar.c;
-        imageView2.setColorFilter(new PorterDuffColorFilter(k6.r1(0.6f, i11), mode));
-        imageView2.setBackground(k6.b0(0, k6.r1(0.15f, i11), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f)));
+        imageView2.setColorFilter(new PorterDuffColorFilter(l6.r1(0.6f, i11), mode));
+        imageView2.setBackground(l6.b0(0, l6.r1(0.15f, i11), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f)));
         imageView.setImageResource(i7 == 0 ? R.drawable.msg_clear_recent : R.drawable.msg_search);
         textView.setText(charSequence);
         imageView2.setOnClickListener(onClickListener);
-        dVar.d.setColor(k6.r1(0.1f, jVar.H));
+        dVar.d.setColor(l6.r1(0.1f, jVar.H));
         dVar.e = z9;
         dVar.setWillNotDraw(!z9);
     }
 
-    @Override // org.telegram.ui.Components.w31
-    public final View d(Context context, pj0 pj0Var, int i7, f6 f6Var) {
+    @Override // org.telegram.ui.Components.x31
+    public final View d(Context context, qj0 qj0Var, int i7, g6 g6Var) {
         return new d(context);
     }
 }

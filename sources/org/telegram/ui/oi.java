@@ -1,51 +1,36 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class oi extends gh.b {
-    public final /* synthetic */ int s;
-    public final /* synthetic */ an w;
+public final class oi extends org.telegram.ui.ActionBar.g1 {
+    public final /* synthetic */ cn o;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ oi(an anVar, org.telegram.ui.ActionBar.f6 f6Var, int i7, int i10) {
-        super(i7, f6Var);
-        this.s = i10;
-        this.w = anVar;
+    public oi(cn cnVar, mi miVar) {
+        super(miVar, -2, -2);
+        this.o = cnVar;
     }
 
-    @Override // gh.b, gh.a
-    public final int e1() {
-        int i7;
-        int i10;
-        switch (this.s) {
-            case 0:
-                an anVar = this.w;
-                i7 = ((org.telegram.ui.ActionBar.f2) anVar).currentAccount;
-                if (!c8.g0.c(i7, anVar.xa)) {
-                    return i0.a.o(anVar.getThemedColor(org.telegram.ui.ActionBar.k6.Ge), org.telegram.messenger.qs.e4);
-                }
-                ym ymVar = anVar.xa;
-                if (ymVar == null || ymVar.a()) {
-                    a();
-                    return this.d;
-                }
-                a();
-                return i0.a.o(this.d, org.telegram.messenger.qs.t3);
-            case 1:
-                return this.w.x.e1();
-            default:
-                an anVar2 = this.w;
-                i10 = ((org.telegram.ui.ActionBar.f2) anVar2).currentAccount;
-                if (!c8.g0.c(i10, anVar2.xa)) {
-                    return i0.a.o(anVar2.getThemedColor(org.telegram.ui.ActionBar.k6.d6), org.telegram.messenger.qs.e4);
-                }
-                ym ymVar2 = anVar2.xa;
-                if (ymVar2 == null || ymVar2.a()) {
-                    a();
-                    return this.d;
-                }
-                a();
-                return i0.a.o(this.d, org.telegram.messenger.qs.t3);
+    @Override // org.telegram.ui.ActionBar.g1, android.widget.PopupWindow
+    public final void dismiss() {
+        d(true);
+        cn cnVar = this.o;
+        if (cnVar.e9 != this) {
+            return;
         }
+        cnVar.e9 = null;
+        cnVar.j9 = null;
+        cnVar.i9 = null;
+        cnVar.B0.R = true;
+        if (cnVar.f9) {
+            cnVar.w8(false, true, 0.0f);
+        } else {
+            cnVar.f9 = true;
+        }
+        sj sjVar = cnVar.Z;
+        if (sjVar == null || sjVar.getEditField() == null) {
+            return;
+        }
+        cnVar.Z.getEditField().setAllowDrawCursor(true);
     }
 }

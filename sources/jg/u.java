@@ -10,10 +10,10 @@ import org.telegram.messenger.yr;
 import org.telegram.tgnet.TLMethod;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.c61;
-import org.telegram.ui.hw;
+import org.telegram.ui.d61;
+import org.telegram.ui.jw;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u implements Runnable {
     public final /* synthetic */ int a;
@@ -96,9 +96,9 @@ public final /* synthetic */ class u implements Runnable {
                             }
                         }
                         zVar.f(h0Var.s, h0Var.v0);
-                        hw hwVar = h0Var.U;
-                        if (hwVar != null) {
-                            hwVar.d(h0Var.D0 > 0, true);
+                        jw jwVar = h0Var.U;
+                        if (jwVar != null) {
+                            jwVar.d(h0Var.D0 > 0, true);
                             h0Var.U.c();
                         }
                         h0Var.f();
@@ -136,7 +136,7 @@ public final /* synthetic */ class u implements Runnable {
                                 if (!arrayList4.isEmpty()) {
                                     for (int i21 = i14; i21 < arrayList4.size(); i21++) {
                                         ij ijVar2 = (ij) arrayList4.get(i21);
-                                        if (ijVar2 == null || ijVar == null || ijVar.f1() != ijVar2.f1() || ij.B0(ijVar.k) != ij.B0(ijVar2.k)) {
+                                        if (ijVar2 == null || ijVar == null || ijVar.e1() != ijVar2.e1() || ij.B0(ijVar.k) != ij.B0(ijVar2.k)) {
                                         }
                                     }
                                 }
@@ -162,10 +162,10 @@ public final /* synthetic */ class u implements Runnable {
                             }
                         }
                         zVar2.f(h0Var2.s, h0Var2.v0);
-                        hw hwVar2 = h0Var2.U;
-                        if (hwVar2 != null) {
+                        jw jwVar2 = h0Var2.U;
+                        if (jwVar2 != null) {
                             i10 = 1;
-                            hwVar2.d(h0Var2.D0 > 0, true);
+                            jwVar2.d(h0Var2.D0 > 0, true);
                             h0Var2.U.c();
                         } else {
                             i10 = 1;
@@ -174,13 +174,13 @@ public final /* synthetic */ class u implements Runnable {
                         h0Var2.H0 = i10;
                         i7 = 0;
                         h0Var2.d = false;
-                        c61 c61Var = h0Var2.E0;
-                        if (c61Var != null) {
+                        d61 d61Var = h0Var2.E0;
+                        if (d61Var != null) {
                             String str3 = h0Var2.Z;
-                            TextView textView = (TextView) c61Var.b;
+                            TextView textView = (TextView) d61Var.b;
                             Object[] objArr = new Object[i10];
                             objArr[0] = str3;
-                            textView.setText(id.a0(null, null, 2131745753, objArr));
+                            textView.setText(id.a0(null, null, 2131745750, objArr));
                         }
                         h0Var2.f();
                         h0Var2.O = i7;

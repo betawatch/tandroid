@@ -1,108 +1,67 @@
 package di;
 
-import java.util.ArrayList;
-import java.util.List;
-import org.telegram.messenger.ij;
-import org.telegram.messenger.qs;
-import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class t6 extends q6 {
-    public final ArrayList C;
+public final class t6 implements f3.g0 {
+    public final /* synthetic */ int a = 1;
+    public int b;
+    public long c;
+    public int d;
 
-    public t6(int i7, ArrayList arrayList) {
-        super(i7, 0L, 3, -1, null);
-        this.C = new ArrayList();
-        F(arrayList);
+    public /* synthetic */ t6() {
     }
 
-    public final void F(ArrayList arrayList) {
-        int i7;
-        ArrayList arrayList2 = this.i;
-        arrayList2.size();
-        int i10 = 0;
-        int i11 = 0;
-        while (true) {
-            int size = arrayList.size();
-            i7 = this.c;
-            if (i10 >= size) {
-                break;
+    public boolean a(int i7, int i10) {
+        int i11 = this.d;
+        if (i11 != 1) {
+            if ((i11 == 2 || i11 == 3) && ConnectionsManager.getInstance(i7).getCurrentTime() >= this.c) {
+                return false;
             }
-            TL_stories.StoryItem storyItem = (TL_stories.StoryItem) arrayList.get(i10);
-            if (storyItem != null) {
-                storyItem.messageId = arrayList2.size();
-                ij ijVar = new ij(i7, storyItem);
-                ijVar.r0(false);
-                ArrayList arrayList3 = new ArrayList();
-                arrayList3.add(Integer.valueOf(arrayList2.size()));
-                this.C.add(arrayList3);
-                arrayList2.add(ijVar);
-                i11++;
-            }
-            i10++;
+        } else if (this.b >= i10) {
+            return false;
         }
-        if (i11 > 0) {
-            qs.f(i7).k(qs.x5, this);
+        return true;
+    }
+
+    public int b() {
+        int i7 = this.d;
+        if (i7 != 2) {
+            return i7 != 3 ? 14 : 16;
+        }
+        return 15;
+    }
+
+    public String toString() {
+        switch (this.a) {
+            case 3:
+                StringBuilder sb2 = new StringBuilder("AtomSizeTooSmall{type=");
+                sb2.append(h2.m0.e0(this.b));
+                sb2.append(", size=");
+                sb2.append(this.c);
+                sb2.append(", minHeaderSize=");
+                return a8.p0.n(this.d, "}", sb2);
+            default:
+                return super.toString();
         }
     }
 
-    @Override // di.q6
-    public final ij f(int i7) {
-        if (i7 < 0) {
-            return null;
-        }
-        ArrayList arrayList = this.i;
-        if (i7 >= arrayList.size()) {
-            return null;
-        }
-        return (ij) arrayList.get(i7);
+    public t6(int i7, long j3, int i10) {
+        this.b = i7;
+        this.c = j3;
+        this.d = i10;
     }
 
-    @Override // di.q6
-    public final int g() {
-        return this.i.size();
+    public t6(long j3, int i7, int i10) {
+        this.c = j3;
+        this.b = i7;
+        this.d = i10;
     }
 
-    @Override // di.q6
-    public final ArrayList h() {
-        return new ArrayList(this.C);
-    }
-
-    @Override // di.q6
-    public final int i() {
-        return this.i.size();
-    }
-
-    @Override // di.q6
-    public final boolean k() {
-        return false;
-    }
-
-    @Override // di.q6
-    public final boolean l() {
-        return false;
-    }
-
-    @Override // di.q6
-    public final boolean q(int i7, List list, boolean z9) {
-        return false;
-    }
-
-    @Override // di.q6
-    public final boolean r(int i7) {
-        return false;
-    }
-
-    @Override // di.q6
-    public final void j() {
-    }
-
-    @Override // di.q6
-    public final void s() {
-    }
-
-    @Override // di.q6
-    public final void x() {
+    public t6(int i7, int i10, long j3) {
+        this.d = i7;
+        this.c = j3;
+        this.b = i10;
     }
 }

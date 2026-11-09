@@ -1,45 +1,48 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.content.Context;
-import android.graphics.Bitmap;
-import java.util.ArrayList;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.ViewPropertyAnimator;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class up0 extends tg.g0 {
-    public final /* synthetic */ PhotoViewer X1;
+public final class up0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ PhotoViewer c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public up0(PhotoViewer photoViewer, Context context, Activity activity, int i7, Bitmap bitmap, Bitmap bitmap2, int i10, ArrayList arrayList, org.telegram.messenger.ye yeVar, cn0 cn0Var, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, activity, i7, bitmap, bitmap2, i10, arrayList, yeVar, cn0Var, f6Var);
-        this.X1 = photoViewer;
+    public /* synthetic */ up0(PhotoViewer photoViewer, int i7, int i10) {
+        this.a = i10;
+        this.c = photoViewer;
+        this.b = i7;
     }
 
-    @Override // tg.g0
-    public final int getPKeyboardHeight() {
-        fi.q3 q3Var = this.X1.K1;
-        if (q3Var != null) {
-            return q3Var.l;
-        }
-        return 0;
-    }
-
-    @Override // tg.g0
-    public final void o0(boolean z9) {
-        PhotoViewer photoViewer = this.X1;
-        if (photoViewer.F2 == null) {
-            return;
-        }
-        photoViewer.G2 = false;
-        photoViewer.n0();
-        if (z9) {
-            photoViewer.F2.g0();
-        } else {
-            if (photoViewer.I4 && photoViewer.O1() && photoViewer.c2 != 1) {
-                return;
-            }
-            photoViewer.F2.h0();
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                PhotoViewer photoViewer = this.c;
+                vp0 vp0Var = photoViewer.N1;
+                vp0Var.e.setVisibility(0);
+                FrameLayout frameLayout = vp0Var.r;
+                frameLayout.setVisibility(0);
+                frameLayout.setTranslationY(org.telegram.messenger.g0.L(18.0f));
+                ViewPropertyAnimator translationY = frameLayout.animate().alpha(1.0f).translationY(0.0f);
+                org.telegram.ui.Components.xq xqVar = org.telegram.ui.Components.xq.h;
+                org.telegram.messenger.camera.q.l(translationY, xqVar, 320L);
+                vp0Var.x.animate().alpha(1.0f).translationX(0.0f).setInterpolator(xqVar).setDuration(320L).start();
+                photoViewer.t4 = this.b;
+                photoViewer.p6 = null;
+                photoViewer.n6 = -1;
+                break;
+            default:
+                int i7 = this.b;
+                PhotoViewer photoViewer2 = this.c;
+                photoViewer2.t4 = i7;
+                photoViewer2.p6 = null;
+                photoViewer2.n6 = -1;
+                break;
         }
     }
 }

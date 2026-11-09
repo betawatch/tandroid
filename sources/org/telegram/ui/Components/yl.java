@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class yl {
     public TextPaint B;
@@ -81,20 +81,20 @@ public final class yl {
         String str = gfVar.I;
         String str2 = gfVar.c;
         if (str2 != null) {
-            ylVar.c.r0(org.telegram.messenger.hc.g(str2), null, null, null, org.telegram.ui.ActionBar.k6.R4, 0L, null, null, 0);
+            ylVar.c.r0(org.telegram.messenger.hc.g(str2), null, null, null, org.telegram.ui.ActionBar.l6.R4, 0L, null, null, 0);
             return;
         }
         if (str == null) {
-            ylVar.c.w0(org.telegram.ui.ActionBar.k6.R4);
+            ylVar.c.w0(org.telegram.ui.ActionBar.l6.R4);
             return;
         }
         if (gfVar.b) {
-            ylVar.c.r0(org.telegram.messenger.hc.g("vthumb://" + i7 + ":" + str), null, null, null, org.telegram.ui.ActionBar.k6.R4, 0L, null, null, 0);
+            ylVar.c.r0(org.telegram.messenger.hc.g("vthumb://" + i7 + ":" + str), null, null, null, org.telegram.ui.ActionBar.l6.R4, 0L, null, null, 0);
             ylVar.c.t0 = true;
             return;
         }
         ylVar.c.G0(gfVar.J, 0, true);
-        ylVar.c.r0(org.telegram.messenger.hc.g("thumb://" + i7 + ":" + str), null, null, null, org.telegram.ui.ActionBar.k6.R4, 0L, null, null, 0);
+        ylVar.c.r0(org.telegram.messenger.hc.g("thumb://" + i7 + ":" + str), null, null, null, org.telegram.ui.ActionBar.l6.R4, 0L, null, null, 0);
     }
 
     public static void b(yl ylVar, vl vlVar, org.telegram.messenger.aj ajVar, boolean z9) {
@@ -383,21 +383,21 @@ public final class yl {
                                 z11 = z10;
                             }
                             TextPaint textPaint2 = this.B;
-                            int i18 = org.telegram.ui.ActionBar.k6.V9;
+                            int i18 = org.telegram.ui.ActionBar.l6.V9;
                             f15 = L2;
-                            textPaint2.setColor(org.telegram.ui.ActionBar.k6.w0(i18, bmVar.a));
+                            textPaint2.setColor(org.telegram.ui.ActionBar.l6.w0(i18, bmVar.a));
                             int length = str2.length();
                             float f27 = (length == 0 || length == 1 || length == i10) ? 14.0f : length != 3 ? 8.0f : 10.0f;
                             this.B.setTextSize(org.telegram.messenger.g0.L(f27));
                             float f28 = i16 / 2.0f;
                             f16 = f13;
-                            int w02 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.W9, bmVar.a);
+                            int w02 = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.W9, bmVar.a);
                             Paint paint2 = this.z;
                             paint2.setColor(w02);
                             float f29 = (int) f28;
                             float f30 = L4;
                             canvas2.drawCircle(f29, f29, f30, paint2);
-                            int S0 = org.telegram.messenger.g0.S0(1.0f, 1.0f, -1, org.telegram.ui.ActionBar.k6.w0(i18, bmVar.a));
+                            int S0 = org.telegram.messenger.g0.S0(1.0f, 1.0f, -1, org.telegram.ui.ActionBar.l6.w0(i18, bmVar.a));
                             Paint paint3 = this.A;
                             paint3.setColor(S0);
                             paint3.setStyle(Paint.Style.STROKE);
@@ -457,7 +457,7 @@ public final class yl {
                                 Canvas canvas3 = new Canvas(this.G);
                                 RectF rectF3 = org.telegram.messenger.g0.P;
                                 rectF3.set(0.0f, 0.0f, intrinsicWidth, max);
-                                canvas3.drawRoundRect(rectF3, org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.ui.ActionBar.k6.i2);
+                                canvas3.drawRoundRect(rectF3, org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.ui.ActionBar.l6.i2);
                                 int L9 = org.telegram.messenger.g0.L(5.0f);
                                 int intrinsicHeight = (int) ((max - drawable.getIntrinsicHeight()) / 2.0f);
                                 drawable.setBounds(L9, intrinsicHeight, drawable.getIntrinsicWidth() + L9, drawable.getIntrinsicHeight() + intrinsicHeight);

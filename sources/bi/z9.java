@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class z9 {
     public final org.telegram.ui.ActionBar.f2 a;
@@ -68,22 +68,22 @@ public final class z9 {
         da daVar = new da(t6, f2Var.getResourceProvider());
         this.f = daVar;
         daVar.b = 3000L;
-        int i10 = org.telegram.ui.ActionBar.k6.uj;
-        org.telegram.ui.ActionBar.f6 resourceProvider = f2Var.getResourceProvider();
+        int i10 = org.telegram.ui.ActionBar.l6.uj;
+        org.telegram.ui.ActionBar.g6 resourceProvider = f2Var.getResourceProvider();
         a3.l lVar = new a3.l(24);
         a3.l lVar2 = new a3.l(25);
-        int Q = org.telegram.ui.ActionBar.r6.Q(i10, -1, 0, 0.0f, resourceProvider);
-        lVar2.c(Q, daVar);
-        org.telegram.ui.ActionBar.l6 x10 = org.telegram.ui.ActionBar.r6.x(101, daVar);
-        x10.c(i10, -1, 0, 0.0f, resourceProvider);
-        x10.n = lVar;
-        x10.o = lVar2;
-        x10.m = false;
-        x10.g = Q;
+        int P = org.telegram.ui.ActionBar.s6.P(i10, -1, 0, 0.0f, resourceProvider);
+        lVar2.c(P, daVar);
+        org.telegram.ui.ActionBar.m6 w10 = org.telegram.ui.ActionBar.s6.w(101, daVar);
+        w10.c(i10, -1, 0, 0.0f, resourceProvider);
+        w10.n = lVar;
+        w10.o = lVar2;
+        w10.m = false;
+        w10.g = P;
         final int i11 = 1;
         org.telegram.ui.Components.ac acVar = new org.telegram.ui.Components.ac(t6, f2Var.getResourceProvider(), true, false);
         this.e = acVar;
-        acVar.e(org.telegram.messenger.id.M0(2131745026, null));
+        acVar.e(org.telegram.messenger.id.M0(2131745023, null));
         acVar.b = new Runnable(this) { // from class: bi.y9
             public final /* synthetic */ z9 b;
 

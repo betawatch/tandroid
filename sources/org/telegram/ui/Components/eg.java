@@ -15,7 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class eg extends FrameLayout {
     public final /* synthetic */ int a = 0;
@@ -39,13 +39,13 @@ public final class eg extends FrameLayout {
         this.d = textView;
         textView.setTextSize(2, 16.0f);
         textView.setGravity(3);
-        org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.G6, null);
+        org.telegram.ui.ActionBar.s6.U(textView, org.telegram.ui.ActionBar.l6.G6, null);
         linearLayout.addView(textView, c8.ha.t(-1, -2, 0, 0, 0, z9 ? 64 : 0, 0));
         TextView textView2 = new TextView(activity);
         this.e = textView2;
         textView2.setTextSize(2, 13.0f);
         textView2.setGravity(3);
-        org.telegram.ui.ActionBar.r6.V(textView2, org.telegram.ui.ActionBar.k6.y6, null);
+        org.telegram.ui.ActionBar.s6.U(textView2, org.telegram.ui.ActionBar.l6.y6, null);
         linearLayout.addView(textView2, c8.ha.t(-1, -2, 0, 0, 4, z9 ? 64 : 0, 0));
         setPadding(0, org.telegram.messenger.g0.L(4.0f), 0, org.telegram.messenger.g0.L(4.0f));
         if (z9) {
@@ -62,7 +62,7 @@ public final class eg extends FrameLayout {
             case 1:
                 super.dispatchDraw(canvas);
                 if (this.b) {
-                    canvas.drawRect(org.telegram.messenger.g0.L(64.0f), getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight(), org.telegram.ui.ActionBar.k6.k0);
+                    canvas.drawRect(org.telegram.messenger.g0.L(64.0f), getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight(), org.telegram.ui.ActionBar.l6.k0);
                     break;
                 }
                 break;
@@ -76,17 +76,17 @@ public final class eg extends FrameLayout {
     public boolean drawChild(Canvas canvas, View view, long j3) {
         switch (this.a) {
             case 0:
-                if (!(view instanceof org.telegram.ui.ActionBar.k5) || !this.b) {
+                if (!(view instanceof org.telegram.ui.ActionBar.l5) || !this.b) {
                     return super.drawChild(canvas, view, j3);
                 }
-                org.telegram.ui.ActionBar.k5 k5Var = (org.telegram.ui.ActionBar.k5) view;
+                org.telegram.ui.ActionBar.l5 l5Var = (org.telegram.ui.ActionBar.l5) view;
                 canvas.save();
                 canvas.scale(0.8f, 0.8f);
                 canvas.translate(-org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(6.0f));
-                int color = k5Var.getTextPaint().getColor();
-                k5Var.getTextPaint().setColor(-1);
+                int color = l5Var.getTextPaint().getColor();
+                l5Var.getTextPaint().setColor(-1);
                 boolean drawChild = super.drawChild(canvas, view, j3);
-                k5Var.getTextPaint().setColor(color);
+                l5Var.getTextPaint().setColor(color);
                 canvas.restore();
                 return drawChild;
             default:
@@ -135,7 +135,7 @@ public final class eg extends FrameLayout {
                     sb2.append("\n");
                     sb2.append((Object) ((TextView) this.e).getText());
                     sb2.append("\n");
-                    sb2.append(org.telegram.messenger.id.M0(r02.h ? 2131747893 : 2131747895, null));
+                    sb2.append(org.telegram.messenger.id.M0(r02.h ? 2131747892 : 2131747894, null));
                     accessibilityNodeInfo.setText(sb2.toString());
                     break;
                 }
@@ -164,9 +164,9 @@ public final class eg extends FrameLayout {
         this.d = new RectF();
         this.e = new Paint(1);
         this.b = false;
-        org.telegram.ui.ActionBar.k5 k5Var = new org.telegram.ui.ActionBar.k5(activity);
-        this.c = k5Var;
-        addView(k5Var, c8.ha.c(-1.0f, -1));
+        org.telegram.ui.ActionBar.l5 l5Var = new org.telegram.ui.ActionBar.l5(activity);
+        this.c = l5Var;
+        addView(l5Var, c8.ha.c(-1.0f, -1));
         setWillNotDraw(false);
         Drawable drawable = activity.getDrawable(R.drawable.msg_mini_close_tooltip);
         this.f = drawable;

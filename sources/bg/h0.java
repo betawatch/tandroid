@@ -19,16 +19,16 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.ActionBar.z0;
-import org.telegram.ui.Components.k60;
-import org.telegram.ui.Components.m11;
-import org.telegram.ui.Components.m50;
-import org.telegram.ui.an;
-import org.telegram.ui.oy0;
+import org.telegram.ui.Components.l60;
+import org.telegram.ui.Components.n11;
+import org.telegram.ui.Components.n50;
+import org.telegram.ui.cn;
+import org.telegram.ui.ry0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h0 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -52,7 +52,7 @@ public final /* synthetic */ class h0 implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        an anVar;
+        cn cnVar;
         TLRPC.FileLocation[] fileLocationArr;
         boolean z9;
         TLRPC.TL_chatBannedRights tL_chatBannedRights;
@@ -66,13 +66,13 @@ public final /* synthetic */ class h0 implements Runnable {
         Object obj6 = this.c;
         switch (i7) {
             case 0:
-                an anVar2 = (an) obj2;
+                cn cnVar2 = (cn) obj2;
                 TLObject tLObject = (TLObject) obj6;
                 TLRPC.FileLocation[] fileLocationArr2 = (TLRPC.FileLocation[]) obj4;
                 String str = (String) obj;
                 TLRPC.FileLocation[] fileLocationArr3 = (TLRPC.FileLocation[]) obj3;
                 if (((TLRPC.TL_error) obj5) == null) {
-                    TLRPC.User a22 = anVar2.getMessagesController().a2(Long.valueOf(anVar2.getUserConfig().e()));
+                    TLRPC.User a22 = cnVar2.getMessagesController().a2(Long.valueOf(cnVar2.getUserConfig().e()));
                     TLRPC.TL_photos_photo tL_photos_photo = (TLRPC.TL_photos_photo) tLObject;
                     ArrayList<TLRPC.PhotoSize> arrayList = tL_photos_photo.photo.sizes;
                     TLRPC.PhotoSize w10 = w7.w(arrayList, qs.g2, false, null, false);
@@ -88,44 +88,44 @@ public final /* synthetic */ class h0 implements Runnable {
                         tL_userProfilePhoto.photo_big = w11.location;
                     }
                     if (w10 == null || fileLocationArr2[0] == null) {
-                        anVar = anVar2;
+                        cnVar = cnVar2;
                         fileLocationArr = fileLocationArr3;
                         z9 = true;
                     } else {
-                        w7.G(anVar2.getCurrentAccount());
+                        w7.G(cnVar2.getCurrentAccount());
                         File J = w7.J(w10, null, true, true);
-                        w7.G(anVar2.getCurrentAccount());
+                        w7.G(cnVar2.getCurrentAccount());
                         w7.J(fileLocationArr2[0], null, true, true).renameTo(J);
                         StringBuilder sb2 = new StringBuilder();
                         sb2.append(fileLocationArr2[0].volume_id);
                         sb2.append("_");
                         String n10 = a8.p0.n(fileLocationArr2[0].local_id, "@50_50", sb2);
                         StringBuilder sb3 = new StringBuilder();
-                        anVar = anVar2;
+                        cnVar = cnVar2;
                         fileLocationArr = fileLocationArr3;
                         sb3.append(w10.location.volume_id);
                         sb3.append("_");
                         z9 = true;
-                        gc.D().S(n10, a8.p0.n(w10.location.local_id, "@50_50", sb3), hc.m(anVar.getCurrentAccount(), 1, a22));
+                        gc.D().S(n10, a8.p0.n(w10.location.local_id, "@50_50", sb3), hc.m(cnVar.getCurrentAccount(), 1, a22));
                     }
                     if (x10 != null && str != null) {
-                        w7.G(anVar.getCurrentAccount());
+                        w7.G(cnVar.getCurrentAccount());
                         new File(str).renameTo(w7.J(x10, "mp4", z9, z9));
                     } else if (w11 != null && fileLocationArr[0] != null) {
-                        w7.G(anVar.getCurrentAccount());
+                        w7.G(cnVar.getCurrentAccount());
                         File J2 = w7.J(w11, null, true, true);
-                        w7.G(anVar.getCurrentAccount());
+                        w7.G(cnVar.getCurrentAccount());
                         w7.J(fileLocationArr[0], null, true, true).renameTo(J2);
                     }
-                    anVar.getMessagesController().U0(a22.id);
+                    cnVar.getMessagesController().U0(a22.id);
                     ArrayList arrayList2 = new ArrayList();
                     arrayList2.add(a22);
-                    anVar.getMessagesStorage().m1(arrayList2, null, false, true);
-                    TLRPC.UserFull b22 = anVar.getMessagesController().b2(j3);
+                    cnVar.getMessagesStorage().m1(arrayList2, null, false, true);
+                    TLRPC.UserFull b22 = cnVar.getMessagesController().b2(j3);
                     b22.profile_photo = tL_photos_photo.photo;
-                    anVar.getMessagesStorage().j2(b22, false);
-                    an anVar3 = anVar;
-                    org.telegram.ui.Components.hc.a0(anVar3).V(Collections.singletonList(a22), org.telegram.messenger.g0.X2(id.M0(2131754219, null)), org.telegram.messenger.g0.U2(id.M0(2131754220, null), new j0(j3, anVar3)), null).j();
+                    cnVar.getMessagesStorage().j2(b22, false);
+                    cn cnVar3 = cnVar;
+                    org.telegram.ui.Components.hc.a0(cnVar3).V(Collections.singletonList(a22), org.telegram.messenger.g0.X2(id.M0(2131754219, null)), org.telegram.messenger.g0.U2(id.M0(2131754220, null), new j0(j3, cnVar3)), null).j();
                     break;
                 }
                 break;
@@ -133,27 +133,27 @@ public final /* synthetic */ class h0 implements Runnable {
                 ((ConferenceCall) obj2).lambda$poll$7((TL_phone.getGroupCallChainBlocks) obj4, this.b, (TLObject) obj6, (TLRPC.TL_error) obj5, (AtomicBoolean) obj3, (AtomicInteger) obj);
                 break;
             case 2:
-                m50 m50Var = (m50) obj5;
+                n50 n50Var = (n50) obj5;
                 ((u1) obj2).c(400L);
-                m50.M0((Context) obj6, m50Var.a, -j3, ((TLRPC.TL_chatInviteExported) obj4).subscription_pricing, (TLRPC.TL_chatInviteImporter) obj3, (TLRPC.ChannelParticipant) obj, m50Var.I0);
+                n50.M0((Context) obj6, n50Var.a, -j3, ((TLRPC.TL_chatInviteExported) obj4).subscription_pricing, (TLRPC.TL_chatInviteImporter) obj3, (TLRPC.ChannelParticipant) obj, n50Var.I0);
                 break;
             case 3:
-                final m11 m11Var = (m11) obj5;
+                final n11 n11Var = (n11) obj5;
                 TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) obj2;
                 z0 z0Var = (z0) obj6;
-                final k60 k60Var = (k60) obj4;
+                final l60 l60Var = (l60) obj4;
                 final TLRPC.User user = (TLRPC.User) obj3;
                 final TLRPC.Chat chat = (TLRPC.Chat) obj;
                 final boolean z10 = (channelParticipant instanceof TLRPC.TL_channelParticipantBanned) && (tL_chatBannedRights = channelParticipant.banned_rights) != null && tL_chatBannedRights.view_messages;
                 z0Var.setVisibility(0);
-                z0Var.setText(id.M0(z10 ? 2131743915 : 2131753726, null));
+                z0Var.setText(id.M0(z10 ? 2131743912 : 2131753726, null));
                 final long j10 = this.b;
-                z0Var.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.x01
+                z0Var.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.y01
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        m11 m11Var2 = m11.this;
-                        int i10 = m11Var2.e;
-                        k60Var.u();
+                        n11 n11Var2 = n11.this;
+                        int i10 = n11Var2.e;
+                        l60Var.u();
                         boolean z11 = z10;
                         TLRPC.User user2 = user;
                         if (!z11) {
@@ -164,34 +164,34 @@ public final /* synthetic */ class h0 implements Runnable {
                         tL_channels_editBanned.participant = org.telegram.messenger.qp.n1(user2);
                         tL_channels_editBanned.channel = org.telegram.messenger.qp.i1(chat);
                         tL_channels_editBanned.banned_rights = new TLRPC.TL_chatBannedRights();
-                        ConnectionsManager.getInstance(i10).sendRequest(tL_channels_editBanned, new x1(m11Var2, 14));
+                        ConnectionsManager.getInstance(i10).sendRequest(tL_channels_editBanned, new x1(n11Var2, 14));
                     }
                 });
                 break;
             default:
                 Activity activity = (Activity) obj5;
-                f6 f6Var = (f6) obj4;
-                oy0 oy0Var = new oy0(activity, f6Var, this.b, (byte[]) obj3);
-                oy0Var.N0((TLRPC.TL_channels_sponsoredMessageReportResultChooseOption) ((TLObject) obj6));
-                oy0Var.r1 = new ab.b0((an) obj2, activity, f6Var, (ij) obj, 10);
-                oy0Var.show();
+                g6 g6Var = (g6) obj4;
+                ry0 ry0Var = new ry0(activity, g6Var, this.b, (byte[]) obj3);
+                ry0Var.N0((TLRPC.TL_channels_sponsoredMessageReportResultChooseOption) ((TLObject) obj6));
+                ry0Var.r1 = new ab.b0((cn) obj2, activity, g6Var, (ij) obj, 10);
+                ry0Var.show();
                 break;
         }
     }
 
-    public /* synthetic */ h0(TLObject tLObject, Activity activity, f6 f6Var, long j3, byte[] bArr, an anVar, ij ijVar) {
+    public /* synthetic */ h0(TLObject tLObject, Activity activity, g6 g6Var, long j3, byte[] bArr, cn cnVar, ij ijVar) {
         this.c = tLObject;
         this.d = activity;
-        this.f = f6Var;
+        this.f = g6Var;
         this.b = j3;
         this.h = bArr;
-        this.e = anVar;
+        this.e = cnVar;
         this.n = ijVar;
     }
 
-    public /* synthetic */ h0(TLRPC.TL_error tL_error, an anVar, TLObject tLObject, TLRPC.FileLocation[] fileLocationArr, String str, TLRPC.FileLocation[] fileLocationArr2, long j3) {
+    public /* synthetic */ h0(TLRPC.TL_error tL_error, cn cnVar, TLObject tLObject, TLRPC.FileLocation[] fileLocationArr, String str, TLRPC.FileLocation[] fileLocationArr2, long j3) {
         this.d = tL_error;
-        this.e = anVar;
+        this.e = cnVar;
         this.c = tLObject;
         this.f = fileLocationArr;
         this.n = str;
@@ -199,8 +199,8 @@ public final /* synthetic */ class h0 implements Runnable {
         this.b = j3;
     }
 
-    public /* synthetic */ h0(m50 m50Var, u1 u1Var, Context context, long j3, TLRPC.TL_chatInviteExported tL_chatInviteExported, TLRPC.TL_chatInviteImporter tL_chatInviteImporter, TLRPC.ChannelParticipant channelParticipant) {
-        this.d = m50Var;
+    public /* synthetic */ h0(n50 n50Var, u1 u1Var, Context context, long j3, TLRPC.TL_chatInviteExported tL_chatInviteExported, TLRPC.TL_chatInviteImporter tL_chatInviteImporter, TLRPC.ChannelParticipant channelParticipant) {
+        this.d = n50Var;
         this.e = u1Var;
         this.c = context;
         this.b = j3;
@@ -209,11 +209,11 @@ public final /* synthetic */ class h0 implements Runnable {
         this.n = channelParticipant;
     }
 
-    public /* synthetic */ h0(m11 m11Var, TLRPC.ChannelParticipant channelParticipant, z0 z0Var, k60 k60Var, long j3, TLRPC.User user, TLRPC.Chat chat) {
-        this.d = m11Var;
+    public /* synthetic */ h0(n11 n11Var, TLRPC.ChannelParticipant channelParticipant, z0 z0Var, l60 l60Var, long j3, TLRPC.User user, TLRPC.Chat chat) {
+        this.d = n11Var;
         this.e = channelParticipant;
         this.c = z0Var;
-        this.f = k60Var;
+        this.f = l60Var;
         this.b = j3;
         this.h = user;
         this.n = chat;

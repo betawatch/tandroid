@@ -15,11 +15,11 @@ import java.util.HashMap;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.qs;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.Components.i5;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public class z0 extends ImageView {
     public static final /* synthetic */ int L = 0;
@@ -34,7 +34,7 @@ public class z0 extends ImageView {
     public final int a;
     public final float[] b;
     public final p1 c;
-    public final f6 d;
+    public final g6 d;
     public boolean e;
     public final float f;
     public boolean h;
@@ -45,7 +45,7 @@ public class z0 extends ImageView {
     public final Path x;
     public Paint y;
 
-    public z0(int i7, Context context, f6 f6Var) {
+    public z0(int i7, Context context, g6 g6Var) {
         super(context);
         this.b = new float[3];
         this.f = 1.0f;
@@ -56,7 +56,7 @@ public class z0 extends ImageView {
         this.y = new Paint(1);
         this.G = 1.0f;
         this.a = i7;
-        this.d = f6Var;
+        this.d = g6Var;
         setImageResource(i7 == 0 ? R.drawable.msg_premium_lock2 : R.drawable.msg_mini_premiumlock);
         if (i7 == 0) {
             p1 p1Var = new p1(5);
@@ -72,7 +72,7 @@ public class z0 extends ImageView {
         }
         if (i7 == 2) {
             this.f = 0.8f;
-            this.y.setColor(k6.x0(null, k6.a7, false));
+            this.y.setColor(l6.x0(null, l6.a7, false));
         } else if (i7 == 3) {
             setScaleType(ImageView.ScaleType.CENTER);
             setImageResource(R.drawable.msg_archive_hide);
@@ -94,10 +94,10 @@ public class z0 extends ImageView {
             fArr[2] = 0.7f;
         }
         int HSVToColor = Color.HSVToColor(fArr);
-        int i10 = k6.d6;
-        f6 f6Var = this.d;
-        int f10 = i0.a.f(0.5f, HSVToColor, k6.w0(i10, f6Var));
-        int f11 = i0.a.f(0.4f, HSVToColor, k6.w0(i10, f6Var));
+        int i10 = l6.d6;
+        g6 g6Var = this.d;
+        int f10 = i0.a.f(0.5f, HSVToColor, l6.w0(i10, g6Var));
+        int f11 = i0.a.f(0.4f, HSVToColor, l6.w0(i10, g6Var));
         if (this.w != null && this.r == f11 && this.s == f10) {
             return;
         }
@@ -300,7 +300,7 @@ public class z0 extends ImageView {
         this.h = true;
         Integer num = this.K;
         if (num != null) {
-            i7 = k6.w(i7, num.intValue());
+            i7 = l6.w(i7, num.intValue());
         }
         if (this.n != i7) {
             this.n = i7;

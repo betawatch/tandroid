@@ -7,7 +7,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x1 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -36,13 +36,13 @@ public final /* synthetic */ class x1 implements Runnable {
                 TwoStepVerificationActivity twoStepVerificationActivity2 = this.d;
                 boolean z10 = this.f;
                 if (!z9) {
-                    k7Var.Q1(this.c, twoStepVerificationActivity2, z10);
+                    k7Var.P1(this.c, twoStepVerificationActivity2, z10);
                     break;
                 } else {
                     TL_account.tmpPassword tmppassword = (TL_account.tmpPassword) tLObject;
                     p10.i(k7Var.a).y = tmppassword;
                     p10.i(k7Var.a).v(false);
-                    k7Var.J1(tmppassword.tmp_password, twoStepVerificationActivity2, z10, null);
+                    k7Var.I1(tmppassword.tmp_password, twoStepVerificationActivity2, z10, null);
                     break;
                 }
             default:

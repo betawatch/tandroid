@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class am extends ViewGroup {
     public long D;
@@ -332,7 +332,7 @@ public final class am extends ViewGroup {
                     if (e02 != null) {
                         int i10 = e02.C;
                         q5Var.d(e02, hashMap2.size() > 1, z13 && chatAttachAlertPhotoLayout.T0 == chatAttachAlertPhotoLayout.U0, R == tlVar.b() - 1, diVar.Z1);
-                        if ((diVar.W1 instanceof org.telegram.ui.an) && diVar.N3) {
+                        if ((diVar.W1 instanceof org.telegram.ui.cn) && diVar.N3) {
                             z10 = false;
                             q5Var.b(arrayList2.indexOf(Integer.valueOf(i10)), hashMap2.containsKey(Integer.valueOf(i10)), false);
                         } else {
@@ -481,7 +481,7 @@ public final class am extends ViewGroup {
             } else {
                 if (zlVar.u == null || zlVar.v != j3) {
                     zlVar.v = j3;
-                    zlVar.u = new my0(bi.dd.a1(false, org.telegram.messenger.id.H(',', "UnlockPaidContent", (int) j3), 0.7f, null), 14.0f, org.telegram.messenger.g0.o());
+                    zlVar.u = new ny0(bi.dd.a1(false, org.telegram.messenger.id.H(',', "UnlockPaidContent", (int) j3), 0.7f, null), 14.0f, org.telegram.messenger.g0.o());
                 }
                 float L = org.telegram.messenger.g0.L(28.0f) + zlVar.u.c;
                 float L2 = org.telegram.messenger.g0.L(32.0f);
@@ -498,11 +498,11 @@ public final class am extends ViewGroup {
                 paint.setColor(1610612736);
                 float f22 = L2 / f19;
                 canvas.drawRoundRect(rectF, f22, f22, paint);
-                my0 my0Var = zlVar.u;
+                ny0 ny0Var = zlVar.u;
                 float L3 = org.telegram.messenger.g0.L(14.0f) + (((zlVar.r / f19) + zlVar.n) - (L / f19));
                 float f23 = zlVar.p + (zlVar.s / f19);
                 f10 = b10;
-                my0Var.c(L3, f23, 1.0f, -1, canvas);
+                ny0Var.c(L3, f23, 1.0f, -1, canvas);
             }
             if (z10) {
                 invalidate();
@@ -569,7 +569,7 @@ public final class am extends ViewGroup {
         boolean z9;
         yl ylVar3;
         int i7;
-        org.telegram.ui.an anVar;
+        org.telegram.ui.cn cnVar;
         yl ylVar4;
         vl vlVar;
         ArrayList arrayList;
@@ -750,8 +750,8 @@ public final class am extends ViewGroup {
                                     org.telegram.ui.ActionBar.f2 f2Var = diVar.W1;
                                     if (i22 != 0) {
                                         i7 = 1;
-                                    } else if (f2Var instanceof org.telegram.ui.an) {
-                                        anVar = (org.telegram.ui.an) f2Var;
+                                    } else if (f2Var instanceof org.telegram.ui.cn) {
+                                        cnVar = (org.telegram.ui.cn) f2Var;
                                         i7 = 0;
                                         if (f2Var == null) {
                                             f2Var = LaunchActivity.Q();
@@ -768,7 +768,7 @@ public final class am extends ViewGroup {
                                         p12.h = i23;
                                         p12.n = z10;
                                         this.N.a = arrayList6;
-                                        PhotoViewer.p1().e2(new ArrayList(arrayList6), indexOf, i7, false, this.N, anVar);
+                                        PhotoViewer.p1().e2(new ArrayList(arrayList6), indexOf, i7, false, this.N, cnVar);
                                         bmVar.P.getClass();
                                         if (ChatAttachAlertPhotoLayout.V()) {
                                             PhotoViewer p13 = PhotoViewer.p1();
@@ -786,7 +786,7 @@ public final class am extends ViewGroup {
                                     } else {
                                         i7 = 4;
                                     }
-                                    anVar = null;
+                                    cnVar = null;
                                     if (f2Var == null) {
                                     }
                                     if (!diVar.T3.f0()) {
@@ -799,7 +799,7 @@ public final class am extends ViewGroup {
                                     p122.h = i232;
                                     p122.n = z102;
                                     this.N.a = arrayList6;
-                                    PhotoViewer.p1().e2(new ArrayList(arrayList6), indexOf, i7, false, this.N, anVar);
+                                    PhotoViewer.p1().e2(new ArrayList(arrayList6), indexOf, i7, false, this.N, cnVar);
                                     bmVar.P.getClass();
                                     if (ChatAttachAlertPhotoLayout.V()) {
                                     }

@@ -5,7 +5,7 @@ import android.view.View;
 import org.telegram.ui.Cells.f0;
 import org.telegram.ui.Cells.ra;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final class h implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -26,17 +26,17 @@ public final class h implements ValueAnimator.AnimatorUpdateListener {
             case 0:
                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 l lVar = this.c;
-                float measuredHeight = ((lVar.G.getMeasuredHeight() - lVar.F.L9) - r2.Ua) / 2.0f;
+                float measuredHeight = ((lVar.G.getMeasuredHeight() - lVar.F.N9) - r2.Wa) / 2.0f;
                 f0 f0Var = (f0) this.d;
-                float measuredHeight2 = (measuredHeight - (f0Var.getMeasuredHeight() / 2.0f)) + lVar.F.L9;
+                float measuredHeight2 = (measuredHeight - (f0Var.getMeasuredHeight() / 2.0f)) + lVar.F.N9;
                 f0Var.setTranslationY(((((float) f0Var.getTop()) > measuredHeight2 ? measuredHeight2 - f0Var.getTop() : 0.0f) * floatValue) + ((1.0f - floatValue) * this.b));
                 break;
             default:
                 float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 l lVar2 = this.c;
-                float measuredHeight3 = ((lVar2.G.getMeasuredHeight() - lVar2.F.L9) - r2.Ua) / 2.0f;
+                float measuredHeight3 = ((lVar2.G.getMeasuredHeight() - lVar2.F.N9) - r2.Wa) / 2.0f;
                 ra raVar = (ra) this.d;
-                float measuredHeight4 = (measuredHeight3 - (raVar.getMeasuredHeight() / 2.0f)) + lVar2.F.L9;
+                float measuredHeight4 = (measuredHeight3 - (raVar.getMeasuredHeight() / 2.0f)) + lVar2.F.N9;
                 raVar.setTranslationY(((((float) raVar.getTop()) > measuredHeight4 ? measuredHeight4 - raVar.getTop() : 0.0f) * floatValue2) + ((1.0f - floatValue2) * this.b));
                 break;
         }

@@ -11,23 +11,23 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.bv;
-import org.telegram.ui.Components.ck0;
-import org.telegram.ui.Components.dl0;
-import org.telegram.ui.Components.g40;
-import org.telegram.ui.Components.o40;
-import org.telegram.ui.Components.ow0;
-import org.telegram.ui.Components.r20;
-import org.telegram.ui.Components.sp0;
+import org.telegram.ui.Components.dk0;
+import org.telegram.ui.Components.el0;
+import org.telegram.ui.Components.h40;
+import org.telegram.ui.Components.p40;
+import org.telegram.ui.Components.pw0;
+import org.telegram.ui.Components.s20;
 import org.telegram.ui.Components.to;
+import org.telegram.ui.Components.tp0;
 import org.telegram.ui.Components.uo;
 import org.telegram.ui.Components.vo;
 import org.telegram.ui.Components.wz;
-import org.telegram.ui.Components.xs0;
+import org.telegram.ui.Components.zs0;
 import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.ll;
-import org.telegram.ui.pn;
+import org.telegram.ui.nl;
+import org.telegram.ui.rn;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k1 implements Runnable {
     public final /* synthetic */ int a;
@@ -42,7 +42,7 @@ public final /* synthetic */ class k1 implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        org.telegram.ui.ActionBar.j6 J0;
+        org.telegram.ui.ActionBar.k6 J0;
         int i7 = this.a;
         char c10 = 1;
         char c11 = 1;
@@ -61,19 +61,19 @@ public final /* synthetic */ class k1 implements Runnable {
             case 1:
                 k7 k7Var = (k7) obj;
                 k7Var.getClass();
-                k7Var.p2(k7Var.b3, org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, z9 ? 2131750425 : 2131750422, k7Var.z1())), true);
+                k7Var.p2(k7Var.b3, org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, z9 ? 2131750424 : 2131750421, k7Var.y1())), true);
                 break;
             case 2:
                 k7 k7Var2 = ((f5) obj).V;
-                TL_stars.SavedStarGift E1 = k7Var2.E1(z9);
-                if (E1 != null) {
+                TL_stars.SavedStarGift D1 = k7Var2.D1(z9);
+                if (D1 != null) {
                     k7Var2.W2 = true;
-                    k7Var2.j2(E1, k7Var2.y2);
+                    k7Var2.i2(D1, k7Var2.y2);
                 } else {
-                    TL_stars.TL_starGiftUnique F1 = k7Var2.F1(z9);
-                    if (F1 != null) {
+                    TL_stars.TL_starGiftUnique E1 = k7Var2.E1(z9);
+                    if (E1 != null) {
                         k7Var2.W2 = true;
-                        k7Var2.h2(F1.slug, F1, k7Var2.y2);
+                        k7Var2.g2(E1.slug, E1, k7Var2.y2);
                     }
                 }
                 k7Var2.M2 = -1;
@@ -94,12 +94,12 @@ public final /* synthetic */ class k1 implements Runnable {
                 }
             case 4:
                 ei.n nVar = (ei.n) obj;
-                sp0 sp0Var = nVar.W;
+                tp0 tp0Var = nVar.W;
                 if (z9) {
-                    new ei.q(sp0Var.a, org.telegram.messenger.id.M0(2131746694, null), new ai.i(sp0Var, 15)).show();
+                    new ei.q(tp0Var.a, org.telegram.messenger.id.M0(2131746693, null), new ai.i(tp0Var, 15)).show();
                     break;
                 } else {
-                    sp0Var.b(nVar.a.E);
+                    tp0Var.b(nVar.a.E);
                     break;
                 }
             case 5:
@@ -167,7 +167,7 @@ public final /* synthetic */ class k1 implements Runnable {
                 l2.i0 i0Var = ((l2.c0) sVar).a;
                 if (i0Var.d0 != z9) {
                     i0Var.d0 = z9;
-                    i0Var.m.e(23, new l2.x(c11 == true ? 1 : 0, z9));
+                    i0Var.m.e(23, new l2.w(c11 == true ? 1 : 0, z9));
                     break;
                 }
                 break;
@@ -199,19 +199,19 @@ public final /* synthetic */ class k1 implements Runnable {
                 r0Var.q0 = true;
                 break;
             case 19:
-                vf.c.t((Context) obj, org.telegram.messenger.id.M0(z9 ? 2131753038 : 2131748393, null));
+                vf.c.t((Context) obj, org.telegram.messenger.id.M0(z9 ? 2131753038 : 2131748392, null));
                 break;
             case 20:
-                ow0 ow0Var = ((ll) obj).b.r1;
-                if (ow0Var != null && z9) {
-                    ow0Var.setVisibility(8);
+                pw0 pw0Var = ((nl) obj).b.r1;
+                if (pw0Var != null && z9) {
+                    pw0Var.setVisibility(8);
                     break;
                 }
                 break;
             case 21:
-                pn pnVar = (pn) obj;
-                pnVar.w0.autotranslation = z9;
-                pnVar.getMessagesController().Q3(pnVar.w0, false);
+                rn rnVar = (rn) obj;
+                rnVar.w0.autotranslation = z9;
+                rnVar.getMessagesController().Q3(rnVar.w0, false);
                 break;
             case 22:
                 vo voVar = (vo) obj;
@@ -228,7 +228,7 @@ public final /* synthetic */ class k1 implements Runnable {
                             voVar.o1.r(r3Var, wallPaper, false, Boolean.valueOf(z9), false);
                         }
                     }
-                    if (org.telegram.messenger.g0.Q1() && (J0 = vo.J0(z9)) != null && J0 != org.telegram.ui.ActionBar.k6.I) {
+                    if (org.telegram.messenger.g0.Q1() && (J0 = vo.J0(z9)) != null && J0 != org.telegram.ui.ActionBar.l6.I) {
                         voVar.Z1 = z9 != voVar.q1;
                         voVar.X0(J0);
                     }
@@ -253,46 +253,46 @@ public final /* synthetic */ class k1 implements Runnable {
                 wzVar.e1(wzVar.q2, z9);
                 break;
             case 25:
-                r20 r20Var = (r20) obj;
+                s20 s20Var = (s20) obj;
                 if (z9) {
-                    r20Var.getClass();
+                    s20Var.getClass();
                     break;
                 } else {
-                    r20Var.r.setVisibility(8);
+                    s20Var.r.setVisibility(8);
                     break;
                 }
             case 26:
-                o40 o40Var = ((g40) obj).H0;
-                if (!o40Var.k0) {
+                p40 p40Var = ((h40) obj).H0;
+                if (!p40Var.k0) {
                     try {
-                        o40Var.performHapticFeedback(3, 2);
+                        p40Var.performHapticFeedback(3, 2);
                     } catch (Exception unused) {
                     }
-                    org.telegram.messenger.g0.f2(o40Var.h.getParentActivity());
-                    o40Var.h0 = z9 ? o40Var.j0 : 0L;
-                    o40Var.g0 = System.currentTimeMillis();
-                    o40Var.i0 = true;
-                    o40Var.w();
-                    o40Var.invalidate();
-                    qs.f(o40Var.e).k(qs.l2, Integer.valueOf(o40Var.U), Boolean.FALSE);
+                    org.telegram.messenger.g0.f2(p40Var.h.getParentActivity());
+                    p40Var.h0 = z9 ? p40Var.j0 : 0L;
+                    p40Var.g0 = System.currentTimeMillis();
+                    p40Var.i0 = true;
+                    p40Var.w();
+                    p40Var.invalidate();
+                    qs.f(p40Var.e).k(qs.l2, Integer.valueOf(p40Var.U), Boolean.FALSE);
                     break;
                 }
                 break;
             case 27:
-                ck0 ck0Var = (ck0) obj;
-                ck0Var.getClass();
-                ck0Var.q0(z9 ? "shown after a change away" : "shown, height differs", false);
+                dk0 dk0Var = (dk0) obj;
+                dk0Var.getClass();
+                dk0Var.q0(z9 ? "shown after a change away" : "shown, height differs", false);
                 break;
             case 28:
-                ((dl0) obj).G.presentFragment(new PremiumPreviewFragment(0, z9 ? "upload_speed" : "download_speed"));
+                ((el0) obj).G.presentFragment(new PremiumPreviewFragment(0, z9 ? "upload_speed" : "download_speed"));
                 break;
             default:
-                xs0 xs0Var = (xs0) obj;
+                zs0 zs0Var = (zs0) obj;
                 if (z9) {
-                    xs0Var.getClass();
+                    zs0Var.getClass();
                     break;
                 } else {
-                    xs0Var.o0.setVisibility(8);
+                    zs0Var.o0.setVisibility(8);
                     break;
                 }
         }

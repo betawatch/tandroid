@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x implements Comparator {
     public final /* synthetic */ int a;
@@ -131,20 +131,20 @@ public final /* synthetic */ class x implements Comparator {
                 ij ijVar = (ij) obj;
                 ij ijVar2 = (ij) obj2;
                 String[] strArr = MediaController.V1;
-                int f12 = ijVar.f1();
-                int f13 = ijVar2.f1();
+                int e12 = ijVar.e1();
+                int e13 = ijVar2.e1();
                 long j15 = ijVar.k.grouped_id;
                 long j16 = ijVar2.k.grouped_id;
-                if (f12 >= 0 || f13 >= 0) {
+                if (e12 >= 0 || e13 >= 0) {
                     if (j15 == 0 || j15 != j16) {
-                        return Integer.compare(f12, f13);
+                        return Integer.compare(e12, e13);
                     }
-                    compare = Integer.compare(f13, f12);
+                    compare = Integer.compare(e13, e12);
                 } else {
                     if (j15 == 0 || j15 != j16) {
-                        return Integer.compare(f13, f12);
+                        return Integer.compare(e13, e12);
                     }
-                    compare = Integer.compare(f12, f13);
+                    compare = Integer.compare(e12, e13);
                 }
                 return -compare;
             case 18:

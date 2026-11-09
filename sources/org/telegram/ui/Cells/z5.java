@@ -14,18 +14,18 @@ import android.view.inputmethod.InputConnection;
 import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.ui.Components.zs;
-import org.telegram.ui.e11;
-import org.telegram.ui.i01;
+import org.telegram.ui.g11;
+import org.telegram.ui.k01;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class z5 extends zs {
     public final /* synthetic */ int Y1;
     public final /* synthetic */ Object Z1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ z5(FrameLayout frameLayout, Context context, org.telegram.ui.ActionBar.f6 f6Var, int i7) {
-        super(context, f6Var);
+    public /* synthetic */ z5(FrameLayout frameLayout, Context context, org.telegram.ui.ActionBar.g6 g6Var, int i7) {
+        super(context, g6Var);
         this.Y1 = i7;
         this.Z1 = frameLayout;
     }
@@ -114,8 +114,8 @@ public final class z5 extends zs {
                 break;
             case 1:
                 if (z9) {
-                    ((i01) this.Z1).F.q();
-                    org.telegram.messenger.g0.i3(new e11(this, 0), 200L);
+                    ((k01) this.Z1).F.q();
+                    org.telegram.messenger.g0.i3(new g11(this, 0), 200L);
                 }
                 super.onFocusChanged(z9, i7, rect);
                 break;
@@ -130,7 +130,7 @@ public final class z5 extends zs {
         switch (this.Y1) {
             case 2:
                 super.onSizeChanged(i7, i10, i11, i12);
-                postOnAnimation(new sg.t0(this, 3));
+                postOnAnimation(new sh.b(this, 1));
                 break;
             default:
                 super.onSizeChanged(i7, i10, i11, i12);
@@ -179,10 +179,10 @@ public final class z5 extends zs {
                 }
                 break;
             case 1:
-                if (motionEvent.getAction() != 1 || !((i01) this.Z1).F.u()) {
+                if (motionEvent.getAction() != 1 || !((k01) this.Z1).F.u()) {
                     break;
                 } else {
-                    org.telegram.messenger.g0.i3(new e11(this, 1), 200L);
+                    org.telegram.messenger.g0.i3(new g11(this, 1), 200L);
                     break;
                 }
         }
@@ -202,8 +202,8 @@ public final class z5 extends zs {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z5(Context context, org.telegram.ui.ActionBar.f6 f6Var, Drawable drawable) {
-        super(context, f6Var);
+    public z5(Context context, org.telegram.ui.ActionBar.g6 g6Var, Drawable drawable) {
+        super(context, g6Var);
         this.Y1 = 3;
         this.Z1 = drawable;
     }

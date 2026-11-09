@@ -26,7 +26,7 @@ import org.webrtc.SurfaceViewRenderer;
 import org.webrtc.TextureViewRenderer;
 import org.webrtc.VideoSink;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class s3 extends FrameLayout implements RendererCommon.RendererEvents, ls {
     public boolean D;
@@ -40,7 +40,7 @@ public final class s3 extends FrameLayout implements RendererCommon.RendererEven
     public Runnable n;
     public boolean r;
     public long s;
-    public di.h4 w;
+    public di.i4 w;
     public boolean x;
     public float y;
 
@@ -88,7 +88,7 @@ public final class s3 extends FrameLayout implements RendererCommon.RendererEven
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void b(long j3, di.h4 h4Var) {
+    public final void b(long j3, di.i4 i4Var) {
         int i7;
         di.x0 x0Var;
         di.g1 g1Var;
@@ -96,7 +96,7 @@ public final class s3 extends FrameLayout implements RendererCommon.RendererEven
         TextureViewRenderer textureViewRenderer;
         int L;
         int width;
-        if (h4Var == null) {
+        if (i4Var == null) {
             long j10 = this.s;
             if (j10 != 0 && this.r && (textureViewRenderer = this.d) != null) {
                 File file = new File(org.telegram.messenger.w7.z(4), rf.b.h(j10, "live", ".jpg"));
@@ -143,14 +143,14 @@ public final class s3 extends FrameLayout implements RendererCommon.RendererEven
                         }
                     }
                     this.s = j3;
-                    this.w = h4Var;
-                    if (this.r && h4Var != null && !h4Var.a) {
-                        h4Var.a = true;
-                        h4Var.b();
+                    this.w = i4Var;
+                    if (this.r && i4Var != null && !i4Var.a) {
+                        i4Var.a = true;
+                        i4Var.b();
                     }
-                    boolean z9 = h4Var == null && (g1Var2 = (di.g1) h4Var.b) != null && g1Var2.n();
-                    if (h4Var == null && (g1Var = (di.g1) h4Var.b) != null && g1Var.a()) {
-                        di.g1 g1Var3 = (di.g1) h4Var.b;
+                    boolean z9 = i4Var == null && (g1Var2 = (di.g1) i4Var.b) != null && g1Var2.n();
+                    if (i4Var == null && (g1Var = (di.g1) i4Var.b) != null && g1Var.a()) {
+                        di.g1 g1Var3 = (di.g1) i4Var.b;
                         Objects.requireNonNull(g1Var3);
                         x0Var = new di.x0(g1Var3, 12);
                     } else {
@@ -164,14 +164,14 @@ public final class s3 extends FrameLayout implements RendererCommon.RendererEven
         if (this.s != j3) {
         }
         this.s = j3;
-        this.w = h4Var;
+        this.w = i4Var;
         if (this.r) {
-            h4Var.a = true;
-            h4Var.b();
+            i4Var.a = true;
+            i4Var.b();
         }
-        if (h4Var == null) {
+        if (i4Var == null) {
         }
-        if (h4Var == null) {
+        if (i4Var == null) {
         }
         x0Var = null;
         a(x0Var, z9);
@@ -227,8 +227,8 @@ public final class s3 extends FrameLayout implements RendererCommon.RendererEven
         di.x0 x0Var;
         if (i7 == qs.G2) {
             long longValue = ((Long) objArr[0]).longValue();
-            di.h4 h4Var = this.w;
-            if (h4Var == null || (g1Var = (di.g1) h4Var.b) == null || g1Var.g() != longValue) {
+            di.i4 i4Var = this.w;
+            if (i4Var == null || (g1Var = (di.g1) i4Var.b) == null || g1Var.g() != longValue) {
                 return;
             }
             boolean n10 = ((di.g1) this.w.b).n();
@@ -377,10 +377,10 @@ public final class s3 extends FrameLayout implements RendererCommon.RendererEven
     @Override // org.webrtc.RendererCommon.RendererEvents
     public final void onFirstFrameRendered() {
         if (!this.r) {
-            di.h4 h4Var = this.w;
-            if (h4Var != null && !h4Var.a) {
-                h4Var.a = true;
-                h4Var.b();
+            di.i4 i4Var = this.w;
+            if (i4Var != null && !i4Var.a) {
+                i4Var.a = true;
+                i4Var.b();
             }
             this.r = true;
         }

@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import android.util.SparseArray;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
-import di.f5;
+import di.g5;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -19,16 +19,16 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_payments;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.hc;
 import org.telegram.ui.Components.kj;
 import org.telegram.ui.Components.mz;
 import org.telegram.ui.Components.uj;
 import org.telegram.ui.Components.vj;
-import org.telegram.ui.Components.w70;
+import org.telegram.ui.Components.x70;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g3 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -45,7 +45,7 @@ public final /* synthetic */ class g3 implements Runnable {
     public final /* synthetic */ Object x;
     public final /* synthetic */ Object y;
 
-    public /* synthetic */ g3(fi.d dVar, TLObject tLObject, int i7, long j3, org.telegram.ui.ActionBar.v2 v2Var, TL_payments.starRefProgram starrefprogram, long j10, boolean z9, Context context, f6 f6Var, TLRPC.User user, TLRPC.TL_error tL_error) {
+    public /* synthetic */ g3(fi.d dVar, TLObject tLObject, int i7, long j3, org.telegram.ui.ActionBar.v2 v2Var, TL_payments.starRefProgram starrefprogram, long j10, boolean z9, Context context, g6 g6Var, TLRPC.User user, TLRPC.TL_error tL_error) {
         this.n = dVar;
         this.d = tLObject;
         this.b = i7;
@@ -55,7 +55,7 @@ public final /* synthetic */ class g3 implements Runnable {
         this.h = j10;
         this.e = z9;
         this.w = context;
-        this.x = f6Var;
+        this.x = g6Var;
         this.y = user;
         this.c = tL_error;
     }
@@ -66,7 +66,7 @@ public final /* synthetic */ class g3 implements Runnable {
      */
     /* JADX WARN: Code restructure failed: missing block: B:79:0x0208, code lost:
     
-        r9.getViewTreeObserver().addOnPreDrawListener(new org.telegram.ui.vp(r13, (org.telegram.ui.Components.mz) r2, r1, r11));
+        r9.getViewTreeObserver().addOnPreDrawListener(new org.telegram.ui.xp(r13, (org.telegram.ui.Components.mz) r2, r1, r11));
      */
     /* JADX WARN: Code restructure failed: missing block: B:80:0x0216, code lost:
     
@@ -101,12 +101,12 @@ public final /* synthetic */ class g3 implements Runnable {
                 org.telegram.ui.ActionBar.v2 v2Var = (org.telegram.ui.ActionBar.v2) obj5;
                 TL_payments.starRefProgram starrefprogram = (TL_payments.starRefProgram) obj4;
                 Context context = (Context) obj3;
-                f6 f6Var = (f6) obj2;
+                g6 g6Var = (g6) obj2;
                 TLRPC.User user = (TLRPC.User) obj;
                 ((fi.d) obj6).setLoading(false);
                 if (!(tLObject instanceof TL_payments.connectedStarRefBots)) {
                     if (tL_error != null) {
-                        org.telegram.ui.Cells.f1.r(v2Var.E, f6Var, tL_error, false);
+                        org.telegram.ui.Cells.f1.r(v2Var.E, g6Var, tL_error, false);
                         break;
                     }
                 } else {
@@ -164,7 +164,7 @@ public final /* synthetic */ class g3 implements Runnable {
                                 }
                             }
                         }
-                        new hc(q3.K0(context, i11, connectedbotstarref, j10, f6Var).E, f6Var).V(Arrays.asList(user), id.M0(2131754335, null), id.M0(2131754336, null), null).j();
+                        new hc(q3.K0(context, i11, connectedbotstarref, j10, g6Var).E, g6Var).V(Arrays.asList(user), id.M0(2131754335, null), id.M0(2131754336, null), null).j();
                         break;
                     }
                 }
@@ -183,14 +183,14 @@ public final /* synthetic */ class g3 implements Runnable {
                 ArrayList arrayList9 = ujVar.N;
                 ArrayList arrayList10 = ujVar.L;
                 vj vjVar = ujVar.X;
-                f5 f5Var = vjVar.L;
+                g5 g5Var = vjVar.L;
                 if (this.b == ujVar.T) {
                     ujVar.S = false;
                     if (tL_error == null) {
                         kj kjVar = vjVar.r;
-                        f5Var.e(false, true);
-                        w70 w70Var = f5Var.e;
-                        xh.l lVar = f5Var.d;
+                        g5Var.e(false, true);
+                        x70 x70Var = g5Var.e;
+                        xh.l lVar = g5Var.d;
                         TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
                         ujVar.G = messages_messages.next_rate;
                         int i15 = cVar.a;
@@ -222,7 +222,7 @@ public final /* synthetic */ class g3 implements Runnable {
                             }
                             arrayList.add(ijVar);
                             arrayList9.add(ijVar);
-                            sparseArray.put(ijVar.f1(), ijVar);
+                            sparseArray.put(ijVar.e1(), ijVar);
                             i17++;
                             arrayList4 = arrayList12;
                         }
@@ -232,13 +232,13 @@ public final /* synthetic */ class g3 implements Runnable {
                         ujVar.V = arrayList9.size() >= i16;
                         if (arrayList9.isEmpty()) {
                             if (TextUtils.isEmpty(ujVar.K) && this.f == 0 && j3 == 0) {
-                                lVar.setText(id.M0(2131745804, null));
-                                w70Var.setVisibility(0);
-                                w70Var.setText(id.M0(2131745809, null));
+                                lVar.setText(id.M0(2131745801, null));
+                                x70Var.setVisibility(0);
+                                x70Var.setText(id.M0(2131745806, null));
                             } else {
-                                lVar.setText(id.M0(2131745803, null));
-                                w70Var.setVisibility(0);
-                                w70Var.setText(id.M0(2131745810, null));
+                                lVar.setText(id.M0(2131745800, null));
+                                x70Var.setVisibility(0);
+                                x70Var.setText(id.M0(2131745807, null));
                             }
                         }
                         if (!z9) {
@@ -246,7 +246,7 @@ public final /* synthetic */ class g3 implements Runnable {
                             if (arrayList5 != null) {
                                 arrayList10.addAll(arrayList5);
                             }
-                            if (str.length() >= 3 && (id.M0(2131745904, null).toLowerCase().startsWith(str) || "saved messages".startsWith(str))) {
+                            if (str.length() >= 3 && (id.M0(2131745901, null).toLowerCase().startsWith(str) || "saved messages".startsWith(str))) {
                                 int i18 = 0;
                                 while (true) {
                                     if (i18 >= arrayList10.size()) {
@@ -285,12 +285,12 @@ public final /* synthetic */ class g3 implements Runnable {
                             break;
                         }
                     } else {
-                        xh.l lVar2 = f5Var.d;
-                        w70 w70Var2 = f5Var.e;
-                        lVar2.setText(id.M0(2131745803, null));
-                        w70Var2.setVisibility(0);
-                        w70Var2.setText(id.M0(2131745810, null));
-                        f5Var.e(false, true);
+                        xh.l lVar2 = g5Var.d;
+                        x70 x70Var2 = g5Var.e;
+                        lVar2.setText(id.M0(2131745800, null));
+                        x70Var2.setVisibility(0);
+                        x70Var2.setText(id.M0(2131745807, null));
+                        g5Var.e(false, true);
                         break;
                     }
                 }

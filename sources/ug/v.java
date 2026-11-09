@@ -12,9 +12,9 @@ import org.telegram.ui.ActionBar.d2;
 import org.telegram.ui.Components.hc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.l00;
+import org.telegram.ui.n00;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v implements Runnable {
     public final /* synthetic */ int a;
@@ -46,7 +46,7 @@ public final /* synthetic */ class v implements Runnable {
                 HashSet hashSet = i0Var.q2;
                 hc X = hc.X();
                 if (X != null) {
-                    org.telegram.messenger.camera.q.s(hashSet.size() == 1 ? id.a0(null, null, 2131749144, g5.p((TLRPC.User) hashSet.iterator().next())) : id.G(hashSet.size(), "InviteLinkSent", Integer.valueOf(hashSet.size())), X, R.raw.voip_invite, 36);
+                    org.telegram.messenger.camera.q.s(hashSet.size() == 1 ? id.a0(null, null, 2131749143, g5.p((TLRPC.User) hashSet.iterator().next())) : id.G(hashSet.size(), "InviteLinkSent", Integer.valueOf(hashSet.size())), X, R.raw.voip_invite, 36);
                     break;
                 }
                 break;
@@ -60,8 +60,8 @@ public final /* synthetic */ class v implements Runnable {
                     if (i0Var.w2.getParent() != null) {
                         ((ViewGroup) i0Var.w2.getParent()).removeView(i0Var.w2);
                     }
-                    l00 l00Var = i0Var.D2;
-                    if (l00Var != null && l00Var.getParent() != null) {
+                    n00 n00Var = i0Var.D2;
+                    if (n00Var != null && n00Var.getParent() != null) {
                         ((ViewGroup) i0Var.D2.getParent()).removeView(i0Var.D2);
                     }
                     i0Var.k1.setPadding(0, 0, 0, 0);

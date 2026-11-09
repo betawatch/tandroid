@@ -1,6 +1,5 @@
 package yb;
 
-import a8.g0;
 import a8.v1;
 import a8.w2;
 import a8.x3;
@@ -10,41 +9,57 @@ import a8.z0;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Matrix;
+import android.graphics.RectF;
 import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
 import android.os.RemoteException;
 import android.util.Log;
+import android.view.View;
+import android.widget.FrameLayout;
 import c8.xb;
+import fh.g;
 import java.util.ArrayList;
-import java.util.Locale;
+import org.telegram.messenger.camera.q;
+import org.telegram.messenger.g0;
+import org.telegram.ui.ActionBar.f2;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.j5;
+import org.telegram.ui.ActionBar.r0;
+import org.telegram.ui.ActionBar.s4;
 import pb.j;
 import q6.m;
+import zh.m3;
+import zh.u2;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
-public final class b implements a {
-    public final Context a;
-    public final y6 b;
-    public final String c;
-    public boolean d;
-    public z0 e;
+public final class b implements a, s4 {
+    public boolean a;
+    public Object b;
+    public Object c;
+    public Object d;
+    public Object e;
 
-    public b(Context context, xb.a aVar) {
-        this.a = context;
-        Locale.getDefault().getLanguage().equals(Locale.ENGLISH.getLanguage());
-        this.b = new y6(1, -1, aVar.a, 1);
-        n6.e.b.getClass();
-        this.c = n6.e.a(context) >= 200400000 ? "com.google.android.gms.vision.ica" : "com.google.android.gms.vision.dynamite";
+    @Override // org.telegram.ui.ActionBar.s4
+    public boolean a() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.s4
+    public boolean b(r0 r0Var, RectF rectF) {
+        float L = g0.L(6.0f);
+        rectF.set(L, L, ((FrameLayout) this.b).getWidth() - r4, ((FrameLayout) this.b).getHeight() - r4);
+        return true;
     }
 
     @Override // yb.a
-    public final ArrayList a(ub.a aVar) {
+    public ArrayList c(ub.a aVar) {
         Bitmap createBitmap;
-        if (this.e == null) {
+        if (((z0) this.e) == null) {
             zzb();
         }
-        if (this.e == null) {
+        if (((z0) this.e) == null) {
             throw new lb.a("Waiting for the image labeling module to be downloaded. Please wait.", 14);
         }
         int i7 = aVar.e;
@@ -76,11 +91,11 @@ public final class b implements a {
             createBitmap = Bitmap.createBitmap(bitmap, 0, 0, i11, i12, matrix, true);
         }
         try {
-            z0 z0Var = this.e;
+            z0 z0Var = (z0) this.e;
             m.g(z0Var);
             a7.b bVar = new a7.b(createBitmap);
             Parcel p12 = z0Var.p1();
-            int i13 = g0.a;
+            int i13 = a8.g0.a;
             p12.writeStrongBinder(bVar);
             p12.writeInt(1);
             int r10 = xb.r(p12, 20293);
@@ -100,13 +115,88 @@ public final class b implements a {
         }
     }
 
+    @Override // org.telegram.ui.ActionBar.s4
+    public boolean d() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.s4
+    public g e(j5 j5Var) {
+        m3 m3Var = (m3) this.e;
+        g c10 = m3Var.getBaseSimpleGlass().d.c(j5Var, null, false);
+        c10.p(m3Var.M);
+        q.p(c10, g0.L(23.0f), 6.0f);
+        return c10;
+    }
+
+    @Override // org.telegram.ui.ActionBar.s4
+    public void f(j5 j5Var, r0 r0Var) {
+        boolean z9 = j5Var != null;
+        this.a = z9;
+        ((FrameLayout) this.b).setVisibility(z9 ? 4 : 0);
+    }
+
+    @Override // org.telegram.ui.ActionBar.s4
+    public int getButtonsGlassBackgroundColor() {
+        gh.e eVar = ((m3) this.e).M;
+        return eVar.a(eVar.e);
+    }
+
+    @Override // org.telegram.ui.ActionBar.s4
+    public gh.a getButtonsGlassColorProvider() {
+        return ((m3) this.e).M;
+    }
+
+    @Override // org.telegram.ui.ActionBar.s4
+    public gh.a getMenuGlassColorProvider() {
+        return ((m3) this.e).M;
+    }
+
+    @Override // org.telegram.ui.ActionBar.s4
+    public View getMenuHostView() {
+        return (FrameLayout) this.b;
+    }
+
+    @Override // org.telegram.ui.ActionBar.s4
+    public g6 getMenuResourcesProvider() {
+        g6 g6Var;
+        g6Var = ((f2) ((m3) this.e)).resourceProvider;
+        return g6Var;
+    }
+
+    @Override // org.telegram.ui.ActionBar.s4
+    public int getMenuRise() {
+        return g0.L(8.0f);
+    }
+
+    @Override // org.telegram.ui.ActionBar.s4
+    public View getMenuView() {
+        return (u2) this.c;
+    }
+
+    @Override // org.telegram.ui.ActionBar.s4
+    public j5 getOpenMenuOverlay() {
+        if (this.a) {
+            return (j5) this.d;
+        }
+        return null;
+    }
+
+    @Override // org.telegram.ui.ActionBar.s4
+    public void setMenuGlassFrostedProgress(float f10) {
+        ri.d dVar = ((m3) this.e).getBaseSimpleGlass().e;
+        if (dVar != null) {
+            dVar.k(f10);
+        }
+    }
+
     @Override // yb.a
-    public final void zzb() {
+    public void zzb() {
         x3 v1Var;
-        String str = this.c;
-        Context context = this.a;
+        String str = (String) this.d;
+        Context context = (Context) this.b;
         Log.d("LegacyLabelDelegate", "Try to load legacy label module.");
-        if (this.e != null) {
+        if (((z0) this.e) != null) {
             return;
         }
         try {
@@ -118,32 +208,32 @@ public final class b implements a {
                 IInterface queryLocalInterface = b10.queryLocalInterface("com.google.android.gms.vision.label.internal.client.INativeImageLabelerCreator");
                 v1Var = queryLocalInterface instanceof x3 ? (x3) queryLocalInterface : new v1(b10, "com.google.android.gms.vision.label.internal.client.INativeImageLabelerCreator", 0);
             }
-            z0 x12 = ((v1) v1Var).x1(new a7.b(context), this.b);
+            z0 x12 = ((v1) v1Var).x1(new a7.b(context), (y6) this.c);
             this.e = x12;
-            if (x12 != null || this.d) {
+            if (x12 != null || this.a) {
                 return;
             }
             Log.d("LegacyLabelDelegate", "Request ICA optional module download.");
             j.b(context);
-            this.d = true;
+            this.a = true;
         } catch (RemoteException e10) {
             throw new lb.a("Failed to create legacy image labeler.", e10);
         } catch (b7.b e11) {
             if (str.equals("com.google.android.gms.vision.dynamite")) {
                 throw new lb.a("Failed to load deprecated vision dynamite module.", e11);
             }
-            if (this.d) {
+            if (this.a) {
                 return;
             }
             Log.d("LegacyLabelDelegate", "Request ICA optional module download.");
             j.b(context);
-            this.d = true;
+            this.a = true;
         }
     }
 
     @Override // yb.a
-    public final void zzc() {
-        z0 z0Var = this.e;
+    public void zzc() {
+        z0 z0Var = (z0) this.e;
         if (z0Var != null) {
             try {
                 z0Var.t1(z0Var.p1(), 2);

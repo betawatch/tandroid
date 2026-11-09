@@ -1,17 +1,17 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class jd implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ zd b;
-    public final /* synthetic */ c51 c;
+    public final /* synthetic */ d51 c;
     public final /* synthetic */ TwoStepVerificationActivity d;
 
-    public /* synthetic */ jd(zd zdVar, c51 c51Var, TwoStepVerificationActivity twoStepVerificationActivity, int i7) {
+    public /* synthetic */ jd(zd zdVar, d51 d51Var, TwoStepVerificationActivity twoStepVerificationActivity, int i7) {
         this.a = i7;
         this.b = zdVar;
-        this.c = c51Var;
+        this.c = d51Var;
         this.d = twoStepVerificationActivity;
     }
 

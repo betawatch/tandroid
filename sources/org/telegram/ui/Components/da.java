@@ -10,7 +10,7 @@ import java.nio.FloatBuffer;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class da {
     public FloatBuffer e;
@@ -67,8 +67,8 @@ public final class da {
             GLES20.glUniformMatrix4fv(z9Var.l, 1, false, fArr, 0);
         }
         GLES20.glUniform1f(z9Var.m, c10 == 0 ? 0.0f : 1.0f);
-        sg.x0.a(z9Var.h, this.l);
-        sg.x0.a(z9Var.i, this.m);
+        sg.w0.a(z9Var.h, this.l);
+        sg.w0.a(z9Var.i, this.m);
         synchronized (this.k) {
             GLES20.glUniformMatrix4fv(z9Var.d, 1, false, this.j, 0);
         }
@@ -86,8 +86,8 @@ public final class da {
             GLES20.glUniform2f(z9Var.f, this.a, this.b);
             GLES20.glUniform2f(z9Var.g, f10, f11);
             GLES20.glUniform1i(z9Var.j, 0);
-            sg.x0.a(z9Var.h, this.l);
-            sg.x0.a(z9Var.i, this.m);
+            sg.w0.a(z9Var.h, this.l);
+            sg.w0.a(z9Var.i, this.m);
             GLES20.glUniform1f(z9Var.k, 0.0f);
             synchronized (this.k) {
                 GLES20.glUniformMatrix4fv(z9Var.d, 1, false, this.j, 0);

@@ -17,18 +17,18 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_communities;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.s6;
 import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.ActionBar.y1;
 import org.telegram.ui.Cells.g6;
-import org.telegram.ui.Components.l41;
-import org.telegram.ui.Components.q41;
+import org.telegram.ui.Components.m41;
+import org.telegram.ui.Components.r41;
 import org.telegram.ui.Components.v4;
 import org.telegram.ui.Components.w8;
-import org.telegram.ui.Components.x31;
+import org.telegram.ui.Components.y31;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final class f extends f2 implements ls {
     public ri.c a;
@@ -36,20 +36,20 @@ public final class f extends f2 implements ls {
     public TLRPC.Chat c;
     public TLRPC.User d;
     public FrameLayout e;
-    public q41 f;
+    public r41 f;
     public e h;
     public ArrayList n;
     public ab.b0 r;
 
-    public static void Z(f fVar, x31 x31Var) {
+    public static void Z(f fVar, y31 y31Var) {
         f fVar2;
-        if (x31Var.d == 1) {
+        if (y31Var.d == 1) {
             fVar2 = fVar;
             v4.O(fVar.getParentActivity(), fVar2, id.M0(2131751906, null), null, id.M0(2131751907, null), null, ConnectionsManager.DEFAULT_DATACENTER_ID, id.M0(2131751753, null), fVar.resourceProvider, new b(fVar));
         } else {
             fVar2 = fVar;
         }
-        Object obj = x31Var.G;
+        Object obj = y31Var.G;
         if (obj instanceof TLRPC.Chat) {
             TLRPC.Chat chat = (TLRPC.Chat) obj;
             fVar2.getMessagesController().M0(Long.valueOf(-fVar2.b));
@@ -96,15 +96,15 @@ public final class f extends f2 implements ls {
         this.actionBar.setAllowOverlayTitle(true);
         this.actionBar.setActionBarMenuOnItemClick(new bi.s(this, 5));
         ri.c cVar = new ri.c();
-        cVar.a(getThemedColor(k6.d6));
+        cVar.a(getThemedColor(l6.d6));
         this.a = cVar;
         dh.c cVar2 = new dh.c(cVar, cVar, cVar);
         this.actionBar.setBackground(null);
-        this.actionBar.M(cVar2, c8.g0.p(this.resourceProvider), false);
+        this.actionBar.N(cVar2, c8.g0.o(this.resourceProvider), false);
         this.actionBar.Q0 = true;
         FrameLayout frameLayout = new FrameLayout(context);
         this.e = frameLayout;
-        r6.i(k6.a7, frameLayout, null);
+        s6.h(l6.a7, frameLayout, null);
         e eVar = new e(context, this.resourceProvider);
         this.h = eVar;
         eVar.setTitle(id.M0(2131751847, null));
@@ -119,14 +119,14 @@ public final class f extends f2 implements ls {
                 this.h.a.e(chat, new w8(this.c));
             }
         }
-        q41 q41Var = new q41(this, new a(this, 0), new b(this), new x3(this, 6));
-        this.f = q41Var;
-        q41Var.setClipToPadding(false);
-        q41 q41Var2 = this.f;
-        l41 l41Var = q41Var2.f3;
-        l41Var.r = false;
-        l41Var.s = true;
-        q41Var2.r1();
+        r41 r41Var = new r41(this, new a(this, 0), new b(this), new x3(this, 6));
+        this.f = r41Var;
+        r41Var.setClipToPadding(false);
+        r41 r41Var2 = this.f;
+        m41 m41Var = r41Var2.f3;
+        m41Var.r = false;
+        m41Var.s = true;
+        r41Var2.r1();
         this.e.addView(this.f, ha.c(-1.0f, -1));
         this.e.addView(this.actionBar, ha.e(-1, -2, 48));
         FrameLayout frameLayout2 = this.e;
@@ -196,7 +196,7 @@ public final class f extends f2 implements ls {
         try {
             ri.c cVar = this.a;
             if (cVar != null) {
-                cVar.a(getThemedColor(k6.d6));
+                cVar.a(getThemedColor(l6.d6));
             }
             org.telegram.ui.ActionBar.k kVar = this.actionBar;
             if (kVar != null) {

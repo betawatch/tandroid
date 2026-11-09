@@ -30,12 +30,12 @@ import org.telegram.messenger.ui;
 import org.telegram.messenger.w7;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.o61;
+import org.telegram.ui.p61;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class t1 extends FrameLayout implements l0, ls {
     public static final float[] U = {0.02f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 0.02f};
@@ -64,7 +64,7 @@ public final class t1 extends FrameLayout implements l0, ls {
     public float f;
     public final String h;
     public final ImageReceiver n;
-    public sg.t0 r;
+    public sh.b r;
     public final int s;
     public final int w;
     public boolean x;
@@ -77,7 +77,7 @@ public final class t1 extends FrameLayout implements l0, ls {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public t1(Context context, rz rzVar, int i7, int i10, f6 f6Var) {
+    public t1(Context context, rz rzVar, int i7, int i10, g6 g6Var) {
         super(context);
         boolean[] zArr;
         Paint paint = new Paint(1);
@@ -91,7 +91,7 @@ public final class t1 extends FrameLayout implements l0, ls {
         this.w = i10;
         this.a = rzVar;
         paint.setColor(-16777216);
-        paint2.setColor(i0.a.f(0.5f, k6.w0(k6.Ak, f6Var), -16777216));
+        paint2.setColor(i0.a.f(0.5f, l6.w0(l6.Ak, g6Var), -16777216));
         imageReceiver.E0(ConnectionsManager.DEFAULT_DATACENTER_ID);
         TLRPC.TL_help_premiumPromo tL_help_premiumPromo = ui.b0(i7).D;
         String q02 = PremiumPreviewFragment.q0(i10);
@@ -129,7 +129,7 @@ public final class t1 extends FrameLayout implements l0, ls {
                 this.n.q0(null, null, s1Var, null, tL_help_premiumPromo, 1);
                 w7.G(this.s).W(document, tL_help_premiumPromo, 3, 0);
                 this.R = document;
-                Utilities.e.c(new u9.f(4, this, document));
+                Utilities.e.c(new u9.f(5, this, document));
                 if (i10 != 1) {
                     k0 k0Var = new k0(0);
                     k0Var.c = new RectF();
@@ -142,7 +142,7 @@ public final class t1 extends FrameLayout implements l0, ls {
                     TextPaint textPaint = new TextPaint(65);
                     textPaint.setTypeface(org.telegram.messenger.g0.o1("fonts/rcondensedbold.ttf"));
                     textPaint.setTextSize(k0Var.b);
-                    textPaint.setColor(i0.a.o(k6.x0(zArr, k6.Nk, false), 30));
+                    textPaint.setColor(i0.a.o(l6.x0(zArr, l6.Nk, false), 30));
                     textPaint.setTextAlign(Paint.Align.CENTER);
                     int i13 = 0;
                     while (i13 < 16) {
@@ -173,8 +173,8 @@ public final class t1 extends FrameLayout implements l0, ls {
                     p1Var.v = 0.98f;
                     p1Var.u = 0.98f;
                     p1Var.o = 4.0f;
-                    p1Var.P = f6Var;
-                    p1Var.Q = k6.Nk;
+                    p1Var.P = g6Var;
+                    p1Var.Q = l6.Nk;
                     p1Var.c();
                 } else if (i10 == 2) {
                     n1 n1Var = new n1();
@@ -185,7 +185,7 @@ public final class t1 extends FrameLayout implements l0, ls {
                             arrayList.add(new m1(n1Var));
                         }
                     }
-                    int o4 = i0.a.o(k6.x0(zArr, k6.Nk, false), 80);
+                    int o4 = i0.a.o(l6.x0(zArr, l6.Nk, false), 80);
                     if (n1Var.i != o4) {
                         n1Var.i = o4;
                         n1Var.c.setColor(o4);
@@ -202,8 +202,8 @@ public final class t1 extends FrameLayout implements l0, ls {
                 } else {
                     p1 p1Var2 = new p1(iz.o() == 2 ? 800 : iz.o() == 1 ? 400 : 100);
                     this.N = p1Var2;
-                    p1Var2.P = f6Var;
-                    p1Var2.Q = k6.Nk;
+                    p1Var2.P = g6Var;
+                    p1Var2.Q = l6.Nk;
                     p1Var2.r = 4;
                     p1Var2.w = 0.98f;
                     p1Var2.v = 0.98f;
@@ -253,13 +253,13 @@ public final class t1 extends FrameLayout implements l0, ls {
                 this.f = 0.671f;
             } else {
                 if ((qs.e().p & 512) != 0) {
-                    sg.t0 t0Var = this.r;
-                    if (t0Var != null) {
-                        org.telegram.messenger.g0.r(t0Var);
+                    sh.b bVar = this.r;
+                    if (bVar != null) {
+                        org.telegram.messenger.g0.r(bVar);
                     }
-                    sg.t0 t0Var2 = new sg.t0(this, 21);
-                    this.r = t0Var2;
-                    org.telegram.messenger.g0.i3(t0Var2, 300L);
+                    sh.b bVar2 = new sh.b(this, 19);
+                    this.r = bVar2;
+                    org.telegram.messenger.g0.i3(bVar2, 300L);
                     return;
                 }
                 try {
@@ -600,7 +600,7 @@ public final class t1 extends FrameLayout implements l0, ls {
                         }
                         n1Var.f = (((1.0f - Utilities.i(this.G / 0.1f, 1.0f, 0.0f)) * 0.9f) + 0.1f) * 150.0f * f12;
                         ArrayList arrayList3 = n1Var.e;
-                        int o4 = i0.a.o(k6.x0(null, k6.Nk, false), 80);
+                        int o4 = i0.a.o(l6.x0(null, l6.Nk, false), 80);
                         if (n1Var.i != o4) {
                             n1Var.i = o4;
                             paint2.setColor(o4);
@@ -801,7 +801,7 @@ public final class t1 extends FrameLayout implements l0, ls {
         fi.c0 c0Var = this.H;
         if (c0Var != null) {
             this.T = c0Var.getCurrentPosition();
-            this.H.release(new o61(20));
+            this.H.release(new p61(20));
             this.H = null;
         }
     }
@@ -944,7 +944,7 @@ public final class t1 extends FrameLayout implements l0, ls {
             fi.c0 c0Var = this.H;
             if (c0Var != null) {
                 this.T = c0Var.getCurrentPosition();
-                this.H.release(new o61(20));
+                this.H.release(new p61(20));
                 this.H = null;
             }
             imageReceiver.Q0();

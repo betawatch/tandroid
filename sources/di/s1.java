@@ -9,15 +9,15 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s1 implements org.telegram.ui.ActionBar.r1, lh.a {
     public final /* synthetic */ int a;
-    public final /* synthetic */ i4 b;
+    public final /* synthetic */ j4 b;
 
-    public /* synthetic */ s1(i4 i4Var, int i7) {
+    public /* synthetic */ s1(j4 j4Var, int i7) {
         this.a = i7;
-        this.b = i4Var;
+        this.b = j4Var;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -46,21 +46,21 @@ public final /* synthetic */ class s1 implements org.telegram.ui.ActionBar.r1, l
         boolean z10;
         TL_stories.StoryItem storyItem;
         int i10 = this.a;
-        i4 i4Var = this.b;
+        j4 j4Var = this.b;
         switch (i10) {
             case 0:
-                o2 o2Var = i4Var.K1;
+                o2 o2Var = j4Var.K1;
                 if (o2Var != null) {
                     o2Var.x();
                     break;
                 }
                 break;
             default:
-                g4 g4Var = i4Var.x1;
+                h4 h4Var = j4Var.x1;
                 int i11 = 0;
                 boolean z11 = true;
                 TLRPC.ChatFull chatFull2 = null;
-                if (g4Var.f && (storyItem = g4Var.a) != null) {
+                if (h4Var.f && (storyItem = h4Var.a) != null) {
                     TLRPC.MessageMedia messageMedia = storyItem.media;
                     if (messageMedia instanceof TLRPC.TL_messageMediaVideoStream) {
                         TLRPC.InputGroupCall inputGroupCall = ((TLRPC.TL_messageMediaVideoStream) messageMedia).call;
@@ -69,23 +69,23 @@ public final /* synthetic */ class s1 implements org.telegram.ui.ActionBar.r1, l
                             g1.W.e();
                             if (g1.W != null) {
                                 g1.W = null;
-                                qs.f(i4Var.l2).k(qs.G2, Long.valueOf(g1.W.g()));
+                                qs.f(j4Var.l2).k(qs.G2, Long.valueOf(g1.W.g()));
                             }
                         }
                     }
                 }
-                TL_stories.StoryItem storyItem2 = g4Var.a;
-                if (storyItem2 instanceof i6) {
-                    j6 j6Var = ((i6) storyItem2).a;
+                TL_stories.StoryItem storyItem2 = h4Var.a;
+                if (storyItem2 instanceof j6) {
+                    k6 k6Var = ((j6) storyItem2).a;
                     TLRPC.MessageMedia messageMedia2 = storyItem2.media;
-                    j6Var.getClass();
-                    j6Var.F(new ArrayList(Arrays.asList(messageMedia2)));
+                    k6Var.getClass();
+                    k6Var.F(new ArrayList(Arrays.asList(messageMedia2)));
                 } else if (storyItem2 != null) {
-                    i4 i4Var2 = g4Var.k;
-                    y6 y6Var = i4Var2.B1;
-                    long j10 = i4Var2.k1;
-                    a0.h hVar = y6Var.i;
-                    int i12 = y6Var.a;
+                    j4 j4Var2 = h4Var.k;
+                    z6 z6Var = j4Var2.B1;
+                    long j10 = j4Var2.k1;
+                    a0.h hVar = z6Var.i;
+                    int i12 = z6Var.a;
                     if (!(storyItem2 instanceof TL_stories.TL_storyItemDeleted)) {
                         int i13 = 0;
                         while (i13 < 2) {
@@ -129,10 +129,10 @@ public final /* synthetic */ class s1 implements org.telegram.ui.ActionBar.r1, l
                                         if (r92.stories.get(i14).id == storyItem2.id) {
                                             r92.stories.remove(i14);
                                             if (r92.stories.size() == 0) {
-                                                if (!y6Var.M(j10)) {
+                                                if (!z6Var.M(j10)) {
                                                     hVar.l(j10);
-                                                    y6Var.g.remove(r92);
-                                                    y6Var.h.remove(r92);
+                                                    z6Var.g.remove(r92);
+                                                    z6Var.h.remove(r92);
                                                 }
                                                 if (j10 > j3) {
                                                     TLRPC.User a22 = qp.s1(i12).a2(Long.valueOf(j10));
@@ -170,40 +170,40 @@ public final /* synthetic */ class s1 implements org.telegram.ui.ActionBar.r1, l
                         TL_stories.TL_stories_deleteStories tL_stories_deleteStories = new TL_stories.TL_stories_deleteStories();
                         tL_stories_deleteStories.peer = qp.s1(i12).j1(j10);
                         tL_stories_deleteStories.id.add(Integer.valueOf(storyItem2.id));
-                        ConnectionsManager.getInstance(i12).sendRequest(tL_stories_deleteStories, new x5(y6Var, 4));
-                        l7 l7Var = y6Var.k;
-                        l7Var.b.a.c(new i7(l7Var, j10, storyItem2.id, 1));
+                        ConnectionsManager.getInstance(i12).sendRequest(tL_stories_deleteStories, new y5(z6Var, 4));
+                        m7 m7Var = z6Var.k;
+                        m7Var.b.a.c(new j7(m7Var, j10, storyItem2.id, 1));
                         qs.f(i12).k(qs.v5, new Object[0]);
                         qp.s1(i12).D();
-                        y6Var.n0(j10, Arrays.asList(storyItem2));
+                        z6Var.n0(j10, Arrays.asList(storyItem2));
                     }
                 } else {
-                    x6 x6Var = g4Var.b;
-                    if (x6Var != null) {
-                        x6Var.a();
+                    y6 y6Var = h4Var.b;
+                    if (y6Var != null) {
+                        y6Var.a();
                     }
                 }
-                i4Var.h1();
-                if (!i4Var.t1 || i4Var.j1 != 0) {
-                    int i15 = i4Var.s1;
-                    int i16 = i4Var.j1;
+                j4Var.h1();
+                if (!j4Var.t1 || j4Var.j1 != 0) {
+                    int i15 = j4Var.s1;
+                    int i16 = j4Var.j1;
                     if (i15 >= i16) {
-                        i4Var.s1 = i16 - 1;
+                        j4Var.s1 = i16 - 1;
                         z10 = false;
                     } else {
                         z10 = false;
                         if (i15 < 0) {
-                            i4Var.s1 = 0;
+                            j4Var.s1 = 0;
                         }
                     }
-                    i4Var.d1(z10);
-                    p9 p9Var = i4Var.s0;
-                    if (p9Var != null) {
-                        p9Var.r();
+                    j4Var.d1(z10);
+                    q9 q9Var = j4Var.s0;
+                    if (q9Var != null) {
+                        q9Var.r();
                         break;
                     }
                 } else {
-                    ((g9) i4Var.z1).j();
+                    ((h9) j4Var.z1).j();
                     break;
                 }
                 break;

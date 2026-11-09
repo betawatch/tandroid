@@ -4,14 +4,14 @@ import android.animation.AnimatorSet;
 import bi.y4;
 import java.util.LinkedList;
 import org.telegram.ui.Components.di;
-import org.telegram.ui.Components.ec0;
+import org.telegram.ui.Components.fc0;
 import org.telegram.ui.Components.gb;
 import org.telegram.ui.Components.ng;
-import org.telegram.ui.Components.qa0;
 import org.telegram.ui.Components.qg;
+import org.telegram.ui.Components.ra0;
 import org.telegram.ui.Components.xf;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class y3 implements r1.c {
     public final /* synthetic */ int a;
@@ -81,18 +81,18 @@ public final /* synthetic */ class y3 implements r1.c {
                 diVar2.P1(0);
                 break;
             default:
-                ec0 ec0Var = (ec0) this.b;
-                qa0 qa0Var = (qa0) this.c;
-                LinkedList linkedList = ec0Var.U;
-                ec0Var.T = null;
-                qa0Var.D = null;
-                qa0Var.y();
+                fc0 fc0Var = (fc0) this.b;
+                ra0 ra0Var = (ra0) this.c;
+                LinkedList linkedList = fc0Var.U;
+                fc0Var.T = null;
+                ra0Var.D = null;
+                ra0Var.y();
                 if (!z9) {
-                    qa0Var.h = 1.0f;
-                    qa0Var.y();
+                    ra0Var.h = 1.0f;
+                    ra0Var.y();
                     if (!linkedList.isEmpty()) {
                         ((Runnable) linkedList.poll()).run();
-                        ec0Var.V.poll();
+                        fc0Var.V.poll();
                         break;
                     }
                 }

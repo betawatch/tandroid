@@ -1,51 +1,24 @@
 package org.telegram.ui;
 
-import android.view.View;
-import java.util.List;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i11 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ m11 b;
-    public final /* synthetic */ Integer c;
+    public final /* synthetic */ j11 b;
 
-    public /* synthetic */ i11(m11 m11Var, Integer num, int i7) {
+    public /* synthetic */ i11(j11 j11Var, int i7) {
         this.a = i7;
-        this.b = m11Var;
-        this.c = num;
+        this.b = j11Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        int i7 = this.a;
-        m11 m11Var = this.b;
-        switch (i7) {
+        switch (this.a) {
             case 0:
-                m11.a(m11Var, this.c);
+                super/*android.widget.PopupWindow*/.dismiss();
                 break;
             default:
-                Integer num = this.c;
-                if (num != null) {
-                    try {
-                        m11Var.P.performHapticFeedback(0, 1);
-                    } catch (Exception unused) {
-                    }
-                    g01 g01Var = (g01) m11Var;
-                    q11 q11Var = g01Var.S.e;
-                    List list = q11.a2;
-                    q11Var.l();
-                    TLRPC.TL_emojiStatus tL_emojiStatus = new TLRPC.TL_emojiStatus();
-                    View view = g01Var.Q;
-                    long j3 = ((a11) view).e.documentId;
-                    tL_emojiStatus.document_id = j3;
-                    q11Var.p(view, Long.valueOf(j3), ((a11) g01Var.Q).e.document, g01Var.R, num);
-                    if (g01Var.R == null) {
-                        org.telegram.messenger.ui.b0(q11Var.V).C1(tL_emojiStatus);
-                        break;
-                    }
-                }
+                this.b.dismiss();
                 break;
         }
     }

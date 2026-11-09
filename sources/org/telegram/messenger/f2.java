@@ -16,7 +16,7 @@ import org.telegram.tgnet.tl.TL_ephemeral;
 import org.telegram.tgnet.tl.TL_forum;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class f2 extends c1 {
     public static volatile f2[] f = new f2[4];
@@ -96,7 +96,7 @@ public final class f2 extends c1 {
             }
             final long[] jArr = new long[list.size()];
             for (int i7 = 0; i7 < list.size(); i7++) {
-                jArr[i7] = ((ij) list.get(i7)).f1();
+                jArr[i7] = ((ij) list.get(i7)).e1();
             }
             if (z9) {
                 j10 = ((TLRPC.TL_messages_sendMessage) tLObject).random_id;
@@ -173,7 +173,7 @@ public final class f2 extends c1 {
                         E = gz.E();
                     }
                     if (TextUtils.isEmpty(str)) {
-                        str = id.M0(2131743983, null);
+                        str = id.M0(2131743980, null);
                     } else if (str.length() > 16) {
                         str = str.substring(0, 16) + "...";
                     }

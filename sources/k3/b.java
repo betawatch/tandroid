@@ -2,7 +2,7 @@ package k3;
 
 import a8.wa;
 import d4.f;
-import di.q4;
+import di.r4;
 import e2.q0;
 import e2.s0;
 import e2.t;
@@ -26,7 +26,7 @@ import java.util.List;
 import org.telegram.ui.Cells.f1;
 import t3.h;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class b implements o {
     public q e;
@@ -230,7 +230,7 @@ public final class b implements o {
             } else {
                 int i17 = this.k;
                 int i18 = uVar3.c;
-                q4 q4Var = new q4(uVar3, 23);
+                r4 r4Var = new r4(uVar3, 23);
                 wa waVar = new wa(uVar3, i17);
                 long b10 = uVar3.b();
                 long j15 = uVar3.j;
@@ -243,7 +243,7 @@ public final class b implements o {
                     int i20 = uVar3.a;
                     j3 = 64 + (((((i20 != uVar3.b || i20 <= 0) ? 4096L : i20) * uVar3.g) * uVar3.h) / 8);
                 }
-                a aVar = new a(q4Var, waVar, b10, j15, position, length, j3, Math.max(6, i18));
+                a aVar = new a(r4Var, waVar, b10, j15, position, length, j3, Math.max(6, i18));
                 this.l = aVar;
                 tVar = aVar.a;
             }

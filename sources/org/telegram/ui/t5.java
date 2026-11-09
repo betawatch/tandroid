@@ -18,9 +18,9 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class t5 extends o00 implements org.telegram.messenger.ls {
+public final class t5 extends q00 implements org.telegram.messenger.ls {
     public final long R;
     public final int S;
     public TL_stories.TL_premium_boostsStatus T;
@@ -96,7 +96,7 @@ public final class t5 extends o00 implements org.telegram.messenger.ls {
                     kbVar.b.setMaxLines(2);
                     org.telegram.ui.Components.cc.g(t5Var, kbVar, 2750).j();
                 } else if (!z10 && !z9) {
-                    t5Var.presentFragment(ProfileActivity.A4(bVar.getDialogId()));
+                    t5Var.presentFragment(ProfileActivity.D4(bVar.getDialogId()));
                 }
             } else {
                 bi.dd.h1(context, t5Var.S, t5Var.R, boost, t5Var.getResourceProvider());
@@ -181,7 +181,7 @@ public final class t5 extends o00 implements org.telegram.messenger.ls {
         arrayList.clear();
         arrayList.add(new s5(14, false));
         if (this.T != null) {
-            arrayList.add(new s5(16, org.telegram.messenger.id.M0(2131744898, null)));
+            arrayList.add(new s5(16, org.telegram.messenger.id.M0(2131744895, null)));
             arrayList.add(new s5(0, false));
             arrayList.add(new s5(2, false));
             if (this.T.prepaid_giveaways.size() > 0) {
@@ -238,7 +238,7 @@ public final class t5 extends o00 implements org.telegram.messenger.ls {
                     arrayList.add(new s5(6, org.telegram.messenger.id.M0(org.telegram.messenger.t3.V(chat) ? 2131753605 : 2131753604, null)));
                 }
             }
-            arrayList.add(new s5(1, org.telegram.messenger.id.M0(2131748915, null)));
+            arrayList.add(new s5(1, org.telegram.messenger.id.M0(2131748914, null)));
             arrayList.add(new s5(3, this.T.boost_url));
             if (org.telegram.messenger.qp.s1(this.S).p4 && org.telegram.messenger.t3.N(chat)) {
                 arrayList.add(new s5(6, org.telegram.messenger.id.M0(org.telegram.messenger.t3.V(chat) ? 2131753269 : 2131753268, null)));
@@ -257,7 +257,7 @@ public final class t5 extends o00 implements org.telegram.messenger.ls {
         }
     }
 
-    @Override // org.telegram.ui.o00, org.telegram.ui.ActionBar.f2
+    @Override // org.telegram.ui.q00, org.telegram.ui.ActionBar.f2
     public final View createView(Context context) {
         View createView = super.createView(context);
         I0(false);
@@ -265,7 +265,7 @@ public final class t5 extends o00 implements org.telegram.messenger.ls {
         kVar.m = false;
         kVar.C = false;
         this.c.setItemAnimator(kVar);
-        this.c.setOnItemClickListener(new di.p4(3, this, context));
+        this.c.setOnItemClickListener(new di.q4(3, this, context));
         Activity parentActivity = getParentActivity();
         LinearLayout linearLayout = new LinearLayout(parentActivity);
         this.h0 = linearLayout;
@@ -301,14 +301,14 @@ public final class t5 extends o00 implements org.telegram.messenger.ls {
         boolean booleanValue = ((Boolean) objArr[1]).booleanValue();
         List fragmentStack = getParentLayout().getFragmentStack();
         org.telegram.ui.ActionBar.f2 f2Var = fragmentStack.size() >= 2 ? (org.telegram.ui.ActionBar.f2) rf.b.g(2, fragmentStack) : null;
-        if (f2Var instanceof pn) {
+        if (f2Var instanceof rn) {
             ((ActionBarLayout) getParentLayout()).d0(f2Var, false);
         }
         List fragmentStack2 = getParentLayout().getFragmentStack();
         org.telegram.ui.ActionBar.f2 f2Var2 = fragmentStack2.size() >= 2 ? (org.telegram.ui.ActionBar.f2) rf.b.g(2, fragmentStack2) : null;
         if (!booleanValue) {
             finishFragment();
-            if ((f2Var2 instanceof ProfileActivity) || (f2Var2 instanceof an)) {
+            if ((f2Var2 instanceof ProfileActivity) || (f2Var2 instanceof cn)) {
                 wg.h.f(f2Var2, chat, false);
                 return;
             }
@@ -319,15 +319,15 @@ public final class t5 extends o00 implements org.telegram.messenger.ls {
             ((ActionBarLayout) getParentLayout()).d0(f2Var2, false);
         }
         finishFragment();
-        if (f2Var3 instanceof an) {
+        if (f2Var3 instanceof cn) {
             wg.h.f(f2Var3, chat, true);
         }
-        if (f2Var2 instanceof an) {
+        if (f2Var2 instanceof cn) {
             wg.h.f(f2Var2, chat, true);
         }
     }
 
-    @Override // org.telegram.ui.o00
+    @Override // org.telegram.ui.q00
     public final v4.g0 k0() {
         return this.f0;
     }

@@ -3,7 +3,7 @@ package ch;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class n0 extends m0 {
     public final /* synthetic */ p0 g0;
@@ -26,14 +26,14 @@ public final class n0 extends m0 {
 
     @Override // ch.m0
     public final boolean l() {
-        return this.g0.x.Q3();
+        return this.g0.x.P3();
     }
 
     @Override // ch.m0
     public final boolean m() {
         p0 p0Var = this.g0;
-        int f12 = p0Var.x.f1();
-        long d12 = p0Var.x.d1();
+        int e12 = p0Var.x.e1();
+        long c12 = p0Var.x.c1();
         k0 k0Var = k0.B;
         if (k0Var == null) {
             return false;
@@ -43,7 +43,7 @@ public final class n0 extends m0 {
             return false;
         }
         long j3 = k0Var.o;
-        return ((j3 != 0 && d12 == j3) || f12 == k0Var.n) && k0Var.p.equals(this.r);
+        return ((j3 != 0 && c12 == j3) || e12 == k0Var.n) && k0Var.p.equals(this.r);
     }
 
     @Override // ch.m0

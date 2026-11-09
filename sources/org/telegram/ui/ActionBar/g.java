@@ -8,9 +8,9 @@ import org.telegram.ui.Components.di;
 import org.telegram.ui.Components.m8;
 import org.telegram.ui.Components.t8;
 import org.telegram.ui.Components.vh;
-import org.telegram.ui.ce0;
+import org.telegram.ui.ee0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class g extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -48,11 +48,11 @@ public final class g extends AnimatorListenerAdapter {
                 }
                 break;
             case 4:
-                ce0 ce0Var = (ce0) this.d;
-                AnimatorSet[] animatorSetArr = ce0Var.K;
+                ee0 ee0Var = (ee0) this.d;
+                AnimatorSet[] animatorSetArr = ee0Var.K;
                 boolean z9 = this.b;
                 if (animatorSetArr[!z9 ? 1 : 0] != null && animatorSetArr[!z9 ? 1 : 0].equals(animator)) {
-                    ce0Var.K[!z9 ? 1 : 0] = null;
+                    ee0Var.K[!z9 ? 1 : 0] = null;
                     break;
                 }
                 break;
@@ -65,12 +65,12 @@ public final class g extends AnimatorListenerAdapter {
         switch (this.a) {
             case 0:
                 k kVar = (k) this.d;
-                k5[] k5VarArr = kVar.n;
-                k5 k5Var = k5VarArr[1];
-                if (k5Var != null && k5Var.getParent() != null) {
-                    ((ViewGroup) k5VarArr[1].getParent()).removeView(k5VarArr[1]);
+                l5[] l5VarArr = kVar.n;
+                l5 l5Var = l5VarArr[1];
+                if (l5Var != null && l5Var.getParent() != null) {
+                    ((ViewGroup) l5VarArr[1].getParent()).removeView(l5VarArr[1]);
                 }
-                k5VarArr[1] = null;
+                l5VarArr[1] = null;
                 kVar.x0 = false;
                 if (this.b && this.c) {
                     kVar.r.setVisibility(8);
@@ -120,14 +120,14 @@ public final class g extends AnimatorListenerAdapter {
                 }
                 break;
             default:
-                ce0 ce0Var = (ce0) this.d;
-                AnimatorSet[] animatorSetArr = ce0Var.K;
+                ee0 ee0Var = (ee0) this.d;
+                AnimatorSet[] animatorSetArr = ee0Var.K;
                 boolean z11 = this.b;
-                if (animatorSetArr[!z11 ? 1 : 0] != null && animatorSetArr[!z11 ? 1 : 0].equals(animator) && !this.c && z11 && ce0Var.M.getAlpha() != 1.0f) {
-                    ce0Var.M.setAlpha(1.0f);
-                    ce0Var.M.setScaleX(1.0f);
-                    ce0Var.M.setScaleY(1.0f);
-                    ce0Var.M.setVisibility(0);
+                if (animatorSetArr[!z11 ? 1 : 0] != null && animatorSetArr[!z11 ? 1 : 0].equals(animator) && !this.c && z11 && ee0Var.M.getAlpha() != 1.0f) {
+                    ee0Var.M.setAlpha(1.0f);
+                    ee0Var.M.setScaleX(1.0f);
+                    ee0Var.M.setScaleY(1.0f);
+                    ee0Var.M.setVisibility(0);
                     break;
                 }
                 break;

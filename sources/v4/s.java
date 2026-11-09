@@ -12,9 +12,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.Arrays;
 import java.util.WeakHashMap;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.st;
+import org.telegram.ui.ut;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public class s extends b0 {
     public boolean I;
@@ -31,7 +31,7 @@ public class s extends b0 {
         this.J = -1;
         this.M = new SparseIntArray();
         this.N = new SparseIntArray();
-        this.O = new st(1);
+        this.O = new ut(1);
         this.P = new Rect();
         y1(i7);
     }
@@ -784,7 +784,7 @@ public class s extends b0 {
         this.J = -1;
         this.M = new SparseIntArray();
         this.N = new SparseIntArray();
-        this.O = new st(1);
+        this.O = new ut(1);
         this.P = new Rect();
         y1(i7);
     }

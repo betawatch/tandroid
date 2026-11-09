@@ -7,23 +7,23 @@ import android.view.MotionEvent;
 import android.widget.FrameLayout;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public abstract class x7 extends c5.k {
     public ArrayList A0;
-    public b4 B0;
+    public c4 B0;
     public boolean C0;
     public boolean D0;
     public int E0;
     public int F0;
     public Runnable G0;
-    public final f4 H0;
+    public final g4 H0;
     public int I0;
     public int J0;
     public float K0;
     public boolean L0;
     public final ra M0;
-    public final p9 N0;
+    public final q9 N0;
     public int O0;
     public final ArrayList P0;
     public float Q0;
@@ -32,7 +32,7 @@ public abstract class x7 extends c5.k {
     public int y0;
     public final u7 z0;
 
-    public x7(int i7, Context context, p9 p9Var, org.telegram.ui.ActionBar.f6 f6Var) {
+    public x7(int i7, Context context, q9 q9Var, org.telegram.ui.ActionBar.g6 g6Var) {
         super(context);
         this.A0 = new ArrayList();
         this.D0 = true;
@@ -41,14 +41,14 @@ public abstract class x7 extends c5.k {
         this.O0 = -1;
         this.P0 = new ArrayList();
         this.y0 = i7;
-        this.H0 = new f4(context);
-        this.N0 = p9Var;
-        u7 u7Var = new u7(wVar, context, p9Var, f6Var);
+        this.H0 = new g4(context);
+        this.N0 = q9Var;
+        u7 u7Var = new u7(wVar, context, q9Var, g6Var);
         this.z0 = u7Var;
         setAdapter(u7Var);
-        q4 q4Var = new q4(wVar, 2);
+        r4 r4Var = new r4(wVar, 2);
         boolean z9 = this.m0 == null;
-        this.m0 = q4Var;
+        this.m0 = r4Var;
         setChildrenDrawingOrderEnabled(true);
         this.o0 = 1;
         this.n0 = 2;
@@ -56,7 +56,7 @@ public abstract class x7 extends c5.k {
             s();
         }
         setOffscreenPageLimit(0);
-        b(new v7(wVar, p9Var, 0));
+        b(new v7(wVar, q9Var, 0));
         setOverScrollMode(2);
     }
 
@@ -102,12 +102,12 @@ public abstract class x7 extends c5.k {
                         this.O0 = -1;
                         w7Var.a(true);
                         if (this.x0 != null) {
-                            i4 i4Var = w7Var.a;
+                            j4 j4Var = w7Var.a;
                             long j3 = w7Var.b;
                             ArrayList arrayList = w7Var.c;
-                            i4Var.k1 = j3;
-                            i4Var.i1 = arrayList;
-                            i4Var.m0(0);
+                            j4Var.k1 = j3;
+                            j4Var.i1 = arrayList;
+                            j4Var.m0(0);
                         } else {
                             w7Var.a.S0(0, w7Var.b);
                         }
@@ -125,7 +125,7 @@ public abstract class x7 extends c5.k {
         boolean z9;
         u7 u7Var;
         int size;
-        p9 p9Var;
+        q9 q9Var;
         ArrayList arrayList2;
         int i10 = 0;
         if (this.w0 == j3) {
@@ -162,14 +162,14 @@ public abstract class x7 extends c5.k {
             setAdapter(u7Var);
             while (true) {
                 size = arrayList.size();
-                p9Var = this.N0;
-                if (i10 < size || ((ArrayList) arrayList.get(i10)).contains(Integer.valueOf(p9Var.O0))) {
+                q9Var = this.N0;
+                if (i10 < size || ((ArrayList) arrayList.get(i10)).contains(Integer.valueOf(q9Var.O0))) {
                     break;
                 } else {
                     i10++;
                 }
             }
-            if (p9Var.Q0) {
+            if (q9Var.Q0) {
                 i10 = (arrayList.size() - 1) - i10;
             }
             setCurrentItem(i10);
@@ -186,7 +186,7 @@ public abstract class x7 extends c5.k {
         setAdapter(u7Var);
         while (true) {
             size = arrayList.size();
-            p9Var = this.N0;
+            q9Var = this.N0;
             if (i10 < size) {
                 break;
             } else {
@@ -194,14 +194,14 @@ public abstract class x7 extends c5.k {
             }
             i10++;
         }
-        if (p9Var.Q0) {
+        if (q9Var.Q0) {
         }
         setCurrentItem(i10);
         this.C0 = true;
     }
 
     public final boolean E(boolean z9) {
-        p9 p9Var = this.N0;
+        q9 q9Var = this.N0;
         boolean z10 = false;
         if (z9) {
             int currentItem = getCurrentItem();
@@ -211,7 +211,7 @@ public abstract class x7 extends c5.k {
             }
             if (currentItem < arrayList.size() - 1) {
                 int currentItem2 = getCurrentItem() + 1;
-                if (p9Var.a && Build.VERSION.SDK_INT < 33) {
+                if (q9Var.a && Build.VERSION.SDK_INT < 33) {
                     z10 = true;
                 }
                 x(currentItem2, !z10);
@@ -222,7 +222,7 @@ public abstract class x7 extends c5.k {
             return false;
         }
         int currentItem3 = getCurrentItem() - 1;
-        if (p9Var.a && Build.VERSION.SDK_INT < 33) {
+        if (q9Var.a && Build.VERSION.SDK_INT < 33) {
             z10 = true;
         }
         x(currentItem3, !z10);
@@ -231,8 +231,8 @@ public abstract class x7 extends c5.k {
 
     public final void F() {
         for (int i7 = 0; i7 < getChildCount(); i7++) {
-            i4 i4Var = (i4) ((FrameLayout) getChildAt(i7)).getChildAt(0);
-            i4Var.setActive(((Integer) getChildAt(i7).getTag()).intValue() == getCurrentItem() && !i4Var.D3);
+            j4 j4Var = (j4) ((FrameLayout) getChildAt(i7)).getChildAt(0);
+            j4Var.setActive(((Integer) getChildAt(i7).getTag()).intValue() == getCurrentItem() && !j4Var.D3);
         }
     }
 
@@ -246,10 +246,10 @@ public abstract class x7 extends c5.k {
         return 0L;
     }
 
-    public i4 getCurrentPeerView() {
+    public j4 getCurrentPeerView() {
         for (int i7 = 0; i7 < getChildCount(); i7++) {
             if (((Integer) getChildAt(i7).getTag()).intValue() == getCurrentItem()) {
-                return (i4) ((FrameLayout) getChildAt(i7)).getChildAt(0);
+                return (j4) ((FrameLayout) getChildAt(i7)).getChildAt(0);
             }
         }
         return null;
@@ -276,11 +276,11 @@ public abstract class x7 extends c5.k {
         super.onLayout(z9, i7, i10, i11, i12);
         if (this.C0) {
             this.C0 = false;
-            i4 currentPeerView = getCurrentPeerView();
+            j4 currentPeerView = getCurrentPeerView();
             if (currentPeerView != null) {
-                b4 b4Var = this.B0;
-                g9 g9Var = (g9) b4Var;
-                g9Var.a(currentPeerView.getSelectedPosition(), currentPeerView.getCurrentPeer());
+                c4 c4Var = this.B0;
+                h9 h9Var = (h9) c4Var;
+                h9Var.a(currentPeerView.getSelectedPosition(), currentPeerView.getCurrentPeer());
             }
         }
         B();
@@ -298,8 +298,8 @@ public abstract class x7 extends c5.k {
         return false;
     }
 
-    public void setDelegate(b4 b4Var) {
-        this.B0 = b4Var;
+    public void setDelegate(c4 c4Var) {
+        this.B0 = c4Var;
     }
 
     public void setHorizontalProgressToDismiss(float f10) {
@@ -316,7 +316,7 @@ public abstract class x7 extends c5.k {
     public void setKeyboardHeight(int i7) {
         if (this.E0 != i7) {
             this.E0 = i7;
-            i4 currentPeerView = getCurrentPeerView();
+            j4 currentPeerView = getCurrentPeerView();
             if (currentPeerView != null) {
                 currentPeerView.requestLayout();
             }
@@ -325,7 +325,7 @@ public abstract class x7 extends c5.k {
 
     public void setPaused(boolean z9) {
         for (int i7 = 0; i7 < getChildCount(); i7++) {
-            ((i4) ((FrameLayout) getChildAt(i7)).getChildAt(0)).setPaused(z9);
+            ((j4) ((FrameLayout) getChildAt(i7)).getChildAt(0)).setPaused(z9);
         }
     }
 }

@@ -4,11 +4,11 @@ import bi.nb;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.l41;
+import org.telegram.ui.Components.m41;
 import org.telegram.ui.Components.vr;
 import org.telegram.ui.Components.xr;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class j0 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -40,9 +40,9 @@ public final /* synthetic */ class j0 implements RequestDelegate {
         }
     }
 
-    public /* synthetic */ j0(l41 l41Var, int i7, TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal, boolean z9, int i10) {
+    public /* synthetic */ j0(m41 m41Var, int i7, TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal, boolean z9, int i10) {
         this.a = i10;
-        this.d = l41Var;
+        this.d = m41Var;
         this.b = i7;
         this.e = tL_messages_searchGlobal;
         this.c = z9;

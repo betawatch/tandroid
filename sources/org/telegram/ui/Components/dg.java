@@ -17,9 +17,9 @@ import android.view.animation.OvershootInterpolator;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public abstract class dg extends View implements j60 {
+public abstract class dg extends View implements k60 {
     public final Paint D;
     public boolean E;
     public boolean F;
@@ -40,7 +40,7 @@ public abstract class dg extends View implements j60 {
     public float U;
     public final w5 V;
     public final w5 W;
-    public final org.telegram.ui.ActionBar.f6 a;
+    public final org.telegram.ui.ActionBar.g6 a;
     public final Path a0;
     public int b;
     public final Paint b0;
@@ -67,7 +67,7 @@ public abstract class dg extends View implements j60 {
     public final i6 x;
     public final w5 y;
 
-    public dg(int i7, Context context, org.telegram.ui.ActionBar.f6 f6Var, boolean z9) {
+    public dg(int i7, Context context, org.telegram.ui.ActionBar.g6 g6Var, boolean z9) {
         super(context);
         xq xqVar = xq.h;
         this.y = new w5(this, 0L, 320L, xqVar);
@@ -90,7 +90,7 @@ public abstract class dg extends View implements j60 {
         this.e0 = new w5(this, 0L, 320L, xqVar);
         this.m0 = new RectF();
         this.b = i7;
-        this.a = f6Var;
+        this.a = g6Var;
         this.E = z9;
         i6 i6Var2 = new i6(false, false, false);
         this.x = i6Var2;
@@ -152,7 +152,7 @@ public abstract class dg extends View implements j60 {
         float f10 = L / 2.0f;
         float L2 = (rectF.left + f10) - org.telegram.messenger.g0.L(6.0f);
         float L3 = (rectF.top + f10) - org.telegram.messenger.g0.L(6.0f);
-        canvas.drawCircle(L2, L3, org.telegram.messenger.g0.L(2.0f) + f10, org.telegram.ui.ActionBar.k6.Cm);
+        canvas.drawCircle(L2, L3, org.telegram.messenger.g0.L(2.0f) + f10, org.telegram.ui.ActionBar.l6.Cm);
         canvas.drawCircle(L2, L3, f10, this.D);
         if (this.G == null) {
             Drawable mutate = getContext().getResources().getDrawable(R.drawable.mini_switch_lock).mutate();
@@ -194,7 +194,7 @@ public abstract class dg extends View implements j60 {
         invalidate();
     }
 
-    @Override // org.telegram.ui.Components.j60
+    @Override // org.telegram.ui.Components.k60
     public final void g(RectF rectF) {
         float circleWidth = getCircleWidth();
         float circleHeight = getCircleHeight();
@@ -214,10 +214,10 @@ public abstract class dg extends View implements j60 {
     }
 
     public int getFillColor() {
-        return org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Me, this.a);
+        return org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.Me, this.a);
     }
 
-    @Override // org.telegram.ui.Components.j60
+    @Override // org.telegram.ui.Components.k60
     public final void h(Canvas canvas, float f10) {
         float T1;
         float T12;
@@ -294,10 +294,10 @@ public abstract class dg extends View implements j60 {
 
     public final void k() {
         boolean z9 = this.E;
-        org.telegram.ui.ActionBar.f6 f6Var = this.a;
-        int w02 = z9 ? -1 : org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Me, f6Var);
-        int w03 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Kl, f6Var);
-        int w04 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Qf, f6Var);
+        org.telegram.ui.ActionBar.g6 g6Var = this.a;
+        int w02 = z9 ? -1 : org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.Me, g6Var);
+        int w03 = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.Kl, g6Var);
+        int w04 = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.Qf, g6Var);
         if (w02 != this.i0 || w03 != this.j0 || w04 != this.k0) {
             this.i0 = w02;
             this.j0 = w03;
@@ -311,7 +311,7 @@ public abstract class dg extends View implements j60 {
         boolean z10 = this.E;
         Paint paint = this.D;
         if (z10) {
-            paint.setColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Me, f6Var));
+            paint.setColor(org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.Me, g6Var));
         } else if (j()) {
             paint.setColor(getFillColor());
         } else {
@@ -583,7 +583,7 @@ public abstract class dg extends View implements j60 {
                 canvas2.save();
                 canvas2.scale(T18, T18, measuredWidth, measuredHeight2);
                 if (!this.E) {
-                    canvas2.drawCircle(measuredWidth, measuredHeight2, (org.telegram.messenger.g0.L(f12) + f34) * i17 * this.d0, org.telegram.ui.ActionBar.k6.Cm);
+                    canvas2.drawCircle(measuredWidth, measuredHeight2, (org.telegram.messenger.g0.L(f12) + f34) * i17 * this.d0, org.telegram.ui.ActionBar.l6.Cm);
                     canvas2.drawCircle(measuredWidth, measuredHeight2, f34 * i17 * this.d0, paint);
                 }
                 i6Var2.B = (int) (i17 * 255.0f);

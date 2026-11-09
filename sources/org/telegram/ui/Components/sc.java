@@ -9,7 +9,7 @@ import android.os.SystemClock;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class sc extends Drawable {
     public static final qc H = new qc(0);
@@ -70,7 +70,7 @@ public final class sc extends Drawable {
     }
 
     public static int e(int i7) {
-        return i7 != 0 ? i7 != 1 ? i7 != 3 ? org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Ph, false) : i0.a.f(0.5f, i0.a.f(0.5f, org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Wh, false), org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Xh, false)), org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Yh, false)) : i0.a.f(0.5f, org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Nh, false), org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Oh, false)) : i0.a.f(0.5f, org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Lh, false), org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Mh, false));
+        return i7 != 0 ? i7 != 1 ? i7 != 3 ? org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.Ph, false) : i0.a.f(0.5f, i0.a.f(0.5f, org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.Wh, false), org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.Xh, false)), org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.Yh, false)) : i0.a.f(0.5f, org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.Nh, false), org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.Oh, false)) : i0.a.f(0.5f, org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.Lh, false), org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.Mh, false));
     }
 
     public final void a(int i7) {

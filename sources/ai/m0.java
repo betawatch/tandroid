@@ -8,8 +8,8 @@ import android.os.Looper;
 import android.os.SystemClock;
 import bi.dd;
 import bi.ea;
-import di.w5;
-import di.y6;
+import di.x5;
+import di.z6;
 import hi.a3;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -40,9 +40,9 @@ import org.telegram.ui.ActionBar.f2;
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.hc;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ob1;
+import org.telegram.ui.qb1;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m0 implements Runnable {
     public final /* synthetic */ int a;
@@ -57,7 +57,7 @@ public final /* synthetic */ class m0 implements Runnable {
         int i7 = 0;
         switch (this.a) {
             case 0:
-                hc.X().N(id.M0(2131745864, null), id.M0(2131751106, null)).j();
+                hc.X().N(id.M0(2131745861, null), id.M0(2131751105, null)).j();
                 return;
             case 1:
                 wa waVar = bg.i.B;
@@ -82,10 +82,10 @@ public final /* synthetic */ class m0 implements Runnable {
                 return;
             case 2:
                 f2 T = LaunchActivity.T();
-                if ((T instanceof ob1) && (c02 = ((ob1) T).c0()) != null) {
+                if ((T instanceof qb1) && (c02 = ((qb1) T).c0()) != null) {
                     T = c02;
                 }
-                cc Q = (T != null ? hc.a0(T) : hc.X()).Q(R.raw.ic_delete, 36, id.M0(2131750217, null));
+                cc Q = (T != null ? hc.a0(T) : hc.X()).Q(R.raw.ic_delete, 36, id.M0(2131750216, null));
                 Q.t = true;
                 Q.j();
                 return;
@@ -108,10 +108,10 @@ public final /* synthetic */ class m0 implements Runnable {
             case 7:
                 return;
             case 8:
-                int i11 = w5.n1;
+                int i11 = x5.n1;
                 return;
             case 9:
-                Comparator comparator = y6.X;
+                Comparator comparator = z6.X;
                 return;
             case 10:
                 int i12 = fi.e0.x0;

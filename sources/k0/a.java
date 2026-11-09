@@ -14,9 +14,9 @@ import java.security.Signature;
 import javax.crypto.Cipher;
 import javax.crypto.Mac;
 import org.telegram.messenger.id;
-import org.telegram.ui.Wallet.v0;
+import org.telegram.ui.Wallet.u0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class a extends FingerprintManager.AuthenticationCallback {
     public final /* synthetic */ int a;
@@ -34,13 +34,13 @@ public final class a extends FingerprintManager.AuthenticationCallback {
                 ((x) ((a0) ((i) this.b).b).d).a(i7, charSequence);
                 break;
             default:
-                v0 v0Var = (v0) this.b;
-                if (v0Var.f() && !v0Var.f) {
+                u0 u0Var = (u0) this.b;
+                if (u0Var.f() && !u0Var.f) {
                     if (i7 != 5) {
-                        v0Var.a();
+                        u0Var.a();
                         break;
                     } else {
-                        v0Var.c("AUTH_CANCELED");
+                        u0Var.c("AUTH_CANCELED");
                         break;
                     }
                 }
@@ -66,9 +66,9 @@ public final class a extends FingerprintManager.AuthenticationCallback {
                 }
                 break;
             default:
-                v0 v0Var = (v0) obj;
-                if (v0Var.f() && (alertDialog = v0Var.i) != null) {
-                    alertDialog.setMessage(id.M0(2131743120, null));
+                u0 u0Var = (u0) obj;
+                if (u0Var.f() && (alertDialog = u0Var.i) != null) {
+                    alertDialog.setMessage(id.M0(2131743117, null));
                     break;
                 }
                 break;
@@ -91,8 +91,8 @@ public final class a extends FingerprintManager.AuthenticationCallback {
                 }
                 break;
             default:
-                v0 v0Var = (v0) this.b;
-                if (v0Var.f() && (alertDialog = v0Var.i) != null) {
+                u0 u0Var = (u0) this.b;
+                if (u0Var.f() && (alertDialog = u0Var.i) != null) {
                     alertDialog.setMessage(charSequence);
                     break;
                 }
@@ -146,9 +146,9 @@ public final class a extends FingerprintManager.AuthenticationCallback {
                 }
                 ((x) ((a0) iVar.b).d).b(new u(vVar, 2));
             default:
-                v0 v0Var = (v0) this.b;
-                if (!v0Var.f) {
-                    v0Var.c(null);
+                u0 u0Var = (u0) this.b;
+                if (!u0Var.f) {
+                    u0Var.c(null);
                     break;
                 }
                 break;

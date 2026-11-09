@@ -9,9 +9,9 @@ import android.widget.TextView;
 import java.util.HashSet;
 import org.telegram.ui.Components.ks;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class s extends LinearLayout implements org.telegram.ui.ActionBar.a6 {
+public final class s extends LinearLayout implements org.telegram.ui.ActionBar.b6 {
     public static final /* synthetic */ int h = 0;
     public Paint a;
     public Paint b;
@@ -24,11 +24,11 @@ public final class s extends LinearLayout implements org.telegram.ui.ActionBar.a
         this.e = f10;
         this.f = true;
         TextView textView = this.d;
-        int x02 = org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.G6, false);
-        int i7 = org.telegram.ui.ActionBar.k6.I6;
-        textView.setTextColor(i0.a.f(f10, x02, org.telegram.ui.ActionBar.k6.x0(null, i7, false)));
+        int x02 = org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.G6, false);
+        int i7 = org.telegram.ui.ActionBar.l6.I6;
+        textView.setTextColor(i0.a.f(f10, x02, org.telegram.ui.ActionBar.l6.x0(null, i7, false)));
         Paint paint = this.a;
-        paint.setColor(i0.a.f(f10, i0.a.o(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.M6, false), 63), org.telegram.ui.ActionBar.k6.x0(null, i7, false)));
+        paint.setColor(i0.a.f(f10, i0.a.o(org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.M6, false), 63), org.telegram.ui.ActionBar.l6.x0(null, i7, false)));
         paint.setStrokeWidth(Math.max(2, org.telegram.messenger.g0.L(org.telegram.messenger.g0.T1(0.5f, 2.0f, f10))));
         invalidate();
     }
@@ -61,7 +61,7 @@ public final class s extends LinearLayout implements org.telegram.ui.ActionBar.a
         canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(18.0f), org.telegram.messenger.g0.L(18.0f), paint);
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
         try {
             if (!this.f || this.d == null) {
@@ -73,7 +73,7 @@ public final class s extends LinearLayout implements org.telegram.ui.ActionBar.a
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

@@ -23,9 +23,9 @@ import org.telegram.messenger.r2;
 import org.telegram.messenger.sz;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.ActionBar.m5;
+import org.telegram.ui.ActionBar.o5;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final class w1 {
     public static final HashMap e = new HashMap();
@@ -117,7 +117,7 @@ public final class w1 {
         return null;
     }
 
-    public static m5 e(u0 u0Var, c20 c20Var) {
+    public static o5 e(u0 u0Var, c20 c20Var) {
         if (u0Var == null) {
             c20Var.a(null);
             return null;
@@ -129,7 +129,7 @@ public final class w1 {
         p1 p1Var = new p1(a00.d(a00Var, "getHTML"), zArr, a00Var, w1Var, c20Var, 0);
         System.currentTimeMillis();
         u0Var.evaluateJavascript(org.telegram.messenger.g0.y2(null, R.raw.open_collapsed).replace("$OPEN$", "true"), new q1(w1Var, u0Var, new File(org.telegram.messenger.g0.E0(), "archive.mht"), p1Var, 0));
-        return new m5(zArr, 19);
+        return new o5(zArr, 17);
     }
 
     public static boolean f(JSONArray jSONArray) {
@@ -184,7 +184,7 @@ public final class w1 {
                 ArrayList arrayList = (ArrayList) f.get(v1Var.b);
                 if (arrayList == null) {
                     f.put(v1Var.b, new ArrayList());
-                    new a1(new org.telegram.ui.Wallet.t(14, w1Var, v1Var)).execute(v1Var.b);
+                    new a1(new org.telegram.ui.Wallet.s(14, w1Var, v1Var)).execute(v1Var.b);
                     return;
                 }
                 for (int i7 = 0; i7 < arrayList.size(); i7++) {

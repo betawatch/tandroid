@@ -2,9 +2,9 @@ package bi;
 
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.an;
+import org.telegram.ui.cn;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class qa implements Runnable {
     public final /* synthetic */ int a;
@@ -24,7 +24,7 @@ public final /* synthetic */ class qa implements Runnable {
                 this.b[0].dismiss();
                 org.telegram.ui.ActionBar.f2 T = LaunchActivity.T();
                 if (T != null) {
-                    T.presentFragment(an.ra(this.c));
+                    T.presentFragment(cn.ta(this.c));
                     break;
                 }
                 break;
@@ -40,7 +40,7 @@ public final /* synthetic */ class qa implements Runnable {
                 this.b[0].dismiss();
                 org.telegram.ui.ActionBar.f2 T3 = LaunchActivity.T();
                 if (T3 != null) {
-                    T3.presentFragment(ProfileActivity.A4(this.c));
+                    T3.presentFragment(ProfileActivity.D4(this.c));
                     break;
                 }
                 break;
@@ -48,7 +48,7 @@ public final /* synthetic */ class qa implements Runnable {
                 this.b[0].dismiss();
                 org.telegram.ui.ActionBar.f2 T4 = LaunchActivity.T();
                 if (T4 != null) {
-                    T4.presentFragment(ProfileActivity.A4(this.c));
+                    T4.presentFragment(ProfileActivity.D4(this.c));
                     break;
                 }
                 break;
@@ -56,7 +56,7 @@ public final /* synthetic */ class qa implements Runnable {
                 this.b[0].dismiss();
                 org.telegram.ui.ActionBar.f2 T5 = LaunchActivity.T();
                 if (T5 != null) {
-                    T5.presentFragment(ProfileActivity.A4(this.c));
+                    T5.presentFragment(ProfileActivity.D4(this.c));
                     break;
                 }
                 break;
@@ -64,7 +64,7 @@ public final /* synthetic */ class qa implements Runnable {
                 this.b[0].dismiss();
                 org.telegram.ui.ActionBar.f2 T6 = LaunchActivity.T();
                 if (T6 != null) {
-                    T6.presentFragment(an.ra(this.c));
+                    T6.presentFragment(cn.ta(this.c));
                     break;
                 }
                 break;
@@ -75,7 +75,7 @@ public final /* synthetic */ class qa implements Runnable {
                 }
                 org.telegram.ui.ActionBar.f2 T7 = LaunchActivity.T();
                 if (T7 != null) {
-                    T7.presentFragment(an.ra(this.c));
+                    T7.presentFragment(cn.ta(this.c));
                     break;
                 }
                 break;

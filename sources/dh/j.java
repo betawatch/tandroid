@@ -10,10 +10,10 @@ import fh.l;
 import java.util.Arrays;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.g0;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.s6;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class j extends Drawable {
     public gh.a a;
@@ -28,22 +28,22 @@ public final class j extends Drawable {
     public final Paint g = new Paint(1);
     public final l h = new l();
     public final float[] i = new float[8];
-    public int k = r6.b;
+    public int k = s6.b;
 
     public final void a() {
-        this.k = r6.b;
+        this.k = s6.b;
         gh.a aVar = this.a;
         if (aVar == null) {
             return;
         }
-        this.b = k6.r1(this.d, aVar.A());
-        this.c = k6.r1(this.d, this.a.O());
+        this.b = l6.r1(this.d, aVar.A());
+        this.c = l6.r1(this.d, this.a.O());
         this.j = new fh.h(g0.N(1.0f), this.b, g0.N(0.6666667f), this.c, 0.0f, 0, 0.0f, 0);
     }
 
     @Override // android.graphics.drawable.Drawable
     public final void draw(Canvas canvas) {
-        if (this.k != r6.b) {
+        if (this.k != s6.b) {
             try {
                 a();
             } catch (Exception e10) {

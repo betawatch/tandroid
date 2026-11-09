@@ -11,7 +11,7 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public class NumberTextView extends View {
     public final ArrayList a;
@@ -126,7 +126,7 @@ public class NumberTextView extends View {
             ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "progress", z10 ? -1.0f : 1.0f, f12);
             this.d = ofFloat;
             ofFloat.setDuration(this.h ? 180L : 150L);
-            this.d.addListener(new e60(this, 5));
+            this.d.addListener(new f60(this, 5));
             this.d.start();
         }
         invalidate();
@@ -250,6 +250,6 @@ public class NumberTextView extends View {
         a(this.f, false);
     }
 
-    public void setOnTextWidthProgressChangedListener(ib0 ib0Var) {
+    public void setOnTextWidthProgressChangedListener(jb0 jb0Var) {
     }
 }

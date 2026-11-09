@@ -1,17 +1,6 @@
 package org.telegram.ui.Components;
 
-import android.graphics.RectF;
-
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class fa0 {
-    public final int a;
-    public final my0 b;
-    public final RectF c = new RectF();
-    public final RectF d = new RectF();
-
-    public fa0(int i7, String str) {
-        this.a = i7;
-        this.b = new my0(str, 14.0f, org.telegram.messenger.g0.o());
-    }
+public interface fa0 extends org.telegram.ui.ActionBar.g6 {
 }

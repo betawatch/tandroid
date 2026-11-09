@@ -1,79 +1,91 @@
 package org.telegram.ui.Components;
 
-import android.text.Editable;
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Canvas;
 import android.text.TextUtils;
-import android.text.TextWatcher;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class tn0 implements TextWatcher {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ mo0 b;
+public final class tn0 extends lt {
+    public boolean V;
+    public int W;
+    public int a0;
+    public ValueAnimator b0;
+    public final /* synthetic */ no0 c0;
 
-    public /* synthetic */ tn0(mo0 mo0Var, int i7) {
-        this.a = i7;
-        this.b = mo0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public tn0(no0 no0Var, Context context, ao0 ao0Var, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(context, ao0Var, null, 1, true, g6Var);
+        this.c0 = no0Var;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        switch (this.a) {
-            case 0:
-                org.telegram.messenger.g0.h3(new ob0(this, 25));
-                break;
-            default:
-                mo0 mo0Var = this.b;
-                fo0 fo0Var = mo0Var.C1;
-                av0 av0Var = mo0Var.I1;
-                s00 s00Var = mo0Var.q2;
-                if (!TextUtils.isEmpty(s00Var.r.getText())) {
-                    mo0Var.K0(false);
-                }
-                if (mo0Var.s2) {
-                    String obj = s00Var.r.getText().toString();
-                    if (obj.length() != 0) {
-                        if (av0Var != null) {
-                            av0Var.d.setText(org.telegram.messenger.id.M0(2131748168, null));
-                        }
-                    } else if (mo0Var.x1.getAdapter() != fo0Var) {
-                        int J0 = mo0.J0(mo0Var);
-                        av0Var.d.setText(org.telegram.messenger.id.M0(2131748168, null));
-                        av0Var.e(false, true);
-                        mo0Var.K0(false);
-                        fo0Var.f();
-                        if (J0 > 0) {
-                            mo0Var.z1.h1(0, -J0);
-                        }
-                    }
-                    jo0 jo0Var = mo0Var.E1;
-                    if (jo0Var != null) {
-                        jo0Var.E(obj);
-                        break;
-                    }
-                }
-                break;
+    @Override // org.telegram.ui.Components.lt
+    public final void c(float f10) {
+        this.c0.Z0();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        if (this.V) {
+            zs editText = this.c0.k1.getEditText();
+            editText.setOffsetY(editText.getOffsetY() - ((this.a0 - editText.getScrollY()) + (this.W - editText.getMeasuredHeight())));
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(editText.getOffsetY(), 0.0f);
+            ofFloat.addUpdateListener(new d60(editText, 17));
+            ValueAnimator valueAnimator = this.b0;
+            if (valueAnimator != null) {
+                valueAnimator.cancel();
+            }
+            this.b0 = ofFloat;
+            ofFloat.setDuration(200L);
+            ofFloat.setInterpolator(xq.f);
+            ofFloat.start();
+            this.V = false;
+        }
+        super.dispatchDraw(canvas);
+    }
+
+    @Override // org.telegram.ui.Components.lt
+    public final void f() {
+        super.f();
+        hy emojiView = getEmojiView();
+        no0 no0Var = this.c0;
+        if (emojiView != null) {
+            emojiView.w0 = false;
+            emojiView.x2 = false;
+            emojiView.setShouldDrawBackground(false);
+            emojiView.setBottomInset(no0Var.y2.d);
+        }
+        FrameLayout frameLayout = no0Var.U1;
+        if (frameLayout != null) {
+            frameLayout.bringToFront();
+        }
+        sn0 sn0Var = no0Var.j1;
+        if (sn0Var != null) {
+            sn0Var.bringToFront();
+        }
+        sn0 sn0Var2 = no0Var.m1;
+        if (sn0Var2 != null) {
+            sn0Var2.bringToFront();
         }
     }
 
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
-        int i12 = this.a;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
-        int i12 = this.a;
-    }
-
-    private final void a(int i7, int i10, int i11, CharSequence charSequence) {
-    }
-
-    private final void b(int i7, int i10, int i11, CharSequence charSequence) {
-    }
-
-    private final void c(int i7, int i10, int i11, CharSequence charSequence) {
-    }
-
-    private final void d(int i7, int i10, int i11, CharSequence charSequence) {
+    @Override // org.telegram.ui.Components.lt
+    public final void q(int i7, int i10) {
+        no0 no0Var = this.c0;
+        sn0 sn0Var = no0Var.j1;
+        if (TextUtils.isEmpty(getEditText().getText())) {
+            getEditText().animate().cancel();
+            getEditText().setOffsetY(0.0f);
+            this.V = false;
+        } else {
+            this.V = true;
+            this.W = getEditText().getMeasuredHeight();
+            this.a0 = getEditText().getScrollY();
+            invalidate();
+        }
+        no0Var.n2 = sn0Var.getTop() + no0Var.m2;
+        sn0Var.invalidate();
     }
 }

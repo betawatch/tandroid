@@ -18,9 +18,9 @@ import java.util.zip.ZipException;
 import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.bi0;
+import org.telegram.ui.di0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class gy implements Runnable {
     public final /* synthetic */ int a;
@@ -98,22 +98,22 @@ public final /* synthetic */ class gy implements Runnable {
                 gz gzVar = (gz) this.c;
                 TLObject tLObject = (TLObject) this.d;
                 TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth = (TLRPC.TL_messages_requestUrlAuth) this.e;
-                org.telegram.ui.an anVar = (org.telegram.ui.an) this.f;
+                org.telegram.ui.cn cnVar = (org.telegram.ui.cn) this.f;
                 String str = (String) this.h;
                 boolean z12 = this.b;
                 if (tLObject == null) {
-                    org.telegram.ui.Components.v4.n0(anVar, str, false, z12);
+                    org.telegram.ui.Components.v4.n0(cnVar, str, false, z12);
                     return;
                 }
                 if (tLObject instanceof TLRPC.TL_urlAuthResultRequest) {
-                    bi0.b(false, gzVar.currentAccount, tL_messages_requestUrlAuth, (TLRPC.TL_urlAuthResultRequest) tLObject, null, null, null, false, null);
+                    di0.b(false, gzVar.currentAccount, tL_messages_requestUrlAuth, (TLRPC.TL_urlAuthResultRequest) tLObject, null, null, null, false, null);
                     return;
                 } else if (tLObject instanceof TLRPC.TL_urlAuthResultAccepted) {
-                    bi0.b(false, gzVar.currentAccount, tL_messages_requestUrlAuth, (TLRPC.TL_urlAuthResultAccepted) tLObject, null, null, null, false, null);
+                    di0.b(false, gzVar.currentAccount, tL_messages_requestUrlAuth, (TLRPC.TL_urlAuthResultAccepted) tLObject, null, null, null, false, null);
                     return;
                 } else {
                     if (tLObject instanceof TLRPC.TL_urlAuthResultDefault) {
-                        org.telegram.ui.Components.v4.n0(anVar, str, false, z12);
+                        org.telegram.ui.Components.v4.n0(cnVar, str, false, z12);
                         return;
                     }
                     return;
@@ -269,12 +269,12 @@ public final /* synthetic */ class gy implements Runnable {
                         i7Var.O0 = true;
                         if (i7Var.c1 != null && i7Var.L0.exists()) {
                             u7 u7Var = i7Var.g0;
-                            di.s6 s6Var = i7Var.c1;
+                            di.t6 t6Var = i7Var.c1;
                             File file6 = i7Var.L0;
                             f8 f8Var = u7Var.e.d;
-                            long j11 = s6Var.c;
-                            int i18 = s6Var.b;
-                            int i19 = s6Var.d;
+                            long j11 = t6Var.c;
+                            int i18 = t6Var.b;
+                            int i19 = t6Var.d;
                             String file7 = file6 != null ? file6.toString() : null;
                             f8Var.getClass();
                             f8Var.h(new d8(f8Var, j11, i18, i19, file7, 0));
@@ -352,7 +352,7 @@ public final /* synthetic */ class gy implements Runnable {
                                     hVar3 = hVar5;
                                     hVar4 = hVar6;
                                     if (ijVar2.k.peer_id.channel_id == j12) {
-                                        sparseArray.put(ijVar2.f1(), ijVar2);
+                                        sparseArray.put(ijVar2.e1(), ijVar2);
                                         qpVar.N = Math.min(qpVar.N, ijVar2.k.date);
                                         long j14 = ijVar2.k.random_id;
                                         if (j14 != j12) {
@@ -456,7 +456,7 @@ public final /* synthetic */ class gy implements Runnable {
                                             i12 = i10;
                                             arrayList7 = arrayList3;
                                             if (ijVar.k.peer_id.channel_id == 0) {
-                                                sparseArray.remove(ijVar.f1());
+                                                sparseArray.remove(ijVar.e1());
                                                 long j15 = ijVar.k.random_id;
                                                 if (j15 != 0) {
                                                     hVar8.l(j15);
@@ -480,10 +480,10 @@ public final /* synthetic */ class gy implements Runnable {
                                                 arrayList6 = arrayList14;
                                                 if (ijVar4 != null) {
                                                     i11 = i30;
-                                                    if (ijVar4.f1() == ijVar3.f1()) {
+                                                    if (ijVar4.e1() == ijVar3.e1()) {
                                                         ijVar3.Z = ijVar4.Z;
                                                         if (ijVar3 != null && ijVar3.k.peer_id.channel_id == 0) {
-                                                            sparseArray.put(ijVar3.f1(), ijVar3);
+                                                            sparseArray.put(ijVar3.e1(), ijVar3);
                                                             qpVar.N = Math.min(qpVar.N, ijVar3.k.date);
                                                             j3 = ijVar3.k.random_id;
                                                             if (j3 == 0) {
@@ -503,7 +503,7 @@ public final /* synthetic */ class gy implements Runnable {
                                             arrayList6 = arrayList14;
                                             i11 = i30;
                                             if (ijVar3 != null) {
-                                                sparseArray.put(ijVar3.f1(), ijVar3);
+                                                sparseArray.put(ijVar3.e1(), ijVar3);
                                                 qpVar.N = Math.min(qpVar.N, ijVar3.k.date);
                                                 j3 = ijVar3.k.random_id;
                                                 if (j3 == 0) {
@@ -536,7 +536,7 @@ public final /* synthetic */ class gy implements Runnable {
                                     for (int i32 = 0; i32 < arrayList14.size(); i32++) {
                                         ij ijVar5 = (ij) arrayList14.get(i32);
                                         if (ijVar5 != null && ijVar5.k.peer_id.channel_id == 0) {
-                                            sparseArray.remove(ijVar5.f1());
+                                            sparseArray.remove(ijVar5.e1());
                                         }
                                     }
                                     if (arrayList15 != null) {
@@ -550,7 +550,7 @@ public final /* synthetic */ class gy implements Runnable {
                                                     i13 = i33;
                                                     if (ijVar7 != null) {
                                                         i14 = i34;
-                                                        if (ijVar7.f1() == ijVar6.f1()) {
+                                                        if (ijVar7.e1() == ijVar6.e1()) {
                                                             ijVar6.Z = ijVar7.Z;
                                                         }
                                                     } else {
@@ -565,7 +565,7 @@ public final /* synthetic */ class gy implements Runnable {
                                             if (ijVar6 != null) {
                                                 arrayList8 = arrayList12;
                                                 if (ijVar6.k.peer_id.channel_id == 0) {
-                                                    sparseArray.put(ijVar6.f1(), ijVar6);
+                                                    sparseArray.put(ijVar6.e1(), ijVar6);
                                                     qpVar.N = Math.min(qpVar.N, ijVar6.k.date);
                                                     long j16 = ijVar6.k.random_id;
                                                     if (j16 != 0) {

@@ -6,9 +6,9 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.za1;
+import org.telegram.ui.bb1;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l0 implements RequestDelegate {
     public final /* synthetic */ int a = 0;
@@ -33,7 +33,7 @@ public final /* synthetic */ class l0 implements RequestDelegate {
                 org.telegram.messenger.g0.h3(new o0((q0) this.c, tL_error, tLObject, (int[]) this.d, (ArrayList) this.e, this.b, (TLRPC.User) this.f));
                 break;
             case 1:
-                org.telegram.messenger.g0.h3(new o0((za1) this.c, tL_error, this.b, tLObject, (byte[]) this.d, (String) this.e, (TL_account.passwordInputSettings) this.f));
+                org.telegram.messenger.g0.h3(new o0((bb1) this.c, tL_error, this.b, tLObject, (byte[]) this.d, (String) this.e, (TL_account.passwordInputSettings) this.f));
                 break;
             default:
                 yh.m mVar = (yh.m) this.c;
@@ -48,8 +48,8 @@ public final /* synthetic */ class l0 implements RequestDelegate {
         }
     }
 
-    public /* synthetic */ l0(za1 za1Var, boolean z9, byte[] bArr, String str, TL_account.passwordInputSettings passwordinputsettings) {
-        this.c = za1Var;
+    public /* synthetic */ l0(bb1 bb1Var, boolean z9, byte[] bArr, String str, TL_account.passwordInputSettings passwordinputsettings) {
+        this.c = bb1Var;
         this.b = z9;
         this.d = bArr;
         this.e = str;

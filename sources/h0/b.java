@@ -1,11 +1,9 @@
 package h0;
 
 import a8.wa;
-import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.content.res.XmlResourceParser;
-import android.graphics.Shader;
 import android.util.AttributeSet;
 import android.util.Base64;
 import android.util.Log;
@@ -17,7 +15,7 @@ import java.util.List;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final float[][] a = {new float[]{0.401288f, 0.650173f, -0.051461f}, new float[]{-0.250268f, 1.204414f, 0.045854f}, new float[]{-0.002079f, 0.048952f, 0.953127f}};
@@ -27,12 +25,15 @@ public abstract class b {
 
     public static wa a(TypedArray typedArray, XmlPullParser xmlPullParser, Resources.Theme theme, String str, int i7) {
         wa waVar;
-        if (xmlPullParser.getAttributeValue("http://schemas.android.com/apk/res/android", str) != null) {
+        String attributeValue = xmlPullParser.getAttributeValue("http://schemas.android.com/apk/res/android", str);
+        Object obj = null;
+        int i10 = 0;
+        if (attributeValue != null) {
             TypedValue typedValue = new TypedValue();
             typedArray.getValue(i7, typedValue);
-            int i10 = typedValue.type;
-            if (i10 >= 28 && i10 <= 31) {
-                return new wa((Shader) null, (ColorStateList) null, typedValue.data);
+            int i11 = typedValue.type;
+            if (i11 >= 28 && i11 <= 31) {
+                return new wa(obj, obj, typedValue.data, 9);
             }
             try {
                 waVar = wa.g(typedArray.getResources(), typedArray.getResourceId(i7, 0), theme);
@@ -44,7 +45,7 @@ public abstract class b {
                 return waVar;
             }
         }
-        return new wa((Shader) null, (ColorStateList) null, 0);
+        return new wa(obj, obj, i10, 9);
     }
 
     public static String b(TypedArray typedArray, XmlPullParser xmlPullParser, String str, int i7) {

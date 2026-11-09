@@ -7,9 +7,9 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.ui.Components.xf;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.dn;
+import org.telegram.ui.fn;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class z2 extends ImageReceiver {
     public final /* synthetic */ int J1;
@@ -24,7 +24,7 @@ public final class z2 extends ImageReceiver {
 
     @Override // org.telegram.messenger.ImageReceiver
     public void L0(int[] iArr) {
-        sh.e eVar;
+        sh.f fVar;
         switch (this.J1) {
             case 2:
                 super.L0(iArr);
@@ -36,8 +36,8 @@ public final class z2 extends ImageReceiver {
                 iArr2[3] = L;
                 iArr2[2] = L;
                 org.telegram.ui.Cells.w1 w1Var = q1Var.w2;
-                if (w1Var != null && (eVar = w1Var.m) != null) {
-                    eVar.b.L0(iArr2);
+                if (w1Var != null && (fVar = w1Var.m) != null) {
+                    fVar.b.L0(iArr2);
                     break;
                 }
                 break;
@@ -53,7 +53,7 @@ public final class z2 extends ImageReceiver {
         Object obj = this.K1;
         switch (i7) {
             case 3:
-                View view = ((dn) obj).b;
+                View view = ((fn) obj).b;
                 if (view != null) {
                     view.invalidate();
                     break;
@@ -69,9 +69,9 @@ public final class z2 extends ImageReceiver {
                 break;
             case 6:
                 super.invalidate();
-                org.telegram.ui.Wallet.b8 b8Var = ((org.telegram.ui.Wallet.a8) obj).d0;
-                int i10 = org.telegram.ui.Wallet.b8.G1;
-                b8Var.f0();
+                org.telegram.ui.Wallet.a8 a8Var = ((org.telegram.ui.Wallet.z7) obj).d0;
+                int i10 = org.telegram.ui.Wallet.a8.G1;
+                a8Var.f0();
                 break;
         }
     }
@@ -83,16 +83,16 @@ public final class z2 extends ImageReceiver {
         Object obj = this.K1;
         switch (i11) {
             case 0:
-                i4 i4Var = (i4) obj;
+                j4 j4Var = (j4) obj;
                 boolean x02 = super.x0(drawable, str, i7, z9, i10);
-                if (i7 == 1 && (runnable = i4Var.R0) != null) {
+                if (i7 == 1 && (runnable = j4Var.R0) != null) {
                     runnable.run();
-                    i4Var.R0 = null;
+                    j4Var.R0 = null;
                 }
                 return x02;
             case 1:
                 if (drawable != null && i7 != 1) {
-                    org.telegram.messenger.camera.q.l(((kg.a1) ((c4) obj).H).h.animate().alpha(1.0f).translationY(0.0f), xq.k, 250L);
+                    org.telegram.messenger.camera.q.l(((kg.a1) ((d4) obj).H).h.animate().alpha(1.0f).translationY(0.0f), xq.k, 250L);
                 }
                 return super.x0(drawable, str, i7, z9, i10);
             case 2:

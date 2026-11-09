@@ -2,12 +2,12 @@ package org.telegram.ui.Cells;
 
 import android.view.View;
 import org.telegram.ui.Components.gn;
-import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.qj0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class k6 extends di.n7 {
+public final class k6 extends di.o7 {
     public final /* synthetic */ int S = 0;
     public final /* synthetic */ View T;
 
@@ -17,7 +17,7 @@ public final class k6 extends di.n7 {
         this.T = paVar;
     }
 
-    @Override // di.n7
+    @Override // di.o7
     public final void f(long j3) {
         switch (this.S) {
             case 0:
@@ -28,7 +28,7 @@ public final class k6 extends di.n7 {
                 org.telegram.ui.ActionBar.f2 Q = LaunchActivity.Q();
                 if (Q != null) {
                     Q.getOrCreateStoryViewer().getClass();
-                    Q.getOrCreateStoryViewer().J(paVar.getContext(), j3, di.h7.a((pj0) paVar.getParent()));
+                    Q.getOrCreateStoryViewer().J(paVar.getContext(), j3, di.i7.a((qj0) paVar.getParent()));
                     break;
                 }
                 break;
@@ -40,8 +40,8 @@ public final class k6 extends di.n7 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k6(m6 m6Var, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(f6Var, false);
+    public k6(m6 m6Var, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(g6Var, false);
         this.T = m6Var;
     }
 

@@ -2,7 +2,7 @@ package org.telegram.messenger;
 
 import org.webrtc.TextureViewRenderer;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class jr implements Runnable {
     public final /* synthetic */ int a;
@@ -28,7 +28,7 @@ public final /* synthetic */ class jr implements Runnable {
                 ((yr) this.f).B1(this.b, this.c, this.d, this.e);
                 break;
             case 1:
-                org.telegram.ui.an.f0((org.telegram.ui.an) this.f, this.b, this.c, this.d, this.e);
+                org.telegram.ui.cn.g0((org.telegram.ui.cn) this.f, this.b, this.c, this.d, this.e);
                 break;
             default:
                 ((TextureViewRenderer) this.f).lambda$onFrameResolutionChanged$0(this.b, this.c, this.d, this.e);

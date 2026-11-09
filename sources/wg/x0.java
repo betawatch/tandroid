@@ -6,9 +6,9 @@ import org.telegram.messenger.ui;
 import org.telegram.ui.ActionBar.d2;
 import org.telegram.ui.ActionBar.f2;
 import org.telegram.ui.PrivacyControlActivity;
-import org.telegram.ui.ng0;
+import org.telegram.ui.pg0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x0 implements Runnable {
     public final /* synthetic */ int a;
@@ -35,12 +35,12 @@ public final /* synthetic */ class x0 implements Runnable {
                 f1Var.p1(true, false);
                 break;
             case 3:
-                ng0 ng0Var = f1Var.R1;
-                ng0Var.b.r(id.M0(2131745839, null), true);
+                pg0 pg0Var = f1Var.R1;
+                pg0Var.b.r(id.M0(2131745836, null), true);
                 break;
             case 4:
-                ng0 ng0Var2 = f1Var.R1;
-                ng0Var2.b.r(id.M0(2131749651, null), true);
+                pg0 pg0Var2 = f1Var.R1;
+                pg0Var2.b.r(id.M0(2131749650, null), true);
                 break;
             case 5:
                 f1Var.e1();

@@ -1,175 +1,67 @@
 package org.telegram.ui.Components;
 
-import android.media.AudioTimestamp;
-import android.os.SystemClock;
-import j$.util.Collection;
-import java.nio.ByteBuffer;
-import java.util.WeakHashMap;
+import android.view.animation.DecelerateInterpolator;
+import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class f40 implements Runnable {
+public final /* synthetic */ class f40 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ h40 b;
 
-    public /* synthetic */ f40(Object obj, int i7) {
+    public /* synthetic */ f40(h40 h40Var, int i7) {
         this.a = i7;
-        this.b = obj;
+        this.b = h40Var;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:87:0x006b, code lost:
-    
-        if (((org.telegram.ui.Components.g40) r22.b).X == 0) goto L87;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x013f  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x0141 A[SYNTHETIC] */
     @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public final void run() {
-        x30 x30Var;
-        long j3;
-        long j10;
-        switch (this.a) {
+        org.telegram.messenger.j20 j20Var;
+        int i7 = this.a;
+        h40 h40Var = this.b;
+        switch (i7) {
             case 0:
-                AudioTimestamp audioTimestamp = new AudioTimestamp();
-                long j11 = -1;
-                long j12 = -1;
-                boolean z9 = false;
-                boolean z10 = true;
-                while (!z9) {
-                    if ((!((g40) this.b).W || ((g40) this.b).D0) && ((g40) this.b).y0.getRecordingState() != 1) {
-                        try {
-                            ((g40) this.b).y0.stop();
-                        } catch (Exception unused) {
-                            z9 = true;
-                        }
-                        break;
-                    }
-                    boolean z11 = z9;
-                    if (((g40) this.b).z0.isEmpty()) {
-                        try {
-                            x30Var = new x30();
-                        } catch (OutOfMemoryError unused2) {
-                            System.gc();
-                            x30Var = new x30();
-                        }
-                    } else {
-                        x30Var = (x30) ((g40) this.b).z0.poll();
-                    }
-                    x30 x30Var2 = x30Var;
-                    x30Var2.e = 0;
-                    int i7 = 10;
-                    x30Var2.d = 10;
-                    int i10 = 0;
-                    while (true) {
-                        if (i10 < i7) {
-                            long j13 = 1000;
-                            if (j12 == j11 && !z10) {
-                                j12 = System.nanoTime() / 1000;
-                            }
-                            ByteBuffer byteBuffer = x30Var2.a[i10];
-                            byteBuffer.rewind();
-                            int read = ((g40) this.b).y0.read(byteBuffer, 2048);
-                            if (read <= 0 || i10 % 2 != 0) {
-                                j3 = 1000;
-                            } else {
-                                byteBuffer.limit(read);
-                                double d = 0.0d;
-                                int i11 = 0;
-                                while (true) {
-                                    j3 = j13;
-                                    if (i11 < read / 2) {
-                                        short s5 = byteBuffer.getShort();
-                                        d += s5 * s5;
-                                        i11++;
-                                        j13 = j3;
-                                    } else {
-                                        org.telegram.messenger.g0.h3(new org.telegram.messenger.te(this, Math.sqrt((d / read) / 2.0d), 1));
-                                        byteBuffer.position(0);
-                                    }
-                                }
-                            }
-                            if (read <= 0) {
-                                x30Var2.d = i10;
-                                if (!((g40) this.b).W) {
-                                    x30Var2.f = true;
-                                }
-                            } else {
-                                if (z10) {
-                                    try {
-                                        ((g40) this.b).y0.getTimestamp(audioTimestamp, 0);
-                                        j10 = j12;
-                                        j12 = audioTimestamp.nanoTime / j3;
-                                    } catch (Exception e10) {
-                                        org.telegram.messenger.a8.g(e10, true);
-                                        j12 = System.nanoTime() / j3;
-                                        z10 = false;
-                                    }
-                                    x30Var2.b[i10] = j12;
-                                    x30Var2.c[i10] = read;
-                                    int i12 = ((read * 1000000) / 48000) / 2;
-                                    if (z10) {
-                                        j10 += i12;
-                                    }
-                                    j12 = j10;
-                                    i10++;
-                                    j11 = -1;
-                                    i7 = 10;
-                                }
-                                j10 = j12;
-                                x30Var2.b[i10] = j12;
-                                x30Var2.c[i10] = read;
-                                int i122 = ((read * 1000000) / 48000) / 2;
-                                if (z10) {
-                                }
-                                j12 = j10;
-                                i10++;
-                                j11 = -1;
-                                i7 = 10;
-                            }
-                        }
-                    }
-                    if (x30Var2.d >= 0 || x30Var2.f) {
-                        if (!((g40) this.b).W && x30Var2.d < 10) {
-                            z11 = true;
-                        }
-                        ((g40) this.b).T.sendMessage(((g40) this.b).T.obtainMessage(3, x30Var2));
-                    } else if (((g40) this.b).W) {
-                        try {
-                            ((g40) this.b).z0.put(x30Var2);
-                        } catch (Exception unused3) {
-                        }
-                    } else {
-                        z9 = true;
-                        j11 = -1;
-                    }
-                    z9 = z11;
-                    j11 = -1;
+                h40Var.H0.s(false, false);
+                break;
+            case 1:
+                p40 p40Var = h40Var.H0;
+                org.telegram.messenger.j20 j20Var2 = new org.telegram.messenger.j20();
+                p40Var.R = j20Var2;
+                j20Var2.s = true;
+                j20Var2.a = -1L;
+                j20Var2.b = -1L;
+                j20Var2.w = p40Var.L;
+                j20Var2.x = p40Var.M;
+                j20Var2.y = p40Var.N;
+                j20Var2.z = p40Var.O;
+                j20Var2.q = Math.max(1L, p40Var.P);
+                org.telegram.messenger.j20 j20Var3 = p40Var.R;
+                j20Var3.n = 25;
+                j20Var3.h = 360;
+                j20Var3.k = 360;
+                j20Var3.i = 360;
+                j20Var3.l = 360;
+                j20Var3.o = p40Var.f0.getAbsolutePath();
+                h40Var.h(p40Var.f0);
+                p40Var.R.r = p40Var.j0;
+                org.telegram.messenger.qs.f(p40Var.e).k(org.telegram.messenger.qs.s2, Integer.valueOf(p40Var.U), p40Var.R, p40Var.f0.getAbsolutePath(), h40Var.A0);
+                break;
+            case 2:
+                if (h40Var.G0 && (j20Var = h40Var.H0.R) != null) {
+                    j20Var.P = false;
                 }
-                try {
-                    ((g40) this.b).y0.release();
-                } catch (Exception e11) {
-                    org.telegram.messenger.a8.g(e11, true);
-                }
-                if (!((g40) this.b).D0) {
-                    ((g40) this.b).T.sendMessage(((g40) this.b).T.obtainMessage(1, ((g40) this.b).X, 0, ((g40) this.b).Y));
-                    break;
-                }
+                h40Var.c(h40Var.a, 0L, true);
+                MediaController.B().Y(false);
+                break;
+            case 3:
+                h40Var.H0.h1 = null;
+                break;
+            case 4:
+                h40Var.H0.q0.animate().setDuration(120L).alpha(0.0f).setInterpolator(new DecelerateInterpolator()).start();
                 break;
             default:
-                long uptimeMillis = SystemClock.uptimeMillis();
-                org.telegram.ui.Wallet.h6 h6Var = (org.telegram.ui.Wallet.h6) this.b;
-                WeakHashMap weakHashMap = h6Var.e;
-                Collection.-EL.removeIf(weakHashMap.entrySet(), new org.telegram.ui.o8(uptimeMillis, 3));
-                if (!weakHashMap.isEmpty()) {
-                    h6Var.d.postDelayed(this, 250L);
-                    break;
-                } else {
-                    h6Var.a();
-                    break;
-                }
+                h40Var.H0.q0.animate().setDuration(120L).alpha(0.0f).setInterpolator(new DecelerateInterpolator()).start();
+                break;
         }
     }
 }

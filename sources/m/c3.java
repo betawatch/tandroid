@@ -5,12 +5,12 @@ import android.graphics.Rect;
 import android.os.Handler;
 import android.util.SparseArray;
 import android.view.View;
-import di.z5;
+import di.a6;
 import java.util.ArrayList;
 import org.telegram.messenger.ij;
-import org.telegram.ui.an;
+import org.telegram.ui.cn;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class c3 implements m9.t {
     public boolean a;
@@ -21,17 +21,17 @@ public final class c3 implements m9.t {
     public boolean a(int i7) {
         SparseArray sparseArray = (SparseArray) this.c;
         boolean z9 = this.b;
-        an anVar = (an) this.d;
-        int i10 = i7 - anVar.C0.J;
-        if (i10 < 0 || i10 >= anVar.K6.size()) {
+        cn cnVar = (cn) this.d;
+        int i10 = i7 - cnVar.C0.J;
+        if (i10 < 0 || i10 >= cnVar.K6.size()) {
             return false;
         }
-        ij ijVar = (ij) anVar.K6.get(i10);
+        ij ijVar = (ij) cnVar.K6.get(i10);
         if (ijVar.U != 0) {
             return false;
         }
-        if (z9 || sparseArray.get(ijVar.f1(), null) != null) {
-            return z9 && sparseArray.get(ijVar.f1(), null) != null;
+        if (z9 || sparseArray.get(ijVar.e1(), null) != null) {
+            return z9 && sparseArray.get(ijVar.e1(), null) != null;
         }
         return true;
     }
@@ -51,10 +51,10 @@ public final class c3 implements m9.t {
     */
     public void c(int i7, boolean z9, float f10, float f11) {
         v4.d1 K;
-        an anVar = (an) this.d;
-        ArrayList arrayList = anVar.K6;
-        SparseArray[] sparseArrayArr = anVar.m6;
-        int i10 = i7 - anVar.C0.J;
+        cn cnVar = (cn) this.d;
+        ArrayList arrayList = cnVar.K6;
+        SparseArray[] sparseArrayArr = cnVar.m6;
+        int i10 = i7 - cnVar.C0.J;
         if (this.b) {
             z9 = !z9;
         }
@@ -62,31 +62,31 @@ public final class c3 implements m9.t {
             return;
         }
         ij ijVar = (ij) arrayList.get(i10);
-        if (!z9 || (sparseArrayArr[0].indexOfKey(ijVar.f1()) < 0 && sparseArrayArr[1].indexOfKey(ijVar.f1()) < 0)) {
-            if ((z9 || sparseArrayArr[0].indexOfKey(ijVar.f1()) >= 0 || sparseArrayArr[1].indexOfKey(ijVar.f1()) >= 0) && ijVar.U == 0) {
+        if (!z9 || (sparseArrayArr[0].indexOfKey(ijVar.e1()) < 0 && sparseArrayArr[1].indexOfKey(ijVar.e1()) < 0)) {
+            if ((z9 || sparseArrayArr[0].indexOfKey(ijVar.e1()) >= 0 || sparseArrayArr[1].indexOfKey(ijVar.e1()) >= 0) && ijVar.U == 0) {
                 if (z9) {
                     if (sparseArrayArr[1].size() + sparseArrayArr[0].size() >= 100) {
                         this.a = true;
-                        K = anVar.z0.K(i7);
+                        K = cnVar.z0.K(i7);
                         if (K != null) {
                             View view = K.a;
                             if (view instanceof org.telegram.ui.Cells.q1) {
-                                an.j2(anVar, view, false, f10, f11);
+                                cn.k2(cnVar, view, false, f10, f11);
                                 return;
                             }
                         }
-                        anVar.J6(ijVar, false, true);
-                        anVar.Hc();
-                        anVar.Cd(false);
+                        cnVar.K6(ijVar, false, true);
+                        cnVar.Kc();
+                        cnVar.Fd(false);
                     }
                 }
                 this.a = false;
-                K = anVar.z0.K(i7);
+                K = cnVar.z0.K(i7);
                 if (K != null) {
                 }
-                anVar.J6(ijVar, false, true);
-                anVar.Hc();
-                anVar.Cd(false);
+                cnVar.K6(ijVar, false, true);
+                cnVar.Kc();
+                cnVar.Fd(false);
             }
         }
     }
@@ -97,7 +97,7 @@ public final class c3 implements m9.t {
         p4.d0 d0Var = ((p4.m0) this.d).h;
         Handler handler = d0Var.l;
         p4.v vVar = (p4.v) this.c;
-        h2.m0.W(handler, new org.telegram.ui.web.w(d0Var, vVar, new z5(this, wVar, this.a, this.b, vVar, 4)));
+        h2.m0.W(handler, new org.telegram.ui.web.s(d0Var, vVar, new a6(this, wVar, this.a, this.b, vVar, 4)));
     }
 
     @Override // m9.t

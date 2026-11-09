@@ -12,20 +12,20 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.r6;
-import org.telegram.ui.Components.oj0;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.s6;
+import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.wp;
-import org.telegram.ui.Components.xi0;
+import org.telegram.ui.Components.yi0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
-public final class x extends oj0 {
+public final class x extends pj0 {
     public ArrayList c;
     public ArrayList d;
     public ArrayList e;
 
-    @Override // org.telegram.ui.Components.oj0
+    @Override // org.telegram.ui.Components.pj0
     public final boolean D(v4.d1 d1Var) {
         return true;
     }
@@ -62,7 +62,7 @@ public final class x extends oj0 {
         String str = (String) this.c.get(i7);
         if (((Boolean) this.e.get(i7)).booleanValue()) {
             wp wpVar = new wp(R.drawable.mini_ephemeral_hidden_14, 0);
-            wpVar.a(k6.A6);
+            wpVar.a(l6.A6);
             wpVar.n = 1;
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str);
             spannableStringBuilder.append((CharSequence) " *");
@@ -85,8 +85,8 @@ public final class x extends oj0 {
         wVar.b = mdVar;
         qs.i(mdVar);
         mdVar.setTextSize(1, 16.0f);
-        int i10 = k6.G6;
-        r6.V(mdVar, i10, null);
+        int i10 = l6.G6;
+        s6.U(mdVar, i10, null);
         mdVar.setTag(Integer.valueOf(i10));
         mdVar.setMaxLines(2);
         mdVar.setEllipsize(TextUtils.TruncateAt.END);
@@ -94,11 +94,11 @@ public final class x extends oj0 {
         TextView textView = new TextView(context);
         wVar.a = textView;
         textView.setTextSize(1, 14.0f);
-        int i11 = k6.y6;
-        r6.V(textView, i11, null);
+        int i11 = l6.y6;
+        s6.U(textView, i11, null);
         textView.setTag(Integer.valueOf(i11));
         wVar.addView(textView, ha.p(-2, -2, 0.0f, 16));
         wVar.setLayoutParams(new v4.o0(-1, -2));
-        return new xi0(wVar);
+        return new yi0(wVar);
     }
 }

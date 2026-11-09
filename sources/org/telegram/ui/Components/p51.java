@@ -1,107 +1,49 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
+import android.net.Uri;
+import java.util.Map;
+import org.telegram.messenger.secretmedia.ExtendedDefaultDataSource;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class p51 {
-    public final boolean a;
-    public final int b;
-    public final int c;
-    public final ArrayList d;
+public final class p51 implements j2.h {
+    public final j2.h a;
+    public final long b;
 
-    public p51(r51 r51Var) {
-        ArrayList arrayList = new ArrayList();
-        this.d = arrayList;
-        this.a = r51Var.b;
-        this.b = r51Var.i;
-        this.c = r51Var.j;
-        arrayList.add(r51Var);
+    public p51(ExtendedDefaultDataSource extendedDefaultDataSource, long j3) {
+        this.a = extendedDefaultDataSource;
+        this.b = j3;
     }
 
-    public final r51 a() {
-        ArrayList arrayList = this.d;
-        r51 r51Var = null;
-        if (arrayList.isEmpty()) {
-            return null;
-        }
-        int size = arrayList.size();
-        int i7 = 0;
-        while (i7 < size) {
-            Object obj = arrayList.get(i7);
-            i7++;
-            r51 r51Var2 = (r51) obj;
-            if (r51Var2.b()) {
-                return r51Var2;
-            }
-        }
-        long j3 = Long.MAX_VALUE;
-        for (int i10 = 0; i10 < arrayList.size(); i10++) {
-            r51 r51Var3 = (r51) arrayList.get(i10);
-            if (r51Var3.k < j3 && t51.D0(r51Var3.m)) {
-                j3 = r51Var3.k;
-                r51Var = r51Var3;
-            }
-        }
-        return r51Var != null ? r51Var : (r51) arrayList.get(0);
+    @Override // j2.h
+    public final void addTransferListener(j2.d0 d0Var) {
+        this.a.addTransferListener(d0Var);
     }
 
-    public final int b() {
-        int min = Math.min(this.b, this.c);
-        if (Math.abs(min - 2160) < 55) {
-            return 2160;
-        }
-        if (Math.abs(min - 1440) < 55) {
-            return 1440;
-        }
-        if (Math.abs(min - 1080) < 55) {
-            return 1080;
-        }
-        if (Math.abs(min - 720) < 55) {
-            return 720;
-        }
-        if (Math.abs(min - 480) < 55) {
-            return 480;
-        }
-        if (Math.abs(min - 360) < 55) {
-            return 360;
-        }
-        return Math.abs(min + (-240)) < 55 ? org.telegram.messenger.qs.P3 : Math.abs(min + (-144)) < 55 ? org.telegram.messenger.qs.a2 : min;
+    @Override // j2.h
+    public final void close() {
+        this.a.close();
     }
 
-    public final String toString() {
-        String str;
-        boolean z9 = org.telegram.messenger.iz.R0;
-        boolean z10 = this.a;
-        String str2 = "";
-        if (!z9) {
-            StringBuilder sb2 = new StringBuilder();
-            sb2.append(b());
-            sb2.append("p");
-            if (z10) {
-                str2 = " (" + org.telegram.messenger.id.M0(2131746451, null) + ")";
-            }
-            sb2.append(str2);
-            return sb2.toString();
-        }
-        StringBuilder sb3 = new StringBuilder();
-        sb3.append(this.b);
-        sb3.append("x");
-        sb3.append(this.c);
-        if (z10) {
-            str = " (" + org.telegram.messenger.id.M0(2131746451, null) + ")";
-        } else {
-            str = "";
-        }
-        sb3.append(str);
-        sb3.append("\n");
-        ArrayList arrayList = this.d;
-        sb3.append(org.telegram.messenger.g0.i0((long) ((r51) arrayList.get(0)).l, false, false).replace(" ", ""));
-        sb3.append("/s");
-        if (((r51) arrayList.get(0)).m != null) {
-            str2 = ", " + ((r51) arrayList.get(0)).m;
-        }
-        sb3.append(str2);
-        return sb3.toString();
+    @Override // j2.h
+    public final Map getResponseHeaders() {
+        return this.a.getResponseHeaders();
+    }
+
+    @Override // j2.h
+    public final Uri getUri() {
+        return this.a.getUri();
+    }
+
+    @Override // j2.h
+    public final long open(j2.m mVar) {
+        j2.l a10 = mVar.a();
+        a10.b = mVar.e + this.b;
+        return this.a.open(a10.d());
+    }
+
+    @Override // e2.n
+    public final int read(byte[] bArr, int i7, int i10) {
+        return this.a.read(bArr, i7, i10);
     }
 }

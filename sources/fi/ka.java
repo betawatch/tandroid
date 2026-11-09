@@ -10,10 +10,10 @@ import org.telegram.ui.Components.hc;
 import org.telegram.ui.Components.ik;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.g20;
-import org.telegram.ui.pc0;
+import org.telegram.ui.i20;
+import org.telegram.ui.rc0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class ka extends ClickableSpan {
     public final /* synthetic */ int a;
@@ -36,7 +36,7 @@ public final class ka extends ClickableSpan {
                 nh.c cVar = (nh.c) this.b;
                 nh.a aVar = cVar.I;
                 if (aVar != null && (groupCallMessage = cVar.H) != null) {
-                    ((g20) aVar).a(groupCallMessage);
+                    ((i20) aVar).a(groupCallMessage);
                     break;
                 }
                 break;
@@ -55,19 +55,19 @@ public final class ka extends ClickableSpan {
                 break;
             case 6:
                 ik ikVar = (ik) this.b;
-                org.telegram.ui.Wallet.x5.J0(ikVar.n, ikVar.getContext(), ikVar.a);
+                org.telegram.ui.Wallet.w5.J0(ikVar.n, ikVar.getContext(), ikVar.a);
                 break;
             case 7:
                 ((ActionBarLayout) ((LaunchActivity) this.b).M()).S(new PremiumPreviewFragment(0, "gift"));
                 break;
             case 8:
-                ((pc0) this.b).p(false);
+                ((rc0) this.b).p(false);
                 break;
             case 9:
-                org.telegram.ui.Wallet.m9 m9Var = (org.telegram.ui.Wallet.m9) this.b;
-                Activity parentActivity = m9Var.getParentActivity();
-                i7 = ((org.telegram.ui.ActionBar.f2) m9Var).currentAccount;
-                org.telegram.ui.Wallet.x5.J0(i7, parentActivity, m9Var.getResourceProvider());
+                org.telegram.ui.Wallet.l9 l9Var = (org.telegram.ui.Wallet.l9) this.b;
+                Activity parentActivity = l9Var.getParentActivity();
+                i7 = ((org.telegram.ui.ActionBar.f2) l9Var).currentAccount;
+                org.telegram.ui.Wallet.w5.J0(i7, parentActivity, l9Var.getResourceProvider());
                 break;
             case 10:
                 ug.i0 i0Var = ((ug.b0) this.b).c;
@@ -103,7 +103,7 @@ public final class ka extends ClickableSpan {
                 textPaint.setUnderlineText(false);
                 break;
             case 6:
-                textPaint.setColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Ci, ((ik) obj).a));
+                textPaint.setColor(org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.Ci, ((ik) obj).a));
                 textPaint.setUnderlineText(false);
                 break;
             case 7:
@@ -115,16 +115,16 @@ public final class ka extends ClickableSpan {
                 textPaint.setUnderlineText(false);
                 break;
             case 9:
-                textPaint.setColor(((org.telegram.ui.Wallet.m9) obj).getThemedColor(org.telegram.ui.ActionBar.k6.Ci));
+                textPaint.setColor(((org.telegram.ui.Wallet.l9) obj).getThemedColor(org.telegram.ui.ActionBar.l6.Ci));
                 textPaint.setUnderlineText(false);
                 break;
             case 10:
                 super.updateDrawState(textPaint);
                 textPaint.setUnderlineText(false);
-                int i10 = org.telegram.ui.ActionBar.k6.Uc;
+                int i10 = org.telegram.ui.ActionBar.l6.Uc;
                 ug.i0 i0Var = ((ug.b0) obj).c;
                 int i11 = ug.i0.O2;
-                textPaint.setColor(org.telegram.ui.ActionBar.k6.w0(i10, i0Var.I0));
+                textPaint.setColor(org.telegram.ui.ActionBar.l6.w0(i10, i0Var.I0));
                 break;
             default:
                 super.updateDrawState(textPaint);

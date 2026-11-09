@@ -9,12 +9,12 @@ import org.telegram.messenger.c20;
 import org.telegram.messenger.ls;
 import org.telegram.messenger.qs;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.nc0;
 import org.telegram.ui.Components.oc0;
 import org.telegram.ui.Components.pc0;
+import org.telegram.ui.Components.qc0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public abstract class ia {
     public static int a = 1500;
@@ -45,16 +45,16 @@ public abstract class ia {
                 while (true) {
                     int i10 = 1;
                     if (i7 >= length) {
-                        e(strArr, new oc0(strArr, activity, c20Var, 1));
+                        e(strArr, new pc0(strArr, activity, c20Var, 1));
                         return;
                     }
                     if (activity.shouldShowRequestPermissionRationale(strArr[i7])) {
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, activity, null);
-                        int i11 = org.telegram.ui.ActionBar.k6.L5;
-                        alertDialog$Builder.m(R.raw.permission_request_camera, 72, org.telegram.ui.ActionBar.k6.x0(null, i11, false), null);
+                        int i11 = org.telegram.ui.ActionBar.l6.L5;
+                        alertDialog$Builder.m(R.raw.permission_request_camera, 72, org.telegram.ui.ActionBar.l6.x0(null, i11, false), null);
                         alertDialog$Builder.n(i11, null);
-                        alertDialog$Builder.a.T = org.telegram.messenger.g0.X2(org.telegram.messenger.id.M0(2131747310, null));
-                        alertDialog$Builder.k(org.telegram.messenger.id.M0(2131747301, null), new nc0(activity, i10));
+                        alertDialog$Builder.a.T = org.telegram.messenger.g0.X2(org.telegram.messenger.id.M0(2131747309, null));
+                        alertDialog$Builder.k(org.telegram.messenger.id.M0(2131747300, null), new oc0(activity, i10));
                         alertDialog$Builder.h(org.telegram.messenger.id.M0(2131751772, null), null);
                         alertDialog$Builder.a.show();
                         c20Var.a(Boolean.FALSE);
@@ -85,18 +85,18 @@ public abstract class ia {
         for (String str2 : strArr) {
             if (!activity.shouldShowRequestPermissionRationale(str2)) {
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, activity, null);
-                int i12 = org.telegram.ui.ActionBar.k6.L5;
-                alertDialog$Builder.m(i7, 72, org.telegram.ui.ActionBar.k6.x0(null, i12, false), null);
+                int i12 = org.telegram.ui.ActionBar.l6.L5;
+                alertDialog$Builder.m(i7, 72, org.telegram.ui.ActionBar.l6.x0(null, i12, false), null);
                 alertDialog$Builder.n(i12, null);
                 alertDialog$Builder.a.T = org.telegram.messenger.g0.X2(org.telegram.messenger.id.M0(i10, null));
-                alertDialog$Builder.k(org.telegram.messenger.id.M0(2131747301, null), new nc0(activity, i11));
+                alertDialog$Builder.k(org.telegram.messenger.id.M0(2131747300, null), new oc0(activity, i11));
                 alertDialog$Builder.h(org.telegram.messenger.id.M0(2131751772, null), null);
                 alertDialog$Builder.a.show();
                 c20Var.a(Boolean.FALSE);
                 return;
             }
         }
-        e(strArr2, new oc0(strArr2, activity, c20Var, 0));
+        e(strArr2, new pc0(strArr2, activity, c20Var, 0));
     }
 
     public static boolean d(String str) {
@@ -118,7 +118,7 @@ public abstract class ia {
         int i7 = a;
         a = i7 + 1;
         ls[] lsVarArr = new ls[1];
-        lsVarArr[0] = new pc0(i7, c20Var, lsVarArr);
+        lsVarArr[0] = new qc0(i7, c20Var, lsVarArr);
         qs.e().b(lsVarArr[0], qs.p5);
         activity.requestPermissions(strArr, i7);
     }

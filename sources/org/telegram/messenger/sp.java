@@ -12,7 +12,7 @@ import org.telegram.SQLite.SQLitePreparedStatement;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class sp implements Runnable {
     public final /* synthetic */ int a;
@@ -270,7 +270,7 @@ public final /* synthetic */ class sp implements Runnable {
                     while (true) {
                         if (i18 >= arrayList5.size()) {
                             ijVar = null;
-                        } else if (((ij) arrayList5.get(i18)).f1() == intValue) {
+                        } else if (((ij) arrayList5.get(i18)).e1() == intValue) {
                             ijVar = (ij) arrayList5.get(i18);
                         } else {
                             i18++;
@@ -280,7 +280,7 @@ public final /* synthetic */ class sp implements Runnable {
                         z9 = false;
                     } else {
                         z9 = mediaDataController.getMessagesController().G3(ijVar.k);
-                        jArr[0] = ij.R1(mediaDataController.getUserConfig().e(), ijVar.k);
+                        jArr[0] = ij.Q1(mediaDataController.getUserConfig().e(), ijVar.k);
                     }
                     arrayList5.remove(ijVar);
                     if (z9) {

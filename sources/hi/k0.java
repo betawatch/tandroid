@@ -15,14 +15,14 @@ import org.telegram.messenger.k5;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public abstract class k0 extends LinearLayout implements rh.a, te.i {
-    public final f6 a;
+    public final g6 a;
     public final FrameLayout b;
     public TLRPC.TL_replyKeyboardMarkup c;
     public h0 d;
@@ -36,12 +36,12 @@ public abstract class k0 extends LinearLayout implements rh.a, te.i {
     public int x;
     public final te.j y;
 
-    public k0(Context context, f6 f6Var) {
+    public k0(Context context, g6 g6Var) {
         super(context);
         this.n = new ArrayList();
         this.w = new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, null);
         this.y = new te.j(this, xq.h, 320L);
-        this.a = f6Var;
+        this.a = g6Var;
         setOrientation(1);
         ScrollView scrollView = new ScrollView(context);
         this.r = scrollView;
@@ -67,7 +67,7 @@ public abstract class k0 extends LinearLayout implements rh.a, te.i {
     }
 
     public final void d() {
-        org.telegram.messenger.g0.z3(this.r, k6.w0(k6.wf, this.a));
+        org.telegram.messenger.g0.z3(this.r, l6.w0(l6.wf, this.a));
         int i7 = 0;
         while (true) {
             ArrayList arrayList = this.n;
@@ -86,11 +86,11 @@ public abstract class k0 extends LinearLayout implements rh.a, te.i {
         super.dispatchDraw(canvas);
         float R0 = org.telegram.messenger.g0.R0(this.s);
         if (R0 > 0.0f) {
-            int r12 = k6.r1(R0, k6.w0(k6.wf, this.a));
+            int r12 = l6.r1(R0, l6.w0(l6.wf, this.a));
             int i7 = this.x;
             GradientDrawable gradientDrawable = this.w;
             if (i7 != r12) {
-                gradientDrawable.setColors(new int[]{r12, k6.r1(0.66f, r12), i0.a.o(r12, 0)});
+                gradientDrawable.setColors(new int[]{r12, l6.r1(0.66f, r12), i0.a.o(r12, 0)});
                 this.x = r12;
             }
             gradientDrawable.setBounds(0, getMeasuredHeight() - this.s, getMeasuredWidth(), getMeasuredHeight());

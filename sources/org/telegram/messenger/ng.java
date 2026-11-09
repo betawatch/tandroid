@@ -34,9 +34,9 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ce0;
+import org.telegram.ui.ee0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ng implements Runnable {
     public final /* synthetic */ int a;
@@ -211,7 +211,7 @@ public final /* synthetic */ class ng implements Runnable {
      */
     /* JADX WARN: Code restructure failed: missing block: B:328:0x06d0, code lost:
     
-        new org.telegram.ui.Components.x41(r0, r5).show();
+        new org.telegram.ui.Components.y41(r0, r5).show();
      */
     /* JADX WARN: Code restructure failed: missing block: B:330:?, code lost:
     
@@ -306,9 +306,9 @@ public final /* synthetic */ class ng implements Runnable {
                                 } else {
                                     TLRPC.Message c02 = yrVar.c0(o4, messageReplyHeader2.reply_to_msg_id);
                                     if (c02 != null) {
-                                        int a22 = (int) ij.a2(yrVar.currentAccount, c02, yrVar.Z(o4));
-                                        ephemeralMessage.top_msg_id = a22;
-                                        if (a22 != 0) {
+                                        int Z1 = (int) ij.Z1(yrVar.currentAccount, c02, yrVar.Z(o4));
+                                        ephemeralMessage.top_msg_id = Z1;
+                                        if (Z1 != 0) {
                                             ephemeralMessage.reply_to.forum_topic = true;
                                             ephemeralMessage.flags |= 2;
                                         }
@@ -337,7 +337,7 @@ public final /* synthetic */ class ng implements Runnable {
                         message.translatedText = message2.translatedText;
                         message.translatedPoll = message2.translatedPoll;
                         message.translatedToLanguage = message2.translatedToLanguage;
-                        if (ijVar.h6(false)) {
+                        if (ijVar.g6(false)) {
                             z9 = true;
                         }
                     }
@@ -357,15 +357,15 @@ public final /* synthetic */ class ng implements Runnable {
                     return;
                 }
                 zArr[0] = true;
-                jcVarArr[0].setText(id.M0(2131746607, null) + "...");
+                jcVarArr[0].setText(id.M0(2131746606, null) + "...");
                 jcVarArr[0].b.f(false);
                 try {
                     ConnectionsManager.getInstance(p10.s0).checkProxy(aVar, new o(i11, zArr, jcVarArr));
                     return;
                 } catch (NumberFormatException unused) {
                     zArr[0] = false;
-                    jcVarArr[0].setText(id.M0(2131743916, null));
-                    org.telegram.ui.ActionBar.r6.V(jcVarArr[0], org.telegram.ui.ActionBar.k6.p7, null);
+                    jcVarArr[0].setText(id.M0(2131743913, null));
+                    org.telegram.ui.ActionBar.s6.U(jcVarArr[0], org.telegram.ui.ActionBar.l6.p7, null);
                     return;
                 }
             case 7:
@@ -501,15 +501,15 @@ public final /* synthetic */ class ng implements Runnable {
                 c cVar = (c) this.c;
                 TLRPC.TL_payments_assignPlayMarketTransaction tL_payments_assignPlayMarketTransaction = (TLRPC.TL_payments_assignPlayMarketTransaction) this.b;
                 TL_update.TL_updateSentPhoneCode tL_updateSentPhoneCode = (TL_update.TL_updateSentPhoneCode) this.d;
-                ce0 ce0Var = (ce0) LaunchActivity.L();
-                if (ce0Var == null) {
-                    ce0Var = new ce0(cVar.a);
+                ee0 ee0Var = (ee0) LaunchActivity.L();
+                if (ee0Var == null) {
+                    ee0Var = new ee0(cVar.a);
                     org.telegram.ui.ActionBar.f2 T = LaunchActivity.T();
                     if (T != null) {
-                        T.presentFragment(ce0Var);
+                        T.presentFragment(ee0Var);
                     }
                 }
-                ce0Var.I1(((TLRPC.TL_inputStorePaymentAuthCode) tL_payments_assignPlayMarketTransaction.purpose).phone_number, tL_updateSentPhoneCode.sent_code);
+                ee0Var.I1(((TLRPC.TL_inputStorePaymentAuthCode) tL_payments_assignPlayMarketTransaction.purpose).phone_number, tL_updateSentPhoneCode.sent_code);
                 return;
             case 10:
                 v1 v1Var = (v1) this.c;
@@ -553,10 +553,10 @@ public final /* synthetic */ class ng implements Runnable {
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, Q.getContext(), Q.getResourceProvider());
                         alertDialog$Builder.a.R = id.M0(R.string.AppName, null);
                         HashMap hashMap2 = new HashMap();
-                        int i18 = org.telegram.ui.ActionBar.k6.L5;
-                        hashMap2.put("info1", Integer.valueOf(org.telegram.ui.ActionBar.k6.x0(null, i18, false)));
-                        hashMap2.put("info2", Integer.valueOf(org.telegram.ui.ActionBar.k6.x0(null, i18, false)));
-                        alertDialog$Builder.m(R.raw.not_available, 52, org.telegram.ui.ActionBar.k6.x0(null, i18, false), hashMap2);
+                        int i18 = org.telegram.ui.ActionBar.l6.L5;
+                        hashMap2.put("info1", Integer.valueOf(org.telegram.ui.ActionBar.l6.x0(null, i18, false)));
+                        hashMap2.put("info2", Integer.valueOf(org.telegram.ui.ActionBar.l6.x0(null, i18, false)));
+                        alertDialog$Builder.m(R.raw.not_available, 52, org.telegram.ui.ActionBar.l6.x0(null, i18, false), hashMap2);
                         alertDialog$Builder.a.W = true;
                         alertDialog$Builder.a.R = id.M0(2131752329, null);
                         alertDialog$Builder.a.T = id.M0(2131752441, null);
@@ -642,9 +642,9 @@ public final /* synthetic */ class ng implements Runnable {
                             } else if (userStatus instanceof TLRPC.TL_userStatusLastMonth) {
                                 userStatus.expires = userStatus.by_me ? -1002 : -102;
                             }
-                            TLRPC.User a23 = g5Var.getMessagesController().a2(Long.valueOf(tL_contactStatus.user_id));
-                            if (a23 != null) {
-                                a23.status = tL_contactStatus.status;
+                            TLRPC.User a22 = g5Var.getMessagesController().a2(Long.valueOf(tL_contactStatus.user_id));
+                            if (a22 != null) {
+                                a22.status = tL_contactStatus.status;
                             }
                             tL_user.status = tL_contactStatus.status;
                             arrayList8.add(tL_user);
@@ -870,11 +870,11 @@ public final /* synthetic */ class ng implements Runnable {
                 pf pfVar = (pf) this.d;
                 for (int i29 = 0; i29 < arrayList21.size(); i29++) {
                     ij ijVar2 = (ij) arrayList21.get(i29);
-                    TLRPC.TL_message e02 = uiVar2.getMessagesStorage().e0(ijVar2.f1(), ij.B0(ijVar2.k));
+                    TLRPC.TL_message e02 = uiVar2.getMessagesStorage().e0(ijVar2.e1(), ij.B0(ijVar2.k));
                     TLRPC.Message message3 = ijVar2.k;
                     message3.translatedToLanguage = e02.translatedToLanguage;
                     message3.translatedText = e02.translatedText;
-                    ijVar2.h6(false);
+                    ijVar2.g6(false);
                 }
                 pfVar.run();
                 return;

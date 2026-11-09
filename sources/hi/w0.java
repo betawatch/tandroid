@@ -9,15 +9,15 @@ import org.telegram.messenger.qp;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.Components.kn0;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.Components.ln0;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.an;
-import org.telegram.ui.c40;
-import org.telegram.ui.cy0;
-import org.telegram.ui.gh;
+import org.telegram.ui.cn;
+import org.telegram.ui.e40;
+import org.telegram.ui.fy0;
+import org.telegram.ui.ih;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class w0 implements RequestDelegate {
     public final /* synthetic */ int a = 0;
@@ -29,12 +29,12 @@ public final /* synthetic */ class w0 implements RequestDelegate {
     public final /* synthetic */ Object g;
     public final /* synthetic */ Object h;
 
-    public /* synthetic */ w0(int i7, org.telegram.ui.ActionBar.u1 u1Var, Context context, long j3, f6 f6Var, org.telegram.ui.web.p pVar, bi.t0 t0Var) {
+    public /* synthetic */ w0(int i7, org.telegram.ui.ActionBar.u1 u1Var, Context context, long j3, g6 g6Var, org.telegram.ui.web.p pVar, bi.t0 t0Var) {
         this.c = i7;
         this.d = u1Var;
         this.e = context;
         this.b = j3;
-        this.f = f6Var;
+        this.f = g6Var;
         this.g = pVar;
         this.h = t0Var;
     }
@@ -50,10 +50,10 @@ public final /* synthetic */ class w0 implements RequestDelegate {
         Object obj5 = this.d;
         switch (i7) {
             case 0:
-                org.telegram.messenger.g0.h3(new y0(tLObject, this.c, (org.telegram.ui.ActionBar.u1) obj5, (Context) obj3, this.b, (f6) obj4, (org.telegram.ui.web.p) obj2, (bi.t0) obj));
+                org.telegram.messenger.g0.h3(new y0(tLObject, this.c, (org.telegram.ui.ActionBar.u1) obj5, (Context) obj3, this.b, (g6) obj4, (org.telegram.ui.web.p) obj2, (bi.t0) obj));
                 break;
             case 1:
-                c40 c40Var = (c40) obj5;
+                e40 e40Var = (e40) obj5;
                 HashSet hashSet = (HashSet) obj3;
                 AtomicInteger atomicInteger = (AtomicInteger) obj4;
                 org.telegram.messenger.r3 r3Var = (org.telegram.messenger.r3) obj2;
@@ -62,13 +62,13 @@ public final /* synthetic */ class w0 implements RequestDelegate {
                 long j3 = this.b;
                 if (z9) {
                     TLRPC.Updates updates = (TLRPC.Updates) tLObject;
-                    qp.s1(c40Var.a).O3(updates, false);
-                    org.telegram.messenger.g0.h3(new bi.d3(c40Var, updates, j3, 27));
+                    qp.s1(e40Var.a).O3(updates, false);
+                    org.telegram.messenger.g0.h3(new bi.d3(e40Var, updates, j3, 27));
                 } else if (tL_error != null && "USER_PRIVACY_RESTRICTED".equalsIgnoreCase(tL_error.text)) {
                     hashSet.add(Long.valueOf(j3));
                 }
                 if (atomicInteger.incrementAndGet() == i10 && !hashSet.isEmpty()) {
-                    org.telegram.messenger.g0.h3(new kn0(c40Var, hashSet, r3Var, str, 7));
+                    org.telegram.messenger.g0.h3(new ln0(e40Var, hashSet, r3Var, str, 7));
                     break;
                 }
                 break;
@@ -78,45 +78,45 @@ public final /* synthetic */ class w0 implements RequestDelegate {
                 break;
             default:
                 Activity activity = (Activity) obj5;
-                f6 f6Var = (f6) obj4;
+                g6 g6Var = (g6) obj4;
                 byte[] bArr = (byte[]) obj3;
-                an anVar = (an) obj2;
+                cn cnVar = (cn) obj2;
                 ij ijVar = (ij) obj;
                 if (tLObject == null) {
                     if (tL_error != null && "AD_EXPIRED".equalsIgnoreCase(tL_error.text)) {
-                        org.telegram.messenger.g0.i3(new cy0(anVar, activity, f6Var, ijVar, 1), 200L);
+                        org.telegram.messenger.g0.i3(new fy0(cnVar, activity, g6Var, ijVar, 1), 200L);
                         break;
                     }
                 } else if (!(tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultChooseOption)) {
                     if (!(tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultReported)) {
                         if (tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultAdsHidden) {
-                            org.telegram.messenger.g0.i3(new gh(anVar, i10, ijVar), 200L);
+                            org.telegram.messenger.g0.i3(new ih(cnVar, i10, ijVar), 200L);
                             break;
                         }
                     } else {
-                        org.telegram.messenger.g0.i3(new cy0(anVar, activity, f6Var, ijVar, 0), 200L);
+                        org.telegram.messenger.g0.i3(new fy0(cnVar, activity, g6Var, ijVar, 0), 200L);
                         break;
                     }
                 } else {
-                    org.telegram.messenger.g0.h3(new bg.h0(tLObject, activity, f6Var, this.b, bArr, anVar, ijVar));
+                    org.telegram.messenger.g0.h3(new bg.h0(tLObject, activity, g6Var, this.b, bArr, cnVar, ijVar));
                     break;
                 }
                 break;
         }
     }
 
-    public /* synthetic */ w0(Activity activity, f6 f6Var, long j3, byte[] bArr, an anVar, ij ijVar, int i7) {
+    public /* synthetic */ w0(Activity activity, g6 g6Var, long j3, byte[] bArr, cn cnVar, ij ijVar, int i7) {
         this.d = activity;
-        this.f = f6Var;
+        this.f = g6Var;
         this.b = j3;
         this.e = bArr;
-        this.g = anVar;
+        this.g = cnVar;
         this.h = ijVar;
         this.c = i7;
     }
 
-    public /* synthetic */ w0(c40 c40Var, long j3, HashSet hashSet, AtomicInteger atomicInteger, int i7, org.telegram.messenger.r3 r3Var, String str) {
-        this.d = c40Var;
+    public /* synthetic */ w0(e40 e40Var, long j3, HashSet hashSet, AtomicInteger atomicInteger, int i7, org.telegram.messenger.r3 r3Var, String str) {
+        this.d = e40Var;
         this.b = j3;
         this.e = hashSet;
         this.f = atomicInteger;

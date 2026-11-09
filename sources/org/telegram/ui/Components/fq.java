@@ -23,7 +23,7 @@ import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class fq implements Runnable {
     public final /* synthetic */ int a;
@@ -38,7 +38,7 @@ public final /* synthetic */ class fq implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        m50 m50Var;
+        n50 n50Var;
         org.telegram.ui.bb bbVar;
         int i7;
         bi.u7 u7Var;
@@ -79,11 +79,11 @@ public final /* synthetic */ class fq implements Runnable {
                     tqVar2.U1 = groupcallstreamrtmpurl.key;
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(tqVar2.U1);
                     tqVar2.V1 = spannableStringBuilder;
-                    uy0 uy0Var = new uy0();
-                    uy0Var.a |= 256;
-                    uy0Var.b = 0;
-                    uy0Var.c = spannableStringBuilder.length();
-                    tqVar2.V1.setSpan(new vy0(uy0Var, 0), 0, tqVar2.V1.length(), 0);
+                    vy0 vy0Var = new vy0();
+                    vy0Var.a |= 256;
+                    vy0Var.b = 0;
+                    vy0Var.c = spannableStringBuilder.length();
+                    tqVar2.V1.setSpan(new wy0(vy0Var, 0), 0, tqVar2.V1.length(), 0);
                     tqVar2.W1.O(false);
                     break;
                 }
@@ -350,11 +350,11 @@ public final /* synthetic */ class fq implements Runnable {
                 ((fx) obj2).a((org.telegram.ui.ActionBar.f2) obj);
                 break;
             case 20:
-                j30 j30Var = (j30) obj2;
+                k30 k30Var = (k30) obj2;
                 Uri uri = (Uri) obj;
-                j30Var.getClass();
+                k30Var.getClass();
                 try {
-                    LaunchActivity launchActivity = (LaunchActivity) j30Var.a.getParentActivity();
+                    LaunchActivity launchActivity = (LaunchActivity) k30Var.a.getParentActivity();
                     if (launchActivity == null) {
                         break;
                     } else {
@@ -362,80 +362,80 @@ public final /* synthetic */ class fq implements Runnable {
                         if (uri != null) {
                             bundle.putParcelable("photoUri", uri);
                         }
-                        org.telegram.ui.pm0 pm0Var = new org.telegram.ui.pm0(bundle);
-                        pm0Var.e = false;
-                        pm0Var.f = false;
-                        pm0Var.c = j30Var;
-                        launchActivity.t0(pm0Var);
+                        org.telegram.ui.rm0 rm0Var = new org.telegram.ui.rm0(bundle);
+                        rm0Var.e = false;
+                        rm0Var.f = false;
+                        rm0Var.c = k30Var;
+                        launchActivity.t0(rm0Var);
                         break;
                     }
                 } catch (Exception e10) {
                     org.telegram.messenger.a8.g(e10, true);
-                    j30Var.r(false, org.telegram.messenger.gc.K(null, uri, 800.0f, 800.0f, true), null);
+                    k30Var.r(false, org.telegram.messenger.gc.K(null, uri, 800.0f, 800.0f, true), null);
                     return;
                 }
             case 21:
-                g40 g40Var = (g40) obj2;
-                d40 d40Var = (d40) obj;
-                o40 o40Var = g40Var.H0;
+                h40 h40Var = (h40) obj2;
+                e40 e40Var = (e40) obj;
+                p40 p40Var = h40Var.H0;
                 org.telegram.messenger.j20 j20Var = new org.telegram.messenger.j20();
-                o40Var.R = j20Var;
+                p40Var.R = j20Var;
                 j20Var.a = -1L;
                 j20Var.b = -1L;
-                j20Var.q = Math.max(1L, o40Var.P);
-                org.telegram.messenger.j20 j20Var2 = o40Var.R;
+                j20Var.q = Math.max(1L, p40Var.P);
+                org.telegram.messenger.j20 j20Var2 = p40Var.R;
                 j20Var2.s = true;
-                j20Var2.w = o40Var.L;
-                j20Var2.x = o40Var.M;
-                j20Var2.y = o40Var.N;
-                j20Var2.z = o40Var.O;
+                j20Var2.w = p40Var.L;
+                j20Var2.x = p40Var.M;
+                j20Var2.y = p40Var.N;
+                j20Var2.z = p40Var.O;
                 j20Var2.n = 25;
                 j20Var2.h = 360;
                 j20Var2.k = 360;
                 j20Var2.i = 360;
                 j20Var2.l = 360;
-                j20Var2.o = g40Var.a.getAbsolutePath();
-                org.telegram.messenger.j20 j20Var3 = o40Var.R;
+                j20Var2.o = h40Var.a.getAbsolutePath();
+                org.telegram.messenger.j20 j20Var3 = p40Var.R;
                 j20Var3.P = true;
-                j20Var3.O = o40Var.i1;
-                j20Var3.r = o40Var.j0;
-                o40Var.i1 = null;
-                org.telegram.messenger.gf gfVar = new org.telegram.messenger.gf(0, g40Var.a.getAbsolutePath(), 0, true, 0, 0);
-                if (d40Var != null) {
-                    gfVar.x = d40Var.c;
-                    gfVar.y = d40Var.d;
+                j20Var3.O = p40Var.i1;
+                j20Var3.r = p40Var.j0;
+                p40Var.i1 = null;
+                org.telegram.messenger.gf gfVar = new org.telegram.messenger.gf(0, h40Var.a.getAbsolutePath(), 0, true, 0, 0);
+                if (e40Var != null) {
+                    gfVar.x = e40Var.c;
+                    gfVar.y = e40Var.d;
                 }
-                o40Var.h.u(gfVar, o40Var.R, d40Var == null || d40Var.a, d40Var != null ? d40Var.b : 0, 0, false, d40Var != null ? d40Var.e : 0L);
+                p40Var.h.u(gfVar, p40Var.R, e40Var == null || e40Var.a, e40Var != null ? e40Var.b : 0, 0, false, e40Var != null ? e40Var.e : 0L);
                 break;
             case 22:
                 Bitmap bitmap = (Bitmap) obj;
-                g40 g40Var2 = (g40) ((et) obj2).b;
-                if ((bitmap == null || bitmap.getPixel(0, 0) == 0) && g40Var2.A0.size() > 1) {
-                    ArrayList arrayList8 = g40Var2.A0;
+                h40 h40Var2 = (h40) ((et) obj2).b;
+                if ((bitmap == null || bitmap.getPixel(0, 0) == 0) && h40Var2.A0.size() > 1) {
+                    ArrayList arrayList8 = h40Var2.A0;
                     arrayList8.add((Bitmap) jg.g.i(1, arrayList8));
                     break;
                 } else {
-                    g40Var2.A0.add(bitmap);
+                    h40Var2.A0.add(bitmap);
                     break;
                 }
                 break;
             case 23:
-                m50 m50Var2 = (m50) obj2;
+                n50 n50Var2 = (n50) obj2;
                 TLObject tLObject4 = (TLObject) obj;
-                m50Var2.getClass();
+                n50Var2.getClass();
                 if (tLObject4 instanceof Vector) {
                     Vector vector = (Vector) tLObject4;
                     if (!vector.objects.isEmpty()) {
-                        m50Var2.j1.put(Long.valueOf(m50Var2.i1.admin_id), (TLRPC.User) vector.objects.get(0));
-                        m50Var2.K1.f();
+                        n50Var2.j1.put(Long.valueOf(n50Var2.i1.admin_id), (TLRPC.User) vector.objects.get(0));
+                        n50Var2.K1.f();
                         break;
                     }
                 }
                 break;
             case 24:
-                g50 g50Var = (g50) obj2;
-                if (((TLRPC.TL_error) obj) == null && (bbVar = (m50Var = g50Var.a.c).a2) != null) {
-                    TLRPC.TL_chatInviteExported tL_chatInviteExported = m50Var.i1;
+                h50 h50Var = (h50) obj2;
+                if (((TLRPC.TL_error) obj) == null && (bbVar = (n50Var = h50Var.a.c).a2) != null) {
+                    TLRPC.TL_chatInviteExported tL_chatInviteExported = n50Var.i1;
                     org.telegram.ui.mb mbVar = bbVar.a;
                     ArrayList arrayList9 = mbVar.o0;
                     int size = arrayList9.size();
@@ -463,33 +463,33 @@ public final /* synthetic */ class fq implements Runnable {
                 break;
             case 25:
                 EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) obj;
-                ((x50) obj2).A0(true);
+                ((y50) obj2).A0(true);
                 editTextBoldCursor.requestFocus();
                 org.telegram.messenger.g0.h3(new bt(editTextBoldCursor, i11));
                 break;
             case 26:
                 Bundle bundle2 = new Bundle();
                 bundle2.putLong("user_id", ((TLRPC.ChatFull) obj2).guard_bot_id);
-                ((org.telegram.ui.go) obj).presentFragment(new ProfileActivity(bundle2, null));
+                ((org.telegram.ui.io) obj).presentFragment(new ProfileActivity(bundle2, null));
                 break;
             case 27:
-                s70 s70Var = (s70) obj2;
-                if (s70Var.O0 == ((x70) obj)) {
-                    s70Var.performLongClick();
-                    s70Var.O0 = null;
-                    s70Var.M0.f(true);
+                t70 t70Var = (t70) obj2;
+                if (t70Var.O0 == ((y70) obj)) {
+                    t70Var.performLongClick();
+                    t70Var.O0 = null;
+                    t70Var.M0.f(true);
                     break;
                 }
                 break;
             case 28:
-                ((n2.n0) obj2).n((a80) obj, false);
+                ((n2.n0) obj2).n((b80) obj, false);
                 break;
             default:
-                u80 u80Var = (u80) obj2;
-                if (!((boolean[]) obj)[0] && (u7Var = u80Var.Q) != null) {
+                v80 v80Var = (v80) obj2;
+                if (!((boolean[]) obj)[0] && (u7Var = v80Var.Q) != null) {
                     u7Var.run();
                 }
-                u80Var.Q = null;
+                v80Var.Q = null;
                 break;
         }
     }

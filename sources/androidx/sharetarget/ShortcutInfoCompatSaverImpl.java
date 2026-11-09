@@ -21,10 +21,10 @@ import java.util.List;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-import org.telegram.ui.fx;
+import org.telegram.ui.hx;
 import vb.d;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public class ShortcutInfoCompatSaverImpl extends e {
     public static final Object h = new Object();
@@ -44,7 +44,7 @@ public class ShortcutInfoCompatSaverImpl extends e {
         File file = new File(context.getFilesDir(), "ShortcutInfoCompatSaver_share_targets");
         this.g = new File(file, "ShortcutInfoCompatSaver_share_targets_bitmaps");
         this.f = new File(file, "targets.xml");
-        threadPoolExecutor.submit(new fx(9, this, file));
+        threadPoolExecutor.submit(new hx(9, this, file));
     }
 
     public static void f(File file) {
@@ -120,7 +120,7 @@ public class ShortcutInfoCompatSaverImpl extends e {
     @Override // g0.e
     public final Object c() {
         m mVar = new m();
-        this.d.submit(new fx(10, this, mVar));
+        this.d.submit(new hx(10, this, mVar));
         return mVar;
     }
 
@@ -180,9 +180,9 @@ public class ShortcutInfoCompatSaverImpl extends e {
     }
 
     public final void h(m mVar) {
-        fx fxVar = new fx(7, this, new ArrayList(this.b.values()));
+        hx hxVar = new hx(7, this, new ArrayList(this.b.values()));
         m mVar2 = new m();
-        this.e.submit(new fx(mVar2, fxVar, false, 11));
-        mVar2.b(new fx(mVar2, mVar, false, 8), this.d);
+        this.e.submit(new hx(mVar2, hxVar, false, 11));
+        mVar2.b(new hx(mVar2, mVar, false, 8), this.d);
     }
 }

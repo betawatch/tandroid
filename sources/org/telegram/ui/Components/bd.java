@@ -5,7 +5,7 @@ import java.util.HashMap;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class bd implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -50,7 +50,7 @@ public final /* synthetic */ class bd implements Runnable {
                 org.telegram.messenger.gf gfVar = (org.telegram.messenger.gf) this.s;
                 ChatActivityEnterView chatActivityEnterView = pfVar.a;
                 boolean z10 = chatActivityEnterView.z3;
-                org.telegram.ui.an anVar = chatActivityEnterView.P2;
+                org.telegram.ui.cn cnVar = chatActivityEnterView.P2;
                 boolean z11 = false;
                 if (z10) {
                     if (chatActivityEnterView.R1 != 0) {
@@ -119,7 +119,7 @@ public final /* synthetic */ class bd implements Runnable {
                         long j3 = chatActivityEnterView.Q2;
                         org.telegram.messenger.ij ijVar = chatActivityEnterView.T2;
                         threadMessage4 = chatActivityEnterView.getThreadMessage();
-                        org.telegram.messenger.gz.X(a10, arrayList, j3, ijVar, threadMessage4, null, chatActivityEnterView.V2, false, false, chatActivityEnterView.Z1, null, z13, i11, i10, false, null, anVar != null ? anVar.W8() : null, chatActivityEnterView.S4, z14, l10.longValue(), chatActivityEnterView.getSendMonoForumPeerId(), chatActivityEnterView.getSendMessageSuggestionParams(), null, false);
+                        org.telegram.messenger.gz.X(a10, arrayList, j3, ijVar, threadMessage4, null, chatActivityEnterView.V2, false, false, chatActivityEnterView.Z1, null, z13, i11, i10, false, null, cnVar != null ? cnVar.X8() : null, chatActivityEnterView.S4, z14, l10.longValue(), chatActivityEnterView.getSendMonoForumPeerId(), chatActivityEnterView.getSendMessageSuggestionParams(), null, false);
                         z9 = z13;
                         i11 = i11;
                     } else {
@@ -129,7 +129,7 @@ public final /* synthetic */ class bd implements Runnable {
                         TL_stories.StoryItem storyItem = T0;
                         org.telegram.messenger.ij ijVar2 = chatActivityEnterView.T2;
                         threadMessage3 = chatActivityEnterView.getThreadMessage();
-                        C.u0(document, str2, j10, charSequence2, j20Var, ijVar2, threadMessage3, storyItem, chatActivityEnterView.V2, null, z13, i11, i10, false, obj2, anVar != null ? anVar.W8() : null, l10.longValue(), chatActivityEnterView.getSendMonoForumPeerId(), chatActivityEnterView.getSendMessageSuggestionParams(), z14);
+                        C.u0(document, str2, j10, charSequence2, j20Var, ijVar2, threadMessage3, storyItem, chatActivityEnterView.V2, null, z13, i11, i10, false, obj2, cnVar != null ? cnVar.X8() : null, l10.longValue(), chatActivityEnterView.getSendMonoForumPeerId(), chatActivityEnterView.getSendMessageSuggestionParams(), z14);
                         z9 = z13;
                         i11 = i11;
                         org.telegram.messenger.ui.b0(chatActivityEnterView.Q).c(document, (int) (System.currentTimeMillis() / 1000), true);
@@ -153,12 +153,12 @@ public final /* synthetic */ class bd implements Runnable {
                         hashMap.put("query_id", "" + botInlineResult.query_id);
                         hashMap.put("force_gif", "1");
                         if (storyItem2 == null) {
-                            org.telegram.ui.an anVar2 = chatActivityEnterView.P2;
+                            org.telegram.ui.cn cnVar2 = chatActivityEnterView.P2;
                             org.telegram.messenger.c cVar = chatActivityEnterView.R;
                             long j11 = chatActivityEnterView.Q2;
                             org.telegram.messenger.ij ijVar3 = chatActivityEnterView.T2;
                             threadMessage2 = chatActivityEnterView.getThreadMessage();
-                            org.telegram.messenger.gz.S(i11, j11, l10.longValue(), chatActivityEnterView.getSendMonoForumPeerId(), hashMap, cVar, ijVar3, threadMessage2, anVar != null ? anVar.W8() : null, botInlineResult, null, anVar2, chatActivityEnterView.V2, z9);
+                            org.telegram.messenger.gz.S(i11, j11, l10.longValue(), chatActivityEnterView.getSendMonoForumPeerId(), hashMap, cVar, ijVar3, threadMessage2, cnVar != null ? cnVar.X8() : null, botInlineResult, null, cnVar2, chatActivityEnterView.V2, z9);
                             i11 = i11;
                             z9 = z9;
                         } else {
@@ -167,7 +167,7 @@ public final /* synthetic */ class bd implements Runnable {
                             long j12 = chatActivityEnterView.Q2;
                             org.telegram.messenger.ij ijVar4 = chatActivityEnterView.T2;
                             threadMessage = chatActivityEnterView.getThreadMessage();
-                            C2.v0(document2, str2, j12, ijVar4, threadMessage, storyItem2, chatActivityEnterView.V2, null, z9, i11, i10, false, obj2, anVar != null ? anVar.W8() : null, l10.longValue(), chatActivityEnterView.getSendMonoForumPeerId(), chatActivityEnterView.getSendMessageSuggestionParams());
+                            C2.v0(document2, str2, j12, ijVar4, threadMessage, storyItem2, chatActivityEnterView.V2, null, z9, i11, i10, false, obj2, cnVar != null ? cnVar.X8() : null, l10.longValue(), chatActivityEnterView.getSendMonoForumPeerId(), chatActivityEnterView.getSendMessageSuggestionParams());
                         }
                         if (chatActivityEnterView.R1 != 0) {
                             chatActivityEnterView.m1(0, true);

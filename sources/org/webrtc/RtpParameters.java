@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Map;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public class RtpParameters {
     public final List<Codec> codecs;
@@ -14,7 +14,7 @@ public class RtpParameters {
     private final Rtcp rtcp;
     public final String transactionId;
 
-    /* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+    /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
     public static class Codec {
         public Integer clockRate;
         MediaStreamTrack.MediaType kind;
@@ -57,7 +57,7 @@ public class RtpParameters {
         }
     }
 
-    /* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+    /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
     public enum DegradationPreference {
         DISABLED,
         MAINTAIN_FRAMERATE,
@@ -69,7 +69,7 @@ public class RtpParameters {
         }
     }
 
-    /* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+    /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
     public static class HeaderExtension {
         private final boolean encrypted;
         private final int id;
@@ -94,7 +94,7 @@ public class RtpParameters {
         }
     }
 
-    /* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+    /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
     public static class Rtcp {
         private final String cname;
         private final boolean reducedSize;
@@ -146,7 +146,7 @@ public class RtpParameters {
         return this.transactionId;
     }
 
-    /* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+    /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
     public static class Encoding {
         public boolean active;
         public boolean adaptiveAudioPacketTime;

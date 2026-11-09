@@ -22,7 +22,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PopupNotificationActivity;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l7 implements Runnable {
     public final /* synthetic */ int a;
@@ -413,9 +413,9 @@ public final /* synthetic */ class l7 implements Runnable {
                 yrVar.getClass();
                 try {
                     long j3 = message.id;
-                    if (ij.c4(message)) {
+                    if (ij.b4(message)) {
                         i14 = 5;
-                    } else if (ij.e5(message)) {
+                    } else if (ij.d5(message)) {
                         i14 = 9;
                     }
                     if (i14 == 9) {
@@ -427,7 +427,7 @@ public final /* synthetic */ class l7 implements Runnable {
                     if (i14 == 5) {
                         SQLiteDatabase sQLiteDatabase2 = yrVar.b;
                         Locale locale2 = Locale.US;
-                        sQLiteDatabase2.executeFast("UPDATE quick_replies_messages SET send_state = 2 WHERE mid = " + j3 + " AND topic_id = " + ij.I1(yrVar.currentAccount, message)).stepThis().dispose();
+                        sQLiteDatabase2.executeFast("UPDATE quick_replies_messages SET send_state = 2 WHERE mid = " + j3 + " AND topic_id = " + ij.H1(yrVar.currentAccount, message)).stepThis().dispose();
                         return;
                     }
                     if (i14 == 1) {
@@ -457,7 +457,7 @@ public final /* synthetic */ class l7 implements Runnable {
                         arrayList.remove(i16);
                         z5Var.getNotificationCenter().k(qs.b5, new Object[0]);
                         if (i15 == 0) {
-                            qs.e().k(qs.P4, 1, id.a0("MessageNotFound", null, 2131748553, new Object[0]));
+                            qs.e().k(qs.P4, 1, id.a0("MessageNotFound", null, 2131748552, new Object[0]));
                             return;
                         } else {
                             if (i15 == -1) {

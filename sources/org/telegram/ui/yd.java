@@ -12,30 +12,30 @@ import java.text.DecimalFormatSymbols;
 import java.util.Locale;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class yd extends FrameLayout {
-    public final org.telegram.ui.ActionBar.f6 a;
+    public final org.telegram.ui.ActionBar.g6 a;
     public final org.telegram.ui.Components.q5 b;
     public final TextView c;
     public final TextView d;
     public final DecimalFormat e;
     public boolean f;
 
-    public yd(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+    public yd(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
         super(context);
-        this.a = f6Var;
+        this.a = g6Var;
         LinearLayout f10 = org.telegram.messenger.k5.f(context, 1);
         addView(f10, c8.ha.d(-1, -2.0f, org.telegram.messenger.qs.E1, 17.0f, 9.0f, 130.0f, 9.0f));
         TextView textView = new TextView(context);
         this.c = textView;
         textView.setTextSize(1, 16.0f);
-        org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.G6, f6Var);
+        org.telegram.ui.ActionBar.s6.U(textView, org.telegram.ui.ActionBar.l6.G6, g6Var);
         f10.addView(textView, c8.ha.o(-1, -2));
         TextView textView2 = new TextView(context);
         this.d = textView2;
         textView2.setTextSize(1, 13.0f);
-        org.telegram.ui.ActionBar.r6.V(textView2, org.telegram.ui.ActionBar.k6.y6, f6Var);
+        org.telegram.ui.ActionBar.s6.U(textView2, org.telegram.ui.ActionBar.l6.y6, g6Var);
         f10.addView(textView2, c8.ha.k(0.0f, 4.0f, 0.0f, 0.0f, -1, -2));
         org.telegram.ui.Components.q5 q5Var = new org.telegram.ui.Components.q5(context);
         this.b = q5Var;
@@ -55,8 +55,8 @@ public final class yd extends FrameLayout {
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (this.f) {
-            org.telegram.ui.ActionBar.f6 f6Var = this.a;
-            Paint d = f6Var != null ? f6Var.d("paintDivider") : org.telegram.ui.ActionBar.k6.k0;
+            org.telegram.ui.ActionBar.g6 g6Var = this.a;
+            Paint d = g6Var != null ? g6Var.d("paintDivider") : org.telegram.ui.ActionBar.l6.k0;
             if (d != null) {
                 canvas.drawLine(org.telegram.messenger.id.a0 ? 0.0f : org.telegram.messenger.g0.L(17.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (org.telegram.messenger.id.a0 ? org.telegram.messenger.g0.L(17.0f) : 0), getMeasuredHeight() - 1, d);
             }

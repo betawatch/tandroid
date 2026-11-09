@@ -22,7 +22,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.camera.CameraView;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ra implements Runnable {
     public final /* synthetic */ int a;
@@ -339,11 +339,11 @@ public final /* synthetic */ class ra implements Runnable {
                     f1Var.o.unlock();
                 }
             case 20:
-                di.i4 i4Var = (di.i4) this.b;
-                if (i4Var.t1 && i4Var.K0) {
-                    di.p9 p9Var = ((di.g9) i4Var.z1).d;
-                    p9Var.k1 = false;
-                    p9Var.V();
+                di.j4 j4Var = (di.j4) this.b;
+                if (j4Var.t1 && j4Var.K0) {
+                    di.q9 q9Var = ((di.h9) j4Var.z1).d;
+                    q9Var.k1 = false;
+                    q9Var.V();
                     return;
                 }
                 return;

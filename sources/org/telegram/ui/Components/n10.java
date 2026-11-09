@@ -14,7 +14,7 @@ import android.view.WindowManager;
 import android.widget.FrameLayout;
 import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class n10 extends FrameLayout {
     public float a;
@@ -24,12 +24,12 @@ public final class n10 extends FrameLayout {
     public final m10 e;
     public final vs f;
     public final /* synthetic */ float h;
-    public final /* synthetic */ p10 n;
+    public final /* synthetic */ q10 n;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n10(p10 p10Var, Context context, float f10) {
+    public n10(q10 q10Var, Context context, float f10) {
         super(context);
-        this.n = p10Var;
+        this.n = q10Var;
         this.h = f10;
         this.e = new m10(this);
         this.f = new vs(2);
@@ -40,29 +40,29 @@ public final class n10 extends FrameLayout {
         super.onMeasure(i7, i10);
         Point point = org.telegram.messenger.g0.q;
         int i11 = point.x;
-        p10 p10Var = this.n;
-        if (i11 == p10Var.J && p10Var.K == point.y) {
+        q10 q10Var = this.n;
+        if (i11 == q10Var.J && q10Var.K == point.y) {
             return;
         }
-        p10Var.J = i11;
-        p10Var.K = point.y;
-        if (p10Var.L < 0.0f) {
+        q10Var.J = i11;
+        q10Var.K = point.y;
+        if (q10Var.L < 0.0f) {
             SharedPreferences sharedPreferences = org.telegram.messenger.t0.b.getSharedPreferences("groupcallpipconfig", 0);
             this.n.L = sharedPreferences.getFloat("relativeX", 1.0f);
             this.n.M = sharedPreferences.getFloat("relativeY", 0.4f);
         }
-        p10 p10Var2 = p10.e0;
-        if (p10Var2 != null) {
-            p10 p10Var3 = this.n;
-            float f10 = p10Var3.L;
-            float f11 = p10Var3.M;
+        q10 q10Var2 = q10.e0;
+        if (q10Var2 != null) {
+            q10 q10Var3 = this.n;
+            float f10 = q10Var3.L;
+            float f11 = q10Var3.M;
             float f12 = -org.telegram.messenger.g0.L(36.0f);
-            p10Var2.s.x = (int) com.google.android.recaptcha.internal.a.z(point.x - (2.0f * f12), org.telegram.messenger.g0.L(105.0f), f10, f12);
-            p10Var2.s.y = (int) ((point.y - org.telegram.messenger.g0.L(105.0f)) * f11);
-            p10Var2.i();
-            n10 n10Var = p10Var2.a;
+            q10Var2.s.x = (int) com.google.android.recaptcha.internal.a.z(point.x - (2.0f * f12), org.telegram.messenger.g0.L(105.0f), f10, f12);
+            q10Var2.s.y = (int) ((point.y - org.telegram.messenger.g0.L(105.0f)) * f11);
+            q10Var2.i();
+            n10 n10Var = q10Var2.a;
             if (n10Var.getParent() != null) {
-                p10Var2.n.updateViewLayout(n10Var, p10Var2.s);
+                q10Var2.n.updateViewLayout(n10Var, q10Var2.s);
             }
         }
     }
@@ -86,12 +86,12 @@ public final class n10 extends FrameLayout {
         float f10;
         boolean z9;
         boolean z10;
-        p10 p10Var;
-        p10 p10Var2;
-        v10 v10Var;
+        q10 q10Var;
+        q10 q10Var2;
+        w10 w10Var;
         ValueAnimator valueAnimator;
         boolean z11 = false;
-        if (p10.e0 == null) {
+        if (q10.e0 == null) {
             return false;
         }
         float rawX = motionEvent.getRawX();
@@ -100,21 +100,21 @@ public final class n10 extends FrameLayout {
         int action = motionEvent.getAction();
         if (action == 0) {
             getLocationOnScreen(this.n.H);
-            p10 p10Var3 = this.n;
-            int i7 = p10Var3.H[0];
-            WindowManager.LayoutParams layoutParams = p10Var3.s;
-            p10Var3.R = i7 - layoutParams.x;
-            p10Var3.S = r5[1] - layoutParams.y;
+            q10 q10Var3 = this.n;
+            int i7 = q10Var3.H[0];
+            WindowManager.LayoutParams layoutParams = q10Var3.s;
+            q10Var3.R = i7 - layoutParams.x;
+            q10Var3.S = r5[1] - layoutParams.y;
             this.a = rawX;
             this.b = rawY;
             System.currentTimeMillis();
             org.telegram.messenger.g0.i3(this.e, 300L);
-            p10 p10Var4 = this.n;
-            WindowManager.LayoutParams layoutParams2 = p10Var4.s;
-            p10Var4.P = layoutParams2.x;
-            p10Var4.Q = layoutParams2.y;
-            p10Var4.Y = true;
-            p10Var4.a();
+            q10 q10Var4 = this.n;
+            WindowManager.LayoutParams layoutParams2 = q10Var4.s;
+            q10Var4.P = layoutParams2.x;
+            q10Var4.Q = layoutParams2.y;
+            q10Var4.Y = true;
+            q10Var4.a();
             return true;
         }
         if (action != 1) {
@@ -129,9 +129,9 @@ public final class n10 extends FrameLayout {
                             parent.requestDisallowInterceptTouchEvent(true);
                         }
                         org.telegram.messenger.g0.r(this.e);
-                        p10 p10Var5 = this.n;
-                        p10Var5.X = true;
-                        p10Var5.g(true);
+                        q10 q10Var5 = this.n;
+                        q10Var5.X = true;
+                        q10Var5.g(true);
                         this.n.f(false);
                         this.a = rawX;
                         this.b = rawY;
@@ -139,13 +139,13 @@ public final class n10 extends FrameLayout {
                         f12 = 0.0f;
                     }
                 }
-                p10 p10Var6 = this.n;
-                if (p10Var6.X) {
-                    p10Var6.P += f11;
-                    p10Var6.Q += f12;
+                q10 q10Var6 = this.n;
+                if (q10Var6.X) {
+                    q10Var6.P += f11;
+                    q10Var6.Q += f12;
                     this.a = rawX;
                     this.b = rawY;
-                    p10Var6.j();
+                    q10Var6.j();
                     float measuredWidth = (getMeasuredWidth() / 2.0f) + this.n.P;
                     float measuredHeight = (getMeasuredHeight() / 2.0f) + this.n.Q;
                     float measuredWidth2 = (r1.b.getMeasuredWidth() / 2.0f) + (r1.O - this.n.R);
@@ -161,79 +161,79 @@ public final class n10 extends FrameLayout {
                         } else {
                             z9 = false;
                             z10 = true;
-                            p10Var = this.n;
-                            if (!p10Var.G && p10Var.b0 != z9) {
-                                p10Var.b0 = z9;
-                                valueAnimator = p10Var.d0;
+                            q10Var = this.n;
+                            if (!q10Var.G && q10Var.b0 != z9) {
+                                q10Var.b0 = z9;
+                                valueAnimator = q10Var.d0;
                                 if (valueAnimator != null) {
                                     valueAnimator.removeAllListeners();
-                                    p10Var.d0.cancel();
+                                    q10Var.d0.cancel();
                                 }
-                                ValueAnimator ofFloat = ValueAnimator.ofFloat(p10Var.c0, !z9 ? 1.0f : f10);
-                                p10Var.d0 = ofFloat;
-                                ofFloat.addUpdateListener(new e6(p10Var, 25));
-                                p10Var.d0.addListener(new t9(10, p10Var, z9));
-                                p10Var.d0.setDuration(250L);
-                                p10Var.d0.setInterpolator(xq.f);
-                                p10Var.d0.start();
+                                ValueAnimator ofFloat = ValueAnimator.ofFloat(q10Var.c0, !z9 ? 1.0f : f10);
+                                q10Var.d0 = ofFloat;
+                                ofFloat.addUpdateListener(new e6(q10Var, 25));
+                                q10Var.d0.addListener(new t9(10, q10Var, z9));
+                                q10Var.d0.setDuration(250L);
+                                q10Var.d0.setInterpolator(xq.f);
+                                q10Var.d0.start();
                             }
-                            p10Var2 = this.n;
-                            v10Var = p10Var2.V;
-                            if (p10Var2.E != z10) {
-                                p10Var2.E = z10;
-                                p10Var2.c.invalidate();
-                                if (!p10Var2.G) {
-                                    p10Var2.x.P(z10 ? 33 : 0);
-                                    p10Var2.W.d();
+                            q10Var2 = this.n;
+                            w10Var = q10Var2.V;
+                            if (q10Var2.E != z10) {
+                                q10Var2.E = z10;
+                                q10Var2.c.invalidate();
+                                if (!q10Var2.G) {
+                                    q10Var2.x.P(z10 ? 33 : 0);
+                                    q10Var2.W.d();
                                 }
                                 if (z10) {
                                     try {
-                                        v10Var.performHapticFeedback(3, 2);
+                                        w10Var.performHapticFeedback(3, 2);
                                     } catch (Exception unused) {
                                     }
                                 }
                             }
-                            if (v10Var.s != z10) {
-                                v10Var.invalidate();
+                            if (w10Var.s != z10) {
+                                w10Var.invalidate();
                             }
-                            v10Var.s = z10;
+                            w10Var.s = z10;
                         }
                     } else {
                         f10 = 0.0f;
                         z9 = false;
                     }
                     z10 = z9;
-                    p10Var = this.n;
-                    if (!p10Var.G) {
-                        p10Var.b0 = z9;
-                        valueAnimator = p10Var.d0;
+                    q10Var = this.n;
+                    if (!q10Var.G) {
+                        q10Var.b0 = z9;
+                        valueAnimator = q10Var.d0;
                         if (valueAnimator != null) {
                         }
-                        ValueAnimator ofFloat2 = ValueAnimator.ofFloat(p10Var.c0, !z9 ? 1.0f : f10);
-                        p10Var.d0 = ofFloat2;
-                        ofFloat2.addUpdateListener(new e6(p10Var, 25));
-                        p10Var.d0.addListener(new t9(10, p10Var, z9));
-                        p10Var.d0.setDuration(250L);
-                        p10Var.d0.setInterpolator(xq.f);
-                        p10Var.d0.start();
+                        ValueAnimator ofFloat2 = ValueAnimator.ofFloat(q10Var.c0, !z9 ? 1.0f : f10);
+                        q10Var.d0 = ofFloat2;
+                        ofFloat2.addUpdateListener(new e6(q10Var, 25));
+                        q10Var.d0.addListener(new t9(10, q10Var, z9));
+                        q10Var.d0.setDuration(250L);
+                        q10Var.d0.setInterpolator(xq.f);
+                        q10Var.d0.start();
                     }
-                    p10Var2 = this.n;
-                    v10Var = p10Var2.V;
-                    if (p10Var2.E != z10) {
+                    q10Var2 = this.n;
+                    w10Var = q10Var2.V;
+                    if (q10Var2.E != z10) {
                     }
-                    if (v10Var.s != z10) {
+                    if (w10Var.s != z10) {
                     }
-                    v10Var.s = z10;
+                    w10Var.s = z10;
                 }
             }
             return true;
         }
         org.telegram.messenger.g0.r(this.f);
         org.telegram.messenger.g0.r(this.e);
-        p10 p10Var7 = this.n;
-        if (!p10Var7.E) {
-            p10Var7.Y = false;
-            p10Var7.a();
+        q10 q10Var7 = this.n;
+        if (!q10Var7.E) {
+            q10Var7.Y = false;
+            q10Var7.a();
             if (this.c) {
                 if (VoIPService.getSharedInstance() != null) {
                     VoIPService.getSharedInstance().setMicMute(true, false, false);
@@ -292,9 +292,9 @@ public final class n10 extends FrameLayout {
                 }
                 this.d.setDuration(150L).setInterpolator(xq.f);
                 this.d.start();
-                p10 p10Var8 = this.n;
-                if (p10Var8.L >= 0.0f) {
-                    float[] fArr = p10Var8.I;
+                q10 q10Var8 = this.n;
+                if (q10Var8.L >= 0.0f) {
+                    float[] fArr = q10Var8.I;
                     float f23 = point.x;
                     float f24 = point.y;
                     float f25 = -org.telegram.messenger.g0.L(36.0f);
@@ -303,69 +303,69 @@ public final class n10 extends FrameLayout {
                     fArr[0] = Math.min(1.0f, Math.max(0.0f, fArr[0]));
                     fArr[1] = Math.min(1.0f, Math.max(0.0f, fArr[1]));
                     SharedPreferences.Editor edit = org.telegram.messenger.t0.b.getSharedPreferences("groupcallpipconfig", 0).edit();
-                    p10 p10Var9 = this.n;
-                    float f26 = p10Var9.I[0];
-                    p10Var9.L = f26;
+                    q10 q10Var9 = this.n;
+                    float f26 = q10Var9.I[0];
+                    q10Var9.L = f26;
                     SharedPreferences.Editor putFloat = edit.putFloat("relativeX", f26);
-                    p10 p10Var10 = this.n;
-                    float f27 = p10Var10.I[1];
-                    p10Var10.M = f27;
+                    q10 q10Var10 = this.n;
+                    float f27 = q10Var10.I[1];
+                    q10Var10.M = f27;
                     putFloat.putFloat("relativeY", f27).apply();
                 }
             }
-            p10 p10Var11 = this.n;
-            p10Var11.X = false;
-            p10Var11.g(false);
+            q10 q10Var11 = this.n;
+            q10Var11.X = false;
+            q10Var11.g(false);
             return true;
         }
         if (this.c && VoIPService.getSharedInstance() != null) {
             VoIPService.getSharedInstance().setMicMute(true, false, false);
         }
         this.c = false;
-        p10 p10Var12 = this.n;
-        ch0 ch0Var = p10Var12.W;
-        zg0 zg0Var = p10Var12.x;
-        bi.e5 e5Var = p10Var12.b;
-        n10 n10Var2 = p10Var12.a;
-        fi.p5 p5Var = p10Var12.c;
-        p10 p10Var13 = p10.e0;
-        if (p10Var13 == null) {
+        q10 q10Var12 = this.n;
+        dh0 dh0Var = q10Var12.W;
+        ah0 ah0Var = q10Var12.x;
+        bi.e5 e5Var = q10Var12.b;
+        n10 n10Var2 = q10Var12.a;
+        fi.p5 p5Var = q10Var12.c;
+        q10 q10Var13 = q10.e0;
+        if (q10Var13 == null) {
             return false;
         }
-        p10Var12.G = true;
-        p10.f0 = true;
-        p10Var12.V.H = true;
-        p10Var13.f(false);
-        float measuredWidth5 = (n10Var2.getMeasuredWidth() / 2.0f) + p10Var12.s.x;
-        float measuredWidth6 = ((e5Var.getMeasuredWidth() / 2.0f) + (p10Var12.O - p10Var12.R)) - measuredWidth5;
-        float measuredHeight4 = ((e5Var.getMeasuredHeight() / 2.0f) + (p10Var12.N - p10Var12.S)) - ((n10Var2.getMeasuredHeight() / 2.0f) + p10Var12.s.y);
-        p10 p10Var14 = p10.e0;
-        WindowManager windowManager = p10Var14.n;
-        n10 n10Var3 = p10Var14.a;
-        bi.e5 e5Var2 = p10Var14.b;
-        FrameLayout frameLayout = p10Var14.d;
-        org.telegram.ui.w7 w7Var = p10Var14.e;
-        p10Var12.e();
-        p10.e0 = null;
+        q10Var12.G = true;
+        q10.f0 = true;
+        q10Var12.V.H = true;
+        q10Var13.f(false);
+        float measuredWidth5 = (n10Var2.getMeasuredWidth() / 2.0f) + q10Var12.s.x;
+        float measuredWidth6 = ((e5Var.getMeasuredWidth() / 2.0f) + (q10Var12.O - q10Var12.R)) - measuredWidth5;
+        float measuredHeight4 = ((e5Var.getMeasuredHeight() / 2.0f) + (q10Var12.N - q10Var12.S)) - ((n10Var2.getMeasuredHeight() / 2.0f) + q10Var12.s.y);
+        q10 q10Var14 = q10.e0;
+        WindowManager windowManager = q10Var14.n;
+        n10 n10Var3 = q10Var14.a;
+        bi.e5 e5Var2 = q10Var14.b;
+        FrameLayout frameLayout = q10Var14.d;
+        org.telegram.ui.w7 w7Var = q10Var14.e;
+        q10Var12.e();
+        q10.e0 = null;
         AnimatorSet animatorSet = new AnimatorSet();
-        int i12 = zg0Var.a0;
+        int i12 = ah0Var.a0;
         if (i12 < 33) {
             n10Var = n10Var3;
-            j3 = (long) (((1.0f - (i12 / 33.0f)) * zg0Var.r()) / 2.0f);
+            j3 = (long) (((1.0f - (i12 / 33.0f)) * ah0Var.r()) / 2.0f);
         } else {
             n10Var = n10Var3;
             j3 = 0;
         }
-        float f28 = p10Var12.s.x;
+        float f28 = q10Var12.s.x;
         ValueAnimator ofFloat7 = ValueAnimator.ofFloat(f28, measuredWidth6 + f28);
-        ofFloat7.addUpdateListener(p10Var12.T);
+        ofFloat7.addUpdateListener(q10Var12.T);
         ValueAnimator duration = ofFloat7.setDuration(250L);
         xq xqVar = xq.f;
         duration.setInterpolator(xqVar);
         animatorSet.playTogether(ofFloat7);
-        float f29 = p10Var12.s.y;
-        ValueAnimator ofFloat8 = ValueAnimator.ofFloat(f29, (f29 + measuredHeight4) - org.telegram.messenger.g0.L(30.0f), p10Var12.s.y + measuredHeight4);
-        ofFloat8.addUpdateListener(p10Var12.U);
+        float f29 = q10Var12.s.y;
+        ValueAnimator ofFloat8 = ValueAnimator.ofFloat(f29, (f29 + measuredHeight4) - org.telegram.messenger.g0.L(30.0f), q10Var12.s.y + measuredHeight4);
+        ofFloat8.addUpdateListener(q10Var12.U);
         ofFloat8.setDuration(250L).setInterpolator(xqVar);
         animatorSet.playTogether(ofFloat8);
         float[] fArr2 = {n10Var.getScaleX(), 0.1f};
@@ -413,11 +413,11 @@ public final class n10 extends FrameLayout {
         ofFloat15.setDuration(350L);
         ofFloat15.setInterpolator(xqVar3);
         animatorSet.playTogether(ofFloat15);
-        animatorSet.addListener(new o10(p10Var12, n10Var4, e5Var2, windowManager, frameLayout, w7Var));
+        animatorSet.addListener(new p10(q10Var12, n10Var4, e5Var2, windowManager, frameLayout, w7Var));
         animatorSet.start();
-        zg0Var.P(66);
-        ch0Var.i();
-        ch0Var.d();
+        ah0Var.P(66);
+        dh0Var.i();
+        dh0Var.d();
         return false;
     }
 }

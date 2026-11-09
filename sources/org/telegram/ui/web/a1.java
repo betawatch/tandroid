@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 import org.telegram.messenger.c20;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final class a1 extends AsyncTask {
     public final /* synthetic */ int a = 1;
@@ -85,13 +85,13 @@ public final class a1 extends AsyncTask {
         switch (this.a) {
             case 0:
                 Bitmap bitmap = (Bitmap) obj;
-                org.telegram.ui.Wallet.t tVar = (org.telegram.ui.Wallet.t) this.d;
-                if (tVar != null) {
+                org.telegram.ui.Wallet.s sVar = (org.telegram.ui.Wallet.s) this.d;
+                if (sVar != null) {
                     if (this.c != null) {
-                        tVar.a(null);
+                        sVar.a(null);
                         break;
                     } else {
-                        tVar.a(bitmap);
+                        sVar.a(bitmap);
                         break;
                     }
                 }
@@ -112,7 +112,7 @@ public final class a1 extends AsyncTask {
         }
     }
 
-    public a1(org.telegram.ui.Wallet.t tVar) {
-        this.d = tVar;
+    public a1(org.telegram.ui.Wallet.s sVar) {
+        this.d = sVar;
     }
 }

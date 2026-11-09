@@ -1,49 +1,22 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Path;
-import android.graphics.RectF;
-
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class wo0 extends org.telegram.ui.Components.d61 {
-    public final org.telegram.ui.Components.ca g0;
-    public final /* synthetic */ PhotoViewer h0;
+public final class wo0 extends org.telegram.ui.Cells.s9 {
+    public final /* synthetic */ int q0 = 0;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public wo0(Context context, PhotoViewer photoViewer) {
-        super(context);
-        this.h0 = photoViewer;
-        new Path();
-        this.g0 = new org.telegram.ui.Components.ca(photoViewer.b0, this, 0, false);
+    public /* synthetic */ wo0(di.h8 h8Var, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(h8Var, g6Var);
     }
 
-    @Override // org.telegram.ui.Components.d61
-    public final void b(Canvas canvas, RectF rectF) {
-        canvas.save();
-        canvas.clipRect(rectF);
-        float f10 = -getX();
-        PhotoViewer photoViewer = this.h0;
-        canvas.translate(f10 - photoViewer.Q7.getX(), (-getY()) - photoViewer.Q7.getY());
-        photoViewer.N0(canvas, this.g0, -14803426, 855638016, false, true, false);
-        canvas.restore();
-    }
-
-    @Override // android.view.View
-    public final void invalidate() {
-        int i7;
-        if (org.telegram.messenger.iz.c0 && ((i7 = this.h0.m4) == 1 || i7 == 2 || i7 == 3)) {
-            return;
+    @Override // org.telegram.ui.Cells.v9
+    public final int o() {
+        switch (this.q0) {
         }
-        super.invalidate();
+        return 0;
     }
 
-    @Override // android.view.View
-    public final void setTranslationY(float f10) {
-        if (getTranslationY() != f10) {
-            super.setTranslationY(f10);
-            this.h0.e0.invalidate();
-        }
+    public wo0(di.b bVar) {
+        super(null, bVar);
     }
 }

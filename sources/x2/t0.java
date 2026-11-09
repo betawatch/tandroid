@@ -7,14 +7,14 @@ import java.io.InterruptedIOException;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
-import org.telegram.ui.hy0;
+import org.telegram.ui.ky0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class t0 implements b3.l {
     public final Uri a;
     public final j2.c0 b;
-    public final hy0 c;
+    public final ky0 c;
     public final w0 d;
     public final h2.i e;
     public volatile boolean h;
@@ -26,11 +26,11 @@ public final class t0 implements b3.l {
     public final f3.s f = new f3.s();
     public boolean n = true;
 
-    public t0(w0 w0Var, Uri uri, j2.h hVar, hy0 hy0Var, w0 w0Var2, h2.i iVar) {
+    public t0(w0 w0Var, Uri uri, j2.h hVar, ky0 ky0Var, w0 w0Var2, h2.i iVar) {
         this.y = w0Var;
         this.a = uri;
         this.b = new j2.c0(hVar);
-        this.c = hy0Var;
+        this.c = ky0Var;
         this.d = w0Var2;
         this.e = iVar;
         u.g.getAndIncrement();
@@ -84,9 +84,9 @@ public final class t0 implements b3.l {
                     }
                 }
                 if (this.n) {
-                    hy0 hy0Var = this.c;
+                    ky0 ky0Var = this.c;
                     long j11 = this.r;
-                    f3.o oVar2 = (f3.o) hy0Var.c;
+                    f3.o oVar2 = (f3.o) ky0Var.c;
                     oVar2.getClass();
                     oVar2.d(j3, j11);
                     this.n = false;
@@ -100,11 +100,11 @@ public final class t0 implements b3.l {
                                 iVar.wait();
                             }
                         }
-                        hy0 hy0Var2 = this.c;
+                        ky0 ky0Var2 = this.c;
                         f3.s sVar = this.f;
-                        f3.o oVar3 = (f3.o) hy0Var2.c;
+                        f3.o oVar3 = (f3.o) ky0Var2.c;
                         oVar3.getClass();
-                        f3.l lVar = (f3.l) hy0Var2.d;
+                        f3.l lVar = (f3.l) ky0Var2.d;
                         lVar.getClass();
                         i10 = oVar3.f(lVar, sVar);
                         long x11 = this.c.x();

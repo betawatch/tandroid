@@ -4,7 +4,7 @@ import android.text.SpannableStringBuilder;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ed implements Runnable {
     public final /* synthetic */ int a;
@@ -51,10 +51,10 @@ public final /* synthetic */ class ed implements Runnable {
                 pdVar.setEnabled(zdVar.N0 > 0 || zdVar.B0 > currentTime);
                 if (currentTime >= zdVar.B0) {
                     pdVar.g(null, true);
-                    pdVar.i(bi.dd.Y0(false, zdVar.M0 ? org.telegram.messenger.id.M0(2131748369, null) : org.telegram.messenger.id.H(' ', "MonetizationStarsWithdraw", (int) zdVar.N0), zdVar.H0), true, true);
+                    pdVar.i(bi.dd.Y0(false, zdVar.M0 ? org.telegram.messenger.id.M0(2131748368, null) : org.telegram.messenger.id.H(' ', "MonetizationStarsWithdraw", (int) zdVar.N0), zdVar.H0), true, true);
                     break;
                 } else {
-                    pdVar.i(org.telegram.messenger.id.M0(2131748368, null), true, true);
+                    pdVar.i(org.telegram.messenger.id.M0(2131748367, null), true, true);
                     if (zdVar.e1 == null) {
                         zdVar.e1 = new SpannableStringBuilder("l");
                         org.telegram.ui.Components.wp wpVar = new org.telegram.ui.Components.wp(R.drawable.mini_switch_lock, 0);

@@ -24,13 +24,13 @@ import org.telegram.messenger.p10;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.n5;
 import org.telegram.ui.Components.r5;
 import org.telegram.ui.Components.w8;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class i0 extends Drawable {
     public NinePatchDrawable a;
@@ -60,7 +60,7 @@ public final class i0 extends Drawable {
         this.c = textPaint;
         ImageReceiver imageReceiver = new ImageReceiver(null);
         this.d = imageReceiver;
-        this.e = new w8((f6) null);
+        this.e = new w8((g6) null);
         int L = org.telegram.messenger.g0.L(10.66f);
         this.f = L * 2;
         this.g = org.telegram.messenger.g0.L(4.0f);

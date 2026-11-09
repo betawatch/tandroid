@@ -11,9 +11,9 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class mx extends oj0 {
+public final class mx extends pj0 {
     public fq E;
     public boolean F;
     public int G;
@@ -43,7 +43,7 @@ public final class mx extends oj0 {
         this.e = z9 ? null : new ox(hyVar, context);
     }
 
-    @Override // org.telegram.ui.Components.oj0
+    @Override // org.telegram.ui.Components.pj0
     public final boolean D(v4.d1 d1Var) {
         return d1Var.f == 0;
     }
@@ -346,7 +346,7 @@ public final class mx extends oj0 {
                     int i13 = 0;
                     for (int i14 = 0; i14 < size; i14++) {
                         TLRPC.Document document = (TLRPC.Document) hyVar.i1.get(i14);
-                        mt0 C1 = ky.C1(nxVar.F1(document, document.attributes));
+                        ot0 C1 = ky.C1(nxVar.F1(document, document.attributes));
                         int min = Math.min(i10, (int) Math.floor((((C1.a / C1.b) * L) / measuredWidth) * i10));
                         if (i11 < min) {
                             this.H += i12;
@@ -402,7 +402,7 @@ public final class mx extends oj0 {
                 view = view3;
             } else {
                 org.telegram.ui.Cells.j8 j8Var = new org.telegram.ui.Cells.j8(this.c, false, false, hyVar.Z1, hyVar.i2);
-                j8Var.a(0, org.telegram.messenger.id.M0(2131750835, null));
+                j8Var.a(0, org.telegram.messenger.id.M0(2131750834, null));
                 v4.o0 o0Var2 = new v4.o0(-1, -2);
                 ((ViewGroup.MarginLayoutParams) o0Var2).topMargin = org.telegram.messenger.g0.L(2.5f);
                 ((ViewGroup.MarginLayoutParams) o0Var2).bottomMargin = org.telegram.messenger.g0.L(5.5f);
@@ -415,6 +415,6 @@ public final class mx extends oj0 {
             h2Var.setCanPreviewGif(true);
             view = h2Var;
         }
-        return new xi0(view);
+        return new yi0(view);
     }
 }

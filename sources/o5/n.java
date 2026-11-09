@@ -1,12 +1,12 @@
 package o5;
 
 import java.util.HashMap;
-import org.telegram.ui.hy0;
+import org.telegram.ui.ky0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public abstract class n {
-    public static final hy0 a;
+    public static final ky0 a;
 
     static {
         HashMap hashMap = new HashMap();
@@ -25,6 +25,6 @@ public abstract class n {
         hashMap2.remove(r5.b.class);
         hashMap.put(r5.f.class, f.a);
         hashMap2.remove(r5.f.class);
-        a = new hy0(new HashMap(hashMap), new HashMap(hashMap2), qa.f.a, 10);
+        a = new ky0(new HashMap(hashMap), new HashMap(hashMap2), qa.f.a, 10);
     }
 }

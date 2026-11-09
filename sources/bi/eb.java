@@ -3,7 +3,7 @@ package bi;
 import android.content.DialogInterface;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class eb implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -28,13 +28,13 @@ public final /* synthetic */ class eb implements DialogInterface.OnDismissListen
                 ((l9) this.b).run();
                 break;
             case 3:
-                ((di.s7) this.b).run();
+                ((di.f8) this.b).run();
                 break;
             case 4:
-                di.p9 p9Var = (di.p9) this.b;
-                if (dialogInterface == p9Var.u0) {
-                    p9Var.u0 = null;
-                    p9Var.V();
+                di.q9 q9Var = (di.q9) this.b;
+                if (dialogInterface == q9Var.u0) {
+                    q9Var.u0 = null;
+                    q9Var.V();
                     break;
                 }
                 break;

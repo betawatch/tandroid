@@ -6,11 +6,11 @@ import android.graphics.Path;
 import org.telegram.messenger.ls;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.qj0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class j1 extends pj0 implements ls {
+public final class j1 extends qj0 implements ls {
     public final Path e3;
     public q0.a f3;
 
@@ -24,7 +24,7 @@ public final class j1 extends pj0 implements ls {
         setClipToPadding(false);
     }
 
-    @Override // org.telegram.ui.Components.pj0
+    @Override // org.telegram.ui.Components.qj0
     public final Integer V0(int i7) {
         return 285212671;
     }
@@ -51,19 +51,19 @@ public final class j1 extends pj0 implements ls {
         }
     }
 
-    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.qj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         qs.e().c(this, qs.C5);
     }
 
-    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.qj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         qs.e().n(this, qs.C5);
     }
 
-    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.qj0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public final void onMeasure(int i7, int i10) {
         super.onMeasure(i7, org.telegram.messenger.camera.q.B(16.0f, org.telegram.messenger.g0.L(48.0f) * Math.min(sg.b0.c().size(), 6), TLObject.FLAG_30));
     }

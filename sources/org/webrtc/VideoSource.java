@@ -2,7 +2,7 @@ package org.webrtc;
 
 import org.webrtc.VideoProcessor;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public class VideoSource extends MediaSource {
     private final CapturerObserver capturerObserver;
@@ -11,7 +11,7 @@ public class VideoSource extends MediaSource {
     private VideoProcessor videoProcessor;
     private final Object videoProcessorLock;
 
-    /* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+    /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
     public static class AspectRatio {
         public static final AspectRatio UNDEFINED = new AspectRatio(0, 0);
         public final int height;
@@ -66,7 +66,7 @@ public class VideoSource extends MediaSource {
                             VideoSource.this.videoProcessor.onFrameCaptured(videoFrame, adaptFrame);
                             return;
                         }
-                        VideoFrame b10 = d0.b(videoFrame, adaptFrame);
+                        VideoFrame b10 = c0.b(videoFrame, adaptFrame);
                         if (b10 != null) {
                             VideoSource.this.nativeAndroidVideoTrackSource.onFrameCaptured(b10);
                             b10.release();
@@ -87,7 +87,7 @@ public class VideoSource extends MediaSource {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$setVideoProcessor$1(VideoFrame videoFrame) {
-        runWithReference(new s(6, this, videoFrame));
+        runWithReference(new r(6, this, videoFrame));
     }
 
     public void adaptOutputFormat(int i7, int i10, int i11) {

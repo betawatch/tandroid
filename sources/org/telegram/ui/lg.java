@@ -1,74 +1,31 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MediaController;
+import android.graphics.drawable.Drawable;
+import android.view.View;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class lg implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ an b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ long d;
+public final /* synthetic */ class lg implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.Components.l60 b;
 
-    public /* synthetic */ lg(an anVar, long j3, boolean z9) {
-        this.b = anVar;
-        this.d = j3;
-        this.c = z9;
+    public /* synthetic */ lg(org.telegram.ui.Components.l60 l60Var, int i7) {
+        this.a = i7;
+        this.b = l60Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        int i7 = this.a;
+        org.telegram.ui.Components.l60 l60Var = this.b;
+        switch (i7) {
             case 0:
-                an.X0(this.b, this.d, this.c);
+                l60Var.s();
                 break;
             default:
-                qj qjVar = this.b.Z;
-                if (qjVar != null) {
-                    MediaController B = MediaController.B();
-                    if (!qjVar.Y1 && !qjVar.F2 && B.J() && !B.K() && B.g1 == qjVar.G2) {
-                        qjVar.c1 = false;
-                        org.telegram.ui.Components.ee eeVar = qjVar.b1;
-                        if (eeVar != null) {
-                            eeVar.j(org.telegram.ui.Components.hg.a, false);
-                        }
-                        qjVar.J3 = true;
-                        qjVar.F2 = true;
-                        org.telegram.ui.Components.wf wfVar = qjVar.Z2;
-                        if (wfVar != null) {
-                            wfVar.R0(1);
-                        }
-                        qjVar.N1(0, true);
-                        if (this.c) {
-                            qjVar.O = true;
-                            org.telegram.ui.Components.ag agVar = qjVar.O1;
-                            if (agVar != null) {
-                                agVar.D.d(1, true, false);
-                            }
-                            org.telegram.messenger.ui b02 = org.telegram.messenger.ui.b0(qjVar.Q);
-                            long j3 = qjVar.Q2;
-                            an anVar = qjVar.P2;
-                            b02.e2(j3, (anVar == null || !anVar.v4) ? 0L : anVar.b(), true);
-                        }
-                        long j10 = this.d;
-                        long currentTimeMillis = j10 > 0 ? System.currentTimeMillis() - j10 : B.k1;
-                        qjVar.i1 = currentTimeMillis;
-                        org.telegram.ui.Components.fg fgVar = qjVar.Y0;
-                        if (fgVar != null) {
-                            fgVar.a(currentTimeMillis);
-                        }
-                        qjVar.s4 = true;
-                        qjVar.z1();
-                        break;
-                    }
-                }
+                Drawable[] drawableArr = PhotoViewer.Y8;
+                l60Var.s();
                 break;
         }
-    }
-
-    public /* synthetic */ lg(an anVar, boolean z9, long j3) {
-        this.b = anVar;
-        this.c = z9;
-        this.d = j3;
     }
 }

@@ -17,9 +17,9 @@ import org.telegram.messenger.m5;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.y00;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ms;
+import org.telegram.ui.os;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l implements Function {
     public final /* synthetic */ int a;
@@ -97,7 +97,7 @@ public final /* synthetic */ class l implements Function {
             case 9:
                 return Long.valueOf(((ij) obj).Z0());
             case 10:
-                return Integer.valueOf(((ij) obj).f1());
+                return Integer.valueOf(((ij) obj).e1());
             case 11:
                 TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) obj;
                 if (channelParticipant == null) {
@@ -109,9 +109,9 @@ public final /* synthetic */ class l implements Function {
             case 13:
                 return Long.valueOf(m5.o(((TLRPC.GroupCallParticipant) obj).peer));
             case 14:
-                return ((ms) obj).a;
+                return ((os) obj).a;
             default:
-                return ((ms) obj).a;
+                return ((os) obj).a;
         }
     }
 

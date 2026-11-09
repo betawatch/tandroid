@@ -8,9 +8,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.an;
+import org.telegram.ui.cn;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m2 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -57,43 +57,43 @@ public final /* synthetic */ class m2 implements Runnable {
                             if (z10 && k7Var.x2 != null && (F = ea.y(k7Var.a, false).F(k7Var.P1, false)) != null) {
                                 F.m(k7Var.x2, !savestargift.unsave);
                             }
-                            k7Var.k().t(org.telegram.messenger.id.a0(null, null, 2131743881, tL_error.text), null).k(false);
+                            k7Var.k().t(org.telegram.messenger.id.a0(null, null, 2131743878, tL_error.text), null).k(false);
                             break;
                         }
                     } else {
                         k7Var.dismiss();
-                        long x12 = k7Var.x1();
+                        long w12 = k7Var.w1();
                         if (!z10) {
-                            ea.y(k7Var.a, false).P(x12);
+                            ea.y(k7Var.a, false).P(w12);
                         }
-                        if (x12 < 0) {
-                            org.telegram.ui.Components.hc.a0(T).s(document, org.telegram.messenger.id.M0(z9 ? 2131750261 : 2131750259, null), org.telegram.messenger.id.M0(z9 ? 2131750262 : 2131750260, null)).j();
+                        if (w12 < 0) {
+                            org.telegram.ui.Components.hc.a0(T).s(document, org.telegram.messenger.id.M0(z9 ? 2131750260 : 2131750258, null), org.telegram.messenger.id.M0(z9 ? 2131750261 : 2131750259, null)).j();
                             break;
                         } else {
-                            org.telegram.ui.Components.hc.a0(T).s(document, org.telegram.messenger.id.M0(z9 ? 2131750124 : 2131750122, null), org.telegram.messenger.g0.U2(org.telegram.messenger.id.M0(z9 ? 2131750125 : 2131750123, null), T instanceof ProfileActivity ? null : new k3(x12, T))).k(true);
+                            org.telegram.ui.Components.hc.a0(T).s(document, org.telegram.messenger.id.M0(z9 ? 2131750123 : 2131750121, null), org.telegram.messenger.g0.U2(org.telegram.messenger.id.M0(z9 ? 2131750124 : 2131750122, null), T instanceof ProfileActivity ? null : new k3(w12, T))).k(true);
                             break;
                         }
                     }
                 }
                 break;
             case 1:
-                an anVar = (an) obj5;
+                cn cnVar = (cn) obj5;
                 String str = (String) obj;
                 CharacterStyle characterStyle = (CharacterStyle) obj4;
                 ij ijVar = (ij) obj2;
                 org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) obj3;
                 if (!str.startsWith("video?")) {
                     if (z10 && !z9) {
-                        anVar.getParentActivity();
+                        cnVar.getParentActivity();
                         vf.c.o(str);
                         break;
                     } else {
-                        anVar.ja(ijVar, false, false);
-                        anVar.za(characterStyle, str, false, q1Var, ijVar);
+                        cnVar.la(ijVar, false, false);
+                        cnVar.Ba(characterStyle, str, false, q1Var, ijVar);
                         break;
                     }
                 } else {
-                    anVar.j8(characterStyle, false, ijVar, q1Var);
+                    cnVar.k8(characterStyle, false, ijVar, q1Var);
                     break;
                 }
             default:
@@ -117,8 +117,8 @@ public final /* synthetic */ class m2 implements Runnable {
         }
     }
 
-    public /* synthetic */ m2(an anVar, String str, CharacterStyle characterStyle, ij ijVar, org.telegram.ui.Cells.q1 q1Var, boolean z9, boolean z10) {
-        this.d = anVar;
+    public /* synthetic */ m2(cn cnVar, String str, CharacterStyle characterStyle, ij ijVar, org.telegram.ui.Cells.q1 q1Var, boolean z9, boolean z10) {
+        this.d = cnVar;
         this.e = str;
         this.f = characterStyle;
         this.h = ijVar;

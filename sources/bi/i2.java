@@ -6,7 +6,7 @@ import org.telegram.messenger.v10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i2 implements c20 {
     public final /* synthetic */ k7 a;
@@ -42,14 +42,14 @@ public final /* synthetic */ class i2 implements c20 {
         }
         h6 h6Var = new h6(this.c, tL_payments_paymentFormStarGift);
         Context context = k7Var.getContext();
-        org.telegram.ui.ActionBar.f6 f6Var = k7Var.I0;
+        org.telegram.ui.ActionBar.g6 g6Var = k7Var.I0;
         int i7 = k7Var.a;
-        String z12 = k7Var.z1();
+        String y12 = k7Var.y1();
         final TL_stars.TL_starGiftUnique tL_starGiftUnique = this.d;
         final long j3 = this.e;
         final TLRPC.TL_textWithEntities tL_textWithEntities = this.f;
         final boolean z9 = this.g;
-        new k6(context, f6Var, tL_starGiftUnique, h6Var, i7, j3, z12, false, new v10() { // from class: bi.y2
+        new k6(context, g6Var, tL_starGiftUnique, h6Var, i7, j3, y12, false, new v10() { // from class: bi.y2
             @Override // org.telegram.messenger.v10
             public final void a(Object obj2, Object obj3) {
                 h6 h6Var2 = (h6) obj2;

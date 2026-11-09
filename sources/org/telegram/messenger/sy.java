@@ -5,7 +5,7 @@ import java.util.HashMap;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class sy {
     public ArrayList A;
@@ -94,9 +94,9 @@ public final class sy {
                 message.send_state = 2;
                 message.errorAllowedPriceStars = 0L;
                 message.errorNewPriceStars = 0L;
-                gzVar.getNotificationCenter().k(i10, Integer.valueOf(ijVar.f1()));
-                gzVar.d0(ijVar.f1());
-                gzVar.j0(ijVar.f1(), this.H);
+                gzVar.getNotificationCenter().k(i10, Integer.valueOf(ijVar.e1()));
+                gzVar.d0(ijVar.e1());
+                gzVar.j0(ijVar.e1(), this.H);
             }
             gzVar.a.remove("group_" + this.F);
         } else {
@@ -107,9 +107,9 @@ public final class sy {
             message2.send_state = 2;
             message2.errorAllowedPriceStars = 0L;
             message2.errorNewPriceStars = 0L;
-            gzVar.getNotificationCenter().k(i10, Integer.valueOf(this.m.f1()));
-            gzVar.d0(this.m.f1());
-            gzVar.j0(this.m.f1(), this.H);
+            gzVar.getNotificationCenter().k(i10, Integer.valueOf(this.m.e1()));
+            gzVar.d0(this.m.e1());
+            gzVar.j0(this.m.e1(), this.H);
         }
         d();
     }

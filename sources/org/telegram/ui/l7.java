@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.regex.Pattern;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class l7 extends g7 {
     public final ArrayList n;
@@ -69,6 +69,6 @@ public final class l7 extends g7 {
         k7 k7Var = new k7(this, viewGroup.getContext(), 0);
         k7Var.e = 2;
         k7Var.b.addView(new org.telegram.ui.Cells.h7(3, viewGroup.getContext(), null));
-        return new org.telegram.ui.Components.xi0(k7Var);
+        return new org.telegram.ui.Components.yi0(k7Var);
     }
 }

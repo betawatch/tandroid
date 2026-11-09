@@ -5,7 +5,7 @@ import android.os.Handler;
 import java.util.concurrent.Callable;
 import org.webrtc.VideoFrame;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public class TextureBufferImpl implements VideoFrame.TextureBuffer {
     private final int height;
@@ -20,7 +20,7 @@ public class TextureBufferImpl implements VideoFrame.TextureBuffer {
     private final int width;
     private final YuvConverter yuvConverter;
 
-    /* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+    /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
     public interface RefCountMonitor {
         void onDestroy(TextureBufferImpl textureBufferImpl);
 
@@ -69,7 +69,7 @@ public class TextureBufferImpl implements VideoFrame.TextureBuffer {
 
     @Override // org.webrtc.VideoFrame.Buffer
     public final /* synthetic */ int getBufferType() {
-        return a0.a(this);
+        return z.a(this);
     }
 
     @Override // org.webrtc.VideoFrame.Buffer
@@ -129,7 +129,7 @@ public class TextureBufferImpl implements VideoFrame.TextureBuffer {
 
     @Override // org.webrtc.VideoFrame.Buffer
     public VideoFrame.I420Buffer toI420() {
-        return (VideoFrame.I420Buffer) ThreadUtils.invokeAtFrontUninterruptibly(this.toI420Handler, new Callable() { // from class: org.webrtc.t
+        return (VideoFrame.I420Buffer) ThreadUtils.invokeAtFrontUninterruptibly(this.toI420Handler, new Callable() { // from class: org.webrtc.s
             @Override // java.util.concurrent.Callable
             public final Object call() {
                 VideoFrame.I420Buffer lambda$toI420$1;
@@ -158,7 +158,7 @@ public class TextureBufferImpl implements VideoFrame.TextureBuffer {
         this.transformMatrix = matrix;
         this.toI420Handler = handler;
         this.yuvConverter = yuvConverter;
-        this.refCountDelegate = new RefCountDelegate(new s(0, this, refCountMonitor));
+        this.refCountDelegate = new RefCountDelegate(new r(0, this, refCountMonitor));
         this.refCountMonitor = refCountMonitor;
     }
 

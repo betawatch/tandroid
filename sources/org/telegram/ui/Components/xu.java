@@ -14,9 +14,9 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public class xu extends ViewGroup implements org.telegram.ui.ActionBar.a6 {
+public class xu extends ViewGroup implements org.telegram.ui.ActionBar.b6 {
     public boolean D;
     public Boolean E;
     public float F;
@@ -32,7 +32,7 @@ public class xu extends ViewGroup implements org.telegram.ui.ActionBar.a6 {
     public boolean b;
     public final boolean c;
     public final l9 d;
-    public final zg0 e;
+    public final ah0 e;
     public final ug.z0 f;
     public final boolean h;
     public final boolean n;
@@ -50,13 +50,13 @@ public class xu extends ViewGroup implements org.telegram.ui.ActionBar.a6 {
         this.M = -1.0f;
         this.h = true;
         this.n = false;
-        setBackground(org.telegram.ui.ActionBar.k6.O(bvVar.k(), 0, 0));
-        zg0 zg0Var = new zg0(i7, org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(24.0f), false, null);
-        this.e = zg0Var;
-        zg0Var.setBounds(org.telegram.messenger.g0.L(3.0f), org.telegram.messenger.g0.L(3.0f), org.telegram.messenger.g0.L(27.0f), org.telegram.messenger.g0.L(27.0f));
-        zg0Var.R(this);
-        zg0Var.J(true);
-        zg0Var.start();
+        setBackground(org.telegram.ui.ActionBar.l6.O(bvVar.k(), 0, 0));
+        ah0 ah0Var = new ah0(i7, org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(24.0f), false, null);
+        this.e = ah0Var;
+        ah0Var.setBounds(org.telegram.messenger.g0.L(3.0f), org.telegram.messenger.g0.L(3.0f), org.telegram.messenger.g0.L(27.0f), org.telegram.messenger.g0.L(27.0f));
+        ah0Var.R(this);
+        ah0Var.J(true);
+        ah0Var.start();
         d();
     }
 
@@ -72,9 +72,9 @@ public class xu extends ViewGroup implements org.telegram.ui.ActionBar.a6 {
             l9Var.setColorFilter(porterDuffColorFilter);
             l9Var.invalidate();
         }
-        zg0 zg0Var = this.e;
-        if (zg0Var != null) {
-            zg0Var.setColorFilter(porterDuffColorFilter);
+        ah0 ah0Var = this.e;
+        if (ah0Var != null) {
+            ah0Var.setColorFilter(porterDuffColorFilter);
             invalidate();
         }
     }
@@ -99,11 +99,11 @@ public class xu extends ViewGroup implements org.telegram.ui.ActionBar.a6 {
         z0Var.setImageDrawable(mutate);
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.k6.Bf));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.k6.Df));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.k6.Kl));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.l6.Bf));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.l6.Df));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.l6.Kl));
     }
 
     public final void b() {
@@ -192,23 +192,23 @@ public class xu extends ViewGroup implements org.telegram.ui.ActionBar.a6 {
         Drawable background = getBackground();
         bv bvVar = this.N;
         int k10 = bvVar.k();
-        org.telegram.ui.ActionBar.f6 f6Var = bvVar.w;
-        org.telegram.ui.ActionBar.k6.H1(background, k10, false);
+        org.telegram.ui.ActionBar.g6 g6Var = bvVar.w;
+        org.telegram.ui.ActionBar.l6.H1(background, k10, false);
         if (bvVar.P) {
-            setColor(i0.a.o(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Kl, f6Var), (int) (org.telegram.messenger.g0.T1(0.4f, 0.8f, this.G) * 255.0f)));
+            setColor(i0.a.o(org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.Kl, g6Var), (int) (org.telegram.messenger.g0.T1(0.4f, 0.8f, this.G) * 255.0f)));
         } else {
-            setColor(i0.a.f(this.G, org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Bf, f6Var), org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Df, f6Var)));
+            setColor(i0.a.f(this.G, org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.Bf, g6Var), org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.Df, g6Var)));
         }
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
-        zg0 zg0Var = this.e;
-        if (zg0Var == null || !this.D) {
+        ah0 ah0Var = this.e;
+        if (ah0Var == null || !this.D) {
             return;
         }
-        zg0Var.draw(canvas);
+        ah0Var.draw(canvas);
     }
 
     @Override // android.view.ViewGroup
@@ -338,7 +338,7 @@ public class xu extends ViewGroup implements org.telegram.ui.ActionBar.a6 {
         }
         Boolean bool = this.E;
         if (bool != null && !bool.booleanValue()) {
-            String M0 = org.telegram.messenger.id.M0(2131750832, null);
+            String M0 = org.telegram.messenger.id.M0(2131750831, null);
             if (contentDescription == null) {
                 contentDescription = M0;
             } else {
@@ -457,12 +457,12 @@ public class xu extends ViewGroup implements org.telegram.ui.ActionBar.a6 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
         bv bvVar = this.N;
         try {
-            int w02 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Bf, bvVar.w);
-            int w03 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Df, bvVar.w);
+            int w02 = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.Bf, bvVar.w);
+            int w03 = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.Df, bvVar.w);
             int k10 = bvVar.k();
             if (w02 == this.J && w03 == this.K && k10 == this.L && this.M == this.G) {
                 return;
@@ -494,7 +494,7 @@ public class xu extends ViewGroup implements org.telegram.ui.ActionBar.a6 {
         this.h = false;
         this.n = z9;
         if (z9) {
-            setBackground(org.telegram.ui.ActionBar.k6.a0(bvVar.k(), 8, 8));
+            setBackground(org.telegram.ui.ActionBar.l6.a0(bvVar.k(), 8, 8));
         }
         l9 l9Var = new l9(context);
         this.d = l9Var;
@@ -540,13 +540,13 @@ public class xu extends ViewGroup implements org.telegram.ui.ActionBar.a6 {
         this.b = true;
         this.h = false;
         this.n = false;
-        di.c4 c4Var = new di.c4(8, context, this);
-        this.d = c4Var;
-        c4Var.x = false;
+        di.d4 d4Var = new di.d4(8, context, this);
+        this.d = d4Var;
+        d4Var.x = false;
         this.r = Long.valueOf(j3);
         this.c = true;
-        c4Var.setColorFilter(bvVar.getEmojiColorFilter());
-        addView(c4Var);
+        d4Var.setColorFilter(bvVar.getEmojiColorFilter());
+        addView(d4Var);
         int i7 = ug.z0.L;
         wu wuVar = new wu(1, context, bvVar.w);
         this.f = wuVar;

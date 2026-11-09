@@ -1,6 +1,6 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ta implements r1.c {
     public final /* synthetic */ int a;
@@ -35,38 +35,38 @@ public final /* synthetic */ class ta implements r1.c {
                 ikVar.m0();
                 break;
             case 3:
-                bn0 bn0Var = (bn0) this.b;
-                bn0Var.q = false;
-                bn0Var.dismiss();
+                cn0 cn0Var = (cn0) this.b;
+                cn0Var.q = false;
+                cn0Var.dismiss();
                 break;
             case 4:
-                cn0 cn0Var = (cn0) this.b;
-                cn0Var.s = false;
-                cn0Var.r = false;
+                dn0 dn0Var = (dn0) this.b;
+                dn0Var.s = false;
+                dn0Var.r = false;
                 if (!z9) {
                     gVar.d();
                 }
-                if (gVar == cn0Var.f) {
-                    cn0Var.f = null;
+                if (gVar == dn0Var.f) {
+                    dn0Var.f = null;
                     break;
                 }
                 break;
             case 5:
-                mo0 mo0Var = (mo0) this.b;
-                mo0Var.w1.setVisibility(8);
-                mo0Var.r2.setVisibility(8);
-                ko0 ko0Var = mo0Var.D1;
-                ko0Var.f = null;
-                ko0Var.f();
-                mo0Var.t2 = null;
-                mo0Var.E2 = false;
+                no0 no0Var = (no0) this.b;
+                no0Var.w1.setVisibility(8);
+                no0Var.r2.setVisibility(8);
+                lo0 lo0Var = no0Var.D1;
+                lo0Var.f = null;
+                lo0Var.f();
+                no0Var.t2 = null;
+                no0Var.E2 = false;
                 break;
             default:
-                mo0 mo0Var2 = ((vn0) this.b).d;
-                mo0Var2.x1.setVisibility(8);
-                mo0Var2.y1.setVisibility(8);
-                mo0Var2.q2.setVisibility(8);
-                mo0Var2.t2 = null;
+                no0 no0Var2 = ((wn0) this.b).d;
+                no0Var2.x1.setVisibility(8);
+                no0Var2.y1.setVisibility(8);
+                no0Var2.q2.setVisibility(8);
+                no0Var2.t2 = null;
                 break;
         }
     }

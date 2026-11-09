@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import android.util.SparseArray;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class xs implements Runnable {
     public final /* synthetic */ int a;
@@ -53,17 +53,17 @@ public final /* synthetic */ class xs implements Runnable {
                 boolean z9 = false;
                 while (i11 < arrayList.size()) {
                     ij ijVar = (ij) arrayList.get(i11);
-                    if (ijVar.J && Math.abs(ijVar.f1()) == i10) {
+                    if (ijVar.J && Math.abs(ijVar.e1()) == i10) {
                         arrayList.remove(i11);
                         SparseArray sparseArray = (SparseArray) hVar.f(ij.B0(ijVar.k));
                         if (sparseArray != null) {
-                            sparseArray.remove(ijVar.f1());
+                            sparseArray.remove(ijVar.e1());
                         }
                         if (sparseArray != null && sparseArray.size() <= 0) {
                             hVar.l(ij.B0(ijVar.k));
                         }
                         ArrayList arrayList2 = new ArrayList();
-                        arrayList2.add(Integer.valueOf(ijVar.f1()));
+                        arrayList2.add(Integer.valueOf(ijVar.e1()));
                         dtVar.getMessagesStorage().E(arrayList2, ij.B0(ijVar.k));
                         i11--;
                         z9 = true;

@@ -17,7 +17,7 @@ import java.util.concurrent.CountDownLatch;
 import org.telegram.tgnet.TLRPC;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class s8 implements j2.h, j7 {
     public static final ConcurrentHashMap H = new ConcurrentHashMap();
@@ -260,9 +260,9 @@ public final class s8 implements j2.h, j7 {
                     StringBuilder sb2 = new StringBuilder("FileStreamLoadOperation ");
                     sb2.append(this.s.id);
                     sb2.append(" ");
-                    sb2.append(ij.i2(this.s));
+                    sb2.append(ij.h2(this.s));
                     sb2.append("x");
-                    sb2.append(ij.i2(this.s));
+                    sb2.append(ij.h2(this.s));
                     sb2.append(" mime_type=");
                     sb2.append(this.s.mime_type);
                     sb2.append(" codec=");
@@ -296,9 +296,9 @@ public final class s8 implements j2.h, j7 {
         StringBuilder sb22 = new StringBuilder("FileStreamLoadOperation ");
         sb22.append(this.s.id);
         sb22.append(" ");
-        sb22.append(ij.i2(this.s));
+        sb22.append(ij.h2(this.s));
         sb22.append("x");
-        sb22.append(ij.i2(this.s));
+        sb22.append(ij.h2(this.s));
         sb22.append(" mime_type=");
         sb22.append(this.s.mime_type);
         sb22.append(" codec=");

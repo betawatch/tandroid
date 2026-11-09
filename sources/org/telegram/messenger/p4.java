@@ -7,7 +7,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class p4 implements RequestDelegate {
     public final /* synthetic */ int a = 0;
@@ -62,7 +62,7 @@ public final /* synthetic */ class p4 implements RequestDelegate {
                 }
                 break;
             case 1:
-                g0.h3(new gy(0, (gz) this.d, tLObject, (TLRPC.TL_messages_requestUrlAuth) this.e, (org.telegram.ui.an) this.f, (String) this.b, this.c));
+                g0.h3(new gy(0, (gz) this.d, tLObject, (TLRPC.TL_messages_requestUrlAuth) this.e, (org.telegram.ui.cn) this.f, (String) this.b, this.c));
                 break;
             default:
                 gz gzVar = (gz) this.d;
@@ -114,10 +114,10 @@ public final /* synthetic */ class p4 implements RequestDelegate {
         this.b = f2Var;
     }
 
-    public /* synthetic */ p4(gz gzVar, TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, org.telegram.ui.an anVar, String str, boolean z9) {
+    public /* synthetic */ p4(gz gzVar, TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, org.telegram.ui.cn cnVar, String str, boolean z9) {
         this.d = gzVar;
         this.e = tL_messages_requestUrlAuth;
-        this.f = anVar;
+        this.f = cnVar;
         this.b = str;
         this.c = z9;
     }

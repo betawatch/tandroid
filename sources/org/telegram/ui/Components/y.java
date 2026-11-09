@@ -5,34 +5,34 @@ import android.view.View;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class y extends org.telegram.ui.q11 {
-    public final /* synthetic */ org.telegram.ui.h11[] e2;
+public final class y extends org.telegram.ui.s11 {
+    public final /* synthetic */ org.telegram.ui.j11[] e2;
     public final /* synthetic */ a0 f2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y(a0 a0Var, Context context, Integer num, org.telegram.ui.ActionBar.f6 f6Var, org.telegram.ui.h11[] h11VarArr) {
-        super(null, context, true, num, 15, f6Var);
+    public y(a0 a0Var, Context context, Integer num, org.telegram.ui.ActionBar.g6 g6Var, org.telegram.ui.j11[] j11VarArr) {
+        super(null, context, true, num, 15, g6Var);
         this.f2 = a0Var;
-        this.e2 = h11VarArr;
+        this.e2 = j11VarArr;
     }
 
-    @Override // org.telegram.ui.q11
+    @Override // org.telegram.ui.s11
     public final boolean F(TL_stars.TL_starGiftUnique tL_starGiftUnique) {
         return tL_starGiftUnique == null || bi.ea.y(this.f2.a, false).n(tL_starGiftUnique.id) == null || org.telegram.messenger.qp.e1().getInt("statusgiftpage", 0) >= 2;
     }
 
-    @Override // org.telegram.ui.q11
+    @Override // org.telegram.ui.s11
     public final void p(View view, Long l10, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
         a0 a0Var = this.f2;
         a0Var.Z1 = l10;
         a0Var.f1();
         a0Var.e1();
-        org.telegram.ui.h11 h11Var = this.e2[0];
-        if (h11Var != null) {
+        org.telegram.ui.j11 j11Var = this.e2[0];
+        if (j11Var != null) {
             a0Var.a2 = null;
-            h11Var.dismiss();
+            j11Var.dismiss();
         }
     }
 }

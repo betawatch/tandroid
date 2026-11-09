@@ -17,13 +17,13 @@ import android.view.View;
 import fi.m3;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
 import org.telegram.ui.Components.iy;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.t5;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class r extends View {
     public final /* synthetic */ LimitPreviewView D;
@@ -174,7 +174,7 @@ public final class r extends View {
             if (((Paint) d2.d) == null) {
                 d2.d = new Paint(1);
             }
-            ((Paint) d2.d).setColor(k6.x0(null, k6.Ci, false));
+            ((Paint) d2.d).setColor(l6.x0(null, l6.Ci, false));
             canvas.drawRoundRect(rectF, f10, f10, (Paint) d2.d);
         } else {
             if (this.w) {

@@ -4,7 +4,7 @@ import android.graphics.SurfaceTexture;
 import android.view.Surface;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public interface EglBase {
     public static final int EGL_OPENGL_ES2_BIT = 4;
@@ -17,7 +17,7 @@ public interface EglBase {
     public static final int[] CONFIG_PIXEL_RGBA_BUFFER = e.a().setHasAlphaChannel(true).setSupportsPixelBuffer(true).createConfigAttributes();
     public static final int[] CONFIG_RECORDABLE = e.a().setIsRecordable(true).createConfigAttributes();
 
-    /* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+    /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
     public static class ConfigBuilder {
         private boolean hasAlphaChannel;
         private boolean isRecordable;
@@ -81,7 +81,7 @@ public interface EglBase {
         }
     }
 
-    /* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+    /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
     public interface Context {
         public static final long NO_CONTEXT = 0;
 

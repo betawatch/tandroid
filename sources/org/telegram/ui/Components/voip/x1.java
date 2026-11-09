@@ -3,11 +3,11 @@ package org.telegram.ui.Components.voip;
 import android.app.Activity;
 import android.content.Context;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.v60;
+import org.telegram.ui.Components.w60;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class x1 extends v60 {
+public final class x1 extends w60 {
     public final /* synthetic */ TLRPC.User j1;
     public final /* synthetic */ TLRPC.Chat k1;
     public final /* synthetic */ String l1;
@@ -36,7 +36,7 @@ public final class x1 extends v60 {
         this.t1 = z12;
     }
 
-    @Override // org.telegram.ui.Components.v60
+    @Override // org.telegram.ui.Components.w60
     public final void I0() {
         y1.b(this.j1, this.k1, this.l1, this.m1, false, this.n1, this.o1, this.p1, this.q1, this.r1, this.s1, false, true, this.t1);
     }

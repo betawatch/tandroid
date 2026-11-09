@@ -5,7 +5,7 @@ import android.content.Context;
 import android.view.OrientationEventListener;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class pt extends OrientationEventListener {
     public final /* synthetic */ int a;
@@ -21,14 +21,14 @@ public final class pt extends OrientationEventListener {
     @Override // android.view.OrientationEventListener
     public final void onOrientationChanged(int i7) {
         Activity activity;
-        fe0 fe0Var;
+        ge0 ge0Var;
         Activity activity2;
         int i10;
         switch (this.a) {
             case 0:
                 wt wtVar = (wt) this.b;
-                l71 l71Var = wtVar.j1;
-                if (wtVar.w1 != null && l71Var.getVisibility() == 0 && (activity = wtVar.p1) != null && l71Var.T && wtVar.D1) {
+                m71 m71Var = wtVar.j1;
+                if (wtVar.w1 != null && m71Var.getVisibility() == 0 && (activity = wtVar.p1) != null && m71Var.T && wtVar.D1) {
                     if (i7 >= 240 && i7 <= 300) {
                         wtVar.E1 = true;
                         break;
@@ -44,7 +44,7 @@ public final class pt extends OrientationEventListener {
                 break;
             default:
                 PhotoViewer photoViewer = (PhotoViewer) this.b;
-                if (photoViewer.V3 != null && (fe0Var = photoViewer.y2) != null && fe0Var.getVisibility() == 0 && (activity2 = photoViewer.D) != null && (i10 = photoViewer.X3) != 0) {
+                if (photoViewer.V3 != null && (ge0Var = photoViewer.y2) != null && ge0Var.getVisibility() == 0 && (activity2 = photoViewer.D) != null && (i10 = photoViewer.X3) != 0) {
                     if (i10 != 1) {
                         if (i7 > 0 && (i7 >= 330 || i7 <= 30)) {
                             photoViewer.Y3 = true;

@@ -1,84 +1,31 @@
 package org.telegram.ui;
 
-import android.util.SparseIntArray;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class ue0 extends v4.o {
-    public int b;
-    public int c;
-    public int d;
-    public int e;
-    public int f;
-    public int g;
-    public int h;
-    public final SparseIntArray i = new SparseIntArray();
-    public final SparseIntArray j = new SparseIntArray();
-    public final ArrayList k = new ArrayList();
-    public final ArrayList l = new ArrayList();
-    public final /* synthetic */ cf0 m;
+public final class ue0 implements Runnable {
+    public final /* synthetic */ ef0 a;
 
-    public ue0(cf0 cf0Var) {
-        this.m = cf0Var;
+    public ue0(ef0 ef0Var) {
+        this.a = ef0Var;
     }
 
-    public static void g(int i7, int i10, SparseIntArray sparseIntArray) {
-        if (i10 >= 0) {
-            sparseIntArray.put(i10, i7);
+    @Override // java.lang.Runnable
+    public final void run() {
+        ef0 ef0Var = this.a;
+        if (ef0Var.b == null) {
+            return;
         }
-    }
-
-    @Override // v4.o
-    public final boolean a(int i7, int i10) {
-        return b(i7, i10);
-    }
-
-    @Override // v4.o
-    public final boolean b(int i7, int i10) {
-        int i11;
-        int i12;
-        int i13 = this.c;
-        cf0 cf0Var = this.m;
-        if (((i7 >= i13 && i7 < this.d) || (i7 >= this.e && i7 < this.f)) && ((i10 >= (i12 = cf0Var.D) && i10 < cf0Var.E) || (i10 >= cf0Var.H && i10 < cf0Var.I))) {
-            TLRPC.TL_chatInviteExported tL_chatInviteExported = (i10 < i12 || i10 >= cf0Var.E) ? (TLRPC.TL_chatInviteExported) cf0Var.j0.get(i10 - cf0Var.H) : (TLRPC.TL_chatInviteExported) cf0Var.i0.get(i10 - i12);
-            int i14 = this.c;
-            return ((i7 < i14 || i7 >= this.d) ? (TLRPC.TL_chatInviteExported) this.l.get(i7 - this.e) : (TLRPC.TL_chatInviteExported) this.k.get(i7 - i14)).link.equals(tL_chatInviteExported.link);
+        for (int i7 = 0; i7 < ef0Var.b.getChildCount(); i7++) {
+            View childAt = ef0Var.b.getChildAt(i7);
+            if (childAt instanceof bf0) {
+                bf0 bf0Var = (bf0) childAt;
+                if (bf0Var.I) {
+                    bf0Var.b(bf0Var.n, bf0Var.r);
+                }
+            }
         }
-        int i15 = this.g;
-        if (i7 >= i15 && i7 < this.h && i10 >= (i11 = cf0Var.U) && i10 < cf0Var.V) {
-            return i7 - i15 == i10 - i11;
-        }
-        int i16 = this.i.get(i7, -1);
-        return i16 >= 0 && i16 == this.j.get(i10, -1);
-    }
-
-    @Override // v4.o
-    public final int d() {
-        return this.m.X;
-    }
-
-    @Override // v4.o
-    public final int e() {
-        return this.b;
-    }
-
-    public final void f(SparseIntArray sparseIntArray) {
-        sparseIntArray.clear();
-        cf0 cf0Var = this.m;
-        g(1, cf0Var.r, sparseIntArray);
-        g(2, cf0Var.s, sparseIntArray);
-        g(3, cf0Var.w, sparseIntArray);
-        g(4, cf0Var.x, sparseIntArray);
-        g(5, cf0Var.y, sparseIntArray);
-        g(6, cf0Var.L, sparseIntArray);
-        g(7, cf0Var.N, sparseIntArray);
-        g(8, cf0Var.O, sparseIntArray);
-        g(9, cf0Var.Q, sparseIntArray);
-        g(10, cf0Var.R, sparseIntArray);
-        g(11, cf0Var.S, sparseIntArray);
-        g(12, cf0Var.P, sparseIntArray);
-        g(13, cf0Var.F, sparseIntArray);
+        org.telegram.messenger.g0.i3(this, 500L);
     }
 }

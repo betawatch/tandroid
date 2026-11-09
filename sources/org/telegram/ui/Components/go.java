@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class go implements org.telegram.messenger.c20 {
     public final /* synthetic */ int a;
@@ -27,8 +27,8 @@ public final /* synthetic */ class go implements org.telegram.messenger.c20 {
                 org.telegram.messenger.e3 e3Var = (org.telegram.messenger.e3) obj;
                 vo voVar2 = this.b;
                 if (voVar2.getContext() != null) {
-                    org.telegram.ui.an anVar = voVar2.r1;
-                    ug.i0 i0Var = new ug.i0(22, voVar2.a, voVar2.getContext(), anVar, voVar2.I0);
+                    org.telegram.ui.cn cnVar = voVar2.r1;
+                    ug.i0 i0Var = new ug.i0(22, voVar2.a, voVar2.getContext(), cnVar, voVar2.I0);
                     i0Var.A1(e3Var);
                     i0Var.z1(voVar2.V1, true);
                     i0Var.B1(voVar2.r1.a());

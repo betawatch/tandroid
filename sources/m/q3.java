@@ -23,10 +23,10 @@ import java.util.LinkedList;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicMarkableReference;
 import org.telegram.messenger.ha;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class q3 {
     public Object a;
@@ -130,7 +130,7 @@ public final class q3 {
         this.b = eVar;
     }
 
-    public q3(Context context, f6 f6Var) {
+    public q3(Context context, g6 g6Var) {
         TextPaint textPaint = new TextPaint(1);
         this.a = textPaint;
         Paint paint = new Paint();
@@ -147,6 +147,6 @@ public final class q3 {
         Drawable mutate2 = context.getDrawable(org.telegram.messenger.beta.R.drawable.filled_views).mutate();
         this.d = mutate2;
         mutate2.setBounds(0, 0, (int) (mutate2.getIntrinsicWidth() * 0.7f), (int) (mutate2.getIntrinsicHeight() * 0.7f));
-        paint.setColor(k6.w0(k6.zi, f6Var));
+        paint.setColor(l6.w0(l6.zi, g6Var));
     }
 }

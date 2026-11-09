@@ -1,12 +1,12 @@
 package org.telegram.ui.Stories.recorder;
 
 import ai.e0;
-import di.s7;
+import di.f8;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.v10;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public class FfmpegAudioWaveformLoader {
     private v10 onChunkReceived;
@@ -36,6 +36,6 @@ public class FfmpegAudioWaveformLoader {
     }
 
     public void destroy() {
-        Utilities.h.c(new s7(this, 22));
+        Utilities.h.c(new f8(this, 21));
     }
 }

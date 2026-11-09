@@ -7,7 +7,7 @@ import android.view.Menu;
 import android.view.MotionEvent;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class ft extends zs {
     public Drawable Y1;
@@ -15,8 +15,8 @@ public final class ft extends zs {
     public final /* synthetic */ lt a2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ft(lt ltVar, Context context, org.telegram.ui.ActionBar.f6 f6Var, int i7) {
-        super(context, f6Var);
+    public ft(lt ltVar, Context context, org.telegram.ui.ActionBar.g6 g6Var, int i7) {
+        super(context, g6Var);
         this.a2 = ltVar;
         this.Z1 = i7;
         this.Y1 = null;
@@ -45,7 +45,7 @@ public final class ft extends zs {
     public final void o(ActionMode actionMode, Menu menu) {
         lt ltVar = this.a2;
         if (ltVar.a()) {
-            org.telegram.ui.an.A8(menu, null, ltVar.L == 3, true, true, true);
+            org.telegram.ui.cn.B8(menu, null, ltVar.L == 3, true, true, true);
         } else {
             ltVar.i(actionMode, menu);
         }
@@ -55,8 +55,8 @@ public final class ft extends zs {
     public final void onSelectionChanged(int i7, int i10) {
         super.onSelectionChanged(i7, i10);
         lt ltVar = this.a2;
-        xj0 xj0Var = ltVar.c;
-        if (xj0Var != null) {
+        yj0 yj0Var = ltVar.c;
+        if (yj0Var != null) {
             boolean z9 = false;
             boolean z10 = i10 != i7;
             if (ltVar.a() && z10) {
@@ -66,10 +66,10 @@ public final class ft extends zs {
             if (ltVar.n != z9) {
                 ltVar.n = z9;
                 if (z9) {
-                    this.Y1 = xj0Var.d;
-                    xj0Var.a(R.drawable.msg_edit, true);
+                    this.Y1 = yj0Var.d;
+                    yj0Var.a(R.drawable.msg_edit, true);
                 } else {
-                    xj0Var.b(this.Y1, true);
+                    yj0Var.b(this.Y1, true);
                     this.Y1 = null;
                 }
             }

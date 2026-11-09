@@ -48,7 +48,6 @@ import e2.m1;
 import h2.j;
 import h9.f0;
 import h9.i0;
-import h9.t1;
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -78,27 +77,28 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.ActionBar.r1;
-import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.ActionBar.s6;
+import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.Cells.t0;
-import org.telegram.ui.Components.cj0;
 import org.telegram.ui.Components.dj0;
-import org.telegram.ui.Components.k60;
+import org.telegram.ui.Components.ej0;
+import org.telegram.ui.Components.l60;
 import org.telegram.ui.Components.t4;
-import org.telegram.ui.Components.x31;
 import org.telegram.ui.Components.xp;
+import org.telegram.ui.Components.y31;
 import org.telegram.ui.NotificationsCustomSettingsActivity;
-import org.telegram.ui.Wallet.u1;
-import org.telegram.ui.gl0;
-import org.telegram.ui.pv;
-import org.telegram.ui.ww;
+import org.telegram.ui.Wallet.t1;
+import org.telegram.ui.il0;
+import org.telegram.ui.rv;
+import org.telegram.ui.yw;
 import v4.l0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class c implements OnSuccessListener, p, Continuation, OnCompleteListener, a20, t4, r1, bg.p, te.b, gl0, j, i, com.google.android.gms.common.api.internal.p, dj0, w10, cj0 {
+public final /* synthetic */ class c implements OnSuccessListener, p, Continuation, OnCompleteListener, a20, t4, r1, bg.p, te.b, il0, j, i, com.google.android.gms.common.api.internal.p, ej0, w10, dj0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -166,7 +166,7 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
         }
     }
 
-    @Override // org.telegram.ui.gl0
+    @Override // org.telegram.ui.il0
     public void b(int i7) {
         switch (this.a) {
             case 16:
@@ -182,14 +182,14 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
                 }
                 break;
             case 17:
-                u1 u1Var = (u1) this.b;
+                t1 t1Var = (t1) this.b;
                 if (i7 != 1) {
                     if (i7 != 3) {
-                        u1Var.a(Boolean.FALSE, null);
+                        t1Var.a(Boolean.FALSE, null);
                         break;
                     }
                 } else {
-                    u1Var.a(Boolean.TRUE, null);
+                    t1Var.a(Boolean.TRUE, null);
                     break;
                 }
                 break;
@@ -218,7 +218,7 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
     /* JADX WARN: Removed duplicated region for block: B:54:0x021b  */
     /* JADX WARN: Removed duplicated region for block: B:81:0x02b5  */
     /* JADX WARN: Removed duplicated region for block: B:95:0x02b7  */
-    @Override // org.telegram.ui.Components.dj0
+    @Override // org.telegram.ui.Components.ej0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -235,53 +235,53 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
         xp xpVar;
         boolean z9;
         boolean z10;
-        k60 k60Var;
+        l60 l60Var;
         final int i17;
         int i18;
         Drawable drawable;
-        final pv pvVar = (pv) this.b;
+        final rv rvVar = (rv) this.b;
         final int i19 = 0;
-        if (pvVar.N == 0.0f && pvVar.n0 == 0.0f) {
+        if (rvVar.N == 0.0f && rvVar.n0 == 0.0f) {
             final long j3 = ((di.p) view).E;
-            ww wwVar = pvVar.O0;
-            i10 = ((f2) wwVar).currentAccount;
+            yw ywVar = rvVar.O0;
+            i10 = ((f2) ywVar).currentAccount;
             final int i20 = 1;
             ui.b0(i10).M0(true);
-            k60 H = k60.H(wwVar, view);
+            l60 H = l60.H(ywVar, view);
             H.z.set(0, g0.L(8.0f), 0, 0);
-            H.W(k6.e0(g0.L(12.0f), g0.L(12.0f), wwVar.getThemedColor(k6.d6)));
+            H.W(l6.e0(g0.L(12.0f), g0.L(12.0f), ywVar.getThemedColor(l6.d6)));
             H.a0(0.0f, g0.L(8.0f));
-            wwVar.L0 = H;
+            ywVar.L0 = H;
             if (!t10.A(j3)) {
                 try {
                     view.performHapticFeedback(0);
                 } catch (Exception unused) {
                 }
-                i11 = ((f2) wwVar).currentAccount;
+                i11 = ((f2) ywVar).currentAccount;
                 final int i21 = 2;
                 if (j3 != p10.i(i11).e()) {
-                    final TLRPC.User a22 = wwVar.getMessagesController().a2(Long.valueOf(j3));
-                    TLRPC.Chat M0 = wwVar.getMessagesController().M0(Long.valueOf(-j3));
+                    final TLRPC.User a22 = ywVar.getMessagesController().a2(Long.valueOf(j3));
+                    TLRPC.Chat M0 = ywVar.getMessagesController().M0(Long.valueOf(-j3));
                     String v = dt.v(j3, 0L, false);
-                    i12 = ((f2) wwVar).currentAccount;
+                    i12 = ((f2) ywVar).currentAccount;
                     boolean h02 = NotificationsCustomSettingsActivity.h0(i12, j3);
-                    i13 = ((f2) wwVar).currentAccount;
+                    i13 = ((f2) ywVar).currentAccount;
                     boolean D3 = qp.s1(i13).D3();
-                    i14 = ((f2) wwVar).currentAccount;
+                    i14 = ((f2) ywVar).currentAccount;
                     boolean q10 = p10.i(i14).q();
-                    i15 = ((f2) wwVar).currentAccount;
+                    i15 = ((f2) ywVar).currentAccount;
                     boolean L = qp.s1(i15).P1().L(j3);
-                    i16 = ((f2) wwVar).currentAccount;
+                    i16 = ((f2) ywVar).currentAccount;
                     boolean H2 = qp.s1(i16).P1().H(j3);
-                    if (D3 || j3 <= 0 || q10 || (drawable = pvVar.getContext().getDrawable(R.drawable.msg_gallery_locked2)) == null) {
+                    if (D3 || j3 <= 0 || q10 || (drawable = rvVar.getContext().getDrawable(R.drawable.msg_gallery_locked2)) == null) {
                         chat = M0;
                         str = v;
                         xpVar = null;
                     } else {
-                        Drawable drawable2 = pvVar.getContext().getDrawable(R.drawable.msg_stealth_locked);
+                        Drawable drawable2 = rvVar.getContext().getDrawable(R.drawable.msg_stealth_locked);
                         if (drawable2 != null) {
                             chat = M0;
-                            r6.y(pvVar, drawable2, k6.F8, wwVar.getResourceProvider(), PorterDuff.Mode.MULTIPLY);
+                            s6.x(rvVar, drawable2, l6.F8, ywVar.getResourceProvider(), PorterDuff.Mode.MULTIPLY);
                         } else {
                             chat = M0;
                         }
@@ -289,156 +289,156 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
                         drawable.setColorFilter(new PorterDuffColorFilter(i0.a.f(0.5f, -1, -16777216), PorterDuff.Mode.MULTIPLY));
                         xpVar = new xp(drawable2, drawable);
                     }
-                    if (j3 < 0 && wwVar.j4().j(j3)) {
+                    if (j3 < 0 && ywVar.j4().j(j3)) {
                         final int i22 = 4;
-                        wwVar.L0.b(R.drawable.msg_stories_add, null, id.M0(2131754384, null), k6.F8, k6.E8, new Runnable() { // from class: org.telegram.ui.lv
+                        ywVar.L0.b(R.drawable.msg_stories_add, null, id.M0(2131754384, null), l6.F8, l6.E8, new Runnable() { // from class: org.telegram.ui.nv
                             @Override // java.lang.Runnable
                             public final void run() {
                                 int i23;
                                 switch (i22) {
                                     case 0:
-                                        pvVar.O0.presentFragment(an.ra(j3));
+                                        rvVar.O0.presentFragment(cn.ta(j3));
                                         break;
                                     case 1:
-                                        org.telegram.messenger.g0.i3(new su(pvVar.O0, j3, !r2.q4(), 0), 200L);
+                                        org.telegram.messenger.g0.i3(new uu(rvVar.O0, j3, !r2.q4(), 0), 200L);
                                         break;
                                     case 2:
-                                        org.telegram.messenger.g0.i3(new su(pvVar.O0, j3, !r2.q4(), 0), 200L);
+                                        org.telegram.messenger.g0.i3(new uu(rvVar.O0, j3, !r2.q4(), 0), 200L);
                                         break;
                                     case 3:
-                                        ww wwVar2 = pvVar.O0;
-                                        i23 = ((org.telegram.ui.ActionBar.f2) wwVar2).currentAccount;
+                                        yw ywVar2 = rvVar.O0;
+                                        i23 = ((org.telegram.ui.ActionBar.f2) ywVar2).currentAccount;
                                         org.telegram.messenger.ui b02 = org.telegram.messenger.ui.b0(i23);
                                         long j10 = j3;
                                         b02.N1(j10);
-                                        wwVar2.getMessagesController().P1().l0(j10, true, false);
+                                        ywVar2.getMessagesController().P1().l0(j10, true, false);
                                         break;
                                     case 4:
-                                        pvVar.O0.E0.j(j3);
+                                        rvVar.O0.E0.j(j3);
                                         break;
                                     case 5:
-                                        pvVar.O0.presentFragment(an.ra(j3));
+                                        rvVar.O0.presentFragment(cn.ta(j3));
                                         break;
                                     default:
-                                        pvVar.O0.presentFragment(ProfileActivity.A4(j3));
+                                        rvVar.O0.presentFragment(ProfileActivity.D4(j3));
                                         break;
                                 }
                             }
                         });
                     }
                     if (a22 != null && !a22.contact) {
-                        i18 = ((f2) wwVar).currentAccount;
+                        i18 = ((f2) ywVar).currentAccount;
                         if (ui.b0(i18).G(j3)) {
                             z9 = true;
-                            k60 k60Var2 = wwVar.L0;
+                            l60 l60Var2 = ywVar.L0;
                             final int i23 = 5;
-                            k60Var2.l(R.drawable.msg_discussion, id.M0(2131745604, null), new Runnable() { // from class: org.telegram.ui.lv
+                            l60Var2.l(R.drawable.msg_discussion, id.M0(2131745601, null), new Runnable() { // from class: org.telegram.ui.nv
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     int i232;
                                     switch (i23) {
                                         case 0:
-                                            pvVar.O0.presentFragment(an.ra(j3));
+                                            rvVar.O0.presentFragment(cn.ta(j3));
                                             break;
                                         case 1:
-                                            org.telegram.messenger.g0.i3(new su(pvVar.O0, j3, !r2.q4(), 0), 200L);
+                                            org.telegram.messenger.g0.i3(new uu(rvVar.O0, j3, !r2.q4(), 0), 200L);
                                             break;
                                         case 2:
-                                            org.telegram.messenger.g0.i3(new su(pvVar.O0, j3, !r2.q4(), 0), 200L);
+                                            org.telegram.messenger.g0.i3(new uu(rvVar.O0, j3, !r2.q4(), 0), 200L);
                                             break;
                                         case 3:
-                                            ww wwVar2 = pvVar.O0;
-                                            i232 = ((org.telegram.ui.ActionBar.f2) wwVar2).currentAccount;
+                                            yw ywVar2 = rvVar.O0;
+                                            i232 = ((org.telegram.ui.ActionBar.f2) ywVar2).currentAccount;
                                             org.telegram.messenger.ui b02 = org.telegram.messenger.ui.b0(i232);
                                             long j10 = j3;
                                             b02.N1(j10);
-                                            wwVar2.getMessagesController().P1().l0(j10, true, false);
+                                            ywVar2.getMessagesController().P1().l0(j10, true, false);
                                             break;
                                         case 4:
-                                            pvVar.O0.E0.j(j3);
+                                            rvVar.O0.E0.j(j3);
                                             break;
                                         case 5:
-                                            pvVar.O0.presentFragment(an.ra(j3));
+                                            rvVar.O0.presentFragment(cn.ta(j3));
                                             break;
                                         default:
-                                            pvVar.O0.presentFragment(ProfileActivity.A4(j3));
+                                            rvVar.O0.presentFragment(ProfileActivity.D4(j3));
                                             break;
                                     }
                                 }
                             }, j3 <= 0);
                             final int i24 = 6;
-                            k60Var2.l(R.drawable.msg_openprofile, id.M0(2131747787, null), new Runnable() { // from class: org.telegram.ui.lv
+                            l60Var2.l(R.drawable.msg_openprofile, id.M0(2131747786, null), new Runnable() { // from class: org.telegram.ui.nv
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     int i232;
                                     switch (i24) {
                                         case 0:
-                                            pvVar.O0.presentFragment(an.ra(j3));
+                                            rvVar.O0.presentFragment(cn.ta(j3));
                                             break;
                                         case 1:
-                                            org.telegram.messenger.g0.i3(new su(pvVar.O0, j3, !r2.q4(), 0), 200L);
+                                            org.telegram.messenger.g0.i3(new uu(rvVar.O0, j3, !r2.q4(), 0), 200L);
                                             break;
                                         case 2:
-                                            org.telegram.messenger.g0.i3(new su(pvVar.O0, j3, !r2.q4(), 0), 200L);
+                                            org.telegram.messenger.g0.i3(new uu(rvVar.O0, j3, !r2.q4(), 0), 200L);
                                             break;
                                         case 3:
-                                            ww wwVar2 = pvVar.O0;
-                                            i232 = ((org.telegram.ui.ActionBar.f2) wwVar2).currentAccount;
+                                            yw ywVar2 = rvVar.O0;
+                                            i232 = ((org.telegram.ui.ActionBar.f2) ywVar2).currentAccount;
                                             org.telegram.messenger.ui b02 = org.telegram.messenger.ui.b0(i232);
                                             long j10 = j3;
                                             b02.N1(j10);
-                                            wwVar2.getMessagesController().P1().l0(j10, true, false);
+                                            ywVar2.getMessagesController().P1().l0(j10, true, false);
                                             break;
                                         case 4:
-                                            pvVar.O0.E0.j(j3);
+                                            rvVar.O0.E0.j(j3);
                                             break;
                                         case 5:
-                                            pvVar.O0.presentFragment(an.ra(j3));
+                                            rvVar.O0.presentFragment(cn.ta(j3));
                                             break;
                                         default:
-                                            pvVar.O0.presentFragment(ProfileActivity.A4(j3));
+                                            rvVar.O0.presentFragment(ProfileActivity.D4(j3));
                                             break;
                                     }
                                 }
                             }, j3 <= 0);
                             final int i25 = 0;
-                            k60Var2.l(R.drawable.msg_channel, id.M0(!t3.V(chat) ? 2131747812 : 2131747800, null), new Runnable() { // from class: org.telegram.ui.lv
+                            l60Var2.l(R.drawable.msg_channel, id.M0(!t3.V(chat) ? 2131747811 : 2131747799, null), new Runnable() { // from class: org.telegram.ui.nv
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     int i232;
                                     switch (i25) {
                                         case 0:
-                                            pvVar.O0.presentFragment(an.ra(j3));
+                                            rvVar.O0.presentFragment(cn.ta(j3));
                                             break;
                                         case 1:
-                                            org.telegram.messenger.g0.i3(new su(pvVar.O0, j3, !r2.q4(), 0), 200L);
+                                            org.telegram.messenger.g0.i3(new uu(rvVar.O0, j3, !r2.q4(), 0), 200L);
                                             break;
                                         case 2:
-                                            org.telegram.messenger.g0.i3(new su(pvVar.O0, j3, !r2.q4(), 0), 200L);
+                                            org.telegram.messenger.g0.i3(new uu(rvVar.O0, j3, !r2.q4(), 0), 200L);
                                             break;
                                         case 3:
-                                            ww wwVar2 = pvVar.O0;
-                                            i232 = ((org.telegram.ui.ActionBar.f2) wwVar2).currentAccount;
+                                            yw ywVar2 = rvVar.O0;
+                                            i232 = ((org.telegram.ui.ActionBar.f2) ywVar2).currentAccount;
                                             org.telegram.messenger.ui b02 = org.telegram.messenger.ui.b0(i232);
                                             long j10 = j3;
                                             b02.N1(j10);
-                                            wwVar2.getMessagesController().P1().l0(j10, true, false);
+                                            ywVar2.getMessagesController().P1().l0(j10, true, false);
                                             break;
                                         case 4:
-                                            pvVar.O0.E0.j(j3);
+                                            rvVar.O0.E0.j(j3);
                                             break;
                                         case 5:
-                                            pvVar.O0.presentFragment(an.ra(j3));
+                                            rvVar.O0.presentFragment(cn.ta(j3));
                                             break;
                                         default:
-                                            pvVar.O0.presentFragment(ProfileActivity.A4(j3));
+                                            rvVar.O0.presentFragment(ProfileActivity.D4(j3));
                                             break;
                                     }
                                 }
                             }, j3 >= 0);
                             final int i26 = 0;
                             final String str2 = str;
-                            k60Var2.l(R.drawable.msg_mute, id.M0(2131747864, null), new Runnable() { // from class: org.telegram.ui.mv
+                            l60Var2.l(R.drawable.msg_mute, id.M0(2131747863, null), new Runnable() { // from class: org.telegram.ui.ov
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     int i27;
@@ -447,38 +447,38 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
                                     int i29 = i26;
                                     TLRPC.User user = a22;
                                     String str3 = str2;
-                                    pv pvVar2 = pvVar;
+                                    rv rvVar2 = rvVar;
                                     switch (i29) {
                                         case 0:
-                                            ww wwVar2 = pvVar2.O0;
-                                            i27 = ((org.telegram.ui.ActionBar.f2) wwVar2).currentAccount;
+                                            yw ywVar2 = rvVar2.O0;
+                                            i27 = ((org.telegram.ui.ActionBar.f2) ywVar2).currentAccount;
                                             org.telegram.messenger.qp.s1(i27).d7.edit().putBoolean("stories_" + str3, false).apply();
-                                            wwVar2.getNotificationsController().c0(j3, 0L, true);
+                                            ywVar2.getNotificationsController().c0(j3, 0L, true);
                                             trim = user != null ? user.first_name.trim() : "";
                                             int indexOf = trim.indexOf(" ");
                                             if (indexOf > 0) {
                                                 trim = trim.substring(0, indexOf);
                                             }
-                                            org.telegram.ui.Components.hc.a0(wwVar2).V(Arrays.asList(user), org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0("NotificationsStoryMutedHint", null, 2131747863, trim)), null, null).j();
+                                            org.telegram.ui.Components.hc.a0(ywVar2).V(Arrays.asList(user), org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0("NotificationsStoryMutedHint", null, 2131747862, trim)), null, null).j();
                                             break;
                                         default:
-                                            ww wwVar3 = pvVar2.O0;
-                                            i28 = ((org.telegram.ui.ActionBar.f2) wwVar3).currentAccount;
+                                            yw ywVar3 = rvVar2.O0;
+                                            i28 = ((org.telegram.ui.ActionBar.f2) ywVar3).currentAccount;
                                             org.telegram.messenger.qp.s1(i28).d7.edit().putBoolean("stories_" + str3, true).apply();
-                                            wwVar3.getNotificationsController().c0(j3, 0L, true);
+                                            ywVar3.getNotificationsController().c0(j3, 0L, true);
                                             trim = user != null ? user.first_name.trim() : "";
                                             int indexOf2 = trim.indexOf(" ");
                                             if (indexOf2 > 0) {
                                                 trim = trim.substring(0, indexOf2);
                                             }
-                                            org.telegram.ui.Components.hc.a0(wwVar3).V(Arrays.asList(user), org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0("NotificationsStoryUnmutedHint", null, 2131747860, trim)), null, null).j();
+                                            org.telegram.ui.Components.hc.a0(ywVar3).V(Arrays.asList(user), org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0("NotificationsStoryUnmutedHint", null, 2131747859, trim)), null, null).j();
                                             break;
                                     }
                                 }
                             }, !h02 && j3 > 0);
-                            k60Var2.E();
+                            l60Var2.E();
                             final int i27 = 1;
-                            k60Var2.l(R.drawable.msg_unmute, id.M0(2131747861, null), new Runnable() { // from class: org.telegram.ui.mv
+                            l60Var2.l(R.drawable.msg_unmute, id.M0(2131747860, null), new Runnable() { // from class: org.telegram.ui.ov
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     int i272;
@@ -487,229 +487,229 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
                                     int i29 = i27;
                                     TLRPC.User user = a22;
                                     String str3 = str2;
-                                    pv pvVar2 = pvVar;
+                                    rv rvVar2 = rvVar;
                                     switch (i29) {
                                         case 0:
-                                            ww wwVar2 = pvVar2.O0;
-                                            i272 = ((org.telegram.ui.ActionBar.f2) wwVar2).currentAccount;
+                                            yw ywVar2 = rvVar2.O0;
+                                            i272 = ((org.telegram.ui.ActionBar.f2) ywVar2).currentAccount;
                                             org.telegram.messenger.qp.s1(i272).d7.edit().putBoolean("stories_" + str3, false).apply();
-                                            wwVar2.getNotificationsController().c0(j3, 0L, true);
+                                            ywVar2.getNotificationsController().c0(j3, 0L, true);
                                             trim = user != null ? user.first_name.trim() : "";
                                             int indexOf = trim.indexOf(" ");
                                             if (indexOf > 0) {
                                                 trim = trim.substring(0, indexOf);
                                             }
-                                            org.telegram.ui.Components.hc.a0(wwVar2).V(Arrays.asList(user), org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0("NotificationsStoryMutedHint", null, 2131747863, trim)), null, null).j();
+                                            org.telegram.ui.Components.hc.a0(ywVar2).V(Arrays.asList(user), org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0("NotificationsStoryMutedHint", null, 2131747862, trim)), null, null).j();
                                             break;
                                         default:
-                                            ww wwVar3 = pvVar2.O0;
-                                            i28 = ((org.telegram.ui.ActionBar.f2) wwVar3).currentAccount;
+                                            yw ywVar3 = rvVar2.O0;
+                                            i28 = ((org.telegram.ui.ActionBar.f2) ywVar3).currentAccount;
                                             org.telegram.messenger.qp.s1(i28).d7.edit().putBoolean("stories_" + str3, true).apply();
-                                            wwVar3.getNotificationsController().c0(j3, 0L, true);
+                                            ywVar3.getNotificationsController().c0(j3, 0L, true);
                                             trim = user != null ? user.first_name.trim() : "";
                                             int indexOf2 = trim.indexOf(" ");
                                             if (indexOf2 > 0) {
                                                 trim = trim.substring(0, indexOf2);
                                             }
-                                            org.telegram.ui.Components.hc.a0(wwVar3).V(Arrays.asList(user), org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0("NotificationsStoryUnmutedHint", null, 2131747860, trim)), null, null).j();
+                                            org.telegram.ui.Components.hc.a0(ywVar3).V(Arrays.asList(user), org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0("NotificationsStoryUnmutedHint", null, 2131747859, trim)), null, null).j();
                                             break;
                                     }
                                 }
                             }, h02 && j3 > 0);
-                            k60Var2.E();
+                            l60Var2.E();
                             final int i28 = 0;
-                            k60Var2.l(R.drawable.msg_stories_stealth2, id.M0(2131743565, null), new Runnable() { // from class: org.telegram.ui.nv
+                            l60Var2.l(R.drawable.msg_stories_stealth2, id.M0(2131743562, null), new Runnable() { // from class: org.telegram.ui.pv
                                 @Override // java.lang.Runnable
                                 public final void run() {
-                                    org.telegram.ui.ActionBar.f6 f6Var;
+                                    org.telegram.ui.ActionBar.g6 g6Var;
                                     int i29;
-                                    org.telegram.ui.ActionBar.f6 f6Var2;
+                                    org.telegram.ui.ActionBar.g6 g6Var2;
                                     switch (i28) {
                                         case 0:
-                                            pv pvVar2 = pvVar;
-                                            ww wwVar2 = pvVar2.O0;
+                                            rv rvVar2 = rvVar;
+                                            yw ywVar2 = rvVar2.O0;
                                             TL_stories.TL_storiesStealthMode tL_storiesStealthMode = org.telegram.messenger.qp.s1(org.telegram.messenger.p10.s0).P1().B;
                                             View view2 = view;
                                             if (tL_storiesStealthMode != null) {
-                                                i29 = ((org.telegram.ui.ActionBar.f2) wwVar2).currentAccount;
+                                                i29 = ((org.telegram.ui.ActionBar.f2) ywVar2).currentAccount;
                                                 if (ConnectionsManager.getInstance(i29).getCurrentTime() < tL_storiesStealthMode.active_until_date) {
                                                     if (view2 instanceof di.p) {
-                                                        wwVar2.E0.i((di.p) view2, false);
+                                                        ywVar2.E0.i((di.p) view2, false);
                                                         break;
                                                     }
                                                 }
                                             }
-                                            Context context = pvVar2.getContext();
-                                            f6Var = ((org.telegram.ui.ActionBar.f2) wwVar2).resourceProvider;
-                                            di.w5 w5Var = new di.w5(context, 0.0f, 1, f6Var);
-                                            w5Var.l1 = new ov(pvVar2, view2, 1);
-                                            wwVar2.showDialog(w5Var);
+                                            Context context = rvVar2.getContext();
+                                            g6Var = ((org.telegram.ui.ActionBar.f2) ywVar2).resourceProvider;
+                                            di.x5 x5Var = new di.x5(context, 0.0f, 1, g6Var);
+                                            x5Var.l1 = new qv(rvVar2, view2, 1);
+                                            ywVar2.showDialog(x5Var);
                                             break;
                                         default:
-                                            pv pvVar3 = pvVar;
-                                            Context context2 = pvVar3.getContext();
-                                            ww wwVar3 = pvVar3.O0;
-                                            f6Var2 = ((org.telegram.ui.ActionBar.f2) wwVar3).resourceProvider;
-                                            di.w5 w5Var2 = new di.w5(context2, 0.0f, 1, f6Var2);
-                                            w5Var2.l1 = new ov(pvVar3, view, 0);
-                                            wwVar3.showDialog(w5Var2);
+                                            rv rvVar3 = rvVar;
+                                            Context context2 = rvVar3.getContext();
+                                            yw ywVar3 = rvVar3.O0;
+                                            g6Var2 = ((org.telegram.ui.ActionBar.f2) ywVar3).resourceProvider;
+                                            di.x5 x5Var2 = new di.x5(context2, 0.0f, 1, g6Var2);
+                                            x5Var2.l1 = new qv(rvVar3, view, 0);
+                                            ywVar3.showDialog(x5Var2);
                                             break;
                                     }
                                 }
                             }, D3 && j3 > 0 && q10 && L && !H2);
-                            k60Var2.E();
+                            l60Var2.E();
                             z10 = D3 && j3 > 0 && !q10 && L && !H2;
-                            String M02 = id.M0(2131743565, null);
+                            String M02 = id.M0(2131743562, null);
                             final int i29 = 1;
-                            Runnable runnable = new Runnable() { // from class: org.telegram.ui.nv
+                            Runnable runnable = new Runnable() { // from class: org.telegram.ui.pv
                                 @Override // java.lang.Runnable
                                 public final void run() {
-                                    org.telegram.ui.ActionBar.f6 f6Var;
+                                    org.telegram.ui.ActionBar.g6 g6Var;
                                     int i292;
-                                    org.telegram.ui.ActionBar.f6 f6Var2;
+                                    org.telegram.ui.ActionBar.g6 g6Var2;
                                     switch (i29) {
                                         case 0:
-                                            pv pvVar2 = pvVar;
-                                            ww wwVar2 = pvVar2.O0;
+                                            rv rvVar2 = rvVar;
+                                            yw ywVar2 = rvVar2.O0;
                                             TL_stories.TL_storiesStealthMode tL_storiesStealthMode = org.telegram.messenger.qp.s1(org.telegram.messenger.p10.s0).P1().B;
                                             View view2 = view;
                                             if (tL_storiesStealthMode != null) {
-                                                i292 = ((org.telegram.ui.ActionBar.f2) wwVar2).currentAccount;
+                                                i292 = ((org.telegram.ui.ActionBar.f2) ywVar2).currentAccount;
                                                 if (ConnectionsManager.getInstance(i292).getCurrentTime() < tL_storiesStealthMode.active_until_date) {
                                                     if (view2 instanceof di.p) {
-                                                        wwVar2.E0.i((di.p) view2, false);
+                                                        ywVar2.E0.i((di.p) view2, false);
                                                         break;
                                                     }
                                                 }
                                             }
-                                            Context context = pvVar2.getContext();
-                                            f6Var = ((org.telegram.ui.ActionBar.f2) wwVar2).resourceProvider;
-                                            di.w5 w5Var = new di.w5(context, 0.0f, 1, f6Var);
-                                            w5Var.l1 = new ov(pvVar2, view2, 1);
-                                            wwVar2.showDialog(w5Var);
+                                            Context context = rvVar2.getContext();
+                                            g6Var = ((org.telegram.ui.ActionBar.f2) ywVar2).resourceProvider;
+                                            di.x5 x5Var = new di.x5(context, 0.0f, 1, g6Var);
+                                            x5Var.l1 = new qv(rvVar2, view2, 1);
+                                            ywVar2.showDialog(x5Var);
                                             break;
                                         default:
-                                            pv pvVar3 = pvVar;
-                                            Context context2 = pvVar3.getContext();
-                                            ww wwVar3 = pvVar3.O0;
-                                            f6Var2 = ((org.telegram.ui.ActionBar.f2) wwVar3).resourceProvider;
-                                            di.w5 w5Var2 = new di.w5(context2, 0.0f, 1, f6Var2);
-                                            w5Var2.l1 = new ov(pvVar3, view, 0);
-                                            wwVar3.showDialog(w5Var2);
+                                            rv rvVar3 = rvVar;
+                                            Context context2 = rvVar3.getContext();
+                                            yw ywVar3 = rvVar3.O0;
+                                            g6Var2 = ((org.telegram.ui.ActionBar.f2) ywVar3).resourceProvider;
+                                            di.x5 x5Var2 = new di.x5(context2, 0.0f, 1, g6Var2);
+                                            x5Var2.l1 = new qv(rvVar3, view, 0);
+                                            ywVar3.showDialog(x5Var2);
                                             break;
                                     }
                                 }
                             };
                             if (z10) {
-                                k60Var = k60Var2;
+                                l60Var = l60Var2;
                             } else {
-                                k60Var2.b(R.drawable.msg_stories_stealth2, xpVar, M02, k6.F8, k6.E8, runnable);
-                                k60Var = k60Var2;
+                                l60Var2.b(R.drawable.msg_stories_stealth2, xpVar, M02, l6.F8, l6.E8, runnable);
+                                l60Var = l60Var2;
                             }
-                            k60Var.E();
+                            l60Var.E();
                             final int i30 = 1;
-                            k60Var.l(R.drawable.msg_archive, id.M0(2131754153, null), new Runnable() { // from class: org.telegram.ui.lv
+                            l60Var.l(R.drawable.msg_archive, id.M0(2131754153, null), new Runnable() { // from class: org.telegram.ui.nv
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     int i232;
                                     switch (i30) {
                                         case 0:
-                                            pvVar.O0.presentFragment(an.ra(j3));
+                                            rvVar.O0.presentFragment(cn.ta(j3));
                                             break;
                                         case 1:
-                                            org.telegram.messenger.g0.i3(new su(pvVar.O0, j3, !r2.q4(), 0), 200L);
+                                            org.telegram.messenger.g0.i3(new uu(rvVar.O0, j3, !r2.q4(), 0), 200L);
                                             break;
                                         case 2:
-                                            org.telegram.messenger.g0.i3(new su(pvVar.O0, j3, !r2.q4(), 0), 200L);
+                                            org.telegram.messenger.g0.i3(new uu(rvVar.O0, j3, !r2.q4(), 0), 200L);
                                             break;
                                         case 3:
-                                            ww wwVar2 = pvVar.O0;
-                                            i232 = ((org.telegram.ui.ActionBar.f2) wwVar2).currentAccount;
+                                            yw ywVar2 = rvVar.O0;
+                                            i232 = ((org.telegram.ui.ActionBar.f2) ywVar2).currentAccount;
                                             org.telegram.messenger.ui b02 = org.telegram.messenger.ui.b0(i232);
                                             long j10 = j3;
                                             b02.N1(j10);
-                                            wwVar2.getMessagesController().P1().l0(j10, true, false);
+                                            ywVar2.getMessagesController().P1().l0(j10, true, false);
                                             break;
                                         case 4:
-                                            pvVar.O0.E0.j(j3);
+                                            rvVar.O0.E0.j(j3);
                                             break;
                                         case 5:
-                                            pvVar.O0.presentFragment(an.ra(j3));
+                                            rvVar.O0.presentFragment(cn.ta(j3));
                                             break;
                                         default:
-                                            pvVar.O0.presentFragment(ProfileActivity.A4(j3));
+                                            rvVar.O0.presentFragment(ProfileActivity.D4(j3));
                                             break;
                                     }
                                 }
-                            }, z9 && !wwVar.q4());
-                            k60Var.E();
+                            }, z9 && !ywVar.q4());
+                            l60Var.E();
                             final int i31 = 2;
-                            k60Var.l(R.drawable.msg_unarchive, id.M0(2131743917, null), new Runnable() { // from class: org.telegram.ui.lv
+                            l60Var.l(R.drawable.msg_unarchive, id.M0(2131743914, null), new Runnable() { // from class: org.telegram.ui.nv
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     int i232;
                                     switch (i31) {
                                         case 0:
-                                            pvVar.O0.presentFragment(an.ra(j3));
+                                            rvVar.O0.presentFragment(cn.ta(j3));
                                             break;
                                         case 1:
-                                            org.telegram.messenger.g0.i3(new su(pvVar.O0, j3, !r2.q4(), 0), 200L);
+                                            org.telegram.messenger.g0.i3(new uu(rvVar.O0, j3, !r2.q4(), 0), 200L);
                                             break;
                                         case 2:
-                                            org.telegram.messenger.g0.i3(new su(pvVar.O0, j3, !r2.q4(), 0), 200L);
+                                            org.telegram.messenger.g0.i3(new uu(rvVar.O0, j3, !r2.q4(), 0), 200L);
                                             break;
                                         case 3:
-                                            ww wwVar2 = pvVar.O0;
-                                            i232 = ((org.telegram.ui.ActionBar.f2) wwVar2).currentAccount;
+                                            yw ywVar2 = rvVar.O0;
+                                            i232 = ((org.telegram.ui.ActionBar.f2) ywVar2).currentAccount;
                                             org.telegram.messenger.ui b02 = org.telegram.messenger.ui.b0(i232);
                                             long j10 = j3;
                                             b02.N1(j10);
-                                            wwVar2.getMessagesController().P1().l0(j10, true, false);
+                                            ywVar2.getMessagesController().P1().l0(j10, true, false);
                                             break;
                                         case 4:
-                                            pvVar.O0.E0.j(j3);
+                                            rvVar.O0.E0.j(j3);
                                             break;
                                         case 5:
-                                            pvVar.O0.presentFragment(an.ra(j3));
+                                            rvVar.O0.presentFragment(cn.ta(j3));
                                             break;
                                         default:
-                                            pvVar.O0.presentFragment(ProfileActivity.A4(j3));
+                                            rvVar.O0.presentFragment(ProfileActivity.D4(j3));
                                             break;
                                     }
                                 }
-                            }, z9 && wwVar.q4());
-                            k60Var.E();
+                            }, z9 && ywVar.q4());
+                            l60Var.E();
                             i17 = 3;
-                            k60Var.l(R.drawable.msg_delete, id.M0(2131744751, null), new Runnable() { // from class: org.telegram.ui.lv
+                            l60Var.l(R.drawable.msg_delete, id.M0(2131744748, null), new Runnable() { // from class: org.telegram.ui.nv
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     int i232;
                                     switch (i17) {
                                         case 0:
-                                            pvVar.O0.presentFragment(an.ra(j3));
+                                            rvVar.O0.presentFragment(cn.ta(j3));
                                             break;
                                         case 1:
-                                            org.telegram.messenger.g0.i3(new su(pvVar.O0, j3, !r2.q4(), 0), 200L);
+                                            org.telegram.messenger.g0.i3(new uu(rvVar.O0, j3, !r2.q4(), 0), 200L);
                                             break;
                                         case 2:
-                                            org.telegram.messenger.g0.i3(new su(pvVar.O0, j3, !r2.q4(), 0), 200L);
+                                            org.telegram.messenger.g0.i3(new uu(rvVar.O0, j3, !r2.q4(), 0), 200L);
                                             break;
                                         case 3:
-                                            ww wwVar2 = pvVar.O0;
-                                            i232 = ((org.telegram.ui.ActionBar.f2) wwVar2).currentAccount;
+                                            yw ywVar2 = rvVar.O0;
+                                            i232 = ((org.telegram.ui.ActionBar.f2) ywVar2).currentAccount;
                                             org.telegram.messenger.ui b02 = org.telegram.messenger.ui.b0(i232);
                                             long j10 = j3;
                                             b02.N1(j10);
-                                            wwVar2.getMessagesController().P1().l0(j10, true, false);
+                                            ywVar2.getMessagesController().P1().l0(j10, true, false);
                                             break;
                                         case 4:
-                                            pvVar.O0.E0.j(j3);
+                                            rvVar.O0.E0.j(j3);
                                             break;
                                         case 5:
-                                            pvVar.O0.presentFragment(an.ra(j3));
+                                            rvVar.O0.presentFragment(cn.ta(j3));
                                             break;
                                         default:
-                                            pvVar.O0.presentFragment(ProfileActivity.A4(j3));
+                                            rvVar.O0.presentFragment(ProfileActivity.D4(j3));
                                             break;
                                     }
                                 }
@@ -717,115 +717,115 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
                         }
                     }
                     z9 = false;
-                    k60 k60Var22 = wwVar.L0;
+                    l60 l60Var22 = ywVar.L0;
                     final int i232 = 5;
-                    k60Var22.l(R.drawable.msg_discussion, id.M0(2131745604, null), new Runnable() { // from class: org.telegram.ui.lv
+                    l60Var22.l(R.drawable.msg_discussion, id.M0(2131745601, null), new Runnable() { // from class: org.telegram.ui.nv
                         @Override // java.lang.Runnable
                         public final void run() {
                             int i2322;
                             switch (i232) {
                                 case 0:
-                                    pvVar.O0.presentFragment(an.ra(j3));
+                                    rvVar.O0.presentFragment(cn.ta(j3));
                                     break;
                                 case 1:
-                                    org.telegram.messenger.g0.i3(new su(pvVar.O0, j3, !r2.q4(), 0), 200L);
+                                    org.telegram.messenger.g0.i3(new uu(rvVar.O0, j3, !r2.q4(), 0), 200L);
                                     break;
                                 case 2:
-                                    org.telegram.messenger.g0.i3(new su(pvVar.O0, j3, !r2.q4(), 0), 200L);
+                                    org.telegram.messenger.g0.i3(new uu(rvVar.O0, j3, !r2.q4(), 0), 200L);
                                     break;
                                 case 3:
-                                    ww wwVar2 = pvVar.O0;
-                                    i2322 = ((org.telegram.ui.ActionBar.f2) wwVar2).currentAccount;
+                                    yw ywVar2 = rvVar.O0;
+                                    i2322 = ((org.telegram.ui.ActionBar.f2) ywVar2).currentAccount;
                                     org.telegram.messenger.ui b02 = org.telegram.messenger.ui.b0(i2322);
                                     long j10 = j3;
                                     b02.N1(j10);
-                                    wwVar2.getMessagesController().P1().l0(j10, true, false);
+                                    ywVar2.getMessagesController().P1().l0(j10, true, false);
                                     break;
                                 case 4:
-                                    pvVar.O0.E0.j(j3);
+                                    rvVar.O0.E0.j(j3);
                                     break;
                                 case 5:
-                                    pvVar.O0.presentFragment(an.ra(j3));
+                                    rvVar.O0.presentFragment(cn.ta(j3));
                                     break;
                                 default:
-                                    pvVar.O0.presentFragment(ProfileActivity.A4(j3));
+                                    rvVar.O0.presentFragment(ProfileActivity.D4(j3));
                                     break;
                             }
                         }
                     }, j3 <= 0);
                     final int i242 = 6;
-                    k60Var22.l(R.drawable.msg_openprofile, id.M0(2131747787, null), new Runnable() { // from class: org.telegram.ui.lv
+                    l60Var22.l(R.drawable.msg_openprofile, id.M0(2131747786, null), new Runnable() { // from class: org.telegram.ui.nv
                         @Override // java.lang.Runnable
                         public final void run() {
                             int i2322;
                             switch (i242) {
                                 case 0:
-                                    pvVar.O0.presentFragment(an.ra(j3));
+                                    rvVar.O0.presentFragment(cn.ta(j3));
                                     break;
                                 case 1:
-                                    org.telegram.messenger.g0.i3(new su(pvVar.O0, j3, !r2.q4(), 0), 200L);
+                                    org.telegram.messenger.g0.i3(new uu(rvVar.O0, j3, !r2.q4(), 0), 200L);
                                     break;
                                 case 2:
-                                    org.telegram.messenger.g0.i3(new su(pvVar.O0, j3, !r2.q4(), 0), 200L);
+                                    org.telegram.messenger.g0.i3(new uu(rvVar.O0, j3, !r2.q4(), 0), 200L);
                                     break;
                                 case 3:
-                                    ww wwVar2 = pvVar.O0;
-                                    i2322 = ((org.telegram.ui.ActionBar.f2) wwVar2).currentAccount;
+                                    yw ywVar2 = rvVar.O0;
+                                    i2322 = ((org.telegram.ui.ActionBar.f2) ywVar2).currentAccount;
                                     org.telegram.messenger.ui b02 = org.telegram.messenger.ui.b0(i2322);
                                     long j10 = j3;
                                     b02.N1(j10);
-                                    wwVar2.getMessagesController().P1().l0(j10, true, false);
+                                    ywVar2.getMessagesController().P1().l0(j10, true, false);
                                     break;
                                 case 4:
-                                    pvVar.O0.E0.j(j3);
+                                    rvVar.O0.E0.j(j3);
                                     break;
                                 case 5:
-                                    pvVar.O0.presentFragment(an.ra(j3));
+                                    rvVar.O0.presentFragment(cn.ta(j3));
                                     break;
                                 default:
-                                    pvVar.O0.presentFragment(ProfileActivity.A4(j3));
+                                    rvVar.O0.presentFragment(ProfileActivity.D4(j3));
                                     break;
                             }
                         }
                     }, j3 <= 0);
                     final int i252 = 0;
-                    k60Var22.l(R.drawable.msg_channel, id.M0(!t3.V(chat) ? 2131747812 : 2131747800, null), new Runnable() { // from class: org.telegram.ui.lv
+                    l60Var22.l(R.drawable.msg_channel, id.M0(!t3.V(chat) ? 2131747811 : 2131747799, null), new Runnable() { // from class: org.telegram.ui.nv
                         @Override // java.lang.Runnable
                         public final void run() {
                             int i2322;
                             switch (i252) {
                                 case 0:
-                                    pvVar.O0.presentFragment(an.ra(j3));
+                                    rvVar.O0.presentFragment(cn.ta(j3));
                                     break;
                                 case 1:
-                                    org.telegram.messenger.g0.i3(new su(pvVar.O0, j3, !r2.q4(), 0), 200L);
+                                    org.telegram.messenger.g0.i3(new uu(rvVar.O0, j3, !r2.q4(), 0), 200L);
                                     break;
                                 case 2:
-                                    org.telegram.messenger.g0.i3(new su(pvVar.O0, j3, !r2.q4(), 0), 200L);
+                                    org.telegram.messenger.g0.i3(new uu(rvVar.O0, j3, !r2.q4(), 0), 200L);
                                     break;
                                 case 3:
-                                    ww wwVar2 = pvVar.O0;
-                                    i2322 = ((org.telegram.ui.ActionBar.f2) wwVar2).currentAccount;
+                                    yw ywVar2 = rvVar.O0;
+                                    i2322 = ((org.telegram.ui.ActionBar.f2) ywVar2).currentAccount;
                                     org.telegram.messenger.ui b02 = org.telegram.messenger.ui.b0(i2322);
                                     long j10 = j3;
                                     b02.N1(j10);
-                                    wwVar2.getMessagesController().P1().l0(j10, true, false);
+                                    ywVar2.getMessagesController().P1().l0(j10, true, false);
                                     break;
                                 case 4:
-                                    pvVar.O0.E0.j(j3);
+                                    rvVar.O0.E0.j(j3);
                                     break;
                                 case 5:
-                                    pvVar.O0.presentFragment(an.ra(j3));
+                                    rvVar.O0.presentFragment(cn.ta(j3));
                                     break;
                                 default:
-                                    pvVar.O0.presentFragment(ProfileActivity.A4(j3));
+                                    rvVar.O0.presentFragment(ProfileActivity.D4(j3));
                                     break;
                             }
                         }
                     }, j3 >= 0);
                     final int i262 = 0;
                     final String str22 = str;
-                    k60Var22.l(R.drawable.msg_mute, id.M0(2131747864, null), new Runnable() { // from class: org.telegram.ui.mv
+                    l60Var22.l(R.drawable.msg_mute, id.M0(2131747863, null), new Runnable() { // from class: org.telegram.ui.ov
                         @Override // java.lang.Runnable
                         public final void run() {
                             int i272;
@@ -834,38 +834,38 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
                             int i292 = i262;
                             TLRPC.User user = a22;
                             String str3 = str22;
-                            pv pvVar2 = pvVar;
+                            rv rvVar2 = rvVar;
                             switch (i292) {
                                 case 0:
-                                    ww wwVar2 = pvVar2.O0;
-                                    i272 = ((org.telegram.ui.ActionBar.f2) wwVar2).currentAccount;
+                                    yw ywVar2 = rvVar2.O0;
+                                    i272 = ((org.telegram.ui.ActionBar.f2) ywVar2).currentAccount;
                                     org.telegram.messenger.qp.s1(i272).d7.edit().putBoolean("stories_" + str3, false).apply();
-                                    wwVar2.getNotificationsController().c0(j3, 0L, true);
+                                    ywVar2.getNotificationsController().c0(j3, 0L, true);
                                     trim = user != null ? user.first_name.trim() : "";
                                     int indexOf = trim.indexOf(" ");
                                     if (indexOf > 0) {
                                         trim = trim.substring(0, indexOf);
                                     }
-                                    org.telegram.ui.Components.hc.a0(wwVar2).V(Arrays.asList(user), org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0("NotificationsStoryMutedHint", null, 2131747863, trim)), null, null).j();
+                                    org.telegram.ui.Components.hc.a0(ywVar2).V(Arrays.asList(user), org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0("NotificationsStoryMutedHint", null, 2131747862, trim)), null, null).j();
                                     break;
                                 default:
-                                    ww wwVar3 = pvVar2.O0;
-                                    i282 = ((org.telegram.ui.ActionBar.f2) wwVar3).currentAccount;
+                                    yw ywVar3 = rvVar2.O0;
+                                    i282 = ((org.telegram.ui.ActionBar.f2) ywVar3).currentAccount;
                                     org.telegram.messenger.qp.s1(i282).d7.edit().putBoolean("stories_" + str3, true).apply();
-                                    wwVar3.getNotificationsController().c0(j3, 0L, true);
+                                    ywVar3.getNotificationsController().c0(j3, 0L, true);
                                     trim = user != null ? user.first_name.trim() : "";
                                     int indexOf2 = trim.indexOf(" ");
                                     if (indexOf2 > 0) {
                                         trim = trim.substring(0, indexOf2);
                                     }
-                                    org.telegram.ui.Components.hc.a0(wwVar3).V(Arrays.asList(user), org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0("NotificationsStoryUnmutedHint", null, 2131747860, trim)), null, null).j();
+                                    org.telegram.ui.Components.hc.a0(ywVar3).V(Arrays.asList(user), org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0("NotificationsStoryUnmutedHint", null, 2131747859, trim)), null, null).j();
                                     break;
                             }
                         }
                     }, !h02 && j3 > 0);
-                    k60Var22.E();
+                    l60Var22.E();
                     final int i272 = 1;
-                    k60Var22.l(R.drawable.msg_unmute, id.M0(2131747861, null), new Runnable() { // from class: org.telegram.ui.mv
+                    l60Var22.l(R.drawable.msg_unmute, id.M0(2131747860, null), new Runnable() { // from class: org.telegram.ui.ov
                         @Override // java.lang.Runnable
                         public final void run() {
                             int i2722;
@@ -874,333 +874,333 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
                             int i292 = i272;
                             TLRPC.User user = a22;
                             String str3 = str22;
-                            pv pvVar2 = pvVar;
+                            rv rvVar2 = rvVar;
                             switch (i292) {
                                 case 0:
-                                    ww wwVar2 = pvVar2.O0;
-                                    i2722 = ((org.telegram.ui.ActionBar.f2) wwVar2).currentAccount;
+                                    yw ywVar2 = rvVar2.O0;
+                                    i2722 = ((org.telegram.ui.ActionBar.f2) ywVar2).currentAccount;
                                     org.telegram.messenger.qp.s1(i2722).d7.edit().putBoolean("stories_" + str3, false).apply();
-                                    wwVar2.getNotificationsController().c0(j3, 0L, true);
+                                    ywVar2.getNotificationsController().c0(j3, 0L, true);
                                     trim = user != null ? user.first_name.trim() : "";
                                     int indexOf = trim.indexOf(" ");
                                     if (indexOf > 0) {
                                         trim = trim.substring(0, indexOf);
                                     }
-                                    org.telegram.ui.Components.hc.a0(wwVar2).V(Arrays.asList(user), org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0("NotificationsStoryMutedHint", null, 2131747863, trim)), null, null).j();
+                                    org.telegram.ui.Components.hc.a0(ywVar2).V(Arrays.asList(user), org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0("NotificationsStoryMutedHint", null, 2131747862, trim)), null, null).j();
                                     break;
                                 default:
-                                    ww wwVar3 = pvVar2.O0;
-                                    i282 = ((org.telegram.ui.ActionBar.f2) wwVar3).currentAccount;
+                                    yw ywVar3 = rvVar2.O0;
+                                    i282 = ((org.telegram.ui.ActionBar.f2) ywVar3).currentAccount;
                                     org.telegram.messenger.qp.s1(i282).d7.edit().putBoolean("stories_" + str3, true).apply();
-                                    wwVar3.getNotificationsController().c0(j3, 0L, true);
+                                    ywVar3.getNotificationsController().c0(j3, 0L, true);
                                     trim = user != null ? user.first_name.trim() : "";
                                     int indexOf2 = trim.indexOf(" ");
                                     if (indexOf2 > 0) {
                                         trim = trim.substring(0, indexOf2);
                                     }
-                                    org.telegram.ui.Components.hc.a0(wwVar3).V(Arrays.asList(user), org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0("NotificationsStoryUnmutedHint", null, 2131747860, trim)), null, null).j();
+                                    org.telegram.ui.Components.hc.a0(ywVar3).V(Arrays.asList(user), org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0("NotificationsStoryUnmutedHint", null, 2131747859, trim)), null, null).j();
                                     break;
                             }
                         }
                     }, h02 && j3 > 0);
-                    k60Var22.E();
+                    l60Var22.E();
                     final int i282 = 0;
-                    k60Var22.l(R.drawable.msg_stories_stealth2, id.M0(2131743565, null), new Runnable() { // from class: org.telegram.ui.nv
+                    l60Var22.l(R.drawable.msg_stories_stealth2, id.M0(2131743562, null), new Runnable() { // from class: org.telegram.ui.pv
                         @Override // java.lang.Runnable
                         public final void run() {
-                            org.telegram.ui.ActionBar.f6 f6Var;
+                            org.telegram.ui.ActionBar.g6 g6Var;
                             int i292;
-                            org.telegram.ui.ActionBar.f6 f6Var2;
+                            org.telegram.ui.ActionBar.g6 g6Var2;
                             switch (i282) {
                                 case 0:
-                                    pv pvVar2 = pvVar;
-                                    ww wwVar2 = pvVar2.O0;
+                                    rv rvVar2 = rvVar;
+                                    yw ywVar2 = rvVar2.O0;
                                     TL_stories.TL_storiesStealthMode tL_storiesStealthMode = org.telegram.messenger.qp.s1(org.telegram.messenger.p10.s0).P1().B;
                                     View view2 = view;
                                     if (tL_storiesStealthMode != null) {
-                                        i292 = ((org.telegram.ui.ActionBar.f2) wwVar2).currentAccount;
+                                        i292 = ((org.telegram.ui.ActionBar.f2) ywVar2).currentAccount;
                                         if (ConnectionsManager.getInstance(i292).getCurrentTime() < tL_storiesStealthMode.active_until_date) {
                                             if (view2 instanceof di.p) {
-                                                wwVar2.E0.i((di.p) view2, false);
+                                                ywVar2.E0.i((di.p) view2, false);
                                                 break;
                                             }
                                         }
                                     }
-                                    Context context = pvVar2.getContext();
-                                    f6Var = ((org.telegram.ui.ActionBar.f2) wwVar2).resourceProvider;
-                                    di.w5 w5Var = new di.w5(context, 0.0f, 1, f6Var);
-                                    w5Var.l1 = new ov(pvVar2, view2, 1);
-                                    wwVar2.showDialog(w5Var);
+                                    Context context = rvVar2.getContext();
+                                    g6Var = ((org.telegram.ui.ActionBar.f2) ywVar2).resourceProvider;
+                                    di.x5 x5Var = new di.x5(context, 0.0f, 1, g6Var);
+                                    x5Var.l1 = new qv(rvVar2, view2, 1);
+                                    ywVar2.showDialog(x5Var);
                                     break;
                                 default:
-                                    pv pvVar3 = pvVar;
-                                    Context context2 = pvVar3.getContext();
-                                    ww wwVar3 = pvVar3.O0;
-                                    f6Var2 = ((org.telegram.ui.ActionBar.f2) wwVar3).resourceProvider;
-                                    di.w5 w5Var2 = new di.w5(context2, 0.0f, 1, f6Var2);
-                                    w5Var2.l1 = new ov(pvVar3, view, 0);
-                                    wwVar3.showDialog(w5Var2);
+                                    rv rvVar3 = rvVar;
+                                    Context context2 = rvVar3.getContext();
+                                    yw ywVar3 = rvVar3.O0;
+                                    g6Var2 = ((org.telegram.ui.ActionBar.f2) ywVar3).resourceProvider;
+                                    di.x5 x5Var2 = new di.x5(context2, 0.0f, 1, g6Var2);
+                                    x5Var2.l1 = new qv(rvVar3, view, 0);
+                                    ywVar3.showDialog(x5Var2);
                                     break;
                             }
                         }
                     }, D3 && j3 > 0 && q10 && L && !H2);
-                    k60Var22.E();
+                    l60Var22.E();
                     if (D3) {
                     }
-                    String M022 = id.M0(2131743565, null);
+                    String M022 = id.M0(2131743562, null);
                     final int i292 = 1;
-                    Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.nv
+                    Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.pv
                         @Override // java.lang.Runnable
                         public final void run() {
-                            org.telegram.ui.ActionBar.f6 f6Var;
+                            org.telegram.ui.ActionBar.g6 g6Var;
                             int i2922;
-                            org.telegram.ui.ActionBar.f6 f6Var2;
+                            org.telegram.ui.ActionBar.g6 g6Var2;
                             switch (i292) {
                                 case 0:
-                                    pv pvVar2 = pvVar;
-                                    ww wwVar2 = pvVar2.O0;
+                                    rv rvVar2 = rvVar;
+                                    yw ywVar2 = rvVar2.O0;
                                     TL_stories.TL_storiesStealthMode tL_storiesStealthMode = org.telegram.messenger.qp.s1(org.telegram.messenger.p10.s0).P1().B;
                                     View view2 = view;
                                     if (tL_storiesStealthMode != null) {
-                                        i2922 = ((org.telegram.ui.ActionBar.f2) wwVar2).currentAccount;
+                                        i2922 = ((org.telegram.ui.ActionBar.f2) ywVar2).currentAccount;
                                         if (ConnectionsManager.getInstance(i2922).getCurrentTime() < tL_storiesStealthMode.active_until_date) {
                                             if (view2 instanceof di.p) {
-                                                wwVar2.E0.i((di.p) view2, false);
+                                                ywVar2.E0.i((di.p) view2, false);
                                                 break;
                                             }
                                         }
                                     }
-                                    Context context = pvVar2.getContext();
-                                    f6Var = ((org.telegram.ui.ActionBar.f2) wwVar2).resourceProvider;
-                                    di.w5 w5Var = new di.w5(context, 0.0f, 1, f6Var);
-                                    w5Var.l1 = new ov(pvVar2, view2, 1);
-                                    wwVar2.showDialog(w5Var);
+                                    Context context = rvVar2.getContext();
+                                    g6Var = ((org.telegram.ui.ActionBar.f2) ywVar2).resourceProvider;
+                                    di.x5 x5Var = new di.x5(context, 0.0f, 1, g6Var);
+                                    x5Var.l1 = new qv(rvVar2, view2, 1);
+                                    ywVar2.showDialog(x5Var);
                                     break;
                                 default:
-                                    pv pvVar3 = pvVar;
-                                    Context context2 = pvVar3.getContext();
-                                    ww wwVar3 = pvVar3.O0;
-                                    f6Var2 = ((org.telegram.ui.ActionBar.f2) wwVar3).resourceProvider;
-                                    di.w5 w5Var2 = new di.w5(context2, 0.0f, 1, f6Var2);
-                                    w5Var2.l1 = new ov(pvVar3, view, 0);
-                                    wwVar3.showDialog(w5Var2);
+                                    rv rvVar3 = rvVar;
+                                    Context context2 = rvVar3.getContext();
+                                    yw ywVar3 = rvVar3.O0;
+                                    g6Var2 = ((org.telegram.ui.ActionBar.f2) ywVar3).resourceProvider;
+                                    di.x5 x5Var2 = new di.x5(context2, 0.0f, 1, g6Var2);
+                                    x5Var2.l1 = new qv(rvVar3, view, 0);
+                                    ywVar3.showDialog(x5Var2);
                                     break;
                             }
                         }
                     };
                     if (z10) {
                     }
-                    k60Var.E();
+                    l60Var.E();
                     final int i302 = 1;
-                    k60Var.l(R.drawable.msg_archive, id.M0(2131754153, null), new Runnable() { // from class: org.telegram.ui.lv
+                    l60Var.l(R.drawable.msg_archive, id.M0(2131754153, null), new Runnable() { // from class: org.telegram.ui.nv
                         @Override // java.lang.Runnable
                         public final void run() {
                             int i2322;
                             switch (i302) {
                                 case 0:
-                                    pvVar.O0.presentFragment(an.ra(j3));
+                                    rvVar.O0.presentFragment(cn.ta(j3));
                                     break;
                                 case 1:
-                                    org.telegram.messenger.g0.i3(new su(pvVar.O0, j3, !r2.q4(), 0), 200L);
+                                    org.telegram.messenger.g0.i3(new uu(rvVar.O0, j3, !r2.q4(), 0), 200L);
                                     break;
                                 case 2:
-                                    org.telegram.messenger.g0.i3(new su(pvVar.O0, j3, !r2.q4(), 0), 200L);
+                                    org.telegram.messenger.g0.i3(new uu(rvVar.O0, j3, !r2.q4(), 0), 200L);
                                     break;
                                 case 3:
-                                    ww wwVar2 = pvVar.O0;
-                                    i2322 = ((org.telegram.ui.ActionBar.f2) wwVar2).currentAccount;
+                                    yw ywVar2 = rvVar.O0;
+                                    i2322 = ((org.telegram.ui.ActionBar.f2) ywVar2).currentAccount;
                                     org.telegram.messenger.ui b02 = org.telegram.messenger.ui.b0(i2322);
                                     long j10 = j3;
                                     b02.N1(j10);
-                                    wwVar2.getMessagesController().P1().l0(j10, true, false);
+                                    ywVar2.getMessagesController().P1().l0(j10, true, false);
                                     break;
                                 case 4:
-                                    pvVar.O0.E0.j(j3);
+                                    rvVar.O0.E0.j(j3);
                                     break;
                                 case 5:
-                                    pvVar.O0.presentFragment(an.ra(j3));
+                                    rvVar.O0.presentFragment(cn.ta(j3));
                                     break;
                                 default:
-                                    pvVar.O0.presentFragment(ProfileActivity.A4(j3));
+                                    rvVar.O0.presentFragment(ProfileActivity.D4(j3));
                                     break;
                             }
                         }
-                    }, z9 && !wwVar.q4());
-                    k60Var.E();
+                    }, z9 && !ywVar.q4());
+                    l60Var.E();
                     final int i312 = 2;
-                    k60Var.l(R.drawable.msg_unarchive, id.M0(2131743917, null), new Runnable() { // from class: org.telegram.ui.lv
+                    l60Var.l(R.drawable.msg_unarchive, id.M0(2131743914, null), new Runnable() { // from class: org.telegram.ui.nv
                         @Override // java.lang.Runnable
                         public final void run() {
                             int i2322;
                             switch (i312) {
                                 case 0:
-                                    pvVar.O0.presentFragment(an.ra(j3));
+                                    rvVar.O0.presentFragment(cn.ta(j3));
                                     break;
                                 case 1:
-                                    org.telegram.messenger.g0.i3(new su(pvVar.O0, j3, !r2.q4(), 0), 200L);
+                                    org.telegram.messenger.g0.i3(new uu(rvVar.O0, j3, !r2.q4(), 0), 200L);
                                     break;
                                 case 2:
-                                    org.telegram.messenger.g0.i3(new su(pvVar.O0, j3, !r2.q4(), 0), 200L);
+                                    org.telegram.messenger.g0.i3(new uu(rvVar.O0, j3, !r2.q4(), 0), 200L);
                                     break;
                                 case 3:
-                                    ww wwVar2 = pvVar.O0;
-                                    i2322 = ((org.telegram.ui.ActionBar.f2) wwVar2).currentAccount;
+                                    yw ywVar2 = rvVar.O0;
+                                    i2322 = ((org.telegram.ui.ActionBar.f2) ywVar2).currentAccount;
                                     org.telegram.messenger.ui b02 = org.telegram.messenger.ui.b0(i2322);
                                     long j10 = j3;
                                     b02.N1(j10);
-                                    wwVar2.getMessagesController().P1().l0(j10, true, false);
+                                    ywVar2.getMessagesController().P1().l0(j10, true, false);
                                     break;
                                 case 4:
-                                    pvVar.O0.E0.j(j3);
+                                    rvVar.O0.E0.j(j3);
                                     break;
                                 case 5:
-                                    pvVar.O0.presentFragment(an.ra(j3));
+                                    rvVar.O0.presentFragment(cn.ta(j3));
                                     break;
                                 default:
-                                    pvVar.O0.presentFragment(ProfileActivity.A4(j3));
+                                    rvVar.O0.presentFragment(ProfileActivity.D4(j3));
                                     break;
                             }
                         }
-                    }, z9 && wwVar.q4());
-                    k60Var.E();
+                    }, z9 && ywVar.q4());
+                    l60Var.E();
                     i17 = 3;
-                    k60Var.l(R.drawable.msg_delete, id.M0(2131744751, null), new Runnable() { // from class: org.telegram.ui.lv
+                    l60Var.l(R.drawable.msg_delete, id.M0(2131744748, null), new Runnable() { // from class: org.telegram.ui.nv
                         @Override // java.lang.Runnable
                         public final void run() {
                             int i2322;
                             switch (i17) {
                                 case 0:
-                                    pvVar.O0.presentFragment(an.ra(j3));
+                                    rvVar.O0.presentFragment(cn.ta(j3));
                                     break;
                                 case 1:
-                                    org.telegram.messenger.g0.i3(new su(pvVar.O0, j3, !r2.q4(), 0), 200L);
+                                    org.telegram.messenger.g0.i3(new uu(rvVar.O0, j3, !r2.q4(), 0), 200L);
                                     break;
                                 case 2:
-                                    org.telegram.messenger.g0.i3(new su(pvVar.O0, j3, !r2.q4(), 0), 200L);
+                                    org.telegram.messenger.g0.i3(new uu(rvVar.O0, j3, !r2.q4(), 0), 200L);
                                     break;
                                 case 3:
-                                    ww wwVar2 = pvVar.O0;
-                                    i2322 = ((org.telegram.ui.ActionBar.f2) wwVar2).currentAccount;
+                                    yw ywVar2 = rvVar.O0;
+                                    i2322 = ((org.telegram.ui.ActionBar.f2) ywVar2).currentAccount;
                                     org.telegram.messenger.ui b02 = org.telegram.messenger.ui.b0(i2322);
                                     long j10 = j3;
                                     b02.N1(j10);
-                                    wwVar2.getMessagesController().P1().l0(j10, true, false);
+                                    ywVar2.getMessagesController().P1().l0(j10, true, false);
                                     break;
                                 case 4:
-                                    pvVar.O0.E0.j(j3);
+                                    rvVar.O0.E0.j(j3);
                                     break;
                                 case 5:
-                                    pvVar.O0.presentFragment(an.ra(j3));
+                                    rvVar.O0.presentFragment(cn.ta(j3));
                                     break;
                                 default:
-                                    pvVar.O0.presentFragment(ProfileActivity.A4(j3));
+                                    rvVar.O0.presentFragment(ProfileActivity.D4(j3));
                                     break;
                             }
                         }
                     }, z9);
-                } else if (wwVar.N3) {
-                    k60 k60Var3 = wwVar.L0;
+                } else if (ywVar.O3) {
+                    l60 l60Var3 = ywVar.L0;
                     String M03 = id.M0(2131754384, null);
-                    int i32 = k6.F8;
-                    int i33 = k6.E8;
-                    k60Var3.b(R.drawable.msg_stories_add, null, M03, i32, i33, new Runnable() { // from class: org.telegram.ui.kv
+                    int i32 = l6.F8;
+                    int i33 = l6.E8;
+                    l60Var3.b(R.drawable.msg_stories_add, null, M03, i32, i33, new Runnable() { // from class: org.telegram.ui.mv
                         @Override // java.lang.Runnable
                         public final void run() {
                             int i34;
                             int i35;
                             switch (i19) {
                                 case 0:
-                                    pvVar.O0.E0.j(0L);
+                                    rvVar.O0.E0.j(0L);
                                     break;
                                 case 1:
                                     Bundle bundle = new Bundle();
-                                    ww wwVar2 = pvVar.O0;
-                                    i34 = ((org.telegram.ui.ActionBar.f2) wwVar2).currentAccount;
+                                    yw ywVar2 = rvVar.O0;
+                                    i34 = ((org.telegram.ui.ActionBar.f2) ywVar2).currentAccount;
                                     bundle.putLong("dialog_id", org.telegram.messenger.p10.i(i34).e());
                                     bundle.putInt(TeXSymbolParser.TYPE_ATTR, 1);
                                     bundle.putInt("start_from", 9);
-                                    wwVar2.presentFragment(new org.telegram.ui.Components.u80(bundle, null));
+                                    ywVar2.presentFragment(new org.telegram.ui.Components.v80(bundle, null));
                                     break;
                                 default:
                                     Bundle bundle2 = new Bundle();
-                                    ww wwVar3 = pvVar.O0;
-                                    i35 = ((org.telegram.ui.ActionBar.f2) wwVar3).currentAccount;
+                                    yw ywVar3 = rvVar.O0;
+                                    i35 = ((org.telegram.ui.ActionBar.f2) ywVar3).currentAccount;
                                     bundle2.putLong("dialog_id", org.telegram.messenger.p10.i(i35).e());
                                     bundle2.putInt(TeXSymbolParser.TYPE_ATTR, 1);
-                                    wwVar3.presentFragment(new org.telegram.ui.Components.u80(bundle2, null));
+                                    ywVar3.presentFragment(new org.telegram.ui.Components.v80(bundle2, null));
                                     break;
                             }
                         }
                     });
-                    wwVar.L0.b(R.drawable.msg_stories_archive, null, id.M0(2131754123, null), i32, i33, new Runnable() { // from class: org.telegram.ui.kv
+                    ywVar.L0.b(R.drawable.msg_stories_archive, null, id.M0(2131754123, null), i32, i33, new Runnable() { // from class: org.telegram.ui.mv
                         @Override // java.lang.Runnable
                         public final void run() {
                             int i34;
                             int i35;
                             switch (i20) {
                                 case 0:
-                                    pvVar.O0.E0.j(0L);
+                                    rvVar.O0.E0.j(0L);
                                     break;
                                 case 1:
                                     Bundle bundle = new Bundle();
-                                    ww wwVar2 = pvVar.O0;
-                                    i34 = ((org.telegram.ui.ActionBar.f2) wwVar2).currentAccount;
+                                    yw ywVar2 = rvVar.O0;
+                                    i34 = ((org.telegram.ui.ActionBar.f2) ywVar2).currentAccount;
                                     bundle.putLong("dialog_id", org.telegram.messenger.p10.i(i34).e());
                                     bundle.putInt(TeXSymbolParser.TYPE_ATTR, 1);
                                     bundle.putInt("start_from", 9);
-                                    wwVar2.presentFragment(new org.telegram.ui.Components.u80(bundle, null));
+                                    ywVar2.presentFragment(new org.telegram.ui.Components.v80(bundle, null));
                                     break;
                                 default:
                                     Bundle bundle2 = new Bundle();
-                                    ww wwVar3 = pvVar.O0;
-                                    i35 = ((org.telegram.ui.ActionBar.f2) wwVar3).currentAccount;
+                                    yw ywVar3 = rvVar.O0;
+                                    i35 = ((org.telegram.ui.ActionBar.f2) ywVar3).currentAccount;
                                     bundle2.putLong("dialog_id", org.telegram.messenger.p10.i(i35).e());
                                     bundle2.putInt(TeXSymbolParser.TYPE_ATTR, 1);
-                                    wwVar3.presentFragment(new org.telegram.ui.Components.u80(bundle2, null));
+                                    ywVar3.presentFragment(new org.telegram.ui.Components.v80(bundle2, null));
                                     break;
                             }
                         }
                     });
-                    wwVar.L0.b(R.drawable.msg_stories_saved, null, id.M0(2131745888, null), i32, i33, new Runnable() { // from class: org.telegram.ui.kv
+                    ywVar.L0.b(R.drawable.msg_stories_saved, null, id.M0(2131745885, null), i32, i33, new Runnable() { // from class: org.telegram.ui.mv
                         @Override // java.lang.Runnable
                         public final void run() {
                             int i34;
                             int i35;
                             switch (i21) {
                                 case 0:
-                                    pvVar.O0.E0.j(0L);
+                                    rvVar.O0.E0.j(0L);
                                     break;
                                 case 1:
                                     Bundle bundle = new Bundle();
-                                    ww wwVar2 = pvVar.O0;
-                                    i34 = ((org.telegram.ui.ActionBar.f2) wwVar2).currentAccount;
+                                    yw ywVar2 = rvVar.O0;
+                                    i34 = ((org.telegram.ui.ActionBar.f2) ywVar2).currentAccount;
                                     bundle.putLong("dialog_id", org.telegram.messenger.p10.i(i34).e());
                                     bundle.putInt(TeXSymbolParser.TYPE_ATTR, 1);
                                     bundle.putInt("start_from", 9);
-                                    wwVar2.presentFragment(new org.telegram.ui.Components.u80(bundle, null));
+                                    ywVar2.presentFragment(new org.telegram.ui.Components.v80(bundle, null));
                                     break;
                                 default:
                                     Bundle bundle2 = new Bundle();
-                                    ww wwVar3 = pvVar.O0;
-                                    i35 = ((org.telegram.ui.ActionBar.f2) wwVar3).currentAccount;
+                                    yw ywVar3 = rvVar.O0;
+                                    i35 = ((org.telegram.ui.ActionBar.f2) ywVar3).currentAccount;
                                     bundle2.putLong("dialog_id", org.telegram.messenger.p10.i(i35).e());
                                     bundle2.putInt(TeXSymbolParser.TYPE_ATTR, 1);
-                                    wwVar3.presentFragment(new org.telegram.ui.Components.u80(bundle2, null));
+                                    ywVar3.presentFragment(new org.telegram.ui.Components.v80(bundle2, null));
                                     break;
                             }
                         }
                     });
                     i17 = 3;
                 } else {
-                    pv pvVar2 = wwVar.E0;
-                    if (pvVar2 != null) {
-                        pvVar2.n();
+                    rv rvVar2 = ywVar.E0;
+                    if (rvVar2 != null) {
+                        rvVar2.n();
                     }
                 }
-                k60 k60Var4 = wwVar.L0;
-                k60Var4.i = i17;
-                k60Var4.a0(g0.L(-8.0f), g0.L(-10.0f));
-                k60Var4.Z();
+                l60 l60Var4 = ywVar.L0;
+                l60Var4.i = i17;
+                l60Var4.a0(g0.L(-8.0f), g0.L(-10.0f));
+                l60Var4.Z();
                 return false;
             }
             p2.D.a();
@@ -1213,7 +1213,7 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
         return u0.a((u0) this.b, (Long) obj);
     }
 
-    @Override // org.telegram.ui.Components.cj0
+    @Override // org.telegram.ui.Components.dj0
     public void f(float f10, float f11, int i7, View view) {
         long j3;
         int i10;
@@ -1299,18 +1299,18 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
         q1Var.setItemAnimator(itemAnimator);
     }
 
-    @Override // org.telegram.ui.Components.cj0
+    @Override // org.telegram.ui.Components.dj0
     public /* synthetic */ boolean f1(View view) {
         return false;
     }
 
     @Override // org.telegram.ui.ActionBar.r1
-    public void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+    public void g(u1 u1Var, int i7) {
         ((c20) this.b).a(u1Var.h(i7, true, true));
     }
 
     @Override // a3.p
-    public t1 h(int i7, m1 m1Var, int[] iArr) {
+    public h9.t1 h(int i7, m1 m1Var, int[] iArr) {
         n nVar = (n) this.b;
         f0 p10 = i0.p();
         for (int i10 = 0; i10 < m1Var.a; i10++) {
@@ -1322,13 +1322,13 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
     @Override // org.telegram.messenger.a20
     public void i(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
         int i7;
-        f6 f6Var;
+        g6 g6Var;
         switch (this.a) {
             case 10:
                 y yVar = (y) this.b;
-                x31 x31Var = (x31) obj;
+                y31 y31Var = (y31) obj;
                 z zVar = yVar.r;
-                if (!(x31Var.G instanceof TL_stars.StarsTransaction)) {
+                if (!(y31Var.G instanceof TL_stars.StarsTransaction)) {
                     if (yVar.h) {
                         yVar.h = false;
                         yVar.a();
@@ -1338,9 +1338,9 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
                     Context context = yVar.getContext();
                     long j3 = zVar.b;
                     i7 = ((f2) zVar).currentAccount;
-                    TL_stars.StarsTransaction starsTransaction = (TL_stars.StarsTransaction) x31Var.G;
-                    f6Var = ((f2) zVar).resourceProvider;
-                    dd.k1(context, true, j3, i7, starsTransaction, f6Var);
+                    TL_stars.StarsTransaction starsTransaction = (TL_stars.StarsTransaction) y31Var.G;
+                    g6Var = ((f2) zVar).resourceProvider;
+                    dd.k1(context, true, j3, i7, starsTransaction, g6Var);
                     break;
                 }
                 break;
@@ -1349,9 +1349,9 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
                 break;
             default:
                 ad adVar = (ad) this.b;
-                x31 x31Var2 = (x31) obj;
-                if (x31Var2.G instanceof TL_stars.StarsTransaction) {
-                    dd.k1(adVar.getContext(), false, 0L, adVar.c, (TL_stars.StarsTransaction) x31Var2.G, adVar.b);
+                y31 y31Var2 = (y31) obj;
+                if (y31Var2.G instanceof TL_stars.StarsTransaction) {
+                    dd.k1(adVar.getContext(), false, 0L, adVar.c, (TL_stars.StarsTransaction) y31Var2.G, adVar.b);
                     break;
                 }
                 break;
@@ -1483,7 +1483,7 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
     public /* synthetic */ void F(float f10, int i7) {
     }
 
-    @Override // org.telegram.ui.Components.cj0
+    @Override // org.telegram.ui.Components.dj0
     public /* synthetic */ void r0(View view, float f10, float f11) {
     }
 }

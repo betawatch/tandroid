@@ -19,7 +19,7 @@ import android.view.ViewGroup;
 import ch.o0;
 import e2.j0;
 import fi.ka;
-import l2.w;
+import l2.a0;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.camera.q;
 import org.telegram.messenger.g0;
@@ -35,21 +35,21 @@ import org.telegram.messenger.ui;
 import org.telegram.messenger.voip.GroupCallMessage;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Cells.l9;
 import org.telegram.ui.Components.i5;
-import org.telegram.ui.Components.u31;
+import org.telegram.ui.Components.v31;
 import org.telegram.ui.Components.voip.n;
 import org.telegram.ui.Components.w8;
 import org.telegram.ui.Components.xq;
-import org.telegram.ui.g20;
+import org.telegram.ui.i20;
 import xh.l;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class c extends ViewGroup implements ue.a, ls, te.b {
     public static final Rect L = new Rect();
-    public final w D;
+    public final a0 D;
     public RenderNode E;
     public float F;
     public View G;
@@ -83,7 +83,7 @@ public final class c extends ViewGroup implements ue.a, ls, te.b {
         this.f = paint2;
         n nVar = new n();
         this.h = nVar;
-        this.D = new w(this, 14);
+        this.D = new a0(this, 13);
         this.J = new ka(this, 1);
         this.K = new RectF();
         l lVar = new l(context);
@@ -129,7 +129,7 @@ public final class c extends ViewGroup implements ue.a, ls, te.b {
         if (a(f10, f11) != 1 || (aVar = this.I) == null || (groupCallMessage = this.H) == null) {
             return;
         }
-        ((g20) aVar).a(groupCallMessage);
+        ((i20) aVar).a(groupCallMessage);
     }
 
     @Override // ue.a
@@ -380,13 +380,13 @@ public final class c extends ViewGroup implements ue.a, ls, te.b {
         GroupCallMessage groupCallMessage2;
         GroupCallMessage groupCallMessage3;
         boolean isAttachedToWindow = isAttachedToWindow();
-        w wVar = this.D;
+        a0 a0Var = this.D;
         if (isAttachedToWindow && (groupCallMessage3 = this.H) != null) {
-            groupCallMessage3.unsubscribeFromStateUpdates(wVar);
+            groupCallMessage3.unsubscribeFromStateUpdates(a0Var);
         }
         this.H = groupCallMessage;
         if (isAttachedToWindow() && (groupCallMessage2 = this.H) != null) {
-            groupCallMessage2.subscribeToStateUpdates(wVar);
+            groupCallMessage2.subscribeToStateUpdates(a0Var);
         }
         GroupCallMessage groupCallMessage4 = this.H;
         if (groupCallMessage4 != null) {
@@ -395,7 +395,7 @@ public final class c extends ViewGroup implements ue.a, ls, te.b {
         }
         TLObject e22 = qp.s1(p10.s0).e2(groupCallMessage.fromId);
         String m10 = m5.m(e22);
-        w8 w8Var = new w8((f6) null);
+        w8 w8Var = new w8((g6) null);
         w8Var.p(e22);
         this.d.i0(e22, w8Var, null);
         ImageReceiver imageReceiver = this.n;
@@ -405,7 +405,7 @@ public final class c extends ViewGroup implements ue.a, ls, te.b {
         }
         this.r = null;
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(m10);
-        spannableStringBuilder.setSpan(new u31(g0.o()), 0, spannableStringBuilder.length(), 33);
+        spannableStringBuilder.setSpan(new v31(g0.o()), 0, spannableStringBuilder.length(), 33);
         spannableStringBuilder.setSpan(this.J, 0, spannableStringBuilder.length(), 33);
         o0 o0Var = groupCallMessage.visibleReaction;
         l lVar = this.w;

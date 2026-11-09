@@ -32,22 +32,22 @@ import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.CheckBox;
-import org.telegram.ui.Components.t60;
 import org.telegram.ui.Components.tr;
+import org.telegram.ui.Components.u60;
 import org.telegram.ui.Components.ur;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.an;
-import org.telegram.ui.aq;
-import org.telegram.ui.ea0;
-import org.telegram.ui.kp;
-import org.telegram.ui.oq;
-import org.telegram.ui.uq0;
-import org.telegram.ui.xo0;
-import org.telegram.ui.zp;
+import org.telegram.ui.bq;
+import org.telegram.ui.cn;
+import org.telegram.ui.cq;
+import org.telegram.ui.ga0;
+import org.telegram.ui.mp;
+import org.telegram.ui.qq;
+import org.telegram.ui.wq0;
+import org.telegram.ui.zo0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i0 implements Runnable {
     public final /* synthetic */ int a;
@@ -119,7 +119,7 @@ public final /* synthetic */ class i0 implements Runnable {
                         k7Var.k().f0(tL_error, false);
                         return;
                     } else {
-                        k7Var.k().t(org.telegram.messenger.id.M0(2131743882, null), null).k(false);
+                        k7Var.k().t(org.telegram.messenger.id.M0(2131743879, null), null).k(false);
                         return;
                     }
                 }
@@ -245,7 +245,7 @@ public final /* synthetic */ class i0 implements Runnable {
                 org.telegram.messenger.g0.i3(new w8(profileActivity, 0), 200L);
                 org.telegram.ui.Components.hc a03 = org.telegram.ui.Components.hc.a0(profileActivity);
                 TLRPC.Document document2 = starGift3.sticker;
-                String M0 = org.telegram.messenger.id.M0(2131745112, null);
+                String M0 = org.telegram.messenger.id.M0(2131745109, null);
                 if (charSequence == null) {
                     charSequence = org.telegram.messenger.g0.X2(org.telegram.messenger.id.G((int) j14, "StarsGiftCompletedChannelText", str4));
                 }
@@ -264,7 +264,7 @@ public final /* synthetic */ class i0 implements Runnable {
                 }
                 if (tL_error2 != null) {
                     caVar.b.f((int) (-caVar.h), caVar.c(), caVar.g);
-                    qs.f(caVar.q.a).k(qs.o1, Long.valueOf(ij.B0(caVar.b.k)), Integer.valueOf(caVar.b.f1()), caVar.b.k.reactions);
+                    qs.f(caVar.q.a).k(qs.o1, Long.valueOf(ij.B0(caVar.b.k)), Integer.valueOf(caVar.b.e1()), caVar.b.k.reactions);
                     if ("BALANCE_TOO_LOW".equals(tL_error2.text)) {
                         if (caVar.a.a >= 0) {
                             str = t10.k(caVar.c.getMessagesController().a2(Long.valueOf(caVar.a.a)));
@@ -292,10 +292,10 @@ public final /* synthetic */ class i0 implements Runnable {
                 long j16 = this.c;
                 ea eaVar4 = (ea) this.e;
                 ij ijVar2 = (ij) this.b;
-                an anVar = (an) this.f;
+                cn cnVar = (cn) this.f;
                 a1.c cVar = ceVar.I1;
                 if (cVar == null) {
-                    ca b02 = eaVar4.b0(ijVar2, anVar, j16, false, true, Long.valueOf(ceVar.v1));
+                    ca b02 = eaVar4.b0(ijVar2, cnVar, j16, false, true, Long.valueOf(ceVar.v1));
                     if (b02 == null) {
                         return;
                     }
@@ -315,24 +315,24 @@ public final /* synthetic */ class i0 implements Runnable {
                 ((ConferenceCall) this.d).lambda$requestLastBlock$2(this.c, (TLObject) this.b, (TLRPC.TL_error) this.e, (Runnable) this.f);
                 return;
             case 9:
-                oq oqVar = (oq) this.d;
+                qq qqVar = (qq) this.d;
                 long j17 = this.c;
                 TLRPC.TL_chatBannedRights tL_chatBannedRights = (TLRPC.TL_chatBannedRights) this.e;
                 String str6 = (String) this.f;
                 TLObject tLObject6 = (TLObject) this.b;
-                kp kpVar = new kp(j17, oqVar.M, null, oqVar.D, tL_chatBannedRights, str6, 1, true, false, null);
-                kpVar.X0 = new zp(oqVar, tLObject6);
-                oqVar.presentFragment(kpVar);
+                mp mpVar = new mp(j17, qqVar.M, null, qqVar.D, tL_chatBannedRights, str6, 1, true, false, null);
+                mpVar.X0 = new bq(qqVar, tLObject6);
+                qqVar.presentFragment(mpVar);
                 return;
             case 10:
-                oq oqVar2 = (oq) this.d;
+                qq qqVar2 = (qq) this.d;
                 long j18 = this.c;
                 TLRPC.TL_chatAdminRights tL_chatAdminRights = (TLRPC.TL_chatAdminRights) this.e;
                 String str7 = (String) this.f;
                 TLObject tLObject7 = (TLObject) this.b;
-                kp kpVar2 = new kp(j18, oqVar2.M, tL_chatAdminRights, null, null, str7, 0, true, false, null);
-                kpVar2.X0 = new aq(oqVar2, tLObject7);
-                oqVar2.presentFragment(kpVar2);
+                mp mpVar2 = new mp(j18, qqVar2.M, tL_chatAdminRights, null, null, str7, 0, true, false, null);
+                mpVar2.X0 = new cq(qqVar2, tLObject7);
+                qqVar2.presentFragment(mpVar2);
                 return;
             case 11:
                 ur urVar = (ur) this.d;
@@ -414,11 +414,11 @@ public final /* synthetic */ class i0 implements Runnable {
                 }
                 if (tLObject8 != null) {
                     TL_phone.joinAsPeers joinaspeers = (TL_phone.joinAsPeers) tLObject8;
-                    t60.z1 = joinaspeers.peers;
-                    t60.B1 = j21;
-                    t60.A1 = SystemClock.elapsedRealtime();
+                    u60.z1 = joinaspeers.peers;
+                    u60.B1 = j21;
+                    u60.A1 = SystemClock.elapsedRealtime();
                     int i18 = cVar2.a;
-                    t60.C1 = i18;
+                    u60.C1 = i18;
                     qp.s1(i18).S3(joinaspeers.chats, false);
                     qp.s1(cVar2.a).Y3(joinaspeers.users, false);
                     qrVar.k(joinaspeers.peers.size() == 1);
@@ -444,13 +444,13 @@ public final /* synthetic */ class i0 implements Runnable {
                 gfVar.e = null;
                 gfVar.f = null;
                 photoViewer.p5.b.setLoading(false);
-                uq0 uq0Var = photoViewer.d;
-                if (uq0Var != null) {
-                    uq0Var.X(photoViewer.O4);
+                wq0 wq0Var = photoViewer.d;
+                if (wq0Var != null) {
+                    wq0Var.X(photoViewer.O4);
                 }
-                xo0 xo0Var = photoViewer.g1;
-                if (xo0Var != null) {
-                    xo0Var.setImage(bitmap);
+                zo0 zo0Var = photoViewer.g1;
+                if (zo0Var != null) {
+                    zo0Var.setImage(bitmap);
                 }
                 photoViewer.b3(0);
                 CheckBox checkBox = photoViewer.N0;
@@ -465,9 +465,9 @@ public final /* synthetic */ class i0 implements Runnable {
                 ArrayList arrayList4 = (ArrayList) this.b;
                 boolean[] zArr2 = (boolean[]) this.f;
                 long j23 = this.c;
-                RectF rectF = ProfileActivity.S6;
+                RectF rectF = ProfileActivity.V6;
                 zArr[0] = true;
-                org.telegram.messenger.g0.r(profileActivity2.x5);
+                org.telegram.messenger.g0.r(profileActivity2.z5);
                 for (int i19 = 0; i19 < arrayList4.size(); i19++) {
                     ((TL_stories.StoryItem) arrayList4.get(i19)).pinned = zArr2[i19];
                 }
@@ -497,11 +497,11 @@ public final /* synthetic */ class i0 implements Runnable {
                 while (i20 < i11) {
                     SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
                     if (i20 == i12) {
-                        a02 = org.telegram.messenger.id.M0(2131749964, str3);
+                        a02 = org.telegram.messenger.id.M0(2131749963, str3);
                     } else {
                         Object[] objArr = new Object[i12];
                         objArr[i13] = g1Var.V1;
-                        a02 = org.telegram.messenger.id.a0(str3, str3, 2131749960, objArr);
+                        a02 = org.telegram.messenger.id.a0(str3, str3, 2131749959, objArr);
                     }
                     spannableStringBuilder2.append((CharSequence) org.telegram.messenger.g0.X2(a02));
                     String str11 = " ";
@@ -530,7 +530,7 @@ public final /* synthetic */ class i0 implements Runnable {
                         SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder();
                         Object[] objArr2 = new Object[1];
                         objArr2[i21] = org.telegram.messenger.m5.t(j25);
-                        spannableStringBuilder3.append((CharSequence) org.telegram.messenger.id.a0(null, null, 2131749958, objArr2).replaceAll(str12, " "));
+                        spannableStringBuilder3.append((CharSequence) org.telegram.messenger.id.a0(null, null, 2131749957, objArr2).replaceAll(str12, " "));
                         spannableStringBuilder3.append((CharSequence) " ");
                         Iterator it = hashSet2.iterator();
                         while (it.hasNext()) {
@@ -540,10 +540,10 @@ public final /* synthetic */ class i0 implements Runnable {
                         }
                         spannableStringBuilder3.append((CharSequence) " >");
                         spannableStringBuilder = spannableStringBuilder2;
-                        spannableStringBuilder.append((CharSequence) org.telegram.messenger.g0.H2(org.telegram.messenger.g0.k2(spannableStringBuilder3, new ea0(g1Var, c20Var2, j25, 4)), true));
+                        spannableStringBuilder.append((CharSequence) org.telegram.messenger.g0.H2(org.telegram.messenger.g0.k2(spannableStringBuilder3, new ga0(g1Var, c20Var2, j25, 4)), true));
                     } else {
                         spannableStringBuilder = spannableStringBuilder2;
-                        spannableStringBuilder.append((CharSequence) org.telegram.messenger.g0.H2(org.telegram.messenger.g0.k2(org.telegram.messenger.id.M0(2131749959, null), new pa(context, 12)), true));
+                        spannableStringBuilder.append((CharSequence) org.telegram.messenger.g0.H2(org.telegram.messenger.g0.k2(org.telegram.messenger.id.M0(2131749958, null), new pa(context, 12)), true));
                     }
                     org.telegram.ui.Components.jb jbVar2 = i20 == 0 ? jbVar : g1Var.d2;
                     jbVar2.setText(spannableStringBuilder);
@@ -577,13 +577,13 @@ public final /* synthetic */ class i0 implements Runnable {
         this.f = runnable;
     }
 
-    public /* synthetic */ i0(ce ceVar, long j3, ea eaVar, ij ijVar, an anVar) {
+    public /* synthetic */ i0(ce ceVar, long j3, ea eaVar, ij ijVar, cn cnVar) {
         this.a = 7;
         this.d = ceVar;
         this.c = j3;
         this.e = eaVar;
         this.b = ijVar;
-        this.f = anVar;
+        this.f = cnVar;
     }
 
     public /* synthetic */ i0(Object obj, Object obj2, long j3, Object obj3, Object obj4, int i7) {
@@ -622,9 +622,9 @@ public final /* synthetic */ class i0 implements Runnable {
         this.f = qrVar;
     }
 
-    public /* synthetic */ i0(oq oqVar, long j3, TLObject tLObject, String str, TLObject tLObject2, int i7) {
+    public /* synthetic */ i0(qq qqVar, long j3, TLObject tLObject, String str, TLObject tLObject2, int i7) {
         this.a = i7;
-        this.d = oqVar;
+        this.d = qqVar;
         this.c = j3;
         this.e = tLObject;
         this.f = str;

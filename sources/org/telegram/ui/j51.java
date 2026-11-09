@@ -1,44 +1,29 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class j51 extends org.telegram.ui.Components.w31 {
-    public static final /* synthetic */ int c = 0;
-    public m.q3 b;
+public final class j51 extends org.telegram.ui.Components.q31 {
+    public final /* synthetic */ StickersActivity b;
 
-    static {
-        org.telegram.ui.Components.w31.h(new j51());
+    public j51(StickersActivity stickersActivity) {
+        this.b = stickersActivity;
     }
 
-    @Override // org.telegram.ui.Components.w31
-    public final void a(org.telegram.ui.Components.pj0 pj0Var, View view, org.telegram.ui.Components.x31 x31Var) {
-        ((org.telegram.ui.Cells.o7) view).l(x31Var != null && x31Var.h, false);
+    @Override // org.telegram.ui.Components.q31
+    public final void g(TLRPC.StickerSetCovered stickerSetCovered, boolean z9) {
+        int i7;
+        StickersActivity stickersActivity = this.b;
+        i7 = ((org.telegram.ui.ActionBar.f2) stickersActivity).currentAccount;
+        org.telegram.messenger.ui.b0(i7).f2(stickersActivity.getParentActivity(), stickerSetCovered, 2, stickersActivity, false, false);
     }
 
-    @Override // org.telegram.ui.Components.w31
-    public final void b(View view, org.telegram.ui.Components.x31 x31Var, boolean z9, org.telegram.ui.Components.l41 l41Var, org.telegram.ui.Components.q41 q41Var) {
-        org.telegram.ui.Cells.o7 o7Var = (org.telegram.ui.Cells.o7) view;
-        o7Var.k((org.telegram.messenger.ij) x31Var.G, x31Var.v, false);
-        o7Var.i(x31Var.e, false);
-        o7Var.l(x31Var.h, false);
-    }
-
-    @Override // org.telegram.ui.Components.w31
-    public final View d(Context context, org.telegram.ui.Components.pj0 pj0Var, int i7, org.telegram.ui.ActionBar.f6 f6Var) {
-        if (this.b == null) {
-            this.b = new m.q3(context, f6Var);
-        }
-        org.telegram.ui.Cells.o7 o7Var = new org.telegram.ui.Cells.o7(context, this.b, i7);
-        o7Var.w0 = true;
-        o7Var.d0 = true;
-        return o7Var;
-    }
-
-    @Override // org.telegram.ui.Components.w31
-    public final boolean e(org.telegram.ui.Components.x31 x31Var, org.telegram.ui.Components.x31 x31Var2) {
-        return x31Var.q == x31Var2.q && x31Var.e == x31Var2.e && x31Var.B == x31Var2.B;
+    @Override // org.telegram.ui.Components.q31
+    public final void h(TLRPC.StickerSetCovered stickerSetCovered) {
+        int i7;
+        StickersActivity stickersActivity = this.b;
+        i7 = ((org.telegram.ui.ActionBar.f2) stickersActivity).currentAccount;
+        org.telegram.messenger.ui.b0(i7).f2(stickersActivity.getParentActivity(), stickerSetCovered, 0, stickersActivity, false, false);
     }
 }

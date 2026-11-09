@@ -14,15 +14,15 @@ import android.view.ViewParent;
 import android.view.ViewPropertyAnimator;
 import android.view.WindowInsets;
 import android.widget.FrameLayout;
-import di.m4;
+import di.n4;
 import fi.v3;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.xq;
-import org.telegram.ui.qb1;
+import org.telegram.ui.sb1;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class n1 extends FrameLayout {
     public float D;
@@ -54,7 +54,7 @@ public final class n1 extends FrameLayout {
     public float d;
     public ValueAnimator d0;
     public boolean e;
-    public final m4 e0;
+    public final n4 e0;
     public int f;
     public ValueAnimator f0;
     public final v3 g0;
@@ -82,7 +82,7 @@ public final class n1 extends FrameLayout {
         this.K = 0.0f;
         this.Q = -1.0f;
         this.R = true;
-        this.e0 = new m4(this, 11);
+        this.e0 = new n4(this, 11);
         this.g0 = new v3(this, 19);
         this.r = ViewConfiguration.get(activity).getScaledTouchSlop();
         setOutlineProvider(new fh.a(this, 7));
@@ -303,7 +303,7 @@ public final class n1 extends FrameLayout {
         }
         m1 m1Var = this.i0;
         if (m1Var != null) {
-            ((qb1) m1Var).b.d0.d(this.P, this.J);
+            ((sb1) m1Var).b.d0.d(this.P, this.J);
         }
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
         if (getMeasuredHeight() != this.f && getMeasuredWidth() != this.h) {

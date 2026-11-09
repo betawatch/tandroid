@@ -4,7 +4,7 @@ import android.animation.ValueAnimator;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import di.k8;
+import di.l8;
 import fi.l5;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Cells.j9;
@@ -12,18 +12,18 @@ import org.telegram.ui.Cells.q1;
 import org.telegram.ui.Cells.q9;
 import org.telegram.ui.Cells.u9;
 import org.telegram.ui.Components.l9;
-import org.telegram.ui.Components.l90;
 import org.telegram.ui.Components.m8;
-import org.telegram.ui.Components.o40;
-import org.telegram.ui.Components.pm0;
+import org.telegram.ui.Components.m90;
+import org.telegram.ui.Components.p40;
+import org.telegram.ui.Components.qm0;
 import org.telegram.ui.Components.t8;
 import org.telegram.ui.Components.voip.n2;
 import org.telegram.ui.Components.xq;
-import org.telegram.ui.bg0;
-import org.telegram.ui.pz0;
-import org.telegram.ui.rz0;
+import org.telegram.ui.dg0;
+import org.telegram.ui.sz0;
+import org.telegram.ui.uz0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -39,7 +39,7 @@ public final /* synthetic */ class u implements ValueAnimator.AnimatorUpdateList
     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         ViewGroup viewGroup;
-        pz0 pz0Var;
+        sz0 sz0Var;
         switch (this.a) {
             case 0:
                 b0 b0Var = (b0) this.c;
@@ -56,12 +56,12 @@ public final /* synthetic */ class u implements ValueAnimator.AnimatorUpdateList
                 }
                 break;
             case 1:
-                k8 k8Var = (k8) this.c;
-                k8Var.getClass();
-                k8Var.D = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                k8Var.invalidate();
+                l8 l8Var = (l8) this.c;
+                l8Var.getClass();
+                l8Var.D = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                l8Var.invalidate();
                 if (this.b) {
-                    k8Var.requestLayout();
+                    l8Var.requestLayout();
                     break;
                 }
                 break;
@@ -119,17 +119,17 @@ public final /* synthetic */ class u implements ValueAnimator.AnimatorUpdateList
                 }
                 break;
             case 7:
-                o40 o40Var = (o40) this.c;
-                o40Var.D0 = this.b ? 0.0f : ((Float) valueAnimator.getAnimatedValue()).floatValue() * (o40Var.getMeasuredHeight() / 2.0f);
-                o40Var.x();
+                p40 p40Var = (p40) this.c;
+                p40Var.D0 = this.b ? 0.0f : ((Float) valueAnimator.getAnimatedValue()).floatValue() * (p40Var.getMeasuredHeight() / 2.0f);
+                p40Var.x();
                 break;
             case 8:
-                l90 l90Var = (l90) this.c;
-                l90Var.getClass();
-                l90Var.M = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                l90Var.invalidate();
+                m90 m90Var = (m90) this.c;
+                m90Var.getClass();
+                m90Var.M = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                m90Var.invalidate();
                 if (this.b) {
-                    l90Var.requestLayout();
+                    m90Var.requestLayout();
                     break;
                 }
                 break;
@@ -149,33 +149,33 @@ public final /* synthetic */ class u implements ValueAnimator.AnimatorUpdateList
                 }
                 break;
             case 10:
-                bg0 bg0Var = (bg0) this.c;
+                dg0 dg0Var = (dg0) this.c;
                 float floatValue4 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                bg0Var.D = floatValue4;
-                bg0Var.G.setAlpha(floatValue4);
-                bg0Var.J.setAlpha(bg0Var.D);
-                if (!this.b && (viewGroup = bg0Var.Y) != null) {
-                    viewGroup.setAlpha(bg0Var.D);
+                dg0Var.D = floatValue4;
+                dg0Var.G.setAlpha(floatValue4);
+                dg0Var.J.setAlpha(dg0Var.D);
+                if (!this.b && (viewGroup = dg0Var.Y) != null) {
+                    viewGroup.setAlpha(dg0Var.D);
                 }
-                bg0Var.E.invalidate();
-                bg0Var.F.invalidate();
+                dg0Var.E.invalidate();
+                dg0Var.F.invalidate();
                 break;
             case 11:
-                rz0 rz0Var = (rz0) this.c;
-                rz0Var.s = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                rz0Var.b.invalidate();
-                rz0Var.c.invalidate();
-                if (rz0Var.S) {
-                    rz0Var.N.invalidate();
+                uz0 uz0Var = (uz0) this.c;
+                uz0Var.s = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                uz0Var.b.invalidate();
+                uz0Var.c.invalidate();
+                if (uz0Var.S) {
+                    uz0Var.N.invalidate();
                 }
-                rz0Var.e();
-                TextView textView = rz0Var.D;
+                uz0Var.e();
+                TextView textView = uz0Var.D;
                 if (textView != null) {
-                    textView.setAlpha(rz0Var.s);
+                    textView.setAlpha(uz0Var.s);
                 }
-                if (!rz0Var.S && (pz0Var = rz0Var.N) != null && pz0Var.getSeekBarWaveform() != null) {
-                    pm0 seekBarWaveform = rz0Var.N.getSeekBarWaveform();
-                    seekBarWaveform.L = (this.b ? xq.g : xq.i).getInterpolation(Utilities.i(rz0Var.s * 1.25f, 1.0f, 0.0f));
+                if (!uz0Var.S && (sz0Var = uz0Var.N) != null && sz0Var.getSeekBarWaveform() != null) {
+                    qm0 seekBarWaveform = uz0Var.N.getSeekBarWaveform();
+                    seekBarWaveform.L = (this.b ? xq.g : xq.i).getInterpolation(Utilities.i(uz0Var.s * 1.25f, 1.0f, 0.0f));
                     q1 q1Var2 = seekBarWaveform.n;
                     if (q1Var2 != null) {
                         q1Var2.invalidate();

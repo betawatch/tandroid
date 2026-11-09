@@ -17,16 +17,16 @@ import org.telegram.messenger.xr;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.f2;
 import org.telegram.ui.Cells.q8;
-import org.telegram.ui.Components.b70;
+import org.telegram.ui.Components.c70;
 import org.telegram.ui.Components.hc;
-import org.telegram.ui.Components.k60;
-import org.telegram.ui.Components.x31;
-import org.telegram.ui.an;
-import org.telegram.ui.w91;
+import org.telegram.ui.Components.l60;
+import org.telegram.ui.Components.y31;
+import org.telegram.ui.cn;
+import org.telegram.ui.y91;
 import r0.h1;
 import r0.k1;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u implements a20, r0.m, b20 {
     public final /* synthetic */ int a;
@@ -50,13 +50,13 @@ public final /* synthetic */ class u implements a20, r0.m, b20 {
     }
 
     @Override // org.telegram.messenger.b20
-    public Boolean a(x31 x31Var, View view, Integer num, Float f10, Float f11) {
+    public Boolean a(y31 y31Var, View view, Integer num, Float f10, Float f11) {
         boolean z9;
         long j3;
         boolean z10;
         boolean z11;
         int i7 = d0.M1;
-        Object obj = x31Var.G;
+        Object obj = y31Var.G;
         boolean z12 = obj instanceof TLRPC.Chat;
         d0 d0Var = this.b;
         boolean z13 = true;
@@ -83,7 +83,7 @@ public final /* synthetic */ class u implements a20, r0.m, b20 {
         z11 = V;
         z10 = false;
         if (z9) {
-            k60 F = k60.F(d0Var.c, null, view);
+            l60 F = l60.F(d0Var.c, null, view);
             F.c(R.drawable.msg_cancel, id.M0(2131751915, null), new m(d0Var, z10, z11, j3, 1), true);
             F.W(d0Var.r1.d.U0(view, true));
             F.Z();
@@ -101,27 +101,27 @@ public final /* synthetic */ class u implements a20, r0.m, b20 {
         d0 d0Var = this.b;
         switch (i7) {
             case 0:
-                d0Var.L0((x31) obj);
+                d0Var.L0((y31) obj);
                 break;
             case 1:
             default:
                 int i10 = d0.M1;
-                d0Var.I0((x31) obj);
+                d0Var.I0((y31) obj);
                 break;
             case 2:
                 int i11 = d0.M1;
-                d0Var.L0((x31) obj);
+                d0Var.L0((y31) obj);
                 break;
             case 3:
-                x31 x31Var = (x31) obj;
+                y31 y31Var = (y31) obj;
                 View view = (View) obj2;
                 f2 f2Var = d0Var.q1;
-                if (!d0Var.I0(x31Var)) {
-                    int i12 = x31Var.d;
+                if (!d0Var.I0(y31Var)) {
+                    int i12 = y31Var.d;
                     boolean z9 = false;
                     if (i12 != 101) {
                         if (i12 != 100) {
-                            Object obj3 = x31Var.G;
+                            Object obj3 = y31Var.G;
                             if (obj3 instanceof TLRPC.Chat) {
                                 TLRPC.Chat chat2 = (TLRPC.Chat) obj3;
                                 z9 = t3.V(chat2);
@@ -139,16 +139,16 @@ public final /* synthetic */ class u implements a20, r0.m, b20 {
                                         break;
                                     }
                                 } else {
-                                    b70 b70Var = new b70(d0Var.getContext(), chat, null, d0Var.q1, d0Var.I0);
-                                    b70Var.p1 = new hc((FrameLayout) d0Var.b, d0Var.I0);
-                                    b70Var.show();
+                                    c70 c70Var = new c70(d0Var.getContext(), chat, null, d0Var.q1, d0Var.I0);
+                                    c70Var.p1 = new hc((FrameLayout) d0Var.b, d0Var.I0);
+                                    c70Var.show();
                                     break;
                                 }
                             } else {
-                                if (f2Var instanceof an) {
-                                    an anVar = (an) f2Var;
-                                    TLRPC.Chat chat3 = anVar.e;
-                                    TLRPC.User j10 = anVar.j();
+                                if (f2Var instanceof cn) {
+                                    cn cnVar = (cn) f2Var;
+                                    TLRPC.Chat chat3 = cnVar.e;
+                                    TLRPC.User j10 = cnVar.j();
                                     if ((chat3 != null && chat3.id == (-j3)) || (j10 != null && j10.id == j3)) {
                                         d0Var.dismiss();
                                         break;
@@ -161,13 +161,13 @@ public final /* synthetic */ class u implements a20, r0.m, b20 {
                                     bundle.putLong("chat_id", -j3);
                                 }
                                 if (!t3.c0(chat)) {
-                                    f2Var.presentFragment(new an(bundle));
+                                    f2Var.presentFragment(new cn(bundle));
                                 } else if (t3.a(chat)) {
-                                    an anVar2 = new an(bundle);
-                                    qg.d.a(anVar2, xr.a(j3, qp.s1(d0Var.a).e7.getLong(p0.o(chat.id, "forumlasttopic"), 1L)));
-                                    f2Var.presentFragment(anVar2);
+                                    cn cnVar2 = new cn(bundle);
+                                    qg.d.a(cnVar2, xr.a(j3, qp.s1(d0Var.a).e7.getLong(p0.o(chat.id, "forumlasttopic"), 1L)));
+                                    f2Var.presentFragment(cnVar2);
                                 } else {
-                                    f2Var.presentFragment(new w91(bundle));
+                                    f2Var.presentFragment(new y91(bundle));
                                 }
                                 d0Var.dismiss();
                                 break;

@@ -29,15 +29,15 @@ import android.view.ViewConfiguration;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.ui.Components.ah0;
 import org.telegram.ui.Components.ic;
-import org.telegram.ui.Components.r70;
-import org.telegram.ui.Components.u31;
-import org.telegram.ui.Components.x70;
+import org.telegram.ui.Components.s70;
+import org.telegram.ui.Components.v31;
 import org.telegram.ui.Components.xq;
-import org.telegram.ui.Components.zg0;
-import org.telegram.ui.oy;
+import org.telegram.ui.Components.y70;
+import org.telegram.ui.qy;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public class m3 extends View {
     public final ic A0;
@@ -80,7 +80,7 @@ public class m3 extends View {
     public boolean U;
     public final RectF U0;
     public boolean V;
-    public x70 V0;
+    public y70 V0;
     public final org.telegram.ui.Components.w5 W;
     public int a;
     public org.telegram.ui.Cells.y a0;
@@ -117,7 +117,7 @@ public class m3 extends View {
     public float w;
     public final int[] w0;
     public final RectF x;
-    public final oy x0;
+    public final qy x0;
     public float y;
     public ValueAnimator y0;
     public float z0;
@@ -153,7 +153,7 @@ public class m3 extends View {
         this.p0 = org.telegram.messenger.g0.N(2.0f);
         this.s0 = Float.NaN;
         this.w0 = new int[2];
-        this.x0 = new oy(this, 1);
+        this.x0 = new qy(this, 1);
         this.z0 = 1.0f;
         this.A0 = new ic(this, 2.0f, 5.0f);
         this.B0 = new Rect();
@@ -277,7 +277,7 @@ public class m3 extends View {
             return textPaint.measureText(charSequence.toString());
         }
         Spanned spanned = (Spanned) charSequence;
-        u31[] u31VarArr = (u31[]) spanned.getSpans(0, charSequence.length(), u31.class);
+        v31[] v31VarArr = (v31[]) spanned.getSpans(0, charSequence.length(), v31.class);
         ReplacementSpan[] replacementSpanArr = (ReplacementSpan[]) spanned.getSpans(0, charSequence.length(), ReplacementSpan.class);
         int i7 = 0;
         int i10 = 0;
@@ -291,13 +291,13 @@ public class m3 extends View {
         }
         CharSequence charSequence2 = charSequence;
         TextPaint textPaint3 = textPaint;
-        if (u31VarArr == null || u31VarArr.length == 0) {
+        if (v31VarArr == null || v31VarArr.length == 0) {
             return textPaint3.measureText(charSequence2.toString()) + i10;
         }
         int i11 = 0;
-        for (int i12 = 0; i12 < u31VarArr.length; i12++) {
-            int spanStart = spanned.getSpanStart(u31VarArr[i12]);
-            int spanEnd = spanned.getSpanEnd(u31VarArr[i12]);
+        for (int i12 = 0; i12 < v31VarArr.length; i12++) {
+            int spanStart = spanned.getSpanStart(v31VarArr[i12]);
+            int spanEnd = spanned.getSpanEnd(v31VarArr[i12]);
             int max = Math.max(i11, spanStart);
             if (max - i11 > 0) {
                 f10 += textPaint3.measureText(spanned, i11, max);
@@ -305,7 +305,7 @@ public class m3 extends View {
             i11 = Math.max(max, spanEnd);
             if (i11 - max > 0) {
                 Typeface typeface = textPaint3.getTypeface();
-                textPaint3.setTypeface(u31VarArr[i12].a);
+                textPaint3.setTypeface(v31VarArr[i12].a);
                 float measureText = textPaint3.measureText(spanned, max, i11) + f10;
                 textPaint3.setTypeface(typeface);
                 f10 = measureText;
@@ -329,7 +329,7 @@ public class m3 extends View {
         int i7 = this.k0;
         Paint paint = this.F;
         if (i7 != 0) {
-            paint.setShadowLayer(this.i0, 0.0f, this.j0, org.telegram.ui.ActionBar.k6.r1(f10, i7));
+            paint.setShadowLayer(this.i0, 0.0f, this.j0, org.telegram.ui.ActionBar.l6.r1(f10, i7));
         }
         int alpha = paint.getAlpha();
         paint.setAlpha((int) (alpha * f10));
@@ -814,8 +814,8 @@ public class m3 extends View {
         if (drawable != null) {
             drawable.setCallback(this);
             Drawable drawable3 = this.c0;
-            if (drawable3 instanceof zg0) {
-                this.d = Math.max(this.d, ((zg0) drawable3).r());
+            if (drawable3 instanceof ah0) {
+                this.d = Math.max(this.d, ((ah0) drawable3).r());
             }
             this.f0 = this.c0.getIntrinsicWidth();
             this.g0 = this.c0.getIntrinsicHeight();
@@ -905,33 +905,33 @@ public class m3 extends View {
                         ClickableSpan[] clickableSpanArr = (ClickableSpan[]) new SpannableString(this.L.getText()).getSpans(offsetForHorizontal, offsetForHorizontal, ClickableSpan.class);
                         if (clickableSpanArr.length != 0 && !org.telegram.messenger.g0.C1()) {
                             clickableSpan = clickableSpanArr[0];
-                            oy oyVar = this.x0;
+                            qy qyVar = this.x0;
                             n2.n0 n0Var = this.Q;
                             if (clickableSpan == null && motionEvent.getAction() == 0) {
-                                x70 x70Var = new x70(clickableSpan, null, motionEvent.getX(), motionEvent.getY(), 0);
-                                this.V0 = x70Var;
-                                n0Var.b(x70Var, null);
+                                y70 y70Var = new y70(clickableSpan, null, motionEvent.getX(), motionEvent.getY(), 0);
+                                this.V0 = y70Var;
+                                n0Var.b(y70Var, null);
                                 SpannableString spannableString = new SpannableString(this.L.getText());
                                 int spanStart = spannableString.getSpanStart(this.V0.i);
                                 int spanEnd = spannableString.getSpanEnd(this.V0.i);
-                                r70 b10 = this.V0.b();
+                                s70 b10 = this.V0.b();
                                 b10.d(this.L, spanStart, 0.0f);
                                 this.L.getSelectionPath(spanStart, spanEnd, b10);
                                 invalidate();
-                                org.telegram.messenger.g0.i3(new bi.s2(this, x70Var, clickableSpan), ViewConfiguration.getLongPressTimeout());
-                                org.telegram.messenger.g0.r(oyVar);
+                                org.telegram.messenger.g0.i3(new bi.s2(this, y70Var, clickableSpan), ViewConfiguration.getLongPressTimeout());
+                                org.telegram.messenger.g0.r(qyVar);
                                 return true;
                             }
                             if (motionEvent.getAction() == 1) {
                                 n0Var.f(true);
                                 invalidate();
-                                org.telegram.messenger.g0.r(oyVar);
+                                org.telegram.messenger.g0.r(qyVar);
                                 long j3 = this.d;
                                 if (j3 > 0) {
-                                    org.telegram.messenger.g0.i3(oyVar, j3);
+                                    org.telegram.messenger.g0.i3(qyVar, j3);
                                 }
-                                x70 x70Var2 = this.V0;
-                                if (x70Var2 != null && (characterStyle = x70Var2.i) == clickableSpan) {
+                                y70 y70Var2 = this.V0;
+                                if (y70Var2 != null && (characterStyle = y70Var2.i) == clickableSpan) {
                                     if (characterStyle != null) {
                                         ((ClickableSpan) characterStyle).onClick(this);
                                     }
@@ -943,10 +943,10 @@ public class m3 extends View {
                             if (motionEvent.getAction() == 3) {
                                 n0Var.f(true);
                                 invalidate();
-                                org.telegram.messenger.g0.r(oyVar);
+                                org.telegram.messenger.g0.r(qyVar);
                                 long j10 = this.d;
                                 if (j10 > 0) {
-                                    org.telegram.messenger.g0.i3(oyVar, j10);
+                                    org.telegram.messenger.g0.i3(qyVar, j10);
                                 }
                                 this.V0 = null;
                             }
@@ -954,7 +954,7 @@ public class m3 extends View {
                     }
                 }
                 clickableSpan = null;
-                oy oyVar2 = this.x0;
+                qy qyVar2 = this.x0;
                 n2.n0 n0Var2 = this.Q;
                 if (clickableSpan == null) {
                 }
@@ -1086,11 +1086,11 @@ public class m3 extends View {
         org.telegram.messenger.g0.i2(getText());
         this.V = true;
         invalidate();
-        oy oyVar = this.x0;
-        org.telegram.messenger.g0.r(oyVar);
+        qy qyVar = this.x0;
+        org.telegram.messenger.g0.r(qyVar);
         long j3 = this.d;
         if (j3 > 0) {
-            org.telegram.messenger.g0.i3(oyVar, j3);
+            org.telegram.messenger.g0.i3(qyVar, j3);
         }
         Runnable runnable = this.q0;
         if (runnable != null) {

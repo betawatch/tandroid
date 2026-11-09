@@ -47,21 +47,21 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.Cells.f1;
 import org.telegram.ui.Cells.j9;
 import org.telegram.ui.Cells.l1;
 import org.telegram.ui.Cells.q1;
 import org.telegram.ui.Components.bi;
-import org.telegram.ui.Components.m51;
+import org.telegram.ui.Components.n51;
 import org.telegram.ui.Components.qg;
 import org.telegram.ui.Components.r5;
-import org.telegram.ui.fr0;
+import org.telegram.ui.hr0;
 import u2.x;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
-public final class b implements a4.h, b3.l, ca.d, eg.a, f3.q, bi, ia.d, SuccessContinuation, u9.d, m51, l1, q2.q, r0.q, u2.k, y2.m, s0 {
+public final class b implements a4.h, b3.l, ca.d, eg.a, f3.q, bi, ia.d, SuccessContinuation, u9.d, n51, l1, q2.q, r0.q, u2.k, y2.m, s0 {
     public static final /* synthetic */ b b = new b(14);
     public final /* synthetic */ int a;
 
@@ -272,9 +272,9 @@ public final class b implements a4.h, b3.l, ca.d, eg.a, f3.q, bi, ia.d, SuccessC
         return false;
     }
 
-    @Override // org.telegram.ui.Components.m51
+    @Override // org.telegram.ui.Components.n51
     public void F(boolean z9, float[] fArr) {
-        k6.A0().e(z9, fArr);
+        l6.A0().e(z9, fArr);
     }
 
     @Override // org.telegram.ui.Components.bi
@@ -328,7 +328,7 @@ public final class b implements a4.h, b3.l, ca.d, eg.a, f3.q, bi, ia.d, SuccessC
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ fr0 N1() {
+    public /* synthetic */ hr0 N1() {
         return null;
     }
 
@@ -621,9 +621,9 @@ public final class b implements a4.h, b3.l, ca.d, eg.a, f3.q, bi, ia.d, SuccessC
         return -1L;
     }
 
-    @Override // org.telegram.ui.Components.m51
+    @Override // org.telegram.ui.Components.n51
     public boolean s() {
-        return k6.A0().i != null;
+        return l6.A0().i != null;
     }
 
     @Override // androidx.lifecycle.s0

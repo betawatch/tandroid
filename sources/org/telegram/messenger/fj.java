@@ -14,12 +14,12 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.Components.my0;
-import org.telegram.ui.rg0;
+import org.telegram.ui.Components.ny0;
+import org.telegram.ui.tg0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
-public final class fj implements rg0 {
+public final class fj implements tg0 {
     public float D;
     public ij E;
     public int F;
@@ -28,12 +28,12 @@ public final class fj implements rg0 {
     public boolean I;
     public boolean J;
     public String K;
-    public my0 L;
+    public ny0 L;
     public int M;
     public boolean N;
     public int O;
     public Drawable P;
-    public my0 Q;
+    public ny0 Q;
     public int R;
     public org.telegram.ui.Cells.y S;
     public Paint T;
@@ -138,7 +138,7 @@ public final class fj implements rg0 {
         }
     }
 
-    @Override // org.telegram.ui.rg0
+    @Override // org.telegram.ui.tg0
     public final Layout a() {
         return this.e;
     }
@@ -161,7 +161,7 @@ public final class fj implements rg0 {
         return g0.T1(f10 ? 1.0f : 0.0f, f() ? 1.0f : 0.0f, x1Var.L1);
     }
 
-    @Override // org.telegram.ui.rg0
+    @Override // org.telegram.ui.tg0
     public final View e() {
         return null;
     }
@@ -183,11 +183,11 @@ public final class fj implements rg0 {
 
     public final void i(Canvas canvas, RectF rectF, int i7, int i10, float f10) {
         if (this.N) {
-            int r12 = org.telegram.ui.ActionBar.k6.r1(0.1f, i7);
+            int r12 = org.telegram.ui.ActionBar.l6.r1(0.1f, i7);
             if (this.R != r12) {
                 org.telegram.ui.Cells.y yVar = this.S;
                 this.R = r12;
-                org.telegram.ui.ActionBar.k6.H1(yVar, r12, true);
+                org.telegram.ui.ActionBar.l6.H1(yVar, r12, true);
             }
             this.S.setBounds(g0.L(3.0f) + ((int) rectF.left), (int) (rectF.bottom - g0.L(38.0f)), (int) rectF.right, (int) rectF.bottom);
             int i11 = (int) (255.0f * f10);
@@ -207,9 +207,9 @@ public final class fj implements rg0 {
             this.P.setAlpha(i11);
             this.P.setBounds((int) centerX, (int) (L - ((r2.getIntrinsicHeight() * 0.8f) / 2.0f)), (int) ((this.P.getIntrinsicWidth() * 0.8f) + centerX), (int) a8.p0.f(this.P.getIntrinsicHeight(), 0.8f, 2.0f, L));
             this.P.draw(canvas);
-            my0 my0Var = this.Q;
-            my0Var.p = g0.L(12.0f) + ((int) (r1 - ((this.P.getIntrinsicWidth() * 0.8f) + g0.L(5.0f))));
-            my0Var.c((this.P.getIntrinsicWidth() * 0.8f) + g0.L(5.0f) + centerX, L, f10, i7, canvas);
+            ny0 ny0Var = this.Q;
+            ny0Var.p = g0.L(12.0f) + ((int) (r1 - ((this.P.getIntrinsicWidth() * 0.8f) + g0.L(5.0f))));
+            ny0Var.c((this.P.getIntrinsicWidth() * 0.8f) + g0.L(5.0f) + centerX, L, f10, i7, canvas);
         }
     }
 
@@ -236,11 +236,11 @@ public final class fj implements rg0 {
         boolean z10 = i7 >= 75 && !z9;
         this.N = z10;
         if (z10) {
-            this.Q = new my0(id.M0(2131751765, null).toUpperCase(), iz.W0 - 3, g0.o());
+            this.Q = new ny0(id.M0(2131751765, null).toUpperCase(), iz.W0 - 3, g0.o());
             Drawable h = jg.g.h(t0.b, R.drawable.msg_copy);
             this.P = h;
             h.setColorFilter(new PorterDuffColorFilter(this.O, PorterDuff.Mode.SRC_IN));
-            this.S = org.telegram.ui.ActionBar.k6.c0(this.R, 0, 0, Math.min(5, iz.Y0), 0);
+            this.S = org.telegram.ui.ActionBar.l6.c0(this.R, 0, 0, Math.min(5, iz.Y0), 0);
             this.T = new Paint(1);
         }
         if (TextUtils.isEmpty(str)) {
@@ -252,9 +252,9 @@ public final class fj implements rg0 {
         String b10 = b(str);
         int i10 = iz.W0 - 1;
         ni.s sVar = ni.m.a;
-        my0 my0Var = new my0(b10, i10 - ((i7 <= 120 ? i7 > 50 ? 3 : 2 : 5) / 2), g0.o());
-        this.L = my0Var;
-        this.M = g0.L(4.0f) + ((int) (my0Var.a.getTextSize() * 1.714f));
+        ny0 ny0Var = new ny0(b10, i10 - ((i7 <= 120 ? i7 > 50 ? 3 : 2 : 5) / 2), g0.o());
+        this.L = ny0Var;
+        this.M = g0.L(4.0f) + ((int) (ny0Var.a.getTextSize() * 1.714f));
     }
 
     public final void n(String str, boolean z9) {
@@ -264,13 +264,13 @@ public final class fj implements rg0 {
             Drawable h = jg.g.h(t0.b, R.drawable.msg_copy);
             this.P = h;
             h.setColorFilter(new PorterDuffColorFilter(this.O, PorterDuff.Mode.SRC_IN));
-            this.S = org.telegram.ui.ActionBar.k6.c0(this.R, 0, 0, Math.min(5, iz.Y0), 0);
+            this.S = org.telegram.ui.ActionBar.l6.c0(this.R, 0, 0, Math.min(5, iz.Y0), 0);
         }
         if (TextUtils.isEmpty(str)) {
             str = null;
         }
         this.K = str;
-        this.L = str != null ? new my0(str, Math.max(8, iz.W0 - 4), null) : null;
+        this.L = str != null ? new ny0(str, Math.max(8, iz.W0 - 4), null) : null;
         this.M = 0;
     }
 

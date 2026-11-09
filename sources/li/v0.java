@@ -8,33 +8,33 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.HashSet;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.Cells.h9;
 import org.telegram.ui.Cells.i9;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
-public final class v0 extends y implements org.telegram.ui.ActionBar.a6, h9 {
-    public final f6 n;
+public final class v0 extends y implements org.telegram.ui.ActionBar.b6, h9 {
+    public final g6 n;
     public final Paint r;
     public final Paint s;
     public q2 w;
     public boolean x;
 
-    public v0(Context context, f6 f6Var) {
+    public v0(Context context, g6 g6Var) {
         super(context);
         this.r = new Paint(1);
         this.s = new Paint(1);
-        this.n = f6Var;
+        this.n = g6Var;
         setWillNotDraw(false);
         updateColors();
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(k6.jl));
-        hashSet.add(Integer.valueOf(k6.ig));
+        hashSet.add(Integer.valueOf(l6.jl));
+        hashSet.add(Integer.valueOf(l6.ig));
     }
 
     @Override // li.y
@@ -90,11 +90,11 @@ public final class v0 extends y implements org.telegram.ui.ActionBar.a6, h9 {
         setMeasuredDimension(View.MeasureSpec.getSize(i7), org.telegram.messenger.g0.L(12.0f));
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
-        int i7 = k6.jl;
-        f6 f6Var = this.n;
-        this.r.setColor(k6.w0(i7, f6Var));
-        this.s.setColor(k6.w0(k6.ig, f6Var));
+        int i7 = l6.jl;
+        g6 g6Var = this.n;
+        this.r.setColor(l6.w0(i7, g6Var));
+        this.s.setColor(l6.w0(l6.ig, g6Var));
     }
 }

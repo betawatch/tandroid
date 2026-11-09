@@ -4,12 +4,12 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.view.View;
-import org.telegram.ui.Components.qa0;
-import org.telegram.ui.Components.rt0;
+import org.telegram.ui.Components.ra0;
+import org.telegram.ui.Components.tt0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class d0 extends rt0 {
+public final class d0 extends tt0 {
     public final /* synthetic */ h0 f0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -18,20 +18,20 @@ public final class d0 extends rt0 {
         this.f0 = h0Var;
     }
 
-    @Override // org.telegram.ui.Components.rt0
+    @Override // org.telegram.ui.Components.tt0
     public final boolean O() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.rt0
+    @Override // org.telegram.ui.Components.tt0
     public final boolean P() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.rt0
+    @Override // org.telegram.ui.Components.tt0
     public final void T(Drawable drawable) {
-        if (drawable instanceof qa0) {
-            ((qa0) drawable).p();
+        if (drawable instanceof ra0) {
+            ((ra0) drawable).p();
         }
         h0 h0Var = this.f0;
         h0Var.k1.a = h0Var.j1.c(drawable);
@@ -51,13 +51,13 @@ public final class d0 extends rt0 {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.rt0
+    @Override // org.telegram.ui.Components.tt0
     public final Drawable getNewDrawable() {
         Drawable drawable = this.f0.u1;
         return drawable != null ? drawable : super.getNewDrawable();
     }
 
-    @Override // org.telegram.ui.Components.rt0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.tt0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
         super.onLayout(z9, i7, i10, i11, i12);
         this.f0.I0();

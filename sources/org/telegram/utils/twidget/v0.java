@@ -11,13 +11,13 @@ import org.telegram.messenger.a8;
 import org.telegram.messenger.br;
 import org.telegram.messenger.id;
 import org.telegram.messenger.yr;
-import org.telegram.ui.Components.ck0;
-import org.telegram.ui.Components.o71;
+import org.telegram.ui.Components.dk0;
 import org.telegram.ui.Components.p71;
-import org.telegram.ui.o61;
-import org.telegram.ui.p31;
+import org.telegram.ui.Components.q71;
+import org.telegram.ui.p61;
+import org.telegram.ui.q31;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final class v0 {
     public boolean A;
@@ -29,7 +29,7 @@ public final class v0 {
     public nb.a e;
     public i1 f;
     public g1 g;
-    public p71 h;
+    public q71 h;
     public int i;
     public int j;
     public int k;
@@ -225,9 +225,9 @@ public final class v0 {
         if (this.e != null) {
             a8.d("widget " + this.a + ": " + str);
         }
-        p71 p71Var = this.h;
-        if (p71Var != null) {
-            p71Var.a.h();
+        q71 q71Var = this.h;
+        if (q71Var != null) {
+            q71Var.a.h();
         }
     }
 
@@ -235,7 +235,7 @@ public final class v0 {
     public final void h(i1 i1Var) {
         g1 g1Var;
         k0 h;
-        p71 p71Var;
+        q71 q71Var;
         if (i1Var == this.f && (g1Var = i1Var.H) != null) {
             if (this.g == null || i1Var.x) {
                 this.g = null;
@@ -246,13 +246,13 @@ public final class v0 {
                 int max = Math.max(1, g1Var.e);
                 boolean z10 = max != this.i;
                 this.i = max;
-                p71 p71Var2 = this.h;
-                if (p71Var2 != null) {
-                    o71 o71Var = p71Var2.a;
+                q71 q71Var2 = this.h;
+                if (q71Var2 != null) {
+                    p71 p71Var = q71Var2.a;
                     if (z10) {
-                        o71Var.j();
+                        p71Var.j();
                     }
-                    o71Var.h();
+                    p71Var.h();
                 }
                 if ((z10 || objArr != false) && this.e != null && (h = n0.h(this)) != null && this.i > 0) {
                     int f10 = n0.f(this.k);
@@ -262,17 +262,17 @@ public final class v0 {
                         yr a02 = yr.a0(h.b);
                         a02.a.c(new br(a02, h.c, h.d, f10, max2, z11 ? 1 : 0, 1));
                     }
-                    ck0 ck0Var = h.u;
-                    if (ck0Var != null) {
-                        ck0Var.p0("frame off screen");
+                    dk0 dk0Var = h.u;
+                    if (dk0Var != null) {
+                        dk0Var.p0("frame off screen");
                     }
                 }
-                if (!f() || z10 || (p71Var = this.h) == null) {
+                if (!f() || z10 || (q71Var = this.h) == null) {
                     return;
                 }
-                o71 o71Var2 = p71Var.a;
-                o71Var2.j();
-                o71Var2.h();
+                p71 p71Var2 = q71Var.a;
+                p71Var2.j();
+                p71Var2.h();
             }
         }
     }
@@ -308,9 +308,9 @@ public final class v0 {
         }
         if ("local".equals(str)) {
             n0.d.put(a10, h);
-            o61 o61Var = n0.e;
-            org.telegram.messenger.g0.r(o61Var);
-            org.telegram.messenger.g0.i3(o61Var, 1000L);
+            p61 p61Var = n0.e;
+            org.telegram.messenger.g0.r(p61Var);
+            org.telegram.messenger.g0.i3(p61Var, 1000L);
         }
     }
 
@@ -479,7 +479,7 @@ public final class v0 {
             long j3 = i1Var.v;
             i1Var.v = 0L;
             if (j3 != 0) {
-                a1.a.execute(new p31(i1Var, j3, 2));
+                a1.a.execute(new q31(i1Var, j3, 2));
             }
         }
         this.f = null;

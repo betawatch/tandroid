@@ -21,10 +21,10 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ExternalActionActivity;
 import org.telegram.ui.Wallet.WalletEngine2;
-import org.telegram.ui.bk0;
-import org.telegram.ui.ws0;
+import org.telegram.ui.dk0;
+import org.telegram.ui.ys0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ee implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -428,12 +428,12 @@ public final /* synthetic */ class ee implements Runnable {
                 }
                 if (tLObject != null) {
                     qp.s1(i20).Y3(authorizationform.users, false);
-                    bk0 bk0Var = new bk0(5, getauthorizationform.bot_id, getauthorizationform.scope, getauthorizationform.public_key, str5, str6, (String) null, authorizationform, (TL_account.Password) tLObject);
-                    bk0Var.C1 = true;
+                    dk0 dk0Var = new dk0(5, getauthorizationform.bot_id, getauthorizationform.scope, getauthorizationform.public_key, str5, str6, (String) null, authorizationform, (TL_account.Password) tLObject);
+                    dk0Var.C1 = true;
                     if (g0.Q1()) {
-                        externalActionActivity.d.c(-1, bk0Var);
+                        externalActionActivity.d.c(-1, dk0Var);
                     } else {
-                        externalActionActivity.c.c(-1, bk0Var);
+                        externalActionActivity.c.c(-1, dk0Var);
                     }
                     if (!g0.Q1()) {
                         externalActionActivity.e.setVisibility(8);
@@ -450,7 +450,7 @@ public final /* synthetic */ class ee implements Runnable {
                 TLObject tLObject2 = (TLObject) r12.f;
                 org.telegram.ui.ActionBar.f2 f2Var = (org.telegram.ui.ActionBar.f2) r12.d;
                 TLRPC.TL_inputStorePaymentPremiumSubscription tL_inputStorePaymentPremiumSubscription = (TLRPC.TL_inputStorePaymentPremiumSubscription) r12.e;
-                ws0 ws0Var = (ws0) r12.b;
+                ys0 ys0Var = (ys0) r12.b;
                 com.google.android.gms.internal.clearcut.z0 z0Var = (com.google.android.gms.internal.clearcut.z0) r12.h;
                 int i21 = r12.c;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) r12.n;
@@ -464,8 +464,8 @@ public final /* synthetic */ class ee implements Runnable {
                 c accountInstance = f2Var.getAccountInstance();
                 q4.q qVar = new q4.q(20, false);
                 qVar.g(r1.l);
-                ws0Var.a();
-                String str7 = ws0Var.g.a;
+                ys0Var.a();
+                String str7 = ys0Var.g.a;
                 if (TextUtils.isEmpty(str7)) {
                     throw new IllegalArgumentException("offerToken can not be empty");
                 }
@@ -473,45 +473,45 @@ public final /* synthetic */ class ee implements Runnable {
                 i22.m(parentActivity, accountInstance, tL_inputStorePaymentPremiumSubscription, Collections.singletonList(qVar.a()), z0Var, false);
                 return;
             case 3:
-                org.telegram.ui.Wallet.j0 j0Var = (org.telegram.ui.Wallet.j0) r12.f;
+                org.telegram.ui.Wallet.i0 i0Var = (org.telegram.ui.Wallet.i0) r12.f;
                 String str8 = (String) r12.d;
                 byte[] bArr2 = (byte[]) r12.b;
                 JSONObject jSONObject2 = (JSONObject) r12.h;
                 String str9 = (String) r12.e;
                 int i23 = r12.c;
-                org.telegram.ui.Wallet.t2 t2Var = (org.telegram.ui.Wallet.t2) r12.n;
-                org.telegram.ui.Wallet.m0 m0Var = (org.telegram.ui.Wallet.m0) r12.r;
+                org.telegram.ui.Wallet.s2 s2Var = (org.telegram.ui.Wallet.s2) r12.n;
+                org.telegram.ui.Wallet.l0 l0Var = (org.telegram.ui.Wallet.l0) r12.r;
                 try {
                     try {
-                        jSONObject = WalletEngine2.signData(j0Var, org.telegram.ui.Wallet.u2.e(), str8, bArr2, jSONObject2, str9, i23);
+                        jSONObject = WalletEngine2.signData(i0Var, org.telegram.ui.Wallet.t2.e(), str8, bArr2, jSONObject2, str9, i23);
                     } catch (Exception e19) {
                         e = e19;
                         jSONObject = null;
                     }
                     try {
-                        byte[] f10 = org.telegram.ui.Wallet.u2.f(j0Var, str8, bArr2);
-                        j0Var.close();
+                        byte[] f10 = org.telegram.ui.Wallet.t2.f(i0Var, str8, bArr2);
+                        i0Var.close();
                         bArr = f10;
                     } catch (Exception e20) {
                         e = e20;
-                        String i24 = org.telegram.ui.Wallet.e2.i("widget sign data", e);
-                        j0Var.close();
+                        String i24 = org.telegram.ui.Wallet.d2.i("widget sign data", e);
+                        i0Var.close();
                         bArr = null;
                         str2 = i24;
-                        g0.h3(new bi.r7(jSONObject, str2, t2Var, m0Var, str8, bArr2, bArr));
+                        g0.h3(new bi.r7(jSONObject, str2, s2Var, l0Var, str8, bArr2, bArr));
                         return;
                     }
-                    g0.h3(new bi.r7(jSONObject, str2, t2Var, m0Var, str8, bArr2, bArr));
+                    g0.h3(new bi.r7(jSONObject, str2, s2Var, l0Var, str8, bArr2, bArr));
                     return;
                 } catch (Throwable th17) {
-                    j0Var.close();
+                    i0Var.close();
                     throw th17;
                 }
             default:
                 Runnable[] runnableArr = (Runnable[]) r12.f;
                 TextView[] textViewArr = (TextView[]) r12.d;
                 int i25 = r12.c;
-                org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) r12.e;
+                org.telegram.ui.ActionBar.g6 g6Var = (org.telegram.ui.ActionBar.g6) r12.e;
                 TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) r12.b;
                 String[] strArr2 = (String[]) r12.n;
                 boolean[] zArr4 = (boolean[]) r12.h;
@@ -520,13 +520,13 @@ public final /* synthetic */ class ee implements Runnable {
                 if (runnable != null) {
                     runnable.run();
                 }
-                bi.v0 v0Var = new bi.v0(runnableArr, textViewArr, i25, f6Var, 9);
-                org.telegram.ui.Wallet.m0 x10 = org.telegram.ui.Wallet.m0.x(i25);
+                bi.v0 v0Var = new bi.v0(runnableArr, textViewArr, i25, g6Var, 9);
+                org.telegram.ui.Wallet.l0 x10 = org.telegram.ui.Wallet.l0.x(i25);
                 TL_wallet.nftItem nftitem = wallettransaction.nft;
                 if (nftitem != null) {
-                    org.telegram.ui.Wallet.c0 c0Var = new org.telegram.ui.Wallet.c0(x10, wallettransaction.peer.address, nftitem, strArr2[0], v0Var);
-                    x10.m0(c0Var);
-                    i13 = new org.telegram.ui.Wallet.l(c0Var, i16);
+                    org.telegram.ui.Wallet.b0 b0Var = new org.telegram.ui.Wallet.b0(x10, wallettransaction.peer.address, nftitem, strArr2[0], v0Var);
+                    x10.m0(b0Var);
+                    i13 = new org.telegram.ui.Wallet.l(b0Var, i16);
                 } else {
                     i13 = x10.i(wallettransaction.peer.address, wallettransaction.amount, strArr2[0], zArr4[0] ? bArr3 : null, v0Var);
                 }
@@ -535,11 +535,11 @@ public final /* synthetic */ class ee implements Runnable {
         }
     }
 
-    public /* synthetic */ ee(TLObject tLObject, org.telegram.ui.ActionBar.f2 f2Var, TLRPC.TL_inputStorePaymentPremiumSubscription tL_inputStorePaymentPremiumSubscription, ws0 ws0Var, com.google.android.gms.internal.clearcut.z0 z0Var, int i7, TLRPC.TL_error tL_error, TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore) {
+    public /* synthetic */ ee(TLObject tLObject, org.telegram.ui.ActionBar.f2 f2Var, TLRPC.TL_inputStorePaymentPremiumSubscription tL_inputStorePaymentPremiumSubscription, ys0 ys0Var, com.google.android.gms.internal.clearcut.z0 z0Var, int i7, TLRPC.TL_error tL_error, TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore) {
         this.f = tLObject;
         this.d = f2Var;
         this.e = tL_inputStorePaymentPremiumSubscription;
-        this.b = ws0Var;
+        this.b = ys0Var;
         this.h = z0Var;
         this.c = i7;
         this.n = tL_error;
@@ -557,22 +557,22 @@ public final /* synthetic */ class ee implements Runnable {
         this.e = str2;
     }
 
-    public /* synthetic */ ee(org.telegram.ui.Wallet.j0 j0Var, String str, byte[] bArr, JSONObject jSONObject, String str2, int i7, org.telegram.ui.Wallet.t2 t2Var, org.telegram.ui.Wallet.m0 m0Var) {
-        this.f = j0Var;
+    public /* synthetic */ ee(org.telegram.ui.Wallet.i0 i0Var, String str, byte[] bArr, JSONObject jSONObject, String str2, int i7, org.telegram.ui.Wallet.s2 s2Var, org.telegram.ui.Wallet.l0 l0Var) {
+        this.f = i0Var;
         this.d = str;
         this.b = bArr;
         this.h = jSONObject;
         this.e = str2;
         this.c = i7;
-        this.n = t2Var;
-        this.r = m0Var;
+        this.n = s2Var;
+        this.r = l0Var;
     }
 
-    public /* synthetic */ ee(Runnable[] runnableArr, TextView[] textViewArr, int i7, org.telegram.ui.ActionBar.f6 f6Var, TL_wallet.walletTransaction wallettransaction, String[] strArr, boolean[] zArr, byte[] bArr) {
+    public /* synthetic */ ee(Runnable[] runnableArr, TextView[] textViewArr, int i7, org.telegram.ui.ActionBar.g6 g6Var, TL_wallet.walletTransaction wallettransaction, String[] strArr, boolean[] zArr, byte[] bArr) {
         this.f = runnableArr;
         this.d = textViewArr;
         this.c = i7;
-        this.e = f6Var;
+        this.e = g6Var;
         this.b = wallettransaction;
         this.n = strArr;
         this.h = zArr;

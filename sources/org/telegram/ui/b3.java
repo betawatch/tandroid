@@ -6,7 +6,7 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class b3 extends FrameLayout {
     public final LinearLayout a;
@@ -52,13 +52,13 @@ public final class b3 extends FrameLayout {
         fi.d dVar = new fi.d(context, null, true);
         this.h = dVar;
         dVar.setMinWidth(org.telegram.messenger.g0.L(140.0f));
-        dVar.i(org.telegram.messenger.id.M0(2131746341, null), false, true);
+        dVar.i(org.telegram.messenger.id.M0(2131746340, null), false, true);
         linearLayout.addView(dVar, c8.ha.t(-2, 40, 3, 0, 12, 0, 0));
     }
 
     public final void a(String str, String str2) {
-        this.d.setText(org.telegram.messenger.id.M0(2131742925, null));
-        org.telegram.messenger.k5.r(null, null, 2131742927, new Object[]{str}, this.e);
+        this.d.setText(org.telegram.messenger.id.M0(2131742922, null));
+        org.telegram.messenger.k5.r(null, null, 2131742924, new Object[]{str}, this.e);
         this.f.setText(str2);
     }
 

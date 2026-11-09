@@ -1,92 +1,30 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Rect;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.ImageView;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class ti implements View.OnTouchListener {
-    public View a;
-    public org.telegram.ui.ActionBar.g1 b;
-    public final Rect c = new Rect();
-    public boolean d;
-    public boolean e;
-    public final org.telegram.ui.Components.a10 f;
-    public final int[] h;
-    public View n;
-    public float r;
-    public float s;
-    public final /* synthetic */ View w;
-    public final /* synthetic */ an x;
+public final class ti implements org.telegram.messenger.qr {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ ui b;
 
-    public ti(an anVar, ImageView imageView) {
-        this.x = anVar;
-        this.w = imageView;
-        org.telegram.ui.Components.a10 a10Var = new org.telegram.ui.Components.a10((Context) null, new f(this, 22));
-        this.f = a10Var;
-        this.h = new int[2];
-        a10Var.v = true;
+    public ti(ui uiVar, boolean z9) {
+        this.b = uiVar;
+        this.a = z9;
     }
 
-    @Override // android.view.View.OnTouchListener
-    public final boolean onTouch(View view, MotionEvent motionEvent) {
-        View view2;
-        this.a = view;
-        if (motionEvent.getAction() == 0) {
-            this.r = motionEvent.getX();
-            this.s = motionEvent.getY();
-            this.e = false;
-        }
-        this.f.a(motionEvent);
-        if (this.b != null && !this.d && motionEvent.getAction() == 2) {
-            View view3 = this.a;
-            int[] iArr = this.h;
-            view3.getLocationOnScreen(iArr);
-            float x10 = motionEvent.getX() + iArr[0];
-            float y10 = motionEvent.getY() + iArr[1];
-            this.b.getContentView().getLocationOnScreen(iArr);
-            float f10 = x10 - iArr[0];
-            float f11 = y10 - iArr[1];
-            this.n = null;
-            ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = (ActionBarPopupWindow$ActionBarPopupWindowLayout) this.b.getContentView();
-            for (int i7 = 0; i7 < actionBarPopupWindow$ActionBarPopupWindowLayout.getItemsCount(); i7++) {
-                View childAt = actionBarPopupWindow$ActionBarPopupWindowLayout.L.getChildAt(i7);
-                Rect rect = this.c;
-                childAt.getHitRect(rect);
-                childAt.getTag();
-                if (childAt.getVisibility() == 0 && childAt.isClickable()) {
-                    if (rect.contains((int) f10, (int) f11)) {
-                        childAt.setPressed(true);
-                        childAt.setSelected(true);
-                        childAt.drawableHotspotChanged(f10, f11 - childAt.getTop());
-                        this.n = childAt;
-                    } else {
-                        childAt.setPressed(false);
-                        childAt.setSelected(false);
-                    }
-                }
+    @Override // org.telegram.messenger.qr
+    public final void k(boolean z9) {
+        cn cnVar = this.b.b;
+        if (z9) {
+            TLRPC.User user = cnVar.f;
+            boolean z10 = this.a;
+            if (user != null || z10) {
+                org.telegram.messenger.yr messagesStorage = cnVar.getMessagesStorage();
+                messagesStorage.a.c(new org.telegram.messenger.er(messagesStorage, cnVar.j6, new si(1, this, z10), 0));
+                return;
             }
         }
-        if ((motionEvent.getAction() == 2 && Math.abs(motionEvent.getX() - this.r) > org.telegram.messenger.g0.e * 2.0f) || Math.abs(motionEvent.getY() - this.s) > org.telegram.messenger.g0.e * 2.0f) {
-            this.e = true;
-            this.a.setPressed(false);
-            this.a.setSelected(false);
-        }
-        if (motionEvent.getAction() == 1 && !this.d && !this.e) {
-            View view4 = this.n;
-            if (view4 != null) {
-                view4.callOnClick();
-                this.d = true;
-                return true;
-            }
-            if (this.b == null && (view2 = this.a) != null) {
-                view2.callOnClick();
-            }
-        }
-        return true;
+        cnVar.Sa(cnVar.r4, z9);
     }
 }

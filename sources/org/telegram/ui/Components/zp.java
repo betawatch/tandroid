@@ -7,9 +7,9 @@ import android.graphics.RectF;
 import android.view.View;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class zp extends View implements org.telegram.ui.ActionBar.a6 {
+public final class zp extends View implements org.telegram.ui.ActionBar.b6 {
     public final Paint a;
     public final Paint b;
     public final RectF c;
@@ -35,17 +35,17 @@ public final class zp extends View implements org.telegram.ui.ActionBar.a6 {
         paint2.setStrokeWidth(org.telegram.messenger.g0.L(2.0f));
         paint2.setStrokeCap(Paint.Cap.ROUND);
         if (i7 == 0) {
-            this.f = org.telegram.ui.ActionBar.k6.B7;
-            this.h = org.telegram.ui.ActionBar.k6.C7;
+            this.f = org.telegram.ui.ActionBar.l6.B7;
+            this.h = org.telegram.ui.ActionBar.l6.C7;
         } else if (i7 == 1) {
-            this.f = org.telegram.ui.ActionBar.k6.D7;
-            this.h = org.telegram.ui.ActionBar.k6.E7;
+            this.f = org.telegram.ui.ActionBar.l6.D7;
+            this.h = org.telegram.ui.ActionBar.l6.E7;
         } else if (i7 == 2) {
-            this.f = org.telegram.ui.ActionBar.k6.F7;
-            this.h = org.telegram.ui.ActionBar.k6.G7;
+            this.f = org.telegram.ui.ActionBar.l6.F7;
+            this.h = org.telegram.ui.ActionBar.l6.G7;
         } else if (i7 == 3) {
-            this.f = org.telegram.ui.ActionBar.k6.H7;
-            this.h = org.telegram.ui.ActionBar.k6.I7;
+            this.f = org.telegram.ui.ActionBar.l6.H7;
+            this.h = org.telegram.ui.ActionBar.l6.I7;
         }
         updateColors();
     }
@@ -94,26 +94,26 @@ public final class zp extends View implements org.telegram.ui.ActionBar.a6 {
         invalidate();
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
         int i7 = this.f;
         Paint paint = this.a;
         if (i7 >= 0) {
-            paint.setColor(org.telegram.ui.ActionBar.k6.x0(null, i7, false));
+            paint.setColor(org.telegram.ui.ActionBar.l6.x0(null, i7, false));
         } else {
             paint.setColor(this.n);
         }
         int i10 = this.h;
         Paint paint2 = this.b;
         if (i10 >= 0) {
-            paint2.setColor(org.telegram.ui.ActionBar.k6.x0(null, i10, false));
+            paint2.setColor(org.telegram.ui.ActionBar.l6.x0(null, i10, false));
         } else {
             paint2.setColor(this.r);
         }
         invalidate();
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

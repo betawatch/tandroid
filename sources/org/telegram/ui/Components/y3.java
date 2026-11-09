@@ -6,20 +6,20 @@ import android.graphics.Point;
 import android.text.TextPaint;
 import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class y3 extends LinearLayout {
     public final /* synthetic */ int a = 0;
     public boolean b;
-    public final /* synthetic */ hb0 c;
+    public final /* synthetic */ ib0 c;
     public final Object d;
-    public final /* synthetic */ hb0 e;
-    public final /* synthetic */ hb0 f;
+    public final /* synthetic */ ib0 e;
+    public final /* synthetic */ ib0 f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y3(Context context, s4 s4Var, hb0 hb0Var, wg.f fVar, wg.g gVar) {
+    public y3(Context context, s4 s4Var, ib0 ib0Var, wg.f fVar, wg.g gVar) {
         super(context);
-        this.c = hb0Var;
+        this.c = ib0Var;
         this.e = fVar;
         this.f = gVar;
         this.b = false;
@@ -48,21 +48,21 @@ public final class y3 extends LinearLayout {
     public final void onMeasure(int i7, int i10) {
         switch (this.a) {
             case 0:
-                hb0 hb0Var = (hb0) this.d;
+                ib0 ib0Var = (ib0) this.d;
                 this.b = true;
                 Point point = org.telegram.messenger.g0.q;
                 int i11 = point.x > point.y ? 3 : 5;
-                hb0 hb0Var2 = this.c;
-                hb0Var2.setItemCount(i11);
-                hb0Var.setItemCount(i11);
-                hb0 hb0Var3 = this.e;
-                hb0Var3.setItemCount(i11);
-                hb0 hb0Var4 = this.f;
-                hb0Var4.setItemCount(i11);
-                hb0Var2.getLayoutParams().height = org.telegram.messenger.g0.L(42.0f) * i11;
-                hb0Var.getLayoutParams().height = org.telegram.messenger.g0.L(42.0f) * i11;
-                hb0Var3.getLayoutParams().height = org.telegram.messenger.g0.L(42.0f) * i11;
-                hb0Var4.getLayoutParams().height = org.telegram.messenger.g0.L(42.0f) * i11;
+                ib0 ib0Var2 = this.c;
+                ib0Var2.setItemCount(i11);
+                ib0Var.setItemCount(i11);
+                ib0 ib0Var3 = this.e;
+                ib0Var3.setItemCount(i11);
+                ib0 ib0Var4 = this.f;
+                ib0Var4.setItemCount(i11);
+                ib0Var2.getLayoutParams().height = org.telegram.messenger.g0.L(42.0f) * i11;
+                ib0Var.getLayoutParams().height = org.telegram.messenger.g0.L(42.0f) * i11;
+                ib0Var3.getLayoutParams().height = org.telegram.messenger.g0.L(42.0f) * i11;
+                ib0Var4.getLayoutParams().height = org.telegram.messenger.g0.L(42.0f) * i11;
                 this.b = false;
                 super.onMeasure(i7, i10);
                 break;
@@ -72,11 +72,11 @@ public final class y3 extends LinearLayout {
                 this.b = true;
                 Point point2 = org.telegram.messenger.g0.q;
                 int i12 = point2.x > point2.y ? 3 : 5;
-                hb0 hb0Var5 = this.c;
-                hb0Var5.setItemCount(i12);
+                ib0 ib0Var5 = this.c;
+                ib0Var5.setItemCount(i12);
                 fVar.setItemCount(i12);
                 gVar.setItemCount(i12);
-                hb0Var5.getLayoutParams().height = org.telegram.messenger.g0.L(42.0f) * i12;
+                ib0Var5.getLayoutParams().height = org.telegram.messenger.g0.L(42.0f) * i12;
                 fVar.getLayoutParams().height = org.telegram.messenger.g0.L(42.0f) * i12;
                 gVar.getLayoutParams().height = org.telegram.messenger.g0.L(42.0f) * i12;
                 this.b = false;
@@ -104,12 +104,12 @@ public final class y3 extends LinearLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y3(Context context, hb0 hb0Var, hb0 hb0Var2, hb0 hb0Var3, hb0 hb0Var4) {
+    public y3(Context context, ib0 ib0Var, ib0 ib0Var2, ib0 ib0Var3, ib0 ib0Var4) {
         super(context);
-        this.c = hb0Var;
-        this.d = hb0Var2;
-        this.e = hb0Var3;
-        this.f = hb0Var4;
+        this.c = ib0Var;
+        this.d = ib0Var2;
+        this.e = ib0Var3;
+        this.f = ib0Var4;
         this.b = false;
     }
 }

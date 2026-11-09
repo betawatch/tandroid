@@ -1,43 +1,56 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.graphics.RectF;
+import android.os.Bundle;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class xt implements qw, vr {
-    public final /* synthetic */ au a;
+public final class xt extends org.telegram.ui.Components.gw0 {
+    public final /* synthetic */ m4.d0 I;
 
-    public /* synthetic */ xt(au auVar) {
-        this.a = auVar;
-    }
-
-    @Override // org.telegram.ui.qw
-    public /* synthetic */ boolean G() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.qw
-    public /* synthetic */ boolean N(ww wwVar) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.vr
-    public void b(TLRPC.User user) {
-        this.a.q0(user);
-    }
-
-    @Override // org.telegram.ui.qw
-    public boolean y(ww wwVar, ArrayList arrayList, CharSequence charSequence, boolean z9, boolean z10, int i7, int i10, w91 w91Var) {
-        if (arrayList.isEmpty()) {
-            return true;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public xt(Context context, long j3, m4.d0 d0Var) {
+        super(context);
+        this.I = d0Var;
+        this.a = new RectF();
+        this.f = 0.0f;
+        org.telegram.ui.Components.i6 i6Var = new org.telegram.ui.Components.i6(false, true, true);
+        this.r = i6Var;
+        org.telegram.ui.Components.i6 i6Var2 = new org.telegram.ui.Components.i6(false, true, false);
+        this.s = i6Var2;
+        i6Var.setCallback(this);
+        i6Var2.setCallback(this);
+        this.n = Long.valueOf(j3);
+        org.telegram.ui.Components.w8 w8Var = new org.telegram.ui.Components.w8((org.telegram.ui.ActionBar.g6) null);
+        w8Var.p = 1.5f;
+        ImageReceiver imageReceiver = new ImageReceiver(null);
+        this.h = imageReceiver;
+        imageReceiver.H0(this);
+        if (j3 == Long.MAX_VALUE) {
+            this.w = org.telegram.messenger.id.M0(2131752647, null);
+            w8Var.g(14);
+            imageReceiver.i0(null, w8Var, null);
+        } else {
+            String H = org.telegram.messenger.m5.H(imageReceiver, w8Var, org.telegram.messenger.qp.s1(org.telegram.messenger.p10.s0).e2(j3));
+            this.w = H;
+            this.w = org.telegram.messenger.i6.m(H, null, false, null, 0);
         }
-        long j3 = ((org.telegram.messenger.xr) arrayList.get(0)).a;
-        if (!org.telegram.messenger.m5.E(j3)) {
-            return true;
+    }
+
+    @Override // org.telegram.ui.Components.gw0
+    public final void b() {
+        m4.d0 d0Var = this.I;
+        y6 y6Var = (y6) d0Var.b;
+        y6Var.Z.dismiss();
+        Bundle bundle = new Bundle();
+        long j3 = ((s6) d0Var.a).a;
+        if (j3 > 0) {
+            bundle.putLong("user_id", j3);
+        } else {
+            bundle.putLong("chat_id", -j3);
         }
-        au auVar = this.a;
-        auVar.q0(auVar.getMessagesController().a2(Long.valueOf(j3)));
-        return true;
+        y6Var.presentFragment(new ProfileActivity(bundle, null));
     }
 }

@@ -1,70 +1,68 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import android.view.View;
-import android.widget.LinearLayout;
 import java.util.ArrayList;
-import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class ur0 implements View.OnClickListener {
-    public final /* synthetic */ jf0 a;
-    public final /* synthetic */ an b;
-    public final /* synthetic */ org.telegram.ui.Components.pj0 c;
-    public final /* synthetic */ LinearLayout d;
-    public final /* synthetic */ org.telegram.ui.Components.k60 e;
-    public final /* synthetic */ org.telegram.ui.Components.k60 f;
-    public final /* synthetic */ zr0 h;
+public final /* synthetic */ class ur0 implements Runnable {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ bs0 b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ TLRPC.PollAnswer d;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f2 e;
+    public final /* synthetic */ ArrayList f;
 
-    public ur0(zr0 zr0Var, jf0 jf0Var, an anVar, org.telegram.ui.Components.pj0 pj0Var, LinearLayout linearLayout, org.telegram.ui.Components.k60 k60Var, org.telegram.ui.Components.k60 k60Var2) {
-        this.h = zr0Var;
-        this.a = jf0Var;
-        this.b = anVar;
-        this.c = pj0Var;
-        this.d = linearLayout;
-        this.e = k60Var;
-        this.f = k60Var2;
+    public /* synthetic */ ur0(bs0 bs0Var, boolean z9, TLRPC.PollAnswer pollAnswer, org.telegram.ui.ActionBar.f2 f2Var, ArrayList arrayList) {
+        this.b = bs0Var;
+        this.c = z9;
+        this.d = pollAnswer;
+        this.e = f2Var;
+        this.f = arrayList;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        jf0 jf0Var = this.a;
-        ArrayList arrayList = jf0Var.b;
-        ArrayList arrayList2 = jf0Var.c;
-        if (arrayList2.isEmpty()) {
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                bs0 bs0Var = this.b;
+                bs0Var.getClass();
+                boolean z9 = this.c;
+                org.telegram.ui.ActionBar.f2 f2Var = this.e;
+                if (z9) {
+                    ArrayList arrayList = this.f;
+                    arrayList.remove(this.d);
+                    f2Var.getSendMessagesHelper().w0(bs0Var.H, arrayList, null);
+                } else {
+                    f2Var.getSendMessagesHelper().w0(bs0Var.H, null, null);
+                }
+                bs0Var.c(true);
+                break;
+            default:
+                bs0 bs0Var2 = this.b;
+                bs0Var2.getClass();
+                boolean z10 = this.c;
+                TLRPC.PollAnswer pollAnswer = this.d;
+                org.telegram.ui.ActionBar.f2 f2Var2 = this.e;
+                if (z10) {
+                    ArrayList arrayList2 = this.f;
+                    arrayList2.add(pollAnswer);
+                    f2Var2.getSendMessagesHelper().w0(bs0Var2.H, arrayList2, null);
+                } else {
+                    ArrayList arrayList3 = new ArrayList(1);
+                    arrayList3.add(pollAnswer);
+                    f2Var2.getSendMessagesHelper().w0(bs0Var2.H, arrayList3, null);
+                }
+                bs0Var2.c(true);
+                break;
         }
-        int size = arrayList2.size();
-        zr0 zr0Var = this.h;
-        an anVar = this.b;
-        if (size == 1 && (arrayList.size() <= 0 || ((Integer) arrayList.get(0)).intValue() <= 0)) {
-            TLObject tLObject = (TLObject) arrayList2.get(0);
-            if (tLObject == null) {
-                return;
-            }
-            Bundle bundle = new Bundle();
-            if (tLObject instanceof TLRPC.User) {
-                bundle.putLong("user_id", ((TLRPC.User) tLObject).id);
-            } else if (tLObject instanceof TLRPC.Chat) {
-                bundle.putLong("chat_id", ((TLRPC.Chat) tLObject).id);
-            }
-            anVar.presentFragment(new ProfileActivity(bundle, null));
-            zr0Var.c(false);
-            return;
-        }
-        if (org.telegram.messenger.iz.c1 > 0 && anVar.l1.getKeyboardHeight() < org.telegram.messenger.g0.L(20.0f)) {
-            org.telegram.ui.Components.cc t6 = new org.telegram.ui.Components.hc(org.telegram.ui.Components.xa.a(zr0Var.getContext()), zr0Var.b).t(org.telegram.messenger.g0.X2(org.telegram.messenger.id.M0(2131748489, null)), null);
-            anVar.B1 = t6;
-            t6.j = 4000;
-            t6.j();
-            org.telegram.messenger.iz.S(org.telegram.messenger.iz.c1 - 1);
-        }
-        org.telegram.ui.Components.pj0 pj0Var = this.c;
-        pj0Var.requestLayout();
-        this.d.requestLayout();
-        pj0Var.getAdapter().f();
-        this.e.K(this.f);
+    }
+
+    public /* synthetic */ ur0(bs0 bs0Var, boolean z9, org.telegram.ui.ActionBar.f2 f2Var, ArrayList arrayList, TLRPC.PollAnswer pollAnswer) {
+        this.b = bs0Var;
+        this.c = z9;
+        this.e = f2Var;
+        this.f = arrayList;
+        this.d = pollAnswer;
     }
 }

@@ -5,21 +5,21 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class kj extends pj0 {
+public final class kj extends qj0 {
     public final /* synthetic */ int e3;
     public final Paint f3;
     public final /* synthetic */ vj g3;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public kj(vj vjVar, Context context, org.telegram.ui.ActionBar.f6 f6Var, int i7) {
-        super(context, f6Var);
+    public kj(vj vjVar, Context context, org.telegram.ui.ActionBar.g6 g6Var, int i7) {
+        super(context, g6Var);
         this.e3 = i7;
         switch (i7) {
             case 1:
                 this.g3 = vjVar;
-                super(context, f6Var);
+                super(context, g6Var);
                 this.f3 = new Paint();
                 break;
             default:
@@ -29,7 +29,7 @@ public final class kj extends pj0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.pj0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.qj0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         switch (this.e3) {
             case 0:
@@ -40,7 +40,7 @@ public final class kj extends pj0 {
                             f10 = getChildAt(i7).getY();
                         }
                     }
-                    this.f3.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.h5, false));
+                    this.f3.setColor(org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.h5, false));
                 }
                 super.dispatchDraw(canvas);
                 break;
@@ -52,14 +52,14 @@ public final class kj extends pj0 {
                             f11 = getChildAt(i10).getY();
                         }
                     }
-                    this.f3.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.h5, false));
+                    this.f3.setColor(org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.h5, false));
                 }
                 super.dispatchDraw(canvas);
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.qj0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public boolean onTouchEvent(MotionEvent motionEvent) {
         switch (this.e3) {
             case 0:

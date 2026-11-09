@@ -1,48 +1,18 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class wk extends nq0 {
-    public final /* synthetic */ ArrayList a;
-    public final /* synthetic */ boolean[] b;
-    public final /* synthetic */ an c;
+public final class wk extends pq0 {
+    public final /* synthetic */ cn a;
 
-    public wk(an anVar, ArrayList arrayList, boolean[] zArr) {
-        this.c = anVar;
-        this.a = arrayList;
-        this.b = zArr;
+    public wk(cn cnVar) {
+        this.a = cnVar;
     }
 
-    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
-    public final boolean T() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
-    public final org.telegram.messenger.jc j(int i7) {
-        return null;
-    }
-
-    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
-    public final void o(int i7, org.telegram.messenger.j20 j20Var, boolean z9, int i10, int i11, boolean z10) {
-        ArrayList arrayList = this.a;
-        for (int size = arrayList.size() - 1; size >= 0; size--) {
-            if (!this.b[size]) {
-                arrayList.remove(size);
-            }
-        }
-        this.c.Gb(i10, arrayList, z9, z10);
-    }
-
-    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
-    public final boolean x(int i7) {
-        return this.b[i7];
-    }
-
-    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
-    public final int k(int i7, org.telegram.messenger.j20 j20Var) {
-        return i7;
+    @Override // org.telegram.ui.pq0, org.telegram.ui.wq0
+    public final yq0 E(org.telegram.messenger.ij ijVar, TLRPC.FileLocation fileLocation, int i7, boolean z9, boolean z10) {
+        return cn.P1(this.a, ijVar, fileLocation, i7, z9, false);
     }
 }

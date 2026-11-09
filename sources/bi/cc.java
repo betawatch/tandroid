@@ -4,21 +4,21 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.text.style.ReplacementSpan;
-import org.telegram.ui.Components.my0;
+import org.telegram.ui.Components.ny0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class cc extends ReplacementSpan {
     public final Paint a;
-    public final my0 b;
+    public final ny0 b;
     public final /* synthetic */ int c;
 
     public cc(int i7, String str) {
         this.c = i7;
         Paint paint = new Paint(1);
         this.a = paint;
-        paint.setColor(org.telegram.ui.ActionBar.k6.r1(0.1f, i7));
-        this.b = new my0(str, 13.0f, org.telegram.messenger.g0.o());
+        paint.setColor(org.telegram.ui.ActionBar.l6.r1(0.1f, i7));
+        this.b = new ny0(str, 13.0f, org.telegram.messenger.g0.o());
     }
 
     @Override // android.text.style.ReplacementSpan

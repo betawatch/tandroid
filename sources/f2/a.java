@@ -3,11 +3,11 @@ package f2;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import di.s7;
+import di.f8;
 import h2.i0;
 import l2.c0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class a extends BroadcastReceiver {
     public final c0 a;
@@ -23,7 +23,7 @@ public final class a extends BroadcastReceiver {
     @Override // android.content.BroadcastReceiver
     public final void onReceive(Context context, Intent intent) {
         if ("android.media.AUDIO_BECOMING_NOISY".equals(intent.getAction())) {
-            this.b.d(new s7(this, 11));
+            this.b.d(new f8(this, 10));
         }
     }
 }

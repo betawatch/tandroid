@@ -9,7 +9,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j2 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -29,10 +29,10 @@ public final /* synthetic */ class j2 implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        org.telegram.ui.Wallet.j0 j0Var;
-        org.telegram.ui.Wallet.j0 j0Var2;
+        org.telegram.ui.Wallet.i0 i0Var;
+        org.telegram.ui.Wallet.i0 i0Var2;
         Object obj;
-        ew0 r10;
+        fw0 r10;
         switch (this.a) {
             case 0:
                 vf.c.r((Context) this.d, Uri.parse((String) this.e), this.b == 0, this.c, (vf.b) this.f);
@@ -68,36 +68,36 @@ public final /* synthetic */ class j2 implements Runnable {
                 runnable.run();
                 return;
             default:
-                org.telegram.ui.Wallet.q0 q0Var = (org.telegram.ui.Wallet.q0) this.d;
+                org.telegram.ui.Wallet.p0 p0Var = (org.telegram.ui.Wallet.p0) this.d;
                 long j10 = this.b;
                 String str = (String) this.e;
                 boolean z10 = this.c;
                 org.telegram.messenger.c20 c20Var = (org.telegram.messenger.c20) this.f;
                 try {
-                    obj = org.telegram.ui.Wallet.q0.f;
+                    obj = org.telegram.ui.Wallet.p0.f;
                     synchronized (obj) {
-                        q0Var.c(j10);
-                        r10 = q0Var.r();
+                        p0Var.c(j10);
+                        r10 = p0Var.r();
                     }
                 } catch (Exception e11) {
                     e = e11;
-                    j0Var = null;
+                    i0Var = null;
                 }
                 if (((LinkedHashMap) r10.e).containsKey(str)) {
-                    j0Var = q0Var.h(r10, str, j10);
+                    i0Var = p0Var.h(r10, str, j10);
                     try {
                         synchronized (obj) {
                             try {
-                                q0Var.c(j10);
+                                p0Var.c(j10);
                                 if (z10) {
-                                    r10.b = ConnectionsManager.getInstance(q0Var.b).getCurrentTime();
-                                    if (q0Var.d.exists()) {
-                                        q0Var.v(r10, new LinkedHashMap());
+                                    r10.b = ConnectionsManager.getInstance(p0Var.b).getCurrentTime();
+                                    if (p0Var.d.exists()) {
+                                        p0Var.v(r10, new LinkedHashMap());
                                     } else {
-                                        if (!q0Var.q().edit().putInt("lastUsageDate", r10.b).commit()) {
+                                        if (!p0Var.q().edit().putInt("lastUsageDate", r10.b).commit()) {
                                             throw new IOException("usage write");
                                         }
-                                        org.telegram.messenger.g0.h3(new org.telegram.ui.o61(4));
+                                        org.telegram.messenger.g0.h3(new org.telegram.ui.p61(4));
                                     }
                                 }
                             } catch (Exception e12) {
@@ -105,22 +105,22 @@ public final /* synthetic */ class j2 implements Runnable {
                             } finally {
                             }
                         }
-                        j0Var2 = j0Var;
+                        i0Var2 = i0Var;
                     } catch (Exception e13) {
                         e = e13;
                         org.telegram.messenger.a8.g(e, true);
-                        if (j0Var != null) {
-                            j0Var.close();
+                        if (i0Var != null) {
+                            i0Var.close();
                         }
-                        j0Var2 = null;
-                        org.telegram.messenger.g0.h3(new bi.w2(q0Var, j0Var2, c20Var, j10, 26));
+                        i0Var2 = null;
+                        org.telegram.messenger.g0.h3(new bi.w2(p0Var, i0Var2, c20Var, j10, 26));
                         return;
                     }
-                    org.telegram.messenger.g0.h3(new bi.w2(q0Var, j0Var2, c20Var, j10, 26));
+                    org.telegram.messenger.g0.h3(new bi.w2(p0Var, i0Var2, c20Var, j10, 26));
                     return;
                 }
-                j0Var2 = null;
-                org.telegram.messenger.g0.h3(new bi.w2(q0Var, j0Var2, c20Var, j10, 26));
+                i0Var2 = null;
+                org.telegram.messenger.g0.h3(new bi.w2(p0Var, i0Var2, c20Var, j10, 26));
                 return;
         }
     }
@@ -133,8 +133,8 @@ public final /* synthetic */ class j2 implements Runnable {
         this.f = runnable;
     }
 
-    public /* synthetic */ j2(org.telegram.ui.Wallet.q0 q0Var, long j3, String str, boolean z9, org.telegram.messenger.c20 c20Var) {
-        this.d = q0Var;
+    public /* synthetic */ j2(org.telegram.ui.Wallet.p0 p0Var, long j3, String str, boolean z9, org.telegram.messenger.c20 c20Var) {
+        this.d = p0Var;
         this.b = j3;
         this.e = str;
         this.c = z9;

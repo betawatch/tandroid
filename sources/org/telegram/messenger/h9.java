@@ -7,21 +7,21 @@ import java.util.concurrent.CancellationException;
 import org.json.JSONObject;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.zc0;
+import org.telegram.ui.bd0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class h9 implements v0.g {
     public final /* synthetic */ CancellationToken a;
     public final /* synthetic */ TaskCompletionSource b;
-    public final /* synthetic */ zc0 c;
+    public final /* synthetic */ bd0 c;
     public final /* synthetic */ int d;
     public final /* synthetic */ Runnable[] e;
 
-    public h9(CancellationToken cancellationToken, TaskCompletionSource taskCompletionSource, zc0 zc0Var, int i7, Runnable[] runnableArr) {
+    public h9(CancellationToken cancellationToken, TaskCompletionSource taskCompletionSource, bd0 bd0Var, int i7, Runnable[] runnableArr) {
         this.a = cancellationToken;
         this.b = taskCompletionSource;
-        this.c = zc0Var;
+        this.c = bd0Var;
         this.d = i7;
         this.e = runnableArr;
     }

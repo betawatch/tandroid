@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class sh implements org.telegram.ui.wm0 {
+public final class sh implements org.telegram.ui.ym0 {
     public boolean a;
     public final /* synthetic */ HashMap b;
     public final /* synthetic */ ArrayList c;
@@ -19,12 +19,12 @@ public final class sh implements org.telegram.ui.wm0 {
         this.c = arrayList;
     }
 
-    @Override // org.telegram.ui.wm0
+    @Override // org.telegram.ui.ym0
     public final /* synthetic */ boolean e() {
         return true;
     }
 
-    @Override // org.telegram.ui.wm0
+    @Override // org.telegram.ui.ym0
     public final void v0(int i7, boolean z9, boolean z10) {
         if (z9) {
             return;
@@ -39,7 +39,7 @@ public final class sh implements org.telegram.ui.wm0 {
         while (true) {
             ArrayList arrayList2 = this.c;
             if (i10 >= arrayList2.size()) {
-                ((org.telegram.ui.an) this.d.W1).s8(i7, arrayList, z10);
+                ((org.telegram.ui.cn) this.d.W1).t8(i7, arrayList, z10);
                 return;
             }
             Object obj = hashMap.get(arrayList2.get(i10));
@@ -69,15 +69,15 @@ public final class sh implements org.telegram.ui.wm0 {
         }
     }
 
-    @Override // org.telegram.ui.wm0
+    @Override // org.telegram.ui.ym0
     public final void B(Editable editable) {
     }
 
-    @Override // org.telegram.ui.wm0
+    @Override // org.telegram.ui.ym0
     public final void A() {
     }
 
-    @Override // org.telegram.ui.wm0
+    @Override // org.telegram.ui.ym0
     public final /* synthetic */ void f0() {
     }
 }

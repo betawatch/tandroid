@@ -6,7 +6,7 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class sb extends FrameLayout {
     public final w5 a;
@@ -54,7 +54,7 @@ public final class sb extends FrameLayout {
             aVar.getInterpolation((currentTimeMillis - (i7 * 1350)) / 667.0f);
             max += aVar.getInterpolation((currentTimeMillis - (r8 + 667)) / 667.0f) * 250.0f;
         }
-        int r12 = org.telegram.ui.ActionBar.k6.r1((1.0f - d) * 1.0f, -1);
+        int r12 = org.telegram.ui.ActionBar.l6.r1((1.0f - d) * 1.0f, -1);
         Paint paint = this.c;
         paint.setColor(r12);
         canvas.drawArc(rectF, (-90.0f) - max, Math.max(0.02f, e10) * (-360.0f), false, paint);

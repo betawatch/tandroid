@@ -28,7 +28,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class g5 extends c1 {
     public static Locale n0;
@@ -205,7 +205,7 @@ public final class g5 extends c1 {
     }
 
     public static String o(TLObject tLObject) {
-        return tLObject instanceof TLRPC.User ? p((TLRPC.User) tLObject) : tLObject instanceof TLRPC.Chat ? ((TLRPC.Chat) tLObject).title : id.M0(2131749329, null);
+        return tLObject instanceof TLRPC.User ? p((TLRPC.User) tLObject) : tLObject instanceof TLRPC.Chat ? ((TLRPC.Chat) tLObject).title : id.M0(2131749328, null);
     }
 
     public static String p(TLRPC.User user) {
@@ -1340,20 +1340,20 @@ public final class g5 extends c1 {
                                                     String string5 = query.getString(3);
                                                     ArrayList arrayList4 = d5Var2.f;
                                                     if (string5 == null) {
-                                                        string5 = id.M0(2131747292, null);
+                                                        string5 = id.M0(2131747291, null);
                                                     }
                                                     arrayList4.add(string5);
                                                 } else if (i13 == 1) {
-                                                    d5Var2.f.add(id.M0(2131747294, null));
+                                                    d5Var2.f.add(id.M0(2131747293, null));
                                                 } else {
                                                     if (i13 == 2) {
-                                                        d5Var2.f.add(id.M0(2131747292, null));
+                                                        d5Var2.f.add(id.M0(2131747291, null));
                                                     } else if (i13 == 3) {
-                                                        d5Var2.f.add(id.M0(2131747282, null));
+                                                        d5Var2.f.add(id.M0(2131747281, null));
                                                     } else if (i13 == 12) {
-                                                        d5Var2.f.add(id.M0(2131747293, null));
+                                                        d5Var2.f.add(id.M0(2131747292, null));
                                                     } else {
-                                                        d5Var2.f.add(id.M0(2131747283, null));
+                                                        d5Var2.f.add(id.M0(2131747282, null));
                                                     }
                                                     hashMap5.put(substring, d5Var2);
                                                     contentResolver3 = contentResolver2;
@@ -1587,7 +1587,7 @@ public final class g5 extends c1 {
                                                             d5Var4.e.add(f5Var2.d);
                                                             d5Var4.g.add(str7);
                                                             d5Var4.h.add(0);
-                                                            d5Var4.f.add(id.M0(2131747283, null));
+                                                            d5Var4.f.add(id.M0(2131747282, null));
                                                             HashMap hashMap7 = hashMap2 == null ? new HashMap() : hashMap2;
                                                             try {
                                                                 hashMap7.put(f5Var2.b, d5Var4);
@@ -1723,7 +1723,7 @@ public final class g5 extends c1 {
     }
 
     public final void K() {
-        getConnectionsManager().sendRequest(new TLRPC.TL_contacts_resetSaved(), new di.u5(9));
+        getConnectionsManager().sendRequest(new TLRPC.TL_contacts_resetSaved(), new di.v5(9));
     }
 
     public final void L() {
@@ -2188,7 +2188,7 @@ public final class g5 extends c1 {
         int size = arrayList.size();
         for (int i7 = 0; i7 < size; i7++) {
             TLRPC.User user = (TLRPC.User) arrayList.get(i7);
-            di.y6 P1 = getMessagesController().P1();
+            di.z6 P1 = getMessagesController().P1();
             long j3 = user.id;
             int i10 = P1.a;
             ArrayList arrayList3 = P1.h;
@@ -2215,8 +2215,8 @@ public final class g5 extends c1 {
                 }
                 i12++;
             }
-            di.l7 l7Var = P1.k;
-            l7Var.b.a.c(new bi.r3(l7Var, j3, 6));
+            di.m7 m7Var = P1.k;
+            m7Var.b.a.c(new bi.r3(m7Var, j3, 6));
             qp.s1(i10).D();
             qs.f(i10).k(qs.v5, new Object[0]);
             TLRPC.InputUser q12 = getMessagesController().q1(user);
@@ -2291,12 +2291,12 @@ public final class g5 extends c1 {
             str = "https://telegram.org/dl";
         }
         if (i7 <= 1) {
-            return id.a0(null, null, 2131749117, str);
+            return id.a0(null, null, 2131749116, str);
         }
         try {
             return String.format(id.K0(i7, "InviteTextNum"), Integer.valueOf(i7), str);
         } catch (Exception unused) {
-            return id.a0(null, null, 2131749117, str);
+            return id.a0(null, null, 2131749116, str);
         }
     }
 

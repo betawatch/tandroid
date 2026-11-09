@@ -17,14 +17,14 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.cv0;
+import org.telegram.ui.Components.ev0;
 import org.telegram.ui.Components.ru;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.q10;
+import org.telegram.ui.s10;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ya implements c20 {
     public final /* synthetic */ int a;
@@ -53,11 +53,11 @@ public final /* synthetic */ class ya implements c20 {
             case 0:
                 org.telegram.ui.Components.jc jcVar = (org.telegram.ui.Components.jc) obj4;
                 Context context = (Context) obj3;
-                org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) obj2;
+                org.telegram.ui.ActionBar.g6 g6Var = (org.telegram.ui.ActionBar.g6) obj2;
                 TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj;
                 if (savedStarGift != null) {
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(jcVar.getText());
-                    spannableStringBuilder.append((CharSequence) " ").append((CharSequence) org.telegram.ui.Components.kc.b(org.telegram.messenger.id.M0(2131745222, null), new ai.a1(this.b, context, f6Var, savedStarGift, 2), f6Var, null));
+                    spannableStringBuilder.append((CharSequence) " ").append((CharSequence) org.telegram.ui.Components.kc.b(org.telegram.messenger.id.M0(2131745219, null), new ai.a1(this.b, context, g6Var, savedStarGift, 2), g6Var, null));
                     jcVar.setText(spannableStringBuilder);
                     break;
                 }
@@ -116,18 +116,18 @@ public final /* synthetic */ class ya implements c20 {
                 }
                 if (iArr[0] == i11 && iArr[1] > 0) {
                     ruVar.dismiss();
-                    org.telegram.ui.Components.cc.g(f2Var2, new cv0(f2Var2.getFragmentView().getContext(), (TLObject) arrayList.get(0), iArr[1], 2, null, f2Var2.getResourceProvider()), 1500).j();
+                    org.telegram.ui.Components.cc.g(f2Var2, new ev0(f2Var2.getFragmentView().getContext(), (TLObject) arrayList.get(0), iArr[1], 2, null, f2Var2.getResourceProvider()), 1500).j();
                     break;
                 }
                 break;
             case 4:
                 LaunchActivity launchActivity = (LaunchActivity) obj4;
-                q10 q10Var = (q10) obj3;
+                s10 s10Var = (s10) obj3;
                 Long l10 = (Long) obj2;
                 TL_stories.TL_storyAlbum tL_storyAlbum = (TL_stories.TL_storyAlbum) obj;
                 String str2 = LaunchActivity.B1;
                 try {
-                    q10Var.run();
+                    s10Var.run();
                 } catch (Exception e10) {
                     org.telegram.messenger.a8.g(e10, true);
                 }
@@ -135,7 +135,7 @@ public final /* synthetic */ class ya implements c20 {
                 if (tL_storyAlbum == null) {
                     org.telegram.ui.Components.hc X = org.telegram.ui.Components.hc.X();
                     if (X != null) {
-                        org.telegram.messenger.k5.o(null, 2131744733, X, R.raw.story_bomb2, 36);
+                        org.telegram.messenger.k5.o(null, 2131744730, X, R.raw.story_bomb2, 36);
                         break;
                     }
                 } else {
@@ -184,10 +184,10 @@ public final /* synthetic */ class ya implements c20 {
         this.e = arrayList;
     }
 
-    public /* synthetic */ ya(LaunchActivity launchActivity, q10 q10Var, Long l10, int i7) {
+    public /* synthetic */ ya(LaunchActivity launchActivity, s10 s10Var, Long l10, int i7) {
         this.a = 4;
         this.c = launchActivity;
-        this.d = q10Var;
+        this.d = s10Var;
         this.e = l10;
         this.b = i7;
     }

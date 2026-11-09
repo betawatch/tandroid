@@ -16,7 +16,7 @@ import org.telegram.messenger.k5;
 import org.telegram.ui.ActionBar.v2;
 import org.telegram.ui.Components.hc;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final class h0 implements View.OnLongClickListener {
     public final /* synthetic */ u0 a;
@@ -87,8 +87,8 @@ public final class h0 implements View.OnLongClickListener {
                                         l10.Q = true;
                                         l10.O = str2;
                                         l10.P = false;
-                                        String M0 = id.M0(2131747793, null);
-                                        String M02 = id.M0(2131747795, null);
+                                        String M0 = id.M0(2131747792, null);
+                                        String M02 = id.M0(2131747794, null);
                                         String M03 = id.M0(2131751767, null);
                                         CharSequence[] charSequenceArr = new CharSequence[3];
                                         charSequenceArr[0] = M0;
@@ -121,7 +121,7 @@ public final class h0 implements View.OnLongClickListener {
                                                                     }
                                                                     DownloadManager.Request request = new DownloadManager.Request(Uri.parse(str7));
                                                                     request.setMimeType("image/*");
-                                                                    request.setDescription(id.M0(2131742931, null));
+                                                                    request.setDescription(id.M0(2131742928, null));
                                                                     request.setNotificationVisibility(1);
                                                                     request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, guessFileName);
                                                                     DownloadManager downloadManager = (DownloadManager) u0Var2.getContext().getSystemService("download");
@@ -130,7 +130,7 @@ public final class h0 implements View.OnLongClickListener {
                                                                     }
                                                                     x0 x0Var2 = u0Var2.Q;
                                                                     if (x0Var2 != null) {
-                                                                        new hc(x0Var2, x0Var2.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131742930, guessFileName))).k(true);
+                                                                        new hc(x0Var2, x0Var2.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131742927, guessFileName))).k(true);
                                                                         break;
                                                                     }
                                                                 } catch (Exception e13) {
@@ -194,8 +194,8 @@ public final class h0 implements View.OnLongClickListener {
                                     l10.Q = true;
                                     l10.O = str2;
                                     l10.P = false;
-                                    String M04 = id.M0(2131747793, null);
-                                    String M022 = id.M0(2131747795, null);
+                                    String M04 = id.M0(2131747792, null);
+                                    String M022 = id.M0(2131747794, null);
                                     String M032 = id.M0(2131751767, null);
                                     CharSequence[] charSequenceArr2 = new CharSequence[3];
                                     charSequenceArr2[0] = M04;
@@ -228,7 +228,7 @@ public final class h0 implements View.OnLongClickListener {
                                                                 }
                                                                 DownloadManager.Request request = new DownloadManager.Request(Uri.parse(str7));
                                                                 request.setMimeType("image/*");
-                                                                request.setDescription(id.M0(2131742931, null));
+                                                                request.setDescription(id.M0(2131742928, null));
                                                                 request.setNotificationVisibility(1);
                                                                 request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, guessFileName);
                                                                 DownloadManager downloadManager = (DownloadManager) u0Var2.getContext().getSystemService("download");
@@ -237,7 +237,7 @@ public final class h0 implements View.OnLongClickListener {
                                                                 }
                                                                 x0 x0Var2 = u0Var2.Q;
                                                                 if (x0Var2 != null) {
-                                                                    new hc(x0Var2, x0Var2.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131742930, guessFileName))).k(true);
+                                                                    new hc(x0Var2, x0Var2.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131742927, guessFileName))).k(true);
                                                                     break;
                                                                 }
                                                             } catch (Exception e13) {
@@ -305,8 +305,8 @@ public final class h0 implements View.OnLongClickListener {
                                     l10.Q = true;
                                     l10.O = str2;
                                     l10.P = false;
-                                    String M042 = id.M0(2131747793, null);
-                                    String M0222 = id.M0(2131747795, null);
+                                    String M042 = id.M0(2131747792, null);
+                                    String M0222 = id.M0(2131747794, null);
                                     String M0322 = id.M0(2131751767, null);
                                     CharSequence[] charSequenceArr22 = new CharSequence[3];
                                     charSequenceArr22[0] = M042;
@@ -339,7 +339,7 @@ public final class h0 implements View.OnLongClickListener {
                                                                 }
                                                                 DownloadManager.Request request = new DownloadManager.Request(Uri.parse(str7));
                                                                 request.setMimeType("image/*");
-                                                                request.setDescription(id.M0(2131742931, null));
+                                                                request.setDescription(id.M0(2131742928, null));
                                                                 request.setNotificationVisibility(1);
                                                                 request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, guessFileName);
                                                                 DownloadManager downloadManager = (DownloadManager) u0Var2.getContext().getSystemService("download");
@@ -348,7 +348,7 @@ public final class h0 implements View.OnLongClickListener {
                                                                 }
                                                                 x0 x0Var2 = u0Var2.Q;
                                                                 if (x0Var2 != null) {
-                                                                    new hc(x0Var2, x0Var2.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131742930, guessFileName))).k(true);
+                                                                    new hc(x0Var2, x0Var2.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131742927, guessFileName))).k(true);
                                                                     break;
                                                                 }
                                                             } catch (Exception e13) {
@@ -417,8 +417,8 @@ public final class h0 implements View.OnLongClickListener {
                             l10.Q = true;
                             l10.O = str2;
                             l10.P = false;
-                            String M0422 = id.M0(2131747793, null);
-                            String M02222 = id.M0(2131747795, null);
+                            String M0422 = id.M0(2131747792, null);
+                            String M02222 = id.M0(2131747794, null);
                             String M03222 = id.M0(2131751767, null);
                             CharSequence[] charSequenceArr222 = new CharSequence[3];
                             charSequenceArr222[0] = M0422;
@@ -451,7 +451,7 @@ public final class h0 implements View.OnLongClickListener {
                                                         }
                                                         DownloadManager.Request request = new DownloadManager.Request(Uri.parse(str7));
                                                         request.setMimeType("image/*");
-                                                        request.setDescription(id.M0(2131742931, null));
+                                                        request.setDescription(id.M0(2131742928, null));
                                                         request.setNotificationVisibility(1);
                                                         request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, guessFileName);
                                                         DownloadManager downloadManager = (DownloadManager) u0Var2.getContext().getSystemService("download");
@@ -460,7 +460,7 @@ public final class h0 implements View.OnLongClickListener {
                                                         }
                                                         x0 x0Var2 = u0Var2.Q;
                                                         if (x0Var2 != null) {
-                                                            new hc(x0Var2, x0Var2.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131742930, guessFileName))).k(true);
+                                                            new hc(x0Var2, x0Var2.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131742927, guessFileName))).k(true);
                                                             break;
                                                         }
                                                     } catch (Exception e13) {
@@ -537,7 +537,7 @@ public final class h0 implements View.OnLongClickListener {
                                     l11.Q = true;
                                     l11.O = str5;
                                     l11.P = false;
-                                    CharSequence[] charSequenceArr3 = {id.M0(2131747795, null), id.M0(2131754938, null), id.M0(2131751762, null)};
+                                    CharSequence[] charSequenceArr3 = {id.M0(2131747794, null), id.M0(2131754938, null), id.M0(2131751762, null)};
                                     DialogInterface.OnClickListener onClickListener3 = new DialogInterface.OnClickListener() { // from class: org.telegram.ui.web.g0
                                         @Override // android.content.DialogInterface.OnClickListener
                                         public final void onClick(DialogInterface dialogInterface, int i13) {
@@ -565,7 +565,7 @@ public final class h0 implements View.OnLongClickListener {
                                                                 }
                                                                 DownloadManager.Request request = new DownloadManager.Request(Uri.parse(str7));
                                                                 request.setMimeType("image/*");
-                                                                request.setDescription(id.M0(2131742931, null));
+                                                                request.setDescription(id.M0(2131742928, null));
                                                                 request.setNotificationVisibility(1);
                                                                 request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, guessFileName);
                                                                 DownloadManager downloadManager = (DownloadManager) u0Var22.getContext().getSystemService("download");
@@ -574,7 +574,7 @@ public final class h0 implements View.OnLongClickListener {
                                                                 }
                                                                 x0 x0Var2 = u0Var22.Q;
                                                                 if (x0Var2 != null) {
-                                                                    new hc(x0Var2, x0Var2.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131742930, guessFileName))).k(true);
+                                                                    new hc(x0Var2, x0Var2.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131742927, guessFileName))).k(true);
                                                                     break;
                                                                 }
                                                             } catch (Exception e132) {
@@ -644,7 +644,7 @@ public final class h0 implements View.OnLongClickListener {
                                 l11.Q = true;
                                 l11.O = str5;
                                 l11.P = false;
-                                CharSequence[] charSequenceArr32 = {id.M0(2131747795, null), id.M0(2131754938, null), id.M0(2131751762, null)};
+                                CharSequence[] charSequenceArr32 = {id.M0(2131747794, null), id.M0(2131754938, null), id.M0(2131751762, null)};
                                 DialogInterface.OnClickListener onClickListener32 = new DialogInterface.OnClickListener() { // from class: org.telegram.ui.web.g0
                                     @Override // android.content.DialogInterface.OnClickListener
                                     public final void onClick(DialogInterface dialogInterface, int i13) {
@@ -672,7 +672,7 @@ public final class h0 implements View.OnLongClickListener {
                                                             }
                                                             DownloadManager.Request request = new DownloadManager.Request(Uri.parse(str7));
                                                             request.setMimeType("image/*");
-                                                            request.setDescription(id.M0(2131742931, null));
+                                                            request.setDescription(id.M0(2131742928, null));
                                                             request.setNotificationVisibility(1);
                                                             request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, guessFileName);
                                                             DownloadManager downloadManager = (DownloadManager) u0Var22.getContext().getSystemService("download");
@@ -681,7 +681,7 @@ public final class h0 implements View.OnLongClickListener {
                                                             }
                                                             x0 x0Var2 = u0Var22.Q;
                                                             if (x0Var2 != null) {
-                                                                new hc(x0Var2, x0Var2.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131742930, guessFileName))).k(true);
+                                                                new hc(x0Var2, x0Var2.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131742927, guessFileName))).k(true);
                                                                 break;
                                                             }
                                                         } catch (Exception e132) {
@@ -744,7 +744,7 @@ public final class h0 implements View.OnLongClickListener {
                             l11.Q = true;
                             l11.O = str5;
                             l11.P = false;
-                            CharSequence[] charSequenceArr322 = {id.M0(2131747795, null), id.M0(2131754938, null), id.M0(2131751762, null)};
+                            CharSequence[] charSequenceArr322 = {id.M0(2131747794, null), id.M0(2131754938, null), id.M0(2131751762, null)};
                             DialogInterface.OnClickListener onClickListener322 = new DialogInterface.OnClickListener() { // from class: org.telegram.ui.web.g0
                                 @Override // android.content.DialogInterface.OnClickListener
                                 public final void onClick(DialogInterface dialogInterface, int i13) {
@@ -772,7 +772,7 @@ public final class h0 implements View.OnLongClickListener {
                                                         }
                                                         DownloadManager.Request request = new DownloadManager.Request(Uri.parse(str7));
                                                         request.setMimeType("image/*");
-                                                        request.setDescription(id.M0(2131742931, null));
+                                                        request.setDescription(id.M0(2131742928, null));
                                                         request.setNotificationVisibility(1);
                                                         request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, guessFileName);
                                                         DownloadManager downloadManager = (DownloadManager) u0Var22.getContext().getSystemService("download");
@@ -781,7 +781,7 @@ public final class h0 implements View.OnLongClickListener {
                                                         }
                                                         x0 x0Var2 = u0Var22.Q;
                                                         if (x0Var2 != null) {
-                                                            new hc(x0Var2, x0Var2.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131742930, guessFileName))).k(true);
+                                                            new hc(x0Var2, x0Var2.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131742927, guessFileName))).k(true);
                                                             break;
                                                         }
                                                     } catch (Exception e132) {
@@ -906,8 +906,8 @@ public final class h0 implements View.OnLongClickListener {
                                     l10.Q = true;
                                     l10.O = str2;
                                     l10.P = false;
-                                    String M0422 = id.M0(2131747793, null);
-                                    String M02222 = id.M0(2131747795, null);
+                                    String M0422 = id.M0(2131747792, null);
+                                    String M02222 = id.M0(2131747794, null);
                                     String M03222 = id.M0(2131751767, null);
                                     CharSequence[] charSequenceArr222 = new CharSequence[3];
                                     charSequenceArr222[0] = M0422;
@@ -940,7 +940,7 @@ public final class h0 implements View.OnLongClickListener {
                                                                 }
                                                                 DownloadManager.Request request = new DownloadManager.Request(Uri.parse(str7));
                                                                 request.setMimeType("image/*");
-                                                                request.setDescription(id.M0(2131742931, null));
+                                                                request.setDescription(id.M0(2131742928, null));
                                                                 request.setNotificationVisibility(1);
                                                                 request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, guessFileName);
                                                                 DownloadManager downloadManager = (DownloadManager) u0Var22.getContext().getSystemService("download");
@@ -949,7 +949,7 @@ public final class h0 implements View.OnLongClickListener {
                                                                 }
                                                                 x0 x0Var2 = u0Var22.Q;
                                                                 if (x0Var2 != null) {
-                                                                    new hc(x0Var2, x0Var2.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131742930, guessFileName))).k(true);
+                                                                    new hc(x0Var2, x0Var2.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131742927, guessFileName))).k(true);
                                                                     break;
                                                                 }
                                                             } catch (Exception e132) {
@@ -1013,8 +1013,8 @@ public final class h0 implements View.OnLongClickListener {
                                 l10.Q = true;
                                 l10.O = str2;
                                 l10.P = false;
-                                String M04222 = id.M0(2131747793, null);
-                                String M022222 = id.M0(2131747795, null);
+                                String M04222 = id.M0(2131747792, null);
+                                String M022222 = id.M0(2131747794, null);
                                 String M032222 = id.M0(2131751767, null);
                                 CharSequence[] charSequenceArr2222 = new CharSequence[3];
                                 charSequenceArr2222[0] = M04222;
@@ -1047,7 +1047,7 @@ public final class h0 implements View.OnLongClickListener {
                                                             }
                                                             DownloadManager.Request request = new DownloadManager.Request(Uri.parse(str7));
                                                             request.setMimeType("image/*");
-                                                            request.setDescription(id.M0(2131742931, null));
+                                                            request.setDescription(id.M0(2131742928, null));
                                                             request.setNotificationVisibility(1);
                                                             request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, guessFileName);
                                                             DownloadManager downloadManager = (DownloadManager) u0Var22.getContext().getSystemService("download");
@@ -1056,7 +1056,7 @@ public final class h0 implements View.OnLongClickListener {
                                                             }
                                                             x0 x0Var2 = u0Var22.Q;
                                                             if (x0Var2 != null) {
-                                                                new hc(x0Var2, x0Var2.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131742930, guessFileName))).k(true);
+                                                                new hc(x0Var2, x0Var2.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131742927, guessFileName))).k(true);
                                                                 break;
                                                             }
                                                         } catch (Exception e132) {
@@ -1124,8 +1124,8 @@ public final class h0 implements View.OnLongClickListener {
                                 l10.Q = true;
                                 l10.O = str2;
                                 l10.P = false;
-                                String M042222 = id.M0(2131747793, null);
-                                String M0222222 = id.M0(2131747795, null);
+                                String M042222 = id.M0(2131747792, null);
+                                String M0222222 = id.M0(2131747794, null);
                                 String M0322222 = id.M0(2131751767, null);
                                 CharSequence[] charSequenceArr22222 = new CharSequence[3];
                                 charSequenceArr22222[0] = M042222;
@@ -1158,7 +1158,7 @@ public final class h0 implements View.OnLongClickListener {
                                                             }
                                                             DownloadManager.Request request = new DownloadManager.Request(Uri.parse(str7));
                                                             request.setMimeType("image/*");
-                                                            request.setDescription(id.M0(2131742931, null));
+                                                            request.setDescription(id.M0(2131742928, null));
                                                             request.setNotificationVisibility(1);
                                                             request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, guessFileName);
                                                             DownloadManager downloadManager = (DownloadManager) u0Var22.getContext().getSystemService("download");
@@ -1167,7 +1167,7 @@ public final class h0 implements View.OnLongClickListener {
                                                             }
                                                             x0 x0Var2 = u0Var22.Q;
                                                             if (x0Var2 != null) {
-                                                                new hc(x0Var2, x0Var2.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131742930, guessFileName))).k(true);
+                                                                new hc(x0Var2, x0Var2.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131742927, guessFileName))).k(true);
                                                                 break;
                                                             }
                                                         } catch (Exception e132) {
@@ -1236,8 +1236,8 @@ public final class h0 implements View.OnLongClickListener {
                         l10.Q = true;
                         l10.O = str2;
                         l10.P = false;
-                        String M0422222 = id.M0(2131747793, null);
-                        String M02222222 = id.M0(2131747795, null);
+                        String M0422222 = id.M0(2131747792, null);
+                        String M02222222 = id.M0(2131747794, null);
                         String M03222222 = id.M0(2131751767, null);
                         CharSequence[] charSequenceArr222222 = new CharSequence[3];
                         charSequenceArr222222[0] = M0422222;
@@ -1270,7 +1270,7 @@ public final class h0 implements View.OnLongClickListener {
                                                     }
                                                     DownloadManager.Request request = new DownloadManager.Request(Uri.parse(str7));
                                                     request.setMimeType("image/*");
-                                                    request.setDescription(id.M0(2131742931, null));
+                                                    request.setDescription(id.M0(2131742928, null));
                                                     request.setNotificationVisibility(1);
                                                     request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, guessFileName);
                                                     DownloadManager downloadManager = (DownloadManager) u0Var22.getContext().getSystemService("download");
@@ -1279,7 +1279,7 @@ public final class h0 implements View.OnLongClickListener {
                                                     }
                                                     x0 x0Var2 = u0Var22.Q;
                                                     if (x0Var2 != null) {
-                                                        new hc(x0Var2, x0Var2.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131742930, guessFileName))).k(true);
+                                                        new hc(x0Var2, x0Var2.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131742927, guessFileName))).k(true);
                                                         break;
                                                     }
                                                 } catch (Exception e132) {
@@ -1356,7 +1356,7 @@ public final class h0 implements View.OnLongClickListener {
                                 l11.Q = true;
                                 l11.O = str5;
                                 l11.P = false;
-                                CharSequence[] charSequenceArr322 = {id.M0(2131747795, null), id.M0(2131754938, null), id.M0(2131751762, null)};
+                                CharSequence[] charSequenceArr322 = {id.M0(2131747794, null), id.M0(2131754938, null), id.M0(2131751762, null)};
                                 DialogInterface.OnClickListener onClickListener322 = new DialogInterface.OnClickListener() { // from class: org.telegram.ui.web.g0
                                     @Override // android.content.DialogInterface.OnClickListener
                                     public final void onClick(DialogInterface dialogInterface, int i13) {
@@ -1384,7 +1384,7 @@ public final class h0 implements View.OnLongClickListener {
                                                             }
                                                             DownloadManager.Request request = new DownloadManager.Request(Uri.parse(str7));
                                                             request.setMimeType("image/*");
-                                                            request.setDescription(id.M0(2131742931, null));
+                                                            request.setDescription(id.M0(2131742928, null));
                                                             request.setNotificationVisibility(1);
                                                             request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, guessFileName);
                                                             DownloadManager downloadManager = (DownloadManager) u0Var22.getContext().getSystemService("download");
@@ -1393,7 +1393,7 @@ public final class h0 implements View.OnLongClickListener {
                                                             }
                                                             x0 x0Var2 = u0Var22.Q;
                                                             if (x0Var2 != null) {
-                                                                new hc(x0Var2, x0Var2.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131742930, guessFileName))).k(true);
+                                                                new hc(x0Var2, x0Var2.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131742927, guessFileName))).k(true);
                                                                 break;
                                                             }
                                                         } catch (Exception e132) {
@@ -1463,7 +1463,7 @@ public final class h0 implements View.OnLongClickListener {
                             l11.Q = true;
                             l11.O = str5;
                             l11.P = false;
-                            CharSequence[] charSequenceArr3222 = {id.M0(2131747795, null), id.M0(2131754938, null), id.M0(2131751762, null)};
+                            CharSequence[] charSequenceArr3222 = {id.M0(2131747794, null), id.M0(2131754938, null), id.M0(2131751762, null)};
                             DialogInterface.OnClickListener onClickListener3222 = new DialogInterface.OnClickListener() { // from class: org.telegram.ui.web.g0
                                 @Override // android.content.DialogInterface.OnClickListener
                                 public final void onClick(DialogInterface dialogInterface, int i13) {
@@ -1491,7 +1491,7 @@ public final class h0 implements View.OnLongClickListener {
                                                         }
                                                         DownloadManager.Request request = new DownloadManager.Request(Uri.parse(str7));
                                                         request.setMimeType("image/*");
-                                                        request.setDescription(id.M0(2131742931, null));
+                                                        request.setDescription(id.M0(2131742928, null));
                                                         request.setNotificationVisibility(1);
                                                         request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, guessFileName);
                                                         DownloadManager downloadManager = (DownloadManager) u0Var22.getContext().getSystemService("download");
@@ -1500,7 +1500,7 @@ public final class h0 implements View.OnLongClickListener {
                                                         }
                                                         x0 x0Var2 = u0Var22.Q;
                                                         if (x0Var2 != null) {
-                                                            new hc(x0Var2, x0Var2.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131742930, guessFileName))).k(true);
+                                                            new hc(x0Var2, x0Var2.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131742927, guessFileName))).k(true);
                                                             break;
                                                         }
                                                     } catch (Exception e132) {
@@ -1563,7 +1563,7 @@ public final class h0 implements View.OnLongClickListener {
                         l11.Q = true;
                         l11.O = str5;
                         l11.P = false;
-                        CharSequence[] charSequenceArr32222 = {id.M0(2131747795, null), id.M0(2131754938, null), id.M0(2131751762, null)};
+                        CharSequence[] charSequenceArr32222 = {id.M0(2131747794, null), id.M0(2131754938, null), id.M0(2131751762, null)};
                         DialogInterface.OnClickListener onClickListener32222 = new DialogInterface.OnClickListener() { // from class: org.telegram.ui.web.g0
                             @Override // android.content.DialogInterface.OnClickListener
                             public final void onClick(DialogInterface dialogInterface, int i13) {
@@ -1591,7 +1591,7 @@ public final class h0 implements View.OnLongClickListener {
                                                     }
                                                     DownloadManager.Request request = new DownloadManager.Request(Uri.parse(str7));
                                                     request.setMimeType("image/*");
-                                                    request.setDescription(id.M0(2131742931, null));
+                                                    request.setDescription(id.M0(2131742928, null));
                                                     request.setNotificationVisibility(1);
                                                     request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, guessFileName);
                                                     DownloadManager downloadManager = (DownloadManager) u0Var22.getContext().getSystemService("download");
@@ -1600,7 +1600,7 @@ public final class h0 implements View.OnLongClickListener {
                                                     }
                                                     x0 x0Var2 = u0Var22.Q;
                                                     if (x0Var2 != null) {
-                                                        new hc(x0Var2, x0Var2.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131742930, guessFileName))).k(true);
+                                                        new hc(x0Var2, x0Var2.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131742927, guessFileName))).k(true);
                                                         break;
                                                     }
                                                 } catch (Exception e132) {

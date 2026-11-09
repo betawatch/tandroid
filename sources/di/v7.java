@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import org.telegram.messenger.id;
 import org.telegram.messenger.p10;
 import org.telegram.ui.Components.ea;
-import org.telegram.ui.vs0;
+import org.telegram.ui.xs0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class v7 implements c5.g {
     public final /* synthetic */ int a;
@@ -26,21 +26,21 @@ public final class v7 implements c5.g {
         KeyEvent.Callback callback = this.c;
         switch (i10) {
             case 0:
-                p9 p9Var = (p9) this.b;
+                q9 q9Var = (q9) this.b;
                 w wVar = (w) callback;
-                i4 currentPeerView = wVar.getCurrentPeerView();
+                j4 currentPeerView = wVar.getCurrentPeerView();
                 if (currentPeerView != null) {
-                    ((g9) wVar.B0).a(currentPeerView.getSelectedPosition(), currentPeerView.getCurrentPeer());
+                    ((h9) wVar.B0).a(currentPeerView.getSelectedPosition(), currentPeerView.getCurrentPeer());
                     wVar.F();
-                    l9 l9Var = p9Var.t0;
-                    if (l9Var != null) {
+                    m9 m9Var = q9Var.t0;
+                    if (m9Var != null) {
                         if (i7 >= 3) {
                             if (i7 > wVar.z0.b() - 4) {
-                                p9Var.t0.b(true);
+                                q9Var.t0.b(true);
                                 break;
                             }
                         } else {
-                            l9Var.b(false);
+                            m9Var.b(false);
                             break;
                         }
                     }
@@ -49,17 +49,17 @@ public final class v7 implements c5.g {
             default:
                 ug.w0 w0Var = (ug.w0) callback;
                 ArrayList arrayList = w0Var.k1;
-                if (((vs0) arrayList.get(i7)).a == 0) {
-                    w0Var.E1.setTitle(id.M0(2131751350, null));
+                if (((xs0) arrayList.get(i7)).a == 0) {
+                    w0Var.E1.setTitle(id.M0(2131751349, null));
                     w0Var.E1.requestLayout();
-                } else if (((vs0) arrayList.get(i7)).a == 14) {
-                    w0Var.E1.setTitle(id.M0(2131743808, null));
+                } else if (((xs0) arrayList.get(i7)).a == 14) {
+                    w0Var.E1.setTitle(id.M0(2131743805, null));
                     w0Var.E1.requestLayout();
-                } else if (((vs0) arrayList.get(i7)).a == 40) {
-                    w0Var.E1.setTitle(id.M0(2131750838, null));
+                } else if (((xs0) arrayList.get(i7)).a == 40) {
+                    w0Var.E1.setTitle(id.M0(2131750837, null));
                     w0Var.E1.requestLayout();
-                } else if (((vs0) arrayList.get(i7)).a == 28) {
-                    w0Var.E1.setTitle(id.M0(2131744255, null));
+                } else if (((xs0) arrayList.get(i7)).a == 28) {
+                    w0Var.E1.setTitle(id.M0(2131744252, null));
                     w0Var.E1.requestLayout();
                 }
                 d();
@@ -78,15 +78,15 @@ public final class v7 implements c5.g {
                 long j3 = p10.i(wVar.y0).n;
                 int i11 = wVar.I0;
                 if (i11 >= 0 && (wVar.x0 != null ? wVar.w0 == j3 : !(i11 >= wVar.A0.size() || ((Long) wVar.A0.get(wVar.I0)).longValue() != j3))) {
-                    ((g9) wVar.B0).d(1.0f - wVar.K0);
+                    ((h9) wVar.B0).d(1.0f - wVar.K0);
                     break;
                 } else {
                     int i12 = wVar.J0;
                     if (i12 >= 0 && (wVar.x0 != null ? wVar.w0 == j3 : !(i12 >= wVar.A0.size() || ((Long) wVar.A0.get(wVar.J0)).longValue() != j3))) {
-                        ((g9) wVar.B0).d(wVar.K0);
+                        ((h9) wVar.B0).d(wVar.K0);
                         break;
                     } else {
-                        ((g9) wVar.B0).d(0.0f);
+                        ((h9) wVar.B0).d(0.0f);
                         break;
                     }
                 }
@@ -110,16 +110,16 @@ public final class v7 implements c5.g {
         switch (this.a) {
             case 0:
                 w wVar = (w) this.c;
-                ((g9) wVar.B0).d.V();
+                ((h9) wVar.B0).d.V();
                 Runnable runnable = wVar.G0;
                 if (runnable != null && i7 == 0) {
                     runnable.run();
                     wVar.G0 = null;
                 }
                 wVar.F0 = i7;
-                p9 p9Var = ((f9) wVar).R0;
-                if (p9Var.n0.F0 == 1) {
-                    org.telegram.messenger.g0.r(p9Var.a1);
+                q9 q9Var = ((g9) wVar).R0;
+                if (q9Var.n0.F0 == 1) {
+                    org.telegram.messenger.g0.r(q9Var.a1);
                     break;
                 }
                 break;
@@ -160,9 +160,9 @@ public final class v7 implements c5.g {
             i11++;
         }
         int i13 = w0Var.x1;
-        boolean z9 = i13 >= 0 && i13 < arrayList.size() && ((i10 = ((vs0) arrayList.get(w0Var.x1)).a) == 0 || i10 == 14 || i10 == 28);
+        boolean z9 = i13 >= 0 && i13 < arrayList.size() && ((i10 = ((xs0) arrayList.get(w0Var.x1)).a) == 0 || i10 == 14 || i10 == 28);
         int i14 = w0Var.y1;
-        boolean z10 = i14 >= 0 && i14 < arrayList.size() && ((i7 = ((vs0) arrayList.get(w0Var.y1)).a) == 0 || i7 == 14 || i7 == 28);
+        boolean z10 = i14 >= 0 && i14 < arrayList.size() && ((i7 = ((xs0) arrayList.get(w0Var.y1)).a) == 0 || i7 == 14 || i7 == 28);
         if (z9 && z10) {
             w0Var.m1 = 1.0f;
             float f11 = w0Var.z1;
@@ -190,7 +190,7 @@ public final class v7 implements c5.g {
         if (i15 != w0Var.B1) {
             w0Var.B1 = i15;
             w0Var.p1.invalidate();
-            org.telegram.messenger.g0.h3(new sg.t0(this, 18));
+            org.telegram.messenger.g0.h3(new sh.b(this, 16));
         }
     }
 

@@ -5,7 +5,7 @@ import java.io.File;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y6 implements org.telegram.messenger.c20 {
     public final /* synthetic */ int a;
@@ -57,8 +57,8 @@ public final /* synthetic */ class y6 implements org.telegram.messenger.c20 {
             default:
                 b8 b8Var2 = this.b;
                 FrameLayout frameLayout = (FrameLayout) b8Var2.b;
-                org.telegram.ui.ActionBar.f6 f6Var = b8Var2.I0;
-                new hc(frameLayout, f6Var).o(gc.F, f6Var).j();
+                org.telegram.ui.ActionBar.g6 g6Var = b8Var2.I0;
+                new hc(frameLayout, g6Var).o(gc.F, g6Var).j();
                 break;
         }
     }

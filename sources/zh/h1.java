@@ -5,17 +5,17 @@ import java.util.ArrayList;
 import org.telegram.messenger.qp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.up0;
+import org.telegram.ui.Components.vp0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h1 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ up0 b;
+    public final /* synthetic */ vp0 b;
 
-    public /* synthetic */ h1(up0 up0Var, int i7) {
+    public /* synthetic */ h1(vp0 vp0Var, int i7) {
         this.a = i7;
-        this.b = up0Var;
+        this.b = vp0Var;
     }
 
     @Override // java.lang.Runnable

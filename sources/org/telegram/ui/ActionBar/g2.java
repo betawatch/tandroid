@@ -3,9 +3,9 @@ package org.telegram.ui.ActionBar;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qs;
-import org.telegram.ui.o61;
+import org.telegram.ui.p61;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g2 implements Runnable {
     public final /* synthetic */ int a;
@@ -39,7 +39,7 @@ public final /* synthetic */ class g2 implements Runnable {
             default:
                 this.b.dismiss();
                 qs.f(p10.s0).k(qs.T2, new Object[0]);
-                org.telegram.messenger.g0.i3(new o61(21), 220L);
+                org.telegram.messenger.g0.i3(new p61(21), 220L);
                 break;
         }
     }

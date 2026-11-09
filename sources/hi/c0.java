@@ -7,11 +7,11 @@ import android.graphics.Path;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
-import fi.h9;
+import fi.v9;
 import org.telegram.ui.Components.w5;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final class c0 extends Drawable {
     public final Paint a = new Paint(1);
@@ -26,10 +26,10 @@ public final class c0 extends Drawable {
     public c0(int i7) {
         Path path = new Path();
         this.d = path;
-        h9 h9Var = new h9(this, 11);
+        v9 v9Var = new v9(this, 10);
         xq xqVar = xq.h;
-        this.g = new w5(h9Var, 320L, xqVar, 0);
-        this.h = new w5(new h9(this, 11), 320L, xqVar, 0);
+        this.g = new w5(v9Var, 320L, xqVar, 0);
+        this.h = new w5(new v9(this, 10), 320L, xqVar, 0);
         this.c = i7;
         path.moveTo(-org.telegram.messenger.g0.L(6.5f), 0.0f);
         path.lineTo(org.telegram.messenger.g0.L(6.5f), 0.0f);

@@ -13,7 +13,7 @@ import org.telegram.messenger.voip.NativeInstance;
 import org.telegram.messenger.w10;
 import org.telegram.messenger.we;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a1 implements NativeInstance.AudioLevelsCallback, org.telegram.ui.ActionBar.r1, g9.k, u9.d, org.telegram.messenger.k9, w10, e20 {
     public final /* synthetic */ int a;
@@ -260,7 +260,7 @@ public final /* synthetic */ class a1 implements NativeInstance.AudioLevelsCallb
     public Object d(Number number, Object obj) {
         Integer num = (Integer) obj;
         if (((Integer) number).intValue() == 0) {
-            return num.intValue() == 0 ? id.M0(2131748806, null) : id.H(',', "Stars", num.intValue());
+            return num.intValue() == 0 ? id.M0(2131748805, null) : id.H(',', "Stars", num.intValue());
         }
         return "" + num;
     }

@@ -30,12 +30,12 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.ck0;
-import org.telegram.ui.Wallet.v1;
-import org.telegram.ui.o61;
-import org.telegram.ui.un0;
+import org.telegram.ui.Components.dk0;
+import org.telegram.ui.Wallet.u1;
+import org.telegram.ui.p61;
+import org.telegram.ui.wn0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public abstract class n0 {
     public static boolean i;
@@ -44,7 +44,7 @@ public abstract class n0 {
     public static final ConcurrentHashMap b = new ConcurrentHashMap();
     public static final HashMap c = new HashMap();
     public static final HashMap d = new HashMap();
-    public static final o61 e = new o61(12);
+    public static final p61 e = new p61(12);
     public static final ArrayList f = new ArrayList();
     public static final ArrayList g = new ArrayList();
     public static final ArrayList h = new ArrayList();
@@ -82,7 +82,7 @@ public abstract class n0 {
                 arrayList.add(k0Var);
             }
         }
-        Collections.sort(arrayList, new un0(11));
+        Collections.sort(arrayList, new wn0(11));
         for (int i7 = 0; i7 < arrayList.size(); i7++) {
             v0 v0Var = ((k0) arrayList.get(i7)).t;
             if (i7 >= 4) {
@@ -489,19 +489,19 @@ public abstract class n0 {
         }
     }
 
-    public static ck0 q(ArrayList arrayList) {
+    public static dk0 q(ArrayList arrayList) {
         int size = arrayList.size();
-        ck0 ck0Var = null;
+        dk0 dk0Var = null;
         int i7 = 0;
         while (i7 < size) {
             Object obj = arrayList.get(i7);
             i7++;
-            ck0 ck0Var2 = (ck0) obj;
-            if (ck0Var == null || ck0Var2.c0 > ck0Var.c0) {
-                ck0Var = ck0Var2;
+            dk0 dk0Var2 = (dk0) obj;
+            if (dk0Var == null || dk0Var2.c0 > dk0Var.c0) {
+                dk0Var = dk0Var2;
             }
         }
-        return ck0Var;
+        return dk0Var;
     }
 
     public static void r(boolean z9) {
@@ -627,7 +627,7 @@ public abstract class n0 {
         tL_messages_getBotWidgetQueryAnswer_layer233.msg_id = k0Var.d;
         tL_messages_getBotWidgetQueryAnswer_layer233.query_type = widgetQueryType;
         tL_messages_getBotWidgetQueryAnswer_layer233.data = bArr;
-        iArr[0] = ConnectionsManager.getInstance(i7).sendRequestTyped(tL_messages_getBotWidgetQueryAnswer_layer233, new d3.b(1), new v1(z10, k0Var, widgetQueryType, bArr, iArr, g0Var));
+        iArr[0] = ConnectionsManager.getInstance(i7).sendRequestTyped(tL_messages_getBotWidgetQueryAnswer_layer233, new d3.b(1), new u1(z10, k0Var, widgetQueryType, bArr, iArr, g0Var));
     }
 
     public static boolean z() {
@@ -635,9 +635,9 @@ public abstract class n0 {
         g1 g1Var;
         for (k0 k0Var : a.values()) {
             v0 v0Var = k0Var.t;
-            ck0 ck0Var = k0Var.w;
-            if (k0Var.x != 0 && v0Var != null && ck0Var != null && !k0Var.D && ((i1Var = v0Var.f) == null || (g1Var = i1Var.H) == null || (!g1Var.g && !i1Var.z))) {
-                String k10 = k(k0Var.a, v0Var, ck0Var.u0());
+            dk0 dk0Var = k0Var.w;
+            if (k0Var.x != 0 && v0Var != null && dk0Var != null && !k0Var.D && ((i1Var = v0Var.f) == null || (g1Var = i1Var.H) == null || (!g1Var.g && !i1Var.z))) {
+                String k10 = k(k0Var.a, v0Var, dk0Var.u0());
                 if (k10.equals("placeholder") || k10.startsWith("cache of width")) {
                     return false;
                 }

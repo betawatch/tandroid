@@ -5,9 +5,9 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.qs;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.an;
+import org.telegram.ui.cn;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b4 implements Runnable {
     public final /* synthetic */ int a;
@@ -34,10 +34,10 @@ public final /* synthetic */ class b4 implements Runnable {
                     k7Var.dismiss();
                     org.telegram.ui.ActionBar.f2 Q = LaunchActivity.Q();
                     if (Q != null) {
-                        if (Q instanceof an) {
-                            an anVar = (an) Q;
-                            if (anVar.a() == j3) {
-                                org.telegram.ui.Components.hc.a0(anVar).I(R.raw.gift, org.telegram.messenger.id.M0(2131745099, null), org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, 2131745097, org.telegram.messenger.m5.t(j3)))).k(true);
+                        if (Q instanceof cn) {
+                            cn cnVar = (cn) Q;
+                            if (cnVar.a() == j3) {
+                                org.telegram.ui.Components.hc.a0(cnVar).I(R.raw.gift, org.telegram.messenger.id.M0(2131745096, null), org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, 2131745094, org.telegram.messenger.m5.t(j3)))).k(true);
                                 break;
                             }
                         }
@@ -46,9 +46,9 @@ public final /* synthetic */ class b4 implements Runnable {
                         Boolean bool = Boolean.FALSE;
                         f10.k(6, valueOf, bool);
                         qs.f(k7Var.a).k(5, Long.valueOf(j3), bool);
-                        an ra2 = an.ra(j3);
-                        ra2.whenFullyVisible(new a4(i10, k7Var, ra2));
-                        Q.presentFragment(ra2);
+                        cn ta2 = cn.ta(j3);
+                        ta2.whenFullyVisible(new a4(i10, k7Var, ta2));
+                        Q.presentFragment(ta2);
                         break;
                     }
                 } else {

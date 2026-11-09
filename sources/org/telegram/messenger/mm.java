@@ -6,9 +6,9 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
-import org.telegram.ui.wn0;
+import org.telegram.ui.yn0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class mm implements RequestDelegate {
     public final /* synthetic */ int a = 2;
@@ -145,7 +145,7 @@ public final /* synthetic */ class mm implements RequestDelegate {
                 final f10 f10Var = (f10) this.b;
                 final ij ijVar = (ij) this.e;
                 final f3.s sVar = (f3.s) this.f;
-                final wn0 wn0Var = (wn0) this.g;
+                final yn0 yn0Var = (yn0) this.g;
                 TLRPC.TL_textWithEntities tL_textWithEntities = (TLRPC.TL_textWithEntities) this.h;
                 f10Var.getClass();
                 boolean z10 = tLObject instanceof TLRPC.TL_messages_translateResult;
@@ -168,7 +168,7 @@ public final /* synthetic */ class mm implements RequestDelegate {
                                     f3.s sVar2 = sVar;
                                     messagesStorage.X1(sVar2.a, ijVar2.k);
                                     f10Var2.L.remove(sVar2);
-                                    g0.i3(wn0Var, Math.max(0L, 400 - (System.currentTimeMillis() - j3)));
+                                    g0.i3(yn0Var, Math.max(0L, 400 - (System.currentTimeMillis() - j3)));
                                     break;
                                 default:
                                     f10 f10Var3 = f10Var;
@@ -181,7 +181,7 @@ public final /* synthetic */ class mm implements RequestDelegate {
                                     f3.s sVar3 = sVar;
                                     messagesStorage2.X1(sVar3.a, ijVar3.k);
                                     f10Var3.L.remove(sVar3);
-                                    g0.i3(wn0Var, Math.max(0L, 400 - (System.currentTimeMillis() - j3)));
+                                    g0.i3(yn0Var, Math.max(0L, 400 - (System.currentTimeMillis() - j3)));
                                     break;
                             }
                         }
@@ -190,7 +190,7 @@ public final /* synthetic */ class mm implements RequestDelegate {
                 } else {
                     ArrayList<TLRPC.TL_textWithEntities> arrayList = ((TLRPC.TL_messages_translateResult) tLObject).result;
                     if (arrayList.size() > 0) {
-                        g0.h3(new bi.m4(f10Var, ijVar, str2, tL_textWithEntities, arrayList.get(0), sVar, wn0Var, j3));
+                        g0.h3(new bi.m4(f10Var, ijVar, str2, tL_textWithEntities, arrayList.get(0), sVar, yn0Var, j3));
                         break;
                     } else {
                         final int i11 = 0;
@@ -209,7 +209,7 @@ public final /* synthetic */ class mm implements RequestDelegate {
                                         f3.s sVar2 = sVar;
                                         messagesStorage.X1(sVar2.a, ijVar2.k);
                                         f10Var2.L.remove(sVar2);
-                                        g0.i3(wn0Var, Math.max(0L, 400 - (System.currentTimeMillis() - j3)));
+                                        g0.i3(yn0Var, Math.max(0L, 400 - (System.currentTimeMillis() - j3)));
                                         break;
                                     default:
                                         f10 f10Var3 = f10Var;
@@ -222,7 +222,7 @@ public final /* synthetic */ class mm implements RequestDelegate {
                                         f3.s sVar3 = sVar;
                                         messagesStorage2.X1(sVar3.a, ijVar3.k);
                                         f10Var3.L.remove(sVar3);
-                                        g0.i3(wn0Var, Math.max(0L, 400 - (System.currentTimeMillis() - j3)));
+                                        g0.i3(yn0Var, Math.max(0L, 400 - (System.currentTimeMillis() - j3)));
                                         break;
                                 }
                             }
@@ -243,12 +243,12 @@ public final /* synthetic */ class mm implements RequestDelegate {
         this.e = runnable;
     }
 
-    public /* synthetic */ mm(f10 f10Var, ij ijVar, String str, f3.s sVar, wn0 wn0Var, long j3, TLRPC.TL_textWithEntities tL_textWithEntities) {
+    public /* synthetic */ mm(f10 f10Var, ij ijVar, String str, f3.s sVar, yn0 yn0Var, long j3, TLRPC.TL_textWithEntities tL_textWithEntities) {
         this.b = f10Var;
         this.e = ijVar;
         this.c = str;
         this.f = sVar;
-        this.g = wn0Var;
+        this.g = yn0Var;
         this.d = j3;
         this.h = tL_textWithEntities;
     }

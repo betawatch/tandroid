@@ -4,12 +4,12 @@ import a8.ia;
 import android.util.Pair;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class a1 {
     public final m2.e c;
     public final h2.i0 d;
-    public final y e;
+    public final x e;
     public long f;
     public int g;
     public boolean h;
@@ -25,10 +25,10 @@ public final class a1 {
     public final e2.k1 b = new e2.k1();
     public ArrayList q = new ArrayList();
 
-    public a1(m2.e eVar, h2.i0 i0Var, y yVar) {
+    public a1(m2.e eVar, h2.i0 i0Var, x xVar) {
         this.c = eVar;
         this.d = i0Var;
-        this.e = yVar;
+        this.e = xVar;
     }
 
     public static x2.g0 o(e2.l1 l1Var, Object obj, long j3, long j10, e2.k1 k1Var, e2.i1 i1Var) {

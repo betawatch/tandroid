@@ -6,7 +6,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.Stories.recorder.FfmpegAudioWaveformLoader;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class ya {
     public final org.telegram.ui.Components.w5 a;
@@ -62,7 +62,7 @@ public final class ya {
         if ("audio/mpeg".equals(str2) || "audio/mp3".equals(str2) || "audio/mp4a".equals(str2) || "audio/mp4a-latm".equals(str2)) {
             this.k = new FfmpegAudioWaveformLoader(str, min, new ai.e(this, 23));
         } else {
-            Utilities.h.c(new h9(this, 5));
+            Utilities.h.c(new v9(this, 4));
         }
     }
 
@@ -71,7 +71,7 @@ public final class ya {
         if (ffmpegAudioWaveformLoader != null) {
             ffmpegAudioWaveformLoader.destroy();
         }
-        Utilities.h.a(new h9(this, 5));
+        Utilities.h.a(new v9(this, 4));
         synchronized (this.i) {
             this.j = true;
         }

@@ -12,7 +12,7 @@ import android.widget.ScrollView;
 import bi.k7;
 import bi.m5;
 import c8.ha;
-import di.m4;
+import di.n4;
 import di.r3;
 import di.v7;
 import java.util.ArrayList;
@@ -25,26 +25,26 @@ import org.telegram.messenger.rz;
 import org.telegram.messenger.sz;
 import org.telegram.messenger.ui;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.s6;
 import org.telegram.ui.ActionBar.v2;
-import org.telegram.ui.Components.a20;
+import org.telegram.ui.Components.b20;
 import org.telegram.ui.Components.ea;
 import org.telegram.ui.Components.r7;
-import org.telegram.ui.Components.v41;
-import org.telegram.ui.Components.v50;
+import org.telegram.ui.Components.w41;
+import org.telegram.ui.Components.w50;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.nt0;
-import org.telegram.ui.vs0;
-import org.telegram.ui.ws0;
+import org.telegram.ui.pt0;
+import org.telegram.ui.xs0;
+import org.telegram.ui.ys0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class w0 extends v2 implements ls {
     public static final /* synthetic */ int F1 = 0;
-    public final ws0 A1;
+    public final ys0 A1;
     public int B1;
     public int C1;
     public int D1;
@@ -68,8 +68,8 @@ public final class w0 extends v2 implements ls {
     public int y1;
     public float z1;
 
-    public w0(int i7, Context context, f6 f6Var) {
-        this(null, context, p10.s0, false, i7, true, null, f6Var);
+    public w0(int i7, Context context, g6 g6Var) {
+        this(null, context, p10.s0, false, i7, true, null, g6Var);
     }
 
     @Override // org.telegram.ui.ActionBar.v2
@@ -160,12 +160,12 @@ public final class w0 extends v2 implements ls {
         }
         int i7 = this.u1;
         if (i7 == 4) {
-            p0Var.f.setText(id.M0(2131743862, null));
+            p0Var.f.setText(id.M0(2131743859, null));
             p0Var.setIcon(R.raw.unlock_icon);
         } else if (i7 != 10) {
             p0Var.f.setText(id.M0(2131754942, null));
         } else {
-            p0Var.f.setText(id.M0(2131743863, null));
+            p0Var.f.setText(id.M0(2131743860, null));
             p0Var.setIcon(R.raw.unlock_icon);
         }
     }
@@ -188,7 +188,7 @@ public final class w0 extends v2 implements ls {
             boolean q10 = p10.i(this.a).q();
             p0 p0Var = this.j1;
             if (q10) {
-                p0Var.c(id.M0(2131747832, null), false, true);
+                p0Var.c(id.M0(2131747831, null), false, true);
             } else {
                 p0Var.r = false;
                 p0Var.d(true);
@@ -215,8 +215,8 @@ public final class w0 extends v2 implements ls {
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(r0.getMeasuredWidth(), 0.0f);
                 n0Var.setOffset(r0.getMeasuredWidth());
                 this.s1 = true;
-                ofFloat.addUpdateListener(new m4(n0Var, 13));
-                ofFloat.addListener(new v50(22, this, n0Var));
+                ofFloat.addUpdateListener(new n4(n0Var, 13));
+                ofFloat.addListener(new w50(22, this, n0Var));
                 ofFloat.setDuration(500L);
                 ofFloat.setStartDelay(100L);
                 ofFloat.setInterpolator(xq.h);
@@ -234,33 +234,33 @@ public final class w0 extends v2 implements ls {
         qs.f(this.a).c(this, qs.f5);
         r7 r7Var = new r7(7, getContext(), this);
         this.E1 = r7Var;
-        r6.i(k6.h5, r7Var, this.I0);
-        r6.m(this.E1, 5, k6.G6, this.I0);
-        r6.m(this.E1, 3, k6.z8, this.I0);
+        s6.h(l6.h5, r7Var, this.I0);
+        s6.l(this.E1, 5, l6.G6, this.I0);
+        s6.l(this.E1, 3, l6.z8, this.I0);
         r7 r7Var2 = this.E1;
-        int i7 = k6.y8;
-        r6.m(r7Var2, 1, i7, this.I0);
-        r6.b(this.E1, i7, this.I0, true);
+        int i7 = l6.y8;
+        s6.l(r7Var2, 1, i7, this.I0);
+        s6.b(this.E1, i7, this.I0, true);
         this.E1.setCastShadows(true);
         this.E1.setExtraHeight(org.telegram.messenger.g0.L(2.0f));
         this.E1.setBackButtonImage(R.drawable.ic_ab_back);
-        this.E1.setActionBarMenuOnItemClick(new nt0(this, 23));
+        this.E1.setActionBarMenuOnItemClick(new pt0(this, 23));
         this.b.addView(this.E1, ha.d(-1, -2.0f, 0, 0.0f, 0.0f, 0.0f, 0.0f));
         ((FrameLayout.LayoutParams) this.E1.getLayoutParams()).topMargin = (-this.s0) - org.telegram.messenger.g0.L(2.0f);
         org.telegram.messenger.g0.Z3(this.E1, false, 1.0f, true, false);
         int i10 = this.x1;
         ArrayList arrayList = this.k1;
-        if (((vs0) arrayList.get(i10)).a == 14) {
-            this.E1.setTitle(id.M0(2131743808, null));
+        if (((xs0) arrayList.get(i10)).a == 14) {
+            this.E1.setTitle(id.M0(2131743805, null));
             this.E1.requestLayout();
-        } else if (((vs0) arrayList.get(this.x1)).a == 28) {
-            this.E1.setTitle(id.M0(2131744255, null));
+        } else if (((xs0) arrayList.get(this.x1)).a == 28) {
+            this.E1.setTitle(id.M0(2131744252, null));
             this.E1.requestLayout();
-        } else if (((vs0) arrayList.get(this.x1)).a == 40) {
-            this.E1.setTitle(id.M0(2131750838, null));
+        } else if (((xs0) arrayList.get(this.x1)).a == 40) {
+            this.E1.setTitle(id.M0(2131750837, null));
             this.E1.requestLayout();
         } else {
-            this.E1.setTitle(id.M0(2131751350, null));
+            this.E1.setTitle(id.M0(2131751349, null));
             this.E1.requestLayout();
         }
     }
@@ -283,32 +283,32 @@ public final class w0 extends v2 implements ls {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public w0(f2 f2Var, Context context, int i7, boolean z9, int i10, boolean z10, ws0 ws0Var) {
-        this(f2Var, context, i7, z9, i10, z10, ws0Var, r0);
-        f6 f6Var;
+    public w0(f2 f2Var, Context context, int i7, boolean z9, int i10, boolean z10, ys0 ys0Var) {
+        this(f2Var, context, i7, z9, i10, z10, ys0Var, r0);
+        g6 g6Var;
         if (f2Var == null) {
-            f6Var = null;
+            g6Var = null;
         } else if (f2Var.getLastStoryViewer() != null && !f2Var.getLastStoryViewer().G0) {
-            f6Var = f2Var.getLastStoryViewer().D;
+            g6Var = f2Var.getLastStoryViewer().D;
         } else {
-            f6Var = f2Var.getResourceProvider();
+            g6Var = f2Var.getResourceProvider();
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w0(f2 f2Var, Context context, int i7, boolean z9, int i10, boolean z10, ws0 ws0Var, f6 f6Var) {
-        super(1, context, f6Var, false);
+    public w0(f2 f2Var, Context context, int i7, boolean z9, int i10, boolean z10, ys0 ys0Var, g6 g6Var) {
+        super(1, context, g6Var, false);
         final int i11 = 0;
         ArrayList arrayList = new ArrayList();
         this.k1 = arrayList;
         this.B1 = qs.e4;
         this.i1 = f2Var;
-        this.A1 = ws0Var;
-        P(k6.h5);
+        this.A1 = ys0Var;
+        P(l6.h5);
         this.u1 = i10;
         this.v1 = z10;
         this.t1 = sz.i(org.telegram.messenger.g0.y2(null, R.raw.star_loader));
-        v41 v41Var = new v41(11, getContext(), this);
+        w41 w41Var = new w41(11, getContext(), this);
         if (!z9 && i10 != 35) {
             PremiumPreviewFragment.s0(i7, arrayList);
         } else {
@@ -317,30 +317,30 @@ public final class w0 extends v2 implements ls {
         }
         if (i10 == 40) {
             arrayList.clear();
-            arrayList.add(new vs0(40, R.drawable.gift, id.M0(2131750838, null), id.M0(2131750837, null)));
+            arrayList.add(new xs0(40, R.drawable.gift, id.M0(2131750837, null), id.M0(2131750836, null)));
         }
         int i12 = 0;
         while (true) {
             if (i12 >= this.k1.size()) {
                 i12 = 0;
                 break;
-            } else if (((vs0) this.k1.get(i12)).a == i10) {
+            } else if (((xs0) this.k1.get(i12)).a == i10) {
                 break;
             } else {
                 i12++;
             }
         }
         if (z10) {
-            vs0 vs0Var = (vs0) this.k1.get(i12);
+            xs0 xs0Var = (xs0) this.k1.get(i12);
             this.k1.clear();
-            this.k1.add(vs0Var);
+            this.k1.add(xs0Var);
             i12 = 0;
         }
-        vs0 vs0Var2 = (vs0) this.k1.get(i12);
+        xs0 xs0Var2 = (xs0) this.k1.get(i12);
         this.u0 = false;
         this.v0 = false;
         this.T0 = false;
-        y0 y0Var = new y0(k6.Ok, k6.Pk, k6.Qk, -1, null);
+        y0 y0Var = new y0(l6.Ok, l6.Pk, l6.Qk, -1, null);
         y0Var.o = 1.1f;
         y0Var.p = 1.5f;
         y0Var.q = -0.2f;
@@ -355,7 +355,7 @@ public final class w0 extends v2 implements ls {
         int L = org.telegram.messenger.g0.L(12.0f);
         int o4 = i0.a.o(-1, 40);
         int o10 = i0.a.o(-1, 100);
-        imageView.setBackground(k6.k0(L, L, L, L, o4, o10, o10));
+        imageView.setBackground(l6.k0(L, L, L, L, o4, o10, o10));
         frameLayout.addView(imageView, ha.e(24, 24, 17));
         frameLayout.setOnClickListener(new View.OnClickListener(this) { // from class: ug.q0
             public final /* synthetic */ w0 b;
@@ -376,32 +376,32 @@ public final class w0 extends v2 implements ls {
                 }
             }
         });
-        v41Var.addView(hVar, ha.t(-1, -2, 1, 0, 16, 0, 0));
+        w41Var.addView(hVar, ha.t(-1, -2, 1, 0, 16, 0, 0));
         u0 u0Var = new u0(this, getContext());
         this.o1 = u0Var;
         u0Var.setOverScrollMode(2);
         u0Var.setOffscreenPageLimit(0);
-        u0Var.setAdapter(new a20(this, 4));
+        u0Var.setAdapter(new b20(this, 4));
         this.x1 = i12;
         u0Var.setCurrentItem(i12);
-        v41Var.addView(u0Var, ha.d(-1, 100.0f, 0, 0.0f, 18.0f, 0.0f, 0.0f));
-        v41Var.addView(frameLayout, ha.d(52, 52.0f, 53, 0.0f, 24.0f, 0.0f, 0.0f));
+        w41Var.addView(u0Var, ha.d(-1, 100.0f, 0, 0.0f, 18.0f, 0.0f, 0.0f));
+        w41Var.addView(frameLayout, ha.d(52, 52.0f, 53, 0.0f, 24.0f, 0.0f, 0.0f));
         ea eaVar = new ea(getContext(), u0Var, this.k1.size());
         u0Var.b(new v7(this, eaVar, 1));
         LinearLayout linearLayout = new LinearLayout(getContext());
-        linearLayout.addView(v41Var);
+        linearLayout.addView(w41Var);
         linearLayout.setOrientation(1);
-        int i13 = k6.V8;
-        int i14 = k6.P9;
+        int i13 = l6.V8;
+        int i14 = l6.P9;
         eaVar.n = i13;
         eaVar.r = i14;
         if (!z10) {
             linearLayout.addView(eaVar, ha.t(this.k1.size() * 11, 5, 1, 0, 0, 0, 10));
         }
         final int i15 = 1;
-        p0 p0Var = new p0(getContext(), f6Var, true);
+        p0 p0Var = new p0(getContext(), g6Var, true);
         this.j1 = p0Var;
-        p0Var.w.setOnClickListener(new r3(this, f2Var, z10, vs0Var2, 5));
+        p0Var.w.setOnClickListener(new r3(this, f2Var, z10, xs0Var2, 5));
         p0Var.h.setOnClickListener(new View.OnClickListener(this) { // from class: ug.q0
             public final /* synthetic */ w0 b;
 
@@ -423,12 +423,12 @@ public final class w0 extends v2 implements ls {
         });
         FrameLayout frameLayout2 = new FrameLayout(getContext());
         frameLayout2.addView(p0Var, ha.d(-1, 48.0f, 16, 16.0f, 0.0f, 16.0f, 0.0f));
-        r6.i(k6.h5, frameLayout2, f6Var);
+        s6.h(l6.h5, frameLayout2, g6Var);
         linearLayout.addView(frameLayout2, ha.r(-1, 68, 80));
         if (i10 == 40) {
-            p0Var.c(k7.g2(id.M0(2131743891, null)), true, false);
+            p0Var.c(k7.f2(id.M0(2131743888, null)), true, false);
         } else if (p10.i(i7).q()) {
-            p0Var.c(id.M0(2131747832, null), false, false);
+            p0Var.c(id.M0(2131747831, null), false, false);
         }
         ScrollView scrollView = new ScrollView(getContext());
         scrollView.addView(linearLayout);

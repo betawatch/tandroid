@@ -1,33 +1,28 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ju implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class ju implements org.telegram.messenger.c20 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ww b;
+    public final /* synthetic */ yw b;
 
-    public /* synthetic */ ju(ww wwVar, int i7) {
+    public /* synthetic */ ju(yw ywVar, int i7) {
         this.a = i7;
-        this.b = wwVar;
+        this.b = ywVar;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // org.telegram.messenger.c20
+    public final void a(Object obj) {
         switch (this.a) {
             case 0:
-                this.b.P4(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            case 1:
-                ww wwVar = this.b;
-                wwVar.getClass();
-                wwVar.R4(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                yw ywVar = this.b;
+                ywVar.P1 = (Long) obj;
+                ywVar.g5();
                 break;
             default:
-                ww wwVar2 = this.b;
-                wwVar2.getClass();
-                wwVar2.L4(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                yw.f0(this.b, (TL_account.TL_birthday) obj);
                 break;
         }
     }

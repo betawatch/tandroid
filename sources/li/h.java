@@ -1,17 +1,17 @@
 package li;
 
-import org.telegram.ui.Components.f60;
-import org.telegram.ui.Components.k60;
+import org.telegram.ui.Components.g60;
+import org.telegram.ui.Components.l60;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class h implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ k60 b;
+    public final /* synthetic */ l60 b;
 
-    public /* synthetic */ h(k60 k60Var, int i7) {
+    public /* synthetic */ h(l60 l60Var, int i7) {
         this.a = i7;
-        this.b = k60Var;
+        this.b = l60Var;
     }
 
     @Override // java.lang.Runnable
@@ -27,44 +27,44 @@ public final /* synthetic */ class h implements Runnable {
                 this.b.s();
                 break;
             case 3:
-                f60 f60Var = this.b.m;
-                if (f60Var != null) {
-                    org.telegram.messenger.g0.v1(f60Var.getContentView());
+                g60 g60Var = this.b.m;
+                if (g60Var != null) {
+                    org.telegram.messenger.g0.v1(g60Var.getContentView());
                     break;
                 }
                 break;
             case 4:
-                f60 f60Var2 = this.b.m;
-                if (f60Var2 != null) {
-                    org.telegram.messenger.g0.v1(f60Var2.getContentView());
+                g60 g60Var2 = this.b.m;
+                if (g60Var2 != null) {
+                    org.telegram.messenger.g0.v1(g60Var2.getContentView());
                     break;
                 }
                 break;
             case 5:
-                f60 f60Var3 = this.b.m;
-                if (f60Var3 != null) {
-                    org.telegram.messenger.g0.v1(f60Var3.getContentView());
+                g60 g60Var3 = this.b.m;
+                if (g60Var3 != null) {
+                    org.telegram.messenger.g0.v1(g60Var3.getContentView());
                     break;
                 }
                 break;
             case 6:
-                f60 f60Var4 = this.b.m;
-                if (f60Var4 != null) {
-                    org.telegram.messenger.g0.v1(f60Var4.getContentView());
+                g60 g60Var4 = this.b.m;
+                if (g60Var4 != null) {
+                    org.telegram.messenger.g0.v1(g60Var4.getContentView());
                     break;
                 }
                 break;
             case 7:
-                f60 f60Var5 = this.b.m;
-                if (f60Var5 != null) {
-                    org.telegram.messenger.g0.v1(f60Var5.getContentView());
+                g60 g60Var5 = this.b.m;
+                if (g60Var5 != null) {
+                    org.telegram.messenger.g0.v1(g60Var5.getContentView());
                     break;
                 }
                 break;
             default:
-                f60 f60Var6 = this.b.m;
-                if (f60Var6 != null) {
-                    org.telegram.messenger.g0.v1(f60Var6.getContentView());
+                g60 g60Var6 = this.b.m;
+                if (g60Var6 != null) {
+                    org.telegram.messenger.g0.v1(g60Var6.getContentView());
                     break;
                 }
                 break;

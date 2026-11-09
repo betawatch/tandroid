@@ -5,9 +5,9 @@ import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.Components.zg0;
+import org.telegram.ui.Components.ah0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class q extends Drawable {
     public final Paint a;
@@ -17,7 +17,7 @@ public final class q extends Drawable {
     public boolean e;
     public boolean f;
     public boolean g;
-    public final zg0 h;
+    public final ah0 h;
     public final la i;
     public final /* synthetic */ la j;
 
@@ -27,22 +27,22 @@ public final class q extends Drawable {
         this.a = paint;
         this.c = 1.0f;
         this.i = laVar2;
-        zg0 zg0Var = new zg0(R.raw.chat_audio_record_delete_3, org.telegram.messenger.g0.L(28.0f), org.telegram.messenger.g0.L(28.0f), false, null);
-        this.h = zg0Var;
-        zg0Var.o0 = true;
+        ah0 ah0Var = new ah0(R.raw.chat_audio_record_delete_3, org.telegram.messenger.g0.L(28.0f), org.telegram.messenger.g0.L(28.0f), false, null);
+        this.h = ah0Var;
+        ah0Var.o0 = true;
         paint.setColor(-2406842);
-        zg0Var.Z = true;
-        zg0Var.Q(-2406842, "Cup Red");
-        zg0Var.Q(-2406842, "Box");
-        zg0Var.o();
+        ah0Var.Z = true;
+        ah0Var.Q(-2406842, "Cup Red");
+        ah0Var.Q(-2406842, "Box");
+        ah0Var.o();
     }
 
     @Override // android.graphics.drawable.Drawable
     public final void draw(Canvas canvas) {
         boolean z9 = this.g;
-        zg0 zg0Var = this.h;
+        ah0 ah0Var = this.h;
         if (z9) {
-            zg0Var.setAlpha((int) (this.b * 255.0f * this.c));
+            ah0Var.setAlpha((int) (this.b * 255.0f * this.c));
         }
         int i7 = (int) (this.b * 255.0f * this.c);
         Paint paint = this.a;
@@ -64,11 +64,11 @@ public final class q extends Drawable {
             }
         }
         this.d = System.currentTimeMillis();
-        zg0Var.setBounds(getBounds());
+        ah0Var.setBounds(getBounds());
         if (this.g) {
-            zg0Var.draw(canvas);
+            ah0Var.draw(canvas);
         }
-        if (!this.g || !zg0Var.u()) {
+        if (!this.g || !ah0Var.u()) {
             canvas.drawCircle(getBounds().centerX(), getBounds().centerY(), org.telegram.messenger.g0.L(5.0f), paint);
         }
         this.j.invalidate();

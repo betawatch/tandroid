@@ -13,7 +13,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f implements Runnable {
     public final /* synthetic */ int a;
@@ -48,16 +48,16 @@ public final /* synthetic */ class f implements Runnable {
                 sVar.getClass();
                 org.telegram.ui.ActionBar.f2 T = LaunchActivity.T();
                 if (T != null) {
-                    T.presentFragment(ProfileActivity.A4(tL_aiComposeTone2.author_id));
+                    T.presentFragment(ProfileActivity.D4(tL_aiComposeTone2.author_id));
                     sVar.dismiss();
                     break;
                 }
                 break;
             case 2:
                 boolean[] zArr = (boolean[]) this.c;
-                org.telegram.ui.ru0 ru0Var = (org.telegram.ui.ru0) this.b;
+                org.telegram.ui.tu0 tu0Var = (org.telegram.ui.tu0) this.b;
                 if (zArr[0]) {
-                    ru0Var.run();
+                    tu0Var.run();
                     break;
                 }
                 break;
@@ -94,7 +94,7 @@ public final /* synthetic */ class f implements Runnable {
                 break;
             case 7:
                 ChatActivityEnterView chatActivityEnterView2 = (ChatActivityEnterView) this.c;
-                if (chatActivityEnterView2.Y4 == ((k60) this.b)) {
+                if (chatActivityEnterView2.Y4 == ((l60) this.b)) {
                     chatActivityEnterView2.Y4 = null;
                     break;
                 }
@@ -223,7 +223,7 @@ public final /* synthetic */ class f implements Runnable {
                 if (ujVar.X.w.f.isEmpty()) {
                     arrayList2.addAll(0, (ArrayList) ujVar.X.w.h);
                 }
-                Utilities.g.c(new org.telegram.ui.vn(ujVar, str, !ujVar.R.isEmpty(), arrayList2, 4));
+                Utilities.g.c(new org.telegram.ui.xn(ujVar, str, !ujVar.R.isEmpty(), arrayList2, 4));
                 break;
             case 20:
                 uj ujVar2 = (uj) this.c;
@@ -246,10 +246,10 @@ public final /* synthetic */ class f implements Runnable {
                 TLRPC.User user = (TLRPC.User) this.b;
                 di diVar5 = ikVar.b;
                 diVar5.dismiss();
-                diVar5.W1.presentFragment(org.telegram.ui.an.ra(user.id));
+                diVar5.W1.presentFragment(org.telegram.ui.cn.ta(user.id));
                 break;
             case 22:
-                org.telegram.messenger.k5.o(null, 2131743204, new hc((ik) this.c, (org.telegram.ui.ActionBar.f6) this.b), R.raw.copy, 36);
+                org.telegram.messenger.k5.o(null, 2131743201, new hc((ik) this.c, (org.telegram.ui.ActionBar.g6) this.b), R.raw.copy, 36);
                 break;
             case 23:
                 wk wkVar = (wk) this.c;

@@ -1,41 +1,39 @@
 package org.telegram.ui;
 
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class d01 extends g.p {
-    public final /* synthetic */ int c;
-    public final /* synthetic */ q11 d;
+public final /* synthetic */ class d01 implements org.telegram.messenger.c20 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ LinkedHashSet b;
+    public final /* synthetic */ Runnable c;
 
-    public /* synthetic */ d01(q11 q11Var, int i7) {
-        this.c = i7;
-        this.d = q11Var;
+    public /* synthetic */ d01(LinkedHashSet linkedHashSet, Runnable runnable, int i7) {
+        this.a = i7;
+        this.b = linkedHashSet;
+        this.c = runnable;
     }
 
-    @Override // g.p
-    public final int i(int i7) {
-        int i10;
-        ArrayList arrayList;
-        int i11;
-        switch (this.c) {
+    @Override // org.telegram.messenger.c20
+    public final void a(Object obj) {
+        switch (this.a) {
             case 0:
-                q11 q11Var = this.d;
-                return (q11Var.w0.indexOfKey(i7) >= 0 || q11Var.z0.indexOfKey(i7) >= 0 || i7 == q11Var.f || i7 == q11Var.D || i7 == q11Var.n || i7 == q11Var.h || i7 == q11Var.w || i7 == q11Var.a || i7 == q11Var.y) ? q11Var.r0.J : ((i7 < q11Var.E || i7 >= q11Var.F) && !q11Var.Q) ? 5 : 8;
+                ArrayList arrayList = (ArrayList) obj;
+                if (arrayList != null) {
+                    this.b.addAll(arrayList);
+                }
+                this.c.run();
+                break;
             default:
-                q11 q11Var2 = this.d;
-                b11 b11Var = q11Var2.q0;
-                int d = b11Var.d(i7);
-                if (d == 6) {
-                    return q11Var2.r0.J;
+                TLRPC.TL_emojiList tL_emojiList = (TLRPC.TL_emojiList) obj;
+                if (tL_emojiList != null) {
+                    this.b.addAll(tL_emojiList.document_id);
                 }
-                if (d != 5) {
-                    q11 q11Var3 = b11Var.s;
-                    if (q11Var3.W != 14 ? i7 <= (i10 = b11Var.c) || (i7 - i10) - 1 >= q11Var3.D1.size() : (arrayList = q11Var3.C1) == null || i7 < (i11 = b11Var.c) || i7 - i11 >= arrayList.size()) {
-                        return 5;
-                    }
-                }
-                return 8;
+                this.c.run();
+                break;
         }
     }
 }

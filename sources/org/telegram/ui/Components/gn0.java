@@ -1,97 +1,30 @@
 package org.telegram.ui.Components;
 
 import android.view.View;
-import android.widget.Toast;
-import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class gn0 implements View.OnClickListener {
+public final /* synthetic */ class gn0 implements r1.d {
     public final /* synthetic */ int a;
-    public final /* synthetic */ mo0 b;
+    public final /* synthetic */ int[] b;
+    public final /* synthetic */ org.telegram.messenger.ls c;
+    public final /* synthetic */ View d;
 
-    public /* synthetic */ gn0(mo0 mo0Var, int i7) {
+    public /* synthetic */ gn0(org.telegram.messenger.ls lsVar, View view, int[] iArr, int i7) {
         this.a = i7;
-        this.b = mo0Var;
+        this.c = lsVar;
+        this.d = view;
+        this.b = iArr;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        int i7 = this.a;
-        mo0 mo0Var = this.b;
-        switch (i7) {
+    @Override // r1.d
+    public final void a(r1.g gVar, float f10, float f11) {
+        switch (this.a) {
             case 0:
-                mo0Var.V0(true);
-                break;
-            case 1:
-                mo0Var.W1.a(!r7.a.q, true);
-                mo0Var.a1();
-                break;
-            case 2:
-                org.telegram.ui.ActionBar.g1 g1Var = mo0Var.B2;
-                if (g1Var != null && g1Var.isShowing()) {
-                    mo0Var.B2.d(true);
-                }
-                mo0Var.V0(false);
-                break;
-            case 3:
-                org.telegram.ui.ActionBar.g1 g1Var2 = mo0Var.B2;
-                if (g1Var2 != null && g1Var2.isShowing()) {
-                    mo0Var.B2.d(true);
-                }
-                mo0Var.V0(true);
-                break;
-            case 4:
-                String[] strArr = mo0Var.g2;
-                if (mo0Var.M1.m() == 0) {
-                    if (mo0Var.f2 || strArr[0] != null) {
-                        mo0Var.dismiss();
-                        PhotoViewer.p1().z0(true, false);
-                        if (strArr[0] != null || !mo0Var.d2) {
-                            mo0Var.getContext();
-                            mo0Var.M0();
-                            break;
-                        } else {
-                            mo0Var.e2 = true;
-                            Toast.makeText(mo0Var.getContext(), org.telegram.messenger.id.M0(2131748780, null), 0).show();
-                            break;
-                        }
-                    }
-                }
-                break;
-            case 5:
-                String[] strArr2 = mo0Var.g2;
-                if (mo0Var.M1.m() == 0) {
-                    if (mo0Var.f2 || strArr2[0] != null) {
-                        mo0Var.dismiss();
-                        if (strArr2[0] != null || !mo0Var.d2) {
-                            mo0Var.getContext();
-                            mo0Var.M0();
-                            break;
-                        } else {
-                            mo0Var.e2 = true;
-                            Toast.makeText(mo0Var.getContext(), org.telegram.messenger.id.M0(2131748780, null), 0).show();
-                            break;
-                        }
-                    }
-                }
+                ((no0) this.c).Q0((org.telegram.ui.Cells.d7) this.d, this.b, f10 / 1000.0f);
                 break;
             default:
-                String[] strArr3 = mo0Var.g2;
-                if (mo0Var.M1.m() == 0) {
-                    if (mo0Var.f2 || strArr3[0] != null) {
-                        mo0Var.dismiss();
-                        if (strArr3[0] != null || !mo0Var.d2) {
-                            mo0Var.getContext();
-                            mo0Var.M0();
-                            break;
-                        } else {
-                            mo0Var.e2 = true;
-                            Toast.makeText(mo0Var.getContext(), org.telegram.messenger.id.M0(2131748780, null), 0).show();
-                            break;
-                        }
-                    }
-                }
+                ((wn0) this.c).d.Q0(this.d, this.b, f10 / 1000.0f);
                 break;
         }
     }

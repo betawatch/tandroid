@@ -8,22 +8,22 @@ import android.graphics.RectF;
 import android.view.KeyEvent;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.di;
-import org.telegram.ui.Components.g90;
+import org.telegram.ui.Components.h90;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class i extends g90 {
+public final class i extends h90 {
     public final /* synthetic */ int V;
     public final /* synthetic */ KeyEvent.Callback W;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ i(KeyEvent.Callback callback, Context context, long j3, org.telegram.ui.ActionBar.f2 f2Var, org.telegram.ui.ActionBar.f6 f6Var, int i7) {
-        super(context, j3, 0L, f2Var, f6Var);
+    public /* synthetic */ i(KeyEvent.Callback callback, Context context, long j3, org.telegram.ui.ActionBar.f2 f2Var, org.telegram.ui.ActionBar.g6 g6Var, int i7) {
+        super(context, j3, 0L, f2Var, g6Var);
         this.V = i7;
         this.W = callback;
     }
 
-    @Override // org.telegram.ui.Components.g90
+    @Override // org.telegram.ui.Components.h90
     public void f(Canvas canvas, Rect rect, float f10) {
         switch (this.V) {
             case 0:
@@ -53,7 +53,7 @@ public final class i extends g90 {
         }
     }
 
-    @Override // org.telegram.ui.Components.g90
+    @Override // org.telegram.ui.Components.h90
     public boolean h() {
         switch (this.V) {
             case 0:
@@ -63,7 +63,7 @@ public final class i extends g90 {
         }
     }
 
-    @Override // org.telegram.ui.Components.g90
+    @Override // org.telegram.ui.Components.h90
     public void i() {
         switch (this.V) {
             case 1:
@@ -76,7 +76,7 @@ public final class i extends g90 {
         }
     }
 
-    @Override // org.telegram.ui.Components.g90
+    @Override // org.telegram.ui.Components.h90
     public void n(boolean z9) {
         switch (this.V) {
             case 1:

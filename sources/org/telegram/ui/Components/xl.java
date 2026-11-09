@@ -7,9 +7,9 @@ import java.util.HashMap;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class xl extends org.telegram.ui.nq0 {
+public final class xl extends org.telegram.ui.pq0 {
     public ArrayList a = new ArrayList();
     public final /* synthetic */ am b;
 
@@ -17,15 +17,15 @@ public final class xl extends org.telegram.ui.nq0 {
         this.b = amVar;
     }
 
-    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
+    @Override // org.telegram.ui.pq0, org.telegram.ui.wq0
     public final void D() {
         am amVar = this.b;
         amVar.c();
         amVar.i(amVar.P.P, false);
     }
 
-    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
-    public final org.telegram.ui.wq0 E(org.telegram.messenger.ij ijVar, TLRPC.FileLocation fileLocation, int i7, boolean z9, boolean z10) {
+    @Override // org.telegram.ui.pq0, org.telegram.ui.wq0
+    public final org.telegram.ui.yq0 E(org.telegram.messenger.ij ijVar, TLRPC.FileLocation fileLocation, int i7, boolean z9, boolean z10) {
         org.telegram.messenger.gf gfVar;
         ArrayList arrayList;
         am amVar = this.b;
@@ -57,35 +57,35 @@ public final class xl extends org.telegram.ui.nq0 {
                 }
             }
             if (zlVar != null && ylVar != null) {
-                org.telegram.ui.wq0 wq0Var = new org.telegram.ui.wq0();
+                org.telegram.ui.yq0 yq0Var = new org.telegram.ui.yq0();
                 int[] iArr = new int[2];
                 amVar.getLocationInWindow(iArr);
                 if (Build.VERSION.SDK_INT < 26) {
                     iArr[0] = iArr[0] - bmVar.b.S();
                 }
-                wq0Var.b = iArr[0];
-                wq0Var.c = iArr[1] + ((int) zlVar.a);
-                wq0Var.k = 1.0f;
-                wq0Var.d = amVar;
+                yq0Var.b = iArr[0];
+                yq0Var.c = iArr[1] + ((int) zlVar.a);
+                yq0Var.k = 1.0f;
+                yq0Var.d = amVar;
                 ImageReceiver imageReceiver = ylVar.c;
-                wq0Var.a = imageReceiver;
-                wq0Var.e = imageReceiver.p();
-                wq0Var.h = new int[]{(int) r8.left, (int) r8.top, (int) r8.right, (int) r8.bottom};
+                yq0Var.a = imageReceiver;
+                yq0Var.e = imageReceiver.p();
+                yq0Var.h = new int[]{(int) r8.left, (int) r8.top, (int) r8.right, (int) r8.bottom};
                 RectF rectF = ylVar.q;
-                wq0Var.j = (int) (-amVar.getY());
-                wq0Var.i = amVar.getHeight() - ((int) (((-amVar.getY()) + bmVar.r.getHeight()) - bmVar.b.Z0()));
-                return wq0Var;
+                yq0Var.j = (int) (-amVar.getY());
+                yq0Var.i = amVar.getHeight() - ((int) (((-amVar.getY()) + bmVar.r.getHeight()) - bmVar.b.Z0()));
+                return yq0Var;
             }
         }
         return null;
     }
 
-    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
+    @Override // org.telegram.ui.pq0, org.telegram.ui.wq0
     public final int H() {
         return this.b.h.size();
     }
 
-    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
+    @Override // org.telegram.ui.pq0, org.telegram.ui.wq0
     public final int R(Object obj) {
         int indexOf;
         Integer valueOf = Integer.valueOf(((org.telegram.messenger.gf) obj).C);
@@ -98,7 +98,7 @@ public final class xl extends org.telegram.ui.nq0 {
         return indexOf;
     }
 
-    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
+    @Override // org.telegram.ui.pq0, org.telegram.ui.wq0
     public final int S(int i7) {
         org.telegram.messenger.gf gfVar;
         if (i7 < 0 || i7 >= this.a.size() || (gfVar = (org.telegram.messenger.gf) this.a.get(i7)) == null) {
@@ -107,7 +107,7 @@ public final class xl extends org.telegram.ui.nq0 {
         return this.b.h.indexOf(Integer.valueOf(gfVar.C));
     }
 
-    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
+    @Override // org.telegram.ui.pq0, org.telegram.ui.wq0
     public final void X(int i7) {
         org.telegram.messenger.gf gfVar;
         ArrayList arrayList;
@@ -148,12 +148,12 @@ public final class xl extends org.telegram.ui.nq0 {
         amVar.invalidate();
     }
 
-    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
+    @Override // org.telegram.ui.pq0, org.telegram.ui.wq0
     public final ArrayList c() {
         return this.b.h;
     }
 
-    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
+    @Override // org.telegram.ui.pq0, org.telegram.ui.wq0
     public final int k(int i7, org.telegram.messenger.j20 j20Var) {
         if (i7 < 0 || i7 >= this.a.size()) {
             return -1;
@@ -174,17 +174,17 @@ public final class xl extends org.telegram.ui.nq0 {
         return indexOf;
     }
 
-    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
+    @Override // org.telegram.ui.pq0, org.telegram.ui.wq0
     public final boolean u() {
         return false;
     }
 
-    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
+    @Override // org.telegram.ui.pq0, org.telegram.ui.wq0
     public final HashMap v() {
         return this.b.d;
     }
 
-    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
+    @Override // org.telegram.ui.pq0, org.telegram.ui.wq0
     public final boolean x(int i7) {
         if (i7 < 0 || i7 >= this.a.size()) {
             return false;

@@ -31,9 +31,9 @@ import java.util.TreeMap;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class vy implements q51, og.n, org.telegram.ui.lm0, o2.i, lm0, com.google.android.gms.common.api.internal.p, tg.l1, i51, u4.c, com.google.android.gms.common.api.internal.n, v4.d0, v4.i1, q5.b {
+public final class vy implements r51, og.n, org.telegram.ui.nm0, o2.i, mm0, com.google.android.gms.common.api.internal.p, tg.l1, j51, u4.c, com.google.android.gms.common.api.internal.n, v4.d0, v4.i1, q5.b {
     public final /* synthetic */ int a;
     public Object b;
 
@@ -252,7 +252,7 @@ public final class vy implements q51, og.n, org.telegram.ui.lm0, o2.i, lm0, com.
 
     @Override // og.n
     public void H(boolean z9) {
-        ((fd0) this.b).c.setAspectLock(z9);
+        ((gd0) this.b).c.setAspectLock(z9);
     }
 
     @Override // u4.c
@@ -342,11 +342,11 @@ public final class vy implements q51, og.n, org.telegram.ui.lm0, o2.i, lm0, com.
 
     @Override // og.n
     public void Z(boolean z9) {
-        fd0 fd0Var = (fd0) this.b;
-        fd0Var.getClass();
-        ed0 ed0Var = fd0Var.a;
-        if (ed0Var != null) {
-            ((org.telegram.ui.ro0) ed0Var).m(z9);
+        gd0 gd0Var = (gd0) this.b;
+        gd0Var.getClass();
+        fd0 fd0Var = gd0Var.a;
+        if (fd0Var != null) {
+            ((org.telegram.ui.to0) fd0Var).m(z9);
         }
     }
 
@@ -412,20 +412,20 @@ public final class vy implements q51, og.n, org.telegram.ui.lm0, o2.i, lm0, com.
     }
 
     public void b() {
-        sg.u0 u0Var = ((sg.w0) this.b).d;
-        if (u0Var != null) {
-            sg.s0 s0Var = u0Var.s;
+        sg.t0 t0Var = ((sg.v0) this.b).d;
+        if (t0Var != null) {
+            sg.s0 s0Var = t0Var.s;
             if (s0Var != null) {
-                u0Var.cancelRunnable(s0Var);
-                u0Var.s = null;
+                t0Var.cancelRunnable(s0Var);
+                t0Var.s = null;
             }
-            sg.s0 s0Var2 = new sg.s0(u0Var, 1);
-            u0Var.s = s0Var2;
-            u0Var.postRunnable(s0Var2, 1L);
+            sg.s0 s0Var2 = new sg.s0(t0Var, 1);
+            t0Var.s = s0Var2;
+            t0Var.postRunnable(s0Var2, 1L);
         }
     }
 
-    @Override // org.telegram.ui.lm0
+    @Override // org.telegram.ui.nm0
     public void c(ArrayList arrayList) {
         a8.r7 r7Var = (a8.r7) this.b;
         try {
@@ -438,7 +438,7 @@ public final class vy implements q51, og.n, org.telegram.ui.lm0, o2.i, lm0, com.
                 Point c12 = org.telegram.messenger.g0.c1();
                 Bitmap K = org.telegram.messenger.gc.K(fzVar.c, null, (float) c12.x, (float) c12.y, true);
                 K.compress(Bitmap.CompressFormat.JPEG, 87, new FileOutputStream((File) r7Var.f));
-                ((a71) r7Var.e).b((File) r7Var.f, K, true);
+                ((b71) r7Var.e).b((File) r7Var.f, K, true);
             }
         } catch (Throwable th2) {
             org.telegram.messenger.a8.g(th2, true);
@@ -447,9 +447,9 @@ public final class vy implements q51, og.n, org.telegram.ui.lm0, o2.i, lm0, com.
 
     @Override // og.n
     public void c0() {
-        ed0 ed0Var = ((fd0) this.b).a;
-        if (ed0Var != null) {
-            PhotoViewer photoViewer = ((org.telegram.ui.ro0) ed0Var).a;
+        fd0 fd0Var = ((gd0) this.b).a;
+        if (fd0Var != null) {
+            PhotoViewer photoViewer = ((org.telegram.ui.to0) fd0Var).a;
             if (photoViewer.c2 == 1) {
                 photoViewer.G2 = true;
                 photoViewer.n3();
@@ -485,7 +485,7 @@ public final class vy implements q51, og.n, org.telegram.ui.lm0, o2.i, lm0, com.
         return new v5.i(Integer.valueOf(v5.i.d).intValue(), (Context) ((fd.a) this.b).get(), "com.google.android.datatransport.events");
     }
 
-    @Override // org.telegram.ui.Components.lm0
+    @Override // org.telegram.ui.Components.mm0
     public CharSequence getContentDescription() {
         pg.i iVar = (pg.i) this.b;
         float f10 = iVar.b;
@@ -497,7 +497,7 @@ public final class vy implements q51, og.n, org.telegram.ui.lm0, o2.i, lm0, com.
         return (p2.j) this.b;
     }
 
-    @Override // org.telegram.ui.Components.i51
+    @Override // org.telegram.ui.Components.j51
     public void invalidate() {
         ((ti.i) this.b).m.invalidate();
     }
@@ -512,7 +512,7 @@ public final class vy implements q51, og.n, org.telegram.ui.lm0, o2.i, lm0, com.
         ((v4.g0) this.b).n(i7, i10, null);
     }
 
-    @Override // org.telegram.ui.Components.lm0
+    @Override // org.telegram.ui.Components.mm0
     public void l(boolean z9, float f10) {
         pg.i iVar = (pg.i) this.b;
         float f11 = iVar.b;
@@ -573,7 +573,7 @@ public final class vy implements q51, og.n, org.telegram.ui.lm0, o2.i, lm0, com.
         ((ProfileInstallReceiver) this.b).setResultCode(i7);
     }
 
-    @Override // org.telegram.ui.lm0
+    @Override // org.telegram.ui.nm0
     public void m() {
         try {
             Intent intent = new Intent("android.intent.action.PICK");
@@ -594,8 +594,8 @@ public final class vy implements q51, og.n, org.telegram.ui.lm0, o2.i, lm0, com.
         ((v4.g0) this.b).o(i7, i10);
     }
 
-    @Override // org.telegram.ui.Components.q51
-    public void onError(t51 t51Var, Exception exc) {
+    @Override // org.telegram.ui.Components.r51
+    public void onError(u51 u51Var, Exception exc) {
         switch (this.a) {
             case 1:
                 org.telegram.messenger.a8.g(exc, true);
@@ -603,74 +603,74 @@ public final class vy implements q51, og.n, org.telegram.ui.lm0, o2.i, lm0, com.
         }
     }
 
-    @Override // org.telegram.ui.Components.q51
+    @Override // org.telegram.ui.Components.r51
     public void onRenderedFirstFrame() {
         int i7 = this.a;
     }
 
-    @Override // org.telegram.ui.Components.q51
+    @Override // org.telegram.ui.Components.r51
     public /* synthetic */ void onSeekFinished(m2.a aVar) {
         int i7 = this.a;
     }
 
-    @Override // org.telegram.ui.Components.q51
+    @Override // org.telegram.ui.Components.r51
     public /* synthetic */ void onSeekStarted(m2.a aVar) {
         int i7 = this.a;
     }
 
-    @Override // org.telegram.ui.Components.q51
+    @Override // org.telegram.ui.Components.r51
     public void onStateChanged(boolean z9, int i7) {
-        o40 o40Var;
+        p40 p40Var;
         org.telegram.messenger.j20 j20Var;
         switch (this.a) {
             case 1:
-                g40 g40Var = (g40) this.b;
-                t51 t51Var = g40Var.H0.S;
-                if (t51Var != null && t51Var.d0() && i7 == 4 && (j20Var = (o40Var = g40Var.H0).R) != null) {
-                    t51 t51Var2 = o40Var.S;
+                h40 h40Var = (h40) this.b;
+                u51 u51Var = h40Var.H0.S;
+                if (u51Var != null && u51Var.d0() && i7 == 4 && (j20Var = (p40Var = h40Var.H0).R) != null) {
+                    u51 u51Var2 = p40Var.S;
                     long j3 = j20Var.a;
                     if (j3 <= 0) {
                         j3 = 0;
                     }
-                    t51Var2.p0(j3);
+                    u51Var2.p0(j3);
                     break;
                 }
                 break;
             default:
-                ji0 ji0Var = (ji0) this.b;
-                if (z9 && ji0Var.n.S() >= 0) {
-                    ji0Var.x = true;
+                ki0 ki0Var = (ki0) this.b;
+                if (z9 && ki0Var.n.S() >= 0) {
+                    ki0Var.x = true;
                 }
-                he0 he0Var = ji0Var.f;
-                ob0 ob0Var = ji0Var.y;
-                he0Var.a(z9, true);
-                org.telegram.messenger.g0.r(ob0Var);
+                ie0 ie0Var = ki0Var.f;
+                pb0 pb0Var = ki0Var.y;
+                ie0Var.a(z9, true);
+                org.telegram.messenger.g0.r(pb0Var);
                 if (z9) {
-                    org.telegram.messenger.g0.i3(ob0Var, 16L);
+                    org.telegram.messenger.g0.i3(pb0Var, 16L);
                     break;
                 }
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.q51
+    @Override // org.telegram.ui.Components.r51
     public /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
         switch (this.a) {
         }
         return false;
     }
 
-    @Override // org.telegram.ui.Components.q51
+    @Override // org.telegram.ui.Components.r51
     public /* synthetic */ void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
         int i7 = this.a;
     }
 
-    @Override // org.telegram.ui.Components.q51
+    @Override // org.telegram.ui.Components.r51
     public void onVideoSizeChanged(int i7, int i10, int i11, float f10) {
         int i12 = this.a;
     }
 
-    @Override // org.telegram.ui.Components.lm0
+    @Override // org.telegram.ui.Components.mm0
     public /* synthetic */ int q0() {
         return 0;
     }
@@ -720,9 +720,9 @@ public final class vy implements q51, og.n, org.telegram.ui.lm0, o2.i, lm0, com.
 
     @Override // og.n
     public void w() {
-        ed0 ed0Var = ((fd0) this.b).a;
-        if (ed0Var != null) {
-            ((org.telegram.ui.ro0) ed0Var).a.e0.invalidate();
+        fd0 fd0Var = ((gd0) this.b).a;
+        if (fd0Var != null) {
+            ((org.telegram.ui.to0) fd0Var).a.e0.invalidate();
         }
     }
 
@@ -745,7 +745,7 @@ public final class vy implements q51, og.n, org.telegram.ui.lm0, o2.i, lm0, com.
         }
     }
 
-    @Override // org.telegram.ui.Components.q51
+    @Override // org.telegram.ui.Components.r51
     public /* synthetic */ void onRenderedFirstFrame(m2.a aVar) {
         int i7 = this.a;
     }
@@ -801,11 +801,11 @@ public final class vy implements q51, og.n, org.telegram.ui.lm0, o2.i, lm0, com.
     private final void q() {
     }
 
-    @Override // org.telegram.ui.Components.lm0
+    @Override // org.telegram.ui.Components.mm0
     public void D() {
     }
 
-    private final void j(t51 t51Var, Exception exc) {
+    private final void j(u51 u51Var, Exception exc) {
     }
 
     @Override // o2.i

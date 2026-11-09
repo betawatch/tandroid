@@ -3,9 +3,9 @@ package bi;
 import android.animation.ValueAnimator;
 import org.telegram.messenger.v10;
 import org.telegram.ui.Components.xq;
-import org.telegram.ui.up0;
+import org.telegram.ui.wp0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q9 implements q0.a {
     public final /* synthetic */ int a;
@@ -21,6 +21,7 @@ public final /* synthetic */ class q9 implements q0.a {
         int i7 = this.a;
         int i10 = 0;
         char c10 = 1;
+        char c11 = 1;
         Object obj2 = this.b;
         switch (i7) {
             case 0:
@@ -54,7 +55,7 @@ public final /* synthetic */ class q9 implements q0.a {
                 if (f11.floatValue() == 1.0f) {
                     ValueAnimator duration2 = ValueAnimator.ofFloat(1.0f, 0.0f).setDuration(200L);
                     duration2.setInterpolator(xq.f);
-                    duration2.addUpdateListener(new hi.t3(c4Var, 1));
+                    duration2.addUpdateListener(new hi.t3(c4Var, c10 == true ? 1 : 0));
                     duration2.addListener(new t5(c4Var, 28));
                     duration2.start();
                     c4Var.P();
@@ -80,21 +81,21 @@ public final /* synthetic */ class q9 implements q0.a {
                         w4Var.getAdapter().f();
                         break;
                     default:
-                        up0 up0Var = (up0) nVar.d;
-                        up0Var.w0(false);
-                        sg.l0 l0Var2 = up0Var.E1;
+                        wp0 wp0Var = (wp0) nVar.d;
+                        wp0Var.w0(false);
+                        sg.l0 l0Var2 = wp0Var.E1;
                         l0Var2.h(intValue, true);
                         l0Var2.g();
-                        up0Var.setNewColor(intValue);
-                        tg.d0 d0Var = up0Var.p1;
+                        wp0Var.setNewColor(intValue);
+                        tg.d0 d0Var = wp0Var.p1;
                         d0Var.setSelectedColorIndex(l0Var2.d());
                         d0Var.getAdapter().f();
                         break;
                 }
             default:
-                zh.a4 a4Var = (zh.a4) obj2;
+                zh.b4 b4Var = (zh.b4) obj2;
                 if (((f5.f) obj).a == 0) {
-                    org.telegram.messenger.g0.h3(new zh.q3(a4Var, c10 == true ? 1 : 0));
+                    org.telegram.messenger.g0.h3(new zh.r3(b4Var, c11 == true ? 1 : 0));
                     break;
                 }
                 break;

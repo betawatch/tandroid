@@ -23,7 +23,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class wz {
     public static volatile wz p;
@@ -65,7 +65,7 @@ public final class wz {
         ij ijVar = MediaController.B().u0;
         if (ijVar != null) {
             r3 = MediaController.B().H() ? 2477828L : 2477830L;
-            if (ijVar.J3()) {
+            if (ijVar.I3()) {
                 r3 |= 48;
             }
         }
@@ -243,8 +243,8 @@ public final class wz {
                 for (int i11 = 0; i11 < arrayList3.size(); i11++) {
                     ij ijVar = (ij) arrayList3.get(i11);
                     MediaDescription.Builder mediaId2 = new MediaDescription.Builder().setMediaId(j3 + "_" + i11);
-                    mediaId2.setTitle(ijVar.z1(true));
-                    mediaId2.setSubtitle(ijVar.x1(true));
+                    mediaId2.setTitle(ijVar.y1(true));
+                    mediaId2.setSubtitle(ijVar.w1(true));
                     arrayList.add(new MediaBrowser.MediaItem(mediaId2.build(), 2));
                 }
             }

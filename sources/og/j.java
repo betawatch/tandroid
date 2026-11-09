@@ -34,45 +34,45 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.ActionBar.q4;
-import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.ActionBar.s6;
 import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.ActionBar.u4;
 import org.telegram.ui.Components.ThemeEditorView;
-import org.telegram.ui.Components.ad0;
-import org.telegram.ui.Components.ar0;
+import org.telegram.ui.Components.bd0;
+import org.telegram.ui.Components.cr0;
 import org.telegram.ui.Components.hc;
-import org.telegram.ui.Components.mo0;
+import org.telegram.ui.Components.no0;
 import org.telegram.ui.Components.r2;
 import org.telegram.ui.ThemeActivity;
-import org.telegram.ui.an;
-import org.telegram.ui.bk0;
-import org.telegram.ui.c40;
+import org.telegram.ui.a00;
+import org.telegram.ui.az0;
+import org.telegram.ui.cn;
+import org.telegram.ui.dk0;
+import org.telegram.ui.e40;
 import org.telegram.ui.eb;
-import org.telegram.ui.f61;
 import org.telegram.ui.g4;
-import org.telegram.ui.go0;
-import org.telegram.ui.h30;
-import org.telegram.ui.l21;
+import org.telegram.ui.g61;
+import org.telegram.ui.io0;
+import org.telegram.ui.j30;
 import org.telegram.ui.l4;
-import org.telegram.ui.lk0;
+import org.telegram.ui.n21;
+import org.telegram.ui.nk0;
 import org.telegram.ui.t3;
-import org.telegram.ui.uz;
-import org.telegram.ui.wu0;
-import org.telegram.ui.ww;
-import org.telegram.ui.xy0;
-import org.telegram.ui.y71;
-import org.telegram.ui.yz;
+import org.telegram.ui.wz;
+import org.telegram.ui.yu0;
+import org.telegram.ui.yw;
+import org.telegram.ui.z71;
+import sg.a1;
 import sg.b1;
 import sg.c1;
-import sg.d1;
 import wi.n0;
 import wi.o0;
 import wi.r0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j implements DialogInterface.OnClickListener {
     public final /* synthetic */ int a;
@@ -172,33 +172,33 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                 }
                 return;
             case 3:
-                an anVar = (an) this.b;
+                cn cnVar = (cn) this.b;
                 String str5 = (String) this.c;
                 g0.g(str5);
-                hc.a0(anVar).i(id.a0(null, null, 2131750885, str5)).j();
+                hc.a0(cnVar).i(id.a0(null, null, 2131750884, str5)).j();
                 return;
             case 4:
                 ArrayList arrayList = (ArrayList) this.b;
-                ww wwVar = (ww) this.c;
+                yw ywVar = (yw) this.c;
                 int i10 = i7 == 0 ? 0 : i7 == 1 ? 1 : i7 == 2 ? 2 : 3;
                 if (arrayList != null) {
                     for (int i11 = 0; i11 < arrayList.size(); i11++) {
                         dt.t(p10.s0).T(((Long) arrayList.get(i11)).longValue(), i10, 0);
                     }
                 }
-                if (hc.a(wwVar)) {
-                    hc.z(wwVar, i10, 0, null).j();
+                if (hc.a(ywVar)) {
+                    hc.z(ywVar, i10, 0, null).j();
                     return;
                 }
                 return;
             case 5:
-                ad0 ad0Var = (ad0) this.b;
+                bd0 bd0Var = (bd0) this.b;
                 f0 f0Var = (f0) this.c;
                 if (i7 == 0) {
                     try {
                         ((ClipboardManager) t0.b.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", f0Var.c(false)));
                         if (g0.I3()) {
-                            Toast.makeText(ad0Var.p1.getParentActivity(), id.M0(2131744197, null), 0).show();
+                            Toast.makeText(bd0Var.p1.getParentActivity(), id.M0(2131744194, null), 0).show();
                             return;
                         }
                         return;
@@ -209,13 +209,13 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                 }
                 return;
             case 6:
-                ar0 ar0Var = (ar0) this.b;
+                cr0 cr0Var = (cr0) this.b;
                 String str6 = (String) this.c;
                 if (i7 == 0) {
-                    ar0Var.a.b1(str6);
+                    cr0Var.a.d1(str6);
                     return;
                 }
-                ar0Var.getClass();
+                cr0Var.getClass();
                 if (i7 == 1) {
                     if (str6.startsWith("mailto:")) {
                         str6 = str6.substring(7);
@@ -227,15 +227,15 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                 }
                 return;
             case 7:
-                uz uzVar = (uz) this.b;
+                wz wzVar = (wz) this.b;
                 String str7 = (String) this.c;
                 if (i7 == 0) {
-                    yz yzVar = uzVar.a.w;
-                    SpannableStringBuilder[] spannableStringBuilderArr = yz.s0;
-                    yzVar.g(str7);
+                    a00 a00Var = wzVar.a.w;
+                    SpannableStringBuilder[] spannableStringBuilderArr = a00.s0;
+                    a00Var.g(str7);
                     return;
                 }
-                uzVar.getClass();
+                wzVar.getClass();
                 if (i7 == 1) {
                     if (str7.startsWith("mailto:")) {
                         str7 = str7.substring(7);
@@ -247,21 +247,21 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                 }
                 return;
             case 8:
-                h30 h30Var = (h30) this.b;
+                j30 j30Var = (j30) this.b;
                 ArrayList arrayList2 = (ArrayList) this.c;
-                c40 c40Var = h30Var.b;
+                e40 e40Var = j30Var.b;
                 if (VoIPService.getSharedInstance() == null) {
                     return;
                 }
                 Integer num = (Integer) arrayList2.get(i7);
                 int intValue = num.intValue();
-                c40Var.p5 = num;
-                c40Var.T1(true, true);
-                c40Var.p5 = null;
-                g0.h3(new r2(h30Var, intValue, 14));
+                e40Var.p5 = num;
+                e40Var.T1(true, true);
+                e40Var.p5 = null;
+                g0.h3(new r2(j30Var, intValue, 14));
                 return;
             case 9:
-                bk0 bk0Var = (bk0) this.b;
+                dk0 dk0Var = (dk0) this.b;
                 ArrayList arrayList3 = (ArrayList) this.c;
                 try {
                     tL_secureRequiredType = new TLRPC.TL_secureRequiredType();
@@ -272,12 +272,12 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                 } catch (Exception unused3) {
                     tL_secureRequiredType = null;
                 }
-                if (!bk0.z1(tL_secureRequiredType.type)) {
-                    if (bk0.x1(tL_secureRequiredType.type)) {
+                if (!dk0.z1(tL_secureRequiredType.type)) {
+                    if (dk0.x1(tL_secureRequiredType.type)) {
                         tL_secureRequiredType2 = new TLRPC.TL_secureRequiredType();
                         tL_secureRequiredType2.type = new TLRPC.TL_secureValueTypeAddress();
                     }
-                    bk0Var.I1(tL_secureRequiredType, tL_secureRequiredType3, new ArrayList(), tL_secureRequiredType3 != null);
+                    dk0Var.I1(tL_secureRequiredType, tL_secureRequiredType3, new ArrayList(), tL_secureRequiredType3 != null);
                     return;
                 }
                 tL_secureRequiredType.selfie_required = true;
@@ -286,14 +286,14 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                 tL_secureRequiredType2.type = new TLRPC.TL_secureValueTypePersonalDetails();
                 tL_secureRequiredType3 = tL_secureRequiredType;
                 tL_secureRequiredType = tL_secureRequiredType2;
-                bk0Var.I1(tL_secureRequiredType, tL_secureRequiredType3, new ArrayList(), tL_secureRequiredType3 != null);
+                dk0Var.I1(tL_secureRequiredType, tL_secureRequiredType3, new ArrayList(), tL_secureRequiredType3 != null);
                 return;
             case 10:
-                wu0.a((wu0) this.b, (Context) this.c, i7);
+                yu0.a((yu0) this.b, (Context) this.c, i7);
                 return;
             case 11:
-                xy0 xy0Var = (xy0) this.b;
-                switch (((go0) this.c).a) {
+                az0 az0Var = (az0) this.b;
+                switch (((io0) this.c).a) {
                     case 6:
                         xi.e.e.b(i7 == 0 ? r0.b : r0.c);
                         break;
@@ -305,7 +305,7 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                         break;
                     default:
                         xi.c cVar = xi.e.h;
-                        int i12 = xy0.d[i7];
+                        int i12 = az0.d[i7];
                         synchronized (cVar) {
                             cVar.b = i12;
                             cVar.a = true;
@@ -313,66 +313,66 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                             break;
                         }
                 }
-                ((l4) xy0Var.c).f();
+                ((l4) az0Var.c).f();
                 return;
             case 12:
-                l21 l21Var = (l21) this.b;
+                n21 n21Var = (n21) this.b;
                 ((ClipboardManager) t0.b.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", (String) this.c));
-                q.r(null, 2131744197, new hc(l21Var.c, null));
+                q.r(null, 2131744194, new hc(n21Var.c, null));
                 return;
             case 13:
-                f61 f61Var = (f61) this.b;
-                j6 j6Var = (j6) this.c;
-                ThemeActivity themeActivity = f61Var.e;
+                g61 g61Var = (g61) this.b;
+                k6 k6Var = (k6) this.c;
+                ThemeActivity themeActivity = g61Var.e;
                 if (themeActivity.getParentActivity() == null) {
                     return;
                 }
                 if (i7 == 0) {
-                    if (j6Var.F == null) {
-                        themeActivity.getMessagesController().y4(j6Var, null);
-                        qs.e().k(qs.s4, j6Var, null);
+                    if (k6Var.F == null) {
+                        themeActivity.getMessagesController().y4(k6Var, null);
+                        qs.e().k(qs.s4, k6Var, null);
                         return;
                     }
-                    String str8 = "https://" + themeActivity.getMessagesController().U2 + "/addtheme/" + j6Var.F.slug;
-                    themeActivity.showDialog(new mo0(themeActivity.getParentActivity(), null, str8, false, str8, false, null));
+                    String str8 = "https://" + themeActivity.getMessagesController().U2 + "/addtheme/" + k6Var.F.slug;
+                    themeActivity.showDialog(new no0(themeActivity.getParentActivity(), null, str8, false, str8, false, null));
                     return;
                 }
                 if (i7 != 1) {
                     if (i7 == 2) {
                         q4Var = ((f2) themeActivity).parentLayout;
                         if (q4Var != null) {
-                            k6.u(j6Var, true, false);
+                            l6.u(k6Var, true, false);
                             q4Var2 = ((f2) themeActivity).parentLayout;
                             ((ActionBarLayout) q4Var2).X(true, true);
-                            new ThemeEditorView().d(themeActivity.getParentActivity(), j6Var);
+                            new ThemeEditorView().d(themeActivity.getParentActivity(), k6Var);
                             return;
                         }
                         return;
                     }
                     if (i7 == 3) {
-                        themeActivity.presentFragment(new y71(j6Var, null, false));
+                        themeActivity.presentFragment(new z71(k6Var, null, false));
                         return;
                     }
                     if (themeActivity.getParentActivity() == null) {
                         return;
                     }
                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(themeActivity.getParentActivity());
-                    alertDialog$Builder.a.R = id.M0(2131751485, "DeleteThemeTitle");
-                    alertDialog$Builder.a.T = id.M0(2131751486, "DeleteThemeAlert");
-                    alertDialog$Builder.k(id.M0(2131751599, "Delete"), new lk0(18, f61Var, j6Var));
+                    alertDialog$Builder.a.R = id.M0(2131751484, "DeleteThemeTitle");
+                    alertDialog$Builder.a.T = id.M0(2131751485, "DeleteThemeAlert");
+                    alertDialog$Builder.k(id.M0(2131751598, "Delete"), new nk0(18, g61Var, k6Var));
                     alertDialog$Builder.h(id.M0(2131752589, "Cancel"), null);
                     u1 u1Var = alertDialog$Builder.a;
                     themeActivity.showDialog(u1Var);
                     TextView textView = (TextView) u1Var.d(-1);
                     if (textView != null) {
-                        r6.V(textView, k6.q7, null);
+                        s6.U(textView, l6.q7, null);
                         return;
                     }
                     return;
                 }
-                if (j6Var.b == null && j6Var.d == null) {
+                if (k6Var.b == null && k6Var.d == null) {
                     StringBuilder sb3 = new StringBuilder();
-                    int[] iArr = k6.em;
+                    int[] iArr = l6.em;
                     for (int i13 = 0; i13 < iArr.length; i13++) {
                         sb3.append(u4.c(i13));
                         sb3.append("=");
@@ -403,7 +403,7 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                         if (fileOutputStream2 != null) {
                             fileOutputStream2.close();
                         }
-                        str2 = j6Var.a;
+                        str2 = k6Var.a;
                         if (!str2.endsWith(".attheme")) {
                         }
                         file = new File(w7.z(4), w7.q(str2));
@@ -424,10 +424,10 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                         }
                     }
                 } else {
-                    String str9 = j6Var.d;
-                    q02 = str9 != null ? k6.q0(str9) : new File(j6Var.b);
+                    String str9 = k6Var.d;
+                    q02 = str9 != null ? l6.q0(str9) : new File(k6Var.b);
                 }
-                str2 = j6Var.a;
+                str2 = k6Var.a;
                 if (!str2.endsWith(".attheme")) {
                     str2 = str2.concat(".attheme");
                 }
@@ -453,35 +453,35 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                     } else {
                         intent.putExtra("android.intent.extra.STREAM", Uri.fromFile(file));
                     }
-                    themeActivity.startActivityForResult(Intent.createChooser(intent, id.M0(2131745462, "ShareFile")), 500);
+                    themeActivity.startActivityForResult(Intent.createChooser(intent, id.M0(2131745459, "ShareFile")), 500);
                     return;
                 } catch (Exception e15) {
                     a8.g(e15, true);
                     return;
                 }
             default:
-                d1 d1Var = (d1) this.b;
+                c1 c1Var = (c1) this.b;
                 ArrayList arrayList4 = (ArrayList) this.c;
-                SharedPreferences sharedPreferences = d1Var.g;
-                ArrayList arrayList5 = d1Var.c;
+                SharedPreferences sharedPreferences = c1Var.g;
+                ArrayList arrayList5 = c1Var.c;
                 if (i7 != 0) {
-                    c1 c1Var = new c1();
-                    c1Var.a = i7 - 1;
-                    c1Var.b = arrayList4;
-                    arrayList5.add(c1Var);
+                    b1 b1Var = new b1();
+                    b1Var.a = i7 - 1;
+                    b1Var.b = arrayList4;
+                    arrayList5.add(b1Var);
                     String string = sharedPreferences.getString("moretemplates", null);
                     if (string == null) {
-                        sb2 = "" + c1Var.a;
+                        sb2 = "" + b1Var.a;
                     } else {
                         StringBuilder j3 = rf.b.j(string, "|");
-                        j3.append(c1Var.a);
+                        j3.append(b1Var.a);
                         sb2 = j3.toString();
                     }
                     for (int i14 = 0; i14 < arrayList4.size(); i14++) {
                         StringBuilder j10 = rf.b.j(sb2, ",");
-                        j10.append(Math.round(((b1) arrayList4.get(i14)).a));
+                        j10.append(Math.round(((a1) arrayList4.get(i14)).a));
                         j10.append(",");
-                        j10.append(Math.round(((b1) arrayList4.get(i14)).b));
+                        j10.append(Math.round(((a1) arrayList4.get(i14)).b));
                         sb2 = j10.toString();
                     }
                     sharedPreferences.edit().putString("moretemplates", sb2).apply();
@@ -489,26 +489,26 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                 }
                 StringBuilder sb5 = new StringBuilder("[");
                 for (int i15 = 0; i15 < arrayList5.size(); i15++) {
-                    c1 c1Var2 = (c1) arrayList5.get(i15);
+                    b1 b1Var2 = (b1) arrayList5.get(i15);
                     if (i15 > 0) {
                         sb5.append(",\n");
                     }
                     sb5.append("\t{\n\t\t\"shape\": ");
-                    sb5.append(c1Var2.a);
+                    sb5.append(b1Var2.a);
                     sb5.append(",\n\t\t\"points\": [");
-                    for (int i16 = 0; i16 < c1Var2.b.size(); i16++) {
+                    for (int i16 = 0; i16 < b1Var2.b.size(); i16++) {
                         if (i16 > 0) {
                             sb5.append(",");
                         }
-                        b1 b1Var = (b1) c1Var2.b.get(i16);
+                        a1 a1Var = (a1) b1Var2.b.get(i16);
                         sb5.append("[");
-                        sb5.append(Math.round(b1Var.a));
+                        sb5.append(Math.round(a1Var.a));
                         sb5.append(",");
-                        sb5.append(Math.round(b1Var.b));
+                        sb5.append(Math.round(a1Var.b));
                         sb5.append("]");
                     }
                     sb5.append("],\n\t\t\"freq\": ");
-                    sb5.append(Math.round(((c1Var2.c / d1Var.a) * 100.0f) * 100.0f) / 100.0f);
+                    sb5.append(Math.round(((b1Var2.c / c1Var.a) * 100.0f) * 100.0f) / 100.0f);
                     sb5.append("\n\t}");
                 }
                 sb5.append("\n]");

@@ -2,18 +2,18 @@ package zh;
 
 import android.content.Context;
 import bi.k7;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.hc;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class y1 extends k7 {
     public final /* synthetic */ int t3;
     public final /* synthetic */ z1 u3;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ y1(z1 z1Var, Context context, int i7, long j3, f6 f6Var, int i10) {
-        super(context, i7, j3, f6Var, null);
+    public /* synthetic */ y1(z1 z1Var, Context context, int i7, long j3, g6 g6Var, int i10) {
+        super(context, i7, j3, g6Var, null);
         this.t3 = i10;
         this.u3 = z1Var;
     }

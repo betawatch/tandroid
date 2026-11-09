@@ -20,7 +20,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class g1 extends View implements ls {
     public final org.telegram.ui.Components.w5 D;
@@ -159,7 +159,7 @@ public final class g1 extends View implements ls {
                         } else {
                             float L = org.telegram.messenger.g0.L(22.5f);
                             int i17 = f1Var6.d;
-                            f1Var6.h = new RadialGradient(0.0f, 0.0f, L, new int[]{i17, org.telegram.ui.ActionBar.k6.r1(0.0f, i17)}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
+                            f1Var6.h = new RadialGradient(0.0f, 0.0f, L, new int[]{i17, org.telegram.ui.ActionBar.l6.r1(0.0f, i17)}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
                             Paint paint = new Paint(1);
                             f1Var6.i = paint;
                             paint.setShader(f1Var6.h);

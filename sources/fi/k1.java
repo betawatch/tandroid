@@ -9,10 +9,10 @@ import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.ic;
 import org.telegram.messenger.sc;
+import org.telegram.ui.Components.ah0;
 import org.telegram.ui.Components.is;
-import org.telegram.ui.Components.zg0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class k1 extends is {
     public int M;
@@ -177,7 +177,7 @@ public final class k1 extends is {
                 }
                 Rect rect = org.telegram.messenger.g0.Q;
                 rect.set(l1Var.getPaddingLeft(), l1Var.getPaddingTop(), l1Var.getWidth() - l1Var.getPaddingRight(), l1Var.getHeight() - l1Var.getPaddingBottom());
-                zg0 B = imageReceiver.B();
+                ah0 B = imageReceiver.B();
                 if (B == null || (i7 = B.c) == 0) {
                     org.telegram.ui.Components.v5 m10 = imageReceiver.m();
                     if (m10 == null || m10.getIntrinsicHeight() == 0) {

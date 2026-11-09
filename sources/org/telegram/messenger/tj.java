@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import java.util.ArrayList;
 import org.telegram.ui.SecretMediaViewer;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class tj implements Runnable {
     public final /* synthetic */ int a;
@@ -47,16 +47,16 @@ public final /* synthetic */ class tj implements Runnable {
                     while (i10 < m11) {
                         long j3 = hVar3.j(i10);
                         ArrayList arrayList3 = (ArrayList) hVar3.n(i10);
-                        if (objArr == true && ijVar != null && ijVar.I1 == qpVar.currentAccount && ij.B0(ijVar.k) == j3 && arrayList3.contains(Integer.valueOf(ijVar.f1()))) {
-                            int f12 = ijVar.f1();
-                            arrayList3.remove(Integer.valueOf(f12));
+                        if (objArr == true && ijVar != null && ijVar.I1 == qpVar.currentAccount && ij.B0(ijVar.k) == j3 && arrayList3.contains(Integer.valueOf(ijVar.e1()))) {
+                            int e12 = ijVar.e1();
+                            arrayList3.remove(Integer.valueOf(e12));
                             ijVar.G0 = true;
-                            long V = qpVar.V(f12, j3);
+                            long V = qpVar.V(e12, j3);
                             z9 = z10;
                             arrayList = arrayList3;
                             qp qpVar2 = qpVar;
                             qpVar = qpVar2;
-                            SecretMediaViewer.f().n1 = new vk(f12, V, j3, qpVar2);
+                            SecretMediaViewer.f().n1 = new vk(e12, V, j3, qpVar2);
                             qs notificationCenter = qpVar.getNotificationCenter();
                             Object[] objArr2 = new Object[1];
                             objArr2[z9 ? 1 : 0] = ijVar.k;

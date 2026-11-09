@@ -1,34 +1,61 @@
 package di;
 
-import org.telegram.tgnet.NativeByteBuffer;
+import org.telegram.tgnet.InputSerializedData;
+import org.telegram.tgnet.OutputSerializedData;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public abstract class m8 {
-    public static void a(TL_stories.StoryItem storyItem, NativeByteBuffer nativeByteBuffer) {
-        if (nativeByteBuffer == null) {
-            return;
-        }
-        int readInt32 = nativeByteBuffer.readInt32(true);
-        if (readInt32 != 1) {
-            throw new RuntimeException(jg.g.j(readInt32, "(story) can't read params version = "));
-        }
-        new l8(storyItem).readParams(nativeByteBuffer, true);
+public final class m8 extends TLObject {
+    public final TL_stories.StoryItem a;
+    public int b;
+
+    public m8(TL_stories.StoryItem storyItem) {
+        this.b = 0;
+        this.a = storyItem;
+        boolean z9 = storyItem.translated;
+        this.b = z9 ? 1 : 0;
+        int i7 = (z9 ? 1 : 0) + (storyItem.detectedLng != null ? 2 : 0);
+        this.b = i7;
+        int i10 = i7 + (storyItem.translatedText != null ? 4 : 0);
+        this.b = i10;
+        this.b = i10 + (storyItem.translatedLng != null ? 8 : 0);
     }
 
-    public static NativeByteBuffer b(TL_stories.StoryItem storyItem) {
-        if (storyItem.detectedLng == null && storyItem.translatedLng == null && !storyItem.translated && storyItem.translatedText == null) {
-            return null;
+    @Override // org.telegram.tgnet.TLObject
+    public final void readParams(InputSerializedData inputSerializedData, boolean z9) {
+        int readInt32 = inputSerializedData.readInt32(true);
+        this.b = readInt32;
+        boolean z10 = (readInt32 & 1) != 0;
+        TL_stories.StoryItem storyItem = this.a;
+        storyItem.translated = z10;
+        if ((readInt32 & 2) != 0) {
+            storyItem.detectedLng = inputSerializedData.readString(z9);
         }
-        l8 l8Var = new l8(storyItem);
-        try {
-            NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(l8Var.getObjectSize());
-            l8Var.serializeToStream(nativeByteBuffer);
-            return nativeByteBuffer;
-        } catch (Exception e10) {
-            e10.printStackTrace();
-            return null;
+        if ((this.b & 4) != 0) {
+            storyItem.translatedText = TLRPC.TL_textWithEntities.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+        }
+        if ((this.b & 8) != 0) {
+            storyItem.translatedLng = inputSerializedData.readString(z9);
+        }
+    }
+
+    @Override // org.telegram.tgnet.TLObject
+    public final void serializeToStream(OutputSerializedData outputSerializedData) {
+        outputSerializedData.writeInt32(1);
+        outputSerializedData.writeInt32(this.b);
+        int i7 = this.b & 2;
+        TL_stories.StoryItem storyItem = this.a;
+        if (i7 != 0) {
+            outputSerializedData.writeString(storyItem.detectedLng);
+        }
+        if ((this.b & 4) != 0) {
+            storyItem.translatedText.serializeToStream(outputSerializedData);
+        }
+        if ((this.b & 8) != 0) {
+            outputSerializedData.writeString(storyItem.translatedLng);
         }
     }
 }

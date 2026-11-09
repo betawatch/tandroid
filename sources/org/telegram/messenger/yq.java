@@ -12,7 +12,7 @@ import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class yq implements Runnable {
     public final /* synthetic */ int a;
@@ -99,7 +99,7 @@ public final /* synthetic */ class yq implements Runnable {
                                                 while (i12 < TLdeserialize.reactions.recent_reactions.size()) {
                                                     TLRPC.MessagePeerReaction messagePeerReaction = TLdeserialize.reactions.recent_reactions.get(i12);
                                                     boolean z13 = true;
-                                                    if (ij.C1(messagePeerReaction.peer_id) == this.e) {
+                                                    if (ij.B1(messagePeerReaction.peer_id) == this.e) {
                                                         try {
                                                             TLdeserialize.reactions.recent_reactions.remove(i12);
                                                             i12--;
@@ -206,7 +206,7 @@ public final /* synthetic */ class yq implements Runnable {
                                     }
                                     SQLitePreparedStatement sQLitePreparedStatement2 = executeFast;
                                     try {
-                                        ij.r5(message);
+                                        ij.q5(message);
                                         NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(message.getObjectSize());
                                         message.serializeToStream(nativeByteBuffer);
                                         sQLitePreparedStatement2.requery();
@@ -385,7 +385,7 @@ public final /* synthetic */ class yq implements Runnable {
                                 if (byteBufferValue != null) {
                                     TLRPC.Message TLdeserialize = TLRPC.Message.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false);
                                     byteBufferValue.reuse();
-                                    j11 = ij.a2(yrVar.currentAccount, TLdeserialize, yrVar.Z(j3));
+                                    j11 = ij.Z1(yrVar.currentAccount, TLdeserialize, yrVar.Z(j3));
                                 }
                             }
                             queryFinalized2.dispose();

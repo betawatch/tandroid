@@ -2,19 +2,19 @@ package ei;
 
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import di.p4;
+import di.q4;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.Components.l41;
+import org.telegram.ui.Components.m41;
 import org.telegram.ui.Components.na;
-import org.telegram.ui.Components.oj0;
 import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.qj0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class q extends na {
     public final int P1;
     public final CharSequence Q1;
-    public l41 R1;
+    public m41 R1;
 
     public q(f2 f2Var, String str, ai.i iVar) {
         super(f2Var, true, false, f2Var.getResourceProvider());
@@ -28,18 +28,18 @@ public final class q extends na {
         this.v1 = true;
         N();
         Y0();
-        pj0 pj0Var = this.k1;
+        qj0 qj0Var = this.k1;
         int i7 = this.t0;
-        pj0Var.setPadding(i7, 0, i7, 0);
-        this.k1.setOnItemClickListener(new p4(1, this, iVar));
+        qj0Var.setPadding(i7, 0, i7, 0);
+        this.k1.setOnItemClickListener(new q4(1, this, iVar));
     }
 
     @Override // org.telegram.ui.Components.na
-    public final oj0 L0(pj0 pj0Var) {
-        l41 l41Var = new l41(pj0Var, getContext(), this.P1, 0, false, new ai.e(this, 14), this.I0);
-        this.R1 = l41Var;
-        l41Var.r = false;
-        return l41Var;
+    public final pj0 L0(qj0 qj0Var) {
+        m41 m41Var = new m41(qj0Var, getContext(), this.P1, 0, false, new ai.e(this, 14), this.I0);
+        this.R1 = m41Var;
+        m41Var.r = false;
+        return m41Var;
     }
 
     @Override // org.telegram.ui.Components.na

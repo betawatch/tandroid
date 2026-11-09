@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class fy extends oj0 {
+public final class fy extends pj0 {
     public final boolean c;
     public final /* synthetic */ hy d;
 
@@ -16,7 +16,7 @@ public final class fy extends oj0 {
         this.c = z9;
     }
 
-    @Override // org.telegram.ui.Components.oj0
+    @Override // org.telegram.ui.Components.pj0
     public final boolean D(v4.d1 d1Var) {
         return true;
     }
@@ -73,15 +73,15 @@ public final class fy extends oj0 {
             return;
         }
         if (z9) {
-            l9Var.setColorFilter(org.telegram.messenger.ij.D4(document) ? org.telegram.ui.ActionBar.k6.o0(hyVar.Z1) : null);
+            l9Var.setColorFilter(org.telegram.messenger.ij.C4(document) ? org.telegram.ui.ActionBar.l6.o0(hyVar.Z1) : null);
         }
         TLObject w10 = org.telegram.messenger.w7.w(stickerSetCovered.set.thumbs, 90, false, null, false);
-        org.telegram.messenger.rz d = org.telegram.messenger.t5.d(stickerSetCovered.set.thumbs, org.telegram.ui.ActionBar.k6.c7, 0.2f, false);
+        org.telegram.messenger.rz d = org.telegram.messenger.t5.d(stickerSetCovered.set.thumbs, org.telegram.ui.ActionBar.l6.c7, 0.2f, false);
         if (d != null) {
             d.e = 512;
             d.f = 512;
         }
-        if (w10 == null || org.telegram.messenger.ij.O4(document)) {
+        if (w10 == null || org.telegram.messenger.ij.N4(document)) {
             w10 = document;
         }
         boolean z10 = w10 instanceof TLRPC.Document;
@@ -97,7 +97,7 @@ public final class fy extends oj0 {
             return;
         }
         String str = !org.telegram.messenger.sc.e(z9 ? 16388 : 1) ? "30_30_firstframe" : "30_30";
-        if (z10 && (org.telegram.messenger.ij.L2(document, true) || org.telegram.messenger.ij.O4(document))) {
+        if (z10 && (org.telegram.messenger.ij.K2(document, true) || org.telegram.messenger.ij.N4(document))) {
             if (d != null) {
                 l9Var.p(org.telegram.messenger.hc.b(document), str, d, stickerSetCovered);
                 return;
@@ -120,6 +120,6 @@ public final class fy extends oj0 {
         eyVar.setLayerNum(1);
         eyVar.setAspectFit(true);
         eyVar.setLayoutParams(new v4.o0(org.telegram.messenger.g0.L(34.0f), org.telegram.messenger.g0.L(34.0f)));
-        return new xi0(eyVar);
+        return new yi0(eyVar);
     }
 }

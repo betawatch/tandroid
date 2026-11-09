@@ -9,16 +9,16 @@ import li.s4;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.wu;
+import org.telegram.ui.Components.ar0;
 import org.telegram.ui.Components.i6;
-import org.telegram.ui.Components.n40;
-import org.telegram.ui.Components.nf0;
-import org.telegram.ui.Components.si0;
+import org.telegram.ui.Components.o40;
+import org.telegram.ui.Components.of0;
+import org.telegram.ui.Components.ti0;
 import org.telegram.ui.Components.w7;
-import org.telegram.ui.Components.yq0;
 import org.telegram.ui.Components.yw;
-import org.telegram.ui.vp;
+import org.telegram.ui.xp;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final class m2 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -123,7 +123,7 @@ public final class m2 extends AnimatorListenerAdapter {
                     if (onClickListener != null) {
                         onClickListener.onClick(v2Var, i10);
                     }
-                    org.telegram.messenger.g0.h3(new l2.w(this, 22));
+                    org.telegram.messenger.g0.h3(new l2.a0(this, 21));
                 }
                 qs.e().k(99, 512);
                 break;
@@ -147,35 +147,35 @@ public final class m2 extends AnimatorListenerAdapter {
                 ywVar.n.setVisibility(i10 == 3 ? 0 : 8);
                 break;
             case 10:
-                n40 n40Var = (n40) obj;
-                if (i10 == n40Var.t0) {
-                    n40Var.x.setRotationY(0.0f);
-                    n40Var.r0 = true;
-                    n40Var.c0 = null;
+                o40 o40Var = (o40) obj;
+                if (i10 == o40Var.t0) {
+                    o40Var.x.setRotationY(0.0f);
+                    o40Var.r0 = true;
+                    o40Var.c0 = null;
                     StringBuilder sb2 = new StringBuilder("RoundVideo camera flip visual animation completed: elapsedMs=");
-                    cameraFlipElapsedMs = n40Var.getCameraFlipElapsedMs();
+                    cameraFlipElapsedMs = o40Var.getCameraFlipElapsedMs();
                     sb2.append(cameraFlipElapsedMs);
                     a8.b(sb2.toString());
-                    n40.n(n40Var);
+                    o40.n(o40Var);
                     break;
                 }
                 break;
             case 11:
-                nf0 nf0Var = (nf0) obj;
-                nf0Var.H = null;
-                nf0Var.P.d1.delete(i10);
+                of0 of0Var = (of0) obj;
+                of0Var.H = null;
+                of0Var.P.d1.delete(i10);
                 break;
             case 12:
-                vp vpVar = (vp) obj;
-                ((si0) vpVar.d).b.remove(i10);
-                si0 si0Var = (si0) vpVar.d;
-                si0Var.d = true;
-                si0Var.a.invalidate();
+                xp xpVar = (xp) obj;
+                ((ti0) xpVar.d).b.remove(i10);
+                ti0 ti0Var = (ti0) xpVar.d;
+                ti0Var.d = true;
+                ti0Var.a.invalidate();
                 break;
             case 13:
-                yq0 yq0Var = (yq0) obj;
-                yq0Var.e.R1.remove(i10);
-                yq0Var.a.invalidate();
+                ar0 ar0Var = (ar0) obj;
+                ar0Var.e.R1.remove(i10);
+                ar0Var.a.invalidate();
                 break;
             default:
                 org.telegram.ui.Components.voip.z0 z0Var = (org.telegram.ui.Components.voip.z0) obj;

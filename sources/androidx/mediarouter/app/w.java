@@ -18,12 +18,12 @@ import java.util.List;
 import m.h3;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.id;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.i4;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.s6;
 import org.telegram.ui.ActionBar.v2;
-import org.telegram.ui.Components.c20;
+import org.telegram.ui.Components.d20;
 import org.telegram.ui.Components.di;
 import org.telegram.ui.Components.dx;
 import org.telegram.ui.Components.fo;
@@ -31,13 +31,13 @@ import org.telegram.ui.Components.hx;
 import org.telegram.ui.Components.hy;
 import org.telegram.ui.Components.j6;
 import org.telegram.ui.Components.oo;
-import org.telegram.ui.Components.q70;
+import org.telegram.ui.Components.r70;
 import org.telegram.ui.Components.vo;
-import org.telegram.ui.Components.x50;
-import org.telegram.ui.an;
+import org.telegram.ui.Components.y50;
+import org.telegram.ui.cn;
 import v4.d1;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class w implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -234,8 +234,8 @@ public final class w implements View.OnClickListener {
                 return;
             case 9:
                 vo voVar = (vo) obj;
-                an anVar = voVar.r1;
-                di diVar = new di(anVar.getParentActivity(), anVar, false, false, false, anVar.getResourceProvider());
+                cn cnVar = voVar.r1;
+                di diVar = new di(cnVar.getParentActivity(), cnVar, false, false, false, cnVar.getResourceProvider());
                 voVar.O1 = diVar;
                 diVar.n = true;
                 diVar.A1(id.M0(2131752139, null));
@@ -249,18 +249,18 @@ public final class w implements View.OnClickListener {
                 j6 j6Var = new j6(voVar.getContext(), true, true, true);
                 voVar.Q1 = j6Var;
                 j6Var.setTextSize(org.telegram.messenger.g0.L(14.0f));
-                voVar.Q1.setText(id.M0(2131745540, null));
+                voVar.Q1.setText(id.M0(2131745537, null));
                 voVar.Q1.setGravity(17);
                 j6 j6Var2 = voVar.Q1;
-                int i10 = k6.Ci;
-                r6.Z(j6Var2, i10, voVar.I0);
+                int i10 = l6.Ci;
+                s6.Y(j6Var2, i10, voVar.I0);
                 voVar.P1.addView(voVar.Q1, ha.e(-1, -2, 17));
                 x5 x5Var = voVar.P1;
                 int L = org.telegram.messenger.g0.L(0.0f);
-                int i11 = k6.d6;
-                int w02 = k6.w0(i11, voVar.I0);
-                int o4 = i0.a.o(k6.w0(i10, voVar.I0), 76);
-                r6.R(x5Var, k6.k0(L, L, L, L, w02, o4, o4), r6.N(i11), r6.h(i10, 76), voVar.I0);
+                int i11 = l6.d6;
+                int w02 = l6.w0(i11, voVar.I0);
+                int o4 = i0.a.o(l6.w0(i10, voVar.I0), 76);
+                s6.Q(x5Var, l6.k0(L, L, L, L, w02, o4, o4), s6.M(i11), s6.g(i10, 76), voVar.I0);
                 voVar.P1.setOnClickListener(new fo(voVar, r9));
                 voVar.O1.l3.addView(voVar.P1, ha.e(-1, -2, 80));
                 return;
@@ -268,7 +268,7 @@ public final class w implements View.OnClickListener {
                 boolean[] zArr = new boolean[1];
                 hx hxVar = (hx) obj;
                 hy hyVar = hxVar.F;
-                f1 f1Var = new f1(hyVar.getContext(), (f6) null);
+                f1 f1Var = new f1(hyVar.getContext(), (g6) null);
                 LinearLayout linearLayout = new LinearLayout(hyVar.getContext());
                 linearLayout.setOrientation(1);
                 linearLayout.setPadding(org.telegram.messenger.g0.L(21.0f), 0, org.telegram.messenger.g0.L(21.0f), 0);
@@ -276,16 +276,16 @@ public final class w implements View.OnClickListener {
                 imageView.setImageResource(R.drawable.smiles_info);
                 linearLayout.addView(imageView, ha.t(-2, -2, 49, 0, 15, 0, 0));
                 TextView textView = new TextView(hyVar.getContext());
-                textView.setText(id.M0(2131751165, null));
+                textView.setText(id.M0(2131751164, null));
                 textView.setTextSize(1, 15.0f);
-                r6.V(textView, k6.n5, hyVar.Z1);
+                s6.U(textView, l6.n5, hyVar.Z1);
                 textView.setGravity(id.a0 ? 5 : 3);
                 textView.setTypeface(org.telegram.messenger.g0.o());
                 linearLayout.addView(textView, ha.t(-2, -2, 51, 0, 24, 0, 0));
                 TextView textView2 = new TextView(hyVar.getContext());
-                textView2.setText(org.telegram.messenger.g0.X2(id.M0(2131751164, null)));
+                textView2.setText(org.telegram.messenger.g0.X2(id.M0(2131751163, null)));
                 textView2.setTextSize(1, 15.0f);
-                r6.V(textView2, k6.j5, hyVar.Z1);
+                s6.U(textView2, l6.j5, hyVar.Z1);
                 textView2.setGravity(id.a0 ? 5 : 3);
                 linearLayout.addView(textView2, ha.t(-2, -2, 51, 0, 11, 0, 0));
                 TextView textView3 = new TextView(hyVar.getContext());
@@ -293,9 +293,9 @@ public final class w implements View.OnClickListener {
                 if (obj2 == null) {
                     obj2 = hyVar.W0;
                 }
-                textView3.setText(id.a0("EmojiSuggestionsUrl", null, 2131751163, obj2));
+                textView3.setText(id.a0("EmojiSuggestionsUrl", null, 2131751162, obj2));
                 textView3.setTextSize(1, 15.0f);
-                r6.V(textView3, k6.k5, hyVar.Z1);
+                s6.U(textView3, l6.k5, hyVar.Z1);
                 textView3.setGravity(id.a0 ? 5 : 3);
                 linearLayout.addView(textView3, ha.t(-2, -2, 51, 0, 18, 0, 16));
                 textView3.setOnClickListener(new dx(this, zArr, f1Var));
@@ -304,25 +304,25 @@ public final class w implements View.OnClickListener {
                 v2Var.show();
                 return;
             case 11:
-                x50 x50Var = (x50) obj;
-                c20 c20Var = (c20) view;
-                if (c20Var.D) {
-                    x50Var.a2 = null;
-                    x50Var.W1.l(c20Var.getUid());
-                    x50Var.L1.b(c20Var);
-                    x50Var.S0(true);
-                    org.telegram.messenger.g0.b4(x50Var.k1);
+                y50 y50Var = (y50) obj;
+                d20 d20Var = (d20) view;
+                if (d20Var.D) {
+                    y50Var.a2 = null;
+                    y50Var.W1.l(d20Var.getUid());
+                    y50Var.L1.b(d20Var);
+                    y50Var.S0(true);
+                    org.telegram.messenger.g0.b4(y50Var.k1);
                     return;
                 }
-                c20 c20Var2 = x50Var.a2;
-                if (c20Var2 != null) {
-                    c20Var2.a();
+                d20 d20Var2 = y50Var.a2;
+                if (d20Var2 != null) {
+                    d20Var2.a();
                 }
-                x50Var.a2 = c20Var;
-                c20Var.b();
+                y50Var.a2 = d20Var;
+                d20Var.b();
                 return;
             default:
-                ((q70) obj).e.callOnClick();
+                ((r70) obj).e.callOnClick();
                 return;
         }
     }

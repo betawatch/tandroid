@@ -1,27 +1,36 @@
 package di;
 
 import android.content.Context;
-import org.telegram.ui.LaunchActivity;
+import android.view.View;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class e5 extends org.telegram.ui.Cells.m6 {
-    public final /* synthetic */ g5 L;
+public final class e5 extends View {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ h5 b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e5(int i7, Context context, b bVar, g5 g5Var) {
-        super(1, i7, context, bVar, false, true);
-        this.L = g5Var;
+    public /* synthetic */ e5(h5 h5Var, Context context, int i7) {
+        super(context);
+        this.a = i7;
+        this.b = h5Var;
     }
 
-    @Override // org.telegram.ui.Cells.m6
-    public final void b(long j3) {
-        org.telegram.ui.ActionBar.f2 Q = LaunchActivity.Q();
-        if (Q == null) {
-            return;
+    @Override // android.view.View
+    public final void onMeasure(int i7, int i10) {
+        switch (this.a) {
+            case 0:
+                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(this.b.d.e), TLObject.FLAG_30));
+                break;
+            default:
+                l5 l5Var = this.b.d;
+                int i11 = l5Var.y.J;
+                if (i11 >= l5Var.r.getPaddingTop() && !l5Var.R) {
+                    i11 = 0;
+                }
+                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(i11, TLObject.FLAG_30));
+                break;
         }
-        p9 createOverlayStoryViewer = Q.createOverlayStoryViewer();
-        createOverlayStoryViewer.getClass();
-        createOverlayStoryViewer.J(getContext(), j3, h7.a(this.L.d.r));
     }
 }

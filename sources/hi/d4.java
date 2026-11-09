@@ -16,10 +16,10 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.hc;
 import org.telegram.ui.Components.wz;
-import org.telegram.ui.jn0;
+import org.telegram.ui.ln0;
 import org.telegram.ui.n6;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d4 implements c20 {
     public final /* synthetic */ int a;
@@ -27,10 +27,10 @@ public final /* synthetic */ class d4 implements c20 {
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ d4(int i7, l2.w wVar, aa.d0 d0Var) {
+    public /* synthetic */ d4(int i7, l2.a0 a0Var, aa.d0 d0Var) {
         this.a = 2;
         this.b = i7;
-        this.c = wVar;
+        this.c = a0Var;
         this.d = d0Var;
     }
 
@@ -47,7 +47,7 @@ public final /* synthetic */ class d4 implements c20 {
                 f2Var.showDialog(new ki.a(f2Var.getContext(), chat, -chat2.id, new ya(f2Var, this.b, chat2, chat, 1)));
                 break;
             case 2:
-                org.telegram.messenger.g0.h3(new ai.a1(this.b, (l2.w) this.c, (SparseIntArray) obj, (aa.d0) this.d, 12));
+                org.telegram.messenger.g0.h3(new ai.a1(this.b, (l2.a0) this.c, (SparseIntArray) obj, (aa.d0) this.d, 12));
                 break;
             case 3:
                 n6 n6Var = (n6) this.c;
@@ -67,7 +67,7 @@ public final /* synthetic */ class d4 implements c20 {
                 c20Var.a(Integer.valueOf(i10));
                 break;
             case 5:
-                Utilities.i.c(new ub((tg.c2) this.c, this.b, (List) obj, new ArrayList(), (jn0) this.d, 25));
+                Utilities.i.c(new ub((tg.c2) this.c, this.b, (List) obj, new ArrayList(), (ln0) this.d, 25));
                 break;
             default:
                 zh.d2 d2Var = (zh.d2) this.c;
@@ -85,7 +85,7 @@ public final /* synthetic */ class d4 implements c20 {
                     if (arrayList.size() <= 1) {
                         if (arrayList.size() == 1) {
                             TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) arrayList.get(0);
-                            cc R = hc.a0(f2Var2).R(savedStarGift.gift.getDocument(), org.telegram.messenger.g0.X2(id.a0(null, null, 2131750394, k7.A1(savedStarGift.gift), c10.title)));
+                            cc R = hc.a0(f2Var2).R(savedStarGift.gift.getDocument(), org.telegram.messenger.g0.X2(id.a0(null, null, 2131750393, k7.z1(savedStarGift.gift), c10.title)));
                             R.r = false;
                             R.j();
                             break;

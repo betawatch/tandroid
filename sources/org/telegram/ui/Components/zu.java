@@ -6,9 +6,9 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class zu extends vk0 {
+public final class zu extends wk0 {
     public long h;
     public boolean n;
     public float r;
@@ -25,9 +25,9 @@ public final class zu extends vk0 {
         setHorizontalScrollBarEnabled(false);
         setVerticalScrollBarEnabled(false);
         setNestedScrollingEnabled(true);
-        org.telegram.ui.c61 c61Var = new org.telegram.ui.c61(11, context, this);
-        this.b = c61Var;
-        c61Var.setOrientation(0);
+        org.telegram.ui.d61 d61Var = new org.telegram.ui.d61(11, context, this);
+        this.b = d61Var;
+        d61Var.setOrientation(0);
         addView(this.b, new FrameLayout.LayoutParams(-2, -1));
         for (int i7 = 0; i7 < 8; i7++) {
             int i10 = bv.e0[i7];
@@ -62,7 +62,7 @@ public final class zu extends vk0 {
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.W1(this.r, org.telegram.messenger.g0.L(30.0f), org.telegram.messenger.g0.L(Math.min(5.7f, this.b.getChildCount()) * 32.0f)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(30.0f), TLObject.FLAG_30));
     }
 
-    @Override // org.telegram.ui.Components.vk0, android.widget.HorizontalScrollView, android.view.View
+    @Override // org.telegram.ui.Components.wk0, android.widget.HorizontalScrollView, android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         d(motionEvent);
         return super.onTouchEvent(motionEvent);

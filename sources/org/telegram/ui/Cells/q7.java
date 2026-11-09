@@ -11,7 +11,7 @@ import org.telegram.messenger.id;
 import org.telegram.messenger.sd;
 import org.telegram.ui.Components.wk;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q7 implements Runnable {
     public final /* synthetic */ int a;
@@ -79,10 +79,10 @@ public final /* synthetic */ class q7 implements Runnable {
                 r7Var2.I = d11;
                 r7Var2.G = false;
                 CharSequence charSequence = r7Var2.K;
-                org.telegram.ui.ActionBar.k5 k5Var = r7Var2.d;
-                CharSequence m10 = org.telegram.messenger.i6.m(charSequence, k5Var.getPaint().getFontMetricsInt(), false, null, 0);
+                org.telegram.ui.ActionBar.l5 l5Var = r7Var2.d;
+                CharSequence m10 = org.telegram.messenger.i6.m(charSequence, l5Var.getPaint().getFontMetricsInt(), false, null, 0);
                 r7Var2.K = m10;
-                k5Var.l(m10, false);
+                l5Var.l(m10, false);
                 break;
             default:
                 ((wk) this.b).h0(this.c, this.d);

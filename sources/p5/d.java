@@ -4,20 +4,20 @@ import android.content.Context;
 import com.google.android.datatransport.cct.CctBackendFactory;
 import java.util.HashMap;
 import m4.d0;
-import org.telegram.ui.hy0;
+import org.telegram.ui.ky0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class d {
     public final d0 a;
-    public final hy0 b;
+    public final ky0 b;
     public final HashMap c;
 
-    public d(Context context, hy0 hy0Var) {
+    public d(Context context, ky0 ky0Var) {
         d0 d0Var = new d0(context);
         this.c = new HashMap();
         this.a = d0Var;
-        this.b = hy0Var;
+        this.b = ky0Var;
     }
 
     public final synchronized e a(String str) {
@@ -28,8 +28,8 @@ public final class d {
         if (E == null) {
             return null;
         }
-        hy0 hy0Var = this.b;
-        e create = E.create(new b((Context) hy0Var.b, (x5.a) hy0Var.c, (x5.a) hy0Var.d, str));
+        ky0 ky0Var = this.b;
+        e create = E.create(new b((Context) ky0Var.b, (x5.a) ky0Var.c, (x5.a) ky0Var.d, str));
         this.c.put(str, create);
         return create;
     }

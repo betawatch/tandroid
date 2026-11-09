@@ -34,7 +34,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class yf implements Runnable {
     public final /* synthetic */ int a;
@@ -785,7 +785,7 @@ public final /* synthetic */ class yf implements Runnable {
                             arrayList8.add("compose");
                             int i13 = 0;
                             while (i13 < arrayList6.size()) {
-                                arrayList8.add("did3_" + ij.C1(((TLRPC.TL_topPeer) arrayList6.get(i13)).peer));
+                                arrayList8.add("did3_" + ij.B1(((TLRPC.TL_topPeer) arrayList6.get(i13)).peer));
                                 i13++;
                                 uiVar3 = uiVar3;
                             }
@@ -812,8 +812,8 @@ public final /* synthetic */ class yf implements Runnable {
                     g0.c cVar = new g0.c();
                     cVar.a = context;
                     cVar.b = "compose";
-                    cVar.e = id.M0(2131748276, null);
-                    cVar.f = id.M0(2131748276, null);
+                    cVar.e = id.M0(2131748275, null);
+                    cVar.f = id.M0(2131748275, null);
                     cVar.h = IconCompat.d(t0.b, R.drawable.shortcut_compose);
                     cVar.m = 0;
                     cVar.c = new Intent[]{intent};
@@ -840,15 +840,15 @@ public final /* synthetic */ class yf implements Runnable {
                     int i15 = 0;
                     while (i15 < arrayList6.size()) {
                         Intent intent2 = new Intent(t0.b, (Class<?>) OpenChatReceiver.class);
-                        long C1 = ij.C1(((TLRPC.TL_topPeer) arrayList6.get(i15)).peer);
-                        if (m5.E(C1)) {
-                            intent2.putExtra("userId", C1);
-                            user = uiVar.getMessagesController().a2(Long.valueOf(C1));
+                        long B1 = ij.B1(((TLRPC.TL_topPeer) arrayList6.get(i15)).peer);
+                        if (m5.E(B1)) {
+                            intent2.putExtra("userId", B1);
+                            user = uiVar.getMessagesController().a2(Long.valueOf(B1));
                             r15 = sQLiteCursor4;
                             arrayList = arrayList10;
                         } else {
                             arrayList = arrayList10;
-                            long j3 = -C1;
+                            long j3 = -B1;
                             TLRPC.Chat M0 = uiVar.getMessagesController().M0(Long.valueOf(j3));
                             intent2.putExtra("chatId", j3);
                             user = null;
@@ -867,8 +867,8 @@ public final /* synthetic */ class yf implements Runnable {
                                 fileLocation = userProfilePhoto.photo_small;
                                 ui uiVar4 = uiVar;
                                 intent2.putExtra("currentAccount", uiVar4.currentAccount);
-                                intent2.setAction("com.tmessages.openchat" + C1);
-                                intent2.putExtra("dialogId", C1);
+                                intent2.setAction("com.tmessages.openchat" + B1);
+                                intent2.putExtra("dialogId", B1);
                                 intent2.putExtra("hash", iz.q);
                                 intent2.addFlags(67108864);
                                 if (fileLocation == null) {
@@ -908,7 +908,7 @@ public final /* synthetic */ class yf implements Runnable {
                                                                             sQLiteCursor = null;
                                                                             a8.g(th, z10);
                                                                             r19 = sQLiteCursor3;
-                                                                            String str4 = "did3_" + C1;
+                                                                            String str4 = "did3_" + B1;
                                                                             if (!TextUtils.isEmpty(str2)) {
                                                                             }
                                                                             Context context2 = t0.b;
@@ -941,7 +941,7 @@ public final /* synthetic */ class yf implements Runnable {
                                                                         sQLiteCursor = null;
                                                                         a8.g(th, z10);
                                                                         r19 = sQLiteCursor3;
-                                                                        String str42 = "did3_" + C1;
+                                                                        String str42 = "did3_" + B1;
                                                                         if (!TextUtils.isEmpty(str2)) {
                                                                         }
                                                                         Context context22 = t0.b;
@@ -993,7 +993,7 @@ public final /* synthetic */ class yf implements Runnable {
                                                                     sQLiteCursor3 = sQLiteCursor2;
                                                                     a8.g(th, z10);
                                                                     r19 = sQLiteCursor3;
-                                                                    String str422 = "did3_" + C1;
+                                                                    String str422 = "did3_" + B1;
                                                                     if (!TextUtils.isEmpty(str2)) {
                                                                     }
                                                                     Context context222 = t0.b;
@@ -1025,7 +1025,7 @@ public final /* synthetic */ class yf implements Runnable {
                                                                 sQLiteCursor3 = sQLiteCursor2;
                                                                 a8.g(th, z10);
                                                                 r19 = sQLiteCursor3;
-                                                                String str4222 = "did3_" + C1;
+                                                                String str4222 = "did3_" + B1;
                                                                 if (!TextUtils.isEmpty(str2)) {
                                                                 }
                                                                 Context context2222 = t0.b;
@@ -1073,7 +1073,7 @@ public final /* synthetic */ class yf implements Runnable {
                                                     sQLiteCursor3 = sQLiteCursor2;
                                                     a8.g(th, z10);
                                                     r19 = sQLiteCursor3;
-                                                    String str42222 = "did3_" + C1;
+                                                    String str42222 = "did3_" + B1;
                                                     if (!TextUtils.isEmpty(str2)) {
                                                     }
                                                     Context context22222 = t0.b;
@@ -1108,7 +1108,7 @@ public final /* synthetic */ class yf implements Runnable {
                                                 sQLiteCursor3 = sQLiteCursor2;
                                                 a8.g(th, z10);
                                                 r19 = sQLiteCursor3;
-                                                String str422222 = "did3_" + C1;
+                                                String str422222 = "did3_" + B1;
                                                 if (!TextUtils.isEmpty(str2)) {
                                                 }
                                                 Context context222222 = t0.b;
@@ -1150,7 +1150,7 @@ public final /* synthetic */ class yf implements Runnable {
                                     sQLiteCursor = null;
                                     r19 = 0;
                                 }
-                                String str4222222 = "did3_" + C1;
+                                String str4222222 = "did3_" + B1;
                                 String str5 = !TextUtils.isEmpty(str2) ? " " : str2;
                                 Context context2222222 = t0.b;
                                 g0.c cVar2222222 = new g0.c();
@@ -1202,13 +1202,13 @@ public final /* synthetic */ class yf implements Runnable {
                             fileLocation = null;
                             ui uiVar42 = uiVar;
                             intent2.putExtra("currentAccount", uiVar42.currentAccount);
-                            intent2.setAction("com.tmessages.openchat" + C1);
-                            intent2.putExtra("dialogId", C1);
+                            intent2.setAction("com.tmessages.openchat" + B1);
+                            intent2.putExtra("dialogId", B1);
                             intent2.putExtra("hash", iz.q);
                             intent2.addFlags(67108864);
                             if (fileLocation == null) {
                             }
-                            String str42222222 = "did3_" + C1;
+                            String str42222222 = "did3_" + B1;
                             if (!TextUtils.isEmpty(str2)) {
                             }
                             Context context22222222 = t0.b;
@@ -1232,13 +1232,13 @@ public final /* synthetic */ class yf implements Runnable {
                                 fileLocation = chatPhoto.photo_small;
                                 ui uiVar422 = uiVar;
                                 intent2.putExtra("currentAccount", uiVar422.currentAccount);
-                                intent2.setAction("com.tmessages.openchat" + C1);
-                                intent2.putExtra("dialogId", C1);
+                                intent2.setAction("com.tmessages.openchat" + B1);
+                                intent2.putExtra("dialogId", B1);
                                 intent2.putExtra("hash", iz.q);
                                 intent2.addFlags(67108864);
                                 if (fileLocation == null) {
                                 }
-                                String str422222222 = "did3_" + C1;
+                                String str422222222 = "did3_" + B1;
                                 if (!TextUtils.isEmpty(str2)) {
                                 }
                                 Context context222222222 = t0.b;
@@ -1259,13 +1259,13 @@ public final /* synthetic */ class yf implements Runnable {
                             fileLocation = null;
                             ui uiVar4222 = uiVar;
                             intent2.putExtra("currentAccount", uiVar4222.currentAccount);
-                            intent2.setAction("com.tmessages.openchat" + C1);
-                            intent2.putExtra("dialogId", C1);
+                            intent2.setAction("com.tmessages.openchat" + B1);
+                            intent2.putExtra("dialogId", B1);
                             intent2.putExtra("hash", iz.q);
                             intent2.addFlags(67108864);
                             if (fileLocation == null) {
                             }
-                            String str4222222222 = "did3_" + C1;
+                            String str4222222222 = "did3_" + B1;
                             if (!TextUtils.isEmpty(str2)) {
                             }
                             Context context2222222222 = t0.b;

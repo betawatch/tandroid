@@ -7,7 +7,7 @@ import android.graphics.RectF;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class ea extends View {
     public final Paint a;
@@ -38,9 +38,9 @@ public final class ea extends View {
         int i7 = this.n;
         Paint paint = this.a;
         if (i7 >= 0) {
-            paint.setColor((org.telegram.ui.ActionBar.k6.x0(null, i7, false) & 16777215) | (-1275068416));
+            paint.setColor((org.telegram.ui.ActionBar.l6.x0(null, i7, false) & 16777215) | (-1275068416));
         } else {
-            paint.setColor(org.telegram.ui.ActionBar.k6.D0().q() ? -11184811 : -4473925);
+            paint.setColor(org.telegram.ui.ActionBar.l6.D0().q() ? -11184811 : -4473925);
         }
         this.d = this.f.getCurrentItem();
         int i10 = 0;
@@ -58,7 +58,7 @@ public final class ea extends View {
         }
         int i12 = this.r;
         if (i12 >= 0) {
-            paint.setColor(org.telegram.ui.ActionBar.k6.x0(null, i12, false));
+            paint.setColor(org.telegram.ui.ActionBar.l6.x0(null, i12, false));
         } else {
             paint.setColor(-14509328);
         }

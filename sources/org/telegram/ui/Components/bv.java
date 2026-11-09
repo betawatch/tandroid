@@ -10,9 +10,9 @@ import java.util.HashMap;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public abstract class bv extends vk0 {
+public abstract class bv extends wk0 {
     public static final int[] e0 = {R.drawable.msg_emoji_smiles, R.drawable.msg_emoji_cat, R.drawable.msg_emoji_food, R.drawable.msg_emoji_activities, R.drawable.msg_emoji_travel, R.drawable.msg_emoji_objects, R.drawable.msg_emoji_other, R.drawable.msg_emoji_flags};
     public static final int[] f0 = {R.raw.msg_emoji_smiles, R.raw.msg_emoji_cat, R.raw.msg_emoji_food, R.raw.msg_emoji_activities, R.raw.msg_emoji_travel, R.raw.msg_emoji_objects, R.raw.msg_emoji_other, R.raw.msg_emoji_flags};
     public final xu D;
@@ -43,11 +43,11 @@ public abstract class bv extends vk0 {
     public final boolean n;
     public boolean r;
     public w5 s;
-    public final org.telegram.ui.ActionBar.f6 w;
+    public final org.telegram.ui.ActionBar.g6 w;
     public final boolean x;
     public final xu y;
 
-    public bv(Context context, org.telegram.ui.ActionBar.f6 f6Var, boolean z9, boolean z10, boolean z11, boolean z12, int i7, Runnable runnable, int i10, boolean z13) {
+    public bv(Context context, org.telegram.ui.ActionBar.g6 g6Var, boolean z9, boolean z10, boolean z11, boolean z12, int i7, Runnable runnable, int i10, boolean z13) {
         super(context);
         this.h = R.drawable.msg_emoji_recent;
         this.n = !org.telegram.messenger.p10.i(org.telegram.messenger.p10.s0).q();
@@ -67,7 +67,7 @@ public abstract class bv extends vk0 {
         this.c0 = true;
         this.d0 = 11.0f;
         this.x = z12;
-        this.w = f6Var;
+        this.w = g6Var;
         this.R = runnable;
         this.T = i7;
         this.Q = i10;
@@ -97,7 +97,7 @@ public abstract class bv extends vk0 {
             xu xuVar2 = new xu(this, context, this.h, false);
             this.D = xuVar2;
             linearLayout2.addView(xuVar2);
-            xuVar2.setContentDescription(org.telegram.messenger.id.M0(2131746362, null));
+            xuVar2.setContentDescription(org.telegram.messenger.id.M0(2131746361, null));
             xuVar2.a = Long.valueOf(-934918565);
         }
         if (z10) {
@@ -105,7 +105,7 @@ public abstract class bv extends vk0 {
             xu xuVar3 = new xu(this, context, R.drawable.msg_emoji_gem, false);
             this.E = xuVar3;
             linearLayout3.addView(xuVar3);
-            xuVar3.setContentDescription(org.telegram.messenger.id.M0(2131751176, null));
+            xuVar3.setContentDescription(org.telegram.messenger.id.M0(2131751175, null));
             xuVar3.setAlpha(0.0f);
             xuVar3.a = Long.valueOf(98352451);
         }
@@ -133,7 +133,7 @@ public abstract class bv extends vk0 {
             xu xuVar5 = new xu(this, context, R.drawable.smiles_tab_settings, true);
             this.F = xuVar5;
             linearLayout5.addView(xuVar5);
-            xuVar5.setContentDescription(org.telegram.messenger.id.M0(2131745498, null));
+            xuVar5.setContentDescription(org.telegram.messenger.id.M0(2131745495, null));
             xuVar5.a = Long.valueOf(1434631203);
             xuVar5.setAlpha(0.0f);
         }
@@ -143,21 +143,21 @@ public abstract class bv extends vk0 {
     public static String f(int i7) {
         switch (i7) {
             case 0:
-                return org.telegram.messenger.id.M0(2131751196, null);
-            case 1:
                 return org.telegram.messenger.id.M0(2131751195, null);
-            case 2:
+            case 1:
                 return org.telegram.messenger.id.M0(2131751194, null);
-            case 3:
+            case 2:
                 return org.telegram.messenger.id.M0(2131751193, null);
-            case 4:
+            case 3:
                 return org.telegram.messenger.id.M0(2131751192, null);
-            case 5:
+            case 4:
                 return org.telegram.messenger.id.M0(2131751191, null);
-            case 6:
+            case 5:
                 return org.telegram.messenger.id.M0(2131751190, null);
-            case 7:
+            case 6:
                 return org.telegram.messenger.id.M0(2131751189, null);
+            case 7:
+                return org.telegram.messenger.id.M0(2131751188, null);
             default:
                 return null;
         }
@@ -172,7 +172,7 @@ public abstract class bv extends vk0 {
     }
 
     public ColorFilter getEmojiColorFilter() {
-        return org.telegram.ui.ActionBar.k6.o0(this.w);
+        return org.telegram.ui.ActionBar.l6.o0(this.w);
     }
 
     public abstract boolean h(int i7);
@@ -230,7 +230,7 @@ public abstract class bv extends vk0 {
             if (z10) {
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
                 this.J = ofFloat;
-                ofFloat.addUpdateListener(new fi.l9(this, f10, f11, i11));
+                ofFloat.addUpdateListener(new fi.k9(this, f10, f11, i11));
                 this.J.setDuration(350L);
                 this.J.setInterpolator(xq.h);
                 this.J.start();
@@ -284,12 +284,12 @@ public abstract class bv extends vk0 {
 
     public final int k() {
         boolean z9 = this.P;
-        org.telegram.ui.ActionBar.f6 f6Var = this.w;
+        org.telegram.ui.ActionBar.g6 g6Var = this.w;
         if (z9) {
-            return i0.a.o(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Kl, f6Var), (int) 12.75f);
+            return i0.a.o(org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.Kl, g6Var), (int) 12.75f);
         }
         int i7 = this.T;
-        return (i7 == 5 || i7 == 7) ? org.telegram.ui.ActionBar.k6.r1(0.09f, this.Q) : org.telegram.ui.ActionBar.k6.r1(0.18f, org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Bf, f6Var));
+        return (i7 == 5 || i7 == 7) ? org.telegram.ui.ActionBar.l6.r1(0.09f, this.Q) : org.telegram.ui.ActionBar.l6.r1(0.18f, org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.Bf, g6Var));
     }
 
     public final void l(boolean z9) {

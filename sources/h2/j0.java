@@ -6,7 +6,7 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.widget.TextView;
-import fi.h9;
+import fi.v9;
 import java.lang.ref.WeakReference;
 import java.security.SecureRandom;
 import java.util.ArrayList;
@@ -20,7 +20,7 @@ import m.x0;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public class j0 {
     public int a;
@@ -96,7 +96,7 @@ public class j0 {
     }
 
     public void b() {
-        new Handler(Looper.getMainLooper()).post(new h9(this, 9));
+        new Handler(Looper.getMainLooper()).post(new v9(this, 8));
     }
 
     public synchronized void c() {

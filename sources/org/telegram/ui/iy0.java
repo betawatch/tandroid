@@ -2,35 +2,44 @@ package org.telegram.ui;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class iy0 implements jy0 {
-    public final /* synthetic */ org.telegram.messenger.video.a a;
-    public final /* synthetic */ org.telegram.ui.Components.hc b;
-    public final /* synthetic */ Context c;
-    public final /* synthetic */ di.i0 d;
-    public final /* synthetic */ org.telegram.messenger.video.d e;
+public final /* synthetic */ class iy0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.messenger.video.a b;
+    public final /* synthetic */ org.telegram.ui.Components.hc c;
+    public final /* synthetic */ Context d;
+    public final /* synthetic */ di.i0 e;
 
-    public iy0(org.telegram.messenger.video.a aVar, org.telegram.ui.Components.hc hcVar, Context context, di.i0 i0Var, org.telegram.messenger.video.d dVar) {
-        this.a = aVar;
-        this.b = hcVar;
-        this.c = context;
-        this.d = i0Var;
-        this.e = dVar;
+    public /* synthetic */ iy0(org.telegram.messenger.video.a aVar, org.telegram.ui.Components.hc hcVar, Context context, di.i0 i0Var, int i7) {
+        this.a = i7;
+        this.b = aVar;
+        this.c = hcVar;
+        this.d = context;
+        this.e = i0Var;
     }
 
-    @Override // org.telegram.ui.jy0
-    public final void a() {
-        org.telegram.messenger.g0.i3(new fy0(this.a, this.b, this.c, this.d, 2), 200L);
-    }
-
-    @Override // org.telegram.ui.jy0
-    public final void d() {
-        org.telegram.messenger.g0.i3(new by0(3, this.a, this.b), 200L);
-    }
-
-    @Override // org.telegram.ui.jy0
-    public final void g() {
-        this.e.run();
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = this.a;
+        di.i0 i0Var = this.e;
+        Context context = this.d;
+        org.telegram.ui.Components.hc hcVar = this.c;
+        org.telegram.messenger.video.a aVar = this.b;
+        int i10 = 2;
+        switch (i7) {
+            case 0:
+                aVar.run();
+                hcVar.c(org.telegram.messenger.g0.S2(org.telegram.messenger.id.M0(2131754487, null), -1, 2, new du(context, i10), i0Var)).j();
+                break;
+            case 1:
+                aVar.run();
+                hcVar.c(org.telegram.messenger.g0.S2(org.telegram.messenger.id.M0(2131754487, null), -1, 2, new du(context, 5), i0Var)).j();
+                break;
+            default:
+                aVar.run();
+                hcVar.c(org.telegram.messenger.g0.S2(org.telegram.messenger.id.M0(2131754487, null), -1, 2, new du(context, 6), i0Var)).j();
+                break;
+        }
     }
 }

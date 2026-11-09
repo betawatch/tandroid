@@ -2,7 +2,7 @@ package hi;
 
 import android.graphics.Paint;
 import android.graphics.RectF;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.Components.cp;
 import org.telegram.ui.Components.i6;
 import org.telegram.ui.Components.ic;
@@ -10,7 +10,7 @@ import org.telegram.ui.Components.w5;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.Components.z4;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final class r {
     public final RectF a = new RectF();
@@ -44,7 +44,7 @@ public final class r {
         this.k = new Paint(1);
         i6 i6Var = new i6(true, false, true);
         this.l = i6Var;
-        org.telegram.ui.Cells.y a02 = k6.a0(0, 9, 9);
+        org.telegram.ui.Cells.y a02 = l6.a0(0, 9, 9);
         this.n = a02;
         cp cpVar = new cp(-1);
         this.o = cpVar;

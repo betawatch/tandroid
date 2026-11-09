@@ -1,18 +1,48 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class eb1 {
-    public final int a;
-    public boolean c;
-    public boolean d;
-    public final ArrayList e = new ArrayList();
-    public final ArrayList f = new ArrayList();
-    public final boolean b = true;
+public final /* synthetic */ class eb1 implements org.telegram.messenger.c20 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ UserInfoActivity b;
 
-    public eb1(int i7) {
+    public /* synthetic */ eb1(UserInfoActivity userInfoActivity, int i7) {
         this.a = i7;
+        this.b = userInfoActivity;
+    }
+
+    @Override // org.telegram.messenger.c20
+    public final void a(Object obj) {
+        int i7 = this.a;
+        UserInfoActivity userInfoActivity = this.b;
+        switch (i7) {
+            case 0:
+                userInfoActivity.J = (TL_account.TL_birthday) obj;
+                fi.w3 w3Var = userInfoActivity.y;
+                if (w3Var != null) {
+                    w3Var.f3.O(true);
+                }
+                userInfoActivity.g0(true);
+                break;
+            default:
+                TLRPC.Chat chat = (TLRPC.Chat) obj;
+                if (userInfoActivity.K != chat) {
+                    userInfoActivity.K = chat;
+                    if (chat != null) {
+                        org.telegram.messenger.k5.o(null, 2131751233, org.telegram.ui.Components.hc.a0(userInfoActivity), R.raw.contact_check, 36);
+                    }
+                    userInfoActivity.g0(true);
+                    fi.w3 w3Var2 = userInfoActivity.y;
+                    if (w3Var2 != null) {
+                        w3Var2.f3.O(true);
+                        break;
+                    }
+                }
+                break;
+        }
     }
 }

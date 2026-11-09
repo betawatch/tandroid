@@ -3,23 +3,23 @@ package kg;
 import android.content.Context;
 import android.text.Editable;
 import fi.w3;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Cells.k3;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class l extends k3 {
     public final /* synthetic */ int E;
     public final /* synthetic */ m F;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l(m mVar, Context context, String str, int i7, f6 f6Var, int i10) {
-        super(context, str, false, false, i7, f6Var);
+    public l(m mVar, Context context, String str, int i7, g6 g6Var, int i10) {
+        super(context, str, false, false, i7, g6Var);
         this.E = i10;
         switch (i10) {
             case 1:
                 this.F = mVar;
-                super(context, str, true, false, i7, f6Var);
+                super(context, str, true, false, i7, g6Var);
                 break;
             default:
                 this.F = mVar;

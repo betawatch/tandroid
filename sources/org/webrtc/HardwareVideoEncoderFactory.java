@@ -10,7 +10,7 @@ import org.webrtc.EglBase;
 import org.webrtc.EglBase14;
 import org.webrtc.VideoEncoderFactory;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public class HardwareVideoEncoderFactory implements VideoEncoderFactory {
     private static final List<String> H264_HW_EXCEPTION_MODELS = Arrays.asList("SAMSUNG-SGH-I337", "Nexus 7", "Nexus 4");
@@ -24,7 +24,7 @@ public class HardwareVideoEncoderFactory implements VideoEncoderFactory {
     private final boolean enableIntelVp8Encoder;
     private final EglBase14.Context sharedContext;
 
-    /* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+    /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
     public static /* synthetic */ class 1 {
         static final /* synthetic */ int[] $SwitchMap$org$webrtc$VideoCodecMimeType;
 
@@ -171,12 +171,12 @@ public class HardwareVideoEncoderFactory implements VideoEncoderFactory {
 
     @Override // org.webrtc.VideoEncoderFactory
     public final /* synthetic */ VideoEncoderFactory.VideoEncoderSelector getEncoderSelector() {
-        return y.a(this);
+        return x.a(this);
     }
 
     @Override // org.webrtc.VideoEncoderFactory
     public final /* synthetic */ VideoCodecInfo[] getImplementations() {
-        return y.b(this);
+        return x.b(this);
     }
 
     @Override // org.webrtc.VideoEncoderFactory

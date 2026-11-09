@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class tk implements Runnable {
     public final /* synthetic */ int a;
@@ -76,7 +76,7 @@ public final /* synthetic */ class tk implements Runnable {
                                         int i20 = i15;
                                         if (Math.abs(elapsedRealtime - ijVar.u0) >= i18) {
                                             if (!ijVar.t0 && !z9) {
-                                                sparseArray.remove(ijVar.f1());
+                                                sparseArray.remove(ijVar.e1());
                                                 size--;
                                                 i17--;
                                             }
@@ -88,13 +88,13 @@ public final /* synthetic */ class tk implements Runnable {
                                             i12 = i14;
                                             j10 = elapsedRealtime;
                                             tL_messages_getPollResults.peer = qpVar2.j1(ij.B0(ijVar.k));
-                                            tL_messages_getPollResults.msg_id = ijVar.f1();
+                                            tL_messages_getPollResults.msg_id = ijVar.e1();
                                             TLRPC.Message message = ijVar.k;
                                             long j11 = 0;
                                             if (message != null && ijVar.D == 17) {
-                                                TLRPC.MessageMedia o12 = ij.o1(message);
-                                                if (o12 instanceof TLRPC.TL_messageMediaPoll) {
-                                                    j11 = ((TLRPC.TL_messageMediaPoll) o12).poll.hash;
+                                                TLRPC.MessageMedia n1 = ij.n1(message);
+                                                if (n1 instanceof TLRPC.TL_messageMediaPoll) {
+                                                    j11 = ((TLRPC.TL_messageMediaPoll) n1).poll.hash;
                                                 }
                                             }
                                             tL_messages_getPollResults.poll_hash = j11;

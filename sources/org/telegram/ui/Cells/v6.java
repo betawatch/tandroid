@@ -14,7 +14,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.id;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class v6 extends FrameLayout {
     public final TextView a;
@@ -27,7 +27,7 @@ public final class v6 extends FrameLayout {
         super(context);
         TextView textView = new TextView(context);
         this.a = textView;
-        org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.G6, null);
+        org.telegram.ui.ActionBar.s6.U(textView, org.telegram.ui.ActionBar.l6.G6, null);
         textView.setTextSize(1, 16.0f);
         textView.setGravity(id.a0 ? 5 : 3);
         textView.setLines(1);
@@ -38,7 +38,7 @@ public final class v6 extends FrameLayout {
         addView(textView, c8.ha.d(-2, -2.0f, z9 ? 5 : 3, z9 ? 16.0f : 71.0f, 10.0f, z9 ? 71.0f : 16.0f, 0.0f));
         TextView textView2 = new TextView(context);
         this.b = textView2;
-        org.telegram.ui.ActionBar.r6.V(textView2, org.telegram.ui.ActionBar.k6.z6, null);
+        org.telegram.ui.ActionBar.s6.U(textView2, org.telegram.ui.ActionBar.l6.z6, null);
         org.telegram.messenger.camera.q.n(textView2, 1, 13.0f, 1, 1);
         textView2.setSingleLine(true);
         textView2.setGravity(id.a0 ? 5 : 3);
@@ -47,7 +47,7 @@ public final class v6 extends FrameLayout {
         ImageView imageView = new ImageView(context);
         this.c = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        org.telegram.ui.ActionBar.r6.t(imageView, org.telegram.ui.ActionBar.k6.m6, null, PorterDuff.Mode.MULTIPLY);
+        org.telegram.ui.ActionBar.s6.s(imageView, org.telegram.ui.ActionBar.l6.m6, null, PorterDuff.Mode.MULTIPLY);
         addView(imageView, c8.ha.d(48, 48.0f, id.a0 ? 5 : 3, 10.0f, 8.0f, 10.0f, 0.0f));
     }
 
@@ -63,7 +63,7 @@ public final class v6 extends FrameLayout {
                     spannableStringBuilder.append((CharSequence) " > ");
                     Drawable mutate = getContext().getResources().getDrawable(R.drawable.settings_arrow).mutate();
                     mutate.setBounds(0, 0, mutate.getIntrinsicWidth(), mutate.getIntrinsicHeight());
-                    org.telegram.ui.ActionBar.r6.y(this, mutate, org.telegram.ui.ActionBar.k6.G6, null, PorterDuff.Mode.MULTIPLY);
+                    org.telegram.ui.ActionBar.s6.x(this, mutate, org.telegram.ui.ActionBar.l6.G6, null, PorterDuff.Mode.MULTIPLY);
                     spannableStringBuilder.setSpan(new u6(mutate), spannableStringBuilder.length() - 2, spannableStringBuilder.length() - 1, 33);
                 }
                 spannableStringBuilder.append((CharSequence) strArr[i7]);
@@ -80,7 +80,7 @@ public final class v6 extends FrameLayout {
                         spannableStringBuilder2.append((CharSequence) " > ");
                         Drawable mutate2 = getContext().getResources().getDrawable(R.drawable.settings_arrow).mutate();
                         mutate2.setBounds(0, 0, mutate2.getIntrinsicWidth(), mutate2.getIntrinsicHeight());
-                        org.telegram.ui.ActionBar.r6.y(this, mutate2, org.telegram.ui.ActionBar.k6.z6, null, PorterDuff.Mode.MULTIPLY);
+                        org.telegram.ui.ActionBar.s6.x(this, mutate2, org.telegram.ui.ActionBar.l6.z6, null, PorterDuff.Mode.MULTIPLY);
                         spannableStringBuilder2.setSpan(new u6(mutate2), spannableStringBuilder2.length() - 2, spannableStringBuilder2.length() - 1, 33);
                     }
                     spannableStringBuilder2.append((CharSequence) strArr[i10]);
@@ -120,7 +120,7 @@ public final class v6 extends FrameLayout {
                     spannableStringBuilder.append((CharSequence) " > ");
                     Drawable mutate = getContext().getResources().getDrawable(R.drawable.settings_arrow).mutate();
                     mutate.setBounds(0, 0, mutate.getIntrinsicWidth(), mutate.getIntrinsicHeight());
-                    org.telegram.ui.ActionBar.r6.y(this, mutate, org.telegram.ui.ActionBar.k6.z6, null, PorterDuff.Mode.MULTIPLY);
+                    org.telegram.ui.ActionBar.s6.x(this, mutate, org.telegram.ui.ActionBar.l6.z6, null, PorterDuff.Mode.MULTIPLY);
                     spannableStringBuilder.setSpan(new u6(mutate), spannableStringBuilder.length() - 2, spannableStringBuilder.length() - 1, 33);
                 }
                 spannableStringBuilder.append((CharSequence) strArr[i10]);
@@ -150,7 +150,7 @@ public final class v6 extends FrameLayout {
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         if (this.d) {
-            canvas.drawLine(id.a0 ? 0.0f : org.telegram.messenger.g0.L(this.e), getMeasuredHeight() - 1, getMeasuredWidth() - (id.a0 ? org.telegram.messenger.g0.L(this.e) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.k6.k0);
+            canvas.drawLine(id.a0 ? 0.0f : org.telegram.messenger.g0.L(this.e), getMeasuredHeight() - 1, getMeasuredWidth() - (id.a0 ? org.telegram.messenger.g0.L(this.e) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.l6.k0);
         }
     }
 

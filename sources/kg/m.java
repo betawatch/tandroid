@@ -35,22 +35,22 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.b5;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.r6;
-import org.telegram.ui.ActionBar.w5;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.s6;
+import org.telegram.ui.ActionBar.x5;
 import org.telegram.ui.Cells.i3;
-import org.telegram.ui.Components.l41;
+import org.telegram.ui.Components.m41;
 import org.telegram.ui.Components.mn;
-import org.telegram.ui.Components.n41;
 import org.telegram.ui.Components.nn;
-import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.o41;
 import org.telegram.ui.Components.pn;
-import org.telegram.ui.Components.x31;
-import org.telegram.ui.ks;
+import org.telegram.ui.Components.qj0;
+import org.telegram.ui.Components.y31;
+import org.telegram.ui.ms;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class m extends n41 implements ls {
+public final class m extends o41 implements ls {
     public String D;
     public TLRPC.InputDocument E;
     public boolean F;
@@ -63,7 +63,7 @@ public final class m extends n41 implements ls {
     public b5 f;
     public j h;
     public i n;
-    public w5 r;
+    public x5 r;
     public l s;
     public l w;
     public TLRPC.Document y;
@@ -80,7 +80,7 @@ public final class m extends n41 implements ls {
 
     public static void d0(m mVar) {
         m mVar2;
-        ks.p().T = null;
+        ms.p().T = null;
         if (mVar.getParentActivity() == null) {
             return;
         }
@@ -124,7 +124,7 @@ public final class m extends n41 implements ls {
                 animatorSet.cancel();
             }
             iVar2.n.getImageReceiver().g1 = new nn(iVar2, gVar);
-            rz f10 = t5.f(document, k6.Zc, 1.0f, null);
+            rz f10 = t5.f(document, l6.Zc, 1.0f, null);
             if (f10 != null) {
                 iVar2.n.p(hc.b(document), pn.b(document), f10, document);
             } else {
@@ -145,53 +145,53 @@ public final class m extends n41 implements ls {
         }
     }
 
-    @Override // org.telegram.ui.Components.n41
-    public final void Z(ArrayList arrayList, l41 l41Var) {
-        arrayList.add(x31.k(this.h));
-        arrayList.add(x31.u(id.M0(2131752724, null)));
-        arrayList.add(x31.k(this.s));
-        arrayList.add(x31.k(this.w));
+    @Override // org.telegram.ui.Components.o41
+    public final void Z(ArrayList arrayList, m41 m41Var) {
+        arrayList.add(y31.k(this.h));
+        arrayList.add(y31.u(id.M0(2131752724, null)));
+        arrayList.add(y31.k(this.s));
+        arrayList.add(y31.k(this.w));
         if (this.x) {
-            arrayList.add(x31.f(id.M0(2131752720, null), id.M0(2131752719, null), 1));
+            arrayList.add(y31.f(id.M0(2131752720, null), id.M0(2131752719, null), 1));
         } else if (this.D != null) {
             String M0 = id.M0(2131752720, null);
             String str = this.D;
-            x31 x31Var = new x31(3);
-            x31Var.d = 1;
-            x31Var.l = M0;
-            x31Var.G = str;
-            arrayList.add(x31Var);
+            y31 y31Var = new y31(3);
+            y31Var.d = 1;
+            y31Var.l = M0;
+            y31Var.G = str;
+            arrayList.add(y31Var);
         } else {
             String M02 = id.M0(2131752720, null);
             TLRPC.Document document = this.y;
-            x31 x31Var2 = new x31(3);
-            x31Var2.d = 1;
-            x31Var2.l = M02;
-            x31Var2.G = document;
-            arrayList.add(x31Var2);
+            y31 y31Var2 = new y31(3);
+            y31Var2.d = 1;
+            y31Var2.l = M02;
+            y31Var2.G = document;
+            arrayList.add(y31Var2);
         }
-        arrayList.add(x31.C(id.M0(2131752723, null)));
+        arrayList.add(y31.C(id.M0(2131752723, null)));
         boolean l02 = l0();
         this.K = !l02;
         if (!l02) {
-            arrayList.add(x31.C(null));
-            x31 e10 = x31.e(2, id.M0(2131752721, null));
+            arrayList.add(y31.C(null));
+            y31 e10 = y31.e(2, id.M0(2131752721, null));
             e10.r = true;
             arrayList.add(e10);
         }
-        x31 x31Var3 = new x31(8);
-        x31Var3.l = null;
-        arrayList.add(x31Var3);
+        y31 y31Var3 = new y31(8);
+        y31Var3.l = null;
+        arrayList.add(y31Var3);
     }
 
-    @Override // org.telegram.ui.Components.n41
+    @Override // org.telegram.ui.Components.o41
     public final CharSequence a0() {
         return id.M0(2131752725, null);
     }
 
-    @Override // org.telegram.ui.Components.n41
-    public final void b0(x31 x31Var, View view) {
-        int i7 = x31Var.d;
+    @Override // org.telegram.ui.Components.o41
+    public final void b0(y31 y31Var, View view) {
+        int i7 = y31Var.d;
         if (i7 == 1) {
             k2 k2Var = new k2(getParentActivity(), getResourceProvider(), true, true);
             k2Var.v1 = new ab.g(19, this, view);
@@ -231,12 +231,12 @@ public final class m extends n41 implements ls {
         }
     }
 
-    @Override // org.telegram.ui.Components.n41
-    public final boolean c0(x31 x31Var, View view) {
+    @Override // org.telegram.ui.Components.o41
+    public final boolean c0(y31 y31Var, View view) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.n41, org.telegram.ui.ActionBar.f2
+    @Override // org.telegram.ui.Components.o41, org.telegram.ui.ActionBar.f2
     public final View createView(Context context) {
         setHasOwnBackground(true);
         org.telegram.messenger.g0.a3(getParentActivity(), this.classGuid);
@@ -249,12 +249,12 @@ public final class m extends n41 implements ls {
         i iVar = this.n;
         j jVar2 = this.h;
         Paint themedPaint = getThemedPaint("paintChatActionBackground");
-        int i7 = k6.a;
-        this.r = new w5(iVar, jVar2, L, themedPaint);
+        int i7 = l6.a;
+        this.r = new x5(iVar, jVar2, L, themedPaint);
         this.n.setBackground(new ColorDrawable(0));
         k kVar = new k(context, 0);
         kVar.setScaleType(ImageView.ScaleType.MATRIX);
-        kVar.setImageDrawable(y5.e(null, this.currentAccount, getUserConfig().e(), k6.I.q()));
+        kVar.setImageDrawable(y5.e(null, this.currentAccount, getUserConfig().e(), l6.I.q()));
         this.h.addView(kVar, ha.e(-1, -1, qs.E1));
         this.h.addView(this.n, ha.d(-2, -2.0f, 17, 42.0f, 18.0f, 42.0f, 18.0f));
         l lVar = new l(this, context, id.M0(2131752718, null), getMessagesController().F5, this.resourceProvider, 0);
@@ -262,8 +262,8 @@ public final class m extends n41 implements ls {
         lVar.r = true;
         lVar.setShowLimitOnFocus(true);
         l lVar2 = this.s;
-        int i10 = k6.d6;
-        r6.i(i10, lVar2, getResourceProvider());
+        int i10 = l6.d6;
+        s6.h(i10, lVar2, getResourceProvider());
         this.s.setDivider(true);
         l lVar3 = this.s;
         lVar3.getClass();
@@ -276,7 +276,7 @@ public final class m extends n41 implements ls {
         l lVar4 = new l(this, context, id.M0(2131752722, null), getMessagesController().G5, this.resourceProvider, 1);
         this.w = lVar4;
         lVar4.setShowLimitOnFocus(true);
-        r6.i(i10, this.w, getResourceProvider());
+        s6.h(i10, this.w, getResourceProvider());
         this.w.setDivider(true);
         l lVar5 = this.w;
         lVar5.getClass();
@@ -291,7 +291,7 @@ public final class m extends n41 implements ls {
         this.a.setSectionsDrawBackground(true);
         this.a.f3.r = false;
         this.simpleActionBar.setActionBarMenuOnItemClick(new bi.s(this, 12));
-        this.f = this.simpleActionBar.n(id.M0(2131745949, null));
+        this.f = this.simpleActionBar.o(id.M0(2131745946, null));
         j0(false);
         this.a.addOnLayoutChangeListener(new l2(this, 1));
         this.a.j(new ai.b(this, 20));
@@ -315,7 +315,7 @@ public final class m extends n41 implements ls {
     }
 
     @Override // org.telegram.ui.ActionBar.f2
-    public final pj0 getListViewForSimpleGlass() {
+    public final qj0 getListViewForSimpleGlass() {
         return this.a;
     }
 
@@ -455,7 +455,7 @@ public final class m extends n41 implements ls {
     }
 
     public final void n0() {
-        l41 l41Var;
+        m41 m41Var;
         if (this.J) {
             return;
         }
@@ -507,8 +507,8 @@ public final class m extends n41 implements ls {
             org.telegram.messenger.g0.i3(gVar, 5000L);
         }
         w3 w3Var = this.a;
-        if (w3Var != null && (l41Var = w3Var.f3) != null) {
-            l41Var.O(true);
+        if (w3Var != null && (m41Var = w3Var.f3) != null) {
+            m41Var.O(true);
         }
         this.J = true;
     }
@@ -521,7 +521,7 @@ public final class m extends n41 implements ls {
         final int i7 = 0;
         if (z9) {
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity());
-            String M0 = id.M0(2131743838, null);
+            String M0 = id.M0(2131743835, null);
             org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
             u1Var.R = M0;
             u1Var.T = id.M0(2131752717, null);
@@ -545,7 +545,7 @@ public final class m extends n41 implements ls {
                 }
             });
             final int i10 = 1;
-            alertDialog$Builder.h(id.M0(2131747581, null), new org.telegram.ui.ActionBar.r1(this) { // from class: kg.h
+            alertDialog$Builder.h(id.M0(2131747580, null), new org.telegram.ui.ActionBar.r1(this) { // from class: kg.h
                 public final /* synthetic */ m b;
 
                 {

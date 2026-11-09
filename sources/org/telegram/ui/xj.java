@@ -1,39 +1,20 @@
 package org.telegram.ui;
 
-import android.animation.AnimatorSet;
-import android.widget.FrameLayout;
+import android.content.Context;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class xj implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ an b;
+public final class xj extends org.telegram.ui.Components.s41 {
+    public final /* synthetic */ cn N;
 
-    public /* synthetic */ xj(an anVar, int i7) {
-        this.a = i7;
-        this.b = anVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public xj(cn cnVar, Context context) {
+        super(context);
+        this.N = cnVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        org.telegram.ui.Components.lg lgVar;
-        FrameLayout frameLayout;
-        switch (this.a) {
-            case 0:
-                an anVar = this.b;
-                AnimatorSet animatorSet = anVar.oa;
-                if (animatorSet != null && !animatorSet.isRunning()) {
-                    anVar.oa.start();
-                    break;
-                }
-                break;
-            default:
-                an anVar2 = this.b;
-                if (anVar2.c3 == this && (lgVar = anVar2.a1) != null && (frameLayout = anVar2.b3) != null) {
-                    lgVar.i(frameLayout, false, true);
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.ui.Components.s41
+    public final org.telegram.ui.ActionBar.g6 getResourceProvider() {
+        return this.N.za;
     }
 }

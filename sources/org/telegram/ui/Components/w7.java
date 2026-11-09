@@ -18,7 +18,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public abstract class w7 extends FrameLayout {
     public final TextView[] a;
@@ -182,7 +182,7 @@ public abstract class w7 extends FrameLayout {
                     break;
                 }
                 TextView textView = textViewArr[i10];
-                if ((textView instanceof o80) && ((o80) textView).d) {
+                if ((textView instanceof p80) && ((p80) textView).d) {
                     this.s = -1;
                     break;
                 }
@@ -283,8 +283,8 @@ public abstract class w7 extends FrameLayout {
     public void setCustomPaddingRight(int i7) {
         this.x = i7;
         for (TextView textView : this.a) {
-            if (textView instanceof o80) {
-                ((o80) textView).setCustomPaddingRight(i7);
+            if (textView instanceof p80) {
+                ((p80) textView).setCustomPaddingRight(i7);
             }
         }
         invalidate();

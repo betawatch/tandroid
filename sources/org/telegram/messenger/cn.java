@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.xm0;
+import org.telegram.ui.zm0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class cn implements RequestDelegate {
     public final /* synthetic */ int a = 0;
@@ -40,13 +40,13 @@ public final /* synthetic */ class cn implements RequestDelegate {
                 }
                 break;
             default:
-                g0.h3(new li.p2((xm0) this.e, (String) this.f, this.b, tLObject, this.c, this.d));
+                g0.h3(new li.p2((zm0) this.e, (String) this.f, this.b, tLObject, this.c, this.d));
                 break;
         }
     }
 
-    public /* synthetic */ cn(xm0 xm0Var, String str, int i7, boolean z9, TLRPC.User user) {
-        this.e = xm0Var;
+    public /* synthetic */ cn(zm0 zm0Var, String str, int i7, boolean z9, TLRPC.User user) {
+        this.e = zm0Var;
         this.f = str;
         this.b = i7;
         this.c = z9;

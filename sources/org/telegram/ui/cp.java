@@ -1,79 +1,73 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class cp implements Runnable {
+public final /* synthetic */ class cp implements org.telegram.ui.ActionBar.r1, org.telegram.messenger.bp, org.telegram.messenger.tr {
     public final /* synthetic */ int a;
-    public final /* synthetic */ kp b;
+    public final /* synthetic */ mp b;
 
-    public /* synthetic */ cp(kp kpVar, int i7) {
+    public /* synthetic */ cp(mp mpVar, int i7) {
         this.a = i7;
-        this.b = kpVar;
+        this.b = mpVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i7 = this.a;
-        kp kpVar = this.b;
-        int i10 = 1;
-        switch (i7) {
+    @Override // org.telegram.messenger.bp
+    public boolean a(TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 2:
+                this.b.y0(false);
+                return true;
+            case 3:
+                this.b.y0(false);
+                return true;
+            default:
+                return mp.b0(this.b, tL_error);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.r1
+    public void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+        switch (this.a) {
             case 0:
-                TLRPC.User user = kpVar.w;
-                hp hpVar = kpVar.X0;
-                if (hpVar != null) {
-                    hpVar.b(0, kpVar.K ? kpVar.M : null, null, kpVar.S);
-                }
-                Bundle k10 = a8.p0.k("scrollToTopOnResume", true);
-                k10.putLong("chat_id", kpVar.x.id);
-                if (!kpVar.getMessagesController().E(k10, kpVar, null, null)) {
-                    kpVar.y0(false);
-                    break;
-                } else {
-                    an anVar = new an(k10);
-                    kpVar.presentFragment(anVar, true);
-                    if (org.telegram.ui.Components.hc.a(anVar)) {
-                        boolean z9 = kpVar.Z0;
-                        if (!z9 || !kpVar.K) {
-                            if (!z9 && !kpVar.L && kpVar.K) {
-                                org.telegram.ui.Components.hc.C(user.first_name, anVar).j();
-                                break;
-                            }
-                        } else {
-                            String str = user.first_name;
-                            org.telegram.ui.Components.kb kbVar = new org.telegram.ui.Components.kb(anVar.getParentActivity(), anVar.xa);
-                            kbVar.d(R.raw.ic_admin, "Shield");
-                            org.telegram.messenger.k5.r("UserAddedAsAdminHint", null, 2131743771, new Object[]{str}, kbVar.b);
-                            org.telegram.ui.Components.cc.g(anVar, kbVar, 1500).j();
-                            break;
-                        }
-                    }
-                }
+                this.b.w0(true);
                 break;
             case 1:
-                kpVar.w0(false);
-                break;
-            default:
-                if (kpVar.r) {
-                    long j3 = kpVar.n;
-                    org.telegram.ui.ActionBar.u1[] u1VarArr = {new org.telegram.ui.ActionBar.u1(3, kpVar.getParentActivity(), null)};
-                    kpVar.getMessagesController().c5(kpVar.s, j3, true, false, true, new cg(u1VarArr, 2), new cg(u1VarArr, 3));
-                    u1VarArr[0].r(300L);
-                }
-                hp hpVar2 = kpVar.X0;
-                if (hpVar2 != null) {
-                    TLRPC.TL_chatAdminRights tL_chatAdminRights = kpVar.M;
-                    if (!tL_chatAdminRights.change_info && !tL_chatAdminRights.post_messages && !tL_chatAdminRights.manage_direct_messages && !tL_chatAdminRights.manage_welcome_messages && !tL_chatAdminRights.edit_messages && !tL_chatAdminRights.delete_messages && !tL_chatAdminRights.ban_users && !tL_chatAdminRights.invite_users && ((!kpVar.G || !tL_chatAdminRights.manage_topics) && !tL_chatAdminRights.pin_messages && !tL_chatAdminRights.manage_ranks && !tL_chatAdminRights.add_admins && !tL_chatAdminRights.anonymous && !tL_chatAdminRights.manage_call && ((!kpVar.E || (!tL_chatAdminRights.post_stories && !tL_chatAdminRights.edit_stories && !tL_chatAdminRights.delete_stories)) && !tL_chatAdminRights.other))) {
-                        i10 = 0;
-                    }
-                    hpVar2.b(i10, tL_chatAdminRights, kpVar.O, kpVar.S);
-                    kpVar.finishFragment();
+                mp mpVar = this.b;
+                mpVar.y0(true);
+                ep epVar = new ep(mpVar, 0);
+                if (!mpVar.K && !mpVar.L) {
+                    mpVar.getMessagesController().m(mpVar.x.id, mpVar.w, 0, mpVar.Y0, mpVar, true, epVar, new cp(mpVar, 3), null);
+                    break;
+                } else {
+                    mpVar.getMessagesController().P4(mpVar.x.id, mpVar.w, mpVar.K ? mpVar.M : mp.t0(false), mpVar.S, false, mpVar, mpVar.Z0, mpVar.K, mpVar.Y0, epVar, new cp(mpVar, 2));
                     break;
                 }
                 break;
+            case 2:
+            case 3:
+            default:
+                mp mpVar2 = this.b;
+                mpVar2.getClass();
+                mpVar2.presentFragment(new bb1(6, null));
+                break;
+            case 4:
+                this.b.finishFragment();
+                break;
+            case 5:
+                TwoStepVerificationActivity twoStepVerificationActivity = new TwoStepVerificationActivity();
+                mp mpVar3 = this.b;
+                ni.c cVar = new ni.c(21, mpVar3, twoStepVerificationActivity);
+                twoStepVerificationActivity.Z = 0;
+                twoStepVerificationActivity.b0 = cVar;
+                mpVar3.presentFragment(twoStepVerificationActivity);
+                break;
         }
+    }
+
+    @Override // org.telegram.messenger.tr
+    public void run(long j3) {
+        mp.Z(this.b, j3);
     }
 }

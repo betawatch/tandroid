@@ -11,12 +11,12 @@ import org.telegram.messenger.hc;
 import org.telegram.messenger.p10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.Components.r9;
 import org.telegram.ui.Components.w8;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class h extends View {
     public final ImageReceiver a;
@@ -36,7 +36,7 @@ public final class h extends View {
         super(context);
         this.a = new ImageReceiver(this);
         this.b = new ImageReceiver(this);
-        this.c = new w8((f6) null);
+        this.c = new w8((g6) null);
         r9 r9Var = new r9(9);
         this.d = r9Var;
         r9 r9Var2 = new r9(12);
@@ -46,7 +46,7 @@ public final class h extends View {
         Paint paint2 = new Paint();
         this.h = paint2;
         paint2.setColor(TLObject.FLAG_31);
-        paint.setColor(k6.x0(null, k6.eh, false));
+        paint.setColor(l6.x0(null, l6.eh, false));
         r9Var.a = 48.0f;
         r9Var.b = 58.999996f;
         r9Var2.a = 51.0f;
@@ -66,13 +66,13 @@ public final class h extends View {
         } else {
             if (!(tLObject instanceof TLRPC.Chat)) {
                 hcVar = null;
-                this.b.q0(hcVar, "50_50_b", new ColorDrawable(k6.x0(null, k6.hh, false)), null, tLObject, 0);
+                this.b.q0(hcVar, "50_50_b", new ColorDrawable(l6.x0(null, l6.hh, false)), null, tLObject, 0);
                 invalidate();
             }
             a10 = hc.a(1, (TLRPC.Chat) tLObject);
         }
         hcVar = a10;
-        this.b.q0(hcVar, "50_50_b", new ColorDrawable(k6.x0(null, k6.hh, false)), null, tLObject, 0);
+        this.b.q0(hcVar, "50_50_b", new ColorDrawable(l6.x0(null, l6.hh, false)), null, tLObject, 0);
         invalidate();
     }
 

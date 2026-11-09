@@ -1,43 +1,54 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
+import android.os.Bundle;
+import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class yt0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ TLRPC.Document b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ org.telegram.messenger.ij d;
-    public final /* synthetic */ org.telegram.ui.Cells.q1 e;
-    public final /* synthetic */ TLRPC.TL_messages_stickerSet f;
-
-    public /* synthetic */ yt0(TLRPC.Document document, int i7, org.telegram.messenger.ij ijVar, org.telegram.ui.Cells.q1 q1Var, TLRPC.TL_messages_stickerSet tL_messages_stickerSet, int i10) {
-        this.a = i10;
-        this.b = document;
-        this.c = i7;
-        this.d = ijVar;
-        this.e = q1Var;
-        this.f = tL_messages_stickerSet;
+public abstract class yt0 extends LinearLayout {
+    public boolean a() {
+        return this instanceof org.telegram.ui.qb0;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                TLRPC.Document document = this.b;
-                String r10 = org.telegram.messenger.w7.r(null, document);
-                int i7 = this.c;
-                org.telegram.messenger.z5.q(i7).a(r10, this.d, this.e);
-                org.telegram.messenger.w7.G(i7).W(document, this.f, 1, 1);
-                break;
-            default:
-                TLRPC.Document document2 = this.b;
-                String r11 = org.telegram.messenger.w7.r(null, document2);
-                int i10 = this.c;
-                org.telegram.messenger.z5.q(i10).a(r11, this.d, this.e);
-                org.telegram.messenger.w7.G(i10).W(document2, this.f, 1, 1);
-                break;
-        }
+    public boolean b() {
+        return this instanceof org.telegram.ui.qb0;
+    }
+
+    public boolean c(boolean z9) {
+        return true;
+    }
+
+    public String getHeaderName() {
+        return "";
+    }
+
+    public void h(String str) {
+    }
+
+    public void k(Bundle bundle) {
+    }
+
+    public void l(Bundle bundle) {
+    }
+
+    public void d() {
+    }
+
+    public void f() {
+    }
+
+    public void g() {
+    }
+
+    public void i() {
+    }
+
+    public void j() {
+    }
+
+    public void updateColors() {
+    }
+
+    public void m(Bundle bundle, boolean z9) {
     }
 }

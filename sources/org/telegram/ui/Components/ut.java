@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Locale;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class ut extends org.telegram.ui.ActionBar.u4 {
     public final /* synthetic */ boolean r;
@@ -24,11 +24,11 @@ public final class ut extends org.telegram.ui.ActionBar.u4 {
         int i7 = wtVar.H1;
         RadialProgressView radialProgressView = wtVar.o1;
         st stVar = wtVar.i1;
-        l71 l71Var = wtVar.j1;
+        m71 m71Var = wtVar.j1;
         if (this.r && wtVar.j1.g(wtVar.B1, null, null, wtVar.z1, true)) {
             radialProgressView.setVisibility(4);
             stVar.setVisibility(4);
-            l71Var.setVisibility(0);
+            m71Var.setVisibility(0);
             return;
         }
         radialProgressView.setVisibility(0);
@@ -36,17 +36,17 @@ public final class ut extends org.telegram.ui.ActionBar.u4 {
         wtVar.q1.setVisibility(0);
         wtVar.r1.setVisibility(4);
         stVar.setKeepScreenOn(true);
-        l71Var.setVisibility(4);
-        l71Var.getControlsView().setVisibility(4);
-        l71Var.getTextureView().setVisibility(4);
-        if (l71Var.getTextureImageView() != null) {
-            l71Var.getTextureImageView().setVisibility(4);
+        m71Var.setVisibility(4);
+        m71Var.getControlsView().setVisibility(4);
+        m71Var.getTextureView().setVisibility(4);
+        if (m71Var.getTextureImageView() != null) {
+            m71Var.getTextureImageView().setVisibility(4);
         }
         wtVar.j1.g(null, null, null, null, false);
         HashMap hashMap = new HashMap();
         hashMap.put("Referer", "messenger.telegram.org");
         try {
-            String youtubeId = l71Var.getYoutubeId();
+            String youtubeId = m71Var.getYoutubeId();
             if (youtubeId == null) {
                 stVar.loadUrl(wtVar.B1, hashMap);
                 return;
@@ -89,13 +89,13 @@ public final class ut extends org.telegram.ui.ActionBar.u4 {
     @Override // org.telegram.ui.ActionBar.u4, org.telegram.ui.ActionBar.p2
     public final boolean x() {
         wt wtVar = this.s;
-        l71 l71Var = wtVar.j1;
-        boolean z9 = l71Var.T;
+        m71 m71Var = wtVar.j1;
+        boolean z9 = m71Var.T;
         if (z9) {
             if (z9) {
-                l71Var.T = false;
-                l71Var.m();
-                l71Var.l(false);
+                m71Var.T = false;
+                m71Var.m();
+                m71Var.l(false);
             }
             return false;
         }

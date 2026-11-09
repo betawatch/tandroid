@@ -1,10 +1,10 @@
 package ui;
 
-import l2.y;
+import l2.x;
 import org.telegram.messenger.g0;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a;
@@ -45,8 +45,8 @@ public final /* synthetic */ class b implements Runnable {
                         b bVar2 = new b(eVar2, dVar4, 2);
                         eVar2.e = bVar2;
                         g0.i3(bVar2, 20000L);
-                        y yVar = dVar4.a;
-                        ((ConnectionsManager) yVar.b).checkWebProxyInternal(dVar4.b, i7, new c(eVar2, dVar4));
+                        x xVar = dVar4.a;
+                        ((ConnectionsManager) xVar.b).checkWebProxyInternal(dVar4.b, i7, new c(eVar2, dVar4));
                         break;
                     } else {
                         eVar2.m(dVar4);

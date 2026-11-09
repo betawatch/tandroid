@@ -1,197 +1,151 @@
 package org.telegram.ui.Components;
 
+import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import android.content.Context;
+import android.util.Property;
+import android.util.SparseArray;
 import android.view.View;
-import android.widget.FrameLayout;
 import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.e81;
-import org.telegram.ui.g81;
-import org.telegram.ui.z71;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class tp0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ Object c;
+public final class tp0 extends ei.r {
+    public final /* synthetic */ zs0 G;
 
-    public /* synthetic */ tp0(int i7, Object obj, boolean z9) {
-        this.a = i7;
-        this.c = obj;
-        this.b = z9;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public tp0(zs0 zs0Var, Context context, org.telegram.ui.ActionBar.f2 f2Var, long j3) {
+        super(context, f2Var, j3);
+        this.G = zs0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        CheckBoxBase checkBoxBase;
-        CheckBoxBase[] checkBoxBaseArr;
-        CheckBoxBase checkBoxBase2;
-        int i7 = this.a;
-        yh.e eVar = null;
-        int i10 = 1;
-        boolean z9 = this.b;
-        Object obj = this.c;
-        switch (i7) {
-            case 0:
-                up0 up0Var = (up0) obj;
-                if (!z9) {
-                    up0Var.V.s0.setVisibility(0);
-                    break;
-                } else {
-                    up0Var.getClass();
-                    break;
-                }
-            case 1:
-                yp0 yp0Var = (yp0) obj;
-                if (!z9) {
-                    yp0Var.x.s0.setVisibility(0);
-                    break;
-                } else {
-                    yp0Var.getClass();
-                    break;
-                }
-            case 2:
-                rt0 rt0Var = (rt0) obj;
-                ArrayList arrayList = rt0Var.r;
-                qt0 qt0Var = rt0Var.n;
-                if (qt0Var != null) {
-                    qt0Var.K(rt0Var.f, z9);
-                }
-                while (r5 < arrayList.size()) {
-                    ((qt0) arrayList.get(r5)).K(rt0Var.f, z9);
-                    r5++;
-                }
-                break;
-            case 3:
-                st0 st0Var = (st0) obj;
-                ArrayList arrayList2 = st0Var.r;
-                qt0 qt0Var2 = st0Var.n;
-                if (qt0Var2 != null) {
-                    qt0Var2.K(st0Var.h0, z9);
-                }
-                while (r5 < arrayList2.size()) {
-                    ((qt0) arrayList2.get(r5)).K(st0Var.h0, z9);
-                    r5++;
-                }
-                break;
-            case 4:
-                ((org.telegram.messenger.v10) obj).a(null, Boolean.valueOf(z9));
-                break;
-            case 5:
-                ((l41) obj).Q(z9);
-                break;
-            case 6:
-                org.telegram.ui.ww wwVar = (org.telegram.ui.ww) obj;
-                v4.J(wwVar.getParentActivity(), z9 ? wwVar.getUserConfig().e() : -1L, new org.telegram.ui.dv(wwVar), wwVar.getResourceProvider());
-                break;
-            case 7:
-                org.telegram.ui.gy gyVar = (org.telegram.ui.gy) obj;
-                gyVar.e0(gyVar.O, z9);
-                break;
-            case 8:
-                org.telegram.ui.pa0 pa0Var = (org.telegram.ui.pa0) obj;
-                if (!z9) {
-                    pa0Var.b.setVisibility(8);
-                    break;
-                } else {
-                    pa0Var.getClass();
-                    break;
-                }
-            case 9:
-                org.telegram.ui.ce0 ce0Var = (org.telegram.ui.ce0) obj;
-                if (!z9) {
-                    ce0Var.W.setVisibility(8);
-                    break;
-                }
-                break;
-            case 10:
-                PhotoViewer photoViewer = (PhotoViewer) obj;
-                if (!z9) {
-                    photoViewer.V0.setVisibility(8);
-                    break;
-                } else {
-                    Drawable[] drawableArr = PhotoViewer.Y8;
-                    photoViewer.getClass();
-                    break;
-                }
-            case 11:
-                RectF rectF = ProfileActivity.S6;
-                ((ProfileActivity) obj).D5(z9, true);
-                break;
-            case 12:
-                ((FrameLayout) obj).setVisibility(z9 ? 4 : 0);
-                break;
-            case 13:
-                vf.c.t(((org.telegram.ui.jw0) obj).e.getParentActivity(), org.telegram.messenger.id.M0(z9 ? 2131746705 : 2131746707, null));
-                break;
-            case 14:
-                g81 g81Var = (g81) obj;
-                org.telegram.messenger.g0.h3(new z71(g81Var, i10));
-                org.telegram.ui.Cells.q1 q1Var = g81Var.K;
-                if (q1Var != null) {
-                    q1Var.setVisibility(0);
-                    if (!z9) {
-                        org.telegram.ui.Cells.q1 q1Var2 = g81Var.K;
-                        int b22 = q1Var2.b2(g81Var.O);
-                        e81 e81Var = g81Var.I;
-                        CheckBoxBase[] checkBoxBaseArr2 = q1Var2.e7;
-                        if (checkBoxBaseArr2 != null && b22 >= 0 && b22 < checkBoxBaseArr2.length && (checkBoxBase = checkBoxBaseArr2[b22]) != null && e81Var != null && (checkBoxBaseArr = e81Var.e7) != null && b22 >= 0 && b22 < checkBoxBaseArr.length && (checkBoxBase2 = checkBoxBaseArr[b22]) != null) {
-                            ObjectAnimator objectAnimator = checkBoxBase.p;
-                            if (objectAnimator != null) {
-                                objectAnimator.cancel();
-                                checkBoxBase.p = null;
-                            }
-                            checkBoxBase.setProgress(checkBoxBase2.getProgress());
-                            checkBoxBase.f(-1, checkBoxBase2.q, true);
-                        }
+    @Override // ei.r
+    public final boolean c(org.telegram.messenger.ij ijVar) {
+        zs0 zs0Var = this.G;
+        return zs0Var.b1[(org.telegram.messenger.ij.B0(ijVar.k) > zs0Var.l1 ? 1 : (org.telegram.messenger.ij.B0(ijVar.k) == zs0Var.l1 ? 0 : -1)) == 0 ? (char) 0 : (char) 1].indexOfKey(ijVar.e1()) >= 0;
+    }
+
+    @Override // ei.r
+    public final boolean e(org.telegram.messenger.ij ijVar) {
+        zs0 zs0Var = this.G;
+        ArrayList arrayList = zs0Var.P0;
+        SparseArray[] sparseArrayArr = zs0Var.b1;
+        if (ijVar != null) {
+            char c10 = org.telegram.messenger.ij.B0(ijVar.k) == zs0Var.l1 ? (char) 0 : (char) 1;
+            if (sparseArrayArr[c10].indexOfKey(ijVar.e1()) < 0) {
+                if (sparseArrayArr[1].size() + sparseArrayArr[0].size() < 100) {
+                    sparseArrayArr[c10].put(ijVar.e1(), ijVar);
+                    if (!ijVar.s(null, false)) {
+                        zs0Var.c1++;
                     }
-                    org.telegram.ui.Cells.q1 q1Var3 = g81Var.K;
-                    q1Var3.b6 = -1;
-                    q1Var3.invalidate();
+                    if (zs0Var.E1) {
+                        zs0Var.o1(sparseArrayArr[1].size() + sparseArrayArr[0].size(), true);
+                    } else {
+                        org.telegram.messenger.g0.v1(zs0Var.x1.getParentActivity().getCurrentFocus());
+                        int i7 = 8;
+                        zs0Var.n0.setVisibility(zs0Var.c1 == 0 ? 0 : 8);
+                        org.telegram.ui.ActionBar.r0 r0Var = zs0Var.w0;
+                        if (r0Var != null) {
+                            r0Var.setVisibility((zs0Var.getClosestTab() == 8 || zs0Var.getClosestTab() == 13) ? 8 : 0);
+                        }
+                        org.telegram.ui.ActionBar.r0 r0Var2 = zs0Var.x0;
+                        if (r0Var2 != null) {
+                            r0Var2.setVisibility(8);
+                        }
+                        org.telegram.ui.ActionBar.r0 r0Var3 = zs0Var.y0;
+                        if (r0Var3 != null) {
+                            r0Var3.setVisibility(8);
+                        }
+                        org.telegram.ui.ActionBar.r0 r0Var4 = zs0Var.v0;
+                        if (r0Var4 != null) {
+                            if (zs0Var.getClosestTab() != 8 && zs0Var.getClosestTab() != 13) {
+                                i7 = 0;
+                            }
+                            r0Var4.setVisibility(i7);
+                        }
+                        zs0Var.o1(sparseArrayArr[1].size() + sparseArrayArr[0].size(), false);
+                        AnimatorSet animatorSet = new AnimatorSet();
+                        ArrayList arrayList2 = new ArrayList();
+                        for (int i10 = 0; i10 < arrayList.size(); i10++) {
+                            View view = (View) arrayList.get(i10);
+                            org.telegram.messenger.g0.y(view);
+                            arrayList2.add(ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_Y, 0.1f, 1.0f));
+                        }
+                        animatorSet.playTogether(arrayList2);
+                        animatorSet.setDuration(250L);
+                        animatorSet.start();
+                        zs0Var.d1 = false;
+                        zs0Var.q1(true);
+                    }
+                    j();
+                    return true;
                 }
-                org.telegram.ui.tl tlVar = g81Var.c0;
-                if (tlVar != null) {
-                    org.telegram.messenger.g0.h3(tlVar);
-                    g81Var.c0 = null;
-                    break;
-                }
-                break;
-            case 15:
-                ((View) obj).setVisibility(z9 ? 0 : 8);
-                break;
-            case 16:
-                wi.k kVar = (wi.k) obj;
-                kVar.P = z9;
-                kVar.Q = kVar.G();
-                kVar.R = 0;
-                kVar.S = 0;
-                kVar.j.b("torch requested: enabled=" + z9 + ", available=" + kVar.G() + ", cameraId=" + kVar.o + ", facing=" + kVar.G);
-                kVar.f();
-                break;
-            default:
-                yh.m mVar = (yh.m) obj;
-                ArrayList arrayList3 = mVar.c;
-                boolean isEmpty = TextUtils.isEmpty(mVar.t);
-                String str = mVar.t;
-                mVar.w = true;
-                mVar.A = false;
-                TLRPC.TL_chatInviteImporter tL_chatInviteImporter = (!isEmpty || arrayList3.isEmpty()) ? null : (TLRPC.TL_chatInviteImporter) jg.g.i(1, arrayList3);
-                boolean z10 = tL_chatInviteImporter == null;
-                if (isEmpty && z10 && z9) {
-                    eVar = new yh.e(mVar, 1);
-                }
-                yh.e eVar2 = eVar;
-                if (isEmpty) {
-                    org.telegram.messenger.g0.i3(eVar2, 300L);
-                }
-                mVar.v = mVar.i.a(mVar.j, str, tL_chatInviteImporter, mVar.d, new bi.t4(mVar, isEmpty, eVar2, str, z10));
-                break;
+            }
         }
+        return false;
+    }
+
+    @Override // ei.r
+    public final boolean g(org.telegram.messenger.ij ijVar) {
+        zs0 zs0Var = this.G;
+        ArrayList arrayList = zs0Var.P0;
+        SparseArray[] sparseArrayArr = zs0Var.b1;
+        if (ijVar != null) {
+            char c10 = org.telegram.messenger.ij.B0(ijVar.k) == zs0Var.l1 ? (char) 0 : (char) 1;
+            if (sparseArrayArr[c10].indexOfKey(ijVar.e1()) >= 0) {
+                sparseArrayArr[c10].remove(ijVar.e1());
+                if (!ijVar.s(null, false)) {
+                    zs0Var.c1--;
+                }
+                if (sparseArrayArr[0].size() == 0 && sparseArrayArr[1].size() == 0) {
+                    org.telegram.messenger.g0.v1(zs0Var.x1.getParentActivity().getCurrentFocus());
+                    sparseArrayArr[0].clear();
+                    sparseArrayArr[1].clear();
+                    int i7 = 8;
+                    zs0Var.n0.setVisibility(zs0Var.c1 == 0 ? 0 : 8);
+                    org.telegram.ui.ActionBar.r0 r0Var = zs0Var.w0;
+                    if (r0Var != null) {
+                        r0Var.setVisibility((zs0Var.getClosestTab() == 8 || zs0Var.getClosestTab() == 13) ? 8 : 0);
+                    }
+                    org.telegram.ui.ActionBar.r0 r0Var2 = zs0Var.x0;
+                    if (r0Var2 != null) {
+                        r0Var2.setVisibility(8);
+                    }
+                    org.telegram.ui.ActionBar.r0 r0Var3 = zs0Var.y0;
+                    if (r0Var3 != null) {
+                        r0Var3.setVisibility(8);
+                    }
+                    org.telegram.ui.ActionBar.r0 r0Var4 = zs0Var.v0;
+                    if (r0Var4 != null) {
+                        if (zs0Var.getClosestTab() != 8 && zs0Var.getClosestTab() != 13) {
+                            i7 = 0;
+                        }
+                        r0Var4.setVisibility(i7);
+                    }
+                    AnimatorSet animatorSet = new AnimatorSet();
+                    ArrayList arrayList2 = new ArrayList();
+                    for (int i10 = 0; i10 < arrayList.size(); i10++) {
+                        View view = (View) arrayList.get(i10);
+                        org.telegram.messenger.g0.y(view);
+                        arrayList2.add(ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_Y, 1.0f, 0.1f));
+                    }
+                    animatorSet.playTogether(arrayList2);
+                    animatorSet.setDuration(250L);
+                    animatorSet.start();
+                    zs0Var.d1 = false;
+                    org.telegram.messenger.g0.i3(new pb0(this, 28), 20L);
+                } else {
+                    zs0Var.o1(sparseArrayArr[1].size() + sparseArrayArr[0].size(), true);
+                }
+                j();
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override // ei.r
+    public final int getStartedTrackingX() {
+        return this.G.B1;
     }
 }

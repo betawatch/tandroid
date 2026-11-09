@@ -20,17 +20,17 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class yw extends FrameLayout implements org.telegram.ui.ActionBar.a6, org.telegram.messenger.ls {
+public final class yw extends FrameLayout implements org.telegram.ui.ActionBar.b6, org.telegram.messenger.ls {
     public Paint D;
     public int E;
     public AnimatorSet F;
     public final /* synthetic */ hy G;
     public int a;
     public int b;
-    public final ch0 c;
-    public final org.telegram.ui.ActionBar.k5 d;
+    public final dh0 c;
+    public final org.telegram.ui.ActionBar.l5 d;
     public final TextView e;
     public final FrameLayout f;
     public final TextView h;
@@ -45,35 +45,35 @@ public final class yw extends FrameLayout implements org.telegram.ui.ActionBar.a
     public yw(hy hyVar, Context context) {
         super(context);
         this.G = hyVar;
-        org.telegram.ui.ActionBar.q6 q6Var = org.telegram.ui.ActionBar.r6.a;
-        ch0 ch0Var = new ch0(context);
-        this.c = ch0Var;
-        ch0Var.f(R.raw.unlock_icon, 24, 24, null);
-        int i7 = org.telegram.ui.ActionBar.k6.If;
-        org.telegram.ui.ActionBar.f6 f6Var = hyVar.Z1;
-        org.telegram.ui.ActionBar.r6.t(ch0Var, i7, f6Var, PorterDuff.Mode.SRC_ATOP);
-        addView(ch0Var, c8.ha.i(20.0f, 20.0f, 8388611, 10.0f, 15.0f, 0.0f, 0.0f));
-        org.telegram.ui.ActionBar.k5 k5Var = new org.telegram.ui.ActionBar.k5(context);
-        this.d = k5Var;
-        k5Var.setTextSize(15);
-        org.telegram.ui.ActionBar.r6.Y(k5Var, i7, f6Var);
-        k5Var.setTypeface(org.telegram.messenger.g0.o());
-        k5Var.setOnClickListener(new xw(this, 0));
+        org.telegram.ui.ActionBar.r6 r6Var = org.telegram.ui.ActionBar.s6.a;
+        dh0 dh0Var = new dh0(context);
+        this.c = dh0Var;
+        dh0Var.f(R.raw.unlock_icon, 24, 24, null);
+        int i7 = org.telegram.ui.ActionBar.l6.If;
+        org.telegram.ui.ActionBar.g6 g6Var = hyVar.Z1;
+        org.telegram.ui.ActionBar.s6.s(dh0Var, i7, g6Var, PorterDuff.Mode.SRC_ATOP);
+        addView(dh0Var, c8.ha.i(20.0f, 20.0f, 8388611, 10.0f, 15.0f, 0.0f, 0.0f));
+        org.telegram.ui.ActionBar.l5 l5Var = new org.telegram.ui.ActionBar.l5(context);
+        this.d = l5Var;
+        l5Var.setTextSize(15);
+        org.telegram.ui.ActionBar.s6.X(l5Var, i7, g6Var);
+        l5Var.setTypeface(org.telegram.messenger.g0.o());
+        l5Var.setOnClickListener(new xw(this, 0));
         TextView textView = new TextView(context);
         this.e = textView;
         textView.setTextSize(1, 11.0f);
-        org.telegram.ui.ActionBar.r6.V(textView, i7, f6Var);
+        org.telegram.ui.ActionBar.s6.U(textView, i7, g6Var);
         textView.setTypeface(org.telegram.messenger.g0.o());
         int L = org.telegram.messenger.g0.L(8.0f);
-        int i10 = org.telegram.ui.ActionBar.k6.Bf;
-        ShapeDrawable d02 = org.telegram.ui.ActionBar.k6.d0(L, org.telegram.ui.ActionBar.k6.r1(0.12f, hyVar.z(i10)));
-        org.telegram.ui.ActionBar.n6 L2 = org.telegram.ui.ActionBar.r6.L(0.12f, i10);
+        int i10 = org.telegram.ui.ActionBar.l6.Bf;
+        ShapeDrawable d02 = org.telegram.ui.ActionBar.l6.d0(L, org.telegram.ui.ActionBar.l6.r1(0.12f, hyVar.z(i10)));
+        org.telegram.ui.ActionBar.o6 K = org.telegram.ui.ActionBar.s6.K(0.12f, i10);
         textView.setBackground(d02);
-        org.telegram.ui.ActionBar.r6.k(textView, d02, L2, null, f6Var);
+        org.telegram.ui.ActionBar.s6.j(textView, d02, K, null, g6Var);
         textView.setPadding(org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(1.5f), org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(1.5f));
-        textView.setText(org.telegram.messenger.id.M0(2131749445, null));
-        k5Var.setEllipsizeByGradient(true);
-        addView(k5Var, c8.ha.i(-2.0f, -1.0f, 8388611, 15.0f, 15.0f, 0.0f, 0.0f));
+        textView.setText(org.telegram.messenger.id.M0(2131749444, null));
+        l5Var.setEllipsizeByGradient(true);
+        addView(l5Var, c8.ha.i(-2.0f, -1.0f, 8388611, 15.0f, 15.0f, 0.0f, 0.0f));
         addView(textView, c8.ha.i(-2.0f, -2.0f, 8388611, 15.0f, 10.0f, 0.0f, 0.0f));
         FrameLayout frameLayout = new FrameLayout(context);
         this.f = frameLayout;
@@ -86,9 +86,9 @@ public final class yw extends FrameLayout implements org.telegram.ui.ActionBar.a
         textView2.setTextSize(1, 14.0f);
         textView2.setTypeface(org.telegram.messenger.g0.o());
         textView2.setText(org.telegram.messenger.id.M0(2131754486, null));
-        org.telegram.ui.ActionBar.r6.V(textView2, org.telegram.ui.ActionBar.k6.Gi, f6Var);
-        int i11 = org.telegram.ui.ActionBar.k6.Ci;
-        textView2.setBackground(org.telegram.ui.ActionBar.z5.d(hyVar.z(i11), hyVar.z(org.telegram.ui.ActionBar.k6.Ei), 16.0f));
+        org.telegram.ui.ActionBar.s6.U(textView2, org.telegram.ui.ActionBar.l6.Gi, g6Var);
+        int i11 = org.telegram.ui.ActionBar.l6.Ci;
+        textView2.setBackground(org.telegram.ui.ActionBar.a6.d(hyVar.z(i11), hyVar.z(org.telegram.ui.ActionBar.l6.Ei), 16.0f));
         textView2.setPadding(org.telegram.messenger.g0.L(14.0f), 0, org.telegram.messenger.g0.L(14.0f), 0);
         textView2.setGravity(17);
         textView2.setOnClickListener(new xw(this, 2));
@@ -97,25 +97,25 @@ public final class yw extends FrameLayout implements org.telegram.ui.ActionBar.a
         this.n = textView3;
         textView3.setTextSize(1, 14.0f);
         textView3.setTypeface(org.telegram.messenger.g0.o());
-        textView3.setText(org.telegram.messenger.id.M0(2131744858, null));
-        org.telegram.ui.ActionBar.r6.V(textView3, org.telegram.ui.ActionBar.k6.Fi, f6Var);
-        textView3.setBackground(org.telegram.ui.ActionBar.z5.d(0, hyVar.z(i11) & 452984831, 16.0f));
+        textView3.setText(org.telegram.messenger.id.M0(2131744855, null));
+        org.telegram.ui.ActionBar.s6.U(textView3, org.telegram.ui.ActionBar.l6.Fi, g6Var);
+        textView3.setBackground(org.telegram.ui.ActionBar.a6.d(0, hyVar.z(i11) & 452984831, 16.0f));
         textView3.setPadding(org.telegram.messenger.g0.L(12.0f), 0, org.telegram.messenger.g0.L(12.0f), 0);
         textView3.setGravity(17);
         textView3.setTranslationX(org.telegram.messenger.g0.L(4.0f));
         textView3.setOnClickListener(new xw(this, 3));
         frameLayout.addView(textView3, c8.ha.h(-2.0f, 26.0f, 8388661));
-        ug.p0 p0Var = new ug.p0(org.telegram.messenger.g0.L(16.0f), context, f6Var, false);
+        ug.p0 p0Var = new ug.p0(org.telegram.messenger.g0.L(16.0f), context, g6Var, false);
         this.r = p0Var;
         p0Var.setIcon(R.raw.unlock_icon);
-        p0Var.b(org.telegram.messenger.id.M0(2131743879, null), new xw(this, 4), false);
+        p0Var.b(org.telegram.messenger.id.M0(2131743876, null), new xw(this, 4), false);
         try {
             ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) p0Var.getIconView().getLayoutParams();
             marginLayoutParams.leftMargin = org.telegram.messenger.g0.L(1.0f);
             marginLayoutParams.topMargin = org.telegram.messenger.g0.L(1.0f);
-            int L3 = org.telegram.messenger.g0.L(20.0f);
-            marginLayoutParams.height = L3;
-            marginLayoutParams.width = L3;
+            int L2 = org.telegram.messenger.g0.L(20.0f);
+            marginLayoutParams.height = L2;
+            marginLayoutParams.width = L2;
             ViewGroup.MarginLayoutParams marginLayoutParams2 = (ViewGroup.MarginLayoutParams) p0Var.getTextView().getLayoutParams();
             marginLayoutParams2.leftMargin = org.telegram.messenger.g0.L(5.0f);
             marginLayoutParams2.topMargin = org.telegram.messenger.g0.L(-0.5f);
@@ -154,12 +154,12 @@ public final class yw extends FrameLayout implements org.telegram.ui.ActionBar.a
         boolean z13 = i7 == 3;
         TextView textView2 = this.n;
         textView2.setEnabled(z13);
-        org.telegram.ui.ActionBar.k5 k5Var = this.d;
-        ch0 ch0Var = this.c;
+        org.telegram.ui.ActionBar.l5 l5Var = this.d;
+        dh0 dh0Var = this.c;
         if (!z9) {
-            ch0Var.setAlpha(i7 == 1 ? 1.0f : 0.0f);
-            ch0Var.setTranslationX(i7 == 1 ? 0.0f : -org.telegram.messenger.g0.L(16.0f));
-            k5Var.setTranslationX(i7 == 1 ? org.telegram.messenger.g0.L(16.0f) : 0.0f);
+            dh0Var.setAlpha(i7 == 1 ? 1.0f : 0.0f);
+            dh0Var.setTranslationX(i7 == 1 ? 0.0f : -org.telegram.messenger.g0.L(16.0f));
+            l5Var.setTranslationX(i7 == 1 ? org.telegram.messenger.g0.L(16.0f) : 0.0f);
             p0Var.setAlpha(i7 == 1 ? 1.0f : 0.0f);
             p0Var.setScaleX(i7 == 1 ? 1.0f : 0.6f);
             p0Var.setScaleY(i7 == 1 ? 1.0f : 0.6f);
@@ -186,14 +186,14 @@ public final class yw extends FrameLayout implements org.telegram.ui.ActionBar.a
         float[] fArr = new float[1];
         fArr[c10] = f10;
         Property property = FrameLayout.TRANSLATION_X;
-        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(ch0Var, (Property<ch0, Float>) property, fArr);
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(dh0Var, (Property<dh0, Float>) property, fArr);
         float[] fArr2 = new float[1];
         fArr2[c10] = i7 == 1 ? 1.0f : 0.0f;
         Property property2 = FrameLayout.ALPHA;
-        ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(ch0Var, (Property<ch0, Float>) property2, fArr2);
+        ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(dh0Var, (Property<dh0, Float>) property2, fArr2);
         float[] fArr3 = new float[1];
         fArr3[c10] = i7 == 1 ? org.telegram.messenger.g0.L(16.0f) : 0.0f;
-        ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(k5Var, (Property<org.telegram.ui.ActionBar.k5, Float>) property, fArr3);
+        ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(l5Var, (Property<org.telegram.ui.ActionBar.l5, Float>) property, fArr3);
         float[] fArr4 = new float[1];
         fArr4[c10] = i7 == 1 ? 1.0f : 0.0f;
         ObjectAnimator ofFloat4 = ObjectAnimator.ofFloat(p0Var, (Property<ug.p0, Float>) property2, fArr4);
@@ -289,7 +289,7 @@ public final class yw extends FrameLayout implements org.telegram.ui.ActionBar.a
                 Paint paint = new Paint(1);
                 this.D = paint;
                 paint.setStrokeWidth(1.0f);
-                this.D.setColor(this.G.z(org.telegram.ui.ActionBar.k6.d7));
+                this.D.setColor(this.G.z(org.telegram.ui.ActionBar.l6.d7));
             }
             canvas2 = canvas;
             canvas2.drawRect(0.0f, 0.0f, getMeasuredWidth(), 1.0f, this.D);
@@ -305,11 +305,11 @@ public final class yw extends FrameLayout implements org.telegram.ui.ActionBar.a
         int L = org.telegram.messenger.g0.L(11.0f) + this.f.getWidth();
         TextView textView = this.e;
         int measuredWidth = L + (textView.getVisibility() == 0 ? textView.getMeasuredWidth() : 0);
-        org.telegram.ui.ActionBar.k5 k5Var = this.d;
-        k5Var.setRightPadding(measuredWidth);
+        org.telegram.ui.ActionBar.l5 l5Var = this.d;
+        l5Var.setRightPadding(measuredWidth);
         if (textView.getVisibility() == 0) {
-            textView.setTranslationX(org.telegram.messenger.g0.L(4.0f) + k5Var.getTextWidth());
-            float L2 = org.telegram.messenger.g0.L(4.0f) + (k5Var.getMaxTextWidth() - measuredWidth);
+            textView.setTranslationX(org.telegram.messenger.g0.L(4.0f) + l5Var.getTextWidth());
+            float L2 = org.telegram.messenger.g0.L(4.0f) + (l5Var.getMaxTextWidth() - measuredWidth);
             if (textView.getTranslationX() > L2) {
                 textView.setTranslationX(L2);
             }
@@ -322,12 +322,12 @@ public final class yw extends FrameLayout implements org.telegram.ui.ActionBar.a
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(this.E == 0 ? 32.0f : 42.0f), TLObject.FLAG_30));
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
         hy hyVar = this.G;
         try {
-            int z9 = hyVar.z(org.telegram.ui.ActionBar.k6.Ci);
-            int z10 = hyVar.z(org.telegram.ui.ActionBar.k6.Ei);
+            int z9 = hyVar.z(org.telegram.ui.ActionBar.l6.Ci);
+            int z10 = hyVar.z(org.telegram.ui.ActionBar.l6.Ei);
             if (z9 == this.a) {
                 if (z10 != this.b) {
                 }
@@ -337,13 +337,13 @@ public final class yw extends FrameLayout implements org.telegram.ui.ActionBar.a
             this.b = z10;
             TextView textView = this.h;
             if (textView != null) {
-                org.telegram.ui.ActionBar.k6.H1(textView.getBackground(), z9, false);
-                org.telegram.ui.ActionBar.k6.H1(textView.getBackground(), z10, true);
+                org.telegram.ui.ActionBar.l6.H1(textView.getBackground(), z9, false);
+                org.telegram.ui.ActionBar.l6.H1(textView.getBackground(), z10, true);
                 textView.invalidate();
             }
             TextView textView2 = this.n;
             if (textView2 != null) {
-                org.telegram.ui.ActionBar.k6.H1(textView2.getBackground(), z9 & 452984831, true);
+                org.telegram.ui.ActionBar.l6.H1(textView2.getBackground(), z9 & 452984831, true);
                 textView2.invalidate();
             }
             invalidate();
@@ -352,7 +352,7 @@ public final class yw extends FrameLayout implements org.telegram.ui.ActionBar.a
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

@@ -1,56 +1,43 @@
 package org.telegram.ui;
 
 import android.app.Activity;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.view.View;
+import android.text.TextUtils;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.LinearLayout;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.messenger.voip.VoIPServiceState;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class ec1 extends View {
-    public final Paint a;
-    public final org.telegram.ui.Components.y8 b;
-    public org.telegram.ui.Components.my0 c;
+public final class ec1 extends LinearLayout {
+    public final /* synthetic */ ic1 a;
 
-    public ec1(Activity activity) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ec1(ic1 ic1Var, Activity activity) {
         super(activity);
-        Paint paint = new Paint(1);
-        this.a = paint;
-        paint.setColor(-14538189);
-        org.telegram.ui.Components.y8 y8Var = new org.telegram.ui.Components.y8(this, false);
-        this.b = y8Var;
-        y8Var.p = org.telegram.messenger.g0.L(100.0f);
-        y8Var.o = org.telegram.messenger.g0.L(30.0f);
-        y8Var.x = false;
-        y8Var.s = org.telegram.messenger.g0.L(24.0f);
-        y8Var.h(org.telegram.messenger.g0.L(18.0f));
-        y8Var.t = 0.58f;
+        this.a = ic1Var;
     }
 
     @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (this.c == null) {
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        VoIPServiceState sharedState = VoIPService.getSharedState();
+        CharSequence text = this.a.E.getText();
+        if (sharedState == null || TextUtils.isEmpty(text)) {
             return;
         }
-        float L = org.telegram.messenger.g0.L(4.0f);
-        org.telegram.ui.Components.y8 y8Var = this.b;
-        float c10 = y8Var.c() + L + org.telegram.messenger.g0.L(7.0f) + this.c.c + org.telegram.messenger.g0.L(13.0f);
-        float L2 = org.telegram.messenger.g0.L(30.0f);
-        RectF rectF = org.telegram.messenger.g0.P;
-        rectF.set((getWidth() - c10) / 2.0f, 0.0f, (getWidth() + c10) / 2.0f, getHeight());
-        float f10 = L2 / 2.0f;
-        canvas.drawRoundRect(rectF, f10, f10, this.a);
-        canvas.save();
-        canvas.translate(rectF.left + org.telegram.messenger.g0.L(4.0f), 0.0f);
-        y8Var.g(canvas);
-        canvas.translate(y8Var.A + org.telegram.messenger.g0.L(7.0f), 0.0f);
-        this.c.c(0.0f, f10, 1.0f, -1, canvas);
-        canvas.restore();
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i7, int i10) {
-        setMeasuredDimension(View.MeasureSpec.getSize(i7), org.telegram.messenger.g0.L(30.0f));
+        StringBuilder sb2 = new StringBuilder(text);
+        sb2.append(", ");
+        if (sharedState.getPrivateCall() == null || !sharedState.getPrivateCall().video) {
+            sb2.append(org.telegram.messenger.id.M0(2131743300, null));
+        } else {
+            sb2.append(org.telegram.messenger.id.M0(2131743297, null));
+        }
+        long callDuration = sharedState.getCallDuration();
+        if (callDuration > 0) {
+            sb2.append(", ");
+            sb2.append(org.telegram.messenger.id.z((int) (callDuration / 1000)));
+        }
+        accessibilityNodeInfo.setText(sb2);
     }
 }

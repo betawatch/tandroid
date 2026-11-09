@@ -19,13 +19,13 @@ import org.telegram.messenger.ye;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.m3;
-import org.telegram.ui.Components.ki0;
-import org.telegram.ui.Components.mt0;
-import org.telegram.ui.Components.v41;
+import org.telegram.ui.Components.li0;
+import org.telegram.ui.Components.ot0;
+import org.telegram.ui.Components.w41;
 import org.telegram.ui.Components.w5;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class n1 extends j {
     public final Bitmap A0;
@@ -40,13 +40,13 @@ public final class n1 extends j {
     public final int s0;
     public boolean t0;
     public final w5 u0;
-    public final mt0 v0;
+    public final ot0 v0;
     public final int w0;
     public boolean x0;
     public final w5 y0;
-    public final v41 z0;
+    public final w41 z0;
 
-    public n1(Context context, PointF pointF, mt0 mt0Var, String str, int i7) {
+    public n1(Context context, PointF pointF, ot0 ot0Var, String str, int i7) {
         super(context, pointF);
         this.s0 = -1;
         this.t0 = false;
@@ -60,13 +60,13 @@ public final class n1 extends j {
         setRotation(0.0f);
         setScale(1.0f);
         this.r0 = str;
-        this.v0 = mt0Var;
-        v41 v41Var = new v41(this, context);
-        this.z0 = v41Var;
-        addView(v41Var, ha.c(-1.0f, -1));
+        this.v0 = ot0Var;
+        w41 w41Var = new w41(this, context);
+        this.z0 = w41Var;
+        addView(w41Var, ha.c(-1.0f, -1));
         xq xqVar = xq.h;
-        this.u0 = new w5(v41Var, 0L, 500L, xqVar);
-        this.y0 = new w5(v41Var, 0L, 350L, xqVar);
+        this.u0 = new w5(w41Var, 0L, 500L, xqVar);
+        this.y0 = new w5(w41Var, 0L, 350L, xqVar);
         this.w0 = i7;
         Bitmap q10 = e7.q(new ab.t(str, 2), 1920, 1920, 0, false);
         this.A0 = q10;
@@ -91,7 +91,7 @@ public final class n1 extends j {
         return this.s0;
     }
 
-    public mt0 getBaseSize() {
+    public ot0 getBaseSize() {
         return this.v0;
     }
 
@@ -120,10 +120,10 @@ public final class n1 extends j {
     }
 
     @Override // tg.j
-    public ki0 getSelectionBounds() {
+    public li0 getSelectionBounds() {
         ViewGroup viewGroup = (ViewGroup) getParent();
         if (viewGroup == null) {
-            return new ki0();
+            return new li0();
         }
         float scaleX = viewGroup.getScaleX();
         float L = (org.telegram.messenger.g0.L(64.0f) / scaleX) + (getScale() * getMeasuredWidth());
@@ -133,14 +133,14 @@ public final class n1 extends j {
         getScale();
         org.telegram.messenger.g0.L(64.0f);
         float x10 = org.telegram.messenger.camera.q.x(L, 2.0f, getPositionX(), scaleX);
-        return new ki0(x10, org.telegram.messenger.camera.q.x(L2, 2.0f, getPositionY(), scaleX), ((L3 * scaleX) + x10) - x10, L2 * scaleX);
+        return new li0(x10, org.telegram.messenger.camera.q.x(L2, 2.0f, getPositionY(), scaleX), ((L3 * scaleX) + x10) - x10, L2 * scaleX);
     }
 
     @Override // tg.j
     public final void k() {
-        mt0 mt0Var = this.v0;
-        float f10 = mt0Var.a / 2.0f;
-        float f11 = mt0Var.b / 2.0f;
+        ot0 ot0Var = this.v0;
+        float f10 = ot0Var.a / 2.0f;
+        float f11 = ot0Var.b / 2.0f;
         ye yeVar = this.G0;
         if (yeVar != null) {
             f10 *= yeVar.e;
@@ -163,9 +163,9 @@ public final class n1 extends j {
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i7, int i10) {
-        mt0 mt0Var = this.v0;
-        float f10 = mt0Var.a;
-        float f11 = mt0Var.b;
+        ot0 ot0Var = this.v0;
+        float f10 = ot0Var.a;
+        float f11 = ot0Var.b;
         ye yeVar = this.G0;
         if (yeVar != null) {
             f10 *= yeVar.e;
@@ -193,9 +193,9 @@ public final class n1 extends j {
         if (!z9) {
             this.u0.f(z10, true);
         }
-        v41 v41Var = this.z0;
-        if (v41Var != null) {
-            v41Var.invalidate();
+        w41 w41Var = this.z0;
+        if (w41Var != null) {
+            w41Var.invalidate();
         }
     }
 
@@ -216,13 +216,13 @@ public final class n1 extends j {
         if (!z9) {
             this.y0.f(z10, true);
         }
-        v41 v41Var = this.z0;
-        if (v41Var != null) {
-            v41Var.invalidate();
+        w41 w41Var = this.z0;
+        if (w41Var != null) {
+            w41Var.invalidate();
         }
     }
 
-    public n1(Context context, PointF pointF, mt0 mt0Var, TLObject tLObject) {
+    public n1(Context context, PointF pointF, ot0 ot0Var, TLObject tLObject) {
         super(context, pointF);
         this.s0 = -1;
         this.t0 = false;
@@ -236,13 +236,13 @@ public final class n1 extends j {
         setRotation(0.0f);
         setScale(1.0f);
         this.q0 = tLObject;
-        this.v0 = mt0Var;
-        v41 v41Var = new v41(this, context);
-        this.z0 = v41Var;
-        addView(v41Var, ha.c(-1.0f, -1));
+        this.v0 = ot0Var;
+        w41 w41Var = new w41(this, context);
+        this.z0 = w41Var;
+        addView(w41Var, ha.c(-1.0f, -1));
         xq xqVar = xq.h;
-        this.u0 = new w5(v41Var, 0L, 500L, xqVar);
-        this.y0 = new w5(v41Var, 0L, 350L, xqVar);
+        this.u0 = new w5(w41Var, 0L, 500L, xqVar);
+        this.y0 = new w5(w41Var, 0L, 350L, xqVar);
         k();
     }
 }

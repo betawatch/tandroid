@@ -1,47 +1,24 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.widget.FrameLayout;
-
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class md0 implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class md0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ pd0 b;
+    public final /* synthetic */ r3 b;
 
-    public /* synthetic */ md0(pd0 pd0Var, int i7) {
+    public /* synthetic */ md0(r3 r3Var, int i7) {
         this.a = i7;
-        this.b = pd0Var;
+        this.b = r3Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                pd0 pd0Var = this.b;
-                pd0Var.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                pd0Var.d.setAlpha(floatValue);
-                pd0Var.e.setAlpha(floatValue);
-                pd0Var.f.setProgress(floatValue);
-                FrameLayout frameLayout = pd0Var.x;
-                frameLayout.setAlpha(floatValue);
-                float f10 = (floatValue * 0.5f) + 0.5f;
-                frameLayout.setScaleX(f10);
-                frameLayout.setScaleY(f10);
+                org.telegram.messenger.g0.h3(new md0(this.b, 1));
                 break;
             default:
-                pd0 pd0Var2 = this.b;
-                pd0Var2.getClass();
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                pd0Var2.f.setProgress(floatValue2);
-                pd0Var2.d.setAlpha(floatValue2);
-                pd0Var2.e.setAlpha(floatValue2);
-                FrameLayout frameLayout2 = pd0Var2.x;
-                frameLayout2.setAlpha(floatValue2);
-                float f11 = (floatValue2 * 0.5f) + 0.5f;
-                frameLayout2.setScaleX(f11);
-                frameLayout2.setScaleY(f11);
+                this.b.a("CANCELLED");
                 break;
         }
     }

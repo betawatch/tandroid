@@ -4,13 +4,13 @@ import android.text.TextPaint;
 import android.text.style.CharacterStyle;
 import android.text.style.UpdateAppearance;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public class yz extends CharacterStyle implements UpdateAppearance {
     public int a;
     public int b;
     public float c;
-    public final org.telegram.ui.ActionBar.f6 d;
+    public final org.telegram.ui.ActionBar.g6 d;
 
     public yz(int i7) {
         this(i7, null);
@@ -18,7 +18,7 @@ public class yz extends CharacterStyle implements UpdateAppearance {
 
     @Override // android.text.style.CharacterStyle
     public void updateDrawState(TextPaint textPaint) {
-        this.a = org.telegram.ui.ActionBar.k6.r1(this.c, org.telegram.ui.ActionBar.k6.w0(this.b, this.d));
+        this.a = org.telegram.ui.ActionBar.l6.r1(this.c, org.telegram.ui.ActionBar.l6.w0(this.b, this.d));
         int color = textPaint.getColor();
         int i7 = this.a;
         if (color != i7) {
@@ -26,9 +26,9 @@ public class yz extends CharacterStyle implements UpdateAppearance {
         }
     }
 
-    public yz(int i7, org.telegram.ui.ActionBar.f6 f6Var) {
+    public yz(int i7, org.telegram.ui.ActionBar.g6 g6Var) {
         this.c = 1.0f;
         this.b = i7;
-        this.d = f6Var;
+        this.d = g6Var;
     }
 }

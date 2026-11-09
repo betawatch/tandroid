@@ -4,7 +4,7 @@ import android.app.Activity;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e1 implements Runnable {
     public final /* synthetic */ int a;
@@ -38,7 +38,7 @@ public final /* synthetic */ class e1 implements Runnable {
                 } else {
                     Activity u02 = org.telegram.messenger.g0.u0();
                     org.telegram.ui.ActionBar.f2 T = LaunchActivity.T();
-                    org.telegram.ui.ActionBar.f6 bVar = (PhotoViewer.p1().P1() || (T != null && T.hasShownSheet())) ? new di.b() : T != null ? T.getResourceProvider() : null;
+                    org.telegram.ui.ActionBar.g6 bVar = (PhotoViewer.p1().P1() || (T != null && T.hasShownSheet())) ? new di.b() : T != null ? T.getResourceProvider() : null;
                     if (u02 != null) {
                         long j12 = this.d;
                         new bi.tc(u02, bVar, j10, 13, org.telegram.messenger.m5.s(i7, j12), new org.telegram.ui.a6(1, j11, c20Var), j12).show();

@@ -21,9 +21,9 @@ import java.util.Locale;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public abstract class pn extends LinearLayout implements org.telegram.ui.ActionBar.a6 {
+public abstract class pn extends LinearLayout implements org.telegram.ui.ActionBar.b6 {
     public static final /* synthetic */ int L = 0;
     public boolean D;
     public boolean E;
@@ -41,17 +41,17 @@ public abstract class pn extends LinearLayout implements org.telegram.ui.ActionB
     public final FrameLayout f;
     public l9 h;
     public l9 n;
-    public final org.telegram.ui.ActionBar.f6 r;
+    public final org.telegram.ui.ActionBar.g6 r;
     public boolean s;
-    public ch0 w;
+    public dh0 w;
     public TextView x;
     public ei.k y;
 
-    public pn(Context context, int i7, TLRPC.Document document, org.telegram.ui.ActionBar.f6 f6Var) {
+    public pn(Context context, int i7, TLRPC.Document document, org.telegram.ui.ActionBar.g6 g6Var) {
         super(context);
         setOrientation(1);
         this.e = i7;
-        this.r = f6Var;
+        this.r = g6Var;
         setPadding(0, org.telegram.messenger.g0.L(8.0f), 0, 0);
         TextView textView = new TextView(context);
         this.b = textView;
@@ -81,8 +81,8 @@ public abstract class pn extends LinearLayout implements org.telegram.ui.ActionB
         c8.ka.a(this.n);
         e();
         updateColors();
-        String M0 = org.telegram.messenger.id.M0(2131748194, null);
-        String M02 = org.telegram.messenger.id.M0(2131748192, null);
+        String M0 = org.telegram.messenger.id.M0(2131748193, null);
+        String M02 = org.telegram.messenger.id.M0(2131748191, null);
         textView.setText(M0);
         textView2.setText(M02);
         textView2.setMaxWidth(fi.m3.a(textView2.getText(), textView2.getPaint()));
@@ -147,7 +147,7 @@ public abstract class pn extends LinearLayout implements org.telegram.ui.ActionB
             }
             i11++;
         }
-        if (org.telegram.messenger.ij.L2(document, true) && i10 == 0 && i7 == 0) {
+        if (org.telegram.messenger.ij.K2(document, true) && i10 == 0 && i7 == 0) {
             i10 = 512;
             i7 = 512;
         }
@@ -178,11 +178,11 @@ public abstract class pn extends LinearLayout implements org.telegram.ui.ActionB
         this.E = z10;
         if (z9) {
             if (this.w == null) {
-                ch0 ch0Var = new ch0(getContext());
-                this.w = ch0Var;
-                ch0Var.setScaleType(ImageView.ScaleType.CENTER);
+                dh0 dh0Var = new dh0(getContext());
+                this.w = dh0Var;
+                dh0Var.setScaleType(ImageView.ScaleType.CENTER);
                 this.w.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-                this.w.setBackground(org.telegram.ui.ActionBar.k6.L(org.telegram.messenger.g0.L(78.0f), 469762048));
+                this.w.setBackground(org.telegram.ui.ActionBar.l6.L(org.telegram.messenger.g0.L(78.0f), 469762048));
                 if (z10) {
                     this.w.setImageResource(R.drawable.filled_chatlist2);
                 } else {
@@ -202,9 +202,9 @@ public abstract class pn extends LinearLayout implements org.telegram.ui.ActionB
             TextView textView2 = this.x;
             textView2.setMaxWidth(fi.m3.a(textView2.getText(), this.x.getPaint()));
             TextView textView3 = this.x;
-            int i7 = org.telegram.ui.ActionBar.k6.Wc;
-            org.telegram.ui.ActionBar.f6 f6Var = this.r;
-            org.telegram.ui.ActionBar.r6.V(textView3, i7, f6Var);
+            int i7 = org.telegram.ui.ActionBar.l6.Wc;
+            org.telegram.ui.ActionBar.g6 g6Var = this.r;
+            org.telegram.ui.ActionBar.s6.U(textView3, i7, g6Var);
             this.x.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
             if (this.y == null) {
                 ei.k kVar = new ei.k(getContext(), 6);
@@ -216,11 +216,11 @@ public abstract class pn extends LinearLayout implements org.telegram.ui.ActionB
                 this.y.setPadding(org.telegram.messenger.g0.L(13.0f), org.telegram.messenger.g0.L(5.0f), org.telegram.messenger.g0.L(13.0f), org.telegram.messenger.g0.L(8.0f));
                 ei.k kVar2 = this.y;
                 int L2 = org.telegram.messenger.g0.L(15.0f);
-                kVar2.setBackground(org.telegram.ui.ActionBar.k6.k0(L2, L2, L2, L2, 503316480, 855638016, 855638016));
+                kVar2.setBackground(org.telegram.ui.ActionBar.l6.k0(L2, L2, L2, L2, 503316480, 855638016, 855638016));
                 c8.ka.a(this.y);
             }
             this.y.setText(str);
-            org.telegram.ui.ActionBar.r6.V(this.y, i7, f6Var);
+            org.telegram.ui.ActionBar.s6.U(this.y, i7, g6Var);
             this.y.setOnClickListener(onClickListener);
         }
         e();
@@ -229,11 +229,11 @@ public abstract class pn extends LinearLayout implements org.telegram.ui.ActionB
     public final void d(CharSequence charSequence, CharSequence charSequence2) {
         this.H = true;
         if (TextUtils.isEmpty(charSequence == null ? null : charSequence.toString().trim())) {
-            charSequence = org.telegram.messenger.id.M0(2131748194, null);
+            charSequence = org.telegram.messenger.id.M0(2131748193, null);
         }
         this.b.setText(charSequence);
         if (TextUtils.isEmpty(charSequence2 == null ? null : charSequence2.toString().trim())) {
-            charSequence2 = org.telegram.messenger.id.M0(2131748192, null);
+            charSequence2 = org.telegram.messenger.id.M0(2131748191, null);
         }
         TextView textView = this.c;
         textView.setText(charSequence2);
@@ -246,14 +246,14 @@ public abstract class pn extends LinearLayout implements org.telegram.ui.ActionB
         if (this.K) {
             canvas2 = canvas;
         } else {
-            org.telegram.ui.ActionBar.f6 f6Var = this.r;
-            if (f6Var != null) {
-                f6Var.b(0.0f, this.I + org.telegram.messenger.g0.L(4.0f), getMeasuredWidth(), this.J);
+            org.telegram.ui.ActionBar.g6 g6Var = this.r;
+            if (g6Var != null) {
+                g6Var.b(0.0f, this.I + org.telegram.messenger.g0.L(4.0f), getMeasuredWidth(), this.J);
             } else {
-                org.telegram.ui.ActionBar.k6.r(0.0f, this.I + org.telegram.messenger.g0.L(4.0f), getMeasuredWidth(), this.J);
+                org.telegram.ui.ActionBar.l6.r(0.0f, this.I + org.telegram.messenger.g0.L(4.0f), getMeasuredWidth(), this.J);
             }
             canvas2 = canvas;
-            canvas2.drawRoundRect(0.0f, 0.0f, getWidth(), getHeight(), org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f), org.telegram.ui.ActionBar.k6.W0("paintChatActionBackground", f6Var));
+            canvas2.drawRoundRect(0.0f, 0.0f, getWidth(), getHeight(), org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f), org.telegram.ui.ActionBar.l6.W0("paintChatActionBackground", g6Var));
         }
         if (!this.s) {
             this.s = true;
@@ -350,7 +350,7 @@ public abstract class pn extends LinearLayout implements org.telegram.ui.ActionB
         }
         this.s = true;
         this.n.b();
-        org.telegram.messenger.rz f10 = org.telegram.messenger.t5.f(document, org.telegram.ui.ActionBar.k6.Zc, 1.0f, null);
+        org.telegram.messenger.rz f10 = org.telegram.messenger.t5.f(document, org.telegram.ui.ActionBar.l6.Zc, 1.0f, null);
         if (f10 != null) {
             this.h.p(org.telegram.messenger.hc.b(document), b(document), f10, document);
             document2 = document;
@@ -361,16 +361,16 @@ public abstract class pn extends LinearLayout implements org.telegram.ui.ActionB
         this.h.setOnClickListener(new mn(this, document2, 0));
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
-        org.telegram.ui.ActionBar.f6 f6Var = this.r;
+        org.telegram.ui.ActionBar.g6 g6Var = this.r;
         TextView textView = this.b;
         if (textView != null) {
-            textView.setTextColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Wc, f6Var));
+            textView.setTextColor(org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.Wc, g6Var));
         }
         TextView textView2 = this.c;
         if (textView2 != null) {
-            textView2.setTextColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Wc, f6Var));
+            textView2.setTextColor(org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.Wc, g6Var));
         }
     }
 
@@ -383,7 +383,7 @@ public abstract class pn extends LinearLayout implements org.telegram.ui.ActionB
         this.h.l(org.telegram.messenger.hc.g(str), "256_256", null, null, 0, null);
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

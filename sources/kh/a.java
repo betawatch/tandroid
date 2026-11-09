@@ -15,24 +15,24 @@ import dh.c;
 import fh.g;
 import java.util.HashSet;
 import org.telegram.messenger.g0;
-import org.telegram.ui.ActionBar.a6;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.ActionBar.b6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.o6;
+import org.telegram.ui.ActionBar.s6;
 import org.telegram.ui.Cells.y;
 import org.telegram.ui.Components.cp;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class a extends FrameLayout implements te.b, a6 {
+public final class a extends FrameLayout implements te.b, b6 {
     public final te.a a;
     public final te.a b;
     public ImageView c;
     public ImageView d;
     public cp e;
-    public f6 f;
+    public g6 f;
     public float h;
     public int n;
     public g r;
@@ -45,38 +45,38 @@ public final class a extends FrameLayout implements te.b, a6 {
         this.h = 1.0f;
     }
 
-    public static a c(Context context, c cVar, gh.a aVar, f6 f6Var) {
-        int i7 = k6.Kl;
-        int w02 = k6.w0(i7, f6Var);
+    public static a c(Context context, c cVar, gh.a aVar, g6 g6Var) {
+        int i7 = l6.Kl;
+        int w02 = l6.w0(i7, g6Var);
         a aVar2 = new a(context);
-        aVar2.f = f6Var;
+        aVar2.f = g6Var;
         aVar2.setBlurredBackgroundDrawable(cVar.c(aVar2, aVar, false));
         aVar2.setIconColor(w02);
         int L = g0.L(22.0f);
-        int r12 = k6.r1(0.15f, w02);
+        int r12 = l6.r1(0.15f, w02);
         int L2 = g0.L(6.0f);
-        y Y = k6.Y(L, r12, L2, L2, L2, L2);
-        n6 L3 = r6.L(0.15f, i7);
+        y Y = l6.Y(L, r12, L2, L2, L2, L2);
+        o6 K = s6.K(0.15f, i7);
         aVar2.setBackground(Y);
-        r6.k(aVar2, Y, null, L3, f6Var);
+        s6.j(aVar2, Y, null, K, g6Var);
         return aVar2;
     }
 
-    public static a d(Context context, c cVar, gh.a aVar, f6 f6Var, int i7, int i10) {
-        int i11 = k6.Kl;
-        int w02 = k6.w0(i11, f6Var);
+    public static a d(Context context, c cVar, gh.a aVar, g6 g6Var, int i7, int i10) {
+        int i11 = l6.Kl;
+        int w02 = l6.w0(i11, g6Var);
         a aVar2 = new a(context);
-        aVar2.f = f6Var;
+        aVar2.f = g6Var;
         aVar2.setBlurredBackgroundDrawable(cVar.c(aVar2, aVar, false));
         aVar2.f(i7, i10);
         aVar2.setIconColor(w02);
         int L = g0.L(22.0f);
-        int r12 = k6.r1(0.15f, w02);
+        int r12 = l6.r1(0.15f, w02);
         int L2 = g0.L(6.0f);
-        y Y = k6.Y(L, r12, L2, L2, L2, L2);
-        n6 L3 = r6.L(0.15f, i11);
+        y Y = l6.Y(L, r12, L2, L2, L2, L2);
+        o6 K = s6.K(0.15f, i11);
         aVar2.setBackground(Y);
-        r6.k(aVar2, Y, null, L3, f6Var);
+        s6.j(aVar2, Y, null, K, g6Var);
         return aVar2;
     }
 
@@ -193,28 +193,28 @@ public final class a extends FrameLayout implements te.b, a6 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
         g gVar = this.r;
         if (gVar != null) {
             gVar.updateColors();
             invalidate();
         }
-        int w02 = k6.w0(k6.Kl, this.f);
+        int w02 = l6.w0(l6.Kl, this.f);
         if (this.c != null && w02 != this.n) {
             setIconColor(w02);
         }
         int L = g0.L(22.0f);
-        int r12 = k6.r1(0.15f, w02);
+        int r12 = l6.r1(0.15f, w02);
         if (getBackground() instanceof RippleDrawable) {
-            k6.H1(getBackground(), r12, true);
+            l6.H1(getBackground(), r12, true);
         } else {
             int L2 = g0.L(6.0f);
-            setBackground(k6.Y(L, r12, L2, L2, L2, L2));
+            setBackground(l6.Y(L, r12, L2, L2, L2, L2));
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 

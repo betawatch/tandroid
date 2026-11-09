@@ -8,12 +8,13 @@ import org.telegram.messenger.qs;
 import org.telegram.messenger.vo;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.fl0;
-import org.telegram.ui.Components.uq0;
-import org.telegram.ui.Components.xs0;
-import org.telegram.ui.Components.zd0;
+import org.telegram.ui.Components.ae0;
+import org.telegram.ui.Components.gl0;
+import org.telegram.ui.Components.xq0;
+import org.telegram.ui.Components.zs0;
+import org.telegram.ui.iz;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c9 implements Runnable {
     public final /* synthetic */ int a;
@@ -85,45 +86,45 @@ public final /* synthetic */ class c9 implements Runnable {
                 }
                 break;
             case 4:
-                ((zd0) obj).a.b.w3(i10, z9);
+                ((ae0) obj).a.b.w3(i10, z9);
                 break;
             case 5:
-                fl0 fl0Var = (fl0) obj;
-                fl0Var.o = null;
-                fl0Var.c(i10, z9, true);
+                gl0 gl0Var = (gl0) obj;
+                gl0Var.o = null;
+                gl0Var.c(i10, z9, true);
                 break;
             case 6:
-                xs0 xs0Var = ((uq0) obj).a;
-                org.telegram.ui.ActionBar.f2 f2Var = xs0Var.x1;
+                zs0 zs0Var = ((xq0) obj).a;
+                org.telegram.ui.ActionBar.f2 f2Var = zs0Var.x1;
                 if (f2Var != null) {
                     if (z9) {
                         TLRPC.TL_channels_setMainProfileTab tL_channels_setMainProfileTab = new TLRPC.TL_channels_setMainProfileTab();
-                        tL_channels_setMainProfileTab.tab = xs0.o0(i10, true);
-                        tL_channels_setMainProfileTab.channel = f2Var.getMessagesController().h1(xs0Var.f1.id);
-                        TLRPC.ChatFull chatFull = xs0Var.f1;
+                        tL_channels_setMainProfileTab.tab = zs0.o0(i10, true);
+                        tL_channels_setMainProfileTab.channel = f2Var.getMessagesController().h1(zs0Var.f1.id);
+                        TLRPC.ChatFull chatFull = zs0Var.f1;
                         chatFull.flags2 |= TLObject.FLAG_22;
                         chatFull.main_tab = tL_channels_setMainProfileTab.tab;
                         tL_account_setMainProfileTab = tL_channels_setMainProfileTab;
                     } else {
                         TLRPC.TL_account_setMainProfileTab tL_account_setMainProfileTab2 = new TLRPC.TL_account_setMainProfileTab();
-                        TLRPC.ProfileTab o02 = xs0.o0(i10, true);
+                        TLRPC.ProfileTab o02 = zs0.o0(i10, true);
                         tL_account_setMainProfileTab2.tab = o02;
-                        TLRPC.UserFull userFull = xs0Var.g1;
+                        TLRPC.UserFull userFull = zs0Var.g1;
                         tL_account_setMainProfileTab = tL_account_setMainProfileTab2;
                         if (userFull != null) {
                             userFull.flags2 |= TLObject.FLAG_20;
                             userFull.main_tab = o02;
-                            f2Var.getMessagesStorage().j2(xs0Var.g1, true);
+                            f2Var.getMessagesStorage().j2(zs0Var.g1, true);
                             tL_account_setMainProfileTab = tL_account_setMainProfileTab2;
                         }
                     }
                     f2Var.getConnectionsManager().sendRequest(tL_account_setMainProfileTab, null);
-                    xs0Var.N1(true);
+                    zs0Var.P1(true);
                     break;
                 }
                 break;
             default:
-                org.telegram.ui.Components.cc I = org.telegram.ui.Components.hc.a0((org.telegram.ui.gz) obj).I(z9 ? R.raw.folder_in : R.raw.folder_out, z9 ? org.telegram.messenger.id.G(i10, "FolderLinkAddedChats", new Object[0]) : org.telegram.messenger.id.G(i10, "FolderLinkRemovedChats", new Object[0]), org.telegram.messenger.id.M0(2131750669, null));
+                org.telegram.ui.Components.cc I = org.telegram.ui.Components.hc.a0((iz) obj).I(z9 ? R.raw.folder_in : R.raw.folder_out, z9 ? org.telegram.messenger.id.G(i10, "FolderLinkAddedChats", new Object[0]) : org.telegram.messenger.id.G(i10, "FolderLinkRemovedChats", new Object[0]), org.telegram.messenger.id.M0(2131750668, null));
                 I.j = 5000;
                 I.j();
                 break;

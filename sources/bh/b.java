@@ -8,18 +8,18 @@ import android.graphics.drawable.Drawable;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import c8.ha;
-import di.c4;
+import di.d4;
 import java.util.Date;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.id;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.k5;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.l5;
+import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.Cells.pa;
 import org.telegram.ui.Components.w8;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class b extends pa {
     public final TextView b0;
@@ -35,7 +35,7 @@ public final class b extends pa {
         this.c0 = new FrameLayout(getContext());
         TextView textView = new TextView(getContext());
         this.b0 = textView;
-        textView.setTextColor(k6.w0(k6.G6, this.D));
+        textView.setTextColor(l6.w0(l6.G6, this.D));
         this.b0.setTypeface(g0.o());
         this.b0.setTextSize(12.0f);
         this.b0.setGravity(17);
@@ -64,7 +64,7 @@ public final class b extends pa {
     @Override // org.telegram.ui.Cells.pa, android.view.View
     public final void onDraw(Canvas canvas) {
         if (this.S) {
-            canvas.drawLine(id.a0 ? 0.0f : g0.L(70.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (id.a0 ? g0.L(70.0f) : 0), getMeasuredHeight() - 1, k6.k0);
+            canvas.drawLine(id.a0 ? 0.0f : g0.L(70.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (id.a0 ? g0.L(70.0f) : 0), getMeasuredHeight() - 1, l6.k0);
         }
     }
 
@@ -73,38 +73,38 @@ public final class b extends pa {
         boolean z9 = boost.gift;
         FrameLayout frameLayout = this.c0;
         TextView textView = this.b0;
-        k5 k5Var = this.b;
+        l5 l5Var = this.b;
         if (z9 || boost.giveaway) {
             frameLayout.setVisibility(0);
             int i7 = ((boost.expires - boost.date) / 30) / 86400;
             long j3 = boost.stars;
-            c4 c4Var = this.a;
+            d4 d4Var = this.a;
             w8 w8Var = this.E;
             if (j3 > 0) {
-                k5Var.l(id.G((int) j3, "BoostingBoostStars", new Object[0]), false);
+                l5Var.l(id.G((int) j3, "BoostingBoostStars", new Object[0]), false);
                 w8Var.g(26);
-                c4Var.e(null, w8Var);
-                k5Var.i(null);
+                d4Var.e(null, w8Var);
+                l5Var.i(null);
             } else if (boost.unclaimed) {
-                k5Var.l(id.M0(2131753177, null), false);
+                l5Var.l(id.M0(2131753177, null), false);
                 w8Var.g(18);
                 setAvatarColorByMonths(i7);
-                c4Var.e(null, w8Var);
-                k5Var.i(null);
+                d4Var.e(null, w8Var);
+                l5Var.i(null);
             } else if (boost.user_id == -1) {
-                k5Var.l(id.M0(2131753178, null), false);
+                l5Var.l(id.M0(2131753178, null), false);
                 w8Var.g(19);
                 setAvatarColorByMonths(i7);
-                c4Var.e(null, w8Var);
-                k5Var.i(null);
+                d4Var.e(null, w8Var);
+                l5Var.i(null);
             }
             String format = id.E0().o0().format(new Date(boost.expires * 1000));
             long j10 = boost.stars;
-            k5 k5Var2 = this.c;
+            l5 l5Var2 = this.c;
             if (j10 > 0) {
-                k5Var2.l(id.a0(null, null, 2131753244, format), false);
+                l5Var2.l(id.a0(null, null, 2131753244, format), false);
             } else {
-                k5Var2.l(id.a0(null, null, 2131753524, format), false);
+                l5Var2.l(id.a0(null, null, 2131753524, format), false);
             }
             if (boost.gift) {
                 if (this.e0 == null) {
@@ -116,7 +116,7 @@ public final class b extends pa {
                 textView.setCompoundDrawablesWithIntrinsicBounds(this.e0, (Drawable) null, (Drawable) null, (Drawable) null);
                 textView.setCompoundDrawablePadding(g0.L(4.0f));
                 textView.setText(id.M0(2131753501, null));
-                frameLayout.setBackground(k6.e0(g0.L(12.0f), g0.L(12.0f), k6.r1(0.2f, -3240417)));
+                frameLayout.setBackground(l6.e0(g0.L(12.0f), g0.L(12.0f), l6.r1(0.2f, -3240417)));
             }
             if (boost.giveaway) {
                 if (this.d0 == null) {
@@ -128,7 +128,7 @@ public final class b extends pa {
                 textView.setCompoundDrawablesWithIntrinsicBounds(this.d0, (Drawable) null, (Drawable) null, (Drawable) null);
                 textView.setCompoundDrawablePadding(g0.L(4.0f));
                 textView.setText(id.M0(2131753492, null));
-                frameLayout.setBackground(k6.e0(g0.L(12.0f), g0.L(12.0f), k6.r1(0.2f, -13397548)));
+                frameLayout.setBackground(l6.e0(g0.L(12.0f), g0.L(12.0f), l6.r1(0.2f, -13397548)));
             }
         } else {
             frameLayout.setVisibility(8);
@@ -140,15 +140,15 @@ public final class b extends pa {
             aVar.f = valueOf;
             aVar.e = aVar.a.measureText(valueOf);
             aVar.invalidateSelf();
-            k5Var.i(aVar);
+            l5Var.i(aVar);
         } else {
-            k5Var.i(null);
+            l5Var.i(null);
         }
         if (frameLayout.getVisibility() != 0) {
-            k5Var.setPadding(0, k5Var.getPaddingTop(), 0, k5Var.getPaddingBottom());
+            l5Var.setPadding(0, l5Var.getPaddingTop(), 0, l5Var.getPaddingBottom());
         } else {
             int L = g0.L(22.0f) + ((int) textView.getPaint().measureText(textView.getText().toString()));
-            k5Var.setPadding(id.a0 ? L : 0, k5Var.getPaddingTop(), id.a0 ? 0 : L, k5Var.getPaddingBottom());
+            l5Var.setPadding(id.a0 ? L : 0, l5Var.getPaddingTop(), id.a0 ? 0 : L, l5Var.getPaddingBottom());
         }
     }
 }

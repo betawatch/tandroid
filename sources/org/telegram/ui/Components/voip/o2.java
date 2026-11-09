@@ -8,11 +8,11 @@ import android.view.WindowManager;
 import android.widget.FrameLayout;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.ui.Components.xq;
-import org.telegram.ui.fc1;
+import org.telegram.ui.ic1;
 import org.telegram.ui.va;
 import org.webrtc.OrientationHelper;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public abstract class o2 extends FrameLayout {
     public Activity a;
@@ -47,25 +47,25 @@ public abstract class o2 extends FrameLayout {
             return;
         }
         this.f = true;
-        if (fc1.l1 != null) {
+        if (ic1.l1 != null) {
             if (VoIPService.getSharedInstance() != null) {
-                int measuredHeight = fc1.l1.t0.getMeasuredHeight();
-                if (fc1.l1.C0 && !VoIPService.getSharedInstance().isConverting()) {
-                    fc1 fc1Var = fc1.l1;
-                    e2.f(fc1Var.b, fc1Var.a, fc1Var.t0.getMeasuredWidth(), measuredHeight, 0);
-                    WindowInsets windowInsets = fc1.l1.q0;
+                int measuredHeight = ic1.l1.t0.getMeasuredHeight();
+                if (ic1.l1.C0 && !VoIPService.getSharedInstance().isConverting()) {
+                    ic1 ic1Var = ic1.l1;
+                    e2.f(ic1Var.b, ic1Var.a, ic1Var.t0.getMeasuredWidth(), measuredHeight, 0);
+                    WindowInsets windowInsets = ic1.l1.q0;
                     if (windowInsets != null) {
                         e2.V = windowInsets.getSystemWindowInsetTop();
-                        fc1.l1.q0.getSystemWindowInsetBottom();
+                        ic1.l1.q0.getSystemWindowInsetBottom();
                     }
                 }
             }
-            fc1.l1.c0.d.release();
-            fc1.l1.d0.d.release();
-            fc1.l1.b0.release();
-            fc1.l1.c();
+            ic1.l1.c0.d.release();
+            ic1.l1.d0.d.release();
+            ic1.l1.b0.release();
+            ic1.l1.c();
         }
-        fc1.l1 = null;
+        ic1.l1 = null;
         f2.d();
         if (this.b) {
             try {

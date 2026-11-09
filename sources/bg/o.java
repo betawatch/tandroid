@@ -13,11 +13,11 @@ import java.util.ArrayList;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.ui;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.d41;
+import org.telegram.ui.Components.e41;
 import org.telegram.ui.Components.r5;
-import org.telegram.ui.Components.ug0;
+import org.telegram.ui.Components.vg0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public abstract class o {
     public static SpannableStringBuilder a(String str) {
@@ -98,7 +98,7 @@ public abstract class o {
                     if (charSequence.equals(url)) {
                         spannableStringBuilder.setSpan(new URLSpan(url), spanStart2, spanEnd2, 33);
                     } else {
-                        spannableStringBuilder.setSpan(new d41(url, null), spanStart2, spanEnd2, 33);
+                        spannableStringBuilder.setSpan(new e41(url, null), spanStart2, spanEnd2, 33);
                     }
                 }
             }
@@ -111,7 +111,7 @@ public abstract class o {
             }
             for (int i11 = 0; i11 < arrayList3.size(); i11++) {
                 n nVar3 = (n) arrayList3.get(i11);
-                ug0.c(spannableStringBuilder, fromHtml.getSpanStart(nVar3), fromHtml.getSpanEnd(nVar3), nVar3.a == 3);
+                vg0.c(spannableStringBuilder, fromHtml.getSpanStart(nVar3), fromHtml.getSpanEnd(nVar3), nVar3.a == 3);
             }
             return spannableStringBuilder;
         } catch (Exception e10) {

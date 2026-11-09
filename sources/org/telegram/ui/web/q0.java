@@ -10,9 +10,9 @@ import bi.eb;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.id;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.m5;
+import org.telegram.ui.ActionBar.o5;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final class q0 extends WebViewClient {
     public final /* synthetic */ WebView a;
@@ -44,8 +44,8 @@ public final class q0 extends WebViewClient {
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, x0Var == null ? null : x0Var.e);
             org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
             u1Var.R = id.M0(2131752104, null);
-            u1Var.T = org.telegram.messenger.g0.U2(id.M0(2131752105, null), new m5(this, 14));
-            alertDialog$Builder.k(id.M0(2131747832, null), null);
+            u1Var.T = org.telegram.messenger.g0.U2(id.M0(2131752105, null), new o5(this, 12));
+            alertDialog$Builder.k(id.M0(2131747831, null), null);
             u1Var.setOnDismissListener(new eb(this, 12));
             alertDialog$Builder.p();
             return true;

@@ -15,7 +15,7 @@ import org.telegram.messenger.ui;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.hc;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u8 implements Runnable {
     public final /* synthetic */ int a;
@@ -269,10 +269,10 @@ public final /* synthetic */ class u8 implements Runnable {
                 }
                 break;
             case 11:
-                o9 o9Var = vaVar.d1;
-                if (o9Var != null) {
+                n9 n9Var = vaVar.d1;
+                if (n9Var != null) {
                     int i17 = -(org.telegram.messenger.g0.L(24.0f) + vaVar.c1.getEditTextHeight());
-                    o9Var.setTranslationY(i17 - (vaVar.Z0 != null ? r3.getContentHeight() - org.telegram.messenger.g0.L(5.0f) : 0));
+                    n9Var.setTranslationY(i17 - (vaVar.Z0 != null ? r3.getContentHeight() - org.telegram.messenger.g0.L(5.0f) : 0));
                     break;
                 }
                 break;
@@ -302,9 +302,9 @@ public final /* synthetic */ class u8 implements Runnable {
                     if (!laVar2.o0 && !laVar2.N1) {
                         fb fbVar = vaVar.Z0;
                         if (!fbVar.P) {
-                            o9 o9Var2 = vaVar.d1;
-                            if (o9Var2.M) {
-                                o9Var2.c(false, true);
+                            n9 n9Var2 = vaVar.d1;
+                            if (n9Var2.M) {
+                                n9Var2.c(false, true);
                                 break;
                             } else {
                                 vaVar.k0(0, false, true);
@@ -344,7 +344,7 @@ public final /* synthetic */ class u8 implements Runnable {
             case 19:
                 ua uaVar2 = vaVar.n;
                 di.b bVar = vaVar.a;
-                new hc(uaVar2, bVar).Q(R.raw.voip_invite, 36, org.telegram.messenger.g0.S2(id.M0(2131744584, null), org.telegram.ui.ActionBar.k6.Uc, 0, new u8(vaVar, 27), bVar)).k(true);
+                new hc(uaVar2, bVar).Q(R.raw.voip_invite, 36, org.telegram.messenger.g0.S2(id.M0(2131744581, null), org.telegram.ui.ActionBar.l6.Uc, 0, new u8(vaVar, 27), bVar)).k(true);
                 break;
             case 20:
                 s8 s8Var = vaVar.q0;

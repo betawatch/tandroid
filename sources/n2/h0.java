@@ -19,7 +19,7 @@ import j$.util.Objects;
 import java.math.RoundingMode;
 import java.util.List;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class h0 implements o {
     public final Context a;
@@ -293,7 +293,7 @@ public final class h0 implements o {
         f();
         e eVar2 = this.i;
         if (eVar2 == null && (context = this.a) != null) {
-            e eVar3 = new e(context, new l2.y(this, 20), eVar, audioDeviceInfo);
+            e eVar3 = new e(context, new l2.x(this, 20), eVar, audioDeviceInfo);
             this.i = eVar3;
             if (eVar3.k) {
                 b10 = eVar3.h;
@@ -310,7 +310,7 @@ public final class h0 implements o {
                 Handler handler = eVar3.c;
                 d.registerAudioDeviceCallback(cVar, handler);
                 if (Build.VERSION.SDK_INT >= 32 && eVar3.g == null) {
-                    eVar3.g = new c3.d(context2, new l2.w(eVar3, 11), Boolean.valueOf(h2.m0.P(context2)));
+                    eVar3.g = new c3.d(context2, new l2.a0(eVar3, 10), Boolean.valueOf(h2.m0.P(context2)));
                 }
                 b10 = b.b(context2, context2.registerReceiver(eVar3.e, new IntentFilter("android.media.action.HDMI_AUDIO_PLUG"), null, handler), eVar3.j, eVar3.i, eVar3.a());
                 eVar3.h = b10;

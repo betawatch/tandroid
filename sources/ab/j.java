@@ -25,37 +25,37 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.r1;
 import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.bi;
-import org.telegram.ui.Components.cj0;
 import org.telegram.ui.Components.di;
+import org.telegram.ui.Components.dj0;
 import org.telegram.ui.Components.tl;
 import org.telegram.ui.Components.v8;
 import org.telegram.ui.Components.voip.y1;
 import org.telegram.ui.Components.x00;
-import org.telegram.ui.Components.x31;
+import org.telegram.ui.Components.y31;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.an;
-import org.telegram.ui.bk0;
+import org.telegram.ui.az;
 import org.telegram.ui.ca;
-import org.telegram.ui.co;
+import org.telegram.ui.cn;
+import org.telegram.ui.dk0;
 import org.telegram.ui.fo;
-import org.telegram.ui.gz;
+import org.telegram.ui.ho;
 import org.telegram.ui.i9;
-import org.telegram.ui.ma1;
-import org.telegram.ui.pi0;
-import org.telegram.ui.si0;
-import org.telegram.ui.vr;
-import org.telegram.ui.yy;
+import org.telegram.ui.iz;
+import org.telegram.ui.oa1;
+import org.telegram.ui.ri0;
+import org.telegram.ui.ui0;
+import org.telegram.ui.xr;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class j implements Continuation, ma1, r1, cj0, vr, androidx.car.app.utils.a {
+public final /* synthetic */ class j implements Continuation, oa1, r1, dj0, xr, androidx.car.app.utils.a {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ Object c;
@@ -75,7 +75,7 @@ public final /* synthetic */ class j implements Continuation, ma1, r1, cj0, vr, 
         return lambda$onCarHardwareResult$0;
     }
 
-    @Override // org.telegram.ui.vr
+    @Override // org.telegram.ui.xr
     public void b(TLRPC.User user) {
         LaunchActivity launchActivity = (LaunchActivity) this.c;
         int[] iArr = (int[]) this.d;
@@ -88,14 +88,14 @@ public final /* synthetic */ class j implements Continuation, ma1, r1, cj0, vr, 
     
         if (r7.N1 != false) goto L96;
      */
-    @Override // org.telegram.ui.Components.cj0
+    @Override // org.telegram.ui.Components.dj0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void f(float f10, float f11, int i7, View view) {
         int i10 = i7;
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = (ChatAttachAlertPhotoLayout) this.c;
-        f6 f6Var = (f6) this.d;
+        g6 g6Var = (g6) this.d;
         ArrayList arrayList = ChatAttachAlertPhotoLayout.t1;
         HashMap hashMap = ChatAttachAlertPhotoLayout.s1;
         di diVar = chatAttachAlertPhotoLayout.b;
@@ -142,7 +142,7 @@ public final /* synthetic */ class j implements Continuation, ma1, r1, cj0, vr, 
                 if (chatAttachAlertPhotoLayout.T0 == chatAttachAlertPhotoLayout.U0 && z11) {
                     i10--;
                 }
-                an anVar = null;
+                cn cnVar = null;
                 if (chatAttachAlertPhotoLayout.g1) {
                     if (i10 == 0) {
                         if (!(view instanceof v8)) {
@@ -173,7 +173,7 @@ public final /* synthetic */ class j implements Continuation, ma1, r1, cj0, vr, 
                         hashMap.clear();
                         return;
                     }
-                    PhotoViewer.p1().H2(null, Q, f6Var);
+                    PhotoViewer.p1().H2(null, Q, g6Var);
                     PhotoViewer.p1().I2(diVar);
                     PhotoViewer p12 = PhotoViewer.p1();
                     int i13 = diVar.M3;
@@ -182,14 +182,14 @@ public final /* synthetic */ class j implements Continuation, ma1, r1, cj0, vr, 
                     p12.n = z12;
                     if (diVar.w1 && diVar.x1) {
                         i12 = 11;
-                        if (f2Var instanceof an) {
-                            anVar = (an) f2Var;
+                        if (f2Var instanceof cn) {
+                            cnVar = (cn) f2Var;
                         }
                     } else if (diVar.K2 != 0) {
                         i12 = 1;
                     } else {
-                        if (f2Var instanceof an) {
-                            anVar = (an) f2Var;
+                        if (f2Var instanceof cn) {
+                            cnVar = (cn) f2Var;
                         }
                         i12 = 0;
                     }
@@ -217,14 +217,14 @@ public final /* synthetic */ class j implements Continuation, ma1, r1, cj0, vr, 
                     if (z13) {
                         chatAttachAlertPhotoLayout.s0(i10, false);
                     }
-                    org.telegram.messenger.g0.i3(new li.g0(chatAttachAlertPhotoLayout, i12, Q, allPhotosArray, i10, anVar), z13 ? 250L : 0L);
+                    org.telegram.messenger.g0.i3(new li.g0(chatAttachAlertPhotoLayout, i12, Q, allPhotosArray, i10, cnVar), z13 ? 250L : 0L);
                 }
             } catch (Exception unused) {
             }
         }
     }
 
-    @Override // org.telegram.ui.Components.cj0
+    @Override // org.telegram.ui.Components.dj0
     public /* synthetic */ boolean f1(View view) {
         return false;
     }
@@ -234,7 +234,7 @@ public final /* synthetic */ class j implements Continuation, ma1, r1, cj0, vr, 
         switch (this.a) {
             case 2:
                 kg.a0 a0Var = (kg.a0) this.c;
-                (!this.b ? a0Var.k : a0Var.j).remove(Long.valueOf(((x31) this.d).x));
+                (!this.b ? a0Var.k : a0Var.j).remove(Long.valueOf(((y31) this.d).x));
                 a0Var.e.run();
                 break;
             case 3:
@@ -260,12 +260,12 @@ public final /* synthetic */ class j implements Continuation, ma1, r1, cj0, vr, 
                 ((ca) this.c).a.o0((TLRPC.TL_username) this.d, this.b, true);
                 break;
             case 5:
-                co coVar = (co) this.c;
+                fo foVar = (fo) this.c;
                 TLRPC.TL_username tL_username = (TLRPC.TL_username) this.d;
                 boolean z11 = this.b;
-                fo foVar = coVar.a;
-                foVar.z1(tL_username, z11, true);
-                foVar.h3.b0();
+                ho hoVar = foVar.a;
+                hoVar.z1(tL_username, z11, true);
+                hoVar.h3.b0();
                 break;
             case 6:
                 f2 f2Var = (f2) this.c;
@@ -277,27 +277,27 @@ public final /* synthetic */ class j implements Continuation, ma1, r1, cj0, vr, 
             case 7:
             case 9:
             default:
-                bk0 bk0Var = (bk0) this.c;
+                dk0 dk0Var = (dk0) this.c;
                 TLRPC.TL_secureRequiredType tL_secureRequiredType = (TLRPC.TL_secureRequiredType) this.d;
                 boolean z13 = this.b;
-                bk0Var.C1();
-                bk0Var.n1(tL_secureRequiredType, null, null, true, new pi0(bk0Var, 4), new si0(bk0Var, 6), z13);
+                dk0Var.C1();
+                dk0Var.n1(tL_secureRequiredType, null, null, true, new ri0(dk0Var, 4), new ui0(dk0Var, 6), z13);
                 break;
             case 8:
-                gz gzVar = (gz) this.c;
-                yy yyVar = (yy) this.d;
+                iz izVar = (iz) this.c;
+                az azVar = (az) this.d;
                 boolean z14 = this.b;
-                int i10 = yyVar.j;
+                int i10 = azVar.j;
                 if (i10 > 0) {
-                    gzVar.D &= ~i10;
+                    izVar.D &= ~i10;
                 } else {
-                    (z14 ? gzVar.F : gzVar.G).remove(Long.valueOf(yyVar.h));
+                    (z14 ? izVar.F : izVar.G).remove(Long.valueOf(azVar.h));
                 }
-                gzVar.p0();
-                gzVar.C0();
-                gzVar.o0(true);
+                izVar.p0();
+                izVar.C0();
+                izVar.o0(true);
                 if (z14) {
-                    gzVar.t0(1, false);
+                    izVar.t0(1, false);
                     break;
                 }
                 break;
@@ -323,16 +323,16 @@ public final /* synthetic */ class j implements Continuation, ma1, r1, cj0, vr, 
                     break;
                 } catch (Exception unused) {
                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(f2Var2.getParentActivity());
-                    alertDialog$Builder.a.R = id.M0(2131746074, null);
-                    alertDialog$Builder.a.T = id.M0(2131748200, "NoMailInstalled");
-                    alertDialog$Builder.k(id.M0(2131747832, "OK"), null);
+                    alertDialog$Builder.a.R = id.M0(2131746071, null);
+                    alertDialog$Builder.a.T = id.M0(2131748199, "NoMailInstalled");
+                    alertDialog$Builder.k(id.M0(2131747831, "OK"), null);
                     f2Var2.showDialog(alertDialog$Builder.a);
                     return;
                 }
         }
     }
 
-    @Override // org.telegram.ui.ma1
+    @Override // org.telegram.ui.oa1
     public void j(TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP) {
         k7 k7Var = (k7) this.c;
         TwoStepVerificationActivity twoStepVerificationActivity = (TwoStepVerificationActivity) this.d;
@@ -361,7 +361,7 @@ public final /* synthetic */ class j implements Continuation, ma1, r1, cj0, vr, 
         this.d = f2Var;
     }
 
-    @Override // org.telegram.ui.Components.cj0
+    @Override // org.telegram.ui.Components.dj0
     public /* synthetic */ void r0(View view, float f10, float f11) {
     }
 }

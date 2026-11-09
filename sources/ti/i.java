@@ -19,23 +19,23 @@ import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.t0;
-import org.telegram.ui.Components.j51;
-import org.telegram.ui.Components.lt0;
-import org.telegram.ui.Components.qm0;
+import org.telegram.ui.Components.k51;
+import org.telegram.ui.Components.nt0;
+import org.telegram.ui.Components.rm0;
 import org.telegram.ui.Components.rt;
 import org.telegram.ui.Components.xq;
-import org.telegram.ui.s81;
+import org.telegram.ui.t81;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final class i {
-    public static final lt0 Q = new lt0(new s0.b(20), new s0.b(21));
-    public static final lt0 R = new lt0(new s0.b(22), new s0.b(23));
+    public static final nt0 Q = new nt0(new s0.b(20), new s0.b(21));
+    public static final nt0 R = new nt0(new s0.b(22), new s0.b(23));
     public float B;
     public float C;
     public r1.g D;
     public r1.g E;
-    public qm0 G;
+    public rm0 G;
     public boolean H;
     public float I;
     public float J;
@@ -68,7 +68,7 @@ public final class i {
     public final WindowManager.LayoutParams e = new WindowManager.LayoutParams();
     public float z = 1.0f;
     public float A = 1.4f;
-    public final j51 F = new j51(false);
+    public final k51 F = new k51(false);
     public final float[] M = new float[2];
     public final b N = new b(this, 1);
     public final f O = new f(this, 0);
@@ -175,7 +175,7 @@ public final class i {
         this.b.F();
     }
 
-    public final void f(sg.t0 t0Var) {
+    public final void f(sh.b bVar) {
         l();
         p pVar = this.j;
         this.j = null;
@@ -187,7 +187,7 @@ public final class i {
             g0.E2(view);
             this.k = null;
         }
-        t0Var.run();
+        bVar.run();
         if (pVar != null) {
             SurfaceTexture surfaceTexture = pVar.a;
             pVar.a = null;
@@ -244,7 +244,7 @@ public final class i {
         this.v = duration;
         duration.setInterpolator(xq.f);
         this.v.addUpdateListener(new d(this, 0));
-        this.v.addListener(new s81(this, 17));
+        this.v.addListener(new t81(this, 17));
         this.v.start();
     }
 

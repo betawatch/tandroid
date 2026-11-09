@@ -1,62 +1,37 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.content.Context;
-import android.text.style.CharacterStyle;
-import org.telegram.ui.Components.UndoView;
-
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class mk extends UndoView {
-    public final /* synthetic */ int j0 = 0;
-    public final /* synthetic */ Object k0;
+public final /* synthetic */ class mk implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ nk b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public mk(z10 z10Var, Context context) {
-        super(context);
-        this.k0 = z10Var;
+    public /* synthetic */ mk(nk nkVar, int i7) {
+        this.a = i7;
+        this.b = nkVar;
     }
 
-    @Override // org.telegram.ui.Components.UndoView
-    public void b(CharacterStyle characterStyle) {
-        switch (this.j0) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
             case 0:
-                ((an) this.k0).j8(characterStyle, false, null, null);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.UndoView, android.view.View
-    public void invalidate() {
-        switch (this.j0) {
-            case 1:
-                super.invalidate();
-                ((z10) this.k0).invalidate();
+                sj sjVar = this.b.H.Z;
+                if (sjVar != null) {
+                    sjVar.H0();
+                    break;
+                }
                 break;
             default:
-                super.invalidate();
+                sj sjVar2 = this.b.H.Z;
+                if (sjVar2 != null) {
+                    sjVar2.T0 = false;
+                    org.telegram.ui.Components.mf mfVar = sjVar2.U0;
+                    if (mfVar != null) {
+                        mfVar.u(false);
+                        break;
+                    }
+                }
                 break;
         }
-    }
-
-    @Override // org.telegram.ui.Components.UndoView
-    public void k(long j3, int i7, Object obj, Object obj2, Runnable runnable, Runnable runnable2) {
-        int i10;
-        switch (this.j0) {
-            case 0:
-                lj ljVar = ((an) this.k0).l2;
-                setAdditionalTranslationY((ljVar == null || !(((i10 = ljVar.U) == 1 || i10 == 3) && ljVar.T)) ? 0.0f : org.telegram.messenger.g0.L(ljVar.getStyleHeight()));
-                super.k(j3, i7, obj, obj2, runnable, runnable2);
-                break;
-            default:
-                super.k(j3, i7, obj, obj2, runnable, runnable2);
-                break;
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public mk(an anVar, Activity activity, an anVar2, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(activity, anVar2, true, f6Var);
-        this.k0 = anVar;
     }
 }

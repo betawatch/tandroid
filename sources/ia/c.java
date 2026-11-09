@@ -17,7 +17,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
-import l2.y;
+import l2.x;
 import li.z;
 import n5.g0;
 import n5.h0;
@@ -35,12 +35,12 @@ import o5.l;
 import o5.n;
 import org.json.JSONObject;
 import org.telegram.ui.ActionBar.m3;
-import org.telegram.ui.hy0;
+import org.telegram.ui.ky0;
 import org.telegram.ui.web.a0;
 import p1.g;
 import w7.s;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class c {
     public Object a;
@@ -244,11 +244,11 @@ public final class c {
                     e0Var.a = "GDT_CLIENT_METRICS";
                     l5.c cVar5 = new l5.c("proto");
                     aVar3.getClass();
-                    hy0 hy0Var = n.a;
-                    hy0Var.getClass();
+                    ky0 ky0Var = n.a;
+                    ky0Var.getClass();
                     ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
                     try {
-                        hy0Var.q(aVar3, byteArrayOutputStream);
+                        ky0Var.q(aVar3, byteArrayOutputStream);
                     } catch (IOException unused) {
                     }
                     e0Var.c = new l(cVar5, byteArrayOutputStream.toByteArray());
@@ -377,10 +377,10 @@ public final class c {
                 try {
                     int i15 = 13;
                     h6.m mVar2 = new h6.m(url, mVar, str, i15);
-                    y yVar = new y(bVar, 19);
+                    x xVar = new x(bVar, 19);
                     int i16 = 5;
                     do {
-                        c10 = yVar.c(mVar2);
+                        c10 = xVar.c(mVar2);
                         URL url2 = (URL) c10.c;
                         if (url2 != null) {
                             cc.a(url2, "CctTransportBackend", "Following redirect to: %s");
@@ -425,7 +425,7 @@ public final class c {
             i11 = aVar2.a;
             if (i11 != i10) {
                 gVar.f(new bg.e0(this, iterable, iVar, j3, 6));
-                ((hy0) this.d).J(iVar, i7 + 1, true);
+                ((ky0) this.d).J(iVar, i7 + 1, true);
                 return;
             }
             cVar2 = this;

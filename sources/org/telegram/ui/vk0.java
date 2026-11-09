@@ -1,61 +1,19 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
-/* loaded from: classes3.dex */
-public final class vk0 extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ hl0 a;
+import android.content.Context;
+import android.view.MotionEvent;
+import android.webkit.WebView;
 
-    public vk0(hl0 hl0Var) {
-        this.a = hl0Var;
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* loaded from: classes3.dex */
+public final class vk0 extends WebView {
+    public vk0(Context context) {
+        super(context);
     }
 
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i7) {
-        hl0 hl0Var = this.a;
-        if (i7 == -1) {
-            if (hl0Var.P0) {
-                return;
-            }
-            hl0Var.finishFragment();
-            return;
-        }
-        if (i7 != 1 || hl0Var.P0) {
-            return;
-        }
-        if (hl0Var.u0 != 3) {
-            org.telegram.messenger.g0.v1(hl0Var.getParentActivity().getCurrentFocus());
-        }
-        int i10 = hl0Var.u0;
-        if (i10 == 0) {
-            hl0Var.J0(true);
-            hl0.r0(hl0Var);
-            return;
-        }
-        int i11 = 0;
-        if (i10 == 1) {
-            while (true) {
-                org.telegram.ui.Cells.i6[] i6VarArr = hl0Var.h;
-                if (i11 >= i6VarArr.length) {
-                    break;
-                }
-                if (i6VarArr[i11].b.f) {
-                    hl0Var.G0 = hl0Var.E0.shipping_options.get(i11);
-                    break;
-                }
-                i11++;
-            }
-            hl0Var.z0();
-            return;
-        }
-        if (i10 == 2) {
-            hl0.o0(hl0Var);
-        } else if (i10 == 3) {
-            hl0.p0(hl0Var);
-        } else {
-            if (i10 != 6) {
-                return;
-            }
-            hl0Var.G0(false);
-        }
+    @Override // android.webkit.WebView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        getParent().requestDisallowInterceptTouchEvent(true);
+        return super.onTouchEvent(motionEvent);
     }
 }

@@ -10,7 +10,7 @@ import org.telegram.messenger.qp;
 import org.telegram.messenger.qs;
 import org.telegram.ui.Components.hc;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class c5 extends k2 {
     public final /* synthetic */ o5 A1;
@@ -41,7 +41,7 @@ public final class c5 extends k2 {
                     l2Var.performHapticFeedback(3);
                 } catch (Exception unused) {
                 }
-                new hc(l2Var, this.I0).I(R.raw.star_premium_2, id.M0(2131749200, null), org.telegram.messenger.g0.S2(G, org.telegram.ui.ActionBar.k6.Uc, 0, new di.s7(this, 17), this.I0)).k(true);
+                new hc(l2Var, this.I0).I(R.raw.star_premium_2, id.M0(2131749199, null), org.telegram.messenger.g0.S2(G, org.telegram.ui.ActionBar.l6.Uc, 0, new di.f8(this, 16), this.I0)).k(true);
                 return false;
             }
             if (i7 >= qp.s1(this.a).p5) {
@@ -49,7 +49,7 @@ public final class c5 extends k2 {
                     l2Var.performHapticFeedback(3);
                 } catch (Exception unused2) {
                 }
-                new hc(l2Var, this.I0).I(R.raw.chats_infotip, id.M0(2131748979, "LimitReached"), id.G(qp.s1(this.a).p5, "StoryReactionsWidgetLimit2", new Object[0])).k(true);
+                new hc(l2Var, this.I0).I(R.raw.chats_infotip, id.M0(2131748978, "LimitReached"), id.G(qp.s1(this.a).p5, "StoryReactionsWidgetLimit2", new Object[0])).k(true);
                 return false;
             }
         }

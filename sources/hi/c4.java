@@ -19,16 +19,16 @@ import org.telegram.messenger.ui;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.s6;
 import org.telegram.ui.Components.di;
 import org.telegram.ui.Components.hc;
 import org.telegram.ui.Components.vh;
 import org.telegram.ui.Components.xa;
-import org.telegram.ui.an;
-import org.telegram.ui.oy0;
+import org.telegram.ui.cn;
+import org.telegram.ui.ry0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final class c4 extends vh implements ls {
     public int D;
@@ -157,14 +157,14 @@ public final class c4 extends vh implements ls {
         alertDialog$Builder.k(id.M0(2131752916, null), new u3(this));
         alertDialog$Builder.h(id.M0(2131752589, null), null);
         u1Var.show();
-        r6.V((TextView) u1Var.d(-1), k6.q7, this.a);
+        s6.U((TextView) u1Var.d(-1), l6.q7, this.a);
         return false;
     }
 
     public final void P() {
         di diVar = this.b;
         org.telegram.ui.ActionBar.f2 f2Var = diVar.W1;
-        if ((f2Var instanceof an) && ((an) f2Var).l1.Q() > org.telegram.messenger.g0.L(20.0f)) {
+        if ((f2Var instanceof cn) && ((cn) f2Var).l1.Q() > org.telegram.messenger.g0.L(20.0f)) {
             org.telegram.messenger.g0.v1(diVar.W1.getFragmentView());
             org.telegram.messenger.g0.i3(new s3(this, 1), 250L);
         } else {
@@ -179,7 +179,7 @@ public final class c4 extends vh implements ls {
         s2 s2Var = this.n;
         if (i7 != qs.z1) {
             if (i7 == qs.n4) {
-                s2Var.n.b(k6.w0(k6.h5, this.a), qs.j2);
+                s2Var.n.b(l6.w0(l6.h5, this.a), qs.j2);
                 return;
             }
             return;
@@ -267,13 +267,13 @@ public final class c4 extends vh implements ls {
     public final void p() {
         qs.f(this.F).n(this, qs.z1);
         qs.e().n(this, qs.n4);
-        org.telegram.ui.ActionBar.y q10 = this.b.R2.q();
+        org.telegram.ui.ActionBar.y r10 = this.b.R2.r();
         org.telegram.ui.ActionBar.r0 r0Var = this.K;
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = r0Var.b;
         if (actionBarPopupWindow$ActionBarPopupWindowLayout != null) {
             actionBarPopupWindow$ActionBarPopupWindowLayout.d();
         }
-        q10.removeView(r0Var);
+        r10.removeView(r0Var);
         this.n.h();
         this.T = true;
         org.telegram.messenger.g0.r(this.U);
@@ -365,7 +365,7 @@ public final class c4 extends vh implements ls {
         if (i7 == R.id.menu_open_bot) {
             Bundle bundle = new Bundle();
             bundle.putLong("user_id", this.w);
-            diVar.W1.presentFragment(new an(bundle));
+            diVar.W1.presentFragment(new cn(bundle));
             diVar.dismiss();
             return;
         }
@@ -415,8 +415,8 @@ public final class c4 extends vh implements ls {
                 Context context = getContext();
                 hc hcVar = new hc(xa.a(getContext()), this.a);
                 long j3 = this.w;
-                int i12 = oy0.s1;
-                oy0.J0(i11, context, j3, false, false, new ArrayList(), hcVar, null, new byte[0], null, null);
+                int i12 = ry0.s1;
+                ry0.J0(i11, context, j3, false, false, new ArrayList(), hcVar, null, new byte[0], null, null);
             }
         }
     }

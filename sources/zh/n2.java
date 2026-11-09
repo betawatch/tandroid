@@ -1,36 +1,27 @@
 package zh;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import bi.l5;
+import java.io.Serializable;
+import org.telegram.messenger.a20;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.y31;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class n2 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ l3 c;
+public final /* synthetic */ class n2 implements l5, a20 {
+    public final /* synthetic */ m3 a;
 
-    public /* synthetic */ n2(l3 l3Var, boolean z9, int i7) {
-        this.a = i7;
-        this.c = l3Var;
-        this.b = z9;
+    public /* synthetic */ n2(m3 m3Var) {
+        this.a = m3Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                if (!this.b) {
-                    this.c.D.setVisibility(8);
-                    break;
-                }
-                break;
-            default:
-                if (!this.b) {
-                    this.c.x.setVisibility(8);
-                    break;
-                }
-                break;
-        }
+    @Override // bi.l5
+    public void a(TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3, boolean z9) {
+        m3.b0(this.a, tL_starGiftUnique, j3, z9);
+    }
+
+    @Override // org.telegram.messenger.a20
+    public void i(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
+        m3.e0(this.a, (y31) obj);
     }
 }

@@ -13,7 +13,7 @@ import org.telegram.messenger.t10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class x6 extends FrameLayout {
     public final int a;
@@ -25,7 +25,7 @@ public final class x6 extends FrameLayout {
     public x6(Activity activity, int i7) {
         super(activity);
         this.a = i7;
-        this.b = new org.telegram.ui.Components.w8((org.telegram.ui.ActionBar.f6) null);
+        this.b = new org.telegram.ui.Components.w8((org.telegram.ui.ActionBar.g6) null);
         org.telegram.ui.Components.l9 l9Var = new org.telegram.ui.Components.l9(activity);
         this.c = l9Var;
         l9Var.setRoundRadius(org.telegram.messenger.g0.L(15.0f));
@@ -41,9 +41,9 @@ public final class x6 extends FrameLayout {
         addView(textView, c8.ha.d(-1, -2.0f, 51, 53.0f, 11.33f, 12.0f, 0.0f));
         TextView textView2 = new TextView(activity);
         textView2.setTextSize(1, 12.0f);
-        textView2.setTextColor(org.telegram.ui.ActionBar.k6.r1(0.85f, -1));
+        textView2.setTextColor(org.telegram.ui.ActionBar.l6.r1(0.85f, -1));
         addView(textView2, c8.ha.d(-1, -2.0f, 51, 53.0f, 29.33f, 12.0f, 0.0f));
-        textView2.setText(org.telegram.messenger.g0.J2(id.M0(2131748808, null), false, org.telegram.messenger.g0.L(2.6666667f), org.telegram.messenger.g0.L(0.33f), 1.0f, R.drawable.msg_mini_forumarrow));
+        textView2.setText(org.telegram.messenger.g0.J2(id.M0(2131748807, null), false, org.telegram.messenger.g0.L(2.6666667f), org.telegram.messenger.g0.L(0.33f), 1.0f, R.drawable.msg_mini_forumarrow));
         set(null);
     }
 

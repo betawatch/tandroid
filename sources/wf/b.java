@@ -27,7 +27,6 @@ import androidx.emoji2.text.v;
 import androidx.fragment.app.i0;
 import androidx.fragment.app.r;
 import androidx.fragment.app.u;
-import bi.a4;
 import bi.d3;
 import ce.j;
 import ce.m;
@@ -40,10 +39,10 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import d3.g0;
 import di.a1;
-import di.i4;
-import di.o9;
+import di.a4;
+import di.j4;
 import di.p9;
-import di.z3;
+import di.q9;
 import e2.s;
 import e2.x1;
 import f3.o;
@@ -89,18 +88,18 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.di;
 import org.telegram.ui.Components.hc;
-import org.telegram.ui.Components.k60;
+import org.telegram.ui.Components.l60;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.an;
-import org.telegram.ui.hy0;
+import org.telegram.ui.cn;
+import org.telegram.ui.ky0;
 import q4.q;
 import s4.y;
 import s4.z;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public class b implements h, h0, ce.c, OnCompleteListener, com.google.android.gms.internal.clearcut.h, k0, n, r3 {
     public static volatile b d;
@@ -447,11 +446,11 @@ public class b implements h, h0, ce.c, OnCompleteListener, com.google.android.gm
     }
 
     @Override // li.r3
-    public k60 J(View view) {
+    public l60 J(View view) {
         li.p pVar = (li.p) this.c;
-        k60 k60Var = new k60(pVar, (f6) this.b, view, false, false, true);
-        pVar.H = k60Var;
-        return k60Var;
+        l60 l60Var = new l60(pVar, (g6) this.b, view, false, false, true);
+        pVar.H = l60Var;
+        return l60Var;
     }
 
     public void K(r f10, boolean z9) {
@@ -796,15 +795,15 @@ public class b implements h, h0, ce.c, OnCompleteListener, com.google.android.gm
     @Override // li.r3
     public void d(s3 s3Var, View view) {
         li.p pVar = (li.p) this.c;
-        k60 k60Var = new k60(pVar, (f6) this.b, view, false, false, true);
-        k60Var.Q = true;
+        l60 l60Var = new l60(pVar, (g6) this.b, view, false, false, true);
+        l60Var.Q = true;
         f2 f2Var = pVar.b.W1;
         pVar.getContext();
-        pVar.H = h4.b(k60Var, f2Var, s3Var, true);
+        pVar.H = h4.b(l60Var, f2Var, s3Var, true);
     }
 
     public boolean d0() {
-        return ((a) ((hy0) this.b).d) != null;
+        return ((a) ((ky0) this.b).d) != null;
     }
 
     @Override // g6.h
@@ -814,14 +813,14 @@ public class b implements h, h0, ce.c, OnCompleteListener, com.google.android.gm
 
     public void e0(boolean z9, boolean z10, float f10) {
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = (ActionBarPopupWindow$ActionBarPopupWindowLayout) this.b;
-        z3 z3Var = (z3) this.c;
-        p9 p9Var = z3Var.e;
-        p9.A1 = f10;
-        o9 o9Var = p9Var.z0;
-        if (o9Var != null) {
-            o9Var.setSpeed(f10);
+        a4 a4Var = (a4) this.c;
+        q9 q9Var = a4Var.e;
+        q9.A1 = f10;
+        p9 p9Var = q9Var.z0;
+        if (p9Var != null) {
+            p9Var.setSpeed(f10);
         }
-        i4.Y(z3Var.x, z9);
+        j4.Y(a4Var.x, z9);
         if (!z10 || actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack() == null) {
             return;
         }
@@ -900,8 +899,8 @@ public class b implements h, h0, ce.c, OnCompleteListener, com.google.android.gm
         g7.c cVar2;
         int i7;
         Log.d("CAST_CONTROLLER", "set current media");
-        hy0 hy0Var = (hy0) this.b;
-        g7.c cVar3 = (g7.c) hy0Var.c;
+        ky0 ky0Var = (ky0) this.b;
+        g7.c cVar3 = (g7.c) ky0Var.c;
         if (d1.f.u()) {
             if (cVar3 == null && cVar == null) {
                 return;
@@ -918,23 +917,23 @@ public class b implements h, h0, ce.c, OnCompleteListener, com.google.android.gm
                 }
             }
         }
-        if (((a) hy0Var.d) != null && cVar != null) {
-            hy0Var.j(cVar);
+        if (((a) ky0Var.d) != null && cVar != null) {
+            ky0Var.j(cVar);
         }
-        if (((a) hy0Var.d) != null && (cVar2 = (g7.c) hy0Var.c) != null) {
-            hy0Var.H(cVar2);
+        if (((a) ky0Var.d) != null && (cVar2 = (g7.c) ky0Var.c) != null) {
+            ky0Var.H(cVar2);
         }
-        if (cVar != null && cVar.a.size() > 0 && !cVar.a(0).a.startsWith("audio/") && (dVar = (d) hy0Var.b) != null) {
+        if (cVar != null && cVar.a.size() > 0 && !cVar.a(0).a.startsWith("audio/") && (dVar = (d) ky0Var.b) != null) {
             dVar.l(null, null);
         }
-        a aVar = (a) hy0Var.d;
+        a aVar = (a) ky0Var.d;
         if (aVar != null && cVar != null) {
             aVar.d = cVar;
             aVar.g = 0;
             aVar.h = 0;
             aVar.p();
         }
-        hy0Var.c = cVar;
+        ky0Var.c = cVar;
     }
 
     @Override // g6.h
@@ -958,11 +957,11 @@ public class b implements h, h0, ce.c, OnCompleteListener, com.google.android.gm
     @Override // g6.h
     public void j(f fVar, int i7) {
         Log.d("CAST_SESSION", "onSessionEnded " + ((g6.c) fVar).a() + " " + i7);
-        ((hy0) this.b).K(null);
+        ((ky0) this.b).K(null);
     }
 
     public void j0(g6.c cVar) {
-        hy0 hy0Var = (hy0) this.b;
+        ky0 ky0Var = (ky0) this.b;
         if (cVar == null) {
             return;
         }
@@ -972,9 +971,9 @@ public class b implements h, h0, ce.c, OnCompleteListener, com.google.android.gm
         if (TextUtils.isEmpty(a10) || hVar == null) {
             return;
         }
-        a aVar = (a) hy0Var.d;
+        a aVar = (a) ky0Var.d;
         if (aVar == null || !TextUtils.equals(aVar.c.a(), a10)) {
-            hy0Var.K(new a(cVar, (g6.g) this.c, hVar));
+            ky0Var.K(new a(cVar, (g6.g) this.c, hVar));
             q6.m.d("Must be called from the main thread.");
             CastDevice castDevice = cVar.k;
             String str = castDevice != null ? castDevice.d : null;
@@ -989,7 +988,7 @@ public class b implements h, h0, ce.c, OnCompleteListener, com.google.android.gm
 
     @Override // ii.k0
     public void k(long j3) {
-        ((f2) this.b).presentFragment(an.ra(j3));
+        ((f2) this.b).presentFragment(cn.ta(j3));
         ((d0) this.c).dismiss();
     }
 
@@ -1036,7 +1035,7 @@ public class b implements h, h0, ce.c, OnCompleteListener, com.google.android.gm
     public void m0(x1 x1Var) {
         Handler handler = (Handler) this.b;
         if (handler != null) {
-            handler.post(new a4(24, this, x1Var));
+            handler.post(new bi.a4(24, this, x1Var));
         }
     }
 
@@ -1060,8 +1059,8 @@ public class b implements h, h0, ce.c, OnCompleteListener, com.google.android.gm
     public void o(a6 a6Var, String str) {
         li.p pVar = (li.p) this.c;
         if (pVar.w == null) {
-            f6 f6Var = (f6) this.b;
-            pVar.w = new ga.d(new ab.g(22, this, f6Var), f6Var);
+            g6 g6Var = (g6) this.b;
+            pVar.w = new ga.d(new ab.g(22, this, g6Var), g6Var);
         }
         pVar.w.k(a6Var, str);
     }
@@ -1221,9 +1220,9 @@ public class b implements h, h0, ce.c, OnCompleteListener, com.google.android.gm
     @Override // li.r3
     public void z(q3 q3Var, View view) {
         li.p pVar = (li.p) this.c;
-        k60 k60Var = new k60(pVar, (f6) this.b, view, false, false, true);
-        k60Var.Q = true;
-        pVar.H = h4.c(k60Var, pVar.b.W1, pVar.getContext(), (f6) this.b, q3Var, true);
+        l60 l60Var = new l60(pVar, (g6) this.b, view, false, false, true);
+        l60Var.Q = true;
+        pVar.H = h4.c(l60Var, pVar.b.W1, pVar.getContext(), (g6) this.b, q3Var, true);
     }
 
     @Override // com.google.android.gms.internal.clearcut.h
@@ -1311,7 +1310,7 @@ public class b implements h, h0, ce.c, OnCompleteListener, com.google.android.gm
                 } catch (RemoteException e10) {
                     g6.g.c.a(e10, "Unable to call %s on %s.", "addCastStateListener", g6.y.class.getSimpleName());
                 }
-                this.b = new hy0(23, z9);
+                this.b = new ky0(23, z9);
                 g6.g b10 = c10.b();
                 this.c = b10;
                 b10.a(this);

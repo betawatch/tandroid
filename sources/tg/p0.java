@@ -9,13 +9,13 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.aj;
 import org.telegram.messenger.cj;
 import org.telegram.messenger.dj;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Components.i90;
-import org.telegram.ui.Components.pj0;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.Components.j90;
+import org.telegram.ui.Components.qj0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class p0 extends pj0 {
+public final class p0 extends qj0 {
     public final ArrayList e3;
     public final ArrayList f3;
     public final ArrayList g3;
@@ -36,7 +36,7 @@ public final class p0 extends pj0 {
 
     /* JADX WARN: Removed duplicated region for block: B:210:0x048c  */
     /* JADX WARN: Removed duplicated region for block: B:213:0x049d A[SYNTHETIC] */
-    @Override // org.telegram.ui.Components.pj0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.qj0, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -72,7 +72,7 @@ public final class p0 extends pj0 {
                     dj currentMessagesGroup2 = q1Var.getCurrentMessagesGroup();
                     if (currentMessagesGroup2 == null || currentMessagesGroup2 != djVar) {
                         aj currentPosition = q1Var.getCurrentPosition();
-                        i90 backgroundDrawable = q1Var.getBackgroundDrawable();
+                        j90 backgroundDrawable = q1Var.getBackgroundDrawable();
                         if ((backgroundDrawable.f || q1Var.y2()) && (currentPosition == null || (2 & currentPosition.l) != 0)) {
                             int y10 = (int) q1Var.getY();
                             canvas.save();
@@ -87,7 +87,7 @@ public final class p0 extends pj0 {
                                     if (childAt2 instanceof org.telegram.ui.Cells.q1) {
                                         org.telegram.ui.Cells.q1 q1Var2 = (org.telegram.ui.Cells.q1) childAt2;
                                         if (q1Var2.getCurrentMessagesGroup() == currentMessagesGroup2) {
-                                            i90 backgroundDrawable2 = q1Var2.getBackgroundDrawable();
+                                            j90 backgroundDrawable2 = q1Var2.getBackgroundDrawable();
                                             int min = Math.min(y10, (int) q1Var2.getY());
                                             int max = Math.max(measuredHeight, q1Var2.getMeasuredHeight() + ((int) q1Var2.getY()));
                                             long j10 = backgroundDrawable2.l;
@@ -109,7 +109,7 @@ public final class p0 extends pj0 {
                             int i15 = i12 + y10;
                             canvas.clipRect(0, y10, getMeasuredWidth(), i15);
                             backgroundDrawable.b = null;
-                            backgroundDrawable.a.setColor(k6.w0(k6.vd, this.n2));
+                            backgroundDrawable.a.setColor(l6.w0(l6.vd, this.n2));
                             backgroundDrawable.setBounds(0, y10, getMeasuredWidth(), i15);
                             backgroundDrawable.draw(canvas);
                             canvas.restore();
@@ -377,7 +377,7 @@ public final class p0 extends pj0 {
     /* JADX WARN: Removed duplicated region for block: B:205:0x0048  */
     /* JADX WARN: Removed duplicated region for block: B:20:0x0087  */
     /* JADX WARN: Removed duplicated region for block: B:22:0x0093  */
-    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.qj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

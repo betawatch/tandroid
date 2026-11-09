@@ -6,7 +6,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public abstract class t10 {
     public static boolean A(long j3) {
@@ -157,19 +157,19 @@ public abstract class t10 {
         } else if (!z9 && str.length() <= 2) {
             return g5.m(0, user.first_name, user.last_name);
         }
-        return !TextUtils.isEmpty(str) ? str : id.M0(2131749329, null);
+        return !TextUtils.isEmpty(str) ? str : id.M0(2131749328, null);
     }
 
     public static String k(TLRPC.User user) {
         if (user == null || x(user)) {
-            return id.M0(2131749329, null);
+            return id.M0(2131749328, null);
         }
         String str = user.first_name;
         if (TextUtils.isEmpty(str)) {
             str = user.last_name;
         }
         if (str == null) {
-            return id.M0(2131749329, null);
+            return id.M0(2131749328, null);
         }
         int indexOf = str.indexOf(" ", 2);
         return indexOf >= 0 ? str.substring(0, indexOf) : str;
@@ -233,7 +233,7 @@ public abstract class t10 {
 
     public static String p(TLRPC.User user) {
         if (user == null || x(user)) {
-            return id.M0(2131749329, null);
+            return id.M0(2131749328, null);
         }
         String F2 = g0.F2(g0.D2(g5.m(0, user.first_name, user.last_name)));
         if (F2.length() != 0 || TextUtils.isEmpty(user.phone)) {

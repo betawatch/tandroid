@@ -1,54 +1,89 @@
 package org.telegram.ui;
 
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.PorterDuff;
 import android.text.TextUtils;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class ct extends rg.a {
-    public final int c;
-    public final int d;
-    public final int e;
-    public final CharSequence f;
-    public final CharSequence g;
-    public final int h;
+public final class ct extends FrameLayout {
+    public final ImageView a;
+    public final TextView b;
+    public final ImageView c;
+    public final TextView d;
+    public boolean e;
 
-    public ct(int i7, String str) {
-        super(i7, false);
-        this.f = str;
+    public ct(mt mtVar, Context context) {
+        super(context);
+        org.telegram.ui.ActionBar.s6.h(org.telegram.ui.ActionBar.l6.d6, this, null);
+        ImageView imageView = new ImageView(context);
+        this.a = imageView;
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        addView(imageView, c8.ha.d(28, 28.0f, (org.telegram.messenger.id.a0 ? 5 : 3) | 16, 18.0f, 0.0f, 18.0f, 0.0f));
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(0);
+        linearLayout.setWeightSum(2.0f);
+        addView(linearLayout, c8.ha.i(-1.0f, -2.0f, (org.telegram.messenger.id.a0 ? 5 : 3) | 16, 64.0f, 0.0f, 20.0f, 0.0f));
+        LinearLayout linearLayout2 = new LinearLayout(context);
+        linearLayout2.setOrientation(0);
+        if (org.telegram.messenger.id.a0) {
+            linearLayout2.setGravity(5);
+        }
+        linearLayout2.setWeightSum(2.0f);
+        TextView textView = new TextView(context);
+        this.b = textView;
+        textView.setTextSize(1, 16.0f);
+        int i7 = org.telegram.ui.ActionBar.l6.G6;
+        org.telegram.ui.ActionBar.s6.U(textView, i7, null);
+        textView.setEllipsize(TextUtils.TruncateAt.END);
+        textView.setSingleLine();
+        textView.setLines(1);
+        ImageView imageView2 = new ImageView(context);
+        this.c = imageView2;
+        imageView2.setScaleType(ImageView.ScaleType.FIT_CENTER);
+        imageView2.setImageResource(R.drawable.arrow_more);
+        org.telegram.ui.ActionBar.s6.s(imageView2, i7, null, PorterDuff.Mode.MULTIPLY);
+        imageView2.setTranslationY(org.telegram.messenger.g0.L(1.0f));
+        imageView2.setVisibility(8);
+        if (org.telegram.messenger.id.a0) {
+            linearLayout2.addView(imageView2, c8.ha.t(16, 16, 21, 3, 0, 0, 0));
+            linearLayout2.addView(textView, c8.ha.r(-2, -2, 21));
+        } else {
+            linearLayout2.addView(textView, c8.ha.r(-2, -2, 16));
+            linearLayout2.addView(imageView2, c8.ha.t(16, 16, 16, 3, 0, 0, 0));
+        }
+        TextView textView2 = new TextView(context);
+        this.d = textView2;
+        textView2.setTextSize(1, 16.0f);
+        org.telegram.ui.ActionBar.s6.U(textView2, org.telegram.ui.ActionBar.l6.o6, null);
+        textView2.setGravity(org.telegram.messenger.id.a0 ? 3 : 5);
+        if (org.telegram.messenger.id.a0) {
+            linearLayout.addView(textView2, c8.ha.r(-2, -2, 19));
+            linearLayout.addView(linearLayout2, c8.ha.p(0, -2, 2.0f, 21));
+        } else {
+            linearLayout.addView(linearLayout2, c8.ha.p(0, -2, 2.0f, 16));
+            linearLayout.addView(textView2, c8.ha.r(-2, -2, 21));
+        }
     }
 
-    public static ct b(CharSequence charSequence, String str) {
-        return new ct(-1, 0, 0, 0, charSequence, str);
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        if (this.e) {
+            canvas.drawLine(org.telegram.messenger.id.a0 ? 0.0f : org.telegram.messenger.g0.L(64.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (org.telegram.messenger.id.a0 ? org.telegram.messenger.g0.L(64.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.l6.k0);
+        }
     }
 
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof ct)) {
-            return false;
-        }
-        ct ctVar = (ct) obj;
-        CharSequence charSequence = ctVar.f;
-        int i7 = ctVar.a;
-        int i10 = this.a;
-        if (i7 != i10) {
-            return false;
-        }
-        CharSequence charSequence2 = this.f;
-        if (i10 == 1 || i10 == 4 || i10 == 3 || i10 == 5) {
-            return TextUtils.equals(charSequence2, charSequence);
-        }
-        if (i10 == 2) {
-            return ctVar.h == this.h && TextUtils.equals(charSequence2, charSequence) && ctVar.d == this.d && ctVar.e == this.e && ctVar.c == this.c;
-        }
-        return true;
-    }
-
-    public ct(int i7, int i10, int i11, int i12, CharSequence charSequence, CharSequence charSequence2) {
-        super(2, false);
-        this.h = i7;
-        this.c = i10;
-        this.d = i11;
-        this.e = i12;
-        this.f = charSequence;
-        this.g = charSequence2;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(48.0f), TLObject.FLAG_30));
     }
 }

@@ -10,10 +10,10 @@ import org.telegram.messenger.i6;
 import org.telegram.messenger.ui;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.g31;
+import org.telegram.ui.Components.h31;
 import org.telegram.ui.Components.op;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class b2 implements Runnable {
     public final /* synthetic */ d2 a;
@@ -65,12 +65,12 @@ public final class b2 implements Runnable {
         HashMap hashMap3 = d2Var.H;
         HashMap hashMap4 = d2Var.I;
         ArrayList arrayList = d2Var.F;
-        g31 g31Var = d2Var.e;
+        h31 h31Var = d2Var.e;
         int i13 = d2Var.c;
         if (TextUtils.isEmpty(d2Var.R)) {
             return;
         }
-        op progressDrawable = g31Var.b.h.getProgressDrawable();
+        op progressDrawable = h31Var.b.h.getProgressDrawable();
         progressDrawable.e = true;
         progressDrawable.b = System.currentTimeMillis();
         progressDrawable.invalidateSelf();
@@ -146,14 +146,14 @@ public final class b2 implements Runnable {
             i11 = 0;
         } else {
             String[] G0 = org.telegram.messenger.g0.G0();
-            if (Arrays.equals(g31Var.a.b(), G0)) {
+            if (Arrays.equals(h31Var.a.b(), G0)) {
                 i11 = 0;
             } else {
                 i11 = 0;
                 ui.b0(i7).M(G0, false);
             }
-            g31Var.a.i(G0);
-            ui.b0(i7).U(g31Var.a.b(), d2Var.R, false, new a2(this, i14, hashMap5, i11), false);
+            h31Var.a.i(G0);
+            ui.b0(i7).U(h31Var.a.b(), d2Var.R, false, new a2(this, i14, hashMap5, i11), false);
         }
         ArrayList s02 = ui.b0(i7).s0(i11);
         int size2 = s02.size();
@@ -204,7 +204,7 @@ public final class b2 implements Runnable {
             }
         }
         if (!arrayList.isEmpty() || !hashMap6.isEmpty()) {
-            g31Var.b(true);
+            h31Var.b(true);
         }
         TLRPC.TL_messages_searchStickerSets tL_messages_searchStickerSets = new TLRPC.TL_messages_searchStickerSets();
         tL_messages_searchStickerSets.q = d2Var.R;

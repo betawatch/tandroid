@@ -34,17 +34,17 @@ import org.telegram.ui.Cells.u3;
 import org.telegram.ui.Components.hc;
 import org.telegram.ui.Components.j6;
 import org.telegram.ui.Components.voip.t0;
-import org.telegram.ui.Components.w70;
+import org.telegram.ui.Components.x70;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.bg0;
-import org.telegram.ui.d10;
-import org.telegram.ui.xf;
-import org.telegram.ui.zb1;
+import org.telegram.ui.af;
+import org.telegram.ui.cc1;
+import org.telegram.ui.dg0;
+import org.telegram.ui.f10;
 import tg.i2;
 import ug.f1;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -164,9 +164,9 @@ public final /* synthetic */ class g implements View.OnClickListener {
             case 10:
                 li.p pVar2 = (li.p) obj;
                 pVar2.L(true, 0, 0, 0L, false);
-                bg0 bg0Var = pVar2.O;
-                if (bg0Var != null) {
-                    bg0Var.g(true);
+                dg0 dg0Var = pVar2.O;
+                if (dg0Var != null) {
+                    dg0Var.g(true);
                     pVar2.O = null;
                     break;
                 }
@@ -210,7 +210,7 @@ public final /* synthetic */ class g implements View.OnClickListener {
                         yVar.o(((Integer) view.getTag()).intValue());
                         break;
                     } else {
-                        kVar.y(r0Var2.T(true));
+                        kVar.z(r0Var2.T(true));
                         break;
                     }
                 } else if (kVar.u0.a()) {
@@ -265,13 +265,13 @@ public final /* synthetic */ class g implements View.OnClickListener {
                 }
                 break;
             case 19:
-                zb1 zb1Var = (zb1) obj;
-                if (!zb1Var.a) {
-                    if (zb1Var.x != 0) {
-                        zb1Var.a(false, true);
+                cc1 cc1Var = (cc1) obj;
+                if (!cc1Var.a) {
+                    if (cc1Var.x != 0) {
+                        cc1Var.a(false, true);
                         break;
                     } else {
-                        ((Activity) zb1Var.getContext()).startActivityForResult(((MediaProjectionManager) zb1Var.getContext().getSystemService("media_projection")).createScreenCaptureIntent(), 520);
+                        ((Activity) cc1Var.getContext()).startActivityForResult(((MediaProjectionManager) cc1Var.getContext().getSystemService("media_projection")).createScreenCaptureIntent(), 520);
                         break;
                     }
                 }
@@ -279,11 +279,11 @@ public final /* synthetic */ class g implements View.OnClickListener {
             case 20:
                 org.telegram.ui.web.j jVar2 = (org.telegram.ui.web.j) obj;
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(jVar2.getContext());
-                String M0 = id.M0(2131742917, null);
+                String M0 = id.M0(2131742914, null);
                 u1 u1Var = alertDialog$Builder.a;
                 u1Var.R = M0;
-                u1Var.T = id.M0(2131742918, null);
-                alertDialog$Builder.k(id.M0(2131747832, null), new org.telegram.ui.web.a(jVar2));
+                u1Var.T = id.M0(2131742915, null);
+                alertDialog$Builder.k(id.M0(2131747831, null), new org.telegram.ui.web.a(jVar2));
                 alertDialog$Builder.h(id.M0(2131752589, null), null);
                 alertDialog$Builder.p();
                 break;
@@ -291,16 +291,16 @@ public final /* synthetic */ class g implements View.OnClickListener {
                 ((sg.q) obj).dismiss();
                 break;
             case 22:
-                ((xf) obj).run();
+                ((af) obj).run();
                 break;
             case 23:
-                ((d10) obj).run();
+                ((f10) obj).run();
                 break;
             case 24:
                 ((i2) obj).onBackPressed();
                 break;
             case 25:
-                ((w70) obj).performClick();
+                ((x70) obj).performClick();
                 break;
             case 26:
                 PremiumPreviewFragment.u0();

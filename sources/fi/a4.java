@@ -23,13 +23,13 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ic;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class a4 extends View implements org.telegram.ui.ActionBar.a6 {
+public final class a4 extends View implements org.telegram.ui.ActionBar.b6 {
     public float D;
     public final org.telegram.ui.Components.w5 E;
     public final org.telegram.ui.Components.w5 F;
-    public final org.telegram.ui.ActionBar.f6 a;
+    public final org.telegram.ui.ActionBar.g6 a;
     public final ImageReceiver b;
     public final Paint c;
     public final Paint d;
@@ -43,7 +43,7 @@ public final class a4 extends View implements org.telegram.ui.ActionBar.a6 {
     public float x;
     public float y;
 
-    public a4(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+    public a4(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
         super(context);
         ImageReceiver imageReceiver = new ImageReceiver(this);
         this.b = imageReceiver;
@@ -68,8 +68,8 @@ public final class a4 extends View implements org.telegram.ui.ActionBar.a6 {
         i6Var.A = 0.35f;
         paint.setStyle(Paint.Style.STROKE);
         paint.setColor(-1);
-        this.a = f6Var;
-        paint2.setColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Ci, f6Var));
+        this.a = g6Var;
+        paint2.setColor(org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.Ci, g6Var));
         imageReceiver.J0(org.telegram.messenger.g0.L(6.0f));
         c8.ka.a(this);
     }
@@ -362,10 +362,10 @@ public final class a4 extends View implements org.telegram.ui.ActionBar.a6 {
         this.e.t(i7 < 0 ? "" : Integer.toString(i7 + 1), true, true);
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
         try {
-            this.d.setColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Ci, this.a));
+            this.d.setColor(org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.Ci, this.a));
             invalidate();
         } catch (Exception e10) {
             org.telegram.messenger.a8.g(e10, true);
@@ -377,7 +377,7 @@ public final class a4 extends View implements org.telegram.ui.ActionBar.a6 {
         return drawable == this.e || super.verifyDrawable(drawable);
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

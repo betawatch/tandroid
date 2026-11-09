@@ -8,10 +8,10 @@ import f3.i0;
 import f3.j0;
 import h2.m0;
 import h2.x;
-import org.telegram.ui.Components.om0;
+import org.telegram.ui.Components.pm0;
 import x2.b1;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class o implements j0 {
     public final b1 a;
@@ -73,12 +73,12 @@ public final class o implements j0 {
             }
         }
         b1 b1Var = this.a;
-        om0 om0Var = b1Var.a;
+        pm0 pm0Var = b1Var.a;
         synchronized (b1Var) {
             int i12 = b1Var.s;
             j10 = i12 == 0 ? -1L : b1Var.j(i12);
         }
-        om0Var.b(j10);
+        pm0Var.b(j10);
     }
 
     @Override // f3.j0

@@ -13,10 +13,10 @@ import org.telegram.messenger.id;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.xq;
-import org.telegram.ui.ef0;
-import org.telegram.ui.xm0;
+import org.telegram.ui.gf0;
+import org.telegram.ui.zm0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class u2 extends org.telegram.ui.ActionBar.n0 {
     public final /* synthetic */ int a;
@@ -46,7 +46,7 @@ public final class u2 extends org.telegram.ui.ActionBar.n0 {
     public boolean b() {
         switch (this.a) {
             case 1:
-                ((xm0) this.c).finishFragment();
+                ((zm0) this.c).finishFragment();
                 return false;
             default:
                 return super.b();
@@ -99,7 +99,7 @@ public final class u2 extends org.telegram.ui.ActionBar.n0 {
             case 2:
                 org.telegram.ui.web.l lVar = (org.telegram.ui.web.l) obj;
                 lVar.w = null;
-                org.telegram.messenger.g0.r((org.telegram.ui.ActionBar.m5) this.b);
+                org.telegram.messenger.g0.r((org.telegram.ui.ActionBar.o5) this.b);
                 org.telegram.ui.web.h hVar = lVar.f;
                 if (hVar != null) {
                     hVar.c();
@@ -116,13 +116,13 @@ public final class u2 extends org.telegram.ui.ActionBar.n0 {
                 org.telegram.ui.web.z0 z0Var = (org.telegram.ui.web.z0) obj;
                 z0Var.r = null;
                 z0Var.n = false;
-                org.telegram.messenger.g0.r((org.telegram.ui.ActionBar.m5) this.b);
+                org.telegram.messenger.g0.r((org.telegram.ui.ActionBar.o5) this.b);
                 w3 w3Var2 = z0Var.a;
                 if (w3Var2 != null) {
                     w3Var2.f3.O(true);
                     z0Var.a.e3.h1(0, 0);
                 }
-                z0Var.y.d.setText(id.M0(TextUtils.isEmpty(z0Var.r) ? 2131742921 : 2131742920, null));
+                z0Var.y.d.setText(id.M0(TextUtils.isEmpty(z0Var.r) ? 2131742918 : 2131742917, null));
                 break;
         }
     }
@@ -178,7 +178,7 @@ public final class u2 extends org.telegram.ui.ActionBar.n0 {
     public void k(EditTextBoldCursor editTextBoldCursor) {
         switch (this.a) {
             case 1:
-                ((xm0) this.c).g0(editTextBoldCursor);
+                ((zm0) this.c).g0(editTextBoldCursor);
                 break;
         }
     }
@@ -193,7 +193,7 @@ public final class u2 extends org.telegram.ui.ActionBar.n0 {
             case 0:
                 String obj2 = editText.getText().toString();
                 x2 x2Var = ((f3) obj).r;
-                di.s7 s7Var = x2Var.w;
+                di.f8 f8Var = x2Var.w;
                 if (!TextUtils.equals(x2Var.f, obj2)) {
                     if (x2Var.e != -1) {
                         ConnectionsManager.getInstance(x2Var.x.a).cancelRequest(x2Var.e, true);
@@ -203,10 +203,10 @@ public final class u2 extends org.telegram.ui.ActionBar.n0 {
                     x2Var.h = null;
                 }
                 x2Var.f = obj2;
-                org.telegram.messenger.g0.r(s7Var);
+                org.telegram.messenger.g0.r(f8Var);
                 if (!TextUtils.isEmpty(obj2)) {
                     x2Var.F(true);
-                    org.telegram.messenger.g0.i3(s7Var, 1500L);
+                    org.telegram.messenger.g0.i3(f8Var, 1500L);
                     break;
                 } else {
                     x2Var.c.clear();
@@ -215,26 +215,26 @@ public final class u2 extends org.telegram.ui.ActionBar.n0 {
                     break;
                 }
             case 1:
-                ef0 ef0Var = (ef0) this.b;
-                xm0 xm0Var = (xm0) obj;
+                gf0 gf0Var = (gf0) this.b;
+                zm0 zm0Var = (zm0) obj;
                 if (editText.getText().length() != 0) {
-                    org.telegram.messenger.g0.r(ef0Var);
-                    org.telegram.messenger.g0.i3(ef0Var, 1200L);
+                    org.telegram.messenger.g0.r(gf0Var);
+                    org.telegram.messenger.g0.i3(gf0Var, 1200L);
                     break;
                 } else {
-                    xm0Var.f.clear();
-                    xm0Var.h.clear();
-                    xm0Var.w = null;
-                    xm0Var.s = true;
-                    xm0Var.r = false;
-                    if (xm0Var.y != 0) {
-                        i7 = ((org.telegram.ui.ActionBar.f2) xm0Var).currentAccount;
-                        ConnectionsManager.getInstance(i7).cancelRequest(xm0Var.y, true);
-                        xm0Var.y = 0;
+                    zm0Var.f.clear();
+                    zm0Var.h.clear();
+                    zm0Var.w = null;
+                    zm0Var.s = true;
+                    zm0Var.r = false;
+                    if (zm0Var.y != 0) {
+                        i7 = ((org.telegram.ui.ActionBar.f2) zm0Var).currentAccount;
+                        ConnectionsManager.getInstance(i7).cancelRequest(zm0Var.y, true);
+                        zm0Var.y = 0;
                     }
-                    xm0Var.N.d.setText(id.M0(2131748170, null));
-                    xm0Var.N.e(false, true);
-                    xm0Var.o0();
+                    zm0Var.N.d.setText(id.M0(2131748169, null));
+                    zm0Var.N.e(false, true);
+                    zm0Var.o0();
                     break;
                 }
             case 2:
@@ -251,9 +251,9 @@ public final class u2 extends org.telegram.ui.ActionBar.n0 {
                     org.telegram.ui.web.h hVar2 = new org.telegram.ui.web.h(obj3, i10, new org.telegram.ui.web.k(lVar, 1));
                     lVar.f = hVar2;
                     hVar2.a();
-                    org.telegram.ui.ActionBar.m5 m5Var = (org.telegram.ui.ActionBar.m5) this.b;
-                    org.telegram.messenger.g0.r(m5Var);
-                    org.telegram.messenger.g0.i3(m5Var, 500L);
+                    org.telegram.ui.ActionBar.o5 o5Var = (org.telegram.ui.ActionBar.o5) this.b;
+                    org.telegram.messenger.g0.r(o5Var);
+                    org.telegram.messenger.g0.i3(o5Var, 500L);
                 }
                 w3 w3Var = lVar.a;
                 if (w3Var != null) {
@@ -271,10 +271,10 @@ public final class u2 extends org.telegram.ui.ActionBar.n0 {
                 if (!TextUtils.equals(z0Var.r, obj4)) {
                     z0Var.r = obj4;
                     z0Var.n = true;
-                    org.telegram.ui.ActionBar.m5 m5Var2 = (org.telegram.ui.ActionBar.m5) this.b;
-                    org.telegram.messenger.g0.r(m5Var2);
-                    org.telegram.messenger.g0.i3(m5Var2, 500L);
-                    z0Var.y.d.setText(id.M0(TextUtils.isEmpty(obj4) ? 2131742921 : 2131742920, null));
+                    org.telegram.ui.ActionBar.o5 o5Var2 = (org.telegram.ui.ActionBar.o5) this.b;
+                    org.telegram.messenger.g0.r(o5Var2);
+                    org.telegram.messenger.g0.i3(o5Var2, 500L);
+                    z0Var.y.d.setText(id.M0(TextUtils.isEmpty(obj4) ? 2131742918 : 2131742917, null));
                 }
                 w3 w3Var2 = z0Var.a;
                 if (w3Var2 != null) {
@@ -288,22 +288,22 @@ public final class u2 extends org.telegram.ui.ActionBar.n0 {
         }
     }
 
-    public u2(xm0 xm0Var) {
+    public u2(zm0 zm0Var) {
         this.a = 1;
-        this.c = xm0Var;
-        this.b = new ef0(this, 15);
+        this.c = zm0Var;
+        this.b = new gf0(this, 15);
     }
 
     public u2(org.telegram.ui.web.l lVar) {
         this.a = 2;
         this.c = lVar;
-        this.b = new org.telegram.ui.ActionBar.m5(this, 12);
+        this.b = new org.telegram.ui.ActionBar.o5(this, 10);
     }
 
     public u2(org.telegram.ui.web.z0 z0Var) {
         this.a = 3;
         this.c = z0Var;
-        this.b = new org.telegram.ui.ActionBar.m5(this, 15);
+        this.b = new org.telegram.ui.ActionBar.o5(this, 13);
     }
 
     private final void o() {

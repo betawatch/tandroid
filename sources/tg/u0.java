@@ -20,15 +20,15 @@ import org.telegram.messenger.ij;
 import org.telegram.messenger.iz;
 import org.telegram.messenger.qp;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.ActionBar.t4;
-import org.telegram.ui.Components.ki0;
-import org.telegram.ui.Components.u90;
+import org.telegram.ui.Components.li0;
+import org.telegram.ui.Components.v90;
 import org.telegram.ui.Components.y9;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public abstract class u0 extends j {
     public boolean A0;
@@ -66,7 +66,7 @@ public abstract class u0 extends j {
         this.y0 = 1;
         this.z0 = 1;
         this.A0 = true;
-        this.B0 = k6.I.q();
+        this.B0 = l6.I.q();
         this.C0 = new SparseIntArray();
         e5 e5Var = (e5) this;
         this.D0 = new t0(e5Var);
@@ -92,7 +92,7 @@ public abstract class u0 extends j {
                 message.voiceTranscriptionOpen = false;
                 int i11 = ijVar.I1;
                 ij ijVar2 = new ij(i11, message, ijVar.C, qp.s1(i11).d, qp.s1(ijVar.I1).b, null, null, true, true, 0L, true, z9, false, 0);
-                ijVar2.M5();
+                ijVar2.L5();
                 this.s0.add(ijVar2);
             }
             tL_messageService.id = message2.id;
@@ -175,7 +175,7 @@ public abstract class u0 extends j {
             message.voiceTranscriptionOpen = false;
             int i112 = ijVar.I1;
             ij ijVar22 = new ij(i112, message, ijVar.C, qp.s1(i112).d, qp.s1(ijVar.I1).b, null, null, true, true, 0L, true, z9, false, 0);
-            ijVar22.M5();
+            ijVar22.L5();
             this.s0.add(ijVar22);
         }
         this.t0 = null;
@@ -183,7 +183,7 @@ public abstract class u0 extends j {
             dj djVar = new dj();
             this.t0 = djVar;
             djVar.d.addAll(this.s0);
-            djVar.a = ((ij) this.s0.get(0)).d1();
+            djVar.a = ((ij) this.s0.get(0)).c1();
             djVar.a();
         }
         m5 m5Var = new m5(e5Var, context);
@@ -192,9 +192,9 @@ public abstract class u0 extends j {
         p0 p0Var = new p0(e5Var, context, this.D0);
         this.r0 = p0Var;
         p0Var.setAdapter(new s0(e5Var, context, y9Var, x5Var, z9));
-        u90 u90Var = new u90(e5Var, 2);
-        u90Var.O = new ai.l(e5Var, 15);
-        p0Var.setLayoutManager(u90Var);
+        v90 v90Var = new v90(e5Var, 2);
+        v90Var.O = new ai.l(e5Var, 15);
+        p0Var.setLayoutManager(v90Var);
         p0Var.i(new di.k(16));
         m5Var.addView(p0Var, ha.c(-1.0f, -1));
         if (x5Var != null && x5Var.g) {
@@ -238,13 +238,13 @@ public abstract class u0 extends j {
     }
 
     @Override // tg.j
-    public ki0 getSelectionBounds() {
+    public li0 getSelectionBounds() {
         ViewGroup viewGroup = (ViewGroup) getParent();
         if (viewGroup == null) {
-            return new ki0();
+            return new li0();
         }
         float scaleX = viewGroup.getScaleX();
-        return new ki0(((getPositionX() * scaleX) - (((getScale() * getMeasuredWidth()) / 2.0f) * scaleX)) - org.telegram.messenger.g0.L(35.5f), ((getPositionY() * scaleX) - (((getScale() * getMeasuredHeight()) / 2.0f) * scaleX)) - org.telegram.messenger.g0.L(35.5f), (getScale() * getMeasuredWidth() * scaleX) + org.telegram.messenger.g0.L(71.0f), (getScale() * getMeasuredHeight() * scaleX) + org.telegram.messenger.g0.L(71.0f));
+        return new li0(((getPositionX() * scaleX) - (((getScale() * getMeasuredWidth()) / 2.0f) * scaleX)) - org.telegram.messenger.g0.L(35.5f), ((getPositionY() * scaleX) - (((getScale() * getMeasuredHeight()) / 2.0f) * scaleX)) - org.telegram.messenger.g0.L(35.5f), (getScale() * getMeasuredWidth() * scaleX) + org.telegram.messenger.g0.L(71.0f), (getScale() * getMeasuredHeight() * scaleX) + org.telegram.messenger.g0.L(71.0f));
     }
 
     @Override // tg.j
@@ -313,7 +313,7 @@ public abstract class u0 extends j {
             m5 m5Var = this.q0;
             if (z9) {
                 org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) childAt;
-                if (q1Var.getMessageObject() == null || !q1Var.getMessageObject().i4() || q1Var.getPhotoImage() == null) {
+                if (q1Var.getMessageObject() == null || !q1Var.getMessageObject().h4() || q1Var.getPhotoImage() == null) {
                     float x10 = childAt.getX() + m5Var.getX() + q1Var.getBackgroundDrawableLeft() + org.telegram.messenger.g0.L(1.0f);
                     if (this.t0 == null) {
                         x10 += org.telegram.messenger.g0.L(8.0f);
@@ -373,7 +373,7 @@ public abstract class u0 extends j {
         SparseIntArray T0;
         int[] iArr;
         int i7;
-        h6 k10;
+        i6 k10;
         if (e7Var == null) {
             this.C0.clear();
             return;
@@ -381,27 +381,27 @@ public abstract class u0 extends j {
         SharedPreferences sharedPreferences = org.telegram.messenger.t0.b.getSharedPreferences("themeconfig", 0);
         String str = "Blue";
         String string = sharedPreferences.getString("lastDayTheme", "Blue");
-        if (k6.Q0(string) == null || k6.Q0(string).q()) {
+        if (l6.Q0(string) == null || l6.Q0(string).q()) {
             string = "Blue";
         }
         String str2 = "Dark Blue";
         String string2 = sharedPreferences.getString("lastDarkTheme", "Dark Blue");
-        if (k6.Q0(string2) == null || !k6.Q0(string2).q()) {
+        if (l6.Q0(string2) == null || !l6.Q0(string2).q()) {
             string2 = "Dark Blue";
         }
-        j6 j6Var = k6.I;
+        k6 k6Var = l6.I;
         if (!string.equals(string2)) {
             str2 = string2;
-        } else if (j6Var.q() || string.equals("Dark Blue") || string.equals("Night")) {
+        } else if (k6Var.q() || string.equals("Dark Blue") || string.equals("Night")) {
             str2 = string2;
             boolean z9 = e7Var.y0;
             this.B0 = z9;
-            j6 Q0 = !z9 ? k6.Q0(str2) : k6.Q0(str);
+            k6 Q0 = !z9 ? l6.Q0(str2) : l6.Q0(str);
             String[] strArr = new String[1];
             String str3 = Q0.d;
-            T0 = str3 == null ? k6.T0(null, str3, strArr) : k6.T0(new File(Q0.b), null, strArr);
+            T0 = str3 == null ? l6.T0(null, str3, strArr) : l6.T0(new File(Q0.b), null, strArr);
             this.C0.clear();
-            iArr = k6.em;
+            iArr = l6.em;
             if (iArr != null) {
                 for (int i10 = 0; i10 < iArr.length; i10++) {
                     this.C0.put(i10, iArr[i10]);
@@ -426,7 +426,7 @@ public abstract class u0 extends j {
         if (str32 == null) {
         }
         this.C0.clear();
-        iArr = k6.em;
+        iArr = l6.em;
         if (iArr != null) {
         }
         while (i7 < T0.size()) {

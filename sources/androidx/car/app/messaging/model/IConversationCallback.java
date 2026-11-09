@@ -6,7 +6,7 @@ import android.os.IInterface;
 import android.os.Parcel;
 import androidx.car.app.IOnDoneCallback;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public interface IConversationCallback extends IInterface {
     public static final String DESCRIPTOR = "androidx$car$app$messaging$model$IConversationCallback".replace('$', '.');
@@ -15,12 +15,12 @@ public interface IConversationCallback extends IInterface {
 
     void onTextReply(IOnDoneCallback iOnDoneCallback, String str);
 
-    /* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+    /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
     public static abstract class Stub extends Binder implements IConversationCallback {
         static final int TRANSACTION_onMarkAsRead = 2;
         static final int TRANSACTION_onTextReply = 3;
 
-        /* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+        /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
         public static class Proxy implements IConversationCallback {
             private IBinder mRemote;
 
@@ -102,7 +102,7 @@ public interface IConversationCallback extends IInterface {
         }
     }
 
-    /* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+    /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
     public static class Default implements IConversationCallback {
         @Override // android.os.IInterface
         public IBinder asBinder() {

@@ -11,7 +11,7 @@ import com.google.android.gms.vision.face.internal.client.FaceParcel;
 import com.google.android.gms.vision.face.internal.client.LandmarkParcel;
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class t2 extends g3 {
     public final /* synthetic */ int r = 0;

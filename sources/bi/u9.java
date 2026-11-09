@@ -7,13 +7,13 @@ import org.telegram.messenger.qp;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.nv0;
-import org.telegram.ui.cf0;
-import org.telegram.ui.hl0;
-import org.telegram.ui.qe0;
-import org.telegram.ui.vn;
+import org.telegram.ui.Components.ov0;
+import org.telegram.ui.ef0;
+import org.telegram.ui.jl0;
+import org.telegram.ui.se0;
+import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u9 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -56,9 +56,9 @@ public final /* synthetic */ class u9 implements RequestDelegate {
                     int size = tL_channels_channelParticipants.participants.size();
                     for (int i10 = 0; i10 < size; i10++) {
                         TLRPC.ChannelParticipant channelParticipant = tL_channels_channelParticipants.participants.get(i10);
-                        long C1 = ij.C1(channelParticipant.peer);
-                        if (this.b || C1 != e10) {
-                            hVar.k(channelParticipant, C1);
+                        long B1 = ij.B1(channelParticipant.peer);
+                        if (this.b || B1 != e10) {
+                            hVar.k(channelParticipant, B1);
                         } else {
                             arrayList.remove(channelParticipant);
                         }
@@ -70,16 +70,16 @@ public final /* synthetic */ class u9 implements RequestDelegate {
                 org.telegram.messenger.g0.h3(new fi.q1(this.c, (Object) tL_error, tLObject, this.d, this.b, 5));
                 break;
             case 4:
-                org.telegram.messenger.g0.h3(new vn((nv0) this.c, tLObject, this.b, (org.telegram.ui.ActionBar.u1) this.d));
+                org.telegram.messenger.g0.h3(new xn((ov0) this.c, tLObject, this.b, (org.telegram.ui.ActionBar.u1) this.d));
                 break;
             case 5:
                 org.telegram.messenger.g0.h3(new fi.q1(this.c, (Object) tL_error, tLObject, this.d, this.b, 11));
                 break;
             case 6:
-                org.telegram.messenger.g0.h3(new vn(this.c, tLObject, this.d, this.b, 8));
+                org.telegram.messenger.g0.h3(new xn(this.c, tLObject, this.d, this.b, 8));
                 break;
             case 7:
-                cf0 cf0Var = (cf0) this.c;
+                ef0 ef0Var = (ef0) this.c;
                 TLRPC.TL_chatInviteExported tL_chatInviteExported2 = (TLRPC.TL_chatInviteExported) this.d;
                 if (tL_error == null) {
                     TLRPC.TL_messages_exportedChatInvites tL_messages_exportedChatInvites = (TLRPC.TL_messages_exportedChatInvites) tLObject;
@@ -87,16 +87,16 @@ public final /* synthetic */ class u9 implements RequestDelegate {
                         for (int i11 = 0; i11 < tL_messages_exportedChatInvites.invites.size(); i11++) {
                             if (((TLRPC.TL_chatInviteExported) tL_messages_exportedChatInvites.invites.get(i11)).link.equals(tL_chatInviteExported2.link)) {
                                 tL_chatInviteExported = (TLRPC.TL_chatInviteExported) tL_messages_exportedChatInvites.invites.remove(i11);
-                                org.telegram.messenger.g0.h3(new qe0(cf0Var, tL_chatInviteExported, tL_error, tLObject, this.b, 0));
+                                org.telegram.messenger.g0.h3(new se0(ef0Var, tL_chatInviteExported, tL_error, tLObject, this.b, 0));
                                 break;
                             }
                         }
                     }
                 }
                 tL_chatInviteExported = null;
-                org.telegram.messenger.g0.h3(new qe0(cf0Var, tL_chatInviteExported, tL_error, tLObject, this.b, 0));
+                org.telegram.messenger.g0.h3(new se0(ef0Var, tL_chatInviteExported, tL_error, tLObject, this.b, 0));
             default:
-                org.telegram.messenger.g0.h3(new fi.q1((hl0) this.c, tL_error, this.b, tLObject, (String) this.d));
+                org.telegram.messenger.g0.h3(new fi.q1((jl0) this.c, tL_error, this.b, tLObject, (String) this.d));
                 break;
         }
     }

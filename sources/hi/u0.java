@@ -4,10 +4,10 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
-import fi.h9;
+import fi.v9;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final class u0 implements SensorEventListener {
     public long a;
@@ -57,9 +57,9 @@ public final class u0 implements SensorEventListener {
     @Override // android.hardware.SensorEventListener
     public final void onSensorChanged(SensorEvent sensorEvent) {
         v0 v0Var = this.e;
-        h9 h9Var = v0Var.s;
-        if (h9Var != null) {
-            org.telegram.messenger.g0.r(h9Var);
+        v9 v9Var = v0Var.s;
+        if (v9Var != null) {
+            org.telegram.messenger.g0.r(v9Var);
             v0Var.s = null;
         }
         if (v0Var.l || v0Var.k == null) {
@@ -68,9 +68,9 @@ public final class u0 implements SensorEventListener {
         long currentTimeMillis = System.currentTimeMillis() - this.a;
         long j3 = v0Var.j;
         if (currentTimeMillis < j3) {
-            h9 h9Var2 = new h9(this, 17);
-            v0Var.s = h9Var2;
-            org.telegram.messenger.g0.i3(h9Var2, j3 - currentTimeMillis);
+            v9 v9Var2 = new v9(this, 16);
+            v0Var.s = v9Var2;
+            org.telegram.messenger.g0.i3(v9Var2, j3 - currentTimeMillis);
         } else {
             if (sensorEvent.sensor.getType() == 15) {
                 this.b = sensorEvent.values;

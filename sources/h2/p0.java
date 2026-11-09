@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class p0 implements yb.a {
     public final /* synthetic */ int a = 1;
@@ -36,8 +36,30 @@ public final class p0 implements yb.a {
         this.e = aVar;
     }
 
+    public void a(boolean z9, boolean z10) {
+        i0 i0Var = (i0) this.e;
+        if (z9 && z10) {
+            i0Var.d(new n0(this, z9, z10, 0));
+            return;
+        }
+        AtomicBoolean atomicBoolean = new AtomicBoolean(true);
+        i0 i0Var2 = (i0) this.f;
+        i0Var2.a.postDelayed(new f2.h(28, this, atomicBoolean), 1000L);
+        i0Var.d(new o0(this, atomicBoolean, z9, z10, 0));
+    }
+
+    public void b(boolean z9) {
+        if (this.c == z9) {
+            return;
+        }
+        this.c = z9;
+        if (this.b) {
+            a(true, z9);
+        }
+    }
+
     @Override // yb.a
-    public ArrayList a(ub.a aVar) {
+    public ArrayList c(ub.a aVar) {
         a7.b bVar;
         if (((cb) this.f) == null) {
             zzb();
@@ -104,28 +126,6 @@ public final class p0 implements yb.a {
             return arrayList;
         } catch (RemoteException e11) {
             throw new lb.a("Failed to run thin image labeler.", e11);
-        }
-    }
-
-    public void b(boolean z9, boolean z10) {
-        i0 i0Var = (i0) this.e;
-        if (z9 && z10) {
-            i0Var.d(new n0(this, z9, z10, 0));
-            return;
-        }
-        AtomicBoolean atomicBoolean = new AtomicBoolean(true);
-        i0 i0Var2 = (i0) this.f;
-        i0Var2.a.postDelayed(new f2.h(28, this, atomicBoolean), 1000L);
-        i0Var.d(new o0(this, atomicBoolean, z9, z10, 0));
-    }
-
-    public void c(boolean z9) {
-        if (this.c == z9) {
-            return;
-        }
-        this.c = z9;
-        if (this.b) {
-            b(true, z9);
         }
     }
 

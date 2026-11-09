@@ -1,42 +1,33 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.view.View;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n61 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public abstract class n61 {
+    public abstract void b(View view, int i7, int i10);
 
-    public /* synthetic */ n61(Object obj, int i7) {
-        this.a = i7;
-        this.b = obj;
+    public boolean c(int i7) {
+        return false;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                u61 u61Var = (u61) this.b;
-                u61Var.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                u61Var.setAnimationIdicatorProgress(floatValue);
-                t61 t61Var = u61Var.D;
-                if (t61Var != null) {
-                    ((n) t61Var).y(floatValue);
-                    break;
-                }
-                break;
-            default:
-                k60 k60Var = (k60) this.b;
-                k60Var.getClass();
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                i60 i60Var = k60Var.x;
-                if (i60Var != null) {
-                    i60Var.setProgress(floatValue2);
-                    break;
-                }
-                break;
-        }
+    public abstract View d(int i7);
+
+    public abstract int e();
+
+    public CharSequence g(int i7) {
+        return "";
+    }
+
+    public int h(int i7) {
+        return 0;
+    }
+
+    public void a(ArrayList arrayList) {
+    }
+
+    public int f(int i7) {
+        return i7;
     }
 }

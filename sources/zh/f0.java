@@ -6,14 +6,14 @@ import org.telegram.messenger.p10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.s6;
 import org.telegram.ui.Components.j6;
 import org.telegram.ui.Components.wf;
-import org.telegram.ui.qm;
-import org.telegram.ui.s81;
+import org.telegram.ui.sm;
+import org.telegram.ui.t81;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class f0 implements wf {
     public final /* synthetic */ TL_stars.TL_starGiftUnique a;
@@ -63,12 +63,12 @@ public final class f0 implements wf {
         int i7;
         h0 h0Var = this.b;
         j6 j6Var = h0Var.s1;
-        h0Var.i1.a(this.a, p10.i(h0Var.a).e(), h0Var.o1.getTextWithEntities(), id.M0(2131749746, null), true);
+        h0Var.i1.a(this.a, p10.i(h0Var.a).e(), h0Var.o1.getTextWithEntities(), id.M0(2131749745, null), true);
         int codePointCount = Character.codePointCount(charSequence, 0, charSequence.length());
         h0Var.w1 = codePointCount;
         int i10 = h0Var.v1;
         if (i10 <= 0 || (i7 = i10 - codePointCount) > 15) {
-            j6Var.animate().alpha(0.0f).scaleX(0.5f).scaleY(0.5f).setDuration(100L).setListener(new s81(this, 25));
+            j6Var.animate().alpha(0.0f).scaleX(0.5f).scaleY(0.5f).setDuration(100L).setListener(new t81(this, 25));
             return;
         }
         if (i7 < -9999) {
@@ -84,9 +84,9 @@ public final class f0 implements wf {
         j6Var.animate().setListener(null).cancel();
         j6Var.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(100L).start();
         if (i7 < 0) {
-            r6.Z(j6Var, k6.p7, h0Var.I0);
+            s6.Y(j6Var, l6.p7, h0Var.I0);
         } else {
-            r6.Z(j6Var, k6.y6, h0Var.I0);
+            s6.Y(j6Var, l6.y6, h0Var.I0);
         }
     }
 
@@ -111,7 +111,7 @@ public final class f0 implements wf {
     }
 
     @Override // org.telegram.ui.Components.wf
-    public final /* synthetic */ qm o0() {
+    public final /* synthetic */ sm o0() {
         return null;
     }
 

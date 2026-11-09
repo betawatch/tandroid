@@ -40,15 +40,15 @@ import org.telegram.messenger.t3;
 import org.telegram.messenger.t5;
 import org.telegram.messenger.ui;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.Cells.q1;
 import org.telegram.ui.Cells.y;
-import org.telegram.ui.Components.mu0;
+import org.telegram.ui.Components.ou0;
 import org.telegram.ui.Components.w8;
-import wg.s;
+import wg.r;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class a {
     public static final HashMap Y;
@@ -117,7 +117,7 @@ public final class a {
 
     public final boolean a(MotionEvent motionEvent) {
         ij ijVar = this.T;
-        if (ijVar != null && ijVar.v3()) {
+        if (ijVar != null && ijVar.u3()) {
             int x10 = (int) motionEvent.getX();
             int y10 = (int) motionEvent.getY();
             if (motionEvent.getAction() == 0) {
@@ -152,7 +152,7 @@ public final class a {
                     this.X = false;
                     ij ijVar2 = this.T;
                     if (ijVar2 != null && ijVar2.k != null) {
-                        s.d(ijVar2, new ii.c(ijVar2, 27), new pg.c(1));
+                        r.d(ijVar2, new ii.c(ijVar2, 27), new pg.c(1));
                         return false;
                     }
                 }
@@ -167,45 +167,45 @@ public final class a {
         return false;
     }
 
-    public final void b(Canvas canvas, int i7, int i10, f6 f6Var) {
+    public final void b(Canvas canvas, int i7, int i10, g6 g6Var) {
         float f10;
         float f11;
         int e10;
         int i11;
         Canvas canvas2 = canvas;
         ij ijVar = this.T;
-        if (ijVar == null || !ijVar.v3()) {
+        if (ijVar == null || !ijVar.u3()) {
             return;
         }
         y yVar = this.S;
         q1 q1Var = this.c;
         int i12 = 0;
         if (yVar == null) {
-            int x02 = k6.x0(null, k6.i6, false);
+            int x02 = l6.x0(null, l6.i6, false);
             this.R = x02;
-            y a02 = k6.a0(x02, 12, 12);
+            y a02 = l6.a0(x02, 12, 12);
             this.S = a02;
             a02.setCallback(q1Var);
         }
-        this.E.setColor(k6.o2.getColor());
-        this.F.setColor(k6.r1(0.45f, k6.o2.getColor()));
-        this.G.setColor(k6.r1(0.15f, k6.o2.getColor()));
-        this.H.setColor(k6.o2.getColor());
-        if (this.T.Q3()) {
+        this.E.setColor(l6.o2.getColor());
+        this.F.setColor(l6.r1(0.45f, l6.o2.getColor()));
+        this.G.setColor(l6.r1(0.15f, l6.o2.getColor()));
+        this.H.setColor(l6.o2.getColor());
+        if (this.T.P3()) {
             TextPaint textPaint = this.D;
-            int i13 = k6.Lb;
-            textPaint.setColor(k6.w0(i13, f6Var));
-            this.I.setColor(k6.w0(i13, f6Var));
-            this.J.setColor(k6.w0(k6.Ob, f6Var));
+            int i13 = l6.Lb;
+            textPaint.setColor(l6.w0(i13, g6Var));
+            this.I.setColor(l6.w0(i13, g6Var));
+            this.J.setColor(l6.w0(l6.Ob, g6Var));
         } else {
             TextPaint textPaint2 = this.D;
-            int i14 = k6.yd;
-            textPaint2.setColor(k6.w0(i14, f6Var));
-            this.I.setColor(k6.w0(i14, f6Var));
-            this.J.setColor(k6.w0(k6.Id, f6Var));
+            int i14 = l6.yd;
+            textPaint2.setColor(l6.w0(i14, g6Var));
+            this.I.setColor(l6.w0(i14, g6Var));
+            this.J.setColor(l6.w0(l6.Id, g6Var));
         }
         if (this.U) {
-            this.I.setColor(k6.w0(k6.Tk, f6Var));
+            this.I.setColor(l6.w0(l6.Tk, g6Var));
         }
         canvas2.save();
         int L = i10 - g0.L(4.0f);
@@ -287,16 +287,16 @@ public final class a {
                 int i19 = i15;
                 while (true) {
                     TLRPC.Chat chat = this.f[i19];
-                    if (this.T.Q3()) {
-                        e10 = k6.w0(k6.Lb, f6Var);
+                    if (this.T.P3()) {
+                        e10 = l6.w0(l6.Lb, g6Var);
                     } else {
                         int F = t3.F(chat);
                         if (F < 7) {
-                            e10 = k6.w0(k6.r8[F], f6Var);
+                            e10 = l6.w0(l6.r8[F], g6Var);
                         } else {
                             gp gpVar = qp.s1(p10.s0).q4;
                             fp d = gpVar == null ? null : gpVar.d(F);
-                            e10 = d != null ? d.e(i12, f6Var) : k6.w0(k6.r8[i12], f6Var);
+                            e10 = d != null ? d.e(i12, g6Var) : l6.w0(l6.r8[i12], g6Var);
                         }
                     }
                     int i20 = this.V;
@@ -349,11 +349,11 @@ public final class a {
         canvas2.restore();
         canvas2.restore();
         if (this.V >= 0) {
-            int r12 = k6.r1(k6.I.q() ? 0.12f : 0.1f, i16);
+            int r12 = l6.r1(l6.I.q() ? 0.12f : 0.1f, i16);
             if (this.R != r12) {
                 y yVar2 = this.S;
                 this.R = r12;
-                k6.H1(yVar2, r12, true);
+                l6.H1(yVar2, r12, true);
             }
             this.S.setBounds(this.i[this.V]);
             this.S.setCallback(q1Var);
@@ -363,7 +363,7 @@ public final class a {
     public final void c(boolean z9) {
         y yVar;
         ij ijVar = this.T;
-        if (ijVar == null || !ijVar.v3() || (yVar = this.S) == null) {
+        if (ijVar == null || !ijVar.u3() || (yVar = this.S) == null) {
             return;
         }
         q1 q1Var = this.c;
@@ -401,7 +401,7 @@ public final class a {
         this.l = 0;
         this.m = 0;
         this.n = 0.0f;
-        if (ijVar.v3()) {
+        if (ijVar.u3()) {
             this.T = ijVar;
             float f12 = 12.0f;
             boolean z11 = true;
@@ -465,7 +465,7 @@ public final class a {
                     ImageReceiver imageReceiver2 = this.a[i11];
                     imageReceiver2.z1 = true;
                     imageReceiver2.J0(g0.L(12.0f));
-                    this.b[i11] = new w8((f6) null);
+                    this.b[i11] = new w8((g6) null);
                     this.b[i11].u(g0.L(18.0f));
                     this.i[i11] = new Rect();
                     i11++;
@@ -572,7 +572,7 @@ public final class a {
                     document = null;
                 }
                 if (document != null) {
-                    rz d = t5.d(document.thumbs, k6.c7, 0.2f, z10);
+                    rz d = t5.d(document.thumbs, l6.c7, 0.2f, z10);
                     if (d != null) {
                         d.e = 512;
                         d.f = 512;
@@ -602,7 +602,7 @@ public final class a {
                     ImageReceiver imageReceiver3 = this.a[i15];
                     imageReceiver3.z1 = z9;
                     imageReceiver3.J0(g0.L(f10));
-                    this.b[i15] = new w8((f6) null);
+                    this.b[i15] = new w8((g6) null);
                     this.b[i15].u(g0.L(f11));
                     this.i[i15] = new Rect();
                     i15++;
@@ -612,9 +612,9 @@ public final class a {
             int L = g0.L(148.0f);
             int Q0 = g0.Q1() ? g0.Q0() - g0.L(80.0f) : i7 - g0.L(80.0f);
             qp s12 = qp.s1(p10.s0);
-            boolean m32 = ij.m3(ijVar.k);
+            boolean l32 = ij.l3(ijVar.k);
             TLRPC.Message message = ijVar.k;
-            boolean V = t3.V(s12.M0(Long.valueOf(-ij.C1(m32 ? message.fwd_from.from_id : message.peer_id))));
+            boolean V = t3.V(s12.M0(Long.valueOf(-ij.B1(l32 ? message.fwd_from.from_id : message.peer_id))));
             SpannableStringBuilder X2 = g0.X2(id.M0(2131753393, null));
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(X2);
             spannableStringBuilder.setSpan(new RelativeSizeSpan(1.05f), 0, X2.length(), 33);
@@ -648,14 +648,14 @@ public final class a {
             String format = id.E0().s0().format(date);
             String format2 = id.E0().p0().format(date);
             spannableStringBuilder4.append((CharSequence) "\n");
-            spannableStringBuilder4.append((CharSequence) id.a0("formatDateAtTime", null, 2131742786, format, format2));
+            spannableStringBuilder4.append((CharSequence) id.a0("formatDateAtTime", null, 2131742783, format, format2));
             TextPaint textPaint2 = this.E;
             Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
             float L2 = g0.L(2.0f);
             TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
-            this.w = mu0.c(spannableStringBuilder, textPaint2, Q0, alignment, L2, truncateAt, Q0, 10, true);
-            this.y = mu0.c(spannableStringBuilder3, this.E, Q0, alignment, g0.L(2.0f), truncateAt, Q0, 10, true);
-            this.z = mu0.c(spannableStringBuilder4, this.E, Q0, alignment, g0.L(3.0f), truncateAt, Q0, 10, true);
+            this.w = ou0.c(spannableStringBuilder, textPaint2, Q0, alignment, L2, truncateAt, Q0, 10, true);
+            this.y = ou0.c(spannableStringBuilder3, this.E, Q0, alignment, g0.L(2.0f), truncateAt, Q0, 10, true);
+            this.z = ou0.c(spannableStringBuilder4, this.E, Q0, alignment, g0.L(3.0f), truncateAt, Q0, 10, true);
             int i16 = 0;
             for (int i17 = 0; i17 < this.w.getLineCount(); i17++) {
                 i16 = (int) Math.max(i16, Math.ceil(this.w.getLineWidth(i17)));
@@ -672,7 +672,7 @@ public final class a {
             int i20 = i16;
             String str4 = tL_messageMediaGiveaway2.prize_description;
             if (str4 != null && !str4.isEmpty()) {
-                StaticLayout c10 = mu0.c(i6.m(g0.X2(id.G(tL_messageMediaGiveaway2.quantity, "BoostingGiveawayMsgPrizes", tL_messageMediaGiveaway2.prize_description)), this.H.getFontMetricsInt(), false, null, 0), this.E, i20, Layout.Alignment.ALIGN_CENTER, g0.L(2.0f), TextUtils.TruncateAt.END, i20, 20, true);
+                StaticLayout c10 = ou0.c(i6.m(g0.X2(id.G(tL_messageMediaGiveaway2.quantity, "BoostingGiveawayMsgPrizes", tL_messageMediaGiveaway2.prize_description)), this.H.getFontMetricsInt(), false, null, 0), this.E, i20, Layout.Alignment.ALIGN_CENTER, g0.L(2.0f), TextUtils.TruncateAt.END, i20, 20, true);
                 this.x = c10;
                 this.m = g0.L(22.0f) + c10.getLineBottom(c10.getLineCount() - 1);
                 String M0 = id.M0(2131753406, null);
@@ -698,7 +698,7 @@ public final class a {
                     arrayList5.add(spannableStringBuilder5);
                 }
                 if (!arrayList5.isEmpty()) {
-                    this.A = mu0.c(i6.m(g0.X2(id.a0("BoostingGiveAwayFromCountries", null, 2131753493, TextUtils.join(", ", arrayList5))), this.H.getFontMetricsInt(), false, null, 0), this.H, i20, Layout.Alignment.ALIGN_CENTER, 0.0f, TextUtils.TruncateAt.END, i20, 10, true);
+                    this.A = ou0.c(i6.m(g0.X2(id.a0("BoostingGiveAwayFromCountries", null, 2131753493, TextUtils.join(", ", arrayList5))), this.H.getFontMetricsInt(), false, null, 0), this.H, i20, Layout.Alignment.ALIGN_CENTER, 0.0f, TextUtils.TruncateAt.END, i20, 10, true);
                 }
             }
             int max = Math.max(i10, Math.min(g0.L(38.0f) + i20, Q0));

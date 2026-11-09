@@ -23,10 +23,10 @@ import android.view.ViewParent;
 import android.view.accessibility.AccessibilityEvent;
 import android.widget.EdgeEffect;
 import android.widget.Scroller;
+import bi.ab;
 import bi.sd;
-import di.i4;
-import di.q4;
-import di.s7;
+import di.j4;
+import di.r4;
 import di.w;
 import di.w7;
 import java.util.ArrayList;
@@ -39,7 +39,7 @@ import q4.q;
 import r0.a0;
 import r0.i0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public class k extends ViewGroup {
     public static final int[] s0 = {R.attr.layout_gravity};
@@ -85,7 +85,7 @@ public class k extends ViewGroup {
     public int j0;
     public ArrayList k0;
     public g l0;
-    public q4 m0;
+    public r4 m0;
     public Parcelable n;
     public int n0;
     public int o0;
@@ -836,17 +836,17 @@ public class k extends ViewGroup {
                     w7 w7Var = (w7) childAt2;
                     if (Math.abs(left2) >= 1.0f) {
                         w7Var.a(false);
-                        g0.i3(new s7(w7Var, 0), 16L);
+                        g0.i3(new ab(w7Var, 29), 16L);
                     } else {
                         if (!w7Var.d) {
                             w7Var.a(true);
                             if (wVar.x0 != null) {
-                                i4 i4Var = w7Var.a;
+                                j4 j4Var = w7Var.a;
                                 long j3 = w7Var.b;
                                 ArrayList arrayList2 = w7Var.c;
-                                i4Var.k1 = j3;
-                                i4Var.i1 = arrayList2;
-                                i4Var.m0(-1);
+                                j4Var.k1 = j3;
+                                j4Var.i1 = arrayList2;
+                                j4Var.m0(-1);
                             } else {
                                 w7Var.a.S0(-1, w7Var.b);
                             }

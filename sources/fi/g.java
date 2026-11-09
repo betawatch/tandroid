@@ -17,25 +17,25 @@ import org.telegram.messenger.qs;
 import org.telegram.ui.Components.gt;
 import org.telegram.ui.Components.hy;
 import org.telegram.ui.Components.lt;
-import org.telegram.ui.Components.rt0;
+import org.telegram.ui.Components.tt0;
 import org.telegram.ui.Components.uc;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.Components.zs;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class g extends lt {
     public org.telegram.ui.Components.ca V;
     public fh.g W;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f6 a0;
+    public final /* synthetic */ org.telegram.ui.ActionBar.g6 a0;
     public final /* synthetic */ org.telegram.ui.Components.y9 b0;
     public final /* synthetic */ m c0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g(m mVar, Context context, rt0 rt0Var, int i7, di.b bVar, org.telegram.ui.ActionBar.f6 f6Var, org.telegram.ui.Components.y9 y9Var) {
-        super(context, rt0Var, null, i7, true, bVar);
+    public g(m mVar, Context context, tt0 tt0Var, int i7, di.b bVar, org.telegram.ui.ActionBar.g6 g6Var, org.telegram.ui.Components.y9 y9Var) {
+        super(context, tt0Var, null, i7, true, bVar);
         this.c0 = mVar;
-        this.a0 = f6Var;
+        this.a0 = g6Var;
         this.b0 = y9Var;
     }
 

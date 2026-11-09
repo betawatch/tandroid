@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.content.Context;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class m7 extends vc {
     public final /* synthetic */ int b;
@@ -22,9 +22,9 @@ public final class m7 extends vc {
             case 0:
                 b8 b8Var = (b8) this.c;
                 b8Var.updateColors();
-                org.telegram.ui.uq uqVar = b8Var.E1;
-                if (uqVar != null) {
-                    uqVar.a(d1.f.u());
+                org.telegram.ui.wq wqVar = b8Var.E1;
+                if (wqVar != null) {
+                    wqVar.a(d1.f.u());
                     break;
                 }
                 break;
@@ -35,13 +35,13 @@ public final class m7 extends vc {
                     z0Var.f(z9);
                     photoViewer.F0.setSelectorColor(z9 ? 259241196 : 268435455);
                 }
-                t51 t51Var = photoViewer.F2;
-                if (t51Var != null) {
-                    t51Var.t0(d1.f.u() || photoViewer.r);
+                u51 u51Var = photoViewer.F2;
+                if (u51Var != null) {
+                    u51Var.t0(d1.f.u() || photoViewer.r);
                 }
-                org.telegram.ui.uq uqVar2 = photoViewer.w0;
-                if (uqVar2 != null) {
-                    uqVar2.a(d1.f.u());
+                org.telegram.ui.wq wqVar2 = photoViewer.w0;
+                if (wqVar2 != null) {
+                    wqVar2.a(d1.f.u());
                     break;
                 }
                 break;

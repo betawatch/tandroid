@@ -40,7 +40,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.RLottieNative;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class e7 {
     public String A;
@@ -143,7 +143,7 @@ public final class e7 {
     public final Matrix n0 = new Matrix();
     public float t0 = 1.0f;
     public float u0 = 1.0f;
-    public boolean y0 = org.telegram.ui.ActionBar.k6.I.q();
+    public boolean y0 = org.telegram.ui.ActionBar.l6.I.q();
     public long z0 = Long.MIN_VALUE;
     public boolean D0 = true;
     public final ArrayList F0 = new ArrayList();
@@ -403,9 +403,9 @@ public final class e7 {
         arrayList.addAll(arrayList3);
         e7Var.I0 = storyItem.expire_date - storyItem.date;
         try {
-            CharSequence m10 = org.telegram.messenger.i6.m(new SpannableString(storyItem.caption), org.telegram.ui.ActionBar.k6.o2.getFontMetricsInt(), true, null, 0);
+            CharSequence m10 = org.telegram.messenger.i6.m(new SpannableString(storyItem.caption), org.telegram.ui.ActionBar.l6.o2.getFontMetricsInt(), true, null, 0);
             ij.b(m10, storyItem.entities, true, false, true, false, 0);
-            e7Var.C0 = ij.C5(m10, storyItem.entities, org.telegram.ui.ActionBar.k6.o2.getFontMetricsInt(), false);
+            e7Var.C0 = ij.B5(m10, storyItem.entities, org.telegram.ui.ActionBar.l6.o2.getFontMetricsInt(), false);
         } catch (Exception unused) {
         }
         e7Var.A();
@@ -487,7 +487,7 @@ public final class e7 {
         long j3;
         if (document != null) {
             if (!"video/webm".equals(document.mime_type) && !"video/mp4".equals(document.mime_type)) {
-                if (ij.L2(document, true)) {
+                if (ij.K2(document, true)) {
                     RLottieNative a10 = RLottieNative.a(str, null, null, null, 0, null);
                     if (a10 != null) {
                         int i7 = a10.a[0];
@@ -1009,7 +1009,7 @@ public final class e7 {
             TLRPC.Photo photo = messageMedia.photo;
             if (photo == null) {
                 TLRPC.Document document = messageMedia.document;
-                if (document != null && ij.W2(document)) {
+                if (document != null && ij.V2(document)) {
                     TLRPC.TL_inputStickeredMediaDocument tL_inputStickeredMediaDocument = new TLRPC.TL_inputStickeredMediaDocument();
                     TLRPC.TL_inputDocument tL_inputDocument = new TLRPC.TL_inputDocument();
                     tL_inputStickeredMediaDocument.id = tL_inputDocument;

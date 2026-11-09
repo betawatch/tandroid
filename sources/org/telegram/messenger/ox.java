@@ -20,11 +20,11 @@ import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.bi0;
-import org.telegram.ui.hl0;
-import org.telegram.ui.ma1;
+import org.telegram.ui.di0;
+import org.telegram.ui.jl0;
+import org.telegram.ui.oa1;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ox implements RequestDelegate {
     public final /* synthetic */ int a = 2;
@@ -40,14 +40,14 @@ public final /* synthetic */ class ox implements RequestDelegate {
     public final /* synthetic */ boolean k;
     public final /* synthetic */ Object l;
 
-    public /* synthetic */ ox(gz gzVar, String str, List list, boolean z9, ij ijVar, TL_keyboard.KeyboardButtonProto keyboardButtonProto, org.telegram.ui.an anVar, TwoStepVerificationActivity twoStepVerificationActivity, TLObject[] tLObjectArr, TLRPC.InputCheckPasswordSRP inputCheckPasswordSRP, boolean z10) {
+    public /* synthetic */ ox(gz gzVar, String str, List list, boolean z9, ij ijVar, TL_keyboard.KeyboardButtonProto keyboardButtonProto, org.telegram.ui.cn cnVar, TwoStepVerificationActivity twoStepVerificationActivity, TLObject[] tLObjectArr, TLRPC.InputCheckPasswordSRP inputCheckPasswordSRP, boolean z10) {
         this.b = gzVar;
         this.e = str;
         this.l = list;
         this.g = z9;
         this.d = ijVar;
         this.c = keyboardButtonProto;
-        this.f = anVar;
+        this.f = cnVar;
         this.h = twoStepVerificationActivity;
         this.i = tLObjectArr;
         this.j = inputCheckPasswordSRP;
@@ -228,7 +228,7 @@ public final /* synthetic */ class ox implements RequestDelegate {
             default:
                 final List list = (List) obj5;
                 final TL_keyboard.KeyboardButtonProto keyboardButtonProto = (TL_keyboard.KeyboardButtonProto) obj4;
-                final org.telegram.ui.an anVar = (org.telegram.ui.an) obj3;
+                final org.telegram.ui.cn cnVar = (org.telegram.ui.cn) obj3;
                 final TwoStepVerificationActivity twoStepVerificationActivity = (TwoStepVerificationActivity) obj2;
                 final TLObject[] tLObjectArr = (TLObject[]) this.i;
                 final TLRPC.InputCheckPasswordSRP inputCheckPasswordSRP = (TLRPC.InputCheckPasswordSRP) obj;
@@ -252,7 +252,7 @@ public final /* synthetic */ class ox implements RequestDelegate {
                         TLObject tLObject3 = tLObject;
                         final ij ijVar4 = ijVar2;
                         final TL_keyboard.KeyboardButtonProto keyboardButtonProto2 = keyboardButtonProto;
-                        final org.telegram.ui.an anVar2 = anVar;
+                        final org.telegram.ui.cn cnVar2 = cnVar;
                         final TwoStepVerificationActivity twoStepVerificationActivity2 = twoStepVerificationActivity;
                         TLObject[] tLObjectArr2 = tLObjectArr;
                         TLRPC.TL_error tL_error2 = tL_error;
@@ -261,16 +261,16 @@ public final /* synthetic */ class ox implements RequestDelegate {
                         gzVar3.r.remove(str5);
                         list2.remove(str5);
                         if (z15 && tLObject3 == null) {
-                            gzVar3.n0(false, ijVar4, keyboardButtonProto2, null, null, anVar2);
+                            gzVar3.n0(false, ijVar4, keyboardButtonProto2, null, null, cnVar2);
                             return;
                         }
                         if (tLObject3 == null) {
-                            if (tL_error2 == null || anVar2.getParentActivity() == null) {
+                            if (tL_error2 == null || cnVar2.getParentActivity() == null) {
                                 return;
                             }
                             if ("PASSWORD_HASH_INVALID".equals(tL_error2.text)) {
                                 if (inputCheckPasswordSRP2 == null) {
-                                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(anVar2.getParentActivity());
+                                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(cnVar2.getParentActivity());
                                     alertDialog$Builder.a.R = id.M0(2131753019, null);
                                     alertDialog$Builder.a.T = g0.X2(id.a0("BotOwnershipTransferReadyAlertText", null, 2131753016, new Object[0]));
                                     alertDialog$Builder.k(id.M0(2131753017, null), new org.telegram.ui.ActionBar.r1() { // from class: org.telegram.messenger.yw
@@ -280,21 +280,21 @@ public final /* synthetic */ class ox implements RequestDelegate {
                                             final ij ijVar5 = ijVar4;
                                             final gz gzVar4 = gz.this;
                                             final TL_keyboard.KeyboardButtonProto keyboardButtonProto3 = keyboardButtonProto2;
-                                            final org.telegram.ui.an anVar3 = anVar2;
+                                            final org.telegram.ui.cn cnVar3 = cnVar2;
                                             final boolean z17 = z16;
-                                            ma1 ma1Var = new ma1() { // from class: org.telegram.messenger.hx
-                                                @Override // org.telegram.ui.ma1
+                                            oa1 oa1Var = new oa1() { // from class: org.telegram.messenger.hx
+                                                @Override // org.telegram.ui.oa1
                                                 public final void j(TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP) {
-                                                    gzVar4.n0(z17, ijVar5, keyboardButtonProto3, tL_inputCheckPasswordSRP, twoStepVerificationActivity3, anVar3);
+                                                    gzVar4.n0(z17, ijVar5, keyboardButtonProto3, tL_inputCheckPasswordSRP, twoStepVerificationActivity3, cnVar3);
                                                 }
                                             };
                                             twoStepVerificationActivity3.Z = 0;
-                                            twoStepVerificationActivity3.b0 = ma1Var;
-                                            anVar3.presentFragment(twoStepVerificationActivity3);
+                                            twoStepVerificationActivity3.b0 = oa1Var;
+                                            cnVar3.presentFragment(twoStepVerificationActivity3);
                                         }
                                     });
                                     alertDialog$Builder.h(id.M0(2131752589, null), null);
-                                    anVar2.showDialog(alertDialog$Builder.a);
+                                    cnVar2.showDialog(alertDialog$Builder.a);
                                     return;
                                 }
                                 return;
@@ -304,7 +304,7 @@ public final /* synthetic */ class ox implements RequestDelegate {
                                     ConnectionsManager.getInstance(gzVar3.currentAccount).sendRequest(new TL_account.getPassword(), new RequestDelegate() { // from class: org.telegram.messenger.zw
                                         @Override // org.telegram.tgnet.RequestDelegate
                                         public final void run(TLObject tLObject4, TLRPC.TL_error tL_error3) {
-                                            g0.h3(new zg(gzVar3, tL_error3, tLObject4, twoStepVerificationActivity2, z16, ijVar4, keyboardButtonProto2, anVar2));
+                                            g0.h3(new zg(gzVar3, tL_error3, tLObject4, twoStepVerificationActivity2, z16, ijVar4, keyboardButtonProto2, cnVar2));
                                         }
                                     }, 8);
                                     return;
@@ -320,32 +320,32 @@ public final /* synthetic */ class ox implements RequestDelegate {
                             if (twoStepVerificationActivity2 != null) {
                                 twoStepVerificationActivity2.t0();
                             }
-                            AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(anVar2.getParentActivity());
-                            alertDialog$Builder2.a.R = id.M0(2131751298, null);
-                            LinearLayout linearLayout = new LinearLayout(anVar2.getParentActivity());
+                            AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(cnVar2.getParentActivity());
+                            alertDialog$Builder2.a.R = id.M0(2131751297, null);
+                            LinearLayout linearLayout = new LinearLayout(cnVar2.getParentActivity());
                             linearLayout.setPadding(g0.L(24.0f), g0.L(2.0f), g0.L(24.0f), 0);
                             linearLayout.setOrientation(1);
                             alertDialog$Builder2.o(linearLayout);
-                            TextView textView = new TextView(anVar2.getParentActivity());
-                            int i12 = org.telegram.ui.ActionBar.k6.j5;
-                            org.telegram.ui.ActionBar.r6.V(textView, i12, null);
+                            TextView textView = new TextView(cnVar2.getParentActivity());
+                            int i12 = org.telegram.ui.ActionBar.l6.j5;
+                            org.telegram.ui.ActionBar.s6.U(textView, i12, null);
                             textView.setTextSize(1, 16.0f);
                             textView.setGravity((id.a0 ? 5 : 3) | 48);
                             k5.r("BotOwnershipTransferAlertText", null, 2131753018, new Object[0], textView);
                             linearLayout.addView(textView, c8.ha.o(-1, -2));
-                            LinearLayout linearLayout2 = new LinearLayout(anVar2.getParentActivity());
+                            LinearLayout linearLayout2 = new LinearLayout(cnVar2.getParentActivity());
                             linearLayout2.setOrientation(0);
                             linearLayout.addView(linearLayout2, c8.ha.k(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
-                            ImageView imageView = new ImageView(anVar2.getParentActivity());
+                            ImageView imageView = new ImageView(cnVar2.getParentActivity());
                             imageView.setImageResource(R.drawable.list_circle);
                             imageView.setPadding(id.a0 ? g0.L(11.0f) : 0, g0.L(9.0f), id.a0 ? 0 : g0.L(11.0f), 0);
                             PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
-                            org.telegram.ui.ActionBar.r6.t(imageView, i12, null, mode);
-                            TextView textView2 = new TextView(anVar2.getParentActivity());
-                            org.telegram.ui.ActionBar.r6.V(textView2, i12, null);
+                            org.telegram.ui.ActionBar.s6.s(imageView, i12, null, mode);
+                            TextView textView2 = new TextView(cnVar2.getParentActivity());
+                            org.telegram.ui.ActionBar.s6.U(textView2, i12, null);
                             textView2.setTextSize(1, 16.0f);
                             textView2.setGravity((id.a0 ? 5 : 3) | 48);
-                            textView2.setText(g0.X2(id.M0(2131751301, null)));
+                            textView2.setText(g0.X2(id.M0(2131751300, null)));
                             if (id.a0) {
                                 linearLayout2.addView(textView2, c8.ha.o(-1, -2));
                                 linearLayout2.addView(imageView, c8.ha.r(-2, -2, 5));
@@ -353,18 +353,18 @@ public final /* synthetic */ class ox implements RequestDelegate {
                                 linearLayout2.addView(imageView, c8.ha.o(-2, -2));
                                 linearLayout2.addView(textView2, c8.ha.o(-1, -2));
                             }
-                            LinearLayout linearLayout3 = new LinearLayout(anVar2.getParentActivity());
+                            LinearLayout linearLayout3 = new LinearLayout(cnVar2.getParentActivity());
                             linearLayout3.setOrientation(0);
                             linearLayout.addView(linearLayout3, c8.ha.k(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
-                            ImageView imageView2 = new ImageView(anVar2.getParentActivity());
+                            ImageView imageView2 = new ImageView(cnVar2.getParentActivity());
                             imageView2.setImageResource(R.drawable.list_circle);
                             imageView2.setPadding(id.a0 ? g0.L(11.0f) : 0, g0.L(9.0f), id.a0 ? 0 : g0.L(11.0f), 0);
-                            org.telegram.ui.ActionBar.r6.t(imageView2, i12, null, mode);
-                            TextView textView3 = new TextView(anVar2.getParentActivity());
-                            org.telegram.ui.ActionBar.r6.V(textView3, i12, null);
+                            org.telegram.ui.ActionBar.s6.s(imageView2, i12, null, mode);
+                            TextView textView3 = new TextView(cnVar2.getParentActivity());
+                            org.telegram.ui.ActionBar.s6.U(textView3, i12, null);
                             textView3.setTextSize(1, 16.0f);
                             textView3.setGravity((id.a0 ? 5 : 3) | 48);
-                            textView3.setText(g0.X2(id.M0(2131751300, null)));
+                            textView3.setText(g0.X2(id.M0(2131751299, null)));
                             if (id.a0) {
                                 linearLayout3.addView(textView3, c8.ha.o(-1, -2));
                                 i11 = 5;
@@ -375,17 +375,17 @@ public final /* synthetic */ class ox implements RequestDelegate {
                                 linearLayout3.addView(textView3, c8.ha.o(-1, -2));
                             }
                             if ("PASSWORD_MISSING".equals(tL_error2.text)) {
-                                alertDialog$Builder2.k(id.M0(2131751292, null), new j1(anVar2, 16));
+                                alertDialog$Builder2.k(id.M0(2131751291, null), new j1(cnVar2, 16));
                                 alertDialog$Builder2.h(id.M0(2131752589, null), null);
                             } else {
-                                TextView textView4 = new TextView(anVar2.getParentActivity());
-                                org.telegram.ui.ActionBar.r6.V(textView4, i12, null);
+                                TextView textView4 = new TextView(cnVar2.getParentActivity());
+                                org.telegram.ui.ActionBar.s6.U(textView4, i12, null);
                                 textView4.setTextSize(1, 16.0f);
-                                k5.m(textView4, (id.a0 ? i11 : 3) | 48, null, 2131751299);
+                                k5.m(textView4, (id.a0 ? i11 : 3) | 48, null, 2131751298);
                                 linearLayout.addView(textView4, c8.ha.k(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
-                                alertDialog$Builder2.h(id.M0(2131747832, null), null);
+                                alertDialog$Builder2.h(id.M0(2131747831, null), null);
                             }
-                            anVar2.showDialog(alertDialog$Builder2.a);
+                            cnVar2.showDialog(alertDialog$Builder2.a);
                             return;
                         }
                         if (twoStepVerificationActivity2 != null) {
@@ -414,14 +414,14 @@ public final /* synthetic */ class ox implements RequestDelegate {
                         TL_keyboard.TL_inlineButtonTypeUrlAuth tL_inlineButtonTypeUrlAuth = (TL_keyboard.TL_inlineButtonTypeUrlAuth) cg.c.a(keyboardButtonProto2, TL_keyboard.TL_inlineButtonTypeUrlAuth.class);
                         if (tL_inlineButtonTypeUrlAuth != null) {
                             if (tLObject3 instanceof TLRPC.TL_urlAuthResultRequest) {
-                                bi0.b(false, gzVar3.currentAccount, (TLRPC.TL_messages_requestUrlAuth) tLObjectArr2[0], (TLRPC.TL_urlAuthResultRequest) tLObject3, tL_inlineButtonTypeUrlAuth.url, null, null, false, null);
+                                di0.b(false, gzVar3.currentAccount, (TLRPC.TL_messages_requestUrlAuth) tLObjectArr2[0], (TLRPC.TL_urlAuthResultRequest) tLObject3, tL_inlineButtonTypeUrlAuth.url, null, null, false, null);
                                 return;
                             } else if (tLObject3 instanceof TLRPC.TL_urlAuthResultAccepted) {
-                                bi0.b(false, gzVar3.currentAccount, (TLRPC.TL_messages_requestUrlAuth) tLObjectArr2[0], (TLRPC.TL_urlAuthResultAccepted) tLObject3, tL_inlineButtonTypeUrlAuth.url, null, null, false, null);
+                                di0.b(false, gzVar3.currentAccount, (TLRPC.TL_messages_requestUrlAuth) tLObjectArr2[0], (TLRPC.TL_urlAuthResultAccepted) tLObject3, tL_inlineButtonTypeUrlAuth.url, null, null, false, null);
                                 return;
                             } else {
                                 if (tLObject3 instanceof TLRPC.TL_urlAuthResultDefault) {
-                                    org.telegram.ui.Components.v4.n0(anVar2, tL_inlineButtonTypeUrlAuth.url, false, true);
+                                    org.telegram.ui.Components.v4.n0(cnVar2, tL_inlineButtonTypeUrlAuth.url, false, true);
                                     return;
                                 }
                                 return;
@@ -436,11 +436,11 @@ public final /* synthetic */ class ox implements RequestDelegate {
                             if (tLObject3 instanceof TLRPC.PaymentForm) {
                                 TLRPC.PaymentForm paymentForm = (TLRPC.PaymentForm) tLObject3;
                                 gzVar3.getMessagesController().Y3(paymentForm.users, false);
-                                anVar2.presentFragment(new hl0(paymentForm, ijVar5, null, anVar2));
+                                cnVar2.presentFragment(new jl0(paymentForm, ijVar5, null, cnVar2));
                                 return;
                             } else if (!(tLObject3 instanceof TLRPC.TL_payments_paymentReceiptStars)) {
                                 if (tLObject3 instanceof TLRPC.PaymentReceipt) {
-                                    anVar2.presentFragment(new hl0((TLRPC.PaymentReceipt) tLObject3));
+                                    cnVar2.presentFragment(new jl0((TLRPC.PaymentReceipt) tLObject3));
                                     return;
                                 }
                                 return;
@@ -461,13 +461,13 @@ public final /* synthetic */ class ox implements RequestDelegate {
                         }
                         String str6 = tL_messages_botCallbackAnswer.message;
                         if (str6 == null) {
-                            if (tL_messages_botCallbackAnswer.url == null || anVar2.getParentActivity() == null) {
+                            if (tL_messages_botCallbackAnswer.url == null || cnVar2.getParentActivity() == null) {
                                 return;
                             }
                             TLRPC.User a23 = gzVar3.getMessagesController().a2(Long.valueOf(Z0));
                             boolean z17 = a23 != null && a23.verified;
                             if (!cg.c.c(keyboardButtonProto2, TL_keyboard.TL_inlineButtonTypeGame.class)) {
-                                org.telegram.ui.Components.v4.n0(anVar2, tL_messages_botCallbackAnswer.url, false, false);
+                                org.telegram.ui.Components.v4.n0(cnVar2, tL_messages_botCallbackAnswer.url, false, false);
                                 return;
                             }
                             TLRPC.MessageMedia messageMedia = ijVar6.k.media;
@@ -475,62 +475,62 @@ public final /* synthetic */ class ox implements RequestDelegate {
                             if (tL_game == null) {
                                 return;
                             }
-                            anVar2.pc(tL_game, ijVar6, tL_messages_botCallbackAnswer.url, !z17 && k5.w("askgame_", Z0, qp.s1(gzVar3.currentAccount).d7, true), Z0);
+                            cnVar2.sc(tL_game, ijVar6, tL_messages_botCallbackAnswer.url, !z17 && k5.w("askgame_", Z0, qp.s1(gzVar3.currentAccount).d7, true), Z0);
                             return;
                         }
                         if (tL_messages_botCallbackAnswer.alert) {
-                            if (anVar2.getParentActivity() == null) {
+                            if (cnVar2.getParentActivity() == null) {
                                 return;
                             }
-                            AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(anVar2.getParentActivity());
+                            AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(cnVar2.getParentActivity());
                             alertDialog$Builder3.a.R = str4;
-                            alertDialog$Builder3.k(id.M0(2131747832, null), null);
+                            alertDialog$Builder3.k(id.M0(2131747831, null), null);
                             String str7 = tL_messages_botCallbackAnswer.message;
                             org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder3.a;
                             u1Var.T = str7;
-                            anVar2.showDialog(u1Var);
+                            cnVar2.showDialog(u1Var);
                             return;
                         }
-                        if (anVar2.b3 == null && anVar2.a1 != null && anVar2.getParentActivity() != null) {
-                            FrameLayout frameLayout = new FrameLayout(anVar2.getParentActivity());
-                            anVar2.b3 = frameLayout;
-                            anVar2.a1.addView(frameLayout, c8.ha.o(-1, 48));
-                            anVar2.a1.h(11, anVar2.b3);
-                            anVar2.a1.g(anVar2.b3);
-                            TextView textView5 = new TextView(anVar2.getParentActivity());
-                            anVar2.d3 = textView5;
+                        if (cnVar2.b3 == null && cnVar2.a1 != null && cnVar2.getParentActivity() != null) {
+                            FrameLayout frameLayout = new FrameLayout(cnVar2.getParentActivity());
+                            cnVar2.b3 = frameLayout;
+                            cnVar2.a1.addView(frameLayout, c8.ha.o(-1, 48));
+                            cnVar2.a1.h(11, cnVar2.b3);
+                            cnVar2.a1.g(cnVar2.b3);
+                            TextView textView5 = new TextView(cnVar2.getParentActivity());
+                            cnVar2.d3 = textView5;
                             textView5.setTextSize(1, 14.0f);
-                            org.telegram.ui.ActionBar.r6.V(anVar2.d3, org.telegram.ui.ActionBar.k6.Te, anVar2.getResourceProvider());
-                            anVar2.d3.setTypeface(g0.o());
-                            anVar2.d3.setSingleLine(true);
-                            TextView textView6 = anVar2.d3;
+                            org.telegram.ui.ActionBar.s6.U(cnVar2.d3, org.telegram.ui.ActionBar.l6.Te, cnVar2.getResourceProvider());
+                            cnVar2.d3.setTypeface(g0.o());
+                            cnVar2.d3.setSingleLine(true);
+                            TextView textView6 = cnVar2.d3;
                             TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
                             textView6.setEllipsize(truncateAt);
-                            anVar2.d3.setMaxLines(1);
-                            anVar2.b3.addView(anVar2.d3, c8.ha.d(-2, -2.0f, 51, 8.0f, 5.0f, 8.0f, 0.0f));
-                            TextView textView7 = new TextView(anVar2.getParentActivity());
-                            anVar2.e3 = textView7;
+                            cnVar2.d3.setMaxLines(1);
+                            cnVar2.b3.addView(cnVar2.d3, c8.ha.d(-2, -2.0f, 51, 8.0f, 5.0f, 8.0f, 0.0f));
+                            TextView textView7 = new TextView(cnVar2.getParentActivity());
+                            cnVar2.e3 = textView7;
                             textView7.setTextSize(1, 14.0f);
-                            org.telegram.ui.ActionBar.r6.V(anVar2.e3, org.telegram.ui.ActionBar.k6.Ue, anVar2.getResourceProvider());
-                            anVar2.e3.setSingleLine(true);
-                            anVar2.e3.setEllipsize(truncateAt);
-                            anVar2.e3.setMaxLines(1);
-                            anVar2.b3.addView(anVar2.e3, c8.ha.d(-2, -2.0f, 51, 8.0f, 23.0f, 8.0f, 0.0f));
+                            org.telegram.ui.ActionBar.s6.U(cnVar2.e3, org.telegram.ui.ActionBar.l6.Ue, cnVar2.getResourceProvider());
+                            cnVar2.e3.setSingleLine(true);
+                            cnVar2.e3.setEllipsize(truncateAt);
+                            cnVar2.e3.setMaxLines(1);
+                            cnVar2.b3.addView(cnVar2.e3, c8.ha.d(-2, -2.0f, 51, 8.0f, 23.0f, 8.0f, 0.0f));
                         }
-                        FrameLayout frameLayout2 = anVar2.b3;
-                        if (frameLayout2 == null || (lgVar = anVar2.a1) == null) {
+                        FrameLayout frameLayout2 = cnVar2.b3;
+                        if (frameLayout2 == null || (lgVar = cnVar2.a1) == null) {
                             return;
                         }
                         lgVar.i(frameLayout2, true, true);
-                        anVar2.d3.setText(str4);
-                        anVar2.e3.setText(i6.m(str6.replace('\n', ' '), anVar2.e3.getPaint().getFontMetricsInt(), false, null, 0));
-                        org.telegram.ui.xj xjVar = anVar2.c3;
-                        if (xjVar != null) {
-                            g0.r(xjVar);
+                        cnVar2.d3.setText(str4);
+                        cnVar2.e3.setText(i6.m(str6.replace('\n', ' '), cnVar2.e3.getPaint().getFontMetricsInt(), false, null, 0));
+                        org.telegram.ui.zj zjVar = cnVar2.c3;
+                        if (zjVar != null) {
+                            g0.r(zjVar);
                         }
-                        org.telegram.ui.xj xjVar2 = new org.telegram.ui.xj(anVar2, 1);
-                        anVar2.c3 = xjVar2;
-                        g0.i3(xjVar2, 3000L);
+                        org.telegram.ui.zj zjVar2 = new org.telegram.ui.zj(cnVar2, 1);
+                        cnVar2.c3 = zjVar2;
+                        g0.i3(zjVar2, 3000L);
                     }
                 });
                 break;

@@ -7,7 +7,7 @@ import java.util.Collections;
 import java.util.concurrent.TimeUnit;
 import org.telegram.messenger.a8;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class q implements Runnable {
     public static final ThreadLocal e = new ThreadLocal();
@@ -41,7 +41,7 @@ public final class q implements Runnable {
                 return j10;
             } catch (Exception e10) {
                 a8.g(e10, true);
-                org.telegram.messenger.g0.h3(new sg.t0(recyclerView, 23));
+                org.telegram.messenger.g0.h3(new sh.b(recyclerView, 21));
                 recyclerView.i0(false);
                 return null;
             }

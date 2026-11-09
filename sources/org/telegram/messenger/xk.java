@@ -1,9 +1,9 @@
 package org.telegram.messenger;
 
 import java.util.HashMap;
-import org.telegram.ui.Components.l41;
+import org.telegram.ui.Components.m41;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class xk implements Runnable {
     public final /* synthetic */ int a;
@@ -20,7 +20,7 @@ public final /* synthetic */ class xk implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        l41 l41Var;
+        m41 m41Var;
         switch (this.a) {
             case 0:
                 qp qpVar = (qp) this.d;
@@ -48,7 +48,7 @@ public final /* synthetic */ class xk implements Runnable {
                 }
                 break;
             case 1:
-                org.telegram.ui.pn.b0((org.telegram.ui.pn) this.d, this.b, this.c);
+                org.telegram.ui.rn.b0((org.telegram.ui.rn) this.d, this.b, this.c);
                 break;
             case 2:
                 org.telegram.ui.web.o1 o1Var = (org.telegram.ui.web.o1) this.d;
@@ -57,8 +57,8 @@ public final /* synthetic */ class xk implements Runnable {
                 o1Var.h = j11;
                 o1Var.n = j12;
                 fi.w3 w3Var = o1Var.a;
-                if (w3Var != null && (l41Var = w3Var.f3) != null && w3Var.G) {
-                    l41Var.O(true);
+                if (w3Var != null && (m41Var = w3Var.f3) != null && w3Var.G) {
+                    m41Var.O(true);
                     break;
                 }
                 break;

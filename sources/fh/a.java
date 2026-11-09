@@ -10,16 +10,16 @@ import org.telegram.messenger.g0;
 import org.telegram.ui.ActionBar.f2;
 import org.telegram.ui.Cells.q5;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
-import org.telegram.ui.Components.ca0;
+import org.telegram.ui.Components.da0;
 import org.telegram.ui.Components.di;
-import org.telegram.ui.Components.o40;
+import org.telegram.ui.Components.p40;
 import org.telegram.ui.Components.tl;
 import org.telegram.ui.Components.voip.k2;
 import org.telegram.ui.Components.voip.n1;
 import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.an;
+import org.telegram.ui.cn;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class a extends ViewOutlineProvider {
     public final /* synthetic */ int a;
@@ -40,7 +40,7 @@ public final class a extends ViewOutlineProvider {
                 ((g) obj).getOutline(outline);
                 break;
             case 1:
-                an anVar = (an) obj;
+                cn cnVar = (cn) obj;
                 ImageReceiver imageReceiver = (ImageReceiver) view.getTag(R.id.parent_tag);
                 if (imageReceiver != null) {
                     int[] iArr = imageReceiver.W0;
@@ -51,7 +51,7 @@ public final class a extends ViewOutlineProvider {
                     outline.setRoundRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight(), i10);
                     break;
                 } else {
-                    outline.setOval(0, 0, g0.g3(anVar.Z9(), anVar.Q9()), g0.g3(anVar.Z9(), anVar.Q9()));
+                    outline.setOval(0, 0, g0.g3(cnVar.aa(), cnVar.R9()), g0.g3(cnVar.aa(), cnVar.R9()));
                     break;
                 }
             case 2:
@@ -110,11 +110,11 @@ public final class a extends ViewOutlineProvider {
                 }
                 break;
             case 4:
-                int i12 = ((o40) obj).W0;
+                int i12 = ((p40) obj).W0;
                 outline.setOval(0, 0, i12, i12);
                 break;
             case 5:
-                outline.setRoundRect(0, ((ca0) obj).T + 1, view.getMeasuredWidth(), view.getMeasuredHeight(), g0.L(8.0f));
+                outline.setRoundRect(0, ((da0) obj).T + 1, view.getMeasuredWidth(), view.getMeasuredHeight(), g0.L(8.0f));
                 break;
             case 6:
                 outline.setRoundRect(0, 0, view.getWidth(), view.getHeight(), ((org.telegram.ui.Components.voip.k) obj).d);

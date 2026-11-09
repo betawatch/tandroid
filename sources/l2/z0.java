@@ -41,20 +41,21 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.ActionBar.a3;
 import org.telegram.ui.ActionBar.d3;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Cells.ea;
 import org.telegram.ui.Cells.ga;
-import org.telegram.ui.Components.an0;
+import org.telegram.ui.Components.bn0;
 import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.it0;
-import org.telegram.ui.Components.k60;
+import org.telegram.ui.Components.kt0;
+import org.telegram.ui.Components.l60;
 import org.telegram.ui.Components.oe;
 import org.telegram.ui.Components.v4;
 import org.telegram.ui.Components.vf;
-import org.telegram.ui.an;
+import org.telegram.ui.Wallet.w5;
+import org.telegram.ui.cn;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class z0 implements Runnable {
     public final /* synthetic */ int a;
@@ -107,9 +108,9 @@ public final /* synthetic */ class z0 implements Runnable {
                 return;
             case 3:
                 t3 t3Var = (t3) this.b;
-                k60 k60Var = (k60) this.c;
+                l60 l60Var = (l60) this.c;
                 m5 m5Var = (m5) this.d;
-                if (t3Var.q4 != k60Var) {
+                if (t3Var.q4 != l60Var) {
                     return;
                 }
                 t3Var.q4 = null;
@@ -200,12 +201,12 @@ public final /* synthetic */ class z0 implements Runnable {
                 AudioTrack audioTrack = (AudioTrack) this.b;
                 Handler handler = (Handler) this.c;
                 h2.r rVar = (h2.r) this.d;
-                int i11 = 12;
+                int i11 = 11;
                 try {
                     audioTrack.flush();
                     audioTrack.release();
                     if (handler.getLooper().getThread().isAlive()) {
-                        handler.post(new w(rVar, i11));
+                        handler.post(new a0(rVar, i11));
                     }
                     synchronized (n2.f0.t) {
                         try {
@@ -223,7 +224,7 @@ public final /* synthetic */ class z0 implements Runnable {
                     return;
                 } catch (Throwable th2) {
                     if (handler.getLooper().getThread().isAlive()) {
-                        handler.post(new w(rVar, i11));
+                        handler.post(new a0(rVar, i11));
                     }
                     synchronized (n2.f0.t) {
                         try {
@@ -294,7 +295,7 @@ public final /* synthetic */ class z0 implements Runnable {
                 return;
             case 19:
                 d3 d3Var = (d3) this.b;
-                ((f2) this.c).presentFragment((an) this.d);
+                ((f2) this.c).presentFragment((cn) this.d);
                 d3Var.c = false;
                 return;
             case 20:
@@ -312,22 +313,22 @@ public final /* synthetic */ class z0 implements Runnable {
                 d3Var2.invalidate();
                 return;
             case 21:
-                j6 j6Var = (j6) this.b;
+                k6 k6Var = (k6) this.b;
                 TLObject tLObject = (TLObject) this.c;
-                j6 j6Var2 = (j6) this.d;
+                k6 k6Var2 = (k6) this.d;
                 if (!(tLObject instanceof TLRPC.TL_wallPaper)) {
-                    j6Var.s();
+                    k6Var.s();
                     return;
                 }
                 TLRPC.TL_wallPaper tL_wallPaper = (TLRPC.TL_wallPaper) tLObject;
-                j6Var.g0 = w7.r(null, tL_wallPaper.document);
-                qs.f(j6Var.E).b(j6Var, qs.Y1);
-                qs.f(j6Var.E).b(j6Var, qs.Z1);
-                w7.G(j6Var2.E).W(tL_wallPaper.document, tL_wallPaper, 1, 1);
+                k6Var.g0 = w7.r(null, tL_wallPaper.document);
+                qs.f(k6Var.E).b(k6Var, qs.Y1);
+                qs.f(k6Var.E).b(k6Var, qs.Z1);
+                w7.G(k6Var2.E).W(tL_wallPaper.document, tL_wallPaper, 1, 1);
                 return;
             case 22:
                 org.telegram.ui.Cells.t0 t0Var = (org.telegram.ui.Cells.t0) this.b;
-                org.telegram.ui.Wallet.x5.G0(t0Var.getContext(), t0Var.H, (TL_wallet.walletTransaction) this.c, null, null, null, (org.telegram.ui.Cells.m0) this.d, t0Var.g1);
+                w5.G0(t0Var.getContext(), t0Var.H, (TL_wallet.walletTransaction) this.c, null, null, null, (org.telegram.ui.Cells.m0) this.d, t0Var.g1);
                 return;
             case 23:
                 org.telegram.ui.Cells.t0 t0Var2 = (org.telegram.ui.Cells.t0) this.b;
@@ -335,13 +336,13 @@ public final /* synthetic */ class z0 implements Runnable {
                 return;
             case 24:
                 ga gaVar = (ga) this.b;
-                j6 j6Var3 = (j6) this.c;
-                j6Var3.f = true ^ j6Var3.d((File) this.d, j6Var3.c);
-                org.telegram.messenger.g0.h3(new ea(8, gaVar, j6Var3));
+                k6 k6Var3 = (k6) this.c;
+                k6Var3.f = true ^ k6Var3.d((File) this.d, k6Var3.c);
+                org.telegram.messenger.g0.h3(new ea(8, gaVar, k6Var3));
                 return;
             case 25:
                 org.telegram.ui.Components.g0 g0Var2 = (org.telegram.ui.Components.g0) this.b;
-                v4.J((Context) this.c, g0Var2.d2, new org.telegram.ui.Components.n(g0Var2), (f6) this.d);
+                v4.J((Context) this.c, g0Var2.d2, new org.telegram.ui.Components.n(g0Var2), (g6) this.d);
                 return;
             case 26:
                 org.telegram.ui.Components.b8 b8Var2 = (org.telegram.ui.Components.b8) this.b;
@@ -370,11 +371,11 @@ public final /* synthetic */ class z0 implements Runnable {
                 return;
             case 27:
                 oe oeVar = (oe) this.b;
-                it0 it0Var = (it0) this.c;
-                an0 an0Var = (an0) this.d;
+                kt0 kt0Var = (kt0) this.c;
+                bn0 bn0Var = (bn0) this.d;
                 oeVar.getClass();
-                it0Var.getViewTreeObserver().removeOnDrawListener(oeVar);
-                an0Var.a.setHideAvatar(true);
+                kt0Var.getViewTreeObserver().removeOnDrawListener(oeVar);
+                bn0Var.a.setHideAvatar(true);
                 return;
             case 28:
                 vf vfVar = (vf) this.b;

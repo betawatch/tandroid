@@ -1,49 +1,29 @@
 package org.telegram.ui;
 
-import android.graphics.Bitmap;
-import android.graphics.Point;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import org.telegram.messenger.Utilities;
+import android.app.Activity;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class j71 extends nq0 {
-    public final /* synthetic */ org.telegram.messenger.gf a;
-    public final /* synthetic */ k71 b;
+public final class j71 extends org.telegram.ui.Components.no0 {
+    public final /* synthetic */ l71 R2;
 
-    public j71(k71 k71Var, org.telegram.messenger.gf gfVar) {
-        this.b = k71Var;
-        this.a = gfVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public j71(l71 l71Var, Activity activity, String str, String str2) {
+        super(activity, null, str, false, str2, false, null);
+        this.R2 = l71Var;
     }
 
-    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
-    public final void o(int i7, org.telegram.messenger.j20 j20Var, boolean z9, int i10, int i11, boolean z10) {
-        v71 v71Var = this.b.a;
-        org.telegram.messenger.gf gfVar = this.a;
-        if (gfVar.h != null) {
-            File file = new File(org.telegram.messenger.w7.z(4), Utilities.b.nextInt() + ".jpg");
-            Point c12 = org.telegram.messenger.g0.c1();
-            Bitmap K = org.telegram.messenger.gc.K(gfVar.h, null, (float) c12.x, (float) c12.y, true);
-            try {
-                K.compress(Bitmap.CompressFormat.JPEG, 87, new FileOutputStream(file));
-            } catch (FileNotFoundException e10) {
-                e10.printStackTrace();
+    @Override // org.telegram.ui.Components.no0
+    public final void R0(a0.h hVar, int i7, TLRPC.TL_forumTopic tL_forumTopic, boolean z9) {
+        if (z9) {
+            int m10 = hVar.m();
+            l71 l71Var = this.R2;
+            if (m10 == 1) {
+                l71Var.a.m0.m(((TLRPC.Dialog) hVar.n(0)).id, Integer.valueOf(i7), 61);
+            } else {
+                l71Var.a.m0.k(0L, 61, Integer.valueOf(i7), Integer.valueOf(hVar.m()), null, null);
             }
-            File file2 = new File(gfVar.h);
-            v71Var.C1 = new qc1(file2, file2, "");
-            v71Var.D1 = K;
-            v71Var.c2 = 0;
-            v71Var.y0.requestLayout();
-            v71Var.g1(false);
-            v71Var.x1 = null;
-            v71Var.n1();
         }
-    }
-
-    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
-    public final boolean z() {
-        return false;
     }
 }

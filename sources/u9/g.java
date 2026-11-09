@@ -16,9 +16,8 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicReference;
-import org.telegram.ui.web.w;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class g implements b {
     public static final ab.m n = new ab.m(1);
@@ -254,7 +253,7 @@ public final class g implements b {
                 for (r rVar : aVar.b) {
                     HashMap hashMap = this.b;
                     if (hashMap.containsKey(rVar)) {
-                        arrayList2.add(new w(29, (p) ((ua.b) hashMap.get(rVar)), bVar));
+                        arrayList2.add(new f(0, (p) ((ua.b) hashMap.get(rVar)), bVar));
                     } else {
                         hashMap.put(rVar, bVar);
                     }
@@ -285,7 +284,7 @@ public final class g implements b {
                 o oVar = (o) hashMap.get(entry2.getKey());
                 Iterator it = ((Set) entry2.getValue()).iterator();
                 while (it.hasNext()) {
-                    arrayList.add(new f(0, oVar, (ua.b) it.next()));
+                    arrayList.add(new f(1, oVar, (ua.b) it.next()));
                 }
             } else {
                 r rVar2 = (r) entry2.getKey();

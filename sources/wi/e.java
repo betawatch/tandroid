@@ -3,7 +3,7 @@ package wi;
 import android.hardware.camera2.CameraDevice;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final class e extends CameraDevice.StateCallback {
     public final /* synthetic */ int a;
@@ -30,19 +30,19 @@ public final class e extends CameraDevice.StateCallback {
     public final void onDisconnected(CameraDevice cameraDevice) {
         switch (this.a) {
             case 0:
-                this.b.j.b("camera disconnected: id=" + cameraDevice.getId() + ", closing=" + this.b.t0.contains(cameraDevice));
-                if (!this.b.t0.contains(cameraDevice)) {
+                this.b.j.b("camera disconnected: id=" + cameraDevice.getId() + ", closing=" + this.b.s0.contains(cameraDevice));
+                if (!this.b.s0.contains(cameraDevice)) {
                     k kVar = this.b;
-                    if (cameraDevice != kVar.p0) {
-                        boolean z9 = (!kVar.V || this.b.Z || this.b.W) ? false : true;
+                    if (cameraDevice != kVar.o0) {
+                        boolean z9 = (!kVar.U || this.b.Y || this.b.V) ? false : true;
                         k kVar2 = this.b;
-                        if (kVar2.z == cameraDevice) {
-                            kVar2.p();
-                            this.b.z = null;
+                        if (kVar2.y == cameraDevice) {
+                            kVar2.o();
+                            this.b.y = null;
                         }
-                        this.b.q(cameraDevice, 1);
+                        this.b.p(cameraDevice, 1);
                         if (z9) {
-                            this.b.M(new IllegalStateException("Camera device disconnected"));
+                            this.b.L(new IllegalStateException("Camera device disconnected"));
                             break;
                         }
                     } else {
@@ -60,7 +60,7 @@ public final class e extends CameraDevice.StateCallback {
                 StringBuilder sb2 = new StringBuilder("warm camera disconnected: id=");
                 sb2.append(cameraDevice.getId());
                 sb2.append(", closing=");
-                ArrayList arrayList = kVar3.t0;
+                ArrayList arrayList = kVar3.s0;
                 sb2.append(arrayList.contains(cameraDevice));
                 oVar.b(sb2.toString());
                 if (!arrayList.contains(cameraDevice)) {
@@ -86,17 +86,17 @@ public final class e extends CameraDevice.StateCallback {
                 sb2.append(" (");
                 sb2.append(i7);
                 sb2.append("), closing=");
-                ArrayList arrayList = kVar.t0;
+                ArrayList arrayList = kVar.s0;
                 sb2.append(arrayList.contains(cameraDevice));
                 oVar.b(sb2.toString());
                 if (!arrayList.contains(cameraDevice)) {
-                    if (cameraDevice != kVar.p0) {
-                        if (kVar.z == cameraDevice) {
-                            kVar.p();
-                            kVar.z = null;
+                    if (cameraDevice != kVar.o0) {
+                        if (kVar.y == cameraDevice) {
+                            kVar.o();
+                            kVar.y = null;
                         }
-                        kVar.q(cameraDevice, 1);
-                        kVar.M(new IllegalStateException("Camera device error: " + k.e(i7) + " (" + i7 + ")"));
+                        kVar.p(cameraDevice, 1);
+                        kVar.L(new IllegalStateException("Camera device error: " + k.e(i7) + " (" + i7 + ")"));
                         break;
                     } else {
                         k.b(kVar, cameraDevice, "error=" + k.e(i7) + " (" + i7 + ")", null);
@@ -116,7 +116,7 @@ public final class e extends CameraDevice.StateCallback {
                 sb3.append(" (");
                 sb3.append(i7);
                 sb3.append("), closing=");
-                ArrayList arrayList2 = kVar2.t0;
+                ArrayList arrayList2 = kVar2.s0;
                 sb3.append(arrayList2.contains(cameraDevice));
                 oVar2.b(sb3.toString());
                 if (!arrayList2.contains(cameraDevice)) {
@@ -138,22 +138,22 @@ public final class e extends CameraDevice.StateCallback {
                 StringBuilder sb2 = new StringBuilder("camera opened: id=");
                 sb2.append(cameraDevice.getId());
                 sb2.append(", elapsedMs=");
-                sb2.append(k.A(this.b.E0));
-                if (this.b.X) {
-                    str = ", switchElapsedMs=" + k.A(this.b.G0);
+                sb2.append(k.z(this.b.D0));
+                if (this.b.W) {
+                    str = ", switchElapsedMs=" + k.z(this.b.F0);
                 } else {
                     str = "";
                 }
                 sb2.append(str);
                 oVar.b(sb2.toString());
-                if (this.b.V) {
+                if (this.b.U) {
                     k kVar = this.b;
-                    if (!kVar.W) {
-                        kVar.z = cameraDevice;
-                        if (!kVar.l0) {
-                            kVar.u();
+                    if (!kVar.V) {
+                        kVar.y = cameraDevice;
+                        if (!kVar.k0) {
+                            kVar.t();
                             break;
-                        } else if (kVar.w0 != null || kVar.p0 == null) {
+                        } else if (kVar.v0 != null || kVar.o0 == null) {
                             kVar.j.b("active camera opened; waiting for dual peer before sessions");
                             break;
                         } else {
@@ -163,17 +163,17 @@ public final class e extends CameraDevice.StateCallback {
                     }
                 }
                 k kVar2 = this.b;
-                kVar2.q(cameraDevice, kVar2.W ? 2 : 1);
+                kVar2.p(cameraDevice, kVar2.V ? 2 : 1);
                 break;
             default:
-                if (this.b.V && !this.b.Z) {
+                if (this.b.U && !this.b.Y) {
                     k kVar3 = this.b;
-                    if (kVar3.l0 && kVar3.q0 != null && cameraDevice.getId().equals(this.b.q0.a)) {
+                    if (kVar3.k0 && kVar3.p0 != null && cameraDevice.getId().equals(this.b.p0.a)) {
                         k kVar4 = this.b;
-                        kVar4.p0 = cameraDevice;
-                        kVar4.j.b("warm camera opened: id=" + cameraDevice.getId() + ", facing=" + this.b.q0.b + ", elapsedMs=" + k.A(this.b.z0));
+                        kVar4.o0 = cameraDevice;
+                        kVar4.j.b("warm camera opened: id=" + cameraDevice.getId() + ", facing=" + this.b.p0.b + ", elapsedMs=" + k.z(this.b.y0));
                         k kVar5 = this.b;
-                        if (kVar5.z != null && kVar5.A == null && !kVar5.W) {
+                        if (kVar5.y != null && kVar5.z == null && !kVar5.V) {
                             kVar5.j.b("both camera devices opened; configuring dual sessions");
                             k.a(this.b);
                             break;
@@ -181,7 +181,7 @@ public final class e extends CameraDevice.StateCallback {
                     }
                 }
                 this.b.j.b("stale warm camera open ignored: id=" + cameraDevice.getId());
-                this.b.q(cameraDevice, 1);
+                this.b.p(cameraDevice, 1);
                 break;
         }
     }

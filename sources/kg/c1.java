@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import c8.ha;
-import di.q4;
+import di.r4;
 import j$.time.DayOfWeek;
 import j$.time.format.TextStyle;
 import java.util.ArrayList;
@@ -24,15 +24,15 @@ import org.telegram.ui.ActionBar.f2;
 import org.telegram.ui.Cells.h5;
 import org.telegram.ui.Cells.m8;
 import org.telegram.ui.Components.hc;
-import org.telegram.ui.Components.l41;
-import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.q41;
-import org.telegram.ui.Components.x31;
+import org.telegram.ui.Components.m41;
+import org.telegram.ui.Components.qj0;
+import org.telegram.ui.Components.r41;
+import org.telegram.ui.Components.y31;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class c1 extends f2 implements ls {
-    public q41 a;
+    public r41 a;
     public b5 b;
     public boolean c;
     public boolean d;
@@ -57,7 +57,7 @@ public final class c1 extends f2 implements ls {
                     return;
                 }
                 c1Var.b.b(false);
-                k5.p(null, 2131743882, hc.a0(c1Var), null);
+                k5.p(null, 2131743879, hc.a0(c1Var), null);
                 return;
             }
             if (c1Var.isFinished || c1Var.finishing) {
@@ -70,26 +70,26 @@ public final class c1 extends f2 implements ls {
     public static void a0(c1 c1Var, ArrayList arrayList) {
         String M0 = id.M0(2131752764, null);
         String M02 = id.M0(2131752749, null);
-        x31 x31Var = new x31(2);
-        x31Var.l = M0;
-        x31Var.o = M02;
-        x31Var.k = R.raw.biz_clock;
-        arrayList.add(x31Var);
-        x31 i7 = x31.i(-1, id.M0(2131752729, null));
+        y31 y31Var = new y31(2);
+        y31Var.l = M0;
+        y31Var.o = M02;
+        y31Var.k = R.raw.biz_clock;
+        arrayList.add(y31Var);
+        y31 i7 = y31.i(-1, id.M0(2131752729, null));
         i7.L(c1Var.d);
         arrayList.add(i7);
-        arrayList.add(x31.B(-100, null));
+        arrayList.add(y31.B(-100, null));
         if (!c1Var.d) {
             return;
         }
-        arrayList.add(x31.u(id.M0(2131752764, null)));
+        arrayList.add(y31.u(id.M0(2131752764, null)));
         int i10 = 0;
         while (true) {
             ArrayList[] arrayListArr = c1Var.f;
             if (i10 >= arrayListArr.length) {
-                arrayList.add(x31.B(-101, null));
-                arrayList.add(x31.f(id.M0(2131752728, null), x1.b(c1Var.currentAccount).d(c1Var.n, false), -2));
-                arrayList.add(x31.B(-102, null));
+                arrayList.add(y31.B(-101, null));
+                arrayList.add(y31.f(id.M0(2131752728, null), x1.b(c1Var.currentAccount).d(c1Var.n, false), -2));
+                arrayList.add(y31.B(-102, null));
                 return;
             }
             if (arrayListArr[i10] == null) {
@@ -98,12 +98,12 @@ public final class c1 extends f2 implements ls {
             String displayName = DayOfWeek.values()[i10].getDisplayName(TextStyle.FULL, id.E0().y);
             String str = displayName.substring(0, 1).toUpperCase() + displayName.substring(1);
             String f02 = f0(c1Var.f[i10]);
-            x31 x31Var2 = new x31(5);
-            x31Var2.d = i10;
-            x31Var2.l = str;
-            x31Var2.m = f02;
-            x31Var2.L(!c1Var.f[i10].isEmpty());
-            arrayList.add(x31Var2);
+            y31 y31Var2 = new y31(5);
+            y31Var2.d = i10;
+            y31Var2.l = str;
+            y31Var2.m = f02;
+            y31Var2.L(!c1Var.f[i10].isEmpty());
+            arrayList.add(y31Var2);
             i10++;
         }
     }
@@ -272,15 +272,15 @@ public final class c1 extends f2 implements ls {
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.simpleActionBar.setTitle(id.M0(2131752764, null));
         this.simpleActionBar.setActionBarMenuOnItemClick(new bi.s(this, 16));
-        this.b = this.simpleActionBar.n(id.M0(2131745949, null));
+        this.b = this.simpleActionBar.o(id.M0(2131745946, null));
         d0(false);
         FrameLayout frameLayout = new FrameLayout(context);
-        q41 q41Var = new q41(this, new hi.u1(this, 11), new q4(this, 24), null);
-        this.a = q41Var;
-        q41Var.r1();
-        q41 q41Var2 = this.a;
-        q41Var2.f3.r = false;
-        q41Var2.setSectionsDrawBackground(true);
+        r41 r41Var = new r41(this, new hi.u1(this, 11), new r4(this, 24), null);
+        this.a = r41Var;
+        r41Var.r1();
+        r41 r41Var2 = this.a;
+        r41Var2.f3.r = false;
+        r41Var2.setSectionsDrawBackground(true);
         frameLayout.addView(this.a, ha.c(-1.0f, -1));
         j0();
         this.fragmentView = frameLayout;
@@ -296,7 +296,7 @@ public final class c1 extends f2 implements ls {
 
     @Override // org.telegram.messenger.ls
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        l41 l41Var;
+        m41 m41Var;
         if (i7 == qs.E0) {
             j0();
             return;
@@ -305,11 +305,11 @@ public final class c1 extends f2 implements ls {
             if (this.e == null) {
                 this.n = x1.b(this.currentAccount).c();
             }
-            q41 q41Var = this.a;
-            if (q41Var == null || (l41Var = q41Var.f3) == null) {
+            r41 r41Var = this.a;
+            if (r41Var == null || (m41Var = r41Var.f3) == null) {
                 return;
             }
-            l41Var.O(true);
+            m41Var.O(true);
         }
     }
 
@@ -351,7 +351,7 @@ public final class c1 extends f2 implements ls {
     }
 
     @Override // org.telegram.ui.ActionBar.f2
-    public final pj0 getListViewForSimpleGlass() {
+    public final qj0 getListViewForSimpleGlass() {
         return this.a;
     }
 
@@ -406,7 +406,7 @@ public final class c1 extends f2 implements ls {
     }
 
     public final void j0() {
-        l41 l41Var;
+        m41 m41Var;
         if (this.c) {
             return;
         }
@@ -443,9 +443,9 @@ public final class c1 extends f2 implements ls {
             this.e = e0(tL_businessWorkHours.weekly_open);
             this.f = e0(b22.business_work_hours.weekly_open);
         }
-        q41 q41Var = this.a;
-        if (q41Var != null && (l41Var = q41Var.f3) != null) {
-            l41Var.O(true);
+        r41 r41Var = this.a;
+        if (r41Var != null && (m41Var = r41Var.f3) != null) {
+            m41Var.O(true);
         }
         d0(false);
         this.c = true;

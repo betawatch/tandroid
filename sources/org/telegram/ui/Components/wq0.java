@@ -1,60 +1,22 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.view.View;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class wq0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ xs0 b;
+public final class wq0 implements View.OnLayoutChangeListener {
+    public final /* synthetic */ zs0 a;
 
-    public /* synthetic */ wq0(xs0 xs0Var, int i7) {
-        this.a = i7;
-        this.b = xs0Var;
+    public wq0(zs0 zs0Var) {
+        this.a = zs0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.b.N0 = null;
-                break;
-            default:
-                xs0 xs0Var = this.b;
-                org.telegram.ui.ActionBar.r0 r0Var = xs0Var.p0;
-                sr0[] sr0VarArr = xs0Var.m0;
-                xs0Var.h1 = null;
-                if (xs0Var.k1) {
-                    sr0VarArr[1].setVisibility(8);
-                    if (r0Var == null || xs0Var.I()) {
-                        xs0Var.q0 = xs0Var.l0(0.0f);
-                        xs0Var.K1(0.0f);
-                    } else {
-                        xs0Var.setSearchItemVisibility(xs0Var.H0() ? 8 : 4);
-                        xs0Var.q0 = 0.0f;
-                    }
-                    xs0Var.G1(false);
-                    xs0Var.z0 = 0;
-                } else {
-                    sr0 sr0Var = sr0VarArr[0];
-                    sr0VarArr[0] = sr0VarArr[1];
-                    sr0VarArr[1] = sr0Var;
-                    sr0Var.setVisibility(8);
-                    if (r0Var != null && xs0Var.z0 == 2) {
-                        xs0Var.setSearchItemVisibility(xs0Var.H0() ? 8 : 4);
-                    }
-                    xs0Var.z0 = 0;
-                    xs0Var.j1(1.0f, sr0VarArr[0].E);
-                    xs0Var.W0();
-                    xs0Var.s1();
-                }
-                xs0Var.i1 = false;
-                xs0Var.A1 = false;
-                xs0Var.z1 = false;
-                xs0Var.setHeaderEnabled(true);
-                xs0Var.K0.setEnabled(true);
-                break;
+    @Override // android.view.View.OnLayoutChangeListener
+    public final void onLayoutChange(View view, int i7, int i10, int i11, int i12, int i13, int i14, int i15, int i16) {
+        zs0 zs0Var = this.a;
+        if (zs0Var.p0 == null) {
+            return;
         }
+        zs0Var.p0.setTranslationX(((View) r2.getParent()).getMeasuredWidth() - zs0Var.p0.getRight());
     }
 }

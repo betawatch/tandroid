@@ -59,23 +59,23 @@ import org.telegram.messenger.t3;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.r1;
 import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.Cells.m8;
-import org.telegram.ui.Components.cj0;
+import org.telegram.ui.Components.dj0;
 import org.telegram.ui.Components.sn;
 import org.telegram.ui.Components.vy;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.hy0;
-import org.telegram.ui.p31;
-import org.telegram.ui.web.a0;
+import org.telegram.ui.ky0;
+import org.telegram.ui.q31;
 import q4.q;
 import r0.k1;
 import r0.m;
 import sg.i0;
 import ug.j;
 import w7.s;
+import wg.a0;
 import wg.c0;
 import wg.r0;
 import wg.v0;
@@ -84,9 +84,9 @@ import wh.h;
 import zh.g1;
 import zh.h0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class e implements w5.b, u9.d, d5.a, r1, cj0, wh.a, ua.a, p, m, q1 {
+public final /* synthetic */ class e implements w5.b, u9.d, d5.a, r1, dj0, wh.a, ua.a, p, m, q1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -135,7 +135,7 @@ public final /* synthetic */ class e implements w5.b, u9.d, d5.a, r1, cj0, wh.a,
             i7++;
             ((j) obj2).g = j3;
         }
-        g0.h3(new wg.p(g1Var, 7));
+        g0.h3(new a0(g1Var, 5));
     }
 
     @Override // ua.a
@@ -455,7 +455,7 @@ public final /* synthetic */ class e implements w5.b, u9.d, d5.a, r1, cj0, wh.a,
 
     /* JADX WARN: Removed duplicated region for block: B:24:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:7:0x0122  */
-    @Override // org.telegram.ui.Components.cj0
+    @Override // org.telegram.ui.Components.dj0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -485,24 +485,24 @@ public final /* synthetic */ class e implements w5.b, u9.d, d5.a, r1, cj0, wh.a,
             }
             if (hashSet.size() != 11 || w0Var.j2 != 1) {
                 j3 = 1;
-                if (hashSet.size() != wg.s.f() + 1 || w0Var.j2 != 2) {
+                if (hashSet.size() != wg.r.f() + 1 || w0Var.j2 != 2) {
                     v0Var.b(true, hashSet, new r0(w0Var, 1), null);
                     w0Var.n1(true, false);
                     if (chat != null && !t3.t0(chat) && hashSet.contains(Long.valueOf(j10))) {
                         Context context = w0Var.o1.getContext();
-                        f6 f6Var = w0Var.I0;
-                        p31 p31Var = new p31(w0Var, j10, 4);
+                        g6 g6Var = w0Var.I0;
+                        q31 q31Var = new q31(w0Var, j10, 4);
                         r0 r0Var = new r0(w0Var, 2);
                         AtomicBoolean atomicBoolean = new AtomicBoolean(false);
-                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, f6Var);
+                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, g6Var);
                         boolean V = t3.V(chat);
                         String M0 = id.M0(V ? 2131753397 : 2131753395, null);
                         u1 u1Var = alertDialog$Builder.a;
                         u1Var.R = M0;
                         u1Var.T = id.M0(V ? 2131753396 : 2131753394, null);
-                        alertDialog$Builder.k(id.M0(2131754486, "Add"), new a0(17, atomicBoolean, r0Var));
+                        alertDialog$Builder.k(id.M0(2131754486, "Add"), new org.telegram.ui.web.a0(17, atomicBoolean, r0Var));
                         alertDialog$Builder.h(id.M0(2131752589, "Cancel"), new v0.j(15));
-                        alertDialog$Builder.j(new u3(18, atomicBoolean, p31Var));
+                        alertDialog$Builder.j(new u3(18, atomicBoolean, q31Var));
                         alertDialog$Builder.p();
                     } else if (chat != null) {
                         w0Var.e1();
@@ -542,7 +542,7 @@ public final /* synthetic */ class e implements w5.b, u9.d, d5.a, r1, cj0, wh.a,
         }
     }
 
-    @Override // org.telegram.ui.Components.cj0
+    @Override // org.telegram.ui.Components.dj0
     public /* synthetic */ boolean f1(View view) {
         return false;
     }
@@ -578,7 +578,7 @@ public final /* synthetic */ class e implements w5.b, u9.d, d5.a, r1, cj0, wh.a,
         ui.e eVar = (ui.e) this.b;
         Iterator it = ((Iterable) ((v5.g) ((v5.d) eVar.c)).c(new v0.j(5))).iterator();
         while (it.hasNext()) {
-            ((hy0) eVar.d).J((i) it.next(), 1, false);
+            ((ky0) eVar.d).J((i) it.next(), 1, false);
         }
         return null;
     }
@@ -596,7 +596,7 @@ public final /* synthetic */ class e implements w5.b, u9.d, d5.a, r1, cj0, wh.a,
                             waVar.f(1);
                             byte[] bArr = (byte[]) waVar.d;
                             Objects.requireNonNull(bArr);
-                            iVar.k.execute(new u9.f(8, iVar, bArr));
+                            iVar.k.execute(new u9.f(9, iVar, bArr));
                             return;
                         }
                         return;
@@ -615,7 +615,7 @@ public final /* synthetic */ class e implements w5.b, u9.d, d5.a, r1, cj0, wh.a,
                     if (str.length() - 14 > 1398112) {
                         iVar.h();
                     } else {
-                        iVar.k.execute(new u9.f(7, iVar, str));
+                        iVar.k.execute(new u9.f(8, iVar, str));
                     }
                 }
             }
@@ -638,7 +638,7 @@ public final /* synthetic */ class e implements w5.b, u9.d, d5.a, r1, cj0, wh.a,
         canvas.restore();
     }
 
-    @Override // org.telegram.ui.Components.cj0
+    @Override // org.telegram.ui.Components.dj0
     public /* synthetic */ void r0(View view, float f10, float f11) {
     }
 }

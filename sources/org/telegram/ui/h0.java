@@ -1,6 +1,6 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class h0 extends org.telegram.ui.ActionBar.u4 {
     public final /* synthetic */ int r;
@@ -15,7 +15,7 @@ public final class h0 extends org.telegram.ui.ActionBar.u4 {
     public void v() {
         switch (this.r) {
             case 1:
-                ((org.telegram.ui.Components.mo0) this.s).Q1 = true;
+                ((org.telegram.ui.Components.no0) this.s).Q1 = true;
                 break;
         }
     }
@@ -36,10 +36,10 @@ public final class h0 extends org.telegram.ui.ActionBar.u4 {
             default:
                 return super.x();
             case 2:
-                z9 = ((org.telegram.ui.Wallet.a2) this.s).m;
+                z9 = ((org.telegram.ui.Wallet.z1) this.s).m;
                 break;
             case 3:
-                z9 = ((org.telegram.ui.Wallet.t2) this.s).d;
+                z9 = ((org.telegram.ui.Wallet.s2) this.s).d;
                 break;
         }
         return !z9;

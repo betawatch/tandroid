@@ -1,19 +1,29 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
+import android.view.View;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.ui.Components.ClippingImageView;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class yq0 {
-    public final int a;
-    public final ArrayList b;
-    public final uq0 c;
-    public final /* synthetic */ PhotoViewer d;
-
-    public yq0(PhotoViewer photoViewer, int i7, ArrayList arrayList, uq0 uq0Var) {
-        this.d = photoViewer;
-        this.b = arrayList;
-        this.a = i7;
-        this.c = uq0Var;
-    }
+    public ImageReceiver a;
+    public int b;
+    public int c;
+    public View d;
+    public org.telegram.messenger.jc e;
+    public long f;
+    public long g;
+    public int[] h;
+    public int i;
+    public int j;
+    public boolean l;
+    public ClippingImageView m;
+    public int n;
+    public boolean p;
+    public int q;
+    public boolean r;
+    public boolean s;
+    public float k = 1.0f;
+    public boolean o = true;
 }

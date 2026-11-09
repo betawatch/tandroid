@@ -7,7 +7,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class sn implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -17,8 +17,8 @@ public final /* synthetic */ class sn implements Runnable {
     public final /* synthetic */ Object e;
     public final /* synthetic */ Object f;
 
-    public /* synthetic */ sn(long j3, long j10, TL_stories.PrepaidGiveaway prepaidGiveaway, TL_stories.TL_prepaidStarsGiveaway tL_prepaidStarsGiveaway, wg.a0 a0Var) {
-        this.d = a0Var;
+    public /* synthetic */ sn(long j3, long j10, TL_stories.PrepaidGiveaway prepaidGiveaway, TL_stories.TL_prepaidStarsGiveaway tL_prepaidStarsGiveaway, wg.z zVar) {
+        this.d = zVar;
         this.e = prepaidGiveaway;
         this.f = tL_prepaidStarsGiveaway;
         this.b = j3;
@@ -38,30 +38,30 @@ public final /* synthetic */ class sn implements Runnable {
         Object obj3 = this.d;
         switch (i7) {
             case 0:
-                ((k60) obj3).u();
+                ((l60) obj3).u();
                 Bundle bundle = new Bundle();
                 bundle.putLong("dialog_id", this.b);
                 bundle.putLong("topic_id", this.c);
-                ((org.telegram.ui.ActionBar.f2) obj2).presentFragment(new org.telegram.ui.gx0(bundle, (org.telegram.ui.ActionBar.f6) obj));
+                ((org.telegram.ui.ActionBar.f2) obj2).presentFragment(new org.telegram.ui.kx0(bundle, (org.telegram.ui.ActionBar.g6) obj));
                 break;
             default:
-                wg.a0 a0Var = (wg.a0) obj3;
+                wg.z zVar = (wg.z) obj3;
                 TL_stories.PrepaidGiveaway prepaidGiveaway = (TL_stories.PrepaidGiveaway) obj2;
                 TL_stories.TL_prepaidStarsGiveaway tL_prepaidStarsGiveaway = (TL_stories.TL_prepaidStarsGiveaway) obj;
-                int l10 = wg.s.l(a0Var.e2);
-                int i10 = a0Var.b2;
+                int l10 = wg.r.l(zVar.e2);
+                int i10 = zVar.b2;
                 int i11 = yg.u.w;
                 boolean z9 = i10 == 1;
-                a0Var.i2.b(true);
-                ArrayList arrayList = a0Var.U1;
-                ArrayList arrayList2 = a0Var.W1;
-                TLRPC.Chat chat = a0Var.T1;
-                boolean z10 = a0Var.p2;
-                boolean z11 = a0Var.o2;
+                zVar.i2.b(true);
+                ArrayList arrayList = zVar.U1;
+                ArrayList arrayList2 = zVar.W1;
+                TLRPC.Chat chat = zVar.T1;
+                boolean z10 = zVar.p2;
+                boolean z11 = zVar.o2;
                 int i12 = prepaidGiveaway.quantity;
-                String str = a0Var.n2;
-                wg.y yVar = new wg.y(this.b, this.c, prepaidGiveaway, tL_prepaidStarsGiveaway, a0Var);
-                wg.v vVar = new wg.v(a0Var, 6);
+                String str = zVar.n2;
+                wg.x xVar = new wg.x(this.b, this.c, prepaidGiveaway, tL_prepaidStarsGiveaway, zVar);
+                wg.u uVar = new wg.u(zVar, 6);
                 org.telegram.messenger.qp s12 = org.telegram.messenger.qp.s1(org.telegram.messenger.p10.s0);
                 ConnectionsManager connectionsManager = ConnectionsManager.getInstance(org.telegram.messenger.p10.s0);
                 if (prepaidGiveaway instanceof TL_stories.TL_prepaidGiveaway) {
@@ -135,16 +135,16 @@ public final /* synthetic */ class sn implements Runnable {
                 tL_payments_launchPrepaidGiveaway.giveaway_id = prepaidGiveaway.id;
                 tL_payments_launchPrepaidGiveaway.peer = s12.j1(-chat.id);
                 tL_payments_launchPrepaidGiveaway.purpose = tL_inputStorePaymentStarsGiveaway;
-                connectionsManager.sendRequest(tL_payments_launchPrepaidGiveaway, new bi.f2(vVar, s12, yVar, 23));
+                connectionsManager.sendRequest(tL_payments_launchPrepaidGiveaway, new bi.f2(uVar, s12, xVar, 23));
                 break;
         }
     }
 
-    public /* synthetic */ sn(k60 k60Var, long j3, long j10, org.telegram.ui.an anVar, org.telegram.ui.ActionBar.f6 f6Var) {
-        this.d = k60Var;
+    public /* synthetic */ sn(l60 l60Var, long j3, long j10, org.telegram.ui.cn cnVar, org.telegram.ui.ActionBar.g6 g6Var) {
+        this.d = l60Var;
         this.b = j3;
         this.c = j10;
-        this.e = anVar;
-        this.f = f6Var;
+        this.e = cnVar;
+        this.f = g6Var;
     }
 }

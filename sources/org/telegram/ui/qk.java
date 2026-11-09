@@ -1,130 +1,161 @@
 package org.telegram.ui;
 
-import android.graphics.Bitmap;
+import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import java.io.Serializable;
-import java.util.ArrayList;
-import org.telegram.messenger.Utilities;
+import android.view.accessibility.AccessibilityNodeInfo;
+import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qk implements Runnable {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Serializable h;
+public final class qk extends org.telegram.ui.ActionBar.l5 {
+    public final /* synthetic */ int M0;
+    public final Object N0;
 
-    public /* synthetic */ qk(h2.c cVar, Bitmap bitmap, int i7, int i10, String str, boolean z9) {
-        this.e = cVar;
-        this.f = bitmap;
-        this.b = i7;
-        this.c = i10;
-        this.h = str;
-        this.d = z9;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ qk(int i7, Context context, Object obj) {
+        super(context);
+        this.M0 = i7;
+        this.N0 = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        org.telegram.ui.Components.cc ccVar;
-        int i7;
-        int i10;
-        int i11;
-        Rect rect;
-        int i12 = this.a;
-        Serializable serializable = this.h;
-        int i13 = this.c;
-        int i14 = this.b;
-        Object obj = this.f;
-        Object obj2 = this.e;
-        switch (i12) {
-            case 0:
-                ArrayList arrayList = (ArrayList) obj;
-                ArrayList arrayList2 = (ArrayList) serializable;
-                an anVar = ((rk) obj2).b;
-                if (this.d) {
-                    i7 = ((org.telegram.ui.ActionBar.f2) anVar).currentAccount;
-                    org.telegram.messenger.qp.s1(i7).d7.edit().remove("pin_" + anVar.j6).commit();
-                    anVar.cd(0, true);
-                    ccVar = null;
-                } else {
-                    ccVar = null;
-                    anVar.getNotificationCenter().k(56, Long.valueOf(anVar.j6), arrayList, Boolean.TRUE, arrayList2, null, 0, Integer.valueOf(i14), Boolean.valueOf(anVar.e5));
+    @Override // org.telegram.ui.ActionBar.l5
+    public boolean k(CharSequence charSequence) {
+        org.telegram.ui.ActionBar.l5 l5Var;
+        switch (this.M0) {
+            case 1:
+                AtomicReference atomicReference = (AtomicReference) this.N0;
+                if (atomicReference != null && (l5Var = (org.telegram.ui.ActionBar.l5) atomicReference.get()) != null) {
+                    l5Var.k(charSequence);
                 }
-                if (i13 == anVar.Q3) {
-                    anVar.O3 = ccVar;
-                    break;
-                }
+                return l(charSequence, false);
+            default:
+                return super.k(charSequence);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.l5, android.view.View
+    public void onAttachedToWindow() {
+        switch (this.M0) {
+            case 2:
+                super.onAttachedToWindow();
+                ((hm0) this.N0).s.a();
                 break;
             default:
-                h2.c cVar = (h2.c) obj2;
-                Bitmap bitmap = (Bitmap) obj;
-                String str = (String) serializable;
-                Paint paint = (Paint) cVar.d;
-                int i15 = cVar.a;
-                if (bitmap != null && !bitmap.isRecycled()) {
-                    float width = bitmap.getWidth() / bitmap.getHeight();
-                    int round = (int) Math.round(Math.sqrt(width * 324.0f));
-                    int round2 = (int) Math.round(Math.sqrt(324.0f / width));
-                    if (i14 == 90 || i14 == 270) {
-                        i10 = round2;
-                        i11 = round;
-                    } else {
-                        i11 = round2;
-                        i10 = round;
-                    }
-                    int i16 = i15 * 2;
-                    Bitmap createBitmap = Bitmap.createBitmap(i16 + i10, i16 + i11, Bitmap.Config.ARGB_8888);
-                    Canvas canvas = new Canvas(createBitmap);
-                    Rect rect2 = new Rect(0, 0, bitmap.getWidth(), bitmap.getHeight());
-                    int i17 = i15 + round;
-                    int i18 = i15 + round2;
-                    Rect rect3 = new Rect(i15, i15, i17, i18);
-                    float f10 = i15;
-                    canvas.translate((i10 / 2.0f) + f10, (i11 / 2.0f) + f10);
-                    if (i13 == 1) {
-                        canvas.scale(-1.0f, 1.0f);
-                        rect = rect2;
-                    } else {
-                        rect = rect2;
-                        if (i13 == 2) {
-                            canvas.scale(1.0f, -1.0f);
-                        }
-                    }
-                    canvas.rotate(i14);
-                    float f11 = -i15;
-                    canvas.translate(f11 - (round / 2.0f), f11 - (round2 / 2.0f));
-                    try {
-                        canvas.drawBitmap(bitmap, rect, rect3, (Paint) null);
-                    } catch (Exception unused) {
-                    }
-                    Utilities.stackBlurBitmap(createBitmap, 6);
-                    if (i15 > 0) {
-                        float f12 = i17;
-                        canvas.drawRect(0.0f, 0.0f, f12, f10, paint);
-                        float f13 = i18;
-                        canvas.drawRect(0.0f, f10, f10, f13, paint);
-                        float f14 = i17 + i15;
-                        canvas.drawRect(f12, f10, f14, f13, paint);
-                        canvas.drawRect(0.0f, f13, f14, i18 + i15, paint);
-                    }
-                    org.telegram.messenger.g0.h3(new fi.q1(cVar, str, createBitmap, this.d, bitmap));
-                    break;
-                }
+                super.onAttachedToWindow();
                 break;
         }
     }
 
-    public /* synthetic */ qk(rk rkVar, boolean z9, ArrayList arrayList, ArrayList arrayList2, int i7, int i10) {
-        this.e = rkVar;
-        this.d = z9;
-        this.f = arrayList;
-        this.h = arrayList2;
-        this.b = i7;
-        this.c = i10;
+    @Override // org.telegram.ui.ActionBar.l5, android.view.View
+    public void onDetachedFromWindow() {
+        switch (this.M0) {
+            case 2:
+                super.onDetachedFromWindow();
+                ((hm0) this.N0).s.b();
+                break;
+            default:
+                super.onDetachedFromWindow();
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.l5, android.view.View
+    public void onDraw(Canvas canvas) {
+        switch (this.M0) {
+            case 3:
+                int rightDrawableX = getRightDrawableX();
+                super.onDraw(canvas);
+                if (rightDrawableX != getRightDrawableX()) {
+                    ((ProfileActivity) this.N0).t5();
+                    break;
+                }
+                break;
+            default:
+                super.onDraw(canvas);
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.l5, android.view.View
+    public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        switch (this.M0) {
+            case 3:
+                ProfileActivity profileActivity = (ProfileActivity) this.N0;
+                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+                if (isFocusable()) {
+                    if (profileActivity.h != null || profileActivity.n != null) {
+                        StringBuilder sb2 = new StringBuilder(getText());
+                        if (profileActivity.n != null) {
+                            if (sb2.length() > 0) {
+                                sb2.append(", ");
+                            }
+                            sb2.append(profileActivity.n);
+                        }
+                        if (profileActivity.h != null) {
+                            if (sb2.length() > 0) {
+                                sb2.append(", ");
+                            }
+                            sb2.append(profileActivity.h);
+                        }
+                        accessibilityNodeInfo.setText(sb2);
+                        break;
+                    }
+                }
+                break;
+            default:
+                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.l5
+    public void setTextColor(int i7) {
+        switch (this.M0) {
+            case 3:
+                ProfileActivity profileActivity = (ProfileActivity) this.N0;
+                profileActivity.F5 = i7;
+                super.setTextColor(i0.a.f(profileActivity.C5, i7, org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.G6, profileActivity.z0)));
+                break;
+            default:
+                super.setTextColor(i7);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public void setTranslationY(float f10) {
+        org.telegram.ui.ActionBar.l5 l5Var;
+        switch (this.M0) {
+            case 0:
+                super.setTranslationY(f10);
+                cn cnVar = (cn) this.N0;
+                if (this == cnVar.R2[0] && cnVar.V2[1] != null) {
+                    if (cnVar.a5 && f10 < 0.0f) {
+                        cnVar.N2.setTranslationY(f10 / 2.0f);
+                        break;
+                    } else {
+                        cnVar.N2.setTranslationY(0.0f);
+                        break;
+                    }
+                }
+                break;
+            case 1:
+                AtomicReference atomicReference = (AtomicReference) this.N0;
+                if (atomicReference != null && (l5Var = (org.telegram.ui.ActionBar.l5) atomicReference.get()) != null) {
+                    l5Var.setTranslationY(f10);
+                }
+                super.setTranslationY(f10);
+                break;
+            default:
+                super.setTranslationY(f10);
+                break;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public qk(Context context, AtomicReference atomicReference) {
+        super(context);
+        this.M0 = 1;
+        this.N0 = atomicReference;
     }
 }

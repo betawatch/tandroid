@@ -2,7 +2,7 @@ package org.telegram.messenger;
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class o00 implements Runnable {
     public final /* synthetic */ int a;
@@ -33,7 +33,7 @@ public final /* synthetic */ class o00 implements Runnable {
                         if (ijVar == null || ijVar.k == null) {
                             arrayList2.add(null);
                         } else {
-                            arrayList2.add(f10Var.getMessagesStorage().e0(ijVar.f1(), ij.B0(ijVar.k)));
+                            arrayList2.add(f10Var.getMessagesStorage().e0(ijVar.e1(), ij.B0(ijVar.k)));
                         }
                     }
                     g0.h3(new ng(f10Var, arrayList2, arrayList, 5));

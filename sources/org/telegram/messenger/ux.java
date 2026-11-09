@@ -9,7 +9,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ux implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -69,7 +69,7 @@ public final /* synthetic */ class ux implements Runnable {
         ArrayList<TLRPC.Update> arrayList4;
         ArrayList arrayList5;
         int i15;
-        String K1;
+        String J1;
         TLRPC.MessageReplyHeader messageReplyHeader;
         a0.h hVar3;
         int i16;
@@ -202,12 +202,12 @@ public final /* synthetic */ class ux implements Runnable {
                                             kg.t1 f10 = kg.t1.f(gzVar3.currentAccount);
                                             if (arrayList6.isEmpty()) {
                                                 i15 = 0;
-                                                K1 = null;
+                                                J1 = null;
                                             } else {
                                                 i15 = 0;
-                                                K1 = ij.K1(((ij) arrayList6.get(0)).k);
+                                                J1 = ij.J1(((ij) arrayList6.get(0)).k);
                                             }
-                                            f10.j(update, K1, (arrayList6.isEmpty() ? null : Integer.valueOf(ij.J1(((ij) arrayList6.get(i15)).k))).intValue());
+                                            f10.j(update, J1, (arrayList6.isEmpty() ? null : Integer.valueOf(ij.I1(((ij) arrayList6.get(i15)).k))).intValue());
                                             TLRPC.Message message7 = ((TL_update.TL_updateQuickReplyMessage) update).message;
                                             sparseArray2.put(message7.id, message7);
                                             arrayList4.remove(i17);
@@ -337,7 +337,7 @@ public final /* synthetic */ class ux implements Runnable {
                                 i13 = i22;
                                 gzVar5.z0(ijVar, message2, message2.id, Collections.singletonList(str2), false, -1, message2.params);
                             }
-                            final int p12 = ijVar.p1();
+                            final int o12 = ijVar.o1();
                             message3.id = message2.id;
                             int i24 = message2.quick_reply_shortcut_id;
                             message3.quick_reply_shortcut_id = i24;
@@ -376,7 +376,7 @@ public final /* synthetic */ class ux implements Runnable {
                             Integer valueOf2 = Integer.valueOf(message3.id);
                             Long valueOf3 = Long.valueOf(message3.dialog_id);
                             Long valueOf4 = Long.valueOf(j3);
-                            Integer valueOf5 = Integer.valueOf(p12);
+                            Integer valueOf5 = Integer.valueOf(o12);
                             Boolean valueOf6 = Boolean.valueOf(z13);
                             ArrayList arrayList15 = arrayList2;
                             Object[] objArr2 = new Object[7];
@@ -393,7 +393,7 @@ public final /* synthetic */ class ux implements Runnable {
                             Integer valueOf8 = Integer.valueOf(message3.id);
                             Long valueOf9 = Long.valueOf(message3.dialog_id);
                             Long valueOf10 = Long.valueOf(j3);
-                            Integer valueOf11 = Integer.valueOf(p12);
+                            Integer valueOf11 = Integer.valueOf(o12);
                             Boolean valueOf12 = Boolean.valueOf(z13);
                             Object[] objArr3 = new Object[7];
                             objArr3[0] = valueOf7;
@@ -429,9 +429,9 @@ public final /* synthetic */ class ux implements Runnable {
                                     ?? r13;
                                     boolean z17;
                                     final TLRPC.Message message11 = message10;
-                                    boolean e52 = ij.e5(message11);
+                                    boolean d52 = ij.d5(message11);
                                     final boolean z18 = z15;
-                                    if (e52) {
+                                    if (d52) {
                                         r13 = 9;
                                     } else {
                                         if (message11.quick_reply_shortcut_id == 0 && message11.quick_reply_shortcut == null) {
@@ -439,18 +439,18 @@ public final /* synthetic */ class ux implements Runnable {
                                             final gz gzVar7 = gz.this;
                                             yr messagesStorage = gzVar7.getMessagesStorage();
                                             long j10 = message11.random_id;
-                                            long C1 = ij.C1(message11.peer_id);
+                                            long B1 = ij.B1(message11.peer_id);
                                             final int i26 = i25;
                                             boolean z19 = z17;
-                                            messagesStorage.a2(j10, C1, Integer.valueOf(i26), message11.id, 0, z19 ? 1 : 0, message11.quick_reply_shortcut_id);
+                                            messagesStorage.a2(j10, B1, Integer.valueOf(i26), message11.id, 0, z19 ? 1 : 0, message11.quick_reply_shortcut_id);
                                             gzVar7.getMessagesStorage().j1(arrayList16, true, false, false, 0, false, z19 ? 1 : 0, message11.quick_reply_shortcut_id);
-                                            if (ij.f3(message11)) {
-                                                long C12 = ij.C1(message11.peer_id);
+                                            if (ij.e3(message11)) {
+                                                long B12 = ij.B1(message11.peer_id);
                                                 ArrayList arrayList17 = new ArrayList(1);
                                                 arrayList17.add(Integer.valueOf(message11.id));
-                                                gzVar7.getMessagesStorage().P0(C12, arrayList17, false, false, z19 ? 1 : 0, (int) ij.a2(gzVar7.currentAccount, message11, 0));
-                                                gzVar7.getMessagesStorage().R1(C12, -C12, arrayList17, null);
-                                                g0.h3(new pw(gzVar7, C12, arrayList17, 1));
+                                                gzVar7.getMessagesStorage().P0(B12, arrayList17, false, false, z19 ? 1 : 0, (int) ij.Z1(gzVar7.currentAccount, message11, 0));
+                                                gzVar7.getMessagesStorage().R1(B12, -B12, arrayList17, null);
+                                                g0.h3(new pw(gzVar7, B12, arrayList17, 1));
                                             }
                                             final int[] iArr5 = iArr4;
                                             final int[] iArr6 = iArr;
@@ -459,7 +459,7 @@ public final /* synthetic */ class ux implements Runnable {
                                             final SparseArray sparseArray6 = sparseArray5;
                                             final ArrayList arrayList18 = arrayList11;
                                             final long j11 = j3;
-                                            final int i27 = p12;
+                                            final int i27 = o12;
                                             g0.h3(new Runnable() { // from class: org.telegram.messenger.ax
                                                 @Override // java.lang.Runnable
                                                 public final void run() {
@@ -512,12 +512,12 @@ public final /* synthetic */ class ux implements Runnable {
                                     final gz gzVar72 = gz.this;
                                     yr messagesStorage2 = gzVar72.getMessagesStorage();
                                     long j102 = message11.random_id;
-                                    long C13 = ij.C1(message11.peer_id);
+                                    long B13 = ij.B1(message11.peer_id);
                                     final int i262 = i25;
                                     boolean z192 = z17;
-                                    messagesStorage2.a2(j102, C13, Integer.valueOf(i262), message11.id, 0, z192 ? 1 : 0, message11.quick_reply_shortcut_id);
+                                    messagesStorage2.a2(j102, B13, Integer.valueOf(i262), message11.id, 0, z192 ? 1 : 0, message11.quick_reply_shortcut_id);
                                     gzVar72.getMessagesStorage().j1(arrayList16, true, false, false, 0, false, z192 ? 1 : 0, message11.quick_reply_shortcut_id);
-                                    if (ij.f3(message11)) {
+                                    if (ij.e3(message11)) {
                                     }
                                     final int[] iArr52 = iArr4;
                                     final int[] iArr62 = iArr;
@@ -526,7 +526,7 @@ public final /* synthetic */ class ux implements Runnable {
                                     final SparseArray sparseArray62 = sparseArray5;
                                     final ArrayList arrayList182 = arrayList11;
                                     final long j112 = j3;
-                                    final int i272 = p12;
+                                    final int i272 = o12;
                                     g0.h3(new Runnable() { // from class: org.telegram.messenger.ax
                                         @Override // java.lang.Runnable
                                         public final void run() {

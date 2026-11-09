@@ -1,6 +1,6 @@
 package z3;
 
-import di.s6;
+import di.t6;
 import e2.p0;
 import e2.q0;
 import e2.s0;
@@ -13,7 +13,7 @@ import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.UUID;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public abstract class q {
     public static final int[] a = {1769172845, 1769172786, 1769172787, 1769172788, 1769172789, 1769172790, 1769172793, 1635148593, 1752589105, 1751479857, 1635135537, 1836069937, 1836069938, 862401121, 862401122, 862417462, 862417718, 862414134, 862414646, 1295275552, 1295270176, 1714714144, 1801741417, 1295275600, 1903435808, 1297305174, 1684175153, 1769172332, 1885955686};
@@ -323,7 +323,7 @@ public abstract class q {
             if (j13 < j14) {
                 g0Var = null;
                 if (m10 != 1718773093 || i11 != 8) {
-                    return new s6(m10, j13, i11);
+                    return new t6(m10, j13, i11);
                 }
                 j13 = j14;
             } else {
@@ -362,7 +362,7 @@ public abstract class q {
                                 }
                             } else {
                                 if (i19 < 8) {
-                                    return new s6(m10, i19, 8);
+                                    return new t6(m10, i19, 8);
                                 }
                                 xVar.K(i19);
                                 i13 = 0;

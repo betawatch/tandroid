@@ -10,7 +10,7 @@ import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import org.telegram.ui.Components.rt;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class x implements l {
     public final MediaCodec a;
@@ -41,18 +41,18 @@ public final class x implements l {
     }
 
     @Override // u2.l
-    public final void d(org.telegram.ui.web.w wVar) {
-        wVar.run();
-    }
-
-    @Override // u2.l
-    public final void e() {
+    public final void d() {
         this.a.detachOutputSurface();
     }
 
     @Override // u2.l
-    public final void f(int i7, long j3) {
+    public final void e(int i7, long j3) {
         this.a.releaseOutputBuffer(i7, j3);
+    }
+
+    @Override // u2.l
+    public final int f() {
+        return this.a.dequeueInputBuffer(0L);
     }
 
     @Override // u2.l
@@ -61,8 +61,12 @@ public final class x implements l {
     }
 
     @Override // u2.l
-    public final int g() {
-        return this.a.dequeueInputBuffer(0L);
+    public final int g(MediaCodec.BufferInfo bufferInfo) {
+        int dequeueOutputBuffer;
+        do {
+            dequeueOutputBuffer = this.a.dequeueOutputBuffer(bufferInfo, 0L);
+        } while (dequeueOutputBuffer == -3);
+        return dequeueOutputBuffer;
     }
 
     @Override // u2.l
@@ -81,22 +85,18 @@ public final class x implements l {
     }
 
     @Override // u2.l
-    public final int h(MediaCodec.BufferInfo bufferInfo) {
-        int dequeueOutputBuffer;
-        do {
-            dequeueOutputBuffer = this.a.dequeueOutputBuffer(bufferInfo, 0L);
-        } while (dequeueOutputBuffer == -3);
-        return dequeueOutputBuffer;
-    }
-
-    @Override // u2.l
-    public final void i(d3.k kVar, Handler handler) {
+    public final void h(d3.k kVar, Handler handler) {
         this.a.setOnFrameRenderedListener(new a(this, kVar, 1), handler);
     }
 
     @Override // u2.l
-    public final void j(int i7) {
+    public final void i(int i7) {
         this.a.setVideoScalingMode(i7);
+    }
+
+    @Override // u2.l
+    public final void j(org.telegram.ui.web.s sVar) {
+        sVar.run();
     }
 
     @Override // u2.l

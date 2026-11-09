@@ -1,41 +1,38 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
-import android.content.SharedPreferences;
-
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ys implements DialogInterface.OnClickListener {
-    public final /* synthetic */ DataSettingsActivity a;
-    public final /* synthetic */ SharedPreferences b;
-    public final /* synthetic */ int c;
+public final /* synthetic */ class ys implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ DataSettingsActivity b;
 
-    public /* synthetic */ ys(DataSettingsActivity dataSettingsActivity, SharedPreferences sharedPreferences, int i7) {
-        this.a = dataSettingsActivity;
-        this.b = sharedPreferences;
-        this.c = i7;
+    public /* synthetic */ ys(DataSettingsActivity dataSettingsActivity, int i7) {
+        this.a = i7;
+        this.b = dataSettingsActivity;
     }
 
-    @Override // android.content.DialogInterface.OnClickListener
-    public final void onClick(DialogInterface dialogInterface, int i7) {
-        int i10;
-        DataSettingsActivity dataSettingsActivity = this.a;
-        dataSettingsActivity.getClass();
-        if (i7 != 0) {
-            i10 = 3;
-            if (i7 != 1) {
-                i10 = i7 != 2 ? i7 != 3 ? -1 : 2 : 1;
-            }
-        } else {
-            i10 = 0;
-        }
-        if (i10 != -1) {
-            this.b.edit().putInt("VoipDataSaving", i10).commit();
-            dataSettingsActivity.U = true;
-        }
-        l4 l4Var = dataSettingsActivity.a;
-        if (l4Var != null) {
-            l4Var.g(this.c);
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7;
+        switch (this.a) {
+            case 0:
+                this.b.getMediaDataController().E(true);
+                break;
+            case 1:
+                DataSettingsActivity dataSettingsActivity = this.b;
+                dataSettingsActivity.W = true;
+                if (dataSettingsActivity.a != null && (i7 = dataSettingsActivity.s) >= 0) {
+                    dataSettingsActivity.s0(i7);
+                    break;
+                }
+                break;
+            default:
+                y6.j0 = null;
+                DataSettingsActivity dataSettingsActivity2 = this.b;
+                ys ysVar = new ys(dataSettingsActivity2, 1);
+                org.telegram.messenger.g0.i3(ysVar, 100L);
+                y6.m0(new bi.b2(dataSettingsActivity2, ysVar, System.currentTimeMillis(), 1));
+                break;
         }
     }
 }

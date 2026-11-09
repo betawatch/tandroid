@@ -12,7 +12,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public abstract class s8 extends FrameLayout {
     public float D;
@@ -20,7 +20,7 @@ public abstract class s8 extends FrameLayout {
     public final /* synthetic */ t8 F;
     public long a;
     public TLRPC.Document b;
-    public final di.c4 c;
+    public final di.d4 c;
     public final f10 d;
     public final f10 e;
     public float f;
@@ -42,12 +42,12 @@ public abstract class s8 extends FrameLayout {
         this.r = new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN);
         this.s = new w5(this, 200L, xq.g);
         this.x = -1.0f;
-        di.c4 c4Var = new di.c4(7, context, this);
-        this.c = c4Var;
-        c4Var.getImageReceiver().X(1);
-        c4Var.getImageReceiver().R0 = true;
+        di.d4 d4Var = new di.d4(7, context, this);
+        this.c = d4Var;
+        d4Var.getImageReceiver().X(1);
+        d4Var.getImageReceiver().R0 = true;
         setClipChildren(false);
-        addView(c4Var, c8.ha.e(70, 70, 17));
+        addView(d4Var, c8.ha.e(70, 70, 17));
     }
 
     public final void a(Canvas canvas, float f10, float f11, float f12, float f13, Paint paint) {
@@ -123,28 +123,28 @@ public abstract class s8 extends FrameLayout {
                 canvas2 = canvas;
                 s8Var.a(canvas2, s8Var.D, s8Var.E, measuredWidth, s8Var.y, paint);
                 float T12 = org.telegram.messenger.g0.T1(org.telegram.messenger.g0.W1(w5Var.c, !t8Var.U ? (int) ((measuredWidth * 2.0f) * 0.7f) : org.telegram.messenger.g0.L(70.0f), (int) (getMeasuredWidth() * 0.7f)), (int) (org.telegram.messenger.g0.L(42.0f) * 0.7f), t8Var.N) / 2.0f;
-                di.c4 c4Var = s8Var.c;
-                i5Var = c4Var.e;
+                di.d4 d4Var = s8Var.c;
+                i5Var = d4Var.e;
                 if (i5Var != null) {
-                    ImageReceiver imageReceiver = c4Var.a;
+                    ImageReceiver imageReceiver = d4Var.a;
                     float f15 = s8Var.D - T12;
                     float f16 = s8Var.E - T12;
                     float f17 = T12 * 2.0f;
                     imageReceiver.y0(f15, f16, f17, f17);
-                    c4Var.a.J0((int) (f17 * 0.13f));
-                    c4Var.a.h(canvas2, null);
+                    d4Var.a.J0((int) (f17 * 0.13f));
+                    d4Var.a.h(canvas2, null);
                     return;
                 }
                 di.z2 z2Var = i5Var.k;
                 if (z2Var != null) {
                     z2Var.J0((int) (2.0f * T12 * 0.13f));
                 }
-                i5 i5Var2 = c4Var.e;
+                i5 i5Var2 = d4Var.e;
                 float f18 = s8Var.D;
                 float f19 = s8Var.E;
                 i5Var2.setBounds((int) (f18 - T12), (int) (f19 - T12), (int) (f18 + T12), (int) (f19 + T12));
-                c4Var.e.setColorFilter(s8Var.r);
-                c4Var.e.draw(canvas2);
+                d4Var.e.setColorFilter(s8Var.r);
+                d4Var.e.draw(canvas2);
                 return;
             }
             float f20 = this.D;
@@ -176,16 +176,16 @@ public abstract class s8 extends FrameLayout {
         if (!t8Var.U) {
         }
         float T122 = org.telegram.messenger.g0.T1(org.telegram.messenger.g0.W1(w5Var.c, !t8Var.U ? (int) ((measuredWidth * 2.0f) * 0.7f) : org.telegram.messenger.g0.L(70.0f), (int) (getMeasuredWidth() * 0.7f)), (int) (org.telegram.messenger.g0.L(42.0f) * 0.7f), t8Var.N) / 2.0f;
-        di.c4 c4Var2 = s8Var.c;
-        i5Var = c4Var2.e;
+        di.d4 d4Var2 = s8Var.c;
+        i5Var = d4Var2.e;
         if (i5Var != null) {
         }
     }
 
     public long getDuration() {
-        di.c4 c4Var = this.c;
-        ImageReceiver imageReceiver = c4Var.getImageReceiver();
-        i5 i5Var = c4Var.e;
+        di.d4 d4Var = this.c;
+        ImageReceiver imageReceiver = d4Var.getImageReceiver();
+        i5 i5Var = d4Var.e;
         if (i5Var != null) {
             imageReceiver = i5Var.k;
         }
@@ -196,9 +196,9 @@ public abstract class s8 extends FrameLayout {
     }
 
     public ImageReceiver getImageReceiver() {
-        di.c4 c4Var = this.c;
-        ImageReceiver imageReceiver = c4Var.getImageReceiver();
-        i5 i5Var = c4Var.e;
+        di.d4 d4Var = this.c;
+        ImageReceiver imageReceiver = d4Var.getImageReceiver();
+        i5 i5Var = d4Var.e;
         if (i5Var == null) {
             return imageReceiver;
         }
@@ -229,12 +229,12 @@ public abstract class s8 extends FrameLayout {
         }
         this.w = z9;
         if (z9) {
-            di.c4 c4Var = this.c;
-            i5 i5Var = c4Var.e;
+            di.d4 d4Var = this.c;
+            i5 i5Var = d4Var.e;
             if (i5Var != null && (z2Var = i5Var.k) != null) {
                 z2Var.P0(false);
             }
-            c4Var.a.P0(false);
+            d4Var.a.P0(false);
         }
         org.telegram.messenger.qs.e().k(org.telegram.messenger.qs.r4, new Object[0]);
         invalidate();

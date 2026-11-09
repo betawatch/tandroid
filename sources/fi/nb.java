@@ -21,21 +21,21 @@ import org.telegram.messenger.ye;
 import org.telegram.messenger.ze;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
+import org.telegram.ui.Components.av0;
 import org.telegram.ui.Components.ay;
-import org.telegram.ui.Components.bz0;
 import org.telegram.ui.Components.cy;
 import org.telegram.ui.Components.cz0;
 import org.telegram.ui.Components.dz0;
+import org.telegram.ui.Components.ez0;
 import org.telegram.ui.Components.hl;
 import org.telegram.ui.Components.vs;
-import org.telegram.ui.Components.yu0;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.a01;
-import org.telegram.ui.cn0;
-import org.telegram.ui.mc0;
-import org.telegram.ui.pn0;
+import org.telegram.ui.d01;
+import org.telegram.ui.en0;
+import org.telegram.ui.oc0;
+import org.telegram.ui.rn0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class nb implements c20 {
     public final /* synthetic */ int a;
@@ -151,7 +151,7 @@ public final /* synthetic */ class nb implements c20 {
                     photoViewer.s5.setCutOutState(true);
                     photoViewer.U2(false, true);
                 } else {
-                    dz0 thanosEffect = photoViewer.o5.getThanosEffect();
+                    ez0 thanosEffect = photoViewer.o5.getThanosEffect();
                     tg.c2 c2Var2 = photoViewer.o5;
                     c2Var2.L = true;
                     c2Var2.E = z1Var;
@@ -161,7 +161,7 @@ public final /* synthetic */ class nb implements c20 {
                     Bitmap b10 = z1Var2 == null ? c2Var2.I : (!z12 || n10 == null) ? z1Var2.b() : c2Var2.e(n10);
                     gf gfVar3 = (gf) photoViewer.f7.get(photoViewer.O4);
                     if (thanosEffect == null) {
-                        Utilities.i.c(new pn0(photoViewer, b10, 0));
+                        Utilities.i.c(new rn0(photoViewer, b10, 0));
                         photoViewer.o5.f();
                         photoViewer.e0.invalidate();
                         break;
@@ -230,7 +230,7 @@ public final /* synthetic */ class nb implements c20 {
                             bitmap2 = bitmap;
                         }
                         if (bitmap2 == null) {
-                            Utilities.i.c(new pn0(photoViewer, b10, 1));
+                            Utilities.i.c(new rn0(photoViewer, b10, 1));
                             photoViewer.o5.f();
                             photoViewer.e0.invalidate();
                             break;
@@ -241,7 +241,7 @@ public final /* synthetic */ class nb implements c20 {
                                 bitmap2 = PhotoViewer.C0(bitmap2, yeVar, new int[]{imageReceiver.U, imageReceiver.V}, true);
                             }
                             if (bitmap2 == null) {
-                                Utilities.i.c(new pn0(photoViewer, b10, 2));
+                                Utilities.i.c(new rn0(photoViewer, b10, 2));
                                 photoViewer.o5.f();
                                 photoViewer.e0.invalidate();
                                 break;
@@ -289,18 +289,18 @@ public final /* synthetic */ class nb implements c20 {
                                 matrix3.postScale(f24, f24, f11 / f10, f12 / f10);
                                 matrix3.postTranslate(photoViewer.W5 + f14 + Math.max(0, (int) ((photoViewer.g1(photoViewer.t4) - f17) / f10)), photoViewer.X5 + f13 + Math.max(0, (int) ((photoViewer.e1() - f18) / f10)));
                                 photoViewer.o5.V = true;
-                                Utilities.i.c(new pn0(photoViewer, b10, 3));
-                                cn0 cn0Var = new cn0(photoViewer, 14);
-                                mc0 mc0Var = new mc0(photoViewer, b10, cn0Var, 19);
+                                Utilities.i.c(new rn0(photoViewer, b10, 3));
+                                en0 en0Var = new en0(photoViewer, 14);
+                                oc0 oc0Var = new oc0(photoViewer, b10, en0Var, 19);
                                 vs vsVar = new vs(27);
-                                bz0 bz0Var = thanosEffect.a;
-                                if (bz0Var != null) {
-                                    bz0Var.c(matrix3, bitmap2, mc0Var, vsVar);
+                                cz0 cz0Var = thanosEffect.a;
+                                if (cz0Var != null) {
+                                    cz0Var.c(matrix3, bitmap2, oc0Var, vsVar);
                                     Choreographer.getInstance().postFrameCallback(thanosEffect.b);
                                 } else {
-                                    thanosEffect.c.add(new cz0(matrix3, bitmap2, mc0Var, vsVar));
+                                    thanosEffect.c.add(new dz0(matrix3, bitmap2, oc0Var, vsVar));
                                 }
-                                org.telegram.messenger.g0.i3(cn0Var, 1200L);
+                                org.telegram.messenger.g0.i3(en0Var, 1200L);
                             }
                         }
                     }
@@ -317,7 +317,7 @@ public final /* synthetic */ class nb implements c20 {
                     runnable2.run();
                     break;
                 } else {
-                    yu0.F3.c(p10.s0, str2, new a01(linkedHashSet, runnable2, 1));
+                    av0.F3.c(p10.s0, str2, new d01(linkedHashSet, runnable2, 1));
                     break;
                 }
         }

@@ -7,7 +7,7 @@ import android.widget.LinearLayout;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class r5 extends FrameLayout {
     public final /* synthetic */ t5 a;
@@ -22,8 +22,8 @@ public final class r5 extends FrameLayout {
         bi.m5 m5Var2 = new bi.m5(t5Var, getContext());
         bi.m5 m5Var3 = new bi.m5(t5Var, getContext());
         m5Var.c(R.drawable.filled_boost_plus, org.telegram.messenger.id.M0(2131753664, null));
-        m5Var2.c(R.drawable.filled_gift_premium, org.telegram.messenger.id.M0(2131749554, null));
-        m5Var3.c(R.drawable.filled_info, org.telegram.messenger.id.M0(2131750831, null));
+        m5Var2.c(R.drawable.filled_gift_premium, org.telegram.messenger.id.M0(2131749553, null));
+        m5Var3.c(R.drawable.filled_info, org.telegram.messenger.id.M0(2131750830, null));
         m5Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.p5
             public final /* synthetic */ r5 b;
 
@@ -33,7 +33,7 @@ public final class r5 extends FrameLayout {
 
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                org.telegram.ui.ActionBar.f6 f6Var;
+                org.telegram.ui.ActionBar.g6 g6Var;
                 int i10 = i7;
                 r5 r5Var = this.b;
                 switch (i10) {
@@ -57,8 +57,8 @@ public final class r5 extends FrameLayout {
                         t5 t5Var3 = r5Var.a;
                         t5Var3.y0(true);
                         long j10 = t5Var3.R;
-                        f6Var = ((org.telegram.ui.ActionBar.f2) t5Var3).resourceProvider;
-                        wg.l.I0(t5Var3, f6Var, j10, null);
+                        g6Var = ((org.telegram.ui.ActionBar.f2) t5Var3).resourceProvider;
+                        wg.l.I0(t5Var3, g6Var, j10, null);
                         wg.l.l1.H0 = new q5(r5Var, 0);
                         break;
                     default:
@@ -81,7 +81,7 @@ public final class r5 extends FrameLayout {
 
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                org.telegram.ui.ActionBar.f6 f6Var;
+                org.telegram.ui.ActionBar.g6 g6Var;
                 int i102 = i10;
                 r5 r5Var = this.b;
                 switch (i102) {
@@ -105,8 +105,8 @@ public final class r5 extends FrameLayout {
                         t5 t5Var3 = r5Var.a;
                         t5Var3.y0(true);
                         long j10 = t5Var3.R;
-                        f6Var = ((org.telegram.ui.ActionBar.f2) t5Var3).resourceProvider;
-                        wg.l.I0(t5Var3, f6Var, j10, null);
+                        g6Var = ((org.telegram.ui.ActionBar.f2) t5Var3).resourceProvider;
+                        wg.l.I0(t5Var3, g6Var, j10, null);
                         wg.l.l1.H0 = new q5(r5Var, 0);
                         break;
                     default:
@@ -129,7 +129,7 @@ public final class r5 extends FrameLayout {
 
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                org.telegram.ui.ActionBar.f6 f6Var;
+                org.telegram.ui.ActionBar.g6 g6Var;
                 int i102 = i11;
                 r5 r5Var = this.b;
                 switch (i102) {
@@ -153,8 +153,8 @@ public final class r5 extends FrameLayout {
                         t5 t5Var3 = r5Var.a;
                         t5Var3.y0(true);
                         long j10 = t5Var3.R;
-                        f6Var = ((org.telegram.ui.ActionBar.f2) t5Var3).resourceProvider;
-                        wg.l.I0(t5Var3, f6Var, j10, null);
+                        g6Var = ((org.telegram.ui.ActionBar.f2) t5Var3).resourceProvider;
+                        wg.l.I0(t5Var3, g6Var, j10, null);
                         wg.l.l1.H0 = new q5(r5Var, 0);
                         break;
                     default:

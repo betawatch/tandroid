@@ -6,9 +6,9 @@ import android.text.TextUtils;
 import java.util.ArrayList;
 import org.telegram.messenger.we;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.xy0;
+import org.telegram.ui.az0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class s extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ int a;
@@ -23,7 +23,7 @@ public final class s extends org.telegram.ui.ActionBar.j {
     public final void b(int i7) {
         int i10;
         int i11;
-        org.telegram.ui.ActionBar.f6 f6Var;
+        org.telegram.ui.ActionBar.g6 g6Var;
         org.telegram.ui.ActionBar.y4 y4Var;
         org.telegram.ui.ActionBar.y4 y4Var2;
         int i12 = this.a;
@@ -229,7 +229,7 @@ public final class s extends org.telegram.ui.ActionBar.j {
                             org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                             u1Var.R = G;
                             u1Var.T = org.telegram.messenger.id.G(arrayList.size(), "BusinessRepliesDeleteMessage", new Object[0]);
-                            alertDialog$Builder.k(org.telegram.messenger.id.M0(2131746322, null), new di.q4(this, 26));
+                            alertDialog$Builder.k(org.telegram.messenger.id.M0(2131746321, null), new di.r4(this, 26));
                             alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), null);
                             q1Var.showDialog(u1Var);
                             break;
@@ -241,8 +241,8 @@ public final class s extends org.telegram.ui.ActionBar.j {
                         if (c10 != null) {
                             Activity parentActivity = q1Var.getParentActivity();
                             i11 = ((org.telegram.ui.ActionBar.f2) q1Var).currentAccount;
-                            f6Var = ((org.telegram.ui.ActionBar.f2) q1Var).resourceProvider;
-                            kg.q1.i0(parentActivity, i11, null, c10, f6Var, new fi.t3(this, intValue, i13));
+                            g6Var = ((org.telegram.ui.ActionBar.f2) q1Var).resourceProvider;
+                            kg.q1.i0(parentActivity, i11, null, c10, g6Var, new fi.t3(this, intValue, i13));
                             break;
                         }
                     }
@@ -280,7 +280,7 @@ public final class s extends org.telegram.ui.ActionBar.j {
                 break;
             case 23:
                 if (i7 == -1) {
-                    ((xy0) obj).finishFragment();
+                    ((az0) obj).finishFragment();
                     break;
                 }
                 break;
@@ -315,7 +315,7 @@ public final class s extends org.telegram.ui.ActionBar.j {
                     }
                 } else {
                     y4Var = ((org.telegram.ui.ActionBar.f2) y6Var).simpleActionBar;
-                    if (!y4Var.s()) {
+                    if (!y4Var.t()) {
                         y6Var.finishFragment();
                         break;
                     } else {
@@ -362,7 +362,7 @@ public final class s extends org.telegram.ui.ActionBar.j {
                     }
                 } else {
                     y4Var2 = ((org.telegram.ui.ActionBar.f2) i9Var).simpleActionBar;
-                    if (!y4Var2.s()) {
+                    if (!y4Var2.t()) {
                         i9Var.finishFragment();
                         break;
                     } else {

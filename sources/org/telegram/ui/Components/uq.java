@@ -11,7 +11,7 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class uq extends Drawable {
     public final Drawable a;
@@ -77,7 +77,7 @@ public final class uq extends Drawable {
                     this.g = 1.0f;
                 }
                 int i10 = this.f;
-                x02 = i10 >= 0 ? -1 : org.telegram.ui.ActionBar.k6.x0(null, i10, false);
+                x02 = i10 >= 0 ? -1 : org.telegram.ui.ActionBar.l6.x0(null, i10, false);
                 i7 = this.e;
                 Drawable drawable = this.a;
                 Paint paint = this.c;

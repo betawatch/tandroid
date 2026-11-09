@@ -1,41 +1,41 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class ei0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ PasscodeActivity b;
-    public final /* synthetic */ boolean c;
+import android.os.Build;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLObject;
 
-    public /* synthetic */ ei0(PasscodeActivity passcodeActivity, boolean z9, int i7) {
-        this.a = i7;
-        this.b = passcodeActivity;
-        this.c = z9;
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* loaded from: classes3.dex */
+public final class ei0 {
+    public final LaunchActivity a;
+    public final ArrayList b = new ArrayList();
+    public int c = TLObject.FLAG_31;
+
+    public ei0(LaunchActivity launchActivity) {
+        this.a = launchActivity;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                PasscodeActivity passcodeActivity = this.b;
-                passcodeActivity.getMediaDataController().m();
-                if (this.c) {
-                    passcodeActivity.presentFragment(new PasscodeActivity(0), true);
-                    l90 l90Var = passcodeActivity.U;
-                    if (l90Var != null) {
-                        org.telegram.messenger.g0.h3(l90Var);
-                        passcodeActivity.U = null;
-                    }
-                } else {
-                    passcodeActivity.finishFragment();
+    public final void a() {
+        boolean isEmpty = this.b.isEmpty();
+        LaunchActivity launchActivity = this.a;
+        try {
+            if (isEmpty || launchActivity.getResources().getConfiguration().smallestScreenWidthDp >= 600 || (Build.VERSION.SDK_INT >= 24 && launchActivity.isInMultiWindowMode())) {
+                int i7 = this.c;
+                if (i7 != Integer.MIN_VALUE) {
+                    launchActivity.setRequestedOrientation(i7);
+                    this.c = TLObject.FLAG_31;
+                    return;
                 }
-                org.telegram.messenger.qs.e().k(50, new Object[0]);
-                break;
-            default:
-                PasscodeActivity passcodeActivity2 = this.b;
-                passcodeActivity2.x.e(true, this.c);
-                org.telegram.messenger.g0.r(passcodeActivity2.T);
-                break;
+                return;
+            }
+            if (this.c == Integer.MIN_VALUE) {
+                this.c = launchActivity.getRequestedOrientation();
+            }
+            if (launchActivity.getRequestedOrientation() != 1) {
+                launchActivity.setRequestedOrientation(1);
+            }
+        } catch (Exception e10) {
+            org.telegram.messenger.a8.g(e10, true);
         }
     }
 }

@@ -12,11 +12,11 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class f0 extends FrameLayout {
     public final int a;
-    public final org.telegram.ui.ActionBar.f6 b;
+    public final org.telegram.ui.ActionBar.g6 b;
     public final d0 c;
     public int d;
     public boolean e;
@@ -24,11 +24,11 @@ public final class f0 extends FrameLayout {
     public final w5 h;
     public fi.u4 n;
 
-    public f0(int i7, Context context, org.telegram.ui.ActionBar.f6 f6Var, boolean z9) {
+    public f0(int i7, Context context, org.telegram.ui.ActionBar.g6 g6Var, boolean z9) {
         super(context);
         this.a = i7;
-        this.b = f6Var;
-        d0 d0Var = new d0(this, context, f6Var);
+        this.b = g6Var;
+        d0 d0Var = new d0(this, context, g6Var);
         this.c = d0Var;
         d0Var.setOrientation(0);
         this.h = new w5(d0Var, 0L, 320L, xq.h);
@@ -141,9 +141,9 @@ public final class f0 extends FrameLayout {
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
         if (this.e) {
-            Paint W0 = org.telegram.ui.ActionBar.k6.W0("paintDivider", this.b);
+            Paint W0 = org.telegram.ui.ActionBar.l6.W0("paintDivider", this.b);
             if (W0 == null) {
-                W0 = org.telegram.ui.ActionBar.k6.k0;
+                W0 = org.telegram.ui.ActionBar.l6.k0;
             }
             canvas.drawRect(org.telegram.messenger.g0.L(10.0f), getHeight() - 1, getWidth() - org.telegram.messenger.g0.L(10.0f), getHeight(), W0);
         }

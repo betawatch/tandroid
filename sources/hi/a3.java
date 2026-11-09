@@ -27,7 +27,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import bi.q9;
 import c8.ha;
-import fi.h9;
+import fi.v9;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -56,25 +56,25 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.s6;
 import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.ec0;
-import org.telegram.ui.Components.k60;
-import org.telegram.ui.Components.lt0;
-import org.telegram.ui.Components.my0;
+import org.telegram.ui.Components.fc0;
+import org.telegram.ui.Components.l60;
+import org.telegram.ui.Components.nt0;
+import org.telegram.ui.Components.ny0;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.an;
-import org.telegram.ui.gq0;
-import org.telegram.ui.s51;
+import org.telegram.ui.cn;
+import org.telegram.ui.iq0;
+import org.telegram.ui.t51;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final class a3 extends Dialog implements ls, org.telegram.ui.ActionBar.h3 {
     public static final HashSet a1 = new HashSet();
-    public static final lt0 b1;
+    public static final nt0 b1;
     public static int c1;
     public Boolean A0;
     public boolean B0;
@@ -83,7 +83,7 @@ public final class a3 extends Dialog implements ls, org.telegram.ui.ActionBar.h3
     public boolean D0;
     public final y2 E;
     public org.telegram.ui.ActionBar.c3 E0;
-    public final f6 F;
+    public final g6 F;
     public boolean F0;
     public boolean G;
     public boolean G0;
@@ -96,13 +96,13 @@ public final class a3 extends Dialog implements ls, org.telegram.ui.ActionBar.h3
     public long K;
     public int K0;
     public int L;
-    public s51 L0;
+    public t51 L0;
     public long M;
     public Drawable M0;
     public String N;
     public final HashMap N0;
     public final Paint O;
-    public k60 O0;
+    public l60 O0;
     public final Paint P;
     public f0 P0;
     public final Paint Q;
@@ -154,7 +154,7 @@ public final class a3 extends Dialog implements ls, org.telegram.ui.ActionBar.h3
     public final FrameLayout.LayoutParams r0;
     public final org.telegram.ui.ActionBar.d3 s;
     public boolean s0;
-    public final ec0 t0;
+    public final fc0 t0;
     public final x1 u0;
     public int v0;
     public final r7 w;
@@ -166,13 +166,13 @@ public final class a3 extends Dialog implements ls, org.telegram.ui.ActionBar.h3
     public boolean z0;
 
     static {
-        lt0 lt0Var = new lt0(new g2.c(25), new g2.c(26));
-        lt0Var.c = 100.0f;
-        b1 = lt0Var;
+        nt0 nt0Var = new nt0(new g2.c(25), new g2.c(26));
+        nt0Var.c = 100.0f;
+        b1 = nt0Var;
         c1 = 0;
     }
 
-    public a3(Context context, f6 f6Var) {
+    public a3(Context context, g6 g6Var) {
         super(context, R.style.TransparentDialog);
         this.c = 0.0f;
         this.h = new Rect();
@@ -195,25 +195,25 @@ public final class a3 extends Dialog implements ls, org.telegram.ui.ActionBar.h3
         this.Q0 = false;
         this.U0 = true;
         this.Z0 = false;
-        this.F = f6Var;
-        int x02 = k6.x0(null, k6.wj, false);
+        this.F = g6Var;
+        int x02 = l6.x0(null, l6.wj, false);
         this.b = x02;
         this.a = x02;
         r2 r2Var = new r2(i7, context, this);
         this.x = r2Var;
         r2Var.setAllowFullSizeSwipe(true);
         r2Var.setShouldWaitWebViewScroll(true);
-        int i11 = k6.d6;
-        s2 s2Var = new s2(this, context, f6Var, k6.w0(i11, f6Var), 0);
+        int i11 = l6.d6;
+        s2 s2Var = new s2(this, context, g6Var, l6.w0(i11, g6Var), 0);
         this.D = s2Var;
         s2Var.setOnVerifiedAge(this.L0);
-        s2Var.setDelegate(new v2(this, context, f6Var));
+        s2Var.setDelegate(new v2(this, context, g6Var));
         paint.setStyle(Paint.Style.FILL_AND_STROKE);
         paint.setStrokeWidth(org.telegram.messenger.g0.L(4.0f));
         paint.setStrokeCap(Paint.Cap.ROUND);
         paint2.setColor(TLObject.FLAG_30);
-        this.R = k6.w0(i11, f6Var);
-        int w02 = k6.w0(k6.a7, f6Var);
+        this.R = l6.w0(i11, g6Var);
+        int w02 = l6.w0(l6.a7, g6Var);
         this.S = w02;
         org.telegram.messenger.g0.u3(this, w02, false, null);
         z2 z2Var = new z2(this, context);
@@ -222,7 +222,7 @@ public final class a3 extends Dialog implements ls, org.telegram.ui.ActionBar.h3
         FrameLayout.LayoutParams e10 = ha.e(-1, -1, 49);
         this.y = e10;
         z2Var.addView(r2Var, e10);
-        w2 w2Var = new w2(this, getContext(), f6Var);
+        w2 w2Var = new w2(this, getContext(), g6Var);
         this.m0 = w2Var;
         w2Var.setOnButtonClickListener(new a2(this, i7));
         w2Var.setOnResizeListener(new x1(this, 3));
@@ -245,7 +245,7 @@ public final class a3 extends Dialog implements ls, org.telegram.ui.ActionBar.h3
         this.r0 = e11;
         z2Var.addView(frameLayout, e11);
         this.Z = getContext().getDrawable(R.drawable.header_shadow).mutate();
-        x2 x2Var = new x2(context, f6Var);
+        x2 x2Var = new x2(context, g6Var);
         this.X = x2Var;
         x2Var.setBackgroundColor(0);
         x2Var.setBackButtonImage(R.drawable.ic_close_white);
@@ -255,7 +255,7 @@ public final class a3 extends Dialog implements ls, org.telegram.ui.ActionBar.h3
         FrameLayout.LayoutParams e12 = ha.e(-1, -2, 49);
         this.Y = e12;
         z2Var.addView(x2Var, e12);
-        y2 y2Var = new y2(context, f6Var);
+        y2 y2Var = new y2(context, g6Var);
         this.E = y2Var;
         z2Var.addView(y2Var, ha.d(-1, -2.0f, 81, 0.0f, 0.0f, 0.0f, 0.0f));
         s2Var.setWebViewProgressListener(new q9(this, i12));
@@ -264,18 +264,18 @@ public final class a3 extends Dialog implements ls, org.telegram.ui.ActionBar.h3
         r2Var.setScrollEndListener(new x1(this, 8));
         r2Var.setDelegate(new y1(this));
         r2Var.setIsKeyboardVisible(new y1(this));
-        ec0 ec0Var = new ec0(context);
-        this.t0 = ec0Var;
-        z2Var.addView(ec0Var, ha.c(-1.0f, -1));
+        fc0 fc0Var = new fc0(context);
+        this.t0 = fc0Var;
+        z2Var.addView(fc0Var, ha.c(-1.0f, -1));
         setContentView(z2Var, new ViewGroup.LayoutParams(-1, -1));
         I();
         LaunchActivity launchActivity = LaunchActivity.G1;
         org.telegram.ui.ActionBar.d3 O = launchActivity != null ? launchActivity.O() : null;
         this.s = O;
         if (O != null) {
-            h9 h9Var = new h9(z2Var, 18);
+            v9 v9Var = new v9(z2Var, 17);
             x1 x1Var = new x1(this, i12);
-            O.I.add(h9Var);
+            O.I.add(v9Var);
             O.J.add(x1Var);
             this.w = new r7(O);
         }
@@ -348,37 +348,37 @@ public final class a3 extends Dialog implements ls, org.telegram.ui.ActionBar.h3
         org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
         u1Var.R = M0;
         u1Var.T = org.telegram.messenger.g0.X2(a02);
-        alertDialog$Builder.k(id.M0(2131747832, null), new n1(i7, j3, tL_attachMenuBot, runnable));
+        alertDialog$Builder.k(id.M0(2131747831, null), new n1(i7, j3, tL_attachMenuBot, runnable));
         jg.g.w(null, 2131752589, alertDialog$Builder, null);
     }
 
-    public static JSONObject u(f6 f6Var, final boolean z9) {
+    public static JSONObject u(g6 g6Var, final boolean z9) {
         try {
             JSONObject jSONObject = new JSONObject();
-            final int w10 = k6.w(-16777216, k6.w0(k6.h5, f6Var));
+            final int w10 = l6.w(-16777216, l6.w0(l6.h5, g6Var));
             d20 d20Var = new d20() { // from class: hi.f2
                 @Override // org.telegram.messenger.d20
                 public final Object a(Object obj) {
-                    int w11 = k6.w(w10, ((Integer) obj).intValue());
+                    int w11 = l6.w(w10, ((Integer) obj).intValue());
                     return z9 ? String.format(Locale.US, "#%02X%02X%02X", Integer.valueOf(Color.red(w11)), Integer.valueOf(Color.green(w11)), Integer.valueOf(Color.blue(w11))) : Integer.valueOf(w11);
                 }
             };
             jSONObject.put("bg_color", d20Var.a(Integer.valueOf(w10)));
-            jSONObject.put("section_bg_color", d20Var.a(Integer.valueOf(k6.w0(k6.d6, f6Var))));
-            int i7 = k6.a7;
-            jSONObject.put("secondary_bg_color", d20Var.a(Integer.valueOf(k6.w0(i7, f6Var))));
-            jSONObject.put("text_color", d20Var.a(Integer.valueOf(k6.w0(k6.G6, f6Var))));
-            jSONObject.put("hint_color", d20Var.a(Integer.valueOf(k6.w0(k6.H6, f6Var))));
-            jSONObject.put("link_color", d20Var.a(Integer.valueOf(k6.w0(k6.J6, f6Var))));
-            jSONObject.put("button_color", d20Var.a(Integer.valueOf(k6.w0(k6.Ci, f6Var))));
-            jSONObject.put("button_text_color", d20Var.a(Integer.valueOf(k6.w0(k6.Gi, f6Var))));
-            jSONObject.put("header_bg_color", d20Var.a(Integer.valueOf(k6.w0(k6.s8, f6Var))));
-            jSONObject.put("accent_text_color", d20Var.a(Integer.valueOf(k6.w0(k6.q6, f6Var))));
-            jSONObject.put("section_header_text_color", d20Var.a(Integer.valueOf(k6.w0(k6.L6, f6Var))));
-            jSONObject.put("subtitle_text_color", d20Var.a(Integer.valueOf(k6.w0(k6.z6, f6Var))));
-            jSONObject.put("destructive_text_color", d20Var.a(Integer.valueOf(k6.w0(k6.p7, f6Var))));
-            jSONObject.put("section_separator_color", d20Var.a(Integer.valueOf(k6.w0(k6.d7, f6Var))));
-            jSONObject.put("bottom_bar_bg_color", d20Var.a(Integer.valueOf(k6.w0(i7, f6Var))));
+            jSONObject.put("section_bg_color", d20Var.a(Integer.valueOf(l6.w0(l6.d6, g6Var))));
+            int i7 = l6.a7;
+            jSONObject.put("secondary_bg_color", d20Var.a(Integer.valueOf(l6.w0(i7, g6Var))));
+            jSONObject.put("text_color", d20Var.a(Integer.valueOf(l6.w0(l6.G6, g6Var))));
+            jSONObject.put("hint_color", d20Var.a(Integer.valueOf(l6.w0(l6.H6, g6Var))));
+            jSONObject.put("link_color", d20Var.a(Integer.valueOf(l6.w0(l6.J6, g6Var))));
+            jSONObject.put("button_color", d20Var.a(Integer.valueOf(l6.w0(l6.Ci, g6Var))));
+            jSONObject.put("button_text_color", d20Var.a(Integer.valueOf(l6.w0(l6.Gi, g6Var))));
+            jSONObject.put("header_bg_color", d20Var.a(Integer.valueOf(l6.w0(l6.s8, g6Var))));
+            jSONObject.put("accent_text_color", d20Var.a(Integer.valueOf(l6.w0(l6.q6, g6Var))));
+            jSONObject.put("section_header_text_color", d20Var.a(Integer.valueOf(l6.w0(l6.L6, g6Var))));
+            jSONObject.put("subtitle_text_color", d20Var.a(Integer.valueOf(l6.w0(l6.z6, g6Var))));
+            jSONObject.put("destructive_text_color", d20Var.a(Integer.valueOf(l6.w0(l6.p7, g6Var))));
+            jSONObject.put("section_separator_color", d20Var.a(Integer.valueOf(l6.w0(l6.d7, g6Var))));
+            jSONObject.put("bottom_bar_bg_color", d20Var.a(Integer.valueOf(l6.w0(i7, g6Var))));
             return jSONObject;
         } catch (Exception e10) {
             a8.g(e10, true);
@@ -573,17 +573,17 @@ public final class a3 extends Dialog implements ls, org.telegram.ui.ActionBar.h3
 
     public final void F() {
         if (!this.V) {
-            int i7 = k6.G6;
-            f6 f6Var = this.F;
-            int w02 = k6.w0(i7, f6Var);
+            int i7 = l6.G6;
+            g6 g6Var = this.F;
+            int w02 = l6.w0(i7, g6Var);
             x2 x2Var = this.X;
             x2Var.setTitleColor(w02);
-            x2Var.D(k6.w0(i7, f6Var), false);
-            x2Var.C(k6.w0(k6.u8, f6Var), false);
-            x2Var.E(k6.w0(k6.G8, f6Var), false);
-            x2Var.G(k6.w0(k6.E8, f6Var), false, false);
-            x2Var.G(k6.w0(k6.F8, f6Var), true, false);
-            x2Var.H(k6.w0(k6.I5, f6Var), false);
+            x2Var.E(l6.w0(i7, g6Var), false);
+            x2Var.D(l6.w0(l6.u8, g6Var), false);
+            x2Var.G(l6.w0(l6.G8, g6Var), false);
+            x2Var.H(l6.w0(l6.E8, g6Var), false, false);
+            x2Var.H(l6.w0(l6.F8, g6Var), true, false);
+            x2Var.I(l6.w0(l6.I5, g6Var), false);
         }
         this.D.setFlickerViewColor(this.Q.getColor());
     }
@@ -765,7 +765,7 @@ public final class a3 extends Dialog implements ls, org.telegram.ui.ActionBar.h3
         if (this.V) {
             z9 = !this.T;
         } else {
-            z9 = !org.telegram.messenger.g0.Q1() && i0.a.h(k6.x0(null, k6.d6, true)) >= 0.7210000157356262d && this.c >= 0.85f;
+            z9 = !org.telegram.messenger.g0.Q1() && i0.a.h(l6.x0(null, l6.d6, true)) >= 0.7210000157356262d && this.c >= 0.85f;
         }
         Boolean bool = this.e;
         if (bool == null || bool.booleanValue() != z9) {
@@ -828,7 +828,7 @@ public final class a3 extends Dialog implements ls, org.telegram.ui.ActionBar.h3
         c3Var.a = this.w0;
         s2 s2Var = this.D;
         c3Var.t = s2Var != null && s2Var.N;
-        c3Var.D = k6.I.q();
+        c3Var.D = l6.I.q();
         c3Var.x = s2Var != null ? s2Var.getUrlLoaded() : null;
         c3Var.e = s2Var != null && s2Var.t0;
         c3Var.f = s2Var != null ? s2Var.getTrustedOrigin() : null;
@@ -890,7 +890,7 @@ public final class a3 extends Dialog implements ls, org.telegram.ui.ActionBar.h3
             }
         } else {
             this.f.invalidate();
-            this.D.n.b(k6.w0(k6.d6, this.F), qs.j2);
+            this.D.n.b(l6.w0(l6.d6, this.F), qs.j2);
             F();
             J();
         }
@@ -920,7 +920,7 @@ public final class a3 extends Dialog implements ls, org.telegram.ui.ActionBar.h3
         if (botappsettings == null) {
             return;
         }
-        boolean q10 = k6.I.q();
+        boolean q10 = l6.I.q();
         int i7 = botappsettings.flags;
         boolean z10 = ((q10 ? 4 : 2) & i7) != 0;
         if ((i7 & (q10 ? 16 : 8)) != 0) {
@@ -1257,7 +1257,7 @@ public final class a3 extends Dialog implements ls, org.telegram.ui.ActionBar.h3
         alertDialog$Builder.k(id.M0(2131752916, null), new y1(this));
         alertDialog$Builder.h(id.M0(2131752589, null), null);
         u1Var.show();
-        ((TextView) u1Var.d(-1)).setTextColor(k6.w0(k6.q7, this.F));
+        ((TextView) u1Var.d(-1)).setTextColor(l6.w0(l6.q7, this.F));
         return false;
     }
 
@@ -1283,11 +1283,11 @@ public final class a3 extends Dialog implements ls, org.telegram.ui.ActionBar.h3
                 break;
             }
         }
-        k60 k60Var = this.O0;
-        if (k60Var != null) {
-            k60Var.u();
+        l60 l60Var = this.O0;
+        if (l60Var != null) {
+            l60Var.u();
         }
-        k60 G = k60.G(this.f, this.F, this.e0 ? this.n0 : this.a0, true);
+        l60 G = l60.G(this.f, this.F, this.e0 ? this.n0 : this.a0, true);
         this.O0 = G;
         ArrayList arrayList3 = g0.c(getContext(), this.H, this.I).e;
         HashMap hashMap = this.N0;
@@ -1296,8 +1296,8 @@ public final class a3 extends Dialog implements ls, org.telegram.ui.ActionBar.h3
         if (arrayList3.isEmpty()) {
             i7 = -1;
         } else {
-            k60 J = G.J();
-            J.c(R.drawable.msg_arrow_back, id.M0(2131753756, null), new gq0(G, 27), false);
+            l60 J = G.J();
+            J.c(R.drawable.msg_arrow_back, id.M0(2131753756, null), new iq0(G, 27), false);
             J.k();
             int size2 = arrayList3.size();
             int i13 = 0;
@@ -1307,7 +1307,7 @@ public final class a3 extends Dialog implements ls, org.telegram.ui.ActionBar.h3
                 f0 f0Var = (f0) obj;
                 String str = f0Var.c;
                 ai.m0 m0Var = new ai.m0(i12);
-                f6 f6Var = J.d;
+                g6 g6Var = J.d;
                 if (J.e == null) {
                     arrayList = arrayList3;
                     i10 = size2;
@@ -1320,17 +1320,17 @@ public final class a3 extends Dialog implements ls, org.telegram.ui.ActionBar.h3
                     z0Var.setSubtext("");
                     Integer num = J.j0;
                     if (num == null && J.k0 == null) {
-                        z0Var.c(k6.E8, k6.F8);
+                        z0Var.c(l6.E8, l6.F8);
                     } else {
-                        int intValue = num != null ? num.intValue() : k6.w0(k6.E8, f6Var);
+                        int intValue = num != null ? num.intValue() : l6.w0(l6.E8, g6Var);
                         Integer num2 = J.k0;
-                        z0Var.d(intValue, num2 != null ? num2.intValue() : k6.w0(k6.F8, f6Var));
+                        z0Var.d(intValue, num2 != null ? num2.intValue() : l6.w0(l6.F8, g6Var));
                     }
                     Integer num3 = J.l0;
                     if (num3 != null) {
                         z0Var.setSelectorColor(num3.intValue());
                     } else {
-                        z0Var.h(0.12f, k6.E8);
+                        z0Var.h(0.12f, l6.E8);
                     }
                     z0Var.setOnClickListener(new org.telegram.ui.Components.h0(J, m0Var));
                     int i14 = J.S;
@@ -1364,11 +1364,11 @@ public final class a3 extends Dialog implements ls, org.telegram.ui.ActionBar.h3
         G.l(R.drawable.menu_intro, id.M0(2131752894, null), new x1(this, 12), this.L0 == null && !q10);
         G.l(R.drawable.msg_report, id.M0(2131752910, null), new x1(this, 13), this.L0 == null && !q10);
         G.l(R.drawable.msg_delete, id.M0(2131752915, null), new x1(this, 14), this.L0 == null && tL_attachMenuBot != null && (tL_attachMenuBot.show_in_side_menu || tL_attachMenuBot.show_in_attach_menu));
-        if (this.R != k6.x0(null, k6.d6, false)) {
+        if (this.R != l6.x0(null, l6.d6, false)) {
             int i16 = org.telegram.messenger.g0.B(this.R) >= 0.721f ? i7 : -15198183;
             int i17 = org.telegram.messenger.g0.B(i16) >= 0.721f ? -16777216 : i7;
-            int r12 = k6.r1(0.85f, i17);
-            int r13 = k6.r1(0.1f, i17);
+            int r12 = l6.r1(0.85f, i17);
+            int r13 = l6.r1(0.1f, i17);
             G.P(i16);
             for (int i18 = 0; i18 < G.x(); i18++) {
                 View w10 = G.w(i18);
@@ -1420,10 +1420,10 @@ public final class a3 extends Dialog implements ls, org.telegram.ui.ActionBar.h3
         x2 x2Var = this.X;
         x2Var.setTitle(p10);
         TLRPC.UserFull b22 = objArr != false ? null : qp.s1(this.H).b2(this.I);
-        f6 f6Var = this.F;
+        g6 g6Var = this.F;
         if ((a22 != null && a22.verified) || (b22 != null && (user = b22.user) != null && user.verified)) {
             this.M0 = getContext().getResources().getDrawable(R.drawable.verified_profile).mutate();
-            r6.y(x2Var.getTitleTextView(), this.M0, k6.Ci, f6Var, PorterDuff.Mode.SRC_IN);
+            s6.x(x2Var.getTitleTextView(), this.M0, l6.Ci, g6Var, PorterDuff.Mode.SRC_IN);
             this.M0.setAlpha(qs.e4);
             x2Var.getTitleTextView().setDrawablePadding(org.telegram.messenger.g0.L(2.0f));
             x2Var.getTitleTextView().i(new fi.l3(this, i10));
@@ -1432,7 +1432,7 @@ public final class a3 extends Dialog implements ls, org.telegram.ui.ActionBar.h3
         if (h2Var != null) {
             String p11 = objArr != false ? q4Var.e : t10.p(a22);
             Object[] objArr2 = a22 != null && a22.verified;
-            h2Var.T = new my0(p11, 13.0f, org.telegram.messenger.g0.o());
+            h2Var.T = new ny0(p11, 13.0f, org.telegram.messenger.g0.o());
             if (objArr2 == true) {
                 h2Var.U = h2Var.getContext().getResources().getDrawable(R.drawable.verified_area).mutate();
                 h2Var.V = h2Var.getContext().getResources().getDrawable(R.drawable.verified_check).mutate();
@@ -1441,14 +1441,14 @@ public final class a3 extends Dialog implements ls, org.telegram.ui.ActionBar.h3
                 h2Var.V = null;
             }
         }
-        org.telegram.ui.ActionBar.y q10 = x2Var.q();
-        q10.removeAllViews();
+        org.telegram.ui.ActionBar.y r10 = x2Var.r();
+        r10.removeAllViews();
         ArrayList<TLRPC.TL_attachMenuBot> arrayList = ui.b0(this.H).b.bots;
         int size = arrayList.size();
         int i11 = 0;
         while (true) {
             if (i11 >= size) {
-                yVar = q10;
+                yVar = r10;
                 userFull = b22;
                 tL_attachMenuBot = null;
                 break;
@@ -1456,12 +1456,12 @@ public final class a3 extends Dialog implements ls, org.telegram.ui.ActionBar.h3
             TLRPC.TL_attachMenuBot tL_attachMenuBot2 = arrayList.get(i11);
             i11++;
             tL_attachMenuBot = tL_attachMenuBot2;
-            yVar = q10;
+            yVar = r10;
             userFull = b22;
             if (tL_attachMenuBot.bot_id == this.I) {
                 break;
             }
-            q10 = yVar;
+            r10 = yVar;
             b22 = userFull;
         }
         if (!this.F0 && objArr == false) {
@@ -1495,7 +1495,7 @@ public final class a3 extends Dialog implements ls, org.telegram.ui.ActionBar.h3
         this.a0 = d;
         d.setOnClickListener(new c2(this, 1));
         x2Var.setActionBarMenuOnItemClick(new k2(this, 0));
-        JSONObject u10 = u(f6Var, false);
+        JSONObject u10 = u(g6Var, false);
         s2 s2Var = this.D;
         s2Var.setBotUser(a22);
         if (objArr == false) {
@@ -1614,9 +1614,9 @@ public final class a3 extends Dialog implements ls, org.telegram.ui.ActionBar.h3
                 tL_messages_requestAppWebView.app = tL_inputBotAppID;
                 tL_messages_requestAppWebView.write_allowed = q4Var.k;
                 tL_messages_requestAppWebView.platform = "android";
-                if (f2Var instanceof an) {
-                    an anVar = (an) f2Var;
-                    n1 = anVar.j() != null ? qp.n1(anVar.j()) : qp.l1(anVar.e);
+                if (f2Var instanceof cn) {
+                    cn cnVar = (cn) f2Var;
+                    n1 = cnVar.j() != null ? qp.n1(cnVar.j()) : qp.l1(cnVar.e);
                 } else {
                     n1 = qp.n1(q4Var.m);
                 }
@@ -1639,9 +1639,9 @@ public final class a3 extends Dialog implements ls, org.telegram.ui.ActionBar.h3
                 TLRPC.TL_messages_requestMainWebView tL_messages_requestMainWebView = new TLRPC.TL_messages_requestMainWebView();
                 tL_messages_requestMainWebView.bot = qp.s1(this.H).o1(q4Var.c);
                 tL_messages_requestMainWebView.platform = "android";
-                if (f2Var instanceof an) {
-                    an anVar2 = (an) f2Var;
-                    j12 = anVar2.j() != null ? qp.n1(anVar2.j()) : qp.l1(anVar2.e);
+                if (f2Var instanceof cn) {
+                    cn cnVar2 = (cn) f2Var;
+                    j12 = cnVar2.j() != null ? qp.n1(cnVar2.j()) : qp.l1(cnVar2.e);
                 } else {
                     j12 = qp.s1(this.H).j1(q4Var.b);
                 }
@@ -1682,15 +1682,15 @@ public final class a3 extends Dialog implements ls, org.telegram.ui.ActionBar.h3
 
     public final void y(final int i7, boolean z9, boolean z10) {
         final int i10 = this.R;
-        k6.b(0.35f, -0.1f, i7);
+        l6.b(0.35f, -0.1f, i7);
         final t1 t1Var = new t1();
         int i11 = this.V ? this.R : 0;
         SparseIntArray sparseIntArray = t1Var.a;
-        f6 f6Var = this.F;
-        t1Var.c(sparseIntArray, i11, f6Var);
+        g6 g6Var = this.F;
+        t1Var.c(sparseIntArray, i11, g6Var);
         this.V = z9;
         this.T = i0.a.h(i7) < 0.7210000157356262d;
-        t1Var.c(t1Var.b, this.V ? i7 : 0, f6Var);
+        t1Var.c(t1Var.b, this.V ? i7 : 0, g6Var);
         if (z10) {
             ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(200L);
             duration.setInterpolator(xq.f);
@@ -1708,7 +1708,7 @@ public final class a3 extends Dialog implements ls, org.telegram.ui.ActionBar.h3
                     x2Var.setBackgroundColor(a3Var.R);
                     t1 t1Var2 = t1Var;
                     t1Var2.b(x2Var, floatValue);
-                    a3Var.a = t1Var2.a(k6.wj);
+                    a3Var.a = t1Var2.a(l6.wj);
                     z2Var.invalidate();
                 }
             });
@@ -1723,7 +1723,7 @@ public final class a3 extends Dialog implements ls, org.telegram.ui.ActionBar.h3
             x2 x2Var = this.X;
             x2Var.setBackgroundColor(i12);
             t1Var.b(x2Var, 1.0f);
-            this.a = t1Var.a(k6.wj);
+            this.a = t1Var.a(l6.wj);
             z2Var.invalidate();
         }
         J();

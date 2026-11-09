@@ -12,9 +12,9 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.CheckBox;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public abstract class ua extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
+public abstract class ua extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public int a;
     public boolean b;
     public final ta[] c;
@@ -44,7 +44,7 @@ public abstract class ua extends FrameLayout implements org.telegram.ui.ActionBa
                 this.w = jg.g.h(context, R.drawable.background_selected);
                 Paint paint2 = new Paint();
                 this.s = paint2;
-                paint2.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.zi, false));
+                paint2.setColor(org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.zi, false));
                 return;
             }
             ta taVar = new ta(this, context);
@@ -65,7 +65,7 @@ public abstract class ua extends FrameLayout implements org.telegram.ui.ActionBa
 
     public final void c(int i7, boolean z9, boolean z10) {
         ta taVar = this.c[i7];
-        di.c4 c4Var = taVar.a;
+        di.d4 d4Var = taVar.a;
         CheckBox checkBox = taVar.c;
         if (checkBox.getVisibility() != 0) {
             checkBox.setVisibility(0);
@@ -79,13 +79,13 @@ public abstract class ua extends FrameLayout implements org.telegram.ui.ActionBa
         if (z10) {
             AnimatorSet animatorSet2 = new AnimatorSet();
             taVar.f = animatorSet2;
-            animatorSet2.playTogether(ObjectAnimator.ofFloat(c4Var, "scaleX", z9 ? 0.8875f : 1.0f), ObjectAnimator.ofFloat(c4Var, "scaleY", z9 ? 0.8875f : 1.0f));
+            animatorSet2.playTogether(ObjectAnimator.ofFloat(d4Var, "scaleX", z9 ? 0.8875f : 1.0f), ObjectAnimator.ofFloat(d4Var, "scaleY", z9 ? 0.8875f : 1.0f));
             taVar.f.setDuration(200L);
             taVar.f.addListener(new ch.y(25, taVar, z9));
             taVar.f.start();
         } else {
-            c4Var.setScaleX(z9 ? 0.8875f : 1.0f);
-            c4Var.setScaleY(z9 ? 0.8875f : 1.0f);
+            d4Var.setScaleX(z9 ? 0.8875f : 1.0f);
+            d4Var.setScaleY(z9 ? 0.8875f : 1.0f);
         }
         taVar.invalidate();
     }
@@ -200,17 +200,17 @@ public abstract class ua extends FrameLayout implements org.telegram.ui.ActionBa
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
         try {
-            this.s.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.zi, false));
+            this.s.setColor(org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.zi, false));
             invalidate();
         } catch (Exception e10) {
             org.telegram.messenger.a8.g(e10, true);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

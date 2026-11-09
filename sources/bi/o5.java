@@ -6,11 +6,11 @@ import java.util.ArrayList;
 import org.telegram.messenger.c20;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.xq;
-import org.telegram.ui.an;
-import org.telegram.ui.rg;
-import org.telegram.ui.si;
+import org.telegram.ui.cn;
+import org.telegram.ui.ui;
+import org.telegram.ui.vg;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o5 implements c20 {
     public final /* synthetic */ int a;
@@ -35,7 +35,7 @@ public final /* synthetic */ class o5 implements c20 {
         SpannableStringBuilder spannableStringBuilder;
         int size;
         int i7;
-        org.telegram.ui.ActionBar.f6 f6Var;
+        org.telegram.ui.ActionBar.g6 g6Var;
         int i10 = this.a;
         Object obj2 = this.d;
         switch (i10) {
@@ -64,7 +64,7 @@ public final /* synthetic */ class o5 implements c20 {
                                 if (spannableStringBuilder.length() > 0) {
                                     spannableStringBuilder.append((CharSequence) " ");
                                 }
-                                spannableStringBuilder.append((CharSequence) org.telegram.messenger.g0.I2(org.telegram.messenger.id.M0(2131749755, null), false, org.telegram.messenger.g0.L(1.0f), org.telegram.messenger.g0.L(1.0f)));
+                                spannableStringBuilder.append((CharSequence) org.telegram.messenger.g0.I2(org.telegram.messenger.id.M0(2131749754, null), false, org.telegram.messenger.g0.L(1.0f), org.telegram.messenger.g0.L(1.0f)));
                                 q5Var.setText(spannableStringBuilder);
                                 break;
                             }
@@ -77,28 +77,28 @@ public final /* synthetic */ class o5 implements c20 {
                     }
                     if (spannableStringBuilder.length() > 0) {
                     }
-                    spannableStringBuilder.append((CharSequence) org.telegram.messenger.g0.I2(org.telegram.messenger.id.M0(2131749755, null), false, org.telegram.messenger.g0.L(1.0f), org.telegram.messenger.g0.L(1.0f)));
+                    spannableStringBuilder.append((CharSequence) org.telegram.messenger.g0.I2(org.telegram.messenger.id.M0(2131749754, null), false, org.telegram.messenger.g0.L(1.0f), org.telegram.messenger.g0.L(1.0f)));
                     q5Var.setText(spannableStringBuilder);
                 }
                 break;
             case 1:
-                an.h1((an) obj2, this.b, this.c, (Long) obj);
+                cn.m1((cn) obj2, this.b, this.c, (Long) obj);
                 break;
             default:
-                si siVar = (si) obj2;
+                ui uiVar = (ui) obj2;
                 Long l10 = (Long) obj;
-                an anVar = siVar.b;
-                if (anVar.getParentActivity() != null) {
-                    Activity parentActivity = anVar.getParentActivity();
-                    String M0 = org.telegram.messenger.id.M0(2131746292, null);
-                    int i12 = org.telegram.messenger.t3.p0(anVar.e) ? 2131746296 : 2131746297;
+                cn cnVar = uiVar.b;
+                if (cnVar.getParentActivity() != null) {
+                    Activity parentActivity = cnVar.getParentActivity();
+                    String M0 = org.telegram.messenger.id.M0(2131746291, null);
+                    int i12 = org.telegram.messenger.t3.p0(cnVar.e) ? 2131746295 : 2131746296;
                     long j3 = this.b;
                     SpannableStringBuilder X2 = org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, i12, org.telegram.messenger.m5.t(j3)));
                     String H = l10.longValue() > 0 ? org.telegram.messenger.id.H(',', "RemoveMessageFeeRefund", (int) l10.longValue()) : null;
                     String M02 = org.telegram.messenger.id.M0(2131751817, null);
-                    rg rgVar = new rg(siVar, j3, this.c, l10, 1);
-                    f6Var = ((org.telegram.ui.ActionBar.f2) anVar).resourceProvider;
-                    org.telegram.ui.Components.v4.f0(parentActivity, M0, X2, H, M02, rgVar, f6Var, true);
+                    vg vgVar = new vg(uiVar, j3, this.c, l10, 1);
+                    g6Var = ((org.telegram.ui.ActionBar.f2) cnVar).resourceProvider;
+                    org.telegram.ui.Components.v4.f0(parentActivity, M0, X2, H, M02, vgVar, g6Var, true);
                     break;
                 }
                 break;

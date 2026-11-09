@@ -4,9 +4,9 @@ import android.app.Activity;
 import android.view.View;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class q8 extends pj0 {
+public final class q8 extends qj0 {
     public final ArrayList e3;
     public final int f3;
     public int g3;
@@ -60,7 +60,7 @@ public final class q8 extends pj0 {
         setOverScrollMode(1);
     }
 
-    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.qj0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public final void onMeasure(int i7, int i10) {
         int size = View.MeasureSpec.getSize(i7) / this.h3.b();
         t8 t8Var = this.j3;

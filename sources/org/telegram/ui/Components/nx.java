@@ -4,17 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class nx extends ky {
-    public final mt0 X;
+    public final ot0 X;
     public final /* synthetic */ hy Y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public nx(hy hyVar) {
         super(100, true);
         this.Y = hyVar;
-        this.X = new mt0();
+        this.X = new ot0();
         this.O = new ai.l(this, 8);
     }
 
@@ -30,7 +30,7 @@ public final class nx extends ky {
     }
 
     @Override // org.telegram.ui.Components.ky
-    public final mt0 D1(int i7) {
+    public final ot0 D1(int i7) {
         ArrayList<TLRPC.DocumentAttribute> arrayList;
         TLRPC.Document document;
         hy hyVar = this.Y;
@@ -93,27 +93,27 @@ public final class nx extends ky {
         return F1(document2, arrayList);
     }
 
-    public final mt0 F1(TLRPC.Document document, List list) {
+    public final ot0 F1(TLRPC.Document document, List list) {
         TLRPC.PhotoSize w10;
         int i7;
         int i10;
-        mt0 mt0Var = this.X;
-        mt0Var.b = 100.0f;
-        mt0Var.a = 100.0f;
+        ot0 ot0Var = this.X;
+        ot0Var.b = 100.0f;
+        ot0Var.a = 100.0f;
         if (document != null && (w10 = org.telegram.messenger.w7.w(document.thumbs, 90, false, null, false)) != null && (i7 = w10.w) != 0 && (i10 = w10.h) != 0) {
-            mt0Var.a = i7;
-            mt0Var.b = i10;
+            ot0Var.a = i7;
+            ot0Var.b = i10;
         }
         if (list != null) {
             for (int i11 = 0; i11 < list.size(); i11++) {
                 TLRPC.DocumentAttribute documentAttribute = (TLRPC.DocumentAttribute) list.get(i11);
                 if ((documentAttribute instanceof TLRPC.TL_documentAttributeImageSize) || (documentAttribute instanceof TLRPC.TL_documentAttributeVideo)) {
-                    mt0Var.a = documentAttribute.w;
-                    mt0Var.b = documentAttribute.h;
+                    ot0Var.a = documentAttribute.w;
+                    ot0Var.b = documentAttribute.h;
                     break;
                 }
             }
         }
-        return mt0Var;
+        return ot0Var;
     }
 }

@@ -6,7 +6,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class hq implements Runnable {
     public final /* synthetic */ int D;
@@ -21,12 +21,12 @@ public final /* synthetic */ class hq implements Runnable {
     public final /* synthetic */ TreeSet h;
     public final /* synthetic */ ng n;
     public final /* synthetic */ org.telegram.ui.Cells.z8 r;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f6 s;
+    public final /* synthetic */ org.telegram.ui.ActionBar.g6 s;
     public final /* synthetic */ int[] w;
     public final /* synthetic */ Runnable[] x;
     public final /* synthetic */ int[] y;
 
-    public /* synthetic */ hq(boolean[] zArr, int[] iArr, ai.a1 a1Var, String[] strArr, fi.d dVar, org.telegram.ui.Cells.k3 k3Var, TreeSet treeSet, ng ngVar, org.telegram.ui.Cells.z8 z8Var, org.telegram.ui.ActionBar.f6 f6Var, int[] iArr2, Runnable[] runnableArr, int[] iArr3, int i7, r2 r2Var, org.telegram.ui.ActionBar.v2 v2Var) {
+    public /* synthetic */ hq(boolean[] zArr, int[] iArr, ai.a1 a1Var, String[] strArr, fi.d dVar, org.telegram.ui.Cells.k3 k3Var, TreeSet treeSet, ng ngVar, org.telegram.ui.Cells.z8 z8Var, org.telegram.ui.ActionBar.g6 g6Var, int[] iArr2, Runnable[] runnableArr, int[] iArr3, int i7, r2 r2Var, org.telegram.ui.ActionBar.v2 v2Var) {
         this.a = zArr;
         this.b = iArr;
         this.c = a1Var;
@@ -36,7 +36,7 @@ public final /* synthetic */ class hq implements Runnable {
         this.h = treeSet;
         this.n = ngVar;
         this.r = z8Var;
-        this.s = f6Var;
+        this.s = g6Var;
         this.w = iArr2;
         this.x = runnableArr;
         this.y = iArr3;
@@ -71,14 +71,14 @@ public final /* synthetic */ class hq implements Runnable {
         }
         int length = sb2.length();
         final org.telegram.ui.Cells.z8 z8Var = this.r;
-        final org.telegram.ui.ActionBar.f6 f6Var = this.s;
+        final org.telegram.ui.ActionBar.g6 g6Var = this.s;
         if (length < 4 || sb2.length() > 32) {
-            z8Var.setText(org.telegram.messenger.id.M0(sb2.length() < 4 ? 2131743657 : 2131743658, null));
-            org.telegram.ui.ActionBar.r6.V(z8Var.getTextView(), org.telegram.ui.ActionBar.k6.q7, f6Var);
+            z8Var.setText(org.telegram.messenger.id.M0(sb2.length() < 4 ? 2131743654 : 2131743655, null));
+            org.telegram.ui.ActionBar.s6.U(z8Var.getTextView(), org.telegram.ui.ActionBar.l6.q7, g6Var);
             return;
         }
-        z8Var.setText(org.telegram.messenger.id.M0(2131743669, null));
-        org.telegram.ui.ActionBar.r6.V(z8Var.getTextView(), org.telegram.ui.ActionBar.k6.B6, f6Var);
+        z8Var.setText(org.telegram.messenger.id.M0(2131743666, null));
+        org.telegram.ui.ActionBar.s6.U(z8Var.getTextView(), org.telegram.ui.ActionBar.l6.B6, g6Var);
         final int[] iArr = this.w;
         final int i7 = iArr[0];
         final Runnable[] runnableArr = this.x;
@@ -112,7 +112,7 @@ public final /* synthetic */ class hq implements Runnable {
                 final ng ngVar2 = ngVar;
                 final TreeSet treeSet2 = treeSet;
                 final r2 r2Var2 = r2Var;
-                final org.telegram.ui.ActionBar.f6 f6Var2 = f6Var;
+                final org.telegram.ui.ActionBar.g6 g6Var2 = g6Var;
                 final org.telegram.ui.Cells.z8 z8Var2 = z8Var;
                 final org.telegram.ui.ActionBar.v2 v2Var2 = v2Var;
                 iArr4[0] = connectionsManager.sendRequestTyped(checkusername, bVar, new org.telegram.messenger.v10() { // from class: org.telegram.ui.Components.gq
@@ -140,17 +140,17 @@ public final /* synthetic */ class hq implements Runnable {
                         int i14 = i13;
                         TreeSet treeSet3 = treeSet2;
                         r2 r2Var3 = r2Var2;
-                        org.telegram.ui.ActionBar.f6 f6Var3 = f6Var2;
-                        CharSequence d = lq.d(i14, str2, treeSet3, str3, r2Var3, f6Var3);
-                        CharSequence M0 = d != null ? d : org.telegram.messenger.id.M0(2131751728, null);
+                        org.telegram.ui.ActionBar.g6 g6Var3 = g6Var2;
+                        CharSequence d = lq.d(i14, str2, treeSet3, str3, r2Var3, g6Var3);
+                        CharSequence M0 = d != null ? d : org.telegram.messenger.id.M0(2131751727, null);
                         org.telegram.ui.Cells.z8 z8Var3 = z8Var2;
                         z8Var3.setText(M0);
-                        org.telegram.ui.ActionBar.r6.V(z8Var3.getTextView(), org.telegram.ui.ActionBar.k6.q7, f6Var3);
+                        org.telegram.ui.ActionBar.s6.U(z8Var3.getTextView(), org.telegram.ui.ActionBar.l6.q7, g6Var3);
                         if (d != null || tL_error == null) {
                             return;
                         }
                         dVar3.setEnabled(true);
-                        org.telegram.ui.Cells.f1.r(v2Var2.E, f6Var3, tL_error, false);
+                        org.telegram.ui.Cells.f1.r(v2Var2.E, g6Var3, tL_error, false);
                     }
                 });
             }

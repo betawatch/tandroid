@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class a2 extends v2 {
     public final /* synthetic */ d2 i1;
@@ -17,8 +17,8 @@ public final class a2 extends v2 {
     public final /* synthetic */ v2[] l1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a2(Activity activity, f6 f6Var, d2 d2Var, q4[] q4VarArr, f2 f2Var, v2[] v2VarArr) {
-        super(1, (Context) activity, f6Var, true);
+    public a2(Activity activity, g6 g6Var, d2 d2Var, q4[] q4VarArr, f2 f2Var, v2[] v2VarArr) {
+        super(1, (Context) activity, g6Var, true);
         this.i1 = d2Var;
         this.j1 = q4VarArr;
         this.k1 = f2Var;
@@ -83,7 +83,7 @@ public final class a2 extends v2 {
         q4Var.setWindow(v2VarArr[0].getWindow());
         d2 d2Var = this.i1;
         if (d2Var == null || !d2Var.e) {
-            P(k6.i5);
+            P(l6.i5);
         } else {
             org.telegram.messenger.g0.n3(v2VarArr[0], true);
         }

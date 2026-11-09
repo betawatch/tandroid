@@ -14,26 +14,26 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.qs;
-import org.telegram.ui.Components.zg0;
+import org.telegram.ui.Components.ah0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class c7 extends Drawable {
     public final Paint a;
-    public final zg0 b;
+    public final ah0 b;
     public final Drawable c;
-    public final org.telegram.ui.ActionBar.f6 d;
+    public final org.telegram.ui.ActionBar.g6 d;
     public int e;
     public int f;
     public int g;
 
-    public c7(Context context, View view, boolean z9, int i7, org.telegram.ui.ActionBar.f6 f6Var) {
+    public c7(Context context, View view, boolean z9, int i7, org.telegram.ui.ActionBar.g6 g6Var) {
         Paint paint = new Paint(1);
         this.a = paint;
         this.g = qs.e4;
-        this.d = f6Var;
-        this.e = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Vk, f6Var);
-        this.f = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Wk, f6Var);
+        this.d = g6Var;
+        this.e = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.Vk, g6Var);
+        this.f = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.Wk, g6Var);
         paint.setShader(new LinearGradient(0.0f, 0.0f, org.telegram.messenger.g0.L(56.0f), org.telegram.messenger.g0.L(56.0f), new int[]{this.e, this.f}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
         if (!z9) {
             this.b = null;
@@ -42,10 +42,10 @@ public final class c7 extends Drawable {
             h.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
             return;
         }
-        zg0 zg0Var = new zg0(R.raw.story_repost, org.telegram.messenger.g0.L(42.0f), org.telegram.messenger.g0.L(42.0f), true, null);
-        this.b = zg0Var;
-        zg0Var.R(view);
-        org.telegram.messenger.g0.i3(new o0(zg0Var, 1), 450L);
+        ah0 ah0Var = new ah0(R.raw.story_repost, org.telegram.messenger.g0.L(42.0f), org.telegram.messenger.g0.L(42.0f), true, null);
+        this.b = ah0Var;
+        ah0Var.R(view);
+        org.telegram.messenger.g0.i3(new o0(ah0Var, 1), 450L);
         this.c = null;
     }
 
@@ -63,10 +63,10 @@ public final class c7 extends Drawable {
         int w02;
         int w03;
         Paint paint = this.a;
-        org.telegram.ui.ActionBar.f6 f6Var = this.d;
+        org.telegram.ui.ActionBar.g6 g6Var = this.d;
         try {
-            w02 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Vk, f6Var);
-            w03 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Wk, f6Var);
+            w02 = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.Vk, g6Var);
+            w03 = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.Wk, g6Var);
         } catch (Exception e10) {
             org.telegram.messenger.a8.g(e10, true);
         }

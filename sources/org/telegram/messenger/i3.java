@@ -7,30 +7,30 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class i3 {
-    public final org.telegram.ui.an a;
+    public final org.telegram.ui.cn a;
     public final ArrayList b = new ArrayList(10);
     public final ArrayList c = new ArrayList(10);
     public final ArrayList d = new ArrayList(10);
     public final ArrayList e = new ArrayList();
     public final ArrayList f = new ArrayList();
 
-    public i3(org.telegram.ui.an anVar) {
-        this.a = anVar;
+    public i3(org.telegram.ui.cn cnVar) {
+        this.a = cnVar;
     }
 
-    public final void a(org.telegram.ui.jl jlVar, int i7, int i10, long j3) {
+    public final void a(org.telegram.ui.ll llVar, int i7, int i10, long j3) {
         TL_stories.StoryItem storyItem;
         TLRPC.MessageMedia messageMedia;
         final i3 i3Var = this;
-        ArrayList L = jlVar.L();
-        org.telegram.ui.an anVar = i3Var.a;
-        if (anVar.c() || i7 < 0 || i10 < 0) {
+        ArrayList L = llVar.L();
+        org.telegram.ui.cn cnVar = i3Var.a;
+        if (cnVar.c() || i7 < 0 || i10 < 0) {
             return;
         }
-        int i11 = jlVar.J;
+        int i11 = llVar.J;
         int i12 = (i10 - i11) - 10;
         int i13 = (i7 - i11) + 10;
         if (i12 < 0) {
@@ -47,11 +47,11 @@ public final class i3 {
         arrayList3.clear();
         while (i12 < i13) {
             ij ijVar = (ij) L.get(i12);
-            if (anVar.l4 != ijVar && ijVar.f1() > 0 && ((ijVar.k.action == null || ijVar.z()) && j3 - ijVar.E > 15000)) {
+            if (cnVar.l4 != ijVar && ijVar.e1() > 0 && ((ijVar.k.action == null || ijVar.z()) && j3 - ijVar.E > 15000)) {
                 ijVar.E = j3;
                 arrayList.add(ijVar);
             }
-            if (anVar.l4 != ijVar && ijVar.f1() > 0 && ((ijVar.r2() || ((messageMedia = ijVar.k.media) != null && (messageMedia instanceof TLRPC.TL_messageMediaPaidMedia) && !messageMedia.extended_media.isEmpty() && (ijVar.k.media.extended_media.get(0) instanceof TLRPC.TL_messageExtendedMediaPreview))) && j3 - ijVar.F > 30000)) {
+            if (cnVar.l4 != ijVar && ijVar.e1() > 0 && ((ijVar.q2() || ((messageMedia = ijVar.k.media) != null && (messageMedia instanceof TLRPC.TL_messageMediaPaidMedia) && !messageMedia.extended_media.isEmpty() && (ijVar.k.media.extended_media.get(0) instanceof TLRPC.TL_messageExtendedMediaPreview))) && j3 - ijVar.F > 30000)) {
                 ijVar.F = j3;
                 arrayList2.add(ijVar);
             }
@@ -65,15 +65,15 @@ public final class i3 {
             }
             i12++;
         }
-        long a10 = anVar.a();
+        long a10 = cnVar.a();
         if (!arrayList.isEmpty()) {
             TLRPC.TL_messages_getMessagesReactions tL_messages_getMessagesReactions = new TLRPC.TL_messages_getMessagesReactions();
-            tL_messages_getMessagesReactions.peer = anVar.getMessagesController().j1(a10);
+            tL_messages_getMessagesReactions.peer = cnVar.getMessagesController().j1(a10);
             for (int i15 = 0; i15 < arrayList.size(); i15++) {
-                tL_messages_getMessagesReactions.id.add(Integer.valueOf(((ij) arrayList.get(i15)).f1()));
+                tL_messages_getMessagesReactions.id.add(Integer.valueOf(((ij) arrayList.get(i15)).e1()));
             }
             final int i16 = 1;
-            Integer valueOf = Integer.valueOf(anVar.getConnectionsManager().sendRequest(tL_messages_getMessagesReactions, new RequestDelegate(i3Var) { // from class: org.telegram.messenger.g3
+            Integer valueOf = Integer.valueOf(cnVar.getConnectionsManager().sendRequest(tL_messages_getMessagesReactions, new RequestDelegate(i3Var) { // from class: org.telegram.messenger.g3
                 public final /* synthetic */ i3 b;
 
                 {
@@ -112,20 +112,20 @@ public final class i3 {
             ArrayList arrayList4 = i3Var.e;
             arrayList4.add(valueOf);
             if (arrayList4.size() > 5) {
-                anVar.getConnectionsManager().cancelRequest(((Integer) arrayList4.remove(0)).intValue(), true);
+                cnVar.getConnectionsManager().cancelRequest(((Integer) arrayList4.remove(0)).intValue(), true);
             }
         }
-        long a11 = anVar.a();
+        long a11 = cnVar.a();
         boolean isEmpty = arrayList2.isEmpty();
         ArrayList arrayList5 = i3Var.f;
         if (!isEmpty) {
             TLRPC.TL_messages_getExtendedMedia tL_messages_getExtendedMedia = new TLRPC.TL_messages_getExtendedMedia();
-            tL_messages_getExtendedMedia.peer = anVar.getMessagesController().j1(a11);
+            tL_messages_getExtendedMedia.peer = cnVar.getMessagesController().j1(a11);
             for (int i17 = 0; i17 < arrayList2.size(); i17++) {
-                tL_messages_getExtendedMedia.id.add(Integer.valueOf(((ij) arrayList2.get(i17)).f1()));
+                tL_messages_getExtendedMedia.id.add(Integer.valueOf(((ij) arrayList2.get(i17)).e1()));
             }
             final int i18 = 0;
-            arrayList5.add(Integer.valueOf(anVar.getConnectionsManager().sendRequest(tL_messages_getExtendedMedia, new RequestDelegate(i3Var) { // from class: org.telegram.messenger.g3
+            arrayList5.add(Integer.valueOf(cnVar.getConnectionsManager().sendRequest(tL_messages_getExtendedMedia, new RequestDelegate(i3Var) { // from class: org.telegram.messenger.g3
                 public final /* synthetic */ i3 b;
 
                 {
@@ -162,7 +162,7 @@ public final class i3 {
                 }
             })));
             if (arrayList5.size() > 10) {
-                anVar.getConnectionsManager().cancelRequest(((Integer) arrayList5.remove(0)).intValue(), false);
+                cnVar.getConnectionsManager().cancelRequest(((Integer) arrayList5.remove(0)).intValue(), false);
             }
         }
         if (arrayList3.isEmpty()) {
@@ -191,14 +191,14 @@ public final class i3 {
                 }
             }
             long j10 = storyItem.dialogId;
-            tL_stories_getStoriesByID.peer = anVar.getMessagesController().j1(j10);
+            tL_stories_getStoriesByID.peer = cnVar.getMessagesController().j1(j10);
             tL_stories_getStoriesByID.id.add(Integer.valueOf(storyItem.id));
-            arrayList5.add(Integer.valueOf(anVar.getConnectionsManager().sendRequest(tL_stories_getStoriesByID, new h3(storyItem.id, 0, j10, i3Var, ijVar2))));
+            arrayList5.add(Integer.valueOf(cnVar.getConnectionsManager().sendRequest(tL_stories_getStoriesByID, new h3(storyItem.id, 0, j10, i3Var, ijVar2))));
             i19++;
             i3Var = this;
         }
         if (arrayList5.size() > 10) {
-            anVar.getConnectionsManager().cancelRequest(((Integer) arrayList5.remove(0)).intValue(), false);
+            cnVar.getConnectionsManager().cancelRequest(((Integer) arrayList5.remove(0)).intValue(), false);
         }
     }
 }

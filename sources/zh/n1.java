@@ -3,14 +3,14 @@ package zh;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.Components.i6;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.Components.z4;
 import org.telegram.ui.Components.zs;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class n1 extends zs {
     public final z4 Y1;
@@ -19,8 +19,8 @@ public final class n1 extends zs {
     public final /* synthetic */ d2 b2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n1(d2 d2Var, Context context, f6 f6Var) {
-        super(context, f6Var);
+    public n1(d2 d2Var, Context context, g6 g6Var) {
+        super(context, g6Var);
         this.b2 = d2Var;
         this.Y1 = new z4(this);
         i6 i6Var = new i6(false, true, true);
@@ -34,7 +34,7 @@ public final class n1 extends zs {
     @Override // android.view.View
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
-        int a10 = this.Y1.a(k6.w0(this.Z1 < 0 ? k6.p7 : k6.P5, this.b2.f), false);
+        int a10 = this.Y1.a(l6.w0(this.Z1 < 0 ? l6.p7 : l6.P5, this.b2.f), false);
         i6 i6Var = this.a2;
         i6Var.u(a10);
         i6Var.setBounds(getScrollX(), 0, getWidth() + getScrollX(), getHeight());

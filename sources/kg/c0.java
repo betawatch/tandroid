@@ -5,22 +5,22 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.ui.Components.lj;
 import org.telegram.ui.Components.my;
-import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.qj0;
 import org.telegram.ui.Components.rm;
 import org.telegram.ui.Components.sk;
 import org.telegram.ui.Components.ti;
 import org.telegram.ui.Components.vh;
 import org.telegram.ui.Components.wk;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class c0 extends my {
     public final /* synthetic */ int U;
     public final /* synthetic */ vh V;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ c0(vh vhVar, int i7, pj0 pj0Var, int i10) {
-        super(i7, 0, pj0Var);
+    public /* synthetic */ c0(vh vhVar, int i7, qj0 qj0Var, int i10) {
+        super(i7, 0, qj0Var);
         this.U = i10;
         this.V = vhVar;
     }

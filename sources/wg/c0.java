@@ -14,12 +14,12 @@ import org.telegram.ui.ActionBar.f2;
 import org.telegram.ui.ActionBar.l2;
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.na;
-import org.telegram.ui.Components.oj0;
 import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.rt0;
+import org.telegram.ui.Components.qj0;
+import org.telegram.ui.Components.tt0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class c0 extends na {
     public final TLRPC.TL_payments_checkedGiftCode P1;
@@ -96,7 +96,7 @@ public final class c0 extends na {
     }
 
     @Override // org.telegram.ui.Components.na
-    public final oj0 L0(pj0 pj0Var) {
+    public final pj0 L0(qj0 qj0Var) {
         b0 b0Var = new b0(this, this.I0);
         this.R1 = b0Var;
         return b0Var;
@@ -108,7 +108,7 @@ public final class c0 extends na {
     }
 
     @Override // org.telegram.ui.Components.na
-    public final void U0(rt0 rt0Var) {
+    public final void U0(tt0 tt0Var) {
         cc.a(this.c, new r7(14));
     }
 }

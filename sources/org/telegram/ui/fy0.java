@@ -1,44 +1,94 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.app.Activity;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class fy0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.messenger.video.a b;
-    public final /* synthetic */ org.telegram.ui.Components.hc c;
-    public final /* synthetic */ Context d;
-    public final /* synthetic */ di.i0 e;
+    public final /* synthetic */ cn b;
+    public final /* synthetic */ Activity c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.g6 d;
+    public final /* synthetic */ org.telegram.messenger.ij e;
 
-    public /* synthetic */ fy0(org.telegram.messenger.video.a aVar, org.telegram.ui.Components.hc hcVar, Context context, di.i0 i0Var, int i7) {
+    public /* synthetic */ fy0(cn cnVar, Activity activity, org.telegram.ui.ActionBar.g6 g6Var, org.telegram.messenger.ij ijVar, int i7) {
         this.a = i7;
-        this.b = aVar;
-        this.c = hcVar;
-        this.d = context;
-        this.e = i0Var;
+        this.b = cnVar;
+        this.c = activity;
+        this.d = g6Var;
+        this.e = ijVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         int i7 = this.a;
-        di.i0 i0Var = this.e;
-        Context context = this.d;
-        org.telegram.ui.Components.hc hcVar = this.c;
-        org.telegram.messenger.video.a aVar = this.b;
-        int i10 = 2;
+        org.telegram.messenger.ij ijVar = this.e;
+        org.telegram.ui.ActionBar.g6 g6Var = this.d;
+        final Activity activity = this.c;
+        cn cnVar = this.b;
+        final int i10 = 2;
         switch (i7) {
             case 0:
-                aVar.run();
-                hcVar.c(org.telegram.messenger.g0.S2(org.telegram.messenger.id.M0(2131754487, null), -1, 2, new bu(context, i10), i0Var)).j();
+                final int i11 = 1;
+                org.telegram.ui.Components.hc.a0(cnVar).c(org.telegram.messenger.g0.S2(org.telegram.messenger.id.M0(2131754487, null), -1, 2, new Runnable() { // from class: org.telegram.ui.gy0
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i11) {
+                            case 0:
+                                vf.c.t(activity, "https://promote.telegram.org/guidelines");
+                                break;
+                            case 1:
+                                vf.c.t(activity, "https://promote.telegram.org/guidelines");
+                                break;
+                            default:
+                                vf.c.t(activity, "https://promote.telegram.org/guidelines");
+                                break;
+                        }
+                    }
+                }, g6Var)).j();
+                cnVar.hb(ijVar);
+                cnVar.jb(ijVar);
                 break;
             case 1:
-                aVar.run();
-                hcVar.c(org.telegram.messenger.g0.S2(org.telegram.messenger.id.M0(2131754487, null), -1, 2, new bu(context, 5), i0Var)).j();
+                final int i12 = 0;
+                org.telegram.ui.Components.hc.a0(cnVar).c(org.telegram.messenger.g0.S2(org.telegram.messenger.id.M0(2131754487, null), -1, 2, new Runnable() { // from class: org.telegram.ui.gy0
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i12) {
+                            case 0:
+                                vf.c.t(activity, "https://promote.telegram.org/guidelines");
+                                break;
+                            case 1:
+                                vf.c.t(activity, "https://promote.telegram.org/guidelines");
+                                break;
+                            default:
+                                vf.c.t(activity, "https://promote.telegram.org/guidelines");
+                                break;
+                        }
+                    }
+                }, g6Var)).j();
+                cnVar.hb(ijVar);
+                cnVar.jb(ijVar);
                 break;
             default:
-                aVar.run();
-                hcVar.c(org.telegram.messenger.g0.S2(org.telegram.messenger.id.M0(2131754487, null), -1, 2, new bu(context, 6), i0Var)).j();
+                org.telegram.ui.Components.hc.a0(cnVar).c(org.telegram.messenger.g0.S2(org.telegram.messenger.id.M0(2131754487, null), -1, 2, new Runnable() { // from class: org.telegram.ui.gy0
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i10) {
+                            case 0:
+                                vf.c.t(activity, "https://promote.telegram.org/guidelines");
+                                break;
+                            case 1:
+                                vf.c.t(activity, "https://promote.telegram.org/guidelines");
+                                break;
+                            default:
+                                vf.c.t(activity, "https://promote.telegram.org/guidelines");
+                                break;
+                        }
+                    }
+                }, g6Var)).j();
+                cnVar.hb(ijVar);
+                cnVar.jb(ijVar);
                 break;
         }
     }

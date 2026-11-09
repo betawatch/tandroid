@@ -9,9 +9,9 @@ import java.util.Random;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-import org.telegram.ui.Components.m20;
+import org.telegram.ui.Components.n20;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class pa implements Runnable {
     public final /* synthetic */ int a;
@@ -28,28 +28,28 @@ public final /* synthetic */ class pa implements Runnable {
         Context context = this.b;
         switch (i7) {
             case 0:
-                new m20(context).show();
+                new n20(context).show();
                 break;
             case 1:
-                vf.c.t(context, org.telegram.messenger.id.M0(2131744969, null));
+                vf.c.t(context, org.telegram.messenger.id.M0(2131744966, null));
                 break;
             case 2:
-                vf.c.t(context, org.telegram.messenger.id.M0(2131744969, null));
+                vf.c.t(context, org.telegram.messenger.id.M0(2131744966, null));
                 break;
             case 3:
-                vf.c.t(context, org.telegram.messenger.id.M0(2131747735, null));
+                vf.c.t(context, org.telegram.messenger.id.M0(2131747734, null));
                 break;
             case 4:
-                vf.c.t(context, org.telegram.messenger.id.M0(2131745022, null));
+                vf.c.t(context, org.telegram.messenger.id.M0(2131745019, null));
                 break;
             case 5:
-                vf.c.t(context, org.telegram.messenger.id.M0(2131744969, null));
+                vf.c.t(context, org.telegram.messenger.id.M0(2131744966, null));
                 break;
             case 6:
-                vf.c.t(context, org.telegram.messenger.id.M0(2131745047, null));
+                vf.c.t(context, org.telegram.messenger.id.M0(2131745044, null));
                 break;
             case 7:
-                new m20(context).show();
+                new n20(context).show();
                 break;
             case 8:
                 vf.c.t(context, org.telegram.messenger.id.M0(2131752506, null));
@@ -64,7 +64,7 @@ public final /* synthetic */ class pa implements Runnable {
                 u4.d.s(context, new d3.b(3), u4.d.a, false);
                 break;
             default:
-                new m20(context).show();
+                new n20(context).show();
                 break;
         }
     }

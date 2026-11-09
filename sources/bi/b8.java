@@ -1,14 +1,14 @@
 package bi;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b8 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.Wallet.u1 b;
+    public final /* synthetic */ org.telegram.ui.Wallet.t1 b;
 
-    public /* synthetic */ b8(org.telegram.ui.Wallet.u1 u1Var, int i7) {
+    public /* synthetic */ b8(org.telegram.ui.Wallet.t1 t1Var, int i7) {
         this.a = i7;
-        this.b = u1Var;
+        this.b = t1Var;
     }
 
     @Override // java.lang.Runnable

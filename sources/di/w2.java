@@ -6,13 +6,13 @@ import org.telegram.messenger.gz;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.mj;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class w2 implements mj {
-    public final /* synthetic */ i4 a;
+    public final /* synthetic */ j4 a;
 
-    public w2(i4 i4Var) {
-        this.a = i4Var;
+    public w2(j4 j4Var) {
+        this.a = j4Var;
     }
 
     @Override // org.telegram.ui.Components.mj
@@ -34,14 +34,14 @@ public final class w2 implements mj {
     @Override // org.telegram.ui.Components.mj
     public final void n(ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z9, int i7, long j3, boolean z10, long j10) {
         org.telegram.messenger.c accountInstance;
-        i4 i4Var = this.a;
-        TL_stories.StoryItem storyItem = i4Var.x1.a;
+        j4 j4Var = this.a;
+        TL_stories.StoryItem storyItem = j4Var.x1.a;
         if (storyItem == null || (storyItem instanceof TL_stories.TL_storyItemSkipped)) {
             return;
         }
-        accountInstance = i4Var.getAccountInstance();
-        gz.V(i7, i4Var.k1, 0L, j10, 0L, str, null, arrayList, arrayList, null, null, null, null, accountInstance, null, null, null, null, null, storyItem, null, null, null, z9, false);
-        i4Var.i0(j10 <= 0);
+        accountInstance = j4Var.getAccountInstance();
+        gz.V(i7, j4Var.k1, 0L, j10, 0L, str, null, arrayList, arrayList, null, null, null, null, accountInstance, null, null, null, null, null, storyItem, null, null, null, z9, false);
+        j4Var.i0(j10 <= 0);
     }
 
     @Override // org.telegram.ui.Components.mj

@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class j7 implements Runnable {
     public final /* synthetic */ int a;
@@ -38,8 +38,8 @@ public final class j7 implements Runnable {
             default:
                 k7 k7Var2 = this.b;
                 b8 b8Var2 = k7Var2.H;
-                t51 t51Var = MediaController.B().i0;
-                long U = t51Var == null ? 0L : t51Var.U();
+                u51 u51Var = MediaController.B().i0;
+                long U = u51Var == null ? 0L : u51Var.U();
                 if (U != 0 && U != -9223372036854775807L) {
                     float f10 = b8Var2.y2;
                     long currentTimeMillis = System.currentTimeMillis();
@@ -53,7 +53,7 @@ public final class j7 implements Runnable {
                     }
                     b8Var2.y2 = f11;
                     org.telegram.messenger.ij ijVar = MediaController.B().u0;
-                    if (ijVar != null && ijVar.J3()) {
+                    if (ijVar != null && ijVar.I3()) {
                         b8Var2.b1(ijVar, false);
                     }
                     if (b8Var2.x2 == -1 && k7Var2.w > 0) {
@@ -61,9 +61,9 @@ public final class j7 implements Runnable {
                             k7Var2.y = currentTimeMillis;
                             if (b8Var2.y2 == 0.0f) {
                                 MediaController.B().i0(MediaController.B().u0, 0.0f);
-                                t51 t51Var2 = MediaController.B().i0;
-                                if (t51Var2 != null) {
-                                    t51Var2.g0();
+                                u51 u51Var2 = MediaController.B().i0;
+                                if (u51Var2 != null) {
+                                    u51Var2.g0();
                                 }
                             } else {
                                 MediaController.B().i0(MediaController.B().u0, f11);

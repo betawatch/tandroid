@@ -1,48 +1,34 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class k11 extends w31 {
-    public static final /* synthetic */ int b = 0;
+public final /* synthetic */ class k11 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ m11 b;
 
-    static {
-        w31.h(new k11());
+    public /* synthetic */ k11(m11 m11Var, int i7) {
+        this.a = i7;
+        this.b = m11Var;
     }
 
-    @Override // org.telegram.ui.Components.w31
-    public final void b(View view, x31 x31Var, boolean z9, l41 l41Var, q41 q41Var) {
-        l11 l11Var = (l11) view;
-        boolean z10 = false;
-        if (x31Var.r) {
-            l11Var.e();
-        } else {
-            Object obj = x31Var.G;
-            if (obj == null) {
-                if (x31Var.B == -2) {
-                    l11Var.b(x31Var.q, x31Var.e);
-                } else {
-                    l11Var.c((x31Var.y & 1) != 0, x31Var.q, x31Var.e);
-                }
-            } else if (obj instanceof TLRPC.TL_forumTopic) {
-                if (x31Var.I) {
-                    l11Var.a(x31Var.x, (TLRPC.TL_forumTopic) obj, x31Var.e);
-                } else {
-                    l11Var.f((TLRPC.TL_forumTopic) obj, x31Var.e);
-                }
-            }
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                m11 m11Var = this.b;
+                m11Var.getClass();
+                m11Var.U = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                m11Var.h();
+                m11Var.g();
+                break;
+            default:
+                float max = Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue());
+                m11 m11Var2 = this.b;
+                m11Var2.L = max;
+                m11Var2.h.invalidate();
+                break;
         }
-        if (q41Var != null && q41Var.j3 && l11Var.E) {
-            z10 = true;
-        }
-        l11Var.setReorder(z10);
-    }
-
-    @Override // org.telegram.ui.Components.w31
-    public final View d(Context context, pj0 pj0Var, int i7, org.telegram.ui.ActionBar.f6 f6Var) {
-        return new l11(i7, context, f6Var);
     }
 }

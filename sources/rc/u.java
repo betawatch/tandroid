@@ -17,10 +17,10 @@ import java.util.TreeMap;
 import org.telegram.messenger.g0;
 import org.telegram.ui.Cells.f1;
 import org.telegram.ui.Components.vy;
-import org.telegram.ui.Wallet.y0;
+import org.telegram.ui.Wallet.x0;
 import org.telegram.ui.web.e1;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class u {
     public final s a;
@@ -80,13 +80,13 @@ public final class u {
                 while (i7 < size) {
                     Object obj = arrayList.get(i7);
                     i7++;
-                    y0 y0Var = (y0) obj;
+                    x0 x0Var = (x0) obj;
                     try {
                         try {
                             int i10 = 5;
-                            g0.h3(new f9(y0Var.a, i10, y0Var.b, y0Var, (u) qVar.b));
+                            g0.h3(new f9(x0Var.a, i10, x0Var.b, x0Var, (u) qVar.b));
                         } catch (Throwable unused) {
-                            y0Var.getClass();
+                            x0Var.getClass();
                         }
                     } catch (Throwable unused2) {
                     }
@@ -185,12 +185,12 @@ public final class u {
                     while (i10 < size) {
                         Object obj = arrayList.get(i10);
                         i10++;
-                        y0 y0Var = (y0) obj;
+                        x0 x0Var = (x0) obj;
                         try {
                             try {
-                                y0Var.getClass();
+                                x0Var.getClass();
                             } catch (Throwable unused) {
-                                y0Var.getClass();
+                                x0Var.getClass();
                             }
                         } catch (Throwable unused2) {
                         }
@@ -227,14 +227,14 @@ public final class u {
         while (i7 < size) {
             Object obj = arrayList.get(i7);
             i7++;
-            y0 y0Var = (y0) obj;
+            x0 x0Var = (x0) obj;
             try {
                 try {
-                    y0Var.a((u) qVar.b, xVar, xVar2, z9);
+                    x0Var.a((u) qVar.b, xVar, xVar2, z9);
                 } catch (Throwable unused2) {
                 }
             } catch (Throwable unused3) {
-                y0Var.getClass();
+                x0Var.getClass();
             }
         }
     }
@@ -348,12 +348,12 @@ public final class u {
                 while (i13 < size2) {
                     Object obj2 = arrayList2.get(i13);
                     i13++;
-                    y0 y0Var = (y0) obj2;
+                    x0 x0Var = (x0) obj2;
                     try {
                         try {
-                            y0Var.getClass();
+                            x0Var.getClass();
                         } catch (Throwable unused) {
-                            y0Var.getClass();
+                            x0Var.getClass();
                         }
                     } catch (Throwable unused2) {
                     }
@@ -594,12 +594,12 @@ public final class u {
             while (i10 < size) {
                 Object obj = arrayList.get(i10);
                 i10++;
-                y0 y0Var = (y0) obj;
+                x0 x0Var = (x0) obj;
                 try {
                     try {
-                        y0Var.getClass();
+                        x0Var.getClass();
                     } catch (Throwable unused) {
-                        y0Var.getClass();
+                        x0Var.getClass();
                     }
                 } catch (Throwable unused2) {
                 }
@@ -612,12 +612,12 @@ public final class u {
             while (i7 < size2) {
                 Object obj2 = arrayList2.get(i7);
                 i7++;
-                y0 y0Var2 = (y0) obj2;
+                x0 x0Var2 = (x0) obj2;
                 try {
                     try {
-                        y0Var2.getClass();
+                        x0Var2.getClass();
                     } catch (Throwable unused3) {
-                        y0Var2.getClass();
+                        x0Var2.getClass();
                     }
                 } catch (Throwable unused4) {
                 }

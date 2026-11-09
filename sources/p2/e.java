@@ -31,7 +31,7 @@ import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.m6;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.hy0;
+import org.telegram.ui.ky0;
 import org.webrtc.MediaStreamTrack;
 import org.xml.sax.helpers.DefaultHandler;
 import org.xmlpull.v1.XmlPullParser;
@@ -39,7 +39,7 @@ import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
 import org.xmlpull.v1.XmlSerializer;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class e extends DefaultHandler implements b3.q {
     public static final Pattern b = Pattern.compile("(\\d+)(?:/(\\d+))?");
@@ -2862,8 +2862,8 @@ public final class e extends DefaultHandler implements b3.q {
         long j23 = j14;
         long j24 = j12 == -9223372036854775807L ? j11 : j12;
         long j25 = j24 == Long.MAX_VALUE ? -9223372036854775807L : j24;
-        hy0 s5 = s(xmlPullParser, "media", pVar != null ? pVar.k : null);
-        hy0 s9 = s(xmlPullParser, "initialization", pVar != null ? pVar.j : null);
+        ky0 s5 = s(xmlPullParser, "media", pVar != null ? pVar.k : null);
+        ky0 s9 = s(xmlPullParser, "initialization", pVar != null ? pVar.j : null);
         List list2 = null;
         do {
             xmlPullParser.next();
@@ -2925,11 +2925,11 @@ public final class e extends DefaultHandler implements b3.q {
     }
 
     /* JADX WARN: Failed to find 'out' block for switch in B:31:0x00ff. Please report as an issue. */
-    public static hy0 s(XmlPullParser xmlPullParser, String str, hy0 hy0Var) {
+    public static ky0 s(XmlPullParser xmlPullParser, String str, ky0 ky0Var) {
         String str2;
         String attributeValue = xmlPullParser.getAttributeValue(null, str);
         if (attributeValue == null) {
-            return hy0Var;
+            return ky0Var;
         }
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList();
@@ -2985,7 +2985,7 @@ public final class e extends DefaultHandler implements b3.q {
                 i7 = indexOf2 + 1;
             }
         }
-        return new hy0(arrayList, arrayList2, arrayList3, 2);
+        return new ky0(arrayList, arrayList2, arrayList3, 2);
     }
 
     @Override // b3.q

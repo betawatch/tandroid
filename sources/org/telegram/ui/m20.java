@@ -1,14 +1,20 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+import android.view.MotionEvent;
+import android.widget.FrameLayout;
+
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class m20 extends org.telegram.ui.Components.hb0 {
+public final class m20 extends FrameLayout {
     public m20(LaunchActivity launchActivity) {
-        super(launchActivity, null);
+        super(launchActivity);
     }
 
-    @Override // org.telegram.ui.Components.hb0
-    public final CharSequence d(int i7) {
-        return org.telegram.messenger.id.G(i7, "Hours", new Object[0]);
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (getAlpha() <= 0.95f) {
+            return false;
+        }
+        return super.dispatchTouchEvent(motionEvent);
     }
 }

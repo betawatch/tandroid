@@ -15,16 +15,16 @@ import org.telegram.ui.ActionBar.f2;
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.l9;
 import org.telegram.ui.Components.ob;
-import org.telegram.ui.Components.ov0;
-import org.telegram.ui.Components.u31;
+import org.telegram.ui.Components.pv0;
+import org.telegram.ui.Components.v31;
 import org.telegram.ui.Components.v4;
 import org.telegram.ui.Components.w8;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.an;
-import org.telegram.ui.ks;
-import org.telegram.ui.za1;
+import org.telegram.ui.bb1;
+import org.telegram.ui.cn;
+import org.telegram.ui.ms;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o0 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -36,11 +36,11 @@ public final /* synthetic */ class o0 implements Runnable {
     public final /* synthetic */ Object h;
     public final /* synthetic */ TLObject n;
 
-    public /* synthetic */ o0(File file, ArrayList arrayList, f2 f2Var, an anVar, TLRPC.Document document, boolean z9, TLRPC.TL_messages_stickerSet tL_messages_stickerSet) {
+    public /* synthetic */ o0(File file, ArrayList arrayList, f2 f2Var, cn cnVar, TLRPC.Document document, boolean z9, TLRPC.TL_messages_stickerSet tL_messages_stickerSet) {
         this.d = file;
         this.b = arrayList;
         this.e = f2Var;
-        this.f = anVar;
+        this.f = cnVar;
         this.h = document;
         this.c = z9;
         this.n = tL_messages_stickerSet;
@@ -75,12 +75,12 @@ public final /* synthetic */ class o0 implements Runnable {
                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) tLObject;
                 arrayList2.add(new gf(0, ((File) obj5).getAbsolutePath(), 0, false, 0, 0));
                 PhotoViewer.p1().H2(f2Var.getParentActivity(), null, f2Var.getResourceProvider());
-                PhotoViewer.p1().e2(arrayList2, 0, 11, false, new ov0(), (an) obj3);
+                PhotoViewer.p1().e2(arrayList2, 0, 11, false, new pv0(), (cn) obj3);
                 PhotoViewer.p1().S0(document, z10 ? document : null, false, null);
-                ks.p().T = z10 ? tL_messages_stickerSet : null;
+                ms.p().T = z10 ? tL_messages_stickerSet : null;
                 break;
             case 2:
-                za1.i0((za1) obj5, (TLRPC.TL_error) obj4, this.c, (TLObject) obj3, (byte[]) obj2, (String) obj, (TL_account.passwordInputSettings) tLObject);
+                bb1.i0((bb1) obj5, (TLRPC.TL_error) obj4, this.c, (TLObject) obj3, (byte[]) obj2, (String) obj, (TL_account.passwordInputSettings) tLObject);
                 break;
             default:
                 yh.m mVar2 = (yh.m) obj5;
@@ -151,10 +151,10 @@ public final /* synthetic */ class o0 implements Runnable {
                             l9Var.setRoundRadius(L);
                             l9Var.e(user, new w8(0, user));
                             String j3 = t10.j(user, true);
-                            String a02 = mVar4.a ? id.a0("HasBeenAddedToChannel", null, 2131749365, j3) : id.a0("HasBeenAddedToGroup", null, 2131749364, j3);
+                            String a02 = mVar4.a ? id.a0("HasBeenAddedToChannel", null, 2131749364, j3) : id.a0("HasBeenAddedToGroup", null, 2131749363, j3);
                             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(a02);
                             int indexOf = a02.indexOf(j3);
-                            spannableStringBuilder.setSpan(new u31(org.telegram.messenger.g0.o()), indexOf, j3.length() + indexOf, 18);
+                            spannableStringBuilder.setSpan(new v31(org.telegram.messenger.g0.o()), indexOf, j3.length() + indexOf, 18);
                             obVar.b.setText(spannableStringBuilder);
                             if (arrayList3.isEmpty()) {
                                 cc.g(f2Var2, obVar, 2750).j();
@@ -162,9 +162,9 @@ public final /* synthetic */ class o0 implements Runnable {
                                 cc.f(mVar4.h, obVar, 2750).j();
                             }
                         }
-                        org.telegram.ui.ActionBar.y q10 = f2Var2.getActionBar().q();
+                        org.telegram.ui.ActionBar.y r10 = f2Var2.getActionBar().r();
                         if (TextUtils.isEmpty(mVar4.t) && mVar4.l) {
-                            q10.j(0).setVisibility(arrayList3.isEmpty() ? 8 : 0);
+                            r10.j(0).setVisibility(arrayList3.isEmpty() ? 8 : 0);
                             break;
                         }
                     }
@@ -183,8 +183,8 @@ public final /* synthetic */ class o0 implements Runnable {
         this.n = user;
     }
 
-    public /* synthetic */ o0(za1 za1Var, TLRPC.TL_error tL_error, boolean z9, TLObject tLObject, byte[] bArr, String str, TL_account.passwordInputSettings passwordinputsettings) {
-        this.d = za1Var;
+    public /* synthetic */ o0(bb1 bb1Var, TLRPC.TL_error tL_error, boolean z9, TLObject tLObject, byte[] bArr, String str, TL_account.passwordInputSettings passwordinputsettings) {
+        this.d = bb1Var;
         this.e = tL_error;
         this.c = z9;
         this.f = tLObject;

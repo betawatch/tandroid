@@ -32,7 +32,7 @@ import org.telegram.messenger.g0;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.t0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public class Camera2Session {
     private CameraCharacteristics cameraCharacteristics;
@@ -65,7 +65,7 @@ public class Camera2Session {
     private boolean opened = false;
     private final Rect cropRegion = new Rect();
 
-    /* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+    /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
     public class 1 extends CameraDevice.StateCallback {
         final /* synthetic */ String val$cameraId;
 
@@ -100,7 +100,7 @@ public class Camera2Session {
         }
     }
 
-    /* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+    /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
     public class 2 extends CameraCaptureSession.StateCallback {
         final /* synthetic */ String val$cameraId;
 
@@ -143,7 +143,7 @@ public class Camera2Session {
         }
     }
 
-    /* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+    /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
     public class 3 implements ImageReader.OnImageAvailableListener {
         final /* synthetic */ File val$file;
         final /* synthetic */ int val$orientation;
@@ -229,7 +229,7 @@ public class Camera2Session {
         }
     }
 
-    /* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+    /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
     public static class CompareSizesByArea implements Comparator<android.util.Size> {
         @Override // java.util.Comparator
         public int compare(android.util.Size size, android.util.Size size2) {

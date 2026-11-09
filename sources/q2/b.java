@@ -23,11 +23,11 @@ import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 import m4.d0;
-import org.telegram.ui.ActionBar.m5;
+import org.telegram.ui.ActionBar.o5;
 import org.telegram.ui.Components.rt;
 import org.telegram.ui.Components.vy;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class b implements g {
     public final List a;
@@ -181,7 +181,7 @@ public final class b implements g {
             eVar.D.add(this);
             Handler handler = eVar.J;
             handler.getClass();
-            handler.postAtTime(new m5(this, 21), this, SystemClock.uptimeMillis() + eVar.w);
+            handler.postAtTime(new o5(this, 19), this, SystemClock.uptimeMillis() + eVar.w);
         } else if (i11 == 0) {
             eVar.x.remove(this);
             if (eVar.G == this) {

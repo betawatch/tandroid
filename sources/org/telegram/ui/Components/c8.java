@@ -4,7 +4,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import java.util.Random;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class c8 {
     public float f;
@@ -149,15 +149,15 @@ public final class c8 {
         }
     }
 
-    public final void c(Canvas canvas, float f10, float f11, boolean z9, float f12, org.telegram.ui.ActionBar.f6 f6Var) {
+    public final void c(Canvas canvas, float f10, float f11, boolean z9, float f12, org.telegram.ui.ActionBar.g6 g6Var) {
         if (org.telegram.messenger.sc.e(32)) {
             int i7 = this.n;
             Paint paint = this.h;
             if (z9) {
-                paint.setColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Bc, f6Var));
+                paint.setColor(org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.Bc, g6Var));
                 paint.setAlpha((int) (i7 * f12));
             } else {
-                paint.setColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.We, f6Var));
+                paint.setColor(org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.We, g6Var));
                 paint.setAlpha((int) (i7 * f12));
             }
             b(canvas, f10, f11);

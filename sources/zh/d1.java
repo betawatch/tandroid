@@ -11,7 +11,7 @@ import android.os.Build;
 import bi.ud;
 import org.telegram.messenger.sc;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class d1 extends Drawable {
     public final int a;
@@ -20,7 +20,7 @@ public final class d1 extends Drawable {
     public final Paint d;
     public final ud e;
     public boolean f;
-    public wg.p g;
+    public wg.a0 g;
     public xg.a h;
     public boolean i;
 
@@ -36,9 +36,9 @@ public final class d1 extends Drawable {
         this.f = z9;
         if (z9) {
             bg.k d = bg.k.d();
-            wg.p pVar = new wg.p(this, 10);
-            this.g = pVar;
-            d.a(15, pVar);
+            wg.a0 a0Var = new wg.a0(this, 8);
+            this.g = a0Var;
+            d.a(15, a0Var);
         } else {
             bg.k.d().f(this.g);
         }

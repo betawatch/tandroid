@@ -1,6 +1,12 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+import android.view.View;
+
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public interface r01 {
+public final class r01 extends v4.k {
+    @Override // v4.k
+    public final float A(View view) {
+        return view instanceof x01 ? 0.6f : 0.0f;
+    }
 }

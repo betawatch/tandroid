@@ -8,14 +8,14 @@ import java.util.Collections;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.ls;
 import org.telegram.messenger.qs;
-import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.qj0;
 import org.telegram.ui.Components.ui;
 import org.telegram.ui.Components.xq;
-import org.telegram.ui.un0;
+import org.telegram.ui.wn0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public abstract class j1 extends pj0 implements ls, l0 {
+public abstract class j1 extends qj0 implements ls, l0 {
     public final ArrayList e3;
     public final v4.b0 f3;
     public boolean g3;
@@ -26,7 +26,7 @@ public abstract class j1 extends pj0 implements ls, l0 {
     public final tg.y l3;
     public final xq m3;
     public final ArrayList n3;
-    public final un0 o3;
+    public final wn0 o3;
     public View p3;
     public boolean q3;
     public int r3;
@@ -44,7 +44,7 @@ public abstract class j1 extends pj0 implements ls, l0 {
         this.l3 = new tg.y(s0Var, 2);
         this.m3 = new xq(0.0f, 0.5f, 0.5f, 1.0f);
         this.n3 = new ArrayList();
-        this.o3 = new un0(13);
+        this.o3 = new wn0(13);
         this.s3 = -1;
         this.i3 = i7;
         v4.b0 b0Var = new v4.b0();
@@ -80,7 +80,7 @@ public abstract class j1 extends pj0 implements ls, l0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.pj0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.qj0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         if (this.t3) {
             ArrayList arrayList = this.n3;
@@ -121,30 +121,30 @@ public abstract class j1 extends pj0 implements ls, l0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.qj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public final boolean drawChild(Canvas canvas, View view, long j3) {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.qj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         qs.f(this.i3).c(this, qs.l5);
         A1();
     }
 
-    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.qj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         qs.f(this.i3).n(this, qs.l5);
     }
 
-    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.qj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
         super.onLayout(z9, i7, i10, i11, i12);
         if (this.g3 && !this.e3.isEmpty() && getChildCount() > 0) {
             this.g3 = false;
-            org.telegram.messenger.g0.h3(new sg.t0(this, 19));
+            org.telegram.messenger.g0.h3(new sh.b(this, 17));
         }
         int i13 = this.s3;
         if (i13 > 0) {
@@ -156,7 +156,7 @@ public abstract class j1 extends pj0 implements ls, l0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.qj0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public final void onMeasure(int i7, int i10) {
         if (View.MeasureSpec.getSize(i10) > View.MeasureSpec.getSize(i7)) {
             this.r3 = View.MeasureSpec.getSize(i7);

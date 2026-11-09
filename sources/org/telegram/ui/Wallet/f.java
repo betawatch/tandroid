@@ -11,19 +11,19 @@ import org.telegram.messenger.id;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final class f {
     public final int a;
-    public final m0 b;
+    public final l0 b;
     public boolean c;
     public TL_wallet.currencyRates d;
     public String e = "en";
     public String f;
 
-    public f(m0 m0Var) {
-        this.b = m0Var;
-        this.a = m0Var.a;
+    public f(l0 l0Var) {
+        this.b = l0Var;
+        this.a = l0Var.a;
         try {
             this.f = org.telegram.messenger.t0.b.getSharedPreferences("gram_wallet", 0).getString("currency", g());
         } catch (Exception e10) {
@@ -93,7 +93,7 @@ public final class f {
         TL_wallet.currencyRate currencyrate = new TL_wallet.currencyRate();
         currencyrate.currency = "USD";
         currencyrate.rate = 1.0d;
-        currencyrate.title = id.M0(2131743150, null);
+        currencyrate.title = id.M0(2131743147, null);
         currencyrate.symbol = "$";
         currencyrate.thousandsSeparator = ",";
         currencyrate.decimalSeparator = ".";

@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.graphics.RectF;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class na implements org.telegram.messenger.sr {
     public final /* synthetic */ int a;
@@ -15,7 +15,7 @@ public final /* synthetic */ class na implements org.telegram.messenger.sr {
 
     @Override // org.telegram.messenger.sr
     public final void a(int i7) {
-        pq0 pq0Var;
+        rq0 rq0Var;
         int i10 = this.a;
         Object obj = this.b;
         switch (i10) {
@@ -27,14 +27,14 @@ public final /* synthetic */ class na implements org.telegram.messenger.sr {
                 break;
             case 2:
                 PhotoViewer photoViewer = (PhotoViewer) obj;
-                if (photoViewer.D != null && (pq0Var = photoViewer.e0) != null && i7 > 0) {
-                    org.telegram.ui.Components.hc.F(pq0Var, true).j();
+                if (photoViewer.D != null && (rq0Var = photoViewer.e0) != null && i7 > 0) {
+                    org.telegram.ui.Components.hc.F(rq0Var, true).j();
                     break;
                 }
                 break;
             case 3:
                 ProfileActivity profileActivity = (ProfileActivity) obj;
-                RectF rectF = ProfileActivity.S6;
+                RectF rectF = ProfileActivity.V6;
                 if (i7 != 1) {
                     profileActivity.getNotificationCenter().k(79, Long.valueOf(profileActivity.d1));
                     break;
@@ -46,12 +46,12 @@ public final /* synthetic */ class na implements org.telegram.messenger.sr {
                     break;
                 }
             default:
-                w91 w91Var = ((d91) obj).a;
+                y91 y91Var = ((e91) obj).a;
                 if (i7 != 0) {
-                    w91Var.finishFragment();
+                    y91Var.finishFragment();
                     break;
                 } else {
-                    w91Var.S0(false);
+                    y91Var.S0(false);
                     break;
                 }
         }

@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class j0 extends vf.b {
     public final /* synthetic */ int d = 0;
@@ -10,10 +10,10 @@ public final class j0 extends vf.b {
     public final /* synthetic */ Object f;
     public final /* synthetic */ Object g;
 
-    public j0(g4 g4Var, z2 z2Var, org.telegram.ui.Components.x70 x70Var) {
+    public j0(g4 g4Var, z2 z2Var, org.telegram.ui.Components.y70 y70Var) {
         this.e = g4Var;
         this.f = z2Var;
-        this.g = x70Var;
+        this.g = y70Var;
     }
 
     @Override // vf.b
@@ -39,7 +39,7 @@ public final class j0 extends vf.b {
         switch (this.d) {
             case 1:
                 if (!z9) {
-                    org.telegram.messenger.g0.i3(new ej(((lm) this.g).a, 10), 250L);
+                    org.telegram.messenger.g0.i3(new gj(((nm) this.g).a, 10), 250L);
                     break;
                 }
                 break;
@@ -53,16 +53,16 @@ public final class j0 extends vf.b {
     public final void d() {
         switch (this.d) {
             case 0:
-                org.telegram.ui.Components.x70 x70Var = (org.telegram.ui.Components.x70) this.g;
+                org.telegram.ui.Components.y70 y70Var = (org.telegram.ui.Components.y70) this.g;
                 g4 g4Var = (g4) this.e;
                 n2.n0 n0Var = g4Var.c;
                 z2 z2Var = (z2) this.f;
                 g4Var.s = z2Var != null ? z2Var.b : null;
                 n0Var.n(g4Var.w, true);
                 if (z2Var != null) {
-                    g4Var.w = n2.n0.k(z2Var.d, x70Var.i, 0.0f);
-                    int x02 = org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.ze, false);
-                    g4Var.w.g(org.telegram.ui.ActionBar.k6.r1(0.8f, x02), org.telegram.ui.ActionBar.k6.r1(1.3f, x02), org.telegram.ui.ActionBar.k6.r1(1.0f, x02), org.telegram.ui.ActionBar.k6.r1(4.0f, x02));
+                    g4Var.w = n2.n0.k(z2Var.d, y70Var.i, 0.0f);
+                    int x02 = org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.ze, false);
+                    g4Var.w.g(org.telegram.ui.ActionBar.l6.r1(0.8f, x02), org.telegram.ui.ActionBar.l6.r1(1.3f, x02), org.telegram.ui.ActionBar.l6.r1(1.0f, x02), org.telegram.ui.ActionBar.l6.r1(4.0f, x02));
                     g4Var.w.x.setStrokeWidth(org.telegram.messenger.g0.N(1.25f));
                     n0Var.c(g4Var.w, z2Var);
                 }
@@ -73,18 +73,18 @@ public final class j0 extends vf.b {
                 super.d();
                 break;
             default:
-                lm lmVar = (lm) this.g;
-                lmVar.a.Wb = ((org.telegram.messenger.ij) this.e).f1();
-                an anVar = lmVar.a;
-                anVar.Xb = 0;
-                anVar.Yb = null;
+                nm nmVar = (nm) this.g;
+                nmVar.a.Yb = ((org.telegram.messenger.ij) this.e).e1();
+                cn cnVar = nmVar.a;
+                cnVar.Zb = 0;
+                cnVar.ac = null;
                 ((org.telegram.ui.Cells.q1) this.f).invalidate();
                 break;
         }
     }
 
-    public j0(lm lmVar, org.telegram.messenger.ij ijVar, org.telegram.ui.Cells.q1 q1Var) {
-        this.g = lmVar;
+    public j0(nm nmVar, org.telegram.messenger.ij ijVar, org.telegram.ui.Cells.q1 q1Var) {
+        this.g = nmVar;
         this.e = ijVar;
         this.f = q1Var;
     }

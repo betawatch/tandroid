@@ -13,13 +13,13 @@ import android.widget.LinearLayout;
 import bi.nc;
 import c8.ha;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.ActionBar.v2;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.fk0;
+import org.telegram.ui.hk0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class q extends v2 {
     public static final /* synthetic */ int q1 = 0;
@@ -32,8 +32,8 @@ public final class q extends v2 {
     public androidx.activity.n o1;
     public boolean p1;
 
-    public q(Context context, f6 f6Var) {
-        super(1, context, f6Var, true);
+    public q(Context context, g6 g6Var) {
+        super(1, context, g6Var, true);
         this.l1 = new Path();
         O(-14342875);
         Drawable mutate = context.getResources().getDrawable(R.drawable.sheet_shadow_round).mutate();
@@ -47,12 +47,12 @@ public final class q extends v2 {
         imageView.setImageResource(R.drawable.picker);
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
         imageView.setColorFilter(new PorterDuffColorFilter(-1, mode));
-        imageView.setBackground(k6.h0(1090519039, 1, -1));
-        imageView.setOnClickListener(new fk0(25, this, context));
+        imageView.setBackground(l6.h0(1090519039, 1, -1));
+        imageView.setOnClickListener(new hk0(25, this, context));
         ImageView imageView2 = new ImageView(context);
         imageView2.setImageResource(R.drawable.ic_ab_done);
         imageView2.setColorFilter(new PorterDuffColorFilter(-1, mode));
-        imageView2.setBackground(k6.h0(1090519039, 1, -1));
+        imageView2.setBackground(l6.h0(1090519039, 1, -1));
         imageView2.setOnClickListener(new ii.g(this, 21));
         k kVar = new k(this, context);
         this.k1 = kVar;

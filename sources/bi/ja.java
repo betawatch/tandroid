@@ -3,19 +3,19 @@ package bi;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.an;
+import org.telegram.ui.cn;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ja implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ an b;
+    public final /* synthetic */ cn b;
     public final /* synthetic */ long c;
     public final /* synthetic */ TLRPC.Chat d;
 
-    public /* synthetic */ ja(an anVar, long j3, TLRPC.Chat chat, int i7) {
+    public /* synthetic */ ja(cn cnVar, long j3, TLRPC.Chat chat, int i7) {
         this.a = i7;
-        this.b = anVar;
+        this.b = cnVar;
         this.c = j3;
         this.d = chat;
     }
@@ -25,14 +25,14 @@ public final /* synthetic */ class ja implements Runnable {
         int i7 = this.a;
         TLRPC.Chat chat = this.d;
         long j3 = this.c;
-        an anVar = this.b;
+        cn cnVar = this.b;
         switch (i7) {
             case 0:
-                org.telegram.ui.Components.hc.a0(anVar).I(R.raw.stars_send, org.telegram.messenger.id.M0(2131744997, null), org.telegram.messenger.g0.X2(org.telegram.messenger.id.G((int) j3, "StarsSubscriptionCompletedText", chat.title))).k(true);
+                org.telegram.ui.Components.hc.a0(cnVar).I(R.raw.stars_send, org.telegram.messenger.id.M0(2131744994, null), org.telegram.messenger.g0.X2(org.telegram.messenger.id.G((int) j3, "StarsSubscriptionCompletedText", chat.title))).k(true);
                 break;
             default:
                 String str = LaunchActivity.B1;
-                org.telegram.ui.Components.hc.a0(anVar).I(R.raw.stars_send, org.telegram.messenger.id.M0(2131744997, null), org.telegram.messenger.g0.X2(org.telegram.messenger.id.G((int) j3, "StarsSubscriptionCompletedText", chat.title))).k(true);
+                org.telegram.ui.Components.hc.a0(cnVar).I(R.raw.stars_send, org.telegram.messenger.id.M0(2131744994, null), org.telegram.messenger.g0.X2(org.telegram.messenger.id.G((int) j3, "StarsSubscriptionCompletedText", chat.title))).k(true);
                 break;
         }
     }

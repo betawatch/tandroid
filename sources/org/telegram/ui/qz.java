@@ -1,65 +1,36 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.view.View;
-import java.util.HashSet;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class qz extends View implements org.telegram.ui.ActionBar.a6 {
-    public final org.telegram.ui.Components.i6 a;
-    public fh.g b;
-    public String c;
+public final class qz extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ xp b;
 
-    public qz(Activity activity) {
-        super(activity);
-        org.telegram.ui.Components.i6 i6Var = new org.telegram.ui.Components.i6(true, false, false);
-        this.a = i6Var;
-        i6Var.u(-1);
-        i6Var.b = 17;
-        i6Var.x(org.telegram.messenger.g0.o());
-        i6Var.w(org.telegram.messenger.g0.L(14.0f));
-        i6Var.setCallback(this);
+    public qz(xp xpVar) {
+        this.b = xpVar;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        org.telegram.ui.Components.i6 i6Var = this.a;
-        int N = (int) (org.telegram.messenger.g0.N(30.0f) + i6Var.c());
-        int width = (getWidth() - N) / 2;
-        int i7 = N + width;
-        fh.g gVar = this.b;
-        if (gVar != null) {
-            gVar.setBounds(width, 0, i7, getHeight());
-            this.b.draw(canvas);
-        }
-        i6Var.draw(canvas);
-    }
-
-    @Override // android.view.View
-    public final void onSizeChanged(int i7, int i10, int i11, int i12) {
-        super.onSizeChanged(i7, i10, i11, i12);
-        this.a.setBounds(0, 0, i7, i10);
-    }
-
-    @Override // org.telegram.ui.ActionBar.a6
-    public final void updateColors() {
-        fh.g gVar = this.b;
-        if (gVar != null) {
-            gVar.updateColors();
-            invalidate();
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                ((a00) this.b.d).l0.e();
+                break;
+            default:
+                xp xpVar = this.b;
+                View view = xpVar.b;
+                view.setAlpha(1.0f);
+                v4.n0.x0(view);
+                ((a00) xpVar.d).b.removeView(view);
+                break;
         }
     }
 
-    @Override // android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return super.verifyDrawable(drawable) || drawable == this.a;
-    }
-
-    @Override // org.telegram.ui.ActionBar.a6
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+    public qz(xp xpVar, v4.n0 n0Var) {
+        this.b = xpVar;
     }
 }

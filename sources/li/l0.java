@@ -7,7 +7,7 @@ import java.util.List;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.id;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final class l0 {
     public static ArrayList d;
@@ -46,7 +46,7 @@ public final class l0 {
             d.add(new l0(R.drawable.iv_ordered_list, id.M0(2131754048, null), "1."));
             d.add(new l0(R.drawable.iv_todo, id.M0(2131754004, null), "[]", "/todo", "/checklist"));
             d.add(new l0(R.drawable.iv_details, id.M0(2131754046, null), ">", "/toggle", "/details"));
-            d.add(new l0(R.drawable.iv_button, id.M0(2131746014, null), "/button"));
+            d.add(new l0(R.drawable.iv_button, id.M0(2131746011, null), "/button"));
             d.add(new l0(R.drawable.iv_table, id.M0(2131754047, null), "/table"));
             d.add(new l0(R.drawable.iv_math, id.M0(2131754049, null), "/math", "/latex", "/expression"));
             d.add(new l0(R.drawable.iv_divider, id.M0(2131754053, null), "---"));

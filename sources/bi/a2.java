@@ -1,6 +1,6 @@
 package bi;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a2 implements Runnable {
     public final /* synthetic */ int a;
@@ -21,10 +21,10 @@ public final /* synthetic */ class a2 implements Runnable {
         k7 k7Var = this.b;
         switch (i7) {
             case 0:
-                k7Var.U1(j3);
+                k7Var.T1(j3);
                 break;
             case 1:
-                k7Var.U1(j3);
+                k7Var.T1(j3);
                 break;
             case 2:
                 z1 z1Var = k7Var.m3;
@@ -36,10 +36,10 @@ public final /* synthetic */ class a2 implements Runnable {
                 }
                 break;
             case 3:
-                k7Var.U1(j3);
+                k7Var.T1(j3);
                 break;
             case 4:
-                k7Var.U1(j3);
+                k7Var.T1(j3);
                 break;
             case 5:
                 new zh.g1(k7Var.getContext(), k7Var.a, this.c, null, new y3(k7Var, i10)).show();
@@ -50,19 +50,19 @@ public final /* synthetic */ class a2 implements Runnable {
                 tcVar.show();
                 break;
             case 7:
-                k7Var.U1(j3);
+                k7Var.T1(j3);
                 break;
             case 8:
                 new zh.g1(k7Var.getContext(), k7Var.a, this.c, null, new y3(k7Var, i10)).show();
                 break;
             case 9:
-                k7Var.U1(j3);
+                k7Var.T1(j3);
                 break;
             case 10:
                 new zh.g1(k7Var.getContext(), k7Var.a, this.c, null, new y3(k7Var, i10)).show();
                 break;
             case 11:
-                k7Var.U1(j3);
+                k7Var.T1(j3);
                 break;
             default:
                 new zh.g1(k7Var.getContext(), k7Var.a, this.c, null, new y3(k7Var, i10)).show();

@@ -16,14 +16,14 @@ import org.telegram.messenger.qs;
 import org.telegram.messenger.t10;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class t5 extends FrameLayout {
     public final int a;
     public int b;
     public final bi.s1 c;
     public final FrameLayout d;
-    public final di.h8 e;
+    public final di.i8 e;
     public boolean f;
     public boolean h;
 
@@ -36,15 +36,15 @@ public final class t5 extends FrameLayout {
         TLRPC.User f10 = p10.i(i7).f();
         bi.s1 s1Var = new bi.s1(this, getContext());
         this.c = s1Var;
-        di.e4 e4Var = new di.e4(getContext(), null);
-        di.c4 c4Var = e4Var.a;
-        c4Var.getAvatarDrawable().r(f10);
-        c4Var.e(f10, c4Var.getAvatarDrawable());
+        di.f4 f4Var = new di.f4(getContext(), null);
+        di.d4 d4Var = f4Var.a;
+        d4Var.getAvatarDrawable().r(f10);
+        d4Var.e(f10, d4Var.getAvatarDrawable());
         String p10 = t10.p(f10);
-        di.d4 d4Var = e4Var.b;
-        d4Var.l(org.telegram.messenger.i6.m(p10, d4Var.getPaint().getFontMetricsInt(), false, null, 0), false);
-        e4Var.c(id.M0(2131746001, null), false);
-        s1Var.addView(e4Var, c8.ha.d(-1, -2.0f, 55, 0.0f, 17.0f, 0.0f, 0.0f));
+        di.e4 e4Var = f4Var.b;
+        e4Var.l(org.telegram.messenger.i6.m(p10, e4Var.getPaint().getFontMetricsInt(), false, null, 0), false);
+        f4Var.c(id.M0(2131745998, null), false);
+        s1Var.addView(f4Var, c8.ha.d(-1, -2.0f, 55, 0.0f, 17.0f, 0.0f, 0.0f));
         ImageView imageView = new ImageView(activity);
         imageView.setImageDrawable(getContext().getResources().getDrawable(R.drawable.ic_close_white).mutate());
         imageView.setPadding(org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f));
@@ -52,22 +52,22 @@ public final class t5 extends FrameLayout {
         addView(s1Var, c8.ha.c(-2.0f, -1));
         FrameLayout frameLayout = new FrameLayout(getContext());
         this.d = frameLayout;
-        di.h8 h8Var = new di.h8(getContext(), bVar);
-        this.e = h8Var;
-        h8Var.s0 = true;
-        h8Var.setTranslationY(org.telegram.messenger.g0.L(8.0f));
-        frameLayout.addView(h8Var, c8.ha.d(-1, -1.0f, 87, 0.0f, 0.0f, 0.0f, 64.0f));
+        di.i8 i8Var = new di.i8(getContext(), bVar);
+        this.e = i8Var;
+        i8Var.s0 = true;
+        i8Var.setTranslationY(org.telegram.messenger.g0.L(8.0f));
+        frameLayout.addView(i8Var, c8.ha.d(-1, -1.0f, 87, 0.0f, 0.0f, 0.0f, 64.0f));
         ImageView imageView2 = new ImageView(activity);
         imageView2.setImageResource(R.drawable.msg_share);
         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
         imageView2.setColorFilter(new PorterDuffColorFilter(-1, mode));
         frameLayout.addView(imageView2, c8.ha.d(28, 28.0f, 85, 0.0f, 0.0f, 12.0f, 16.0f));
         FrameLayout frameLayout2 = new FrameLayout(activity);
-        frameLayout2.setBackground(org.telegram.ui.ActionBar.k6.d0(org.telegram.messenger.g0.L(22.0f), i0.a.o(-16777216, qs.G1)));
+        frameLayout2.setBackground(org.telegram.ui.ActionBar.l6.d0(org.telegram.messenger.g0.L(22.0f), i0.a.o(-16777216, qs.G1)));
         TextView textView = new TextView(activity);
         textView.setTextSize(1, 18.0f);
         textView.setTextColor(1694498815);
-        textView.setText(id.M0(2131746258, null));
+        textView.setText(id.M0(2131746255, null));
         frameLayout2.addView(textView, c8.ha.d(-2, -2.0f, 19, 24.0f, 0.0f, 24.0f, 0.0f));
         ImageView imageView3 = new ImageView(activity);
         imageView3.setImageResource(R.drawable.input_attach);

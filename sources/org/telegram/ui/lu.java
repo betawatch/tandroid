@@ -1,38 +1,33 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class lu implements DialogInterface.OnDismissListener {
+public final /* synthetic */ class lu implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ww b;
+    public final /* synthetic */ yw b;
 
-    public /* synthetic */ lu(ww wwVar, int i7) {
+    public /* synthetic */ lu(yw ywVar, int i7) {
         this.a = i7;
-        this.b = wwVar;
+        this.b = ywVar;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                ww wwVar = this.b;
-                if (wwVar.R3 != null) {
-                    wwVar.getMessagesController().k4(0L, wwVar.R3);
-                    wwVar.R3 = null;
-                    wwVar.X4();
-                    break;
-                }
+                this.b.P4(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             case 1:
-                this.b.n4(true);
-                break;
-            case 2:
-                this.b.n4(true);
+                yw ywVar = this.b;
+                ywVar.getClass();
+                ywVar.R4(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             default:
-                ww.l0(this.b);
+                yw ywVar2 = this.b;
+                ywVar2.getClass();
+                ywVar2.L4(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
         }
     }

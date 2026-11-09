@@ -1,80 +1,44 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import android.widget.TextView;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.view.KeyEvent;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class j70 implements View.OnClickListener {
+public final /* synthetic */ class j70 implements org.telegram.ui.ActionBar.r1, org.telegram.ui.ActionBar.e1 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ q70 b;
+    public final /* synthetic */ r70 b;
 
-    public /* synthetic */ j70(q70 q70Var, int i7) {
+    public /* synthetic */ j70(r70 r70Var, int i7) {
         this.a = i7;
-        this.b = q70Var;
+        this.b = r70Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        int i7 = this.a;
-        q70 q70Var = this.b;
-        int i10 = 1;
-        switch (i7) {
+    @Override // org.telegram.ui.ActionBar.r1
+    public void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+        switch (this.a) {
             case 0:
-                q70Var.r.f();
-                break;
-            case 1:
-                org.telegram.ui.ActionBar.g1 g1Var = q70Var.s;
-                if (g1Var != null) {
-                    g1Var.d(true);
-                }
-                q70Var.r.d();
-                break;
-            case 2:
-                q70 q70Var2 = this.b;
-                String str = q70Var2.b;
-                boolean z9 = str != null && str.endsWith("?direct");
-                Context context = q70Var2.getContext();
-                String M0 = org.telegram.messenger.id.M0(2131749171, null);
-                String str2 = q70Var2.b;
-                String str3 = q70Var2.J;
-                if (str3 == null) {
-                    str3 = org.telegram.messenger.id.M0(q70Var2.H ? z9 ? 2131746508 : 2131746509 : 2131746506, null);
-                }
-                n70 n70Var = new n70(q70Var2, context, M0, str2, str3);
-                q70Var2.E = n70Var;
-                n70Var.I0();
-                q70Var2.E.show();
-                org.telegram.ui.ActionBar.g1 g1Var2 = q70Var2.s;
-                if (g1Var2 != null) {
-                    g1Var2.d(true);
+                q70 q70Var = this.b.r;
+                if (q70Var != null) {
+                    q70Var.k();
                     break;
                 }
                 break;
             default:
-                org.telegram.ui.ActionBar.g1 g1Var3 = q70Var.s;
-                if (g1Var3 != null) {
-                    g1Var3.d(true);
-                }
-                org.telegram.ui.ActionBar.f2 f2Var = q70Var.c;
-                if (f2Var.getParentActivity() != null) {
-                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(f2Var.getParentActivity());
-                    String M02 = org.telegram.messenger.id.M0(2131746026, null);
-                    org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
-                    u1Var.R = M02;
-                    u1Var.T = org.telegram.messenger.id.M0(2131746029, null);
-                    alertDialog$Builder.k(org.telegram.messenger.id.M0(2131746027, null), new i70(q70Var, i10));
-                    alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), null);
-                    TextView textView = (TextView) u1Var.d(-1);
-                    if (textView != null) {
-                        org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.q7, null);
-                    }
-                    alertDialog$Builder.p();
+                q70 q70Var2 = this.b.r;
+                if (q70Var2 != null) {
+                    q70Var2.e();
                     break;
                 }
                 break;
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.e1
+    public void j(KeyEvent keyEvent) {
+        r70 r70Var = this.b;
+        r70Var.getClass();
+        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && r70Var.s.isShowing()) {
+            r70Var.s.d(true);
         }
     }
 }

@@ -1,19 +1,20 @@
 package bi;
 
 import android.animation.ValueAnimator;
+import java.util.ArrayList;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicMarkableReference;
 import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.messenger.qs;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Stories.ProfileStoriesView;
-import org.telegram.ui.an;
-import org.telegram.ui.pv;
-import org.telegram.ui.ww;
+import org.telegram.ui.cn;
+import org.telegram.ui.rv;
+import org.telegram.ui.yw;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ab implements Runnable {
     public final /* synthetic */ int a;
@@ -62,10 +63,10 @@ public final /* synthetic */ class ab implements Runnable {
                 ((h1[]) this.b)[0].dismiss();
                 return;
             case 3:
-                vf.c.t(((tc) this.b).getContext(), org.telegram.messenger.id.M0(2131744969, null));
+                vf.c.t(((tc) this.b).getContext(), org.telegram.messenger.id.M0(2131744966, null));
                 return;
             case 4:
-                vf.c.t(((uc) this.b).getContext(), org.telegram.messenger.id.M0(2131744969, null));
+                vf.c.t(((uc) this.b).getContext(), org.telegram.messenger.id.M0(2131744966, null));
                 return;
             case 5:
                 ((c1.e) this.b).f().a(new w0.h(2, "Failed to launch the selector UI. Hint: ensure the `context` parameter is an Activity-based context."));
@@ -97,14 +98,14 @@ public final /* synthetic */ class ab implements Runnable {
                 if (qVar != null) {
                     qVar.d(true);
                 }
-                rVar.a.N7(true);
+                rVar.a.O7(true);
                 return;
             case 9:
                 ((ValueAnimator) this.b).start();
                 return;
             case 10:
                 org.telegram.ui.ActionBar.f2 f2Var = ((ch.w) this.b).g2.r;
-                if (f2Var instanceof an) {
+                if (f2Var instanceof cn) {
                     f2Var.showDialog(new ug.w0(f2Var, 11, false));
                     return;
                 }
@@ -124,12 +125,12 @@ public final /* synthetic */ class ab implements Runnable {
                 r0.a.postVsyncCallback((d3.c0) this.b);
                 return;
             case 14:
-                ww wwVar = ((pv) this.b).O0;
-                if (wwVar.L && wwVar.j4().I()) {
-                    wwVar.E0.h();
+                yw ywVar = ((rv) this.b).O0;
+                if (ywVar.L && ywVar.j4().I()) {
+                    ywVar.E0.h();
                     return;
                 } else {
-                    wwVar.J4(true, true);
+                    ywVar.J4(true, true);
                     return;
                 }
             case 15:
@@ -141,11 +142,11 @@ public final /* synthetic */ class ab implements Runnable {
                 return;
             case 17:
                 di.i1 i1Var = (di.i1) this.b;
-                di.p9 p9Var = i1Var.c;
-                if (p9Var == null || !i1Var.E() || (oVar = i1Var.a) == null || oVar.c != 0 || (launchActivity = LaunchActivity.G1) == null || !c8.kc.a(launchActivity)) {
+                di.q9 q9Var = i1Var.c;
+                if (q9Var == null || !i1Var.E() || (oVar = i1Var.a) == null || oVar.c != 0 || (launchActivity = LaunchActivity.G1) == null || !c8.kc.a(launchActivity)) {
                     return;
                 }
-                p9Var.T();
+                q9Var.T();
                 return;
             case 18:
                 ti.o oVar2 = ((di.h1) this.b).e.a;
@@ -158,67 +159,88 @@ public final /* synthetic */ class ab implements Runnable {
                 ((di.e3) this.b).a.O0();
                 return;
             case 20:
-                di.i4 i4Var = ((di.j3) this.b).y;
-                di.b4 b4Var = i4Var.z1;
-                if (b4Var != null) {
-                    if (i4Var.C1 || i4Var.D1 || i4Var.E1) {
-                        if (i4Var.x1.e) {
-                            ((di.o9) i4Var.v2.c).loopBack();
+                di.j4 j4Var = ((di.j3) this.b).y;
+                di.c4 c4Var = j4Var.z1;
+                if (c4Var != null) {
+                    if (j4Var.C1 || j4Var.D1 || j4Var.E1) {
+                        if (j4Var.x1.e) {
+                            ((di.p9) j4Var.v2.c).loopBack();
                             return;
                         } else {
-                            i4Var.F0 = 0L;
+                            j4Var.F0 = 0L;
                             return;
                         }
                     }
-                    di.p9 p9Var2 = ((di.g9) b4Var).d;
-                    if (p9Var2.n0.getCurrentPeerView().b1(true) || p9Var2.n0.E(true)) {
+                    di.q9 q9Var2 = ((di.h9) c4Var).d;
+                    if (q9Var2.n0.getCurrentPeerView().b1(true) || q9Var2.n0.E(true)) {
                         return;
                     }
-                    p9Var2.u(true);
+                    q9Var2.u(true);
                     return;
                 }
                 return;
             case 21:
-                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = (ActionBarPopupWindow$ActionBarPopupWindowLayout) this.b;
-                if (actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack() != null) {
-                    actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().b(true);
-                    return;
-                }
-                return;
-            case 22:
                 ProfileStoriesView profileStoriesView = (ProfileStoriesView) this.b;
                 int i7 = ProfileStoriesView.s0;
                 profileStoriesView.getClass();
                 org.telegram.messenger.g0.c4(profileStoriesView);
                 return;
-            case 23:
-                di.k5.a(((di.g5) this.b).d);
+            case 22:
+                di.l5.a(((di.h5) this.b).d);
                 return;
-            case 24:
-                di.w5 w5Var = (di.w5) this.b;
-                if (w5Var.isShowing()) {
-                    w5Var.J0(true);
+            case 23:
+                di.x5 x5Var = (di.x5) this.b;
+                if (x5Var.isShowing()) {
+                    x5Var.J0(true);
                     return;
                 }
                 return;
-            case 25:
+            case 24:
                 fi.z0 z0Var = (fi.z0) this.b;
                 z0Var.c(z0Var.b);
                 z0Var.c = false;
                 return;
-            case 26:
+            case 25:
                 ((fi.d8) this.b).run();
                 return;
+            case 26:
+                di.d7 d7Var = (di.d7) this.b;
+                d7Var.c();
+                d7Var.a(true);
+                return;
             case 27:
-                di.c7 c7Var = (di.c7) this.b;
-                c7Var.c();
-                c7Var.a(true);
+                ((di.z5) this.b).a(null);
                 return;
             case 28:
-                ((di.y5) this.b).a(null);
+                ((di.n7) this.b).R();
                 return;
             default:
-                ((di.m7) this.b).R();
+                di.w7 w7Var = (di.w7) this.b;
+                ArrayList arrayList = w7Var.c;
+                if (arrayList != null) {
+                    w7Var.a.i1 = arrayList;
+                }
+                di.j4 j4Var2 = w7Var.a;
+                long j3 = w7Var.b;
+                if (j4Var2.k1 == j3 && j4Var2.i1 == null) {
+                    return;
+                }
+                j4Var2.k1 = j3;
+                j4Var2.h1();
+                j4Var2.g1();
+                j4Var2.d1(true);
+                TL_stories.PeerStories peerStories = j4Var2.s0.P0;
+                if (peerStories != null) {
+                    j4Var2.B1.V(peerStories, true);
+                    return;
+                }
+                di.z6 z6Var = j4Var2.B1;
+                TL_stories.PeerStories y10 = z6Var.y(j3);
+                if (y10 == null) {
+                    y10 = z6Var.z(j3);
+                    z9 = true;
+                }
+                z6Var.V(y10, z9);
                 return;
         }
     }

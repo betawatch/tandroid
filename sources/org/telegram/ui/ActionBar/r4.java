@@ -9,7 +9,7 @@ import android.os.SystemClock;
 import android.view.animation.DecelerateInterpolator;
 import org.telegram.messenger.qs;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public class r4 extends Drawable {
     public final Paint a;
@@ -110,11 +110,11 @@ public class r4 extends Drawable {
         canvas.translate(((org.telegram.messenger.g0.L(24.0f) / 2) - org.telegram.messenger.g0.L(9.0f)) - (org.telegram.messenger.g0.L(1.0f) * this.f), org.telegram.messenger.g0.L(24.0f) / 2);
         int i10 = this.j;
         if (i10 == 0) {
-            i10 = k6.x0(null, k6.v8, false);
+            i10 = l6.x0(null, l6.v8, false);
         }
         int i11 = this.k;
         if (i11 == 0) {
-            i11 = k6.x0(null, k6.s8, false);
+            i11 = l6.x0(null, l6.s8, false);
         }
         boolean z9 = this.h;
         Paint paint = this.a;
@@ -145,8 +145,8 @@ public class r4 extends Drawable {
                 abs2 = (Math.abs(this.f) * org.telegram.messenger.g0.N(3.0f)) + org.telegram.messenger.g0.N(5.0f);
                 abs3 = (Math.abs(this.f) * org.telegram.messenger.g0.N(7.0f)) + org.telegram.messenger.g0.N(2.0f);
             } else {
-                int x02 = k6.x0(null, k6.y8, false);
-                org.telegram.messenger.g0.S0(this.f, 1.0f, i11, k6.x0(null, k6.w8, false));
+                int x02 = l6.x0(null, l6.y8, false);
+                org.telegram.messenger.g0.S0(this.f, 1.0f, i11, l6.x0(null, l6.w8, false));
                 paint.setColor(org.telegram.messenger.g0.S0(this.f, 1.0f, i10, x02));
                 paint.setAlpha(this.o);
                 canvas.drawLine(this.f * org.telegram.messenger.g0.L(1.0f), 0.0f, (org.telegram.messenger.g0.L(18.0f) - (org.telegram.messenger.g0.L(1.0f) * this.f)) - 0.0f, 0.0f, paint);

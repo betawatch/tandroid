@@ -3,7 +3,7 @@ package c4;
 import a8.ia;
 import android.content.SharedPreferences;
 import android.widget.EditText;
-import di.u5;
+import di.v5;
 import h2.x;
 import java.util.List;
 import org.telegram.messenger.di;
@@ -20,7 +20,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.r1;
 import org.telegram.ui.ActionBar.u1;
-import org.telegram.ui.Components.xs0;
+import org.telegram.ui.Components.zs0;
 import p4.a1;
 import p4.c1;
 import p4.d0;
@@ -28,7 +28,7 @@ import p4.g1;
 import p4.v;
 import p4.y0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class n implements h2.j, h2.o, RequestDelegateTimestamp, r1, wr, y0, a1 {
     public final /* synthetic */ int a;
@@ -45,7 +45,7 @@ public final /* synthetic */ class n implements h2.j, h2.o, RequestDelegateTimes
 
     @Override // org.telegram.messenger.wr
     public void a(String str) {
-        xs0.f((xs0) this.d, this.c, this.b, str);
+        zs0.f((zs0) this.d, this.c, this.b, str);
     }
 
     @Override // h2.j
@@ -102,7 +102,7 @@ public final /* synthetic */ class n implements h2.j, h2.o, RequestDelegateTimes
                     updateprofile.about = trim;
                     updateprofile.flags |= 4;
                     qs.e().k(qs.P4, 2, Long.valueOf(j3));
-                    ConnectionsManager.getInstance(i11).sendRequest(updateprofile, new u5(18), 2);
+                    ConnectionsManager.getInstance(i11).sendRequest(updateprofile, new v5(18), 2);
                 } else {
                     long j10 = -j3;
                     TLRPC.ChatFull N0 = qp.s1(i11).N0(j10);

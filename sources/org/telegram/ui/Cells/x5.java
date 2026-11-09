@@ -10,10 +10,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.messenger.id;
 import org.telegram.ui.Components.Switch;
-import org.telegram.ui.Components.c30;
-import org.telegram.ui.Components.da0;
+import org.telegram.ui.Components.d30;
+import org.telegram.ui.Components.ea0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class x5 extends FrameLayout {
     public final TextView a;
@@ -22,11 +22,11 @@ public final class x5 extends FrameLayout {
     public final Switch d;
     public boolean e;
     public boolean f;
-    public final org.telegram.ui.ActionBar.f6 h;
+    public final org.telegram.ui.ActionBar.g6 h;
 
-    public x5(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+    public x5(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
         super(context);
-        this.h = f6Var;
+        this.h = g6Var;
         ImageView imageView = new ImageView(context);
         this.c = imageView;
         imageView.setFocusable(false);
@@ -34,7 +34,7 @@ public final class x5 extends FrameLayout {
         addView(imageView, c8.ha.d(28, 28.0f, (id.a0 ? 5 : 3) | 48, 18.0f, 16.0f, 18.0f, 9.0f));
         TextView textView = new TextView(context);
         this.a = textView;
-        org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.G6, f6Var);
+        org.telegram.ui.ActionBar.s6.U(textView, org.telegram.ui.ActionBar.l6.G6, g6Var);
         org.telegram.messenger.camera.q.n(textView, 1, 16.0f, 1, 1);
         textView.setSingleLine(true);
         textView.setGravity((id.a0 ? 5 : 3) | 16);
@@ -43,7 +43,7 @@ public final class x5 extends FrameLayout {
         addView(textView, c8.ha.d(-1, -2.0f, (z9 ? 5 : 3) | 48, z9 ? 66.0f : 64.0f, 8.0f, z9 ? 64.0f : 66.0f, 0.0f));
         TextView textView2 = new TextView(context);
         this.b = textView2;
-        org.telegram.ui.ActionBar.r6.V(textView2, org.telegram.ui.ActionBar.k6.z6, f6Var);
+        org.telegram.ui.ActionBar.s6.U(textView2, org.telegram.ui.ActionBar.l6.z6, g6Var);
         textView2.setTextSize(1, 13.0f);
         textView2.setGravity(id.a0 ? 5 : 3);
         textView2.setLines(0);
@@ -53,25 +53,25 @@ public final class x5 extends FrameLayout {
         textView2.setLineSpacing(org.telegram.messenger.g0.L(1.66f), 1.0f);
         boolean z10 = id.a0;
         addView(textView2, c8.ha.d(-2, -2.0f, (z10 ? 5 : 3) | 48, z10 ? 66.0f : 64.0f, 31.0f, z10 ? 64.0f : 66.0f, 10.0f));
-        Switch r32 = new Switch(context, f6Var);
+        Switch r32 = new Switch(context, g6Var);
         this.d = r32;
-        int i7 = org.telegram.ui.ActionBar.k6.M6;
-        int i10 = org.telegram.ui.ActionBar.k6.N6;
-        int i11 = org.telegram.ui.ActionBar.k6.d6;
+        int i7 = org.telegram.ui.ActionBar.l6.M6;
+        int i10 = org.telegram.ui.ActionBar.l6.N6;
+        int i11 = org.telegram.ui.ActionBar.l6.d6;
         r32.d(i7, i10, i11, i11);
         addView(r32, c8.ha.d(37, 40.0f, (id.a0 ? 3 : 5) | 48, 21.0f, 10.0f, 19.0f, 0.0f));
         r32.setFocusable(false);
     }
 
-    public final void a(String str, String str2, c30 c30Var, int i7, boolean z9) {
+    public final void a(String str, String str2, d30 d30Var, int i7, boolean z9) {
         this.a.setText(str);
-        org.telegram.ui.ActionBar.f6 f6Var = this.h;
-        boolean a10 = f6Var != null ? f6Var.a() : org.telegram.ui.ActionBar.k6.I.q();
-        da0 da0Var = new da0(1);
-        da0Var.b(c30Var.a, c30Var.b);
-        da0Var.b = a10;
+        org.telegram.ui.ActionBar.g6 g6Var = this.h;
+        boolean a10 = g6Var != null ? g6Var.a() : org.telegram.ui.ActionBar.l6.I.q();
+        ea0 ea0Var = new ea0(1);
+        ea0Var.b(d30Var.a, d30Var.b);
+        ea0Var.b = a10;
         ImageView imageView = this.c;
-        imageView.setBackground(da0Var);
+        imageView.setBackground(ea0Var);
         imageView.setImageResource(i7);
         boolean z10 = this.e;
         Switch r02 = this.d;
@@ -84,10 +84,10 @@ public final class x5 extends FrameLayout {
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
         if (this.f) {
-            org.telegram.ui.ActionBar.f6 f6Var = this.h;
-            Paint d = f6Var != null ? f6Var.d("paintDivider") : org.telegram.ui.ActionBar.k6.k0;
+            org.telegram.ui.ActionBar.g6 g6Var = this.h;
+            Paint d = g6Var != null ? g6Var.d("paintDivider") : org.telegram.ui.ActionBar.l6.k0;
             if (d == null) {
-                d = org.telegram.ui.ActionBar.k6.k0;
+                d = org.telegram.ui.ActionBar.l6.k0;
             }
             Paint paint = d;
             if (paint != null) {

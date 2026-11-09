@@ -1,10 +1,10 @@
 package ei;
 
 import android.content.Context;
-import di.q6;
-import org.telegram.ui.Components.av0;
+import di.r6;
+import org.telegram.ui.Components.cv0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class i extends m {
     public final /* synthetic */ n w;
@@ -22,10 +22,10 @@ public final class i extends m {
         if (nVar.r.getVisibility() == 0) {
             nVar.x.f();
         }
-        av0 av0Var = nVar.D;
-        if (av0Var != null) {
-            q6 q6Var = this.e;
-            av0Var.e(q6Var != null && q6Var.k(), true);
+        cv0 cv0Var = nVar.D;
+        if (cv0Var != null) {
+            r6 r6Var = this.e;
+            cv0Var.e(r6Var != null && r6Var.k(), true);
         }
     }
 }

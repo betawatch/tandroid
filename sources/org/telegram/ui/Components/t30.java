@@ -1,37 +1,44 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Paint;
-import org.telegram.ui.ProfileActivity;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class t30 extends Paint {
+public final class t30 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ p40 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ t30(Object obj, int i7) {
-        super(1);
+    public /* synthetic */ t30(p40 p40Var, int i7) {
         this.a = i7;
-        this.b = obj;
+        this.b = p40Var;
     }
 
-    @Override // android.graphics.Paint
-    public final void setAlpha(int i7) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                super.setAlpha(i7);
-                ((o40) this.b).invalidate();
+                p40 p40Var = this.b;
+                if (animator.equals(p40Var.K)) {
+                    p40Var.K = null;
+                    break;
+                }
                 break;
             case 1:
-                super.setAlpha(i7);
-                fk0 fk0Var = (fk0) this.b;
-                fk0Var.a.setAlpha(Math.round(i7 * 0.2f));
-                fk0Var.invalidate();
+                p40 p40Var2 = this.b;
+                if (p40Var2.k1 != null) {
+                    p40Var2.k1 = null;
+                    break;
+                }
                 break;
             default:
-                super.setAlpha(i7);
-                ((ProfileActivity) this.b).fragmentView.invalidate();
+                p40 p40Var3 = this.b;
+                if (animator.equals(p40Var3.d0)) {
+                    p40Var3.d(true);
+                    p40Var3.f1 = false;
+                    p40Var3.setVisibility(4);
+                    break;
+                }
                 break;
         }
     }

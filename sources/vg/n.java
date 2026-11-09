@@ -27,9 +27,9 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.sz;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.l6;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class n {
     public static final String[] e0 = {"models/star.binobj"};
@@ -158,7 +158,7 @@ public final class n {
                 fArr4[1] = 0.5f;
                 fArr4[2] = 0.78f;
                 fArr4[3] = 1.0f;
-                paint.setShader(new LinearGradient(0.0f, 100.0f, 150.0f, 0.0f, new int[]{k6.x0(null, k6.zk, false), k6.x0(null, k6.Ak, false), k6.x0(null, k6.Bk, false), k6.x0(null, k6.Ck, false)}, fArr4, Shader.TileMode.CLAMP));
+                paint.setShader(new LinearGradient(0.0f, 100.0f, 150.0f, 0.0f, new int[]{l6.x0(null, l6.zk, false), l6.x0(null, l6.Ak, false), l6.x0(null, l6.Bk, false), l6.x0(null, l6.Ck, false)}, fArr4, Shader.TileMode.CLAMP));
                 canvas.drawRect(0.0f, 0.0f, 100.0f, 100.0f, paint);
                 int[] iArr = new int[1];
                 GLES20.glGenTextures(1, iArr, 0);

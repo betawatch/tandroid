@@ -1,35 +1,72 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.view.MotionEvent;
+import android.view.View;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ti0 implements RequestDelegate {
+public final /* synthetic */ class ti0 implements View.OnTouchListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ bk0 b;
+    public final /* synthetic */ dk0 b;
 
-    public /* synthetic */ ti0(bk0 bk0Var, int i7) {
+    public /* synthetic */ ti0(dk0 dk0Var, int i7) {
         this.a = i7;
-        this.b = bk0Var;
+        this.b = dk0Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
+    @Override // android.view.View.OnTouchListener
+    public final boolean onTouch(View view, MotionEvent motionEvent) {
+        int i7 = this.a;
+        int i10 = 2;
+        int i11 = 3;
+        dk0 dk0Var = this.b;
+        switch (i7) {
             case 0:
-                org.telegram.messenger.g0.h3(new mc0(this.b, tL_error, tLObject, 12));
+                if (dk0Var.getParentActivity() != null) {
+                    if (motionEvent.getAction() == 1) {
+                        ss ssVar = new ss(null, false);
+                        ssVar.r = new ru(28, dk0Var, view);
+                        dk0Var.presentFragment(ssVar);
+                    }
+                    break;
+                }
                 break;
             case 1:
-                org.telegram.messenger.g0.h3(new zc0(21, this.b, tL_error));
+                if (dk0Var.getParentActivity() != null) {
+                    if (motionEvent.getAction() == 1) {
+                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(dk0Var.getParentActivity());
+                        String M0 = org.telegram.messenger.id.M0(2131747466, null);
+                        org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
+                        u1Var.R = M0;
+                        alertDialog$Builder.f(new CharSequence[]{org.telegram.messenger.id.M0(2131747508, null), org.telegram.messenger.id.M0(2131747569, null)}, new k4(dk0Var, i11));
+                        alertDialog$Builder.k(org.telegram.messenger.id.M0(2131752589, null), null);
+                        dk0Var.showDialog(u1Var);
+                    }
+                    break;
+                }
                 break;
             case 2:
-                org.telegram.messenger.g0.h3(new pi0(this.b, 5));
+                if (dk0Var.getParentActivity() != null) {
+                    if (motionEvent.getAction() == 1) {
+                        ss ssVar2 = new ss(null, false);
+                        ssVar2.r = new ui0(dk0Var, i10);
+                        dk0Var.presentFragment(ssVar2);
+                    }
+                    break;
+                }
                 break;
             default:
-                org.telegram.messenger.g0.h3(new zc0(20, this.b, tLObject));
+                if (dk0Var.getParentActivity() != null) {
+                    if (motionEvent.getAction() == 1) {
+                        ss ssVar3 = new ss(null, false);
+                        ssVar3.r = new ui0(dk0Var, i11);
+                        dk0Var.presentFragment(ssVar3);
+                    }
+                    break;
+                }
                 break;
         }
+        return true;
     }
 }

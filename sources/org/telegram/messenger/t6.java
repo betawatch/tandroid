@@ -7,22 +7,22 @@ import android.text.SpannableStringBuilder;
 import android.view.ActionMode;
 import android.view.Menu;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.Components.u31;
+import org.telegram.ui.Components.v31;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class t6 extends org.telegram.ui.Components.zs {
     public final org.telegram.ui.Components.z4 Y1;
     public int Z1;
     public final org.telegram.ui.Components.i6 a2;
     public final /* synthetic */ int b2;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f6 c2;
+    public final /* synthetic */ org.telegram.ui.ActionBar.g6 c2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t6(Context context, org.telegram.ui.ActionBar.f6 f6Var, int i7, org.telegram.ui.ActionBar.f6 f6Var2) {
-        super(context, f6Var);
+    public t6(Context context, org.telegram.ui.ActionBar.g6 g6Var, int i7, org.telegram.ui.ActionBar.g6 g6Var2) {
+        super(context, g6Var);
         this.b2 = i7;
-        this.c2 = f6Var2;
+        this.c2 = g6Var2;
         this.Y1 = new org.telegram.ui.Components.z4(this);
         org.telegram.ui.Components.i6 i6Var = new org.telegram.ui.Components.i6(false, true, true);
         this.a2 = i6Var;
@@ -35,7 +35,7 @@ public final class t6 extends org.telegram.ui.Components.zs {
     @Override // android.view.View
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
-        int a10 = this.Y1.a(org.telegram.ui.ActionBar.k6.w0(this.Z1 < 0 ? org.telegram.ui.ActionBar.k6.p7 : org.telegram.ui.ActionBar.k6.P5, this.c2), false);
+        int a10 = this.Y1.a(org.telegram.ui.ActionBar.l6.w0(this.Z1 < 0 ? org.telegram.ui.ActionBar.l6.p7 : org.telegram.ui.ActionBar.l6.P5, this.c2), false);
         org.telegram.ui.Components.i6 i6Var = this.a2;
         i6Var.u(a10);
         i6Var.setBounds(getScrollX(), 0, getWidth() + getScrollX(), getHeight());
@@ -49,13 +49,13 @@ public final class t6 extends org.telegram.ui.Components.zs {
         }
         menu.removeItem(android.R.id.shareText);
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(id.M0(2131753671, null));
-        spannableStringBuilder.setSpan(new u31(g0.o()), 0, spannableStringBuilder.length(), 33);
+        spannableStringBuilder.setSpan(new v31(g0.o()), 0, spannableStringBuilder.length(), 33);
         menu.add(R.id.menu_groupbolditalic, R.id.menu_bold, 6, spannableStringBuilder);
-        SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(id.M0(2131749088, null));
-        spannableStringBuilder2.setSpan(new u31(g0.o1("fonts/rmediumitalic.ttf")), 0, spannableStringBuilder2.length(), 33);
+        SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(id.M0(2131749087, null));
+        spannableStringBuilder2.setSpan(new v31(g0.o1("fonts/rmediumitalic.ttf")), 0, spannableStringBuilder2.length(), 33);
         menu.add(R.id.menu_groupbolditalic, R.id.menu_italic, 7, spannableStringBuilder2);
-        menu.add(R.id.menu_groupbolditalic, R.id.menu_link, 8, id.M0(2131751745, null));
-        menu.add(R.id.menu_groupbolditalic, R.id.menu_regular, 9, id.M0(2131746338, null));
+        menu.add(R.id.menu_groupbolditalic, R.id.menu_link, 8, id.M0(2131751744, null));
+        menu.add(R.id.menu_groupbolditalic, R.id.menu_regular, 9, id.M0(2131746337, null));
     }
 
     @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.dt, android.widget.TextView

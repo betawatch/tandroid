@@ -18,16 +18,16 @@ import org.telegram.messenger.camera.q;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.k5;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.s6;
 import org.telegram.ui.Components.j6;
 import org.telegram.ui.Components.vy;
 import tg.f0;
 import ug.w0;
 import ug.y0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class h extends FrameLayout {
     public final /* synthetic */ int a;
@@ -47,7 +47,7 @@ public final class h extends FrameLayout {
         switch (this.a) {
             case 1:
                 c0 c0Var = (c0) this.c;
-                c0Var.b(k6.r1(0.65f, k6.w0(k6.d6, (f6) this.b)));
+                c0Var.b(l6.r1(0.65f, l6.w0(l6.d6, (g6) this.b)));
                 c0Var.draw(canvas);
                 super.dispatchDraw(canvas);
                 break;
@@ -208,7 +208,7 @@ public final class h extends FrameLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h(int i7, Context context, f6 f6Var) {
+    public h(int i7, Context context, g6 g6Var) {
         super(context);
         this.a = i7;
         switch (i7) {
@@ -217,15 +217,15 @@ public final class h extends FrameLayout {
                 LinearLayout f10 = k5.f(context, 1);
                 j6 j6Var = new j6(context, false, false, false);
                 this.b = j6Var;
-                int i10 = k6.G6;
-                r6.Z(j6Var, i10, f6Var);
+                int i10 = l6.G6;
+                s6.Y(j6Var, i10, g6Var);
                 j6Var.setTextSize(g0.L(17.0f));
                 j6Var.setTypeface(g0.o());
                 f10.addView(j6Var, ha.r(-2, 23, 1));
                 TextView textView = new TextView(context);
                 this.c = textView;
                 textView.setTextSize(1, 11.0f);
-                r6.V(textView, i10, f6Var);
+                s6.U(textView, i10, g6Var);
                 textView.setSingleLine();
                 textView.setMaxLines(1);
                 textView.setEllipsize(TextUtils.TruncateAt.END);
@@ -234,7 +234,7 @@ public final class h extends FrameLayout {
                 break;
             default:
                 this.c = new c0(8);
-                this.b = f6Var;
+                this.b = g6Var;
                 break;
         }
     }

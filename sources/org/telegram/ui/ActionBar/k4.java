@@ -37,9 +37,9 @@ import org.telegram.messenger.jl;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
 import org.telegram.ui.Components.qs;
-import org.telegram.ui.c61;
+import org.telegram.ui.d61;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class k4 {
     public static final x3 p = new x3();
@@ -51,7 +51,7 @@ public final class k4 {
     public final int i;
     public Runnable j;
     public qs k;
-    public final f6 n;
+    public final g6 n;
     public final dh.c o;
     public final Rect c = new Rect();
     public final Rect d = new Rect();
@@ -75,11 +75,11 @@ public final class k4 {
         r = Arrays.asList(valueOf2, valueOf3, valueOf4, valueOf8, valueOf5, valueOf6, valueOf7, valueOf9);
     }
 
-    public k4(Context context, View view, int i7, f6 f6Var, dh.c cVar) {
+    public k4(Context context, View view, int i7, g6 g6Var, dh.c cVar) {
         this.a = view;
         this.i = i7;
         this.o = cVar;
-        this.n = f6Var;
+        this.n = g6Var;
         this.b = new i4(this, context, view);
     }
 
@@ -113,7 +113,7 @@ public final class k4 {
         int i10;
         ImageView imageView;
         int i11 = k4Var.i;
-        f6 f6Var = k4Var.n;
+        g6 g6Var = k4Var.n;
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setLayoutParams(new ViewGroup.LayoutParams(-2, -2));
         linearLayout.setOrientation(0);
@@ -129,11 +129,11 @@ public final class k4 {
         textView.setFocusable(false);
         textView.setImportantForAccessibility(2);
         textView.setFocusableInTouchMode(false);
-        int w03 = k6.w0(k6.i6, f6Var);
+        int w03 = l6.w0(l6.i6, g6Var);
         if (i11 == 0) {
-            i7 = k6.j5;
-            w02 = k6.w0(i7, f6Var);
-            r6.V(textView, i7, f6Var);
+            i7 = l6.j5;
+            w02 = l6.w0(i7, g6Var);
+            s6.U(textView, i7, g6Var);
         } else {
             if (i11 == 2) {
                 textView.setTextColor(-328966);
@@ -141,9 +141,9 @@ public final class k4 {
                 w03 = 553648127;
                 i7 = -1;
                 if (!z10 || z11) {
-                    linearLayout.setBackground(k6.c0(w03, !z10 ? 12 : 0, !z11 ? 12 : 0, !z11 ? 12 : 0, !z10 ? 12 : 0));
+                    linearLayout.setBackground(l6.c0(w03, !z10 ? 12 : 0, !z11 ? 12 : 0, !z11 ? 12 : 0, !z10 ? 12 : 0));
                 } else {
-                    linearLayout.setBackground(k6.h0(w03, 2, -1));
+                    linearLayout.setBackground(l6.h0(w03, 2, -1));
                 }
                 textView.setPaddingRelative(org.telegram.messenger.g0.L(11.0f), 0, 0, 0);
                 linearLayout.addView(textView, new LinearLayout.LayoutParams(-2, org.telegram.messenger.g0.L(!z9 ? 42.0f : 48.0f)));
@@ -152,21 +152,21 @@ public final class k4 {
                 e10.setScaleType(ImageView.ScaleType.CENTER);
                 if (i11 == 2) {
                     if (i7 < 0) {
-                        i7 = k6.G6;
+                        i7 = l6.G6;
                     }
-                    n6 L = r6.L(0.4f, i7);
+                    o6 K = s6.K(0.4f, i7);
                     PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
-                    int i12 = L.a;
-                    float f10 = L.d;
-                    int Q = r6.Q(i12, -1, 2, f10, f6Var);
-                    PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(Q, mode);
+                    int i12 = K.a;
+                    float f10 = K.d;
+                    int P = s6.P(i12, -1, 2, f10, g6Var);
+                    PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(P, mode);
                     e10.setColorFilter(porterDuffColorFilter);
-                    l6 O = r6.O(e10, 5, i12, -1, 2, f10, f6Var, Q, porterDuffColorFilter);
+                    m6 N = s6.N(e10, 5, i12, -1, 2, f10, g6Var, P, porterDuffColorFilter);
                     imageView = e10;
-                    O.h = mode;
+                    N.h = mode;
                 } else {
                     imageView = e10;
-                    imageView.setColorFilter(new PorterDuffColorFilter(k6.r1(0.4f, i10), PorterDuff.Mode.SRC_IN));
+                    imageView.setColorFilter(new PorterDuffColorFilter(l6.r1(0.4f, i10), PorterDuff.Mode.SRC_IN));
                 }
                 imageView.setVisibility(8);
                 linearLayout.addView(imageView, ha.q(-2, -1, 0.0f, 0, 12, 0, 0, 0));
@@ -176,18 +176,18 @@ public final class k4 {
                 return linearLayout;
             }
             if (i11 == 1) {
-                i7 = k6.G6;
-                w02 = k6.w0(i7, f6Var);
-                r6.V(textView, i7, f6Var);
+                i7 = l6.G6;
+                w02 = l6.w0(i7, g6Var);
+                s6.U(textView, i7, g6Var);
             } else {
-                w02 = k6.w0(k6.G6, f6Var);
+                w02 = l6.w0(l6.G6, g6Var);
                 i7 = -1;
             }
         }
         i10 = w02;
         if (z10) {
         }
-        linearLayout.setBackground(k6.c0(w03, !z10 ? 12 : 0, !z11 ? 12 : 0, !z11 ? 12 : 0, !z10 ? 12 : 0));
+        linearLayout.setBackground(l6.c0(w03, !z10 ? 12 : 0, !z11 ? 12 : 0, !z11 ? 12 : 0, !z10 ? 12 : 0));
         textView.setPaddingRelative(org.telegram.messenger.g0.L(11.0f), 0, 0, 0);
         linearLayout.addView(textView, new LinearLayout.LayoutParams(-2, org.telegram.messenger.g0.L(!z9 ? 42.0f : 48.0f)));
         linearLayout.addView(new Space(context), new LinearLayout.LayoutParams(-1, 1, 1.0f));
@@ -279,9 +279,9 @@ public final class k4 {
         i4Var.J = null;
         i4Var.N = false;
         i4Var.n();
-        c61 c61Var = i4Var.g;
-        c61Var.removeAllViews();
-        c61Var.setPaddingRelative(0, 0, 0, 0);
+        d61 d61Var = i4Var.g;
+        d61Var.removeAllViews();
+        d61Var.setPaddingRelative(0, 0, 0, 0);
         h4 h4Var = i4Var.h;
         ArrayAdapter arrayAdapter = (ArrayAdapter) h4Var.getAdapter();
         arrayAdapter.clear();
@@ -322,7 +322,7 @@ public final class k4 {
                 }
                 b10.setTag(menuItem3);
                 b10.setOnClickListener(i4Var.L);
-                c61Var.addView(b10);
+                d61Var.addView(b10);
                 ViewGroup.LayoutParams layoutParams = b10.getLayoutParams();
                 layoutParams.width = min2;
                 b10.setLayoutParams(layoutParams);
@@ -338,10 +338,10 @@ public final class k4 {
             i7 = 0;
         } else {
             i7 = 0;
-            c61Var.setPaddingRelative(0, 0, size2.getWidth(), 0);
+            d61Var.setPaddingRelative(0, 0, size2.getWidth(), 0);
         }
-        c61Var.measure(i7, i7);
-        i4Var.J = new Size(c61Var.getMeasuredWidth(), c61Var.getMeasuredHeight());
+        d61Var.measure(i7, i7);
+        i4Var.J = new Size(d61Var.getMeasuredWidth(), d61Var.getMeasuredHeight());
         if (!linkedList.isEmpty()) {
             ArrayAdapter arrayAdapter2 = (ArrayAdapter) h4Var.getAdapter();
             arrayAdapter2.clear();

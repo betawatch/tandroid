@@ -1,50 +1,36 @@
 package org.telegram.ui;
 
 import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
-import org.telegram.tgnet.TLObject;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class ak0 extends FrameLayout {
-    public TextView a;
-    public TextView b;
-    public ImageView c;
-    public boolean d;
-
-    public final void a(String str, boolean z9) {
-        this.a.setText(str);
-        this.b.setText("");
-        this.d = z9;
-        setWillNotDraw(!z9);
-    }
+public final class ak0 extends View implements org.telegram.ui.ActionBar.b6 {
+    public Paint a;
+    public Paint b;
+    public float c;
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        if (this.d) {
-            canvas.drawLine(org.telegram.messenger.id.a0 ? 0.0f : org.telegram.messenger.g0.L(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (org.telegram.messenger.id.a0 ? org.telegram.messenger.g0.L(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.k6.k0);
+        float measuredWidth = (int) (getMeasuredWidth() * this.c);
+        canvas.drawRect(0.0f, 0.0f, measuredWidth, getMeasuredHeight(), this.b);
+        canvas.drawRect(measuredWidth, 0.0f, getMeasuredWidth(), getMeasuredHeight(), this.a);
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void updateColors() {
+        try {
+            this.a.setColor(org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.Ui, false));
+            this.b.setColor(org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.Vi, false));
+            invalidate();
+        } catch (Exception e10) {
+            org.telegram.messenger.a8.g(e10, true);
         }
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(64.0f) + (this.d ? 1 : 0), TLObject.FLAG_30));
-    }
-
-    public void setChecked(boolean z9) {
-        this.c.setVisibility(z9 ? 0 : 4);
-    }
-
-    public void setNeedDivider(boolean z9) {
-        this.d = z9;
-        setWillNotDraw(!z9);
-        invalidate();
-    }
-
-    public void setValue(CharSequence charSequence) {
-        this.b.setText(charSequence);
+    @Override // org.telegram.ui.ActionBar.b6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

@@ -15,7 +15,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.qs;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class z2 extends Dialog {
     public final h3 a;
@@ -32,7 +32,7 @@ public final class z2 extends Dialog {
         i3 d = h3Var.d();
         x2 x2Var = new x2(this, getContext());
         this.c = x2Var;
-        paint.setColor(k6.x0(null, k6.a7, false));
+        paint.setColor(l6.x0(null, l6.a7, false));
         y2 y2Var = new y2(d);
         this.b = y2Var;
         setContentView(y2Var, new ViewGroup.LayoutParams(-1, -1));

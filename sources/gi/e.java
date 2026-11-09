@@ -17,20 +17,20 @@ import org.telegram.messenger.qs;
 import org.telegram.messenger.r2;
 import org.telegram.messenger.t0;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.Components.ja;
-import org.telegram.ui.Components.l41;
+import org.telegram.ui.Components.m41;
 import org.telegram.ui.Components.na;
-import org.telegram.ui.Components.oj0;
 import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.qj0;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.Wallet.v6;
-import org.telegram.ui.an;
-import org.telegram.ui.qj;
+import org.telegram.ui.Wallet.u6;
+import org.telegram.ui.cn;
+import org.telegram.ui.sj;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class e extends na implements ls {
     public final cg.a P1;
@@ -38,7 +38,7 @@ public final class e extends na implements ls {
     public final FrameLayout R1;
     public Runnable S1;
     public int T1;
-    public l41 U1;
+    public m41 U1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     /* JADX WARN: Removed duplicated region for block: B:11:? A[RETURN, SYNTHETIC] */
@@ -46,16 +46,16 @@ public final class e extends na implements ls {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public e(Context context, f6 f6Var, cg.a aVar, boolean z9, Runnable runnable) {
-        super(context, null, false, false, f6Var);
-        l41 l41Var;
+    public e(Context context, g6 g6Var, cg.a aVar, boolean z9, Runnable runnable) {
+        super(context, null, false, false, g6Var);
+        m41 m41Var;
         final int i7 = 0;
         this.r1 = 0.2f;
         this.S1 = runnable;
         N();
-        pj0 pj0Var = this.k1;
+        qj0 qj0Var = this.k1;
         int i10 = this.t0;
-        pj0Var.setPadding(i10, 0, i10, 0);
+        qj0Var.setPadding(i10, 0, i10, 0);
         this.k1.setOnItemClickListener(new k(this, 12));
         v4.k kVar = new v4.k();
         kVar.m = false;
@@ -63,14 +63,14 @@ public final class e extends na implements ls {
         kVar.o(xq.h);
         kVar.n(350L);
         this.k1.setItemAnimator(kVar);
-        v0(k6.w0(k6.h5, f6Var));
+        v0(l6.w0(l6.h5, g6Var));
         this.P1 = aVar;
-        nc ncVar = new nc(2, context, f6Var);
+        nc ncVar = new nc(2, context, g6Var);
         this.Q1 = ncVar;
         final int i11 = 1;
-        ((TextView) ncVar.c).setText(id.a0(null, null, 2131744048, cg.a.i(aVar.b - ea.y(this.a, true).s().b, cg.b.b).d()));
+        ((TextView) ncVar.c).setText(id.a0(null, null, 2131744045, cg.a.i(aVar.b - ea.y(this.a, true).s().b, cg.b.b).d()));
         TextView textView = (TextView) ncVar.d;
-        textView.setText(g0.X2(id.M0(2131750521, null)));
+        textView.setText(g0.X2(id.M0(2131750520, null)));
         textView.setMaxWidth(m3.a(textView.getText(), textView.getPaint()));
         this.l1.setTitle(O0());
         FrameLayout frameLayout = new FrameLayout(context);
@@ -95,7 +95,7 @@ public final class e extends na implements ls {
                         e eVar = this.b;
                         switch (i12) {
                             case 0:
-                                vf.c.v(eVar.getContext(), id.M0(2131744031, null), false);
+                                vf.c.v(eVar.getContext(), id.M0(2131744028, null), false);
                                 break;
                             default:
                                 eVar.dismiss();
@@ -103,15 +103,15 @@ public final class e extends na implements ls {
                         }
                     }
                 });
-                l41Var = this.U1;
-                if (l41Var == null) {
-                    l41Var.O(false);
+                m41Var = this.U1;
+                if (m41Var == null) {
+                    m41Var.O(false);
                     return;
                 }
                 return;
             }
         }
-        dVar.i(id.M0(2131744033, null), false, true);
+        dVar.i(id.M0(2131744030, null), false, true);
         dVar.setOnClickListener(new View.OnClickListener(this) { // from class: gi.d
             public final /* synthetic */ e b;
 
@@ -125,7 +125,7 @@ public final class e extends na implements ls {
                 e eVar = this.b;
                 switch (i12) {
                     case 0:
-                        vf.c.v(eVar.getContext(), id.M0(2131744031, null), false);
+                        vf.c.v(eVar.getContext(), id.M0(2131744028, null), false);
                         break;
                     default:
                         eVar.dismiss();
@@ -133,8 +133,8 @@ public final class e extends na implements ls {
                 }
             }
         });
-        l41Var = this.U1;
-        if (l41Var == null) {
+        m41Var = this.U1;
+        if (m41Var == null) {
         }
     }
 
@@ -146,10 +146,10 @@ public final class e extends na implements ls {
     }
 
     @Override // org.telegram.ui.Components.na
-    public final oj0 L0(pj0 pj0Var) {
-        l41 l41Var = new l41(this.k1, getContext(), this.a, 0, true, new ai.e(this, 25), this.I0);
-        this.U1 = l41Var;
-        return l41Var;
+    public final pj0 L0(qj0 qj0Var) {
+        m41 m41Var = new m41(this.k1, getContext(), this.a, 0, true, new ai.e(this, 25), this.I0);
+        this.U1 = m41Var;
+        return m41Var;
     }
 
     @Override // org.telegram.ui.Components.na
@@ -165,14 +165,14 @@ public final class e extends na implements ls {
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         Runnable runnable;
         if (i7 == qs.v3 || i7 == qs.y3) {
-            l41 l41Var = this.U1;
-            if (l41Var != null) {
-                l41Var.O(true);
+            m41 m41Var = this.U1;
+            if (m41Var != null) {
+                m41Var.O(true);
             }
             cg.a s5 = ea.y(this.a, true).s();
             TextView textView = (TextView) this.Q1.c;
             cg.a aVar = this.P1;
-            textView.setText(id.a0(null, null, 2131744048, cg.a.i(aVar.b - s5.b, cg.b.b).d()));
+            textView.setText(id.a0(null, null, 2131744045, cg.a.i(aVar.b - s5.b, cg.b.b).d()));
             ja jaVar = this.l1;
             if (jaVar != null) {
                 jaVar.setTitle(O0());
@@ -191,7 +191,7 @@ public final class e extends na implements ls {
         super.dismiss();
         nc ncVar = this.Q1;
         if (ncVar != null) {
-            ((v6) ncVar.b).setPaused(true);
+            ((u6) ncVar.b).setPaused(true);
         }
     }
 
@@ -199,7 +199,7 @@ public final class e extends na implements ls {
     public final void s0() {
         super.s0();
         try {
-            int w02 = k6.w0(k6.h5, this.I0);
+            int w02 = l6.w0(l6.h5, this.I0);
             if (w02 != this.T1) {
                 this.T1 = w02;
                 v0(w02);
@@ -211,7 +211,7 @@ public final class e extends na implements ls {
 
     @Override // org.telegram.ui.ActionBar.v2, android.app.Dialog
     public final void show() {
-        qj qjVar;
+        sj sjVar;
         if (ea.y(this.a, true).s().b >= this.P1.b) {
             Runnable runnable = this.S1;
             if (runnable != null) {
@@ -222,10 +222,10 @@ public final class e extends na implements ls {
             return;
         }
         f2 Q = LaunchActivity.Q();
-        if (Q instanceof an) {
-            an anVar = (an) Q;
-            if (anVar.T9() && (qjVar = anVar.Z) != null) {
-                qjVar.L();
+        if (Q instanceof cn) {
+            cn cnVar = (cn) Q;
+            if (cnVar.U9() && (sjVar = cnVar.Z) != null) {
+                sjVar.L();
             }
         }
         super.show();

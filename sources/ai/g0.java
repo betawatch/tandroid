@@ -11,22 +11,22 @@ import fi.va;
 import java.util.ArrayList;
 import org.telegram.messenger.qs;
 import org.telegram.ui.Cells.q1;
-import org.telegram.ui.Components.jk0;
-import org.telegram.ui.Components.pm0;
-import org.telegram.ui.Components.wt0;
-import org.telegram.ui.an;
-import org.telegram.ui.c20;
-import org.telegram.ui.c40;
-import org.telegram.ui.ce0;
-import org.telegram.ui.g81;
-import org.telegram.ui.pn;
-import org.telegram.ui.pz0;
-import org.telegram.ui.rz0;
+import org.telegram.ui.Components.kk0;
+import org.telegram.ui.Components.qm0;
+import org.telegram.ui.Components.yt0;
+import org.telegram.ui.bs0;
+import org.telegram.ui.cn;
+import org.telegram.ui.e20;
+import org.telegram.ui.e40;
+import org.telegram.ui.ee0;
+import org.telegram.ui.h81;
+import org.telegram.ui.rn;
+import org.telegram.ui.sz0;
 import org.telegram.ui.t3;
-import org.telegram.ui.zr0;
+import org.telegram.ui.uz0;
 import tg.i2;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class g0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -55,7 +55,7 @@ public final class g0 extends AnimatorListenerAdapter {
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator anim) {
-        pz0 pz0Var;
+        sz0 sz0Var;
         switch (this.a) {
             case 0:
                 i0 i0Var = (i0) this.d;
@@ -107,42 +107,42 @@ public final class g0 extends AnimatorListenerAdapter {
                 t3Var.r();
                 return;
             case 6:
-                an anVar = (an) this.d;
+                cn cnVar = (cn) this.d;
                 if (this.b) {
                     return;
                 }
-                Bitmap bitmap = anVar.P8;
+                Bitmap bitmap = cnVar.P8;
                 if (bitmap != null) {
-                    anVar.Q8 = null;
-                    anVar.R8 = null;
+                    cnVar.Q8 = null;
+                    cnVar.R8 = null;
                     bitmap.recycle();
-                    anVar.P8 = null;
+                    cnVar.P8 = null;
                 }
                 q1 q1Var = (q1) this.c;
                 if (q1Var != null) {
                     q1Var.invalidate();
                 }
-                anVar.Qb(null);
-                anVar.a9 = null;
-                anVar.l1.invalidate();
-                anVar.z0.invalidate();
+                cnVar.Tb(null);
+                cnVar.a9 = null;
+                cnVar.l1.invalidate();
+                cnVar.z0.invalidate();
                 return;
             case 7:
                 ArrayList arrayList = (ArrayList) this.c;
-                ((pn) this.d).N.setVisibility(this.b ? 0 : 8);
+                ((rn) this.d).N.setVisibility(this.b ? 0 : 8);
                 for (int i7 = 0; i7 < arrayList.size(); i7++) {
                     ((View) arrayList.get(i7)).setTranslationY(0.0f);
                 }
                 return;
             case 8:
-                jk0 jk0Var = (jk0) this.d;
+                kk0 kk0Var = (kk0) this.d;
                 float f10 = this.b ? 1.0f : 0.0f;
-                jk0Var.r = f10;
-                jk0Var.D.setScaleX(org.telegram.messenger.g0.T1(0.8f, 1.0f, f10));
-                jk0Var.D.setScaleY(org.telegram.messenger.g0.T1(0.8f, 1.0f, jk0Var.r));
-                jk0Var.D.setAlpha(jk0Var.r);
-                jk0Var.s.invalidate();
-                jk0Var.w.invalidate();
+                kk0Var.r = f10;
+                kk0Var.D.setScaleX(org.telegram.messenger.g0.T1(0.8f, 1.0f, f10));
+                kk0Var.D.setScaleY(org.telegram.messenger.g0.T1(0.8f, 1.0f, kk0Var.r));
+                kk0Var.D.setAlpha(kk0Var.r);
+                kk0Var.s.invalidate();
+                kk0Var.w.invalidate();
                 Runnable runnable2 = (Runnable) this.c;
                 if (runnable2 != null) {
                     org.telegram.messenger.g0.h3(runnable2);
@@ -162,65 +162,65 @@ public final class g0 extends AnimatorListenerAdapter {
                 yVar2.setVisibility(8);
                 return;
             case 10:
-                c40 c40Var = (c40) this.d;
-                c20 c20Var = c40Var.t4;
+                e40 e40Var = (e40) this.d;
+                e20 e20Var = e40Var.t4;
                 org.telegram.ui.Components.voip.y yVar3 = (org.telegram.ui.Components.voip.y) this.c;
                 if (yVar3 != null) {
                     yVar3.f = false;
                 }
-                qs.f(c40Var.k1.a).j(c40Var.U4);
-                c40Var.T4 = false;
+                qs.f(e40Var.k1.a).j(e40Var.U4);
+                e40Var.T4 = false;
                 boolean z9 = this.b;
                 float f11 = z9 ? 1.0f : 0.0f;
-                c40Var.U3 = f11;
-                c40Var.R3.n = f11;
+                e40Var.U3 = f11;
+                e40Var.R3.n = f11;
                 if (z9) {
-                    c20Var.setAlpha(1.0f);
-                    c20Var.setScaleX(1.0f);
-                    c20Var.setScaleY(1.0f);
-                    c20Var.setTranslationX(0.0f);
-                    c20Var.setTranslationY(0.0f);
+                    e20Var.setAlpha(1.0f);
+                    e20Var.setScaleX(1.0f);
+                    e20Var.setScaleY(1.0f);
+                    e20Var.setTranslationX(0.0f);
+                    e20Var.setTranslationY(0.0f);
                 } else {
-                    c40Var.N4.setAlpha(0);
-                    c40Var.d1();
-                    if (c40Var.V3.getParent() != null) {
-                        c40Var.b.removeView(c40Var.V3);
+                    e40Var.N4.setAlpha(0);
+                    e40Var.d1();
+                    if (e40Var.V3.getParent() != null) {
+                        e40Var.b.removeView(e40Var.V3);
                     }
-                    c40Var.V3 = null;
-                    c20Var.setVisibility(8);
-                    c40Var.W3 = false;
-                    c40Var.P1.X = true;
-                    c40Var.S3.setVisibility(8);
-                    if (c40Var.j2) {
-                        c40Var.j2 = false;
-                        c40Var.Q0(true);
+                    e40Var.V3 = null;
+                    e20Var.setVisibility(8);
+                    e40Var.W3 = false;
+                    e40Var.P1.X = true;
+                    e40Var.S3.setVisibility(8);
+                    if (e40Var.j2) {
+                        e40Var.j2 = false;
+                        e40Var.Q0(true);
                     }
-                    org.telegram.ui.Components.voip.y yVar4 = c40Var.Q4;
+                    org.telegram.ui.Components.voip.y yVar4 = e40Var.Q4;
                     if (yVar4 != null) {
                         yVar4.a.setRoundCorners(0.0f);
                     }
                 }
-                c40Var.U0();
-                c40Var.b.invalidate();
-                c40Var.i1.invalidate();
-                c40Var.H1.invalidate();
+                e40Var.U0();
+                e40Var.b.invalidate();
+                e40Var.i1.invalidate();
+                e40Var.H1.invalidate();
                 return;
             case 11:
-                wt0 wt0Var = (wt0) this.c;
-                ce0 ce0Var = (ce0) this.d;
-                if (ce0Var.J == 0 && this.b) {
-                    ce0Var.N1(true, true);
+                yt0 yt0Var = (yt0) this.c;
+                ee0 ee0Var = (ee0) this.d;
+                if (ee0Var.J == 0 && this.b) {
+                    ee0Var.N1(true, true);
                 }
-                wt0Var.setVisibility(8);
-                wt0Var.g();
-                wt0Var.setX(0.0f);
+                yt0Var.setVisibility(8);
+                yt0Var.g();
+                yt0Var.setX(0.0f);
                 return;
             case 12:
-                zr0 zr0Var = (zr0) this.d;
-                zr0Var.D = this.b ? 1.0f : 0.0f;
-                zr0Var.c.invalidate();
-                zr0Var.d.invalidate();
-                zr0Var.e();
+                bs0 bs0Var = (bs0) this.d;
+                bs0Var.D = this.b ? 1.0f : 0.0f;
+                bs0Var.c.invalidate();
+                bs0Var.d.invalidate();
+                bs0Var.e();
                 Runnable runnable3 = (Runnable) this.c;
                 if (runnable3 != null) {
                     runnable3.run();
@@ -228,21 +228,21 @@ public final class g0 extends AnimatorListenerAdapter {
                 }
                 return;
             case 13:
-                rz0 rz0Var = (rz0) this.d;
-                rz0Var.s = this.b ? 1.0f : 0.0f;
-                rz0Var.b.invalidate();
-                rz0Var.c.invalidate();
-                rz0Var.e();
-                TextView textView = rz0Var.D;
+                uz0 uz0Var = (uz0) this.d;
+                uz0Var.s = this.b ? 1.0f : 0.0f;
+                uz0Var.b.invalidate();
+                uz0Var.c.invalidate();
+                uz0Var.e();
+                TextView textView = uz0Var.D;
                 if (textView != null) {
-                    textView.setAlpha(rz0Var.s);
+                    textView.setAlpha(uz0Var.s);
                 }
-                if (rz0Var.S) {
-                    rz0Var.N.invalidate();
+                if (uz0Var.S) {
+                    uz0Var.N.invalidate();
                 }
-                if (!rz0Var.S && (pz0Var = rz0Var.N) != null && pz0Var.getSeekBarWaveform() != null) {
-                    pm0 seekBarWaveform = rz0Var.N.getSeekBarWaveform();
-                    seekBarWaveform.L = rz0Var.s;
+                if (!uz0Var.S && (sz0Var = uz0Var.N) != null && sz0Var.getSeekBarWaveform() != null) {
+                    qm0 seekBarWaveform = uz0Var.N.getSeekBarWaveform();
+                    seekBarWaveform.L = uz0Var.s;
                     q1 q1Var2 = seekBarWaveform.n;
                     if (q1Var2 != null) {
                         q1Var2.invalidate();
@@ -255,11 +255,11 @@ public final class g0 extends AnimatorListenerAdapter {
                 }
                 return;
             case 14:
-                g81 g81Var = (g81) this.d;
-                g81Var.y = this.b ? 1.0f : 0.0f;
-                g81Var.b.invalidate();
-                g81Var.c.invalidate();
-                g81Var.e();
+                h81 h81Var = (h81) this.d;
+                h81Var.y = this.b ? 1.0f : 0.0f;
+                h81Var.b.invalidate();
+                h81Var.c.invalidate();
+                h81Var.e();
                 Runnable runnable5 = (Runnable) this.c;
                 if (runnable5 != null) {
                     runnable5.run();

@@ -25,7 +25,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class r1 implements f5.n, f5.c {
     public static final f5.o k;
@@ -478,7 +478,7 @@ public final class r1 implements f5.n, f5.c {
                 tL_inputAppEvent.type = "premium.promo_screen_fail";
                 tL_inputAppEvent.data = new TLRPC.TL_jsonNull();
                 tL_help_saveAppLog.events.add(tL_inputAppEvent);
-                ConnectionsManager.getInstance(p10.s0).sendRequest(tL_help_saveAppLog, new di.u5(9));
+                ConnectionsManager.getInstance(p10.s0).sendRequest(tL_help_saveAppLog, new di.v5(9));
             }
             Runnable runnable = r1Var2.h;
             if (runnable != null) {

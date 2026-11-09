@@ -24,7 +24,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_ephemeral;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class lg implements Runnable {
     public final /* synthetic */ int a;
@@ -65,16 +65,16 @@ public final /* synthetic */ class lg implements Runnable {
         NativeByteBuffer byteBufferValue;
         yr yrVar = (yr) this.b;
         ArrayList arrayList = (ArrayList) this.c;
-        org.telegram.ui.wg wgVar = (org.telegram.ui.wg) this.d;
+        org.telegram.ui.yg ygVar = (org.telegram.ui.yg) this.d;
         long e10 = yrVar.getUserConfig().e();
         int size = arrayList.size();
         int i7 = 0;
         while (i7 < size) {
             int i10 = i7 + 1;
             ij ijVar = (ij) arrayList.get(i7);
-            if (!ijVar.p1 && !ij.c4(ijVar.k)) {
+            if (!ijVar.p1 && !ij.b4(ijVar.k)) {
                 try {
-                    sQLiteCursor = yrVar.b.queryFinalized("SELECT data FROM messages_v2 WHERE uid = ? AND mid = ?", Long.valueOf(ij.B0(ijVar.k)), Integer.valueOf(ijVar.f1()));
+                    sQLiteCursor = yrVar.b.queryFinalized("SELECT data FROM messages_v2 WHERE uid = ? AND mid = ?", Long.valueOf(ij.B0(ijVar.k)), Integer.valueOf(ijVar.e1()));
                     try {
                         try {
                             if (sQLiteCursor.next() && (byteBufferValue = sQLiteCursor.byteBufferValue(0)) != null) {
@@ -111,7 +111,7 @@ public final /* synthetic */ class lg implements Runnable {
             }
             i7 = i10;
         }
-        g0.h3(wgVar);
+        g0.h3(ygVar);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -1140,7 +1140,7 @@ public final /* synthetic */ class lg implements Runnable {
                 f2Var.showDialog(u1VarArr[0]);
                 return;
             case 6:
-                ((qp) this.b).getNotificationCenter().k(qs.N2, (org.telegram.ui.ActionBar.j6) this.c, (org.telegram.ui.ActionBar.h6) this.d);
+                ((qp) this.b).getNotificationCenter().k(qs.N2, (org.telegram.ui.ActionBar.k6) this.c, (org.telegram.ui.ActionBar.i6) this.d);
                 return;
             case 7:
                 qp qpVar = (qp) this.b;

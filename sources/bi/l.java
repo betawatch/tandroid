@@ -14,10 +14,10 @@ import org.telegram.messenger.vi;
 import org.telegram.messenger.z10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.k21;
+import org.telegram.ui.Components.l21;
 import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -72,7 +72,7 @@ public final /* synthetic */ class l implements Runnable {
                 while (i7 < size) {
                     ij ijVar = (ij) arrayList8.get(i7);
                     SparseArray sparseArray = (SparseArray) hVar.f(ij.B0(ijVar.k));
-                    if (sparseArray != null && (arrayList = (ArrayList) sparseArray.get(ijVar.f1())) != null) {
+                    if (sparseArray != null && (arrayList = (ArrayList) sparseArray.get(ijVar.e1())) != null) {
                         int i10 = 0;
                         while (i10 < arrayList.size()) {
                             ij ijVar2 = (ij) arrayList.get(i10);
@@ -136,21 +136,21 @@ public final /* synthetic */ class l implements Runnable {
                     ArrayList<TLRPC.TL_textWithEntities> arrayList9 = ((TLRPC.TL_messages_translateResult) tLObject2).result;
                     int min = Math.min(arrayList3.size(), arrayList9.size());
                     for (int i11 = 0; i11 < min; i11++) {
-                        ((z10) arrayList3.get(i11)).a(Boolean.valueOf(z13), (Integer) arrayList2.get(i11), k21.P0((TLRPC.TL_textWithEntities) arrayList4.get(i11), arrayList9.get(i11)), str);
+                        ((z10) arrayList3.get(i11)).a(Boolean.valueOf(z13), (Integer) arrayList2.get(i11), l21.P0((TLRPC.TL_textWithEntities) arrayList4.get(i11), arrayList9.get(i11)), str);
                     }
                 } else {
                     if (tL_error2 == null || !"TRANSLATIONS_DISABLED_ALT".equalsIgnoreCase(tL_error2.text)) {
                         arrayList5 = arrayList2;
                         if (tL_error2 == null || !"TO_LANG_INVALID".equals(tL_error2.text)) {
                             if (tL_error2 != null && "QUOTA_EXCEEDED".equals(tL_error2.text)) {
-                                qs.e().k(qs.P4, 1, org.telegram.messenger.id.M0(2131743950, null));
+                                qs.e().k(qs.P4, 1, org.telegram.messenger.id.M0(2131743947, null));
                             }
                             for (int i12 = 0; i12 < arrayList3.size(); i12++) {
                                 ((z10) arrayList3.get(i12)).a(Boolean.valueOf(z13), (Integer) arrayList5.get(i12), null, b10Var.e);
                             }
                         } else {
                             f10Var.K(j11, false);
-                            qs.e().k(qs.P4, 1, org.telegram.messenger.id.M0(2131743949, null));
+                            qs.e().k(qs.P4, 1, org.telegram.messenger.id.M0(2131743946, null));
                         }
                         synchronized (f10Var) {
                             for (int i13 = 0; i13 < arrayList5.size(); i13++) {
@@ -168,7 +168,7 @@ public final /* synthetic */ class l implements Runnable {
                         int intValue = ((Integer) arrayList2.get(i14)).intValue();
                         ArrayList arrayList10 = arrayList2;
                         String str2 = str;
-                        k21.J0(((TLRPC.TL_textWithEntities) arrayList4.get(i14)).text, null, str2, new r00(f10Var, (z10) arrayList3.get(i14), z13, intValue, str2, j11, 1));
+                        l21.J0(((TLRPC.TL_textWithEntities) arrayList4.get(i14)).text, null, str2, new r00(f10Var, (z10) arrayList3.get(i14), z13, intValue, str2, j11, 1));
                         i14++;
                         arrayList2 = arrayList10;
                         str = str2;

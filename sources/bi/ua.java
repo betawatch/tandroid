@@ -9,11 +9,11 @@ import org.telegram.messenger.qp;
 import org.telegram.messenger.yr;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PrivacyControlActivity;
-import org.telegram.ui.an;
-import org.telegram.ui.hs0;
-import org.telegram.ui.oq;
+import org.telegram.ui.cn;
+import org.telegram.ui.js0;
+import org.telegram.ui.qq;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ua implements Runnable {
     public final /* synthetic */ int a;
@@ -40,12 +40,12 @@ public final /* synthetic */ class ua implements Runnable {
                             Bundle bundle = new Bundle();
                             bundle.putLong("chat_id", j10);
                             bundle.putInt(TeXSymbolParser.TYPE_ATTR, 3);
-                            oq oqVar = new oq(bundle);
-                            oqVar.C0(qp.s1(i7).N0(j10));
-                            T.presentFragment(oqVar);
+                            qq qqVar = new qq(bundle);
+                            qqVar.C0(qp.s1(i7).N0(j10));
+                            T.presentFragment(qqVar);
                             break;
                         } else {
-                            T.presentFragment(new hs0(j10));
+                            T.presentFragment(new js0(j10));
                             break;
                         }
                     } else {
@@ -75,7 +75,7 @@ public final /* synthetic */ class ua implements Runnable {
             default:
                 org.telegram.ui.ActionBar.f2 T2 = LaunchActivity.T();
                 if (T2 != null) {
-                    T2.presentFragment(an.qa(this.b, this.c));
+                    T2.presentFragment(cn.sa(this.b, this.c));
                     break;
                 }
                 break;

@@ -1,22 +1,22 @@
 package org.telegram.ui.web;
 
-import di.o7;
+import di.p7;
 import org.json.JSONObject;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.v10;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class n implements v10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ x0 b;
-    public final /* synthetic */ o7 c;
+    public final /* synthetic */ p7 c;
 
-    public /* synthetic */ n(x0 x0Var, o7 o7Var, int i7) {
+    public /* synthetic */ n(x0 x0Var, p7 p7Var, int i7) {
         this.a = i7;
         this.b = x0Var;
-        this.c = o7Var;
+        this.c = p7Var;
     }
 
     @Override // org.telegram.messenger.v10
@@ -53,7 +53,7 @@ public final /* synthetic */ class n implements v10 {
                 x0Var3.v(this.c);
                 break;
             case 3:
-                o7 o7Var = this.c;
+                p7 p7Var = this.c;
                 Boolean bool3 = (Boolean) obj;
                 String str2 = (String) obj2;
                 boolean booleanValue = bool3.booleanValue();
@@ -65,7 +65,7 @@ public final /* synthetic */ class n implements v10 {
                     JSONObject jSONObject = new JSONObject();
                     jSONObject.put("status", bool3.booleanValue() ? "authorized" : "failed");
                     jSONObject.put("token", str2);
-                    x0Var4.x(o7Var, "biometry_auth_requested", jSONObject);
+                    x0Var4.x(p7Var, "biometry_auth_requested", jSONObject);
                     break;
                 } catch (Exception e10) {
                     a8.g(e10, true);
@@ -75,12 +75,12 @@ public final /* synthetic */ class n implements v10 {
                 String str3 = (String) obj;
                 TLRPC.Document document = (TLRPC.Document) obj2;
                 x0 x0Var5 = this.b;
-                o7 o7Var2 = this.c;
+                p7 p7Var2 = this.c;
                 if (str3 != null) {
-                    x0Var5.x(o7Var2, "emoji_status_failed", x0.A(str3, "error"));
+                    x0Var5.x(p7Var2, "emoji_status_failed", x0.A(str3, "error"));
                     break;
                 } else {
-                    x0Var5.x(o7Var2, "emoji_status_set", null);
+                    x0Var5.x(p7Var2, "emoji_status_set", null);
                     d0 d0Var2 = x0Var5.c;
                     if (d0Var2 != null) {
                         d0Var2.d(document);

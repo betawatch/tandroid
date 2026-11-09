@@ -12,7 +12,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class i00 extends FrameLayout {
     public final RectF a;
@@ -111,7 +111,7 @@ public final class i00 extends FrameLayout {
                         h00Var.run();
                         hc a02 = hc.a0(f2Var);
                         boolean z10 = fragmentContextView.i0;
-                        org.telegram.messenger.k5.o(null, z10 ? 2131748781 : 2131748782, a02, z10 ? R.raw.silent_unmute : R.raw.silent_mute, 36);
+                        org.telegram.messenger.k5.o(null, z10 ? 2131748780 : 2131748781, a02, z10 ? R.raw.silent_unmute : R.raw.silent_mute, 36);
                     }
                 }
                 fragmentContextView.k0.c(false);

@@ -1,29 +1,27 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.text.SpannableStringBuilder;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class e50 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ g50 b;
+public final class e50 extends r70 {
+    public final /* synthetic */ i50 M;
 
-    public /* synthetic */ e50(g50 g50Var, int i7) {
-        this.a = i7;
-        this.b = g50Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public e50(i50 i50Var, Context context, org.telegram.ui.ActionBar.f2 f2Var, org.telegram.ui.ActionBar.v2 v2Var, boolean z9) {
+        super(context, f2Var, v2Var, false, z9);
+        this.M = i50Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                org.telegram.messenger.g0.h3(new ng(this.b, tL_error, tLObject, 9));
-                break;
-            default:
-                org.telegram.messenger.g0.h3(new fq(24, this.b, tL_error));
-                break;
-        }
+    @Override // org.telegram.ui.Components.r70
+    public final void e(SpannableStringBuilder spannableStringBuilder) {
+        n50 n50Var = this.M.c;
+        org.telegram.ui.ActionBar.l2 l2Var = n50Var.c;
+        int i7 = n50.e2;
+        cc Q = new hc(l2Var, n50Var.I0).Q(R.raw.forward, 36, spannableStringBuilder);
+        Q.r = false;
+        Q.k(true);
     }
 }

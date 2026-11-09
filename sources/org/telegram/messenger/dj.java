@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class dj {
     public long a;
@@ -36,7 +36,7 @@ public final class dj {
      */
     /* JADX WARN: Code restructure failed: missing block: B:39:0x00a8, code lost:
     
-        if ((org.telegram.messenger.ij.o1(r13.k) instanceof org.telegram.tgnet.TLRPC.TL_messageMediaInvoice) == false) goto L41;
+        if ((org.telegram.messenger.ij.n1(r13.k) instanceof org.telegram.tgnet.TLRPC.TL_messageMediaInvoice) == false) goto L41;
      */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:16:0x0068  */
@@ -103,7 +103,7 @@ public final class dj {
                 ijVar = (ij) this.d.get(i15);
                 if (i15 == (!this.n ? size - 1 : z11)) {
                     ijVar.U2 = null;
-                    z15 = ijVar.Q3();
+                    z15 = ijVar.P3();
                     if (!z15) {
                         TLRPC.Message message2 = ijVar.k;
                         TLRPC.MessageFwdHeader messageFwdHeader = message2.fwd_from;
@@ -112,19 +112,19 @@ public final class dj {
                                 TLRPC.Peer peer = message2.peer_id;
                                 if (peer.channel_id == 0) {
                                     if (peer.chat_id == 0) {
-                                        if (!(ij.o1(message2) instanceof TLRPC.TL_messageMediaGame)) {
+                                        if (!(ij.n1(message2) instanceof TLRPC.TL_messageMediaGame)) {
                                         }
                                     }
                                 }
                             }
                         }
                         z13 = z12;
-                        if (!ijVar.J3() || ijVar.V2()) {
+                        if (!ijVar.I3() || ijVar.U2()) {
                             this.i = z12;
                         }
                     }
                     z13 = z11;
-                    if (!ijVar.J3()) {
+                    if (!ijVar.I3()) {
                     }
                     this.i = z12;
                 }
@@ -150,7 +150,7 @@ public final class dj {
                     z14 = z12;
                 }
                 this.f.put(ijVar, ajVar2);
-                this.g.k(ajVar2, ijVar.f1());
+                this.g.k(ajVar2, ijVar.e1());
                 this.e.add(ajVar2);
                 if (ijVar.z != null) {
                     if (z16 && this.h == null) {
@@ -188,7 +188,7 @@ public final class dj {
                 if (f13 > 2.0f) {
                 }
                 this.f.put(ijVar, ajVar22);
-                this.g.k(ajVar22, ijVar.f1());
+                this.g.k(ajVar22, ijVar.e1());
                 this.e.add(ajVar22);
                 if (ijVar.z != null) {
                 }
@@ -602,7 +602,7 @@ public final class dj {
                 }
             }
         }
-        boolean z17 = (z9 || this.d.isEmpty() || !((ij) this.d.get(0)).Q2()) ? false : true;
+        boolean z17 = (z9 || this.d.isEmpty() || !((ij) this.d.get(0)).P2()) ? false : true;
         for (int i59 = 0; i59 < size; i59++) {
             aj ajVar16 = (aj) this.e.get(i59);
             if (z9) {
@@ -621,7 +621,7 @@ public final class dj {
                 }
             }
             ij ijVar2 = (ij) this.d.get(i59);
-            if (!z9 && !z17 && ijVar2.m5()) {
+            if (!z9 && !z17 && ijVar2.l5()) {
                 if (ajVar16.k) {
                     int i60 = ajVar16.i;
                     if (i60 != 1000) {
@@ -730,7 +730,7 @@ public final class dj {
         if (ajVar != null) {
             return ajVar;
         }
-        return (aj) this.g.f(ijVar.f1());
+        return (aj) this.g.f(ijVar.e1());
     }
 
     public final float e(int i7, int i10, float[] fArr) {

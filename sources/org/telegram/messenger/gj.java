@@ -11,11 +11,11 @@ import android.text.TextPaint;
 import android.text.TextUtils;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.my0;
-import org.telegram.ui.Components.tg0;
+import org.telegram.ui.Components.ny0;
 import org.telegram.ui.Components.ug0;
+import org.telegram.ui.Components.vg0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class gj {
     public final CharSequence a;
@@ -108,7 +108,7 @@ public final class gj {
     public gj(ij ijVar, CharSequence charSequence, TextPaint textPaint, int i7) {
         int i10;
         int L;
-        StaticLayout h52;
+        StaticLayout g52;
         boolean z9;
         float f10;
         float f11;
@@ -168,19 +168,19 @@ public final class gj {
             z21 = qp.s1(ijVar.I1).A2(ij.B0(ijVar.k));
         }
         boolean z22 = z21;
-        boolean z23 = ijVar != null && ijVar.Q2() && !ijVar.Q3() && textPaint == org.telegram.ui.ActionBar.k6.o2;
+        boolean z23 = ijVar != null && ijVar.P2() && !ijVar.P3() && textPaint == org.telegram.ui.ActionBar.l6.o2;
         boolean z24 = charSequence4 instanceof Spanned;
         this.f = z24 && ((ni.j[]) ((Spanned) charSequence4).getSpans(0, charSequence4.length(), ni.j.class)).length > 0;
-        this.i = z24 && ((tg0[]) ((Spanned) charSequence4).getSpans(0, charSequence4.length(), tg0.class)).length > 0;
+        this.i = z24 && ((ug0[]) ((Spanned) charSequence4).getSpans(0, charSequence4.length(), ug0.class)).length > 0;
         this.k = false;
         this.h = false;
         if (z24) {
             Spanned spanned = (Spanned) charSequence4;
-            ug0[] ug0VarArr = (ug0[]) spanned.getSpans(0, spanned.length(), ug0.class);
-            for (ug0 ug0Var : ug0VarArr) {
-                ug0Var.b = false;
+            vg0[] vg0VarArr = (vg0[]) spanned.getSpans(0, spanned.length(), vg0.class);
+            for (vg0 vg0Var : vg0VarArr) {
+                vg0Var.b = false;
             }
-            this.k = ug0VarArr.length == 1 && spanned.getSpanStart(ug0VarArr[0]) == 0 && spanned.getSpanEnd(ug0VarArr[0]) == spanned.length();
+            this.k = vg0VarArr.length == 1 && spanned.getSpanStart(vg0VarArr[0]) == 0 && spanned.getSpanEnd(vg0VarArr[0]) == spanned.length();
             ni.j[] jVarArr = (ni.j[]) spanned.getSpans(0, spanned.length(), ni.j.class);
             this.h = jVarArr.length == 1 && spanned.getSpanStart(jVarArr[0]) == 0 && spanned.getSpanEnd(jVarArr[0]) == spanned.length();
         }
@@ -190,12 +190,12 @@ public final class gj {
             } else {
                 if (!this.h) {
                     i10 = i7;
-                    h52 = ij.h5(charSequence4, textPaint, i10, 1.0f, 0.0f, false, Layout.Alignment.ALIGN_NORMAL);
+                    g52 = ij.g5(charSequence4, textPaint, i10, 1.0f, 0.0f, false, Layout.Alignment.ALIGN_NORMAL);
                     if (ijVar != null && ijVar.h2) {
-                        i21 = ijVar.D == 0 ? ijVar.A2() ? 7 : 12 : 22;
-                        i21 = ijVar.a5() ? i21 - 8 : i21;
-                        if (h52.getLineCount() > i21) {
-                            String M0 = id.M0(2131746372, null);
+                        i21 = ijVar.D == 0 ? ijVar.z2() ? 7 : 12 : 22;
+                        i21 = ijVar.Z4() ? i21 - 8 : i21;
+                        if (g52.getLineCount() > i21) {
+                            String M0 = id.M0(2131746371, null);
                             f10 = 15.0f;
                             f11 = 32.0f;
                             boolean z25 = true;
@@ -204,32 +204,32 @@ public final class gj {
                             int i22 = 0;
                             float f18 = 0.0f;
                             while (i22 < i21) {
-                                f18 = Math.max(f18, h52.getLineRight(i22));
+                                f18 = Math.max(f18, g52.getLineRight(i22));
                                 i22++;
                                 z25 = z25;
                             }
                             boolean z26 = z25;
                             int i23 = i21 - 1;
-                            int lineStart = h52.getLineStart(i23);
-                            int lineEnd = h52.getLineEnd(i23) - 1;
-                            while (lineEnd >= lineStart && h52.getPrimaryHorizontal(lineEnd) >= f18 - ceil3) {
+                            int lineStart = g52.getLineStart(i23);
+                            int lineEnd = g52.getLineEnd(i23) - 1;
+                            while (lineEnd >= lineStart && g52.getPrimaryHorizontal(lineEnd) >= f18 - ceil3) {
                                 lineEnd--;
                             }
                             while (lineEnd >= lineStart && !Character.isWhitespace(charSequence4.charAt(lineEnd))) {
                                 lineEnd--;
                             }
                             SpannableStringBuilder append = new SpannableStringBuilder(charSequence4.subSequence(0, lineEnd)).append((CharSequence) "… ").append((CharSequence) M0);
-                            append.setSpan(new fi.t9(2), append.length() - M0.length(), append.length(), 33);
+                            append.setSpan(new fi.s9(2), append.length() - M0.length(), append.length(), 33);
                             try {
                                 f12 = 0.0f;
-                                h52 = ij.h5(append, textPaint, i10, 1.0f, 0.0f, false, Layout.Alignment.ALIGN_NORMAL);
+                                g52 = ij.g5(append, textPaint, i10, 1.0f, 0.0f, false, Layout.Alignment.ALIGN_NORMAL);
                                 charSequence2 = append;
                                 if (this.k) {
                                     L2 = g0.L(f11);
                                 } else {
                                     if (!this.h) {
                                         i11 = i10;
-                                        int lineCount2 = h52.getLineCount();
+                                        int lineCount2 = g52.getLineCount();
                                         z10 = Build.VERSION.SDK_INT < 24;
                                         int i24 = 10;
                                         if (z10) {
@@ -243,15 +243,15 @@ public final class gj {
                                         if (!(charSequence2 instanceof Spanned) && (this.i || this.f)) {
                                             ij.R((Spanned) charSequence2, arrayList);
                                         } else if (!z10 || ceil == 1) {
-                                            arrayList.add(new hj(0, h52.getText().length()));
+                                            arrayList.add(new hj(0, g52.getText().length()));
                                         } else {
                                             int i25 = 0;
                                             int i26 = 0;
                                             while (i25 < ceil) {
                                                 int min = Math.min(i24, lineCount2 - i26);
-                                                int lineStart2 = h52.getLineStart(i26);
+                                                int lineStart2 = g52.getLineStart(i26);
                                                 int i27 = min + i26;
-                                                int lineEnd2 = h52.getLineEnd(i27 - 1);
+                                                int lineEnd2 = g52.getLineEnd(i27 - 1);
                                                 if (lineEnd2 >= lineStart2) {
                                                     arrayList.add(new hj(lineStart2, lineEnd2));
                                                     i26 = i27;
@@ -266,7 +266,7 @@ public final class gj {
                                         this.k = false;
                                         int i28 = i10;
                                         i12 = 0;
-                                        StaticLayout staticLayout6 = h52;
+                                        StaticLayout staticLayout6 = g52;
                                         CharSequence charSequence5 = charSequence2;
                                         while (i12 < arrayList.size()) {
                                             fj fjVar = new fj();
@@ -331,7 +331,7 @@ public final class gj {
                                                         z15 = z14;
                                                         int i31 = i30 - i29;
                                                         staticLayout = staticLayout6;
-                                                        textPaint2 = i31 > 220 ? org.telegram.ui.ActionBar.k6.r2 : i31 > 80 ? org.telegram.ui.ActionBar.k6.q2 : org.telegram.ui.ActionBar.k6.p2;
+                                                        textPaint2 = i31 > 220 ? org.telegram.ui.ActionBar.l6.r2 : i31 > 80 ? org.telegram.ui.ActionBar.l6.q2 : org.telegram.ui.ActionBar.l6.p2;
                                                     }
                                                     if (!fjVar.I) {
                                                         c10 = g0.L(f11);
@@ -345,7 +345,7 @@ public final class gj {
                                                                 SpannableString b11 = !TextUtils.isEmpty(str) ? ni.m.b(charSequence5.subSequence(i29, i30).toString(), str) : new SpannableString(charSequence5.subSequence(i29, i30));
                                                                 fjVar.s = i13;
                                                                 int i32 = i13;
-                                                                staticLayout5 = ij.h5(b11, textPaint2, i32, 1.0f, 0.0f, false, Layout.Alignment.ALIGN_NORMAL);
+                                                                staticLayout5 = ij.g5(b11, textPaint2, i32, 1.0f, 0.0f, false, Layout.Alignment.ALIGN_NORMAL);
                                                                 i28 = i32;
                                                             } else {
                                                                 fjVar.s = i28;
@@ -380,9 +380,9 @@ public final class gj {
                                                                                 b10 = ni.m.b(charSequence5.subSequence(i29, i30).toString(), str);
                                                                                 SpannableString spannableString = b10;
                                                                                 fjVar.s = i33;
-                                                                                StaticLayout h53 = ij.h5(spannableString, textPaint2, i33, 1.0f, 0.0f, false, Layout.Alignment.ALIGN_NORMAL);
-                                                                                fjVar.e = h53;
-                                                                                fjVar.w = h53.getHeight();
+                                                                                StaticLayout g53 = ij.g5(spannableString, textPaint2, i33, 1.0f, 0.0f, false, Layout.Alignment.ALIGN_NORMAL);
+                                                                                fjVar.e = g53;
+                                                                                fjVar.w = g53.getHeight();
                                                                                 fjVar.F = (int) Math.min(textPaint.getTextSize() * 1.4f * 3.0f, fjVar.w);
                                                                                 i16 = i28;
                                                                                 staticLayout2 = staticLayout;
@@ -410,9 +410,9 @@ public final class gj {
                                                                     b10 = SpannableString.valueOf(charSequence5.subSequence(i29, i30));
                                                                     SpannableString spannableString2 = b10;
                                                                     fjVar.s = i33;
-                                                                    StaticLayout h532 = ij.h5(spannableString2, textPaint2, i33, 1.0f, 0.0f, false, Layout.Alignment.ALIGN_NORMAL);
-                                                                    fjVar.e = h532;
-                                                                    fjVar.w = h532.getHeight();
+                                                                    StaticLayout g532 = ij.g5(spannableString2, textPaint2, i33, 1.0f, 0.0f, false, Layout.Alignment.ALIGN_NORMAL);
+                                                                    fjVar.e = g532;
+                                                                    fjVar.w = g532.getHeight();
                                                                     fjVar.F = (int) Math.min(textPaint.getTextSize() * 1.4f * 3.0f, fjVar.w);
                                                                     i16 = i28;
                                                                     staticLayout2 = staticLayout;
@@ -614,9 +614,9 @@ public final class gj {
                                                         if (fjVar.U) {
                                                             this.c = Math.max(this.c, i11);
                                                         } else {
-                                                            my0 my0Var = fjVar.L;
-                                                            if (my0Var != null) {
-                                                                this.c = (int) Math.max(this.c, Math.min(my0Var.c + g0.L(f10), fjVar.e == null ? f14 : r5.getWidth()));
+                                                            ny0 ny0Var = fjVar.L;
+                                                            if (ny0Var != null) {
+                                                                this.c = (int) Math.max(this.c, Math.min(ny0Var.c + g0.L(f10), fjVar.e == null ? f14 : r5.getWidth()));
                                                             }
                                                         }
                                                         if (ijVar != null && !ijVar.L0 && !ijVar.I2) {
@@ -748,7 +748,7 @@ public final class gj {
                                     L2 = g0.L(f10);
                                 }
                                 i11 = L2 + i10;
-                                int lineCount22 = h52.getLineCount();
+                                int lineCount22 = g52.getLineCount();
                                 if (Build.VERSION.SDK_INT < 24) {
                                 }
                                 int i242 = 10;
@@ -759,14 +759,14 @@ public final class gj {
                                 }
                                 if (z10) {
                                 }
-                                arrayList.add(new hj(0, h52.getText().length()));
+                                arrayList.add(new hj(0, g52.getText().length()));
                                 int size2 = arrayList.size();
                                 this.g = false;
                                 this.j = false;
                                 this.k = false;
                                 int i282 = i10;
                                 i12 = 0;
-                                StaticLayout staticLayout62 = h52;
+                                StaticLayout staticLayout62 = g52;
                                 CharSequence charSequence52 = charSequence2;
                                 while (i12 < arrayList.size()) {
                                 }
@@ -785,7 +785,7 @@ public final class gj {
                     if (this.k) {
                     }
                     i11 = L2 + i10;
-                    int lineCount222 = h52.getLineCount();
+                    int lineCount222 = g52.getLineCount();
                     if (Build.VERSION.SDK_INT < 24) {
                     }
                     int i2422 = 10;
@@ -796,14 +796,14 @@ public final class gj {
                     }
                     if (z10) {
                     }
-                    arrayList.add(new hj(0, h52.getText().length()));
+                    arrayList.add(new hj(0, g52.getText().length()));
                     int size22 = arrayList.size();
                     this.g = false;
                     this.j = false;
                     this.k = false;
                     int i2822 = i10;
                     i12 = 0;
-                    StaticLayout staticLayout622 = h52;
+                    StaticLayout staticLayout622 = g52;
                     CharSequence charSequence522 = charSequence2;
                     while (i12 < arrayList.size()) {
                     }
@@ -811,13 +811,13 @@ public final class gj {
                 }
                 L = g0.L(15.0f);
             }
-            h52 = ij.h5(charSequence4, textPaint, i10, 1.0f, 0.0f, false, Layout.Alignment.ALIGN_NORMAL);
+            g52 = ij.g5(charSequence4, textPaint, i10, 1.0f, 0.0f, false, Layout.Alignment.ALIGN_NORMAL);
             if (ijVar != null) {
                 if (ijVar.D == 0) {
                 }
-                if (ijVar.a5()) {
+                if (ijVar.Z4()) {
                 }
-                if (h52.getLineCount() > i21) {
+                if (g52.getLineCount() > i21) {
                 }
             }
             z9 = z22;
@@ -828,7 +828,7 @@ public final class gj {
             if (this.k) {
             }
             i11 = L2 + i10;
-            int lineCount2222 = h52.getLineCount();
+            int lineCount2222 = g52.getLineCount();
             if (Build.VERSION.SDK_INT < 24) {
             }
             int i24222 = 10;
@@ -839,14 +839,14 @@ public final class gj {
             }
             if (z10) {
             }
-            arrayList.add(new hj(0, h52.getText().length()));
+            arrayList.add(new hj(0, g52.getText().length()));
             int size222 = arrayList.size();
             this.g = false;
             this.j = false;
             this.k = false;
             int i28222 = i10;
             i12 = 0;
-            StaticLayout staticLayout6222 = h52;
+            StaticLayout staticLayout6222 = g52;
             CharSequence charSequence5222 = charSequence2;
             while (i12 < arrayList.size()) {
             }

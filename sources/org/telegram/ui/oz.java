@@ -1,36 +1,27 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.View;
+import android.content.Context;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class oz extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ vp b;
+public final class oz extends org.telegram.ui.Components.mz {
+    public final /* synthetic */ int U;
+    public final /* synthetic */ Object V;
 
-    public oz(vp vpVar) {
-        this.b = vpVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ oz(int i7, Context context, Object obj) {
+        super(context, null);
+        this.U = i7;
+        this.V = obj;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
+    @Override // org.telegram.ui.Components.mz
+    public final int getColumnsCount() {
+        switch (this.U) {
             case 0:
-                ((yz) this.b.d).l0.e();
-                break;
+                return ((a00) this.V).s;
             default:
-                vp vpVar = this.b;
-                View view = vpVar.b;
-                view.setAlpha(1.0f);
-                v4.n0.x0(view);
-                ((yz) vpVar.d).b.removeView(view);
-                break;
+                return ((yz) this.V).d.s;
         }
-    }
-
-    public oz(vp vpVar, v4.n0 n0Var) {
-        this.b = vpVar;
     }
 }

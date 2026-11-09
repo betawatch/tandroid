@@ -1,23 +1,50 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class vu0 extends org.telegram.ui.Components.mo0 {
-    public final /* synthetic */ wu0 R2;
+public final class vu0 extends v4.b0 {
+    public final /* synthetic */ ProfileActivity I;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public vu0(wu0 wu0Var, Activity activity, String str) {
-        super(activity, null, str, false, null, false, null);
-        this.R2 = wu0Var;
+    public vu0(ProfileActivity profileActivity) {
+        this.I = profileActivity;
     }
 
-    @Override // org.telegram.ui.Components.mo0
-    public final void R0(a0.h hVar, int i7, TLRPC.TL_forumTopic tL_forumTopic, boolean z9) {
-        if (z9) {
-            org.telegram.messenger.g0.i3(new qn0(this, hVar, i7, 23), 250L);
+    @Override // v4.b0, v4.n0
+    public final int o0(int i7, v4.v0 v0Var, v4.a1 a1Var) {
+        ProfileActivity profileActivity = this.I;
+        View m10 = profileActivity.c.m(0);
+        if (m10 != null && !profileActivity.F0) {
+            int top = m10.getTop() - profileActivity.j4();
+            boolean z9 = profileActivity.n2;
+            if (z9 || top <= i7) {
+                if (z9) {
+                    if (i7 >= top) {
+                        profileActivity.n2 = false;
+                    } else if (profileActivity.a.getScrollState() == 1 && !profileActivity.o2) {
+                        i7 /= 2;
+                    }
+                }
+            } else if (!profileActivity.n0.X0.isEmpty() && profileActivity.e0.getImageReceiver().L() && !org.telegram.messenger.g0.C1() && ((!profileActivity.m2 && !org.telegram.messenger.g0.Q1()) || profileActivity.I0)) {
+                profileActivity.n2 = profileActivity.I2 == null;
+            }
+            i7 = top;
         }
+        if (!profileActivity.N1 || profileActivity.a.P0) {
+            return super.o0(i7, v0Var, a1Var);
+        }
+        return 0;
+    }
+
+    @Override // v4.b0, v4.n0
+    public final boolean y0() {
+        return this.I.q0 != null;
+    }
+
+    @Override // v4.b0
+    public final void z0(v4.a1 a1Var, int[] iArr) {
+        super.z0(a1Var, iArr);
+        iArr[0] = Math.max(iArr[0], ProfileActivity.J0(this.I));
     }
 }

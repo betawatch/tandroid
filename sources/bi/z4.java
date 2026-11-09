@@ -8,7 +8,7 @@ import org.telegram.messenger.t10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z4 implements c20 {
     public final /* synthetic */ int a;
@@ -36,11 +36,11 @@ public final /* synthetic */ class z4 implements c20 {
         switch (i7) {
             case 0:
                 Context context = (Context) obj3;
-                org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) obj2;
+                org.telegram.ui.ActionBar.g6 g6Var = (org.telegram.ui.ActionBar.g6) obj2;
                 ArrayList arrayList = (ArrayList) obj;
                 ((boolean[]) obj4)[0] = false;
                 if (arrayList != null) {
-                    new w1(context, f6Var, this.b, this.c, arrayList, false).show();
+                    new w1(context, g6Var, this.b, this.c, arrayList, false).show();
                     break;
                 }
                 break;
@@ -62,7 +62,7 @@ public final /* synthetic */ class z4 implements c20 {
                     if (a22 == null) {
                         org.telegram.ui.ActionBar.f2 Q = LaunchActivity.Q();
                         if (Q != null) {
-                            org.telegram.messenger.k5.p(null, 2131748135, org.telegram.ui.Components.hc.a0(Q), null);
+                            org.telegram.messenger.k5.p(null, 2131748134, org.telegram.ui.Components.hc.a0(Q), null);
                             break;
                         }
                     } else {

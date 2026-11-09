@@ -20,9 +20,9 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public abstract class gb extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
+public abstract class gb extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public static final r1.e IN_OUT_OFFSET_Y = new cb(0);
     public static final Property<gb, Float> IN_OUT_OFFSET_Y2 = new org.telegram.ui.Cells.o8("offsetY", 8);
     Drawable background;
@@ -36,7 +36,7 @@ public abstract class gb extends FrameLayout implements org.telegram.ui.ActionBa
     private boolean hasCustomBackground;
     public float inOutOffset;
     public View.OnClickListener onClickListener;
-    private final org.telegram.ui.ActionBar.f6 resourcesProvider;
+    private final org.telegram.ui.ActionBar.g6 resourcesProvider;
     private Drawable themeBackground;
     public boolean top;
     public boolean transitionRunningEnter;
@@ -44,14 +44,14 @@ public abstract class gb extends FrameLayout implements org.telegram.ui.ActionBa
     private int wideScreenGravity;
     private int wideScreenWidth;
 
-    public gb(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+    public gb(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
         super(context);
         this.callbacks = new ArrayList();
         this.wideScreenWidth = -2;
         this.wideScreenGravity = 1;
-        this.resourcesProvider = f6Var;
+        this.resourcesProvider = g6Var;
         setMinimumHeight(org.telegram.messenger.g0.L(48.0f));
-        setBackground(getThemedColor(org.telegram.ui.ActionBar.k6.tj));
+        setBackground(getThemedColor(org.telegram.ui.ActionBar.l6.tj));
         this.themeBackground = this.background;
         b();
         setPadding(org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(8.0f));
@@ -244,7 +244,7 @@ public abstract class gb extends FrameLayout implements org.telegram.ui.ActionBa
     }
 
     public int getThemedColor(int i7) {
-        return org.telegram.ui.ActionBar.k6.w0(i7, this.resourcesProvider);
+        return org.telegram.ui.ActionBar.l6.w0(i7, this.resourcesProvider);
     }
 
     public float getTopOffset() {
@@ -362,7 +362,7 @@ public abstract class gb extends FrameLayout implements org.telegram.ui.ActionBa
         try {
             Drawable drawable = this.background;
             if (drawable != null && drawable == this.themeBackground && (drawable instanceof ShapeDrawable)) {
-                ((ShapeDrawable) drawable).getPaint().setColor(getThemedColor(org.telegram.ui.ActionBar.k6.tj));
+                ((ShapeDrawable) drawable).getPaint().setColor(getThemedColor(org.telegram.ui.ActionBar.l6.tj));
                 invalidate();
             }
         } catch (Exception e10) {
@@ -391,7 +391,7 @@ public abstract class gb extends FrameLayout implements org.telegram.ui.ActionBa
         if (this.hasCustomBackground) {
             return;
         }
-        this.background = org.telegram.ui.ActionBar.k6.d0(org.telegram.messenger.g0.L(i10), i7);
+        this.background = org.telegram.ui.ActionBar.l6.d0(org.telegram.messenger.g0.L(i10), i7);
     }
 
     public /* synthetic */ void addColorKeys(HashSet hashSet) {

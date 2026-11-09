@@ -14,16 +14,16 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.id;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.a6;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.ActionBar.b6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.s6;
 import org.telegram.ui.Components.w8;
 import org.telegram.ui.Components.wo;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class n1 extends FrameLayout implements a6 {
+public final class n1 extends FrameLayout implements b6 {
     public final w8 a;
     public final ImageReceiver b;
     public final TextView c;
@@ -31,25 +31,25 @@ public final class n1 extends FrameLayout implements a6 {
     public final wo e;
     public final Path f;
     public final Paint h;
-    public final f6 n;
+    public final g6 n;
     public final int[] r;
     public boolean s;
 
-    public n1(Context context, f6 f6Var) {
+    public n1(Context context, g6 g6Var) {
         super(context);
-        this.a = new w8((f6) null);
+        this.a = new w8((g6) null);
         this.b = new ImageReceiver(this);
         this.f = new Path();
         this.h = new Paint(1);
         this.r = new int[1];
-        this.n = f6Var;
+        this.n = g6Var;
         setWillNotDraw(false);
         TextView textView = new TextView(context);
         this.c = textView;
         textView.setSingleLine();
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
         textView.setEllipsize(truncateAt);
-        r6.V(textView, k6.G6, f6Var);
+        s6.U(textView, l6.G6, g6Var);
         textView.setTypeface(org.telegram.messenger.g0.o());
         textView.setTextSize(1, 16.0f);
         boolean z9 = id.a0;
@@ -58,13 +58,13 @@ public final class n1 extends FrameLayout implements a6 {
         this.d = textView2;
         textView2.setLines(2);
         textView2.setEllipsize(truncateAt);
-        r6.V(textView2, k6.z6, f6Var);
+        s6.U(textView2, l6.z6, g6Var);
         textView2.setTextSize(1, 15.0f);
         boolean z10 = id.a0;
         addView(textView2, ha.d(-1, -2.0f, 7, z10 ? 40.0f : 78.0f, 32.0f, z10 ? 78.0f : 40.0f, 0.0f));
-        wo woVar = new wo(21, getContext(), f6Var);
+        wo woVar = new wo(21, getContext(), g6Var);
         this.e = woVar;
-        woVar.b(-1, k6.d6, k6.k7);
+        woVar.b(-1, l6.d6, l6.k7);
         woVar.setDrawUnchecked(false);
         woVar.setDrawBackgroundAsArc(3);
         addView(woVar, ha.i(24.0f, 24.0f, 8388659, 33.0f, 25.0f, 0.0f, 0.0f));
@@ -82,9 +82,9 @@ public final class n1 extends FrameLayout implements a6 {
         super.onDraw(canvas);
         canvas.drawPath(this.f, this.h);
         if (this.s) {
-            Paint W0 = k6.W0("paintDivider", this.n);
+            Paint W0 = l6.W0("paintDivider", this.n);
             if (W0 == null) {
-                W0 = k6.k0;
+                W0 = l6.k0;
             }
             canvas.drawRect(org.telegram.messenger.g0.L(id.a0 ? 0.0f : 78.0f), getMeasuredHeight() - 1, getWidth() - org.telegram.messenger.g0.L(id.a0 ? 78.0f : 0.0f), getMeasuredHeight(), W0);
         }
@@ -99,7 +99,7 @@ public final class n1 extends FrameLayout implements a6 {
         paint.setStrokeCap(Paint.Cap.ROUND);
         paint.setStrokeJoin(Paint.Join.ROUND);
         paint.setStrokeWidth(org.telegram.messenger.g0.N(1.66f));
-        paint.setColor(k6.r1(0.85f, k6.w0(k6.z6, this.n)));
+        paint.setColor(l6.r1(0.85f, l6.w0(l6.z6, this.n)));
         Path path = this.f;
         path.rewind();
         float measuredHeight = getMeasuredHeight() / 2.0f;
@@ -109,17 +109,17 @@ public final class n1 extends FrameLayout implements a6 {
         path.lineTo(N, org.telegram.messenger.g0.N(5.66f) + measuredHeight);
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
         try {
-            this.h.setColor(k6.r1(0.85f, k6.w0(k6.z6, this.n)));
+            this.h.setColor(l6.r1(0.85f, l6.w0(l6.z6, this.n)));
             invalidate();
         } catch (Exception e10) {
             a8.g(e10, true);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

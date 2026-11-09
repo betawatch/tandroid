@@ -5,7 +5,7 @@ import android.content.Context;
 import android.view.ActionMode;
 import android.view.Menu;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class ym extends org.telegram.ui.Cells.a6 {
     public final /* synthetic */ org.telegram.ui.l4 F;
@@ -23,7 +23,7 @@ public final class ym extends org.telegram.ui.Cells.a6 {
             if (menu.findItem(R.id.copy) == null) {
                 return;
             }
-            org.telegram.ui.an.A8(menu, ((org.telegram.ui.an) ((bn) this.F.e).b.W1).h, false, true, true, true);
+            org.telegram.ui.cn.B8(menu, ((org.telegram.ui.cn) ((bn) this.F.e).b.W1).h, false, true, true, true);
         }
     }
 

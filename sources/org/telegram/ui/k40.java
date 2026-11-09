@@ -1,46 +1,26 @@
 package org.telegram.ui;
 
-import android.view.View;
+import android.app.Activity;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class k40 implements org.telegram.ui.Components.t00, org.telegram.ui.ActionBar.r1, r0.m {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ w40 b;
+public final class k40 extends ug.i0 {
+    public final /* synthetic */ l40 P2;
 
-    public /* synthetic */ k40(w40 w40Var, int i7) {
-        this.a = i7;
-        this.b = w40Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public k40(l40 l40Var, l40 l40Var2, Activity activity, int i7, int i10, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(i7, i10, activity, l40Var2, g6Var);
+        this.P2 = l40Var;
     }
 
-    @Override // r0.m
-    public r0.k1 S0(View view, r0.k1 k1Var) {
-        int i7 = org.telegram.messenger.g0.I0(k1Var, false).d;
-        w40 w40Var = this.b;
-        w40Var.m0 = i7;
-        bi.s1 s1Var = w40Var.F;
-        if (s1Var != null) {
-            s1Var.setPadding(0, 0, 0, i7);
-        }
-        w40Var.o0();
-        w40Var.m0();
-        return r0.k1.b;
+    @Override // org.telegram.ui.ActionBar.v2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.b2
+    public final void dismiss() {
+        super.dismiss();
+        this.P2.B0 = false;
     }
 
-    @Override // org.telegram.ui.Components.t00
-    public void a(int i7) {
-        this.b.b.a(Math.min(i7, r0.c0));
-    }
-
-    @Override // org.telegram.ui.ActionBar.r1
-    public void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
-        switch (this.a) {
-            case 1:
-                this.b.t0();
-                break;
-            default:
-                this.b.finishFragment();
-                break;
-        }
+    @Override // org.telegram.ui.ActionBar.v2
+    public final void v() {
+        this.P2.B0 = false;
     }
 }

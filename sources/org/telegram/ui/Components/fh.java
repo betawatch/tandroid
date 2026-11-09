@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.view.View;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class fh extends View {
     public final /* synthetic */ int a;
@@ -39,12 +39,12 @@ public final class fh extends View {
                 String format = String.format("%d", Integer.valueOf(Math.max(1, diVar.s2.getSelectedItemsCount())));
                 int max = Math.max(org.telegram.messenger.g0.L(16.0f) + ((int) Math.ceil(diVar.D2.measureText(format))), org.telegram.messenger.g0.L(24.0f));
                 int measuredWidth = getMeasuredWidth() / 2;
-                diVar.D2.setColor(i0.a.o(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.C5, diVar.I0), (int) (((diVar.P2 * 0.42d) + 0.58d) * Color.alpha(r5))));
-                diVar.F2.setColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.h5, diVar.I0));
+                diVar.D2.setColor(i0.a.o(org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.C5, diVar.I0), (int) (((diVar.P2 * 0.42d) + 0.58d) * Color.alpha(r5))));
+                diVar.F2.setColor(org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.h5, diVar.I0));
                 int i7 = max / 2;
                 diVar.E2.set(measuredWidth - i7, 0.0f, i7 + measuredWidth, getMeasuredHeight());
                 canvas.drawRoundRect(diVar.E2, org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(12.0f), diVar.F2);
-                diVar.F2.setColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.W9, diVar.I0));
+                diVar.F2.setColor(org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.W9, diVar.I0));
                 diVar.E2.set(org.telegram.messenger.g0.L(2.0f) + r6, org.telegram.messenger.g0.L(2.0f), r3 - org.telegram.messenger.g0.L(2.0f), getMeasuredHeight() - org.telegram.messenger.g0.L(2.0f));
                 canvas.drawRoundRect(diVar.E2, org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(10.0f), diVar.F2);
                 canvas.drawText(format, measuredWidth - (r2 / 2), org.telegram.messenger.g0.L(16.2f), diVar.D2);

@@ -11,7 +11,7 @@ import org.telegram.messenger.x10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h2 implements x10 {
     public final /* synthetic */ int a;
@@ -35,9 +35,9 @@ public final /* synthetic */ class h2 implements x10 {
                 ArrayList arrayList = (ArrayList) obj;
                 v10 v10Var = (v10) obj2;
                 Runnable runnable = (Runnable) obj3;
-                zh.j3 j3Var = k7Var.O2;
-                if (j3Var != null) {
-                    j3Var.b();
+                zh.k3 k3Var = k7Var.O2;
+                if (k3Var != null) {
+                    k3Var.b();
                     k7Var.O2 = null;
                 }
                 TL_stars.craftStarGift craftstargift = new TL_stars.craftStarGift();
@@ -156,15 +156,15 @@ public final /* synthetic */ class h2 implements x10 {
                         vaVar.l0(true);
                         vaVar.e(false);
                         vaVar.J(1, true);
-                        fi.o9 o9Var = vaVar.d1;
-                        if (o9Var != null) {
-                            di.s7 s7Var = o9Var.h;
-                            if (!o9Var.I && !o9Var.M && (i7 = qp.e1().getInt("multistorieshint", 0)) < 3) {
+                        fi.n9 n9Var = vaVar.d1;
+                        if (n9Var != null) {
+                            di.f8 f8Var = n9Var.h;
+                            if (!n9Var.I && !n9Var.M && (i7 = qp.e1().getInt("multistorieshint", 0)) < 3) {
                                 qp.e1().edit().putInt("multistorieshint", i7 + 1).apply();
-                                org.telegram.messenger.g0.r(s7Var);
-                                o9Var.I = true;
-                                o9Var.invalidate();
-                                org.telegram.messenger.g0.i3(s7Var, 5500L);
+                                org.telegram.messenger.g0.r(f8Var);
+                                n9Var.I = true;
+                                n9Var.invalidate();
+                                org.telegram.messenger.g0.i3(f8Var, 5500L);
                             }
                         }
                         fi.i3 i3Var = vaVar.M0;

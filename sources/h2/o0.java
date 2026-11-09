@@ -17,10 +17,9 @@ import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Cells.e2;
 import org.telegram.ui.Cells.h2;
 import org.telegram.ui.Components.j2;
-import org.telegram.ui.Wallet.h3;
-import org.telegram.ui.Wallet.q0;
+import org.telegram.ui.Wallet.g3;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class o0 implements Runnable {
     public final /* synthetic */ int a;
@@ -104,14 +103,14 @@ public final /* synthetic */ class o0 implements Runnable {
                 h2Var.f(z14, true);
                 break;
             case 4:
-                org.telegram.ui.Wallet.m0 m0Var = (org.telegram.ui.Wallet.m0) this.d;
+                org.telegram.ui.Wallet.l0 l0Var = (org.telegram.ui.Wallet.l0) this.d;
                 c20 c20Var = (c20) this.e;
                 boolean z15 = this.b;
                 boolean z16 = this.c;
-                TL_wallet.TL_walletState tL_walletState = (TL_wallet.TL_walletState) m0Var.e;
-                q0 q0Var = m0Var.c;
-                if (q0Var == null || !TextUtils.equals(q0Var.c, tL_walletState.address) || !m0Var.c.f(tL_walletState.public_key)) {
-                    m0Var.z(new org.telegram.ui.Wallet.j((Object) m0Var, (Object) c20Var, (Object) tL_walletState, 6), z15, z16);
+                TL_wallet.TL_walletState tL_walletState = (TL_wallet.TL_walletState) l0Var.e;
+                org.telegram.ui.Wallet.p0 p0Var2 = l0Var.c;
+                if (p0Var2 == null || !TextUtils.equals(p0Var2.c, tL_walletState.address) || !l0Var.c.f(tL_walletState.public_key)) {
+                    l0Var.z(new org.telegram.ui.Wallet.j((Object) l0Var, (Object) c20Var, (Object) tL_walletState, 6), z15, z16);
                     break;
                 } else {
                     c20Var.a(null);
@@ -119,35 +118,35 @@ public final /* synthetic */ class o0 implements Runnable {
                 }
                 break;
             default:
-                org.telegram.ui.Wallet.m0 m0Var2 = (org.telegram.ui.Wallet.m0) this.d;
+                org.telegram.ui.Wallet.l0 l0Var2 = (org.telegram.ui.Wallet.l0) this.d;
                 v10 v10Var = (v10) this.e;
                 boolean z17 = this.b;
                 boolean z18 = this.c;
-                org.telegram.ui.Wallet.m0.H("getSecretPhrase: ready!");
-                TL_wallet.TL_walletState tL_walletState2 = (TL_wallet.TL_walletState) m0Var2.e;
-                if (!m0Var2.c.f(tL_walletState2.public_key)) {
+                org.telegram.ui.Wallet.l0.H("getSecretPhrase: ready!");
+                TL_wallet.TL_walletState tL_walletState2 = (TL_wallet.TL_walletState) l0Var2.e;
+                if (!l0Var2.c.f(tL_walletState2.public_key)) {
                     Object obj = null;
                     if (!tL_walletState2.backup_enabled) {
-                        org.telegram.ui.Wallet.m0.j("getSecretPhrase: no server backup!");
+                        org.telegram.ui.Wallet.l0.j("getSecretPhrase: no server backup!");
                         v10Var.a(null, "NO_LOCAL_BACKUP");
                         break;
                     } else {
-                        org.telegram.ui.Wallet.m0.H("getSecretPhrase: exportSecretPhrase through password request");
-                        h3.a(m0Var2.a, new ai.c0(9), null, null, null, new di.b0(4, m0Var2, v10Var), z17, z18, new v0(obj, 2));
+                        org.telegram.ui.Wallet.l0.H("getSecretPhrase: exportSecretPhrase through password request");
+                        g3.a(l0Var2.a, new ai.c0(9), null, null, null, new di.b0(4, l0Var2, v10Var), z17, z18, new v0(obj, 2));
                         break;
                     }
                 } else {
-                    org.telegram.ui.Wallet.m0.H("getSecretPhrase: device has secured phrase, requesting");
-                    q0 q0Var2 = m0Var2.c;
+                    org.telegram.ui.Wallet.l0.H("getSecretPhrase: device has secured phrase, requesting");
+                    org.telegram.ui.Wallet.p0 p0Var3 = l0Var2.c;
                     byte[] bArr = tL_walletState2.public_key;
                     org.telegram.ui.Wallet.k kVar = new org.telegram.ui.Wallet.k(v10Var, 1);
                     if (bArr == null) {
                         o4 = "";
                     } else {
-                        q0Var2.getClass();
-                        o4 = q0.o(bArr);
+                        p0Var3.getClass();
+                        o4 = org.telegram.ui.Wallet.p0.o(bArr);
                     }
-                    q0.h.execute(new j2(q0Var2, q0Var2.l(), o4, true, (c20) kVar));
+                    org.telegram.ui.Wallet.p0.h.execute(new j2(p0Var3, p0Var3.l(), o4, true, (c20) kVar));
                     break;
                 }
         }

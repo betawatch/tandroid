@@ -26,15 +26,15 @@ import l2.u0;
 import l2.v0;
 import org.telegram.ui.Cells.f1;
 import org.telegram.ui.Components.rt;
-import org.telegram.ui.web.w;
 import p4.r0;
 import s2.u;
+import s2.w;
 import x2.c1;
 import x2.d0;
 import x2.e0;
 import x2.q1;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class j implements e0, u {
     public final int D;
@@ -168,7 +168,7 @@ public final class j implements e0, u {
                         iVar.a0 = i10 < 0 ? 0L : ((s2.h) (i10 < i0Var.size() ? ((s2.j) i0Var.get(i10)).y : b10.s).get(i7)).c;
                     }
                 } else if (c10 == 0) {
-                    pVar.H.post(new w(16, pVar, iVar));
+                    pVar.H.post(new org.telegram.ui.web.s(17, pVar, iVar));
                 } else if (c10 == 2 && !pVar.j0 && oVar.d()) {
                     oVar.b();
                 }
@@ -298,7 +298,7 @@ public final class j implements e0, u {
             b3.o oVar = pVar3.s;
             int i23 = i20;
             h hVar2 = pVar3.d;
-            s2.w[] wVarArr = hVar2.e;
+            w[] wVarArr = hVar2.e;
             s2.d dVar = hVar2.g;
             ArrayList arrayList = pVar3.D;
             pVar3.l();
@@ -622,7 +622,7 @@ public final class j implements e0, u {
         while (i10 < length) {
             p pVar = pVarArr[i10];
             h hVar = pVar.d;
-            s2.w[] wVarArr = hVar.e;
+            w[] wVarArr = hVar.e;
             s2.d dVar = hVar.g;
             int length2 = wVarArr.length;
             int i11 = 0;
@@ -630,7 +630,7 @@ public final class j implements e0, u {
                 if (i11 >= length2) {
                     break;
                 }
-                s2.w wVar = wVarArr[i11];
+                w wVar = wVarArr[i11];
                 s2.c cVar = (s2.c) dVar.d.get(uri);
                 if (wVar.equals(cVar != null ? cVar.a : null)) {
                     if (z9) {
@@ -660,7 +660,7 @@ public final class j implements e0, u {
                                     i13 = -1;
                                     break;
                                 }
-                                s2.w wVar2 = wVarArr[i13];
+                                w wVar2 = wVarArr[i13];
                                 s2.c cVar3 = (s2.c) dVar.d.get(uri);
                                 if (wVar2.equals(cVar3 != null ? cVar3.a : null)) {
                                     break;
@@ -693,7 +693,7 @@ public final class j implements e0, u {
         return this.M.e();
     }
 
-    public final p f(String str, int i7, s2.w[] wVarArr, e2.u[] uVarArr, e2.u uVar, List list, Map map, long j3) {
+    public final p f(String str, int i7, w[] wVarArr, e2.u[] uVarArr, e2.u uVar, List list, Map map, long j3) {
         p pVar = new p(str, i7, this.F, new h(this.a, this.b, wVarArr, uVarArr, this.c, this.d, this.w, list, this.E), map, this.r, j3, uVar, this.e, this.f, this.h, this.n, this.D, null);
         long j10 = this.N;
         pVar.k0 = j10;
@@ -724,7 +724,7 @@ public final class j implements e0, u {
                 h hVar = pVar.d;
                 s2.d dVar = hVar.g;
                 int d = hVar.r.d();
-                s2.w[] wVarArr = hVar.e;
+                w[] wVarArr = hVar.e;
                 s2.m b10 = (d >= wVarArr.length || d == -1) ? null : dVar.b(wVarArr[hVar.r.m()].c(), true);
                 if (b10 != null) {
                     i0 i0Var = b10.r;
@@ -856,7 +856,7 @@ public final class j implements e0, u {
             int i12 = 0;
             int i13 = 0;
             for (int i14 = 0; i14 < c10.size(); i14++) {
-                e2.u uVar2 = ((s2.w) c10.get(i14)).a.a;
+                e2.u uVar2 = ((w) c10.get(i14)).a.a;
                 int i15 = uVar2.A;
                 String str2 = uVar2.k;
                 if (i15 > 0 || m0.w(2, str2) != null) {
@@ -886,7 +886,7 @@ public final class j implements e0, u {
                 z11 = false;
                 i11 = size;
             }
-            s2.w[] wVarArr = new s2.w[i11];
+            w[] wVarArr = new w[i11];
             e2.u[] uVarArr = new e2.u[i11];
             int[] iArr2 = new int[i11];
             int i19 = 0;
@@ -903,7 +903,7 @@ public final class j implements e0, u {
                     list = list2;
                 }
                 if (!z11 || iArr[i20] != 1) {
-                    s2.w wVar = (s2.w) c10.get(i20);
+                    w wVar = (w) c10.get(i20);
                     wVarArr[i19] = wVar;
                     uVarArr[i19] = wVar.a.a;
                     iArr2[i19] = i20;
@@ -1006,7 +1006,7 @@ public final class j implements e0, u {
         HashSet hashSet3 = new HashSet();
         int i25 = 0;
         while (i25 < c11.size()) {
-            String str4 = ((s2.w) c11.get(i25)).a.c;
+            String str4 = ((w) c11.get(i25)).a.c;
             str4.getClass();
             if (hashSet3.add(str4)) {
                 arrayList6.clear();
@@ -1014,8 +1014,8 @@ public final class j implements e0, u {
                 arrayList8.clear();
                 boolean z16 = true;
                 for (int i26 = 0; i26 < c11.size(); i26++) {
-                    if (str4.equals(((s2.w) c11.get(i26)).a.c)) {
-                        s2.w wVar2 = (s2.w) c11.get(i26);
+                    if (str4.equals(((w) c11.get(i26)).a.c)) {
+                        w wVar2 = (w) c11.get(i26);
                         e2.u uVar4 = wVar2.a.a;
                         arrayList8.add(Integer.valueOf(i26));
                         arrayList6.add(wVar2);
@@ -1031,7 +1031,7 @@ public final class j implements e0, u {
                 map2 = map;
                 arrayList = arrayList7;
                 arrayList2 = arrayList8;
-                p f11 = f(concat, 1, (s2.w[]) arrayList6.toArray(new s2.w[0]), (e2.u[]) arrayList7.toArray(new e2.u[0]), null, Collections.EMPTY_LIST, map2, j3);
+                p f11 = f(concat, 1, (w[]) arrayList6.toArray(new w[0]), (e2.u[]) arrayList7.toArray(new e2.u[0]), null, Collections.EMPTY_LIST, map2, j3);
                 arrayList4.add(e1.f(arrayList2));
                 arrayList3.add(f11);
                 if (z9 && z16) {
@@ -1066,15 +1066,15 @@ public final class j implements e0, u {
         int i27 = 0;
         while (i27 < i0Var.size()) {
             i0 i0Var3 = i0Var;
-            String str6 = ((s2.w) i0Var3.get(i27)).a.c;
+            String str6 = ((w) i0Var3.get(i27)).a.c;
             str6.getClass();
             if (hashSet4.add(str6)) {
                 arrayList9.clear();
                 arrayList10.clear();
                 arrayList11.clear();
                 for (int i28 = 0; i28 < i0Var3.size(); i28++) {
-                    if (str6.equals(((s2.w) i0Var3.get(i28)).a.c)) {
-                        s2.w wVar3 = (s2.w) i0Var3.get(i28);
+                    if (str6.equals(((w) i0Var3.get(i28)).a.c)) {
+                        w wVar3 = (w) i0Var3.get(i28);
                         arrayList11.add(Integer.valueOf(i28));
                         arrayList9.add(wVar3);
                         arrayList10.add(wVar3.a.a);
@@ -1083,7 +1083,7 @@ public final class j implements e0, u {
                 String concat2 = "subtitle:".concat(str6);
                 e2.u[] uVarArr6 = (e2.u[]) arrayList10.toArray(new e2.u[0]);
                 String str7 = m0.a;
-                s2.w[] wVarArr2 = (s2.w[]) arrayList9.toArray(new s2.w[0]);
+                w[] wVarArr2 = (w[]) arrayList9.toArray(new w[0]);
                 g0 g0Var = i0.b;
                 i0Var = i0Var3;
                 i7 = i27;

@@ -1,44 +1,70 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.text.TextUtils;
+import android.view.View;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class wn extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ Context a;
-    public final /* synthetic */ go b;
+public final /* synthetic */ class wn implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ io b;
 
-    public wn(go goVar, Context context) {
-        this.b = goVar;
-        this.a = context;
+    public /* synthetic */ wn(io ioVar, int i7) {
+        this.a = i7;
+        this.b = ioVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i7) {
-        go goVar = this.b;
-        if (i7 == -1) {
-            goVar.finishFragment();
-            return;
-        }
-        if (i7 == 1) {
-            org.telegram.ui.ActionBar.b5 b5Var = goVar.r;
-            if (b5Var == null || !b5Var.y.f) {
-                String K = org.telegram.messenger.t3.K(goVar.X, false);
-                if (!goVar.V || TextUtils.isEmpty(K)) {
-                    goVar.e0();
-                    return;
-                }
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, this.a, goVar.getResourceProvider());
-                String M0 = org.telegram.messenger.id.M0(goVar.a0 ? 2131748703 : 2131748701, null);
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        int i7 = this.a;
+        io ioVar = this.b;
+        switch (i7) {
+            case 0:
+                TLRPC.Chat currentChannel = ((org.telegram.ui.Cells.n) view.getParent()).getCurrentChannel();
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(ioVar.getParentActivity());
+                String M0 = org.telegram.messenger.id.M0(R.string.AppName, null);
                 org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                 u1Var.R = M0;
-                u1Var.T = org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, goVar.a0 ? 2131748704 : 2131748702, org.telegram.ui.Cells.f1.n(goVar.getMessagesController().U2, "/", K, new StringBuilder())));
-                alertDialog$Builder.k(org.telegram.messenger.id.M0(2131751771, null), new w0(this, 24));
+                if (ioVar.a0) {
+                    u1Var.T = org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0("RevokeLinkAlertChannel", null, 2131746021, ioVar.getMessagesController().U2 + "/" + org.telegram.messenger.t3.K(currentChannel, false), currentChannel.title));
+                } else {
+                    u1Var.T = org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0("RevokeLinkAlert", null, 2131746022, ioVar.getMessagesController().U2 + "/" + org.telegram.messenger.t3.K(currentChannel, false), currentChannel.title));
+                }
                 alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), null);
-                goVar.showDialog(u1Var);
-            }
+                alertDialog$Builder.k(org.telegram.messenger.id.M0(2131746024, null), new ni.c(18, ioVar, currentChannel));
+                ioVar.showDialog(u1Var);
+                break;
+            case 1:
+                if (!ioVar.V) {
+                    ioVar.V = true;
+                    ioVar.h0();
+                    break;
+                }
+                break;
+            case 2:
+                if (ioVar.V) {
+                    if (!ioVar.c0) {
+                        ioVar.f0();
+                        break;
+                    } else {
+                        ioVar.V = false;
+                        ioVar.h0();
+                        break;
+                    }
+                }
+                break;
+            case 3:
+                ef0 ef0Var = new ef0(ioVar.Z, 0, 0L);
+                ef0Var.m0(ioVar.Y, ioVar.l0);
+                ioVar.presentFragment(ef0Var);
+                break;
+            default:
+                boolean z9 = !ioVar.b0;
+                ioVar.b0 = z9;
+                ((org.telegram.ui.Cells.r8) view).setChecked(z9);
+                break;
         }
     }
 }

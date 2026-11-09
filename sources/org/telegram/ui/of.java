@@ -17,7 +17,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class of implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -92,7 +92,7 @@ public final /* synthetic */ class of implements View.OnLongClickListener {
     */
     public final boolean onLongClick(View view) {
         TLRPC.User a22;
-        an anVar;
+        cn cnVar;
         org.telegram.messenger.ij ijVar;
         org.telegram.messenger.ij ijVar2;
         org.telegram.ui.ActionBar.f2 f2Var;
@@ -101,7 +101,7 @@ public final /* synthetic */ class of implements View.OnLongClickListener {
         boolean z9;
         org.telegram.messenger.ij ijVar3;
         boolean z10;
-        an anVar2;
+        cn cnVar2;
         org.telegram.ui.Components.di diVar;
         boolean z11;
         org.telegram.messenger.ij ijVar4;
@@ -122,12 +122,12 @@ public final /* synthetic */ class of implements View.OnLongClickListener {
         MediaMetadataRetriever mediaMetadataRetriever3;
         ParcelFileDescriptor parcelFileDescriptor3;
         String str;
-        org.telegram.ui.ActionBar.f6 f6Var;
+        org.telegram.ui.ActionBar.g6 g6Var;
         long j10;
         ?? r62;
         long j11;
-        an anVar3;
-        an anVar4;
+        cn cnVar3;
+        cn cnVar4;
         long j12;
         TLRPC.ChatFull chatFull;
         org.telegram.ui.Components.vh vhVar;
@@ -149,46 +149,46 @@ public final /* synthetic */ class of implements View.OnLongClickListener {
         int i16 = 1;
         switch (i15) {
             case 0:
-                an anVar5 = (an) obj4;
+                cn cnVar5 = (cn) obj4;
                 TL_keyboard.KeyboardInlineButton keyboardInlineButton = (TL_keyboard.KeyboardInlineButton) obj3;
                 org.telegram.messenger.ij ijVar6 = (org.telegram.messenger.ij) obj2;
-                pm pmVar = (pm) obj;
+                rm rmVar = (rm) obj;
                 TL_keyboard.TL_inlineButtonTypeUrl tL_inlineButtonTypeUrl = (TL_keyboard.TL_inlineButtonTypeUrl) cg.c.a(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeUrl.class);
-                if (anVar5.getParentActivity() == null || (!(anVar5.c1.getVisibility() != 0 || tL_inlineButtonTypeUrl != null || cg.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeSwitchInline.class) || cg.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeCallback.class) || cg.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeGame.class) || cg.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeBuy.class) || cg.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeUrlAuth.class) || cg.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeUserProfile.class)) || tL_inlineButtonTypeUrl == null)) {
+                if (cnVar5.getParentActivity() == null || (!(cnVar5.c1.getVisibility() != 0 || tL_inlineButtonTypeUrl != null || cg.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeSwitchInline.class) || cg.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeCallback.class) || cg.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeGame.class) || cg.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeBuy.class) || cg.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeUrlAuth.class) || cg.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeUserProfile.class)) || tL_inlineButtonTypeUrl == null)) {
                     return false;
                 }
-                anVar5.za(null, tL_inlineButtonTypeUrl.url, true, null, ijVar6);
+                cnVar5.Ba(null, tL_inlineButtonTypeUrl.url, true, null, ijVar6);
                 try {
-                    pmVar.performHapticFeedback(0, 1);
+                    rmVar.performHapticFeedback(0, 1);
                 } catch (Exception unused) {
                 }
                 return true;
             default:
                 org.telegram.ui.Components.di diVar2 = (org.telegram.ui.Components.di) obj4;
                 Context context2 = (Context) obj3;
-                org.telegram.ui.ActionBar.f6 f6Var2 = (org.telegram.ui.ActionBar.f6) obj2;
+                org.telegram.ui.ActionBar.g6 g6Var2 = (org.telegram.ui.ActionBar.g6) obj2;
                 org.telegram.ui.ActionBar.f2 f2Var3 = (org.telegram.ui.ActionBar.f2) obj;
                 org.telegram.ui.Components.lh lhVar3 = diVar2.C2;
                 org.telegram.ui.ActionBar.f2 f2Var4 = diVar2.W1;
                 ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = diVar2.a2;
                 int i17 = diVar2.D3;
                 long j13 = diVar2.Q1;
-                if ((j13 != 0 || (f2Var4 instanceof an)) && diVar2.B1 - diVar2.C1 >= 0 && !diVar2.n1.f) {
-                    if (f2Var4 instanceof an) {
-                        an anVar6 = (an) f2Var4;
-                        TLRPC.User j14 = anVar6.j();
-                        org.telegram.messenger.ij ijVar7 = anVar6.D5;
-                        org.telegram.messenger.ij ijVar8 = anVar6.A5;
-                        if (!anVar6.c() && anVar6.f4 != 5) {
+                if ((j13 != 0 || (f2Var4 instanceof cn)) && diVar2.B1 - diVar2.C1 >= 0 && !diVar2.n1.f) {
+                    if (f2Var4 instanceof cn) {
+                        cn cnVar6 = (cn) f2Var4;
+                        TLRPC.User j14 = cnVar6.j();
+                        org.telegram.messenger.ij ijVar7 = cnVar6.D5;
+                        org.telegram.messenger.ij ijVar8 = cnVar6.A5;
+                        if (!cnVar6.c() && cnVar6.f4 != 5) {
                             ijVar = ijVar7;
                             ijVar2 = ijVar8;
-                            j13 = anVar6.a();
+                            j13 = cnVar6.a();
                             a22 = j14;
-                            anVar = anVar6;
+                            cnVar = cnVar6;
                         }
                     } else {
                         a22 = org.telegram.messenger.qp.s1(i17).a2(Long.valueOf(j13));
-                        anVar = null;
+                        cnVar = null;
                         ijVar = null;
                         ijVar2 = null;
                     }
@@ -196,9 +196,9 @@ public final /* synthetic */ class of implements View.OnLongClickListener {
                     if (ueVar != null) {
                         ueVar.dismiss();
                     }
-                    org.telegram.ui.Components.ue ueVar2 = new org.telegram.ui.Components.ue(diVar2, context2, f6Var2, i16);
+                    org.telegram.ui.Components.ue ueVar2 = new org.telegram.ui.Components.ue(diVar2, context2, g6Var2, i16);
                     diVar2.Y1 = ueVar2;
-                    ueVar2.q(lhVar3, false, new ah.g(diVar2, f2Var3, f6Var2, 20));
+                    ueVar2.q(lhVar3, false, new ah.g(diVar2, f2Var3, g6Var2, 20));
                     ArrayList arrayList2 = new ArrayList();
                     org.telegram.ui.Components.vh vhVar2 = diVar2.s2;
                     int i18 = 2;
@@ -224,7 +224,7 @@ public final /* synthetic */ class of implements View.OnLongClickListener {
                                 int i22 = ceil;
                                 int i23 = i20;
                                 int min = Math.min(10, selectedPhotos.size() - i21);
-                                an anVar7 = anVar;
+                                cn cnVar7 = cnVar;
                                 org.telegram.ui.Components.di diVar3 = diVar2;
                                 long nextLong = Utilities.b.nextLong();
                                 i19 = i19;
@@ -475,10 +475,10 @@ public final /* synthetic */ class of implements View.OnLongClickListener {
                                             TLRPC.TL_messageReplyHeader tL_messageReplyHeader = new TLRPC.TL_messageReplyHeader();
                                             if (ijVar2 != null) {
                                                 tL_messageReplyHeader.flags |= 2;
-                                                tL_messageReplyHeader.reply_to_top_id = ijVar2.f1();
+                                                tL_messageReplyHeader.reply_to_top_id = ijVar2.e1();
                                             }
                                             tL_messageReplyHeader.flags |= 16;
-                                            tL_messageReplyHeader.reply_to_msg_id = ijVar.f1();
+                                            tL_messageReplyHeader.reply_to_msg_id = ijVar.e1();
                                             tL_message.reply_to = tL_messageReplyHeader;
                                         }
                                         org.telegram.messenger.ij ijVar10 = new org.telegram.messenger.ij(i17, tL_message, true, false);
@@ -506,12 +506,12 @@ public final /* synthetic */ class of implements View.OnLongClickListener {
                                 i20 = i23 + 1;
                                 ceil = i22;
                                 diVar2 = diVar3;
-                                anVar = anVar7;
+                                cnVar = cnVar7;
                             }
                             z9 = z17;
                             ijVar3 = ijVar9;
                         }
-                        anVar2 = anVar;
+                        cnVar2 = cnVar;
                         diVar = diVar2;
                         z11 = z9;
                         ijVar4 = ijVar3;
@@ -582,7 +582,7 @@ public final /* synthetic */ class of implements View.OnLongClickListener {
                             f2Var = f2Var3;
                             lhVar = lhVar3;
                             z10 = z16;
-                            anVar2 = anVar;
+                            cnVar2 = cnVar;
                             diVar = diVar2;
                             ijVar4 = null;
                         } else {
@@ -651,7 +651,7 @@ public final /* synthetic */ class of implements View.OnLongClickListener {
                                 f2Var = f2Var3;
                                 lhVar = lhVar3;
                                 z10 = z19;
-                                anVar2 = anVar;
+                                cnVar2 = cnVar;
                                 diVar = diVar2;
                                 ijVar4 = ijVar13;
                             } else {
@@ -682,7 +682,7 @@ public final /* synthetic */ class of implements View.OnLongClickListener {
                                                     }
                                                 }
                                             }
-                                            anVar2 = anVar;
+                                            cnVar2 = cnVar;
                                             diVar = diVar2;
                                             ijVar4 = ijVar5;
                                             z11 = false;
@@ -692,13 +692,13 @@ public final /* synthetic */ class of implements View.OnLongClickListener {
                                     ijVar5 = null;
                                     if (arrayList2.size() > 1) {
                                     }
-                                    anVar2 = anVar;
+                                    cnVar2 = cnVar;
                                     diVar = diVar2;
                                     ijVar4 = ijVar5;
                                     z11 = false;
                                     z10 = true;
                                 } else {
-                                    anVar2 = anVar;
+                                    cnVar2 = cnVar;
                                     diVar = diVar2;
                                     ijVar4 = null;
                                     z11 = false;
@@ -710,64 +710,64 @@ public final /* synthetic */ class of implements View.OnLongClickListener {
                     }
                     if (!arrayList2.isEmpty()) {
                         org.telegram.ui.Components.di diVar4 = diVar;
-                        org.telegram.ui.Components.k60 F = org.telegram.ui.Components.k60.F(diVar4.b, f6Var2, lhVar);
+                        org.telegram.ui.Components.l60 F = org.telegram.ui.Components.l60.F(diVar4.b, g6Var2, lhVar);
                         if (ijVar4 == null || !((vhVar = diVar4.s2) == chatAttachAlertPhotoLayout || vhVar == diVar4.h2)) {
-                            f6Var = f6Var2;
+                            g6Var = g6Var2;
                             j10 = j13;
                             r62 = 0;
                         } else {
                             r62 = 0;
                             r62 = 0;
-                            f6Var = f6Var2;
+                            g6Var = g6Var2;
                             j10 = j13;
-                            org.telegram.ui.Components.ha0 ha0Var = new org.telegram.ui.Components.ha0(context, R.raw.position_below, org.telegram.messenger.id.M0(2131752560, null), R.raw.position_above, org.telegram.messenger.id.M0(2131752559, null), f6Var);
+                            org.telegram.ui.Components.ia0 ia0Var = new org.telegram.ui.Components.ia0(context, R.raw.position_below, org.telegram.messenger.id.M0(2131752560, null), R.raw.position_above, org.telegram.messenger.id.M0(2131752559, null), g6Var);
                             TLRPC.Message message = ijVar4.k;
                             boolean z20 = diVar4.T1;
                             message.invert_media = z20;
-                            ha0Var.a(!z20, false);
-                            ha0Var.setOnClickListener(new ah.g(diVar4, ijVar4, ha0Var, 21));
-                            F.q(ha0Var);
+                            ia0Var.a(!z20, false);
+                            ia0Var.setOnClickListener(new ah.g(diVar4, ijVar4, ia0Var, 21));
+                            F.q(ia0Var);
                             if (diVar4.B3 == null) {
                                 F.k();
                             }
                         }
                         boolean B = org.telegram.messenger.t10.B(a22);
                         if (diVar4.B3 == null) {
-                            an anVar8 = anVar2;
-                            if ((anVar2 == null || !org.telegram.messenger.t3.p0(anVar8.e)) && ((anVar8 != null && anVar8.R6()) || diVar4.s2.c())) {
+                            cn cnVar8 = cnVar2;
+                            if ((cnVar2 == null || !org.telegram.messenger.t3.p0(cnVar8.e)) && ((cnVar8 != null && cnVar8.S6()) || diVar4.s2.c())) {
                                 j11 = j10;
-                                anVar3 = anVar8;
-                                F.c(R.drawable.msg_calendar2, org.telegram.messenger.id.M0(B ? 2131745517 : 2131745862, r62), new bi.d3(diVar4, j11, f6Var, 21), false);
+                                cnVar3 = cnVar8;
+                                F.c(R.drawable.msg_calendar2, org.telegram.messenger.id.M0(B ? 2131745514 : 2131745859, r62), new bi.d3(diVar4, j11, g6Var, 21), false);
                             } else {
                                 j11 = j10;
-                                anVar3 = anVar8;
+                                cnVar3 = cnVar8;
                             }
                         } else {
                             j11 = j10;
-                            anVar3 = anVar2;
+                            cnVar3 = cnVar2;
                         }
                         org.telegram.ui.Components.vh vhVar3 = diVar4.s2;
-                        if ((vhVar3 == chatAttachAlertPhotoLayout || vhVar3 == diVar4.h2) && vhVar3.getSelectedItemsCount() == 1 && anVar3 != null && org.telegram.messenger.t3.p0(anVar3.e)) {
-                            anVar4 = anVar3;
+                        if ((vhVar3 == chatAttachAlertPhotoLayout || vhVar3 == diVar4.h2) && vhVar3.getSelectedItemsCount() == 1 && cnVar3 != null && org.telegram.messenger.t3.p0(cnVar3.e)) {
+                            cnVar4 = cnVar3;
                             j12 = j11;
-                            F.c(R.drawable.input_suggest_paid_24, org.telegram.messenger.id.M0(2131747070, r62), new bi.w2(diVar4, j11, anVar4, f6Var, 16), false);
+                            F.c(R.drawable.input_suggest_paid_24, org.telegram.messenger.id.M0(2131747069, r62), new bi.w2(diVar4, j11, cnVar4, g6Var, 16), false);
                         } else {
-                            anVar4 = anVar3;
+                            cnVar4 = cnVar3;
                             j12 = j11;
                         }
                         if (diVar4.B3 == null && !B) {
-                            F.c(R.drawable.input_notify_off, org.telegram.messenger.id.M0(2131745586, r62), new org.telegram.ui.Components.qg(diVar4, i18), false);
+                            F.c(R.drawable.input_notify_off, org.telegram.messenger.id.M0(2131745583, r62), new org.telegram.ui.Components.qg(diVar4, i18), false);
                         }
-                        if (diVar4.B3 == null && z11 && anVar4 != null && org.telegram.messenger.t3.V(anVar4.e) && (chatFull = anVar4.p8) != null && chatFull.paid_media_allowed) {
-                            F.c(R.drawable.menu_feature_paid, org.telegram.messenger.id.M0(2131747731, r62), r62, false);
+                        if (diVar4.B3 == null && z11 && cnVar4 != null && org.telegram.messenger.t3.V(cnVar4.e) && (chatFull = cnVar4.p8) != null && chatFull.paid_media_allowed) {
+                            F.c(R.drawable.menu_feature_paid, org.telegram.messenger.id.M0(2131747730, r62), r62, false);
                             org.telegram.ui.ActionBar.z0 y10 = F.y();
-                            y10.setOnClickListener(new di.u3(diVar4, context, y10, f6Var, 12));
+                            y10.setOnClickListener(new di.v3(diVar4, context, y10, g6Var, 12));
                             long starsPrice = chatAttachAlertPhotoLayout.getStarsPrice();
                             if (starsPrice > 0) {
-                                y10.setText(org.telegram.messenger.id.M0(2131747729, r62));
+                                y10.setText(org.telegram.messenger.id.M0(2131747728, r62));
                                 y10.setSubtext(org.telegram.messenger.id.G((int) starsPrice, "Stars", new Object[0]));
                             } else {
-                                y10.setText(org.telegram.messenger.id.M0(2131747731, r62));
+                                y10.setText(org.telegram.messenger.id.M0(2131747730, r62));
                                 y10.setSubtext(r62);
                             }
                             diVar4.Y1.r(starsPrice);

@@ -7,7 +7,7 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class oc extends Drawable {
     public final /* synthetic */ int a;
@@ -38,7 +38,7 @@ public final class oc extends Drawable {
                 if (chatActivityEnterView.U0 != null) {
                     paint.setAlpha(Math.round(chatActivityEnterView.C3 * 102.0f));
                     float width = chatActivityEnterView.getWidth();
-                    float y10 = (chatActivityEnterView.U0.getY() - chatActivityEnterView.getHeight()) + org.telegram.ui.ActionBar.k6.i3.getIntrinsicHeight();
+                    float y10 = (chatActivityEnterView.U0.getY() - chatActivityEnterView.getHeight()) + org.telegram.ui.ActionBar.l6.i3.getIntrinsicHeight();
                     xe xeVar = chatActivityEnterView.E0;
                     canvas.drawRect(0.0f, 0.0f, width, y10 + (xeVar == null ? 0.0f : xeVar.getOffsetY()), paint);
                     break;
@@ -66,7 +66,7 @@ public final class oc extends Drawable {
                 }
                 break;
             case 3:
-                ((my0) this.b).c(getBounds().centerX() - (((my0) this.b).c / 2.0f), getBounds().centerY(), 1.0f, org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.G6, (org.telegram.ui.ActionBar.f6) this.c), canvas);
+                ((ny0) this.b).c(getBounds().centerX() - (((ny0) this.b).c / 2.0f), getBounds().centerY(), 1.0f, org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.G6, (org.telegram.ui.ActionBar.g6) this.c), canvas);
                 break;
             default:
                 ImageReceiver imageReceiver = (ImageReceiver) this.b;

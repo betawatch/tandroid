@@ -25,20 +25,20 @@ import org.telegram.messenger.iz;
 import org.telegram.messenger.ls;
 import org.telegram.messenger.qs;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.ActionBar.q4;
-import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.ActionBar.s6;
 import org.telegram.ui.Cells.f1;
 import org.telegram.ui.Cells.y;
-import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.qj0;
 import org.telegram.ui.Components.xp;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.o61;
+import org.telegram.ui.p61;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class j extends FrameLayout implements ls {
-    public pj0 D;
+    public qj0 D;
     public ArrayList E;
     public int F;
     public h a;
@@ -66,12 +66,12 @@ public final class j extends FrameLayout implements ls {
     private List<a> getBuiltInDebugItems() {
         ArrayList arrayList = new ArrayList();
         arrayList.add(new a("Theme"));
-        arrayList.add(new a("Draw action bar shadow", new o61(13)));
+        arrayList.add(new a("Draw action bar shadow", new p61(13)));
         arrayList.add(new a("Show blur settings", new d(this, 0)));
-        arrayList.add(new a(id.M0(2131751648, null)));
-        arrayList.add(new a(id.M0(iz.J0 ? 2131751639 : 2131751631, null), new d(this, 1)));
-        arrayList.add(new a(k6.I.q() ? "Switch to day theme" : "Switch to dark theme", new o61(14)));
-        arrayList.add(new a(id.M0(2131751614, null), new d(this, 2)));
+        arrayList.add(new a(id.M0(2131751647, null)));
+        arrayList.add(new a(id.M0(iz.J0 ? 2131751638 : 2131751630, null), new d(this, 1)));
+        arrayList.add(new a(l6.I.q() ? "Switch to day theme" : "Switch to dark theme", new p61(14)));
+        arrayList.add(new a(id.M0(2131751613, null), new d(this, 2)));
         return arrayList;
     }
 
@@ -158,7 +158,7 @@ public final class j extends FrameLayout implements ls {
     }
 
     public final void d() {
-        y j02 = k6.j0(g0.L(56.0f), k6.x0(null, k6.P9, false), k6.x0(null, k6.Q9, false));
+        y j02 = l6.j0(g0.L(56.0f), l6.x0(null, l6.P9, false), l6.x0(null, l6.Q9, false));
         Drawable mutate = getResources().getDrawable(R.drawable.floating_shadow).mutate();
         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
         mutate.setColorFilter(new PorterDuffColorFilter(-16777216, mode));
@@ -169,9 +169,9 @@ public final class j extends FrameLayout implements ls {
         xpVar.f = L2;
         this.b = xpVar;
         Drawable drawable = getResources().getDrawable(R.drawable.popup_fixed_alert3);
-        r6.y(this, drawable, k6.h5, null, mode);
+        s6.x(this, drawable, l6.h5, null, mode);
         this.x.setBackground(drawable);
-        r6.V(this.y, k6.j5, null);
+        s6.U(this.y, l6.j5, null);
         invalidate();
     }
 

@@ -10,7 +10,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class q7 extends FrameLayout {
     public final RectF a;
@@ -89,28 +89,29 @@ public final class q7 extends FrameLayout {
         b8Var.r0.draw(canvas);
         RectF rectF = this.a;
         if (z9 || f11 == 1.0f) {
-            f12 = 10.0f;
+            f12 = 20.0f;
             f13 = 4.0f;
         } else {
-            f12 = 10.0f;
-            org.telegram.ui.ActionBar.k6.t0.setColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.h5, b8Var.I0));
+            f12 = 20.0f;
+            org.telegram.ui.ActionBar.l6.t0.setColor(org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.h5, b8Var.I0));
             f13 = 4.0f;
             rectF.set(b8Var.t0, b8Var.s0 + i12, getMeasuredWidth() - b8Var.t0, org.telegram.messenger.g0.L(24.0f) + b8Var.s0 + i12);
-            canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(12.0f) * f11, org.telegram.messenger.g0.L(12.0f) * f11, org.telegram.ui.ActionBar.k6.t0);
+            canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(12.0f) * f11, org.telegram.messenger.g0.L(12.0f) * f11, org.telegram.ui.ActionBar.l6.t0);
         }
         if (!z9 && f11 != 0.0f) {
             int L5 = org.telegram.messenger.g0.L(36.0f);
             rectF.set((getMeasuredWidth() - L5) / 2, i13, (getMeasuredWidth() + L5) / 2, org.telegram.messenger.g0.L(f13) + i13);
-            int w02 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.wj, b8Var.I0);
+            int w02 = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.wj, b8Var.I0);
             int alpha = Color.alpha(w02);
-            org.telegram.ui.ActionBar.k6.t0.setColor(w02);
-            org.telegram.ui.ActionBar.k6.t0.setAlpha((int) (alpha * 1.0f * f11));
-            canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f), org.telegram.ui.ActionBar.k6.t0);
+            org.telegram.ui.ActionBar.l6.t0.setColor(w02);
+            org.telegram.ui.ActionBar.l6.t0.setAlpha((int) (alpha * 1.0f * f11));
+            canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f), org.telegram.ui.ActionBar.l6.t0);
         }
         if (z9) {
             r7Var.setVisibility(0);
-            r7Var.setTranslationY(Math.max(0.0f, com.google.android.recaptcha.internal.a.z(1.0f, b8Var.H2, org.telegram.messenger.g0.L(6.0f), (i12 - b8Var.s0) - org.telegram.messenger.g0.L(f12)) - r7Var.getTop()));
-            b8Var.k1.setTranslationY(Math.max(0.0f, com.google.android.recaptcha.internal.a.z(1.0f, b8Var.H2, org.telegram.messenger.g0.L(6.0f), (i12 - b8Var.s0) - org.telegram.messenger.g0.L(f12)) - r7Var.getTop()));
+            float max = Math.max(0.0f, com.google.android.recaptcha.internal.a.z(1.0f, b8Var.H2, org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(f12) + ((i12 - org.telegram.messenger.g0.m) - b8Var.s0)) - r7Var.getTop());
+            r7Var.setTranslationY(max);
+            b8Var.k1.setTranslationY(max);
         }
     }
 

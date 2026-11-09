@@ -2,11 +2,11 @@ package org.telegram.messenger;
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class dx implements Runnable {
     public final /* synthetic */ nj D;
-    public final /* synthetic */ sh.f E;
+    public final /* synthetic */ sh.g E;
     public final /* synthetic */ ArrayList F;
     public final /* synthetic */ ArrayList G;
     public final /* synthetic */ ArrayList a;
@@ -16,14 +16,14 @@ public final /* synthetic */ class dx implements Runnable {
     public final /* synthetic */ long e;
     public final /* synthetic */ ij f;
     public final /* synthetic */ ij h;
-    public final /* synthetic */ org.telegram.ui.qm n;
+    public final /* synthetic */ org.telegram.ui.sm n;
     public final /* synthetic */ boolean r;
     public final /* synthetic */ int s;
     public final /* synthetic */ hw w;
     public final /* synthetic */ long x;
     public final /* synthetic */ long y;
 
-    public /* synthetic */ dx(ArrayList arrayList, ArrayList arrayList2, c cVar, ArrayList arrayList3, long j3, ij ijVar, ij ijVar2, org.telegram.ui.qm qmVar, boolean z9, int i7, hw hwVar, long j10, long j11, nj njVar, sh.f fVar, ArrayList arrayList4, ArrayList arrayList5) {
+    public /* synthetic */ dx(ArrayList arrayList, ArrayList arrayList2, c cVar, ArrayList arrayList3, long j3, ij ijVar, ij ijVar2, org.telegram.ui.sm smVar, boolean z9, int i7, hw hwVar, long j10, long j11, nj njVar, sh.g gVar, ArrayList arrayList4, ArrayList arrayList5) {
         this.a = arrayList;
         this.b = arrayList2;
         this.c = cVar;
@@ -31,14 +31,14 @@ public final /* synthetic */ class dx implements Runnable {
         this.e = j3;
         this.f = ijVar;
         this.h = ijVar2;
-        this.n = qmVar;
+        this.n = smVar;
         this.r = z9;
         this.s = i7;
         this.w = hwVar;
         this.x = j10;
         this.y = j11;
         this.D = njVar;
-        this.E = fVar;
+        this.E = gVar;
         this.F = arrayList4;
         this.G = arrayList5;
     }

@@ -7,9 +7,9 @@ import java.util.regex.Pattern;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class k2 implements org.telegram.ui.ActionBar.r1, db0, org.telegram.ui.ActionBar.o6, org.telegram.ui.ActionBar.p6, t4, org.telegram.messenger.lc, org.telegram.messenger.eb, org.telegram.messenger.k9, p.a, ih.b, jt0, kt0, gh.d, r0.m {
+public final /* synthetic */ class k2 implements org.telegram.ui.ActionBar.r1, eb0, org.telegram.ui.ActionBar.p6, org.telegram.ui.ActionBar.q6, t4, org.telegram.messenger.lc, org.telegram.messenger.eb, org.telegram.messenger.k9, p.a, ih.b, lt0, mt0, gh.d, r0.m {
     public final /* synthetic */ int a;
 
     public /* synthetic */ k2(int i7) {
@@ -48,49 +48,49 @@ public final /* synthetic */ class k2 implements org.telegram.ui.ActionBar.r1, d
         return bitmap.getConfig() == Bitmap.Config.ALPHA_8 ? bitmap : bitmap.extractAlpha();
     }
 
-    @Override // org.telegram.ui.ActionBar.p6
+    @Override // org.telegram.ui.ActionBar.q6
     public void c(int i7, View view) {
         ((org.telegram.ui.ActionBar.z0) view).d(i7, i7);
     }
 
-    @Override // org.telegram.ui.Components.kt0
+    @Override // org.telegram.ui.Components.mt0
     public void f(Object obj, float f10) {
-        lb0 lb0Var = (lb0) obj;
+        mb0 mb0Var = (mb0) obj;
         switch (this.a) {
             case 21:
-                lb0Var.f = f10;
-                if (!lb0Var.D || lb0Var.F) {
-                    lb0Var.c.setStrokeWidth(org.telegram.messenger.g0.T1(lb0Var.w, lb0Var.x, f10));
-                    lb0Var.f();
+                mb0Var.f = f10;
+                if (!mb0Var.D || mb0Var.F) {
+                    mb0Var.c.setStrokeWidth(org.telegram.messenger.g0.T1(mb0Var.w, mb0Var.x, f10));
+                    mb0Var.f();
                 }
-                lb0Var.invalidate();
+                mb0Var.invalidate();
                 break;
             case 22:
             default:
-                lb0Var.s = f10;
-                lb0Var.f();
+                mb0Var.s = f10;
+                mb0Var.f();
                 break;
             case 23:
-                lb0Var.n = f10;
-                if (!lb0Var.D || lb0Var.F) {
-                    lb0Var.f();
+                mb0Var.n = f10;
+                if (!mb0Var.D || mb0Var.F) {
+                    mb0Var.f();
                 }
-                lb0Var.invalidate();
+                mb0Var.invalidate();
                 break;
         }
     }
 
     @Override // org.telegram.messenger.lc
     public void f0(ImageReceiver imageReceiver, boolean z9, boolean z10, boolean z11) {
-        zg0 B;
+        ah0 B;
         switch (this.a) {
             case 13:
                 Drawable t6 = imageReceiver.t();
-                if (t6 instanceof zg0) {
-                    zg0 zg0Var = (zg0) t6;
-                    zg0Var.P(0);
-                    zg0Var.stop();
-                    zg0Var.T(false, 0.0f);
+                if (t6 instanceof ah0) {
+                    ah0 ah0Var = (ah0) t6;
+                    ah0Var.P(0);
+                    ah0Var.stop();
+                    ah0Var.T(false, 0.0f);
                     break;
                 }
                 break;
@@ -115,21 +115,21 @@ public final /* synthetic */ class k2 implements org.telegram.ui.ActionBar.r1, d
         }
     }
 
-    @Override // org.telegram.ui.Components.jt0
+    @Override // org.telegram.ui.Components.lt0
     public float get(Object obj) {
-        lb0 lb0Var = (lb0) obj;
+        mb0 mb0Var = (mb0) obj;
         switch (this.a) {
             case 20:
-                return lb0Var.f;
+                return mb0Var.f;
             case 21:
             default:
-                return lb0Var.s;
+                return mb0Var.s;
             case 22:
-                return lb0Var.n;
+                return mb0Var.n;
         }
     }
 
-    @Override // org.telegram.ui.Components.db0
+    @Override // org.telegram.ui.Components.eb0
     public String h(int i7) {
         switch (this.a) {
             case 2:
@@ -142,7 +142,7 @@ public final /* synthetic */ class k2 implements org.telegram.ui.ActionBar.r1, d
         return String.format("%02d", Integer.valueOf(i7));
     }
 
-    @Override // org.telegram.ui.ActionBar.o6
+    @Override // org.telegram.ui.ActionBar.p6
     public int i(View view) {
         org.telegram.ui.ActionBar.z0 z0Var = (org.telegram.ui.ActionBar.z0) view;
         if (z0Var.getTextView() != null) {
@@ -163,7 +163,7 @@ public final /* synthetic */ class k2 implements org.telegram.ui.ActionBar.r1, d
     }
 
     @Override // gh.d
-    public int k(org.telegram.ui.ActionBar.f6 f6Var, boolean z9) {
+    public int k(org.telegram.ui.ActionBar.g6 g6Var, boolean z9) {
         Bitmap bitmap = ai.z.a;
         return (((int) a8.p0.f(ai.o1.b[3], 255.0f, 100.0f, 0.5f)) << 24) | 16777215;
     }

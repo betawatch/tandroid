@@ -16,9 +16,9 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class cy extends oj0 {
+public final class cy extends pj0 {
     public boolean D;
     public int L;
     public int M;
@@ -58,7 +58,7 @@ public final class cy extends oj0 {
         cxVar.setOnTouchListener(new m.d2(this, 3));
     }
 
-    @Override // org.telegram.ui.Components.oj0
+    @Override // org.telegram.ui.Components.pj0
     public final boolean D(v4.d1 d1Var) {
         return d1Var.f == 7;
     }
@@ -191,7 +191,7 @@ public final class cy extends oj0 {
             } else {
                 int i25 = this.y;
                 this.y = i25 + 1;
-                sparseArray2.put(i25, org.telegram.messenger.id.M0(2131744877, null));
+                sparseArray2.put(i25, org.telegram.messenger.id.M0(2131744874, null));
                 int i26 = i7 + 1;
                 int size3 = this.I.size();
                 int i27 = 0;
@@ -251,7 +251,7 @@ public final class cy extends oj0 {
             if (z10) {
                 int i38 = this.y;
                 this.y = i38 + 1;
-                sparseArray2.put(i38, org.telegram.messenger.id.M0(2131744878, null));
+                sparseArray2.put(i38, org.telegram.messenger.id.M0(2131744875, null));
                 int i39 = i7 + 1;
                 String str5 = (String) this.H.get(this.K);
                 if (str5 != null) {
@@ -393,13 +393,13 @@ public final class cy extends oj0 {
     @Override // v4.g0
     public final v4.d1 x(ViewGroup viewGroup, int i7) {
         hy hyVar = this.Q;
-        org.telegram.ui.ActionBar.f6 f6Var = hyVar.Z1;
+        org.telegram.ui.ActionBar.g6 g6Var = hyVar.Z1;
         boolean z9 = true;
         Context context = this.h;
         View view = null;
         switch (i7) {
             case 0:
-                view = new jg.c2(2, context, f6Var, z9);
+                view = new jg.c2(2, context, g6Var, z9);
                 break;
             case 1:
                 view = new org.telegram.ui.Cells.m3(context);
@@ -421,14 +421,14 @@ public final class cy extends oj0 {
                 ImageView imageView = new ImageView(context);
                 imageView.setScaleType(ImageView.ScaleType.CENTER);
                 imageView.setImageResource(R.drawable.stickers_empty);
-                int i10 = org.telegram.ui.ActionBar.k6.Af;
-                org.telegram.ui.ActionBar.r6.t(imageView, i10, f6Var, PorterDuff.Mode.MULTIPLY);
+                int i10 = org.telegram.ui.ActionBar.l6.Af;
+                org.telegram.ui.ActionBar.s6.s(imageView, i10, g6Var, PorterDuff.Mode.MULTIPLY);
                 imageView.setTranslationY(-org.telegram.messenger.g0.L(24.0f));
                 e5Var.addView(imageView, c8.ha.d(-2, -2.0f, 17, 0.0f, 42.0f, 0.0f, 28.0f));
                 TextView textView = new TextView(context);
-                textView.setText(org.telegram.messenger.id.M0(2131748150, null));
+                textView.setText(org.telegram.messenger.id.M0(2131748149, null));
                 textView.setTextSize(1, 16.0f);
-                org.telegram.ui.ActionBar.r6.V(textView, i10, f6Var);
+                org.telegram.ui.ActionBar.s6.U(textView, i10, g6Var);
                 e5Var.addView(textView, c8.ha.d(-2, -2.0f, 17, 0.0f, 42.0f, 0.0f, 9.0f));
                 e5Var.setLayoutParams(new v4.o0(-1, -2));
                 view = e5Var;
@@ -443,6 +443,6 @@ public final class cy extends oj0 {
                 view.setLayoutParams(new v4.o0(-1, org.telegram.messenger.g0.L(68.0f)));
                 break;
         }
-        return new xi0(view);
+        return new yi0(view);
     }
 }

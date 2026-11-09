@@ -1,67 +1,22 @@
 package di;
 
-import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class s6 implements f3.g0 {
-    public final /* synthetic */ int a = 1;
-    public int b;
-    public long c;
-    public int d;
+public final class s6 {
+    public int a;
+    public String b;
+    public TLRPC.Photo c;
+    public TLRPC.Document d;
 
-    public /* synthetic */ s6() {
-    }
-
-    public boolean a(int i7, int i10) {
-        int i11 = this.d;
-        if (i11 != 1) {
-            if ((i11 == 2 || i11 == 3) && ConnectionsManager.getInstance(i7).getCurrentTime() >= this.c) {
-                return false;
-            }
-        } else if (this.b >= i10) {
-            return false;
-        }
-        return true;
-    }
-
-    public int b() {
-        int i7 = this.d;
-        if (i7 != 2) {
-            return i7 != 3 ? 14 : 16;
-        }
-        return 15;
-    }
-
-    public String toString() {
-        switch (this.a) {
-            case 3:
-                StringBuilder sb2 = new StringBuilder("AtomSizeTooSmall{type=");
-                sb2.append(h2.m0.e0(this.b));
-                sb2.append(", size=");
-                sb2.append(this.c);
-                sb2.append(", minHeaderSize=");
-                return a8.p0.n(this.d, "}", sb2);
-            default:
-                return super.toString();
-        }
-    }
-
-    public s6(int i7, long j3, int i10) {
-        this.b = i7;
-        this.c = j3;
-        this.d = i10;
-    }
-
-    public s6(long j3, int i7, int i10) {
-        this.c = j3;
-        this.b = i7;
-        this.d = i10;
-    }
-
-    public s6(int i7, int i10, long j3) {
-        this.d = i7;
-        this.c = j3;
-        this.b = i10;
+    public static s6 a(TL_stories.TL_storyAlbum tL_storyAlbum) {
+        s6 s6Var = new s6();
+        s6Var.a = tL_storyAlbum.album_id;
+        s6Var.b = tL_storyAlbum.title;
+        s6Var.c = tL_storyAlbum.icon_photo;
+        s6Var.d = tL_storyAlbum.icon_video;
+        return s6Var;
     }
 }

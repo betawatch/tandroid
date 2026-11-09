@@ -1,11 +1,11 @@
 package fi;
 
-import org.telegram.ui.Components.h51;
+import org.telegram.ui.Components.i51;
 import org.telegram.ui.Components.py;
 import org.telegram.ui.Components.sy;
-import org.telegram.ui.Components.t51;
+import org.telegram.ui.Components.u51;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w5 implements Runnable {
     public final /* synthetic */ int a;
@@ -31,18 +31,18 @@ public final /* synthetic */ class w5 implements Runnable {
             case 3:
                 y5 y5Var = this.b;
                 w5 w5Var = y5Var.K;
-                t51 t51Var = y5Var.e;
-                if (t51Var != null && y5Var.F != null) {
-                    long S = t51Var.S();
+                u51 u51Var = y5Var.e;
+                if (u51Var != null && y5Var.F != null) {
+                    long S = u51Var.S();
                     if (y5Var.getDuration() > 1) {
                         float duration = S / y5Var.getDuration();
                         if (!y5Var.F.m1) {
                             e7 e7Var = y5Var.d;
                             if ((duration < e7Var.Z || duration > e7Var.a0) && System.currentTimeMillis() - y5Var.J > 500) {
                                 y5Var.J = System.currentTimeMillis();
-                                t51 t51Var2 = y5Var.e;
+                                u51 u51Var2 = y5Var.e;
                                 long duration2 = (long) (y5Var.d.Z * y5Var.getDuration());
-                                t51Var2.q0(duration2, false);
+                                u51Var2.q0(duration2, false);
                                 y5Var.w(true);
                                 y5Var.y(true);
                                 S = duration2;
@@ -75,9 +75,9 @@ public final /* synthetic */ class w5 implements Runnable {
                         float f12 = e7Var2.C;
                         if ((f10 < f11 * f12 || f10 > e7Var2.F * f12) && System.currentTimeMillis() - y5Var2.J > 500) {
                             y5Var2.J = System.currentTimeMillis();
-                            t51 t51Var3 = y5Var2.D;
+                            u51 u51Var3 = y5Var2.D;
                             long j3 = (long) (y5Var2.d.E * r3.C);
-                            t51Var3.q0(j3, false);
+                            u51Var3.q0(j3, false);
                             S2 = j3;
                         }
                     }
@@ -101,9 +101,9 @@ public final /* synthetic */ class w5 implements Runnable {
                         float f15 = e7Var3.q0;
                         if ((f13 < f14 * f15 || f13 > e7Var3.t0 * f15) && System.currentTimeMillis() - y5Var3.J > 500) {
                             y5Var3.J = System.currentTimeMillis();
-                            t51 t51Var4 = y5Var3.y;
+                            u51 u51Var4 = y5Var3.y;
                             long j10 = (long) (y5Var3.d.s0 * r3.q0);
-                            t51Var4.q0(j10, false);
+                            u51Var4.q0(j10, false);
                             y5Var3.w(true);
                             S3 = j10;
                         }
@@ -118,13 +118,13 @@ public final /* synthetic */ class w5 implements Runnable {
                 break;
             default:
                 y5 y5Var4 = this.b;
-                h51 h51Var = y5Var4.n;
-                if (h51Var != null) {
-                    sy syVar = h51Var.b;
+                i51 i51Var = y5Var4.n;
+                if (i51Var != null) {
+                    sy syVar = i51Var.b;
                     if (syVar != null) {
                         syVar.postRunnable(new py(syVar, 0));
                     }
-                    h51Var.a = null;
+                    i51Var.a = null;
                     y5Var4.removeView(y5Var4.n);
                     y5Var4.n = null;
                     break;

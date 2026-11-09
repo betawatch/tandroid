@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import java.util.Locale;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.qd0;
+import org.telegram.ui.Components.rd0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class j20 {
     public hf A;
@@ -125,12 +125,12 @@ public final class j20 {
                 serializedData.writeFloat(this.A.t);
                 int i10 = 0;
                 while (i10 < 4) {
-                    qd0 qd0Var = (qd0) (i10 == 0 ? this.A.p.b : i10 == 1 ? this.A.p.c : i10 == 2 ? this.A.p.d : this.A.p.e);
-                    serializedData.writeFloat(qd0Var.a);
-                    serializedData.writeFloat(qd0Var.b);
-                    serializedData.writeFloat(qd0Var.c);
-                    serializedData.writeFloat(qd0Var.d);
-                    serializedData.writeFloat(qd0Var.e);
+                    rd0 rd0Var = (rd0) (i10 == 0 ? this.A.p.b : i10 == 1 ? this.A.p.c : i10 == 2 ? this.A.p.d : this.A.p.e);
+                    serializedData.writeFloat(rd0Var.a);
+                    serializedData.writeFloat(rd0Var.b);
+                    serializedData.writeFloat(rd0Var.c);
+                    serializedData.writeFloat(rd0Var.d);
+                    serializedData.writeFloat(rd0Var.e);
                     i10++;
                 }
             } else {

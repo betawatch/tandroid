@@ -3,17 +3,17 @@ package org.telegram.ui.Components;
 import android.content.Context;
 import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class ja extends org.telegram.ui.ActionBar.k {
-    public final /* synthetic */ rt0 F1;
+    public final /* synthetic */ tt0 F1;
     public final /* synthetic */ na G1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ja(na naVar, Context context, rt0 rt0Var) {
+    public ja(na naVar, Context context, tt0 tt0Var) {
         super(context, null);
         this.G1 = naVar;
-        this.F1 = rt0Var;
+        this.F1 = tt0Var;
     }
 
     @Override // org.telegram.ui.ActionBar.k, android.view.ViewGroup, android.view.View

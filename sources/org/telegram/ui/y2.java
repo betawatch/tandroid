@@ -8,7 +8,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class y2 implements Runnable {
     public final /* synthetic */ int a;
@@ -35,7 +35,7 @@ public final class y2 implements Runnable {
                             articleViewer$WindowView.performHapticFeedback(0, 2);
                         } catch (Exception unused) {
                         }
-                        g4Var.X(((org.telegram.ui.Components.qy0) g4Var.b.i).b);
+                        g4Var.X(((org.telegram.ui.Components.ry0) g4Var.b.i).b);
                         g4Var.b = null;
                         g4Var.d = null;
                         View view = g4Var.f;
@@ -87,11 +87,11 @@ public final class y2 implements Runnable {
                                     g4Var.B0.setShownFromBottom(false);
                                     TextView textView = new TextView(g4Var.L);
                                     g4Var.C0 = textView;
-                                    int i11 = org.telegram.ui.ActionBar.k6.i6;
-                                    org.telegram.ui.Cells.y h02 = org.telegram.ui.ActionBar.k6.h0(org.telegram.ui.ActionBar.k6.x0(null, i11, false), 2, -1);
-                                    org.telegram.ui.ActionBar.n6 N = org.telegram.ui.ActionBar.r6.N(i11);
+                                    int i11 = org.telegram.ui.ActionBar.l6.i6;
+                                    org.telegram.ui.Cells.y h02 = org.telegram.ui.ActionBar.l6.h0(org.telegram.ui.ActionBar.l6.x0(null, i11, false), 2, -1);
+                                    org.telegram.ui.ActionBar.o6 M = org.telegram.ui.ActionBar.s6.M(i11);
                                     textView.setBackground(h02);
-                                    org.telegram.ui.ActionBar.r6.k(textView, h02, null, N, null);
+                                    org.telegram.ui.ActionBar.s6.j(textView, h02, null, M, null);
                                     g4Var.C0.setGravity(16);
                                     g4Var.C0.setPadding(org.telegram.messenger.g0.L(20.0f), 0, org.telegram.messenger.g0.L(20.0f), 0);
                                     g4Var.C0.setTextSize(1, 15.0f);
@@ -110,10 +110,10 @@ public final class y2 implements Runnable {
                                     g4Var.H.getContentView().setFocusableInTouchMode(true);
                                     g4Var.H.setOnDismissListener(new e0(g4Var, i10));
                                 }
-                                org.telegram.ui.ActionBar.r6.V(g4Var.C0, org.telegram.ui.ActionBar.k6.E8, null);
+                                org.telegram.ui.ActionBar.s6.U(g4Var.C0, org.telegram.ui.ActionBar.l6.E8, null);
                                 ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout2 = g4Var.B0;
                                 if (actionBarPopupWindow$ActionBarPopupWindowLayout2 != null) {
-                                    org.telegram.ui.ActionBar.r6.i(org.telegram.ui.ActionBar.k6.G8, actionBarPopupWindow$ActionBarPopupWindowLayout2, null);
+                                    org.telegram.ui.ActionBar.s6.h(org.telegram.ui.ActionBar.l6.G8, actionBarPopupWindow$ActionBarPopupWindowLayout2, null);
                                 }
                                 g4Var.B0.measure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(1000.0f), TLObject.FLAG_31));
                                 g4Var.H.setFocusable(true);

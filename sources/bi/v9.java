@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class v9 implements w9 {
     public final int a;
@@ -88,7 +88,7 @@ public final class v9 implements w9 {
 
     @Override // bi.w9
     public final int b(int i7) {
-        if (!k7.L1(this.a, this.b)) {
+        if (!k7.K1(this.a, this.b)) {
             return -1;
         }
         int i10 = i7 + 1;
@@ -292,7 +292,7 @@ public final class v9 implements w9 {
                 i7++;
                 togglestargiftspinnedtotop.stargift.add(h((TL_stars.SavedStarGift) obj));
             }
-            ConnectionsManager.getInstance(i10).sendRequest(togglestargiftspinnedtotop, new di.u5(9), 64);
+            ConnectionsManager.getInstance(i10).sendRequest(togglestargiftspinnedtotop, new di.v5(9), 64);
             return;
         }
         TL_stars.updateStarGiftCollection updatestargiftcollection = new TL_stars.updateStarGiftCollection();

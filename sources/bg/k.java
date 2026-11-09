@@ -8,11 +8,11 @@ import android.view.View;
 import java.lang.reflect.Field;
 import java.util.Iterator;
 import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.Components.ah0;
 import org.telegram.ui.Components.u5;
 import org.telegram.ui.Components.v5;
-import org.telegram.ui.Components.zg0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class k implements Choreographer.FrameCallback {
     public static final long[] r;
@@ -195,7 +195,7 @@ public final class k implements Choreographer.FrameCallback {
                                     ((EditTextBoldCursor) obj).invalidate();
                                     break;
                                 default:
-                                    zg0.g((zg0) obj);
+                                    ah0.g((ah0) obj);
                                     break;
                             }
                         }

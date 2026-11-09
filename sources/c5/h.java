@@ -5,10 +5,10 @@ import m.e2;
 import m.z2;
 import org.telegram.messenger.g0;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.mw0;
-import org.telegram.ui.ru0;
+import org.telegram.ui.ow0;
+import org.telegram.ui.tu0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class h extends DataSetObserver {
     public final /* synthetic */ int a;
@@ -38,20 +38,20 @@ public final class h extends DataSetObserver {
                 }
                 break;
             default:
-                mw0 mw0Var = (mw0) this.b;
-                ProfileActivity profileActivity = mw0Var.n;
+                ow0 ow0Var = (ow0) this.b;
+                ProfileActivity profileActivity = ow0Var.n;
                 int realCount = profileActivity.n0.getRealCount();
                 if (profileActivity.A0 == 0 && realCount > 1 && realCount <= 20 && profileActivity.M.E) {
                     profileActivity.A0 = 1;
                 }
-                mw0Var.a(false);
-                mw0Var.b(1.0f);
+                ow0Var.a(false);
+                ow0Var.b(1.0f);
                 if (profileActivity.q0 != null) {
                     if (!profileActivity.S0.x()) {
-                        mw0Var.c();
+                        ow0Var.c();
                         break;
                     } else {
-                        g0.i3(new ru0(mw0Var, 4), 500L);
+                        g0.i3(new tu0(ow0Var, 4), 500L);
                         break;
                     }
                 }

@@ -3,16 +3,16 @@ package org.telegram.ui.Components;
 import android.widget.LinearLayout;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class kq extends LinearLayout implements org.telegram.ui.ActionBar.a6 {
-    @Override // org.telegram.ui.ActionBar.a6
+public final class kq extends LinearLayout implements org.telegram.ui.ActionBar.b6 {
+    @Override // org.telegram.ui.ActionBar.b6
     public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.k6.a7));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.k6.H6));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.l6.a7));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.l6.H6));
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
     }
 }

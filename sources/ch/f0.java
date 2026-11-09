@@ -13,10 +13,10 @@ import org.telegram.messenger.p10;
 import org.telegram.messenger.t5;
 import org.telegram.messenger.ui;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.Components.i5;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class f0 {
     public final ImageReceiver a;
@@ -113,7 +113,7 @@ public final class f0 {
         if (o0Var.f != null) {
             TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) ui.b0(this.d).r.get(o0Var.f);
             if (tL_availableReaction != null) {
-                imageReceiver.r0(hc.b(tL_availableReaction.select_animation), str, null, null, t5.f(tL_availableReaction.select_animation, k6.m6, 0.2f, null), 0L, "tgs", o0Var, 0);
+                imageReceiver.r0(hc.b(tL_availableReaction.select_animation), str, null, null, t5.f(tL_availableReaction.select_animation, l6.m6, 0.2f, null), 0L, "tgs", o0Var, 0);
                 return;
             }
             return;

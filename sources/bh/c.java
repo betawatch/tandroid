@@ -5,12 +5,12 @@ import android.graphics.Canvas;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.id;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.Cells.pa;
 import org.telegram.ui.Components.w8;
-import wg.s;
+import wg.r;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class c extends pa {
     public final a b0;
@@ -28,7 +28,7 @@ public final class c extends pa {
     @Override // org.telegram.ui.Cells.pa, android.view.View
     public final void onDraw(Canvas canvas) {
         if (this.S) {
-            canvas.drawLine(id.a0 ? 0.0f : g0.L(70.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (id.a0 ? g0.L(70.0f) : 0), getMeasuredHeight() - 1, k6.k0);
+            canvas.drawLine(id.a0 ? 0.0f : g0.L(70.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (id.a0 ? g0.L(70.0f) : 0), getMeasuredHeight() - 1, l6.k0);
         }
     }
 
@@ -53,7 +53,7 @@ public final class c extends pa {
             } else {
                 w8Var.i(-6631068, -11945404);
             }
-            String valueOf2 = String.valueOf(s.g() * prepaidGiveaway.quantity);
+            String valueOf2 = String.valueOf(r.g() * prepaidGiveaway.quantity);
             a aVar2 = this.b0;
             aVar2.f = valueOf2;
             aVar2.e = aVar2.a.measureText(valueOf2);

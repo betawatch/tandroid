@@ -32,22 +32,22 @@ import org.telegram.ui.ActionBar.f2;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.gb;
-import org.telegram.ui.Components.hb0;
 import org.telegram.ui.Components.hc;
-import org.telegram.ui.Components.kl0;
+import org.telegram.ui.Components.ib0;
+import org.telegram.ui.Components.ll0;
 import org.telegram.ui.Components.u4;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PasscodeActivity;
 import org.telegram.ui.SessionsActivity;
 import org.telegram.ui.StickersActivity;
-import org.telegram.ui.an;
-import org.telegram.ui.c30;
-import org.telegram.ui.h30;
-import org.telegram.ui.hy0;
-import org.telegram.ui.pa0;
-import org.telegram.ui.tg;
+import org.telegram.ui.cn;
+import org.telegram.ui.e30;
+import org.telegram.ui.j30;
+import org.telegram.ui.ky0;
+import org.telegram.ui.ra0;
+import org.telegram.ui.wg;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a2 implements ri, org.telegram.ui.ActionBar.r1, h2.o, NativeInstance.PayloadCallback, y10, p4.l0, h2.j, w5.b {
     public final /* synthetic */ int a;
@@ -254,15 +254,15 @@ public final /* synthetic */ class a2 implements ri, org.telegram.ui.ActionBar.r
                 StickersActivity.f0((StickersActivity) this.c, (ArrayList) this.d, this.b);
                 break;
             case 4:
-                an anVar = (an) this.c;
-                anVar.getMessagesController().C3(anVar.e, anVar.f, this.b, false, !r10[1], ((boolean[]) this.d)[0]);
-                cc B = hc.B(anVar, true, null, null, anVar.xa);
+                cn cnVar = (cn) this.c;
+                cnVar.getMessagesController().C3(cnVar.e, cnVar.f, this.b, false, !r10[1], ((boolean[]) this.d)[0]);
+                cc B = hc.B(cnVar, true, null, null, cnVar.za);
                 B.j();
                 gb gbVar = B.e;
-                gbVar.postDelayed(new tg(0, gbVar), 550L);
+                gbVar.postDelayed(new wg(0, gbVar), 550L);
                 break;
             case 5:
-                an.J0((an) this.c, this.b, (ij) this.d);
+                cn.M0((cn) this.c, this.b, (ij) this.d);
                 break;
             case 6:
                 u4 u4Var = (u4) this.c;
@@ -278,27 +278,27 @@ public final /* synthetic */ class a2 implements ri, org.telegram.ui.ActionBar.r
                 }
                 break;
             case 7:
-                kl0 kl0Var = (kl0) this.c;
+                ll0 ll0Var = (ll0) this.c;
                 TLRPC.Reaction reaction = (TLRPC.Reaction) this.d;
-                String obj2 = kl0Var.getText().toString();
+                String obj2 = ll0Var.getText().toString();
                 if (obj2.length() <= 12) {
                     qp.s1(this.b).l4(ch.o0.d(reaction), obj2);
                     u1Var.dismiss();
                     break;
                 } else {
-                    org.telegram.messenger.g0.F3(kl0Var);
+                    org.telegram.messenger.g0.F3(ll0Var);
                     break;
                 }
             case 9:
-                c30 c30Var = (c30) this.c;
+                e30 e30Var = (e30) this.c;
                 EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) this.d;
-                h30 h30Var = c30Var.o1;
-                r3 r3Var = h30Var.b.R2;
+                j30 j30Var = e30Var.o1;
+                r3 r3Var = j30Var.b.R2;
                 String obj3 = editTextBoldCursor.getText().toString();
                 int i10 = this.b;
                 r3Var.A(i10, obj3);
                 org.telegram.messenger.g0.v1(editTextBoldCursor);
-                h30Var.b.n1().j(i10 == 0 ? 39 : 100, 0L, null);
+                j30Var.b.n1().j(i10 == 0 ? 39 : 100, 0L, null);
                 if (VoIPService.getSharedInstance() != null) {
                     VoIPService.getSharedInstance().playStartRecordSound();
                     break;
@@ -309,17 +309,17 @@ public final /* synthetic */ class a2 implements ri, org.telegram.ui.ActionBar.r
                 HashMap hashMap = (HashMap) this.d;
                 ArrayList arrayList = launchActivity.d0;
                 if (!arrayList.isEmpty() && org.telegram.messenger.g0.J1((f2) g.i(1, arrayList))) {
-                    pa0 pa0Var = new pa0(0);
-                    pa0Var.G0 = new l2.q(hashMap, this.b, 11);
-                    launchActivity.t0(pa0Var);
+                    ra0 ra0Var = new ra0(0);
+                    ra0Var.G0 = new l2.q(hashMap, this.b, 11);
+                    launchActivity.t0(ra0Var);
                     break;
                 }
                 break;
             case 11:
-                ((pa0) this.c).I0(900, this.b, (TLRPC.User) this.d);
+                ((ra0) this.c).I0(900, this.b, (TLRPC.User) this.d);
                 break;
             case 12:
-                PasscodeActivity.Z((PasscodeActivity) this.c, (hb0) this.d, this.b);
+                PasscodeActivity.Z((PasscodeActivity) this.c, (ib0) this.d, this.b);
                 break;
             case 14:
                 SessionsActivity.c0((SessionsActivity) this.c, this.b, (boolean[]) this.d);
@@ -330,12 +330,22 @@ public final /* synthetic */ class a2 implements ri, org.telegram.ui.ActionBar.r
     @Override // w5.b
     public Object h() {
         ia.c cVar = (ia.c) this.c;
-        ((hy0) cVar.d).J((o5.i) this.d, this.b + 1, false);
+        ((ky0) cVar.d).J((o5.i) this.d, this.b + 1, false);
         return null;
     }
 
+    @Override // h2.o
+    public void invoke(Object obj) {
+        e2.b1 b1Var = (e2.b1) this.c;
+        e2.b1 b1Var2 = (e2.b1) this.d;
+        e2.a1 a1Var = (e2.a1) obj;
+        int i7 = this.b;
+        a1Var.i(i7);
+        a1Var.s(b1Var, b1Var2, i7);
+    }
+
     @Override // org.telegram.messenger.y10
-    public void i(Object obj, TLRPC.Document document, Boolean bool) {
+    public void k(Object obj, TLRPC.Document document, Boolean bool) {
         Context context = (Context) this.c;
         TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) this.d;
         int i7 = this.b;
@@ -350,16 +360,6 @@ public final /* synthetic */ class a2 implements ri, org.telegram.ui.ActionBar.r
             u1Var.r(350L);
         } catch (Exception unused) {
         }
-    }
-
-    @Override // h2.o
-    public void invoke(Object obj) {
-        e2.b1 b1Var = (e2.b1) this.c;
-        e2.b1 b1Var2 = (e2.b1) this.d;
-        e2.a1 a1Var = (e2.a1) obj;
-        int i7 = this.b;
-        a1Var.i(i7);
-        a1Var.s(b1Var, b1Var2, i7);
     }
 
     @Override // org.telegram.messenger.voip.NativeInstance.PayloadCallback

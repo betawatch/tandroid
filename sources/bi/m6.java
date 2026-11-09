@@ -3,10 +3,10 @@ package bi;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import java.util.ArrayList;
-import org.telegram.ui.Components.km0;
-import org.telegram.ui.Components.zj0;
+import org.telegram.ui.Components.ak0;
+import org.telegram.ui.Components.lm0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class m6 implements View.OnAttachStateChangeListener {
     public final /* synthetic */ int a;
@@ -81,12 +81,12 @@ public final class m6 implements View.OnAttachStateChangeListener {
                 ((a5.h) this.b).a();
                 break;
             case 10:
-                zj0 zj0Var = (zj0) this.b;
-                org.telegram.ui.Components.g5 g5Var = zj0Var.t;
+                ak0 ak0Var = (ak0) this.b;
+                org.telegram.ui.Components.g5 g5Var = ak0Var.t;
                 if (g5Var != null) {
                     g5Var.a();
                 }
-                org.telegram.ui.Components.g5 g5Var2 = zj0Var.u;
+                org.telegram.ui.Components.g5 g5Var2 = ak0Var.u;
                 if (g5Var2 != null) {
                     g5Var2.a();
                     break;
@@ -101,18 +101,18 @@ public final class m6 implements View.OnAttachStateChangeListener {
                 ((zh.v0) this.b).l.a();
                 break;
             case 14:
-                zh.w2 w2Var = (zh.w2) this.b;
-                zh.u2 u2Var = w2Var.a0;
-                if (u2Var != null) {
-                    u2Var.a(w2Var.c);
+                zh.x2 x2Var = (zh.x2) this.b;
+                zh.v2 v2Var = x2Var.a0;
+                if (v2Var != null) {
+                    v2Var.a(x2Var.c);
                     break;
                 }
                 break;
             default:
-                zh.z2 z2Var = (zh.z2) this.b;
-                zh.x2 x2Var = z2Var.a0;
-                if (x2Var != null) {
-                    x2Var.a(z2Var.c);
+                zh.a3 a3Var = (zh.a3) this.b;
+                zh.y2 y2Var = a3Var.a0;
+                if (y2Var != null) {
+                    y2Var.a(a3Var.c);
                     break;
                 }
                 break;
@@ -186,19 +186,19 @@ public final class m6 implements View.OnAttachStateChangeListener {
                 ((a5.h) this.b).b();
                 break;
             case 10:
-                zj0 zj0Var = (zj0) this.b;
-                org.telegram.ui.Components.g5 g5Var = zj0Var.t;
+                ak0 ak0Var = (ak0) this.b;
+                org.telegram.ui.Components.g5 g5Var = ak0Var.t;
                 if (g5Var != null) {
                     g5Var.b();
                 }
-                org.telegram.ui.Components.g5 g5Var2 = zj0Var.u;
+                org.telegram.ui.Components.g5 g5Var2 = ak0Var.u;
                 if (g5Var2 != null) {
                     g5Var2.a();
                     break;
                 }
                 break;
             case 11:
-                view.removeCallbacks((Runnable) ((km0) this.b).a.remove(view));
+                view.removeCallbacks((Runnable) ((lm0) this.b).a.remove(view));
                 view.removeOnAttachStateChangeListener(this);
                 break;
             case 12:
@@ -207,18 +207,18 @@ public final class m6 implements View.OnAttachStateChangeListener {
                 ((zh.v0) this.b).l.b();
                 break;
             case 14:
-                zh.w2 w2Var = (zh.w2) this.b;
-                zh.u2 u2Var = w2Var.a0;
-                if (u2Var != null) {
-                    u2Var.n(w2Var.c);
+                zh.x2 x2Var = (zh.x2) this.b;
+                zh.v2 v2Var = x2Var.a0;
+                if (v2Var != null) {
+                    v2Var.n(x2Var.c);
                     break;
                 }
                 break;
             default:
-                zh.z2 z2Var = (zh.z2) this.b;
-                zh.x2 x2Var = z2Var.a0;
-                if (x2Var != null) {
-                    x2Var.n(z2Var.c);
+                zh.a3 a3Var = (zh.a3) this.b;
+                zh.y2 y2Var = a3Var.a0;
+                if (y2Var != null) {
+                    y2Var.n(a3Var.c);
                     break;
                 }
                 break;

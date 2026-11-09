@@ -27,7 +27,7 @@ import org.webrtc.SurfaceTextureHelper;
 import org.webrtc.VideoCapturer;
 import org.webrtc.voiceengine.WebRtcAudioRecord;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public class VideoCapturerDevice {
     private static final int CAPTURE_FPS = 30;
@@ -45,7 +45,7 @@ public class VideoCapturerDevice {
     private VideoCapturer videoCapturer;
     private SurfaceTextureHelper videoCapturerSurfaceTextureHelper;
 
-    /* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+    /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
     public class 1 extends MediaProjection.Callback {
         public 1() {
         }
@@ -356,7 +356,7 @@ public class VideoCapturerDevice {
         return point;
     }
 
-    /* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+    /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
     public class 2 implements CameraVideoCapturer.CameraEventsHandler {
         public 2() {
         }
@@ -394,7 +394,7 @@ public class VideoCapturerDevice {
         }
     }
 
-    /* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+    /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
     public class 3 implements CameraVideoCapturer.CameraSwitchHandler {
         public 3() {
         }

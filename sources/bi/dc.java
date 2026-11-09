@@ -7,23 +7,23 @@ import android.widget.TextView;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.lb0;
+import org.telegram.ui.Components.mb0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class dc implements TextWatcher {
     public boolean a;
     public int b = 2;
     public final /* synthetic */ EditTextBoldCursor c;
-    public final /* synthetic */ lb0 d;
+    public final /* synthetic */ mb0 d;
     public final /* synthetic */ long e;
     public final /* synthetic */ boolean f;
     public final /* synthetic */ fi.d h;
     public final /* synthetic */ TextView n;
 
-    public dc(EditTextBoldCursor editTextBoldCursor, lb0 lb0Var, long j3, boolean z9, fi.d dVar, TextView textView) {
+    public dc(EditTextBoldCursor editTextBoldCursor, mb0 mb0Var, long j3, boolean z9, fi.d dVar, TextView textView) {
         this.c = editTextBoldCursor;
-        this.d = lb0Var;
+        this.d = mb0Var;
         this.e = j3;
         this.f = z9;
         this.h = dVar;
@@ -39,7 +39,7 @@ public final class dc implements TextWatcher {
     */
     public final void afterTextChanged(Editable editable) {
         long j3;
-        lb0 lb0Var = this.d;
+        mb0 mb0Var = this.d;
         EditTextBoldCursor editTextBoldCursor = this.c;
         if (this.a) {
             return;
@@ -54,7 +54,7 @@ public final class dc implements TextWatcher {
                     editTextBoldCursor.setSelection(editTextBoldCursor.getText().length());
                     int i7 = -this.b;
                     this.b = i7;
-                    org.telegram.messenger.g0.G3(i7, lb0Var, null);
+                    org.telegram.messenger.g0.G3(i7, mb0Var, null);
                 }
             } catch (Exception unused) {
                 this.a = true;
@@ -64,7 +64,7 @@ public final class dc implements TextWatcher {
                 this.a = false;
                 if (!this.f) {
                 }
-                lb0Var.c(editTextBoldCursor.isFocused(), !TextUtils.isEmpty(editTextBoldCursor.getText()));
+                mb0Var.c(editTextBoldCursor.isFocused(), !TextUtils.isEmpty(editTextBoldCursor.getText()));
                 TextView textView = this.n;
                 if (j3 != 0) {
                 }
@@ -76,7 +76,7 @@ public final class dc implements TextWatcher {
         if (!this.f) {
             this.h.setEnabled(j3 > 0);
         }
-        lb0Var.c(editTextBoldCursor.isFocused(), !TextUtils.isEmpty(editTextBoldCursor.getText()));
+        mb0Var.c(editTextBoldCursor.isFocused(), !TextUtils.isEmpty(editTextBoldCursor.getText()));
         TextView textView2 = this.n;
         if (j3 != 0) {
             textView2.animate().alpha(0.0f).start();

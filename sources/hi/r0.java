@@ -25,11 +25,11 @@ import org.telegram.messenger.qp;
 import org.telegram.messenger.t10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.qn0;
+import org.telegram.ui.sn0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final class r0 {
     public static final HashMap g = new HashMap();
@@ -178,8 +178,8 @@ public final class r0 {
         org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
         u1Var.T = X2;
         q0 q0Var = new q0(this.a, p10.i(i10).f(), a22);
-        int i12 = k6.L5;
-        int x02 = k6.x0(null, i12, false);
+        int i12 = l6.L5;
+        int x02 = l6.x0(null, i12, false);
         u1Var.b0 = q0Var;
         u1Var.c0 = x02;
         u1Var.d0 = -1;
@@ -337,11 +337,11 @@ public final class r0 {
         if (context != null) {
             try {
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context);
-                int i10 = k6.L5;
-                alertDialog$Builder.m(R.raw.permission_request_location, 72, k6.x0(null, i10, false), null);
+                int i10 = l6.L5;
+                alertDialog$Builder.m(R.raw.permission_request_location, 72, l6.x0(null, i10, false), null);
                 alertDialog$Builder.n(i10, null);
-                alertDialog$Builder.a.T = id.M0(2131749531, null);
-                alertDialog$Builder.k(id.M0(2131751161, null), new qb(context, i7));
+                alertDialog$Builder.a.T = id.M0(2131749530, null);
+                alertDialog$Builder.k(id.M0(2131751160, null), new qb(context, i7));
                 alertDialog$Builder.h(id.M0(2131752589, null), null);
                 alertDialog$Builder.p();
             } catch (Exception e12) {
@@ -360,7 +360,7 @@ public final class r0 {
         edit.apply();
     }
 
-    public final void l(boolean z9, final qn0 qn0Var) {
+    public final void l(boolean z9, final sn0 sn0Var) {
         final int i7 = 1;
         this.d = true;
         if (!z9 || a()) {
@@ -369,8 +369,8 @@ public final class r0 {
             while (it.hasNext()) {
                 ((Runnable) it.next()).run();
             }
-            if (qn0Var != null) {
-                qn0Var.run();
+            if (sn0Var != null) {
+                sn0Var.run();
             }
         } else {
             Activity f10 = f();
@@ -385,8 +385,8 @@ public final class r0 {
             org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
             u1Var.T = X2;
             q0 q0Var = new q0(this.a, p10.i(i10).f(), a22);
-            int i12 = k6.L5;
-            int x02 = k6.x0(null, i12, false);
+            int i12 = l6.L5;
+            int x02 = l6.x0(null, i12, false);
             u1Var.b0 = q0Var;
             u1Var.c0 = x02;
             u1Var.d0 = -1;
@@ -406,7 +406,7 @@ public final class r0 {
                             case 0:
                                 r0 r0Var = this.b;
                                 if (!r0Var.a()) {
-                                    ia.e(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new ai.f1(17, r0Var, qn0Var));
+                                    ia.e(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new ai.f1(17, r0Var, sn0Var));
                                     break;
                                 } else {
                                     r0Var.d = true;
@@ -427,7 +427,7 @@ public final class r0 {
                                 while (it3.hasNext()) {
                                     ((Runnable) it3.next()).run();
                                 }
-                                Runnable runnable = qn0Var;
+                                Runnable runnable = sn0Var;
                                 if (runnable != null) {
                                     runnable.run();
                                     break;
@@ -452,7 +452,7 @@ public final class r0 {
                         case 0:
                             r0 r0Var = this.b;
                             if (!r0Var.a()) {
-                                ia.e(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new ai.f1(17, r0Var, qn0Var));
+                                ia.e(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new ai.f1(17, r0Var, sn0Var));
                                 break;
                             } else {
                                 r0Var.d = true;
@@ -473,7 +473,7 @@ public final class r0 {
                             while (it3.hasNext()) {
                                 ((Runnable) it3.next()).run();
                             }
-                            Runnable runnable = qn0Var;
+                            Runnable runnable = sn0Var;
                             if (runnable != null) {
                                 runnable.run();
                                 break;

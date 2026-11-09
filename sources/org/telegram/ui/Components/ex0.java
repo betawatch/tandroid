@@ -1,22 +1,41 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.view.View;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public interface ex0 extends org.telegram.ui.Cells.t9 {
-    int b();
+public class ex0 {
+    public int a;
+    public int b;
+    public int c;
 
-    void d(Canvas canvas, View view);
+    public ex0() {
+        c();
+    }
 
-    void f(View view);
+    public int a(nx0 nx0Var, gx0 gx0Var, zw0 zw0Var, int i7, boolean z9) {
+        return this.a - zw0Var.a(gx0Var, i7);
+    }
 
-    void g(int i7);
+    public void b(int i7, int i10) {
+        this.a = Math.max(this.a, i7);
+        this.b = Math.max(this.b, i10);
+    }
 
-    void h(int i7);
+    public void c() {
+        this.a = TLObject.FLAG_31;
+        this.b = TLObject.FLAG_31;
+        this.c = 2;
+    }
 
-    void i(View view);
-
-    void j(int i7);
+    public int d(boolean z9) {
+        if (!z9) {
+            int i7 = this.c;
+            zw0 zw0Var = nx0.S;
+            if ((i7 & 2) != 0) {
+                return 100000;
+            }
+        }
+        return this.a + this.b;
+    }
 }

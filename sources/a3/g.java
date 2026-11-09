@@ -31,11 +31,11 @@ import org.telegram.ui.ActionBar.f2;
 import org.telegram.ui.ActionBar.r1;
 import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.bw0;
+import org.telegram.ui.Components.cw0;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.an;
+import org.telegram.ui.cn;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g implements p, l5.g, tr, r1, bp {
     public final /* synthetic */ int a;
@@ -54,7 +54,7 @@ public final /* synthetic */ class g implements p, l5.g, tr, r1, bp {
 
     @Override // org.telegram.messenger.bp
     public boolean a(TLRPC.TL_error tL_error) {
-        return ProfileActivity.f0((ProfileActivity) this.c, (boolean[]) this.d, this.b, (f2) this.e, tL_error);
+        return ProfileActivity.d0((ProfileActivity) this.c, (boolean[]) this.d, this.b, (f2) this.e, tL_error);
     }
 
     @Override // l5.g
@@ -135,14 +135,14 @@ public final /* synthetic */ class g implements p, l5.g, tr, r1, bp {
                 }
                 break;
             case 4:
-                an anVar = (an) this.c;
+                cn cnVar = (cn) this.c;
                 qp qpVar = (qp) this.d;
                 CharSequence charSequence = (CharSequence) this.e;
                 boolean z10 = this.b;
                 qpVar.G2 = 1;
-                qp.e1().edit().putInt("secretWebpage2", anVar.getMessagesController().G2).commit();
-                anVar.X5 = null;
-                anVar.yb(charSequence, z10);
+                qp.e1().edit().putInt("secretWebpage2", cnVar.getMessagesController().G2).commit();
+                cnVar.X5 = null;
+                cnVar.Bb(charSequence, z10);
                 break;
             case 5:
                 boolean z11 = this.b;
@@ -165,22 +165,22 @@ public final /* synthetic */ class g implements p, l5.g, tr, r1, bp {
                     }
                 }
             default:
-                bw0 bw0Var = (bw0) this.c;
+                cw0 cw0Var = (cw0) this.c;
                 v10 v10Var = (v10) this.d;
                 Context context2 = (Context) this.e;
                 boolean z12 = this.b;
-                String trim2 = bw0Var.getText().toString().trim();
+                String trim2 = cw0Var.getText().toString().trim();
                 if (!TextUtils.isEmpty(trim2) && !TextUtils.isEmpty(org.telegram.messenger.g0.O3(trim2.toString()))) {
-                    org.telegram.messenger.g0.v1(bw0Var);
+                    org.telegram.messenger.g0.v1(cw0Var);
                     u1 u1Var2 = new u1(3, context2, z12 ? null : new di.b());
                     u1Var2.r(250L);
-                    v10Var.a(trim2, new v3(u1Var2, u1Var, bw0Var, 9));
+                    v10Var.a(trim2, new v3(u1Var2, u1Var, cw0Var, 9));
                     break;
                 } else {
-                    bw0Var.setErrorText(".");
-                    org.telegram.messenger.g0.G3(-6.0f, bw0Var, null);
+                    cw0Var.setErrorText(".");
+                    org.telegram.messenger.g0.G3(-6.0f, cw0Var, null);
                     p2.D.a();
-                    org.telegram.messenger.g0.K3(bw0Var);
+                    org.telegram.messenger.g0.K3(cw0Var);
                     break;
                 }
                 break;

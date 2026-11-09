@@ -15,10 +15,10 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public class l9 extends View {
-    public my0 D;
+    public ny0 D;
     public Path E;
     public ColorMatrixColorFilter F;
     public ImageReceiver a;
@@ -90,7 +90,7 @@ public class l9 extends View {
 
     public w8 getAvatarDrawable() {
         if (this.h == null) {
-            this.h = new w8((org.telegram.ui.ActionBar.f6) null);
+            this.h = new w8((org.telegram.ui.ActionBar.g6) null);
         }
         return this.h;
     }
@@ -205,9 +205,9 @@ public class l9 extends View {
         n(hcVar, str, null, null, drawable, null, 0, obj);
     }
 
-    public final void q(d51 d51Var, org.telegram.messenger.hc hcVar, String str, org.telegram.messenger.hc hcVar2, org.telegram.messenger.hc hcVar3, String str2, int i7, String str3) {
-        if (d51Var != null) {
-            this.a.w0(d51Var);
+    public final void q(e51 e51Var, org.telegram.messenger.hc hcVar, String str, org.telegram.messenger.hc hcVar2, org.telegram.messenger.hc hcVar3, String str2, int i7, String str3) {
+        if (e51Var != null) {
+            this.a.w0(e51Var);
         } else {
             this.a.u0(hcVar, str, hcVar2, null, hcVar3, str2, null, i7, null, str3, 1);
         }
@@ -256,7 +256,7 @@ public class l9 extends View {
             this.D = null;
             return;
         }
-        this.D = new my0(charSequence, 16.5f, org.telegram.messenger.g0.o());
+        this.D = new ny0(charSequence, 16.5f, org.telegram.messenger.g0.o());
         if (this.F == null) {
             ColorMatrix colorMatrix = new ColorMatrix();
             colorMatrix.setSaturation(1.2f);

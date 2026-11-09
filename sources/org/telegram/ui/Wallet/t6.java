@@ -1,53 +1,21 @@
 package org.telegram.ui.Wallet;
 
 import android.content.Context;
-import android.graphics.SurfaceTexture;
 import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
-public final class t6 extends vg.m {
-    public final /* synthetic */ v6 i0;
+public final class t6 extends vg.e {
+    public final /* synthetic */ u6 L;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t6(v6 v6Var, Context context) {
-        super(context, 1, 4);
-        this.i0 = v6Var;
+    public t6(u6 u6Var, Context context) {
+        super(context);
+        this.L = u6Var;
     }
 
-    @Override // vg.m
-    public final void i() {
-        v6 v6Var = this.i0;
-        if (v6Var.e == this) {
-            v6.c(v6Var);
-        }
-    }
-
-    @Override // vg.m, android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i7, int i10) {
-        int round = Math.round(Math.min(i7, i10) * 3.5f);
-        surfaceTexture.setDefaultBufferSize(round, round);
-        super.onSurfaceTextureAvailable(surfaceTexture, round, round);
-    }
-
-    @Override // vg.m, android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int i7, int i10) {
-        int round = Math.round(Math.min(i7, i10) * 3.5f);
-        surfaceTexture.setDefaultBufferSize(round, round);
-        this.D = round;
-        this.y = round;
-    }
-
-    @Override // vg.m, android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
-        int round = Math.round(Math.min(getWidth(), getHeight()) * 3.5f);
-        if (round > 0) {
-            surfaceTexture.setDefaultBufferSize(round, round);
-        }
-    }
-
-    @Override // vg.m, android.view.View
+    @Override // vg.e, android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        return !this.i0.y && super.onTouchEvent(motionEvent);
+        return !this.L.y && super.onTouchEvent(motionEvent);
     }
 }

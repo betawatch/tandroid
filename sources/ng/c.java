@@ -14,11 +14,11 @@ import java.util.Date;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.id;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.s6;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public class c extends FrameLayout {
     public final TextView a;
@@ -29,13 +29,13 @@ public class c extends FrameLayout {
     public boolean f;
     public final Drawable h;
     public final int n;
-    public final f6 r;
+    public final g6 r;
 
-    public c(Context context, f6 f6Var) {
+    public c(Context context, g6 g6Var) {
         super(context);
         this.e = true;
         new SimpleDateFormat("d MMM yyyy");
-        this.r = f6Var;
+        this.r = g6Var;
         TextPaint textPaint = new TextPaint();
         textPaint.setTextSize(14.0f);
         textPaint.setTypeface(g0.o());
@@ -65,27 +65,27 @@ public class c extends FrameLayout {
         addView(textView4, ha.d(-2, -2.0f, 8388629, 16.0f, 0.0f, 16.0f, 0.0f));
         textView4.setVisibility(8);
         textView2.setVisibility(8);
-        textView2.setText(id.M0(2131742790, null));
+        textView2.setText(id.M0(2131742787, null));
         Drawable drawable = getContext().getDrawable(R.drawable.msg_zoomout_stats);
         this.h = drawable;
         textView2.setCompoundDrawablesWithIntrinsicBounds(drawable, (Drawable) null, (Drawable) null, (Drawable) null);
         textView2.setCompoundDrawablePadding(g0.L(4.0f));
         textView2.setPadding(g0.L(8.0f), g0.L(4.0f), g0.L(8.0f), g0.L(4.0f));
-        textView2.setBackground(k6.J0(g0.L(3.0f), k6.w0(k6.Fi, f6Var)));
+        textView2.setBackground(l6.J0(g0.L(3.0f), l6.w0(l6.Fi, g6Var)));
         textView4.addOnLayoutChangeListener(new n3(this, 1));
         a();
     }
 
     public final void a() {
-        int i7 = k6.j5;
+        int i7 = l6.j5;
         TextView textView = this.a;
-        f6 f6Var = this.r;
-        r6.V(textView, i7, f6Var);
-        r6.V(this.b, i7, f6Var);
-        r6.V(this.c, i7, f6Var);
-        int i10 = k6.Tj;
-        r6.V(this.d, i10, f6Var);
-        r6.y(this, this.h, i10, f6Var, PorterDuff.Mode.SRC_IN);
+        g6 g6Var = this.r;
+        s6.U(textView, i7, g6Var);
+        s6.U(this.b, i7, g6Var);
+        s6.U(this.c, i7, g6Var);
+        int i10 = l6.Tj;
+        s6.U(this.d, i10, g6Var);
+        s6.x(this, this.h, i10, g6Var, PorterDuff.Mode.SRC_IN);
     }
 
     public final void b(long j3, long j10) {

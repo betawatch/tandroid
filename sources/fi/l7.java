@@ -12,9 +12,9 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.b80;
+import org.telegram.ui.Components.c80;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class l7 extends FrameLayout {
     public final Paint a;
@@ -63,23 +63,23 @@ public final class l7 extends FrameLayout {
         int textColor = j6Var.getTextColor();
         SpannableString spannableString = new SpannableString("x");
         this.h = spannableString;
-        b80 b80Var = new b80(org.telegram.messenger.g0.L(200.0f), j6Var);
-        b80Var.e = 0.8f;
-        b80Var.a(org.telegram.ui.ActionBar.k6.r1(0.4f, textColor), org.telegram.ui.ActionBar.k6.r1(0.08f, textColor));
-        spannableString.setSpan(b80Var, 0, spannableString.length(), 33);
+        c80 c80Var = new c80(org.telegram.messenger.g0.L(200.0f), j6Var);
+        c80Var.e = 0.8f;
+        c80Var.a(org.telegram.ui.ActionBar.l6.r1(0.4f, textColor), org.telegram.ui.ActionBar.l6.r1(0.08f, textColor));
+        spannableString.setSpan(c80Var, 0, spannableString.length(), 33);
         int textColor2 = j6Var2.getTextColor();
         SpannableString spannableString2 = new SpannableString("x");
         this.n = spannableString2;
-        b80 b80Var2 = new b80(org.telegram.messenger.g0.L(140.0f), j6Var2);
-        b80Var2.e = 0.8f;
-        b80Var2.a(org.telegram.ui.ActionBar.k6.r1(0.4f, textColor2), org.telegram.ui.ActionBar.k6.r1(0.08f, textColor2));
-        spannableString2.setSpan(b80Var2, 0, spannableString2.length(), 33);
+        c80 c80Var2 = new c80(org.telegram.messenger.g0.L(140.0f), j6Var2);
+        c80Var2.e = 0.8f;
+        c80Var2.a(org.telegram.ui.ActionBar.l6.r1(0.4f, textColor2), org.telegram.ui.ActionBar.l6.r1(0.08f, textColor2));
+        spannableString2.setSpan(c80Var2, 0, spannableString2.length(), 33);
         ImageView imageView3 = new ImageView(context);
         this.f = imageView3;
         imageView3.setColorFilter(new PorterDuffColorFilter(1694498815, PorterDuff.Mode.MULTIPLY));
         imageView3.setImageResource(R.drawable.input_clear);
         imageView3.setScaleType(scaleType);
-        imageView3.setBackground(org.telegram.ui.ActionBar.k6.h0(436207615, 1, org.telegram.messenger.g0.L(18.0f)));
+        imageView3.setBackground(org.telegram.ui.ActionBar.l6.h0(436207615, 1, org.telegram.messenger.g0.L(18.0f)));
         addView(imageView3, c8.ha.d(48, 48.0f, 21, 0.0f, 0.0f, 4.0f, 0.0f));
     }
 

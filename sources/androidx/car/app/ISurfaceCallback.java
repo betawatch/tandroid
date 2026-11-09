@@ -8,7 +8,7 @@ import android.os.IInterface;
 import android.os.Parcel;
 import androidx.car.app.IOnDoneCallback;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public interface ISurfaceCallback extends IInterface {
     public static final String DESCRIPTOR = "androidx$car$app$ISurfaceCallback".replace('$', '.');
@@ -29,7 +29,7 @@ public interface ISurfaceCallback extends IInterface {
 
     void onVisibleAreaChanged(Rect rect, IOnDoneCallback iOnDoneCallback);
 
-    /* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+    /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
     public static abstract class Stub extends Binder implements ISurfaceCallback {
         static final int TRANSACTION_onClick = 9;
         static final int TRANSACTION_onFling = 7;
@@ -40,7 +40,7 @@ public interface ISurfaceCallback extends IInterface {
         static final int TRANSACTION_onSurfaceDestroyed = 5;
         static final int TRANSACTION_onVisibleAreaChanged = 3;
 
-        /* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+        /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
         public static class Proxy implements ISurfaceCallback {
             private IBinder mRemote;
 
@@ -221,7 +221,7 @@ public interface ISurfaceCallback extends IInterface {
         }
     }
 
-    /* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+    /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
     public static class Default implements ISurfaceCallback {
         @Override // android.os.IInterface
         public IBinder asBinder() {

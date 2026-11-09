@@ -1,15 +1,116 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.tl.TL_iv;
+import android.graphics.Bitmap;
+import android.graphics.Paint;
+import android.os.Build;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.SystemClock;
+import android.view.Choreographer;
+import android.view.PixelCopy;
+import android.view.Surface;
+import android.view.SurfaceView;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class h80 {
-    public final TL_iv.PageBlock a;
-    public final int b;
+    public final org.telegram.ui.z90 a;
+    public SurfaceView d;
+    public Bitmap e;
+    public Bitmap f;
+    public boolean g;
+    public boolean h;
+    public boolean i;
+    public boolean j;
+    public boolean k;
+    public long l;
+    public final Handler b = new Handler(Looper.getMainLooper());
+    public final Paint c = new Paint(2);
+    public final f80 m = new Choreographer.FrameCallback() { // from class: org.telegram.ui.Components.f80
+        @Override // android.view.Choreographer.FrameCallback
+        public final void doFrame(long j3) {
+            h80 h80Var = h80.this;
+            h80Var.j = false;
+            h80Var.c();
+        }
+    };
+    public final gp n = new gp(this, 23);
 
-    public h80(int i7, TL_iv.PageBlock pageBlock) {
-        this.a = pageBlock;
-        this.b = i7;
+    /* JADX WARN: Type inference failed for: r0v2, types: [org.telegram.ui.Components.f80] */
+    public h80(org.telegram.ui.z90 z90Var) {
+        this.a = z90Var;
+    }
+
+    public final void a() {
+        this.l = SystemClock.uptimeMillis() + 1500;
+        if (this.k) {
+            this.b.removeCallbacks(this.n);
+            this.k = false;
+        }
+        b();
+    }
+
+    public final void b() {
+        if (!this.g || this.i || this.d == null || this.j || this.k) {
+            return;
+        }
+        if (SystemClock.uptimeMillis() < this.l) {
+            this.j = true;
+            Choreographer.getInstance().postFrameCallback(this.m);
+        } else {
+            this.k = true;
+            this.b.postDelayed(this.n, 400L);
+        }
+    }
+
+    public final void c() {
+        Surface surface;
+        if (!this.g || this.i) {
+            return;
+        }
+        if (!this.h) {
+            SurfaceView surfaceView = this.d;
+            if (Build.VERSION.SDK_INT >= 24 && surfaceView != null && surfaceView.isAttachedToWindow() && surfaceView.getWidth() > 0 && surfaceView.getHeight() > 0 && (surface = surfaceView.getHolder().getSurface()) != null && surface.isValid()) {
+                int max = Math.max(1, surfaceView.getWidth() / 4);
+                int max2 = Math.max(1, surfaceView.getHeight() / 4);
+                Bitmap bitmap = this.f;
+                if (bitmap == null || bitmap.getWidth() != max || this.f.getHeight() != max2) {
+                    this.f = Bitmap.createBitmap(max, max2, Bitmap.Config.ARGB_8888);
+                }
+                final Bitmap bitmap2 = this.f;
+                this.h = true;
+                try {
+                    PixelCopy.request(surfaceView, bitmap2, new PixelCopy.OnPixelCopyFinishedListener() { // from class: org.telegram.ui.Components.g80
+                        @Override // android.view.PixelCopy.OnPixelCopyFinishedListener
+                        public final void onPixelCopyFinished(int i7) {
+                            h80 h80Var = h80.this;
+                            Bitmap bitmap3 = bitmap2;
+                            h80Var.h = false;
+                            if (h80Var.i || i7 != 0) {
+                                return;
+                            }
+                            h80Var.f = h80Var.e;
+                            h80Var.e = bitmap3;
+                            h80Var.a.run();
+                        }
+                    }, this.b);
+                } catch (Exception e10) {
+                    this.h = false;
+                    org.telegram.messenger.a8.g(e10, true);
+                }
+            }
+        }
+        b();
+    }
+
+    public final void d() {
+        if (this.j) {
+            Choreographer.getInstance().removeFrameCallback(this.m);
+            this.j = false;
+        }
+        if (this.k) {
+            this.b.removeCallbacks(this.n);
+            this.k = false;
+        }
     }
 }

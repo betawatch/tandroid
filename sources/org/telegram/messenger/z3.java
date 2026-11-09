@@ -7,9 +7,9 @@ import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
-import org.telegram.ui.Components.k21;
+import org.telegram.ui.Components.l21;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class z3 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -184,7 +184,7 @@ public final /* synthetic */ class z3 implements Runnable {
                     String str4 = b10Var.e;
                     while (i7 < b10Var.b.size()) {
                         String str5 = str4;
-                        k21.J0(((TLRPC.TL_textWithEntities) b10Var.c.get(i7)).text, null, str5, new r00(f10Var, (z10) b10Var.d.get(i7), z14, ((Integer) b10Var.b.get(i7)).intValue(), str4, j12, 0));
+                        l21.J0(((TLRPC.TL_textWithEntities) b10Var.c.get(i7)).text, null, str5, new r00(f10Var, (z10) b10Var.d.get(i7), z14, ((Integer) b10Var.b.get(i7)).intValue(), str4, j12, 0));
                         i7++;
                         str4 = str5;
                     }

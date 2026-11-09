@@ -3,7 +3,6 @@ package wg;
 import android.os.Bundle;
 import android.view.View;
 import bi.dd;
-import bi.sc;
 import bi.v9;
 import hi.d4;
 import java.util.ArrayList;
@@ -21,21 +20,22 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.d2;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.Components.gp0;
-import org.telegram.ui.Components.k60;
+import org.telegram.ui.Components.hp0;
+import org.telegram.ui.Components.l60;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.an;
+import org.telegram.ui.cn;
+import wg.a0;
 import wg.b0;
-import wg.p;
-import zh.e3;
-import zh.j3;
+import zh.f3;
 import zh.k3;
 import zh.l3;
 import zh.m3;
 import zh.n3;
+import zh.o3;
+import zh.r2;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -79,8 +79,8 @@ public final /* synthetic */ class z0 implements View.OnClickListener {
             case 1:
                 final f1 f1Var2 = (f1) obj2;
                 final TLRPC.User user = (TLRPC.User) obj;
-                k60 F = k60.F(f1Var2.c, f1Var2.I0, (View) view.getParent());
-                F.c(R.drawable.profile_discuss, id.M0(2131745604, null), new Runnable() { // from class: wg.b1
+                l60 F = l60.F(f1Var2.c, f1Var2.I0, (View) view.getParent());
+                F.c(R.drawable.profile_discuss, id.M0(2131745601, null), new Runnable() { // from class: wg.b1
                     @Override // java.lang.Runnable
                     public final void run() {
                         switch (i11) {
@@ -91,7 +91,7 @@ public final /* synthetic */ class z0 implements View.OnClickListener {
                                     if (f2Var != null) {
                                         Bundle bundle = new Bundle();
                                         bundle.putLong("user_id", user2.id);
-                                        f2Var.presentFragment(new an(bundle));
+                                        f2Var.presentFragment(new cn(bundle));
                                         break;
                                     } else {
                                         f2 T = LaunchActivity.T();
@@ -100,7 +100,7 @@ public final /* synthetic */ class z0 implements View.OnClickListener {
                                         if (T != null) {
                                             Bundle bundle2 = new Bundle();
                                             bundle2.putLong("user_id", user2.id);
-                                            T.showAsSheet(new an(bundle2), d2Var);
+                                            T.showAsSheet(new cn(bundle2), d2Var);
                                             break;
                                         }
                                     }
@@ -131,7 +131,7 @@ public final /* synthetic */ class z0 implements View.OnClickListener {
                         }
                     }
                 }, false);
-                F.c(R.drawable.msg_openprofile, id.M0(2131747787, null), new Runnable() { // from class: wg.b1
+                F.c(R.drawable.msg_openprofile, id.M0(2131747786, null), new Runnable() { // from class: wg.b1
                     @Override // java.lang.Runnable
                     public final void run() {
                         switch (i12) {
@@ -142,7 +142,7 @@ public final /* synthetic */ class z0 implements View.OnClickListener {
                                     if (f2Var != null) {
                                         Bundle bundle = new Bundle();
                                         bundle.putLong("user_id", user2.id);
-                                        f2Var.presentFragment(new an(bundle));
+                                        f2Var.presentFragment(new cn(bundle));
                                         break;
                                     } else {
                                         f2 T = LaunchActivity.T();
@@ -151,7 +151,7 @@ public final /* synthetic */ class z0 implements View.OnClickListener {
                                         if (T != null) {
                                             Bundle bundle2 = new Bundle();
                                             bundle2.putLong("user_id", user2.id);
-                                            T.showAsSheet(new an(bundle2), d2Var);
+                                            T.showAsSheet(new cn(bundle2), d2Var);
                                             break;
                                         }
                                     }
@@ -200,7 +200,7 @@ public final /* synthetic */ class z0 implements View.OnClickListener {
                                 case 0:
                                     aVar.b(false);
                                     b0 b0Var = (b0) fVar;
-                                    g0.i3(new p(b0Var, 2), 200L);
+                                    g0.i3(new a0(b0Var, 0), 200L);
                                     b0Var.r.dismiss();
                                     break;
                                 default:
@@ -218,7 +218,7 @@ public final /* synthetic */ class z0 implements View.OnClickListener {
                                 case 0:
                                     aVar.b(false);
                                     b0 b0Var = (b0) fVar;
-                                    g0.i3(new p(b0Var, 2), 200L);
+                                    g0.i3(new a0(b0Var, 0), 200L);
                                     b0Var.r.dismiss();
                                     break;
                                 default:
@@ -240,9 +240,9 @@ public final /* synthetic */ class z0 implements View.OnClickListener {
                 TLRPC.Chat chat = (TLRPC.Chat) obj;
                 yg.f fVar2 = ((yg.g) obj2).w;
                 if (fVar2 != null) {
-                    a0 a0Var = ((u) fVar2).a;
-                    a0Var.U1.remove(chat);
-                    a0Var.k1(true, true);
+                    z zVar = ((t) fVar2).a;
+                    zVar.U1.remove(chat);
+                    zVar.k1(true, true);
                     break;
                 }
                 break;
@@ -274,35 +274,35 @@ public final /* synthetic */ class z0 implements View.OnClickListener {
                 }
                 break;
             case 7:
-                l3 l3Var = (l3) obj2;
-                l3Var.getClass();
-                if (((sc) obj).f > 0) {
-                    l3Var.presentFragment(new dd());
+                m3 m3Var = (m3) obj2;
+                m3Var.getClass();
+                if (((r2) obj).n > 0) {
+                    m3Var.presentFragment(new dd());
                     break;
                 }
                 break;
             case 8:
-                k3 k3Var = (k3) obj2;
-                j3 j3Var = (j3) obj;
-                k60 F2 = k60.F(k3Var.c, k3Var.I0, k3Var.S1);
-                F2.c(R.drawable.menu_sort_value, id.M0(2131746142, null), new e3(j3Var, 3), false);
-                F2.c(R.drawable.menu_sort_date, id.M0(2131746146, null), new e3(j3Var, 4), false);
-                F2.c(R.drawable.menu_sort_number, id.M0(2131746144, null), new e3(j3Var, 5), false);
+                l3 l3Var = (l3) obj2;
+                k3 k3Var = (k3) obj;
+                l60 F2 = l60.F(l3Var.c, l3Var.I0, l3Var.S1);
+                F2.c(R.drawable.menu_sort_value, id.M0(2131746139, null), new f3(k3Var, 3), false);
+                F2.c(R.drawable.menu_sort_date, id.M0(2131746143, null), new f3(k3Var, 4), false);
+                F2.c(R.drawable.menu_sort_number, id.M0(2131746141, null), new f3(k3Var, 5), false);
                 F2.t = false;
                 F2.Y = true;
                 F2.a0(0.0f, org.telegram.messenger.g0.L(-8.0f));
                 F2.Z();
                 break;
             case 9:
-                n3 n3Var = (n3) obj2;
+                o3 o3Var = (o3) obj2;
                 d4 d4Var = (d4) obj;
-                HashSet hashSet2 = n3Var.R1;
+                HashSet hashSet2 = o3Var.R1;
                 if (!hashSet2.isEmpty()) {
                     ArrayList arrayList2 = new ArrayList();
                     Iterator it = hashSet2.iterator();
                     while (it.hasNext()) {
                         long longValue = ((Long) it.next()).longValue();
-                        ArrayList arrayList3 = n3Var.Q1.l;
+                        ArrayList arrayList3 = o3Var.Q1.l;
                         int size2 = arrayList3.size();
                         int i13 = 0;
                         while (true) {
@@ -322,14 +322,14 @@ public final /* synthetic */ class z0 implements View.OnClickListener {
                         }
                     }
                     d4Var.a(arrayList2);
-                    n3Var.dismiss();
+                    o3Var.dismiss();
                     break;
                 }
                 break;
             default:
-                v9 v9Var = ((m3) obj2).c.Q1;
+                v9 v9Var = ((n3) obj2).c.Q1;
                 v9Var.e = !v9Var.e;
-                ((gp0) obj).run();
+                ((hp0) obj).run();
                 v9Var.j(true);
                 break;
         }

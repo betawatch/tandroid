@@ -8,7 +8,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class zg implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -50,7 +50,7 @@ public final /* synthetic */ class zg implements Runnable {
                 int i7 = 0;
                 for (int i10 = 0; i10 < size; i10++) {
                     TLRPC.Message message = (TLRPC.Message) arrayList3.get(i10);
-                    if ((ij.o1(message) instanceof TLRPC.TL_messageMediaDocument) || (ij.o1(message) instanceof TLRPC.TL_messageMediaPhoto)) {
+                    if ((ij.n1(message) instanceof TLRPC.TL_messageMediaDocument) || (ij.n1(message) instanceof TLRPC.TL_messageMediaPhoto)) {
                         i7++;
                     }
                     arrayList4.add(new ij(uiVar.currentAccount, message, hVar, hVar2, false, i7 < 30));
@@ -91,12 +91,12 @@ public final /* synthetic */ class zg implements Runnable {
                 boolean z11 = this.b;
                 ij ijVar = (ij) this.h;
                 TL_keyboard.KeyboardButtonProto keyboardButtonProto = (TL_keyboard.KeyboardButtonProto) this.n;
-                org.telegram.ui.an anVar = (org.telegram.ui.an) this.r;
+                org.telegram.ui.cn cnVar = (org.telegram.ui.cn) this.r;
                 if (tL_error == null) {
                     TL_account.Password password = (TL_account.Password) tLObject;
                     twoStepVerificationActivity.I = password;
                     TwoStepVerificationActivity.r0(password);
-                    gzVar.n0(z11, ijVar, keyboardButtonProto, twoStepVerificationActivity.q0(), twoStepVerificationActivity, anVar);
+                    gzVar.n0(z11, ijVar, keyboardButtonProto, twoStepVerificationActivity.q0(), twoStepVerificationActivity, cnVar);
                     break;
                 }
                 break;
@@ -114,7 +114,7 @@ public final /* synthetic */ class zg implements Runnable {
         this.r = hVar2;
     }
 
-    public /* synthetic */ zg(gz gzVar, TLRPC.TL_error tL_error, TLObject tLObject, TwoStepVerificationActivity twoStepVerificationActivity, boolean z9, ij ijVar, TL_keyboard.KeyboardButtonProto keyboardButtonProto, org.telegram.ui.an anVar) {
+    public /* synthetic */ zg(gz gzVar, TLRPC.TL_error tL_error, TLObject tLObject, TwoStepVerificationActivity twoStepVerificationActivity, boolean z9, ij ijVar, TL_keyboard.KeyboardButtonProto keyboardButtonProto, org.telegram.ui.cn cnVar) {
         this.d = gzVar;
         this.c = tL_error;
         this.e = tLObject;
@@ -122,6 +122,6 @@ public final /* synthetic */ class zg implements Runnable {
         this.b = z9;
         this.h = ijVar;
         this.n = keyboardButtonProto;
-        this.r = anVar;
+        this.r = cnVar;
     }
 }

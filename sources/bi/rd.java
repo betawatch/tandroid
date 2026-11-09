@@ -5,9 +5,9 @@ import android.animation.AnimatorListenerAdapter;
 import android.graphics.RectF;
 import android.view.View;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.r80;
+import org.telegram.ui.t80;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class rd extends AnimatorListenerAdapter {
     public final /* synthetic */ ch.m0 a;
@@ -30,7 +30,7 @@ public final class rd extends AnimatorListenerAdapter {
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
-        r80 r80Var;
+        t80 t80Var;
         ce ceVar = this.h;
         qd qdVar = ceVar.B1;
         qdVar.setVisibility(4);
@@ -63,9 +63,9 @@ public final class rd extends AnimatorListenerAdapter {
             }
         }
         LaunchActivity launchActivity = LaunchActivity.G1;
-        if (launchActivity == null || (r80Var = launchActivity.v0) == null) {
+        if (launchActivity == null || (t80Var = launchActivity.v0) == null) {
             return;
         }
-        r80Var.c(true);
+        t80Var.c(true);
     }
 }

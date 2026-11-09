@@ -16,20 +16,20 @@ import org.telegram.messenger.t10;
 import org.telegram.messenger.t3;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.s6;
 import org.telegram.ui.Cells.g6;
 import org.telegram.ui.Cells.m8;
 import org.telegram.ui.Cells.x3;
 import org.telegram.ui.Components.mz;
-import org.telegram.ui.Components.oj0;
+import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.tm;
-import org.telegram.ui.Components.xi0;
+import org.telegram.ui.Components.yi0;
 import org.telegram.ui.Components.yz;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public abstract class s1 extends oj0 {
+public abstract class s1 extends pj0 {
     public boolean D;
     public int E;
     public int F;
@@ -49,7 +49,7 @@ public abstract class s1 extends oj0 {
     public boolean x;
     public long y;
 
-    @Override // org.telegram.ui.Components.oj0
+    @Override // org.telegram.ui.Components.pj0
     public final boolean D(v4.d1 d1Var) {
         int i7 = d1Var.f;
         return i7 == 0 || i7 == 2 || i7 == 3;
@@ -156,13 +156,13 @@ public abstract class s1 extends oj0 {
             if (i10 == 1) {
                 x3 x3Var = (x3) view;
                 if (i7 == this.J) {
-                    x3Var.setText(id.M0(2131749108, null));
+                    x3Var.setText(id.M0(2131749107, null));
                     return;
                 } else if (E(i7) == null) {
-                    x3Var.setText(id.M0(2131749536, null));
+                    x3Var.setText(id.M0(2131749535, null));
                     return;
                 } else {
-                    x3Var.setText(id.M0(2131747284, null));
+                    x3Var.setText(id.M0(2131747283, null));
                     return;
                 }
             }
@@ -176,7 +176,7 @@ public abstract class s1 extends oj0 {
             }
             String str2 = (String) E(i7);
             m8 m8Var = (m8) view;
-            m8Var.g(-1, k6.o6);
+            m8Var.g(-1, l6.o6);
             m8Var.k(id.a0(null, null, 2131754452, pf.b.c().b("+" + str2)), false);
             return;
         }
@@ -212,7 +212,7 @@ public abstract class s1 extends oj0 {
                     charSequence = null;
                     g6 g6Var = (g6) view;
                     if (z9) {
-                        charSequence = id.M0(2131745904, null);
+                        charSequence = id.M0(2131745901, null);
                     }
                     g6Var.x(tLObject, null, charSequence, charSequence2, false, z9);
                     g6Var.w(this.h.h(j3) >= 0, false);
@@ -237,7 +237,7 @@ public abstract class s1 extends oj0 {
                         } else {
                             A1++;
                         }
-                        spannableStringBuilder.setSpan(new yz(k6.q6, null), A1, length + A1, 33);
+                        spannableStringBuilder.setSpan(new yz(l6.q6, null), A1, length + A1, 33);
                     }
                     str = spannableStringBuilder;
                 } catch (Exception e10) {
@@ -283,9 +283,9 @@ public abstract class s1 extends oj0 {
             mz mzVar = new mz(context, null);
             mzVar.setIsSingleCell(true);
             mzVar.setViewType(29);
-            r6.i(k6.d6, mzVar, null);
+            s6.h(l6.d6, mzVar, null);
             view = mzVar;
         }
-        return new xi0(view);
+        return new yi0(view);
     }
 }

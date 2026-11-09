@@ -5,12 +5,12 @@ import android.text.TextPaint;
 import android.view.View;
 import java.util.HashSet;
 import org.telegram.messenger.a8;
-import org.telegram.ui.ActionBar.a6;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.b6;
+import org.telegram.ui.ActionBar.l6;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class h0 extends View implements a6 {
+public final class h0 extends View implements b6 {
     public TextPaint a;
     public int b;
 
@@ -25,17 +25,17 @@ public final class h0 extends View implements a6 {
         canvas.drawText("+" + this.b, measuredWidth, (int) (measuredHeight - ((textPaint.ascent() + textPaint.descent()) / 2.0f)), textPaint);
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
         try {
-            this.a.setColor(k6.x0(null, k6.a7, false));
+            this.a.setColor(l6.x0(null, l6.a7, false));
             invalidate();
         } catch (Exception e10) {
             a8.g(e10, true);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

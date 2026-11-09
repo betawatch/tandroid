@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.pp0;
-import org.telegram.ui.Components.ur0;
+import org.telegram.ui.Components.qp0;
+import org.telegram.ui.Components.wr0;
 import org.telegram.ui.StickersActivity;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class qf implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -44,7 +44,7 @@ public final /* synthetic */ class qf implements RequestDelegate {
                 }
                 break;
             default:
-                ur0 ur0Var = (ur0) this.d;
+                wr0 wr0Var = (wr0) this.d;
                 String str = (String) this.e;
                 ArrayList arrayList = new ArrayList();
                 if (tL_error == null) {
@@ -53,11 +53,11 @@ public final /* synthetic */ class qf implements RequestDelegate {
                         TLRPC.Message message = messages_messages.messages.get(i7);
                         int i10 = this.b;
                         if (i10 == 0 || message.id <= i10) {
-                            arrayList.add(new ij(ur0Var.w.x1.getCurrentAccount(), message, false, true));
+                            arrayList.add(new ij(wr0Var.w.x1.getCurrentAccount(), message, false, true));
                         }
                     }
                 }
-                g0.h3(new pp0(ur0Var, this.c, arrayList, str, 1));
+                g0.h3(new qp0(wr0Var, this.c, arrayList, str, 1));
                 break;
         }
     }

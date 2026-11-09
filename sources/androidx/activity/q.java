@@ -1,11 +1,11 @@
 package androidx.activity;
 
 import android.window.OnBackInvokedCallback;
-import di.p9;
+import di.q9;
 import fi.va;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class q implements OnBackInvokedCallback {
     public final /* synthetic */ int a;
@@ -24,10 +24,10 @@ public final /* synthetic */ class q implements OnBackInvokedCallback {
                 onBackInvoked.invoke();
                 break;
             case 1:
-                p9 p9Var = (p9) this.b;
+                q9 q9Var = (q9) this.b;
                 LaunchActivity launchActivity = LaunchActivity.G1;
                 if (launchActivity == null) {
-                    p9Var.p();
+                    q9Var.p();
                     break;
                 } else {
                     launchActivity.onBackPressed();

@@ -1,31 +1,34 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+import android.content.Context;
+
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s90 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ca0 b;
+    public final /* synthetic */ da0 b;
+    public final /* synthetic */ Context c;
 
-    public /* synthetic */ s90(ca0 ca0Var, int i7) {
+    public /* synthetic */ s90(da0 da0Var, Context context, int i7) {
         this.a = i7;
-        this.b = ca0Var;
+        this.b = da0Var;
+        this.c = context;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ca0 ca0Var = this.b;
-                bi.q1 q1Var = ca0Var.f;
-                if (!ca0Var.c0.d.r) {
-                    q1Var.x0(q1Var.computeVerticalScrollRange() - (q1Var.computeVerticalScrollExtent() + q1Var.computeVerticalScrollOffset()), org.telegram.messenger.qs.Z3, mi.l.V);
-                    break;
-                } else {
-                    q1Var.x0(-q1Var.computeVerticalScrollOffset(), org.telegram.messenger.qs.Z3, mi.l.V);
+                da0 da0Var = this.b;
+                da0Var.c0.a(false);
+                org.telegram.messenger.g0.h3(new s90(da0Var, this.c, 1));
+                break;
+            default:
+                Context context = this.c;
+                if (org.telegram.messenger.g0.E1(context)) {
+                    new ug.w0(43, context, this.b.c0.F).show();
                     break;
                 }
-            default:
-                this.b.h(true, false);
                 break;
         }
     }

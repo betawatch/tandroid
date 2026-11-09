@@ -5,9 +5,9 @@ import java.util.Arrays;
 import org.telegram.messenger.c20;
 import org.telegram.messenger.v10;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.bi0;
+import org.telegram.ui.di0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s7 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -68,7 +68,7 @@ public final /* synthetic */ class s7 implements DialogInterface.OnDismissListen
                     v2Var.dismiss();
                     v2VarArr[0] = null;
                 }
-                bi0.a = null;
+                di0.a = null;
                 org.telegram.ui.ActionBar.v2 v2Var2 = v2VarArr2[0];
                 if (v2Var2 != null) {
                     v2Var2.dismiss();
@@ -78,24 +78,24 @@ public final /* synthetic */ class s7 implements DialogInterface.OnDismissListen
                 break;
             default:
                 org.telegram.ui.web.x0 x0Var = (org.telegram.ui.web.x0) this.b;
-                di.o7 o7Var = (di.o7) this.d;
+                di.p7 p7Var = (di.p7) this.d;
                 String str = (String) this.e;
                 x0Var.getClass();
                 boolean[] zArr3 = this.c;
                 if (!zArr3[0]) {
                     zArr3[0] = true;
-                    x0Var.x(o7Var, "requested_chat_failed", org.telegram.ui.web.x0.A(str, "req_id"));
+                    x0Var.x(p7Var, "requested_chat_failed", org.telegram.ui.web.x0.A(str, "req_id"));
                     break;
                 }
                 break;
         }
     }
 
-    public /* synthetic */ s7(org.telegram.ui.web.x0 x0Var, boolean[] zArr, di.o7 o7Var, String str) {
+    public /* synthetic */ s7(org.telegram.ui.web.x0 x0Var, boolean[] zArr, di.p7 p7Var, String str) {
         this.a = 3;
         this.b = x0Var;
         this.c = zArr;
-        this.d = o7Var;
+        this.d = p7Var;
         this.e = str;
     }
 

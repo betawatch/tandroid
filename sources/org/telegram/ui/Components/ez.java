@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.FiltersSetupActivity;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class ez extends v4.v {
     public final /* synthetic */ int d;
@@ -17,7 +17,7 @@ public final class ez extends v4.v {
     public ez(FiltersSetupActivity filtersSetupActivity) {
         this.d = 1;
         this.f = filtersSetupActivity;
-        this.e = new org.telegram.ui.hz(this, 4);
+        this.e = new org.telegram.ui.jz(this, 4);
     }
 
     @Override // v4.v
@@ -35,8 +35,8 @@ public final class ez extends v4.v {
                 View view2 = d1Var.a;
                 view2.setPressed(false);
                 view2.setTag(R.id.dragging, null);
-                if (view2 instanceof org.telegram.ui.a00) {
-                    ((org.telegram.ui.a00) view2).setDragging(false);
+                if (view2 instanceof org.telegram.ui.c00) {
+                    ((org.telegram.ui.c00) view2).setDragging(false);
                     break;
                 }
                 break;
@@ -99,16 +99,16 @@ public final class ez extends v4.v {
                         bz bzVar = fzVar.J;
                         int i13 = czVar2.a;
                         int i14 = czVar.a;
-                        org.telegram.ui.nw nwVar = (org.telegram.ui.nw) bzVar;
+                        org.telegram.ui.pw pwVar = (org.telegram.ui.pw) bzVar;
                         while (true) {
-                            org.telegram.ui.vw[] vwVarArr = nwVar.b.e0;
-                            if (i7 < vwVarArr.length) {
-                                org.telegram.ui.vw vwVar = vwVarArr[i7];
-                                int i15 = vwVar.h;
+                            org.telegram.ui.xw[] xwVarArr = pwVar.b.e0;
+                            if (i7 < xwVarArr.length) {
+                                org.telegram.ui.xw xwVar = xwVarArr[i7];
+                                int i15 = xwVar.h;
                                 if (i15 == i13) {
-                                    vwVar.h = i14;
+                                    xwVar.h = i14;
                                 } else if (i15 == i14) {
-                                    vwVar.h = i13;
+                                    xwVar.h = i13;
                                 }
                                 i7++;
                             } else {
@@ -142,23 +142,23 @@ public final class ez extends v4.v {
                 break;
             default:
                 if (d1Var.f == d1Var2.f) {
-                    org.telegram.ui.e00 e00Var = ((FiltersSetupActivity) this.f).b;
+                    org.telegram.ui.g00 g00Var = ((FiltersSetupActivity) this.f).b;
                     int b12 = d1Var.b();
                     int b13 = d1Var2.b();
-                    FiltersSetupActivity filtersSetupActivity = e00Var.e;
+                    FiltersSetupActivity filtersSetupActivity = g00Var.e;
                     int i18 = filtersSetupActivity.r;
                     ArrayList arrayList2 = filtersSetupActivity.n;
                     if (b12 >= i18 && b13 >= i18) {
-                        org.telegram.ui.c00 c00Var = (org.telegram.ui.c00) arrayList2.get(b12);
-                        org.telegram.ui.c00 c00Var2 = (org.telegram.ui.c00) arrayList2.get(b13);
-                        if (c00Var != null && c00Var2 != null && (voVar = c00Var.d) != null && (voVar2 = c00Var2.d) != null) {
+                        org.telegram.ui.e00 e00Var = (org.telegram.ui.e00) arrayList2.get(b12);
+                        org.telegram.ui.e00 e00Var2 = (org.telegram.ui.e00) arrayList2.get(b13);
+                        if (e00Var != null && e00Var2 != null && (voVar = e00Var.d) != null && (voVar2 = e00Var2.d) != null) {
                             int i19 = voVar.f;
                             voVar.f = voVar2.f;
                             voVar2.f = i19;
                             ArrayList arrayList3 = filtersSetupActivity.getMessagesController().P0;
                             try {
-                                arrayList3.set(b12 - filtersSetupActivity.r, c00Var2.d);
-                                arrayList3.set(b13 - filtersSetupActivity.r, c00Var.d);
+                                arrayList3.set(b12 - filtersSetupActivity.r, e00Var2.d);
+                                arrayList3.set(b13 - filtersSetupActivity.r, e00Var.d);
                             } catch (Exception unused) {
                             }
                             filtersSetupActivity.e = true;
@@ -184,7 +184,7 @@ public final class ez extends v4.v {
                 if (i7 != 0) {
                     fzVar.F.I0(false);
                     d1Var.a.setPressed(true);
-                    org.telegram.ui.ActionBar.r6.i(fzVar.b0, d1Var.a, fzVar.a);
+                    org.telegram.ui.ActionBar.s6.h(fzVar.b0, d1Var.a, fzVar.a);
                 } else {
                     org.telegram.messenger.g0.r(gpVar);
                     org.telegram.messenger.g0.i3(gpVar, 320L);
@@ -195,19 +195,19 @@ public final class ez extends v4.v {
                 }
                 break;
             default:
-                org.telegram.ui.hz hzVar = (org.telegram.ui.hz) runnable;
+                org.telegram.ui.jz jzVar = (org.telegram.ui.jz) runnable;
                 if (i7 != 0) {
                     ((FiltersSetupActivity) obj).a.I0(false);
                     d1Var.a.setPressed(true);
                 } else {
-                    org.telegram.messenger.g0.r(hzVar);
-                    org.telegram.messenger.g0.i3(hzVar, 320L);
+                    org.telegram.messenger.g0.r(jzVar);
+                    org.telegram.messenger.g0.i3(jzVar, 320L);
                 }
                 if (d1Var != null) {
                     View view = d1Var.a;
                     view.setTag(R.id.dragging, i7 == 2 ? Boolean.TRUE : null);
-                    if (view instanceof org.telegram.ui.a00) {
-                        ((org.telegram.ui.a00) view).setDragging(i7 == 2);
+                    if (view instanceof org.telegram.ui.c00) {
+                        ((org.telegram.ui.c00) view).setDragging(i7 == 2);
                         break;
                     }
                 }

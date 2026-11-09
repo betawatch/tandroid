@@ -5,7 +5,7 @@ import android.text.SpannableStringBuilder;
 import android.text.TextPaint;
 import android.text.TextUtils;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class cz {
     public int a;
@@ -33,7 +33,7 @@ public final class cz {
         this.c = ceil;
         int i11 = 0;
         if (z9) {
-            i7 = ((org.telegram.ui.nw) fzVar.J).a(this.a);
+            i7 = ((org.telegram.ui.pw) fzVar.J).a(this.a);
             if (i7 < 0) {
                 i7 = 0;
             }
@@ -63,7 +63,7 @@ public final class cz {
         this.b = spannableStringBuilder;
         CharSequence m10 = org.telegram.messenger.i6.m(spannableStringBuilder, textPaint.getFontMetricsInt(), false, null, 0);
         this.b = m10;
-        this.b = org.telegram.messenger.ij.C5(m10, null, textPaint.getFontMetricsInt(), false);
+        this.b = org.telegram.messenger.ij.B5(m10, null, textPaint.getFontMetricsInt(), false);
         this.g = false;
     }
 }

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ws implements Runnable {
     public final /* synthetic */ int a;
@@ -144,7 +144,7 @@ public final /* synthetic */ class ws implements Runnable {
                                                 long j13 = j12 != j3 ? -j12 : j3;
                                                 SparseArray sparseArray = (SparseArray) hVar.f(j13);
                                                 if (sparseArray != null) {
-                                                    sparseArray.remove(ijVar.f1());
+                                                    sparseArray.remove(ijVar.e1());
                                                     if (sparseArray.size() == 0) {
                                                         hVar.l(j13);
                                                     }
@@ -260,10 +260,10 @@ public final /* synthetic */ class ws implements Runnable {
                             int i18 = i16;
                             if (ij.B0(ijVar2.k) == j14) {
                                 j11 = j15;
-                                if (ijVar2.f1() <= j11) {
+                                if (ijVar2.e1() <= j11) {
                                     SparseArray sparseArray2 = (SparseArray) hVar4.f(j14);
                                     if (sparseArray2 != null) {
-                                        sparseArray2.remove(ijVar2.f1());
+                                        sparseArray2.remove(ijVar2.e1());
                                         if (sparseArray2.size() == 0) {
                                             hVar4.l(j14);
                                         }

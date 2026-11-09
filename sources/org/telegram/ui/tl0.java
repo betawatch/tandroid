@@ -1,71 +1,37 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.tl.TL_stars;
-
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class tl0 implements org.telegram.messenger.c20 {
+public final /* synthetic */ class tl0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ul0 b;
+    public final /* synthetic */ dm0 b;
 
-    public /* synthetic */ tl0(ul0 ul0Var, int i7) {
+    public /* synthetic */ tl0(dm0 dm0Var, int i7) {
         this.a = i7;
-        this.b = ul0Var;
+        this.b = dm0Var;
     }
 
-    @Override // org.telegram.messenger.c20
-    public final void a(Object obj) {
-        int i7;
-        fm0 fm0Var;
-        bm0 bm0Var;
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = this.a;
+        dm0 dm0Var = this.b;
+        switch (i7) {
             case 0:
-                Integer num = (Integer) obj;
-                ul0 ul0Var = this.b;
-                bm0 bm0Var2 = ul0Var.e;
-                TL_stars.StarGift starGift = num.intValue() == 0 ? null : (TL_stars.StarGift) bm0Var2.M.get(num);
-                bm0Var2.K = starGift;
-                hm0 hm0Var = bm0Var2.p0;
-                if (starGift == null) {
-                    zh.b3 b3Var = bm0Var2.J;
-                    if (b3Var != null) {
-                        b3Var.f();
-                        bm0Var2.J = null;
-                    }
-                } else {
-                    zh.b3 b3Var2 = bm0Var2.J;
-                    if (b3Var2 == null || b3Var2.b != starGift.id) {
-                        i7 = ((org.telegram.ui.ActionBar.f2) hm0Var).currentAccount;
-                        zh.b3 b3Var3 = new zh.b3(i7, bm0Var2.K.id, new tl0(ul0Var, 2));
-                        bm0Var2.J = b3Var3;
-                        b3Var3.g(false);
-                    }
-                }
-                bm0.a(bm0Var2);
-                (hm0Var.I.getCurrentPosition() == 1 ? hm0Var.n : hm0Var.h).e();
-                break;
-            case 1:
-                bm0 bm0Var3 = this.b.e;
-                bm0Var3.h = ((Integer) obj).intValue();
-                bm0Var3.r = null;
-                bm0Var3.s = null;
-                bm0Var3.I = null;
-                bm0Var3.j(true);
-                bm0Var3.i();
-                bm0Var3.f(true);
-                am0 am0Var = bm0Var3.D;
-                if (am0Var != null) {
-                    am0Var.invalidate();
-                }
-                hm0 hm0Var2 = bm0Var3.p0;
-                bm0 bm0Var4 = hm0Var2.n;
-                if (bm0Var4 != null && (fm0Var = bm0Var4.a) != null && (bm0Var = hm0Var2.h) != null) {
-                    fm0Var.a(bm0Var.h);
+                if (dm0Var.G) {
+                    dm0Var.b.invalidate();
                     break;
                 }
                 break;
+            case 1:
+                dm0Var.h();
+                break;
+            case 2:
+                int i10 = dm0.q0;
+                dm0Var.h();
+                break;
             default:
-                this.b.e.e();
+                int i11 = dm0.q0;
+                dm0Var.h();
                 break;
         }
     }

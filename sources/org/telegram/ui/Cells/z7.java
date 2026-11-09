@@ -26,7 +26,7 @@ import org.telegram.messenger.zy;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public class z7 extends FrameLayout implements ls, rg.c {
     public static final AccelerateInterpolator N = new AccelerateInterpolator(0.5f);
@@ -39,7 +39,7 @@ public class z7 extends FrameLayout implements ls, rg.c {
     public final ImageView J;
     public int K;
     public boolean L;
-    public final org.telegram.ui.ActionBar.f6 M;
+    public final org.telegram.ui.ActionBar.g6 M;
     public final y7 a;
     public final ug.z0 b;
     public TLRPC.Document c;
@@ -54,14 +54,14 @@ public class z7 extends FrameLayout implements ls, rg.c {
     public float x;
     public long y;
 
-    public z7(Context context, org.telegram.ui.ActionBar.f6 f6Var, boolean z9) {
+    public z7(Context context, org.telegram.ui.ActionBar.g6 g6Var, boolean z9) {
         super(context);
         this.n = 1.0f;
         this.E = p10.s0;
         this.H = 1.0f;
-        this.M = f6Var;
+        this.M = g6Var;
         this.F = z9;
-        y7 y7Var = new y7(this, f6Var);
+        y7 y7Var = new y7(this, g6Var);
         this.a = y7Var;
         y7Var.R0 = true;
         y7Var.z1 = true;
@@ -69,7 +69,7 @@ public class z7 extends FrameLayout implements ls, rg.c {
         TextView textView = new TextView(context);
         this.h = textView;
         textView.setTextSize(1, 16.0f);
-        new Paint(1).setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Ci, false));
+        new Paint(1).setColor(org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.Ci, false));
         ug.z0 z0Var = new ug.z0(1, context, null);
         this.b = z0Var;
         z0Var.setImageReceiver(y7Var);
@@ -81,11 +81,11 @@ public class z7 extends FrameLayout implements ls, rg.c {
         imageView.setImageResource(R.drawable.mini_more_dots);
         imageView.setPadding(org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f));
         int L = org.telegram.messenger.g0.L(12.0f);
-        int i7 = org.telegram.ui.ActionBar.k6.q5;
-        ShapeDrawable d02 = org.telegram.ui.ActionBar.k6.d0(L, org.telegram.ui.ActionBar.k6.w0(i7, f6Var));
-        org.telegram.ui.ActionBar.n6 N2 = org.telegram.ui.ActionBar.r6.N(i7);
+        int i7 = org.telegram.ui.ActionBar.l6.q5;
+        ShapeDrawable d02 = org.telegram.ui.ActionBar.l6.d0(L, org.telegram.ui.ActionBar.l6.w0(i7, g6Var));
+        org.telegram.ui.ActionBar.o6 M = org.telegram.ui.ActionBar.s6.M(i7);
         imageView.setBackground(d02);
-        org.telegram.ui.ActionBar.r6.k(imageView, d02, N2, null, f6Var);
+        org.telegram.ui.ActionBar.s6.j(imageView, d02, M, null, g6Var);
         imageView.setAlpha(0.0f);
         addView(imageView, c8.ha.e(-2, -2, 5));
         setFocusable(true);
@@ -185,21 +185,21 @@ public class z7 extends FrameLayout implements ls, rg.c {
         TextView textView;
         int i7;
         this.f = str;
-        this.G = ij.Y3(document);
+        this.G = ij.X3(document);
         this.L = false;
         y7 y7Var = this.a;
         y7Var.o1 = null;
         this.K = 0;
         int L = org.telegram.messenger.g0.L(12.0f);
-        int i10 = org.telegram.ui.ActionBar.k6.q5;
-        org.telegram.ui.ActionBar.r6.C(this.J, org.telegram.ui.ActionBar.k6.d0(L, org.telegram.ui.ActionBar.k6.x0(null, i10, false)), org.telegram.ui.ActionBar.r6.N(i10), null);
+        int i10 = org.telegram.ui.ActionBar.l6.q5;
+        org.telegram.ui.ActionBar.s6.B(this.J, org.telegram.ui.ActionBar.l6.d0(L, org.telegram.ui.ActionBar.l6.x0(null, i10, false)), org.telegram.ui.ActionBar.s6.M(i10), null);
         if (z10) {
             c(false);
         } else {
             a(false);
         }
         if (this.G) {
-            int x02 = org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.d6, false);
+            int x02 = org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.d6, false);
             ug.z0 z0Var = this.b;
             z0Var.setColor(x02);
             z0Var.H = true;
@@ -213,12 +213,12 @@ public class z7 extends FrameLayout implements ls, rg.c {
                 i7 = 4;
                 iArr = null;
                 textView = textView2;
-                y7Var.r0(hc.g(zyVar.a), "80_80", null, null, org.telegram.messenger.t5.b(org.telegram.ui.ActionBar.k6.i5), 0L, zyVar.e ? "tgs" : null, 0, 1);
+                y7Var.r0(hc.g(zyVar.a), "80_80", null, null, org.telegram.messenger.t5.b(org.telegram.ui.ActionBar.l6.i5), 0L, zyVar.e ? "tgs" : null, 0, 1);
             } else {
                 iArr = null;
                 textView = textView2;
                 i7 = 4;
-                y7Var.r0(null, null, null, null, org.telegram.messenger.t5.b(org.telegram.ui.ActionBar.k6.i5), 0L, zyVar.e ? "tgs" : null, 0, 1);
+                y7Var.r0(null, null, null, null, org.telegram.messenger.t5.b(org.telegram.ui.ActionBar.l6.i5), 0L, zyVar.e ? "tgs" : null, 0, 1);
             }
             if (str != null) {
                 TextView textView3 = textView;
@@ -232,13 +232,13 @@ public class z7 extends FrameLayout implements ls, rg.c {
             this.e = obj;
             TLRPC.PhotoSize w10 = org.telegram.messenger.w7.w(document.thumbs, 90, false, null, false);
             boolean z13 = this.F;
-            int i11 = z13 ? org.telegram.ui.ActionBar.k6.c7 : org.telegram.ui.ActionBar.k6.a7;
+            int i11 = z13 ? org.telegram.ui.ActionBar.l6.c7 : org.telegram.ui.ActionBar.l6.a7;
             float f10 = z13 ? 0.2f : 1.0f;
-            org.telegram.ui.ActionBar.f6 f6Var = this.M;
-            rz f11 = org.telegram.messenger.t5.f(document, i11, f10, f6Var);
+            org.telegram.ui.ActionBar.g6 g6Var = this.M;
+            rz f11 = org.telegram.messenger.t5.f(document, i11, f10, g6Var);
             String str2 = z13 ? "66_66_pcache_compress" : "66_66";
-            if (ij.D4(document)) {
-                y7Var.o1 = org.telegram.ui.ActionBar.k6.o0(f6Var);
+            if (ij.C4(document)) {
+                y7Var.o1 = org.telegram.ui.ActionBar.l6.o0(g6Var);
             }
             if (ij.p(document)) {
                 if (z13) {

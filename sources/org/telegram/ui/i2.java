@@ -9,9 +9,9 @@ import android.view.View;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class i2 extends View implements org.telegram.ui.ActionBar.a6 {
+public final class i2 extends View implements org.telegram.ui.ActionBar.b6 {
     public final /* synthetic */ int a = 1;
     public Object b;
     public Drawable c;
@@ -20,11 +20,11 @@ public final class i2 extends View implements org.telegram.ui.ActionBar.a6 {
         super(context);
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void addColorKeys(HashSet hashSet) {
         switch (this.a) {
             case 0:
-                hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.k6.El));
+                hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.l6.El));
                 break;
         }
     }
@@ -55,10 +55,10 @@ public final class i2 extends View implements org.telegram.ui.ActionBar.a6 {
             case 0:
                 setMeasuredDimension(View.MeasureSpec.getSize(i7), org.telegram.messenger.g0.L(12.0f));
                 org.telegram.ui.Components.xp xpVar = (org.telegram.ui.Components.xp) this.c;
-                o50 o50Var = (o50) this.b;
-                int i11 = org.telegram.ui.ActionBar.k6.El;
-                ((g4) o50Var).getClass();
-                org.telegram.ui.ActionBar.k6.B1(xpVar, org.telegram.ui.ActionBar.k6.v0(i11), false);
+                q50 q50Var = (q50) this.b;
+                int i11 = org.telegram.ui.ActionBar.l6.El;
+                ((g4) q50Var).getClass();
+                org.telegram.ui.ActionBar.l6.B1(xpVar, org.telegram.ui.ActionBar.l6.v0(i11), false);
                 break;
             default:
                 super.onMeasure(i7, i10);
@@ -66,14 +66,14 @@ public final class i2 extends View implements org.telegram.ui.ActionBar.a6 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
         switch (this.a) {
             case 0:
                 try {
                     org.telegram.ui.Components.xp xpVar = (org.telegram.ui.Components.xp) this.c;
-                    if (xpVar != null && ((o50) this.b) != null) {
-                        org.telegram.ui.ActionBar.k6.B1(xpVar, org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.El, false), false);
+                    if (xpVar != null && ((q50) this.b) != null) {
+                        org.telegram.ui.ActionBar.l6.B1(xpVar, org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.El, false), false);
                         invalidate();
                         break;
                     }
@@ -83,16 +83,16 @@ public final class i2 extends View implements org.telegram.ui.ActionBar.a6 {
                 }
                 break;
             default:
-                ((Paint) this.b).setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.h5, false));
+                ((Paint) this.b).setColor(org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.h5, false));
                 invalidate();
                 break;
         }
     }
 
-    public i2(Context context, o50 o50Var) {
+    public i2(Context context, q50 q50Var) {
         super(context);
-        this.b = o50Var;
-        org.telegram.ui.Components.xp xpVar = new org.telegram.ui.Components.xp(new ColorDrawable(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.El, false)), org.telegram.ui.ActionBar.k6.X0(context, R.drawable.greydivider_bottom, -16777216));
+        this.b = q50Var;
+        org.telegram.ui.Components.xp xpVar = new org.telegram.ui.Components.xp(new ColorDrawable(org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.El, false)), org.telegram.ui.ActionBar.l6.X0(context, R.drawable.greydivider_bottom, -16777216));
         this.c = xpVar;
         xpVar.x = true;
         setBackgroundDrawable(xpVar);

@@ -6,9 +6,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class fr implements org.telegram.messenger.f20, cj0, org.telegram.messenger.tr {
+public final /* synthetic */ class fr implements org.telegram.messenger.f20, dj0, org.telegram.messenger.tr {
     public final /* synthetic */ int a;
     public final /* synthetic */ lr b;
 
@@ -146,11 +146,11 @@ public final /* synthetic */ class fr implements org.telegram.messenger.f20, cj0
         }
     }
 
-    @Override // org.telegram.ui.Components.cj0
+    @Override // org.telegram.ui.Components.dj0
     public void f(float f10, float f11, int i7, View view) {
         boolean z9;
         lr lrVar = this.b;
-        x31 G = lrVar.P1.G(i7 - 1);
+        y31 G = lrVar.P1.G(i7 - 1);
         if (G == null) {
             return;
         }
@@ -194,11 +194,11 @@ public final /* synthetic */ class fr implements org.telegram.messenger.f20, cj0
             if (i11 == 39) {
                 if (G.t) {
                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(lrVar.getContext());
-                    String M0 = org.telegram.messenger.id.M0(2131743722, null);
+                    String M0 = org.telegram.messenger.id.M0(2131743719, null);
                     org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                     u1Var.R = M0;
-                    u1Var.T = org.telegram.messenger.id.M0(2131743721, null);
-                    alertDialog$Builder.k(org.telegram.messenger.id.M0(2131747832, null), null);
+                    u1Var.T = org.telegram.messenger.id.M0(2131743718, null);
+                    alertDialog$Builder.k(org.telegram.messenger.id.M0(2131747831, null), null);
                     u1Var.show();
                     return;
                 }
@@ -275,11 +275,11 @@ public final /* synthetic */ class fr implements org.telegram.messenger.f20, cj0
         if (i11 == 35) {
             if (G.t) {
                 AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(lrVar.getContext());
-                String M02 = org.telegram.messenger.id.M0(2131743722, null);
+                String M02 = org.telegram.messenger.id.M0(2131743719, null);
                 org.telegram.ui.ActionBar.u1 u1Var2 = alertDialog$Builder2.a;
                 u1Var2.R = M02;
-                u1Var2.T = org.telegram.messenger.id.M0(2131743721, null);
-                alertDialog$Builder2.k(org.telegram.messenger.id.M0(2131747832, null), null);
+                u1Var2.T = org.telegram.messenger.id.M0(2131743718, null);
+                alertDialog$Builder2.k(org.telegram.messenger.id.M0(2131747831, null), null);
                 u1Var2.show();
                 return;
             }
@@ -322,7 +322,7 @@ public final /* synthetic */ class fr implements org.telegram.messenger.f20, cj0
                                 if (i14 >= lrVar.P1.D.size()) {
                                     break;
                                 }
-                                x31 G2 = lrVar.P1.G(i14);
+                                y31 G2 = lrVar.P1.G(i14);
                                 if (G2.a == 39 && G2.d == 0) {
                                     v4.d1 K = lrVar.k1.K(i14 + 1);
                                     if (K != null) {
@@ -361,7 +361,7 @@ public final /* synthetic */ class fr implements org.telegram.messenger.f20, cj0
         }
     }
 
-    @Override // org.telegram.ui.Components.cj0
+    @Override // org.telegram.ui.Components.dj0
     public /* synthetic */ boolean f1(View view) {
         return false;
     }
@@ -374,7 +374,7 @@ public final /* synthetic */ class fr implements org.telegram.messenger.f20, cj0
                 lrVar.getClass();
                 org.telegram.ui.ActionBar.f2 Q = LaunchActivity.Q();
                 if (Q != null) {
-                    Q.presentFragment(org.telegram.ui.an.ra(j3));
+                    Q.presentFragment(org.telegram.ui.cn.ta(j3));
                 }
                 lrVar.dismiss();
                 break;
@@ -383,14 +383,14 @@ public final /* synthetic */ class fr implements org.telegram.messenger.f20, cj0
                 lrVar2.getClass();
                 org.telegram.ui.ActionBar.f2 Q2 = LaunchActivity.Q();
                 if (Q2 != null) {
-                    Q2.presentFragment(org.telegram.ui.an.ra(j3));
+                    Q2.presentFragment(org.telegram.ui.cn.ta(j3));
                 }
                 lrVar2.dismiss();
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.cj0
+    @Override // org.telegram.ui.Components.dj0
     public /* synthetic */ void r0(View view, float f10, float f11) {
     }
 }

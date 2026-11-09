@@ -13,18 +13,18 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ic;
-import org.telegram.ui.Components.oj0;
-import org.telegram.ui.Components.xi0;
+import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.yi0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class r1 extends oj0 {
+public final class r1 extends pj0 {
     public String e;
     public TLRPC.User f;
     public String h;
     public boolean n;
     public final /* synthetic */ t1 s;
-    public final di.s7 c = new di.s7(this, 18);
+    public final di.f8 c = new di.f8(this, 17);
     public int d = -1;
     public boolean r = false;
 
@@ -44,7 +44,7 @@ public final class r1 extends oj0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.oj0
+    @Override // org.telegram.ui.Components.pj0
     public final boolean D(v4.d1 d1Var) {
         return d1Var.f == 2;
     }
@@ -132,8 +132,8 @@ public final class r1 extends oj0 {
         }
         boolean isEmpty = TextUtils.isEmpty(this.e);
         this.e = str;
-        di.s7 s7Var = this.c;
-        org.telegram.messenger.g0.r(s7Var);
+        di.f8 f8Var = this.c;
+        org.telegram.messenger.g0.r(f8Var);
         if (TextUtils.isEmpty(str)) {
             t1Var.n.clear();
             e2Var.c(false);
@@ -143,7 +143,7 @@ public final class r1 extends oj0 {
                 f();
             }
             e2Var.c(true);
-            org.telegram.messenger.g0.i3(s7Var, 1500L);
+            org.telegram.messenger.g0.i3(f8Var, 1500L);
         }
     }
 
@@ -212,7 +212,7 @@ public final class r1 extends oj0 {
             k2 k2Var = t1Var.r;
             int i10 = k2.y1;
             ?? j8Var = new org.telegram.ui.Cells.j8(context, false, false, k2Var.I0, false);
-            j8Var.a(0, id.M0(2131750835, null));
+            j8Var.a(0, id.M0(2131750834, null));
             v4.o0 o0Var = new v4.o0(-1, -2);
             ((ViewGroup.MarginLayoutParams) o0Var).topMargin = org.telegram.messenger.g0.L(2.5f);
             ((ViewGroup.MarginLayoutParams) o0Var).bottomMargin = org.telegram.messenger.g0.L(5.5f);
@@ -230,6 +230,6 @@ public final class r1 extends oj0 {
             h2Var2.setCanPreviewGif(true);
             h2Var = h2Var2;
         }
-        return new xi0(h2Var);
+        return new yi0(h2Var);
     }
 }

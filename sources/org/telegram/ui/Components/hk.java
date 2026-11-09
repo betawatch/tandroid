@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class hk implements TextWatcher {
     public boolean a;
@@ -21,7 +21,7 @@ public final class hk implements TextWatcher {
         boolean isEmpty = TextUtils.isEmpty(editable);
         if (isEmpty != this.a) {
             this.a = isEmpty;
-            this.b.setText(org.telegram.messenger.id.M0(isEmpty ? 2131746322 : 2131754486, null));
+            this.b.setText(org.telegram.messenger.id.M0(isEmpty ? 2131746321 : 2131754486, null));
         }
     }
 

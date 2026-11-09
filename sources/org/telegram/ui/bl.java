@@ -1,23 +1,21 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
+import android.app.Activity;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class bl extends nq0 {
-    public final /* synthetic */ an a;
+public final class bl extends fi.m3 {
+    public final /* synthetic */ cn W0;
 
-    public bl(an anVar) {
-        this.a = anVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public bl(cn cnVar, Activity activity) {
+        super(activity, 3);
+        this.W0 = cnVar;
     }
 
-    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
-    public final wq0 E(org.telegram.messenger.ij ijVar, TLRPC.FileLocation fileLocation, int i7, boolean z9, boolean z10) {
-        return an.O1(this.a, ijVar, fileLocation, i7, z9, false);
-    }
-
-    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
-    public final boolean L() {
-        return true;
+    @Override // fi.m3, android.view.View
+    public final void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
+        super.onLayout(z9, i7, i10, i11, i12);
+        setTranslationY(((-getTop()) - org.telegram.messenger.g0.L(120.0f)) + this.W0.Q1);
     }
 }

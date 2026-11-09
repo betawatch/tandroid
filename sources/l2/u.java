@@ -3,12 +3,12 @@ package l2;
 import j$.time.LocalDate;
 import j$.time.ZoneOffset;
 import org.telegram.messenger.id;
-import org.telegram.ui.Components.db0;
-import org.telegram.ui.Components.yi0;
+import org.telegram.ui.Components.eb0;
+import org.telegram.ui.Components.zi0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class u implements h2.o, g9.k, yi0, db0, h2.j {
+public final /* synthetic */ class u implements h2.o, g9.k, zi0, eb0, h2.j {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
 
@@ -40,14 +40,14 @@ public final /* synthetic */ class u implements h2.o, g9.k, yi0, db0, h2.j {
         return Integer.valueOf(this.b);
     }
 
-    @Override // org.telegram.ui.Components.db0
+    @Override // org.telegram.ui.Components.eb0
     public String h(int i7) {
         int i10 = this.a;
         int i11 = this.b;
         switch (i10) {
             case 4:
                 if (i7 == 0) {
-                    return id.M0(2131748532, null);
+                    return id.M0(2131748531, null);
                 }
                 LocalDate plusDays = LocalDate.now().plusDays(i7);
                 int year = plusDays.getYear();
@@ -73,7 +73,7 @@ public final /* synthetic */ class u implements h2.o, g9.k, yi0, db0, h2.j {
         }
     }
 
-    @Override // org.telegram.ui.Components.yi0
+    @Override // org.telegram.ui.Components.zi0
     public int run() {
         return this.b;
     }

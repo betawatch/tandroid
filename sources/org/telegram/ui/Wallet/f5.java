@@ -1,18 +1,15 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
-public final class f5 implements bi.j7 {
-    public final /* synthetic */ TL_stars.TL_starGiftUnique a;
-    public final /* synthetic */ TL_wallet.nftItem b;
-    public final /* synthetic */ x5 c;
+public final class f5 implements bi.i7 {
+    public final /* synthetic */ TL_wallet.nftItem a;
+    public final /* synthetic */ w5 b;
 
-    public f5(x5 x5Var, TL_stars.TL_starGiftUnique tL_starGiftUnique, TL_wallet.nftItem nftitem) {
-        this.c = x5Var;
-        this.a = tL_starGiftUnique;
-        this.b = nftitem;
+    public f5(w5 w5Var, TL_wallet.nftItem nftitem) {
+        this.b = w5Var;
+        this.a = nftitem;
     }
 }

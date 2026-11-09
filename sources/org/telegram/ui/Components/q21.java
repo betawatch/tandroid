@@ -1,136 +1,79 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
+import android.text.TextUtils;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
-import java.util.HashSet;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class q21 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
-    public final org.telegram.ui.ActionBar.f6 a;
-    public final LinearLayout b;
-    public final TextView c;
-    public final TextView d;
-    public final TextView e;
-    public final ImageView f;
-    public final LinearLayout h;
-    public final wo n;
-    public final LinearLayout r;
-    public final ImageView s;
-    public final TextView w;
-
-    public q21(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context);
-        this.a = f6Var;
-        setClipToPadding(false);
-        setPadding(org.telegram.messenger.g0.L(20.0f), org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(20.0f), org.telegram.messenger.g0.L(6.0f));
-        LinearLayout f10 = org.telegram.messenger.k5.f(context, 0);
-        addView(f10, c8.ha.e(-2, -2, 19));
-        TextView textView = new TextView(context);
-        this.c = textView;
-        textView.setTextSize(1, 14.0f);
-        textView.setTypeface(org.telegram.messenger.g0.o1("fonts/rextrabold.ttf"));
-        f10.addView(textView, c8.ha.t(-2, -2, 19, 0, 0, 0, 0));
-        LinearLayout linearLayout = new LinearLayout(context);
-        this.b = linearLayout;
-        linearLayout.setOrientation(0);
-        linearLayout.setPadding(org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(1.0f), org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(1.0f));
-        c8.ka.a(linearLayout);
-        f10.addView(linearLayout, c8.ha.d(-2, -2.0f, 19, -6.0f, 0.0f, 0.0f, 0.0f));
-        TextView textView2 = new TextView(context);
-        this.d = textView2;
-        textView2.setTextSize(1, 14.0f);
-        textView2.setTypeface(org.telegram.messenger.g0.o1("fonts/rextrabold.ttf"));
-        linearLayout.addView(textView2, c8.ha.t(-2, -2, 19, 0, 0, 0, 0));
-        ImageView imageView = new ImageView(context);
-        this.f = imageView;
-        imageView.setImageResource(R.drawable.arrows_select);
-        linearLayout.addView(imageView, c8.ha.t(16, 16, 19, 1, 0, 0, 0));
-        imageView.setTranslationY(org.telegram.messenger.g0.L(1.0f));
-        TextView textView3 = new TextView(context);
-        this.e = textView3;
-        textView3.setTextSize(1, 14.0f);
-        textView3.setTypeface(org.telegram.messenger.g0.o1("fonts/rextrabold.ttf"));
-        f10.addView(textView3, c8.ha.t(-2, -2, 19, -6, 0, 0, 0));
-        LinearLayout linearLayout2 = new LinearLayout(context);
-        this.h = linearLayout2;
-        linearLayout2.setPadding(org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(3.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(3.0f));
-        linearLayout2.setClipToPadding(false);
-        linearLayout2.setOrientation(0);
-        wo woVar = new wo(20, context, f6Var);
-        this.n = woVar;
-        woVar.b(org.telegram.ui.ActionBar.k6.h7, org.telegram.ui.ActionBar.k6.j7, org.telegram.ui.ActionBar.k6.k7);
-        woVar.setDrawUnchecked(true);
-        woVar.a(false, false);
-        woVar.setDrawBackgroundAsArc(10);
-        linearLayout2.addView(woVar, c8.ha.t(22, 22, 16, 0, 0, 0, 0));
-        TextView textView4 = new TextView(context);
-        org.telegram.messenger.k5.n(textView4, org.telegram.ui.ActionBar.k6.j5, f6Var, 1, 14.0f);
-        textView4.setText(org.telegram.messenger.id.M0(2131754995, null));
-        linearLayout2.addView(textView4, c8.ha.t(-2, -2, 16, 3, -1, 2, 0));
-        addView(linearLayout2, c8.ha.d(-2, -2.0f, 21, 0.0f, -3.0f, -6.0f, -3.0f));
-        c8.ka.b(linearLayout2, 0.025f, 1.5f);
-        LinearLayout linearLayout3 = new LinearLayout(context);
-        this.r = linearLayout3;
-        linearLayout3.setPadding(org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(3.0f), org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(3.0f));
-        linearLayout3.setOrientation(0);
-        linearLayout3.setVisibility(8);
-        addView(linearLayout3, c8.ha.d(-2, -2.0f, 53, 0.0f, 0.0f, -6.0f, 0.0f));
-        c8.ka.b(linearLayout3, 0.025f, 1.5f);
-        ImageView imageView2 = new ImageView(context);
-        this.s = imageView2;
-        imageView2.setImageResource(R.drawable.mini_replace2);
-        linearLayout3.addView(imageView2, c8.ha.t(-2, -2, 16, 0, 0, 4, 0));
-        TextView textView5 = new TextView(context);
-        this.w = textView5;
-        textView5.setTextSize(1, 14.0f);
-        textView5.setTypeface(org.telegram.messenger.g0.o());
-        textView5.setText(org.telegram.messenger.id.M0(2131755003, null));
-        linearLayout3.addView(textView5, c8.ha.r(-2, -2, 16));
-        updateColors();
+public final class q21 extends x31 {
+    static {
+        x31.h(new q21());
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
-    public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.k6.G6));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.k6.L6));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.k6.i6));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.k6.Ci));
+    public static y31 i(int i7, CharSequence charSequence, CharSequence charSequence2, CharSequence charSequence3, View.OnClickListener onClickListener, boolean z9, View.OnClickListener onClickListener2, p pVar) {
+        y31 K = y31.K(q21.class);
+        K.d = i7;
+        K.l = charSequence;
+        K.m = charSequence2;
+        K.n = charSequence3;
+        K.D = onClickListener;
+        K.e = z9;
+        K.E = onClickListener2;
+        K.G = pVar;
+        return K;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), i10);
+    public static y31 j(int i7, String str, String str2, String str3, n21 n21Var) {
+        return i(i7, str, str2, str3, n21Var, false, null, null);
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
-    public final void updateColors() {
-        int i7 = org.telegram.ui.ActionBar.k6.G6;
-        org.telegram.ui.ActionBar.f6 f6Var = this.a;
-        this.c.setTextColor(org.telegram.ui.ActionBar.k6.w0(i7, f6Var));
-        int i10 = org.telegram.ui.ActionBar.k6.L6;
-        this.d.setTextColor(org.telegram.ui.ActionBar.k6.w0(i10, f6Var));
-        this.e.setTextColor(org.telegram.ui.ActionBar.k6.w0(i7, f6Var));
-        this.f.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.k6.w0(i10, f6Var), PorterDuff.Mode.MULTIPLY));
-        LinearLayout linearLayout = this.b;
-        linearLayout.setBackground(linearLayout.isClickable() ? org.telegram.ui.ActionBar.k6.a0(org.telegram.ui.ActionBar.k6.r1(0.1f, org.telegram.ui.ActionBar.k6.x0(null, i10, false)), org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(10.0f)) : null);
-        if (linearLayout.isClickable()) {
-            c8.ka.a(linearLayout);
-        } else {
-            linearLayout.setStateListAnimator(null);
-        }
-        this.h.setBackground(org.telegram.ui.ActionBar.k6.a0(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.i6, f6Var), 24, 24));
-        int i11 = org.telegram.ui.ActionBar.k6.Ci;
-        this.s.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.k6.w0(i11, f6Var), PorterDuff.Mode.SRC_IN));
-        this.w.setTextColor(org.telegram.ui.ActionBar.k6.w0(i11, f6Var));
-        this.r.setBackground(org.telegram.ui.ActionBar.k6.a0(org.telegram.ui.ActionBar.k6.r1(0.1f, org.telegram.ui.ActionBar.k6.w0(i11, f6Var)), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f)));
+    @Override // org.telegram.ui.Components.x31
+    public final void b(View view, y31 y31Var, boolean z9, m41 m41Var, r41 r41Var) {
+        r21 r21Var = (r21) view;
+        CharSequence charSequence = y31Var.l;
+        CharSequence charSequence2 = y31Var.m;
+        CharSequence charSequence3 = y31Var.n;
+        View.OnClickListener onClickListener = y31Var.D;
+        boolean z10 = y31Var.e;
+        View.OnClickListener onClickListener2 = y31Var.E;
+        Object obj = y31Var.G;
+        View.OnClickListener onClickListener3 = obj instanceof View.OnClickListener ? (View.OnClickListener) obj : null;
+        LinearLayout linearLayout = r21Var.r;
+        LinearLayout linearLayout2 = r21Var.h;
+        LinearLayout linearLayout3 = r21Var.b;
+        r21Var.c.setText(charSequence);
+        r21Var.d.setText(charSequence2);
+        r21Var.e.setText(charSequence3);
+        r21Var.f.setVisibility(onClickListener != null ? 0 : 8);
+        linearLayout3.setOnClickListener(onClickListener);
+        linearLayout3.setClickable(onClickListener != null);
+        r21Var.n.a(z10, false);
+        linearLayout2.setVisibility(onClickListener2 != null ? 0 : 8);
+        linearLayout2.setOnClickListener(onClickListener2);
+        linearLayout.setVisibility(onClickListener3 != null ? 0 : 8);
+        linearLayout.setOnClickListener(new lk(27, r21Var, onClickListener3));
+        r21Var.updateColors();
+    }
+
+    @Override // org.telegram.ui.Components.x31
+    public final boolean c(y31 y31Var, y31 y31Var2) {
+        return TextUtils.equals(y31Var.l, y31Var2.l) && TextUtils.equals(y31Var.m, y31Var2.m) && TextUtils.equals(y31Var.n, y31Var2.n) && y31Var.E == y31Var2.E;
+    }
+
+    @Override // org.telegram.ui.Components.x31
+    public final View d(Context context, qj0 qj0Var, int i7, org.telegram.ui.ActionBar.g6 g6Var) {
+        return new r21(context, g6Var);
+    }
+
+    @Override // org.telegram.ui.Components.x31
+    public final boolean e(y31 y31Var, y31 y31Var2) {
+        return y31Var.d == y31Var2.d;
+    }
+
+    @Override // org.telegram.ui.Components.x31
+    public final boolean f() {
+        return false;
     }
 }

@@ -1,76 +1,104 @@
 package org.telegram.ui;
 
-import android.content.Intent;
-import android.net.Uri;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import android.view.View;
+import android.widget.TextView;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class si0 implements org.telegram.ui.ActionBar.r1, ps, qj0 {
+public final /* synthetic */ class si0 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ bk0 b;
+    public final /* synthetic */ dk0 b;
 
-    public /* synthetic */ si0(bk0 bk0Var, int i7) {
+    public /* synthetic */ si0(dk0 dk0Var, int i7) {
         this.a = i7;
-        this.b = bk0Var;
+        this.b = dk0Var;
     }
 
-    @Override // org.telegram.ui.qj0
-    public void a(String str, String str2) {
-        this.b.B1();
-    }
-
-    @Override // org.telegram.ui.ps
-    public void b(ms msVar) {
-        switch (this.a) {
-            case 2:
-                bk0 bk0Var = this.b;
-                bk0Var.Y[5].setText(msVar.a);
-                bk0Var.s = msVar.d;
-                break;
-            default:
-                bk0 bk0Var2 = this.b;
-                bk0Var2.Y[0].setText(msVar.a);
-                if (bk0Var2.U0.indexOf(msVar.a) != -1) {
-                    bk0Var2.Z0 = true;
-                    String str = (String) bk0Var2.V0.get(msVar.a);
-                    bk0Var2.Y[1].setText(str);
-                    String str2 = (String) bk0Var2.X0.get(str);
-                    bk0Var2.Y[2].setHintText(str2 != null ? str2.replace('X', (char) 8211) : null);
-                    bk0Var2.Z0 = false;
-                }
-                org.telegram.messenger.g0.i3(new pi0(bk0Var2, 3), 300L);
-                bk0Var2.Y[2].requestFocus();
-                EditTextBoldCursor editTextBoldCursor = bk0Var2.Y[2];
-                editTextBoldCursor.setSelection(editTextBoldCursor.length());
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.r1
-    public void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
-        switch (this.a) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        int i7 = this.a;
+        dk0 dk0Var = this.b;
+        switch (i7) {
             case 0:
-                bk0 bk0Var = this.b;
-                try {
-                    Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-                    intent.setData(Uri.parse("package:" + org.telegram.messenger.t0.b.getPackageName()));
-                    bk0Var.getParentActivity().startActivity(intent);
-                    break;
-                } catch (Exception e10) {
-                    org.telegram.messenger.a8.g(e10, true);
-                    return;
-                }
+                dk0Var.S0 = 2;
+                dk0Var.H1();
+                break;
             case 1:
-                this.b.finishFragment();
+                dk0Var.h1();
                 break;
             case 2:
+                dk0Var.S0 = 3;
+                dk0Var.H1();
+                break;
             case 3:
-            default:
-                bk0.f0(this.b);
+                dk0Var.S0 = 1;
+                dk0Var.H1();
                 break;
             case 4:
-                vf.c.t(r3.getParentActivity(), "https://telegram.org/deactivate?phone=" + org.telegram.messenger.p10.i(this.b.currentAccount).d());
+                dk0Var.S0 = 4;
+                dk0Var.H1();
+                break;
+            case 5:
+                if (dk0Var.getParentActivity().checkSelfPermission("android.permission.CAMERA") == 0) {
+                    s9 s9Var = new s9(0);
+                    s9Var.M = new dj0(dk0Var);
+                    dk0Var.presentFragment(s9Var);
+                    break;
+                } else {
+                    dk0Var.getParentActivity().requestPermissions(new String[]{"android.permission.CAMERA"}, 22);
+                    break;
+                }
+            case 6:
+                dk0Var.f = true;
+                dk0Var.L.callOnClick();
+                dk0Var.f = false;
+                break;
+            case 7:
+                dk0Var.S0 = 0;
+                dk0Var.H1();
+                break;
+            case 8:
+                dk0Var.S0 = 4;
+                dk0Var.H1();
+                break;
+            case 9:
+                dk0Var.h1();
+                break;
+            case 10:
+                dk0.g0(dk0Var);
+                break;
+            case 11:
+                dk0.h0(dk0Var);
+                break;
+            case 12:
+                dk0Var.G1();
+                break;
+            case 13:
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(dk0Var.getParentActivity());
+                String M0 = org.telegram.messenger.id.M0(2131744232, null);
+                org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
+                u1Var.R = M0;
+                u1Var.T = org.telegram.messenger.id.M0(2131744233, null);
+                alertDialog$Builder.k(org.telegram.messenger.id.M0(2131751598, null), new ui0(dk0Var, 5));
+                alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), null);
+                dk0Var.showDialog(u1Var);
+                TextView textView = (TextView) u1Var.d(-1);
+                if (textView != null) {
+                    org.telegram.ui.ActionBar.s6.U(textView, org.telegram.ui.ActionBar.l6.q7, null);
+                    break;
+                }
+                break;
+            case 14:
+                dk0Var.G1();
+                break;
+            case 15:
+                dk0.a0(dk0Var);
+                break;
+            default:
+                dk0Var.f = true;
+                dk0Var.L.callOnClick();
+                dk0Var.f = false;
                 break;
         }
     }

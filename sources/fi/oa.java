@@ -1,8 +1,8 @@
 package fi;
 
-import org.telegram.ui.wv0;
+import org.telegram.ui.yv0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class oa extends qa {
     public final /* synthetic */ int g;
@@ -17,12 +17,12 @@ public final class oa extends qa {
     public final void e() {
         switch (this.g) {
             case 0:
-                wv0 wv0Var = (wv0) this.h;
-                wv0Var.Q = false;
-                wv0Var.invalidate();
+                yv0 yv0Var = (yv0) this.h;
+                yv0Var.Q = false;
+                yv0Var.invalidate();
                 break;
             case 1:
-                di.i4 z9 = ((di.p9) this.h).z();
+                di.j4 z9 = ((di.q9) this.h).z();
                 if (z9 != null) {
                     z9.k0(true);
                     break;
@@ -30,7 +30,7 @@ public final class oa extends qa {
                 break;
             default:
                 org.telegram.ui.Components.l9 l9Var = (org.telegram.ui.Components.l9) this.h;
-                l9Var.post(new h9(l9Var, 4));
+                l9Var.post(new v9(l9Var, 3));
                 break;
         }
     }
@@ -39,12 +39,12 @@ public final class oa extends qa {
     public final void f(boolean z9) {
         switch (this.g) {
             case 0:
-                wv0 wv0Var = (wv0) this.h;
-                wv0Var.Q = true;
-                wv0Var.invalidate();
+                yv0 yv0Var = (yv0) this.h;
+                yv0Var.Q = true;
+                yv0Var.invalidate();
                 break;
             case 1:
-                di.i4 z10 = ((di.p9) this.h).z();
+                di.j4 z10 = ((di.q9) this.h).z();
                 if (z10 != null) {
                     z10.k0(false);
                 }

@@ -1,34 +1,121 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
+import android.os.Bundle;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class k70 implements DialogInterface.OnDismissListener {
-    public final /* synthetic */ int a;
+public final /* synthetic */ class k70 implements Runnable {
+    public final /* synthetic */ Object D;
+    public final /* synthetic */ int a = 1;
     public final /* synthetic */ LaunchActivity b;
+    public final /* synthetic */ Bundle c;
+    public final /* synthetic */ Long d;
+    public final /* synthetic */ s10 e;
+    public final /* synthetic */ boolean f;
+    public final /* synthetic */ vf.b h;
+    public final /* synthetic */ Long n;
+    public final /* synthetic */ Integer r;
+    public final /* synthetic */ Integer s;
+    public final /* synthetic */ byte[] w;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f2 x;
+    public final /* synthetic */ int y;
 
-    public /* synthetic */ k70(LaunchActivity launchActivity, int i7) {
-        this.a = i7;
+    public /* synthetic */ k70(LaunchActivity launchActivity, Bundle bundle, Long l10, int[] iArr, s10 s10Var, boolean z9, vf.b bVar, Long l11, Integer num, Integer num2, byte[] bArr, org.telegram.ui.ActionBar.f2 f2Var, int i7) {
         this.b = launchActivity;
+        this.c = bundle;
+        this.d = l10;
+        this.D = iArr;
+        this.e = s10Var;
+        this.f = z9;
+        this.h = bVar;
+        this.n = l11;
+        this.r = num;
+        this.s = num2;
+        this.w = bArr;
+        this.x = f2Var;
+        this.y = i7;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
+    @Override // java.lang.Runnable
+    public final void run() {
         int i7 = this.a;
-        LaunchActivity launchActivity = this.b;
+        Object obj = this.D;
         switch (i7) {
             case 0:
-                launchActivity.v1 = false;
-                break;
-            case 1:
+                s10 s10Var = this.e;
+                TLObject tLObject = (TLObject) obj;
                 String str = LaunchActivity.B1;
-                org.telegram.messenger.g0.i3(new s60(launchActivity, 7), 30000L);
+                try {
+                    s10Var.run();
+                } catch (Exception e10) {
+                    org.telegram.messenger.a8.g(e10, true);
+                }
+                boolean z9 = tLObject instanceof TLRPC.TL_messages_chats;
+                LaunchActivity launchActivity = this.b;
+                if (z9) {
+                    TLRPC.TL_messages_chats tL_messages_chats = (TLRPC.TL_messages_chats) tLObject;
+                    if (!tL_messages_chats.chats.isEmpty()) {
+                        org.telegram.messenger.qp.s1(launchActivity.O).S3(tL_messages_chats.chats, false);
+                        TLRPC.Chat chat = tL_messages_chats.chats.get(0);
+                        Long l10 = this.d;
+                        if (chat != null && this.f && org.telegram.messenger.t3.R(chat)) {
+                            launchActivity.w0(Long.valueOf(-l10.longValue()), null, this.h, null);
+                        } else if (chat != null && chat.forum) {
+                            Long l11 = this.n;
+                            Integer num = this.s;
+                            byte[] bArr = this.w;
+                            if (l11 != null) {
+                                launchActivity.l0(-l10.longValue(), this.r, null, num, bArr, null, 0, -1);
+                            } else {
+                                launchActivity.l0(-l10.longValue(), null, null, num, bArr, null, 0, -1);
+                            }
+                        }
+                        org.telegram.ui.ActionBar.f2 f2Var = this.x;
+                        Bundle bundle = this.c;
+                        if (f2Var == null || org.telegram.messenger.qp.s1(this.y).E(bundle, f2Var, null, null)) {
+                            ((ActionBarLayout) launchActivity.M()).S(new cn(bundle));
+                            break;
+                        }
+                    }
+                }
+                launchActivity.F0(org.telegram.ui.Components.v4.E(launchActivity, org.telegram.messenger.id.M0(2131751454, null), org.telegram.messenger.id.M0(2131748895, null)));
                 break;
             default:
+                int[] iArr = (int[]) obj;
                 String str2 = LaunchActivity.B1;
-                org.telegram.messenger.g0.i3(new s60(launchActivity, 10), 30000L);
+                LaunchActivity launchActivity2 = this.b;
+                org.telegram.ui.ActionBar.q4 M = launchActivity2.M();
+                Bundle bundle2 = this.c;
+                if (!((ActionBarLayout) M).S(new cn(bundle2))) {
+                    TLRPC.TL_channels_getChannels tL_channels_getChannels = new TLRPC.TL_channels_getChannels();
+                    TLRPC.TL_inputChannel tL_inputChannel = new TLRPC.TL_inputChannel();
+                    Long l12 = this.d;
+                    tL_inputChannel.channel_id = l12.longValue();
+                    tL_channels_getChannels.id.add(tL_inputChannel);
+                    iArr[0] = ConnectionsManager.getInstance(launchActivity2.O).sendRequest(tL_channels_getChannels, new org.telegram.messenger.o4(launchActivity2, this.e, this.f, l12, this.h, this.n, this.r, this.s, this.w, this.x, this.y, bundle2));
+                    break;
+                }
                 break;
         }
+    }
+
+    public /* synthetic */ k70(LaunchActivity launchActivity, s10 s10Var, TLObject tLObject, boolean z9, Long l10, vf.b bVar, Long l11, Integer num, Integer num2, byte[] bArr, org.telegram.ui.ActionBar.f2 f2Var, int i7, Bundle bundle) {
+        this.b = launchActivity;
+        this.e = s10Var;
+        this.D = tLObject;
+        this.f = z9;
+        this.d = l10;
+        this.h = bVar;
+        this.n = l11;
+        this.r = num;
+        this.s = num2;
+        this.w = bArr;
+        this.x = f2Var;
+        this.y = i7;
+        this.c = bundle;
     }
 }

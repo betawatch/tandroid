@@ -46,7 +46,7 @@ import org.telegram.ui.Components.hc;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public class v2 extends Dialog implements b2 {
     public static final /* synthetic */ int h1 = 0;
@@ -64,7 +64,7 @@ public class v2 extends Dialog implements b2 {
     public int H;
     public DialogInterface.OnDismissListener H0;
     public boolean I;
-    public f6 I0;
+    public g6 I0;
     public final boolean J;
     public boolean J0;
     public DialogInterface.OnClickListener K;
@@ -146,8 +146,8 @@ public class v2 extends Dialog implements b2 {
     public p2 y0;
     public AnimatorSet z0;
 
-    public v2(Context context, f6 f6Var, boolean z9, boolean z10) {
-        this(z10 ? 2 : 1, context, f6Var, z9);
+    public v2(Context context, g6 g6Var, boolean z9, boolean z10) {
+        this(z10 ? 2 : 1, context, g6Var, z9);
     }
 
     public static void A(v2 v2Var) {
@@ -155,7 +155,7 @@ public class v2 extends Dialog implements b2 {
         Drawable drawable;
         int w03;
         l2 l2Var = v2Var.c;
-        if (v2Var.a1 >= 0 && (drawable = v2Var.r0) != null && v2Var.b1 != null && drawable.getColorFilter() == v2Var.b1 && (w03 = k6.w0(v2Var.a1, v2Var.I0)) != v2Var.Z0) {
+        if (v2Var.a1 >= 0 && (drawable = v2Var.r0) != null && v2Var.b1 != null && drawable.getColorFilter() == v2Var.b1 && (w03 = l6.w0(v2Var.a1, v2Var.I0)) != v2Var.Z0) {
             Drawable drawable2 = v2Var.r0;
             PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(w03, PorterDuff.Mode.MULTIPLY);
             v2Var.b1 = porterDuffColorFilter;
@@ -170,7 +170,7 @@ public class v2 extends Dialog implements b2 {
             }
         }
         int i7 = v2Var.Y0;
-        if (i7 < 0 || v2Var.F0 >= 0 || v2Var.d1 != v2Var.G0 || (w02 = k6.w0(i7, v2Var.I0)) == v2Var.G0) {
+        if (i7 < 0 || v2Var.F0 >= 0 || v2Var.d1 != v2Var.G0 || (w02 = l6.w0(i7, v2Var.I0)) == v2Var.G0) {
             return;
         }
         v2Var.G0 = w02;
@@ -263,7 +263,7 @@ public class v2 extends Dialog implements b2 {
         }
         if (this.f1 != null) {
             LaunchActivity.G1.F(true, true, true);
-            org.telegram.messenger.g0.o3(l2Var, org.telegram.messenger.g0.B(e(k6.w0(k6.a7, this.I0))) >= 0.721f);
+            org.telegram.messenger.g0.o3(l2Var, org.telegram.messenger.g0.B(e(l6.w0(l6.a7, this.I0))) >= 0.721f);
         } else {
             org.telegram.messenger.g0.u3(this, this.d1, true, null);
             org.telegram.messenger.g0.n3(this, ((double) org.telegram.messenger.g0.B(this.d1)) > 0.721d);
@@ -290,7 +290,7 @@ public class v2 extends Dialog implements b2 {
 
     public final void G0(boolean z9) {
         this.Z = z9;
-        int x02 = k6.x0(null, k6.s8, true);
+        int x02 = l6.x0(null, l6.s8, true);
         l2 l2Var = this.c;
         int systemUiVisibility = l2Var.getSystemUiVisibility();
         l2Var.setSystemUiVisibility((this.Z && x02 == -1) ? systemUiVisibility | TLObject.FLAG_13 : systemUiVisibility & (-8193));
@@ -373,7 +373,7 @@ public class v2 extends Dialog implements b2 {
     }
 
     public final void N() {
-        P(k6.a7);
+        P(l6.a7);
     }
 
     public final void O(int i7) {
@@ -387,7 +387,7 @@ public class v2 extends Dialog implements b2 {
     }
 
     public final void P(int i7) {
-        O(k6.w0(i7, this.I0));
+        O(l6.w0(i7, this.I0));
         this.Y0 = i7;
     }
 
@@ -422,7 +422,7 @@ public class v2 extends Dialog implements b2 {
     }
 
     public final int V(int i7) {
-        return k6.w0(i7, this.I0);
+        return l6.w0(i7, this.I0);
     }
 
     public final boolean W() {
@@ -614,7 +614,7 @@ public class v2 extends Dialog implements b2 {
             setContentView(l2Var, new ViewGroup.LayoutParams(-1, -1));
         }
         int i11 = 1;
-        if (this.Z && k6.x0(null, k6.s8, true) == -1) {
+        if (this.Z && l6.x0(null, l6.s8, true) == -1) {
             l2Var.setSystemUiVisibility(l2Var.getSystemUiVisibility() | TLObject.FLAG_13);
         }
         if (this.b == null) {
@@ -635,12 +635,12 @@ public class v2 extends Dialog implements b2 {
             this.l0 = m2Var;
             m2Var.setText(this.O);
             if (this.P) {
-                r6.V(this.l0, k6.j5, this.I0);
+                s6.U(this.l0, l6.j5, this.I0);
                 this.l0.setTextSize(1, 20.0f);
                 this.l0.setTypeface(org.telegram.messenger.g0.o());
                 this.l0.setPadding(org.telegram.messenger.g0.L(21.0f), org.telegram.messenger.g0.L(this.Q ? 14.0f : 6.0f), org.telegram.messenger.g0.L(21.0f), org.telegram.messenger.g0.L(8.0f));
             } else {
-                r6.V(this.l0, k6.q5, this.I0);
+                s6.U(this.l0, l6.q5, this.I0);
                 this.l0.setTextSize(1, 16.0f);
                 this.l0.setPadding(org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(this.Q ? 8.0f : 0.0f), org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(8.0f));
             }
@@ -792,12 +792,12 @@ public class v2 extends Dialog implements b2 {
 
     /* JADX WARN: Multi-variable type inference failed */
     public void s0() {
-        if (!(this instanceof a6) || this.W0) {
+        if (!(this instanceof b6) || this.W0) {
             return;
         }
         this.W0 = true;
         try {
-            ((a6) this).updateColors();
+            ((b6) this).updateColors();
         } catch (Exception e10) {
             a8.g(e10, true);
         } finally {
@@ -889,7 +889,7 @@ public class v2 extends Dialog implements b2 {
     }
 
     public final void w0(int i7) {
-        v0(k6.w0(i7, this.I0));
+        v0(l6.w0(i7, this.I0));
         Drawable drawable = this.r0;
         PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(this.Z0, PorterDuff.Mode.MULTIPLY);
         this.b1 = porterDuffColorFilter;
@@ -917,10 +917,10 @@ public class v2 extends Dialog implements b2 {
     }
 
     public v2(Context context, boolean z9) {
-        this(1, context, (f6) null, z9);
+        this(1, context, (g6) null, z9);
     }
 
-    public v2(int i7, Context context, f6 f6Var, boolean z9) {
+    public v2(int i7, Context context, g6 g6Var, boolean z9) {
         super(context, R.style.TransparentDialog);
         this.a = p10.s0;
         int i10 = 1;
@@ -928,7 +928,7 @@ public class v2 extends Dialog implements b2 {
         u2 u2Var = new u2();
         this.Y = u2Var;
         this.Z = true;
-        int i11 = k6.h5;
+        int i11 = l6.h5;
         this.a0 = i11;
         this.b0 = true;
         this.c0 = true;
@@ -945,7 +945,7 @@ public class v2 extends Dialog implements b2 {
         this.w0 = new ArrayList();
         this.x0 = new g2(this, i10);
         this.C0 = 0.0f;
-        this.F0 = k6.a7;
+        this.F0 = l6.a7;
         this.K0 = true;
         this.L0 = new h2.f((int[]) null);
         this.T0 = true;
@@ -954,7 +954,7 @@ public class v2 extends Dialog implements b2 {
         this.Y0 = -1;
         this.a1 = i11;
         this.e1 = -1L;
-        this.I0 = f6Var;
+        this.I0 = g6Var;
         if (i7 == 3) {
             org.telegram.messenger.g0.S(getWindow());
             this.n = false;
@@ -974,7 +974,7 @@ public class v2 extends Dialog implements b2 {
         Rect rect = new Rect();
         t2 t2Var = new t2(jg.g.h(context, R.drawable.sheet_shadow_round));
         this.r0 = t2Var;
-        int w02 = k6.w0(i11, this.I0);
+        int w02 = l6.w0(i11, this.I0);
         this.Z0 = w02;
         PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(w02, PorterDuff.Mode.MULTIPLY);
         this.b1 = porterDuffColorFilter;

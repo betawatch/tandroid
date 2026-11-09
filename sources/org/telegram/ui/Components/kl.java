@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.camera.CameraController;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class kl extends pl {
     public final /* synthetic */ boolean b;
@@ -21,7 +21,7 @@ public final class kl extends pl {
         this.b = z9;
     }
 
-    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
+    @Override // org.telegram.ui.pq0, org.telegram.ui.wq0
     public final void D() {
         boolean z9 = ChatAttachAlertPhotoLayout.q1;
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.c;
@@ -29,7 +29,7 @@ public final class kl extends pl {
         chatAttachAlertPhotoLayout.D(ChatAttachAlertPhotoLayout.s1.size());
     }
 
-    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
+    @Override // org.telegram.ui.pq0, org.telegram.ui.wq0
     public final void G() {
         jl jlVar = this.c.E;
         int childCount = jlVar.getChildCount();
@@ -43,7 +43,7 @@ public final class kl extends pl {
         }
     }
 
-    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
+    @Override // org.telegram.ui.pq0, org.telegram.ui.wq0
     public final boolean K() {
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.c;
         if (!chatAttachAlertPhotoLayout.b.M1) {
@@ -55,33 +55,33 @@ public final class kl extends pl {
         return false;
     }
 
-    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
+    @Override // org.telegram.ui.pq0, org.telegram.ui.wq0
     public final boolean T() {
         return false;
     }
 
-    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
+    @Override // org.telegram.ui.pq0, org.telegram.ui.wq0
     public final void d() {
         boolean z9 = ChatAttachAlertPhotoLayout.q1;
         this.c.n0();
     }
 
-    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
+    @Override // org.telegram.ui.pq0, org.telegram.ui.wq0
     public final boolean g() {
         return this.c.b.M3 != 1;
     }
 
-    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
+    @Override // org.telegram.ui.pq0, org.telegram.ui.wq0
     public final void i() {
         boolean z9 = ChatAttachAlertPhotoLayout.q1;
     }
 
-    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
+    @Override // org.telegram.ui.pq0, org.telegram.ui.wq0
     public final org.telegram.messenger.jc j(int i7) {
         return null;
     }
 
-    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
+    @Override // org.telegram.ui.pq0, org.telegram.ui.wq0
     public final void n() {
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.c;
         TextView textView = chatAttachAlertPhotoLayout.p0;
@@ -100,7 +100,7 @@ public final class kl extends pl {
         chatAttachAlertPhotoLayout.B0(false);
     }
 
-    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
+    @Override // org.telegram.ui.pq0, org.telegram.ui.wq0
     public final void o(int i7, org.telegram.messenger.j20 j20Var, boolean z9, int i10, int i11, boolean z10) {
         di diVar = this.c.b;
         ArrayList arrayList = ChatAttachAlertPhotoLayout.r1;
@@ -111,7 +111,7 @@ public final class kl extends pl {
             ((org.telegram.messenger.gf) arrayList.get(i7)).s = j20Var;
         }
         org.telegram.ui.ActionBar.f2 f2Var = diVar.W1;
-        if (!(f2Var instanceof org.telegram.ui.an) || !((org.telegram.ui.an) f2Var).z()) {
+        if (!(f2Var instanceof org.telegram.ui.cn) || !((org.telegram.ui.cn) f2Var).z()) {
             int size = arrayList.size();
             for (int i12 = 0; i12 < size; i12++) {
                 org.telegram.messenger.gf gfVar = (org.telegram.messenger.gf) ChatAttachAlertPhotoLayout.r1.get(i12);
@@ -127,7 +127,7 @@ public final class kl extends pl {
         v4.X(diVar.D3, diVar.X0() + ChatAttachAlertPhotoLayout.s1.size(), diVar.b1(), new fl(this, z10, z9, i10));
     }
 
-    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
+    @Override // org.telegram.ui.pq0, org.telegram.ui.wq0
     public final boolean u() {
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.c;
         if (chatAttachAlertPhotoLayout.b0 && chatAttachAlertPhotoLayout.P != null) {
@@ -164,7 +164,7 @@ public final class kl extends pl {
         return true;
     }
 
-    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
+    @Override // org.telegram.ui.pq0, org.telegram.ui.wq0
     public final boolean z() {
         di diVar = this.c.b;
         return (diVar.w1 || diVar.y1) ? false : true;

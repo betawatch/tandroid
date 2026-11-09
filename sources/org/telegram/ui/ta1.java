@@ -1,33 +1,37 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ta1 implements Runnable {
+public final /* synthetic */ class ta1 implements org.telegram.ui.ActionBar.r1 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ za1 b;
-    public final /* synthetic */ byte[] c;
+    public final /* synthetic */ bb1 b;
 
-    public /* synthetic */ ta1(za1 za1Var, byte[] bArr, int i7) {
+    public /* synthetic */ ta1(bb1 bb1Var, int i7) {
         this.a = i7;
-        this.b = za1Var;
-        this.c = bArr;
+        this.b = bb1Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.ui.ActionBar.r1
+    public final void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
         switch (this.a) {
             case 0:
-                za1.d0(this.b, this.c);
+                this.b.finishFragment();
+                break;
+            case 1:
+                bb1 bb1Var = this.b;
+                bb1Var.G0();
+                bb1Var.finishFragment();
+                break;
+            case 2:
+                bb1 bb1Var2 = this.b;
+                bb1Var2.R = "";
+                bb1Var2.J0(false);
+                break;
+            case 3:
+                bb1.f0(this.b);
                 break;
             default:
-                za1 za1Var = this.b;
-                za1Var.B0();
-                za1Var.V = this.c;
-                za1Var.getMessagesController().k4(0L, "VALIDATE_PASSWORD");
-                za1 za1Var2 = new za1(9, za1Var.U);
-                za1Var2.H = za1Var.H;
-                za1Var2.G = za1Var.G;
-                za1Var.presentFragment(za1Var2, true);
+                bb1.c0(this.b);
                 break;
         }
     }

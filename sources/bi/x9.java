@@ -4,7 +4,7 @@ import j$.util.Objects;
 import org.telegram.messenger.ij;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class x9 {
     public final long a;
@@ -24,7 +24,7 @@ public final class x9 {
             return null;
         }
         TLRPC.Message message = ijVar.k;
-        return (message == null || !(message.isThreadMessage || ijVar.l3()) || ijVar.k.fwd_from == null) ? new x9(ij.B0(ijVar.k), ijVar.f1()) : new x9(ijVar.Z0(), ijVar.k.fwd_from.saved_from_msg_id);
+        return (message == null || !(message.isThreadMessage || ijVar.k3()) || ijVar.k.fwd_from == null) ? new x9(ij.B0(ijVar.k), ijVar.e1()) : new x9(ijVar.Z0(), ijVar.k.fwd_from.saved_from_msg_id);
     }
 
     public final boolean equals(Object obj) {

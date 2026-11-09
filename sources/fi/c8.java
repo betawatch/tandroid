@@ -9,7 +9,7 @@ import org.telegram.messenger.qp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c8 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -79,12 +79,12 @@ public final /* synthetic */ class c8 implements View.OnClickListener {
                         } else {
                             q8Var = new q8(i16, s8Var.a, (ArrayList) null);
                         }
-                        s8Var.N0(q8Var, new di.w3(s8Var, 1), false);
+                        s8Var.N0(q8Var, new di.x3(s8Var, 1), false);
                         break;
                     } else if (i15 == 2) {
                         if (s8Var.Q1) {
                             s8Var.M0();
-                            s8Var.N0(new q8(2, s8Var.a, arrayList), new di.w3(s8Var, 1), false);
+                            s8Var.N0(new q8(2, s8Var.a, arrayList), new di.x3(s8Var, 1), false);
                             break;
                         } else {
                             s8Var.M0();
@@ -95,7 +95,7 @@ public final /* synthetic */ class c8 implements View.OnClickListener {
                         if (i15 == 6) {
                             HashSet R0 = s8.R0(arrayList, hashMap);
                             dVar.setLoading(true);
-                            di.y6 P1 = qp.s1(s8Var.a).P1();
+                            di.z6 P1 = qp.s1(s8Var.a).P1();
                             d8 d8Var = new d8(n8Var, i12);
                             int i17 = P1.a;
                             TLRPC.TL_contacts_setBlocked tL_contacts_setBlocked = new TLRPC.TL_contacts_setBlocked();

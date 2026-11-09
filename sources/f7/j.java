@@ -10,13 +10,13 @@ import java.util.Arrays;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.telegram.ui.hy0;
+import org.telegram.ui.ky0;
 import q7.a1;
 import q7.b1;
 import q7.c1;
 import q7.e1;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class j extends l {
     public static final Parcelable.Creator<j> CREATOR = new t0(5);
@@ -192,16 +192,16 @@ public final class j extends l {
     }
 
     public final String toString() {
-        hy0 hy0Var = new hy0(getClass().getSimpleName(), 9);
+        ky0 ky0Var = new ky0(getClass().getSimpleName(), 9);
         q7.k0 k0Var = q7.m0.d;
         byte[] p10 = this.a.p();
-        hy0Var.N(k0Var.c(p10.length, p10), "keyHandle");
+        ky0Var.N(k0Var.c(p10.length, p10), "keyHandle");
         byte[] p11 = this.b.p();
-        hy0Var.N(k0Var.c(p11.length, p11), "clientDataJSON");
+        ky0Var.N(k0Var.c(p11.length, p11), "clientDataJSON");
         byte[] p12 = this.c.p();
-        hy0Var.N(k0Var.c(p12.length, p12), "attestationObject");
-        hy0Var.N(Arrays.toString(this.d), "transports");
-        return hy0Var.toString();
+        ky0Var.N(k0Var.c(p12.length, p12), "attestationObject");
+        ky0Var.N(Arrays.toString(this.d), "transports");
+        return ky0Var.toString();
     }
 
     @Override // android.os.Parcelable

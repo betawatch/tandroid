@@ -1,64 +1,47 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.drawable.BitmapDrawable;
-import android.view.ViewGroup;
-import org.telegram.messenger.Utilities;
+import android.animation.ValueAnimator;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class od0 extends AnimatorListenerAdapter {
+public final /* synthetic */ class od0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ pd0 b;
+    public final /* synthetic */ rd0 b;
 
-    public /* synthetic */ od0(pd0 pd0Var, int i7) {
+    public /* synthetic */ od0(rd0 rd0Var, int i7) {
         this.a = i7;
-        this.b = pd0Var;
+        this.b = rd0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                if (org.telegram.messenger.g0.C1()) {
-                    this.b.h.requestFocus();
-                    break;
-                }
+                rd0 rd0Var = this.b;
+                rd0Var.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                rd0Var.d.setAlpha(floatValue);
+                rd0Var.e.setAlpha(floatValue);
+                rd0Var.f.setProgress(floatValue);
+                FrameLayout frameLayout = rd0Var.x;
+                frameLayout.setAlpha(floatValue);
+                float f10 = (floatValue * 0.5f) + 0.5f;
+                frameLayout.setScaleX(f10);
+                frameLayout.setScaleY(f10);
                 break;
             default:
-                pd0 pd0Var = this.b;
-                if (pd0Var.getParent() instanceof ViewGroup) {
-                    ((ViewGroup) pd0Var.getParent()).removeView(pd0Var);
-                }
-                pd0Var.c.setVisibility(0);
-                break;
-        }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationStart(Animator animator) {
-        switch (this.a) {
-            case 0:
-                pd0 pd0Var = this.b;
-                pd0Var.c.setVisibility(8);
-                int measuredWidth = (int) (pd0Var.b.getMeasuredWidth() / 10.0f);
-                int measuredHeight = (int) (pd0Var.b.getMeasuredHeight() / 10.0f);
-                Bitmap createBitmap = Bitmap.createBitmap(measuredWidth, measuredHeight, Bitmap.Config.ARGB_8888);
-                Canvas canvas = new Canvas(createBitmap);
-                canvas.scale(0.1f, 0.1f);
-                canvas.drawColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.d6, false));
-                pd0Var.b.draw(canvas);
-                Utilities.stackBlurBitmap(createBitmap, Math.max(8, Math.max(measuredWidth, measuredHeight) / org.telegram.messenger.qs.g2));
-                pd0Var.d.setBackground(new BitmapDrawable(pd0Var.getContext().getResources(), createBitmap));
-                pd0Var.d.setAlpha(0.0f);
-                pd0Var.d.setVisibility(0);
-                pd0Var.b.addView(pd0Var);
-                break;
-            default:
-                super.onAnimationStart(animator);
+                rd0 rd0Var2 = this.b;
+                rd0Var2.getClass();
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                rd0Var2.f.setProgress(floatValue2);
+                rd0Var2.d.setAlpha(floatValue2);
+                rd0Var2.e.setAlpha(floatValue2);
+                FrameLayout frameLayout2 = rd0Var2.x;
+                frameLayout2.setAlpha(floatValue2);
+                float f11 = (floatValue2 * 0.5f) + 0.5f;
+                frameLayout2.setScaleX(f11);
+                frameLayout2.setScaleY(f11);
                 break;
         }
     }

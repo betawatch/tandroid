@@ -16,9 +16,10 @@ import bi.ea;
 import bi.j5;
 import bi.w1;
 import di.c8;
-import di.k5;
-import di.p9;
-import di.s5;
+import di.l5;
+import di.q5;
+import di.q9;
+import di.t5;
 import fi.a4;
 import fi.b4;
 import fi.d7;
@@ -26,10 +27,10 @@ import fi.e7;
 import fi.f3;
 import fi.j8;
 import fi.m7;
+import fi.n9;
 import fi.o5;
-import fi.o9;
 import fi.p2;
-import fi.s9;
+import fi.r9;
 import fi.va;
 import fi.w3;
 import fi.w6;
@@ -52,14 +53,14 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.f2;
 import org.telegram.ui.ActionBar.v2;
-import org.telegram.ui.Components.h51;
-import org.telegram.ui.Components.he0;
-import org.telegram.ui.Components.l41;
-import org.telegram.ui.Components.q41;
-import org.telegram.ui.Components.x31;
+import org.telegram.ui.Components.i51;
+import org.telegram.ui.Components.ie0;
+import org.telegram.ui.Components.m41;
+import org.telegram.ui.Components.r41;
+import org.telegram.ui.Components.y31;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i implements c20 {
     public final /* synthetic */ int a;
@@ -75,7 +76,7 @@ public final /* synthetic */ class i implements c20 {
         String str;
         String str2;
         int i7;
-        l41 l41Var;
+        m41 m41Var;
         int i10 = 0;
         int i11 = 0;
         switch (this.a) {
@@ -97,7 +98,7 @@ public final /* synthetic */ class i implements c20 {
                 Long l10 = (Long) obj;
                 if (!f2Var.isFinished) {
                     if (l10 != null && l10.longValue() != Long.MAX_VALUE) {
-                        f2Var.presentFragment(ProfileActivity.A4(l10.longValue()), true);
+                        f2Var.presentFragment(ProfileActivity.D4(l10.longValue()), true);
                         break;
                     } else {
                         org.telegram.messenger.g0.h3(new m0(0));
@@ -227,20 +228,20 @@ public final /* synthetic */ class i implements c20 {
                 }
                 break;
             case 12:
-                p9 p9Var = (p9) this.b;
-                p9Var.j1 = false;
-                p9Var.V();
+                q9 q9Var = (q9) this.b;
+                q9Var.j1 = false;
+                q9Var.V();
                 break;
             case 13:
-                k5 k5Var = (k5) obj;
-                s5 s5Var = ((di.p5) this.b).e;
+                l5 l5Var = (l5) obj;
+                t5 t5Var = ((q5) this.b).e;
                 while (true) {
-                    ArrayList arrayList2 = s5Var.G;
+                    ArrayList arrayList2 = t5Var.G;
                     if (i10 >= arrayList2.size()) {
                         break;
                     } else {
-                        if (k5Var != arrayList2.get(i10)) {
-                            ((k5) arrayList2.get(i10)).getClass();
+                        if (l5Var != arrayList2.get(i10)) {
+                            ((l5) arrayList2.get(i10)).getClass();
                         }
                         i10++;
                     }
@@ -312,7 +313,7 @@ public final /* synthetic */ class i implements c20 {
                 if (view2 instanceof a4) {
                     w3Var.getClass();
                     int R = RecyclerView.R(view2);
-                    x31 G = w3Var.f3.G(R);
+                    y31 G = w3Var.f3.G(R);
                     if (G != null) {
                         a4 a4Var = (a4) view2;
                         a4Var.setPosition(b4Var.b(R));
@@ -331,9 +332,9 @@ public final /* synthetic */ class i implements c20 {
                 w3 w3Var2 = (w3) this.b;
                 View view3 = (View) obj;
                 if (view3 instanceof a4) {
-                    o9 o9Var = (o9) w3Var2.n3;
-                    o9Var.b.getClass();
-                    ((a4) view3).setPosition(o9Var.b(RecyclerView.R(view3)));
+                    n9 n9Var = (n9) w3Var2.n3;
+                    n9Var.b.getClass();
+                    ((a4) view3).setPosition(n9Var.b(RecyclerView.R(view3)));
                     view3.setPressed(false);
                     break;
                 }
@@ -346,7 +347,7 @@ public final /* synthetic */ class i implements c20 {
                 if (e7Var != null && vaVar.O1 != 1) {
                     boolean isEmpty = TextUtils.isEmpty(e7Var.y);
                     boolean z9 = !isEmpty;
-                    ((he0) vaVar.j1.c).a(!vaVar.X0.k(), false);
+                    ((ie0) vaVar.j1.c).a(!vaVar.X0.k(), false);
                     vaVar.j1.setVisibility(0);
                     vaVar.j1.animate().alpha(!isEmpty ? 1.0f : 0.0f).withEndAction(new bi.k1(9, x9Var, z9)).start();
                 }
@@ -368,9 +369,9 @@ public final /* synthetic */ class i implements c20 {
                 break;
             case 24:
                 d7 d7Var = (d7) obj;
-                h51 h51Var = ((y5) this.b).n;
-                if (h51Var != null) {
-                    h51Var.setHDRInfo(d7Var);
+                i51 i51Var = ((y5) this.b).n;
+                if (i51Var != null) {
+                    i51Var.setHDRInfo(d7Var);
                     break;
                 }
                 break;
@@ -401,16 +402,16 @@ public final /* synthetic */ class i implements c20 {
                 ((j8) this.b).n.W.y1 = ((Integer) obj).intValue();
                 break;
             case 28:
-                ((s9) this.b).h((c20) obj);
+                ((r9) this.b).h((c20) obj);
                 break;
             default:
                 hi.q qVar = (hi.q) this.b;
                 ArrayList arrayList5 = qVar.b;
                 arrayList5.clear();
                 arrayList5.addAll((ArrayList) obj);
-                q41 q41Var = qVar.a;
-                if (q41Var != null && (l41Var = q41Var.f3) != null) {
-                    l41Var.O(true);
+                r41 r41Var = qVar.a;
+                if (r41Var != null && (m41Var = r41Var.f3) != null) {
+                    m41Var.O(true);
                     break;
                 }
                 break;

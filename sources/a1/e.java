@@ -66,10 +66,10 @@ import org.telegram.ui.Components.RLottieNative;
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.hc;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.mm0;
+import org.telegram.ui.om0;
 import v0.o;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements Runnable {
     public final /* synthetic */ int a;
@@ -323,19 +323,19 @@ public final /* synthetic */ class e implements Runnable {
                                 default:
                                     l1 l1Var = s0Var3.d;
                                     if (l1Var != null && !s0Var3.isFinished) {
-                                        l1Var.d1(R.drawable.msg_download, id.M0(2131746472, null), null);
+                                        l1Var.d1(R.drawable.msg_download, id.M0(2131746471, null), null);
                                         break;
                                     }
                                     break;
                             }
                         }
                     };
-                    mm0 mm0Var = new mm0(10, false, false, null);
-                    mm0Var.G = 1;
-                    mm0Var.H = false;
-                    mm0Var.y = false;
-                    mm0Var.V = new a0(c0Var, s0Var2, c20Var, false, 7);
-                    s0Var2.presentFragment(mm0Var);
+                    om0 om0Var = new om0(10, false, false, null);
+                    om0Var.G = 1;
+                    om0Var.H = false;
+                    om0Var.y = false;
+                    om0Var.V = new a0(c0Var, s0Var2, c20Var, false, 7);
+                    s0Var2.presentFragment(om0Var);
                     return;
                 }
                 return;
@@ -362,7 +362,7 @@ public final /* synthetic */ class e implements Runnable {
                             default:
                                 l1 l1Var = s0Var32.d;
                                 if (l1Var != null && !s0Var32.isFinished) {
-                                    l1Var.d1(R.drawable.msg_download, id.M0(2131746472, null), null);
+                                    l1Var.d1(R.drawable.msg_download, id.M0(2131746471, null), null);
                                     break;
                                 }
                                 break;
@@ -483,10 +483,10 @@ public final /* synthetic */ class e implements Runnable {
                 f2 T = LaunchActivity.T();
                 if (T != null) {
                     if (tL_error == null || !"STARGIFT_ALREADY_BURNED".equalsIgnoreCase(tL_error.text)) {
-                        k5.o(null, 2131743884, hc.a0(T), R.raw.error, 36);
+                        k5.o(null, 2131743881, hc.a0(T), R.raw.error, 36);
                         return;
                     } else {
-                        k5.o(null, 2131743883, hc.a0(T), R.raw.fire_on, 36);
+                        k5.o(null, 2131743880, hc.a0(T), R.raw.fire_on, 36);
                         return;
                     }
                 }
@@ -498,7 +498,7 @@ public final /* synthetic */ class e implements Runnable {
                 if (l10.longValue() < 0 && (M0 = qp.s1(k7Var.a).M0(Long.valueOf(-l10.longValue()))) != null) {
                     str3 = M0.title;
                 }
-                cc Q = k7Var.k().Q(R.raw.contact_check, 36, g0.X2(TextUtils.isEmpty(str3) ? id.M0(2131749617, null) : id.a0(null, null, 2131749618, str3)));
+                cc Q = k7Var.k().Q(R.raw.contact_check, 36, g0.X2(TextUtils.isEmpty(str3) ? id.M0(2131749616, null) : id.a0(null, null, 2131749617, str3)));
                 Q.t = true;
                 Q.j();
                 return;
@@ -506,10 +506,10 @@ public final /* synthetic */ class e implements Runnable {
                 k7 k7Var2 = (k7) this.b;
                 if (((ea) this.c).e) {
                     k7Var2.c2.setLoading(false);
-                    k7Var2.t1();
+                    k7Var2.s1();
                     return;
                 } else {
-                    cc Q2 = k7Var2.k().Q(R.raw.error, 36, id.a0(null, null, 2131743881, "NO_BALANCE"));
+                    cc Q2 = k7Var2.k().Q(R.raw.error, 36, id.a0(null, null, 2131743878, "NO_BALANCE"));
                     Q2.t = true;
                     Q2.j();
                     return;

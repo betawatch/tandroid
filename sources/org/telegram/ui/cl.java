@@ -1,13 +1,29 @@
 package org.telegram.ui;
 
-import android.view.accessibility.AccessibilityNodeInfo;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class cl extends org.telegram.ui.Cells.t0 {
-    @Override // org.telegram.ui.Cells.t0, android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setVisibleToUser(true);
+public final class cl extends AnimatorListenerAdapter {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ cn d;
+
+    public cl(cn cnVar, boolean z9, boolean z10, boolean z11) {
+        this.d = cnVar;
+        this.a = z9;
+        this.b = z10;
+        this.c = z11;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        cn cnVar = this.d;
+        cnVar.a3 = null;
+        cnVar.X2.setVisibility(this.a ? 0 : 4);
+        cnVar.Z2.setVisibility(this.b ? 0 : 4);
+        cnVar.Y2.setVisibility(this.c ? 0 : 4);
     }
 }

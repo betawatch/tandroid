@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class zx implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -123,7 +123,7 @@ public final /* synthetic */ class zx implements Runnable {
                         } else if (update instanceof TL_update.TL_updateNewScheduledMessage) {
                             message2 = ((TL_update.TL_updateNewScheduledMessage) update).message;
                         } else if (update instanceof TL_update.TL_updateQuickReplyMessage) {
-                            kg.t1.f(gzVar6.currentAccount).j(update, ij.K1(message5), ij.J1(message5));
+                            kg.t1.f(gzVar6.currentAccount).j(update, ij.J1(message5), ij.I1(message5));
                             message2 = ((TL_update.TL_updateQuickReplyMessage) update).message;
                         }
                         message = message2;
@@ -162,7 +162,7 @@ public final /* synthetic */ class zx implements Runnable {
                         tL_error2 = tL_error4;
                         gzVar7.z0(ijVar3, null, tL_updateShortSentMessage.id, Collections.singletonList(null), false, -1, hashMap2);
                         gz gzVar8 = gzVar7;
-                        int p12 = ijVar3.p1();
+                        int o12 = ijVar3.o1();
                         int i17 = tL_updateShortSentMessage.id;
                         message6.id = i17;
                         message6.local_id = i17;
@@ -194,7 +194,7 @@ public final /* synthetic */ class zx implements Runnable {
                         message6.unread = num.intValue() < message6.id;
                         Utilities.d.c(new zq(19, gzVar8, tL_updateShortSentMessage));
                         arrayList6.add(message6);
-                        i10 = p12;
+                        i10 = o12;
                         j3 = 0;
                         z11 = false;
                         z10 = false;
@@ -359,7 +359,7 @@ public final /* synthetic */ class zx implements Runnable {
                                             i12 = 1;
                                             z18 = true;
                                         } else if (update2 instanceof TL_update.TL_updateQuickReplyMessage) {
-                                            kg.t1.f(gzVar10.currentAccount).j(update2, ij.K1(ijVar3.k), ij.J1(ijVar3.k));
+                                            kg.t1.f(gzVar10.currentAccount).j(update2, ij.J1(ijVar3.k), ij.I1(ijVar3.k));
                                             TLRPC.Message message11 = ((TL_update.TL_updateQuickReplyMessage) update2).message;
                                             arrayList6.add(message11);
                                             arrayList.remove(i18);
@@ -472,9 +472,9 @@ public final /* synthetic */ class zx implements Runnable {
                                 gzVar13.z0(ijVar3, message13, message7.id, Collections.singletonList(str6), false, -1, hashMap5);
                                 ijVar = ijVar3;
                                 gzVar = gzVar13;
-                                int p13 = ijVar.p1();
+                                int o13 = ijVar.o1();
                                 message6.id = message13.id;
-                                i11 = p13;
+                                i11 = o13;
                                 z19 = z21;
                                 z12 = false;
                             } else {
@@ -505,7 +505,7 @@ public final /* synthetic */ class zx implements Runnable {
                             gzVar4 = gzVar9;
                         }
                     }
-                    if ((ij.o1(message6) instanceof TLRPC.TL_messageMediaGeoLive) && message6.via_bot_id == j3 && TextUtils.isEmpty(message6.via_bot_name)) {
+                    if ((ij.n1(message6) instanceof TLRPC.TL_messageMediaGeoLive) && message6.via_bot_id == j3 && TextUtils.isEmpty(message6.via_bot_name)) {
                         sd locationController = gzVar4.getLocationController();
                         ArrayList arrayList13 = locationController.b;
                         a0.h hVar4 = locationController.a;
@@ -581,9 +581,9 @@ public final /* synthetic */ class zx implements Runnable {
                                     int i29;
                                     int i30;
                                     TLRPC.Message message14 = message3;
-                                    boolean e52 = ij.e5(message14);
+                                    boolean d52 = ij.d5(message14);
                                     boolean z23 = z22;
-                                    if (e52) {
+                                    if (d52) {
                                         i29 = 9;
                                     } else {
                                         if (message14.quick_reply_shortcut_id == 0 && message14.quick_reply_shortcut == null) {
@@ -591,18 +591,18 @@ public final /* synthetic */ class zx implements Runnable {
                                             gz gzVar16 = gz.this;
                                             yr messagesStorage = gzVar16.getMessagesStorage();
                                             long j13 = message14.random_id;
-                                            long C1 = ij.C1(message14.peer_id);
+                                            long B1 = ij.B1(message14.peer_id);
                                             int i31 = i27;
-                                            messagesStorage.a2(j13, C1, Integer.valueOf(i31), message14.id, 0, z23 ? 1 : 0, message14.quick_reply_shortcut_id);
+                                            messagesStorage.a2(j13, B1, Integer.valueOf(i31), message14.id, 0, z23 ? 1 : 0, message14.quick_reply_shortcut_id);
                                             gzVar16.getMessagesStorage().j1(arrayList16, true, false, false, 0, false, i30, message14.quick_reply_shortcut_id);
                                             int i32 = i30;
-                                            if (ij.f3(message14)) {
-                                                long C12 = ij.C1(message14.peer_id);
+                                            if (ij.e3(message14)) {
+                                                long B12 = ij.B1(message14.peer_id);
                                                 ArrayList arrayList17 = new ArrayList(1);
                                                 arrayList17.add(Integer.valueOf(message14.id));
-                                                gzVar16.getMessagesStorage().P0(C12, arrayList17, false, false, i32, (int) ij.a2(gzVar16.currentAccount, message14, 0));
-                                                gzVar16.getMessagesStorage().R1(C12, -C12, arrayList17, null);
-                                                g0.h3(new pw(gzVar16, C12, arrayList17, 0));
+                                                gzVar16.getMessagesStorage().P0(B12, arrayList17, false, false, i32, (int) ij.Z1(gzVar16.currentAccount, message14, 0));
+                                                gzVar16.getMessagesStorage().R1(B12, -B12, arrayList17, null);
+                                                g0.h3(new pw(gzVar16, B12, arrayList17, 0));
                                             }
                                             g0.h3(new rw(gzVar16, message14, i31, i28, z23));
                                         }
@@ -612,12 +612,12 @@ public final /* synthetic */ class zx implements Runnable {
                                     gz gzVar162 = gz.this;
                                     yr messagesStorage2 = gzVar162.getMessagesStorage();
                                     long j132 = message14.random_id;
-                                    long C13 = ij.C1(message14.peer_id);
+                                    long B13 = ij.B1(message14.peer_id);
                                     int i312 = i27;
-                                    messagesStorage2.a2(j132, C13, Integer.valueOf(i312), message14.id, 0, z23 ? 1 : 0, message14.quick_reply_shortcut_id);
+                                    messagesStorage2.a2(j132, B13, Integer.valueOf(i312), message14.id, 0, z23 ? 1 : 0, message14.quick_reply_shortcut_id);
                                     gzVar162.getMessagesStorage().j1(arrayList16, true, false, false, 0, false, i30, message14.quick_reply_shortcut_id);
                                     int i322 = i30;
-                                    if (ij.f3(message14)) {
+                                    if (ij.e3(message14)) {
                                     }
                                     g0.h3(new rw(gzVar162, message14, i312, i28, z23));
                                 }

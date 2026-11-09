@@ -16,13 +16,13 @@ import bi.t0;
 import bi.uc;
 import bi.v;
 import bi.w4;
+import di.a4;
 import di.c1;
-import di.i4;
-import di.k5;
-import di.p9;
-import di.u4;
+import di.j4;
+import di.l5;
+import di.q9;
+import di.v4;
 import di.z1;
-import di.z3;
 import fi.b3;
 import fi.f3;
 import fi.la;
@@ -54,10 +54,10 @@ import org.telegram.tgnet.tl.TL_aicompose;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.i1;
-import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.l2;
+import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.ActionBar.v2;
 import org.telegram.ui.ActionBar.z0;
@@ -66,38 +66,37 @@ import org.telegram.ui.Cells.x8;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.a8;
 import org.telegram.ui.Components.bx;
-import org.telegram.ui.Components.ca0;
+import org.telegram.ui.Components.da0;
 import org.telegram.ui.Components.di;
 import org.telegram.ui.Components.e10;
 import org.telegram.ui.Components.fq;
 import org.telegram.ui.Components.ft;
 import org.telegram.ui.Components.gp;
-import org.telegram.ui.Components.h90;
-import org.telegram.ui.Components.ha0;
 import org.telegram.ui.Components.hc;
+import org.telegram.ui.Components.i90;
 import org.telegram.ui.Components.ia0;
-import org.telegram.ui.Components.k60;
+import org.telegram.ui.Components.ja0;
+import org.telegram.ui.Components.l60;
 import org.telegram.ui.Components.lh;
 import org.telegram.ui.Components.lt;
-import org.telegram.ui.Components.mc0;
-import org.telegram.ui.Components.q70;
+import org.telegram.ui.Components.nc0;
 import org.telegram.ui.Components.r2;
 import org.telegram.ui.Components.r4;
-import org.telegram.ui.Components.rt0;
+import org.telegram.ui.Components.r70;
 import org.telegram.ui.Components.ru;
 import org.telegram.ui.Components.s;
 import org.telegram.ui.Components.sq;
 import org.telegram.ui.Components.t4;
 import org.telegram.ui.Components.tq;
+import org.telegram.ui.Components.tt0;
 import org.telegram.ui.Components.ue;
-import org.telegram.ui.Components.v4;
 import org.telegram.ui.Components.vh;
 import org.telegram.ui.Components.zs;
-import org.telegram.ui.an;
-import org.telegram.ui.w40;
+import org.telegram.ui.cn;
+import org.telegram.ui.y40;
 import sg.l0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -115,7 +114,7 @@ public final /* synthetic */ class g implements View.OnClickListener {
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
         boolean u12;
-        ha0 ha0Var;
+        ia0 ia0Var;
         l2 l2Var;
         int i7 = 3;
         int i10 = 4;
@@ -135,9 +134,9 @@ public final /* synthetic */ class g implements View.OnClickListener {
             case 1:
                 a1 a1Var = (a1) this.b;
                 Context context = (Context) this.c;
-                f6 f6Var = (f6) this.d;
+                g6 g6Var = (g6) this.d;
                 if (a1Var.f2.a == cg.b.a) {
-                    new uc(context, f6Var).show();
+                    new uc(context, g6Var).show();
                     break;
                 }
                 break;
@@ -285,47 +284,47 @@ public final /* synthetic */ class g implements View.OnClickListener {
                 v2Var3.dismiss();
                 break;
             case 5:
-                z3 z3Var = (z3) this.b;
+                a4 a4Var = (a4) this.b;
                 q8 q8Var = (q8) this.c;
                 TL_stories.StoryItem storyItem = (TL_stories.StoryItem) this.d;
-                i4 i4Var = z3Var.x;
-                i4Var.D0(q8Var, storyItem);
-                z3 z3Var2 = i4Var.c1;
-                if (z3Var2 != null) {
-                    z3Var2.a();
+                j4 j4Var = a4Var.x;
+                j4Var.D0(q8Var, storyItem);
+                a4 a4Var2 = j4Var.c1;
+                if (a4Var2 != null) {
+                    a4Var2.a();
                     break;
                 }
                 break;
             case 6:
-                z3 z3Var3 = (z3) this.b;
+                a4 a4Var3 = (a4) this.b;
                 z0 z0Var = (z0) this.c;
-                p9 p9Var = (p9) this.d;
+                q9 q9Var = (q9) this.d;
                 z0Var.performHapticFeedback(3);
                 hc X = hc.X();
                 if (X != null) {
-                    X.Q(R.raw.ic_save_to_gallery, 36, g0.U2(id.M0(2131745936, null), new di.z0(i10, z3Var3, p9Var))).j();
+                    X.Q(R.raw.ic_save_to_gallery, 36, g0.U2(id.M0(2131745933, null), new di.z0(i10, a4Var3, q9Var))).j();
                     break;
                 }
                 break;
             case 7:
-                u4 u4Var = (u4) this.b;
+                v4 v4Var = (v4) this.b;
                 ArrayList arrayList = (ArrayList) this.c;
-                k60 k60Var = (k60) this.d;
-                w4 w4Var = new w4(u4Var, i11);
-                k5 k5Var = u4Var.b;
-                new ru(w4Var, k5Var.getContext(), k5Var.s, arrayList).show();
-                k60Var.u();
+                l60 l60Var = (l60) this.d;
+                w4 w4Var = new w4(v4Var, i11);
+                l5 l5Var = v4Var.b;
+                new ru(w4Var, l5Var.getContext(), l5Var.s, arrayList).show();
+                l60Var.u();
                 break;
             case 8:
                 la laVar = (la) this.b;
                 FrameLayout frameLayout = (FrameLayout) this.c;
                 di.b bVar = (di.b) this.d;
-                k60 k60Var2 = laVar.U0;
-                if (k60Var2 == null || !k60Var2.D()) {
+                l60 l60Var2 = laVar.U0;
+                if (l60Var2 == null || !l60Var2.D()) {
                     fi.o oVar = new fi.o(laVar, z9 ? 1 : 0);
                     boolean q10 = p10.i(laVar.U).q();
                     fi.o oVar2 = q10 ? null : new fi.o(laVar, c11 == true ? 1 : 0);
-                    k60 F = k60.F(frameLayout, bVar, laVar.S0);
+                    l60 F = l60.F(frameLayout, bVar, laVar.S0);
                     laVar.U0 = F;
                     F.p(13, g0.L(200.0f), id.N0("StoryPeriodHint"));
                     laVar.U0.k();
@@ -333,17 +332,17 @@ public final /* synthetic */ class g implements View.OnClickListener {
                     while (true) {
                         int[] iArr = fi.r.P1;
                         if (i13 >= 4) {
-                            k60 k60Var3 = laVar.U0;
-                            k60Var3.s = 0;
-                            k60Var3.Z();
+                            l60 l60Var3 = laVar.U0;
+                            l60Var3.s = 0;
+                            l60Var3.Z();
                             break;
                         } else {
                             int i14 = iArr[i13];
-                            k60 k60Var4 = laVar.U0;
+                            l60 l60Var4 = laVar.U0;
                             String N0 = i14 == Integer.MAX_VALUE ? id.N0("StoryPeriodKeep") : id.G(i14 / 3600, "Hours", new Object[0]);
-                            int i15 = k6.E8;
-                            k60Var4.b(0, null, N0, i15, i15, new m0(oVar, i14, 5));
-                            k60Var4.M((q10 || i14 == 86400 || i14 == Integer.MAX_VALUE) ? null : new m0(oVar2, i14, 6));
+                            int i15 = l6.E8;
+                            l60Var4.b(0, null, N0, i15, i15, new m0(oVar, i14, 5));
+                            l60Var4.M((q10 || i14 == 86400 || i14 == Integer.MAX_VALUE) ? null : new m0(oVar2, i14, 6));
                             if (laVar.W0 == i13) {
                                 laVar.U0.L();
                             }
@@ -394,7 +393,7 @@ public final /* synthetic */ class g implements View.OnClickListener {
                 break;
             case 11:
                 kg.e eVar = (kg.e) this.b;
-                k60 F2 = k60.F(((an) this.c).getLayoutContainer(), (f6) this.d, eVar.n);
+                l60 F2 = l60.F(((cn) this.c).getLayoutContainer(), (g6) this.d, eVar.n);
                 F2.c(R.drawable.msg_cancel, id.M0(2131753702, null), new kg.d(eVar, c13 == true ? 1 : 0), true);
                 F2.E();
                 if (eVar.y != null) {
@@ -439,14 +438,14 @@ public final /* synthetic */ class g implements View.OnClickListener {
             case 15:
                 s sVar = (s) this.b;
                 TL_aicompose.AiComposeTone aiComposeTone = (TL_aicompose.AiComposeTone) this.c;
-                f6 f6Var2 = (f6) this.d;
+                g6 g6Var2 = (g6) this.d;
                 fi.d dVar5 = sVar.X1;
                 if (dVar5.c0 && !dVar5.Q) {
                     if (!sVar.d1()) {
                         dVar5.setLoading(true);
                         TL_aicompose.saveTone savetone = new TL_aicompose.saveTone();
                         savetone.tone = TL_aicompose.InputAiComposeTone.from(aiComposeTone);
-                        ConnectionsManager.getInstance(sVar.a).sendRequestTyped(savetone, new d3.b(c14 == true ? 1 : 0), new t0(sVar, f6Var2, aiComposeTone, i10));
+                        ConnectionsManager.getInstance(sVar.a).sendRequestTyped(savetone, new d3.b(c14 == true ? 1 : 0), new t0(sVar, g6Var2, aiComposeTone, i10));
                         break;
                     } else {
                         sVar.dismiss();
@@ -490,7 +489,7 @@ public final /* synthetic */ class g implements View.OnClickListener {
             case 20:
                 di diVar = (di) this.b;
                 f2 f2Var = (f2) this.c;
-                f6 f6Var3 = (f6) this.d;
+                g6 g6Var3 = (g6) this.d;
                 f2 f2Var2 = diVar.W1;
                 int i17 = diVar.D3;
                 lh lhVar = diVar.C2;
@@ -516,10 +515,10 @@ public final /* synthetic */ class g implements View.OnClickListener {
                         break;
                     }
                 } else {
-                    if (diVar.B3 == null && (f2Var2 instanceof an)) {
-                        an anVar = (an) f2Var2;
-                        if (anVar.c()) {
-                            v4.J(diVar.getContext(), anVar.a(), new c1(diVar, j3, i7), f6Var3);
+                    if (diVar.B3 == null && (f2Var2 instanceof cn)) {
+                        cn cnVar = (cn) f2Var2;
+                        if (cnVar.c()) {
+                            org.telegram.ui.Components.v4.J(diVar.getContext(), cnVar.a(), new c1(diVar, j3, i7), g6Var3);
                             diVar.v1(false, false);
                             break;
                         }
@@ -545,16 +544,16 @@ public final /* synthetic */ class g implements View.OnClickListener {
             case 21:
                 di diVar2 = (di) this.b;
                 ij ijVar = (ij) this.c;
-                ha0 ha0Var2 = (ha0) this.d;
+                ia0 ia0Var2 = (ia0) this.d;
                 diVar2.v1(!diVar2.T1, true);
                 TLRPC.Message message = ijVar.k;
                 boolean z11 = diVar2.T1;
                 message.invert_media = z11;
-                ha0Var2.a(!z11, true);
+                ia0Var2.a(!z11, true);
                 diVar2.Y1.e(ijVar);
                 ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = diVar2.a2;
-                if (chatAttachAlertPhotoLayout != null && (ha0Var = chatAttachAlertPhotoLayout.d1) != null) {
-                    ha0Var.a(!diVar2.T1, true);
+                if (chatAttachAlertPhotoLayout != null && (ia0Var = chatAttachAlertPhotoLayout.d1) != null) {
+                    ia0Var.a(!diVar2.T1, true);
                 }
                 diVar2.Y1.m(!diVar2.T1);
                 break;
@@ -571,7 +570,7 @@ public final /* synthetic */ class g implements View.OnClickListener {
                 sqVar.getClass();
                 g0.g(x8Var.a.getText().toString());
                 if (g0.I3()) {
-                    Toast.makeText(context3, id.M0(2131744197, null), 0).show();
+                    Toast.makeText(context3, id.M0(2131744194, null), 0).show();
                     break;
                 }
                 break;
@@ -592,8 +591,8 @@ public final /* synthetic */ class g implements View.OnClickListener {
                 break;
             case 25:
                 lt ltVar = (lt) this.b;
-                rt0 rt0Var = (rt0) this.c;
-                f6 f6Var4 = (f6) this.d;
+                tt0 tt0Var = (tt0) this.c;
+                g6 g6Var4 = (g6) this.d;
                 ft ftVar = ltVar.a;
                 kg.k kVar = ltVar.b;
                 if (kVar.isEnabled() && kVar.getAlpha() >= 0.5f) {
@@ -620,11 +619,11 @@ public final /* synthetic */ class g implements View.OnClickListener {
                             }
                         } else {
                             ftVar.m();
-                            k60 k60Var5 = new k60(rt0Var, f6Var4, kVar, false, false, true);
-                            k60Var5.X = g0.L(280.0f);
-                            ftVar.o(null, new h90(k60Var5, ftVar));
-                            k60Var5.U = true;
-                            k60Var5.Z();
+                            l60 l60Var5 = new l60(tt0Var, g6Var4, kVar, false, false, true);
+                            l60Var5.X = g0.L(280.0f);
+                            ftVar.o(null, new i90(l60Var5, ftVar));
+                            l60Var5.U = true;
+                            l60Var5.Z();
                             break;
                         }
                     }
@@ -636,19 +635,19 @@ public final /* synthetic */ class g implements View.OnClickListener {
                 f2 f2Var3 = (f2) this.d;
                 e10Var.dismiss();
                 AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(context4);
-                alertDialog$Builder2.a.R = id.M0(2131749562, null);
-                alertDialog$Builder2.a.T = g0.X2(id.M0(2131749563, null));
-                alertDialog$Builder2.k(id.M0(2131749564, null), new bx(e10Var, i10));
+                alertDialog$Builder2.a.R = id.M0(2131749561, null);
+                alertDialog$Builder2.a.T = g0.X2(id.M0(2131749562, null));
+                alertDialog$Builder2.k(id.M0(2131749563, null), new bx(e10Var, i10));
                 alertDialog$Builder2.h(id.M0(2131752589, null), null);
                 f2Var3.showDialog(alertDialog$Builder2.a);
                 break;
             case 27:
-                q70 q70Var = (q70) this.b;
+                r70 r70Var = (r70) this.b;
                 v2 v2Var4 = (v2) this.c;
                 f2 f2Var4 = (f2) this.d;
                 try {
-                    if (q70Var.b != null) {
-                        ((ClipboardManager) org.telegram.messenger.t0.b.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", q70Var.b));
+                    if (r70Var.b != null) {
+                        ((ClipboardManager) org.telegram.messenger.t0.b.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", r70Var.b));
                         if (v2Var4 == null || (l2Var = v2Var4.c) == null) {
                             hc.j(f2Var4).j();
                         } else {
@@ -662,30 +661,30 @@ public final /* synthetic */ class g implements View.OnClickListener {
                 }
                 break;
             case 28:
-                ca0 ca0Var = (ca0) this.b;
-                ha0 ha0Var3 = (ha0) this.c;
-                ha0 ha0Var4 = (ha0) this.d;
-                ia0 ia0Var = ca0Var.c0;
-                mj mjVar = ia0Var.d;
+                da0 da0Var = (da0) this.b;
+                ia0 ia0Var3 = (ia0) this.c;
+                ia0 ia0Var4 = (ia0) this.d;
+                ja0 ja0Var = da0Var.c0;
+                mj mjVar = ja0Var.d;
                 boolean z12 = mjVar.l;
                 boolean z13 = !z12;
                 mjVar.l = z13;
                 if (z12) {
-                    if (ia0Var.y) {
+                    if (ja0Var.y) {
                         mjVar.k = false;
                     }
-                    ia0Var.y = false;
+                    ja0Var.y = false;
                 } else if (!mjVar.k) {
                     mjVar.k = true;
-                    ia0Var.y = true;
+                    ja0Var.y = true;
                 }
-                ha0Var3.a(z13, true);
-                ha0Var4.a(mjVar.k, true);
-                ca0Var.i();
-                ca0Var.l(true);
+                ia0Var3.a(z13, true);
+                ia0Var4.a(mjVar.k, true);
+                da0Var.i();
+                da0Var.l(true);
                 break;
             default:
-                mc0.J0((mc0) this.b, (TLRPC.ChatFull) this.c, (w40) this.d);
+                nc0.J0((nc0) this.b, (TLRPC.ChatFull) this.c, (y40) this.d);
                 break;
         }
     }

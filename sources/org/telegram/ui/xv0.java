@@ -1,168 +1,198 @@
 package org.telegram.ui;
 
-import android.util.SparseIntArray;
+import android.app.Activity;
+import android.content.Context;
+import android.graphics.RectF;
+import android.util.SparseArray;
+import android.view.View;
+import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class xv0 extends v4.o {
-    public int b;
-    public final SparseIntArray c = new SparseIntArray();
-    public final SparseIntArray d = new SparseIntArray();
-    public final ArrayList e = new ArrayList();
-    public final ArrayList f = new ArrayList();
-    public int g;
-    public int h;
-    public final /* synthetic */ ProfileActivity i;
+public final class xv0 extends org.telegram.ui.Components.zs0 {
+    public boolean w2;
+    public final /* synthetic */ ProfileActivity x2;
 
-    public xv0(ProfileActivity profileActivity) {
-        this.i = profileActivity;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public xv0(ProfileActivity profileActivity, Context context, long j3, org.telegram.ui.Components.rs0 rs0Var, int i7, ArrayList arrayList, TLRPC.ChatFull chatFull, TLRPC.UserFull userFull, int i10, int i11, ProfileActivity profileActivity2, ProfileActivity profileActivity3, org.telegram.ui.ActionBar.g6 g6Var, dh.c cVar) {
+        super(context, j3, rs0Var, i7, arrayList, chatFull, userFull, i10, i11, profileActivity2, profileActivity3, 1, g6Var, cVar);
+        this.x2 = profileActivity;
     }
 
-    public static void g(int i7, int i10, SparseIntArray sparseIntArray) {
-        if (i10 >= 0) {
-            sparseIntArray.put(i10, i7);
+    @Override // org.telegram.ui.Components.zs0
+    public final boolean H0() {
+        return this.x2.r1;
+    }
+
+    @Override // org.telegram.ui.Components.zs0
+    public final boolean I0() {
+        return this.x2.r1;
+    }
+
+    @Override // org.telegram.ui.Components.zs0
+    public final void P0(SparseArray sparseArray) {
+        ProfileActivity profileActivity = this.x2;
+        if (profileActivity.r1) {
+            int size = sparseArray.size();
+            int selectedTab = getSelectedTab();
+            char c10 = (org.telegram.ui.Components.zs0.J0(selectedTab) || selectedTab == 8) ? (char) 0 : selectedTab == 9 ? (char) 1 : (char) 65535;
+            if (c10 >= 0) {
+                if (c10 == 0) {
+                    ProfileActivity.O0(profileActivity, size);
+                }
+                profileActivity.y5[c10].c(size, true);
+            }
         }
     }
 
-    @Override // v4.o
-    public final boolean a(int i7, int i10) {
-        return b(i7, i10);
-    }
-
-    @Override // v4.o
-    public final boolean b(int i7, int i10) {
-        ProfileActivity profileActivity = this.i;
-        if (i10 < profileActivity.t4 || i10 >= profileActivity.u4 || i7 < this.g || i7 >= this.h) {
-            int i11 = this.c.get(i7, -1);
-            return i11 == this.d.get(i10, -1) && i11 >= 0;
-        }
-        ArrayList arrayList = this.f;
-        boolean isEmpty = arrayList.isEmpty();
-        ArrayList arrayList2 = this.e;
-        return (!isEmpty ? (TLRPC.ChatParticipant) arrayList2.get(((Integer) arrayList.get(i7 - this.g)).intValue()) : (TLRPC.ChatParticipant) arrayList2.get(i7 - this.g)).user_id == (!profileActivity.B2.isEmpty() ? (TLRPC.ChatParticipant) profileActivity.Q4.get(((Integer) profileActivity.R4.get(i10 - profileActivity.t4)).intValue()) : (TLRPC.ChatParticipant) profileActivity.Q4.get(i10 - profileActivity.t4)).user_id;
-    }
-
-    @Override // v4.o
-    public final int d() {
-        return this.i.M2;
-    }
-
-    @Override // v4.o
-    public final int e() {
-        return this.b;
-    }
-
-    public final void f(SparseIntArray sparseIntArray) {
+    @Override // org.telegram.ui.Components.zs0
+    public final void P1(boolean z9) {
         int i7;
         int i10;
-        int i11;
-        sparseIntArray.clear();
-        ProfileActivity profileActivity = this.i;
-        g(1, profileActivity.N2, sparseIntArray);
-        g(2, profileActivity.O2, sparseIntArray);
-        g(3, profileActivity.R2, sparseIntArray);
-        g(4, profileActivity.S2, sparseIntArray);
-        g(5, profileActivity.U2, sparseIntArray);
-        g(6, profileActivity.V2, sparseIntArray);
-        g(7, profileActivity.Z2, sparseIntArray);
-        g(8, profileActivity.W2, sparseIntArray);
-        g(9, profileActivity.b3, sparseIntArray);
-        g(10, profileActivity.a3, sparseIntArray);
-        g(11, profileActivity.X2, sparseIntArray);
-        g(12, profileActivity.Y2, sparseIntArray);
-        g(13, profileActivity.c3, sparseIntArray);
-        g(14, profileActivity.d3, sparseIntArray);
-        g(15, profileActivity.e3, sparseIntArray);
-        g(16, profileActivity.f3, sparseIntArray);
-        g(17, profileActivity.b4, sparseIntArray);
-        g(18, profileActivity.c4, sparseIntArray);
-        g(19, profileActivity.e4, sparseIntArray);
-        g(20, profileActivity.g4, sparseIntArray);
-        g(21, profileActivity.f4, sparseIntArray);
-        g(22, profileActivity.g3, sparseIntArray);
-        g(23, profileActivity.h3, sparseIntArray);
-        g(24, profileActivity.k3, sparseIntArray);
-        g(25, profileActivity.i3, sparseIntArray);
-        g(26, profileActivity.j3, sparseIntArray);
-        g(27, profileActivity.l3, sparseIntArray);
-        g(28, profileActivity.m3, sparseIntArray);
-        g(29, profileActivity.n3, sparseIntArray);
-        g(30, profileActivity.o3, sparseIntArray);
-        g(31, profileActivity.p3, sparseIntArray);
-        g(32, profileActivity.q3, sparseIntArray);
-        g(33, profileActivity.r3, sparseIntArray);
-        g(34, profileActivity.s3, sparseIntArray);
-        g(35, profileActivity.t3, sparseIntArray);
-        g(36, profileActivity.u3, sparseIntArray);
-        g(37, profileActivity.v3, sparseIntArray);
-        g(38, profileActivity.w3, sparseIntArray);
-        g(39, profileActivity.x3, sparseIntArray);
-        g(40, profileActivity.y3, sparseIntArray);
-        g(41, profileActivity.z3, sparseIntArray);
-        g(42, profileActivity.A3, sparseIntArray);
-        g(43, profileActivity.B3, sparseIntArray);
-        g(44, profileActivity.C3, sparseIntArray);
-        g(45, profileActivity.D3, sparseIntArray);
-        g(46, profileActivity.E3, sparseIntArray);
-        g(47, profileActivity.F3, sparseIntArray);
-        g(48, profileActivity.G3, sparseIntArray);
-        g(49, profileActivity.H3, sparseIntArray);
-        g(50, profileActivity.I3, sparseIntArray);
-        g(51, profileActivity.J3, sparseIntArray);
-        g(52, profileActivity.K3, sparseIntArray);
-        g(53, profileActivity.L3, sparseIntArray);
-        g(54, profileActivity.X3, sparseIntArray);
-        g(55, profileActivity.M3, sparseIntArray);
-        g(56, profileActivity.Q3, sparseIntArray);
-        g(57, profileActivity.R3, sparseIntArray);
-        g(58, profileActivity.S3, sparseIntArray);
-        g(59, profileActivity.i4, sparseIntArray);
-        g(60, profileActivity.T3, sparseIntArray);
-        g(61, profileActivity.U3, sparseIntArray);
-        g(62, profileActivity.V3, sparseIntArray);
-        g(63, profileActivity.W3, sparseIntArray);
-        g(64, profileActivity.Y3, sparseIntArray);
-        g(65, profileActivity.p4, sparseIntArray);
-        g(66, profileActivity.q4, sparseIntArray);
-        g(67, profileActivity.r4, sparseIntArray);
-        g(68, profileActivity.s4, sparseIntArray);
-        g(69, profileActivity.v4, sparseIntArray);
-        g(70, profileActivity.w4, sparseIntArray);
-        g(71, profileActivity.x4, sparseIntArray);
-        g(72, profileActivity.y4, sparseIntArray);
-        g(73, profileActivity.z4, sparseIntArray);
-        g(74, profileActivity.F4, sparseIntArray);
-        g(75, profileActivity.G4, sparseIntArray);
-        g(76, profileActivity.D4, sparseIntArray);
-        g(77, profileActivity.J4, sparseIntArray);
-        g(78, profileActivity.K4, sparseIntArray);
-        g(79, profileActivity.Z3, sparseIntArray);
-        g(80, profileActivity.a4, sparseIntArray);
-        g(81, profileActivity.L4, sparseIntArray);
-        g(82, profileActivity.M4, sparseIntArray);
-        g(83, profileActivity.P3, sparseIntArray);
-        g(84, profileActivity.N3, sparseIntArray);
-        g(85, profileActivity.O3, sparseIntArray);
-        g(86, profileActivity.T2, sparseIntArray);
-        g(87, profileActivity.P2, sparseIntArray);
-        g(88, profileActivity.A4, sparseIntArray);
-        g(89, profileActivity.B4, sparseIntArray);
-        g(90, profileActivity.C4, sparseIntArray);
-        g(91, profileActivity.E4, sparseIntArray);
-        g(92, profileActivity.h4, sparseIntArray);
-        g(93, profileActivity.m4, sparseIntArray);
-        i7 = profileActivity.botPermissionLocation;
-        g(94, i7, sparseIntArray);
-        i10 = profileActivity.botPermissionEmojiStatus;
-        g(95, i10, sparseIntArray);
-        i11 = profileActivity.botPermissionBiometry;
-        g(96, i11, sparseIntArray);
-        g(97, profileActivity.o4, sparseIntArray);
-        g(98, profileActivity.Q2, sparseIntArray);
-        g(99, profileActivity.j4, sparseIntArray);
-        g(100, profileActivity.k4, sparseIntArray);
-        g(101, profileActivity.l4, sparseIntArray);
+        super.P1(z9);
+        ProfileActivity profileActivity = this.x2;
+        boolean z10 = profileActivity.s1;
+        org.telegram.ui.Components.vp0 vp0Var = this.a0;
+        if (z10 && !profileActivity.v1 && this.K0.d(14)) {
+            if (!this.w2 && (i10 = profileActivity.t1) > 0 && vp0Var != null) {
+                this.w2 = true;
+                vp0Var.P = i10;
+                vp0Var.e();
+            }
+            profileActivity.v1 = true;
+            k1(14);
+            return;
+        }
+        if (!profileActivity.s1 || !profileActivity.v1 || this.w2 || (i7 = profileActivity.t1) <= 0 || vp0Var == null) {
+            return;
+        }
+        this.w2 = true;
+        vp0Var.P = i7;
+        vp0Var.e();
+    }
+
+    @Override // org.telegram.ui.Components.zs0
+    public final void Q0() {
+        FrameLayout frameLayout;
+        xv0 xv0Var;
+        ProfileActivity profileActivity = this.x2;
+        if (!profileActivity.r1 || (frameLayout = profileActivity.v5[0]) == null || (xv0Var = profileActivity.N) == null) {
+            return;
+        }
+        ProfileActivity.b5(frameLayout, 1.0f - xv0Var.getBottomButtonStoriesVisibility());
+    }
+
+    @Override // org.telegram.ui.Components.zs0
+    public final boolean U0(TLRPC.ChatParticipant chatParticipant, boolean z9, View view) {
+        return this.x2.h(chatParticipant, z9, false, view);
+    }
+
+    @Override // org.telegram.ui.Components.zs0
+    public final void W0() {
+        RectF rectF = ProfileActivity.V6;
+        this.x2.E5(true);
+    }
+
+    @Override // org.telegram.ui.Components.zs0
+    public final void X0(boolean z9) {
+        int i7;
+        ProfileActivity profileActivity = this.x2;
+        Activity parentActivity = profileActivity.getParentActivity();
+        i7 = ((org.telegram.ui.ActionBar.f2) profileActivity).classGuid;
+        org.telegram.messenger.g0.B2(parentActivity, i7);
+        profileActivity.a.C0();
+        profileActivity.Y.setPivotY((profileActivity.X.getMeasuredHeight() / 2.0f) + profileActivity.X.getPivotY());
+        profileActivity.Y.setPivotX(r1.getMeasuredWidth() / 2.0f);
+        org.telegram.messenger.g0.Z3(profileActivity.Y, !z9, 0.95f, true, true);
+        profileActivity.O5(false);
+    }
+
+    @Override // org.telegram.ui.Components.zs0
+    public final void Y0() {
+        this.x2.V();
+    }
+
+    @Override // org.telegram.ui.Components.zs0
+    public final void Z0(float f10) {
+        Q0();
+        ProfileActivity profileActivity = this.x2;
+        xv0 xv0Var = profileActivity.N;
+        if (xv0Var != null && profileActivity.r1) {
+            if (profileActivity.v5[0] != null) {
+                profileActivity.v5[0].setTranslationX(xv0Var.q0(8, true));
+            }
+            if (profileActivity.v5[1] != null) {
+                profileActivity.v5[1].setTranslationX(profileActivity.N.q0(9, false));
+            }
+            ProfileActivity.O0(profileActivity, profileActivity.H6);
+            profileActivity.s5();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.zs0
+    public final int getInitialTab() {
+        return 8;
+    }
+
+    @Override // org.telegram.ui.Components.zs0
+    public final int h1(int i7) {
+        RectF rectF = ProfileActivity.V6;
+        this.x2.getClass();
+        return i7;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        org.telegram.messenger.g0.h3(new tu0(this, 3));
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:13:0x0032, code lost:
+    
+        if (org.telegram.messenger.qp.s1(r6).W4() == false) goto L18;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0040  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x004c  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x0044  */
+    @Override // org.telegram.ui.Components.zs0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void q1(boolean z9) {
+        int i7;
+        super.q1(z9);
+        ProfileActivity profileActivity = this.x2;
+        if (profileActivity.r1) {
+            if (z9) {
+                v1(null);
+            }
+            this.O1 = z9;
+            int selectedTab = getSelectedTab() - 8;
+            if (selectedTab >= 0) {
+                boolean z10 = true;
+                if (selectedTab > 1) {
+                    return;
+                }
+                FrameLayout frameLayout = profileActivity.v5[selectedTab];
+                if (!z9) {
+                    if (selectedTab == 0) {
+                        i7 = ((org.telegram.ui.ActionBar.f2) profileActivity).currentAccount;
+                    }
+                    frameLayout.setVisibility(0);
+                    frameLayout.animate().translationY(!z10 ? ProfileActivity.W6 : 0.0f).alpha(z10 ? 0.0f : 1.0f).setDuration(320L).setInterpolator(org.telegram.ui.Components.xq.h).setUpdateListener(new a3(this, 25)).withEndAction(new org.telegram.ui.Components.up0(12, frameLayout, z10)).start();
+                }
+                z10 = false;
+                frameLayout.setVisibility(0);
+                frameLayout.animate().translationY(!z10 ? ProfileActivity.W6 : 0.0f).alpha(z10 ? 0.0f : 1.0f).setDuration(320L).setInterpolator(org.telegram.ui.Components.xq.h).setUpdateListener(new a3(this, 25)).withEndAction(new org.telegram.ui.Components.up0(12, frameLayout, z10)).start();
+            }
+        }
+    }
+
+    @Override // org.telegram.ui.Components.zs0
+    public final boolean x0() {
+        ProfileActivity profileActivity = this.x2;
+        return profileActivity.h1 == profileActivity.getUserConfig().e() && !profileActivity.g1;
     }
 }

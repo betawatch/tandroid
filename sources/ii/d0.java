@@ -10,9 +10,9 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import bi.ec;
 import c8.ha;
-import di.h7;
+import di.i7;
 import fi.g1;
-import fi.m9;
+import fi.l9;
 import fi.r7;
 import fi.x7;
 import hi.d4;
@@ -32,23 +32,23 @@ import org.telegram.messenger.t3;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.ActionBar.v2;
 import org.telegram.ui.Cells.p2;
 import org.telegram.ui.Cells.t2;
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.hc;
-import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.q41;
+import org.telegram.ui.Components.qj0;
+import org.telegram.ui.Components.r41;
 import org.telegram.ui.Components.s00;
-import org.telegram.ui.Components.x31;
 import org.telegram.ui.Components.xq;
-import org.telegram.ui.an;
-import org.telegram.ui.yz;
+import org.telegram.ui.Components.y31;
+import org.telegram.ui.a00;
+import org.telegram.ui.cn;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final class d0 extends v2 implements ls, te.b, p2 {
     public static final /* synthetic */ int M1 = 0;
@@ -78,8 +78,8 @@ public final class d0 extends v2 implements ls, te.b, p2 {
     public final y t1;
     public final s00 u1;
     public final s00 v1;
-    public final yz w1;
-    public final q41 x1;
+    public final a00 w1;
+    public final r41 x1;
     public final ec y1;
     public final ec z1;
 
@@ -99,8 +99,8 @@ public final class d0 extends v2 implements ls, te.b, p2 {
         return true;
     }
 
-    public final boolean I0(x31 x31Var) {
-        Object obj = x31Var.G;
+    public final boolean I0(y31 y31Var) {
+        Object obj = y31Var.G;
         if (!(obj instanceof ji.f)) {
             return false;
         }
@@ -110,11 +110,11 @@ public final class d0 extends v2 implements ls, te.b, p2 {
         TLRPC.User a22 = qp.s1(this.a).a2(Long.valueOf(j3));
         f2 f2Var = this.q1;
         if (a22 != null) {
-            f2Var.presentFragment(an.ra(a22.id));
+            f2Var.presentFragment(cn.ta(a22.id));
             return true;
         }
         if (t3.t0(M0) || t3.j0(M0)) {
-            f2Var.presentFragment(an.ra(-M0.id));
+            f2Var.presentFragment(cn.ta(-M0.id));
             return true;
         }
         new ki.b(getContext(), M0, new ha.b(10, this, fVar)).show();
@@ -125,8 +125,8 @@ public final class d0 extends v2 implements ls, te.b, p2 {
         String str;
         int i7 = 0;
         if (!z9) {
-            arrayList.add(x31.E(99, (int) (org.telegram.messenger.g0.q.y * 0.35f)));
-            arrayList.add(x31.E(0, org.telegram.messenger.g0.L(56.0f)));
+            arrayList.add(y31.E(99, (int) (org.telegram.messenger.g0.q.y * 0.35f)));
+            arrayList.add(y31.E(0, org.telegram.messenger.g0.L(56.0f)));
         }
         if (this.H1 != null) {
             String lowerCase = (!z9 || (str = this.J1) == null) ? null : str.toLowerCase();
@@ -137,11 +137,11 @@ public final class d0 extends v2 implements ls, te.b, p2 {
                 i7++;
                 TLRPC.Chat chat = (TLRPC.Chat) obj;
                 if (!z9 || TextUtils.isEmpty(lowerCase)) {
-                    arrayList.add(x31.w(chat));
+                    arrayList.add(y31.w(chat));
                 } else {
                     String str2 = chat.title;
                     if (str2 != null && str2.toLowerCase().contains(lowerCase)) {
-                        arrayList.add(x31.w(chat));
+                        arrayList.add(y31.w(chat));
                     }
                 }
             }
@@ -159,7 +159,7 @@ public final class d0 extends v2 implements ls, te.b, p2 {
         long j10 = -chat.id;
         boolean V = t3.V(chat);
         if (t3.T(chat)) {
-            qp.s1(this.a).Q2(j10, j3, false, z9, new m9(1, this, V));
+            qp.s1(this.a).Q2(j10, j3, false, z9, new l9(1, this, V));
             return;
         }
         u1 u1Var = new u1(3, getContext(), null);
@@ -167,8 +167,8 @@ public final class d0 extends v2 implements ls, te.b, p2 {
         qp.s1(this.a).T(getContext(), -j10, null, new d(this, u1Var, j3, z9, 1), null);
     }
 
-    public final void L0(x31 x31Var) {
-        Object obj = x31Var.G;
+    public final void L0(y31 y31Var) {
+        Object obj = y31Var.G;
         if (obj instanceof TLRPC.Chat) {
             TLRPC.Chat chat = (TLRPC.Chat) obj;
             if (!this.E1) {
@@ -202,9 +202,9 @@ public final class d0 extends v2 implements ls, te.b, p2 {
             this.o1.setScaleX(org.telegram.messenger.g0.T1(0.95f, 1.0f, a10));
             this.o1.setScaleY(org.telegram.messenger.g0.T1(0.95f, 1.0f, a10));
             this.o1.setVisibility(a10 > 0.0f ? 0 : 8);
-            yz yzVar = this.w1;
-            yzVar.setAlpha(f10);
-            yzVar.setVisibility(f10 > 0.0f ? 0 : 8);
+            a00 a00Var = this.w1;
+            a00Var.setAlpha(f10);
+            a00Var.setVisibility(f10 > 0.0f ? 0 : 8);
             this.b.invalidate();
             this.y1.invalidate();
         }
@@ -230,9 +230,9 @@ public final class d0 extends v2 implements ls, te.b, p2 {
                 this.p1.setScaleY(org.telegram.messenger.g0.T1(0.95f, 1.0f, a11));
                 this.p1.setVisibility(a11 > 0.0f ? 0 : 8);
             }
-            q41 q41Var = this.x1;
-            q41Var.setAlpha(f10);
-            q41Var.setVisibility(f10 > 0.0f ? 0 : 8);
+            r41 r41Var = this.x1;
+            r41Var.setAlpha(f10);
+            r41Var.setVisibility(f10 > 0.0f ? 0 : 8);
             this.b.invalidate();
             this.z1.invalidate();
         }
@@ -290,7 +290,7 @@ public final class d0 extends v2 implements ls, te.b, p2 {
     @Override // org.telegram.ui.Cells.p2
     public final void r(t2 t2Var) {
         TLRPC.TL_forumTopic f10;
-        if (t2Var.getMessage() == null || (f10 = qp.s1(this.a).q7.f(-t2Var.getDialogId(), ij.c2(this.a, t2Var.getMessage().k, true, false))) == null) {
+        if (t2Var.getMessage() == null || (f10 = qp.s1(this.a).q7.f(-t2Var.getDialogId(), ij.b2(this.a, t2Var.getMessage().k, true, false))) == null) {
             return;
         }
         qg.d.m(this.q1, -t2Var.getDialogId(), f10, 0);
@@ -301,7 +301,7 @@ public final class d0 extends v2 implements ls, te.b, p2 {
         Paint paint = this.G1;
         try {
             super.s0();
-            int w02 = k6.w0(k6.a7, this.I0);
+            int w02 = l6.w0(l6.a7, this.I0);
             if (paint.getColor() != w02) {
                 v0(w02);
                 paint.setColor(w02);
@@ -320,7 +320,7 @@ public final class d0 extends v2 implements ls, te.b, p2 {
         if (qp.s1(this.a).P1().K(t2Var.getDialogId())) {
             f2 f2Var = this.q1;
             f2Var.getOrCreateStoryViewer().getClass();
-            f2Var.getOrCreateStoryViewer().J(f2Var.getContext(), t2Var.getDialogId(), h7.a((pj0) t2Var.getParent()));
+            f2Var.getOrCreateStoryViewer().J(f2Var.getContext(), t2Var.getDialogId(), i7.a((qj0) t2Var.getParent()));
         }
     }
 
@@ -354,8 +354,8 @@ public final class d0 extends v2 implements ls, te.b, p2 {
         Context context = f2Var.getContext();
         qs.f(this.a).c(this, qs.T);
         qs.f(this.a).c(this, qs.r);
-        int i12 = k6.a7;
-        paint.setColor(k6.w0(i12, this.I0));
+        int i12 = l6.a7;
+        paint.setColor(l6.w0(i12, this.I0));
         P(i12);
         this.b = new x7(this, context);
         g1 g1Var = new g1(i10, context, this);
@@ -371,7 +371,7 @@ public final class d0 extends v2 implements ls, te.b, p2 {
         s00Var.setCloseButtonVisible(true);
         s00Var.y = true;
         s00Var.updateColors();
-        String M0 = id.M0(2131745839, null);
+        String M0 = id.M0(2131745836, null);
         ah.i iVar = s00Var.r;
         iVar.setHint(M0);
         iVar.addTextChangedListener(new w(this, i11));
@@ -381,30 +381,30 @@ public final class d0 extends v2 implements ls, te.b, p2 {
         s00Var2.setCloseButtonVisible(true);
         s00Var2.y = true;
         s00Var2.updateColors();
-        String M02 = id.M0(2131745839, null);
+        String M02 = id.M0(2131745836, null);
         ah.i iVar2 = s00Var2.r;
         iVar2.setHint(M02);
         iVar2.addTextChangedListener(new w(this, i7));
         s00Var2.setVisibility(8);
-        q41 q41Var = new q41(context, this.a, 0, false, new t(this, objArr5 == true ? 1 : 0), new u(this, objArr4 == true ? 1 : 0), null, this.I0);
-        this.x1 = q41Var;
-        q41Var.j(new ai.b(this, 17));
-        q41Var.setClipToPadding(false);
-        q41Var.setVisibility(8);
-        q41Var.r1();
-        q41Var.f3.r = false;
-        q41Var.setPadding(0, org.telegram.messenger.g0.L(52.0f) + org.telegram.messenger.g0.m, 0, org.telegram.messenger.g0.n);
-        yz yzVar = new yz(f2Var);
-        this.w1 = yzVar;
-        yzVar.setVisibility(8);
-        yzVar.setBackground(null);
-        yzVar.setChatPreviewDelegate(new qb.a(11));
-        yzVar.setUiCallback(new gf.g(this, 6));
-        yzVar.b.setClipToPadding(false);
+        r41 r41Var = new r41(context, this.a, 0, false, new t(this, objArr5 == true ? 1 : 0), new u(this, objArr4 == true ? 1 : 0), null, this.I0);
+        this.x1 = r41Var;
+        r41Var.j(new ai.b(this, 17));
+        r41Var.setClipToPadding(false);
+        r41Var.setVisibility(8);
+        r41Var.r1();
+        r41Var.f3.r = false;
+        r41Var.setPadding(0, org.telegram.messenger.g0.L(52.0f) + org.telegram.messenger.g0.m, 0, org.telegram.messenger.g0.n);
+        a00 a00Var = new a00(f2Var);
+        this.w1 = a00Var;
+        a00Var.setVisibility(8);
+        a00Var.setBackground(null);
+        a00Var.setChatPreviewDelegate(new qb.a(11));
+        a00Var.setUiCallback(new gf.g(this, 6));
+        a00Var.b.setClipToPadding(false);
         this.C1 = new View(getContext());
         Context context2 = getContext();
-        f6 f6Var = this.I0;
-        l0 l0Var = new l0(context2, f6Var, new hc((FrameLayout) this.b, f6Var), this.a, j3);
+        g6 g6Var = this.I0;
+        l0 l0Var = new l0(context2, g6Var, new hc((FrameLayout) this.b, g6Var), this.a, j3);
         this.D1 = l0Var;
         l0Var.h = new wf.b(this, f2Var, objArr3 == true ? 1 : 0, 23);
         this.l1 = j3;
@@ -419,7 +419,7 @@ public final class d0 extends v2 implements ls, te.b, p2 {
         arrayList2.add(o0Var);
         s00Var.I = arrayList2.size() - 1;
         s00Var.e();
-        v0(k6.w0(i12, this.I0));
+        v0(l6.w0(i12, this.I0));
         this.s1 = new y(this, context, 1);
         this.r1 = new z(this, context);
         this.t1 = new y(this, context, 0);

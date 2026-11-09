@@ -2,7 +2,7 @@ package androidx.emoji2.text;
 
 import android.os.Trace;
 import android.util.SparseIntArray;
-import di.r7;
+import di.s7;
 import java.util.ArrayList;
 import m.f3;
 import org.telegram.messenger.Utilities;
@@ -10,13 +10,13 @@ import org.telegram.messenger.g0;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.r5;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.Components.f10;
 import org.telegram.ui.Components.voip.e2;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.s2;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class n implements Runnable {
     public static final /* synthetic */ n b = new n(1);
@@ -52,9 +52,9 @@ public final class n implements Runnable {
                 return;
             case 2:
                 Math.abs(Utilities.b.nextInt() % 3);
-                f10[] f10VarArr = r7.a;
+                f10[] f10VarArr = s7.a;
                 qs.f(p10.s0).k(2, 0);
-                g0.i3(r7.o, 1000L);
+                g0.i3(s7.o, 1000L);
                 LaunchActivity.Q().getFragmentView();
                 return;
             case 3:
@@ -81,12 +81,12 @@ public final class n implements Runnable {
                 Utilities.e.c(new org.telegram.messenger.k(i7, arrayList2));
                 return;
             case 5:
-                k6.j = false;
-                k6.m(false);
+                l6.j = false;
+                l6.m(false);
                 return;
             case 6:
-                k6.k = false;
-                k6.m(true);
+                l6.k = false;
+                l6.m(true);
                 return;
             case 7:
                 return;

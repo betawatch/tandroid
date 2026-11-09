@@ -20,15 +20,15 @@ import kotlin.jvm.internal.j;
 import org.telegram.messenger.b20;
 import org.telegram.messenger.sc;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Components.jt0;
-import org.telegram.ui.Components.kt0;
-import org.telegram.ui.Components.x31;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.Components.lt0;
+import org.telegram.ui.Components.mt0;
+import org.telegram.ui.Components.y31;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class c implements k, l5.e, u9.d, gh.d, b20, jt0, kt0 {
+public final /* synthetic */ class c implements k, l5.e, u9.d, gh.d, b20, lt0, mt0 {
     public final /* synthetic */ int a;
 
     public /* synthetic */ c(int i7) {
@@ -36,7 +36,7 @@ public final /* synthetic */ class c implements k, l5.e, u9.d, gh.d, b20, jt0, k
     }
 
     @Override // org.telegram.messenger.b20
-    public Boolean a(x31 x31Var, View view, Integer num, Float f10, Float f11) {
+    public Boolean a(y31 y31Var, View view, Integer num, Float f10, Float f11) {
         return Boolean.FALSE;
     }
 
@@ -75,7 +75,7 @@ public final /* synthetic */ class c implements k, l5.e, u9.d, gh.d, b20, jt0, k
         }
     }
 
-    @Override // org.telegram.ui.Components.kt0
+    @Override // org.telegram.ui.Components.mt0
     public void f(Object obj, float f10) {
         switch (this.a) {
             case 26:
@@ -92,7 +92,7 @@ public final /* synthetic */ class c implements k, l5.e, u9.d, gh.d, b20, jt0, k
         }
     }
 
-    @Override // org.telegram.ui.Components.jt0
+    @Override // org.telegram.ui.Components.lt0
     public float get(Object obj) {
         switch (this.a) {
             case 25:
@@ -106,48 +106,48 @@ public final /* synthetic */ class c implements k, l5.e, u9.d, gh.d, b20, jt0, k
     }
 
     @Override // gh.d
-    public int k(f6 f6Var, boolean z9) {
+    public int k(g6 g6Var, boolean z9) {
         switch (this.a) {
             case 6:
-                return z9 ? k6.r1(0.9f, -15658735) : g0.n(sc.e(262144) ? 0.82f : 0.76f, k6.w0(k6.d6, f6Var), -14145496);
+                return z9 ? l6.r1(0.9f, -15658735) : g0.m(sc.e(262144) ? 0.82f : 0.76f, l6.w0(l6.d6, g6Var), -14145496);
             case 7:
                 if (!sc.e(256)) {
-                    return k6.x0(null, k6.G8, false);
+                    return l6.x0(null, l6.G8, false);
                 }
-                return k6.r1(z9 ? 0.85f : 0.825f, k6.x0(null, k6.G8, false));
+                return l6.r1(z9 ? 0.85f : 0.825f, l6.x0(null, l6.G8, false));
             case 8:
-                return g0.n(sc.e(262144) ? 0.85f : 0.76f, k6.w0(k6.d6, f6Var), k6.w0(k6.Nl, f6Var));
+                return g0.m(sc.e(262144) ? 0.85f : 0.76f, l6.w0(l6.d6, g6Var), l6.w0(l6.Nl, g6Var));
             case 9:
-                return k6.r1(sc.e(262144) ? 0.85f : 0.76f, k6.w0(k6.tj, f6Var));
+                return l6.r1(sc.e(262144) ? 0.85f : 0.76f, l6.w0(l6.tj, g6Var));
             case 10:
-                return g0.n(sc.e(262144) ? 0.85f : 0.76f, k6.w0(k6.d6, f6Var), k6.w0(k6.Ge, f6Var));
+                return g0.m(sc.e(262144) ? 0.85f : 0.76f, l6.w0(l6.d6, g6Var), l6.w0(l6.Ge, g6Var));
             case 11:
-                return g0.n(sc.e(262144) ? 0.85f : 0.8f, k6.w0(k6.a7, f6Var), k6.w0(k6.d6, f6Var));
+                return g0.m(sc.e(262144) ? 0.85f : 0.8f, l6.w0(l6.a7, g6Var), l6.w0(l6.d6, g6Var));
             case 12:
                 return 855638016;
             case 13:
                 return TLObject.FLAG_30;
             case 14:
-                return k6.r1(z9 ? 0.82f : 0.78f, k6.w0(k6.h5, f6Var));
+                return l6.r1(z9 ? 0.82f : 0.78f, l6.w0(l6.h5, g6Var));
             case 15:
-                return k6.r1(0.075f, -16777216);
+                return l6.r1(0.075f, -16777216);
             case 16:
-                return k6.r1(z9 ? 0.85f : 0.825f, k6.w0(k6.G8, f6Var));
+                return l6.r1(z9 ? 0.85f : 0.825f, l6.w0(l6.G8, g6Var));
             case 17:
-                return k6.r1(0.88f, k6.w0(k6.d6, f6Var));
+                return l6.r1(0.88f, l6.w0(l6.d6, g6Var));
             case 18:
-                return g0.n(sc.e(262144) ? 0.85f : 0.76f, k6.w0(k6.d6, f6Var), k6.w0(k6.Ml, f6Var));
+                return g0.m(sc.e(262144) ? 0.85f : 0.76f, l6.w0(l6.d6, g6Var), l6.w0(l6.Ml, g6Var));
             case 19:
-                return k6.r1(sc.e(262144) ? 0.85f : 0.76f, k6.w0(k6.d6, f6Var));
+                return l6.r1(sc.e(262144) ? 0.85f : 0.76f, l6.w0(l6.d6, g6Var));
             case 20:
-                return k6.r1(0.78f, k6.w0(k6.h5, f6Var));
+                return l6.r1(0.78f, l6.w0(l6.h5, g6Var));
             case 21:
-                return k6.r1(0.7f, k6.w0(k6.d6, f6Var));
+                return l6.r1(0.7f, l6.w0(l6.d6, g6Var));
             case 22:
                 sc.e(262144);
                 return 0;
             default:
-                return k6.r1(sc.e(262144) ? 0.85f : 0.76f, k6.w0(k6.d6, f6Var));
+                return l6.r1(sc.e(262144) ? 0.85f : 0.76f, l6.w0(l6.d6, g6Var));
         }
     }
 

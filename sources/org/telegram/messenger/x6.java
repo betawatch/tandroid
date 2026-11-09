@@ -13,10 +13,10 @@ import java.util.ArrayList;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.rt0;
+import org.telegram.ui.Components.tt0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class x6 {
     public static volatile x6[] g = new x6[4];
@@ -67,7 +67,7 @@ public final class x6 {
         if (!TextUtils.isEmpty(tL_textWithEntities.text)) {
             TLRPC.TL_editFactCheck tL_editFactCheck2 = new TLRPC.TL_editFactCheck();
             tL_editFactCheck2.peer = qp.s1(this.a).j1(ij.B0(ijVar.k));
-            tL_editFactCheck2.msg_id = ijVar.f1();
+            tL_editFactCheck2.msg_id = ijVar.e1();
             tL_editFactCheck2.text = tL_textWithEntities;
             tL_editFactCheck = tL_editFactCheck2;
         } else {
@@ -76,7 +76,7 @@ public final class x6 {
             }
             TLRPC.TL_deleteFactCheck tL_deleteFactCheck = new TLRPC.TL_deleteFactCheck();
             tL_deleteFactCheck.peer = qp.s1(this.a).j1(ij.B0(ijVar.k));
-            tL_deleteFactCheck.msg_id = ijVar.f1();
+            tL_deleteFactCheck.msg_id = ijVar.e1();
             tL_editFactCheck = tL_deleteFactCheck;
         }
         Context context = LaunchActivity.G1;
@@ -88,7 +88,7 @@ public final class x6 {
         ConnectionsManager.getInstance(this.a).sendRequest(tL_editFactCheck, new bi.d4(this, tL_textWithEntities, z9, u1Var, 2));
     }
 
-    public final void c(Activity activity, org.telegram.ui.ActionBar.f6 f6Var, ij ijVar) {
+    public final void c(Activity activity, org.telegram.ui.ActionBar.g6 g6Var, ij ijVar) {
         TLRPC.TL_textWithEntities tL_textWithEntities;
         TLRPC.Message message;
         org.telegram.ui.ActionBar.f2 Q = LaunchActivity.Q();
@@ -96,28 +96,28 @@ public final class x6 {
         final View currentFocus = W != null ? W.getCurrentFocus() : null;
         final int i7 = 1;
         final int i10 = 0;
-        boolean z9 = Q != null && (Q.getFragmentView() instanceof rt0) && ((rt0) Q.getFragmentView()).Q() > g0.L(20.0f);
+        boolean z9 = Q != null && (Q.getFragmentView() instanceof tt0) && ((tt0) Q.getFragmentView()).Q() > g0.L(20.0f);
         org.telegram.ui.ActionBar.u1[] u1VarArr = new org.telegram.ui.ActionBar.u1[1];
-        AlertDialog$Builder w1Var = z9 ? new org.telegram.ui.ActionBar.w1(0, activity, f6Var) : new AlertDialog$Builder(0, activity, f6Var);
+        AlertDialog$Builder w1Var = z9 ? new org.telegram.ui.ActionBar.w1(0, activity, g6Var) : new AlertDialog$Builder(0, activity, g6Var);
         TextView[] textViewArr = new TextView[1];
         boolean z10 = ijVar == null || (message = ijVar.k) == null || message.factcheck == null;
-        String M0 = id.M0(2131750853, null);
+        String M0 = id.M0(2131750852, null);
         org.telegram.ui.ActionBar.u1 u1Var = w1Var.a;
         u1Var.R = M0;
         int i11 = this.a;
         int i12 = qp.s1(i11).Q5;
-        final t6 t6Var = new t6(activity, f6Var, i12, f6Var);
+        final t6 t6Var = new t6(activity, g6Var, i12, g6Var);
         t6Var.r0 = true;
         boolean z11 = z10;
         t6Var.setOnEditorActionListener(new u6(this, t6Var, i12, ijVar, z11, u1VarArr, currentFocus));
         ui.b0(i11).M(g0.G0(), true);
         t6Var.setTextSize(1, 18.0f);
-        org.telegram.ui.ActionBar.r6.V(t6Var, org.telegram.ui.ActionBar.k6.j5, f6Var);
-        org.telegram.ui.ActionBar.r6.m(t6Var, 34, org.telegram.ui.ActionBar.k6.Li, f6Var);
-        t6Var.setHintText(id.M0(2131750850, null));
+        org.telegram.ui.ActionBar.s6.U(t6Var, org.telegram.ui.ActionBar.l6.j5, g6Var);
+        org.telegram.ui.ActionBar.s6.l(t6Var, 34, org.telegram.ui.ActionBar.l6.Li, g6Var);
+        t6Var.setHintText(id.M0(2131750849, null));
         t6Var.setFocusable(true);
         t6Var.setInputType(147457);
-        org.telegram.ui.ActionBar.r6.G(t6Var, org.telegram.ui.ActionBar.k6.k6, org.telegram.ui.ActionBar.k6.l6, org.telegram.ui.ActionBar.k6.p7, f6Var);
+        org.telegram.ui.ActionBar.s6.F(t6Var, org.telegram.ui.ActionBar.l6.k6, org.telegram.ui.ActionBar.l6.l6, org.telegram.ui.ActionBar.l6.p7, g6Var);
         t6Var.setImeOptions(6);
         t6Var.setBackgroundDrawable(null);
         t6Var.setPadding(0, g0.L(6.0f), 0, g0.L(6.0f));
@@ -134,7 +134,7 @@ public final class x6 {
         w1Var.c();
         w1Var.o(linearLayout);
         u1Var.a = g0.L(292.0f);
-        w1Var.k(id.M0(2131751355, null), new r6(this, t6Var, i12, ijVar, z11));
+        w1Var.k(id.M0(2131751354, null), new r6(this, t6Var, i12, ijVar, z11));
         w1Var.h(id.M0(2131752589, "Cancel"), new ni.a(15));
         if (z9) {
             i = u1Var;

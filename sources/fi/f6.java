@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.id;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class f6 extends k1.b {
     public final /* synthetic */ int o = 0;
@@ -117,23 +117,23 @@ public final class f6 extends k1.b {
                             return false;
                         }
                         g6Var.d(180.0f);
-                        ((s9) g6Var.a).b();
+                        ((r9) g6Var.a).b();
                     } else if (g6Var.b()) {
-                        ((s9) g6Var.a).a();
+                        ((r9) g6Var.a).a();
                     } else if (g6Var.r0) {
                         g6Var.r0 = false;
                         g6Var.z0 = false;
                         g6Var.v0 = SystemClock.elapsedRealtime();
                         g6Var.u0 = true;
-                        ((s9) g6Var.a).e(false);
+                        ((r9) g6Var.a).e(false);
                         g6Var.invalidate();
                     } else if (!g6Var.o0) {
-                        ((s9) g6Var.a).d();
-                    } else if (va.c(((s9) g6Var.a).a)) {
+                        ((r9) g6Var.a).d();
+                    } else if (va.c(((r9) g6Var.a).a)) {
                         g6Var.R = 0L;
                         g6Var.Q = System.currentTimeMillis();
                         g6Var.A0 = false;
-                        ((s9) g6Var.a).f(new di.s7(this, 26), false);
+                        ((r9) g6Var.a).f(new di.f8(this, 25), false);
                     }
                 } else {
                     if (g6Var.b()) {
@@ -142,12 +142,12 @@ public final class f6 extends k1.b {
                     if (g6Var.r0 && g6Var.A0) {
                         g6Var.z0 = false;
                         g6Var.G0.e(true, 1.0f);
-                        k3 k3Var = ((s9) g6Var.a).a.T0;
-                        k3Var.a.t(id.M0(2131744664, null), true, true);
+                        k3 k3Var = ((r9) g6Var.a).a.T0;
+                        k3Var.a.t(id.M0(2131744661, null), true, true);
                         k3Var.invalidate();
                         g6Var.invalidate();
                     } else {
-                        ((s9) g6Var.a).c();
+                        ((r9) g6Var.a).c();
                     }
                 }
                 return true;
@@ -230,7 +230,7 @@ public final class f6 extends k1.b {
                     float f15 = g6Var.j0;
                     rect.set((int) (f13 - f14), (int) (f15 - f14), (int) (f13 + f14), (int) (f15 + f14));
                     dVar.h(rect);
-                    dVar.j(g6Var.b() ? id.M0(2131745643, null) : g6Var.r0 ? id.M0(2131754754, null) : g6Var.o0 ? id.M0(2131754758, null) : id.M0(2131754747, null));
+                    dVar.j(g6Var.b() ? id.M0(2131745640, null) : g6Var.r0 ? id.M0(2131754754, null) : g6Var.o0 ? id.M0(2131754758, null) : id.M0(2131754747, null));
                     accessibilityNodeInfo.setEnabled(!g6Var.u0);
                     if (!g6Var.u0) {
                         dVar.b(s0.c.c);
@@ -289,9 +289,9 @@ public final class f6 extends k1.b {
                             rect.set((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
                             dVar.h(rect);
                             if (TextUtils.isEmpty(str3)) {
-                                str = id.M0(2131747818, null);
+                                str = id.M0(2131747817, null);
                             } else {
-                                str = id.M0(2131747818, null) + ", " + str3;
+                                str = id.M0(2131747817, null) + ", " + str3;
                             }
                             dVar.j(str);
                             break;

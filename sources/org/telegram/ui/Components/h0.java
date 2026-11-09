@@ -15,7 +15,7 @@ import org.telegram.tgnet.tl.TL_chatlists;
 import org.telegram.ui.FiltersSetupActivity;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -37,7 +37,7 @@ public final /* synthetic */ class h0 implements View.OnClickListener {
         int i10;
         TLRPC.ChatFull N0;
         TL_chatlists.TL_chatlists_joinChatlistInvite tL_chatlists_joinChatlistInvite;
-        org.telegram.ui.fw fwVar;
+        org.telegram.ui.hw hwVar;
         int i11 = this.a;
         UndoView undoView = null;
         int i12 = 3;
@@ -61,9 +61,9 @@ public final /* synthetic */ class h0 implements View.OnClickListener {
                 mbVar.u0 = tL_channelAdminLogEventsFilter2;
                 mbVar.w0 = hVar2;
                 if (tL_channelAdminLogEventsFilter2 == null && hVar2 == null) {
-                    mbVar.I.setSubtitle(org.telegram.messenger.id.M0(2131751075, null));
+                    mbVar.I.setSubtitle(org.telegram.messenger.id.M0(2131751074, null));
                 } else {
-                    mbVar.I.setSubtitle(org.telegram.messenger.id.M0(2131750913, null));
+                    mbVar.I.setSubtitle(org.telegram.messenger.id.M0(2131750912, null));
                 }
                 mbVar.Z0(true);
                 i0Var.dismiss();
@@ -262,15 +262,15 @@ public final /* synthetic */ class h0 implements View.OnClickListener {
                             if (z9) {
                                 if (parentLayout != null) {
                                     org.telegram.ui.ActionBar.f2 lastFragment = parentLayout.getLastFragment();
-                                    if (lastFragment instanceof org.telegram.ui.an) {
-                                        org.telegram.ui.an anVar = (org.telegram.ui.an) lastFragment;
-                                        anVar.f8();
-                                        undoView = anVar.M3;
-                                    } else if (lastFragment instanceof org.telegram.ui.ww) {
-                                        undoView = ((org.telegram.ui.ww) lastFragment).k4();
+                                    if (lastFragment instanceof org.telegram.ui.cn) {
+                                        org.telegram.ui.cn cnVar = (org.telegram.ui.cn) lastFragment;
+                                        cnVar.g8();
+                                        undoView = cnVar.M3;
+                                    } else if (lastFragment instanceof org.telegram.ui.yw) {
+                                        undoView = ((org.telegram.ui.yw) lastFragment).k4();
                                     } else if (lastFragment instanceof FiltersSetupActivity) {
                                         undoView = ((FiltersSetupActivity) lastFragment).e0();
-                                    } else if (lastFragment instanceof org.telegram.ui.gz) {
+                                    } else if (lastFragment instanceof org.telegram.ui.iz) {
                                         List fragmentStack = parentLayout.getFragmentStack();
                                         if (fragmentStack.size() >= 2 && (rf.b.g(2, fragmentStack) instanceof FiltersSetupActivity)) {
                                             FiltersSetupActivity filtersSetupActivity = (FiltersSetupActivity) rf.b.g(2, fragmentStack);
@@ -355,12 +355,12 @@ public final /* synthetic */ class h0 implements View.OnClickListener {
                 ArrayList arrayList7 = s00Var.F;
                 if (s00Var.d()) {
                     r00 r00Var = s00Var.H;
-                    if (r00Var != null && (fwVar = ((org.telegram.ui.dv) r00Var).a.C0) != null) {
-                        fwVar.R(false);
+                    if (r00Var != null && (hwVar = ((org.telegram.ui.fv) r00Var).a.C0) != null) {
+                        hwVar.R(false);
                     }
                     for (int i22 = 0; i22 < arrayList7.size(); i22++) {
                         if (s00Var.H != null && ((jg.o0) arrayList7.get(i22)).h) {
-                            ((org.telegram.ui.dv) s00Var.H).h((jg.o0) arrayList7.get(i22));
+                            ((org.telegram.ui.fv) s00Var.H).h((jg.o0) arrayList7.get(i22));
                         }
                     }
                     s00Var.c();
@@ -388,73 +388,73 @@ public final /* synthetic */ class h0 implements View.OnClickListener {
                 e10Var.dismiss();
                 break;
             case 20:
-                ((p10) obj).f(false);
+                ((q10) obj).f(false);
                 break;
             case 21:
-                t10 t10Var = (t10) obj;
-                t10Var.getClass();
+                u10 u10Var = (u10) obj;
+                u10Var.getClass();
                 if (VoIPService.getSharedInstance() != null) {
-                    Intent action = new Intent(t10Var.getContext(), (Class<?>) LaunchActivity.class).setAction("voip_chat");
+                    Intent action = new Intent(u10Var.getContext(), (Class<?>) LaunchActivity.class).setAction("voip_chat");
                     action.putExtra("currentAccount", VoIPService.getSharedInstance().getAccount());
-                    t10Var.getContext().startActivity(action);
+                    u10Var.getContext().startActivity(action);
                     break;
                 }
                 break;
             case 22:
-                org.telegram.ui.c30 c30Var = (org.telegram.ui.c30) obj;
-                c30Var.J0(c30Var.n1);
-                c30Var.dismiss();
+                org.telegram.ui.e30 e30Var = (org.telegram.ui.e30) obj;
+                e30Var.J0(e30Var.n1);
+                e30Var.dismiss();
                 break;
             case 23:
-                ((m20) obj).dismiss();
+                ((n20) obj).dismiss();
                 break;
             case 24:
-                r20 r20Var = (r20) obj;
-                r20Var.a0(!r20Var.D, true);
-                jg.l1 l1Var = r20Var.r;
-                boolean z11 = r20Var.D;
+                s20 s20Var = (s20) obj;
+                s20Var.a0(!s20Var.D, true);
+                jg.l1 l1Var = s20Var.r;
+                boolean z11 = s20Var.D;
                 ValueAnimator valueAnimator = l1Var.f;
                 if (valueAnimator != null) {
                     valueAnimator.cancel();
                 }
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(l1Var.e, z11 ? 1.0f : 0.0f);
                 l1Var.f = ofFloat;
-                ofFloat.addUpdateListener(new di.m4(l1Var, i12));
+                ofFloat.addUpdateListener(new di.n4(l1Var, i12));
                 l1Var.f.addListener(new ch.y(16, l1Var, z11));
                 l1Var.f.setDuration(320L);
                 l1Var.f.setInterpolator(xq.h);
                 l1Var.f.start();
                 break;
             case 25:
-                ((l30) obj).dismiss();
+                ((m30) obj).dismiss();
                 break;
             case 26:
-                k60 k60Var = (k60) obj;
+                l60 l60Var = (l60) obj;
                 HashSet hashSet = hi.a3.a1;
-                if (k60Var.J) {
-                    k60Var.u();
+                if (l60Var.J) {
+                    l60Var.u();
                     break;
                 }
                 break;
             case 27:
-                t60 t60Var = (t60) obj;
-                t60Var.v1 = org.telegram.messenger.qp.s1(t60Var.a).j1(org.telegram.messenger.ij.C1(t60Var.t1));
-                t60Var.w1 = true;
-                t60Var.dismiss();
+                u60 u60Var = (u60) obj;
+                u60Var.v1 = org.telegram.messenger.qp.s1(u60Var.a).j1(org.telegram.messenger.ij.B1(u60Var.t1));
+                u60Var.w1 = true;
+                u60Var.dismiss();
                 break;
             case 28:
-                v60 v60Var = (v60) obj;
-                v60Var.i1 = true;
-                v60Var.dismiss();
+                w60 w60Var = (w60) obj;
+                w60Var.i1 = true;
+                w60Var.dismiss();
                 break;
             default:
-                ((b70) obj).dismiss();
+                ((c70) obj).dismiss();
                 break;
         }
     }
 
-    public /* synthetic */ h0(k60 k60Var, ai.m0 m0Var) {
+    public /* synthetic */ h0(l60 l60Var, ai.m0 m0Var) {
         this.a = 26;
-        this.b = k60Var;
+        this.b = l60Var;
     }
 }

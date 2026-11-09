@@ -5,13 +5,13 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import e2.r0;
 import org.telegram.ui.Components.vy;
-import org.telegram.ui.hy0;
+import org.telegram.ui.ky0;
 import v4.d1;
 import v4.f1;
 import v4.n0;
 import v4.v0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class g {
     public final RecyclerView a;
@@ -63,12 +63,12 @@ public final class g {
         n0 n0Var = recyclerView.y;
         View view = d1Var.a;
         v0 v0Var = recyclerView.b;
-        hy0 hy0Var = n0Var.a;
-        vy vyVar = (vy) hy0Var.b;
+        ky0 ky0Var = n0Var.a;
+        vy vyVar = (vy) ky0Var.b;
         int indexOfChild = ((RecyclerView) vyVar.b).indexOfChild(view);
         if (indexOfChild >= 0) {
-            if (((ua) hy0Var.c).G(indexOfChild)) {
-                hy0Var.M(view);
+            if (((ua) ky0Var.c).G(indexOfChild)) {
+                ky0Var.M(view);
             }
             vyVar.Q(indexOfChild);
         }

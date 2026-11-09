@@ -3,9 +3,9 @@ package org.telegram.ui.Components;
 import android.content.Context;
 import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class lv extends pj0 {
+public final class lv extends qj0 {
     public boolean e3;
     public boolean f3;
     public final /* synthetic */ hy g3;
@@ -16,14 +16,14 @@ public final class lv extends pj0 {
         this.g3 = hyVar;
     }
 
-    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.qj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        org.telegram.ui.ks p10 = org.telegram.ui.ks.p();
+        org.telegram.ui.ms p10 = org.telegram.ui.ms.p();
         hy hyVar = this.g3;
         return super.onInterceptTouchEvent(motionEvent) || p10.q(motionEvent, hyVar.h0, hyVar.g2, this.n2);
     }
 
-    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.qj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
         hy hyVar = this.g3;
         if (hyVar.q0 && hyVar.n0.G > 1) {
@@ -38,7 +38,7 @@ public final class lv extends pj0 {
         hy.f(hyVar, true);
     }
 
-    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.qj0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public final void onMeasure(int i7, int i10) {
         super.onMeasure(i7, i10);
         if (this.f3) {
@@ -48,7 +48,7 @@ public final class lv extends pj0 {
         this.f3 = true;
     }
 
-    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
+    @Override // org.telegram.ui.Components.qj0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
     public final void requestLayout() {
         if (this.e3) {
             return;

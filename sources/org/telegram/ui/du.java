@@ -1,30 +1,57 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
+import android.app.Activity;
+import android.content.Context;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class du implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ww b;
-    public final /* synthetic */ TLRPC.TL_attachMenuBot c;
-    public final /* synthetic */ LaunchActivity d;
+    public final /* synthetic */ Context b;
 
-    public /* synthetic */ du(ww wwVar, TLRPC.TL_attachMenuBot tL_attachMenuBot, LaunchActivity launchActivity, int i7) {
+    public /* synthetic */ du(Context context, int i7) {
         this.a = i7;
-        this.b = wwVar;
-        this.c = tL_attachMenuBot;
-        this.d = launchActivity;
+        this.b = context;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        switch (this.a) {
+        int i7 = this.a;
+        Context context = this.b;
+        switch (i7) {
             case 0:
-                ww.v0(this.b, this.c, this.d);
+                org.telegram.ui.ActionBar.l6.K(context, false);
+                break;
+            case 1:
+                Activity W = org.telegram.messenger.g0.W(context);
+                if (W == null) {
+                    W = LaunchActivity.G1;
+                }
+                if (W != null && !W.isFinishing()) {
+                    W.moveTaskToBack(true);
+                    break;
+                }
+                break;
+            case 2:
+                vf.c.t(context, "https://promote.telegram.org/guidelines");
+                break;
+            case 3:
+                vf.c.t(context, "https://promote.telegram.org/guidelines");
+                break;
+            case 4:
+                vf.c.t(context, "https://promote.telegram.org/guidelines");
+                break;
+            case 5:
+                vf.c.t(context, "https://promote.telegram.org/guidelines");
+                break;
+            case 6:
+                vf.c.t(context, "https://promote.telegram.org/guidelines");
+                break;
+            case 7:
+                vf.c.t(context, "https://promote.telegram.org/guidelines");
                 break;
             default:
-                ww.j0(this.b, this.c, this.d);
+                vf.c.t(context, org.telegram.messenger.id.M0(2131742943, null));
                 break;
         }
     }

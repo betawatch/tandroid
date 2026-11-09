@@ -50,10 +50,10 @@ import m.w;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.hy0;
+import org.telegram.ui.ky0;
 import r0.i0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public class Toolbar extends ViewGroup {
     public final int D;
@@ -75,7 +75,7 @@ public class Toolbar extends ViewGroup {
     public final ArrayList T;
     public final ArrayList U;
     public final int[] V;
-    public final hy0 W;
+    public final ky0 W;
     public ActionMenuView a;
     public ArrayList a0;
     public a1 b;
@@ -1573,7 +1573,7 @@ public class Toolbar extends ViewGroup {
         this.T = new ArrayList();
         this.U = new ArrayList();
         this.V = new int[2];
-        this.W = new hy0(new e3(this, 1));
+        this.W = new ky0(new e3(this, 1));
         this.a0 = new ArrayList();
         this.b0 = new g(this, 16);
         this.j0 = new f3(this, 0);

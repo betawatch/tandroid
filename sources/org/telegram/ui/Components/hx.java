@@ -12,9 +12,9 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class hx extends oj0 {
+public final class hx extends pj0 {
     public boolean D;
     public boolean E;
     public final /* synthetic */ hy F;
@@ -53,7 +53,7 @@ public final class hx extends oj0 {
         org.telegram.messenger.ui.b0(hyVar.c1).Z1(true, str, str2, new di.s2((Object) hxVar, str2, arrayList, (Object) runnable, 9), z9);
     }
 
-    @Override // org.telegram.ui.Components.oj0
+    @Override // org.telegram.ui.Components.pj0
     public final boolean D(v4.d1 d1Var) {
         int i7 = d1Var.f;
         return i7 == 0 || i7 == 4;
@@ -214,10 +214,10 @@ public final class hx extends oj0 {
                 i11 = 2;
             }
             if (i7 == arrayList2.size() + i11) {
-                j8Var.a(0, org.telegram.messenger.id.M0(2131744878, null));
+                j8Var.a(0, org.telegram.messenger.id.M0(2131744875, null));
                 return;
             } else {
-                j8Var.a(0, org.telegram.messenger.id.M0(2131744877, null));
+                j8Var.a(0, org.telegram.messenger.id.M0(2131744874, null));
                 return;
             }
         }
@@ -294,7 +294,7 @@ public final class hx extends oj0 {
     public final v4.d1 x(ViewGroup viewGroup, int i7) {
         View view;
         hy hyVar = this.F;
-        org.telegram.ui.ActionBar.f6 f6Var = hyVar.Z1;
+        org.telegram.ui.ActionBar.g6 g6Var = hyVar.Z1;
         if (i7 == 0) {
             view = new qx(hyVar.getContext());
         } else if (i7 == 1) {
@@ -311,15 +311,15 @@ public final class hx extends oj0 {
         } else if (i7 != 5) {
             bi.e5 e5Var = new bi.e5(18, hyVar.getContext(), this);
             TextView textView = new TextView(hyVar.getContext());
-            textView.setText(org.telegram.messenger.id.M0(2131748214, null));
+            textView.setText(org.telegram.messenger.id.M0(2131748213, null));
             textView.setTextSize(1, 16.0f);
-            int i10 = org.telegram.ui.ActionBar.k6.Af;
-            org.telegram.ui.ActionBar.r6.V(textView, i10, f6Var);
+            int i10 = org.telegram.ui.ActionBar.l6.Af;
+            org.telegram.ui.ActionBar.s6.U(textView, i10, g6Var);
             e5Var.addView(textView, c8.ha.d(-2, -2.0f, 49, 0.0f, 10.0f, 0.0f, 0.0f));
             ImageView imageView = new ImageView(hyVar.getContext());
             imageView.setScaleType(ImageView.ScaleType.CENTER);
             imageView.setImageResource(R.drawable.msg_emoji_question);
-            org.telegram.ui.ActionBar.r6.t(imageView, i10, f6Var, PorterDuff.Mode.MULTIPLY);
+            org.telegram.ui.ActionBar.s6.s(imageView, i10, g6Var, PorterDuff.Mode.MULTIPLY);
             e5Var.addView(imageView, c8.ha.e(48, 48, 85));
             imageView.setOnClickListener(new androidx.mediarouter.app.w(this, 10));
             e5Var.setLayoutParams(new v4.o0(-1, -2));
@@ -329,6 +329,6 @@ public final class hx extends oj0 {
             view4.setLayoutParams(new v4.o0(-1, org.telegram.messenger.g0.L(68.0f)));
             view = view4;
         }
-        return new xi0(view);
+        return new yi0(view);
     }
 }

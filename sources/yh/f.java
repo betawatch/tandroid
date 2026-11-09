@@ -1,17 +1,15 @@
 package yh;
 
 import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.camera.q;
 import org.telegram.messenger.g0;
 import org.telegram.ui.Components.mz;
-import org.telegram.ui.Components.xq;
 import v4.b0;
 import v4.s0;
-import zh.k3;
 import zh.l3;
-import zh.n3;
+import zh.m3;
+import zh.o3;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class f extends s0 {
     public final /* synthetic */ int a;
@@ -38,26 +36,21 @@ public final class f extends s0 {
                 }
                 break;
             case 1:
-                l3 l3Var = (l3) this.b;
-                int i11 = 0;
-                while (true) {
-                    if (i11 < l3Var.n.getChildCount()) {
-                        if (l3Var.n.getChildAt(i11) instanceof mz) {
-                            l3Var.d.g(false);
-                        } else {
-                            i11++;
-                        }
+                m3 m3Var = (m3) this.b;
+                for (int i11 = 0; i11 < m3Var.f.getChildCount(); i11++) {
+                    if (m3Var.f.getChildAt(i11) instanceof mz) {
+                        m3Var.d.g(false);
+                        break;
                     }
                 }
-                q.l(l3Var.h.animate().alpha((l3Var.K && l3Var.n.canScrollVertically(-1)) ? 1.0f : 0.0f), xq.h, 320L);
                 break;
             case 2:
-                ((k3) this.b).d1();
+                ((l3) this.b).d1();
                 break;
             default:
-                n3 n3Var = (n3) this.b;
-                if (n3Var.e1()) {
-                    n3Var.Q1.a();
+                o3 o3Var = (o3) this.b;
+                if (o3Var.e1()) {
+                    o3Var.Q1.a();
                     break;
                 }
                 break;

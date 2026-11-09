@@ -39,7 +39,7 @@ import org.telegram.ui.Cells.f1;
 import org.telegram.ui.Components.rt;
 import x2.g0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public abstract class r extends l2.b {
     public static final byte[] Y0 = {0, 0, 1, 103, 66, -64, 11, -38, 37, -112, 0, 0, 1, 104, -50, 15, 19, 32, 0, 0, 1, 101, -120, -124, 13, -50, 113, 24, -96, 0, 47, -65, 28, 49, -61, 39, 93, 120};
@@ -500,9 +500,9 @@ public abstract class r extends l2.b {
         int i7 = this.v0;
         MediaCodec.BufferInfo bufferInfo = this.Q;
         if (i7 < 0) {
-            int h = lVar.h(bufferInfo);
-            if (h < 0) {
-                if (h != -2) {
+            int g10 = lVar.g(bufferInfo);
+            if (g10 < 0) {
+                if (g10 != -2) {
                     if (this.q0 && (this.J0 || this.D0 == 2)) {
                         k0();
                     }
@@ -539,15 +539,15 @@ public abstract class r extends l2.b {
             bufferInfo.presentationTimeUs -= this.U0;
             if (this.p0) {
                 this.p0 = false;
-                lVar.c(h);
+                lVar.c(g10);
                 return true;
             }
             if (bufferInfo.size == 0 && (bufferInfo.flags & 4) != 0) {
                 k0();
                 return false;
             }
-            this.v0 = h;
-            ByteBuffer outputBuffer = lVar.getOutputBuffer(h);
+            this.v0 = g10;
+            ByteBuffer outputBuffer = lVar.getOutputBuffer(g10);
             this.w0 = outputBuffer;
             if (outputBuffer != null) {
                 outputBuffer.position(bufferInfo.offset);
@@ -589,10 +589,10 @@ public abstract class r extends l2.b {
             int i7 = this.u0;
             k2.h hVar = this.N;
             if (i7 < 0) {
-                int g10 = lVar.g();
-                this.u0 = g10;
-                if (g10 >= 0) {
-                    hVar.c = lVar.getInputBuffer(g10);
+                int f10 = lVar.f();
+                this.u0 = f10;
+                if (f10 >= 0) {
+                    hVar.c = lVar.getInputBuffer(f10);
                     hVar.clear();
                 }
             }
@@ -639,7 +639,7 @@ public abstract class r extends l2.b {
             wf.b bVar = this.c;
             bVar.A();
             try {
-                lVar.d(new org.telegram.ui.web.w(27, this, bVar));
+                lVar.j(new org.telegram.ui.web.s(28, this, bVar));
                 int i11 = this.T.get();
                 if (i11 == -3) {
                     if (k()) {

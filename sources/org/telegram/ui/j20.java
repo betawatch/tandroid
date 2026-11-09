@@ -1,71 +1,68 @@
 package org.telegram.ui;
 
 import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.os.Build;
-import android.widget.FrameLayout;
+import android.view.View;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class j20 extends FrameLayout {
-    public final RectF a;
-    public final RectF b;
-    public final RectF c;
-    public final Paint d;
-    public final /* synthetic */ c40 e;
+public final class j20 extends org.telegram.ui.Components.lt {
+    public final /* synthetic */ e40 V;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j20(c40 c40Var, LaunchActivity launchActivity) {
-        super(launchActivity);
-        this.e = c40Var;
-        this.a = new RectF();
-        this.b = new RectF();
-        this.c = new RectF();
-        this.d = new Paint(1);
+    public j20(e40 e40Var, LaunchActivity launchActivity, k30 k30Var, org.telegram.ui.ActionBar.f2 f2Var, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(launchActivity, k30Var, f2Var, 5, true, g6Var);
+        this.V = e40Var;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        c40 c40Var = this.e;
-        k20 k20Var = c40Var.w1;
-        float y10 = k20Var.getY() + k20Var.getMeasuredHeight();
-        te.c cVar = c40Var.s5;
-        float f10 = y10 - cVar.f;
-        float measuredWidth = getMeasuredWidth();
-        float measuredHeight = getMeasuredHeight();
-        RectF rectF = this.a;
-        rectF.set(0.0f, f10, measuredWidth, measuredHeight);
-        float y11 = k20Var.getY() + k20Var.getMeasuredHeight();
-        float measuredWidth2 = getMeasuredWidth();
-        float measuredHeight2 = getMeasuredHeight();
-        RectF rectF2 = this.b;
-        rectF2.set(0.0f, y11, measuredWidth2, measuredHeight2);
-        float y12 = (k20Var.getY() + k20Var.getMeasuredHeight()) - cVar.f;
-        float measuredWidth3 = getMeasuredWidth();
-        float y13 = k20Var.getY() + k20Var.getMeasuredHeight();
-        RectF rectF3 = this.c;
-        rectF3.set(0.0f, y12, measuredWidth3, y13);
-        int i7 = Build.VERSION.SDK_INT;
-        Paint paint = this.d;
-        if (i7 < 29 || c40Var.H4 == null || !canvas.isHardwareAccelerated()) {
-            paint.setColor(-14933463);
-            canvas.drawRect(rectF3, paint);
-            paint.setColor(i0.a.k(234881023, -14933463));
-            canvas.drawRect(rectF2, paint);
-        } else {
-            paint.setColor(-14933463);
-            canvas.drawRect(rectF, paint);
-            canvas.save();
-            canvas.clipRect(rectF);
-            canvas.translate(-getX(), -getY());
-            float f11 = c40Var.I4;
-            canvas.scale(f11, f11);
-            canvas.drawRenderNode(c40Var.H4);
-            canvas.restore();
-            paint.setColor(234881023);
-            canvas.drawRect(rectF2, paint);
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j3) {
+        if (view != getEditText()) {
+            return super.drawChild(canvas, view, j3);
         }
-        super.dispatchDraw(canvas);
+        canvas.save();
+        e40 e40Var = this.V;
+        e40Var.y1.getEditText().setTranslationY(view.getMeasuredHeight() - e40Var.s5.f);
+        boolean drawChild = super.drawChild(canvas, view, j3);
+        canvas.restore();
+        return drawChild;
+    }
+
+    @Override // org.telegram.ui.Components.lt
+    public final void f() {
+        super.f();
+        org.telegram.ui.Components.hy emojiView = getEmojiView();
+        if (emojiView != null) {
+            emojiView.w0 = false;
+            emojiView.x2 = false;
+            emojiView.setShouldDrawBackground(false);
+            emojiView.setBottomInset(this.V.b.getPaddingBottom());
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(i7, i10);
+        te.c cVar = this.V.s5;
+        if (cVar.f == 0.0f) {
+            cVar.c(getMeasuredHeight());
+        } else {
+            cVar.a(getMeasuredHeight());
+        }
+    }
+
+    @Override // org.telegram.ui.Components.lt
+    public final void p() {
+        rh.h hVar = this.V.t3;
+        int max = this.e ? Math.max(0, getEmojiPadding()) : this.N ? Math.max(0, getKeyboardHeight()) : 0;
+        if (max > 0) {
+            hVar.g(max);
+        } else {
+            hVar.i(false);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.lt
+    public final void y() {
+        this.V.b.requestApplyInsets();
     }
 }

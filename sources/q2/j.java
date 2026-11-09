@@ -3,11 +3,11 @@ package q2;
 import h2.m0;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
-import org.telegram.ui.Components.r31;
-import org.telegram.ui.d10;
+import org.telegram.ui.Components.s31;
+import org.telegram.ui.f10;
 import x2.g0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class j {
     public final int a;
@@ -24,7 +24,7 @@ public final class j {
         Iterator it = this.c.iterator();
         while (it.hasNext()) {
             i iVar = (i) it.next();
-            m0.W(iVar.a, new r31(this, iVar.b, aVar, 16));
+            m0.W(iVar.a, new s31(this, iVar.b, aVar, 16));
         }
     }
 
@@ -41,7 +41,7 @@ public final class j {
         Iterator it = this.c.iterator();
         while (it.hasNext()) {
             i iVar = (i) it.next();
-            m0.W(iVar.a, new d10(this, iVar.b, i7, 21));
+            m0.W(iVar.a, new f10(this, iVar.b, i7, 21));
         }
     }
 
@@ -49,7 +49,7 @@ public final class j {
         Iterator it = this.c.iterator();
         while (it.hasNext()) {
             i iVar = (i) it.next();
-            m0.W(iVar.a, new r31(this, iVar.b, exc, 15));
+            m0.W(iVar.a, new s31(this, iVar.b, exc, 15));
         }
     }
 

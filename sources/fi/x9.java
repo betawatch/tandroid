@@ -8,10 +8,10 @@ import android.view.ViewPropertyAnimator;
 import java.io.File;
 import java.util.ArrayList;
 import org.telegram.messenger.ye;
-import org.telegram.ui.Components.he0;
+import org.telegram.ui.Components.ie0;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class x9 extends o5 {
     public boolean i2;
@@ -49,7 +49,7 @@ public final class x9 extends o5 {
         if (!z9) {
             vaVar.p1.a(false, z10);
             vaVar.p1.clearAnimation();
-            vaVar.p1.animate().alpha(0.0f).withEndAction(new h9(this, 2)).setDuration(180L).setInterpolator(xq.g).setStartDelay(z10 ? 500L : 0L).start();
+            vaVar.p1.animate().alpha(0.0f).withEndAction(new v9(this, 1)).setDuration(180L).setInterpolator(xq.g).setStartDelay(z10 ? 500L : 0L).start();
         } else {
             vaVar.p1.setVisibility(0);
             vaVar.p1.setAlpha(0.0f);
@@ -133,7 +133,7 @@ public final class x9 extends o5 {
             jaVar.x(6, z9);
             p5 p5Var = vaVar.j1;
             if (p5Var != null) {
-                ((he0) p5Var.c).a(vaVar.X0.k(), true);
+                ((ie0) p5Var.c).a(vaVar.X0.k(), true);
             }
         }
         la laVar = vaVar.c1;

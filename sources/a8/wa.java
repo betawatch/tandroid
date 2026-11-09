@@ -44,14 +44,14 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.Components.hr;
-import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.pp0;
+import org.telegram.ui.Components.qj0;
+import org.telegram.ui.Components.qp0;
 import org.telegram.ui.Components.xq;
-import org.telegram.ui.hy0;
-import org.telegram.ui.yl;
+import org.telegram.ui.am;
+import org.telegram.ui.ky0;
 import org.xmlpull.v1.XmlPullParserException;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public class wa implements f3.i, m9.t {
     public final /* synthetic */ int a;
@@ -63,115 +63,124 @@ public class wa implements f3.i, m9.t {
         this.a = i7;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:100:0x01e2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:100:0x01df, code lost:
     
         r0 = null;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:66:0x01da, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:66:0x01d7, code lost:
     
-        if (r13.size() <= 0) goto L94;
+        if (r12.size() <= 0) goto L94;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:67:0x01dc, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:67:0x01d9, code lost:
     
-        r0 = new q4.q(r13, r7);
+        r0 = new q4.q(r12, r7);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:68:0x01e3, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:68:0x01e0, code lost:
     
         if (r0 == null) goto L97;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:70:0x01f5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:70:0x01f2, code lost:
     
-        if (r11 == 1) goto L112;
+        if (r10 == 1) goto L112;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:72:0x01f8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:72:0x01f5, code lost:
     
-        if (r11 == 2) goto L111;
+        if (r10 == 2) goto L111;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:73:0x01fa, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:73:0x01f7, code lost:
     
-        r16 = (int[]) r0.b;
-        r17 = (float[]) r0.c;
+        r17 = (int[]) r0.b;
+        r18 = (float[]) r0.c;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:74:0x0208, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:74:0x0205, code lost:
     
-        if (r10 == 1) goto L109;
+        if (r13 == 1) goto L109;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:75:0x020a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:75:0x0207, code lost:
     
-        if (r10 == 2) goto L108;
+        if (r13 == 2) goto L108;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:76:0x020c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:76:0x0209, code lost:
     
         r0 = android.graphics.Shader.TileMode.CLAMP;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:78:0x021f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:77:0x020b, code lost:
     
-        r11 = new android.graphics.LinearGradient(r21, r22, r26, r27, r16, r17, r0);
+        r1 = 0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:80:0x0268, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:78:0x021b, code lost:
     
-        return new a8.wa(r11, (android.content.res.ColorStateList) null, 0);
+        r12 = new android.graphics.LinearGradient(r23, r26, r27, r16, r17, r18, r0);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:81:0x0219, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:80:0x0267, code lost:
+    
+        return new a8.wa(r12, (java.lang.Object) null, r1, 9);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:81:0x0215, code lost:
     
         r0 = android.graphics.Shader.TileMode.MIRROR;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:82:0x021c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:82:0x0218, code lost:
     
         r0 = android.graphics.Shader.TileMode.REPEAT;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:83:0x0223, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:83:0x021f, code lost:
     
-        r11 = new android.graphics.SweepGradient(r8, r9, (int[]) r0.b, (float[]) r0.c);
+        r1 = 0;
+        r12 = new android.graphics.SweepGradient(r8, r9, (int[]) r0.b, (float[]) r0.c);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:85:0x0235, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:84:0x022e, code lost:
+    
+        r1 = 0;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:85:0x0233, code lost:
     
         if (r25 <= 0.0f) goto L125;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:86:0x0237, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:86:0x0235, code lost:
     
-        r20 = (int[]) r0.b;
-        r21 = (float[]) r0.c;
+        r2 = (int[]) r0.b;
+        r22 = (float[]) r0.c;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:87:0x0246, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:87:0x0242, code lost:
     
-        if (r10 == 1) goto L121;
+        if (r13 == 1) goto L121;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:89:0x0249, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:89:0x0245, code lost:
     
-        if (r10 == 2) goto L120;
+        if (r13 == 2) goto L120;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:90:0x024b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:90:0x0247, code lost:
     
         r0 = android.graphics.Shader.TileMode.CLAMP;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:92:0x025c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:92:0x025a, code lost:
     
-        r11 = new android.graphics.RadialGradient(r8, r9, r25, r20, r21, r0);
+        r12 = new android.graphics.RadialGradient(r8, r9, r25, r2, r22, r0);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:93:0x0256, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:93:0x0254, code lost:
     
         r0 = android.graphics.Shader.TileMode.MIRROR;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:94:0x0259, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:94:0x0257, code lost:
     
         r0 = android.graphics.Shader.TileMode.REPEAT;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:96:0x0270, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:96:0x026f, code lost:
     
         throw new org.xmlpull.v1.XmlPullParserException("<gradient> tag requires 'gradientRadius' attribute with radial type");
      */
-    /* JADX WARN: Code restructure failed: missing block: B:97:0x01e7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:97:0x01e4, code lost:
     
         if (r20 == false) goto L99;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:98:0x01e9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:98:0x01e6, code lost:
     
-        r0 = new q4.q(r6, r5, r12);
+        r0 = new q4.q(r6, r11, r5);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:99:0x01ef, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:99:0x01ec, code lost:
     
-        r0 = new q4.q(r6, r12);
+        r0 = new q4.q(r6, r5);
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -181,8 +190,6 @@ public class wa implements f3.i, m9.t {
         float f10;
         int i10;
         float f11;
-        int i11;
-        float f12;
         XmlResourceParser xml = resources.getXml(i7);
         AttributeSet asAttributeSet = Xml.asAttributeSet(xml);
         do {
@@ -196,10 +203,12 @@ public class wa implements f3.i, m9.t {
         }
         String name = xml.getName();
         name.getClass();
+        int i11 = 9;
+        Object obj = null;
         if (!name.equals("gradient")) {
             if (name.equals("selector")) {
                 ColorStateList b10 = h0.c.b(resources, xml, asAttributeSet, theme);
-                return new wa((Shader) null, b10, b10.getDefaultColor());
+                return new wa(obj, b10, b10.getDefaultColor(), i11);
             }
             throw new XmlPullParserException(xml.getPositionDescription() + ": unsupported complex color tag " + name);
         }
@@ -207,64 +216,58 @@ public class wa implements f3.i, m9.t {
         if (!name2.equals("gradient")) {
             throw new XmlPullParserException(xml.getPositionDescription() + ": invalid gradient color tag " + name2);
         }
-        TypedArray f13 = h0.b.f(resources, theme, asAttributeSet, d0.a.d);
-        float f14 = xml.getAttributeValue("http://schemas.android.com/apk/res/android", "startX") != null ? f13.getFloat(8, 0.0f) : 0.0f;
-        float f15 = xml.getAttributeValue("http://schemas.android.com/apk/res/android", "startY") != null ? f13.getFloat(9, 0.0f) : 0.0f;
-        float f16 = xml.getAttributeValue("http://schemas.android.com/apk/res/android", "endX") != null ? f13.getFloat(10, 0.0f) : 0.0f;
-        float f17 = xml.getAttributeValue("http://schemas.android.com/apk/res/android", "endY") != null ? f13.getFloat(11, 0.0f) : 0.0f;
-        float f18 = xml.getAttributeValue("http://schemas.android.com/apk/res/android", "centerX") != null ? f13.getFloat(3, 0.0f) : 0.0f;
-        float f19 = xml.getAttributeValue("http://schemas.android.com/apk/res/android", "centerY") != null ? f13.getFloat(4, 0.0f) : 0.0f;
-        int i12 = xml.getAttributeValue("http://schemas.android.com/apk/res/android", TeXSymbolParser.TYPE_ATTR) != null ? f13.getInt(2, 0) : 0;
-        int color = xml.getAttributeValue("http://schemas.android.com/apk/res/android", "startColor") != null ? f13.getColor(0, 0) : 0;
+        TypedArray f12 = h0.b.f(resources, theme, asAttributeSet, d0.a.d);
+        float f13 = xml.getAttributeValue("http://schemas.android.com/apk/res/android", "startX") != null ? f12.getFloat(8, 0.0f) : 0.0f;
+        float f14 = xml.getAttributeValue("http://schemas.android.com/apk/res/android", "startY") != null ? f12.getFloat(9, 0.0f) : 0.0f;
+        float f15 = xml.getAttributeValue("http://schemas.android.com/apk/res/android", "endX") != null ? f12.getFloat(10, 0.0f) : 0.0f;
+        float f16 = xml.getAttributeValue("http://schemas.android.com/apk/res/android", "endY") != null ? f12.getFloat(11, 0.0f) : 0.0f;
+        float f17 = xml.getAttributeValue("http://schemas.android.com/apk/res/android", "centerX") != null ? f12.getFloat(3, 0.0f) : 0.0f;
+        float f18 = xml.getAttributeValue("http://schemas.android.com/apk/res/android", "centerY") != null ? f12.getFloat(4, 0.0f) : 0.0f;
+        int i12 = xml.getAttributeValue("http://schemas.android.com/apk/res/android", TeXSymbolParser.TYPE_ATTR) != null ? f12.getInt(2, 0) : 0;
+        int color = xml.getAttributeValue("http://schemas.android.com/apk/res/android", "startColor") != null ? f12.getColor(0, 0) : 0;
         boolean z9 = xml.getAttributeValue("http://schemas.android.com/apk/res/android", "centerColor") != null;
-        int color2 = xml.getAttributeValue("http://schemas.android.com/apk/res/android", "centerColor") != null ? f13.getColor(7, 0) : 0;
-        if (xml.getAttributeValue("http://schemas.android.com/apk/res/android", "endColor") != null) {
-            f10 = f14;
-            i10 = f13.getColor(1, 0);
+        int color2 = xml.getAttributeValue("http://schemas.android.com/apk/res/android", "centerColor") != null ? f12.getColor(7, 0) : 0;
+        int color3 = xml.getAttributeValue("http://schemas.android.com/apk/res/android", "endColor") != null ? f12.getColor(1, 0) : 0;
+        if (xml.getAttributeValue("http://schemas.android.com/apk/res/android", "tileMode") != null) {
+            f10 = f13;
+            i10 = f12.getInt(6, 0);
         } else {
-            f10 = f14;
+            f10 = f13;
             i10 = 0;
         }
-        if (xml.getAttributeValue("http://schemas.android.com/apk/res/android", "tileMode") != null) {
-            f11 = f15;
-            i11 = f13.getInt(6, 0);
-        } else {
-            f11 = f15;
-            i11 = 0;
-        }
-        float f20 = xml.getAttributeValue("http://schemas.android.com/apk/res/android", "gradientRadius") != null ? f13.getFloat(5, 0.0f) : 0.0f;
-        f13.recycle();
+        float f19 = xml.getAttributeValue("http://schemas.android.com/apk/res/android", "gradientRadius") != null ? f12.getFloat(5, 0.0f) : 0.0f;
+        f12.recycle();
         int depth = xml.getDepth() + 1;
         ArrayList arrayList = new ArrayList(20);
-        float f21 = f20;
+        float f20 = f19;
         ArrayList arrayList2 = new ArrayList(20);
         while (true) {
             int next2 = xml.next();
-            float f22 = f16;
+            float f21 = f14;
             if (next2 == 1) {
-                f12 = f17;
+                f11 = f15;
                 break;
             }
             int depth2 = xml.getDepth();
-            f12 = f17;
+            f11 = f15;
             if (depth2 < depth && next2 == 3) {
                 break;
             }
             if (next2 == 2 && depth2 <= depth && xml.getName().equals("item")) {
-                TypedArray f23 = h0.b.f(resources, theme, asAttributeSet, d0.a.e);
-                boolean hasValue = f23.hasValue(0);
-                boolean hasValue2 = f23.hasValue(1);
+                TypedArray f22 = h0.b.f(resources, theme, asAttributeSet, d0.a.e);
+                boolean hasValue = f22.hasValue(0);
+                boolean hasValue2 = f22.hasValue(1);
                 if (!hasValue || !hasValue2) {
                     break;
                 }
-                int color3 = f23.getColor(0, 0);
-                float f24 = f23.getFloat(1, 0.0f);
-                f23.recycle();
-                arrayList2.add(Integer.valueOf(color3));
-                arrayList.add(Float.valueOf(f24));
+                int color4 = f22.getColor(0, 0);
+                float f23 = f22.getFloat(1, 0.0f);
+                f22.recycle();
+                arrayList2.add(Integer.valueOf(color4));
+                arrayList.add(Float.valueOf(f23));
             }
-            f16 = f22;
-            f17 = f12;
+            f14 = f21;
+            f15 = f11;
         }
         throw new XmlPullParserException(xml.getPositionDescription() + ": <item> tag requires a 'color' attribute and a 'offset' attribute!");
     }
@@ -370,11 +373,11 @@ public class wa implements f3.i, m9.t {
                 try {
                     y7.h9.b();
                     y7.o6 o6Var = new y7.o6(b0Var);
-                    hy0 hy0Var = new hy0(27);
-                    h9Var.a(hy0Var);
-                    HashMap hashMap3 = new HashMap((HashMap) hy0Var.b);
-                    HashMap hashMap4 = new HashMap((HashMap) hy0Var.c);
-                    y7.i iVar = (y7.i) hy0Var.d;
+                    ky0 ky0Var = new ky0(27);
+                    h9Var.a(ky0Var);
+                    HashMap hashMap3 = new HashMap((HashMap) ky0Var.b);
+                    HashMap hashMap4 = new HashMap((HashMap) ky0Var.c);
+                    y7.i iVar = (y7.i) ky0Var.d;
                     ByteArrayOutputStream byteArrayOutputStream2 = new ByteArrayOutputStream();
                     try {
                         jVar = new y7.j(byteArrayOutputStream2, hashMap3, hashMap4, iVar);
@@ -571,7 +574,7 @@ public class wa implements f3.i, m9.t {
         Iterator it = ((CopyOnWriteArrayList) this.d).iterator();
         while (it.hasNext()) {
             x2.j0 j0Var = (x2.j0) it.next();
-            h2.m0.W(j0Var.a, new u9.f(27, jVar, j0Var.b));
+            h2.m0.W(j0Var.a, new u9.f(28, jVar, j0Var.b));
         }
     }
 
@@ -677,7 +680,7 @@ public class wa implements f3.i, m9.t {
         p4.d0 d0Var = ((p4.m0) this.d).h;
         Handler handler = d0Var.l;
         p4.v vVar = (p4.v) this.c;
-        h2.m0.W(handler, new org.telegram.ui.web.w(d0Var, vVar, new pp0(this, this.b, list, vVar, 21)));
+        h2.m0.W(handler, new org.telegram.ui.web.s(d0Var, vVar, new qp0(this, this.b, list, vVar, 21)));
     }
 
     public void p(x2.u uVar, int i7, int i10, e2.u uVar2, int i11, Object obj, long j3, long j10) {
@@ -685,7 +688,7 @@ public class wa implements f3.i, m9.t {
     }
 
     public void q(x2.u uVar, int i7, int i10, e2.u uVar2, int i11, Object obj, long j3, long j10, IOException iOException, boolean z9) {
-        i(new yl(this, uVar, new x2.c0(i7, i10, uVar2, i11, obj, h2.m0.h0(j3), h2.m0.h0(j10)), iOException, z9));
+        i(new am(this, uVar, new x2.c0(i7, i10, uVar2, i11, obj, h2.m0.h0(j3), h2.m0.h0(j10)), iOException, z9));
     }
 
     public void r(x2.u uVar, int i7, IOException iOException, boolean z9) {
@@ -819,6 +822,13 @@ public class wa implements f3.i, m9.t {
         this.c = arrayList;
     }
 
+    public /* synthetic */ wa(Object obj, Object obj2, int i7, int i10) {
+        this.a = i10;
+        this.c = obj;
+        this.d = obj2;
+        this.b = i7;
+    }
+
     public wa(b8 b8Var, int i7) {
         this.a = 0;
         this.d = new s9();
@@ -828,7 +838,7 @@ public class wa implements f3.i, m9.t {
     }
 
     public wa(ab.b0 b0Var, int i7) {
-        this.a = 27;
+        this.a = 28;
         this.d = new s9();
         this.c = b0Var;
         y7.h9.b();
@@ -843,9 +853,9 @@ public class wa implements f3.i, m9.t {
         this.b = i7;
     }
 
-    public wa(pj0 pj0Var) {
+    public wa(qj0 qj0Var) {
         this.a = 19;
-        this.d = pj0Var;
+        this.d = qj0Var;
     }
 
     public wa(ByteBuffer byteBuffer, int i7, RectF rectF) {
@@ -891,17 +901,10 @@ public class wa implements f3.i, m9.t {
     }
 
     public wa(v0.j jVar) {
-        this.a = 26;
+        this.a = 27;
         this.c = new SparseArray();
         this.d = jVar;
         this.b = -1;
-    }
-
-    public wa(Shader shader, ColorStateList colorStateList, int i7) {
-        this.a = 9;
-        this.c = shader;
-        this.d = colorStateList;
-        this.b = i7;
     }
 
     public wa(String str) {
@@ -952,7 +955,7 @@ public class wa implements f3.i, m9.t {
     }
 
     public wa(CopyOnWriteArrayList copyOnWriteArrayList, int i7, x2.g0 g0Var) {
-        this.a = 25;
+        this.a = 26;
         this.d = copyOnWriteArrayList;
         this.b = i7;
         this.c = g0Var;

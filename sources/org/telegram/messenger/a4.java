@@ -14,7 +14,7 @@ import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a4 implements Runnable {
     public final /* synthetic */ int a;
@@ -85,7 +85,7 @@ public final /* synthetic */ class a4 implements Runnable {
             int size = arrayList.size();
             for (int i7 = 0; i7 < size; i7++) {
                 TLRPC.Message message = (TLRPC.Message) arrayList.get(i7);
-                ij.r5(message);
+                ij.q5(message);
                 NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(message.getObjectSize());
                 message.serializeToStream(nativeByteBuffer);
                 executeFast.requery();
@@ -294,7 +294,7 @@ public final /* synthetic */ class a4 implements Runnable {
     private final void k() {
         yr yrVar = (yr) this.c;
         long j3 = this.b;
-        di.l6 l6Var = (di.l6) this.d;
+        di.m6 m6Var = (di.m6) this.d;
         ArrayList arrayList = new ArrayList();
         SQLiteCursor sQLiteCursor = null;
         try {
@@ -308,7 +308,7 @@ public final /* synthetic */ class a4 implements Runnable {
                         TL_stories.TL_storyAlbum TLdeserialize = TL_stories.TL_storyAlbum.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false);
                         byteBufferValue.reuse();
                         if (TLdeserialize != null) {
-                            arrayList.add(di.r6.a(TLdeserialize));
+                            arrayList.add(di.s6.a(TLdeserialize));
                         }
                     }
                 }
@@ -316,7 +316,7 @@ public final /* synthetic */ class a4 implements Runnable {
                 yrVar.o(e10, true);
             }
             sQLiteCursor.dispose();
-            l6Var.x(arrayList);
+            m6Var.x(arrayList);
         } catch (Throwable th2) {
             if (sQLiteCursor != null) {
                 sQLiteCursor.dispose();
@@ -427,16 +427,16 @@ public final /* synthetic */ class a4 implements Runnable {
                 yrVar.b.executeFast("DELETE FROM profile_stories_albums WHERE dialog_id = " + j3).stepThis().dispose();
                 sQLitePreparedStatement = yrVar.b.executeFast("REPLACE INTO profile_stories_albums VALUES(?, ?, ?, ?)");
                 for (int i7 = 0; i7 < list.size(); i7++) {
-                    di.r6 r6Var = (di.r6) list.get(i7);
+                    di.s6 s6Var = (di.s6) list.get(i7);
                     sQLitePreparedStatement.requery();
                     sQLitePreparedStatement.bindLong(1, j3);
-                    sQLitePreparedStatement.bindInteger(2, r6Var.a);
+                    sQLitePreparedStatement.bindInteger(2, s6Var.a);
                     sQLitePreparedStatement.bindInteger(3, i7);
                     TL_stories.TL_storyAlbum tL_storyAlbum = new TL_stories.TL_storyAlbum();
-                    tL_storyAlbum.album_id = r6Var.a;
-                    tL_storyAlbum.title = r6Var.b;
-                    tL_storyAlbum.icon_photo = r6Var.c;
-                    tL_storyAlbum.icon_video = r6Var.d;
+                    tL_storyAlbum.album_id = s6Var.a;
+                    tL_storyAlbum.title = s6Var.b;
+                    tL_storyAlbum.icon_photo = s6Var.c;
+                    tL_storyAlbum.icon_video = s6Var.d;
                     NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(tL_storyAlbum.getObjectSize());
                     tL_storyAlbum.serializeToStream(nativeByteBuffer);
                     sQLitePreparedStatement.bindByteBuffer(4, nativeByteBuffer);

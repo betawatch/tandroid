@@ -25,22 +25,22 @@ import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.c20;
 import org.telegram.messenger.g0;
+import org.telegram.messenger.t0;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.n6;
-import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.o6;
+import org.telegram.ui.ActionBar.s6;
 import org.telegram.ui.Cells.y;
-import org.telegram.ui.Components.j51;
-import org.telegram.ui.Components.qm0;
+import org.telegram.ui.Components.k51;
+import org.telegram.ui.Components.rm0;
 import org.telegram.ui.Components.rt;
-import org.telegram.ui.Components.v50;
 import org.telegram.ui.Components.vy;
+import org.telegram.ui.Components.w50;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.web.w;
-import sg.t0;
+import org.telegram.ui.web.s;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final class o {
     public final m a;
@@ -65,7 +65,7 @@ public final class o {
         this.c = 0;
         iVar.K = true;
         iVar.d();
-        g0.i3(new w(24, iVar, c20Var), 100L);
+        g0.i3(new s(25, iVar, c20Var), 100L);
         this.b.f();
     }
 
@@ -86,7 +86,7 @@ public final class o {
         this.e = null;
         boolean z9 = i7 == 1;
         Objects.requireNonNull(mVar);
-        t0 t0Var = new t0(mVar, 12);
+        sh.b bVar = new sh.b(mVar, 10);
         if (!iVar.K) {
             iVar.K = true;
             iVar.d();
@@ -100,10 +100,10 @@ public final class o {
                 animatorSet.setDuration(250L);
                 animatorSet.setInterpolator(xq.f);
                 animatorSet.playTogether(ObjectAnimator.ofFloat(iVar.h, (Property<org.telegram.ui.e, Float>) View.ALPHA, 0.0f), ObjectAnimator.ofFloat(iVar.h, (Property<org.telegram.ui.e, Float>) View.SCALE_X, 0.1f), ObjectAnimator.ofFloat(iVar.h, (Property<org.telegram.ui.e, Float>) View.SCALE_Y, 0.1f));
-                animatorSet.addListener(new v50(21, iVar, t0Var));
+                animatorSet.addListener(new w50(21, iVar, bVar));
                 animatorSet.start();
             } else {
-                iVar.f(t0Var);
+                iVar.f(bVar);
             }
         }
         iVar2.i(this, i7);
@@ -171,9 +171,9 @@ public final class o {
         int I = mVar.I();
         int U = mVar.U();
         float f10 = ((I <= 0 || U <= 0) ? 0.5625f : ((float) U) / ((float) I)) < 1.0f ? 0.6f : 0.45f;
-        j51 j51Var = iVar2.F;
-        j51Var.q = f10;
-        j51Var.a();
+        k51 k51Var = iVar2.F;
+        k51Var.q = f10;
+        k51Var.a();
         r1.g gVar = new r1.g(iVar2, i.Q);
         r1.h hVar = new r1.h();
         hVar.a(0.75f);
@@ -205,17 +205,17 @@ public final class o {
         q0 q0Var = u0.a;
         eVar2.setOutlineProvider(new s0(0, L));
         iVar2.i.setClipToOutline(true);
-        r6.i(k6.Ug, iVar2.i, null);
+        s6.h(l6.Ug, iVar2.i, null);
         ImageView imageView = new ImageView(activity2);
         iVar2.l = imageView;
         imageView.setScaleType(ImageView.ScaleType.FIT_XY);
         iVar2.l.setVisibility(8);
         iVar2.i.addView(iVar2.l, ha.c(-1.0f, -1));
-        j51Var.n = new vy(iVar2, 21);
+        k51Var.n = new vy(iVar2, 21);
         iVar2.m = new e(iVar2, activity2, i11);
         e eVar3 = iVar2.m;
         Objects.requireNonNull(eVar3);
-        iVar2.G = new qm0(new t0(eVar3, 9), true);
+        iVar2.G = new rm0(new sh.b(eVar3, 7), true);
         iVar2.m.setWillNotDraw(false);
         iVar2.m.setAlpha(0.0f);
         View view = new View(activity2);
@@ -224,14 +224,14 @@ public final class o {
         int L2 = g0.L(8.0f);
         ImageView imageView2 = new ImageView(activity2);
         imageView2.setImageResource(R.drawable.pip_video_close);
-        int i12 = k6.Vg;
+        int i12 = l6.Vg;
         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
-        r6.t(imageView2, i12, null, mode);
-        int i13 = k6.i6;
-        y h02 = k6.h0(k6.x0(null, i13, false), 1, -1);
-        n6 N = r6.N(i13);
+        s6.s(imageView2, i12, null, mode);
+        int i13 = l6.i6;
+        y h02 = l6.h0(l6.x0(null, i13, false), 1, -1);
+        o6 M = s6.M(i13);
         imageView2.setBackground(h02);
-        r6.k(imageView2, h02, null, N, null);
+        s6.j(imageView2, h02, null, M, null);
         imageView2.setPadding(L2, L2, L2, L2);
         imageView2.setOnClickListener(new View.OnClickListener() { // from class: ti.a
             @Override // android.view.View.OnClickListener
@@ -245,17 +245,17 @@ public final class o {
                         o oVar2 = iVar2.a;
                         if (oVar2.c == 1) {
                             l2.i iVar3 = oVar2.b;
-                            t0 t0Var = new t0(oVar2, 13);
+                            sh.b bVar = new sh.b(oVar2, 11);
                             if (iVar3.b && (launchActivity = (LaunchActivity) iVar3.f) != null && !g0.H1(launchActivity)) {
-                                t0Var.run();
+                                bVar.run();
                                 break;
                             } else {
-                                ((ArrayList) iVar3.d).add(t0Var);
+                                ((ArrayList) iVar3.d).add(bVar);
                                 if (((LaunchActivity) iVar3.f) != null && !iVar3.a) {
                                     try {
-                                        Intent intent = new Intent(org.telegram.messenger.t0.b, ((LaunchActivity) iVar3.f).getClass());
+                                        Intent intent = new Intent(t0.b, ((LaunchActivity) iVar3.f).getClass());
                                         intent.addFlags(TLObject.FLAG_28);
-                                        org.telegram.messenger.t0.b.startActivity(intent);
+                                        t0.b.startActivity(intent);
                                         break;
                                     } catch (Exception e10) {
                                         a8.g(e10, true);
@@ -286,12 +286,12 @@ public final class o {
         iVar2.m.addView(imageView2, ha.d(38, 38.0f, 5, 0.0f, 4.0f, 4.0f, 0.0f));
         ImageView imageView3 = new ImageView(activity2);
         imageView3.setImageResource(R.drawable.pip_video_expand);
-        r6.t(imageView3, i12, null, mode);
+        s6.s(imageView3, i12, null, mode);
         final int i14 = 1;
-        y h03 = k6.h0(k6.x0(null, i13, false), 1, -1);
-        n6 N2 = r6.N(i13);
+        y h03 = l6.h0(l6.x0(null, i13, false), 1, -1);
+        o6 M2 = s6.M(i13);
         imageView3.setBackground(h03);
-        r6.k(imageView3, h03, null, N2, null);
+        s6.j(imageView3, h03, null, M2, null);
         imageView3.setPadding(L2, L2, L2, L2);
         imageView3.setOnClickListener(new View.OnClickListener() { // from class: ti.a
             @Override // android.view.View.OnClickListener
@@ -305,17 +305,17 @@ public final class o {
                         o oVar2 = iVar2.a;
                         if (oVar2.c == 1) {
                             l2.i iVar3 = oVar2.b;
-                            t0 t0Var = new t0(oVar2, 13);
+                            sh.b bVar = new sh.b(oVar2, 11);
                             if (iVar3.b && (launchActivity = (LaunchActivity) iVar3.f) != null && !g0.H1(launchActivity)) {
-                                t0Var.run();
+                                bVar.run();
                                 break;
                             } else {
-                                ((ArrayList) iVar3.d).add(t0Var);
+                                ((ArrayList) iVar3.d).add(bVar);
                                 if (((LaunchActivity) iVar3.f) != null && !iVar3.a) {
                                     try {
-                                        Intent intent = new Intent(org.telegram.messenger.t0.b, ((LaunchActivity) iVar3.f).getClass());
+                                        Intent intent = new Intent(t0.b, ((LaunchActivity) iVar3.f).getClass());
                                         intent.addFlags(TLObject.FLAG_28);
-                                        org.telegram.messenger.t0.b.startActivity(intent);
+                                        t0.b.startActivity(intent);
                                         break;
                                     } catch (Exception e10) {
                                         a8.g(e10, true);
@@ -346,8 +346,8 @@ public final class o {
         iVar2.m.addView(imageView3, ha.d(38, 38.0f, 5, 0.0f, 4.0f, 48.0f, 0.0f));
         ImageView imageView4 = new ImageView(activity2);
         iVar2.n = imageView4;
-        r6.t(imageView4, i12, null, mode);
-        r6.R(iVar2.n, k6.h0(k6.x0(null, i13, false), 1, -1), null, r6.N(i13), null);
+        s6.s(imageView4, i12, null, mode);
+        s6.Q(iVar2.n, l6.h0(l6.x0(null, i13, false), 1, -1), null, s6.M(i13), null);
         final int i15 = 2;
         iVar2.n.setOnClickListener(new View.OnClickListener() { // from class: ti.a
             @Override // android.view.View.OnClickListener
@@ -361,17 +361,17 @@ public final class o {
                         o oVar2 = iVar2.a;
                         if (oVar2.c == 1) {
                             l2.i iVar3 = oVar2.b;
-                            t0 t0Var = new t0(oVar2, 13);
+                            sh.b bVar = new sh.b(oVar2, 11);
                             if (iVar3.b && (launchActivity = (LaunchActivity) iVar3.f) != null && !g0.H1(launchActivity)) {
-                                t0Var.run();
+                                bVar.run();
                                 break;
                             } else {
-                                ((ArrayList) iVar3.d).add(t0Var);
+                                ((ArrayList) iVar3.d).add(bVar);
                                 if (((LaunchActivity) iVar3.f) != null && !iVar3.a) {
                                     try {
-                                        Intent intent = new Intent(org.telegram.messenger.t0.b, ((LaunchActivity) iVar3.f).getClass());
+                                        Intent intent = new Intent(t0.b, ((LaunchActivity) iVar3.f).getClass());
                                         intent.addFlags(TLObject.FLAG_28);
-                                        org.telegram.messenger.t0.b.startActivity(intent);
+                                        t0.b.startActivity(intent);
                                         break;
                                     } catch (Exception e10) {
                                         a8.g(e10, true);

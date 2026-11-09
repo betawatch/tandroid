@@ -3,7 +3,7 @@ package fi;
 import android.os.Build;
 import c8.zc;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t6 implements oi.n, oi.m {
     public final /* synthetic */ w6 a;
@@ -16,7 +16,7 @@ public final /* synthetic */ class t6 implements oi.n, oi.m {
     public int h() {
         w6 w6Var = this.a;
         w6Var.getClass();
-        return org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.d6, w6Var.I0);
+        return org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.d6, w6Var.I0);
     }
 
     @Override // oi.m

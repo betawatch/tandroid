@@ -1,18 +1,31 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qc0 implements u0.g, t4 {
-    public final /* synthetic */ ad0 a;
+public final class qc0 implements org.telegram.messenger.ls {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.messenger.c20 b;
+    public final /* synthetic */ org.telegram.messenger.ls[] c;
 
-    public /* synthetic */ qc0(ad0 ad0Var) {
-        this.a = ad0Var;
+    public qc0(int i7, org.telegram.messenger.c20 c20Var, org.telegram.messenger.ls[] lsVarArr) {
+        this.a = i7;
+        this.b = c20Var;
+        this.c = lsVarArr;
     }
 
-    @Override // org.telegram.ui.Components.t4
-    public void L(int i7, int i10, boolean z9) {
-        ad0 ad0Var = this.a;
-        ad0Var.B1.a(ad0Var.E1, z9, i7, 0L);
-        ad0Var.dismiss();
+    @Override // org.telegram.messenger.ls
+    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
+        int i11 = org.telegram.messenger.qs.p5;
+        if (i7 == i11) {
+            int intValue = ((Integer) objArr[0]).intValue();
+            int[] iArr = (int[]) objArr[2];
+            if (intValue == this.a) {
+                org.telegram.messenger.c20 c20Var = this.b;
+                if (c20Var != null) {
+                    c20Var.a(iArr);
+                }
+                org.telegram.messenger.qs.e().n(this.c[0], i11);
+            }
+        }
     }
 }

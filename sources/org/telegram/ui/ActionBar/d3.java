@@ -25,13 +25,13 @@ import org.telegram.messenger.ij;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.my0;
+import org.telegram.ui.Components.ny0;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.an;
-import org.telegram.ui.qj;
+import org.telegram.ui.cn;
+import org.telegram.ui.sj;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class d3 extends FrameLayout {
     public static final HashMap K = new HashMap();
@@ -72,7 +72,7 @@ public final class d3 extends FrameLayout {
         this.I = new HashSet();
         this.J = new HashSet();
         this.d = actionBarLayout;
-        setNavigationBarColor(k6.x0(null, k6.a7, false));
+        setNavigationBarColor(l6.x0(null, l6.a7, false));
         b3 b3Var = new b3(this, this);
         this.e = b3Var;
         r0.i0.j(this, b3Var);
@@ -192,25 +192,25 @@ public final class d3 extends FrameLayout {
     }
 
     public final void e(c3 c3Var) {
-        an anVar;
-        qj qjVar;
+        cn cnVar;
+        sj sjVar;
         f2 Q = LaunchActivity.Q();
         if (Q == null || Q.getParentActivity() == null) {
             return;
         }
-        boolean z9 = Q instanceof an;
-        if (z9 && (qjVar = (anVar = (an) Q).Z) != null) {
-            qjVar.L();
-            anVar.Z.j0();
+        boolean z9 = Q instanceof cn;
+        if (z9 && (sjVar = (cnVar = (cn) Q).Z) != null) {
+            sjVar.L();
+            cnVar.Z.j0();
         }
         if (c3Var.J == null) {
             new org.telegram.messenger.voip.k(1, this, c3Var).a(Q);
             if (c3Var.C) {
-                if (z9 && ((an) Q).a() == c3Var.a.c) {
+                if (z9 && ((cn) Q).a() == c3Var.a.c) {
                     return;
                 }
                 this.c = true;
-                org.telegram.messenger.g0.i3(new l2.z0(this, Q, an.ra(c3Var.a.c), 19), 220L);
+                org.telegram.messenger.g0.i3(new l2.z0(this, Q, cn.ta(c3Var.a.c), 19), 220L);
                 return;
             }
             return;
@@ -287,7 +287,7 @@ public final class d3 extends FrameLayout {
         u1[] u1VarArr = {u1Var};
         u1Var.setOnDismissListener(new q8(zArr, c20Var));
         u1VarArr[0].show();
-        r6.V((TextView) u1VarArr[0].d(-1), k6.q7, null);
+        s6.U((TextView) u1VarArr[0].d(-1), l6.q7, null);
     }
 
     public Paint getBackgroundPaint() {
@@ -378,7 +378,7 @@ public final class d3 extends FrameLayout {
                 z9 = false;
             }
             this.f = i7;
-            int w10 = k6.w(i7, k6.r1((org.telegram.messenger.g0.B(i7) > 0.721f ? 1 : (org.telegram.messenger.g0.B(i7) == 0.721f ? 0 : -1)) < 0 ? 0.08f : 0.75f, -1));
+            int w10 = l6.w(i7, l6.r1((org.telegram.messenger.g0.B(i7) > 0.721f ? 1 : (org.telegram.messenger.g0.B(i7) == 0.721f ? 0 : -1)) < 0 ? 0.08f : 0.75f, -1));
             this.n = w10;
             this.s = org.telegram.messenger.g0.B(w10) < 0.721f;
             if (!z9) {
@@ -496,7 +496,7 @@ public final class d3 extends FrameLayout {
                 if (m10 == null) {
                     a3Var.v = null;
                 } else {
-                    a3Var.v = new my0(m10, 17.0f, org.telegram.messenger.g0.o());
+                    a3Var.v = new ny0(m10, 17.0f, org.telegram.messenger.g0.o());
                 }
             }
             charSequence = m10;

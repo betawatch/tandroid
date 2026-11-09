@@ -16,7 +16,7 @@ import org.telegram.messenger.m5;
 import org.telegram.messenger.yr;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -243,7 +243,7 @@ public final /* synthetic */ class c implements Runnable {
                                     try {
                                         TLdeserialize.readAttachPath(byteBufferValue, yrVar.getUserConfig().n);
                                         byteBufferValue.reuse();
-                                        ij.N5(queryFinalized.intValue(5), TLdeserialize);
+                                        ij.M5(queryFinalized.intValue(5), TLdeserialize);
                                         TLdeserialize.id = queryFinalized.intValue(6);
                                         TLdeserialize.send_state = queryFinalized.intValue(7);
                                         int intValue = queryFinalized.intValue(8);

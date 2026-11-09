@@ -5,37 +5,37 @@ import android.graphics.Rect;
 import android.view.View;
 import bg.s;
 import org.telegram.messenger.g0;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Components.dh0;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.Components.eh0;
 import org.telegram.ui.Components.i6;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class d extends c {
     public final i6 d;
-    public final dh0 e;
+    public final eh0 e;
     public final te.a f;
     public float h;
 
-    public d(View view, f6 f6Var) {
-        super(f6Var);
-        dh0 dh0Var = new dh0(view);
-        this.e = dh0Var;
-        dh0Var.d(null, true, false);
-        dh0Var.v = 650.0f;
-        dh0Var.e(false, 0.69f);
-        dh0Var.p.setStrokeWidth(g0.L(1.5f));
+    public d(View view, g6 g6Var) {
+        super(g6Var);
+        eh0 eh0Var = new eh0(view);
+        this.e = eh0Var;
+        eh0Var.d(null, true, false);
+        eh0Var.v = 650.0f;
+        eh0Var.e(false, 0.69f);
+        eh0Var.p.setStrokeWidth(g0.L(1.5f));
         this.f = new te.a(view, xq.h, 260L);
         i6 i6Var = new i6(true, false, false);
         this.d = i6Var;
         i6Var.x(g0.o());
         i6Var.w(g0.L(13.0f));
         i6Var.b = 17;
-        int w02 = k6.w0(k6.i6, f6Var);
+        int w02 = l6.w0(l6.i6, g6Var);
         if (this.b != w02) {
-            k6.H1(this.a, w02, false);
+            l6.H1(this.a, w02, false);
             this.b = w02;
         }
     }

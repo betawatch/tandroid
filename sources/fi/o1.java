@@ -6,16 +6,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.messenger.p10;
 import org.telegram.ui.Components.hy;
-import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.qj0;
 import org.telegram.ui.Components.qu;
 import org.telegram.ui.Components.ru;
 import org.telegram.ui.Components.tw;
 import org.telegram.ui.Components.yw;
-import org.telegram.ui.bm0;
-import org.telegram.ui.jf0;
-import org.telegram.ui.qg0;
+import org.telegram.ui.dm0;
+import org.telegram.ui.lf0;
+import org.telegram.ui.sg0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class o1 extends v4.m0 {
     public final /* synthetic */ int a;
@@ -70,7 +70,7 @@ public final class o1 extends v4.m0 {
                 hy hyVar = (hy) this.b;
                 tw twVar = hyVar.P;
                 if (!(view instanceof org.telegram.ui.Cells.j8)) {
-                    if (!(view instanceof pj0) && !(view instanceof yw)) {
+                    if (!(view instanceof qj0) && !(view instanceof yw)) {
                         if (view instanceof org.telegram.ui.Components.l9) {
                             rect.bottom = org.telegram.messenger.g0.L(12.0f);
                             break;
@@ -99,7 +99,7 @@ public final class o1 extends v4.m0 {
                 }
                 break;
             case 5:
-                if (RecyclerView.R(view) == ((jf0) this.b).c.size() - 1) {
+                if (RecyclerView.R(view) == ((lf0) this.b).c.size() - 1) {
                     rect.bottom = org.telegram.messenger.g0.L(4.0f);
                     break;
                 }
@@ -107,18 +107,18 @@ public final class o1 extends v4.m0 {
             case 6:
                 super.e(rect, view, recyclerView, a1Var);
                 int R = RecyclerView.R(view);
-                qg0 qg0Var = (qg0) this.b;
-                if (R == qg0Var.U1.size()) {
-                    rect.bottom = qg0Var.d2;
+                sg0 sg0Var = (sg0) this.b;
+                if (R == sg0Var.U1.size()) {
+                    rect.bottom = sg0Var.d2;
                     break;
                 }
                 break;
             case 7:
                 int R2 = RecyclerView.R(view);
-                bm0 bm0Var = (bm0) this.b;
-                int i7 = bm0Var.b0;
+                dm0 dm0Var = (dm0) this.b;
+                int i7 = dm0Var.b0;
                 if (R2 >= i7) {
-                    int i10 = bm0Var.f0;
+                    int i10 = dm0Var.f0;
                     if (R2 < i7 + i10) {
                         int i11 = R2 - i7;
                         int i12 = i11 / 3;

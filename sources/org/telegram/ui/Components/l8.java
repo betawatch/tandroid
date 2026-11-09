@@ -12,9 +12,9 @@ import android.view.ViewGroup;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class l8 extends rt0 {
+public final class l8 extends tt0 {
     public final e2.r0 f0;
     public final /* synthetic */ t8 g0;
     public boolean h0;
@@ -31,7 +31,7 @@ public final class l8 extends rt0 {
         this.f0 = new e2.r0();
     }
 
-    @Override // org.telegram.ui.Components.rt0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.tt0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         Canvas canvas2;
         int save = canvas.save();
@@ -97,7 +97,7 @@ public final class l8 extends rt0 {
         if (view != kVar || t8Var.N <= 0.0f) {
             canvas2 = canvas;
         } else {
-            paint.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.d6, false));
+            paint.setColor(org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.d6, false));
             paint.setAlpha((int) (t8Var.N * 255.0f));
             canvas2 = canvas;
             canvas2.drawRect(0.0f, 0.0f, view.getMeasuredWidth(), view.getMeasuredHeight(), paint);
@@ -168,8 +168,8 @@ public final class l8 extends rt0 {
             } else {
                 i11 = 0;
             }
-            org.telegram.ui.c61 c61Var = t8Var.r;
-            c61Var.setTranslationY((c61Var.getTranslationY() + ((ViewGroup.MarginLayoutParams) t8Var.r.getLayoutParams()).topMargin) - i11);
+            org.telegram.ui.d61 d61Var = t8Var.r;
+            d61Var.setTranslationY((d61Var.getTranslationY() + ((ViewGroup.MarginLayoutParams) t8Var.r.getLayoutParams()).topMargin) - i11);
             ((ViewGroup.MarginLayoutParams) t8Var.r.getLayoutParams()).topMargin = i11;
             boolean z12 = t8Var.L;
             if (!t8Var.U) {

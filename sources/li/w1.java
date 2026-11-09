@@ -6,22 +6,22 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.Button;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.id;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.Components.dg;
-import org.telegram.ui.Components.mo0;
+import org.telegram.ui.Components.no0;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.ww;
+import org.telegram.ui.yw;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final class w1 extends dg {
     public final /* synthetic */ int n0 = 0;
     public final /* synthetic */ Object o0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w1(y3 y3Var, Context context, f6 f6Var) {
-        super(R.drawable.send_plane_24, context, f6Var, true);
+    public w1(y3 y3Var, Context context, g6 g6Var) {
+        super(R.drawable.send_plane_24, context, g6Var, true);
         this.o0 = y3Var;
     }
 
@@ -62,12 +62,12 @@ public final class w1 extends dg {
         Object obj = this.o0;
         switch (i7) {
             case 2:
-                return k6.w0(k6.S5, ((mo0) obj).I0);
+                return l6.w0(l6.S5, ((no0) obj).I0);
             case 3:
             default:
                 return super.getFillColor();
             case 4:
-                int i10 = k6.ng;
+                int i10 = l6.ng;
                 Drawable[] drawableArr = PhotoViewer.Y8;
                 return ((PhotoViewer) obj).w1(i10);
         }
@@ -92,7 +92,7 @@ public final class w1 extends dg {
         switch (this.n0) {
             case 3:
                 super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                accessibilityNodeInfo.setText(id.G(((ww) this.o0).I2.size(), "AccDescrShareInChats", new Object[0]));
+                accessibilityNodeInfo.setText(id.G(((yw) this.o0).J2.size(), "AccDescrShareInChats", new Object[0]));
                 accessibilityNodeInfo.setClassName(Button.class.getName());
                 accessibilityNodeInfo.setLongClickable(true);
                 accessibilityNodeInfo.setClickable(true);
@@ -104,26 +104,26 @@ public final class w1 extends dg {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w1(b2 b2Var, Context context, int i7, f6 f6Var) {
-        super(i7, context, f6Var, true);
+    public w1(b2 b2Var, Context context, int i7, g6 g6Var) {
+        super(i7, context, g6Var, true);
         this.o0 = b2Var;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w1(mo0 mo0Var, Context context, f6 f6Var) {
-        super(R.drawable.send_plane_24, context, f6Var, false);
-        this.o0 = mo0Var;
+    public w1(no0 no0Var, Context context, g6 g6Var) {
+        super(R.drawable.send_plane_24, context, g6Var, false);
+        this.o0 = no0Var;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w1(ww wwVar, Context context, f6 f6Var) {
-        super(R.drawable.send_plane_24, context, f6Var, false);
-        this.o0 = wwVar;
+    public w1(yw ywVar, Context context, g6 g6Var) {
+        super(R.drawable.send_plane_24, context, g6Var, false);
+        this.o0 = ywVar;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w1(PhotoViewer photoViewer, Context context, f6 f6Var) {
-        super(R.drawable.send_plane_24, context, f6Var, false);
+    public w1(PhotoViewer photoViewer, Context context, g6 g6Var) {
+        super(R.drawable.send_plane_24, context, g6Var, false);
         this.o0 = photoViewer;
     }
 }

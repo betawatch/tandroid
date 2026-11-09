@@ -20,7 +20,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class p2 {
     public final Context a;
@@ -80,9 +80,9 @@ public final class p2 {
         }
     }
 
-    public final void c(r9 r9Var) {
+    public final void c(q9 q9Var) {
         h(this.p);
-        e(1.0f, 320L, r9Var);
+        e(1.0f, 320L, q9Var);
     }
 
     public final void d() {

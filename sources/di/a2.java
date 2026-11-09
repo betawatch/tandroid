@@ -16,14 +16,14 @@ import org.telegram.ui.Components.di;
 import org.telegram.ui.Components.hc;
 import org.telegram.ui.Components.sh;
 import org.telegram.ui.Components.ue;
-import org.telegram.ui.an;
 import org.telegram.ui.an0;
-import org.telegram.ui.c61;
-import org.telegram.ui.h90;
-import org.telegram.ui.xm0;
-import org.telegram.ui.ym0;
+import org.telegram.ui.cn;
+import org.telegram.ui.cn0;
+import org.telegram.ui.d61;
+import org.telegram.ui.j90;
+import org.telegram.ui.zm0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a2 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -46,24 +46,24 @@ public final /* synthetic */ class a2 implements View.OnClickListener {
         int i11 = 1;
         switch (i7) {
             case 0:
-                i4 i4Var = (i4) obj;
+                j4 j4Var = (j4) obj;
                 boolean z10 = !z9;
-                qp s12 = qp.s1(i4Var.l2);
+                qp s12 = qp.s1(j4Var.l2);
                 if (s12.p6 != z10) {
                     SharedPreferences.Editor edit = s12.e7.edit();
                     s12.p6 = z10;
                     edit.putBoolean("storyQualityFull", z10).apply();
                     s12.getNotificationCenter().k(qs.m3, new Object[0]);
                 }
-                new hc(i4Var.L0, i4Var.k0).I(R.raw.chats_infotip, id.M0(!z9 ? 2131744510 : 2131744513, null), id.M0(!z9 ? 2131744511 : 2131744514, null)).j();
-                z3 z3Var = i4Var.c1;
-                if (z3Var != null) {
-                    z3Var.a();
+                new hc(j4Var.L0, j4Var.k0).I(R.raw.chats_infotip, id.M0(!z9 ? 2131744507 : 2131744510, null), id.M0(!z9 ? 2131744508 : 2131744511, null)).j();
+                a4 a4Var = j4Var.c1;
+                if (a4Var != null) {
+                    a4Var.a();
                     break;
                 }
                 break;
             case 1:
-                z3 z3Var2 = (z3) obj;
+                a4 a4Var2 = (a4) obj;
                 g1 g1Var = g1.W;
                 if (g1Var != null) {
                     boolean z11 = !z9;
@@ -75,9 +75,9 @@ public final /* synthetic */ class a2 implements View.OnClickListener {
                         }
                     }
                 }
-                z3 z3Var3 = z3Var2.x.c1;
-                if (z3Var3 != null) {
-                    z3Var3.a();
+                a4 a4Var3 = a4Var2.x.c1;
+                if (a4Var3 != null) {
+                    a4Var3.a();
                     break;
                 }
                 break;
@@ -102,9 +102,9 @@ public final /* synthetic */ class a2 implements View.OnClickListener {
                 }
                 break;
             case 3:
-                c61 c61Var = (c61) obj;
+                d61 d61Var = (d61) obj;
                 for (int i12 = 0; i12 < 2; i12++) {
-                    org.telegram.ui.Cells.v0 v0Var = ((org.telegram.ui.Cells.v0[]) c61Var.b)[i12];
+                    org.telegram.ui.Cells.v0 v0Var = ((org.telegram.ui.Cells.v0[]) d61Var.b)[i12];
                     ((org.telegram.ui.Cells.u0) v0Var.d).a(v0Var == view, true);
                 }
                 iz.p1 = z9;
@@ -138,50 +138,50 @@ public final /* synthetic */ class a2 implements View.OnClickListener {
                 } else {
                     HashMap hashMap = new HashMap();
                     ArrayList arrayList = new ArrayList();
-                    an0 an0Var = new an0(hashMap, arrayList, 0, true, (an) f2Var);
+                    cn0 cn0Var = new cn0(hashMap, arrayList, 0, true, (cn) f2Var);
                     sh shVar = new sh(diVar, hashMap, arrayList);
-                    xm0 xm0Var = an0Var.a;
-                    xm0Var.s0 = shVar;
-                    xm0 xm0Var2 = an0Var.b;
-                    xm0Var2.s0 = shVar;
-                    xm0Var.t0 = new ym0(an0Var, i11);
-                    xm0Var2.t0 = new ym0(an0Var, i10);
+                    zm0 zm0Var = cn0Var.a;
+                    zm0Var.s0 = shVar;
+                    zm0 zm0Var2 = cn0Var.b;
+                    zm0Var2.s0 = shVar;
+                    zm0Var.t0 = new an0(cn0Var, i11);
+                    zm0Var2.t0 = new an0(cn0Var, i10);
                     int i13 = diVar.M3;
                     boolean z12 = diVar.N3;
-                    xm0Var.k0(i13, z12);
-                    xm0Var2.k0(i13, z12);
+                    zm0Var.k0(i13, z12);
+                    zm0Var2.k0(i13, z12);
                     if (z9) {
-                        f2Var.showAsSheet(an0Var);
+                        f2Var.showAsSheet(cn0Var);
                     } else {
-                        f2Var.presentFragment(an0Var);
+                        f2Var.presentFragment(cn0Var);
                     }
                     diVar.dismiss();
                     break;
                 }
             default:
-                h90 h90Var = (h90) obj;
+                j90 j90Var = (j90) obj;
                 if (!z9) {
-                    org.telegram.ui.Cells.r8 r8Var = h90Var.n;
+                    org.telegram.ui.Cells.r8 r8Var = j90Var.n;
                     if (r8Var == null || !r8Var.e.h) {
                         org.telegram.ui.Cells.r8 r8Var2 = (org.telegram.ui.Cells.r8) view;
                         boolean z13 = r8Var2.e.h;
                         r8Var2.setChecked(!z13);
-                        h90Var.e0(z13);
-                        org.telegram.ui.Cells.r8 r8Var3 = h90Var.n;
+                        j90Var.e0(z13);
+                        org.telegram.ui.Cells.r8 r8Var3 = j90Var.n;
                         if (r8Var3 != null) {
                             if (r8Var2.e.h) {
                                 r8Var3.setChecked(false);
-                                h90Var.n.setCheckBoxIcon(R.drawable.permission_locked);
-                                h90Var.r.setVisibility(8);
+                                j90Var.n.setCheckBoxIcon(R.drawable.permission_locked);
+                                j90Var.r.setVisibility(8);
                                 break;
-                            } else if (h90Var.e == null) {
+                            } else if (j90Var.e == null) {
                                 r8Var3.setCheckBoxIcon(0);
                                 break;
                             }
                         }
                     } else {
-                        int i14 = -h90Var.M;
-                        h90Var.M = i14;
+                        int i14 = -j90Var.M;
+                        j90Var.M = i14;
                         org.telegram.messenger.g0.G3(i14, r8Var, null);
                         break;
                     }

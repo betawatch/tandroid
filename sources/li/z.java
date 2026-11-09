@@ -5,7 +5,7 @@ import bi.de;
 import java.net.URL;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final class z {
     public int a;
@@ -18,7 +18,7 @@ public final class z {
         this.b = j3;
     }
 
-    public void a(a aVar, l2.y yVar) {
+    public void a(a aVar, l2.x xVar) {
         int i7;
         int b10 = c8.l1.b(aVar);
         long j3 = aVar != null ? aVar.a : Long.MIN_VALUE;
@@ -31,11 +31,11 @@ public final class z {
         }
         if (!z9 || (i7 = this.a) == b10) {
             this.a = b10;
-            yVar.d(b10);
+            xVar.d(b10);
             return;
         }
         ValueAnimator ofInt = ValueAnimator.ofInt(i7, b10);
-        ofInt.addUpdateListener(new de(8, this, yVar));
+        ofInt.addUpdateListener(new de(8, this, xVar));
         ofInt.setInterpolator(xq.f);
         ofInt.setDuration(200L);
         this.c = ofInt;

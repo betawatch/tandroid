@@ -7,9 +7,9 @@ import android.graphics.RectF;
 import android.graphics.Shader;
 import android.text.TextPaint;
 import android.text.style.ReplacementSpan;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.l6;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class e1 extends ReplacementSpan {
     public final TextPaint a;
@@ -27,7 +27,7 @@ public final class e1 extends ReplacementSpan {
         textPaint.setTypeface(org.telegram.messenger.g0.o1("fonts/rmono.ttf"));
         textPaint.setTextSize(org.telegram.messenger.g0.L(13.0f));
         textPaint.setColor(i7);
-        paint.setColor(k6.r1(0.08f, i7));
+        paint.setColor(l6.r1(0.08f, i7));
     }
 
     @Override // android.text.style.ReplacementSpan
@@ -40,7 +40,7 @@ public final class e1 extends ReplacementSpan {
         canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(6.0f), this.b);
         if (this.d) {
             int color = textPaint.getColor();
-            int r12 = k6.r1(0.0f, color);
+            int r12 = l6.r1(0.0f, color);
             float L = f10 + org.telegram.messenger.g0.L(4.0f);
             textPaint.setShader(new LinearGradient(L, 0.0f, L + measureText, 0.0f, new int[]{color, r12, r12, color}, new float[]{0.17f, 0.41f, 0.59f, 0.87f}, Shader.TileMode.CLAMP));
         }

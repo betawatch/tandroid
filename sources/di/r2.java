@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.vj;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r2 implements c20 {
     public final /* synthetic */ int a;
@@ -36,37 +36,37 @@ public final /* synthetic */ class r2 implements c20 {
                 t2 t2Var = (t2) this.d;
                 TLRPC.BotInlineResult botInlineResult = (TLRPC.BotInlineResult) this.e;
                 Long l10 = (Long) obj;
-                i4 i4Var = t2Var.a;
-                TLRPC.User user = i4Var.M2.getAdapter().w0;
+                j4 j4Var = t2Var.a;
+                TLRPC.User user = j4Var.M2.getAdapter().w0;
                 long j3 = user != null ? user.id : 0L;
                 HashMap hashMap = new HashMap();
                 hashMap.put("id", botInlineResult.id);
                 hashMap.put("query_id", "" + botInlineResult.query_id);
                 hashMap.put("bot", "" + j3);
-                TLRPC.User user2 = i4Var.M2.getAdapter().w0;
+                TLRPC.User user2 = j4Var.M2.getAdapter().w0;
                 hashMap.put("bot_name", user2 != null ? user2.username : "");
-                org.telegram.ui.ActionBar.f2 f2Var = i4Var.s0.f;
-                accountInstance = i4Var.getAccountInstance();
+                org.telegram.ui.ActionBar.f2 f2Var = j4Var.s0.f;
+                accountInstance = j4Var.getAccountInstance();
                 long j10 = j3;
-                gz.S(this.c, i4Var.k1, 0L, l10.longValue(), hashMap, accountInstance, null, null, null, botInlineResult, i4Var.x1.a, f2Var, null, this.b);
-                i4Var.K1.setFieldText("");
-                i4Var.i0(l10.longValue() <= 0);
-                ui.b0(i4Var.l2).v0(j10, false);
+                gz.S(this.c, j4Var.k1, 0L, l10.longValue(), hashMap, accountInstance, null, null, null, botInlineResult, j4Var.x1.a, f2Var, null, this.b);
+                j4Var.K1.setFieldText("");
+                j4Var.i0(l10.longValue() <= 0);
+                ui.b0(j4Var.l2).v0(j10, false);
                 break;
             case 1:
-                k6 k6Var = (k6) this.d;
+                l6 l6Var = (l6) this.d;
                 List list = (List) this.e;
-                n6 n6Var = k6Var.q;
-                TLObject f22 = qp.s1(k6Var.c).f2(k6Var.D);
-                k6Var.G = false;
+                o6 o6Var = l6Var.q;
+                TLObject f22 = qp.s1(l6Var.c).f2(l6Var.D);
+                l6Var.G = false;
                 if (f22 == null) {
-                    k6Var.J = 0;
-                    k6Var.H = "";
-                    org.telegram.messenger.g0.r(n6Var);
-                    org.telegram.messenger.g0.h3(n6Var);
+                    l6Var.J = 0;
+                    l6Var.H = "";
+                    org.telegram.messenger.g0.r(o6Var);
+                    org.telegram.messenger.g0.h3(o6Var);
                     break;
                 } else {
-                    k6Var.q(this.c, list, this.b);
+                    l6Var.q(this.c, list, this.b);
                     break;
                 }
             default:
@@ -75,9 +75,9 @@ public final /* synthetic */ class r2 implements c20 {
         }
     }
 
-    public /* synthetic */ r2(k6 k6Var, boolean z9, int i7, List list) {
+    public /* synthetic */ r2(l6 l6Var, boolean z9, int i7, List list) {
         this.a = 1;
-        this.d = k6Var;
+        this.d = l6Var;
         this.b = z9;
         this.c = i7;
         this.e = list;

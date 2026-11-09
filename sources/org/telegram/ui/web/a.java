@@ -4,9 +4,9 @@ import java.io.Serializable;
 import org.telegram.messenger.a20;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.ij;
-import org.telegram.ui.Components.x31;
+import org.telegram.ui.Components.y31;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a implements org.telegram.ui.ActionBar.r1, a20 {
     public final /* synthetic */ j a;
@@ -25,11 +25,11 @@ public final /* synthetic */ class a implements org.telegram.ui.ActionBar.r1, a2
     @Override // org.telegram.messenger.a20
     public void i(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
         org.telegram.ui.q qVar;
-        x31 x31Var = (x31) obj;
-        boolean H = x31Var.H(c.class);
+        y31 y31Var = (y31) obj;
+        boolean H = y31Var.H(c.class);
         j jVar = this.a;
         if (H) {
-            String charSequence = x31Var.l.toString();
+            String charSequence = y31Var.l.toString();
             org.telegram.ui.y yVar = jVar.L;
             if (yVar != null) {
                 yVar.a(charSequence);
@@ -37,11 +37,11 @@ public final /* synthetic */ class a implements org.telegram.ui.ActionBar.r1, a2
             }
             return;
         }
-        if (!x31Var.H(f.class) || (qVar = jVar.N) == null) {
+        if (!y31Var.H(f.class) || (qVar = jVar.N) == null) {
             return;
         }
         try {
-            qVar.a(j.a((ij) x31Var.H));
+            qVar.a(j.a((ij) y31Var.H));
         } catch (Exception e10) {
             a8.g(e10, true);
         }

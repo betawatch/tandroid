@@ -11,9 +11,9 @@ import org.telegram.messenger.ij;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.wo;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class p7 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
+public final class p7 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public m7[] a;
     public ij[] b;
     public int[] c;
@@ -141,17 +141,17 @@ public final class p7 extends FrameLayout implements org.telegram.ui.ActionBar.a
         this.e = i7;
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
         try {
-            this.n.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.zi, false));
+            this.n.setColor(org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.zi, false));
             invalidate();
         } catch (Exception e10) {
             org.telegram.messenger.a8.g(e10, true);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

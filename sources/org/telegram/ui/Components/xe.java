@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class xe extends vf {
     public boolean a2;
@@ -22,8 +22,8 @@ public final class xe extends vf {
     public final /* synthetic */ ChatActivityEnterView e2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xe(ChatActivityEnterView chatActivityEnterView, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(chatActivityEnterView, context, f6Var);
+    public xe(ChatActivityEnterView chatActivityEnterView, Context context, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(chatActivityEnterView, context, g6Var);
         this.e2 = chatActivityEnterView;
         this.a2 = true;
     }
@@ -37,8 +37,8 @@ public final class xe extends vf {
             setWindowView(view);
             return;
         }
-        org.telegram.ui.an anVar = chatActivityEnterView.P2;
-        if (anVar == null || anVar.getParentLayout() == null || !((ActionBarLayout) chatActivityEnterView.P2.getParentLayout()).b) {
+        org.telegram.ui.cn cnVar = chatActivityEnterView.P2;
+        if (cnVar == null || cnVar.getParentLayout() == null || !((ActionBarLayout) chatActivityEnterView.P2.getParentLayout()).b) {
             setWindowView(chatActivityEnterView.O2.getWindow().getDecorView());
         } else {
             setWindowView(chatActivityEnterView.P2.getParentLayout().getWindow().getDecorView());
@@ -101,14 +101,14 @@ public final class xe extends vf {
                                 }
                                 int max2 = Math.max(0, chatActivityEnterView.E0.getSelectionStart());
                                 int min2 = Math.min(chatActivityEnterView.E0.getText().length(), chatActivityEnterView.E0.getSelectionEnd());
-                                tg0[] tg0VarArr = (tg0[]) chatActivityEnterView.E0.getText().getSpans(max2, min2, tg0.class);
-                                if (tg0VarArr == null || tg0VarArr.length <= 0) {
-                                    ug0.a(spannableStringBuilder);
+                                ug0[] ug0VarArr = (ug0[]) chatActivityEnterView.E0.getText().getSpans(max2, min2, ug0.class);
+                                if (ug0VarArr == null || ug0VarArr.length <= 0) {
+                                    vg0.a(spannableStringBuilder);
                                 } else {
-                                    tg0[] tg0VarArr2 = (tg0[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), tg0.class);
-                                    for (int i10 = 0; i10 < tg0VarArr2.length; i10++) {
-                                        spannableStringBuilder.removeSpan(tg0VarArr2[i10]);
-                                        spannableStringBuilder.removeSpan(tg0VarArr2[i10].a);
+                                    ug0[] ug0VarArr2 = (ug0[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), ug0.class);
+                                    for (int i10 = 0; i10 < ug0VarArr2.length; i10++) {
+                                        spannableStringBuilder.removeSpan(ug0VarArr2[i10]);
+                                        spannableStringBuilder.removeSpan(ug0VarArr2[i10].a);
                                     }
                                 }
                                 xe xeVar = chatActivityEnterView.E0;
@@ -131,7 +131,7 @@ public final class xe extends vf {
         ChatActivityEnterView chatActivityEnterView = this.e2;
         if (!chatActivityEnterView.s()) {
             if (motionEvent.getAction() == 0 && chatActivityEnterView.Z2 != null) {
-                org.telegram.ui.ActionBar.r6.m(this, 36, org.telegram.ui.ActionBar.k6.jg, chatActivityEnterView.W3);
+                org.telegram.ui.ActionBar.s6.l(this, 36, org.telegram.ui.ActionBar.l6.jg, chatActivityEnterView.W3);
                 chatActivityEnterView.Z2.f1();
             }
             return super.onTouchEvent(motionEvent);
@@ -146,7 +146,7 @@ public final class xe extends vf {
             }
         } else if (this.d2) {
             if (chatActivityEnterView.Z2 != null) {
-                org.telegram.ui.ActionBar.r6.m(this, 36, org.telegram.ui.ActionBar.k6.jg, chatActivityEnterView.W3);
+                org.telegram.ui.ActionBar.s6.l(this, 36, org.telegram.ui.ActionBar.l6.jg, chatActivityEnterView.W3);
                 chatActivityEnterView.Z2.f1();
             }
             xe xeVar = chatActivityEnterView.E0;

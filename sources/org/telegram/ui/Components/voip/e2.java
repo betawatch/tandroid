@@ -22,12 +22,12 @@ import org.telegram.messenger.ls;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.messenger.voip.VoIPService;
-import org.telegram.ui.Components.t41;
+import org.telegram.ui.Components.u41;
 import org.telegram.ui.Components.vs;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class e2 implements VoIPService.StateListener, ls {
     public static boolean S = false;
@@ -103,10 +103,10 @@ public final class e2 implements VoIPService.StateListener, ls {
             ImageView imageView2 = new ImageView(context);
             imageView2.setImageResource(R.drawable.pip_enlarge);
             imageView2.setPadding(org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f));
-            imageView2.setContentDescription(id.M0(2131747818, null));
+            imageView2.setContentDescription(id.M0(2131747817, null));
             d2Var.addView(imageView2, ha.d(40, 40.0f, 51, 4.0f, 4.0f, 4.0f, 0.0f));
             imageView.setOnClickListener(new bi.l1(14));
-            imageView2.setOnClickListener(new t41(4, this, context));
+            imageView2.setOnClickListener(new u41(4, this, context));
         }
         VoIPService sharedInstance = VoIPService.getSharedInstance();
         if (sharedInstance != null) {

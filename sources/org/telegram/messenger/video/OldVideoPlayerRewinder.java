@@ -1,10 +1,10 @@
 package org.telegram.messenger.video;
 
 import org.telegram.messenger.g0;
-import org.telegram.ui.Components.ae0;
-import org.telegram.ui.Components.t51;
+import org.telegram.ui.Components.be0;
+import org.telegram.ui.Components.u51;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public class OldVideoPlayerRewinder {
     private long rewindBackSeekPlayerPosition;
@@ -15,8 +15,8 @@ public class OldVideoPlayerRewinder {
     private long rewindLastUpdatePlayerTime;
     private long startRewindFrom;
     private Runnable updateRewindRunnable;
-    private t51 videoPlayer;
-    private ae0 webView;
+    private u51 videoPlayer;
+    private be0 webView;
     private float playSpeed = 1.0f;
     private final Runnable backSeek = new Runnable() { // from class: org.telegram.messenger.video.OldVideoPlayerRewinder.1
         @Override // java.lang.Runnable
@@ -86,11 +86,11 @@ public class OldVideoPlayerRewinder {
         if (this.webView != null) {
             return r0.getCurrentPosition();
         }
-        t51 t51Var = this.videoPlayer;
-        if (t51Var == null) {
+        u51 u51Var = this.videoPlayer;
+        if (u51Var == null) {
             return 0L;
         }
-        return t51Var.S();
+        return u51Var.S();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -98,11 +98,11 @@ public class OldVideoPlayerRewinder {
         if (this.webView != null) {
             return r0.getVideoDuration();
         }
-        t51 t51Var = this.videoPlayer;
-        if (t51Var == null) {
+        u51 u51Var = this.videoPlayer;
+        if (u51Var == null) {
             return 0L;
         }
-        return t51Var.U();
+        return u51Var.U();
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:39:0x0048, code lost:
@@ -180,15 +180,15 @@ public class OldVideoPlayerRewinder {
     }
 
     private boolean isPlaying() {
-        ae0 ae0Var = this.webView;
-        if (ae0Var != null) {
-            return ae0Var.G;
+        be0 be0Var = this.webView;
+        if (be0Var != null) {
+            return be0Var.G;
         }
-        t51 t51Var = this.videoPlayer;
-        if (t51Var == null) {
+        u51 u51Var = this.videoPlayer;
+        if (u51Var == null) {
             return false;
         }
-        return t51Var.d0();
+        return u51Var.d0();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -199,29 +199,29 @@ public class OldVideoPlayerRewinder {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void seekTo(long j3) {
-        ae0 ae0Var = this.webView;
-        if (ae0Var != null) {
-            ae0Var.i(j3);
+        be0 be0Var = this.webView;
+        if (be0Var != null) {
+            be0Var.i(j3);
             return;
         }
-        t51 t51Var = this.videoPlayer;
-        if (t51Var == null) {
+        u51 u51Var = this.videoPlayer;
+        if (u51Var == null) {
             return;
         }
-        t51Var.p0(j3);
+        u51Var.p0(j3);
     }
 
     private void setPlaybackSpeed(float f10) {
-        ae0 ae0Var = this.webView;
-        if (ae0Var != null) {
-            ae0Var.setPlaybackSpeed(f10);
+        be0 be0Var = this.webView;
+        if (be0Var != null) {
+            be0Var.setPlaybackSpeed(f10);
             return;
         }
-        t51 t51Var = this.videoPlayer;
-        if (t51Var == null) {
+        u51 u51Var = this.videoPlayer;
+        if (u51Var == null) {
             return;
         }
-        t51Var.v0(f10);
+        u51Var.v0(f10);
     }
 
     public void cancelRewind() {
@@ -249,16 +249,16 @@ public class OldVideoPlayerRewinder {
         return this.rewindBackSeekPlayerPosition / getDuration();
     }
 
-    public void startRewind(ae0 ae0Var, boolean z9, float f10) {
-        this.webView = ae0Var;
+    public void startRewind(be0 be0Var, boolean z9, float f10) {
+        this.webView = be0Var;
         this.playSpeed = f10;
         this.rewindForward = z9;
         cancelRewind();
         incrementRewindCount();
     }
 
-    public void startRewind(t51 t51Var, boolean z9, float f10) {
-        this.videoPlayer = t51Var;
+    public void startRewind(u51 u51Var, boolean z9, float f10) {
+        this.videoPlayer = u51Var;
         this.playSpeed = f10;
         this.rewindForward = z9;
         cancelRewind();

@@ -1,36 +1,25 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.view.View;
-import java.util.HashSet;
+import java.util.TimerTask;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class yj0 extends View implements org.telegram.ui.ActionBar.a6 {
-    public Paint a;
-    public Paint b;
-    public float c;
+public final class yj0 extends TimerTask {
+    public final /* synthetic */ zj0 a;
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        float measuredWidth = (int) (getMeasuredWidth() * this.c);
-        canvas.drawRect(0.0f, 0.0f, measuredWidth, getMeasuredHeight(), this.b);
-        canvas.drawRect(measuredWidth, 0.0f, getMeasuredWidth(), getMeasuredHeight(), this.a);
+    public yj0(zj0 zj0Var) {
+        this.a = zj0Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
-    public final void updateColors() {
-        try {
-            this.a.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Ui, false));
-            this.b.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Vi, false));
-            invalidate();
-        } catch (Exception e10) {
-            org.telegram.messenger.a8.g(e10, true);
+    @Override // java.util.TimerTask, java.lang.Runnable
+    public final void run() {
+        zj0 zj0Var = this.a;
+        if (zj0Var.w == null) {
+            return;
         }
-    }
-
-    @Override // org.telegram.ui.ActionBar.a6
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+        double currentTimeMillis = System.currentTimeMillis();
+        zj0Var.D = (int) (zj0Var.D - (currentTimeMillis - zj0Var.F));
+        zj0Var.F = currentTimeMillis;
+        org.telegram.messenger.g0.h3(new gf0(this, 9));
     }
 }

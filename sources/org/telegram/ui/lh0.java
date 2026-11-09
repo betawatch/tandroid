@@ -1,38 +1,23 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import org.telegram.messenger.Utilities;
+import android.widget.ImageView;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class lh0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ mh0 b;
-    public final /* synthetic */ String c;
+public final class lh0 extends org.telegram.ui.Cells.m8 {
+    public ImageView W;
 
-    public /* synthetic */ lh0(mh0 mh0Var, String str, int i7) {
-        this.a = i7;
-        this.b = mh0Var;
-        this.c = str;
+    @Override // org.telegram.ui.Cells.m8, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
+        super.onLayout(z9, i7, i10, i11, i12);
+        int L = org.telegram.messenger.id.a0 ? org.telegram.messenger.g0.L(17.0f) : (i11 - i7) - org.telegram.messenger.g0.L(41.0f);
+        int y10 = org.telegram.messenger.camera.q.y(24.0f, i12 - i10, 2);
+        this.W.layout(L, y10, org.telegram.messenger.g0.L(24.0f) + L, org.telegram.messenger.g0.L(24.0f) + y10);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                mh0 mh0Var = this.b;
-                String str = this.c;
-                mh0Var.getClass();
-                org.telegram.messenger.g0.h3(new lh0(mh0Var, str, 1));
-                break;
-            default:
-                mh0 mh0Var2 = this.b;
-                String str2 = this.c;
-                jg.z1 z1Var = mh0Var2.h;
-                int i7 = mh0Var2.n.s;
-                z1Var.g(str2, true, (i7 == 1 || i7 == 3) ? false : true, true, false, 0L, false, 0, 0);
-                Utilities.g.c(new mc0(mh0Var2, str2, new ArrayList(mh0Var2.n.x), 10));
-                break;
-        }
+    @Override // org.telegram.ui.Cells.m8, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(i7, i10);
+        this.W.measure(i7, i10);
     }
 }

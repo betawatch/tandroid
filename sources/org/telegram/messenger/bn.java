@@ -8,7 +8,7 @@ import java.util.Collections;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class bn implements Runnable {
     public final /* synthetic */ qp a;
@@ -307,7 +307,7 @@ public final /* synthetic */ class bn implements Runnable {
              */
             /* JADX WARN: Code restructure failed: missing block: B:161:0x01a3, code lost:
             
-                r7.remove(r11.f1());
+                r7.remove(r11.e1());
              */
             /* JADX WARN: Code restructure failed: missing block: B:162:0x01aa, code lost:
             
@@ -367,7 +367,7 @@ public final /* synthetic */ class bn implements Runnable {
              */
             /* JADX WARN: Code restructure failed: missing block: B:183:0x01f0, code lost:
             
-                if (r11.f1() != r1.f1()) goto L222;
+                if (r11.e1() != r1.e1()) goto L222;
              */
             /* JADX WARN: Code restructure failed: missing block: B:185:0x01f2, code lost:
             
@@ -375,7 +375,7 @@ public final /* synthetic */ class bn implements Runnable {
              */
             /* JADX WARN: Code restructure failed: missing block: B:186:0x01fa, code lost:
             
-                r7.put(r1.f1(), r1);
+                r7.put(r1.e1(), r1);
                 r10 = r1.k.random_id;
              */
             /* JADX WARN: Code restructure failed: missing block: B:187:0x0207, code lost:
@@ -495,7 +495,7 @@ public final /* synthetic */ class bn implements Runnable {
                                 for (int i29 = 0; i29 < arrayList11.size(); i29++) {
                                     ij ijVar4 = (ij) arrayList11.get(i29);
                                     if (ijVar4 != null && ijVar4.k.peer_id.channel_id == 0) {
-                                        sparseArray4.put(ijVar4.f1(), ijVar4);
+                                        sparseArray4.put(ijVar4.e1(), ijVar4);
                                         long j17 = ijVar4.k.random_id;
                                         if (j17 != 0) {
                                             hVar6.k(ijVar4, j17);
@@ -540,7 +540,7 @@ public final /* synthetic */ class bn implements Runnable {
                                     ij ijVar5 = (ij) arrayList12.get(i31);
                                     if (ijVar5 != null) {
                                         if (ijVar5.k.peer_id.channel_id == 0) {
-                                            sparseArray4.remove(ijVar5.f1());
+                                            sparseArray4.remove(ijVar5.e1());
                                         }
                                         long j18 = ijVar5.k.random_id;
                                         if (j18 != 0) {
@@ -559,13 +559,13 @@ public final /* synthetic */ class bn implements Runnable {
                                                 break;
                                             }
                                             ij ijVar7 = (ij) arrayList12.get(i33);
-                                            if (ijVar7 != null && ijVar7.f1() == ijVar6.f1()) {
+                                            if (ijVar7 != null && ijVar7.e1() == ijVar6.e1()) {
                                                 ijVar6.Z = ijVar7.Z;
                                                 break;
                                             }
                                             i33++;
                                         }
-                                        sparseArray4.put(ijVar6.f1(), ijVar6);
+                                        sparseArray4.put(ijVar6.e1(), ijVar6);
                                         long j19 = ijVar6.k.random_id;
                                         if (j19 != 0) {
                                             hVar6.k(ijVar6, j19);

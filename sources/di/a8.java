@@ -2,7 +2,7 @@ package di;
 
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a8 implements r1.d {
     public final /* synthetic */ int a;
@@ -17,9 +17,9 @@ public final /* synthetic */ class a8 implements r1.d {
     public final void a(r1.g gVar, float f10, float f11) {
         switch (this.a) {
             case 0:
-                h8 h8Var = (h8) this.b;
-                h8Var.d0 = f10;
-                h8Var.f0 = f11;
+                i8 i8Var = (i8) this.b;
+                i8Var.d0 = f10;
+                i8Var.f0 = f11;
                 break;
             case 1:
                 fi.o5 o5Var = (fi.o5) this.b;

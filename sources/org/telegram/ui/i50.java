@@ -1,45 +1,17 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.TextWatcher;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class i50 implements TextWatcher {
-    public final /* synthetic */ j50 a;
+public final class i50 {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ TLRPC.TL_messages_stickerSet b;
+    public final /* synthetic */ o50 c;
 
-    public i50(j50 j50Var) {
-        this.a = j50Var;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        String trim = editable.toString().trim();
-        j50 j50Var = this.a;
-        m50 m50Var = j50Var.h;
-        if (j50Var.c != 0) {
-            m50Var.getConnectionsManager().cancelRequest(j50Var.c, true);
-            j50Var.c = 0;
-        }
-        q10 q10Var = j50Var.d;
-        if (q10Var != null) {
-            org.telegram.messenger.g0.r(q10Var);
-        }
-        j50Var.e = null;
-        if (trim.isEmpty()) {
-            m50.f0(m50Var, null);
-            return;
-        }
-        q10 q10Var2 = new q10(3, this, trim);
-        j50Var.d = q10Var2;
-        org.telegram.messenger.g0.i3(q10Var2, 300L);
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+    public i50(o50 o50Var, boolean z9, TLRPC.TL_messages_stickerSet tL_messages_stickerSet) {
+        this.c = o50Var;
+        this.a = z9;
+        this.b = tL_messages_stickerSet;
     }
 }

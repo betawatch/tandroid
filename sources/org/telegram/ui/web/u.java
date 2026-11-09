@@ -1,63 +1,59 @@
 package org.telegram.ui.web;
 
-import bi.a3;
-import di.o7;
-import java.io.File;
-import org.telegram.messenger.c20;
+import di.p7;
+import org.json.JSONObject;
+import org.telegram.messenger.a8;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class u implements c20 {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ x0 b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ String d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+public final /* synthetic */ class u implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ String[] b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ u0 d;
+    public final /* synthetic */ p7 e;
 
-    public /* synthetic */ u(x0 x0Var, o7 o7Var, String str, hi.m1 m1Var, String str2) {
-        this.b = x0Var;
-        this.e = o7Var;
-        this.c = str;
-        this.f = m1Var;
-        this.d = str2;
+    public /* synthetic */ u(String[] strArr, int i7, u0 u0Var, p7 p7Var, int i10) {
+        this.a = i10;
+        this.b = strArr;
+        this.c = i7;
+        this.d = u0Var;
+        this.e = p7Var;
     }
 
-    @Override // org.telegram.messenger.c20
-    public final void a(Object obj) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                o7 o7Var = (o7) this.e;
-                hi.m1 m1Var = (hi.m1) this.f;
-                String str = this.d;
-                String str2 = (String) obj;
-                x0 x0Var = this.b;
-                String str3 = this.c;
-                if (str2 == null) {
-                    x0Var.x(o7Var, "secure_storage_failed", x0.B("req_id", str3, "error", "RESTORE_CANCELLED"));
-                    break;
-                } else {
+                int i7 = this.c;
+                u0 u0Var = this.d;
+                p7 p7Var = this.e;
+                String[] strArr = this.b;
+                if (strArr[0] != null) {
                     try {
-                        m1Var.j(str2);
-                        x0Var.x(o7Var, "secure_storage_key_restored", x0.B("req_id", str3, "value", (String) m1Var.f(str).first));
+                        JSONObject jSONObject = new JSONObject();
+                        jSONObject.put("status", strArr[0]);
+                        x0.w(i7, u0Var, p7Var, "phone_requested", jSONObject);
                         break;
                     } catch (Exception e10) {
-                        x0Var.x(o7Var, "secure_storage_failed", x0.B("req_id", str3, "error", e10.getMessage()));
+                        a8.g(e10, true);
                         return;
                     }
                 }
-            default:
-                x0 x0Var2 = this.b;
-                org.telegram.messenger.g0.h3(new a3(x0Var2, (File) obj, (org.telegram.ui.ActionBar.u1) this.e, this.c, this.d, (String) this.f, 26));
                 break;
+            default:
+                String[] strArr2 = this.b;
+                int i10 = this.c;
+                u0 u0Var2 = this.d;
+                p7 p7Var2 = this.e;
+                try {
+                    JSONObject jSONObject2 = new JSONObject();
+                    jSONObject2.put("status", strArr2[0]);
+                    x0.w(i10, u0Var2, p7Var2, "write_access_requested", jSONObject2);
+                    break;
+                } catch (Exception e11) {
+                    a8.g(e11, true);
+                }
         }
-    }
-
-    public /* synthetic */ u(x0 x0Var, org.telegram.ui.ActionBar.u1 u1Var, String str, String str2, String str3) {
-        this.b = x0Var;
-        this.e = u1Var;
-        this.c = str;
-        this.d = str2;
-        this.f = str3;
     }
 }

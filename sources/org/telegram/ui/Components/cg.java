@@ -6,7 +6,7 @@ import android.graphics.Paint;
 import android.view.View;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class cg extends View {
     public float a;
@@ -14,7 +14,7 @@ public final class cg extends View {
     public boolean c;
     public boolean d;
     public boolean e;
-    public final zg0 f;
+    public final ah0 f;
     public boolean h;
     public boolean n;
     public long r;
@@ -25,43 +25,43 @@ public final class cg extends View {
         super(context);
         this.s = chatActivityEnterView;
         this.r = -1L;
-        zg0 zg0Var = new zg0(R.raw.chat_audio_record_delete_2, org.telegram.messenger.g0.L(28.0f), org.telegram.messenger.g0.L(28.0f), false, null);
-        this.f = zg0Var;
-        zg0Var.o0 = true;
+        ah0 ah0Var = new ah0(R.raw.chat_audio_record_delete_2, org.telegram.messenger.g0.L(28.0f), org.telegram.messenger.g0.L(28.0f), false, null);
+        this.f = ah0Var;
+        ah0Var.o0 = true;
         b();
     }
 
     public final void a() {
         this.e = true;
-        zg0 zg0Var = this.f;
-        zg0Var.T(true, 0.0f);
+        ah0 ah0Var = this.f;
+        ah0Var.T(true, 0.0f);
         if (this.d) {
-            zg0Var.start();
+            ah0Var.start();
         }
     }
 
     public final void b() {
-        int i7 = org.telegram.ui.ActionBar.k6.Xf;
+        int i7 = org.telegram.ui.ActionBar.l6.Xf;
         int i10 = ChatActivityEnterView.s5;
         ChatActivityEnterView chatActivityEnterView = this.s;
         int f02 = chatActivityEnterView.f0(i7);
-        int f03 = chatActivityEnterView.f0(org.telegram.ui.ActionBar.k6.Ge);
-        int f04 = chatActivityEnterView.f0(org.telegram.ui.ActionBar.k6.Sf);
+        int f03 = chatActivityEnterView.f0(org.telegram.ui.ActionBar.l6.Ge);
+        int f04 = chatActivityEnterView.f0(org.telegram.ui.ActionBar.l6.Sf);
         chatActivityEnterView.w3.setColor(f02);
-        zg0 zg0Var = this.f;
-        zg0Var.Z = true;
-        zg0Var.Q(f02, "Cup Red");
-        zg0Var.Q(f02, "Box Red");
-        zg0Var.Q(f04, "Cup Grey");
-        zg0Var.Q(f04, "Box Grey");
-        zg0Var.Q(f04, "Box_Grey 2");
-        zg0Var.Q(f04, "Line 1");
-        zg0Var.Q(f04, "Line 2");
-        zg0Var.Q(f04, "Line 3");
-        zg0Var.Q(f03, "Line 1 Dup");
-        zg0Var.Q(f03, "Line 2 Dup");
-        zg0Var.Q(f03, "Line 3 Dup");
-        zg0Var.o();
+        ah0 ah0Var = this.f;
+        ah0Var.Z = true;
+        ah0Var.Q(f02, "Cup Red");
+        ah0Var.Q(f02, "Box Red");
+        ah0Var.Q(f04, "Cup Grey");
+        ah0Var.Q(f04, "Box Grey");
+        ah0Var.Q(f04, "Box_Grey 2");
+        ah0Var.Q(f04, "Line 1");
+        ah0Var.Q(f04, "Line 2");
+        ah0Var.Q(f04, "Line 3");
+        ah0Var.Q(f03, "Line 1 Dup");
+        ah0Var.Q(f03, "Line 2 Dup");
+        ah0Var.Q(f03, "Line 3 Dup");
+        ah0Var.o();
     }
 
     @Override // android.view.View
@@ -69,29 +69,29 @@ public final class cg extends View {
         super.onAttachedToWindow();
         this.d = true;
         boolean z9 = this.e;
-        zg0 zg0Var = this.f;
+        ah0 ah0Var = this.f;
         if (z9) {
-            zg0Var.start();
+            ah0Var.start();
         }
-        zg0Var.R(this);
+        ah0Var.R(this);
     }
 
     @Override // android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.d = false;
-        zg0 zg0Var = this.f;
-        zg0Var.stop();
-        zg0Var.R(null);
+        ah0 ah0Var = this.f;
+        ah0Var.stop();
+        ah0Var.R(null);
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         Paint paint = this.s.w3;
         boolean z9 = this.e;
-        zg0 zg0Var = this.f;
+        ah0 ah0Var = this.f;
         if (z9) {
-            zg0Var.setAlpha((int) (this.a * 255.0f));
+            ah0Var.setAlpha((int) (this.a * 255.0f));
         }
         paint.setAlpha((int) (this.a * 255.0f));
         if (!this.n) {
@@ -117,9 +117,9 @@ public final class cg extends View {
             this.b = currentTimeMillis;
         }
         if (this.e) {
-            zg0Var.draw(canvas);
+            ah0Var.draw(canvas);
         }
-        if (!this.e || !zg0Var.u()) {
+        if (!this.e || !ah0Var.u()) {
             canvas.drawCircle(getMeasuredWidth() >> 1, getMeasuredHeight() >> 1, org.telegram.messenger.g0.L(5.0f), paint);
         }
         if (this.n) {

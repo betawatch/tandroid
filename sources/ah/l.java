@@ -27,38 +27,38 @@ import org.telegram.messenger.iz;
 import org.telegram.messenger.qs;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.k5;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.l5;
+import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.ActionBar.p4;
 import org.telegram.ui.ActionBar.y;
 import org.telegram.ui.Cells.q1;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.Crop.CropAreaView;
 import org.telegram.ui.Components.ad;
-import org.telegram.ui.Components.c20;
+import org.telegram.ui.Components.d20;
 import org.telegram.ui.Components.di;
 import org.telegram.ui.Components.hy;
 import org.telegram.ui.Components.ke;
 import org.telegram.ui.Components.ng;
 import org.telegram.ui.Components.pa;
-import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.q40;
+import org.telegram.ui.Components.qj0;
 import org.telegram.ui.Components.r2;
+import org.telegram.ui.Components.r40;
 import org.telegram.ui.Components.ra;
 import org.telegram.ui.Components.tt;
 import org.telegram.ui.Components.v00;
 import org.telegram.ui.Components.xf;
 import org.telegram.ui.Stories.ProfileStoriesView;
-import org.telegram.ui.an;
-import org.telegram.ui.bh;
-import org.telegram.ui.hl;
+import org.telegram.ui.cn;
+import org.telegram.ui.dh;
+import org.telegram.ui.jl;
 import org.telegram.ui.q0;
-import org.telegram.ui.tm;
 import org.telegram.ui.va;
-import org.telegram.ui.vo;
+import org.telegram.ui.vm;
+import org.telegram.ui.xo;
 import tg.r1;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class l extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -91,13 +91,13 @@ public final class l extends AnimatorListenerAdapter {
                     actionBarLayout.j0.clear();
                     actionBarLayout.j();
                     actionBarLayout.j();
-                    k6.jm = null;
+                    l6.jm = null;
                     actionBarLayout.i0 = null;
                     actionBarLayout.g0 = null;
                     actionBarLayout.q0 = null;
-                    tm tmVar = ((p4) this.b).j;
-                    if (tmVar != null) {
-                        tmVar.run();
+                    vm vmVar = ((p4) this.b).j;
+                    if (vmVar != null) {
+                        vmVar.run();
                         break;
                     }
                 }
@@ -142,7 +142,7 @@ public final class l extends AnimatorListenerAdapter {
         switch (i7) {
             case 0:
                 n nVar = (n) obj2;
-                nVar.removeView((c20) obj);
+                nVar.removeView((d20) obj);
                 nVar.h.clear();
                 nVar.b = null;
                 nVar.c = false;
@@ -166,7 +166,7 @@ public final class l extends AnimatorListenerAdapter {
                     int i11 = ProfileStoriesView.s0;
                     if (iz.o() > 0) {
                         g0.c4(profileStoriesView);
-                        g0.i3(new ab(profileStoriesView, 22), 180L);
+                        g0.i3(new ab(profileStoriesView, 21), 180L);
                     }
                 }
                 profileStoriesView.W = 1.0f;
@@ -199,7 +199,7 @@ public final class l extends AnimatorListenerAdapter {
                 break;
             case 7:
                 n nVar2 = (n) obj2;
-                nVar2.removeView((c20) obj);
+                nVar2.removeView((d20) obj);
                 nVar2.h.clear();
                 nVar2.b = null;
                 nVar2.c = false;
@@ -258,9 +258,9 @@ public final class l extends AnimatorListenerAdapter {
                 AnimatorSet animatorSet = kVar.P;
                 if (animatorSet != null && animatorSet.equals(animator)) {
                     kVar.P = null;
-                    k5 k5Var = kVar.n[0];
-                    if (k5Var != null) {
-                        k5Var.setVisibility(4);
+                    l5 l5Var = kVar.n[0];
+                    if (l5Var != null) {
+                        l5Var.setVisibility(4);
                     }
                     if (kVar.r != null && !TextUtils.isEmpty(kVar.A0)) {
                         kVar.r.setVisibility(4);
@@ -295,13 +295,13 @@ public final class l extends AnimatorListenerAdapter {
                     actionBarLayout.j0.clear();
                     actionBarLayout.j();
                     actionBarLayout.j();
-                    k6.jm = null;
+                    l6.jm = null;
                     actionBarLayout.i0 = null;
                     actionBarLayout.g0 = null;
                     actionBarLayout.q0 = null;
-                    tm tmVar = ((p4) obj).j;
-                    if (tmVar != null) {
-                        tmVar.run();
+                    vm vmVar = ((p4) obj).j;
+                    if (vmVar != null) {
+                        vmVar.run();
                         break;
                     }
                 }
@@ -312,40 +312,40 @@ public final class l extends AnimatorListenerAdapter {
                 break;
             case 16:
                 View view4 = (View) obj;
-                an anVar = (an) obj2;
-                anVar.T9 = 0.0f;
-                if (animator == anVar.Cb) {
+                cn cnVar = (cn) obj2;
+                cnVar.V9 = 0.0f;
+                if (animator == cnVar.Eb) {
                     ViewGroup viewGroup = (ViewGroup) view4.getParent();
                     if (viewGroup != null) {
                         viewGroup.removeView(view4);
                     }
-                    anVar.n3 = null;
-                    anVar.Cb = null;
+                    cnVar.n3 = null;
+                    cnVar.Eb = null;
                     break;
                 }
                 break;
             case 17:
-                q1 q1Var = ((hl) obj2).b;
+                q1 q1Var = ((jl) obj2).b;
                 q1Var.setAlpha(1.0f);
                 q1Var.getTransitionParams().y0 = false;
                 q0 q0Var = new q0("alpha", 2);
                 AnimatorSet animatorSet2 = new AnimatorSet();
-                animatorSet2.playTogether(ObjectAnimator.ofFloat((q40) obj, (Property<q40, Float>) View.ALPHA, 0.0f), ObjectAnimator.ofFloat(q1Var, q0Var, 1.0f));
+                animatorSet2.playTogether(ObjectAnimator.ofFloat((r40) obj, (Property<r40, Float>) View.ALPHA, 0.0f), ObjectAnimator.ofFloat(q1Var, q0Var, 1.0f));
                 animatorSet2.setDuration(100L);
                 animatorSet2.setInterpolator(new DecelerateInterpolator());
                 animatorSet2.addListener(new va(this, 6));
                 animatorSet2.start();
                 break;
             case 18:
-                vo voVar = (vo) obj2;
-                voVar.L = 0.0f;
-                voVar.K = 1.0f;
+                xo xoVar = (xo) obj2;
+                xoVar.L = 0.0f;
+                xoVar.K = 1.0f;
                 ((View) obj).invalidate();
-                voVar.T.invalidate();
-                bh bhVar = voVar.Y;
-                if (bhVar != null) {
-                    bhVar.run();
-                    voVar.Y = null;
+                xoVar.T.invalidate();
+                dh dhVar = xoVar.Y;
+                if (dhVar != null) {
+                    dhVar.run();
+                    xoVar.Y = null;
                     break;
                 }
                 break;
@@ -408,16 +408,16 @@ public final class l extends AnimatorListenerAdapter {
                 ((Runnable) obj).run();
                 break;
             case 27:
-                pj0 pj0Var = (pj0) obj;
+                qj0 qj0Var = (qj0) obj;
                 hy hyVar = (hy) obj2;
                 if (animator.equals(hyVar.M0)) {
-                    pj0Var.setTranslationY(0.0f);
-                    if (pj0Var == hyVar.D0) {
-                        pj0Var.setPadding(0, 0, 0, hyVar.q2);
-                    } else if (pj0Var == hyVar.P) {
-                        pj0Var.setPadding(g0.L(5.0f), 0, g0.L(5.0f), hyVar.q2);
-                    } else if (pj0Var == hyVar.h0) {
-                        pj0Var.setPadding(0, hyVar.b1, 0, hyVar.q2);
+                    qj0Var.setTranslationY(0.0f);
+                    if (qj0Var == hyVar.D0) {
+                        qj0Var.setPadding(0, 0, 0, hyVar.q2);
+                    } else if (qj0Var == hyVar.P) {
+                        qj0Var.setPadding(g0.L(5.0f), 0, g0.L(5.0f), hyVar.q2);
+                    } else if (qj0Var == hyVar.h0) {
+                        qj0Var.setPadding(0, hyVar.b1, 0, hyVar.q2);
                     }
                     hyVar.M0 = null;
                     break;
@@ -425,7 +425,7 @@ public final class l extends AnimatorListenerAdapter {
                 break;
             case 28:
                 v00 v00Var = (v00) obj2;
-                v00Var.removeView((c20) obj);
+                v00Var.removeView((d20) obj);
                 v00Var.e.clear();
                 v00Var.a = null;
                 v00Var.b = false;

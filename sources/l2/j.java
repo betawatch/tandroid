@@ -6,10 +6,10 @@ import android.os.Handler;
 import android.os.Looper;
 import androidx.media3.decoder.ffmpeg.ExperimentalFfmpegVideoRenderer;
 import androidx.media3.decoder.ffmpeg.FfmpegAudioRenderer;
-import di.h4;
+import di.i4;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public class j {
     public final Context a;
@@ -22,7 +22,7 @@ public class j {
     }
 
     public n2.q0 a(Context context) {
-        return new h4(context, 1).a();
+        return new i4(context, 1).a();
     }
 
     /* JADX WARN: Can't wrap try/catch for region: R(14:(2:22|23)|24|25|26|(2:27|28)|(5:29|30|31|32|33)|(5:35|36|37|38|39)|41|42|87|(0)|90|91|92) */

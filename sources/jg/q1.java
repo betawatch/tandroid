@@ -7,12 +7,12 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.x4;
-import org.telegram.ui.Components.l51;
+import org.telegram.ui.Components.m51;
 import org.telegram.ui.Components.oj;
-import org.telegram.ui.v50;
-import org.telegram.ui.w50;
+import org.telegram.ui.x50;
+import org.telegram.ui.y50;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class q1 extends TimerTask {
     public final /* synthetic */ int a;
@@ -52,17 +52,17 @@ public final class q1 extends TimerTask {
                 } catch (Exception e11) {
                     a8.g(e11, true);
                 }
-                Utilities.g.c(new l51(8, (oj) this.c, (String) this.b));
+                Utilities.g.c(new m51(8, (oj) this.c, (String) this.b));
                 return;
             default:
-                w50 w50Var = (w50) this.c;
+                y50 y50Var = (y50) this.c;
                 try {
-                    w50Var.f.cancel();
-                    w50Var.f = null;
+                    y50Var.f.cancel();
+                    y50Var.f = null;
                 } catch (Exception e12) {
                     a8.g(e12, true);
                 }
-                org.telegram.messenger.g0.h3(new v50(this, (String) this.b, 0));
+                org.telegram.messenger.g0.h3(new x50(this, (String) this.b, 0));
                 return;
         }
     }

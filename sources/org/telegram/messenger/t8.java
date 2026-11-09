@@ -12,7 +12,7 @@ import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class t8 implements Runnable {
     public final /* synthetic */ int a;
@@ -168,7 +168,7 @@ public final /* synthetic */ class t8 implements Runnable {
                 return;
             case 5:
                 yr yrVar = (yr) obj2;
-                org.telegram.ui.fg fgVar = (org.telegram.ui.fg) obj;
+                org.telegram.ui.dg dgVar = (org.telegram.ui.dg) obj;
                 try {
                     if (j13 != 0) {
                         SQLiteDatabase sQLiteDatabase = yrVar.b;
@@ -186,7 +186,7 @@ public final /* synthetic */ class t8 implements Runnable {
                         try {
                             int intValue = sQLiteCursor.next() ? sQLiteCursor.intValue(i7) : 0;
                             sQLiteCursor.dispose();
-                            g0.h3(new x0(fgVar, intValue, 9));
+                            g0.h3(new x0(dgVar, intValue, 9));
                         } catch (Exception e10) {
                             e = e10;
                             yrVar.o(e, true);

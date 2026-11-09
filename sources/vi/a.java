@@ -8,9 +8,9 @@ import java.nio.ByteOrder;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.me;
 import org.telegram.messenger.qs;
-import org.telegram.ui.p31;
+import org.telegram.ui.q31;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a implements Runnable {
     public final /* synthetic */ int a;
@@ -48,7 +48,7 @@ public final /* synthetic */ class a implements Runnable {
                     dVar.f.b("AudioRecord started: minBufferBytes=" + minBufferSize + ", bufferBytes=" + max + ", sessionId=" + dVar.p.getAudioSessionId());
                     dVar.r = SystemClock.elapsedRealtime();
                     ac.e eVar = dVar.g;
-                    ((h) eVar.c).i.post(new p31(eVar, eVar.a, 3));
+                    ((h) eVar.c).i.post(new q31(eVar, eVar.a, 3));
                     dVar.i.post(new a(dVar, 2));
                     return;
                 } catch (Throwable th2) {

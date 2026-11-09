@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class vv {
     public final int a;
@@ -53,7 +53,7 @@ public final class vv {
         }
         Bundle bundle = new Bundle();
         bundle.putLong("user_id", p10.i(Q.getCurrentAccount()).e());
-        Q.presentFragment(new org.telegram.ui.an(bundle));
+        Q.presentFragment(new org.telegram.ui.cn(bundle));
     }
 
     public static boolean k(ArrayList arrayList, ArrayList arrayList2) {
@@ -454,14 +454,14 @@ public final class vv {
         long e10 = p10.i(i11).e();
         for (int i12 = 0; i12 < arrayList.size(); i12++) {
             TLRPC.Message message = (TLRPC.Message) arrayList.get(i12);
-            long R1 = ij.R1(e10, message);
-            if (R1 == e10 || (message.id >= 0 && (message.send_state == 0 || message.fwd_from == null))) {
-                TLRPC.Message message2 = (TLRPC.Message) hVar2.f(R1);
+            long Q1 = ij.Q1(e10, message);
+            if (Q1 == e10 || (message.id >= 0 && (message.send_state == 0 || message.fwd_from == null))) {
+                TLRPC.Message message2 = (TLRPC.Message) hVar2.f(Q1);
                 if (message2 == null || message2.id < message.id) {
-                    hVar2.k(message, R1);
+                    hVar2.k(message, Q1);
                 }
-                Integer num = (Integer) hVar3.f(R1);
-                hVar3.k(Integer.valueOf((num == null ? 0 : num.intValue()) + 1), R1);
+                Integer num = (Integer) hVar3.f(Q1);
+                hVar3.k(Integer.valueOf((num == null ? 0 : num.intValue()) + 1), Q1);
             }
         }
         int i13 = 0;
@@ -495,7 +495,7 @@ public final class vv {
                         }
                         ij ijVar = new ij(i11, message3, false, false);
                         uvVar.d = ijVar;
-                        uvVar.c = ijVar.f1();
+                        uvVar.c = ijVar.e1();
                         z11 = true;
                     }
                     num2 = Integer.valueOf(num2 != null ? Math.max(num2.intValue(), uvVar.e) : uvVar.e);
@@ -538,7 +538,7 @@ public final class vv {
                         i7 = 0;
                         ij ijVar2 = new ij(i11, message3, false, false);
                         uvVar2.d = ijVar2;
-                        uvVar2.c = ijVar2.f1();
+                        uvVar2.c = ijVar2.e1();
                         z11 = true;
                     } else {
                         i7 = 0;

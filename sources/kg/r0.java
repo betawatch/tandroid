@@ -3,10 +3,10 @@ package kg;
 import android.os.Bundle;
 import java.io.Serializable;
 import org.telegram.messenger.a20;
-import org.telegram.ui.Components.x31;
-import org.telegram.ui.an;
+import org.telegram.ui.Components.y31;
+import org.telegram.ui.cn;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r0 implements org.telegram.ui.ActionBar.r1, a20 {
     public final /* synthetic */ int a;
@@ -31,18 +31,18 @@ public final /* synthetic */ class r0 implements org.telegram.ui.ActionBar.r1, a
 
     @Override // org.telegram.messenger.a20
     public void i(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-        x31 x31Var = (x31) obj;
+        y31 y31Var = (y31) obj;
         s0 s0Var = this.b;
-        if (s0Var.c.h(x31Var)) {
+        if (s0Var.c.h(y31Var)) {
             return;
         }
-        int i7 = x31Var.d;
-        if (i7 == 2 || x31Var.a == 17) {
+        int i7 = y31Var.d;
+        if (i7 == 2 || y31Var.a == 17) {
             Bundle bundle = new Bundle();
             bundle.putLong("user_id", s0Var.getUserConfig().e());
             bundle.putInt("chatMode", 5);
             bundle.putString("quick_reply", "hello");
-            s0Var.presentFragment(new an(bundle));
+            s0Var.presentFragment(new cn(bundle));
             return;
         }
         if (i7 == 1) {

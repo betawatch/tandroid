@@ -8,17 +8,17 @@ import c8.ha;
 import java.util.Iterator;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public abstract class m extends FrameLayout implements te.i {
-    public final f6 a;
+    public final g6 a;
     public final ab.q b;
     public final te.j c;
 
-    public m(Context context, f6 f6Var, ab.q qVar) {
+    public m(Context context, g6 g6Var, ab.q qVar) {
         super(context);
         this.c = new te.j(this, xq.h, 350L);
-        this.a = f6Var;
+        this.a = g6Var;
         this.b = qVar;
     }
 
@@ -43,10 +43,10 @@ public abstract class m extends FrameLayout implements te.i {
             charSequence2 = charSequence;
         }
         l lVar = new l(this, getContext());
-        int i7 = k6.Ul;
-        f6 f6Var = this.a;
-        r6.V(lVar, i7, f6Var);
-        r6.H(lVar, i7, f6Var);
+        int i7 = l6.Ul;
+        g6 g6Var = this.a;
+        s6.U(lVar, i7, g6Var);
+        s6.G(lVar, i7, g6Var);
         lVar.setTextSize(1, 14.0f);
         lVar.setAlpha(0.0f);
         lVar.setText(charSequence2);
@@ -62,10 +62,10 @@ public abstract class m extends FrameLayout implements te.i {
         while (it.hasNext()) {
             te.e eVar = (te.e) it.next();
             l lVar = (l) eVar.a;
-            int i7 = k6.Ul;
-            f6 f6Var = this.a;
-            lVar.setTextColor(k6.w0(i7, f6Var));
-            ((l) eVar.a).setLinkTextColor(k6.w0(i7, f6Var));
+            int i7 = l6.Ul;
+            g6 g6Var = this.a;
+            lVar.setTextColor(l6.w0(i7, g6Var));
+            ((l) eVar.a).setLinkTextColor(l6.w0(i7, g6Var));
         }
     }
 

@@ -18,9 +18,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class u implements org.telegram.ui.ActionBar.r1, cj0, db0, eb0, fb0, te.d, org.telegram.messenger.lc, t4, r0.m, wh.a, t0.e, dj0, CameraController.VideoTakeCallback, org.telegram.ui.Cells.o5, di.l9, org.telegram.ui.ActionBar.m0, org.telegram.ui.ActionBar.e1 {
+public final /* synthetic */ class u implements org.telegram.ui.ActionBar.r1, dj0, eb0, fb0, gb0, te.d, org.telegram.messenger.lc, t4, r0.m, wh.a, t0.e, ej0, CameraController.VideoTakeCallback, org.telegram.ui.Cells.o5, di.m9, org.telegram.ui.ActionBar.m0, org.telegram.ui.ActionBar.e1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -68,7 +68,7 @@ public final /* synthetic */ class u implements org.telegram.ui.ActionBar.r1, cj
         y5Var.e();
     }
 
-    @Override // org.telegram.ui.Components.dj0
+    @Override // org.telegram.ui.Components.ej0
     public boolean c(int i7, View view) {
         Object O;
         vj vjVar = (vj) this.b;
@@ -83,7 +83,7 @@ public final /* synthetic */ class u implements org.telegram.ui.ActionBar.r1, cj
         return vjVar.T(view, O);
     }
 
-    @Override // org.telegram.ui.Components.eb0
+    @Override // org.telegram.ui.Components.fb0
     public void d(int i7) {
         p2 p2Var = (p2) this.b;
         if (i7 == 0) {
@@ -91,7 +91,7 @@ public final /* synthetic */ class u implements org.telegram.ui.ActionBar.r1, cj
         }
     }
 
-    @Override // di.l9
+    @Override // di.m9
     public void e(long j3, int i7, di.l3 l3Var) {
         l3Var.run();
     }
@@ -116,7 +116,7 @@ public final /* synthetic */ class u implements org.telegram.ui.ActionBar.r1, cj
     /* JADX WARN: Removed duplicated region for block: B:63:0x011f  */
     /* JADX WARN: Removed duplicated region for block: B:64:0x012e  */
     /* JADX WARN: Removed duplicated region for block: B:65:0x0139  */
-    @Override // org.telegram.ui.Components.cj0
+    @Override // org.telegram.ui.Components.dj0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -124,7 +124,7 @@ public final /* synthetic */ class u implements org.telegram.ui.ActionBar.r1, cj
         boolean z9;
         ArrayList arrayList;
         i0 i0Var = (i0) this.b;
-        x31 G = i0Var.P1.G(i7 - 1);
+        y31 G = i0Var.P1.G(i7 - 1);
         if (G == null) {
             return;
         }
@@ -305,7 +305,7 @@ public final /* synthetic */ class u implements org.telegram.ui.ActionBar.r1, cj
         }
     }
 
-    @Override // org.telegram.ui.Components.cj0
+    @Override // org.telegram.ui.Components.dj0
     public /* synthetic */ boolean f1(View view) {
         return false;
     }
@@ -358,7 +358,7 @@ public final /* synthetic */ class u implements org.telegram.ui.ActionBar.r1, cj
         }
     }
 
-    @Override // org.telegram.ui.Components.db0
+    @Override // org.telegram.ui.Components.eb0
     public String h(int i7) {
         return ((String[]) this.b)[i7];
     }
@@ -461,34 +461,34 @@ public final /* synthetic */ class u implements org.telegram.ui.ActionBar.r1, cj
         ((gb) this.b).dispatchDrawImplBlur(canvas, i7);
     }
 
-    @Override // org.telegram.ui.Components.fb0
-    public void n(hb0 hb0Var, int i7) {
+    @Override // org.telegram.ui.Components.gb0
+    public void n(ib0 ib0Var, int i7) {
         org.telegram.ui.Cells.w3 w3Var = (org.telegram.ui.Cells.w3) this.b;
         try {
             if (i7 == 0) {
-                w3Var.setText(org.telegram.messenger.id.M0(2131751435, null));
+                w3Var.setText(org.telegram.messenger.id.M0(2131751434, null));
             } else {
-                w3Var.setText(org.telegram.messenger.id.M0(2131745543, null));
+                w3Var.setText(org.telegram.messenger.id.M0(2131745540, null));
             }
         } catch (Exception unused) {
         }
     }
 
-    @Override // di.l9
-    public boolean o(long j3, int i7, int i10, int i11, di.m9 m9Var) {
+    @Override // di.m9
+    public boolean o(long j3, int i7, int i10, int i11, di.n9 n9Var) {
         gn gnVar = (gn) ((org.telegram.ui.Cells.k6) this.b).T;
         ImageReceiver imageReceiver = gnVar.a;
-        m9Var.c = imageReceiver;
-        m9Var.l = imageReceiver;
+        n9Var.c = imageReceiver;
+        n9Var.l = imageReceiver;
         org.telegram.ui.Cells.k6 k6Var = gnVar.G;
-        m9Var.m = k6Var;
+        n9Var.m = k6Var;
         boolean z9 = k6Var.w;
         gn gnVar2 = gnVar.K.e;
-        m9Var.a = gnVar2;
-        m9Var.k = gnVar2.getAlpha();
-        m9Var.h = 0.0f;
-        m9Var.i = org.telegram.messenger.g0.q.y;
-        m9Var.g = (View) gnVar.getParent();
+        n9Var.a = gnVar2;
+        n9Var.k = gnVar2.getAlpha();
+        n9Var.h = 0.0f;
+        n9Var.i = org.telegram.messenger.g0.q.y;
+        n9Var.g = (View) gnVar.getParent();
         return true;
     }
 
@@ -558,7 +558,7 @@ public final /* synthetic */ class u implements org.telegram.ui.ActionBar.r1, cj
     private final /* synthetic */ void s(ImageReceiver imageReceiver) {
     }
 
-    @Override // di.l9
+    @Override // di.m9
     public /* synthetic */ void b(boolean z9) {
     }
 
@@ -580,7 +580,7 @@ public final /* synthetic */ class u implements org.telegram.ui.ActionBar.r1, cj
     private final /* synthetic */ void q(int i7, Drawable drawable) {
     }
 
-    @Override // org.telegram.ui.Components.cj0
+    @Override // org.telegram.ui.Components.dj0
     public /* synthetic */ void r0(View view, float f10, float f11) {
     }
 }

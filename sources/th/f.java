@@ -7,9 +7,9 @@ import org.telegram.messenger.hc;
 import org.telegram.messenger.m20;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class f extends sh.c {
+public final class f extends sh.d {
     public final TLRPC.MessageMedia b;
 
     public f(TLRPC.MessageMedia messageMedia) {
@@ -26,7 +26,7 @@ public final class f extends sh.c {
         imageReceiver.s0(hc.p(m20.a(geoPoint.lat, geoPoint._long, geoPoint.access_hash, 38, 38, 13, min)), null, null, null, null, null, 0);
     }
 
-    @Override // sh.c
+    @Override // sh.d
     public final void c(Canvas canvas, int i7, int i10) {
         ImageReceiver imageReceiver = this.a;
         imageReceiver.y0(0.0f, 0.0f, i7, i10);

@@ -1,57 +1,35 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.view.View;
-
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class zr implements View.OnClickListener {
+public final /* synthetic */ class zr implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ks b;
+    public final /* synthetic */ ms b;
 
-    public /* synthetic */ zr(ks ksVar, int i7) {
+    public /* synthetic */ zr(ms msVar, int i7) {
         this.a = i7;
-        this.b = ksVar;
+        this.b = msVar;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ks ksVar = this.b;
-                ksVar.K = false;
-                ksVar.z.invalidate();
-                ksVar.m();
+                this.b.c0 = null;
                 break;
             case 1:
-                ks ksVar2 = this.b;
-                Activity activity = ksVar2.w;
-                if (activity instanceof LaunchActivity) {
-                    LaunchActivity launchActivity = (LaunchActivity) activity;
-                    if (launchActivity.M() != null && launchActivity.M().getLastFragment() != null) {
-                        launchActivity.M().getLastFragment().dismissCurrentDialog();
-                    }
-                    launchActivity.t0(new PremiumPreviewFragment(0, PremiumPreviewFragment.q0(5)));
+                ms msVar = this.b;
+                msVar.A.w0(null);
+                org.telegram.ui.Components.tb0 tb0Var = msVar.C;
+                if (tb0Var != null) {
+                    tb0Var.a();
+                    msVar.z.removeView(msVar.C);
+                    msVar.C = null;
+                    break;
                 }
-                ksVar2.K = false;
-                ksVar2.z.invalidate();
-                ksVar2.m();
-                break;
-            case 2:
-                ks ksVar3 = this.b;
-                is isVar = ksVar3.l;
-                if (isVar != null) {
-                    isVar.K();
-                }
-                ksVar3.o();
                 break;
             default:
-                ks ksVar4 = this.b;
-                is isVar2 = ksVar4.l;
-                if (isVar2 != null) {
-                    isVar2.r();
-                }
-                ksVar4.o();
+                this.b.Q.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(420L).setInterpolator(org.telegram.ui.Components.xq.h).start();
                 break;
         }
     }

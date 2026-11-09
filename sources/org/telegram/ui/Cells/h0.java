@@ -2,21 +2,21 @@ package org.telegram.ui.Cells;
 
 import android.content.Context;
 import android.view.MotionEvent;
-import org.telegram.ui.Components.mm0;
-import org.telegram.ui.w61;
+import org.telegram.ui.Components.nm0;
+import org.telegram.ui.x61;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class h0 extends mm0 {
+public final class h0 extends nm0 {
     public final /* synthetic */ int m0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ h0(int i7, Context context, org.telegram.ui.ActionBar.f6 f6Var, boolean z9) {
-        super(context, f6Var, z9);
+    public /* synthetic */ h0(int i7, Context context, org.telegram.ui.ActionBar.g6 g6Var, boolean z9) {
+        super(context, g6Var, z9);
         this.m0 = i7;
     }
 
-    @Override // org.telegram.ui.Components.mm0, android.view.View
+    @Override // org.telegram.ui.Components.nm0, android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         switch (this.m0) {
             case 0:
@@ -50,8 +50,8 @@ public final class h0 extends mm0 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h0(Context context, w61 w61Var) {
-        super(context, w61Var, false);
+    public h0(Context context, x61 x61Var) {
+        super(context, x61Var, false);
         this.m0 = 3;
     }
 }

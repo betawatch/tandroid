@@ -1,119 +1,127 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
+import android.text.Editable;
+import android.text.TextWatcher;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class nj0 implements RequestDelegate {
+public final class nj0 implements TextWatcher {
     public final /* synthetic */ int a;
-    public final /* synthetic */ pj0 b;
+    public final /* synthetic */ dk0 b;
 
-    public /* synthetic */ nj0(pj0 pj0Var, int i7) {
+    public /* synthetic */ nj0(dk0 dk0Var, int i7) {
         this.a = i7;
-        this.b = pj0Var;
+        this.b = dk0Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, final TLRPC.TL_error tL_error) {
-        switch (this.a) {
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        boolean z9;
+        String str;
+        int indexOf;
+        int i7 = this.a;
+        dk0 dk0Var = this.b;
+        switch (i7) {
             case 0:
-                org.telegram.messenger.g0.h3(new oj0(this.b, tLObject, tL_error));
-                break;
-            case 1:
-                final int i7 = 1;
-                final pj0 pj0Var = this.b;
-                org.telegram.messenger.g0.h3(new Runnable() { // from class: org.telegram.ui.mj0
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        int i10;
-                        int i11;
-                        switch (i7) {
-                            case 0:
-                                pj0 pj0Var2 = pj0Var;
-                                TLRPC.TL_error tL_error2 = tL_error;
-                                bk0 bk0Var = pj0Var2.e;
-                                if (tL_error2 != null && "SRP_ID_INVALID".equals(tL_error2.text)) {
-                                    TL_account.getPassword getpassword = new TL_account.getPassword();
-                                    i10 = ((org.telegram.ui.ActionBar.f2) bk0Var).currentAccount;
-                                    ConnectionsManager.getInstance(i10).sendRequest(getpassword, new nj0(pj0Var2, 4), 8);
-                                    break;
-                                } else {
-                                    if (bk0Var.D == null) {
-                                        bk0Var.D = new TL_account.authorizationForm();
-                                    }
-                                    pj0Var2.a();
-                                    break;
-                                }
-                                break;
-                            default:
-                                pj0 pj0Var3 = pj0Var;
-                                TLRPC.TL_error tL_error3 = tL_error;
-                                if (tL_error3 != null && "SRP_ID_INVALID".equals(tL_error3.text)) {
-                                    TL_account.getPassword getpassword2 = new TL_account.getPassword();
-                                    i11 = ((org.telegram.ui.ActionBar.f2) pj0Var3.e).currentAccount;
-                                    ConnectionsManager.getInstance(i11).sendRequest(getpassword2, new nj0(pj0Var3, 3), 8);
-                                    break;
-                                } else {
-                                    Utilities.e.c(new mc0(pj0Var3, pj0Var3.b, pj0Var3.d, 14));
-                                    break;
-                                }
-                        }
-                    }
-                });
-                break;
-            case 2:
-                final int i10 = 0;
-                final pj0 pj0Var2 = this.b;
-                org.telegram.messenger.g0.h3(new Runnable() { // from class: org.telegram.ui.mj0
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        int i102;
-                        int i11;
-                        switch (i10) {
-                            case 0:
-                                pj0 pj0Var22 = pj0Var2;
-                                TLRPC.TL_error tL_error2 = tL_error;
-                                bk0 bk0Var = pj0Var22.e;
-                                if (tL_error2 != null && "SRP_ID_INVALID".equals(tL_error2.text)) {
-                                    TL_account.getPassword getpassword = new TL_account.getPassword();
-                                    i102 = ((org.telegram.ui.ActionBar.f2) bk0Var).currentAccount;
-                                    ConnectionsManager.getInstance(i102).sendRequest(getpassword, new nj0(pj0Var22, 4), 8);
-                                    break;
-                                } else {
-                                    if (bk0Var.D == null) {
-                                        bk0Var.D = new TL_account.authorizationForm();
-                                    }
-                                    pj0Var22.a();
-                                    break;
-                                }
-                                break;
-                            default:
-                                pj0 pj0Var3 = pj0Var2;
-                                TLRPC.TL_error tL_error3 = tL_error;
-                                if (tL_error3 != null && "SRP_ID_INVALID".equals(tL_error3.text)) {
-                                    TL_account.getPassword getpassword2 = new TL_account.getPassword();
-                                    i11 = ((org.telegram.ui.ActionBar.f2) pj0Var3.e).currentAccount;
-                                    ConnectionsManager.getInstance(i11).sendRequest(getpassword2, new nj0(pj0Var3, 3), 8);
-                                    break;
-                                } else {
-                                    Utilities.e.c(new mc0(pj0Var3, pj0Var3.b, pj0Var3.d, 14));
-                                    break;
-                                }
-                        }
-                    }
-                });
-                break;
-            case 3:
-                org.telegram.messenger.g0.h3(new oj0(this.b, tL_error, tLObject, 1));
+                if (!dk0Var.Z0 && dk0Var.T0 != 0 && dk0Var.Y[0].length() == dk0Var.T0) {
+                    dk0Var.L.callOnClick();
+                    break;
+                }
                 break;
             default:
-                org.telegram.messenger.g0.h3(new oj0(this.b, tL_error, tLObject, 2));
+                ArrayList arrayList = dk0Var.U0;
+                HashMap hashMap = dk0Var.W0;
+                if (!dk0Var.Z0) {
+                    dk0Var.Z0 = true;
+                    String d = pf.b.d(dk0Var.Y[1].getText().toString(), false);
+                    dk0Var.Y[1].setText(d);
+                    org.telegram.ui.Components.w20 w20Var = (org.telegram.ui.Components.w20) dk0Var.Y[2];
+                    if (d.length() == 0) {
+                        w20Var.setHintText((String) null);
+                        w20Var.setHint(org.telegram.messenger.id.M0(2131747372, null));
+                        dk0Var.Y[0].setText(org.telegram.messenger.id.M0(2131752134, null));
+                    } else {
+                        int i10 = 4;
+                        if (d.length() > 4) {
+                            while (true) {
+                                if (i10 >= 1) {
+                                    String substring = d.substring(0, i10);
+                                    if (((String) hashMap.get(substring)) != null) {
+                                        String str2 = d.substring(i10) + dk0Var.Y[2].getText().toString();
+                                        dk0Var.Y[1].setText(substring);
+                                        str = str2;
+                                        d = substring;
+                                        z9 = true;
+                                    } else {
+                                        i10--;
+                                    }
+                                } else {
+                                    z9 = false;
+                                    str = null;
+                                }
+                            }
+                            if (!z9) {
+                                str = d.substring(1) + dk0Var.Y[2].getText().toString();
+                                EditTextBoldCursor editTextBoldCursor = dk0Var.Y[1];
+                                d = d.substring(0, 1);
+                                editTextBoldCursor.setText(d);
+                            }
+                        } else {
+                            z9 = false;
+                            str = null;
+                        }
+                        String str3 = (String) hashMap.get(d);
+                        if (str3 == null || (indexOf = arrayList.indexOf(str3)) == -1) {
+                            w20Var.setHintText((String) null);
+                            w20Var.setHint(org.telegram.messenger.id.M0(2131747372, null));
+                            dk0Var.Y[0].setText(org.telegram.messenger.id.M0(2131742859, null));
+                        } else {
+                            dk0Var.Y[0].setText((CharSequence) arrayList.get(indexOf));
+                            String str4 = (String) dk0Var.X0.get(d);
+                            if (str4 != null) {
+                                w20Var.setHintText(str4.replace('X', (char) 8211));
+                                w20Var.setHint((CharSequence) null);
+                            }
+                        }
+                        if (!z9) {
+                            EditTextBoldCursor editTextBoldCursor2 = dk0Var.Y[1];
+                            editTextBoldCursor2.setSelection(editTextBoldCursor2.getText().length());
+                        }
+                        if (str != null) {
+                            w20Var.requestFocus();
+                            w20Var.setText(str);
+                            w20Var.setSelection(w20Var.length());
+                        }
+                    }
+                    dk0Var.Z0 = false;
+                    break;
+                }
                 break;
         }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+        int i12 = this.a;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+        int i12 = this.a;
+    }
+
+    private final void a(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void b(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void c(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void d(int i7, int i10, int i11, CharSequence charSequence) {
     }
 }

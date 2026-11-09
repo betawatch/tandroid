@@ -1,24 +1,12 @@
 package org.telegram.ui;
 
-import androidx.recyclerview.widget.RecyclerView;
-
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class r91 extends v4.s0 {
-    public final /* synthetic */ int a;
+public final class r91 {
+    public final int a;
+    public int b;
 
-    public /* synthetic */ r91(int i7) {
+    public r91(int i7) {
         this.a = i7;
-    }
-
-    @Override // v4.s0
-    public final void b(RecyclerView recyclerView, int i7, int i10) {
-        int i11 = this.a;
-    }
-
-    private final void c(RecyclerView recyclerView, int i7, int i10) {
-    }
-
-    private final void d(RecyclerView recyclerView, int i7, int i10) {
     }
 }

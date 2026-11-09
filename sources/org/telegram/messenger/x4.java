@@ -20,11 +20,11 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.t51;
-import org.telegram.ui.Components.zg0;
+import org.telegram.ui.Components.ah0;
+import org.telegram.ui.Components.u51;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class x4 implements Runnable {
     public final /* synthetic */ int a;
@@ -52,7 +52,7 @@ public final /* synthetic */ class x4 implements Runnable {
                 for (int i11 = 0; i11 < tL_topPeerCategoryPeers.peers.size(); i11++) {
                     TLRPC.TL_topPeer tL_topPeer = tL_topPeerCategoryPeers.peers.get(i11);
                     executeFast.requery();
-                    executeFast.bindLong(1, ij.C1(tL_topPeer.peer));
+                    executeFast.bindLong(1, ij.B1(tL_topPeer.peer));
                     executeFast.bindInteger(2, i10);
                     executeFast.bindDouble(3, tL_topPeer.rating);
                     executeFast.bindInteger(4, 0);
@@ -353,14 +353,14 @@ public final /* synthetic */ class x4 implements Runnable {
                 gc gcVar3 = vbVar.e;
                 kb kbVar = gcVar3.e;
                 ub ubVar2 = vbVar.c;
-                if (drawable2 instanceof zg0) {
-                    zg0 zg0Var = (zg0) drawable2;
+                if (drawable2 instanceof ah0) {
+                    ah0 ah0Var = (ah0) drawable2;
                     Drawable drawable3 = (Drawable) kbVar.f(ubVar2.d);
                     if (drawable3 == null) {
-                        kbVar.l(ubVar2.d, zg0Var);
-                        drawable = zg0Var;
+                        kbVar.l(ubVar2.d, ah0Var);
+                        drawable = ah0Var;
                     } else {
-                        zg0Var.C(false);
+                        ah0Var.C(false);
                         drawable = drawable3;
                     }
                     gcVar3.H(ubVar2.d);
@@ -433,22 +433,22 @@ public final /* synthetic */ class x4 implements Runnable {
                 try {
                     int i17 = mediaController2.k0 + 1;
                     mediaController2.k0 = i17;
-                    t51 t51Var = mediaController2.j0;
-                    if (t51Var != null) {
-                        t51Var.m0();
+                    u51 u51Var = mediaController2.j0;
+                    if (u51Var != null) {
+                        u51Var.m0();
                     }
-                    t51 t51Var2 = new t51(false, false);
-                    mediaController2.j0 = t51Var2;
-                    t51Var2.J = new f5.u(mediaController2, i17, 10);
-                    t51Var2.j0(Uri.fromFile(file), "other");
+                    u51 u51Var2 = new u51(false, false);
+                    mediaController2.j0 = u51Var2;
+                    u51Var2.J = new f5.u(mediaController2, i17, 10);
+                    u51Var2.j0(Uri.fromFile(file), "other");
                     mediaController2.j0.x0(3);
                     mediaController2.j0.h0();
                     return;
                 } catch (Exception e14) {
                     a8.g(e14, true);
-                    t51 t51Var3 = mediaController2.j0;
-                    if (t51Var3 != null) {
-                        t51Var3.m0();
+                    u51 u51Var3 = mediaController2.j0;
+                    if (u51Var3 != null) {
+                        u51Var3.m0();
                         mediaController2.j0 = null;
                         return;
                     }
@@ -467,14 +467,14 @@ public final /* synthetic */ class x4 implements Runnable {
                 jg.q1 q1Var = (jg.q1) this.b;
                 ij ijVar2 = (ij) this.c;
                 MediaController mediaController3 = (MediaController) q1Var.c;
-                t51 t51Var4 = mediaController3.i0;
-                if ((t51Var4 == null && mediaController3.E0 == null) || mediaController3.g0) {
+                u51 u51Var4 = mediaController3.i0;
+                if ((u51Var4 == null && mediaController3.E0 == null) || mediaController3.g0) {
                     return;
                 }
                 try {
-                    t51 t51Var5 = mediaController3.E0;
-                    if (t51Var5 != null) {
-                        U = t51Var5.U();
+                    u51 u51Var5 = mediaController3.E0;
+                    if (u51Var5 != null) {
+                        U = u51Var5.U();
                         S = ((MediaController) q1Var.c).E0.S();
                         if (S >= 0 && U > 0) {
                             float f11 = U;
@@ -486,7 +486,7 @@ public final /* synthetic */ class x4 implements Runnable {
                         }
                         return;
                     }
-                    U = t51Var4.U();
+                    U = u51Var4.U();
                     S = ((MediaController) q1Var.c).i0.S();
                     f10 = U >= 0 ? S / U : 0.0f;
                     K = ((MediaController) q1Var.c).i0.K() / U;
@@ -513,7 +513,7 @@ public final /* synthetic */ class x4 implements Runnable {
                             Utilities.e.c(new ve(str8, i7, f10));
                         }
                     }
-                    qs.f(ijVar2.I1).k(qs.e2, Integer.valueOf(ijVar2.f1()), Float.valueOf(f10));
+                    qs.f(ijVar2.I1).k(qs.e2, Integer.valueOf(ijVar2.e1()), Float.valueOf(f10));
                     return;
                 } catch (Exception e15) {
                     a8.g(e15, true);
@@ -531,7 +531,7 @@ public final /* synthetic */ class x4 implements Runnable {
                     return;
                 }
                 cfVar.d.put(w7.r(null, F0), ijVar3);
-                w7.G(cfVar.a.a).W(F0, ijVar3, 3, ij.S5(ijVar3.k) ? 2 : 0);
+                w7.G(cfVar.a.a).W(F0, ijVar3, 3, ij.R5(ijVar3.k) ? 2 : 0);
                 return;
             case 27:
                 a();

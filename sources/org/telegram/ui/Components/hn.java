@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class hn implements f8 {
     public final /* synthetic */ org.telegram.ui.ActionBar.g1[] a;
@@ -15,20 +15,20 @@ public final class hn implements f8 {
 
     @Override // org.telegram.ui.Components.f8
     public final void X0(int i7, int i10) {
-        org.telegram.ui.an anVar = this.b.G;
-        if (anVar == null) {
+        org.telegram.ui.cn cnVar = this.b.G;
+        if (cnVar == null) {
             return;
         }
-        anVar.getMessagesController().I4(i7, anVar.a());
-        TLRPC.ChatFull chatFull = anVar.p8;
-        TLRPC.UserFull userFull = anVar.q8;
+        cnVar.getMessagesController().I4(i7, cnVar.a());
+        TLRPC.ChatFull chatFull = cnVar.p8;
+        TLRPC.UserFull userFull = cnVar.q8;
         if (userFull == null && chatFull == null) {
             return;
         }
-        anVar.f8();
-        UndoView undoView = anVar.M3;
+        cnVar.g8();
+        UndoView undoView = cnVar.M3;
         if (undoView != null) {
-            undoView.k(anVar.a(), i10, anVar.j(), Integer.valueOf(userFull != null ? userFull.ttl_period : chatFull.ttl_period), null, null);
+            undoView.k(cnVar.a(), i10, cnVar.j(), Integer.valueOf(userFull != null ? userFull.ttl_period : chatFull.ttl_period), null, null);
         }
     }
 

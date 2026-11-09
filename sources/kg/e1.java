@@ -4,19 +4,19 @@ import android.content.Context;
 import android.view.View;
 import android.widget.FrameLayout;
 import c8.ha;
-import di.q4;
-import fi.h9;
+import di.r4;
+import fi.v9;
 import java.util.ArrayList;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.s6;
 import org.telegram.ui.Cells.r8;
-import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.q41;
+import org.telegram.ui.Components.qj0;
+import org.telegram.ui.Components.r41;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class e1 extends f2 {
     public final CharSequence a;
@@ -24,9 +24,9 @@ public final class e1 extends f2 {
     public final int c;
     public final int d;
     public final int e;
-    public h9 f;
+    public v9 f;
     public ha.b h;
-    public q41 n;
+    public r41 n;
     public boolean r;
 
     public e1(CharSequence charSequence, ArrayList arrayList, int i7, int i10, int i11) {
@@ -59,9 +59,9 @@ public final class e1 extends f2 {
         this.simpleActionBar.setTitle(this.a);
         this.simpleActionBar.setActionBarMenuOnItemClick(new bi.s(this, 17));
         FrameLayout frameLayout = new FrameLayout(context);
-        q41 q41Var = new q41(this, new hi.u1(this, 12), new q4(this, 25), null);
-        this.n = q41Var;
-        q41Var.r1();
+        r41 r41Var = new r41(this, new hi.u1(this, 12), new r4(this, 25), null);
+        this.n = r41Var;
+        r41Var.r1();
         this.n.setSectionsDrawBackground(true);
         frameLayout.addView(this.n, ha.c(-1.0f, -1));
         this.fragmentView = frameLayout;
@@ -69,7 +69,7 @@ public final class e1 extends f2 {
     }
 
     @Override // org.telegram.ui.ActionBar.f2
-    public final pj0 getListViewForSimpleGlass() {
+    public final qj0 getListViewForSimpleGlass() {
         return this.n;
     }
 
@@ -98,9 +98,9 @@ public final class e1 extends f2 {
             return;
         }
         arrayList.clear();
-        h9 h9Var = this.f;
-        if (h9Var != null) {
-            h9Var.run();
+        v9 v9Var = this.f;
+        if (v9Var != null) {
+            v9Var.run();
         }
     }
 
@@ -112,7 +112,7 @@ public final class e1 extends f2 {
                 for (int i7 = 0; i7 < this.n.getChildCount(); i7++) {
                     View childAt = this.n.getChildAt(i7);
                     if ((childAt instanceof r8) && ((r8) childAt).b == -1) {
-                        r6.i(this.r ? k6.f6 : k6.e6, childAt, null);
+                        s6.h(this.r ? l6.f6 : l6.e6, childAt, null);
                     }
                 }
             }

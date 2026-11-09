@@ -1,31 +1,35 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
-/* loaded from: classes3.dex */
-public final class ju0 {
-    public org.telegram.messenger.fp a;
-    public org.telegram.ui.ActionBar.f6 b;
-    public int c;
-    public int d;
-    public float e;
+import android.content.Context;
 
-    public final void a(org.telegram.messenger.fp fpVar) {
-        this.a = fpVar;
-        if (fpVar == null) {
-            this.c = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.A8, this.b);
-            this.d = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.s8, this.b);
-            this.c = i0.a.f(this.e, this.c, 603979776);
-            this.d = i0.a.f(this.e, this.d, -1);
-            return;
-        }
-        int c10 = fpVar.c(org.telegram.ui.ActionBar.k6.I.q());
-        int d = fpVar.d(org.telegram.ui.ActionBar.k6.I.q());
-        org.telegram.ui.ActionBar.f6 f6Var = this.b;
-        int f10 = i0.a.f(0.75f, d, c10);
-        int w02 = org.telegram.messenger.g0.B(f10) > 0.721f ? org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.v6, f6Var) : org.telegram.ui.ActionBar.k6.b(0.08f, -0.08f, f10);
-        this.c = w02;
-        this.d = org.telegram.messenger.g0.B(w02) > 0.721f ? -16777216 : -1;
-        this.c = i0.a.f(this.e, this.c, 603979776);
-        this.d = i0.a.f(this.e, this.d, -1);
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* loaded from: classes3.dex */
+public final class ju0 extends na {
+    public vr P1;
+
+    public ju0(Context context) {
+        super(context, null, true, false, null);
+        N();
+        this.v1 = true;
+        this.u1 = true;
+        Y0();
+        qj0 qj0Var = this.k1;
+        int i7 = this.t0;
+        qj0Var.setPadding(i7, 0, i7, 0);
+        this.k1.j(new ui(this, 17));
+        this.k1.setOnItemClickListener(new k(this, 14));
+    }
+
+    @Override // org.telegram.ui.Components.na
+    public final pj0 L0(qj0 qj0Var) {
+        vr vrVar = new vr(qj0Var, getContext(), this.a, 0, true, this.I0);
+        this.P1 = vrVar;
+        vrVar.r = false;
+        return vrVar;
+    }
+
+    @Override // org.telegram.ui.Components.na
+    public final CharSequence O0() {
+        return org.telegram.messenger.id.M0(2131745821, null);
     }
 }

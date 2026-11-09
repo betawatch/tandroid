@@ -5,9 +5,9 @@ import org.telegram.messenger.m5;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.t3;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ck0;
+import org.telegram.ui.Components.dk0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final class k0 {
     public boolean A;
@@ -36,8 +36,8 @@ public final class k0 {
     public TLRPC.TL_messageMediaWidget r;
     public String s;
     public v0 t;
-    public ck0 u;
-    public ck0 w;
+    public dk0 u;
+    public dk0 w;
     public int x;
     public long y;
     public boolean z;

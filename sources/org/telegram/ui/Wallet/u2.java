@@ -1,463 +1,107 @@
 package org.telegram.ui.Wallet;
 
 import android.content.Context;
-import android.graphics.Typeface;
-import android.graphics.drawable.ShapeDrawable;
-import android.text.TextUtils;
-import android.util.Base64;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.view.MotionEvent;
 import android.view.View;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import java.security.SecureRandom;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Locale;
-import org.json.JSONObject;
-import org.scilab.forge.jlatexmath.TeXSymbolParser;
+import android.widget.FrameLayout;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.ee;
-import org.telegram.messenger.id;
-import org.telegram.messenger.ls;
-import org.telegram.messenger.qs;
-import org.telegram.messenger.t10;
-import org.telegram.messenger.v10;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.hc;
-import org.telegram.ui.d10;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
-public abstract class u2 {
-    public static final ArrayList a = new ArrayList();
+public final class u2 extends FrameLayout {
+    public final org.telegram.ui.Components.w5 a;
+    public final Paint b;
+    public final Path c;
+    public float d;
+    public final /* synthetic */ x2 e;
 
-    public static void a(Context context, LinearLayout linearLayout, TLRPC.User user, CharSequence charSequence, org.telegram.ui.ActionBar.f6 f6Var) {
-        org.telegram.ui.Components.l9 l9Var = new org.telegram.ui.Components.l9(context);
-        l9Var.setRoundRadius(org.telegram.messenger.g0.L(38.0f));
-        org.telegram.ui.Components.w8 w8Var = new org.telegram.ui.Components.w8((org.telegram.ui.ActionBar.f6) null);
-        w8Var.r(user);
-        l9Var.e(user, w8Var);
-        linearLayout.addView(l9Var, c8.ha.t(76, 76, 1, 0, 24, 0, 0));
-        TextView v = e2.v(20, context, charSequence, f6Var);
-        v.setTypeface(org.telegram.messenger.g0.o());
-        linearLayout.addView(v, c8.ha.k(24.0f, 12.0f, 24.0f, 0.0f, -1, -2));
-        String n10 = t10.n(user);
-        if (TextUtils.isEmpty(n10)) {
-            linearLayout.addView(new View(context), c8.ha.o(-1, 12));
-            return;
-        }
-        linearLayout.addView(e2.h(context, "@" + n10, f6Var), c8.ha.t(-2, -2, 1, 36, 6, 36, 12));
-    }
-
-    public static void b(y2 y2Var, t2 t2Var) {
-        y2Var.c0 = false;
-        y2Var.y0 = new org.telegram.ui.h0(t2Var, 3);
-        y2Var.setOnDismissListener(new l2(t2Var, 0));
-        y2Var.show();
-        org.telegram.messenger.g0.i3(new n(6, t2Var, y2Var), 700L);
-    }
-
-    public static void c(Context context, final int i7, final TLRPC.User user, final JSONObject jSONObject, final String str, final byte[] bArr, final org.telegram.ui.ActionBar.f6 f6Var, r2 r2Var) {
-        final m0 x10 = m0.x(i7);
-        boolean equals = "text".equals(jSONObject.optString(TeXSymbolParser.TYPE_ATTR));
-        final y2 y2Var = new y2(context, f6Var, new View[0]);
-        y2Var.J0(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.a7, f6Var));
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(1);
-        a(context, linearLayout, user, id.V(null, null, 2131743199, t10.p(user)), f6Var);
-        LinearLayout f10 = org.telegram.messenger.k5.f(context, 1);
-        f10.setPadding(org.telegram.messenger.g0.L(20.0f), org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(20.0f), org.telegram.messenger.g0.L(16.0f));
-        int L = org.telegram.messenger.g0.L(16.0f);
-        int i10 = org.telegram.ui.ActionBar.k6.d6;
-        ShapeDrawable d02 = org.telegram.ui.ActionBar.k6.d0(L, org.telegram.ui.ActionBar.k6.w0(i10, f6Var));
-        org.telegram.ui.ActionBar.n6 N = org.telegram.ui.ActionBar.r6.N(i10);
-        f10.setBackground(d02);
-        org.telegram.ui.ActionBar.r6.k(f10, d02, N, null, f6Var);
-        TextView v = e2.v(14, context, id.M0(equals ? 2131743013 : 2131743187, null), f6Var);
-        v.setGravity(3);
-        v.setTypeface(org.telegram.messenger.g0.o());
-        org.telegram.ui.ActionBar.r6.V(v, equals ? org.telegram.ui.ActionBar.k6.L6 : org.telegram.ui.ActionBar.k6.q7, f6Var);
-        f10.addView(v, c8.ha.k(0.0f, 0.0f, 0.0f, equals ? 12.0f : 4.0f, -1, -2));
-        TextView v10 = e2.v(equals ? 14 : 16, context, equals ? jSONObject.optString("text") : id.M0(2131743186, null), f6Var);
-        v10.setGravity(3);
-        if (equals) {
-            v10.setTypeface(Typeface.MONOSPACE);
-        }
-        f10.addView(v10, c8.ha.o(-1, -2));
-        q2 q2Var = new q2(context, qs.r5);
-        q2Var.addView(f10);
-        linearLayout.addView(q2Var, c8.ha.k(12.0f, 4.0f, 12.0f, 0.0f, -1, -2));
-        x2 x2Var = new x2(context);
-        x2Var.getContent().addView(linearLayout, c8.ha.c(-2.0f, -1));
-        y2Var.I0(x2Var);
-        LinearLayout f11 = org.telegram.messenger.k5.f(context, 1);
-        if (equals) {
-            TextView v11 = e2.v(14, context, id.M0(2131743032, null), f6Var);
-            v11.setGravity(3);
-            org.telegram.ui.ActionBar.r6.V(v11, org.telegram.ui.ActionBar.k6.z6, f6Var);
-            f11.addView(v11, c8.ha.k(36.0f, 12.0f, 36.0f, 0.0f, -1, -2));
-        }
-        LinearLayout linearLayout2 = new LinearLayout(context);
-        linearLayout2.setPadding(org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f));
-        fi.d dVar = new fi.d(context, f6Var, true);
-        dVar.setRoundRadius(24);
-        dVar.e();
-        dVar.setText(id.M0(2131752589, null));
-        final fi.d h = org.telegram.messenger.k5.h(24, context, f6Var, true);
-        h.setText(id.M0(2131743015, null));
-        linearLayout2.addView(dVar, c8.ha.m(1.0f, 0, 44, 0, 6, 0));
-        linearLayout2.addView(h, c8.ha.m(1.0f, 0, 44, 6, 0, 0));
-        f11.addView(linearLayout2);
-        y2Var.K0(f11);
-        final t2 t2Var = new t2(y2Var, r2Var);
-        final g gVar = new g(t2Var, h, dVar, 9);
-        t2Var.g = gVar;
-        dVar.setOnClickListener(new h2(t2Var, 1));
-        h.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Wallet.p2
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                final t2 t2Var2 = t2Var;
-                if (t2Var2.a() || t2Var2.d) {
-                    return;
-                }
-                t2Var2.d = true;
-                final fi.d dVar2 = h;
-                dVar2.setLoading(true);
-                final g gVar2 = gVar;
-                gVar2.run();
-                final int i11 = i7;
-                final String str2 = str;
-                final JSONObject jSONObject2 = jSONObject;
-                final TLRPC.User user2 = user;
-                final org.telegram.ui.ActionBar.f6 f6Var2 = f6Var;
-                final m0 m0Var = x10;
-                final y2 y2Var2 = y2Var;
-                final byte[] bArr2 = bArr;
-                m0Var.z(new v10() { // from class: org.telegram.ui.Wallet.j2
-                    @Override // org.telegram.messenger.v10
-                    public final void a(Object obj, Object obj2) {
-                        t2 t2Var3 = t2Var2;
-                        fi.d dVar3 = dVar2;
-                        y2 y2Var3 = y2Var2;
-                        org.telegram.ui.ActionBar.f6 f6Var3 = f6Var2;
-                        g gVar3 = gVar2;
-                        m0 m0Var2 = m0Var;
-                        String str3 = str2;
-                        byte[] bArr3 = bArr2;
-                        int i12 = i11;
-                        TLRPC.User user3 = user2;
-                        JSONObject jSONObject3 = jSONObject2;
-                        j0 j0Var = (j0) obj;
-                        String str4 = (String) obj2;
-                        if (t2Var3.e) {
-                            return;
-                        }
-                        if (j0Var == null || str4 != null) {
-                            t2Var3.d = false;
-                            dVar3.setLoading(false);
-                            if (str4 != null) {
-                                hc.c0(str4, y2Var3.E, f6Var3);
-                            }
-                            gVar3.run();
-                            return;
-                        }
-                        if (str3.equals(m0Var2.t()) && Arrays.equals(bArr3, m0Var2.y())) {
-                            Utilities.e.c(new ee(j0Var.b(), str3, bArr3, jSONObject3, "bot" + user3.id, ConnectionsManager.getInstance(i12).getCurrentTime(), t2Var3, m0Var2));
-                            return;
-                        }
-                        hc.b0(id.M0(2131742962, null));
-                        t2Var3.d = false;
-                        if (!t2Var3.f) {
-                            t2Var3.f = true;
-                            t2Var3.b.a();
-                        }
-                        if (t2Var3.e) {
-                            return;
-                        }
-                        t2Var3.a.dismiss();
-                    }
-                }, true, false);
-            }
-        });
-        b(y2Var, t2Var);
-        gVar.run();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public u2(x2 x2Var, Context context) {
+        super(context);
+        this.e = x2Var;
+        this.a = new org.telegram.ui.Components.w5(this, 250L, xq.h);
+        Paint paint = new Paint(1);
+        this.b = paint;
+        this.c = new Path();
+        setWillNotDraw(false);
+        paint.setColor(org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.h5, x2Var.I0));
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r0v3, types: [org.telegram.messenger.ls, org.telegram.ui.Wallet.f2] */
-    public static void d(Context context, final int i7, final TLRPC.User user, final d2 d2Var, final String str, final byte[] bArr, org.telegram.ui.ActionBar.f6 f6Var, r2 r2Var) {
-        org.telegram.ui.ActionBar.f6 f6Var2 = f6Var;
-        final m0 x10 = m0.x(i7);
-        char c10 = 0;
-        final y2 y2Var = new y2(context, f6Var2, new View[0]);
-        y2Var.J0(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.a7, f6Var2));
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(1);
-        a(context, linearLayout, user, id.V(null, null, 2131743198, t10.p(user)), f6Var2);
-        g6 g6Var = new g6(context, R.drawable.wallet_card_info, 24);
-        g6Var.getCardHolderView().setMaxLines(2);
-        g6Var.getCardHolderView().setSingleLine(false);
-        List<c2> list = d2Var.b;
-        g6Var.setCardHolder(e8.c0(((c2) list.get(0)).a));
-        org.telegram.ui.Components.j6 balanceView = g6Var.getBalanceView();
-        long j3 = d2Var.c;
-        balanceView.setText(e2.k(j3));
-        g6Var.getUsdBalanceView().setText(x10.m(j3, false));
-        linearLayout.addView(g6Var, c8.ha.o(-1, -2));
-        LinearLayout F = e2.F(context, id.M0(2131743210, null), f6Var2);
-        for (c2 c2Var : list) {
-            String M0 = id.M0((c2Var.b == null || c2Var.d != null) ? 2131742984 : 2131743156, null);
-            Object[] objArr = new Object[1];
-            objArr[c10] = e2.C(c2Var.a);
-            org.telegram.ui.ActionBar.f6 f6Var3 = f6Var2;
-            LinearLayout linearLayout2 = F;
-            linearLayout2.addView(e2.c(context, M0, id.V(null, null, 2131742979, objArr), e2.b(-c2Var.e), c2Var.d, f6Var3), c8.ha.o(-1, -2));
-            F = linearLayout2;
-            f6Var2 = f6Var3;
-            c10 = 0;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        float f10;
+        x2 x2Var = this.e;
+        Integer num = x2Var.m1;
+        int intValue = num != null ? num.intValue() : org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.h5, x2Var.I0);
+        Paint paint = this.b;
+        paint.setColor(intValue);
+        View[] viewPages = x2Var.i1.getViewPages();
+        this.d = 0.0f;
+        for (ai.i0 i0Var : viewPages) {
+            if (i0Var != 0) {
+                float i7 = Utilities.i(1.0f - Math.abs(i0Var.getTranslationX() / Math.max(1, i0Var.getMeasuredWidth())), 1.0f, 0.0f);
+                float f11 = this.d;
+                boolean z9 = i0Var instanceof v2;
+                if (z9) {
+                    w2 w2Var = (w2) ((v2) i0Var);
+                    f10 = Math.max(0.0f, w2Var.getHeight() - w2Var.a.getMeasuredHeight());
+                } else {
+                    f10 = 0.0f;
+                }
+                this.d = (f10 * i7) + f11;
+                if (i0Var.getVisibility() == 0 && z9) {
+                }
+            }
         }
-        final org.telegram.ui.ActionBar.f6 f6Var4 = f6Var2;
-        LinearLayout linearLayout3 = F;
-        q2 q2Var = new q2(context, qs.P3);
-        q2Var.addView(linearLayout3);
-        linearLayout.addView(q2Var, c8.ha.k(12.0f, 6.0f, 12.0f, 0.0f, -1, -2));
-        x2 x2Var = new x2(context);
-        x2Var.getContent().addView(linearLayout, c8.ha.c(-2.0f, -1));
-        y2Var.I0(x2Var);
-        LinearLayout f10 = org.telegram.messenger.k5.f(context, 1);
-        TextView v = e2.v(14, context, null, f6Var4);
-        org.telegram.ui.ActionBar.r6.V(v, org.telegram.ui.ActionBar.k6.z6, f6Var4);
-        f10.addView(v, c8.ha.k(20.0f, 16.0f, 20.0f, 16.0f, -1, -2));
-        LinearLayout linearLayout4 = new LinearLayout(context);
-        linearLayout4.setPadding(org.telegram.messenger.g0.L(16.0f), 0, org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f));
-        fi.d dVar = new fi.d(context, f6Var4, true);
-        dVar.setRoundRadius(24);
-        dVar.e();
-        dVar.setText(id.M0(2131743146, null));
-        linearLayout4.addView(dVar, c8.ha.m(1.0f, 0, 44, 0, 6, 0));
-        final fi.d h = org.telegram.messenger.k5.h(24, context, f6Var4, true);
-        h.setText(id.M0(2131743171, null));
-        linearLayout4.addView(h, c8.ha.m(1.0f, 0, 44, 6, 0, 0));
-        f10.addView(linearLayout4);
-        y2Var.K0(f10);
-        final t2 t2Var = new t2(y2Var, r2Var);
-        final int[] iArr = {0};
-        final f7 f7Var = new f7(t2Var, h, iArr, dVar, 10);
-        final Runnable[] runnableArr = {new bi.a3(t2Var, iArr, v, f7Var, x10, d2Var, 23)};
-        ?? r02 = new ls() { // from class: org.telegram.ui.Wallet.f2
-            @Override // org.telegram.messenger.ls
-            public final void didReceivedNotification(int i10, int i11, Object[] objArr2) {
-                if (iArr[0] != 2 || x10.v() < d2Var.c) {
-                    return;
-                }
-                runnableArr[0].run();
-            }
-        };
-        qs.f(i7).b(r02, qs.a4);
-        t2Var.h = new g2(i7, r02);
-        t2Var.g = f7Var;
-        dVar.setOnClickListener(new h2(t2Var, 0));
-        h.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Wallet.i2
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                final t2 t2Var2 = t2.this;
-                if (t2Var2.a() || t2Var2.d) {
-                    return;
-                }
-                int i10 = iArr[0];
-                final int i11 = i7;
-                final m0 m0Var = x10;
-                if (i10 == 2) {
-                    m0Var.v();
-                    di.e eVar = new di.e(25);
-                    m0 x11 = m0.x(i11);
-                    x11.m0(new d10(i11, eVar, x11));
-                    return;
-                }
-                if (i10 != 1) {
-                    return;
-                }
-                ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i11);
-                final d2 d2Var2 = d2Var;
-                long j10 = d2Var2.a;
-                if (j10 != 0 && j10 <= connectionsManager.getCurrentTime()) {
-                    hc.b0(id.M0(2131742961, null));
-                    t2Var2.d = false;
-                    if (!t2Var2.f) {
-                        t2Var2.f = true;
-                        t2Var2.b.a();
-                    }
-                    if (t2Var2.e) {
-                        return;
-                    }
-                    t2Var2.a.dismiss();
-                    return;
-                }
-                t2Var2.d = true;
-                fi.d dVar2 = h;
-                dVar2.setLoading(true);
-                f7 f7Var2 = f7Var;
-                f7Var2.run();
-                final y2 y2Var2 = y2Var;
-                final org.telegram.ui.ActionBar.f6 f6Var5 = f6Var4;
-                final bi.z2 z2Var = new bi.z2(t2Var2, dVar2, y2Var2, f6Var5, f7Var2, 6);
-                final String str2 = str;
-                final byte[] bArr2 = bArr;
-                final TLRPC.User user2 = user;
-                m0Var.z(new v10() { // from class: org.telegram.ui.Wallet.k2
-                    @Override // org.telegram.messenger.v10
-                    public final void a(Object obj, Object obj2) {
-                        final t2 t2Var3 = t2.this;
-                        bi.z2 z2Var2 = z2Var;
-                        final m0 m0Var2 = m0Var;
-                        final String str3 = str2;
-                        final byte[] bArr3 = bArr2;
-                        final d2 d2Var3 = d2Var2;
-                        final TLRPC.User user3 = user2;
-                        final int i12 = i11;
-                        final y2 y2Var3 = y2Var2;
-                        final org.telegram.ui.ActionBar.f6 f6Var6 = f6Var5;
-                        j0 j0Var = (j0) obj;
-                        String str4 = (String) obj2;
-                        if (t2Var3.e) {
-                            return;
-                        }
-                        if (j0Var == null || str4 != null) {
-                            z2Var2.a(str4);
-                            return;
-                        }
-                        if (str3.equals(m0Var2.t()) && Arrays.equals(bArr3, m0Var2.y())) {
-                            final WalletEngine2 walletEngine2 = m0Var2.b;
-                            if (walletEngine2 == null) {
-                                z2Var2.a(id.M0(2131742962, null));
-                                return;
-                            } else {
-                                final j0 b10 = j0Var.b();
-                                Utilities.e.c(new Runnable() { // from class: org.telegram.ui.Wallet.m2
-                                    @Override // java.lang.Runnable
-                                    public final void run() {
-                                        final j0 j0Var2 = j0.this;
-                                        final String str5 = str3;
-                                        final byte[] bArr4 = bArr3;
-                                        final byte[] f11 = u2.f(j0Var2, str5, bArr4);
-                                        final t2 t2Var4 = t2Var3;
-                                        final WalletEngine2 walletEngine22 = walletEngine2;
-                                        final d2 d2Var4 = d2Var3;
-                                        final TLRPC.User user4 = user3;
-                                        final int i13 = i12;
-                                        final m0 m0Var3 = m0Var2;
-                                        final y2 y2Var4 = y2Var3;
-                                        final org.telegram.ui.ActionBar.f6 f6Var7 = f6Var6;
-                                        org.telegram.messenger.g0.h3(new Runnable() { // from class: org.telegram.ui.Wallet.n2
-                                            @Override // java.lang.Runnable
-                                            public final void run() {
-                                                final t2 t2Var5 = t2.this;
-                                                WalletEngine2 walletEngine23 = walletEngine22;
-                                                j0 j0Var3 = j0Var2;
-                                                d2 d2Var5 = d2Var4;
-                                                TLRPC.User user5 = user4;
-                                                final int i14 = i13;
-                                                final m0 m0Var4 = m0Var3;
-                                                final y2 y2Var5 = y2Var4;
-                                                final String str6 = str5;
-                                                final byte[] bArr5 = bArr4;
-                                                final byte[] bArr6 = f11;
-                                                final org.telegram.ui.ActionBar.f6 f6Var8 = f6Var7;
-                                                try {
-                                                    if (t2Var5.e) {
-                                                        return;
-                                                    }
-                                                    walletEngine23.prepareTonConnectTransfer(j0Var3, d2Var5, "widget:" + user5.id + ":" + Utilities.b.nextLong(), new v10(i14, m0Var4, y2Var5, t2Var5, str6, bArr5, bArr6, f6Var8) { // from class: org.telegram.ui.Wallet.o2
-                                                        public final /* synthetic */ int a;
-                                                        public final /* synthetic */ m0 b;
-                                                        public final /* synthetic */ t2 c;
-                                                        public final /* synthetic */ String d;
-                                                        public final /* synthetic */ byte[] e;
-                                                        public final /* synthetic */ byte[] f;
-
-                                                        {
-                                                            this.c = t2Var5;
-                                                            this.d = str6;
-                                                            this.e = bArr5;
-                                                            this.f = bArr6;
-                                                        }
-
-                                                        @Override // org.telegram.messenger.v10
-                                                        public final void a(Object obj3, Object obj4) {
-                                                            TL_wallet.sendTransfer sendtransfer = (TL_wallet.sendTransfer) obj3;
-                                                            String str7 = (String) obj4;
-                                                            t2 t2Var6 = this.c;
-                                                            if (!t2Var6.e || t2Var6.d) {
-                                                                if (sendtransfer != null) {
-                                                                    int i15 = this.a;
-                                                                    ConnectionsManager.getInstance(i15).sendRequestTyped(sendtransfer, new d3.b(1), new org.telegram.messenger.f9(i15, this.b, this.d, this.e, this.f, sendtransfer, t2Var6));
-                                                                    return;
-                                                                }
-                                                                if (str7 == null) {
-                                                                    str7 = id.M0(2131742989, null);
-                                                                }
-                                                                hc.b0(str7);
-                                                                t2Var6.d = false;
-                                                                if (!t2Var6.f) {
-                                                                    t2Var6.f = true;
-                                                                    t2Var6.b.a();
-                                                                }
-                                                                if (t2Var6.e) {
-                                                                    return;
-                                                                }
-                                                                t2Var6.a.dismiss();
-                                                            }
-                                                        }
-                                                    });
-                                                } finally {
-                                                    j0Var3.close();
-                                                }
-                                            }
-                                        });
-                                    }
-                                });
-                                return;
-                            }
-                        }
-                        hc.b0(id.M0(2131742962, null));
-                        t2Var3.d = false;
-                        if (!t2Var3.f) {
-                            t2Var3.f = true;
-                            t2Var3.b.a();
-                        }
-                        if (t2Var3.e) {
-                            return;
-                        }
-                        t2Var3.a.dismiss();
-                    }
-                }, true, false);
-            }
-        });
-        b(y2Var, t2Var);
-        runnableArr[0].run();
+        float e10 = this.a.e(false, this.d <= ((float) org.telegram.messenger.g0.m) ? 1.0f : 0.0f);
+        float max = Math.max(org.telegram.messenger.g0.m, this.d) - (org.telegram.messenger.g0.m * e10);
+        this.d = max;
+        RectF rectF = org.telegram.messenger.g0.P;
+        rectF.set(x2Var.t0, max, getWidth() - x2Var.t0, org.telegram.messenger.g0.L(8.0f) + getHeight());
+        float W1 = org.telegram.messenger.g0.W1(e10, org.telegram.messenger.g0.L(14.0f), 0);
+        canvas.drawRoundRect(rectF, W1, W1, paint);
+        if (x2Var.E != null) {
+            x2Var.E.setTranslationY(Math.max((x2Var.b.getY() + this.d) + x2Var.s0, x2Var.E.getHeight() + (org.telegram.messenger.g0.L(56.0f) + org.telegram.messenger.g0.m)) - x2Var.E.getBottom());
+        }
+        canvas.save();
+        Path path = this.c;
+        path.rewind();
+        path.addRoundRect(rectF, W1, W1, Path.Direction.CW);
+        canvas.clipPath(path);
+        super.dispatchDraw(canvas);
+        canvas.restore();
     }
 
-    public static TL_wallet.tonConnectSession e() {
-        TL_wallet.tonConnectSession tonconnectsession = new TL_wallet.tonConnectSession();
-        byte[] bArr = new byte[32];
-        SecureRandom secureRandom = Utilities.b;
-        secureRandom.nextBytes(bArr);
-        tonconnectsession.dapp_client_id = Utilities.f(bArr).toLowerCase(Locale.ROOT);
-        byte[] bArr2 = new byte[32];
-        tonconnectsession.nonce = bArr2;
-        secureRandom.nextBytes(bArr2);
-        return tonconnectsession;
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (motionEvent.getAction() != 0 || motionEvent.getY() >= this.d) {
+            return super.dispatchTouchEvent(motionEvent);
+        }
+        this.e.dismiss();
+        return true;
     }
 
-    public static byte[] f(j0 j0Var, String str, byte[] bArr) {
-        try {
-            return Base64.decode(WalletEngine2.tonConnectCrypto(j0Var, e(), str, bArr, new JSONObject().put("account", true)).getJSONObject("account").getString("walletStateInit"), 2);
-        } catch (Exception e10) {
-            org.telegram.messenger.a8.g(e10, true);
-            return null;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        int i11;
+        int size = View.MeasureSpec.getSize(i7);
+        int size2 = View.MeasureSpec.getSize(i10);
+        x2 x2Var = this.e;
+        FrameLayout frameLayout = x2Var.l1;
+        if (frameLayout != null) {
+            frameLayout.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
+            i11 = x2Var.l1.getMeasuredHeight();
+        } else {
+            i11 = 0;
         }
+        x2Var.i1.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(Math.max(0, size2 - i11), TLObject.FLAG_30));
+        setMeasuredDimension(size, size2);
     }
 }

@@ -4,10 +4,10 @@ import android.content.res.Resources;
 import android.graphics.Rect;
 import android.view.View;
 import androidx.appcompat.widget.SearchView;
-import fi.h9;
+import fi.v9;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final class l2 implements View.OnLayoutChangeListener {
     public final /* synthetic */ int a;
@@ -39,7 +39,7 @@ public final class l2 implements View.OnLayoutChangeListener {
                 h2.f fVar = new h2.f((int[]) null);
                 fVar.d();
                 if (a3Var.G0 || a3Var.r()) {
-                    r2Var.f(r2Var.getTopActionBarOffsetY() + (-r2Var.getOffsetY()), false, new h9(fVar, 19));
+                    r2Var.f(r2Var.getTopActionBarOffsetY() + (-r2Var.getOffsetY()), false, new v9(fVar, 18));
                 } else {
                     r1.g gVar = new r1.g((Object) r2Var, (r1.e) b4.b0, 0.0f);
                     r1.h hVar = new r1.h(0.0f);

@@ -15,14 +15,14 @@ import org.telegram.ui.Components.pf;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.c40;
-import org.telegram.ui.kp;
-import org.telegram.ui.p90;
-import org.telegram.ui.qv0;
-import org.telegram.ui.rv0;
-import org.telegram.ui.ww;
+import org.telegram.ui.e40;
+import org.telegram.ui.mp;
+import org.telegram.ui.r90;
+import org.telegram.ui.sv0;
+import org.telegram.ui.tv0;
+import org.telegram.ui.yw;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -65,11 +65,11 @@ public final /* synthetic */ class o implements Runnable {
                 }
                 return;
             case 1:
-                di.i4 i4Var = (di.i4) obj4;
+                di.j4 j4Var = (di.j4) obj4;
                 final qp qpVar = (qp) obj3;
                 String str = (String) obj;
                 TLObject tLObject2 = (TLObject) obj2;
-                di.y6 P1 = qpVar.P1();
+                di.z6 P1 = qpVar.P1();
                 final long j10 = this.b;
                 final boolean z10 = this.c;
                 P1.l0(j10, z10, false);
@@ -102,15 +102,15 @@ public final /* synthetic */ class o implements Runnable {
                         }
                     }
                 };
-                org.telegram.ui.Components.cc V = new org.telegram.ui.Components.hc(i4Var.M0, i4Var.k0).V(Arrays.asList(tLObject2), !z10 ? org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, 2131744761, org.telegram.messenger.g5.m(10, str, null))) : org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, 2131744762, org.telegram.messenger.g5.m(10, str, null))), null, d0Var);
+                org.telegram.ui.Components.cc V = new org.telegram.ui.Components.hc(j4Var.M0, j4Var.k0).V(Arrays.asList(tLObject2), !z10 ? org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, 2131744758, org.telegram.messenger.g5.m(10, str, null))) : org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, 2131744759, org.telegram.messenger.g5.m(10, str, null))), null, d0Var);
                 V.a = 2;
                 V.k(true);
                 return;
             case 2:
-                di.y6 y6Var = (di.y6) obj4;
+                di.z6 z6Var = (di.z6) obj4;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj3;
                 c20 c20Var = (c20) obj2;
-                org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) obj;
+                org.telegram.ui.ActionBar.g6 g6Var = (org.telegram.ui.ActionBar.g6) obj;
                 if (tL_error == null) {
                     c20Var.a(Boolean.TRUE);
                     return;
@@ -120,21 +120,21 @@ public final /* synthetic */ class o implements Runnable {
                         c20Var.a(Boolean.FALSE);
                         return;
                     }
-                    qp s12 = qp.s1(y6Var.a);
+                    qp s12 = qp.s1(z6Var.a);
                     org.telegram.messenger.f3 G0 = s12.G0();
                     long j11 = this.b;
-                    G0.a(j11, new r2(y6Var, c20Var, s12, j11, 2));
+                    G0.a(j11, new r2(z6Var, c20Var, s12, j11, 2));
                     return;
                 }
                 if (tL_error.text.startsWith("STORY_LIVE_ALREADY_")) {
                     org.telegram.ui.ActionBar.f2 Q = LaunchActivity.Q();
                     if (z9 && Q != null) {
-                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, Q.getContext(), f6Var);
-                        String M0 = org.telegram.messenger.id.M0(2131748827, null);
+                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, Q.getContext(), g6Var);
+                        String M0 = org.telegram.messenger.id.M0(2131748826, null);
                         org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                         u1Var.R = M0;
-                        u1Var.T = org.telegram.messenger.id.M0(2131748828, null);
-                        jg.g.C(null, 2131747832, alertDialog$Builder, null);
+                        u1Var.T = org.telegram.messenger.id.M0(2131748827, null);
+                        jg.g.C(null, 2131747831, alertDialog$Builder, null);
                     }
                     c20Var.a(Boolean.FALSE);
                     return;
@@ -190,7 +190,7 @@ public final /* synthetic */ class o implements Runnable {
                     throw th2;
                 }
             case 4:
-                c40 c40Var = (c40) obj4;
+                e40 e40Var = (e40) obj4;
                 org.telegram.ui.ActionBar.u1[] u1VarArr = (org.telegram.ui.ActionBar.u1[]) obj2;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj3;
                 TL_phone.inviteToGroupCall invitetogroupcall = (TL_phone.inviteToGroupCall) obj;
@@ -200,22 +200,22 @@ public final /* synthetic */ class o implements Runnable {
                 }
                 u1VarArr[0] = null;
                 if (z9 && "USER_NOT_PARTICIPANT".equals(tL_error2.text)) {
-                    c40Var.C1(null, j3, 3);
+                    e40Var.C1(null, j3, 3);
                     return;
                 } else {
-                    org.telegram.ui.Components.v4.c0(c40Var.a, tL_error2, (org.telegram.ui.ActionBar.f2) c40Var.Z1.M().getFragmentStack().get(c40Var.Z1.M().getFragmentStack().size() - 1), invitetogroupcall, new Object[0]);
+                    org.telegram.ui.Components.v4.c0(e40Var.a, tL_error2, (org.telegram.ui.ActionBar.f2) e40Var.Z1.M().getFragmentStack().get(e40Var.Z1.M().getFragmentStack().size() - 1), invitetogroupcall, new Object[0]);
                     return;
                 }
             case 5:
-                p90 p90Var = (p90) obj4;
+                r90 r90Var = (r90) obj4;
                 TLObject tLObject3 = (TLObject) obj2;
                 String str3 = (String) obj;
                 TLRPC.TL_error tL_error3 = (TLRPC.TL_error) obj3;
-                int i12 = p90Var.b;
-                p90Var.c();
+                int i12 = r90Var.b;
+                r90Var.c();
                 if (!(tLObject3 instanceof TLRPC.TL_contacts_resolvedPeer)) {
                     if (tL_error3 != null) {
-                        p90.d().f0(tL_error3, false);
+                        r90.d().f0(tL_error3, false);
                         return;
                     }
                     return;
@@ -225,27 +225,27 @@ public final /* synthetic */ class o implements Runnable {
                 qp.s1(i12).S3(tL_contacts_resolvedPeer.chats, false);
                 TLRPC.User a22 = qp.s1(i12).a2(Long.valueOf(tL_contacts_resolvedPeer.peer.user_id));
                 if (a22 != null) {
-                    org.telegram.ui.Wallet.m9 m9Var = new org.telegram.ui.Wallet.m9(a22);
-                    m9Var.s = j3;
-                    m9Var.g0 = str3;
-                    m9Var.h0 = z9;
-                    m9Var.f0 = true;
-                    p90Var.u(m9Var, false);
+                    org.telegram.ui.Wallet.l9 l9Var = new org.telegram.ui.Wallet.l9(a22);
+                    l9Var.s = j3;
+                    l9Var.g0 = str3;
+                    l9Var.h0 = z9;
+                    l9Var.f0 = true;
+                    r90Var.u(l9Var, false);
                     return;
                 }
                 return;
             default:
-                rv0 rv0Var = (rv0) obj4;
-                ProfileActivity profileActivity = rv0Var.b;
-                kp kpVar = new kp(profileActivity.d1, -j3, (TLRPC.TL_chatAdminRights) obj3, null, null, (String) obj2, 2, true, !z9, null);
-                kpVar.X0 = new qv0(rv0Var, (ww) obj);
-                profileActivity.presentFragment(kpVar);
+                tv0 tv0Var = (tv0) obj4;
+                ProfileActivity profileActivity = tv0Var.b;
+                mp mpVar = new mp(profileActivity.d1, -j3, (TLRPC.TL_chatAdminRights) obj3, null, null, (String) obj2, 2, true, !z9, null);
+                mpVar.X0 = new sv0(tv0Var, (yw) obj);
+                profileActivity.presentFragment(mpVar);
                 return;
         }
     }
 
-    public /* synthetic */ o(di.i4 i4Var, qp qpVar, long j3, boolean z9, String str, TLObject tLObject) {
-        this.e = i4Var;
+    public /* synthetic */ o(di.j4 j4Var, qp qpVar, long j3, boolean z9, String str, TLObject tLObject) {
+        this.e = j4Var;
         this.f = qpVar;
         this.b = j3;
         this.c = z9;
@@ -253,13 +253,13 @@ public final /* synthetic */ class o implements Runnable {
         this.d = tLObject;
     }
 
-    public /* synthetic */ o(di.y6 y6Var, TLRPC.TL_error tL_error, boolean z9, long j3, c20 c20Var, org.telegram.ui.ActionBar.f6 f6Var) {
-        this.e = y6Var;
+    public /* synthetic */ o(di.z6 z6Var, TLRPC.TL_error tL_error, boolean z9, long j3, c20 c20Var, org.telegram.ui.ActionBar.g6 g6Var) {
+        this.e = z6Var;
         this.f = tL_error;
         this.c = z9;
         this.b = j3;
         this.d = c20Var;
-        this.h = f6Var;
+        this.h = g6Var;
     }
 
     public /* synthetic */ o(pf pfVar, EditTextBoldCursor editTextBoldCursor, String str, TLRPC.Document document, long j3, boolean z9) {
@@ -271,8 +271,8 @@ public final /* synthetic */ class o implements Runnable {
         this.c = z9;
     }
 
-    public /* synthetic */ o(c40 c40Var, org.telegram.ui.ActionBar.u1[] u1VarArr, boolean z9, TLRPC.TL_error tL_error, long j3, TL_phone.inviteToGroupCall invitetogroupcall) {
-        this.e = c40Var;
+    public /* synthetic */ o(e40 e40Var, org.telegram.ui.ActionBar.u1[] u1VarArr, boolean z9, TLRPC.TL_error tL_error, long j3, TL_phone.inviteToGroupCall invitetogroupcall) {
+        this.e = e40Var;
         this.d = u1VarArr;
         this.c = z9;
         this.f = tL_error;
@@ -280,8 +280,8 @@ public final /* synthetic */ class o implements Runnable {
         this.h = invitetogroupcall;
     }
 
-    public /* synthetic */ o(p90 p90Var, TLObject tLObject, long j3, String str, boolean z9, TLRPC.TL_error tL_error) {
-        this.e = p90Var;
+    public /* synthetic */ o(r90 r90Var, TLObject tLObject, long j3, String str, boolean z9, TLRPC.TL_error tL_error) {
+        this.e = r90Var;
         this.d = tLObject;
         this.b = j3;
         this.h = str;
@@ -289,12 +289,12 @@ public final /* synthetic */ class o implements Runnable {
         this.f = tL_error;
     }
 
-    public /* synthetic */ o(rv0 rv0Var, long j3, TLRPC.TL_chatAdminRights tL_chatAdminRights, String str, boolean z9, ww wwVar) {
-        this.e = rv0Var;
+    public /* synthetic */ o(tv0 tv0Var, long j3, TLRPC.TL_chatAdminRights tL_chatAdminRights, String str, boolean z9, yw ywVar) {
+        this.e = tv0Var;
         this.b = j3;
         this.f = tL_chatAdminRights;
         this.d = str;
         this.c = z9;
-        this.h = wwVar;
+        this.h = ywVar;
     }
 }

@@ -1,49 +1,83 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class fg0 extends org.telegram.ui.Components.kn {
-    public final /* synthetic */ jg0 A0;
+public final /* synthetic */ class fg0 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ lg0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fg0(jg0 jg0Var, Context context) {
-        super(context, null, false, null);
-        this.A0 = jg0Var;
+    public /* synthetic */ fg0(lg0 lg0Var, int i7) {
+        this.a = i7;
+        this.b = lg0Var;
     }
 
-    @Override // org.telegram.ui.Components.kn, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        jg0 jg0Var = this.A0;
-        jg0Var.W.y0(jg0Var.b0.getAvatarImageView().getX(), jg0Var.b0.getAvatarImageView().getY(), jg0Var.b0.getAvatarImageView().getWidth(), jg0Var.b0.getAvatarImageView().getHeight());
-        if (jg0Var.Y) {
-            canvas.save();
-            canvas.scale(0.9f, 0.9f, jg0Var.W.r(), jg0Var.W.s());
-            jg0Var.W.h(canvas, null);
-            canvas.restore();
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                final int i7 = 0;
+                final lg0 lg0Var = this.b;
+                org.telegram.messenger.g0.h3(new Runnable() { // from class: org.telegram.ui.eg0
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i7) {
+                            case 0:
+                                lg0.Z(lg0Var, tL_error, tLObject);
+                                break;
+                            case 1:
+                                lg0.b0(lg0Var, tL_error, tLObject);
+                                break;
+                            default:
+                                lg0.a0(lg0Var, tL_error, tLObject);
+                                break;
+                        }
+                    }
+                });
+                break;
+            case 1:
+                final int i10 = 1;
+                final lg0 lg0Var2 = this.b;
+                org.telegram.messenger.g0.h3(new Runnable() { // from class: org.telegram.ui.eg0
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i10) {
+                            case 0:
+                                lg0.Z(lg0Var2, tL_error, tLObject);
+                                break;
+                            case 1:
+                                lg0.b0(lg0Var2, tL_error, tLObject);
+                                break;
+                            default:
+                                lg0.a0(lg0Var2, tL_error, tLObject);
+                                break;
+                        }
+                    }
+                });
+                break;
+            default:
+                final int i11 = 2;
+                final lg0 lg0Var3 = this.b;
+                org.telegram.messenger.g0.h3(new Runnable() { // from class: org.telegram.ui.eg0
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i11) {
+                            case 0:
+                                lg0.Z(lg0Var3, tL_error, tLObject);
+                                break;
+                            case 1:
+                                lg0.b0(lg0Var3, tL_error, tLObject);
+                                break;
+                            default:
+                                lg0.a0(lg0Var3, tL_error, tLObject);
+                                break;
+                        }
+                    }
+                });
+                break;
         }
-        if (jg0Var.X) {
-            int r10 = (int) (jg0Var.W.r() - (org.telegram.ui.ActionBar.k6.U0.getIntrinsicWidth() / 2));
-            int s5 = (int) (jg0Var.W.s() - (org.telegram.ui.ActionBar.k6.U0.getIntrinsicHeight() / 2));
-            Drawable drawable = org.telegram.ui.ActionBar.k6.U0;
-            drawable.setBounds(r10, s5, drawable.getIntrinsicWidth() + r10, org.telegram.ui.ActionBar.k6.U0.getIntrinsicHeight() + s5);
-            org.telegram.ui.ActionBar.k6.U0.draw(canvas);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.kn, android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.A0.W.P();
-    }
-
-    @Override // org.telegram.ui.Components.kn, android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.A0.W.R();
     }
 }

@@ -1,38 +1,38 @@
 package di;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e8 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ f8 b;
+    public final /* synthetic */ g8 b;
 
-    public /* synthetic */ e8(f8 f8Var, int i7) {
+    public /* synthetic */ e8(g8 g8Var, int i7) {
         this.a = i7;
-        this.b = f8Var;
+        this.b = g8Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                g8 g8Var = this.b.v;
-                g8Var.s = 0;
-                g8Var.requestLayout();
-                h8 h8Var = g8Var.J;
-                h8Var.L(h8Var.getWidth(), h8Var.getHeight());
+                h8 h8Var = this.b.v;
+                h8Var.s = 0;
                 h8Var.requestLayout();
+                i8 i8Var = h8Var.J;
+                i8Var.L(i8Var.getWidth(), i8Var.getHeight());
+                i8Var.requestLayout();
                 break;
             case 1:
-                g8 g8Var2 = this.b.v;
-                g8Var2.s = 0;
-                g8Var2.requestLayout();
-                h8 h8Var2 = g8Var2.J;
-                h8Var2.L(h8Var2.getWidth(), h8Var2.getHeight());
+                h8 h8Var2 = this.b.v;
+                h8Var2.s = 0;
                 h8Var2.requestLayout();
+                i8 i8Var2 = h8Var2.J;
+                i8Var2.L(i8Var2.getWidth(), i8Var2.getHeight());
+                i8Var2.requestLayout();
                 break;
             case 2:
-                f8 f8Var = this.b;
-                f8Var.v.post(new e8(f8Var, 3));
+                g8 g8Var = this.b;
+                g8Var.v.post(new e8(g8Var, 3));
                 break;
             default:
                 this.b.v.y = true;

@@ -1,65 +1,55 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MediaController;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class mz0 implements Runnable {
+public final class mz0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ rz0 b;
+    public final /* synthetic */ SecretMediaViewer b;
 
-    public /* synthetic */ mz0(rz0 rz0Var, int i7) {
+    public /* synthetic */ mz0(SecretMediaViewer secretMediaViewer, int i7) {
         this.a = i7;
-        this.b = rz0Var;
+        this.b = secretMediaViewer;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                rz0 rz0Var = this.b;
-                mz0 mz0Var = rz0Var.Z;
-                if (rz0Var.x != null) {
-                    rz0Var.a0 = r2.S() / rz0Var.x.U();
-                    pz0 pz0Var = rz0Var.N;
-                    if (pz0Var != null) {
-                        pz0Var.oc = (rz0Var.x.U() - rz0Var.x.S()) / 1000;
-                        rz0Var.N.S3();
-                        org.telegram.ui.Components.pm0 seekBarWaveform = rz0Var.N.getSeekBarWaveform();
-                        if (seekBarWaveform != null) {
-                            float f10 = rz0Var.a0;
-                            seekBarWaveform.J = true;
-                            seekBarWaveform.K = f10;
-                            org.telegram.ui.Cells.q1 q1Var = seekBarWaveform.n;
-                            if (q1Var != null) {
-                                q1Var.invalidate();
-                            }
-                        }
-                    }
-                    if (rz0Var.x.d0()) {
-                        org.telegram.messenger.g0.r(mz0Var);
-                        org.telegram.messenger.g0.i3(mz0Var, 16L);
-                        break;
-                    }
+                SecretMediaViewer secretMediaViewer = this.b;
+                Runnable runnable = secretMediaViewer.m0;
+                if (runnable != null) {
+                    runnable.run();
+                    secretMediaViewer.m0 = null;
+                    break;
                 }
                 break;
             case 1:
-                super/*android.app.Dialog*/.dismiss();
+                SecretMediaViewer secretMediaViewer2 = this.b;
+                AnimatorSet animatorSet = secretMediaViewer2.G;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    secretMediaViewer2.F.setVisibility(8);
+                    secretMediaViewer2.G = null;
+                    secretMediaViewer2.Y.scrollTo(0, 0);
+                    break;
+                }
                 break;
             case 2:
-                super/*android.app.Dialog*/.dismiss();
+                SecretMediaViewer secretMediaViewer3 = this.b;
+                Runnable runnable2 = secretMediaViewer3.m0;
+                if (runnable2 != null) {
+                    runnable2.run();
+                    secretMediaViewer3.m0 = null;
+                    break;
+                }
                 break;
             default:
-                rz0 rz0Var2 = this.b;
-                if (rz0Var2.d == null) {
-                    org.telegram.messenger.g0.h3(new mz0(rz0Var2, 2));
-                    org.telegram.ui.Cells.q1 q1Var2 = rz0Var2.O;
-                    if (q1Var2 != null) {
-                        q1Var2.setVisibility(0);
-                        rz0Var2.O.invalidate();
-                    }
-                }
-                MediaController.B().F0();
+                SecretMediaViewer secretMediaViewer4 = this.b;
+                secretMediaViewer4.I0 = null;
+                secretMediaViewer4.e.invalidate();
                 break;
         }
     }

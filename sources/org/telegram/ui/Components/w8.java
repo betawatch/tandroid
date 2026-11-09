@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public class w8 extends Drawable {
     public static final int[][] L = {new int[]{-636796, -1090751, -612560, -35006}, new int[]{-693938, -690388, -11246, -22717}, new int[]{-8160001, -5217281, -36183, -1938945}, new int[]{-16133536, -10560448, -4070106, -8331477}, new int[]{-10569989, -14692629, -12191817, -14683687}, new int[]{-11694593, -13910017, -14622003, -15801871}, new int[]{-439392, -304000, -19910, -98718}};
@@ -57,10 +57,10 @@ public class w8 extends Drawable {
     public boolean w;
     public boolean x;
     public int y;
-    public final org.telegram.ui.ActionBar.f6 z;
+    public final org.telegram.ui.ActionBar.g6 z;
 
     public w8() {
-        this((org.telegram.ui.ActionBar.f6) null);
+        this((org.telegram.ui.ActionBar.g6) null);
     }
 
     public static void a(String str, String str2, String str3, StringBuilder sb2) {
@@ -95,15 +95,15 @@ public class w8 extends Drawable {
     }
 
     public static int d(long j3) {
-        return org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.p8[e(j3)], false);
+        return org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.p8[e(j3)], false);
     }
 
     public static int e(long j3) {
-        return (int) Math.abs(j3 % org.telegram.ui.ActionBar.k6.p8.length);
+        return (int) Math.abs(j3 % org.telegram.ui.ActionBar.l6.p8.length);
     }
 
     public static int f(int i7) {
-        float[] P0 = org.telegram.ui.ActionBar.k6.P0(5);
+        float[] P0 = org.telegram.ui.ActionBar.l6.P0(5);
         Color.colorToHSV(i7, P0);
         int i10 = (int) P0[0];
         if (i10 >= 345 || i10 < 29) {
@@ -134,8 +134,8 @@ public class w8 extends Drawable {
             return this.d;
         }
         int i7 = this.d;
-        org.telegram.ui.ActionBar.h6 k10 = org.telegram.ui.ActionBar.k6.I.k(false);
-        return org.telegram.ui.ActionBar.k6.C(org.telegram.ui.ActionBar.k6.I, k10 != null ? k10.c : 0, i7);
+        org.telegram.ui.ActionBar.i6 k10 = org.telegram.ui.ActionBar.l6.I.k(false);
+        return org.telegram.ui.ActionBar.l6.C(org.telegram.ui.ActionBar.l6.I, k10 != null ? k10.c : 0, i7);
     }
 
     public final int c() {
@@ -143,8 +143,8 @@ public class w8 extends Drawable {
             return this.e;
         }
         int i7 = this.e;
-        org.telegram.ui.ActionBar.h6 k10 = org.telegram.ui.ActionBar.k6.I.k(false);
-        return org.telegram.ui.ActionBar.k6.C(org.telegram.ui.ActionBar.k6.I, k10 != null ? k10.c : 0, i7);
+        org.telegram.ui.ActionBar.i6 k10 = org.telegram.ui.ActionBar.l6.I.k(false);
+        return org.telegram.ui.ActionBar.l6.C(org.telegram.ui.ActionBar.l6.I, k10 != null ? k10.c : 0, i7);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:192:0x00fd  */
@@ -172,24 +172,24 @@ public class w8 extends Drawable {
         }
         int width = bounds.width();
         boolean z9 = this.G;
-        org.telegram.ui.ActionBar.f6 f6Var = this.z;
+        org.telegram.ui.ActionBar.g6 g6Var = this.z;
         if (z9) {
             int i11 = this.J;
-            int i12 = org.telegram.ui.ActionBar.r6.b;
+            int i12 = org.telegram.ui.ActionBar.s6.b;
             if (i11 != i12) {
                 this.J = i12;
                 try {
                     if (this.d == this.H && this.e == this.I) {
                         int i13 = this.n;
                         if (i13 == 13) {
-                            w02 = org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.P9, false);
+                            w02 = org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.P9, false);
                         } else if (i13 == 2) {
-                            w02 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.N7, f6Var);
+                            w02 = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.N7, g6Var);
                         } else {
                             if (i13 != 27 && i13 != 12 && i13 != 1 && i13 != 14) {
                                 if (i13 == 20) {
-                                    w02 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Vk, f6Var);
-                                    w03 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Wk, f6Var);
+                                    w02 = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.Vk, g6Var);
+                                    w03 = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.Wk, g6Var);
                                     this.H = w02;
                                     this.d = w02;
                                     this.I = w03;
@@ -198,8 +198,8 @@ public class w8 extends Drawable {
                                     this.G = false;
                                 }
                             }
-                            w02 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.K7, f6Var);
-                            w03 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.L7, f6Var);
+                            w02 = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.K7, g6Var);
+                            w03 = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.L7, g6Var);
                             this.H = w02;
                             this.d = w02;
                             this.I = w03;
@@ -219,23 +219,23 @@ public class w8 extends Drawable {
         }
         if (this.B) {
             int i14 = this.F;
-            int i15 = org.telegram.ui.ActionBar.r6.b;
+            int i15 = org.telegram.ui.ActionBar.s6.b;
             if (i14 != i15) {
                 this.F = i15;
                 if (this.n == 0 && this.d == this.D && this.e == this.E && (i10 = this.C) >= 0) {
-                    int[] iArr = org.telegram.ui.ActionBar.k6.p8;
+                    int[] iArr = org.telegram.ui.ActionBar.l6.p8;
                     c10 = '\r';
                     if (i10 < iArr.length) {
-                        int w04 = org.telegram.ui.ActionBar.k6.w0(iArr[i10], f6Var);
+                        int w04 = org.telegram.ui.ActionBar.l6.w0(iArr[i10], g6Var);
                         this.D = w04;
                         this.d = w04;
-                        int w05 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.q8[this.C], f6Var);
+                        int w05 = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.q8[this.C], g6Var);
                         this.E = w05;
                         this.e = w05;
-                        int o4 = i0.a.o(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.J7, f6Var), this.y);
+                        int o4 = i0.a.o(org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.J7, g6Var), this.y);
                         TextPaint textPaint = this.a;
                         textPaint.setColor(o4);
-                        Paint paint = org.telegram.ui.ActionBar.k6.q0;
+                        Paint paint = org.telegram.ui.ActionBar.l6.q0;
                         if (!this.c && (f10Var = this.f) != null) {
                             f10Var.b(bounds.left, bounds.top, r0 + width, r7 + width);
                             paint = this.f.c;
@@ -280,39 +280,39 @@ public class w8 extends Drawable {
                         i7 = this.n;
                         if (i7 == 2) {
                             if (this.o != 0.0f) {
-                                int i16 = org.telegram.ui.ActionBar.k6.M7;
-                                paint.setColor(i0.a.o(org.telegram.ui.ActionBar.k6.w0(i16, f6Var), this.y));
+                                int i16 = org.telegram.ui.ActionBar.l6.M7;
+                                paint.setColor(i0.a.o(org.telegram.ui.ActionBar.l6.w0(i16, g6Var), this.y));
                                 float f14 = width / 2.0f;
                                 canvas.drawCircle(f14, f14, this.o * f14, paint);
-                                if (org.telegram.ui.ActionBar.k6.C1) {
-                                    zg0 zg0Var = org.telegram.ui.ActionBar.k6.u1;
-                                    zg0Var.Z = true;
-                                    zg0Var.Q(org.telegram.ui.ActionBar.k6.x0(null, i16, true), "Arrow1");
-                                    org.telegram.ui.ActionBar.k6.u1.Q(org.telegram.ui.ActionBar.k6.x0(null, i16, true), "Arrow2");
-                                    org.telegram.ui.ActionBar.k6.u1.o();
-                                    org.telegram.ui.ActionBar.k6.C1 = false;
+                                if (org.telegram.ui.ActionBar.l6.C1) {
+                                    ah0 ah0Var = org.telegram.ui.ActionBar.l6.u1;
+                                    ah0Var.Z = true;
+                                    ah0Var.Q(org.telegram.ui.ActionBar.l6.x0(null, i16, true), "Arrow1");
+                                    org.telegram.ui.ActionBar.l6.u1.Q(org.telegram.ui.ActionBar.l6.x0(null, i16, true), "Arrow2");
+                                    org.telegram.ui.ActionBar.l6.u1.o();
+                                    org.telegram.ui.ActionBar.l6.C1 = false;
                                 }
-                            } else if (!org.telegram.ui.ActionBar.k6.C1) {
-                                zg0 zg0Var2 = org.telegram.ui.ActionBar.k6.u1;
-                                zg0Var2.Z = true;
-                                zg0Var2.Q(this.d, "Arrow1");
-                                org.telegram.ui.ActionBar.k6.u1.Q(this.d, "Arrow2");
-                                org.telegram.ui.ActionBar.k6.u1.o();
-                                org.telegram.ui.ActionBar.k6.C1 = true;
+                            } else if (!org.telegram.ui.ActionBar.l6.C1) {
+                                ah0 ah0Var2 = org.telegram.ui.ActionBar.l6.u1;
+                                ah0Var2.Z = true;
+                                ah0Var2.Q(this.d, "Arrow1");
+                                org.telegram.ui.ActionBar.l6.u1.Q(this.d, "Arrow2");
+                                org.telegram.ui.ActionBar.l6.u1.o();
+                                org.telegram.ui.ActionBar.l6.C1 = true;
                             }
-                            zg0 zg0Var3 = org.telegram.ui.ActionBar.k6.u1;
-                            int i17 = zg0Var3.b;
-                            int i18 = zg0Var3.c;
+                            ah0 ah0Var3 = org.telegram.ui.ActionBar.l6.u1;
+                            int i17 = ah0Var3.b;
+                            int i18 = ah0Var3.c;
                             int i19 = (width - i17) / 2;
                             int i20 = (width - i18) / 2;
                             canvas.save();
-                            org.telegram.ui.ActionBar.k6.u1.setBounds(i19, i20, i17 + i19, i18 + i20);
-                            org.telegram.ui.ActionBar.k6.u1.draw(canvas);
+                            org.telegram.ui.ActionBar.l6.u1.setBounds(i19, i20, i17 + i19, i18 + i20);
+                            org.telegram.ui.ActionBar.l6.u1.draw(canvas);
                             canvas.restore();
                         } else if (i7 != 0 || this.K != null) {
                             Drawable drawable2 = this.K;
                             if (drawable2 == null) {
-                                drawable2 = i7 == 1 ? org.telegram.ui.ActionBar.k6.r0[0] : i7 == 4 ? org.telegram.ui.ActionBar.k6.r0[2] : i7 == 5 ? org.telegram.ui.ActionBar.k6.r0[3] : i7 == 6 ? org.telegram.ui.ActionBar.k6.r0[4] : i7 == 7 ? org.telegram.ui.ActionBar.k6.r0[5] : i7 == 8 ? org.telegram.ui.ActionBar.k6.r0[6] : i7 == 9 ? org.telegram.ui.ActionBar.k6.r0[7] : i7 == 10 ? org.telegram.ui.ActionBar.k6.r0[8] : i7 == 3 ? org.telegram.ui.ActionBar.k6.r0[10] : i7 == 12 ? org.telegram.ui.ActionBar.k6.r0[11] : i7 == 14 ? org.telegram.ui.ActionBar.k6.r0[12] : i7 == 15 ? org.telegram.ui.ActionBar.k6.r0[c10] : i7 == 16 ? org.telegram.ui.ActionBar.k6.r0[14] : i7 == 19 ? org.telegram.ui.ActionBar.k6.r0[15] : i7 == 18 ? org.telegram.ui.ActionBar.k6.r0[16] : i7 == 20 ? org.telegram.ui.ActionBar.k6.r0[17] : i7 == 21 ? org.telegram.ui.ActionBar.k6.r0[18] : i7 == 22 ? org.telegram.ui.ActionBar.k6.r0[19] : i7 == 23 ? org.telegram.ui.ActionBar.k6.r0[21] : i7 == 24 ? org.telegram.ui.ActionBar.k6.r0[20] : i7 == 25 ? org.telegram.ui.ActionBar.k6.r0[22] : i7 == 26 ? org.telegram.ui.ActionBar.k6.r0[23] : i7 == 27 ? org.telegram.ui.ActionBar.k6.r0[24] : org.telegram.ui.ActionBar.k6.r0[9];
+                                drawable2 = i7 == 1 ? org.telegram.ui.ActionBar.l6.r0[0] : i7 == 4 ? org.telegram.ui.ActionBar.l6.r0[2] : i7 == 5 ? org.telegram.ui.ActionBar.l6.r0[3] : i7 == 6 ? org.telegram.ui.ActionBar.l6.r0[4] : i7 == 7 ? org.telegram.ui.ActionBar.l6.r0[5] : i7 == 8 ? org.telegram.ui.ActionBar.l6.r0[6] : i7 == 9 ? org.telegram.ui.ActionBar.l6.r0[7] : i7 == 10 ? org.telegram.ui.ActionBar.l6.r0[8] : i7 == 3 ? org.telegram.ui.ActionBar.l6.r0[10] : i7 == 12 ? org.telegram.ui.ActionBar.l6.r0[11] : i7 == 14 ? org.telegram.ui.ActionBar.l6.r0[12] : i7 == 15 ? org.telegram.ui.ActionBar.l6.r0[c10] : i7 == 16 ? org.telegram.ui.ActionBar.l6.r0[14] : i7 == 19 ? org.telegram.ui.ActionBar.l6.r0[15] : i7 == 18 ? org.telegram.ui.ActionBar.l6.r0[16] : i7 == 20 ? org.telegram.ui.ActionBar.l6.r0[17] : i7 == 21 ? org.telegram.ui.ActionBar.l6.r0[18] : i7 == 22 ? org.telegram.ui.ActionBar.l6.r0[19] : i7 == 23 ? org.telegram.ui.ActionBar.l6.r0[21] : i7 == 24 ? org.telegram.ui.ActionBar.l6.r0[20] : i7 == 25 ? org.telegram.ui.ActionBar.l6.r0[22] : i7 == 26 ? org.telegram.ui.ActionBar.l6.r0[23] : i7 == 27 ? org.telegram.ui.ActionBar.l6.r0[24] : org.telegram.ui.ActionBar.l6.r0[9];
                             }
                             if (drawable2 != null) {
                                 int intrinsicWidth = (int) (drawable2.getIntrinsicWidth() * this.p);
@@ -329,7 +329,7 @@ public class w8 extends Drawable {
                                     drawable2.draw(canvas);
                                 }
                             }
-                        } else if (!this.m || (drawable = (drawableArr = org.telegram.ui.ActionBar.k6.r0)[1]) == null) {
+                        } else if (!this.m || (drawable = (drawableArr = org.telegram.ui.ActionBar.l6.r0)[1]) == null) {
                             if (this.A) {
                                 this.A = false;
                                 StringBuilder sb2 = this.q;
@@ -385,10 +385,10 @@ public class w8 extends Drawable {
                     c10 = '\r';
                 }
                 this.B = false;
-                int o42 = i0.a.o(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.J7, f6Var), this.y);
+                int o42 = i0.a.o(org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.J7, g6Var), this.y);
                 TextPaint textPaint2 = this.a;
                 textPaint2.setColor(o42);
-                Paint paint2 = org.telegram.ui.ActionBar.k6.q0;
+                Paint paint2 = org.telegram.ui.ActionBar.l6.q0;
                 if (!this.c) {
                 }
                 if (this.b) {
@@ -404,10 +404,10 @@ public class w8 extends Drawable {
             }
         }
         c10 = '\r';
-        int o422 = i0.a.o(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.J7, f6Var), this.y);
+        int o422 = i0.a.o(org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.J7, g6Var), this.y);
         TextPaint textPaint22 = this.a;
         textPaint22.setColor(o422);
-        Paint paint22 = org.telegram.ui.ActionBar.k6.q0;
+        Paint paint22 = org.telegram.ui.ActionBar.l6.q0;
         if (!this.c) {
         }
         if (this.b) {
@@ -428,68 +428,68 @@ public class w8 extends Drawable {
         this.c = false;
         this.b = false;
         if (i7 == 13) {
-            int x02 = org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.P9, false);
+            int x02 = org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.P9, false);
             this.e = x02;
             this.d = x02;
         } else {
-            org.telegram.ui.ActionBar.f6 f6Var = this.z;
+            org.telegram.ui.ActionBar.g6 g6Var = this.z;
             if (i7 == 2) {
-                int w02 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.N7, f6Var);
+                int w02 = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.N7, g6Var);
                 this.e = w02;
                 this.d = w02;
             } else if (i7 == 27 || i7 == 12 || i7 == 1 || i7 == 14) {
                 this.b = true;
-                this.d = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.K7, f6Var);
-                this.e = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.L7, f6Var);
+                this.d = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.K7, g6Var);
+                this.e = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.L7, g6Var);
             } else if (i7 == 20) {
                 this.x = true;
                 this.b = true;
-                this.d = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Vk, f6Var);
-                this.e = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Wk, f6Var);
+                this.d = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.Vk, g6Var);
+                this.e = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.Wk, g6Var);
             } else if (i7 == 3) {
                 this.b = true;
-                this.d = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.p8[e(5L)], f6Var);
-                this.e = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.q8[e(5L)], f6Var);
+                this.d = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.p8[e(5L)], g6Var);
+                this.e = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.q8[e(5L)], g6Var);
             } else if (i7 == 25) {
                 this.b = true;
-                this.d = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.p8[e(2L)], f6Var);
-                this.e = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.q8[e(2L)], f6Var);
+                this.d = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.p8[e(2L)], g6Var);
+                this.e = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.q8[e(2L)], g6Var);
             } else if (i7 == 26) {
                 this.b = true;
-                this.d = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.p8[e(1L)], f6Var);
-                this.e = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.q8[e(1L)], f6Var);
+                this.d = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.p8[e(1L)], g6Var);
+                this.e = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.q8[e(1L)], g6Var);
             } else if (i7 == 4) {
                 this.b = true;
-                this.d = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.p8[e(5L)], f6Var);
-                this.e = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.q8[e(5L)], f6Var);
+                this.d = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.p8[e(5L)], g6Var);
+                this.e = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.q8[e(5L)], g6Var);
             } else if (i7 == 5) {
                 this.b = true;
-                this.d = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.p8[e(4L)], f6Var);
-                this.e = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.q8[e(4L)], f6Var);
+                this.d = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.p8[e(4L)], g6Var);
+                this.e = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.q8[e(4L)], g6Var);
             } else if (i7 == 6 || i7 == 23) {
                 this.b = true;
-                this.d = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.p8[e(3L)], f6Var);
-                this.e = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.q8[e(3L)], f6Var);
+                this.d = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.p8[e(3L)], g6Var);
+                this.e = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.q8[e(3L)], g6Var);
             } else if (i7 == 7 || i7 == 24) {
                 this.b = true;
-                this.d = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.p8[e(1L)], f6Var);
-                this.e = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.q8[e(1L)], f6Var);
+                this.d = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.p8[e(1L)], g6Var);
+                this.e = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.q8[e(1L)], g6Var);
             } else if (i7 == 8) {
                 this.b = true;
-                this.d = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.p8[e(0L)], f6Var);
-                this.e = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.q8[e(0L)], f6Var);
+                this.d = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.p8[e(0L)], g6Var);
+                this.e = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.q8[e(0L)], g6Var);
             } else if (i7 == 9) {
                 this.b = true;
-                this.d = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.p8[e(6L)], f6Var);
-                this.e = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.q8[e(6L)], f6Var);
+                this.d = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.p8[e(6L)], g6Var);
+                this.e = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.q8[e(6L)], g6Var);
             } else if (i7 == 10) {
                 this.b = true;
-                this.d = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.p8[e(5L)], f6Var);
-                this.e = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.q8[e(5L)], f6Var);
+                this.d = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.p8[e(5L)], g6Var);
+                this.e = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.q8[e(5L)], g6Var);
             } else if (i7 == 17) {
                 this.b = true;
-                this.d = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.p8[e(5L)], f6Var);
-                this.e = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.q8[e(5L)], f6Var);
+                this.d = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.p8[e(5L)], g6Var);
+                this.e = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.q8[e(5L)], g6Var);
             } else if (i7 == 21) {
                 this.c = true;
                 if (this.f == null) {
@@ -504,8 +504,8 @@ public class w8 extends Drawable {
                 this.f.d(-11694593, -13910017, -14622003, -15801871);
             } else {
                 this.b = true;
-                this.d = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.p8[e(4L)], f6Var);
-                this.e = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.q8[e(4L)], f6Var);
+                this.d = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.p8[e(4L)], g6Var);
+                this.e = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.q8[e(4L)], g6Var);
             }
         }
         int i10 = this.n;
@@ -513,7 +513,7 @@ public class w8 extends Drawable {
         this.G = i10 == 13 || i10 == 2 || i10 == 27 || i10 == 12 || i10 == 1 || i10 == 14 || i10 == 20;
         this.H = this.d;
         this.I = this.e;
-        this.J = org.telegram.ui.ActionBar.r6.b;
+        this.J = org.telegram.ui.ActionBar.s6.b;
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -558,15 +558,15 @@ public class w8 extends Drawable {
         if (num != null) {
             s(num.intValue());
         } else {
-            int i7 = org.telegram.ui.ActionBar.k6.p8[e(j3)];
-            org.telegram.ui.ActionBar.f6 f6Var = this.z;
-            this.d = org.telegram.ui.ActionBar.k6.w0(i7, f6Var);
-            this.e = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.q8[e(j3)], f6Var);
+            int i7 = org.telegram.ui.ActionBar.l6.p8[e(j3)];
+            org.telegram.ui.ActionBar.g6 g6Var = this.z;
+            this.d = org.telegram.ui.ActionBar.l6.w0(i7, g6Var);
+            this.e = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.q8[e(j3)], g6Var);
             this.C = e(j3);
             this.D = this.d;
             this.E = this.e;
             this.B = true;
-            this.F = org.telegram.ui.ActionBar.r6.b;
+            this.F = org.telegram.ui.ActionBar.s6.b;
         }
         this.g = j3 == 5;
         this.n = 0;
@@ -637,7 +637,7 @@ public class w8 extends Drawable {
             this.c = false;
         }
         int[][] iArr = L;
-        org.telegram.ui.ActionBar.f6 f6Var = this.z;
+        org.telegram.ui.ActionBar.g6 g6Var = this.z;
         if (i7 < 14) {
             if (f10Var != null) {
                 int[] iArr2 = iArr[e(i7)];
@@ -645,8 +645,8 @@ public class w8 extends Drawable {
                 return;
             } else {
                 long j3 = i7;
-                this.d = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.p8[e(j3)], f6Var);
-                this.e = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.q8[e(j3)], f6Var);
+                this.d = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.p8[e(j3)], g6Var);
+                this.e = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.q8[e(j3)], g6Var);
                 return;
             }
         }
@@ -659,8 +659,8 @@ public class w8 extends Drawable {
                 return;
             } else {
                 long j10 = i7;
-                this.d = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.p8[e(j10)], f6Var);
-                this.e = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.q8[e(j10)], f6Var);
+                this.d = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.p8[e(j10)], g6Var);
+                this.e = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.q8[e(j10)], g6Var);
                 return;
             }
         }
@@ -669,8 +669,8 @@ public class w8 extends Drawable {
             int[] iArr4 = iArr[f(f10)];
             this.f.d(iArr4[0], iArr4[1], iArr4[2], iArr4[3]);
         } else {
-            this.d = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.p8[f(f10)], f6Var);
-            this.e = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.q8[f(f10)], f6Var);
+            this.d = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.p8[f(f10)], g6Var);
+            this.e = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.q8[f(f10)], g6Var);
         }
     }
 
@@ -688,7 +688,7 @@ public class w8 extends Drawable {
     }
 
     public w8(int i7, TLRPC.User user) {
-        this((org.telegram.ui.ActionBar.f6) null);
+        this((org.telegram.ui.ActionBar.g6) null);
         this.l = false;
         if (user != null) {
             k(user.id, user.first_name, user.last_name, null);
@@ -697,19 +697,19 @@ public class w8 extends Drawable {
     }
 
     public w8(TLRPC.Chat chat) {
-        this((org.telegram.ui.ActionBar.f6) null);
+        this((org.telegram.ui.ActionBar.g6) null);
         this.l = false;
         q(chat);
     }
 
-    public w8(org.telegram.ui.ActionBar.f6 f6Var) {
+    public w8(org.telegram.ui.ActionBar.g6 g6Var) {
         this.p = 1.0f;
         this.q = new StringBuilder(5);
         this.r = -1;
         this.w = true;
         this.x = false;
         this.y = org.telegram.messenger.qs.e4;
-        this.z = f6Var;
+        this.z = g6Var;
         TextPaint textPaint = new TextPaint(1);
         this.a = textPaint;
         textPaint.setTypeface(org.telegram.messenger.g0.o());

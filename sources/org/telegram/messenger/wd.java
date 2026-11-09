@@ -6,7 +6,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class wd implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -78,7 +78,7 @@ public final /* synthetic */ class wd implements Runnable {
                     mediaController.o1 = j10;
                     mediaController.p1 = njVar;
                     ij ijVar2 = this.n;
-                    mediaController.n1 = ijVar2 == null ? 0L : ij.c2(mediaController.h1, ijVar2.k, false, false);
+                    mediaController.n1 = ijVar2 == null ? 0L : ij.b2(mediaController.h1, ijVar2.k, false, false);
                     mediaController.h1 = i10;
                     mediaController.q1 = ijVar;
                     mediaController.r1 = ijVar2;

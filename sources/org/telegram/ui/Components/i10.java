@@ -5,38 +5,38 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class i10 extends oj0 {
+public final class i10 extends pj0 {
     public org.telegram.messenger.r3 c;
     public final int d;
     public ArrayList h;
-    public org.telegram.ui.z10 n;
-    public final org.telegram.ui.c40 r;
+    public org.telegram.ui.b20 n;
+    public final org.telegram.ui.e40 r;
     public final ArrayList e = new ArrayList();
     public final ArrayList f = new ArrayList();
     public boolean s = false;
 
-    public i10(org.telegram.messenger.r3 r3Var, int i7, org.telegram.ui.c40 c40Var) {
+    public i10(org.telegram.messenger.r3 r3Var, int i7, org.telegram.ui.e40 e40Var) {
         this.c = r3Var;
         this.d = i7;
-        this.r = c40Var;
+        this.r = e40Var;
     }
 
-    @Override // org.telegram.ui.Components.oj0
+    @Override // org.telegram.ui.Components.pj0
     public final boolean D(v4.d1 d1Var) {
         return false;
     }
 
-    public final void E(ArrayList arrayList, org.telegram.ui.z10 z10Var) {
+    public final void E(ArrayList arrayList, org.telegram.ui.b20 b20Var) {
         this.h = arrayList;
-        this.n = z10Var;
+        this.n = b20Var;
     }
 
-    public final void F(org.telegram.ui.v10 v10Var, boolean z9) {
+    public final void F(org.telegram.ui.x10 x10Var, boolean z9) {
         this.s = z9;
-        for (int i7 = 0; i7 < v10Var.getChildCount(); i7++) {
-            View childAt = v10Var.getChildAt(i7);
+        for (int i7 = 0; i7 < x10Var.getChildCount(); i7++) {
+            View childAt = x10Var.getChildAt(i7);
             if (childAt instanceof h10) {
                 h10 h10Var = (h10) childAt;
                 if (h10Var.getVideoParticipant() != null) {
@@ -46,7 +46,7 @@ public final class i10 extends oj0 {
         }
     }
 
-    public final void G(pj0 pj0Var, boolean z9) {
+    public final void G(qj0 qj0Var, boolean z9) {
         if (this.c == null) {
             return;
         }
@@ -79,7 +79,7 @@ public final class i10 extends oj0 {
             arrayList.addAll(r3Var4.f);
         }
         v4.o.c(new g10(this, arrayList4, arrayList3), true).c(this);
-        org.telegram.messenger.g0.b4(pj0Var);
+        org.telegram.messenger.g0.b4(qj0Var);
     }
 
     @Override // v4.g0
@@ -129,6 +129,6 @@ public final class i10 extends oj0 {
 
     @Override // v4.g0
     public final v4.d1 x(ViewGroup viewGroup, int i7) {
-        return new xi0(new h10(this, viewGroup.getContext()));
+        return new yi0(new h10(this, viewGroup.getContext()));
     }
 }

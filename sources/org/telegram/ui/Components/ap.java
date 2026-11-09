@@ -5,9 +5,9 @@ import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.RectF;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class ap extends ou0 {
+public final class ap extends qu0 {
     public final /* synthetic */ int a;
     public boolean b;
     public long c;
@@ -29,7 +29,7 @@ public final class ap extends ou0 {
         paint.setStrokeWidth(org.telegram.messenger.g0.N(1.2f));
     }
 
-    @Override // org.telegram.ui.Components.ou0
+    @Override // org.telegram.ui.Components.qu0
     public final void b(int i7) {
         switch (this.a) {
             case 0:
@@ -49,7 +49,7 @@ public final class ap extends ou0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.ou0
+    @Override // org.telegram.ui.Components.qu0
     public final void c(boolean z9) {
         switch (this.a) {
             case 0:
@@ -60,7 +60,7 @@ public final class ap extends ou0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.ou0
+    @Override // org.telegram.ui.Components.qu0
     public final void d() {
         switch (this.a) {
             case 0:
@@ -99,11 +99,11 @@ public final class ap extends ou0 {
                 float N3 = (org.telegram.messenger.g0.N(0.5f) * interpolation) - (org.telegram.messenger.g0.N(0.5f) * interpolation2);
                 Paint paint = this.g;
                 if (paint == null) {
-                    paint = org.telegram.ui.ActionBar.k6.d2;
+                    paint = org.telegram.ui.ActionBar.l6.d2;
                 }
                 Paint paint2 = (Paint) this.h;
                 if (paint2 == null) {
-                    paint2 = org.telegram.ui.ActionBar.k6.c2;
+                    paint2 = org.telegram.ui.ActionBar.l6.c2;
                 }
                 if (paint.getStrokeWidth() != org.telegram.messenger.g0.L(0.8f)) {
                     paint.setStrokeWidth(org.telegram.messenger.g0.L(0.8f));
@@ -141,7 +141,7 @@ public final class ap extends ou0 {
                 RectF rectF2 = (RectF) this.h;
                 Paint paint3 = this.g;
                 if (paint3 == null) {
-                    paint3 = org.telegram.ui.ActionBar.k6.d2;
+                    paint3 = org.telegram.ui.ActionBar.l6.d2;
                 }
                 Paint paint4 = paint3;
                 if (paint4.getStrokeWidth() != org.telegram.messenger.g0.L(2.0f)) {
@@ -185,7 +185,7 @@ public final class ap extends ou0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.ou0
+    @Override // org.telegram.ui.Components.qu0
     public final void e() {
         switch (this.a) {
             case 0:

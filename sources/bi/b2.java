@@ -8,11 +8,11 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.DataSettingsActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.ve;
-import org.telegram.ui.ws;
-import org.telegram.ui.ww;
-import org.telegram.ui.xv;
+import org.telegram.ui.ys;
+import org.telegram.ui.yw;
+import org.telegram.ui.zv;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b2 implements c20 {
     public final /* synthetic */ int a;
@@ -48,7 +48,7 @@ public final /* synthetic */ class b2 implements c20 {
             case 1:
                 DataSettingsActivity dataSettingsActivity = (DataSettingsActivity) this.c;
                 Long l10 = (Long) obj;
-                org.telegram.messenger.g0.r((ws) this.d);
+                org.telegram.messenger.g0.r((ys) this.d);
                 dataSettingsActivity.V = dataSettingsActivity.V || System.currentTimeMillis() - this.b > 120;
                 dataSettingsActivity.X = l10.longValue();
                 dataSettingsActivity.W = false;
@@ -58,20 +58,20 @@ public final /* synthetic */ class b2 implements c20 {
                 }
                 break;
             case 2:
-                xv xvVar = (xv) this.c;
+                zv zvVar = (zv) this.c;
                 Runnable runnable = (Runnable) obj;
                 ((org.telegram.ui.ActionBar.u1) this.d).r(150L);
-                ww wwVar = xvVar.b;
-                Boolean bool = wwVar.G.bot_participant;
+                yw ywVar = zvVar.b;
+                Boolean bool = ywVar.G.bot_participant;
                 if (bool != null && bool.booleanValue()) {
-                    wwVar.getMessagesController().m(this.b, wwVar.getMessagesController().a2(Long.valueOf(wwVar.H)), 0, null, wwVar, false, runnable, new ve(6, runnable), null);
+                    ywVar.getMessagesController().m(this.b, ywVar.getMessagesController().a2(Long.valueOf(ywVar.H)), 0, null, ywVar, false, runnable, new ve(6, runnable), null);
                     break;
                 } else {
                     runnable.run();
                     break;
                 }
             default:
-                ProfileActivity.i0((ProfileActivity) this.c, (Context) this.d, this.b, (TL_payments.connectedBotStarRef) obj);
+                ProfileActivity.g0((ProfileActivity) this.c, (Context) this.d, this.b, (TL_payments.connectedBotStarRef) obj);
                 break;
         }
     }

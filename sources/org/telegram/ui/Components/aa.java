@@ -5,7 +5,7 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class aa implements View.OnAttachStateChangeListener {
     public final /* synthetic */ int a;
@@ -32,22 +32,22 @@ public final class aa implements View.OnAttachStateChangeListener {
                 }
                 break;
             case 1:
-                my0 my0Var = (my0) obj2;
-                my0Var.k = r5.update(my0Var.l, (View) obj, my0Var.k, my0Var.b);
+                ny0 ny0Var = (ny0) obj2;
+                ny0Var.k = r5.update(ny0Var.l, (View) obj, ny0Var.k, ny0Var.b);
                 break;
             default:
-                org.telegram.ui.Wallet.c4 c4Var = (org.telegram.ui.Wallet.c4) obj2;
-                org.telegram.ui.Wallet.b4 b4Var = c4Var.m;
-                if (b4Var != null) {
-                    b4Var.setPaused(!c4Var.n);
+                org.telegram.ui.Wallet.b4 b4Var = (org.telegram.ui.Wallet.b4) obj2;
+                org.telegram.ui.Wallet.a4 a4Var = b4Var.m;
+                if (a4Var != null) {
+                    a4Var.setPaused(!b4Var.n);
                 }
-                c4Var.a.isAttachedToWindow();
-                int i10 = c4Var.v0;
+                b4Var.a.isAttachedToWindow();
+                int i10 = b4Var.v0;
                 if (-1 != i10) {
                     if (i10 >= 0) {
-                        org.telegram.messenger.qs.f(i10).n(c4Var.x0, 67);
+                        org.telegram.messenger.qs.f(i10).n(b4Var.x0, 67);
                     }
-                    c4Var.v0 = -1;
+                    b4Var.v0 = -1;
                     break;
                 }
                 break;
@@ -73,47 +73,47 @@ public final class aa implements View.OnAttachStateChangeListener {
                 paint.setShader(null);
                 break;
             case 1:
-                r5.release((View) this.b, ((my0) this.c).k);
+                r5.release((View) this.b, ((ny0) this.c).k);
                 break;
             default:
-                org.telegram.ui.Wallet.c4 c4Var = (org.telegram.ui.Wallet.c4) this.c;
-                org.telegram.ui.Cells.t0 t0Var = c4Var.a;
-                c4Var.f();
-                c4Var.M = false;
-                c4Var.N = 0L;
-                c4Var.k();
-                r1.g gVar = c4Var.Z;
+                org.telegram.ui.Wallet.b4 b4Var = (org.telegram.ui.Wallet.b4) this.c;
+                org.telegram.ui.Cells.t0 t0Var = b4Var.a;
+                b4Var.f();
+                b4Var.M = false;
+                b4Var.N = 0L;
+                b4Var.k();
+                r1.g gVar = b4Var.Z;
                 if (gVar != null) {
                     gVar.d();
-                    c4Var.Z = null;
+                    b4Var.Z = null;
                 }
-                c4Var.a0 = 1.0f;
+                b4Var.a0 = 1.0f;
                 t0Var.invalidate();
                 if (t0Var.getParent() instanceof View) {
                     ((View) t0Var.getParent()).invalidate();
                 }
-                c4Var.l();
-                org.telegram.ui.Wallet.h6 h6Var = c4Var.k;
+                b4Var.l();
+                org.telegram.ui.Wallet.g6 g6Var = b4Var.k;
                 org.telegram.ui.Cells.t0 t0Var2 = (org.telegram.ui.Cells.t0) this.b;
-                WeakHashMap weakHashMap = h6Var.e;
+                WeakHashMap weakHashMap = g6Var.e;
                 weakHashMap.remove(t0Var2);
                 if (weakHashMap.isEmpty()) {
-                    h6Var.a();
+                    g6Var.a();
                 }
                 t0Var.isAttachedToWindow();
-                int i7 = c4Var.v0;
+                int i7 = b4Var.v0;
                 if (-1 != i7) {
                     if (i7 >= 0) {
-                        org.telegram.messenger.qs.f(i7).n(c4Var.x0, 67);
+                        org.telegram.messenger.qs.f(i7).n(b4Var.x0, 67);
                     }
-                    c4Var.v0 = -1;
+                    b4Var.v0 = -1;
                 }
-                org.telegram.ui.Wallet.b4 b4Var = c4Var.m;
-                if (b4Var != null) {
-                    b4Var.setPaused(true);
+                org.telegram.ui.Wallet.a4 a4Var = b4Var.m;
+                if (a4Var != null) {
+                    a4Var.setPaused(true);
                 }
-                c4Var.l.stop();
-                c4Var.H = false;
+                b4Var.l.stop();
+                b4Var.H = false;
                 break;
         }
     }

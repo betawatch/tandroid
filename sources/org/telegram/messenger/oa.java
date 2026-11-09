@@ -8,7 +8,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class oa {
     public static volatile oa[] g = new oa[4];
@@ -237,10 +237,10 @@ public final class oa {
                         TLRPC.Message message = arrayList2.get(i14);
                         i14++;
                         ij ijVar = new ij(oaVar.a, message, null, null, null, null, null, true, true, 0L, false, false, false, i10);
-                        if (ijVar.A2()) {
+                        if (ijVar.z2()) {
                             ijVar.Q2 = true;
                         }
-                        ijVar.L5(str4, false);
+                        ijVar.K5(str4, false);
                         arrayList.add(ijVar);
                     }
                 }

@@ -33,12 +33,12 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.v71;
+import org.telegram.ui.w71;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 @Deprecated
 /* loaded from: classes3.dex */
-public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
+public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public static final /* synthetic */ int i0 = 0;
     public final TextPaint D;
     public final Paint E;
@@ -58,7 +58,7 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
     public CharSequence S;
     public int T;
     public final ShapeDrawable U;
-    public final org.telegram.ui.ActionBar.f6 V;
+    public final org.telegram.ui.ActionBar.g6 V;
     public boolean W;
     public int a;
     public final ArrayList a0;
@@ -70,7 +70,7 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
     public int d0;
     public final ImageView e;
     public StaticLayout e0;
-    public final ch0 f;
+    public final dh0 f;
     public StaticLayout f0;
     public float g0;
     public final l9 h;
@@ -90,9 +90,9 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
         return true;
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.k6.tj));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.l6.tj));
     }
 
     public final boolean c() {
@@ -168,7 +168,7 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
                 animatorSet.setDuration(180L);
             }
             animatorSet.setInterpolator(new DecelerateInterpolator());
-            animatorSet.addListener(new f11(this, i13));
+            animatorSet.addListener(new g11(this, i13));
             animatorSet.start();
         }
     }
@@ -217,15 +217,15 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
 
     public final void h(int i7, int i10) {
         this.W = true;
-        org.telegram.ui.ActionBar.k6.C1(-115203550, this.U);
+        org.telegram.ui.ActionBar.l6.C1(-115203550, this.U);
         org.telegram.ui.Cells.b2 b2Var = this.b;
-        org.telegram.ui.ActionBar.r6.r(b2Var);
-        int i11 = org.telegram.ui.ActionBar.k6.uj;
-        org.telegram.ui.ActionBar.f6 f6Var = this.V;
-        org.telegram.ui.ActionBar.r6.H(b2Var, i11, f6Var);
+        org.telegram.ui.ActionBar.s6.q(b2Var);
+        int i11 = org.telegram.ui.ActionBar.l6.uj;
+        org.telegram.ui.ActionBar.g6 g6Var = this.V;
+        org.telegram.ui.ActionBar.s6.G(b2Var, i11, g6Var);
         TextView textView = this.c;
-        org.telegram.ui.ActionBar.r6.r(textView);
-        org.telegram.ui.ActionBar.r6.H(textView, i11, f6Var);
+        org.telegram.ui.ActionBar.s6.q(textView);
+        org.telegram.ui.ActionBar.s6.G(textView, i11, g6Var);
         b2Var.setTextColor(-1);
         textView.setTextColor(-1);
         ArrayList arrayList = this.a0;
@@ -243,9 +243,9 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
             arrayList3.remove(indexOf2);
             arrayList2.remove(indexOf2);
         }
-        ch0 ch0Var = this.f;
-        ch0Var.h(-14540254, "info1");
-        ch0Var.h(-14540254, "info2");
+        dh0 dh0Var = this.f;
+        dh0Var.h(-14540254, "info1");
+        dh0Var.h(-14540254, "info2");
     }
 
     public final void i(int i7, String str, boolean z9) {
@@ -261,8 +261,8 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
             arrayList3.add(Integer.valueOf(i7));
             arrayList2.add(Boolean.valueOf(z9));
         }
-        org.telegram.ui.ActionBar.f6 f6Var = this.V;
-        this.f.h(z9 ? org.telegram.ui.ActionBar.k6.w0(i7, f6Var) | (-16777216) : org.telegram.ui.ActionBar.k6.w0(i7, f6Var), str);
+        org.telegram.ui.ActionBar.g6 g6Var = this.V;
+        this.f.h(z9 ? org.telegram.ui.ActionBar.l6.w0(i7, g6Var) | (-16777216) : org.telegram.ui.ActionBar.l6.w0(i7, g6Var), str);
     }
 
     @Override // android.view.View
@@ -327,7 +327,7 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
         int i18 = this.y;
         TextView textView = this.d;
         TextView textView2 = this.c;
-        ch0 ch0Var = this.f;
+        dh0 dh0Var = this.f;
         org.telegram.ui.Cells.b2 b2Var = this.b;
         if (org.telegram.messenger.g0.I3()) {
             i10 = i18;
@@ -353,11 +353,11 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
         this.w = obj;
         this.x = obj2;
         this.O = SystemClock.elapsedRealtime();
-        textView.setText(org.telegram.messenger.id.L0(2131743888));
+        textView.setText(org.telegram.messenger.id.L0(2131743885));
         this.e.setVisibility(0);
-        ch0Var.setPadding(0, 0, 0, 0);
-        ch0Var.setScaleX(1.0f);
-        ch0Var.setScaleY(1.0f);
+        dh0Var.setPadding(0, 0, 0, 0);
+        dh0Var.setScaleX(1.0f);
+        dh0Var.setScaleY(1.0f);
         b2Var.setTextSize(1, 15.0f);
         l9Var.setVisibility(8);
         b2Var.setGravity(51);
@@ -366,8 +366,8 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
         layoutParams.height = -2;
         layoutParams.topMargin = org.telegram.messenger.g0.L(13.0f);
         layoutParams.bottomMargin = 0;
-        ch0Var.setScaleType(ImageView.ScaleType.CENTER);
-        FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) ch0Var.getLayoutParams();
+        dh0Var.setScaleType(ImageView.ScaleType.CENTER);
+        FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) dh0Var.getLayoutParams();
         layoutParams2.gravity = 19;
         layoutParams2.bottomMargin = 0;
         layoutParams2.topMargin = 0;
@@ -376,7 +376,7 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
         layoutParams2.height = -2;
         b2Var.setMinHeight(0);
         if ((runnable == null && runnable2 == null) || i7 == 83) {
-            setOnClickListener(new f41(this, 1));
+            setOnClickListener(new g41(this, 1));
             movementMethod = null;
             setOnTouchListener(null);
         } else {
@@ -391,21 +391,21 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
         if (f10) {
             if (i7 == 83) {
                 textView2.setSingleLine(false);
-                X2 = org.telegram.messenger.id.L0(2131745285);
-                charSequence = org.telegram.messenger.g0.U2(org.telegram.messenger.id.L0(2131745284), runnable);
+                X2 = org.telegram.messenger.id.L0(2131745282);
+                charSequence = org.telegram.messenger.g0.U2(org.telegram.messenger.id.L0(2131745281), runnable);
                 this.M = null;
                 this.G = 4000L;
                 i15 = R.raw.sound_download;
             } else if (i7 == 74) {
                 textView2.setSingleLine(false);
-                X2 = org.telegram.messenger.id.L0(2131746225);
-                charSequence = org.telegram.messenger.id.Y(2131746210, "ReportSentInfo", new Object[0]);
+                X2 = org.telegram.messenger.id.L0(2131746222);
+                charSequence = org.telegram.messenger.id.Y(2131746207, "ReportSentInfo", new Object[0]);
                 this.G = 4000L;
                 i15 = R.raw.ic_admin;
             } else {
                 if (i7 == 34) {
                     TLRPC.User user = (TLRPC.User) obj;
-                    SpannableStringBuilder X22 = org.telegram.messenger.t3.W((TLRPC.Chat) obj2) ? org.telegram.messenger.g0.X2(org.telegram.messenger.id.Y(2131743482, "VoipChannelInvitedUser", org.telegram.messenger.t10.i(user))) : org.telegram.messenger.g0.X2(org.telegram.messenger.id.Y(2131743374, "VoipGroupInvitedUser", org.telegram.messenger.t10.i(user)));
+                    SpannableStringBuilder X22 = org.telegram.messenger.t3.W((TLRPC.Chat) obj2) ? org.telegram.messenger.g0.X2(org.telegram.messenger.id.Y(2131743479, "VoipChannelInvitedUser", org.telegram.messenger.t10.i(user))) : org.telegram.messenger.g0.X2(org.telegram.messenger.id.Y(2131743371, "VoipGroupInvitedUser", org.telegram.messenger.t10.i(user)));
                     w8 w8Var = new w8();
                     w8Var.u(org.telegram.messenger.g0.L(12.0f));
                     w8Var.r(user);
@@ -417,10 +417,10 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
                     TLRPC.Chat chat = (TLRPC.Chat) obj2;
                     if (obj instanceof TLRPC.User) {
                         TLRPC.User user2 = (TLRPC.User) obj;
-                        X2 = org.telegram.messenger.t3.W(chat) ? org.telegram.messenger.g0.X2(org.telegram.messenger.id.Z(2131743453, org.telegram.messenger.t10.i(user2))) : org.telegram.messenger.g0.X2(org.telegram.messenger.id.Z(2131743430, org.telegram.messenger.t10.i(user2)));
+                        X2 = org.telegram.messenger.t3.W(chat) ? org.telegram.messenger.g0.X2(org.telegram.messenger.id.Z(2131743450, org.telegram.messenger.t10.i(user2))) : org.telegram.messenger.g0.X2(org.telegram.messenger.id.Z(2131743427, org.telegram.messenger.t10.i(user2)));
                     } else if (obj instanceof TLRPC.Chat) {
                         TLRPC.Chat chat2 = (TLRPC.Chat) obj;
-                        X2 = org.telegram.messenger.t3.W(chat) ? org.telegram.messenger.g0.X2(org.telegram.messenger.id.Z(2131743490, chat2.title)) : org.telegram.messenger.g0.X2(org.telegram.messenger.id.Z(2131743447, chat2.title));
+                        X2 = org.telegram.messenger.t3.W(chat) ? org.telegram.messenger.g0.X2(org.telegram.messenger.id.Z(2131743487, chat2.title)) : org.telegram.messenger.g0.X2(org.telegram.messenger.id.Z(2131743444, chat2.title));
                     } else {
                         X2 = "";
                     }
@@ -447,16 +447,16 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
                     }
                     if (org.telegram.messenger.t3.W((TLRPC.Chat) obj2)) {
                         i16 = 0;
-                        X2 = org.telegram.messenger.g0.X2(org.telegram.messenger.id.Y(2131743454, "VoipChannelUserChanged", str2));
+                        X2 = org.telegram.messenger.g0.X2(org.telegram.messenger.id.Y(2131743451, "VoipChannelUserChanged", str2));
                     } else {
                         i16 = 0;
-                        X2 = org.telegram.messenger.g0.X2(org.telegram.messenger.id.Y(2131743315, "VoipGroupUserChanged", str2));
+                        X2 = org.telegram.messenger.g0.X2(org.telegram.messenger.id.Y(2131743312, "VoipGroupUserChanged", str2));
                     }
                     l9Var.setVisibility(i16);
                     this.G = 3000L;
                 } else {
                     if (i7 == 33) {
-                        X2 = org.telegram.messenger.id.L0(2131743392);
+                        X2 = org.telegram.messenger.id.L0(2131743389);
                         this.G = 3000L;
                         i15 = R.raw.voip_invite;
                     } else {
@@ -471,38 +471,38 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
                             i13 = R.raw.payment_success;
                         } else {
                             if (i7 == 30) {
-                                X2 = org.telegram.messenger.g0.X2(org.telegram.messenger.id.Y(2131743317, "VoipGroupUserCantNowSpeak", obj instanceof TLRPC.User ? org.telegram.messenger.t10.i((TLRPC.User) obj) : ((TLRPC.Chat) obj).title));
+                                X2 = org.telegram.messenger.g0.X2(org.telegram.messenger.id.Y(2131743314, "VoipGroupUserCantNowSpeak", obj instanceof TLRPC.User ? org.telegram.messenger.t10.i((TLRPC.User) obj) : ((TLRPC.Chat) obj).title));
                                 this.G = 3000L;
                             } else if (i7 == 35) {
-                                X2 = org.telegram.messenger.g0.X2(org.telegram.messenger.id.Y(2131743316, "VoipGroupUserCantNowSpeakForYou", obj instanceof TLRPC.User ? org.telegram.messenger.t10.i((TLRPC.User) obj) : obj instanceof TLRPC.Chat ? ((TLRPC.Chat) obj).title : ""));
+                                X2 = org.telegram.messenger.g0.X2(org.telegram.messenger.id.Y(2131743313, "VoipGroupUserCantNowSpeakForYou", obj instanceof TLRPC.User ? org.telegram.messenger.t10.i((TLRPC.User) obj) : obj instanceof TLRPC.Chat ? ((TLRPC.Chat) obj).title : ""));
                                 this.G = 3000L;
                             } else {
                                 if (i7 == 31) {
-                                    X2 = org.telegram.messenger.g0.X2(org.telegram.messenger.id.Y(2131743319, "VoipGroupUserCanNowSpeak", obj instanceof TLRPC.User ? org.telegram.messenger.t10.i((TLRPC.User) obj) : ((TLRPC.Chat) obj).title));
+                                    X2 = org.telegram.messenger.g0.X2(org.telegram.messenger.id.Y(2131743316, "VoipGroupUserCanNowSpeak", obj instanceof TLRPC.User ? org.telegram.messenger.t10.i((TLRPC.User) obj) : ((TLRPC.Chat) obj).title));
                                     this.G = 3000L;
                                 } else if (i7 == 38) {
-                                    X2 = obj instanceof TLRPC.Chat ? org.telegram.messenger.g0.X2(org.telegram.messenger.id.Y(2131743307, "VoipGroupYouCanNowSpeakIn", ((TLRPC.Chat) obj).title)) : org.telegram.messenger.g0.X2(org.telegram.messenger.id.L0(2131743308));
+                                    X2 = obj instanceof TLRPC.Chat ? org.telegram.messenger.g0.X2(org.telegram.messenger.id.Y(2131743304, "VoipGroupYouCanNowSpeakIn", ((TLRPC.Chat) obj).title)) : org.telegram.messenger.g0.X2(org.telegram.messenger.id.L0(2131743305));
                                     this.G = 3000L;
                                     i13 = R.raw.voip_allow_talk;
                                 } else if (i7 == 42) {
-                                    X2 = org.telegram.messenger.t3.W((TLRPC.Chat) obj) ? org.telegram.messenger.g0.X2(org.telegram.messenger.id.L0(2131743463)) : org.telegram.messenger.g0.X2(org.telegram.messenger.id.L0(2131743338));
+                                    X2 = org.telegram.messenger.t3.W((TLRPC.Chat) obj) ? org.telegram.messenger.g0.X2(org.telegram.messenger.id.L0(2131743460)) : org.telegram.messenger.g0.X2(org.telegram.messenger.id.L0(2131743335));
                                     this.G = 3000L;
                                     charSequence = null;
                                     i15 = R.raw.ic_mute;
                                 } else if (i7 == 43) {
-                                    X2 = org.telegram.messenger.t3.W((TLRPC.Chat) obj) ? org.telegram.messenger.g0.X2(org.telegram.messenger.id.L0(2131743462)) : org.telegram.messenger.g0.X2(org.telegram.messenger.id.L0(2131743337));
+                                    X2 = org.telegram.messenger.t3.W((TLRPC.Chat) obj) ? org.telegram.messenger.g0.X2(org.telegram.messenger.id.L0(2131743459)) : org.telegram.messenger.g0.X2(org.telegram.messenger.id.L0(2131743334));
                                     this.G = 3000L;
                                     charSequence = null;
                                     i15 = R.raw.ic_unmute;
                                 } else {
                                     int i22 = this.K;
                                     if (i22 == 39 || i22 == 100) {
-                                        X2 = org.telegram.messenger.g0.X2(org.telegram.messenger.id.L0(i22 == 39 ? 2131743400 : 2131743311));
+                                        X2 = org.telegram.messenger.g0.X2(org.telegram.messenger.id.L0(i22 == 39 ? 2131743397 : 2131743308));
                                         this.G = 3000L;
                                         i13 = R.raw.voip_record_start;
                                     } else {
                                         if (i22 == 40 || i22 == 101) {
-                                            String L04 = org.telegram.messenger.id.L0(i22 == 40 ? 2131743401 : 2131743312);
+                                            String L04 = org.telegram.messenger.id.L0(i22 == 40 ? 2131743398 : 2131743309);
                                             this.G = 4000L;
                                             b2Var.setMovementMethod(new org.telegram.messenger.c0(0));
                                             spannableStringBuilder = new SpannableStringBuilder(L04);
@@ -512,34 +512,34 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
                                                 spannableStringBuilder.replace(lastIndexOf, lastIndexOf + 2, (CharSequence) "");
                                                 spannableStringBuilder.replace(indexOf, indexOf + 2, (CharSequence) "");
                                                 try {
-                                                    spannableStringBuilder.setSpan(new b41("tg://openmessage?user_id=" + org.telegram.messenger.p10.i(i10).e()), indexOf, lastIndexOf - 2, 33);
+                                                    spannableStringBuilder.setSpan(new c41("tg://openmessage?user_id=" + org.telegram.messenger.p10.i(i10).e()), indexOf, lastIndexOf - 2, 33);
                                                 } catch (Exception e10) {
                                                     org.telegram.messenger.a8.f(e10);
                                                 }
                                             }
                                             i14 = R.raw.voip_record_saved;
                                         } else if (i7 == 36) {
-                                            X2 = org.telegram.messenger.g0.X2(org.telegram.messenger.id.Y(2131743318, "VoipGroupUserCanNowSpeakForYou", obj instanceof TLRPC.User ? org.telegram.messenger.t10.i((TLRPC.User) obj) : ((TLRPC.Chat) obj).title));
+                                            X2 = org.telegram.messenger.g0.X2(org.telegram.messenger.id.Y(2131743315, "VoipGroupUserCanNowSpeakForYou", obj instanceof TLRPC.User ? org.telegram.messenger.t10.i((TLRPC.User) obj) : ((TLRPC.Chat) obj).title));
                                             this.G = 3000L;
                                         } else if (i7 == 32 || i7 == 102) {
                                             String i23 = obj instanceof TLRPC.User ? org.telegram.messenger.t10.i((TLRPC.User) obj) : ((TLRPC.Chat) obj).title;
-                                            X2 = i7 == 102 ? org.telegram.messenger.g0.X2(org.telegram.messenger.id.Z(2131743427, i23)) : org.telegram.messenger.g0.X2(org.telegram.messenger.id.Z(2131743347, i23));
+                                            X2 = i7 == 102 ? org.telegram.messenger.g0.X2(org.telegram.messenger.id.Z(2131743424, i23)) : org.telegram.messenger.g0.X2(org.telegram.messenger.id.Z(2131743344, i23));
                                             this.G = 3000L;
                                             i13 = R.raw.ic_ban;
                                         } else {
                                             if (i7 == 9 || i7 == 10) {
                                                 TLRPC.User user4 = (TLRPC.User) obj;
-                                                X2 = i7 == 9 ? org.telegram.messenger.g0.X2(org.telegram.messenger.id.Y(2131751296, "EditAdminTransferChannelToast", org.telegram.messenger.t10.i(user4))) : org.telegram.messenger.g0.X2(org.telegram.messenger.id.Y(2131751295, "EditAdminTransferGroupToast", org.telegram.messenger.t10.i(user4)));
+                                                X2 = i7 == 9 ? org.telegram.messenger.g0.X2(org.telegram.messenger.id.Y(2131751295, "EditAdminTransferChannelToast", org.telegram.messenger.t10.i(user4))) : org.telegram.messenger.g0.X2(org.telegram.messenger.id.Y(2131751294, "EditAdminTransferGroupToast", org.telegram.messenger.t10.i(user4)));
                                             } else if (i7 == 8) {
-                                                X2 = org.telegram.messenger.id.Y(2131747835, "NowInContacts", org.telegram.messenger.t10.i((TLRPC.User) obj));
+                                                X2 = org.telegram.messenger.id.Y(2131747834, "NowInContacts", org.telegram.messenger.t10.i((TLRPC.User) obj));
                                             } else if (i7 == 87) {
-                                                X2 = org.telegram.messenger.id.Z(2131746611, new Object[0]);
+                                                X2 = org.telegram.messenger.id.Z(2131746610, new Object[0]);
                                             } else if (i7 == 22) {
                                                 if (org.telegram.messenger.m5.E(longValue)) {
-                                                    X2 = obj == null ? org.telegram.messenger.id.L0(2131748711) : org.telegram.messenger.id.L0(2131748710);
+                                                    X2 = obj == null ? org.telegram.messenger.id.L0(2131748710) : org.telegram.messenger.id.L0(2131748709);
                                                 } else {
                                                     TLRPC.Chat M0 = org.telegram.messenger.qp.s1(org.telegram.messenger.p10.s0).M0(Long.valueOf(-longValue));
-                                                    X2 = (!org.telegram.messenger.t3.T(M0) || M0.megagroup) ? obj == null ? org.telegram.messenger.id.L0(2131748713) : org.telegram.messenger.id.L0(2131748712) : obj == null ? org.telegram.messenger.id.L0(2131748715) : org.telegram.messenger.id.L0(2131748714);
+                                                    X2 = (!org.telegram.messenger.t3.T(M0) || M0.megagroup) ? obj == null ? org.telegram.messenger.id.L0(2131748712) : org.telegram.messenger.id.L0(2131748711) : obj == null ? org.telegram.messenger.id.L0(2131748714) : org.telegram.messenger.id.L0(2131748713);
                                                 }
                                             } else if (i7 == 23) {
                                                 X2 = org.telegram.messenger.id.L0(2131752195);
@@ -551,12 +551,12 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
                                                 i21 = 48;
                                             } else {
                                                 if (i22 == 13) {
-                                                    L02 = org.telegram.messenger.id.L0(2131746445);
-                                                    L03 = org.telegram.messenger.id.L0(2131746444);
+                                                    L02 = org.telegram.messenger.id.L0(2131746444);
+                                                    L03 = org.telegram.messenger.id.L0(2131746443);
                                                     i15 = R.raw.wallet_congrats;
                                                 } else if (i22 == 14) {
-                                                    L02 = org.telegram.messenger.id.L0(2131746443);
-                                                    L03 = org.telegram.messenger.id.L0(2131746442);
+                                                    L02 = org.telegram.messenger.id.L0(2131746442);
+                                                    L03 = org.telegram.messenger.id.L0(2131746441);
                                                     i15 = R.raw.wallet_science;
                                                 } else {
                                                     if (i7 == 7) {
@@ -568,7 +568,7 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
                                                         str = null;
                                                     } else if (i7 == 20 || i7 == 21) {
                                                         org.telegram.messenger.vo voVar = (org.telegram.messenger.vo) obj2;
-                                                        Spannable A5 = org.telegram.messenger.ij.A5(b2Var.getPaint().getFontMetricsInt(), org.telegram.messenger.i6.l(voVar.b, b2Var.getPaint().getFontMetricsInt(), false), voVar.c);
+                                                        Spannable z52 = org.telegram.messenger.ij.z5(b2Var.getPaint().getFontMetricsInt(), org.telegram.messenger.i6.l(voVar.b, b2Var.getPaint().getFontMetricsInt(), false), voVar.c);
                                                         this.a = voVar.n ? 26 : 0;
                                                         if (longValue != 0) {
                                                             long j10 = org.telegram.messenger.m5.C(longValue) ? org.telegram.messenger.qp.s1(i10).a1(Integer.valueOf(org.telegram.messenger.m5.h(longValue))).user_id : longValue;
@@ -576,18 +576,18 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
                                                                 TLRPC.User a22 = org.telegram.messenger.qp.s1(i10).a2(Long.valueOf(j10));
                                                                 String i24 = org.telegram.messenger.t10.i(a22);
                                                                 if (org.telegram.messenger.t10.B(a22)) {
-                                                                    i24 = org.telegram.messenger.id.L0(2131745904);
+                                                                    i24 = org.telegram.messenger.id.L0(2131745901);
                                                                 } else if (org.telegram.messenger.t10.z(a22)) {
-                                                                    i24 = org.telegram.messenger.id.L0(2131746267);
+                                                                    i24 = org.telegram.messenger.id.L0(2131746266);
                                                                 }
-                                                                W22 = i7 == 20 ? org.telegram.messenger.g0.W2(org.telegram.messenger.id.U(2131750699, i24, A5)) : org.telegram.messenger.g0.W2(org.telegram.messenger.id.U(2131750698, i24, A5));
+                                                                W22 = i7 == 20 ? org.telegram.messenger.g0.W2(org.telegram.messenger.id.U(2131750698, i24, z52)) : org.telegram.messenger.g0.W2(org.telegram.messenger.id.U(2131750697, i24, z52));
                                                             } else {
                                                                 TLRPC.Chat M02 = org.telegram.messenger.qp.s1(i10).M0(Long.valueOf(-j10));
-                                                                W22 = i7 == 20 ? org.telegram.messenger.g0.W2(org.telegram.messenger.id.U(2131750800, M02.title, A5)) : org.telegram.messenger.g0.W2(org.telegram.messenger.id.U(2131750799, M02.title, A5));
+                                                                W22 = i7 == 20 ? org.telegram.messenger.g0.W2(org.telegram.messenger.id.U(2131750799, M02.title, z52)) : org.telegram.messenger.g0.W2(org.telegram.messenger.id.U(2131750798, M02.title, z52));
                                                             }
                                                             W2 = W22;
                                                         } else {
-                                                            W2 = i7 == 20 ? org.telegram.messenger.g0.W2(org.telegram.messenger.id.U(2131750796, org.telegram.messenger.id.G(((Integer) obj).intValue(), "ChatsSelected", new Object[0]), A5)) : org.telegram.messenger.g0.W2(org.telegram.messenger.id.U(2131750795, org.telegram.messenger.id.G(((Integer) obj).intValue(), "ChatsSelected", new Object[0]), A5));
+                                                            W2 = i7 == 20 ? org.telegram.messenger.g0.W2(org.telegram.messenger.id.U(2131750795, org.telegram.messenger.id.G(((Integer) obj).intValue(), "ChatsSelected", new Object[0]), z52)) : org.telegram.messenger.g0.W2(org.telegram.messenger.id.U(2131750794, org.telegram.messenger.id.G(((Integer) obj).intValue(), "ChatsSelected", new Object[0]), z52));
                                                         }
                                                         i14 = i7 == 20 ? R.raw.folder_in : R.raw.folder_out;
                                                         spannableStringBuilder = W2;
@@ -639,15 +639,15 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
             }
             b2Var.setText(X2);
             if (i15 != 0) {
-                ch0Var.e(i15, i21, i21);
-                zg0 animatedDrawable = ch0Var.getAnimatedDrawable();
+                dh0Var.e(i15, i21, i21);
+                ah0 animatedDrawable = dh0Var.getAnimatedDrawable();
                 animatedDrawable.h = false;
                 animatedDrawable.P(animatedDrawable.s());
-                ch0Var.setVisibility(0);
-                ch0Var.setProgress(0.0f);
-                ch0Var.d();
+                dh0Var.setVisibility(0);
+                dh0Var.setProgress(0.0f);
+                dh0Var.d();
             } else {
-                ch0Var.setVisibility(8);
+                dh0Var.setVisibility(8);
             }
             if (charSequence != null) {
                 layoutParams.leftMargin = org.telegram.messenger.g0.L(58.0f);
@@ -673,19 +673,19 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
             int i25 = this.K;
             if (i25 == 45 || i25 == 46 || i25 == 47 || i25 == 52 || i25 == 53 || i25 == 54 || i25 == 55 || i25 == 56 || i25 == 57 || i25 == 58 || i25 == 59 || i25 == 60 || i25 == 71 || i25 == 70 || i25 == 75 || i25 == 76 || i25 == 41 || i25 == 78 || i25 == 79 || i25 == 61 || i25 == 80) {
                 this.e.setVisibility(8);
-                ch0Var.setVisibility(0);
+                dh0Var.setVisibility(0);
                 b2Var.setTypeface(Typeface.DEFAULT);
                 int i26 = this.K;
                 long j11 = -1;
                 if (i26 == 76) {
                     b2Var.setText(org.telegram.messenger.id.L0(2131752881));
-                    ch0Var.e(R.raw.gigagroup_convert, 36, 36);
+                    dh0Var.e(R.raw.gigagroup_convert, 36, 36);
                     layoutParams.topMargin = org.telegram.messenger.g0.L(9.0f);
                     b2Var.setTextSize(1, 14.0f);
                     z9 = true;
                 } else if (i26 == 75) {
-                    b2Var.setText(org.telegram.messenger.id.L0(2131749560));
-                    ch0Var.e(R.raw.chats_infotip, 36, 36);
+                    b2Var.setText(org.telegram.messenger.id.L0(2131749559));
+                    dh0Var.e(R.raw.chats_infotip, 36, 36);
                     layoutParams.topMargin = org.telegram.messenger.g0.L(9.0f);
                     z9 = true;
                     b2Var.setTextSize(1, 14.0f);
@@ -693,25 +693,25 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
                     if (i7 != 70) {
                         if (i26 == 71) {
                             b2Var.setText(org.telegram.messenger.id.L0(2131753855));
-                            ch0Var.e(R.raw.fire_off, 36, 36);
+                            dh0Var.e(R.raw.fire_off, 36, 36);
                             b2Var.setTextSize(1, 14.0f);
                             this.G = 3000L;
-                            ch0Var.setPadding(0, 0, 0, org.telegram.messenger.g0.L(4.0f));
+                            dh0Var.setPadding(0, 0, 0, org.telegram.messenger.g0.L(4.0f));
                         } else if (i26 == 45) {
-                            b2Var.setText(org.telegram.messenger.id.L0(2131749245));
-                            ch0Var.e(R.raw.error, 36, 36);
+                            b2Var.setText(org.telegram.messenger.id.L0(2131749244));
+                            dh0Var.e(R.raw.error, 36, 36);
                             layoutParams.topMargin = org.telegram.messenger.g0.L(9.0f);
                             z9 = true;
                             b2Var.setTextSize(1, 14.0f);
                         } else if (i26 == 46) {
-                            b2Var.setText(org.telegram.messenger.id.L0(2131749244));
-                            ch0Var.e(R.raw.error, 36, 36);
+                            b2Var.setText(org.telegram.messenger.id.L0(2131749243));
+                            dh0Var.e(R.raw.error, 36, 36);
                             layoutParams.topMargin = org.telegram.messenger.g0.L(9.0f);
                             b2Var.setTextSize(1, 14.0f);
                         } else if (i26 == 47) {
-                            b2Var.setText(org.telegram.messenger.id.L0(2131749222));
-                            ch0Var.e(R.raw.imported, 36, 36);
-                            ch0Var.setPadding(0, 0, 0, org.telegram.messenger.g0.L(5.0f));
+                            b2Var.setText(org.telegram.messenger.id.L0(2131749221));
+                            dh0Var.e(R.raw.imported, 36, 36);
+                            dh0Var.setPadding(0, 0, 0, org.telegram.messenger.g0.L(5.0f));
                             layoutParams.topMargin = org.telegram.messenger.g0.L(9.0f);
                             b2Var.setTextSize(1, 14.0f);
                         } else if (i26 == 52 || i26 == 56 || i26 == 57 || i26 == 58 || i26 == 59 || i26 == 60 || i26 == 80) {
@@ -720,48 +720,48 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
                             }
                             int i27 = this.K;
                             if (i27 == 80) {
-                                b2Var.setText(org.telegram.messenger.id.L0(2131751204));
+                                b2Var.setText(org.telegram.messenger.id.L0(2131751203));
                             } else if (i27 == 60) {
-                                b2Var.setText(org.telegram.messenger.id.L0(2131747296));
+                                b2Var.setText(org.telegram.messenger.id.L0(2131747295));
                             } else if (i27 == 56) {
-                                b2Var.setText(org.telegram.messenger.id.L0(2131743668));
+                                b2Var.setText(org.telegram.messenger.id.L0(2131743665));
                             } else if (i27 == 57) {
-                                b2Var.setText(org.telegram.messenger.id.L0(2131749363));
+                                b2Var.setText(org.telegram.messenger.id.L0(2131749362));
                             } else if (i27 == 52) {
-                                b2Var.setText(org.telegram.messenger.id.L0(2131748590));
+                                b2Var.setText(org.telegram.messenger.id.L0(2131748589));
                             } else if (i27 == 59) {
-                                b2Var.setText(org.telegram.messenger.id.L0(2131748922));
-                                ch0Var.e(i20, 30, 30);
+                                b2Var.setText(org.telegram.messenger.id.L0(2131748921));
+                                dh0Var.e(i20, 30, 30);
                                 this.G = 3000L;
                                 b2Var.setTextSize(1, 15.0f);
                             } else {
-                                b2Var.setText(org.telegram.messenger.id.L0(2131744197));
+                                b2Var.setText(org.telegram.messenger.id.L0(2131744194));
                             }
                             i20 = R.raw.copy;
-                            ch0Var.e(i20, 30, 30);
+                            dh0Var.e(i20, 30, 30);
                             this.G = 3000L;
                             b2Var.setTextSize(1, 15.0f);
                         } else if (i26 == 54) {
                             b2Var.setText(org.telegram.messenger.id.L0(2131752338));
-                            ch0Var.e(R.raw.silent_unmute, 30, 30);
+                            dh0Var.e(R.raw.silent_unmute, 30, 30);
                             this.G = 3000L;
                             b2Var.setTextSize(1, 15.0f);
                         } else if (i26 == 55) {
                             b2Var.setText(org.telegram.messenger.id.L0(2131752339));
-                            ch0Var.e(R.raw.silent_mute, 30, 30);
+                            dh0Var.e(R.raw.silent_mute, 30, 30);
                             this.G = 3000L;
                             b2Var.setTextSize(1, 15.0f);
                         } else if (i26 == 41) {
                             if (obj2 != null) {
-                                b2Var.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.Y(2131749188, "InvLinkToChats", org.telegram.messenger.id.G(((Integer) obj2).intValue(), "Chats", new Object[0]))));
+                                b2Var.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.Y(2131749187, "InvLinkToChats", org.telegram.messenger.id.G(((Integer) obj2).intValue(), "Chats", new Object[0]))));
                             } else if (longValue == org.telegram.messenger.p10.i(i10).n) {
-                                b2Var.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.L0(2131749186)));
+                                b2Var.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.L0(2131749185)));
                             } else if (org.telegram.messenger.m5.z(longValue)) {
-                                b2Var.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.Y(2131749187, "InvLinkToGroup", org.telegram.messenger.qp.s1(i10).M0(Long.valueOf(-longValue)).title)));
+                                b2Var.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.Y(2131749186, "InvLinkToGroup", org.telegram.messenger.qp.s1(i10).M0(Long.valueOf(-longValue)).title)));
                             } else {
-                                b2Var.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.Y(2131749185, "InvLinkToUser", org.telegram.messenger.t10.i(org.telegram.messenger.qp.s1(i10).a2(l10)))));
+                                b2Var.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.Y(2131749184, "InvLinkToUser", org.telegram.messenger.t10.i(org.telegram.messenger.qp.s1(i10).a2(l10)))));
                             }
-                            ch0Var.e(R.raw.contact_check, 36, 36);
+                            dh0Var.e(R.raw.contact_check, 36, 36);
                             this.G = 3000L;
                         } else if (i26 == 53) {
                             Integer num = (Integer) obj;
@@ -772,14 +772,14 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
                                 } else {
                                     b2Var.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.G(intValue2, "FwdMessagesToManyChats", new Object[0])));
                                 }
-                                ch0Var.e(R.raw.forward, 30, 30);
+                                dh0Var.e(R.raw.forward, 30, 30);
                             } else if (longValue == org.telegram.messenger.p10.i(i10).n) {
                                 if (num.intValue() == 1) {
-                                    b2Var.setText(org.telegram.messenger.g0.U2(org.telegram.messenger.id.L0(2131750499), new vs(10)));
+                                    b2Var.setText(org.telegram.messenger.g0.U2(org.telegram.messenger.id.L0(2131750498), new vs(10)));
                                 } else {
-                                    b2Var.setText(org.telegram.messenger.g0.U2(org.telegram.messenger.id.L0(2131750492), new vs(10)));
+                                    b2Var.setText(org.telegram.messenger.g0.U2(org.telegram.messenger.id.L0(2131750491), new vs(10)));
                                 }
-                                ch0Var.e(R.raw.saved_messages, 30, 30);
+                                dh0Var.e(R.raw.saved_messages, 30, 30);
                                 this.G = 3000L;
                             } else {
                                 if (org.telegram.messenger.m5.z(longValue)) {
@@ -790,22 +790,22 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
                                         if (i28 == null) {
                                             i28 = tL_forumTopic != null ? tL_forumTopic.title : M03.title;
                                         }
-                                        b2Var.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.Y(2131750503, "FwdMessageToGroup", i28)));
+                                        b2Var.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.Y(2131750502, "FwdMessageToGroup", i28)));
                                     } else {
                                         if (i28 == null) {
                                             i28 = tL_forumTopic != null ? tL_forumTopic.title : M03.title;
                                         }
-                                        b2Var.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.Y(2131750496, "FwdMessagesToGroup", i28)));
+                                        b2Var.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.Y(2131750495, "FwdMessagesToGroup", i28)));
                                     }
                                 } else {
                                     TLRPC.User a23 = org.telegram.messenger.qp.s1(i10).a2(l10);
                                     if (num.intValue() == 1) {
-                                        b2Var.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.Y(2131750498, "FwdMessageToUser", org.telegram.messenger.t10.i(a23))));
+                                        b2Var.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.Y(2131750497, "FwdMessageToUser", org.telegram.messenger.t10.i(a23))));
                                     } else {
-                                        b2Var.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.Y(2131750491, "FwdMessagesToUser", org.telegram.messenger.t10.i(a23))));
+                                        b2Var.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.Y(2131750490, "FwdMessagesToUser", org.telegram.messenger.t10.i(a23))));
                                     }
                                 }
-                                ch0Var.e(R.raw.forward, 30, 30);
+                                dh0Var.e(R.raw.forward, 30, 30);
                             }
                             j11 = 300;
                             this.G = 3000L;
@@ -814,17 +814,17 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
                             if (i26 == 61) {
                                 if (obj2 != null) {
                                     b2Var.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.Y(2131753737, "BackgroundToChats", org.telegram.messenger.id.G(((Integer) obj2).intValue(), "Chats", new Object[0]))));
-                                    ch0Var.e(R.raw.forward, 30, 30);
+                                    dh0Var.e(R.raw.forward, 30, 30);
                                 } else if (longValue == org.telegram.messenger.p10.i(i29).n) {
                                     b2Var.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.L0(2131753735)));
-                                    ch0Var.e(R.raw.saved_messages, 30, 30);
+                                    dh0Var.e(R.raw.saved_messages, 30, 30);
                                 } else {
                                     if (org.telegram.messenger.m5.z(longValue)) {
                                         b2Var.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.Y(2131753736, "BackgroundToGroup", org.telegram.messenger.qp.s1(i29).M0(Long.valueOf(-longValue)).title)));
                                     } else {
                                         b2Var.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.Y(2131753734, "BackgroundToUser", org.telegram.messenger.t10.i(org.telegram.messenger.qp.s1(i29).a2(l10)))));
                                     }
-                                    ch0Var.e(R.raw.forward, 30, 30);
+                                    dh0Var.e(R.raw.forward, 30, 30);
                                 }
                                 this.G = 3000L;
                             }
@@ -833,14 +833,14 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
                         i11 = 8;
                         z9 = false;
                         textView2.setVisibility(i11);
-                        org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.uj, this.V);
+                        org.telegram.ui.ActionBar.s6.U(textView, org.telegram.ui.ActionBar.l6.uj, this.V);
                         linearLayout.setVisibility(i11);
                         layoutParams.leftMargin = org.telegram.messenger.g0.L(58.0f);
                         layoutParams.rightMargin = org.telegram.messenger.g0.L(8.0f);
-                        ch0Var.setProgress(0.0f);
-                        ch0Var.d();
+                        dh0Var.setProgress(0.0f);
+                        dh0Var.d();
                         if (j3 > 0) {
-                            ch0Var.postDelayed(new ir0(this, 26), j3);
+                            dh0Var.postDelayed(new kr0(this, 26), j3);
                         }
                         StringBuilder sb2 = new StringBuilder();
                         sb2.append((Object) b2Var.getText());
@@ -891,20 +891,20 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
                     int intValue3 = ((Integer) obj2).intValue();
                     textView2.setSingleLine(false);
                     b2Var.setText(org.telegram.messenger.id.Y(2131753854, "AutoDeleteHintOnText", org.telegram.messenger.id.c0(intValue3)));
-                    ch0Var.e(R.raw.fire_on, 36, 36);
+                    dh0Var.e(R.raw.fire_on, 36, 36);
                     layoutParams.topMargin = org.telegram.messenger.g0.L(9.0f);
                     this.G = 4000L;
-                    ch0Var.setPadding(0, 0, 0, org.telegram.messenger.g0.L(3.0f));
+                    dh0Var.setPadding(0, 0, 0, org.telegram.messenger.g0.L(3.0f));
                     j3 = -1;
                     i11 = 8;
                     z9 = true;
                     textView2.setVisibility(i11);
-                    org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.uj, this.V);
+                    org.telegram.ui.ActionBar.s6.U(textView, org.telegram.ui.ActionBar.l6.uj, this.V);
                     linearLayout.setVisibility(i11);
                     layoutParams.leftMargin = org.telegram.messenger.g0.L(58.0f);
                     layoutParams.rightMargin = org.telegram.messenger.g0.L(8.0f);
-                    ch0Var.setProgress(0.0f);
-                    ch0Var.d();
+                    dh0Var.setProgress(0.0f);
+                    dh0Var.d();
                     if (j3 > 0) {
                     }
                     StringBuilder sb22 = new StringBuilder();
@@ -921,12 +921,12 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
                 j3 = -1;
                 i11 = 8;
                 textView2.setVisibility(i11);
-                org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.uj, this.V);
+                org.telegram.ui.ActionBar.s6.U(textView, org.telegram.ui.ActionBar.l6.uj, this.V);
                 linearLayout.setVisibility(i11);
                 layoutParams.leftMargin = org.telegram.messenger.g0.L(58.0f);
                 layoutParams.rightMargin = org.telegram.messenger.g0.L(8.0f);
-                ch0Var.setProgress(0.0f);
-                ch0Var.d();
+                dh0Var.setProgress(0.0f);
+                dh0Var.d();
                 if (j3 > 0) {
                 }
                 StringBuilder sb222 = new StringBuilder();
@@ -943,81 +943,81 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
                 int intValue4 = ((Integer) obj).intValue();
                 TLRPC.User user5 = (TLRPC.User) obj2;
                 this.e.setVisibility(8);
-                ch0Var.setVisibility(0);
+                dh0Var.setVisibility(0);
                 if (intValue4 != 0) {
                     b2Var.setTypeface(org.telegram.messenger.g0.o());
                     b2Var.setTextSize(1, 14.0f);
-                    ch0Var.a.clear();
-                    int i32 = org.telegram.ui.ActionBar.k6.vj;
+                    dh0Var.a.clear();
+                    int i32 = org.telegram.ui.ActionBar.l6.vj;
                     i(i32, "BODY", false);
                     i(i32, "Wibe Big", false);
                     i(i32, "Wibe Big 3", false);
                     i(i32, "Wibe Small", false);
-                    b2Var.setText(org.telegram.messenger.id.L0(2131746617));
-                    ch0Var.e(R.raw.ic_unmute, 28, 28);
+                    b2Var.setText(org.telegram.messenger.id.L0(2131746616));
+                    dh0Var.e(R.raw.ic_unmute, 28, 28);
                     textView2.setVisibility(0);
                     textView2.setSingleLine(false);
                     textView2.setMaxLines(3);
                     if (user5 != null) {
-                        textView2.setText(org.telegram.messenger.id.Y(2131746615, "ProximityAlertSetInfoUser", org.telegram.messenger.t10.i(user5), org.telegram.messenger.id.y(intValue4, 2, null)));
+                        textView2.setText(org.telegram.messenger.id.Y(2131746614, "ProximityAlertSetInfoUser", org.telegram.messenger.t10.i(user5), org.telegram.messenger.id.y(intValue4, 2, null)));
                     } else {
-                        textView2.setText(org.telegram.messenger.id.Y(2131746616, "ProximityAlertSetInfoGroup2", org.telegram.messenger.id.y(intValue4, 2, null)));
+                        textView2.setText(org.telegram.messenger.id.Y(2131746615, "ProximityAlertSetInfoGroup2", org.telegram.messenger.id.y(intValue4, 2, null)));
                     }
                     linearLayout.setVisibility(8);
                     layoutParams.topMargin = org.telegram.messenger.g0.L(6.0f);
                 } else {
                     b2Var.setTypeface(Typeface.DEFAULT);
                     b2Var.setTextSize(1, 15.0f);
-                    ch0Var.a.clear();
-                    int i33 = org.telegram.ui.ActionBar.k6.vj;
+                    dh0Var.a.clear();
+                    int i33 = org.telegram.ui.ActionBar.l6.vj;
                     i(i33, "Body Main", false);
                     i(i33, "Body Top", false);
                     i(i33, "Line", false);
                     i(i33, "Curve Big", false);
                     i(i33, "Curve Small", false);
                     layoutParams.topMargin = org.telegram.messenger.g0.L(14.0f);
-                    b2Var.setText(org.telegram.messenger.id.L0(2131746618));
-                    ch0Var.e(R.raw.ic_mute, 28, 28);
+                    b2Var.setText(org.telegram.messenger.id.L0(2131746617));
+                    dh0Var.e(R.raw.ic_mute, 28, 28);
                     textView2.setVisibility(8);
-                    org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.uj, this.V);
+                    org.telegram.ui.ActionBar.s6.U(textView, org.telegram.ui.ActionBar.l6.uj, this.V);
                     linearLayout.setVisibility(0);
                 }
                 layoutParams.leftMargin = org.telegram.messenger.g0.L(58.0f);
-                ch0Var.setProgress(0.0f);
-                ch0Var.d();
+                dh0Var.setProgress(0.0f);
+                dh0Var.d();
             } else if (i25 == 11) {
                 b2Var.setText(org.telegram.messenger.id.L0(2131753886));
-                ch0Var.e(R.raw.contact_check, 36, 36);
+                dh0Var.e(R.raw.contact_check, 36, 36);
                 layoutParams.leftMargin = org.telegram.messenger.g0.L(58.0f);
                 layoutParams.topMargin = org.telegram.messenger.g0.L(6.0f);
                 textView2.setText(((TLRPC.TL_authorization) obj).app_name);
                 textView2.setVisibility(0);
                 b2Var.setTextSize(1, 14.0f);
                 b2Var.setTypeface(org.telegram.messenger.g0.o());
-                org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.p7, this.V);
+                org.telegram.ui.ActionBar.s6.U(textView, org.telegram.ui.ActionBar.l6.p7, this.V);
                 this.e.setVisibility(8);
                 linearLayout.setVisibility(0);
-                ch0Var.setVisibility(0);
-                ch0Var.setProgress(0.0f);
-                ch0Var.d();
+                dh0Var.setVisibility(0);
+                dh0Var.setProgress(0.0f);
+                dh0Var.d();
             } else if (i25 == 15) {
                 this.G = 10000L;
-                textView.setText(org.telegram.messenger.id.L0(2131747818));
-                b2Var.setText(org.telegram.messenger.id.L0(2131750803));
-                ch0Var.e(R.raw.filter_new, 36, 36);
+                textView.setText(org.telegram.messenger.id.L0(2131747817));
+                b2Var.setText(org.telegram.messenger.id.L0(2131750802));
+                dh0Var.e(R.raw.filter_new, 36, 36);
                 int L3 = org.telegram.messenger.g0.L(26.0f) + ((int) Math.ceil(textView.getPaint().measureText(textView.getText().toString())));
                 layoutParams.leftMargin = org.telegram.messenger.g0.L(58.0f);
                 layoutParams.rightMargin = L3;
                 layoutParams.topMargin = org.telegram.messenger.g0.L(6.0f);
                 ((FrameLayout.LayoutParams) textView2.getLayoutParams()).rightMargin = L3;
-                String L06 = org.telegram.messenger.id.L0(2131750804);
+                String L06 = org.telegram.messenger.id.L0(2131750803);
                 SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(L06);
                 int indexOf2 = L06.indexOf(42);
                 int lastIndexOf2 = L06.lastIndexOf(42);
                 if (indexOf2 >= 0 && lastIndexOf2 >= 0 && indexOf2 != lastIndexOf2) {
                     spannableStringBuilder2.replace(lastIndexOf2, lastIndexOf2 + 1, (CharSequence) "");
                     spannableStringBuilder2.replace(indexOf2, indexOf2 + 1, (CharSequence) "");
-                    spannableStringBuilder2.setSpan(new b41("tg://settings/folders"), indexOf2, lastIndexOf2 - 1, 33);
+                    spannableStringBuilder2.setSpan(new c41("tg://settings/folders"), indexOf2, lastIndexOf2 - 1, 33);
                 }
                 textView2.setText(spannableStringBuilder2);
                 textView2.setVisibility(0);
@@ -1025,9 +1025,9 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
                 textView2.setMaxLines(2);
                 linearLayout.setVisibility(0);
                 this.e.setVisibility(8);
-                ch0Var.setVisibility(0);
-                ch0Var.setProgress(0.0f);
-                ch0Var.d();
+                dh0Var.setVisibility(0);
+                dh0Var.setProgress(0.0f);
+                dh0Var.d();
             } else if (i25 == 16 || i25 == 17) {
                 this.G = 4000L;
                 b2Var.setTextSize(1, 14.0f);
@@ -1035,11 +1035,11 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
                 b2Var.setMinHeight(org.telegram.messenger.g0.L(30.0f));
                 String str4 = (String) obj;
                 if ("🎲".equals(str4)) {
-                    b2Var.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.L0(2131751451)));
-                    ch0Var.setImageResource(R.drawable.dice);
+                    b2Var.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.L0(2131751450)));
+                    dh0Var.setImageResource(R.drawable.dice);
                 } else {
                     if ("🎯".equals(str4)) {
-                        b2Var.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.L0(2131751679)));
+                        b2Var.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.L0(2131751678)));
                     } else {
                         String i34 = rf.b.i("DiceEmojiInfo_", str4);
                         String b10 = org.telegram.messenger.id.E0().Y.b(i34);
@@ -1049,24 +1049,24 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
                             b10 = E0.W.b(i34);
                         }
                         if (TextUtils.isEmpty(b10)) {
-                            b2Var.setText(org.telegram.messenger.i6.l(org.telegram.messenger.id.Y(2131751452, "DiceEmojiInfo", str4), b2Var.getPaint().getFontMetricsInt(), false));
+                            b2Var.setText(org.telegram.messenger.i6.l(org.telegram.messenger.id.Y(2131751451, "DiceEmojiInfo", str4), b2Var.getPaint().getFontMetricsInt(), false));
                         } else {
                             b2Var.setText(org.telegram.messenger.i6.l(b10, b2Var.getPaint().getFontMetricsInt(), false));
                         }
                     }
-                    ch0Var.setImageDrawable(org.telegram.messenger.i6.g(str4));
-                    ch0Var.setScaleType(ImageView.ScaleType.FIT_XY);
+                    dh0Var.setImageDrawable(org.telegram.messenger.i6.g(str4));
+                    dh0Var.setScaleType(ImageView.ScaleType.FIT_XY);
                     layoutParams.topMargin = org.telegram.messenger.g0.L(14.0f);
                     layoutParams.bottomMargin = org.telegram.messenger.g0.L(14.0f);
                     layoutParams2.leftMargin = org.telegram.messenger.g0.L(14.0f);
                     layoutParams2.width = org.telegram.messenger.g0.L(26.0f);
                     layoutParams2.height = org.telegram.messenger.g0.L(26.0f);
                 }
-                textView.setText(org.telegram.messenger.id.L0(2131745630));
+                textView.setText(org.telegram.messenger.id.L0(2131745627));
                 if (this.K == 16) {
                     L = org.telegram.messenger.g0.L(26.0f) + ((int) Math.ceil(textView.getPaint().measureText(textView.getText().toString())));
                     textView.setVisibility(0);
-                    org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.uj, this.V);
+                    org.telegram.ui.ActionBar.s6.U(textView, org.telegram.ui.ActionBar.l6.uj, this.V);
                     this.e.setVisibility(8);
                     linearLayout.setVisibility(0);
                 } else {
@@ -1080,7 +1080,7 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
                 layoutParams.bottomMargin = org.telegram.messenger.g0.L(7.0f);
                 layoutParams.height = -1;
                 textView2.setVisibility(8);
-                ch0Var.setVisibility(0);
+                dh0Var.setVisibility(0);
             } else if (i25 == 18) {
                 this.G = Math.max(4000, Math.min((r0.length() / 50) * 1600, 10000));
                 b2Var.setTextSize(1, 14.0f);
@@ -1097,14 +1097,14 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
                 int L4 = org.telegram.messenger.g0.L(8.0f);
                 layoutParams2.bottomMargin = L4;
                 layoutParams2.topMargin = L4;
-                ch0Var.setVisibility(0);
-                ch0Var.e(R.raw.chats_infotip, 36, 36);
-                ch0Var.setProgress(0.0f);
-                ch0Var.d();
+                dh0Var.setVisibility(0);
+                dh0Var.e(R.raw.chats_infotip, 36, 36);
+                dh0Var.setProgress(0.0f);
+                dh0Var.d();
                 b2Var.setMovementMethod(new org.telegram.messenger.c0(0));
             } else if (i25 == 12) {
                 b2Var.setText(org.telegram.messenger.id.L0(2131752010));
-                ch0Var.setImageResource(R.drawable.toast_pallete);
+                dh0Var.setImageResource(R.drawable.toast_pallete);
                 layoutParams.leftMargin = org.telegram.messenger.g0.L(58.0f);
                 layoutParams.rightMargin = org.telegram.messenger.g0.L(48.0f);
                 layoutParams.topMargin = org.telegram.messenger.g0.L(6.0f);
@@ -1116,7 +1116,7 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
                 if (indexOf3 >= 0 && lastIndexOf3 >= 0 && indexOf3 != lastIndexOf3) {
                     spannableStringBuilder3.replace(lastIndexOf3, lastIndexOf3 + 1, (CharSequence) "");
                     spannableStringBuilder3.replace(indexOf3, indexOf3 + 1, (CharSequence) "");
-                    spannableStringBuilder3.setSpan(new b41("tg://settings/themes"), indexOf3, lastIndexOf3 - 1, 33);
+                    spannableStringBuilder3.setSpan(new c41("tg://settings/themes"), indexOf3, lastIndexOf3 - 1, 33);
                 }
                 textView2.setText(spannableStringBuilder3);
                 textView2.setVisibility(0);
@@ -1124,17 +1124,17 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
                 textView2.setMaxLines(2);
                 textView.setVisibility(8);
                 linearLayout.setVisibility(0);
-                ch0Var.setVisibility(0);
+                dh0Var.setVisibility(0);
             } else if (i25 == 84) {
                 b2Var.setVisibility(0);
                 b2Var.setTextSize(1, 15.0f);
                 b2Var.setTypeface(Typeface.DEFAULT);
-                b2Var.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.L0(2131743858)));
-                ch0Var.setVisibility(0);
-                ch0Var.e(R.raw.voice_to_text, 36, 36);
-                ch0Var.setProgress(0.0f);
-                ch0Var.d();
-                textView.setText(org.telegram.messenger.id.L0(2131747034));
+                b2Var.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.L0(2131743855)));
+                dh0Var.setVisibility(0);
+                dh0Var.e(R.raw.voice_to_text, 36, 36);
+                dh0Var.setProgress(0.0f);
+                dh0Var.d();
+                textView.setText(org.telegram.messenger.id.L0(2131747033));
                 layoutParams.leftMargin = org.telegram.messenger.g0.L(58.0f);
                 layoutParams.rightMargin = org.telegram.messenger.g0.L(26.0f) + ((int) Math.ceil(textView.getPaint().measureText(textView.getText().toString())));
                 int L5 = org.telegram.messenger.g0.L(6.0f);
@@ -1150,13 +1150,13 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
                 b2Var.setVisibility(0);
                 b2Var.setTextSize(1, 15.0f);
                 b2Var.setTypeface(org.telegram.messenger.g0.o());
-                b2Var.setText(org.telegram.messenger.id.L0(2131744309));
-                ch0Var.setVisibility(0);
-                ch0Var.e(R.raw.hint_swipe_reply, 64, 64);
-                ch0Var.setProgress(0.0f);
-                ch0Var.d();
+                b2Var.setText(org.telegram.messenger.id.L0(2131744306));
+                dh0Var.setVisibility(0);
+                dh0Var.e(R.raw.hint_swipe_reply, 64, 64);
+                dh0Var.setProgress(0.0f);
+                dh0Var.d();
                 textView2.setVisibility(0);
-                textView2.setText(org.telegram.messenger.id.L0(2131744308));
+                textView2.setText(org.telegram.messenger.id.L0(2131744305));
                 layoutParams.leftMargin = org.telegram.messenger.g0.L(58.0f);
                 layoutParams.rightMargin = org.telegram.messenger.g0.L(26.0f) + ((int) Math.ceil(textView.getPaint().measureText(textView.getText().toString())));
                 layoutParams.topMargin = org.telegram.messenger.g0.L(6.0f);
@@ -1166,7 +1166,7 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
             } else if (i25 == 90 || i25 == 91 || i25 == 92 || i25 == 93 || i25 == 94) {
                 switch (i25) {
                     case org.telegram.messenger.qs.b1 /* 90 */:
-                        b2Var.setText(org.telegram.messenger.id.G((int) wg.s.f(), "BoostingSelectUpToWarningChannelsGroupsPlural", new Object[0]));
+                        b2Var.setText(org.telegram.messenger.id.G((int) wg.r.f(), "BoostingSelectUpToWarningChannelsGroupsPlural", new Object[0]));
                         break;
                     case org.telegram.messenger.qs.c1 /* 91 */:
                         b2Var.setText(org.telegram.messenger.id.L0(2131753272));
@@ -1187,10 +1187,10 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
                 linearLayout.setVisibility(8);
                 b2Var.setTypeface(Typeface.DEFAULT);
                 textView2.setVisibility(8);
-                ch0Var.setVisibility(0);
-                ch0Var.e(R.raw.chats_infotip, 36, 36);
-                ch0Var.setProgress(0.0f);
-                ch0Var.d();
+                dh0Var.setVisibility(0);
+                dh0Var.e(R.raw.chats_infotip, 36, 36);
+                dh0Var.setProgress(0.0f);
+                dh0Var.d();
             } else {
                 if (i25 == 2) {
                     i12 = 2;
@@ -1208,16 +1208,16 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
                     l9Var.setRoundRadius(org.telegram.messenger.g0.L(2.0f));
                     String str5 = gfVar.c;
                     if (str5 != null) {
-                        l9Var.h(str5, null, org.telegram.ui.ActionBar.k6.R4);
+                        l9Var.h(str5, null, org.telegram.ui.ActionBar.l6.R4);
                     } else if (gfVar.I != null) {
                         l9Var.s(gfVar.J, gfVar.K, true);
                         if (gfVar.b) {
-                            l9Var.h("vthumb://" + gfVar.C + ":" + gfVar.I, null, org.telegram.ui.ActionBar.k6.R4);
+                            l9Var.h("vthumb://" + gfVar.C + ":" + gfVar.I, null, org.telegram.ui.ActionBar.l6.R4);
                         } else {
-                            l9Var.h("thumb://" + gfVar.C + ":" + gfVar.I, null, org.telegram.ui.ActionBar.k6.R4);
+                            l9Var.h("thumb://" + gfVar.C + ":" + gfVar.I, null, org.telegram.ui.ActionBar.l6.R4);
                         }
                     } else {
-                        l9Var.setImageDrawable(org.telegram.ui.ActionBar.k6.R4);
+                        l9Var.setImageDrawable(org.telegram.ui.ActionBar.l6.R4);
                     }
                 } else {
                     layoutParams.leftMargin = org.telegram.messenger.g0.L(45.0f);
@@ -1228,7 +1228,7 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
                     Typeface typeface = Typeface.DEFAULT;
                     b2Var.setTypeface(typeface);
                     textView2.setVisibility(8);
-                    ch0Var.setVisibility(8);
+                    dh0Var.setVisibility(8);
                     int i35 = this.K;
                     if (i35 == 88) {
                         String str6 = (String) obj;
@@ -1241,7 +1241,7 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
                             FrameLayout.LayoutParams layoutParams3 = (FrameLayout.LayoutParams) textView2.getLayoutParams();
                             layoutParams3.leftMargin = org.telegram.messenger.g0.L(48.0f);
                             layoutParams3.rightMargin = L6;
-                            b2Var.setText(org.telegram.messenger.id.Y(2131750664, "FolderLinkDeletedTitle", str6));
+                            b2Var.setText(org.telegram.messenger.id.Y(2131750663, "FolderLinkDeletedTitle", str6));
                             b2Var.setTypeface(org.telegram.messenger.g0.o());
                             textView2.setVisibility(0);
                             textView2.setText(org.telegram.messenger.id.G(intValue5, "FolderLinkDeletedSubtitle", new Object[0]));
@@ -1250,19 +1250,19 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
                             if (str6 == null) {
                                 str6 = "";
                             }
-                            b2Var.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.Y(2131750668, "FolderLinkDeleted", str6.replace('*', (char) 10033))));
+                            b2Var.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.Y(2131750667, "FolderLinkDeleted", str6.replace('*', (char) 10033))));
                         }
                     } else if (i35 == 81 || i35 == 0 || i35 == 26) {
-                        b2Var.setText(org.telegram.messenger.id.L0(2131749294));
+                        b2Var.setText(org.telegram.messenger.id.L0(2131749293));
                     } else if (i35 == 27) {
                         b2Var.setText(org.telegram.messenger.id.L0(2131752180));
                     } else if (i35 == 95) {
                         if (org.telegram.messenger.m5.z(longValue)) {
                             TLRPC.Chat M04 = org.telegram.messenger.qp.s1(i10).M0(Long.valueOf(-longValue));
                             if (org.telegram.messenger.t3.p0(M04)) {
-                                b2Var.setText(org.telegram.messenger.id.L0(2131748350));
+                                b2Var.setText(org.telegram.messenger.id.L0(2131748349));
                             } else if (!org.telegram.messenger.t3.T(M04) || M04.megagroup) {
-                                b2Var.setText(org.telegram.messenger.id.L0(2131749431));
+                                b2Var.setText(org.telegram.messenger.id.L0(2131749430));
                             } else {
                                 b2Var.setText(org.telegram.messenger.id.L0(2131752388));
                             }
@@ -1272,9 +1272,9 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
                     } else if (org.telegram.messenger.m5.z(longValue)) {
                         TLRPC.Chat M05 = org.telegram.messenger.qp.s1(i10).M0(Long.valueOf(-longValue));
                         if (org.telegram.messenger.t3.p0(M05)) {
-                            b2Var.setText(org.telegram.messenger.id.L0(2131748350));
+                            b2Var.setText(org.telegram.messenger.id.L0(2131748349));
                         } else if (!org.telegram.messenger.t3.T(M05) || M05.megagroup) {
-                            b2Var.setText(org.telegram.messenger.id.L0(2131749450));
+                            b2Var.setText(org.telegram.messenger.id.L0(2131749449));
                         } else {
                             b2Var.setText(org.telegram.messenger.id.L0(2131752417));
                         }
@@ -1302,10 +1302,10 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
                 linearLayout.setVisibility(0);
                 b2Var.setTypeface(Typeface.DEFAULT);
                 textView2.setVisibility(8);
-                ch0Var.setVisibility(0);
-                ch0Var.e(R.raw.chats_archived, 36, 36);
-                ch0Var.setProgress(0.0f);
-                ch0Var.d();
+                dh0Var.setVisibility(0);
+                dh0Var.e(R.raw.chats_archived, 36, 36);
+                dh0Var.setProgress(0.0f);
+                dh0Var.d();
             }
         }
         z9 = false;
@@ -1438,9 +1438,9 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
         this.S = charSequence;
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
-        org.telegram.ui.ActionBar.f6 f6Var;
+        org.telegram.ui.ActionBar.g6 g6Var;
         ArrayList arrayList = this.a0;
         try {
             if (this.W) {
@@ -1449,39 +1449,39 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
             int i7 = 0;
             while (true) {
                 int size = arrayList.size();
-                f6Var = this.V;
+                g6Var = this.V;
                 if (i7 >= size) {
                     break;
                 }
-                int w02 = org.telegram.ui.ActionBar.k6.w0(((Integer) this.b0.get(i7)).intValue(), f6Var);
-                ch0 ch0Var = this.f;
+                int w02 = org.telegram.ui.ActionBar.l6.w0(((Integer) this.b0.get(i7)).intValue(), g6Var);
+                dh0 dh0Var = this.f;
                 String str = (String) arrayList.get(i7);
                 if (((Boolean) this.c0.get(i7)).booleanValue()) {
                     w02 |= -16777216;
                 }
-                ch0Var.h(w02, str);
+                dh0Var.h(w02, str);
                 i7++;
             }
             Paint paint = this.E;
-            int i10 = org.telegram.ui.ActionBar.k6.vj;
-            paint.setColor(org.telegram.ui.ActionBar.k6.w0(i10, f6Var));
-            this.D.setColor(org.telegram.ui.ActionBar.k6.w0(i10, f6Var));
-            org.telegram.ui.ActionBar.k6.C1(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.tj, f6Var), this.U);
+            int i10 = org.telegram.ui.ActionBar.l6.vj;
+            paint.setColor(org.telegram.ui.ActionBar.l6.w0(i10, g6Var));
+            this.D.setColor(org.telegram.ui.ActionBar.l6.w0(i10, g6Var));
+            org.telegram.ui.ActionBar.l6.C1(org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.tj, g6Var), this.U);
             invalidate();
             LinearLayout linearLayout = this.n;
             if (linearLayout != null) {
-                org.telegram.ui.ActionBar.k6.H1(linearLayout.getBackground(), org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.uj, f6Var) & 587202559, true);
+                org.telegram.ui.ActionBar.l6.H1(linearLayout.getBackground(), org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.uj, g6Var) & 587202559, true);
             }
         } catch (Exception e10) {
             org.telegram.messenger.a8.g(e10, true);
         }
     }
 
-    public UndoView(Context context, v71 v71Var) {
-        this(context, v71Var, false, null);
+    public UndoView(Context context, w71 w71Var) {
+        this(context, w71Var, false, null);
     }
 
-    public UndoView(Context context, org.telegram.ui.ActionBar.f2 f2Var, boolean z9, org.telegram.ui.ActionBar.f6 f6Var) {
+    public UndoView(Context context, org.telegram.ui.ActionBar.f2 f2Var, boolean z9, org.telegram.ui.ActionBar.g6 g6Var) {
         super(context);
         this.a = 0;
         this.y = org.telegram.messenger.p10.s0;
@@ -1492,32 +1492,32 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
         this.c0 = new ArrayList();
         this.d0 = org.telegram.messenger.g0.L(8.0f);
         this.g0 = 1.0f;
-        this.V = f6Var;
+        this.V = g6Var;
         this.s = f2Var;
         this.R = z9;
-        org.telegram.ui.Cells.b2 b2Var = new org.telegram.ui.Cells.b2(this, context, f6Var);
+        org.telegram.ui.Cells.b2 b2Var = new org.telegram.ui.Cells.b2(this, context, g6Var);
         this.b = b2Var;
         b2Var.setTextSize(1, 15.0f);
-        int i7 = org.telegram.ui.ActionBar.k6.vj;
-        org.telegram.ui.ActionBar.r6.V(b2Var, i7, f6Var);
-        int i10 = org.telegram.ui.ActionBar.k6.uj;
-        org.telegram.ui.ActionBar.r6.H(b2Var, i10, f6Var);
-        b2Var.setMovementMethod(new g41(this));
+        int i7 = org.telegram.ui.ActionBar.l6.vj;
+        org.telegram.ui.ActionBar.s6.U(b2Var, i7, g6Var);
+        int i10 = org.telegram.ui.ActionBar.l6.uj;
+        org.telegram.ui.ActionBar.s6.G(b2Var, i10, g6Var);
+        b2Var.setMovementMethod(new h41(this));
         addView(b2Var, c8.ha.d(-2, -2.0f, 51, 45.0f, 13.0f, 0.0f, 0.0f));
         TextView textView = new TextView(context);
         this.c = textView;
         textView.setTextSize(1, 13.0f);
-        org.telegram.ui.ActionBar.r6.V(textView, i7, f6Var);
-        org.telegram.ui.ActionBar.r6.H(textView, i10, f6Var);
+        org.telegram.ui.ActionBar.s6.U(textView, i7, g6Var);
+        org.telegram.ui.ActionBar.s6.G(textView, i10, g6Var);
         textView.setHighlightColor(0);
         textView.setSingleLine(true);
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setMovementMethod(new org.telegram.messenger.c0(false));
         addView(textView, c8.ha.d(-2, -2.0f, 51, 58.0f, 27.0f, 8.0f, 0.0f));
-        ch0 ch0Var = new ch0(context);
-        this.f = ch0Var;
-        ch0Var.setScaleType(ImageView.ScaleType.CENTER);
-        int i11 = org.telegram.ui.ActionBar.k6.tj;
+        dh0 dh0Var = new dh0(context);
+        this.f = dh0Var;
+        dh0Var.setScaleType(ImageView.ScaleType.CENTER);
+        int i11 = org.telegram.ui.ActionBar.l6.tj;
         i(i11, "info1", true);
         i(i11, "info2", true);
         i(i7, "luc12", false);
@@ -1533,7 +1533,7 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
         i(i7, "luc2", false);
         i(i7, "luc1", false);
         i(i7, "Oval", false);
-        addView(ch0Var, c8.ha.d(54, -2.0f, 19, 3.0f, 0.0f, 0.0f, 0.0f));
+        addView(dh0Var, c8.ha.d(54, -2.0f, 19, 3.0f, 0.0f, 0.0f, 0.0f));
         l9 l9Var = new l9(context);
         this.h = l9Var;
         l9Var.setRoundRadius(org.telegram.messenger.g0.L(15.0f));
@@ -1541,18 +1541,18 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
         LinearLayout linearLayout = new LinearLayout(context);
         this.n = linearLayout;
         linearLayout.setOrientation(0);
-        linearLayout.setBackground(org.telegram.ui.ActionBar.k6.a0(org.telegram.ui.ActionBar.k6.w0(i10, f6Var) & 587202559, org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f)));
+        linearLayout.setBackground(org.telegram.ui.ActionBar.l6.a0(org.telegram.ui.ActionBar.l6.w0(i10, g6Var) & 587202559, org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f)));
         addView(linearLayout, c8.ha.d(-2, -2.0f, 21, 0.0f, 0.0f, 11.0f, 0.0f));
-        linearLayout.setOnClickListener(new f41(this, 0));
+        linearLayout.setOnClickListener(new g41(this, 0));
         ImageView imageView = new ImageView(context);
         this.e = imageView;
         imageView.setImageResource(R.drawable.chats_undo);
-        org.telegram.ui.ActionBar.r6.t(imageView, i10, f6Var, PorterDuff.Mode.MULTIPLY);
+        org.telegram.ui.ActionBar.s6.s(imageView, i10, g6Var, PorterDuff.Mode.MULTIPLY);
         linearLayout.addView(imageView, c8.ha.t(-2, -2, 19, 4, 4, 0, 4));
         TextView textView2 = new TextView(context);
         this.d = textView2;
         com.google.android.recaptcha.internal.a.q(textView2, 1, 14.0f);
-        org.telegram.messenger.camera.q.o(textView2, i10, f6Var, null, 2131743888);
+        org.telegram.messenger.camera.q.o(textView2, i10, g6Var, null, 2131743885);
         linearLayout.addView(textView2, c8.ha.t(-2, -2, 19, 6, 4, 8, 4));
         this.F = new RectF(org.telegram.messenger.g0.L(15.0f), org.telegram.messenger.g0.L(15.0f), org.telegram.messenger.g0.L(33.0f), org.telegram.messenger.g0.L(33.0f));
         Paint paint = new Paint(1);
@@ -1560,14 +1560,14 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(org.telegram.messenger.g0.L(2.0f));
         paint.setStrokeCap(Paint.Cap.ROUND);
-        paint.setColor(org.telegram.ui.ActionBar.k6.w0(i7, f6Var));
+        paint.setColor(org.telegram.ui.ActionBar.l6.w0(i7, g6Var));
         TextPaint textPaint = new TextPaint(1);
         this.D = textPaint;
         textPaint.setTextSize(org.telegram.messenger.g0.L(12.0f));
         textPaint.setTypeface(org.telegram.messenger.g0.o());
-        textPaint.setColor(org.telegram.ui.ActionBar.k6.w0(i7, f6Var));
+        textPaint.setColor(org.telegram.ui.ActionBar.l6.w0(i7, g6Var));
         setWillNotDraw(false);
-        this.U = org.telegram.ui.ActionBar.k6.d0(org.telegram.messenger.g0.L(10.0f), org.telegram.ui.ActionBar.k6.w0(i11, f6Var));
+        this.U = org.telegram.ui.ActionBar.l6.d0(org.telegram.messenger.g0.L(10.0f), org.telegram.ui.ActionBar.l6.w0(i11, g6Var));
         setOnTouchListener(new ei.b(26));
         setVisibility(4);
     }

@@ -6,7 +6,7 @@ import java.io.File;
 import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class o7 extends g7 {
     public m.q3 n;
@@ -40,7 +40,7 @@ public final class o7 extends g7 {
     @Override // v4.g0
     public final void t(v4.d1 d1Var, int i7) {
         if (this.s == null) {
-            org.telegram.ui.Components.xp xpVar = new org.telegram.ui.Components.xp(new ColorDrawable(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.X9, false)), org.telegram.ui.ActionBar.k6.R4);
+            org.telegram.ui.Components.xp xpVar = new org.telegram.ui.Components.xp(new ColorDrawable(org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.X9, false)), org.telegram.ui.ActionBar.l6.R4);
             this.s = xpVar;
             xpVar.x = true;
         }
@@ -70,6 +70,6 @@ public final class o7 extends g7 {
         }
         n7 n7Var = new n7(this, viewGroup.getContext(), this.n, this.w.e.getCurrentAccount());
         n7Var.setStyle(1);
-        return new org.telegram.ui.Components.xi0(n7Var);
+        return new org.telegram.ui.Components.yi0(n7Var);
     }
 }

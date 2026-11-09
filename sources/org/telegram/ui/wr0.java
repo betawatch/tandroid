@@ -1,143 +1,70 @@
 package org.telegram.ui;
 
-import android.graphics.Point;
+import android.os.Bundle;
 import android.view.View;
-import java.util.HashSet;
+import android.widget.LinearLayout;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class wr0 implements r0.m, org.telegram.ui.Components.u51, org.telegram.ui.Components.co0, org.telegram.ui.Components.lm0, org.telegram.ui.Components.bm0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class wr0 implements View.OnClickListener {
+    public final /* synthetic */ lf0 a;
+    public final /* synthetic */ cn b;
+    public final /* synthetic */ org.telegram.ui.Components.qj0 c;
+    public final /* synthetic */ LinearLayout d;
+    public final /* synthetic */ org.telegram.ui.Components.l60 e;
+    public final /* synthetic */ org.telegram.ui.Components.l60 f;
+    public final /* synthetic */ bs0 h;
 
-    public /* synthetic */ wr0(Object obj, int i7) {
-        this.a = i7;
-        this.b = obj;
+    public wr0(bs0 bs0Var, lf0 lf0Var, cn cnVar, org.telegram.ui.Components.qj0 qj0Var, LinearLayout linearLayout, org.telegram.ui.Components.l60 l60Var, org.telegram.ui.Components.l60 l60Var2) {
+        this.h = bs0Var;
+        this.a = lf0Var;
+        this.b = cnVar;
+        this.c = qj0Var;
+        this.d = linearLayout;
+        this.e = l60Var;
+        this.f = l60Var2;
     }
 
-    @Override // org.telegram.ui.Components.bm0
-    public void A(float f10) {
-        Point point = org.telegram.messenger.g0.q;
-        if (point.x > point.y) {
-            ((s91) this.b).v0.movePreviewFragment(f10);
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        lf0 lf0Var = this.a;
+        ArrayList arrayList = lf0Var.b;
+        ArrayList arrayList2 = lf0Var.c;
+        if (arrayList2.isEmpty()) {
+            return;
         }
-    }
-
-    @Override // org.telegram.ui.Components.co0
-    public void C0() {
-        ((StickersActivity) this.b).o0();
-    }
-
-    @Override // org.telegram.ui.Components.lm0
-    public void D() {
-        int i7 = this.a;
-    }
-
-    @Override // org.telegram.ui.Components.bm0
-    public void O(org.telegram.ui.Cells.t2 t2Var) {
-        w91 w91Var = ((s91) this.b).v0;
-        HashSet hashSet = w91.q1;
-        w91Var.Q0(t2Var);
-    }
-
-    @Override // r0.m
-    public r0.k1 S0(View view, r0.k1 k1Var) {
-        switch (this.a) {
-            case 0:
-                zr0 zr0Var = (zr0) this.b;
-                i0.b g10 = k1Var.a.g(519);
-                zr0Var.r = g10;
-                zr0Var.d.setPadding(g10.a, g10.b, g10.c, g10.d);
-                zr0Var.c.requestLayout();
-                break;
-            default:
-                g81 g81Var = (g81) this.b;
-                i0.b g11 = k1Var.a.g(519);
-                g81Var.n = g11;
-                g81Var.c.setPadding(g11.a, g11.b, g11.c, g11.d);
-                g81Var.b.requestLayout();
-                break;
-        }
-        return r0.k1.b;
-    }
-
-    @Override // org.telegram.ui.Components.co0
-    public void W() {
-        ((StickersActivity) this.b).o0();
-    }
-
-    @Override // org.telegram.ui.Components.u51
-    public void a(float f10) {
-        SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.b;
-        kp0 kp0Var = secretMediaViewer.D;
-        if (kp0Var != null) {
-            long U = kp0Var.U();
-            if (U != -9223372036854775807L) {
-                secretMediaViewer.D.q0((long) (f10 * U), false);
+        int size = arrayList2.size();
+        bs0 bs0Var = this.h;
+        cn cnVar = this.b;
+        if (size == 1 && (arrayList.size() <= 0 || ((Integer) arrayList.get(0)).intValue() <= 0)) {
+            TLObject tLObject = (TLObject) arrayList2.get(0);
+            if (tLObject == null) {
+                return;
             }
-            secretMediaViewer.D.h0();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.u51
-    public void d(float f10) {
-        SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.b;
-        kp0 kp0Var = secretMediaViewer.D;
-        if (kp0Var != null) {
-            kp0Var.g0();
-            long U = secretMediaViewer.D.U();
-            if (U != -9223372036854775807L) {
-                secretMediaViewer.D.q0((long) (f10 * U), false);
+            Bundle bundle = new Bundle();
+            if (tLObject instanceof TLRPC.User) {
+                bundle.putLong("user_id", ((TLRPC.User) tLObject).id);
+            } else if (tLObject instanceof TLRPC.Chat) {
+                bundle.putLong("chat_id", ((TLRPC.Chat) tLObject).id);
             }
+            cnVar.presentFragment(new ProfileActivity(bundle, null));
+            bs0Var.c(false);
+            return;
         }
-    }
-
-    @Override // org.telegram.ui.Components.bm0
-    public void finish() {
-        Point point = org.telegram.messenger.g0.q;
-        if (point.x > point.y) {
-            ((s91) this.b).v0.finishPreviewFragment();
+        if (org.telegram.messenger.iz.c1 > 0 && cnVar.l1.getKeyboardHeight() < org.telegram.messenger.g0.L(20.0f)) {
+            org.telegram.ui.Components.cc t6 = new org.telegram.ui.Components.hc(org.telegram.ui.Components.xa.a(bs0Var.getContext()), bs0Var.b).t(org.telegram.messenger.g0.X2(org.telegram.messenger.id.M0(2131748488, null)), null);
+            cnVar.B1 = t6;
+            t6.j = 4000;
+            t6.j();
+            org.telegram.messenger.iz.S(org.telegram.messenger.iz.c1 - 1);
         }
-    }
-
-    @Override // org.telegram.ui.Components.lm0
-    public CharSequence getContentDescription() {
-        switch (this.a) {
-            case 3:
-                return String.valueOf(Math.round((((w51) this.b).a.getProgress() * r0.b) + 0));
-            default:
-                g61 g61Var = (g61) this.b;
-                return String.valueOf(Math.round((g61Var.b.getProgress() * (g61Var.e - r1)) + g61Var.d));
-        }
-    }
-
-    @Override // org.telegram.ui.Components.lm0
-    public void l(boolean z9, float f10) {
-        switch (this.a) {
-            case 3:
-                ThemeActivity.d0(((w51) this.b).e, Math.round((r4.b * f10) + 0), false);
-                break;
-            default:
-                g61 g61Var = (g61) this.b;
-                ThemeActivity.p0(g61Var.r, Math.round(((g61Var.e - r1) * f10) + g61Var.d));
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.lm0
-    public int q0() {
-        switch (this.a) {
-            case 3:
-                return ((w51) this.b).b;
-            default:
-                g61 g61Var = (g61) this.b;
-                return g61Var.e - g61Var.d;
-        }
-    }
-
-    private final void b() {
-    }
-
-    private final void c() {
+        org.telegram.ui.Components.qj0 qj0Var = this.c;
+        qj0Var.requestLayout();
+        this.d.requestLayout();
+        qj0Var.getAdapter().f();
+        this.e.K(this.f);
     }
 }

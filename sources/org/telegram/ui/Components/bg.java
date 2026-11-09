@@ -5,7 +5,7 @@ import android.graphics.RectF;
 import java.util.ArrayList;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class bg extends k1.b {
     public final int[] o;
@@ -65,7 +65,7 @@ public final class bg extends k1.b {
         ChatActivityEnterView chatActivityEnterView = ChatActivityEnterView.this;
         if (i7 == 1) {
             dVar.h(chatActivityEnterView.T3);
-            dVar.o(org.telegram.messenger.id.M0(2131745643, "Send"));
+            dVar.o(org.telegram.messenger.id.M0(2131745640, "Send"));
             return;
         }
         if (i7 == 2) {
@@ -73,7 +73,7 @@ public final class bg extends k1.b {
             RectF rectF = chatActivityEnterView.S3;
             rect2.set((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
             dVar.h(chatActivityEnterView.U3);
-            dVar.o(org.telegram.messenger.id.M0(2131744844, null));
+            dVar.o(org.telegram.messenger.id.M0(2131744841, null));
             return;
         }
         if (i7 != 3 || chatActivityEnterView.N1 == null) {

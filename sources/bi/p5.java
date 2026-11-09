@@ -35,27 +35,27 @@ import org.telegram.tgnet.tl.TL_update;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.bn;
 import org.telegram.ui.Components.di;
-import org.telegram.ui.Components.g21;
-import org.telegram.ui.Components.j21;
+import org.telegram.ui.Components.h21;
 import org.telegram.ui.Components.k21;
-import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.v11;
+import org.telegram.ui.Components.l21;
+import org.telegram.ui.Components.qj0;
 import org.telegram.ui.Components.vr;
-import org.telegram.ui.Components.x31;
+import org.telegram.ui.Components.w11;
 import org.telegram.ui.Components.xr;
+import org.telegram.ui.Components.y31;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.Wallet.WalletEngine2;
-import org.telegram.ui.an;
-import org.telegram.ui.bi0;
-import org.telegram.ui.c40;
-import org.telegram.ui.il0;
-import org.telegram.ui.is0;
-import org.telegram.ui.lm;
-import org.telegram.ui.p90;
-import org.telegram.ui.t60;
+import org.telegram.ui.cn;
+import org.telegram.ui.di0;
+import org.telegram.ui.e40;
+import org.telegram.ui.kl0;
+import org.telegram.ui.ks0;
+import org.telegram.ui.nm;
+import org.telegram.ui.r90;
+import org.telegram.ui.v60;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p5 implements v10 {
     public final /* synthetic */ int a;
@@ -69,11 +69,11 @@ public final /* synthetic */ class p5 implements v10 {
     }
 
     private final void b(Object obj, Object obj2) {
-        org.telegram.ui.Wallet.a0 a0Var = (org.telegram.ui.Wallet.a0) this.b;
+        org.telegram.ui.Wallet.z zVar = (org.telegram.ui.Wallet.z) this.b;
         v10 v10Var = (v10) this.c;
         TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) obj;
         String str = (String) obj2;
-        if (a0Var.a) {
+        if (zVar.a) {
             return;
         }
         v10Var.a(wallettransaction, str);
@@ -300,31 +300,31 @@ public final /* synthetic */ class p5 implements v10 {
                 }
                 break;
             case 1:
-                dd.D0((dd) obj4, (x31) obj3, (Boolean) obj, (String) obj2);
+                dd.D0((dd) obj4, (y31) obj3, (Boolean) obj, (String) obj2);
                 return;
             case 2:
                 tc tcVar = (tc) obj4;
-                x31 x31Var = (x31) obj3;
+                y31 y31Var = (y31) obj3;
                 Boolean bool = (Boolean) obj;
                 String str = (String) obj2;
                 if (tcVar.getContext() == null) {
                     return;
                 }
                 if (bool.booleanValue()) {
-                    new org.telegram.ui.Components.hc((FrameLayout) tcVar.b, tcVar.I0).I(R.raw.stars_topup, org.telegram.messenger.id.M0(2131745162, null), org.telegram.messenger.g0.X2(org.telegram.messenger.id.G((int) x31Var.B, "StarsAcquiredInfo", new Object[0]))).j();
+                    new org.telegram.ui.Components.hc((FrameLayout) tcVar.b, tcVar.I0).I(R.raw.stars_topup, org.telegram.messenger.id.M0(2131745159, null), org.telegram.messenger.g0.X2(org.telegram.messenger.id.G((int) y31Var.B, "StarsAcquiredInfo", new Object[0]))).j();
                     tcVar.S1.c(true);
                     ea.y(tcVar.a, false).S(true);
                     return;
                 } else {
                     if (str != null) {
-                        new org.telegram.ui.Components.hc((FrameLayout) tcVar.b, tcVar.I0).Q(R.raw.error, 36, org.telegram.messenger.id.a0(null, null, 2131743881, str)).j();
+                        new org.telegram.ui.Components.hc((FrameLayout) tcVar.b, tcVar.I0).Q(R.raw.error, 36, org.telegram.messenger.id.a0(null, null, 2131743878, str)).j();
                         return;
                     }
                     return;
                 }
             case 3:
                 uc ucVar = (uc) obj4;
-                x31 x31Var2 = (x31) obj3;
+                y31 y31Var2 = (y31) obj3;
                 Boolean bool2 = (Boolean) obj;
                 String str2 = (String) obj2;
                 if (ucVar.getContext() == null) {
@@ -338,12 +338,12 @@ public final /* synthetic */ class p5 implements v10 {
                 }
                 if (!bool2.booleanValue()) {
                     if (str2 != null) {
-                        org.telegram.ui.Components.hc.a0(T).Q(R.raw.error, 36, org.telegram.messenger.id.a0(null, null, 2131743881, str2)).j();
+                        org.telegram.ui.Components.hc.a0(T).Q(R.raw.error, 36, org.telegram.messenger.id.a0(null, null, 2131743878, str2)).j();
                         return;
                     }
                     return;
                 } else {
-                    org.telegram.ui.Components.hc.a0(T).I(R.raw.stars_topup, org.telegram.messenger.id.M0(2131745162, null), org.telegram.messenger.g0.X2(org.telegram.messenger.id.G((int) x31Var2.B, "StarsAcquiredInfo", new Object[0]))).j();
+                    org.telegram.ui.Components.hc.a0(T).I(R.raw.stars_topup, org.telegram.messenger.id.M0(2131745159, null), org.telegram.messenger.g0.X2(org.telegram.messenger.id.G((int) y31Var2.B, "StarsAcquiredInfo", new Object[0]))).j();
                     LaunchActivity launchActivity = LaunchActivity.G1;
                     if (launchActivity != null) {
                         launchActivity.v0.c(true);
@@ -394,7 +394,7 @@ public final /* synthetic */ class p5 implements v10 {
             case 5:
                 ArrayList arrayList4 = (ArrayList) obj3;
                 Vector vector = (Vector) obj;
-                int i24 = ((di.w9) obj4).a.a;
+                int i24 = ((di.x9) obj4).a.a;
                 if (vector != null) {
                     ArrayList arrayList5 = new ArrayList();
                     ArrayList arrayList6 = new ArrayList();
@@ -453,16 +453,16 @@ public final /* synthetic */ class p5 implements v10 {
                 }
                 return;
             case 9:
-                an.k1((an) obj4, (ij) obj3, (Long) obj, (Runnable) obj2);
+                cn.e1((cn) obj4, (ij) obj3, (Long) obj, (Runnable) obj2);
                 return;
             case 10:
-                an anVar = (an) obj4;
+                cn cnVar = (cn) obj4;
                 org.telegram.ui.n6 n6Var = (org.telegram.ui.n6) obj3;
                 TL_account.webPagePreview webpagepreview = (TL_account.webPagePreview) obj;
-                anVar.V5 = 0;
+                cnVar.V5 = 0;
                 if (webpagepreview != null) {
-                    anVar.getMessagesController().Y3(webpagepreview.users, false);
-                    anVar.getMessagesController().S3(webpagepreview.chats, false);
+                    cnVar.getMessagesController().Y3(webpagepreview.users, false);
+                    cnVar.getMessagesController().S3(webpagepreview.chats, false);
                     TLRPC.MessageMedia messageMedia = webpagepreview.media;
                     if (messageMedia instanceof TLRPC.TL_messageMediaWebPage) {
                         tL_messageMediaWebPage = (TLRPC.TL_messageMediaWebPage) messageMedia;
@@ -486,7 +486,7 @@ public final /* synthetic */ class p5 implements v10 {
                                         n6Var.a(Boolean.TRUE, tL_messageMediaWebPage.webpage);
                                         return;
                                     } else {
-                                        anVar.getMessagesStorage().a.c(new org.telegram.ui.m6(anVar, tL_messageMediaWebPage, tL_webPageAttributeStory, n6Var, 9));
+                                        cnVar.getMessagesStorage().a.c(new org.telegram.ui.m6(cnVar, tL_messageMediaWebPage, tL_webPageAttributeStory, n6Var, 9));
                                         return;
                                     }
                                 }
@@ -502,16 +502,16 @@ public final /* synthetic */ class p5 implements v10 {
                 }
                 break;
             case 11:
-                lm lmVar = (lm) obj4;
+                nm nmVar = (nm) obj4;
                 org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) obj3;
                 TLRPC.TL_channels_channelParticipant tL_channels_channelParticipant = (TLRPC.TL_channels_channelParticipant) obj;
-                an anVar2 = lmVar.a;
+                cn cnVar2 = nmVar.a;
                 if (tL_channels_channelParticipant != null) {
-                    anVar2.getMessagesController().Y3(tL_channels_channelParticipant.users, false);
-                    anVar2.getMessagesController().S3(tL_channels_channelParticipant.chats, false);
+                    cnVar2.getMessagesController().Y3(tL_channels_channelParticipant.users, false);
+                    cnVar2.getMessagesController().S3(tL_channels_channelParticipant.chats, false);
                     TLRPC.ChannelParticipant channelParticipant = tL_channels_channelParticipant.participant;
                     if (channelParticipant != null) {
-                        lmVar.c(q1Var, channelParticipant);
+                        nmVar.c(q1Var, channelParticipant);
                         return;
                     }
                     return;
@@ -524,12 +524,12 @@ public final /* synthetic */ class p5 implements v10 {
                 ((Runnable) obj2).run();
                 diVar.a2.setStarsPrice(l10.longValue());
                 if (l10.longValue() > 0) {
-                    z0Var.setText(org.telegram.messenger.id.M0(2131747729, null));
+                    z0Var.setText(org.telegram.messenger.id.M0(2131747728, null));
                     z0Var.setSubtext(org.telegram.messenger.id.G((int) l10.longValue(), "Stars", new Object[0]));
                     diVar.Y1.r(l10.longValue());
                     return;
                 } else {
-                    z0Var.setText(org.telegram.messenger.id.M0(2131747731, null));
+                    z0Var.setText(org.telegram.messenger.id.M0(2131747730, null));
                     z0Var.setSubtext(null);
                     diVar.Y1.r(0L);
                     return;
@@ -537,7 +537,7 @@ public final /* synthetic */ class p5 implements v10 {
             case 13:
                 bn bnVar = (bn) obj4;
                 bnVar.getClass();
-                bnVar.a0((th.e) ((sh.c) obj3), true);
+                bnVar.a0((th.e) ((sh.d) obj3), true);
                 return;
             case 14:
                 vr vrVar = (vr) obj4;
@@ -588,9 +588,9 @@ public final /* synthetic */ class p5 implements v10 {
                         }
                     }
                 }
-                pj0 pj0Var = vrVar.d;
-                if (pj0Var != null) {
-                    pj0Var.v0(0);
+                qj0 qj0Var = vrVar.d;
+                if (qj0Var != null) {
+                    qj0Var.v0(0);
                 }
                 vrVar.O(true);
                 return;
@@ -684,44 +684,44 @@ public final /* synthetic */ class p5 implements v10 {
                 xrVar.O(true);
                 return;
             case 16:
-                k21 k21Var = (k21) obj4;
+                l21 l21Var = (l21) obj4;
                 TLRPC.TL_textWithEntities tL_textWithEntities = (TLRPC.TL_textWithEntities) obj3;
                 TLRPC.TL_textWithEntities tL_textWithEntities2 = (TLRPC.TL_textWithEntities) obj;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
-                v11 v11Var = k21Var.v1;
-                j21 j21Var = k21Var.E1;
-                k21Var.i1 = null;
+                w11 w11Var = l21Var.v1;
+                k21 k21Var = l21Var.E1;
+                l21Var.i1 = null;
                 if (tL_error != null && "TRANSLATIONS_DISABLED_ALT".equalsIgnoreCase(tL_error.text)) {
-                    k21Var.X0();
+                    l21Var.X0();
                     return;
                 }
                 if (tL_textWithEntities2 != null) {
-                    k21Var.L1 = false;
-                    TLRPC.TL_textWithEntities P0 = k21.P0(tL_textWithEntities, tL_textWithEntities2);
+                    l21Var.L1 = false;
+                    TLRPC.TL_textWithEntities P0 = l21.P0(tL_textWithEntities, tL_textWithEntities2);
                     SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(P0.text);
                     ij.b(valueOf, P0.entities, false, true, false, false, 0);
-                    k21Var.w1.setText(k21Var.Q0(valueOf));
-                    j21Var.D(v11Var);
+                    l21Var.w1.setText(l21Var.Q0(valueOf));
+                    k21Var.D(w11Var);
                     return;
                 }
-                if (k21Var.L1) {
-                    k21Var.dismiss();
-                    qs.e().k(qs.P4, 1, org.telegram.messenger.id.M0(2131743949, null));
+                if (l21Var.L1) {
+                    l21Var.dismiss();
+                    qs.e().k(qs.P4, 1, org.telegram.messenger.id.M0(2131743946, null));
                     return;
                 }
-                org.telegram.messenger.k5.p(null, 2131743949, new org.telegram.ui.Components.hc((FrameLayout) k21Var.b, k21Var.I0), null);
-                g21 g21Var = k21Var.t1.e;
-                String str3 = k21Var.s1;
-                k21Var.r1 = str3;
-                g21Var.setText(k21.O0(str3, null, null));
-                j21Var.D(v11Var);
+                org.telegram.messenger.k5.p(null, 2131743946, new org.telegram.ui.Components.hc((FrameLayout) l21Var.b, l21Var.I0), null);
+                h21 h21Var = l21Var.t1.e;
+                String str3 = l21Var.s1;
+                l21Var.r1 = str3;
+                h21Var.setText(l21.O0(str3, null, null));
+                k21Var.D(w11Var);
                 return;
             case 17:
-                c40 c40Var = (c40) obj4;
+                e40 e40Var = (e40) obj4;
                 org.telegram.messenger.r3 r3Var = (org.telegram.messenger.r3) obj3;
                 Boolean bool4 = (Boolean) obj;
                 HashSet hashSet3 = (HashSet) obj2;
-                org.telegram.messenger.r3 r3Var2 = c40Var.R2;
+                org.telegram.messenger.r3 r3Var2 = e40Var.R2;
                 if (r3Var2 == null || (groupCall = r3Var2.b) == null) {
                     return;
                 }
@@ -733,21 +733,21 @@ public final /* synthetic */ class p5 implements v10 {
                 while (it.hasNext()) {
                     Long l11 = (Long) it.next();
                     long longValue = l11.longValue();
-                    c40Var.R2.a(longValue);
+                    e40Var.R2.a(longValue);
                     TL_phone.inviteConferenceCallParticipant inviteconferencecallparticipant = new TL_phone.inviteConferenceCallParticipant();
                     TLRPC.TL_inputGroupCall tL_inputGroupCall = new TLRPC.TL_inputGroupCall();
                     inviteconferencecallparticipant.call = tL_inputGroupCall;
-                    TLRPC.GroupCall groupCall2 = c40Var.R2.b;
+                    TLRPC.GroupCall groupCall2 = e40Var.R2.b;
                     tL_inputGroupCall.id = groupCall2.id;
                     tL_inputGroupCall.access_hash = groupCall2.access_hash;
-                    qp s12 = qp.s1(c40Var.a);
+                    qp s12 = qp.s1(e40Var.a);
                     inviteconferencecallparticipant.user_id = s12.q1(s12.a2(l11));
                     inviteconferencecallparticipant.video = bool4.booleanValue();
                     String str5 = str4;
-                    ConnectionsManager.getInstance(c40Var.a).sendRequest(inviteconferencecallparticipant, new hi.w0(c40Var, longValue, hashSet4, atomicInteger, size7, r3Var, str5));
+                    ConnectionsManager.getInstance(e40Var.a).sendRequest(inviteconferencecallparticipant, new hi.w0(e40Var, longValue, hashSet4, atomicInteger, size7, r3Var, str5));
                     str4 = str5;
                 }
-                c40Var.Q0(true);
+                e40Var.Q0(true);
                 if (!bool4.booleanValue() || (sharedInstance = VoIPService.getSharedInstance()) == null || sharedInstance.getVideoState(false) == 2 || sharedInstance.getVideoState(false) == 1) {
                     return;
                 }
@@ -759,22 +759,22 @@ public final /* synthetic */ class p5 implements v10 {
                 sharedInstance.setVideoState(false, 2);
                 sharedInstance.setMicMute(false, false, true);
                 sharedInstance.switchToSpeaker();
-                c40Var.T1(true, true);
+                e40Var.T1(true, true);
                 return;
             case 18:
-                p90 p90Var = (p90) obj4;
+                r90 r90Var = (r90) obj4;
                 TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth = (TLRPC.TL_messages_requestUrlAuth) obj3;
                 TLRPC.UrlAuthResult urlAuthResult = (TLRPC.UrlAuthResult) obj;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
-                p90Var.c();
+                r90Var.c();
                 if (tL_error2 == null) {
-                    bi0.b(p90Var.d, p90Var.b, tL_messages_requestUrlAuth, urlAuthResult, null, null, null, false, null);
+                    di0.b(r90Var.d, r90Var.b, tL_messages_requestUrlAuth, urlAuthResult, null, null, null, false, null);
                     return;
                 } else if ("URL_EXPIRED".equalsIgnoreCase(tL_error2.text)) {
-                    p90.d().I(R.raw.error, org.telegram.messenger.id.M0(2131753128, null), org.telegram.messenger.id.M0(2131753129, null)).j();
+                    r90.d().I(R.raw.error, org.telegram.messenger.id.M0(2131753128, null), org.telegram.messenger.id.M0(2131753129, null)).j();
                     return;
                 } else {
-                    p90.d().f0(tL_error2, false);
+                    r90.d().f0(tL_error2, false);
                     return;
                 }
             case 19:
@@ -783,11 +783,11 @@ public final /* synthetic */ class p5 implements v10 {
                 return;
             case 20:
                 ((vf.b) obj4).b();
-                ((il0) obj3).a((Boolean) obj);
+                ((kl0) obj3).a((Boolean) obj);
                 return;
             case 21:
                 PremiumPreviewFragment premiumPreviewFragment = (PremiumPreviewFragment) obj4;
-                is0 is0Var = (is0) obj3;
+                ks0 ks0Var = (ks0) obj3;
                 Long l12 = (Long) obj;
                 Integer num = (Integer) obj2;
                 if (l12 == null) {
@@ -802,7 +802,7 @@ public final /* synthetic */ class p5 implements v10 {
                     emojiStatus = tL_emojiStatus;
                 }
                 premiumPreviewFragment.getMessagesController().h5(emojiStatus, null);
-                is0Var.b(l12 == null ? 0L : l12.longValue(), true);
+                ks0Var.b(l12 == null ? 0L : l12.longValue(), true);
                 return;
             case 22:
                 String str6 = (String) obj4;
@@ -828,48 +828,48 @@ public final /* synthetic */ class p5 implements v10 {
                             bArr = Utilities.v(string.substring(2));
                         }
                     } catch (Exception e10) {
-                        org.telegram.ui.Wallet.m0.k("failed to get public key of " + str6, e10);
+                        org.telegram.ui.Wallet.l0.k("failed to get public key of " + str6, e10);
                     }
                 }
                 c20Var.a(bArr);
                 return;
             case 23:
-                org.telegram.ui.Wallet.m0 m0Var = (org.telegram.ui.Wallet.m0) obj4;
-                org.telegram.ui.Wallet.f8 f8Var = (org.telegram.ui.Wallet.f8) obj3;
-                org.telegram.ui.Wallet.j0 j0Var = (org.telegram.ui.Wallet.j0) obj;
+                org.telegram.ui.Wallet.l0 l0Var = (org.telegram.ui.Wallet.l0) obj4;
+                org.telegram.ui.Wallet.e8 e8Var = (org.telegram.ui.Wallet.e8) obj3;
+                org.telegram.ui.Wallet.i0 i0Var = (org.telegram.ui.Wallet.i0) obj;
                 String str7 = (String) obj2;
-                if (j0Var == null) {
-                    org.telegram.ui.Wallet.m0.j("enable backup: didnt get secret phrase: ".concat(str7 == null ? "NULL_ERROR" : str7));
-                    f8Var.a(str7 != null ? str7 : "NULL_ERROR");
+                if (i0Var == null) {
+                    org.telegram.ui.Wallet.l0.j("enable backup: didnt get secret phrase: ".concat(str7 == null ? "NULL_ERROR" : str7));
+                    e8Var.a(str7 != null ? str7 : "NULL_ERROR");
                     return;
                 }
-                org.telegram.ui.Wallet.j0 b10 = j0Var.b();
-                org.telegram.ui.Wallet.t tVar = new org.telegram.ui.Wallet.t(i15, b10, f8Var);
-                org.telegram.ui.Wallet.m0.H("enable backup: got secret phrase");
+                org.telegram.ui.Wallet.i0 b10 = i0Var.b();
+                org.telegram.ui.Wallet.s sVar = new org.telegram.ui.Wallet.s(i15, b10, e8Var);
+                org.telegram.ui.Wallet.l0.H("enable backup: got secret phrase");
                 try {
-                    ConnectionsManager.getInstance(m0Var.a).sendRequestTyped(new TL_wallet.getBackupHolderDcs(), new d3.b(i14), new org.telegram.ui.Wallet.r(m0Var, tVar, b10, WalletEngine2.secretPhraseToPublicKey(b10), 1));
+                    ConnectionsManager.getInstance(l0Var.a).sendRequestTyped(new TL_wallet.getBackupHolderDcs(), new d3.b(i14), new org.telegram.ui.Wallet.q(l0Var, sVar, b10, WalletEngine2.secretPhraseToPublicKey(b10), 1));
                     return;
                 } catch (Exception e11) {
-                    org.telegram.ui.Wallet.m0.k("failed to get public key from secret phrase", e11);
-                    tVar.a(e11.getMessage() != null ? e11.getMessage() : "NULL_ERROR");
+                    org.telegram.ui.Wallet.l0.k("failed to get public key from secret phrase", e11);
+                    sVar.a(e11.getMessage() != null ? e11.getMessage() : "NULL_ERROR");
                     return;
                 }
             case 24:
-                org.telegram.ui.Wallet.m0 m0Var2 = (org.telegram.ui.Wallet.m0) obj4;
-                org.telegram.ui.Wallet.g8 g8Var = (org.telegram.ui.Wallet.g8) obj3;
-                org.telegram.ui.Wallet.j0 j0Var2 = (org.telegram.ui.Wallet.j0) obj;
+                org.telegram.ui.Wallet.l0 l0Var2 = (org.telegram.ui.Wallet.l0) obj4;
+                org.telegram.ui.Wallet.f8 f8Var = (org.telegram.ui.Wallet.f8) obj3;
+                org.telegram.ui.Wallet.i0 i0Var2 = (org.telegram.ui.Wallet.i0) obj;
                 String str8 = (String) obj2;
-                if (j0Var2 == null) {
-                    org.telegram.ui.Wallet.m0.j("prepare disable backup, cant get secret phrase: ".concat(str8 == null ? "NULL_ERROR" : str8));
-                    g8Var.a(null, str8 != null ? str8 : "NULL_ERROR");
+                if (i0Var2 == null) {
+                    org.telegram.ui.Wallet.l0.j("prepare disable backup, cant get secret phrase: ".concat(str8 == null ? "NULL_ERROR" : str8));
+                    f8Var.a(null, str8 != null ? str8 : "NULL_ERROR");
                     return;
                 }
-                TL_update.TL_updateWalletGaslessInfo tL_updateWalletGaslessInfo = m0Var2.f;
+                TL_update.TL_updateWalletGaslessInfo tL_updateWalletGaslessInfo = l0Var2.f;
                 if (tL_updateWalletGaslessInfo != null && tL_updateWalletGaslessInfo.available) {
                     TextUtils.isEmpty(tL_updateWalletGaslessInfo.relayer_address);
                 }
-                org.telegram.ui.Wallet.m0.H("prepare disable backup: preparing transfer");
-                m0Var2.b.prepareRotateKey(j0Var2, null, new di.b2(i13, m0Var2, g8Var));
+                org.telegram.ui.Wallet.l0.H("prepare disable backup: preparing transfer");
+                l0Var2.b.prepareRotateKey(i0Var2, null, new di.b2(i13, l0Var2, f8Var));
                 return;
             case 25:
                 ai.e eVar = (ai.e) obj3;
@@ -881,19 +881,19 @@ public final /* synthetic */ class p5 implements v10 {
                 eVar.a(wallettransaction, str9);
                 return;
             case 26:
-                org.telegram.ui.Wallet.m0 m0Var3 = (org.telegram.ui.Wallet.m0) obj4;
-                org.telegram.ui.Wallet.t tVar2 = (org.telegram.ui.Wallet.t) obj3;
+                org.telegram.ui.Wallet.l0 l0Var3 = (org.telegram.ui.Wallet.l0) obj4;
+                org.telegram.ui.Wallet.s sVar2 = (org.telegram.ui.Wallet.s) obj3;
                 TL_wallet.WalletState walletState = (TL_wallet.WalletState) obj;
                 TLRPC.TL_error tL_error3 = (TLRPC.TL_error) obj2;
                 if (tL_error3 == null) {
-                    org.telegram.ui.Wallet.m0.H("enable backup: server accepted request");
-                    m0Var3.l0(walletState);
-                    tVar2.a(null);
+                    org.telegram.ui.Wallet.l0.H("enable backup: server accepted request");
+                    l0Var3.l0(walletState);
+                    sVar2.a(null);
                     return;
                 }
-                org.telegram.ui.Wallet.m0.j("enable backup: server rejected request code=" + tL_error3.code + " error=" + tL_error3.text);
+                org.telegram.ui.Wallet.l0.j("enable backup: server rejected request code=" + tL_error3.code + " error=" + tL_error3.text);
                 String str10 = tL_error3.text;
-                tVar2.a(str10 != null ? str10 : "NULL_ERROR");
+                sVar2.a(str10 != null ? str10 : "NULL_ERROR");
                 return;
             case 27:
                 b(obj, obj2);
@@ -903,18 +903,18 @@ public final /* synthetic */ class p5 implements v10 {
                 return;
             default:
                 TL_wallet.inputTonConnectOauthSession[] inputtonconnectoauthsessionArr = (TL_wallet.inputTonConnectOauthSession[]) obj4;
-                t60 t60Var = (t60) obj3;
+                v60 v60Var = (v60) obj3;
                 TL_wallet.inputTonConnectOauthSession inputtonconnectoauthsession = (TL_wallet.inputTonConnectOauthSession) obj;
                 String str11 = (String) obj2;
                 if (str11 == null) {
                     inputtonconnectoauthsessionArr[0] = inputtonconnectoauthsession;
                 }
-                t60Var.a(str11);
+                v60Var.a(str11);
                 return;
         }
     }
 
-    public /* synthetic */ p5(org.telegram.ui.Wallet.m0 m0Var, String str, c20 c20Var) {
+    public /* synthetic */ p5(org.telegram.ui.Wallet.l0 l0Var, String str, c20 c20Var) {
         this.a = 22;
         this.b = str;
         this.c = c20Var;

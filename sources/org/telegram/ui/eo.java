@@ -1,80 +1,92 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.view.ViewGroup;
+import android.content.Context;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class eo extends org.telegram.ui.Components.oj0 {
-    public final /* synthetic */ fo c;
+public final class eo extends org.telegram.ui.Components.g70 {
+    public final /* synthetic */ Context x;
+    public final /* synthetic */ io y;
 
-    public eo(fo foVar) {
-        this.c = foVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public eo(io ioVar, Context context, TLRPC.Chat chat, Context context2) {
+        super(context, chat);
+        this.y = ioVar;
+        this.x = context2;
     }
 
-    @Override // org.telegram.ui.Components.oj0
-    public final boolean D(v4.d1 d1Var) {
-        return d1Var.f == 1;
-    }
-
-    @Override // v4.g0
-    public final int b() {
-        return this.c.h3.N.size() + 2;
-    }
-
-    @Override // v4.g0
-    public final int d(int i7) {
-        if (i7 == 0) {
-            return 0;
+    @Override // org.telegram.ui.Components.g70
+    public final boolean a(final boolean z9, org.telegram.ui.Components.e70 e70Var) {
+        TLRPC.ChatFull chatFull;
+        int i7;
+        org.telegram.ui.ActionBar.g6 g6Var;
+        io ioVar = this.y;
+        final int i10 = 1;
+        if (!ioVar.V || (chatFull = ioVar.Y) == null || (i7 = chatFull.invitesCount) == 0) {
+            return true;
         }
-        return i7 <= this.c.h3.N.size() ? 1 : 2;
-    }
+        String str = ioVar.a0 ? z9 ? "ApproveNewMembersEnableForLinksChannel" : "ApproveNewMembersDisableForLinksChannel" : z9 ? "ApproveNewMembersEnableForLinks" : "ApproveNewMembersDisableForLinks";
+        Context context = this.x;
+        g6Var = ((org.telegram.ui.ActionBar.f2) ioVar).resourceProvider;
+        final int i11 = 0;
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, g6Var);
+        String M0 = org.telegram.messenger.id.M0(2131754204, null);
+        org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
+        u1Var.R = M0;
+        u1Var.T = org.telegram.messenger.g0.X2(org.telegram.messenger.id.G(i7, str, new Object[0]));
+        alertDialog$Builder.k(org.telegram.messenger.id.M0(2131754206, null), new org.telegram.ui.ActionBar.r1(this) { // from class: org.telegram.ui.co
+            public final /* synthetic */ eo b;
 
-    @Override // v4.g0
-    public final void t(v4.d1 d1Var, int i7) {
-        fo foVar = this.c;
-        go goVar = foVar.h3;
-        int i10 = d1Var.f;
-        View view = d1Var.a;
-        if (i10 == 0) {
-            org.telegram.ui.Cells.n4 n4Var = (org.telegram.ui.Cells.n4) view;
-            org.telegram.ui.ActionBar.r6.i(org.telegram.ui.ActionBar.k6.d6, n4Var, foVar.n2);
-            n4Var.setText(org.telegram.messenger.id.M0(2131743647, null));
-            return;
-        }
-        if (i10 != 1) {
-            if (i10 != 2) {
-                return;
+            {
+                this.b = this;
             }
-            ((org.telegram.ui.Cells.z8) view).setText(org.telegram.messenger.id.M0(2131743646, null));
-            return;
-        }
-        TLRPC.TL_username tL_username = (TLRPC.TL_username) goVar.N.get(i7 - 1);
-        ia iaVar = (ia) view;
-        if (iaVar.H) {
-            goVar.O = null;
-        }
-        iaVar.a(tL_username, i7 < goVar.N.size(), false, 0L);
-        if (tL_username == null || !tL_username.editable) {
-            return;
-        }
-        goVar.O = iaVar;
-    }
 
-    @Override // v4.g0
-    public final v4.d1 x(ViewGroup viewGroup, int i7) {
-        fo foVar = this.c;
-        org.telegram.ui.ActionBar.f6 f6Var = foVar.n2;
-        if (i7 == 0) {
-            return new org.telegram.ui.Components.xi0(new org.telegram.ui.Cells.n4(foVar.getContext(), f6Var));
-        }
-        if (i7 == 1) {
-            return new org.telegram.ui.Components.xi0(new da(this, foVar.getContext(), f6Var));
-        }
-        if (i7 != 2) {
-            return null;
-        }
-        return new org.telegram.ui.Components.xi0(new org.telegram.ui.Cells.z8(12, foVar.getContext(), f6Var));
+            @Override // org.telegram.ui.ActionBar.r1
+            public final void g(org.telegram.ui.ActionBar.u1 u1Var2, int i12) {
+                switch (i11) {
+                    case 0:
+                        boolean z10 = z9;
+                        eo eoVar = this.b;
+                        eoVar.setJoinRequest(z10);
+                        eoVar.y.W = true;
+                        break;
+                    default:
+                        boolean z11 = z9;
+                        eo eoVar2 = this.b;
+                        eoVar2.setJoinRequest(z11);
+                        eoVar2.y.W = false;
+                        break;
+                }
+            }
+        });
+        alertDialog$Builder.h(org.telegram.messenger.id.M0(2131754205, null), new org.telegram.ui.ActionBar.r1(this) { // from class: org.telegram.ui.co
+            public final /* synthetic */ eo b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // org.telegram.ui.ActionBar.r1
+            public final void g(org.telegram.ui.ActionBar.u1 u1Var2, int i12) {
+                switch (i10) {
+                    case 0:
+                        boolean z10 = z9;
+                        eo eoVar = this.b;
+                        eoVar.setJoinRequest(z10);
+                        eoVar.y.W = true;
+                        break;
+                    default:
+                        boolean z11 = z9;
+                        eo eoVar2 = this.b;
+                        eoVar2.setJoinRequest(z11);
+                        eoVar2.y.W = false;
+                        break;
+                }
+            }
+        });
+        ioVar.showDialog(u1Var);
+        return false;
     }
 }

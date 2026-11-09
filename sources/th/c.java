@@ -15,12 +15,12 @@ import org.telegram.messenger.ij;
 import org.telegram.messenger.t0;
 import org.telegram.messenger.w7;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class c extends sh.c {
+public final class c extends sh.d {
     public final String b;
     public final Uri c;
     public final String d;
@@ -58,21 +58,21 @@ public final class c extends sh.c {
         TextPaint textPaint = new TextPaint(1);
         textPaint.setTextSize(g0.L(13.0f));
         textPaint.setTypeface(g0.o());
-        textPaint.setColor(k6.x0(null, k6.pj, false));
+        textPaint.setColor(l6.x0(null, l6.pj, false));
         this.n = new StaticLayout(TextUtils.ellipsize(str2, textPaint, g0.L(34.0f), TextUtils.TruncateAt.END), textPaint, g0.L(34.0f), Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
     }
 
     public static b d(View view, String str, String str2, TLRPC.Document document, ij ijVar) {
         b bVar = new b();
-        bVar.a.setColor(k6.x0(null, k6.G6, false));
-        bVar.b.setColor(k6.x0(null, k6.y6, false));
+        bVar.a.setColor(l6.x0(null, l6.G6, false));
+        bVar.b.setColor(l6.x0(null, l6.y6, false));
         bVar.d = true;
         RadialProgress2 radialProgress2 = new RadialProgress2(view, null);
         bVar.c = radialProgress2;
         radialProgress2.setCircleRadius(g0.L(21.0f));
-        bVar.c.g(k6.We, k6.Xe, k6.id, k6.jd);
-        if (ij.K3(document)) {
-            if (ij.X2(document)) {
+        bVar.c.g(l6.We, l6.Xe, l6.id, l6.jd);
+        if (ij.J3(document)) {
+            if (ij.W2(document)) {
                 TLRPC.PhotoSize w10 = w7.w(document.thumbs, g0.L(22.0f), true, null, false);
                 bVar.c.j(w7.w(document.thumbs, g0.L(44.0f), true, w10, true), w10, document, ijVar);
             } else {
@@ -103,7 +103,7 @@ public final class c extends sh.c {
         return bVar;
     }
 
-    @Override // sh.c
+    @Override // sh.d
     public final void c(Canvas canvas, int i7, int i10) {
         Drawable drawable = this.h;
         if (drawable != null) {
@@ -136,7 +136,7 @@ public final class c extends sh.c {
             TextPaint textPaint = new TextPaint(1);
             textPaint.setTextSize(g0.L(13.0f));
             textPaint.setTypeface(g0.o());
-            textPaint.setColor(k6.x0(null, k6.pj, false));
+            textPaint.setColor(l6.x0(null, l6.pj, false));
             this.n = new StaticLayout(TextUtils.ellipsize(str, textPaint, g0.L(34.0f), TextUtils.TruncateAt.END), textPaint, g0.L(34.0f), Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
             return;
         }

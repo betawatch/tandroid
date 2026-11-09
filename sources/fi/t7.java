@@ -8,26 +8,26 @@ import android.view.MotionEvent;
 import android.widget.FrameLayout;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class t7 extends FrameLayout {
     public final Paint a;
     public final org.telegram.ui.Components.w5 b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f6 c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.g6 c;
     public final /* synthetic */ w7 d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t7(w7 w7Var, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+    public t7(w7 w7Var, Context context, org.telegram.ui.ActionBar.g6 g6Var) {
         super(context);
         this.d = w7Var;
-        this.c = f6Var;
+        this.c = g6Var;
         this.a = new Paint(1);
         this.b = new org.telegram.ui.Components.w5(this, 0L, 350L, xq.h);
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        int w02 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.h5, this.c);
+        int w02 = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.h5, this.c);
         Paint paint = this.a;
         paint.setColor(w02);
         w7 w7Var = this.d;

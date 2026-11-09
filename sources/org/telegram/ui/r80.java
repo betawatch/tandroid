@@ -1,16 +1,19 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+import j$.util.function.Consumer$-CC;
+import java.util.function.Consumer;
+
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class r80 extends org.telegram.ui.Components.kz {
-    @Override // org.telegram.ui.Components.kz
-    public final void b() {
-        setVisibility(8);
+public final class r80 implements Consumer {
+    @Override // java.util.function.Consumer
+    /* renamed from: accept */
+    public final void x(Object obj) {
+        ((Boolean) obj).getClass();
+        String str = LaunchActivity.B1;
     }
 
-    @Override // org.telegram.ui.Components.kz
-    public final void c(boolean z9) {
-        setVisibility(0);
-        super.c(z9);
+    public /* synthetic */ Consumer andThen(Consumer consumer) {
+        return Consumer$-CC.$default$andThen(this, consumer);
     }
 }

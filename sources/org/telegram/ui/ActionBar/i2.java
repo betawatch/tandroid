@@ -3,11 +3,11 @@ package org.telegram.ui.ActionBar;
 import android.animation.ValueAnimator;
 import org.telegram.ui.Components.hy;
 import org.telegram.ui.Components.lt;
-import org.telegram.ui.Components.n40;
-import org.telegram.ui.Components.si0;
-import org.telegram.ui.vp;
+import org.telegram.ui.Components.o40;
+import org.telegram.ui.Components.ti0;
+import org.telegram.ui.xp;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i2 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -33,7 +33,7 @@ public final /* synthetic */ class i2 implements ValueAnimator.AnimatorUpdateLis
             case 1:
                 org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) this.c;
                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                if (q1Var.getMessageObject() != null && q1Var.getMessageObject().f1() == this.b) {
+                if (q1Var.getMessageObject() != null && q1Var.getMessageObject().e1() == this.b) {
                     q1Var.setSelectedBackgroundProgress(floatValue);
                     break;
                 }
@@ -55,24 +55,24 @@ public final /* synthetic */ class i2 implements ValueAnimator.AnimatorUpdateLis
                 ((hy) this.c).Q0[this.b] = (int) ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 break;
             case 4:
-                n40 n40Var = (n40) this.c;
-                if (this.b == n40Var.t0) {
+                o40 o40Var = (o40) this.c;
+                if (this.b == o40Var.t0) {
                     float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                     if (floatValue3 >= 0.5f) {
                         floatValue3 -= 1.0f;
                     }
-                    n40Var.x.setRotationY(floatValue3 * 180.0f);
+                    o40Var.x.setRotationY(floatValue3 * 180.0f);
                     break;
                 }
                 break;
             case 5:
-                vp vpVar = (vp) this.c;
-                vpVar.getClass();
+                xp xpVar = (xp) this.c;
+                xpVar.getClass();
                 Float f12 = (Float) valueAnimator.getAnimatedValue();
-                si0 si0Var = (si0) vpVar.d;
-                si0Var.b.put(this.b, f12);
-                si0Var.d = true;
-                si0Var.a.invalidate();
+                ti0 ti0Var = (ti0) xpVar.d;
+                ti0Var.b.put(this.b, f12);
+                ti0Var.d = true;
+                ti0Var.a.invalidate();
                 break;
             default:
                 xh.f fVar = (xh.f) this.c;

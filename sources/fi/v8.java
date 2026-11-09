@@ -19,7 +19,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.hc;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v8 implements c20 {
     public final /* synthetic */ int a;
@@ -34,7 +34,7 @@ public final /* synthetic */ class v8 implements c20 {
     public final void a(Object obj) {
         boolean z9;
         fb fbVar;
-        o9 o9Var;
+        n9 n9Var;
         int i7 = this.a;
         int i10 = 1;
         int i11 = 0;
@@ -62,25 +62,25 @@ public final /* synthetic */ class v8 implements c20 {
                 e7 e7Var2 = (e7) obj;
                 vaVar.V(e7Var2, false);
                 int i12 = vaVar.c;
-                di.y6 P1 = qp.s1(i12).P1();
+                di.z6 P1 = qp.s1(i12).P1();
                 a0.h hVar = P1.e;
                 int i13 = P1.a;
                 ArrayList arrayList = P1.h;
                 ArrayList arrayList2 = P1.g;
-                di.x6 x6Var = new di.x6(P1, e7Var2);
+                di.y6 y6Var = new di.y6(P1, e7Var2);
                 boolean z10 = e7Var2.g;
-                long j3 = x6Var.J;
+                long j3 = y6Var.J;
                 if (z10) {
                     HashMap hashMap = (HashMap) hVar.f(j3);
                     if (hashMap == null) {
                         hashMap = new HashMap();
                         hVar.k(hashMap, j3);
                     }
-                    hashMap.put(Integer.valueOf(e7Var2.f), x6Var);
+                    hashMap.put(Integer.valueOf(e7Var2.f), y6Var);
                 } else {
-                    P1.d(j3, x6Var, P1.b, false);
+                    P1.d(j3, y6Var, P1.b, false);
                 }
-                P1.d(j3, x6Var, P1.c, true);
+                P1.d(j3, y6Var, P1.c, true);
                 if (j3 != p10.i(i13).n) {
                     int i14 = 0;
                     while (true) {
@@ -114,7 +114,7 @@ public final /* synthetic */ class v8 implements c20 {
                         P1.R(j3);
                     }
                 }
-                x6Var.d();
+                y6Var.d();
                 qs.f(i13).k(qs.v5, new Object[0]);
                 if (e7Var2.c && !e7Var2.g) {
                     qp.s1(i12).P1().w.b(e7Var2);
@@ -157,7 +157,7 @@ public final /* synthetic */ class v8 implements c20 {
                     xaVar.getWindow().setAttributes(xaVar.b);
                 }
                 waVar.setTouchable(true);
-                new hc(waVar, bVar).G(R.raw.fire_on, 3, org.telegram.messenger.g0.S2(id.G(intValue, "StoryPeriodPremium", new Object[0]), org.telegram.ui.ActionBar.k6.Uc, 0, new u8(vaVar, 27), bVar)).k(true);
+                new hc(waVar, bVar).G(R.raw.fire_on, 3, org.telegram.messenger.g0.S2(id.G(intValue, "StoryPeriodPremium", new Object[0]), org.telegram.ui.ActionBar.l6.Uc, 0, new u8(vaVar, 27), bVar)).k(true);
                 break;
             case 6:
                 Boolean bool = (Boolean) obj;
@@ -208,7 +208,7 @@ public final /* synthetic */ class v8 implements c20 {
             case 9:
                 vaVar.O = true;
                 vaVar.p(true);
-                org.telegram.messenger.g0.i3(new k9((c20) obj, i11), 210L);
+                org.telegram.messenger.g0.i3(new j9((c20) obj, i11), 210L);
                 break;
             case 10:
                 Integer num2 = (Integer) obj;
@@ -332,17 +332,17 @@ public final /* synthetic */ class v8 implements c20 {
                 if (frameLayout != null) {
                     frameLayout.setTranslationY(vaVar.g0 == 2 ? org.telegram.messenger.g0.L(68.0f) : org.telegram.messenger.g0.L(64.0f) + (-(org.telegram.messenger.g0.L(12.0f) + vaVar.c1.getEditTextHeight())));
                 }
-                o9 o9Var2 = vaVar.d1;
-                if (o9Var2 != null) {
+                n9 n9Var2 = vaVar.d1;
+                if (n9Var2 != null) {
                     int i16 = -(org.telegram.messenger.g0.L(24.0f) + vaVar.c1.getEditTextHeight());
-                    o9Var2.setTranslationY(i16 - (vaVar.Z0 == null ? 0 : r3.getContentHeight() - org.telegram.messenger.g0.L(5.0f)));
+                    n9Var2.setTranslationY(i16 - (vaVar.Z0 == null ? 0 : r3.getContentHeight() - org.telegram.messenger.g0.L(5.0f)));
                 }
                 cc ccVar2 = cc.w;
                 if (ccVar2 != null && ccVar2.a == 2) {
                     ccVar2.l();
                 }
-                if (vaVar.c1.o0 && (o9Var = vaVar.d1) != null) {
-                    o9Var.c(false, true);
+                if (vaVar.c1.o0 && (n9Var = vaVar.d1) != null) {
+                    n9Var.c(false, true);
                     break;
                 }
                 break;
@@ -421,15 +421,15 @@ public final /* synthetic */ class v8 implements c20 {
                 break;
             case 19:
                 TLRPC.InputPeer inputPeer2 = (TLRPC.InputPeer) obj;
-                x6 x6Var2 = vaVar.o0;
+                x6 x6Var = vaVar.o0;
                 vaVar.x0 = inputPeer2;
-                x6Var2.set(inputPeer2);
+                x6Var.set(inputPeer2);
                 break;
             case 20:
                 TLRPC.InputPeer inputPeer3 = (TLRPC.InputPeer) obj;
-                x6 x6Var3 = vaVar.o0;
+                x6 x6Var2 = vaVar.o0;
                 vaVar.x0 = inputPeer3;
-                x6Var3.set(inputPeer3);
+                x6Var2.set(inputPeer3);
                 break;
             default:
                 p2 p2Var2 = vaVar.s;

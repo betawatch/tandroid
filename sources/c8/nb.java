@@ -10,11 +10,11 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.iz;
-import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.qj0;
 import org.telegram.ui.Components.vy;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public abstract class nb {
     public static pg.j a;
@@ -38,7 +38,7 @@ public abstract class nb {
             jVar2.a = hVar;
             ImageView imageView = new ImageView(launchActivity);
             imageView.setImageResource(R.drawable.device_phone_android);
-            org.telegram.ui.ActionBar.r6.t(imageView, org.telegram.ui.ActionBar.k6.O9, null, PorterDuff.Mode.SRC_IN);
+            org.telegram.ui.ActionBar.s6.s(imageView, org.telegram.ui.ActionBar.l6.O9, null, PorterDuff.Mode.SRC_IN);
             hVar.addView(imageView);
             hVar.setVisibility(8);
             jVar2.addView(hVar, ha.c(56.0f, 56));
@@ -49,16 +49,16 @@ public abstract class nb {
             TextView textView = new TextView(launchActivity);
             jVar2.y = textView;
             textView.setTextSize(1, 20.0f);
-            textView.setText(org.telegram.messenger.id.M0(2131751647, null));
+            textView.setText(org.telegram.messenger.id.M0(2131751646, null));
             textView.setTypeface(org.telegram.messenger.g0.o());
             textView.setPadding(org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(19.0f), org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(19.0f));
             linearLayout.addView(textView, ha.o(-1, -2));
-            pj0 pj0Var = new pj0(launchActivity, null);
-            jVar2.D = pj0Var;
-            pj0Var.setLayoutManager(new v4.b0());
-            pj0Var.setAdapter(new org.telegram.ui.l4(jVar2, launchActivity));
-            pj0Var.setOnItemClickListener(new ai.k(jVar2, 18));
-            linearLayout.addView(pj0Var, ha.l(1.0f, -1, 0));
+            qj0 qj0Var = new qj0(launchActivity, null);
+            jVar2.D = qj0Var;
+            qj0Var.setLayoutManager(new v4.b0());
+            qj0Var.setAdapter(new org.telegram.ui.l4(jVar2, launchActivity));
+            qj0Var.setOnItemClickListener(new ai.k(jVar2, 18));
+            linearLayout.addView(qj0Var, ha.l(1.0f, -1, 0));
             jVar2.addView(linearLayout, ha.d(-1, -1.0f, 0, 8.0f, 8.0f, 8.0f, 8.0f));
             jVar2.d();
             jVar2.setFitsSystemWindows(true);

@@ -1,12 +1,12 @@
 package fi;
 
 import android.widget.FrameLayout;
-import org.telegram.ui.Components.el0;
+import org.telegram.ui.Components.fl0;
 import org.telegram.ui.Components.op;
 import org.telegram.ui.Components.ux;
-import org.telegram.ui.i01;
+import org.telegram.ui.k01;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class c2 extends op {
     public final /* synthetic */ int h;
@@ -21,15 +21,15 @@ public final class c2 extends op {
     public final int a() {
         switch (this.h) {
             case 0:
-                return org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.yf, (org.telegram.ui.ActionBar.f6) this.i);
+                return org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.yf, (org.telegram.ui.ActionBar.g6) this.i);
             case 1:
                 return ((org.telegram.ui.ActionBar.r0) this.i).c.b.r0;
             case 2:
-                return org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.yf, ((ux) this.i).G.Z1);
+                return org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.yf, ((ux) this.i).G.Z1);
             case 3:
-                return org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Q5, ((el0) this.i).e);
+                return org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.Q5, ((fl0) this.i).e);
             default:
-                return org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.yf, ((i01) this.i).F.Z0);
+                return org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.yf, ((k01) this.i).F.Z0);
         }
     }
 
@@ -42,18 +42,18 @@ public final class c2 extends op {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c2(org.telegram.ui.ActionBar.f6 f6Var) {
+    public c2(org.telegram.ui.ActionBar.g6 g6Var) {
         super(1.25f);
         this.h = 0;
-        this.i = f6Var;
+        this.i = g6Var;
         this.f = org.telegram.messenger.g0.L(7.0f);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c2(i01 i01Var) {
+    public c2(k01 k01Var) {
         super(1.25f);
         this.h = 4;
-        this.i = i01Var;
+        this.i = k01Var;
         this.f = org.telegram.messenger.g0.L(7.0f);
     }
 }

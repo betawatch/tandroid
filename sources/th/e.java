@@ -14,14 +14,14 @@ import org.telegram.messenger.g0;
 import org.telegram.messenger.t0;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.Components.ci;
 import org.telegram.ui.Components.cp;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class e extends sh.c implements Drawable.Callback, te.b {
+public final class e extends sh.d implements Drawable.Callback, te.b {
     public final String b;
     public final Drawable d;
     public final cp f;
@@ -42,7 +42,7 @@ public final class e extends sh.c implements Drawable.Callback, te.b {
         this.a.J0(g0.L(7.0f));
         this.d = jg.g.h(t0.b, R.drawable.media_link_24);
         cpVar.setCallback(this);
-        cpVar.b(k6.x0(null, k6.o7, false));
+        cpVar.b(l6.x0(null, l6.o7, false));
         cpVar.a = g0.L(15.0f);
     }
 
@@ -54,19 +54,19 @@ public final class e extends sh.c implements Drawable.Callback, te.b {
         }
     }
 
-    @Override // sh.c
+    @Override // sh.d
     public final void a(View view) {
         super.a(view);
         this.h = (ci) view;
     }
 
-    @Override // sh.c
+    @Override // sh.d
     public final void b() {
         super.b();
         this.h = null;
     }
 
-    @Override // sh.c
+    @Override // sh.d
     public final void c(Canvas canvas, int i7, int i10) {
         float f10 = i7;
         float f11 = i10;
@@ -75,13 +75,13 @@ public final class e extends sh.c implements Drawable.Callback, te.b {
         imageReceiver.h(canvas, null);
         cp cpVar = this.f;
         cpVar.setBounds(0, 0, i7, i10);
-        int x02 = k6.x0(null, k6.a7, false);
+        int x02 = l6.x0(null, l6.a7, false);
         te.a aVar = this.s;
         int f12 = i0.a.f(aVar.e, x02, TLObject.FLAG_30);
         Paint paint = this.e;
         paint.setColor(f12);
         canvas.drawRoundRect(0.0f, 0.0f, f10, f11, g0.L(7.0f), g0.L(7.0f), paint);
-        int f13 = i0.a.f(aVar.e, k6.x0(null, k6.o7, false), -1);
+        int f13 = i0.a.f(aVar.e, l6.x0(null, l6.o7, false), -1);
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
         wa waVar = this.c;
         waVar.getClass();

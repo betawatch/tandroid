@@ -13,7 +13,6 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-import android.os.SystemClock;
 import android.text.TextUtils;
 import android.text.method.LinkMovementMethod;
 import android.transition.ChangeBounds;
@@ -26,10 +25,8 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
-import android.view.ViewParent;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.view.animation.DecelerateInterpolator;
-import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -39,26 +36,23 @@ import android.widget.TextView;
 import c8.ha;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.c20;
 import org.telegram.messenger.id;
 import org.telegram.messenger.u10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.a01;
-import org.telegram.ui.Components.ch0;
-import org.telegram.ui.Components.k60;
-import org.telegram.ui.Components.ue0;
-import org.telegram.ui.Components.ve0;
-import org.telegram.ui.Components.w70;
+import org.telegram.ui.Components.ah0;
+import org.telegram.ui.Components.b01;
+import org.telegram.ui.Components.dh0;
+import org.telegram.ui.Components.l60;
+import org.telegram.ui.Components.x70;
 import org.telegram.ui.Components.xq;
-import org.telegram.ui.Components.zg0;
-import org.telegram.ui.c61;
-import org.telegram.ui.ch;
+import org.telegram.ui.d61;
 import org.telegram.ui.eh;
+import org.telegram.ui.gh;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public class r0 extends FrameLayout {
     public int D;
@@ -100,7 +94,7 @@ public class r0 extends FrameLayout {
     public float j0;
     public float k0;
     public View l0;
-    public final f6 m0;
+    public final g6 m0;
     public CharSequence n;
     public int n0;
     public View.OnClickListener o0;
@@ -117,15 +111,15 @@ public class r0 extends FrameLayout {
     public AnimatorSet w0;
     public View x;
     public ArrayList x0;
-    public final ch0 y;
+    public final dh0 y;
     public HashMap y0;
 
     public r0(Context context, int i7, int i10) {
         this(context, null, i7, i10, true, null);
     }
 
-    public static z0 c(boolean z9, boolean z10, ViewGroup viewGroup, int i7, CharSequence charSequence, boolean z11, f6 f6Var) {
-        z0 z0Var = new z0(z11 ? 1 : 0, viewGroup.getContext(), f6Var, z9, z10);
+    public static z0 c(boolean z9, boolean z10, ViewGroup viewGroup, int i7, CharSequence charSequence, boolean z11, g6 g6Var) {
+        z0 z0Var = new z0(z11 ? 1 : 0, viewGroup.getContext(), g6Var, z9, z10);
         z0Var.j(charSequence, i7, null);
         z0Var.setMinimumWidth(org.telegram.messenger.g0.L(196.0f));
         viewGroup.addView(z0Var);
@@ -139,32 +133,32 @@ public class r0 extends FrameLayout {
         return z0Var;
     }
 
-    private i5 getShownSubMenuOverlay() {
+    private j5 getShownSubMenuOverlay() {
         s4 subMenuOverlayHost = getSubMenuOverlayHost();
-        i5 openMenuOverlay = subMenuOverlayHost != null ? subMenuOverlayHost.getOpenMenuOverlay() : null;
-        if (openMenuOverlay != null && openMenuOverlay.e == this && (openMenuOverlay.y || openMenuOverlay.M)) {
+        j5 openMenuOverlay = subMenuOverlayHost != null ? subMenuOverlayHost.getOpenMenuOverlay() : null;
+        if (openMenuOverlay != null && openMenuOverlay.e == this && (openMenuOverlay.D || openMenuOverlay.N)) {
             return openMenuOverlay;
         }
         return null;
     }
 
-    public final void A(zg0 zg0Var, String str) {
+    public final void A(ah0 ah0Var, String str) {
         p0 p0Var = new p0(0);
         p0Var.b = 29;
         p0Var.c = 0;
-        p0Var.d = zg0Var;
+        p0Var.d = ah0Var;
         p0Var.e = str;
         p0Var.f = true;
         G(p0Var);
     }
 
-    public final p0 B(eh ehVar) {
+    public final p0 B(gh ghVar) {
         p0 p0Var = new p0(2);
         p0Var.c = R.drawable.msg_mute;
         p0Var.d = null;
         p0Var.e = null;
         p0Var.g = null;
-        p0Var.h = ehVar;
+        p0Var.h = ghVar;
         G(p0Var);
         return p0Var;
     }
@@ -242,7 +236,7 @@ public class r0 extends FrameLayout {
         if (l0Var == null || l0Var.getVisibility() == 0 || (yVar = this.c) == null) {
             return;
         }
-        yVar.b.y(T(z9));
+        yVar.b.z(T(z9));
     }
 
     public final p0 G(p0 p0Var) {
@@ -322,10 +316,10 @@ public class r0 extends FrameLayout {
         if (actionBarPopupWindow$ActionBarPopupWindowLayout == null) {
             return;
         }
-        c61 c61Var = actionBarPopupWindow$ActionBarPopupWindowLayout.L;
-        int childCount = c61Var.getChildCount();
+        d61 d61Var = actionBarPopupWindow$ActionBarPopupWindowLayout.L;
+        int childCount = d61Var.getChildCount();
         for (int i10 = 0; i10 < childCount; i10++) {
-            View childAt = c61Var.getChildAt(i10);
+            View childAt = d61Var.getChildAt(i10);
             if (childAt instanceof TextView) {
                 ((TextView) childAt).setTextColor(i7);
             } else if (childAt instanceof z0) {
@@ -381,7 +375,7 @@ public class r0 extends FrameLayout {
 
     public boolean T(boolean z9) {
         y yVar;
-        ch0 iconView;
+        dh0 iconView;
         Animator e10;
         k();
         n0 n0Var = this.H;
@@ -480,21 +474,22 @@ public class r0 extends FrameLayout {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r9v11, types: [android.view.ViewGroup, android.widget.LinearLayout, fi.a5] */
+    /* JADX WARN: Type inference failed for: r15v8, types: [android.view.ViewGroup, android.widget.LinearLayout, fi.a5] */
     public final void U(View view, r0 r0Var) {
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout;
         View childAt;
         k kVar;
         g1 g1Var;
         boolean z9;
+        FrameLayout frameLayout = null;
         int i7 = 1;
         if (view == null) {
             s4 subMenuOverlayHost = getSubMenuOverlayHost();
-            final i5 subMenuOverlay = subMenuOverlayHost != null ? getSubMenuOverlay() : null;
+            j5 subMenuOverlay = subMenuOverlayHost != null ? getSubMenuOverlay() : null;
             if (subMenuOverlay != null && ((g1Var = this.d) == null || !g1Var.isShowing())) {
                 y();
                 if (s() && i()) {
-                    if (subMenuOverlay.e == this && (((z9 = subMenuOverlay.y) || subMenuOverlay.M) && z9)) {
+                    if (subMenuOverlay.e == this && (((z9 = subMenuOverlay.D) || subMenuOverlay.N) && z9)) {
                         subMenuOverlay.a(true);
                         return;
                     }
@@ -503,100 +498,7 @@ public class r0 extends FrameLayout {
                     if (o0Var != null) {
                         o0Var.n();
                     }
-                    ActionBarPopupWindow$ActionBarPopupWindowLayout popupLayout = getPopupLayout();
-                    WeakHashMap weakHashMap = subMenuOverlay.r;
-                    if (subMenuOverlay.y && subMenuOverlay.d == subMenuOverlayHost && subMenuOverlay.e == this) {
-                        return;
-                    }
-                    s4 s4Var = subMenuOverlay.d;
-                    if (s4Var != null && (s4Var != subMenuOverlayHost || subMenuOverlay.e != this)) {
-                        subMenuOverlay.c();
-                    }
-                    subMenuOverlay.d = subMenuOverlayHost;
-                    subMenuOverlay.e = this;
-                    subMenuOverlayHost.getClass();
-                    subMenuOverlay.s = false;
-                    ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout2 = subMenuOverlay.f;
-                    if (actionBarPopupWindow$ActionBarPopupWindowLayout2 != popupLayout) {
-                        if (actionBarPopupWindow$ActionBarPopupWindowLayout2 != null) {
-                            org.telegram.messenger.g0.E2(actionBarPopupWindow$ActionBarPopupWindowLayout2);
-                        }
-                        subMenuOverlay.f = popupLayout;
-                    }
-                    subMenuOverlay.i(popupLayout, org.telegram.messenger.g0.L(5.0f));
-                    popupLayout.setTranslationX(0.0f);
-                    popupLayout.setTranslationY(0.0f);
-                    popupLayout.setAlpha(1.0f);
-                    r6.d0(popupLayout, false);
-                    k60.U(popupLayout, k6.r1(0.06f, k6.w0(k6.E8, subMenuOverlay.d.getMenuResourcesProvider())));
-                    popupLayout.f();
-                    ve0 swipeBack = popupLayout.getSwipeBack();
-                    if (swipeBack != null) {
-                        swipeBack.b(false);
-                        swipeBack.setForegroundOnGlass(true);
-                        if (subMenuOverlay.b != swipeBack) {
-                            subMenuOverlay.b = swipeBack;
-                            swipeBack.y.add(new ue0() { // from class: org.telegram.ui.ActionBar.g5
-                                @Override // org.telegram.ui.Components.ue0
-                                public final void a(float f10, float f11) {
-                                    i5.this.invalidate();
-                                }
-                            });
-                        }
-                        for (int i10 = 1; i10 < swipeBack.getChildCount(); i10++) {
-                            if (swipeBack.getChildAt(i10) instanceof ActionBarPopupWindow$ActionBarPopupWindowLayout) {
-                                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout3 = (ActionBarPopupWindow$ActionBarPopupWindowLayout) swipeBack.getChildAt(i10);
-                                subMenuOverlay.i(actionBarPopupWindow$ActionBarPopupWindowLayout3, 0);
-                                r6.d0(actionBarPopupWindow$ActionBarPopupWindowLayout3, false);
-                                k60.U(actionBarPopupWindow$ActionBarPopupWindowLayout3, k6.r1(0.06f, k6.w0(k6.E8, subMenuOverlay.d.getMenuResourcesProvider())));
-                            }
-                        }
-                    }
-                    ScrollView scrollView = popupLayout.K;
-                    if (scrollView != null) {
-                        scrollView.scrollTo(0, 0);
-                    }
-                    if (popupLayout.getParent() != subMenuOverlay) {
-                        org.telegram.messenger.g0.E2(popupLayout);
-                        subMenuOverlay.addView(popupLayout, new FrameLayout.LayoutParams(-2, -2));
-                    }
-                    fh.g gVar = subMenuOverlay.h;
-                    if (gVar == null || subMenuOverlay.n != subMenuOverlayHost) {
-                        if (gVar != null) {
-                            gVar.a.setEmpty();
-                            subMenuOverlay.h.setBounds(0, 0, 0, 0);
-                        }
-                        fh.g gVar2 = (fh.g) weakHashMap.get(subMenuOverlayHost);
-                        subMenuOverlay.h = gVar2;
-                        if (gVar2 == null) {
-                            fh.g c10 = subMenuOverlayHost.c(subMenuOverlay);
-                            subMenuOverlay.h = c10;
-                            if (c10 != null) {
-                                c10.p(subMenuOverlay.c);
-                                weakHashMap.put(subMenuOverlayHost, subMenuOverlay.h);
-                            }
-                        }
-                        subMenuOverlay.n = subMenuOverlayHost;
-                    }
-                    ViewParent parent = subMenuOverlay.getParent();
-                    if (parent instanceof ViewGroup) {
-                        ((ViewGroup) parent).bringChildToFront(subMenuOverlay);
-                    }
-                    subMenuOverlay.setVisibility(0);
-                    subMenuOverlay.y = true;
-                    subMenuOverlay.F = SystemClock.uptimeMillis();
-                    subMenuOverlay.g();
-                    subMenuOverlayHost.d(subMenuOverlay, this);
-                    subMenuOverlay.b();
-                    if (!subMenuOverlay.D) {
-                        getIconView().setAlpha(0.0f);
-                    }
-                    r6 = subMenuOverlay.getRootView() != null ? subMenuOverlay.getRootView().findFocus() : null;
-                    if ((r6 instanceof EditText) && r6.isShown()) {
-                        return;
-                    }
-                    subMenuOverlay.setFocusableInTouchMode(true);
-                    subMenuOverlay.requestFocus();
+                    subMenuOverlay.d(subMenuOverlayHost, this, getPopupLayout());
                     return;
                 }
                 return;
@@ -608,7 +510,7 @@ public class r0 extends FrameLayout {
         }
         if (this.b != null) {
             y yVar = this.c;
-            if (yVar == null || !yVar.c || (kVar = yVar.b) == null || kVar.v()) {
+            if (yVar == null || !yVar.c || (kVar = yVar.b) == null || kVar.w()) {
                 bi.k1 k1Var = this.L;
                 if (k1Var != null) {
                     org.telegram.messenger.g0.r(k1Var);
@@ -627,42 +529,42 @@ public class r0 extends FrameLayout {
                 if (this.b.getParent() != null) {
                     ((ViewGroup) this.b.getParent()).removeView(this.b);
                 }
-                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout4 = this.b;
+                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout2 = this.b;
                 if (view != null) {
                     ?? a5Var = new fi.a5(this, getContext(), view);
                     a5Var.setOrientation(1);
-                    FrameLayout frameLayout = new FrameLayout(getContext());
-                    frameLayout.setAlpha(0.0f);
-                    frameLayout.animate().alpha(1.0f).setDuration(100L).setStartDelay(this.b.w ? 165L : 0L).start();
+                    FrameLayout frameLayout2 = new FrameLayout(getContext());
+                    frameLayout2.setAlpha(0.0f);
+                    frameLayout2.animate().alpha(1.0f).setDuration(100L).setStartDelay(this.b.w ? 165L : 0L).start();
                     if (view.getParent() instanceof ViewGroup) {
                         ((ViewGroup) view.getParent()).removeView(view);
                     }
                     if ((view instanceof z0) || (view instanceof LinearLayout)) {
                         dh.c cVar = this.t0;
                         if (cVar != null) {
-                            fh.g c11 = cVar.c(this.b, null, true);
-                            c11.p(this.u0);
-                            org.telegram.messenger.camera.q.p(c11, org.telegram.messenger.g0.L(12.0f), 8.0f);
-                            c11.Q.e = true;
-                            frameLayout.setBackground(c11);
+                            fh.g c10 = cVar.c(this.b, null, true);
+                            c10.p(this.u0);
+                            org.telegram.messenger.camera.q.p(c10, org.telegram.messenger.g0.L(12.0f), 8.0f);
+                            c10.Q.e = true;
+                            frameLayout2.setBackground(c10);
                         } else {
                             Drawable mutate = getContext().getDrawable(R.drawable.popup_fixed_alert2).mutate();
                             mutate.setColorFilter(new PorterDuffColorFilter(this.b.getBackgroundColor(), PorterDuff.Mode.MULTIPLY));
-                            frameLayout.setBackground(mutate);
+                            frameLayout2.setBackground(mutate);
                         }
                     }
-                    frameLayout.addView(view, ha.c(-2.0f, -1));
-                    a5Var.addView(frameLayout, ha.o(-1, -2));
+                    frameLayout2.addView(view, ha.c(-2.0f, -1));
+                    a5Var.addView(frameLayout2, ha.o(-1, -2));
                     a5Var.addView(this.b, ha.t(-2, -2, 0, 0, -10, 0, 0));
-                    this.b.setTopView(frameLayout);
-                    r6 = frameLayout;
+                    this.b.setTopView(frameLayout2);
+                    frameLayout = frameLayout2;
                     actionBarPopupWindow$ActionBarPopupWindowLayout = a5Var;
                 } else {
-                    actionBarPopupWindow$ActionBarPopupWindowLayout4.setTopView(null);
-                    actionBarPopupWindow$ActionBarPopupWindowLayout = actionBarPopupWindow$ActionBarPopupWindowLayout4;
+                    actionBarPopupWindow$ActionBarPopupWindowLayout2.setTopView(null);
+                    actionBarPopupWindow$ActionBarPopupWindowLayout = actionBarPopupWindow$ActionBarPopupWindowLayout2;
                 }
                 if (this.t0 != null) {
-                    k60.U(this.b, k6.r1(0.06f, k6.w0(k6.E8, this.m0)));
+                    l60.U(this.b, l6.r1(0.06f, l6.w0(l6.E8, this.m0)));
                 }
                 g1 g1Var4 = new g1(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
                 this.d = g1Var4;
@@ -685,11 +587,11 @@ public class r0 extends FrameLayout {
                 actionBarPopupWindow$ActionBarPopupWindowLayout.setFocusableInTouchMode(true);
                 actionBarPopupWindow$ActionBarPopupWindowLayout.setOnKeyListener(new View.OnKeyListener() { // from class: org.telegram.ui.ActionBar.c0
                     @Override // android.view.View.OnKeyListener
-                    public final boolean onKey(View view2, int i11, KeyEvent keyEvent) {
+                    public final boolean onKey(View view2, int i10, KeyEvent keyEvent) {
                         g1 g1Var5;
                         r0 r0Var2 = r0.this;
                         r0Var2.getClass();
-                        if (i11 != 82 || keyEvent.getRepeatCount() != 0 || keyEvent.getAction() != 1 || (g1Var5 = r0Var2.d) == null || !g1Var5.isShowing()) {
+                        if (i10 != 82 || keyEvent.getRepeatCount() != 0 || keyEvent.getAction() != 1 || (g1Var5 = r0Var2.d) == null || !g1Var5.isShowing()) {
                             return false;
                         }
                         r0Var2.d.d(true);
@@ -699,8 +601,8 @@ public class r0 extends FrameLayout {
                 this.d.setOnDismissListener(new fi.p4(i7, this));
                 Point point = org.telegram.messenger.g0.q;
                 actionBarPopupWindow$ActionBarPopupWindowLayout.measure(org.telegram.messenger.camera.q.c(40.0f, point.x, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(point.y, TLObject.FLAG_31));
-                if (r6 != null && r6.getLayoutParams() != null && this.b.getSwipeBack() != null && (childAt = this.b.getSwipeBack().getChildAt(0)) != null && childAt.getMeasuredWidth() > 0) {
-                    r6.getLayoutParams().width = org.telegram.messenger.g0.L(16.0f) + childAt.getMeasuredWidth();
+                if (frameLayout != null && frameLayout.getLayoutParams() != null && this.b.getSwipeBack() != null && (childAt = this.b.getSwipeBack().getChildAt(0)) != null && childAt.getMeasuredWidth() > 0) {
+                    frameLayout.getLayoutParams().width = org.telegram.messenger.g0.L(16.0f) + childAt.getMeasuredWidth();
                 }
                 this.T = false;
                 this.d.setFocusable(true);
@@ -727,22 +629,22 @@ public class r0 extends FrameLayout {
             }
         }
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = this.b;
-        f6 f6Var = this.m0;
+        g6 g6Var = this.m0;
         if (actionBarPopupWindow$ActionBarPopupWindowLayout != null) {
             for (int i10 = 0; i10 < this.b.getItemsCount(); i10++) {
                 if (this.b.L.getChildAt(i10) instanceof z0) {
-                    ((z0) this.b.L.getChildAt(i10)).setSelectorColor(k6.w0(k6.I5, f6Var));
+                    ((z0) this.b.L.getChildAt(i10)).setSelectorColor(l6.w0(l6.I5, g6Var));
                 }
             }
         }
         ah.i iVar = this.e;
         if (iVar != null) {
-            int i11 = k6.C8;
-            r6.m(iVar, 30, i11, f6Var);
-            r6.E(this.e, k6.D8, f6Var);
-            r6.V(this.e, i11, f6Var);
-            r6.D(this.e, k6.ig, f6Var);
-            r6.z(this.e, k6.jg, f6Var);
+            int i11 = l6.C8;
+            s6.l(iVar, 30, i11, g6Var);
+            s6.D(this.e, l6.D8, g6Var);
+            s6.U(this.e, i11, g6Var);
+            s6.C(this.e, l6.ig, g6Var);
+            s6.y(this.e, l6.jg, g6Var);
         }
     }
 
@@ -827,7 +729,7 @@ public class r0 extends FrameLayout {
 
     public final d1 a(int i7) {
         p();
-        d1 d1Var = new d1(k6.H8, getContext(), this.m0);
+        d1 d1Var = new d1(l6.H8, getContext(), this.m0);
         if (i7 != -1) {
             d1Var.setTag(Integer.valueOf(i7));
         }
@@ -852,9 +754,9 @@ public class r0 extends FrameLayout {
         return textView;
     }
 
-    public final z0 d(int i7, int i10, Drawable drawable, CharSequence charSequence, boolean z9, boolean z10, f6 f6Var) {
+    public final z0 d(int i7, int i10, Drawable drawable, CharSequence charSequence, boolean z9, boolean z10, g6 g6Var) {
         p();
-        z0 z0Var = new z0(z10 ? 1 : 0, getContext(), f6Var, false, false);
+        z0 z0Var = new z0(z10 ? 1 : 0, getContext(), g6Var, false, false);
         z0Var.j(charSequence, i10, drawable);
         z0Var.setMinimumWidth(org.telegram.messenger.g0.L(196.0f));
         z0Var.setTag(Integer.valueOf(i7));
@@ -885,8 +787,8 @@ public class r0 extends FrameLayout {
     public final void f(int i7, String str) {
         p();
         TextView textView = new TextView(getContext());
-        r6.V(textView, k6.E8, this.m0);
-        textView.setBackgroundDrawable(k6.N0(false));
+        s6.U(textView, l6.E8, this.m0);
+        textView.setBackgroundDrawable(l6.N0(false));
         if (id.a0) {
             textView.setGravity(21);
         } else {
@@ -916,15 +818,15 @@ public class r0 extends FrameLayout {
         this.b.addView(kVar);
         kVar.setTag(8);
         kVar.setOnClickListener(new z(this, 1));
-        kVar.setBackgroundDrawable(k6.N0(false));
+        kVar.setBackgroundDrawable(l6.N0(false));
     }
 
     public View getContentView() {
-        ch0 ch0Var = this.y;
-        return ch0Var != null ? ch0Var : this.E;
+        dh0 dh0Var = this.y;
+        return dh0Var != null ? dh0Var : this.E;
     }
 
-    public ch0 getIconView() {
+    public dh0 getIconView() {
         return this.y;
     }
 
@@ -952,10 +854,10 @@ public class r0 extends FrameLayout {
         return this.e;
     }
 
-    public i5 getSubMenuOverlay() {
+    public j5 getSubMenuOverlay() {
         u10 u10Var = this.v0;
         if (u10Var != null) {
-            return (i5) u10Var.run();
+            return (j5) u10Var.run();
         }
         return null;
     }
@@ -983,10 +885,10 @@ public class r0 extends FrameLayout {
         return i7;
     }
 
-    public final z0 h(int i7, a01 a01Var, String str, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
+    public final z0 h(int i7, b01 b01Var, String str, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
         p();
         z0 z0Var = new z0(0, getContext(), this.m0, false, false);
-        z0Var.j(str, i7, a01Var);
+        z0Var.j(str, i7, b01Var);
         z0Var.setMinimumWidth(org.telegram.messenger.g0.L(196.0f));
         z0Var.setRightIcon(R.drawable.msg_arrowright);
         this.b.addView(z0Var);
@@ -1007,7 +909,7 @@ public class r0 extends FrameLayout {
     public boolean i() {
         k kVar;
         y yVar = this.c;
-        return yVar == null || !yVar.c || (kVar = yVar.b) == null || kVar.v();
+        return yVar == null || !yVar.c || (kVar = yVar.b) == null || kVar.w();
     }
 
     public final void j() {
@@ -1162,9 +1064,9 @@ public class r0 extends FrameLayout {
             this.h = textView;
             textView.setTextSize(1, 18.0f);
             TextView textView2 = this.h;
-            int i11 = k6.C8;
-            f6 f6Var = this.m0;
-            r6.V(textView2, i11, f6Var);
+            int i11 = l6.C8;
+            g6 g6Var = this.m0;
+            s6.U(textView2, i11, g6Var);
             this.h.setSingleLine(true);
             this.h.setEllipsize(TextUtils.TruncateAt.END);
             this.h.setVisibility(8);
@@ -1174,10 +1076,10 @@ public class r0 extends FrameLayout {
             this.e = iVar;
             iVar.setScrollContainer(false);
             this.e.setCursorWidth(1.5f);
-            r6.w(this.e, i11, f6Var);
+            s6.v(this.e, i11, g6Var);
             this.e.setTextSize(1, 18.0f);
-            r6.E(this.e, k6.D8, f6Var);
-            r6.V(this.e, i11, f6Var);
+            s6.D(this.e, l6.D8, g6Var);
+            s6.U(this.e, i11, g6Var);
             this.e.setSingleLine(true);
             this.e.setBackgroundResource(0);
             this.e.setPadding(0, 0, 0, 0);
@@ -1186,8 +1088,8 @@ public class r0 extends FrameLayout {
             this.e.addTextChangedListener(new ah.j(this, 12));
             this.e.setImeOptions(234881027);
             this.e.setTextIsSelectable(false);
-            r6.D(this.e, k6.ig, f6Var);
-            r6.z(this.e, k6.jg, f6Var);
+            s6.C(this.e, l6.ig, g6Var);
+            s6.y(this.e, l6.jg, g6Var);
             CharSequence charSequence = this.n;
             if (charSequence != null) {
                 this.e.setHint(charSequence);
@@ -1216,7 +1118,7 @@ public class r0 extends FrameLayout {
             fi.c2 c2Var = new fi.c2(i10, this);
             this.W = c2Var;
             f0Var.setImageDrawable(c2Var);
-            this.s.setBackground(k6.h0(yVar.b.q0, 1, -1));
+            this.s.setBackground(l6.h0(yVar.b.q0, 1, -1));
             this.s.setScaleType(ImageView.ScaleType.CENTER);
             this.s.setAlpha(0.0f);
             this.s.setRotation(45.0f);
@@ -1272,7 +1174,7 @@ public class r0 extends FrameLayout {
     }
 
     public final void o() {
-        i5 shownSubMenuOverlay = getShownSubMenuOverlay();
+        j5 shownSubMenuOverlay = getShownSubMenuOverlay();
         if (shownSubMenuOverlay != null) {
             shownSubMenuOverlay.a(true);
             return;
@@ -1318,8 +1220,8 @@ public class r0 extends FrameLayout {
         bi.k1 k1Var;
         int i7;
         bi.k1 k1Var2;
-        i5 shownSubMenuOverlay = getShownSubMenuOverlay();
-        boolean z9 = shownSubMenuOverlay != null && shownSubMenuOverlay.y;
+        j5 shownSubMenuOverlay = getShownSubMenuOverlay();
+        boolean z9 = shownSubMenuOverlay != null && shownSubMenuOverlay.D;
         boolean z10 = getSubMenuOverlayHost() != null;
         g1 g1Var = this.d;
         boolean z11 = g1Var != null && g1Var.isShowing();
@@ -1469,11 +1371,11 @@ public class r0 extends FrameLayout {
             actionBarPopupWindow$ActionBarPopupWindowLayout.setBackground(c10);
         }
         this.b.setOnTouchListener(new fi.n4(1, this));
-        this.b.setDispatchKeyEventListener(new l2.y(this, 26));
+        this.b.setDispatchKeyEventListener(new l2.x(this, 26));
     }
 
     public final void q() {
-        i5 shownSubMenuOverlay = getShownSubMenuOverlay();
+        j5 shownSubMenuOverlay = getShownSubMenuOverlay();
         if (shownSubMenuOverlay != null) {
             shownSubMenuOverlay.a(true);
             return;
@@ -1534,14 +1436,14 @@ public class r0 extends FrameLayout {
     }
 
     public void setIcon(Drawable drawable) {
-        ch0 ch0Var = this.y;
-        if (ch0Var == null) {
+        dh0 dh0Var = this.y;
+        if (dh0Var == null) {
             return;
         }
-        if (drawable instanceof zg0) {
-            ch0Var.setAnimation((zg0) drawable);
+        if (drawable instanceof ah0) {
+            dh0Var.setAnimation((ah0) drawable);
         } else {
-            ch0Var.setImageDrawable(drawable);
+            dh0Var.setImageDrawable(drawable);
         }
         this.D = 0;
     }
@@ -1551,12 +1453,12 @@ public class r0 extends FrameLayout {
             this.r0 = new PorterDuffColorFilter(i7, PorterDuff.Mode.SRC_IN);
             this.s0 = i7;
         }
-        ch0 ch0Var = this.y;
-        if (ch0Var != null) {
-            ColorFilter colorFilter = ch0Var.getColorFilter();
+        dh0 dh0Var = this.y;
+        if (dh0Var != null) {
+            ColorFilter colorFilter = dh0Var.getColorFilter();
             PorterDuffColorFilter porterDuffColorFilter = this.r0;
             if (colorFilter != porterDuffColorFilter) {
-                ch0Var.setColorFilter(porterDuffColorFilter);
+                dh0Var.setColorFilter(porterDuffColorFilter);
             }
         }
         TextView textView = this.E;
@@ -1623,10 +1525,10 @@ public class r0 extends FrameLayout {
         if (actionBarPopupWindow$ActionBarPopupWindowLayout == null) {
             return;
         }
-        c61 c61Var = actionBarPopupWindow$ActionBarPopupWindowLayout.L;
-        int childCount = c61Var.getChildCount();
+        d61 d61Var = actionBarPopupWindow$ActionBarPopupWindowLayout.L;
+        int childCount = d61Var.getChildCount();
         for (int i10 = 0; i10 < childCount; i10++) {
-            View childAt = c61Var.getChildAt(i10);
+            View childAt = d61Var.getChildAt(i10);
             if (childAt instanceof z0) {
                 ((z0) childAt).setSelectorColor(i7);
             }
@@ -1761,9 +1663,9 @@ public class r0 extends FrameLayout {
     }
 
     public final boolean x() {
-        i5 shownSubMenuOverlay = getShownSubMenuOverlay();
+        j5 shownSubMenuOverlay = getShownSubMenuOverlay();
         if (shownSubMenuOverlay != null) {
-            return shownSubMenuOverlay.y;
+            return shownSubMenuOverlay.D;
         }
         g1 g1Var = this.d;
         return g1Var != null && g1Var.isShowing();
@@ -1803,7 +1705,7 @@ public class r0 extends FrameLayout {
                     }
                     p0Var.j = z0Var;
                 } else if (i11 == 1) {
-                    d1 d1Var = new d1(k6.H8, getContext(), this.m0);
+                    d1 d1Var = new d1(l6.H8, getContext(), this.m0);
                     d1Var.setTag(R.id.fit_width_tag, 1);
                     this.b.a(d1Var, ha.o(-1, 8));
                     p0Var.j = d1Var;
@@ -1821,9 +1723,9 @@ public class r0 extends FrameLayout {
                     layoutParams2.width = -1;
                     layoutParams2.height = org.telegram.messenger.g0.L(48.0f);
                     z0Var2.setLayoutParams(layoutParams2);
-                    eh ehVar = p0Var.h;
-                    if (ehVar != null) {
-                        p0Var.g = (View) ehVar.run();
+                    gh ghVar = p0Var.h;
+                    if (ghVar != null) {
+                        p0Var.g = (View) ghVar.run();
                         p0Var.h = null;
                     }
                     z0Var2.P = new d0(this, this.b.b(p0Var.g), i10);
@@ -1835,25 +1737,25 @@ public class r0 extends FrameLayout {
                     }
                     p0Var.j = z0Var2;
                 } else if (i11 == 3) {
-                    w70 w70Var = new w70(getContext(), null);
-                    w70Var.setTag(R.id.fit_width_tag, 1);
-                    w70Var.setPadding(org.telegram.messenger.g0.L(13.0f), 0, org.telegram.messenger.g0.L(13.0f), org.telegram.messenger.g0.L(8.0f));
-                    w70Var.setTextSize(1, p0Var.i);
-                    r6.V(w70Var, k6.E8, null);
-                    w70Var.setMovementMethod(LinkMovementMethod.getInstance());
-                    r6.H(w70Var, k6.J6, null);
-                    w70Var.setText(p0Var.e);
-                    w70Var.setMaxWidth(org.telegram.messenger.g0.L(200.0f));
-                    this.b.a(w70Var, ha.q(-1, -2, 0.0f, 0, 0, 8, 0, 0));
-                    p0Var.j = w70Var;
+                    x70 x70Var = new x70(getContext(), null);
+                    x70Var.setTag(R.id.fit_width_tag, 1);
+                    x70Var.setPadding(org.telegram.messenger.g0.L(13.0f), 0, org.telegram.messenger.g0.L(13.0f), org.telegram.messenger.g0.L(8.0f));
+                    x70Var.setTextSize(1, p0Var.i);
+                    s6.U(x70Var, l6.E8, null);
+                    x70Var.setMovementMethod(LinkMovementMethod.getInstance());
+                    s6.G(x70Var, l6.J6, null);
+                    x70Var.setText(p0Var.e);
+                    x70Var.setMaxWidth(org.telegram.messenger.g0.L(200.0f));
+                    this.b.a(x70Var, ha.q(-1, -2, 0.0f, 0, 0, 8, 0, 0));
+                    p0Var.j = x70Var;
                 }
             }
             View view2 = p0Var.j;
             if (view2 != null) {
                 view2.setVisibility(p0Var.l);
-                ch chVar = p0Var.k;
-                if (chVar != null) {
-                    p0Var.j.setOnClickListener(chVar);
+                eh ehVar = p0Var.k;
+                if (ehVar != null) {
+                    p0Var.j.setOnClickListener(ehVar);
                 }
             }
         }
@@ -1875,7 +1777,7 @@ public class r0 extends FrameLayout {
         this(context, yVar, 0, i7, false, null);
     }
 
-    public r0(Context context, y yVar, int i7, int i10, boolean z9, f6 f6Var) {
+    public r0(Context context, y yVar, int i7, int i10, boolean z9, g6 g6Var) {
         super(context);
         new ArrayList();
         this.R = true;
@@ -1885,9 +1787,9 @@ public class r0 extends FrameLayout {
         this.g0 = new ArrayList();
         this.h0 = -1;
         this.i0 = new h2.f((int[]) null);
-        this.m0 = f6Var;
+        this.m0 = g6Var;
         if (i7 != 0) {
-            setBackgroundDrawable(k6.h0(i7, z9 ? 5 : 1, -1));
+            setBackgroundDrawable(l6.h0(i7, z9 ? 5 : 1, -1));
         }
         this.c = yVar;
         if (z9) {
@@ -1904,22 +1806,22 @@ public class r0 extends FrameLayout {
             addView(textView, ha.c(-1.0f, -2));
             return;
         }
-        ch0 ch0Var = new ch0(context);
-        this.y = ch0Var;
-        ch0Var.setScaleType(ImageView.ScaleType.CENTER);
-        ch0Var.setImportantForAccessibility(2);
-        addView(ch0Var, ha.c(-1.0f, -1));
+        dh0 dh0Var = new dh0(context);
+        this.y = dh0Var;
+        dh0Var.setScaleType(ImageView.ScaleType.CENTER);
+        dh0Var.setImportantForAccessibility(2);
+        addView(dh0Var, ha.c(-1.0f, -1));
         if (i10 != 0) {
-            ch0Var.setColorFilter(new PorterDuffColorFilter(i10, PorterDuff.Mode.SRC_IN));
+            dh0Var.setColorFilter(new PorterDuffColorFilter(i10, PorterDuff.Mode.SRC_IN));
         }
     }
 
     public void setIcon(int i7) {
-        ch0 ch0Var = this.y;
-        if (ch0Var == null) {
+        dh0 dh0Var = this.y;
+        if (dh0Var == null) {
             return;
         }
         this.D = i7;
-        ch0Var.setImageResource(i7);
+        dh0Var.setImageResource(i7);
     }
 }

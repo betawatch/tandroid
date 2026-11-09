@@ -24,14 +24,14 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.s6;
 import org.telegram.ui.Components.hc;
 import org.telegram.ui.Components.xa;
-import org.telegram.ui.Wallet.e2;
+import org.telegram.ui.Wallet.d2;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v0 implements v10 {
     public final /* synthetic */ int a = 1;
@@ -79,7 +79,7 @@ public final /* synthetic */ class v0 implements v10 {
                     if (!y0Var.E) {
                         l1 l1Var = y0Var.b;
                         l1Var.getClass();
-                        l1Var.d1(R.drawable.msg_warning, id.M0(2131751106, null), null);
+                        l1Var.d1(R.drawable.msg_warning, id.M0(2131751105, null), null);
                         break;
                     }
                 }
@@ -114,32 +114,32 @@ public final /* synthetic */ class v0 implements v10 {
                 new hc(xa.a(context), bVar).E(bVar).j();
                 break;
             case 2:
-                e2 e2Var = (e2) obj5;
+                d2 d2Var = (d2) obj5;
                 c20 c20Var = (c20) obj4;
                 JSONObject jSONObject = (JSONObject) obj3;
                 TLRPC.Bool bool = (TLRPC.Bool) obj;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
                 if (tL_error2 != null || !(bool instanceof TLRPC.TL_boolTrue)) {
-                    c20Var.a(e2.z(tL_error2, "submitResponse"));
+                    c20Var.a(d2.z(tL_error2, "submitResponse"));
                     break;
                 } else {
                     boolean optBoolean = jSONObject.optBoolean("disconnect");
                     long j10 = this.c;
                     int i12 = this.b;
                     if (!optBoolean) {
-                        e2Var.e(i12, j10, c20Var);
+                        d2Var.e(i12, j10, c20Var);
                         break;
                     } else {
                         TL_wallet.tonConnectCloseSession tonconnectclosesession = new TL_wallet.tonConnectCloseSession();
                         tonconnectclosesession.session_id = j10;
-                        e2Var.f.sendRequestTyped(tonconnectclosesession, new d3.b(1), new org.telegram.ui.Wallet.o1(e2Var, c20Var, j10, i12, 1));
+                        d2Var.f.sendRequestTyped(tonconnectclosesession, new d3.b(1), new org.telegram.ui.Wallet.n1(d2Var, c20Var, j10, i12, 1));
                         break;
                     }
                 }
                 break;
             default:
                 Context context2 = (Context) obj5;
-                f6 f6Var = (f6) obj4;
+                g6 g6Var = (g6) obj4;
                 Runnable runnable = (Runnable) obj3;
                 s9 s9Var = (s9) obj;
                 if (s9Var != null) {
@@ -161,34 +161,34 @@ public final /* synthetic */ class v0 implements v10 {
                         f10.addView(new h7(context2, a22, M0), ha.t(-1, -2, 48, 0, -4, 0, 0));
                         TextView textView = new TextView(context2);
                         qs.i(textView);
-                        textView.setText(id.M0(2131750306, null));
-                        int i14 = k6.j5;
-                        k5.n(textView, i14, f6Var, 1, 20.0f);
+                        textView.setText(id.M0(2131750305, null));
+                        int i14 = l6.j5;
+                        k5.n(textView, i14, g6Var, 1, 20.0f);
                         textView.setGravity(id.a0 ? 5 : 3);
                         f10.addView(textView, ha.d(-2, -2.0f, (id.a0 ? 5 : 3) | 48, 24.0f, 19.0f, 24.0f, 2.0f));
                         TextView textView2 = new TextView(context2);
-                        r6.V(textView2, i14, f6Var);
+                        s6.U(textView2, i14, g6Var);
                         textView2.setTextSize(1, 16.0f);
                         String t6 = m5.t(o4);
                         String t10 = m5.t(j11);
                         Object[] objArr = new Object[2];
                         objArr[i7] = t6;
                         objArr[1] = t10;
-                        k5.r(null, null, 2131750305, objArr, textView2);
+                        k5.r(null, null, 2131750304, objArr, textView2);
                         f10.addView(textView2, ha.t(-1, -2, 48, 24, 4, 24, 4));
-                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(i7, context2, f6Var);
+                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(i7, context2, g6Var);
                         alertDialog$Builder.o(f10);
                         alertDialog$Builder.k(id.M0(2131751771, null), new u5.e(d0Var, 13));
                         alertDialog$Builder.h(id.M0(2131752589, null), null);
                         alertDialog$Builder.a.show();
                         break;
                     } else if (s9Var.e.bid_date > 0 && !s9Var.f()) {
-                        zh.l lVar = new zh.l(context2, f6Var, null, s9Var);
+                        zh.l lVar = new zh.l(context2, g6Var, null, s9Var);
                         lVar.f2 = runnable;
                         lVar.show();
                         break;
                     } else {
-                        new zh.u(context2, f6Var, j11, s9Var.d, runnable).show();
+                        new zh.u(context2, g6Var, j11, s9Var.d, runnable).show();
                         break;
                     }
                 }
@@ -204,16 +204,16 @@ public final /* synthetic */ class v0 implements v10 {
         this.c = j3;
     }
 
-    public /* synthetic */ v0(Context context, f6 f6Var, int i7, long j3, Runnable runnable) {
+    public /* synthetic */ v0(Context context, g6 g6Var, int i7, long j3, Runnable runnable) {
         this.d = context;
-        this.e = f6Var;
+        this.e = g6Var;
         this.b = i7;
         this.c = j3;
         this.f = runnable;
     }
 
-    public /* synthetic */ v0(e2 e2Var, c20 c20Var, JSONObject jSONObject, long j3, int i7) {
-        this.d = e2Var;
+    public /* synthetic */ v0(d2 d2Var, c20 c20Var, JSONObject jSONObject, long j3, int i7) {
+        this.d = d2Var;
         this.e = c20Var;
         this.f = jSONObject;
         this.c = j3;

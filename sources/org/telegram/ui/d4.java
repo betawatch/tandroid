@@ -5,7 +5,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public abstract class d4 {
     public static TLRPC.Document a(TLRPC.WebPage webPage, long j3) {
@@ -101,6 +101,6 @@ public abstract class d4 {
         if (!(pageBlock instanceof TL_iv.pageBlockVideo) || (a10 = a(webPage, ((TL_iv.pageBlockVideo) pageBlock).video_id)) == null) {
             return false;
         }
-        return org.telegram.messenger.ij.L4(a10);
+        return org.telegram.messenger.ij.K4(a10);
     }
 }

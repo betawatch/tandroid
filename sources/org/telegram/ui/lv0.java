@@ -1,146 +1,108 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class lv0 extends nq0 {
-    public final /* synthetic */ ProfileActivity a;
+public final class lv0 implements jp {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ TLRPC.ChatParticipant b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ boolean[] d;
+    public final /* synthetic */ ProfileActivity e;
 
-    public lv0(ProfileActivity profileActivity) {
-        this.a = profileActivity;
+    public lv0(ProfileActivity profileActivity, int i7, TLRPC.ChatParticipant chatParticipant, boolean z9, boolean[] zArr) {
+        this.e = profileActivity;
+        this.a = i7;
+        this.b = chatParticipant;
+        this.c = z9;
+        this.d = zArr;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x0105  */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x0127  */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x013e  */
-    /* JADX WARN: Removed duplicated region for block: B:72:0x0140  */
-    /* JADX WARN: Removed duplicated region for block: B:73:0x012a  */
-    /* JADX WARN: Removed duplicated region for block: B:74:0x0108  */
-    /* JADX WARN: Type inference failed for: r1v7, types: [org.telegram.ui.Components.l9] */
-    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final wq0 E(org.telegram.messenger.ij ijVar, TLRPC.FileLocation fileLocation, int i7, boolean z9, boolean z10) {
-        TLRPC.Chat M0;
-        TLRPC.ChatPhoto chatPhoto;
-        TLRPC.FileLocation fileLocation2;
-        wq0 wq0Var;
-        int i10;
-        boolean z11;
-        long j3;
-        av0 av0Var;
-        av0 av0Var2;
-        org.telegram.ui.Components.rf0 rf0Var;
-        TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated;
-        TLRPC.User a22;
-        TLRPC.UserProfilePhoto userProfilePhoto;
-        if (fileLocation != null) {
-            ProfileActivity profileActivity = this.a;
-            if (profileActivity.X.getScaleX() <= 0.96f || !z10) {
-                if (profileActivity.d1 == 0 ? profileActivity.e1 == 0 || (M0 = profileActivity.getMessagesController().M0(Long.valueOf(profileActivity.e1))) == null || (chatPhoto = M0.photo) == null || (fileLocation2 = chatPhoto.photo_big) == null : (a22 = profileActivity.getMessagesController().a2(Long.valueOf(profileActivity.d1))) == null || (userProfilePhoto = a22.photo) == null || (fileLocation2 = userProfilePhoto.photo_big) == null) {
-                    fileLocation2 = null;
+    @Override // org.telegram.ui.jp
+    public final void a(TLRPC.User user) {
+        ProfileActivity profileActivity = this.e;
+        profileActivity.L.m(-profileActivity.e1, user, profileActivity.D2.megagroup ? 10 : 9);
+    }
+
+    @Override // org.telegram.ui.jp
+    public final void b(int i7, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
+        TLRPC.ChatFull chatFull;
+        boolean z9;
+        int i10 = 0;
+        TLRPC.ChatParticipant chatParticipant = this.b;
+        ProfileActivity profileActivity = this.e;
+        int i11 = this.a;
+        if (i11 == 0) {
+            if (chatParticipant instanceof TLRPC.TL_chatChannelParticipant) {
+                TLRPC.TL_chatChannelParticipant tL_chatChannelParticipant = (TLRPC.TL_chatChannelParticipant) chatParticipant;
+                if (i7 == 1) {
+                    TLRPC.TL_channelParticipantAdmin tL_channelParticipantAdmin = new TLRPC.TL_channelParticipantAdmin();
+                    tL_chatChannelParticipant.channelParticipant = tL_channelParticipantAdmin;
+                    tL_channelParticipantAdmin.flags |= 4;
+                } else {
+                    tL_chatChannelParticipant.channelParticipant = new TLRPC.TL_channelParticipant();
                 }
-                boolean z12 = false;
-                boolean z13 = fileLocation2 != null && fileLocation2.local_id == fileLocation.local_id && fileLocation2.volume_id == fileLocation.volume_id && fileLocation2.dc_id == fileLocation.dc_id;
-                av0 av0Var3 = profileActivity.n0;
-                if (av0Var3 != null) {
-                    int realCount = av0Var3.getRealCount();
-                    i10 = 0;
-                    while (i10 < realCount) {
-                        org.telegram.messenger.hc G = profileActivity.n0.G(i10);
-                        if (G != null && (tL_fileLocationToBeDeprecated = G.f) != null && tL_fileLocationToBeDeprecated.local_id == fileLocation.local_id) {
-                            wq0Var = null;
-                            if (tL_fileLocationToBeDeprecated.volume_id == fileLocation.volume_id && G.a == fileLocation.dc_id) {
-                                z13 = true;
-                                break;
-                            }
-                        }
-                        i10++;
+                tL_chatChannelParticipant.channelParticipant.inviter_id = profileActivity.getUserConfig().e();
+                tL_chatChannelParticipant.channelParticipant.peer = new TLRPC.TL_peerUser();
+                TLRPC.ChannelParticipant channelParticipant = tL_chatChannelParticipant.channelParticipant;
+                channelParticipant.peer.user_id = chatParticipant.user_id;
+                channelParticipant.date = chatParticipant.date;
+                channelParticipant.banned_rights = tL_chatBannedRights;
+                channelParticipant.admin_rights = tL_chatAdminRights;
+                channelParticipant.rank = str;
+            } else if (chatParticipant != null) {
+                TLRPC.ChatParticipant tL_chatParticipantAdmin = i7 == 1 ? new TLRPC.TL_chatParticipantAdmin() : new TLRPC.TL_chatParticipant();
+                tL_chatParticipantAdmin.user_id = chatParticipant.user_id;
+                tL_chatParticipantAdmin.date = chatParticipant.date;
+                tL_chatParticipantAdmin.inviter_id = chatParticipant.inviter_id;
+                int indexOf = profileActivity.t2.participants.participants.indexOf(chatParticipant);
+                if (indexOf >= 0) {
+                    profileActivity.t2.participants.participants.set(indexOf, tL_chatParticipantAdmin);
+                }
+            }
+            if (i7 != 1 || this.c) {
+                return;
+            }
+            this.d[0] = true;
+            return;
+        }
+        if (i11 == 1 && i7 == 0 && profileActivity.D2.megagroup && (chatFull = profileActivity.t2) != null && chatFull.participants != null) {
+            int i12 = 0;
+            while (true) {
+                if (i12 >= profileActivity.t2.participants.participants.size()) {
+                    z9 = false;
+                    break;
+                } else {
+                    if (org.telegram.messenger.ij.B1(((TLRPC.TL_chatChannelParticipant) profileActivity.t2.participants.participants.get(i12)).channelParticipant.peer) == chatParticipant.user_id) {
+                        TLRPC.ChatFull chatFull2 = profileActivity.t2;
+                        chatFull2.participants_count--;
+                        chatFull2.participants.participants.remove(i12);
+                        z9 = true;
+                        break;
                     }
+                    i12++;
                 }
-                wq0Var = null;
-                i10 = -1;
-                if (!z13) {
-                    return wq0Var;
-                }
-                zu0 zu0Var = profileActivity.e0;
-                if (i10 >= 0 && (av0Var = profileActivity.n0) != null && av0Var.getVisibility() == 0) {
-                    if (i10 != profileActivity.n0.getRealPosition() && (rf0Var = (av0Var2 = profileActivity.n0).D0) != null) {
-                        av0Var2.x(rf0Var.j() + i10, false);
+            }
+            TLRPC.ChatFull chatFull3 = profileActivity.t2;
+            if (chatFull3 != null && chatFull3.participants != null) {
+                while (true) {
+                    if (i10 >= profileActivity.t2.participants.participants.size()) {
+                        break;
                     }
-                    ?? currentItemView = profileActivity.n0.getCurrentItemView();
-                    if (currentItemView != 0) {
-                        zu0Var = currentItemView;
-                        z11 = true;
-                        int[] iArr = new int[2];
-                        zu0Var.getLocationInWindow(iArr);
-                        wq0 wq0Var2 = new wq0();
-                        wq0Var2.b = iArr[0];
-                        wq0Var2.c = iArr[1];
-                        wq0Var2.d = zu0Var;
-                        ImageReceiver imageReceiver = zu0Var.getImageReceiver();
-                        wq0Var2.a = imageReceiver;
-                        j3 = profileActivity.d1;
-                        if (j3 == 0) {
-                            wq0Var2.f = j3;
-                        } else {
-                            long j10 = profileActivity.e1;
-                            if (j10 != 0) {
-                                wq0Var2.f = -j10;
-                            }
-                        }
-                        wq0Var2.e = imageReceiver.p();
-                        wq0Var2.g = -1L;
-                        wq0Var2.h = zu0Var.getImageReceiver().E();
-                        wq0Var2.k = !z11 ? 1.0f : profileActivity.X.getScaleX();
-                        wq0Var2.p = profileActivity.d1 != profileActivity.getUserConfig().n;
-                        if (!z11 && profileActivity.X.getScaleX() > 0.96f) {
-                            z12 = true;
-                        }
-                        wq0Var2.r = z12;
-                        wq0Var2.s = z11;
-                        return wq0Var2;
+                    if (profileActivity.t2.participants.participants.get(i10).user_id == chatParticipant.user_id) {
+                        profileActivity.t2.participants.participants.remove(i10);
+                        z9 = true;
+                        break;
                     }
+                    i10++;
                 }
-                z11 = false;
-                int[] iArr2 = new int[2];
-                zu0Var.getLocationInWindow(iArr2);
-                wq0 wq0Var22 = new wq0();
-                wq0Var22.b = iArr2[0];
-                wq0Var22.c = iArr2[1];
-                wq0Var22.d = zu0Var;
-                ImageReceiver imageReceiver2 = zu0Var.getImageReceiver();
-                wq0Var22.a = imageReceiver2;
-                j3 = profileActivity.d1;
-                if (j3 == 0) {
-                }
-                wq0Var22.e = imageReceiver2.p();
-                wq0Var22.g = -1L;
-                wq0Var22.h = zu0Var.getImageReceiver().E();
-                wq0Var22.k = !z11 ? 1.0f : profileActivity.X.getScaleX();
-                wq0Var22.p = profileActivity.d1 != profileActivity.getUserConfig().n;
-                if (!z11) {
-                    z12 = true;
-                }
-                wq0Var22.r = z12;
-                wq0Var22.s = z11;
-                return wq0Var22;
+            }
+            if (z9) {
+                profileActivity.J5(true);
+                profileActivity.M5();
+                profileActivity.d.f();
             }
         }
-        return null;
-    }
-
-    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
-    public final void G() {
-        this.a.e0.getImageReceiver().O0(true, true);
-    }
-
-    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
-    public final void f(String str, String str2, boolean z9) {
-        this.a.q0.p(str, str2, z9);
     }
 }

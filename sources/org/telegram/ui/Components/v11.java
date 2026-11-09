@@ -1,14 +1,25 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class v11 extends FrameLayout {
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), i10);
+public final /* synthetic */ class v11 implements org.telegram.messenger.pc, org.telegram.messenger.oc {
+    public final /* synthetic */ String a;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ org.telegram.messenger.v10 c;
+
+    public /* synthetic */ v11(String str, String str2, org.telegram.messenger.v10 v10Var) {
+        this.a = str;
+        this.b = str2;
+        this.c = v10Var;
+    }
+
+    @Override // org.telegram.messenger.pc
+    public void a(String str) {
+        l21.J0(this.a, str, this.b, this.c);
+    }
+
+    @Override // org.telegram.messenger.oc
+    public void r(Exception exc) {
+        l21.J0(this.a, "en", this.b, this.c);
     }
 }

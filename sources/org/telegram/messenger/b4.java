@@ -25,9 +25,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.lt0;
+import org.telegram.ui.nt0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b4 implements Runnable {
     public final /* synthetic */ int a;
@@ -59,7 +59,7 @@ public final /* synthetic */ class b4 implements Runnable {
     private final void b() {
         Account[] accountArr;
         g5 g5Var = (g5) this.b;
-        lt0 lt0Var = (lt0) this.c;
+        nt0 nt0Var = (nt0) this.c;
         AccountManager accountManager = AccountManager.get(t0.b);
         try {
             Account[] accountsByType = accountManager.getAccountsByType("org.telegram.messenger");
@@ -118,7 +118,7 @@ public final /* synthetic */ class b4 implements Runnable {
         g5Var.l0.clear();
         g5Var.getNotificationCenter().k(qs.O, new Object[0]);
         g5Var.A(0L, false);
-        lt0Var.run();
+        nt0Var.run();
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -278,7 +278,7 @@ public final /* synthetic */ class b4 implements Runnable {
                 if (messageAction instanceof TLRPC.TL_messageActionWalletTonConnectRequest) {
                     TLRPC.TL_messageActionWalletTonConnectRequest tL_messageActionWalletTonConnectRequest = (TLRPC.TL_messageActionWalletTonConnectRequest) messageAction;
                     if (tL_messageActionWalletTonConnectRequest.accepted || tL_messageActionWalletTonConnectRequest.declined) {
-                        org.telegram.ui.Wallet.m0.x(qpVar.currentAccount).g.o(message.id, tL_messageActionWalletTonConnectRequest.session_id);
+                        org.telegram.ui.Wallet.l0.x(qpVar.currentAccount).g.o(message.id, tL_messageActionWalletTonConnectRequest.session_id);
                         return;
                     }
                     return;
@@ -355,8 +355,8 @@ public final /* synthetic */ class b4 implements Runnable {
                         id.E0().V0(qpVar3.currentAccount, true);
                     }
                 }
-                org.telegram.ui.ActionBar.k6.m1(qpVar3.currentAccount, false);
-                org.telegram.ui.ActionBar.k6.G(false);
+                org.telegram.ui.ActionBar.l6.m1(qpVar3.currentAccount, false);
+                org.telegram.ui.ActionBar.l6.G(false);
                 if (tL_config.static_maps_provider == null) {
                     tL_config.static_maps_provider = "telegram";
                 }
@@ -493,7 +493,7 @@ public final /* synthetic */ class b4 implements Runnable {
                     SQLitePreparedStatement executeFast2 = yrVar.b.executeFast("REPLACE INTO unread_push_messages VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
                     executeFast2.requery();
                     executeFast2.bindLong(1, ij.B0(ijVar.k));
-                    executeFast2.bindInteger(2, ijVar.f1());
+                    executeFast2.bindInteger(2, ijVar.e1());
                     executeFast2.bindLong(3, ijVar.k.random_id);
                     executeFast2.bindInteger(4, ijVar.k.date);
                     executeFast2.bindByteBuffer(5, nativeByteBuffer);
@@ -516,7 +516,7 @@ public final /* synthetic */ class b4 implements Runnable {
                         executeFast2.bindString(8, str9);
                     }
                     executeFast2.bindInteger(9, i18);
-                    executeFast2.bindLong(10, ij.c2(yrVar.currentAccount, ijVar.k, false, false));
+                    executeFast2.bindLong(10, ij.b2(yrVar.currentAccount, ijVar.k, false, false));
                     executeFast2.bindInteger(11, (ijVar.I ? 1 : 0) + (ijVar.J ? 1 : 0));
                     executeFast2.step();
                     nativeByteBuffer.reuse();
@@ -626,11 +626,11 @@ public final /* synthetic */ class b4 implements Runnable {
                 org.telegram.ui.ActionBar.f2 f2Var = (org.telegram.ui.ActionBar.f2) obj;
                 k00Var3.getClass();
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(f2Var.getContext());
-                String M0 = id.M0(2131748979, null);
+                String M0 = id.M0(2131748978, null);
                 org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                 u1Var.R = M0;
-                u1Var.T = id.a0(null, null, 2131748949, Integer.valueOf(qp.s1(k00Var3.currentAccount).d5));
-                alertDialog$Builder.k(id.M0(2131747832, null), null);
+                u1Var.T = id.a0(null, null, 2131748948, Integer.valueOf(qp.s1(k00Var3.currentAccount).d5));
+                alertDialog$Builder.k(id.M0(2131747831, null), null);
                 f2Var.showDialog(u1Var);
                 return;
             case 15:

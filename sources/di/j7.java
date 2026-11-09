@@ -1,42 +1,52 @@
 package di;
 
-import org.telegram.tgnet.tl.TL_stories;
+import java.util.Locale;
+import org.telegram.SQLite.SQLiteDatabase;
+import org.telegram.messenger.yr;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j7 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ l7 b;
-    public final /* synthetic */ TL_stories.PeerStories c;
+    public final /* synthetic */ m7 b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ int d;
 
-    public /* synthetic */ j7(l7 l7Var, TL_stories.PeerStories peerStories, int i7) {
-        this.a = i7;
-        this.b = l7Var;
-        this.c = peerStories;
+    public /* synthetic */ j7(m7 m7Var, long j3, int i7, int i10) {
+        this.a = i10;
+        this.b = m7Var;
+        this.c = j3;
+        this.d = i7;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                l7 l7Var = this.b;
-                l7Var.getClass();
-                int i7 = 0;
-                while (true) {
-                    TL_stories.PeerStories peerStories = this.c;
-                    if (i7 >= peerStories.stories.size()) {
-                        break;
-                    } else {
-                        l7Var.l(org.telegram.messenger.m5.o(peerStories.peer), peerStories.stories.get(i7));
-                        i7++;
-                    }
+                long j3 = this.c;
+                int i7 = this.d;
+                yr yrVar = this.b.b;
+                SQLiteDatabase sQLiteDatabase = yrVar.b;
+                try {
+                    Locale locale = Locale.US;
+                    sQLiteDatabase.executeFast("REPLACE INTO stories_counter VALUES(" + j3 + ", 0, " + i7 + ")").stepThis().dispose();
+                    break;
+                } catch (Throwable th2) {
+                    yrVar.o(th2, true);
+                    return;
                 }
             default:
-                l7 l7Var2 = this.b;
-                l7Var2.getClass();
-                TL_stories.PeerStories peerStories2 = this.c;
-                l7Var2.g(org.telegram.messenger.m5.o(peerStories2.peer), peerStories2);
-                break;
+                long j10 = this.c;
+                int i10 = this.d;
+                yr yrVar2 = this.b.b;
+                SQLiteDatabase sQLiteDatabase2 = yrVar2.b;
+                try {
+                    Locale locale2 = Locale.US;
+                    sQLiteDatabase2.executeFast("DELETE FROM stories WHERE dialog_id = " + j10 + " AND story_id = " + i10).stepThis().dispose();
+                    break;
+                } catch (Throwable th3) {
+                    yrVar2.o(th3, true);
+                }
         }
     }
 }

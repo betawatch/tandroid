@@ -10,12 +10,12 @@ import org.telegram.messenger.qs;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.oj0;
-import org.telegram.ui.Components.xi0;
+import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.yi0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public abstract class e3 extends oj0 {
+public abstract class e3 extends pj0 {
     public boolean d;
     public String f;
     public String h;
@@ -25,13 +25,13 @@ public abstract class e3 extends oj0 {
     public final ArrayList c = new ArrayList();
     public int e = -1;
     public final ColorDrawable s = new ColorDrawable(285212671);
-    public final di.s7 w = new di.s7(this, 24);
+    public final di.f8 w = new di.f8(this, 23);
 
     public e3(f3 f3Var) {
         this.x = f3Var;
     }
 
-    @Override // org.telegram.ui.Components.oj0
+    @Override // org.telegram.ui.Components.pj0
     public final boolean D(v4.d1 d1Var) {
         return true;
     }
@@ -112,6 +112,6 @@ public abstract class e3 extends oj0 {
 
     @Override // v4.g0
     public final v4.d1 x(ViewGroup viewGroup, int i7) {
-        return new xi0(new bi.b7(this.x.getContext(), 1));
+        return new yi0(new bi.b7(this.x.getContext(), 1));
     }
 }

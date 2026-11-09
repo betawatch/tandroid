@@ -5,7 +5,7 @@ import java.util.HashSet;
 import org.telegram.messenger.c20;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e8 implements c20 {
     public final /* synthetic */ int a;
@@ -43,12 +43,12 @@ public final /* synthetic */ class e8 implements c20 {
             case 1:
                 s8 s8Var2 = n8Var.W;
                 int i11 = s8.U1;
-                s8Var2.N0(new q8(5, s8Var2.a, (ArrayList) obj), new di.w3(s8Var2, i10), false);
+                s8Var2.N0(new q8(5, s8Var2.a, (ArrayList) obj), new di.x3(s8Var2, i10), false);
                 break;
             case 2:
                 s8 s8Var3 = n8Var.W;
                 HashSet hashSet2 = s8Var3.r1;
-                hashSet2.add(Integer.valueOf(((di.r6) obj).a));
+                hashSet2.add(Integer.valueOf(((di.s6) obj).a));
                 n8Var.h(true);
                 v8 v8Var2 = s8Var3.O1;
                 if (v8Var2 != null) {

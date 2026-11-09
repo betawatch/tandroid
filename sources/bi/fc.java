@@ -7,7 +7,7 @@ import org.telegram.messenger.d20;
 import org.telegram.messenger.ij;
 import org.telegram.ui.Components.di;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class fc implements d20 {
     public final /* synthetic */ int a;
@@ -34,7 +34,7 @@ public final /* synthetic */ class fc implements d20 {
                 gc gcVar2 = (gc) callback;
                 return gcVar2.s[((Integer) obj).intValue() % gcVar2.s.length];
             case 3:
-                return new org.telegram.ui.web.w(4, (org.telegram.ui.l0) callback, (Integer) obj);
+                return new org.telegram.ui.web.s(5, (org.telegram.ui.l0) callback, (Integer) obj);
             case 4:
                 tg.g0 g0Var = (tg.g0) callback;
                 if (((Integer) obj).intValue() == 2) {

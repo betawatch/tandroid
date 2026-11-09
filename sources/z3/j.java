@@ -5,11 +5,11 @@ import org.telegram.messenger.b20;
 import org.telegram.messenger.k9;
 import org.telegram.ui.ActionBar.r1;
 import org.telegram.ui.ActionBar.u1;
-import org.telegram.ui.Components.x31;
-import zh.k3;
+import org.telegram.ui.Components.y31;
 import zh.l3;
+import zh.m3;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class j implements g9.k, r1, b20, k9 {
     public final /* synthetic */ int a;
@@ -19,7 +19,7 @@ public final /* synthetic */ class j implements g9.k, r1, b20, k9 {
     }
 
     @Override // org.telegram.messenger.b20
-    public Boolean a(x31 x31Var, View view, Integer num, Float f10, Float f11) {
+    public Boolean a(y31 y31Var, View view, Integer num, Float f10, Float f11) {
         return Boolean.FALSE;
     }
 
@@ -42,11 +42,11 @@ public final /* synthetic */ class j implements g9.k, r1, b20, k9 {
 
     @Override // org.telegram.messenger.k9
     public Object j(Object obj) {
-        int i7 = k3.c2;
+        int i7 = l3.c2;
         return 0;
     }
 
-    public /* synthetic */ j(l3 l3Var) {
+    public /* synthetic */ j(m3 m3Var) {
         this.a = 3;
     }
 }

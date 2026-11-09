@@ -13,7 +13,7 @@ import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class z1 implements Runnable {
     public final /* synthetic */ int a;
@@ -408,16 +408,16 @@ public final /* synthetic */ class z1 implements Runnable {
                 gz gzVar = (gz) obj3;
                 ij ijVar = (ij) obj2;
                 TLRPC.Message message2 = (TLRPC.Message) obj;
-                int f12 = ijVar.f1();
+                int e19 = ijVar.e1();
                 ijVar.k = message2;
                 ijVar.K1 = true;
                 qs notificationCenter = gzVar.getNotificationCenter();
-                Integer valueOf = Integer.valueOf(f12);
+                Integer valueOf = Integer.valueOf(e19);
                 Integer valueOf2 = Integer.valueOf(message2.id);
                 Long valueOf3 = Long.valueOf(j3);
                 Boolean bool = Boolean.FALSE;
                 notificationCenter.k(21, valueOf, valueOf2, message2, valueOf3, 0L, 0, bool);
-                gzVar.getNotificationCenter().k(22, Integer.valueOf(f12), Integer.valueOf(message2.id), message2, Long.valueOf(j3), 0L, 0, bool);
+                gzVar.getNotificationCenter().k(22, Integer.valueOf(e19), Integer.valueOf(message2.id), message2, Long.valueOf(j3), 0L, 0, bool);
                 gzVar.d0(i12);
                 gzVar.i0(i12, false);
                 return;
@@ -453,8 +453,8 @@ public final /* synthetic */ class z1 implements Runnable {
                             ij ijVar2 = (ij) arrayList4.get(0);
                             cb.c cVar = new cb.c(5);
                             cVar.z((long) (ijVar2.L0() * 1000.0d));
-                            cVar.B("android.media.metadata.ARTIST", ijVar2.x1(true));
-                            cVar.B("android.media.metadata.TITLE", ijVar2.z1(true));
+                            cVar.B("android.media.metadata.ARTIST", ijVar2.w1(true));
+                            cVar.B("android.media.metadata.TITLE", ijVar2.y1(true));
                             a0Var.t(new MediaMetadataCompat((Bundle) cVar.b));
                         }
                     }

@@ -1,71 +1,22 @@
 package org.telegram.ui;
 
-import android.view.View;
+import android.content.Context;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class il extends org.telegram.ui.Components.l6 {
-    public final /* synthetic */ int b;
-    public final /* synthetic */ hl c;
+public final class il extends org.telegram.ui.Cells.a0 {
+    public final /* synthetic */ ll f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public il(hl hlVar, int i7) {
-        super("p2", 0);
-        this.b = i7;
-        switch (i7) {
-            case 1:
-                this.c = hlVar;
-                super("progress", 0);
-                break;
-            case 2:
-                this.c = hlVar;
-                super("alpha", 0);
-                break;
-            default:
-                this.c = hlVar;
-                break;
-        }
+    public il(ll llVar, Context context, int i7, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(i7, context, g6Var);
+        this.f = llVar;
     }
 
-    @Override // org.telegram.ui.Components.l6
-    public final void c(Object obj, float f10) {
-        switch (this.b) {
-            case 0:
-                ((org.telegram.messenger.ej) obj).e = f10;
-                View view = this.c.c.Q.fragmentView;
-                if (view != null) {
-                    view.invalidate();
-                    break;
-                }
-                break;
-            case 1:
-                ((org.telegram.messenger.ej) obj).g = f10;
-                View view2 = this.c.c.Q.fragmentView;
-                if (view2 != null) {
-                    view2.invalidate();
-                    break;
-                }
-                break;
-            default:
-                ((org.telegram.messenger.ej) obj).f = f10;
-                View view3 = this.c.c.Q.fragmentView;
-                if (view3 != null) {
-                    view3.invalidate();
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // android.util.Property
-    public final Object get(Object obj) {
-        switch (this.b) {
-            case 0:
-                return Float.valueOf(((org.telegram.messenger.ej) obj).e);
-            case 1:
-                return Float.valueOf(((org.telegram.messenger.ej) obj).g);
-            default:
-                return Float.valueOf(((org.telegram.messenger.ej) obj).f);
-        }
+    @Override // org.telegram.ui.Cells.a0
+    public final int getSideMenuWidth() {
+        cn cnVar = this.f.Q;
+        int i7 = cn.kd;
+        return cnVar.m9();
     }
 }

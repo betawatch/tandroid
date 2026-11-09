@@ -12,9 +12,9 @@ import android.view.View;
 import fi.v3;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.xq;
-import org.telegram.ui.z40;
+import org.telegram.ui.b50;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public abstract class o1 extends View {
     public Bitmap a;
@@ -39,7 +39,7 @@ public abstract class o1 extends View {
         ValueAnimator duration = ValueAnimator.ofFloat(1.0f, 0.0f).setDuration(150L);
         duration.setInterpolator(xq.f);
         duration.addUpdateListener(new v3(this, 26));
-        duration.addListener(new z40(14, this, z9));
+        duration.addListener(new b50(14, this, z9));
         duration.start();
     }
 

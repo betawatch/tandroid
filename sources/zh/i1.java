@@ -1,15 +1,15 @@
 package zh;
 
 import org.telegram.messenger.w10;
-import org.telegram.ui.Components.up0;
+import org.telegram.ui.Components.vp0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i1 implements te.b, w10 {
-    public final /* synthetic */ up0 a;
+    public final /* synthetic */ vp0 a;
 
-    public /* synthetic */ i1(up0 up0Var) {
-        this.a = up0Var;
+    public /* synthetic */ i1(vp0 vp0Var) {
+        this.a = vp0Var;
     }
 
     @Override // te.b
@@ -19,12 +19,12 @@ public final /* synthetic */ class i1 implements te.b, w10 {
 
     @Override // org.telegram.messenger.w10
     public Object d(Number number, Object obj) {
-        up0 up0Var = this.a;
-        up0Var.i();
+        vp0 vp0Var = this.a;
+        vp0Var.i();
         if (((Integer) number).intValue() != -1) {
             return Boolean.FALSE;
         }
-        up0Var.h(null, new j1(up0Var, 1));
+        vp0Var.h(null, new j1(vp0Var, 1));
         return Boolean.TRUE;
     }
 

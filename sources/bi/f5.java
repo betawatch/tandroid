@@ -6,11 +6,11 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.v61;
+import org.telegram.ui.Components.w61;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class f5 extends v61 {
+public final class f5 extends w61 {
     public final /* synthetic */ k7 V;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -19,7 +19,7 @@ public final class f5 extends v61 {
         this.V = k7Var;
     }
 
-    @Override // org.telegram.ui.Components.v61
+    @Override // org.telegram.ui.Components.w61
     public final void F(View view, float f10) {
         View view2;
         i5 i5Var;
@@ -71,17 +71,17 @@ public final class f5 extends v61 {
     }
 
     /* JADX WARN: Type inference failed for: r1v1, types: [boolean] */
-    @Override // org.telegram.ui.Components.v61
+    @Override // org.telegram.ui.Components.w61
     public final void G() {
         super.G();
         int i7 = this.b;
         k7 k7Var = this.V;
-        if (i7 != k7Var.I1(false)) {
-            org.telegram.messenger.g0.h3(new k1(2, this, this.b > k7Var.I1(false)));
+        if (i7 != k7Var.H1(false)) {
+            org.telegram.messenger.g0.h3(new k1(2, this, this.b > k7Var.H1(false)));
         }
     }
 
-    @Override // org.telegram.ui.Components.v61
+    @Override // org.telegram.ui.Components.w61
     public final boolean b(MotionEvent motionEvent) {
         g6 g6Var = this.V.T2;
         return g6Var == null || g6Var.c(0);
@@ -96,7 +96,7 @@ public final class f5 extends v61 {
         canvas.restore();
     }
 
-    @Override // org.telegram.ui.Components.v61
+    @Override // org.telegram.ui.Components.w61
     public final float getAvailableTranslationX() {
         return Math.max(1, getMeasuredWidth() - (this.V.t0 * 2));
     }

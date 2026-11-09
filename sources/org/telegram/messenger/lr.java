@@ -11,7 +11,7 @@ import org.telegram.SQLite.SQLitePreparedStatement;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class lr implements Runnable {
     public final /* synthetic */ int a;
@@ -144,7 +144,7 @@ public final /* synthetic */ class lr implements Runnable {
                                         TLRPC.Message TLdeserialize = TLRPC.Message.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(z10), z10);
                                         if (TLdeserialize != null) {
                                             TLdeserialize.readAttachPath(byteBufferValue, yrVar7.getUserConfig().n);
-                                            if (!TLdeserialize.out && TLdeserialize.media_unread && ij.S4(TLdeserialize)) {
+                                            if (!TLdeserialize.out && TLdeserialize.media_unread && ij.R4(TLdeserialize)) {
                                                 z10 = false;
                                                 arrayList9.add(new ij(yrVar7.currentAccount, TLdeserialize, false, false));
                                                 byteBufferValue.reuse();
@@ -340,13 +340,13 @@ public final /* synthetic */ class lr implements Runnable {
                                         int i16 = 16;
                                         if (i15 < arrayList.size()) {
                                             TLRPC.Message message = (TLRPC.Message) arrayList.get(i15);
-                                            ij.r5(message);
+                                            ij.q5(message);
                                             NativeByteBuffer nativeByteBuffer3 = new NativeByteBuffer(message.getObjectSize());
                                             message.serializeToStream(nativeByteBuffer3);
                                             sQLitePreparedStatement.requery();
                                             sQLitePreparedStatement.bindInteger(i14, message.id);
                                             sQLitePreparedStatement.bindLong(i13, message.dialog_id);
-                                            sQLitePreparedStatement.bindInteger(i12, ij.d2(message));
+                                            sQLitePreparedStatement.bindInteger(i12, ij.c2(message));
                                             sQLitePreparedStatement.bindInteger(4, message.send_state);
                                             sQLitePreparedStatement.bindInteger(5, message.date);
                                             sQLitePreparedStatement.bindByteBuffer(6, nativeByteBuffer3);
@@ -564,7 +564,7 @@ public final /* synthetic */ class lr implements Runnable {
                         TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) arrayList8.get(i19);
                         executeFast.requery();
                         executeFast.bindLong(1, j11);
-                        executeFast.bindLong(2, ij.C1(channelParticipant.peer));
+                        executeFast.bindLong(2, ij.B1(channelParticipant.peer));
                         executeFast.bindInteger(3, currentTimeMillis);
                         NativeByteBuffer nativeByteBuffer4 = new NativeByteBuffer(channelParticipant.getObjectSize());
                         channelParticipant.serializeToStream(nativeByteBuffer4);
@@ -653,7 +653,7 @@ public final /* synthetic */ class lr implements Runnable {
                     i20++;
                     TLRPC.Message message2 = (TLRPC.Message) obj;
                     if (yrVar7.getMessagesController().G3(message2)) {
-                        hashSet.add(Long.valueOf(ij.R1(j3, message2)));
+                        hashSet.add(Long.valueOf(ij.Q1(j3, message2)));
                         sQLiteCursor3 = 1;
                     }
                 }

@@ -14,15 +14,16 @@ import j$.util.Objects;
 import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
 import org.telegram.ui.Components.FragmentContextView;
-import org.telegram.ui.Components.i21;
 import org.telegram.ui.Components.j00;
+import org.telegram.ui.Components.j21;
 import org.telegram.ui.SessionsActivity;
-import org.telegram.ui.Wallet.m9;
-import org.telegram.ui.fc1;
-import org.telegram.ui.ls;
-import org.telegram.ui.z21;
+import org.telegram.ui.Wallet.l9;
+import org.telegram.ui.b31;
+import org.telegram.ui.ic1;
+import org.telegram.ui.ns;
+import org.telegram.ui.wb1;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class m2 extends TextView {
     public final /* synthetic */ int a;
@@ -57,10 +58,10 @@ public final class m2 extends TextView {
                 break;
             case 6:
                 super.draw(canvas);
-                z21 z21Var = (z21) this.b;
-                org.telegram.ui.Components.voip.n nVar = z21Var.c;
+                b31 b31Var = (b31) this.b;
+                org.telegram.ui.Components.voip.n nVar = b31Var.c;
                 if (nVar.g <= 1.0f) {
-                    SessionsActivity sessionsActivity = z21Var.f;
+                    SessionsActivity sessionsActivity = b31Var.f;
                     if (sessionsActivity.V && sessionsActivity.W) {
                         RectF rectF2 = org.telegram.messenger.g0.P;
                         rectF2.set(0.0f, 0.0f, getWidth(), getHeight());
@@ -82,7 +83,7 @@ public final class m2 extends TextView {
         switch (this.a) {
             case 5:
                 super.onAttachedToWindow();
-                qs.e().c((ls) this.b, qs.i4);
+                qs.e().c((ns) this.b, qs.i4);
                 break;
             default:
                 super.onAttachedToWindow();
@@ -95,7 +96,7 @@ public final class m2 extends TextView {
         switch (this.a) {
             case 5:
                 super.onDetachedFromWindow();
-                qs.e().n((ls) this.b, qs.i4);
+                qs.e().n((ns) this.b, qs.i4);
                 break;
             default:
                 super.onDetachedFromWindow();
@@ -129,11 +130,11 @@ public final class m2 extends TextView {
                 canvas.drawRoundRect(rectF2, org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), paint);
                 break;
             case 9:
-                org.telegram.ui.Wallet.g6 g6Var = (org.telegram.ui.Wallet.g6) this.b;
-                float e10 = g6Var.g0.e(false, g6Var.e0);
+                org.telegram.ui.Wallet.f6 f6Var = (org.telegram.ui.Wallet.f6) this.b;
+                float e10 = f6Var.g0.e(false, f6Var.e0);
                 TextPaint paint2 = getPaint();
                 Objects.requireNonNull(paint2);
-                g6Var.c(e10, new org.telegram.ui.Wallet.d3(paint2, 3), new org.telegram.ui.Wallet.n(14, this, canvas));
+                f6Var.c(e10, new org.telegram.ui.Wallet.c3(paint2, 3), new wb1(15, this, canvas));
                 break;
             default:
                 super.onDraw(canvas);
@@ -147,7 +148,7 @@ public final class m2 extends TextView {
             case 8:
                 super.onLayout(z9, i7, i10, i11, i12);
                 if (z9) {
-                    ((fc1) this.b).y();
+                    ((ic1) this.b).y();
                     break;
                 }
                 break;
@@ -188,13 +189,13 @@ public final class m2 extends TextView {
             case 3:
                 super.onMeasure(i7, i10);
                 if (id.a0) {
-                    ((i21) this.b).b.setPivotX(getMeasuredWidth());
+                    ((j21) this.b).b.setPivotX(getMeasuredWidth());
                     break;
                 }
                 break;
             case 10:
                 super.onMeasure(i7, i10);
-                setMeasuredDimension(getMeasuredWidth(), Math.round(getMeasuredHeight() * ((m9) this.b).X));
+                setMeasuredDimension(getMeasuredWidth(), Math.round(getMeasuredHeight() * ((l9) this.b).X));
                 break;
             case 11:
                 super.onMeasure(i7, i10);
@@ -262,7 +263,7 @@ public final class m2 extends TextView {
         switch (i7) {
             case 5:
                 super(context);
-                this.b = new ls(1, this);
+                this.b = new ns(1, this);
                 break;
             default:
                 break;

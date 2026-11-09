@@ -7,7 +7,7 @@ import android.graphics.Paint;
 import android.widget.LinearLayout;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class l8 extends LinearLayout {
     public float a;
@@ -57,11 +57,11 @@ public final class l8 extends LinearLayout {
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
-        int i7 = org.telegram.ui.ActionBar.k6.a7;
+        int i7 = org.telegram.ui.ActionBar.l6.a7;
         n8 n8Var = this.h;
         s8 s8Var = n8Var.W;
         int i10 = s8.U1;
-        int w02 = org.telegram.ui.ActionBar.k6.w0(i7, s8Var.I0);
+        int w02 = org.telegram.ui.ActionBar.l6.w0(i7, s8Var.I0);
         Paint paint = this.e;
         paint.setColor(w02);
         paint.setAlpha((int) (this.f.e(false, n8Var.f.canScrollVertically(1) ? 1.0f : 0.0f) * 255.0f));

@@ -6,7 +6,7 @@ import org.telegram.messenger.qp;
 import org.telegram.messenger.v10;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n9 implements c20 {
     public final /* synthetic */ ea a;
@@ -15,18 +15,18 @@ public final /* synthetic */ class n9 implements c20 {
     public final /* synthetic */ boolean[] d;
     public final /* synthetic */ v10 e;
     public final /* synthetic */ Context f;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f6 g;
+    public final /* synthetic */ org.telegram.ui.ActionBar.g6 g;
     public final /* synthetic */ TLRPC.ChatInvite h;
     public final /* synthetic */ String i;
 
-    public /* synthetic */ n9(ea eaVar, long j3, int i7, boolean[] zArr, v10 v10Var, Context context, org.telegram.ui.ActionBar.f6 f6Var, TLRPC.ChatInvite chatInvite, String str) {
+    public /* synthetic */ n9(ea eaVar, long j3, int i7, boolean[] zArr, v10 v10Var, Context context, org.telegram.ui.ActionBar.g6 g6Var, TLRPC.ChatInvite chatInvite, String str) {
         this.a = eaVar;
         this.b = j3;
         this.c = i7;
         this.d = zArr;
         this.e = v10Var;
         this.f = context;
-        this.g = f6Var;
+        this.g = g6Var;
         this.h = chatInvite;
         this.i = str;
     }
@@ -47,10 +47,10 @@ public final /* synthetic */ class n9 implements c20 {
         }
         boolean z9 = qp.s1(this.c).j7;
         Context context = this.f;
-        org.telegram.ui.ActionBar.f6 f6Var = this.g;
+        org.telegram.ui.ActionBar.g6 g6Var = this.g;
         if (!z9) {
             boolean[] zArr2 = {false};
-            tc tcVar = new tc(context, f6Var, j10, 1, chatInvite.title, new r7(eaVar, zArr2, str, chatInvite, zArr, v10Var, c20Var), 0L);
+            tc tcVar = new tc(context, g6Var, j10, 1, chatInvite.title, new r7(eaVar, zArr2, str, chatInvite, zArr, v10Var, c20Var), 0L);
             tcVar.setOnDismissListener(new s7(eaVar, c20Var, zArr2, zArr, v10Var, 0));
             tcVar.show();
             return;
@@ -62,6 +62,6 @@ public final /* synthetic */ class n9 implements c20 {
             v10Var.a("cancelled", 0L);
             zArr[0] = true;
         }
-        ea.c0(context, f6Var);
+        ea.c0(context, g6Var);
     }
 }

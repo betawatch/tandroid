@@ -6,16 +6,16 @@ import android.text.method.LinkMovementMethod;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public class yb extends za {
     public final l9 a;
     public final TextView b;
     public final TextView c;
 
-    public yb(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, f6Var);
-        int i7 = org.telegram.ui.ActionBar.k6.vj;
+    public yb(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(context, g6Var);
+        int i7 = org.telegram.ui.ActionBar.l6.vj;
         getThemedColor(i7);
         l9 l9Var = new l9(context);
         this.a = l9Var;
@@ -26,13 +26,13 @@ public class yb extends za {
         TextView textView = new TextView(context);
         this.b = textView;
         textView.setSingleLine();
-        org.telegram.messenger.k5.n(textView, i7, f6Var, 1, 14.0f);
+        org.telegram.messenger.k5.n(textView, i7, g6Var, 1, 14.0f);
         linearLayout.addView(textView);
         TextView textView2 = new TextView(context);
         this.c = textView2;
         textView2.setMaxLines(2);
-        org.telegram.ui.ActionBar.r6.V(textView2, i7, f6Var);
-        org.telegram.ui.ActionBar.r6.H(textView2, org.telegram.ui.ActionBar.k6.uj, f6Var);
+        org.telegram.ui.ActionBar.s6.U(textView2, i7, g6Var);
+        org.telegram.ui.ActionBar.s6.G(textView2, org.telegram.ui.ActionBar.l6.uj, g6Var);
         textView2.setMovementMethod(new LinkMovementMethod());
         textView2.setTypeface(Typeface.SANS_SERIF);
         textView2.setTextSize(1, 13.0f);

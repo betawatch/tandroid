@@ -1,44 +1,24 @@
 package org.telegram.ui;
 
+import android.view.MotionEvent;
 import android.view.View;
-import android.widget.RelativeLayout;
-import org.telegram.tgnet.TLObject;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class ds0 extends RelativeLayout {
-    public final /* synthetic */ PopupNotificationActivity a;
+public final /* synthetic */ class ds0 implements View.OnTouchListener {
+    public final /* synthetic */ int a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ds0(PopupNotificationActivity popupNotificationActivity, PopupNotificationActivity popupNotificationActivity2) {
-        super(popupNotificationActivity2);
-        this.a = popupNotificationActivity;
-    }
-
-    @Override // android.widget.RelativeLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
-        super.onLayout(z9, i7, i10, i11, i12);
-        for (int i13 = 0; i13 < getChildCount(); i13++) {
-            View childAt = getChildAt(i13);
-            if (childAt.getTag() instanceof String) {
-                int left = childAt.getLeft();
-                PopupNotificationActivity popupNotificationActivity = this.a;
-                childAt.layout(left, org.telegram.messenger.g0.L(3.0f) + popupNotificationActivity.b.getTop(), childAt.getRight(), popupNotificationActivity.b.getBottom());
-            }
+    @Override // android.view.View.OnTouchListener
+    public final boolean onTouch(View view, MotionEvent motionEvent) {
+        switch (this.a) {
+            case 0:
+                int i7 = PopupNotificationActivity.b0;
+                break;
+            default:
+                HashSet hashSet = y91.q1;
+                break;
         }
-    }
-
-    @Override // android.widget.RelativeLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(i7, i10);
-        PopupNotificationActivity popupNotificationActivity = this.a;
-        int measuredWidth = popupNotificationActivity.b.getMeasuredWidth();
-        int measuredHeight = popupNotificationActivity.b.getMeasuredHeight();
-        for (int i11 = 0; i11 < getChildCount(); i11++) {
-            View childAt = getChildAt(i11);
-            if (childAt.getTag() instanceof String) {
-                childAt.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(measuredHeight - org.telegram.messenger.g0.L(3.0f), TLObject.FLAG_30));
-            }
-        }
+        return true;
     }
 }

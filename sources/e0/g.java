@@ -11,7 +11,7 @@ import android.os.Looper;
 import android.text.TextPaint;
 import android.view.View;
 import androidx.core.graphics.drawable.IconCompat;
-import di.h4;
+import di.i4;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -20,11 +20,11 @@ import org.telegram.messenger.id;
 import org.telegram.messenger.me;
 import org.telegram.ui.Components.i6;
 import org.telegram.ui.Components.ic;
-import org.telegram.ui.Components.rg0;
+import org.telegram.ui.Components.sg0;
 import org.telegram.ui.Components.w5;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class g {
     public int a;
@@ -39,7 +39,7 @@ public final class g {
     public g(View view) {
         this.h = new Paint(1);
         this.d = new w5(view, 350L, xq.h);
-        this.f = new rg0(view);
+        this.f = new sg0(view);
         this.g = new ic(view);
         i6 i6Var = new i6(false, false, false);
         this.e = i6Var;
@@ -48,10 +48,10 @@ public final class g {
         i6Var.setCallback(view);
         i6Var.M = (int) (org.telegram.messenger.g0.q.x * 0.3f);
         this.b = false;
-        i6Var.t(id.M0(2131746440, null), false, true);
-        String M0 = id.M0(2131746439, null);
+        i6Var.t(id.M0(2131746439, null), false, true);
+        String M0 = id.M0(2131746438, null);
         TextPaint textPaint = i6Var.a;
-        this.a = (int) Math.ceil(Math.max(textPaint.measureText(M0), textPaint.measureText(id.M0(2131746440, null))));
+        this.a = (int) Math.ceil(Math.max(textPaint.measureText(M0), textPaint.measureText(id.M0(2131746439, null))));
     }
 
     public void a(l0 l0Var) {
@@ -119,11 +119,11 @@ public final class g {
 
     public void d(Canvas canvas, RectF rectF, float f10, float f11, int i7, boolean z9, boolean z10) {
         Paint paint = (Paint) this.h;
-        rg0 rg0Var = (rg0) this.f;
+        sg0 sg0Var = (sg0) this.f;
         i6 i6Var = (i6) this.e;
         if (z9 != this.b) {
             this.b = z9;
-            i6Var.t(id.M0(z9 ? 2131746439 : 2131746440, null), true, true);
+            i6Var.t(id.M0(z9 ? 2131746438 : 2131746439, null), true, true);
         }
         int c10 = (int) (i6Var.c() + org.telegram.messenger.g0.L(23.66f));
         float L = org.telegram.messenger.g0.L(17.66f);
@@ -141,16 +141,16 @@ public final class g {
             float L2 = org.telegram.messenger.g0.L(14.0f);
             int L3 = (int) ((rectF.right - org.telegram.messenger.g0.L(3.33f)) - L2);
             float f13 = L2 / 2.0f;
-            rg0Var.setBounds(L3, (int) ((rectF.centerY() - f13) + org.telegram.messenger.g0.L(0.33f)), (int) (rectF.right - org.telegram.messenger.g0.L(3.33f)), (int) (rectF.centerY() + f13 + org.telegram.messenger.g0.L(0.33f)));
-            Paint paint2 = rg0Var.b;
+            sg0Var.setBounds(L3, (int) ((rectF.centerY() - f13) + org.telegram.messenger.g0.L(0.33f)), (int) (rectF.right - org.telegram.messenger.g0.L(3.33f)), (int) (rectF.centerY() + f13 + org.telegram.messenger.g0.L(0.33f)));
+            Paint paint2 = sg0Var.b;
             paint2.setColor(i7);
-            paint2.setAlpha(rg0Var.d);
+            paint2.setAlpha(sg0Var.d);
             boolean z11 = !z9;
-            if (rg0Var.e != z11) {
-                rg0Var.e = z11;
-                rg0Var.a.invalidate();
+            if (sg0Var.e != z11) {
+                sg0Var.e = z11;
+                sg0Var.a.invalidate();
             }
-            rg0Var.draw(canvas);
+            sg0Var.draw(canvas);
             canvas.restore();
         }
     }
@@ -196,16 +196,16 @@ public final class g {
         this.g = new HashMap();
         this.h = new HashSet();
         this.a = 1;
-        h4 h4Var = new h4(context, 3);
-        h4Var.c = file;
+        i4 i4Var = new i4(context, 3);
+        i4Var.c = file;
         vi.f fVar = (vi.f) xi.e.c.a();
         if (fVar != null) {
-            h4Var.d = fVar;
-            h4Var.a = false;
-            h4Var.e = new j2.n(11, this, meVar);
-            h4Var.f = new m4.d0(this, meVar, false);
-            h4Var.g = new w7.s(16, false);
-            this.e = new vi.h(h4Var);
+            i4Var.d = fVar;
+            i4Var.a = false;
+            i4Var.e = new j2.n(11, this, meVar);
+            i4Var.f = new m4.d0(this, meVar, false);
+            i4Var.g = new w7.s(16, false);
+            this.e = new vi.h(i4Var);
             return;
         }
         throw new IllegalArgumentException("Noise suppression mode is required");

@@ -1,34 +1,34 @@
 package hi;
 
 import android.os.Bundle;
-import org.telegram.ui.ww;
+import org.telegram.ui.yw;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
-public final class g1 extends ww {
-    public final /* synthetic */ bi.t0 B4;
-    public final /* synthetic */ i1 C4;
+public final class g1 extends yw {
+    public final /* synthetic */ bi.t0 C4;
+    public final /* synthetic */ i1 D4;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public g1(i1 i1Var, Bundle bundle, bi.t0 t0Var) {
         super(bundle);
-        this.C4 = i1Var;
-        this.B4 = t0Var;
+        this.D4 = i1Var;
+        this.C4 = t0Var;
     }
 
-    @Override // org.telegram.ui.ww
+    @Override // org.telegram.ui.yw
     public final boolean U3() {
         return true;
     }
 
-    @Override // org.telegram.ui.ww, org.telegram.ui.ActionBar.f2
+    @Override // org.telegram.ui.yw, org.telegram.ui.ActionBar.f2
     public final void onFragmentDestroy() {
         super.onFragmentDestroy();
-        i1 i1Var = this.C4;
+        i1 i1Var = this.D4;
         if (i1Var.U1) {
             return;
         }
         i1Var.U1 = true;
-        this.B4.a("USER_DECLINED", null);
+        this.C4.a("USER_DECLINED", null);
     }
 }

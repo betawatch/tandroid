@@ -12,9 +12,9 @@ import org.telegram.messenger.ij;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.u31;
+import org.telegram.ui.Components.v31;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class s2 {
     public final t2 a;
@@ -34,24 +34,24 @@ public final class s2 {
         boolean z9;
         int i10;
         s2Var.getClass();
-        int f12 = (ijVar == null || chat == null) ? 0 : ijVar.f1();
-        if (s2Var.b != f12 || s2Var.e) {
+        int e12 = (ijVar == null || chat == null) ? 0 : ijVar.e1();
+        if (s2Var.b != e12 || s2Var.e) {
             s2Var.f = null;
             s2Var.c = 0;
             s2Var.d = false;
             s2Var.e = false;
-            s2Var.b = f12;
-            TextPaint textPaint = org.telegram.ui.ActionBar.k6.F0[0];
+            s2Var.b = e12;
+            TextPaint textPaint = org.telegram.ui.ActionBar.l6.F0[0];
             if (chat != null) {
                 ArrayList l10 = qp.s1(i7).q7.l(chat.id);
                 boolean z10 = true;
                 if (l10 == null || l10.isEmpty()) {
                     if (qp.s1(i7).q7.e(chat.id)) {
-                        s2Var.g = id.M0(org.telegram.messenger.t3.p0(chat) ? 2131748191 : 2131748138, null);
+                        s2Var.g = id.M0(org.telegram.messenger.t3.p0(chat) ? 2131748190 : 2131748137, null);
                         return;
                     }
                     qp.s1(i7).q7.n(0, chat.id, true);
-                    s2Var.g = id.M0(2131748780, null);
+                    s2Var.g = id.M0(2131748779, null);
                     s2Var.e = true;
                     return;
                 }
@@ -63,14 +63,14 @@ public final class s2 {
                     z9 = false;
                     i10 = 0;
                 } else {
-                    j3 = ij.c2(i7, ijVar.k, true, false);
+                    j3 = ij.b2(i7, ijVar.k, true, false);
                     TLRPC.TL_forumTopic f10 = qp.s1(i7).q7.f(chat.id, j3);
                     if (f10 != null) {
                         CharSequence j10 = qg.d.j(f10, textPaint, null);
                         spannableStringBuilder.append(j10);
                         i10 = f10.unread_count > 0 ? j10.length() : 0;
                         s2Var.c = j10.length();
-                        if (ijVar.Q3()) {
+                        if (ijVar.P3()) {
                             s2Var.d = false;
                         } else {
                             s2Var.d = f10.unread_count > 0;
@@ -122,12 +122,12 @@ public final class s2 {
                 }
                 if (i10 > 0) {
                     Typeface o10 = org.telegram.messenger.g0.o();
-                    int i14 = org.telegram.ui.ActionBar.k6.X8;
-                    u31 u31Var = new u31();
-                    u31Var.a = o10;
-                    u31Var.c = i14;
-                    u31Var.b = org.telegram.ui.ActionBar.k6.v0(i14);
-                    spannableStringBuilder.setSpan(u31Var, 0, Math.min(spannableStringBuilder.length(), i10 + 2), 0);
+                    int i14 = org.telegram.ui.ActionBar.l6.X8;
+                    v31 v31Var = new v31();
+                    v31Var.a = o10;
+                    v31Var.c = i14;
+                    v31Var.b = org.telegram.ui.ActionBar.l6.v0(i14);
+                    spannableStringBuilder.setSpan(v31Var, 0, Math.min(spannableStringBuilder.length(), i10 + 2), 0);
                 }
                 s2Var.g = spannableStringBuilder;
             }

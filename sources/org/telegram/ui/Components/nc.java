@@ -24,9 +24,9 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public abstract class nc extends View implements org.telegram.ui.ActionBar.a6 {
+public abstract class nc extends View implements org.telegram.ui.ActionBar.b6 {
     public static final int[] W;
     public static final int[] a0;
     public static long b0;
@@ -66,15 +66,15 @@ public abstract class nc extends View implements org.telegram.ui.ActionBar.a6 {
     public final RectF y;
 
     static {
-        int i7 = org.telegram.ui.ActionBar.k6.Zj;
-        int i10 = org.telegram.ui.ActionBar.k6.Vj;
-        int i11 = org.telegram.ui.ActionBar.k6.Wj;
-        int i12 = org.telegram.ui.ActionBar.k6.dk;
-        int i13 = org.telegram.ui.ActionBar.k6.ak;
-        int i14 = org.telegram.ui.ActionBar.k6.Xj;
-        int i15 = org.telegram.ui.ActionBar.k6.bk;
-        int i16 = org.telegram.ui.ActionBar.k6.ek;
-        int i17 = org.telegram.ui.ActionBar.k6.Yj;
+        int i7 = org.telegram.ui.ActionBar.l6.Zj;
+        int i10 = org.telegram.ui.ActionBar.l6.Vj;
+        int i11 = org.telegram.ui.ActionBar.l6.Wj;
+        int i12 = org.telegram.ui.ActionBar.l6.dk;
+        int i13 = org.telegram.ui.ActionBar.l6.ak;
+        int i14 = org.telegram.ui.ActionBar.l6.Xj;
+        int i15 = org.telegram.ui.ActionBar.l6.bk;
+        int i16 = org.telegram.ui.ActionBar.l6.ek;
+        int i17 = org.telegram.ui.ActionBar.l6.Yj;
         W = new int[]{i7, i10, i11, i12, i13, i14, i15, i16, i12, i17, i17};
         a0 = new int[]{R.raw.cache_photos, R.raw.cache_videos, R.raw.cache_documents, R.raw.cache_music, R.raw.cache_videos, R.raw.cache_music, R.raw.cache_stickers, R.raw.cache_profile_photos, R.raw.cache_other, R.raw.cache_other, R.raw.cache_documents};
         b0 = -1L;
@@ -116,7 +116,7 @@ public abstract class nc extends View implements org.telegram.ui.ActionBar.a6 {
         this.w = new lc[i7];
         Paint.Style style = Paint.Style.STROKE;
         paint.setStyle(style);
-        paint.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.i6, false));
+        paint.setColor(org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.i6, false));
         paint3.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
         Shader.TileMode tileMode = Shader.TileMode.CLAMP;
         LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, 0.0f, org.telegram.messenger.g0.L(200.0f), new int[]{7263574, -9513642, -12469647, 4307569}, new float[]{0.0f, 0.07f, 0.93f, 1.0f}, tileMode);
@@ -132,13 +132,13 @@ public abstract class nc extends View implements org.telegram.ui.ActionBar.a6 {
         paint2.setStrokeJoin(Paint.Join.ROUND);
         i6Var.n(0.2f, 450L, xqVar);
         i6Var.A = 0.6f;
-        i6Var.u(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.G6, false));
+        i6Var.u(org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.G6, false));
         i6Var.x(org.telegram.messenger.g0.o());
         i6Var.w(org.telegram.messenger.g0.L(32.0f));
         i6Var.b = 17;
         i6Var2.n(0.6f, 450L, xqVar);
         i6Var2.A = 0.6f;
-        i6Var2.u(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.y6, false));
+        i6Var2.u(org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.y6, false));
         i6Var2.w(org.telegram.messenger.g0.L(12.0f));
         i6Var2.b = 17;
         i6Var3.n(0.2f, 450L, xqVar);
@@ -161,8 +161,8 @@ public abstract class nc extends View implements org.telegram.ui.ActionBar.a6 {
             }
             lc lcVar = new lc(this);
             lcVarArr[i11] = lcVar;
-            int w10 = org.telegram.ui.ActionBar.k6.w(org.telegram.ui.ActionBar.k6.x0(null, iArr[i11], false), ConnectionsManager.FileTypeAudio);
-            int w11 = org.telegram.ui.ActionBar.k6.w(org.telegram.ui.ActionBar.k6.x0(null, iArr[i11], false), 822083583);
+            int w10 = org.telegram.ui.ActionBar.l6.w(org.telegram.ui.ActionBar.l6.x0(null, iArr[i11], false), ConnectionsManager.FileTypeAudio);
+            int w11 = org.telegram.ui.ActionBar.l6.w(org.telegram.ui.ActionBar.l6.x0(null, iArr[i11], false), 822083583);
             org.telegram.messenger.g0.L(50.0f);
             RadialGradient radialGradient = new RadialGradient(0.0f, 0.0f, org.telegram.messenger.g0.L(86.0f), new int[]{w11, w10}, new float[]{0.3f, 1.0f}, Shader.TileMode.CLAMP);
             lcVar.v = radialGradient;
@@ -1137,18 +1137,18 @@ public abstract class nc extends View implements org.telegram.ui.ActionBar.a6 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
         try {
-            this.D.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.i6, false));
+            this.D.setColor(org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.i6, false));
             try {
                 i6 i6Var = this.M;
                 if (i6Var != null) {
-                    i6Var.u(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.G6, false));
+                    i6Var.u(org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.G6, false));
                 }
                 i6 i6Var2 = this.N;
                 if (i6Var2 != null) {
-                    i6Var2.u(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.y6, false));
+                    i6Var2.u(org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.y6, false));
                 }
             } catch (Exception e10) {
                 org.telegram.messenger.a8.g(e10, true);
@@ -1159,7 +1159,7 @@ public abstract class nc extends View implements org.telegram.ui.ActionBar.a6 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

@@ -5,7 +5,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.view.View;
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class z5 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -170,9 +170,9 @@ public final class z5 extends AnimatorListenerAdapter {
                 break;
             case 16:
                 vo voVar = (vo) this.b;
-                xz0 xz0Var = voVar.H1;
-                if (xz0Var != null) {
-                    if (xz0Var.getParent() != null) {
+                yz0 yz0Var = voVar.H1;
+                if (yz0Var != null) {
+                    if (yz0Var.getParent() != null) {
                         ((ViewGroup) voVar.H1.getParent()).removeView(voVar.H1);
                     }
                     voVar.H1 = null;
@@ -181,13 +181,13 @@ public final class z5 extends AnimatorListenerAdapter {
                 super.onAnimationEnd(animator);
                 break;
             case 17:
-                xz0 xz0Var2 = (xz0) this.b;
-                xz0Var2.c = null;
-                xz0Var2.a.setShader(null);
-                xz0Var2.n = null;
-                xz0Var2.r = null;
-                xz0Var2.setImageDrawable(null);
-                org.telegram.messenger.g0.E2(xz0Var2);
+                yz0 yz0Var2 = (yz0) this.b;
+                yz0Var2.c = null;
+                yz0Var2.a.setShader(null);
+                yz0Var2.n = null;
+                yz0Var2.r = null;
+                yz0Var2.setImageDrawable(null);
+                org.telegram.messenger.g0.E2(yz0Var2);
                 break;
             case 18:
                 CheckBox checkBox = (CheckBox) this.b;
@@ -267,10 +267,10 @@ public final class z5 extends AnimatorListenerAdapter {
                 szVar.invalidate();
                 break;
             default:
-                n40 n40Var = (n40) this.b;
-                if (animator == n40Var.a0) {
-                    n40Var.d(true);
-                    n40Var.setVisibility(4);
+                o40 o40Var = (o40) this.b;
+                if (animator == o40Var.a0) {
+                    o40Var.d(true);
+                    o40Var.setVisibility(4);
                     break;
                 }
                 break;

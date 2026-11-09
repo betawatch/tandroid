@@ -4,11 +4,11 @@ import android.content.Context;
 import android.view.View;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.q4;
-import org.telegram.ui.Components.rt0;
+import org.telegram.ui.Components.tt0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class l1 extends rt0 {
+public final class l1 extends tt0 {
     public final /* synthetic */ int f0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -17,7 +17,7 @@ public final class l1 extends rt0 {
         this.f0 = i7;
     }
 
-    @Override // org.telegram.ui.Components.rt0
+    @Override // org.telegram.ui.Components.tt0
     public boolean O() {
         switch (this.f0) {
             case 2:

@@ -35,7 +35,7 @@ import q6.k;
 import q6.m;
 import q6.p;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class e extends pb.e {
     public boolean d = true;
@@ -82,11 +82,11 @@ public final class e extends pb.e {
 
     @Override // pb.e
     public final Object e(ub.a aVar) {
-        ArrayList a10;
+        ArrayList c10;
         synchronized (this) {
             long elapsedRealtime = SystemClock.elapsedRealtime();
             try {
-                a10 = this.f.a(aVar);
+                c10 = this.f.c(aVar);
                 f(z7.b, aVar, elapsedRealtime);
                 this.d = false;
             } catch (lb.a e10) {
@@ -94,7 +94,7 @@ public final class e extends pb.e {
                 throw e10;
             }
         }
-        return a10;
+        return c10;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -111,13 +111,12 @@ public final class e extends pb.e {
         Object[] objArr2 = 0;
         Object[] objArr3 = 0;
         Object[] objArr4 = 0;
-        Object[] objArr5 = 0;
         if (taVar.c(a8Var, elapsedRealtime2)) {
             taVar.i.put(a8Var, Long.valueOf(elapsedRealtime2));
             b8 b8Var = new b8();
             b8Var.c = y7.b;
             android.support.v4.media.session.a0 a0Var = new android.support.v4.media.session.a0(4, z9);
-            r7 r7Var = new r7((int) (objArr5 == true ? 1 : 0), (byte) (objArr4 == true ? 1 : 0));
+            r7 r7Var = new r7((int) (objArr4 == true ? 1 : 0), (byte) (objArr3 == true ? 1 : 0));
             r7Var.b = Long.valueOf(Long.MAX_VALUE & elapsedRealtime);
             r7Var.c = z7Var;
             r7Var.d = Boolean.valueOf(this.d);
@@ -141,7 +140,7 @@ public final class e extends pb.e {
                 }
                 i7 = 0;
             }
-            wf.b bVar = new wf.b(i10, (boolean) (objArr3 == true ? 1 : 0));
+            wf.b bVar = new wf.b(i10, (boolean) (objArr2 == true ? 1 : 0));
             bVar.b = i11 != -1 ? i11 != 35 ? i11 != 842094169 ? i11 != 16 ? i11 != 17 ? o7.b : o7.d : o7.c : o7.e : o7.f : o7.h;
             bVar.c = Integer.valueOf(i7 & ConnectionsManager.DEFAULT_DATACENTER_ID);
             a0Var.d = new p7(bVar);
@@ -149,7 +148,7 @@ public final class e extends pb.e {
             b8Var.e = new r8(a0Var);
             pb.m.a.execute(new pa(taVar, new wa(b8Var, 0), a8Var, taVar.b(), 0));
         }
-        android.support.v4.media.session.a0 a0Var2 = new android.support.v4.media.session.a0(3, (boolean) (objArr2 == true ? 1 : 0));
+        android.support.v4.media.session.a0 a0Var2 = new android.support.v4.media.session.a0(3, (boolean) (objArr == true ? 1 : 0));
         a0Var2.d = this.e;
         a0Var2.b = z7Var;
         a0Var2.c = Boolean.valueOf(this.d);
@@ -163,7 +162,7 @@ public final class e extends pb.e {
             if (vaVar.b.get() != -1 && elapsedRealtime3 - vaVar.b.get() <= TimeUnit.MINUTES.toMillis(30L)) {
                 return;
             }
-            vaVar.a.f(new p(0, Arrays.asList(new k(24305, i12, 0, j10, currentTimeMillis, null, null, 0, -1)))).addOnFailureListener(new ua((Object) vaVar, elapsedRealtime3, (int) (objArr == true ? 1 : 0)));
+            vaVar.a.f(new p(0, Arrays.asList(new k(24305, i12, 0, j10, currentTimeMillis, null, null, 0, -1)))).addOnFailureListener(new ua(vaVar, elapsedRealtime3, 0));
         }
     }
 }

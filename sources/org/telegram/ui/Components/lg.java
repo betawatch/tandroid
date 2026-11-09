@@ -9,7 +9,7 @@ import android.graphics.drawable.Drawable;
 import android.view.MotionEvent;
 import android.view.View;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class lg extends y5 {
     public fh.g s;
@@ -26,7 +26,7 @@ public final class lg extends y5 {
         if (gVar != null) {
             gVar.updateColors();
         }
-        Color.alpha(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.d6, false));
+        Color.alpha(org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.d6, false));
         invalidate();
     }
 
@@ -81,11 +81,11 @@ public final class lg extends y5 {
             View view2 = ((x5) i13.a).a;
             float min = Math.min(1.0f, i13.c.a) * i13.c();
             if (min > 0.0f && (!z9 || (fragmentContextView = this.y) == null || (fragmentContextView != view2 && fragmentContextView.getParent() != view2))) {
-                int alpha = org.telegram.ui.ActionBar.k6.k0.getAlpha();
-                org.telegram.ui.ActionBar.k6.k0.setAlpha((int) (alpha * min));
+                int alpha = org.telegram.ui.ActionBar.l6.k0.getAlpha();
+                org.telegram.ui.ActionBar.l6.k0.setAlpha((int) (alpha * min));
                 float f10 = 1.0f - min;
-                canvas2.drawLine(getPaddingLeft() + (org.telegram.messenger.g0.L(16.0f) * f10), paddingTop2, getWidth() - ((org.telegram.messenger.g0.L(16.0f) * f10) + getPaddingRight()), paddingTop2, org.telegram.ui.ActionBar.k6.k0);
-                org.telegram.ui.ActionBar.k6.k0.setAlpha(alpha);
+                canvas2.drawLine(getPaddingLeft() + (org.telegram.messenger.g0.L(16.0f) * f10), paddingTop2, getWidth() - ((org.telegram.messenger.g0.L(16.0f) * f10) + getPaddingRight()), paddingTop2, org.telegram.ui.ActionBar.l6.k0);
+                org.telegram.ui.ActionBar.l6.k0.setAlpha(alpha);
             }
             i12++;
             canvas2 = canvas;

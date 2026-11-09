@@ -4,10 +4,10 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class i0 extends na {
-    public l41 P1;
+    public m41 P1;
     public TLRPC.TL_channelAdminLogEventsFilter Q1;
     public ArrayList R1;
     public a0.h S1;
@@ -28,8 +28,8 @@ public final class i0 extends na {
         this.X1 = false;
         this.r1 = 0.35f;
         N();
-        int i10 = org.telegram.ui.ActionBar.k6.i5;
-        int w02 = org.telegram.ui.ActionBar.k6.w0(i10, this.I0);
+        int i10 = org.telegram.ui.ActionBar.l6.i5;
+        int w02 = org.telegram.ui.ActionBar.l6.w0(i10, this.I0);
         this.Z1 = w02;
         v0(w02);
         Y0();
@@ -86,23 +86,23 @@ public final class i0 extends na {
         kVar.n(350L);
         this.k1.setItemAnimator(kVar);
         this.k1.setOnItemClickListener(new u(this, i11));
-        ah.a aVar = new ah.a(getContext(), this.I0, (pj0) null);
+        ah.a aVar = new ah.a(getContext(), this.I0, (qj0) null);
         this.U1 = aVar;
         aVar.setClickable(true);
         aVar.setOrientation(1);
         aVar.setPadding(org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(10.0f));
-        org.telegram.ui.ActionBar.r6.i(i10, aVar, this.I0);
+        org.telegram.ui.ActionBar.s6.h(i10, aVar, this.I0);
         fi.d dVar = new fi.d(getContext(), this.I0, true);
         dVar.f();
-        dVar.i(org.telegram.messenger.id.M0(2131751004, null), false, true);
+        dVar.i(org.telegram.messenger.id.M0(2131751003, null), false, true);
         dVar.setOnClickListener(new h0(this, i7));
         aVar.addView(dVar, c8.ha.r(-1, 48, 87));
         ViewGroup viewGroup = this.b;
         int i12 = this.t0;
         viewGroup.addView(aVar, c8.ha.f(-2.0f, -1, 87, i12, 0, i12, 0));
-        pj0 pj0Var = this.k1;
+        qj0 qj0Var = this.k1;
         int i13 = this.t0;
-        pj0Var.setPadding(i13, 0, i13, org.telegram.messenger.g0.L(68.0f));
+        qj0Var.setPadding(i13, 0, i13, org.telegram.messenger.g0.L(68.0f));
         this.k1.r1();
     }
 
@@ -112,15 +112,15 @@ public final class i0 extends na {
     }
 
     @Override // org.telegram.ui.Components.na
-    public final oj0 L0(pj0 pj0Var) {
-        l41 l41Var = new l41(pj0Var, getContext(), this.a, 0, true, new d(this, 3), this.I0);
-        this.P1 = l41Var;
-        return l41Var;
+    public final pj0 L0(qj0 qj0Var) {
+        m41 m41Var = new m41(qj0Var, getContext(), this.a, 0, true, new d(this, 3), this.I0);
+        this.P1 = m41Var;
+        return m41Var;
     }
 
     @Override // org.telegram.ui.Components.na
     public final CharSequence O0() {
-        return org.telegram.messenger.id.M0(2131751080, null);
+        return org.telegram.messenger.id.M0(2131751079, null);
     }
 
     public final String d1(int i7) {
@@ -162,9 +162,9 @@ public final class i0 extends na {
                 this.S1.k(org.telegram.messenger.qp.s1(this.a).a2(Long.valueOf(o4)), o4);
             }
         }
-        l41 l41Var = this.P1;
-        if (l41Var != null) {
-            l41Var.O(true);
+        m41 m41Var = this.P1;
+        if (m41Var != null) {
+            m41Var.O(true);
         }
     }
 
@@ -178,7 +178,7 @@ public final class i0 extends na {
     public final void s0() {
         try {
             super.s0();
-            int w02 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.i5, this.I0);
+            int w02 = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.i5, this.I0);
             if (w02 != this.Z1) {
                 this.Z1 = w02;
                 v0(w02);

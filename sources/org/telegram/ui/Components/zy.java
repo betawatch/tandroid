@@ -7,7 +7,7 @@ import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.view.View;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class zy extends v4.k {
     public final /* synthetic */ fz F;
@@ -64,22 +64,13 @@ public final class zy extends v4.k {
         super.m();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:91:0x032a, code lost:
-    
-        if (r1.getMeasuredWidth() != r1.j0) goto L99;
-     */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:90:0x0321  */
-    /* JADX WARN: Removed duplicated region for block: B:93:0x0335  */
     /* JADX WARN: Type inference failed for: r2v1 */
-    /* JADX WARN: Type inference failed for: r2v21 */
-    /* JADX WARN: Type inference failed for: r3v26 */
+    /* JADX WARN: Type inference failed for: r2v30 */
+    /* JADX WARN: Type inference failed for: r3v33 */
     /* JADX WARN: Type inference failed for: r3v4 */
     /* JADX WARN: Type inference failed for: r3v5, types: [boolean, int] */
     @Override // v4.k, v4.f1
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public final boolean r(v4.d1 d1Var, e2.r0 r0Var, int i7, int i10, int i11, int i12) {
         int i13;
         int i14;
@@ -91,14 +82,14 @@ public final class zy extends v4.k {
         int i17;
         boolean z10;
         boolean z11;
-        float f10;
         boolean z12;
-        boolean z13;
         CharSequence charSequence;
         CharSequence charSequence2;
+        boolean z13;
         boolean z14;
         boolean z15;
         boolean z16;
+        boolean z17;
         int i18;
         View view = d1Var.a;
         if (!(view instanceof dz)) {
@@ -129,8 +120,8 @@ public final class zy extends v4.k {
             if (i22 <= 0 || i21 <= 0) {
                 i13 = translationX;
                 i14 = translationY;
-                z15 = true;
-                z16 = false;
+                z16 = true;
+                z17 = false;
             } else {
                 String valueOf = String.valueOf(i22);
                 String valueOf2 = String.valueOf(dzVar.b.d);
@@ -142,11 +133,11 @@ public final class zy extends v4.k {
                     while (i23 < valueOf.length()) {
                         int i24 = translationX;
                         if (valueOf.charAt(i23) == valueOf2.charAt(i23)) {
-                            boolean z17 = false;
+                            boolean z18 = false;
                             i18 = translationY;
                             int i25 = i23 + 1;
-                            spannableStringBuilder.setSpan(new iy(z17), i23, i25, 0);
-                            spannableStringBuilder2.setSpan(new iy(z17), i23, i25, 0);
+                            spannableStringBuilder.setSpan(new iy(z18), i23, i25, 0);
+                            spannableStringBuilder2.setSpan(new iy(z18), i23, i25, 0);
                         } else {
                             i18 = translationY;
                             spannableStringBuilder3.setSpan(new iy(false), i23, i23 + 1, 0);
@@ -157,28 +148,27 @@ public final class zy extends v4.k {
                     }
                     i13 = translationX;
                     i14 = translationY;
-                    z16 = false;
-                    int ceil = (int) Math.ceil(org.telegram.ui.ActionBar.k6.L0.measureText(valueOf));
-                    TextPaint textPaint3 = fzVar.c;
+                    z17 = false;
+                    int ceil = (int) Math.ceil(org.telegram.ui.ActionBar.l6.L0.measureText(valueOf));
                     Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
-                    dzVar.L = new StaticLayout(spannableStringBuilder, textPaint3, ceil, alignment, 1.0f, 0.0f, false);
-                    dzVar.M = new StaticLayout(spannableStringBuilder3, textPaint3, ceil, alignment, 1.0f, 0.0f, false);
-                    dzVar.K = new StaticLayout(spannableStringBuilder2, textPaint3, ceil, alignment, 1.0f, 0.0f, false);
-                    z15 = true;
+                    z16 = true;
+                    dzVar.L = new StaticLayout(spannableStringBuilder, textPaint2, ceil, alignment, 1.0f, 0.0f, false);
+                    dzVar.M = new StaticLayout(spannableStringBuilder3, textPaint2, ceil, alignment, 1.0f, 0.0f, false);
+                    dzVar.K = new StaticLayout(spannableStringBuilder2, textPaint2, ceil, alignment, 1.0f, 0.0f, false);
                 } else {
                     i13 = translationX;
                     i14 = translationY;
-                    z16 = false;
-                    int ceil2 = (int) Math.ceil(org.telegram.ui.ActionBar.k6.L0.measureText(valueOf));
+                    z16 = true;
+                    z17 = false;
+                    int ceil2 = (int) Math.ceil(org.telegram.ui.ActionBar.l6.L0.measureText(valueOf));
                     Layout.Alignment alignment2 = Layout.Alignment.ALIGN_CENTER;
-                    z15 = true;
                     dzVar.L = new StaticLayout(valueOf, textPaint2, ceil2, alignment2, 1.0f, 0.0f, false);
-                    dzVar.K = new StaticLayout(valueOf2, textPaint2, (int) Math.ceil(org.telegram.ui.ActionBar.k6.L0.measureText(valueOf2)), alignment2, 1.0f, 0.0f, false);
+                    dzVar.K = new StaticLayout(valueOf2, textPaint2, (int) Math.ceil(org.telegram.ui.ActionBar.l6.L0.measureText(valueOf2)), alignment2, 1.0f, 0.0f, false);
                 }
             }
-            z9 = z15;
-            i15 = z15;
-            r32 = z16;
+            z9 = z16;
+            i15 = z16;
+            r32 = z17;
         } else {
             i13 = translationX;
             i14 = translationY;
@@ -204,82 +194,30 @@ public final class zy extends v4.k {
         }
         int i28 = i17 + i27;
         float measuredWidth = (dzVar.getMeasuredWidth() - i28) / 2;
-        float f11 = dzVar.E;
-        if (measuredWidth != f11) {
+        float f10 = dzVar.E;
+        if (measuredWidth != f10) {
             dzVar.G = i15;
-            dzVar.F = f11;
+            dzVar.F = f10;
             z10 = i15;
         } else {
             z10 = z9;
         }
         CharSequence charSequence3 = dzVar.N;
-        boolean z18 = z10;
-        if (charSequence3 != null) {
-            z18 = z10;
-            if (!dzVar.b.b.equals(charSequence3)) {
-                if (dzVar.N.length() > dzVar.b.b.length()) {
-                    charSequence = dzVar.N;
-                    charSequence2 = dzVar.b.b;
-                    z14 = i15;
-                } else {
-                    charSequence = dzVar.b.b;
-                    charSequence2 = dzVar.N;
-                    z14 = r32;
-                }
-                int t6 = org.telegram.messenger.g0.t(charSequence, charSequence2);
-                if (t6 < 0) {
-                    CharSequence charSequence4 = dzVar.b.b;
-                    int L = org.telegram.messenger.g0.L(400.0f);
-                    Layout.Alignment alignment3 = Layout.Alignment.ALIGN_NORMAL;
-                    z11 = r32;
-                    f10 = 0.0f;
-                    StaticLayout staticLayout = new StaticLayout(charSequence4, textPaint, L, alignment3, 1.0f, 0.0f, false);
-                    dzVar.P = staticLayout;
-                    if (dzVar.l0) {
-                        int i29 = dzVar.b.g ? 26 : z11 ? 1 : 0;
-                        n5 n5Var = dzVar.O;
-                        Layout[] layoutArr = new Layout[i15];
-                        layoutArr[z11 ? 1 : 0] = staticLayout;
-                        dzVar.O = r5.update(i29, dzVar, n5Var, layoutArr);
-                    }
-                    StaticLayout staticLayout2 = new StaticLayout(dzVar.N, textPaint, org.telegram.messenger.g0.L(400.0f), alignment3, 1.0f, 0.0f, false);
-                    dzVar.R = staticLayout2;
-                    if (dzVar.l0) {
-                        int i30 = dzVar.b.g ? 26 : z11 ? 1 : 0;
-                        n5 n5Var2 = dzVar.Q;
-                        Layout[] layoutArr2 = new Layout[i15];
-                        layoutArr2[z11 ? 1 : 0] = staticLayout2;
-                        dzVar.Q = r5.update(i30, dzVar, n5Var2, layoutArr2);
-                    }
-                    dzVar.T = null;
-                    r5.release(dzVar, dzVar.S);
-                    dzVar.U = i15;
-                    dzVar.a0 = 0.0f;
-                    dzVar.c0 = dzVar.b0;
-                    z12 = i15;
-                    if (i28 == dzVar.h0) {
-                        z13 = z12;
-                    }
-                    dzVar.W = i15;
-                    dzVar.i0 = dzVar.h0;
-                    z13 = i15;
-                    if (z13) {
-                        dzVar.y = f10;
-                        dzVar.x = i15;
-                        fz fzVar2 = this.F;
-                        fzVar2.F.invalidate();
-                        fzVar2.invalidate();
-                    }
-                    if (i19 != 0 && i20 == 0 && !z13) {
-                        v(d1Var);
-                        return z11;
-                    }
-                    boolean z19 = i15;
-                    this.r.add(new v4.j(d1Var, i13, i14, i11, i12));
-                    return z19;
-                }
-                TextPaint textPaint4 = fzVar.b;
-                CharSequence m10 = org.telegram.messenger.i6.m(charSequence, textPaint4.getFontMetricsInt(), r32, null, r32);
+        if (charSequence3 == null || dzVar.b.b.equals(charSequence3)) {
+            z11 = r32;
+        } else {
+            if (dzVar.N.length() > dzVar.b.b.length()) {
+                charSequence = dzVar.N;
+                charSequence2 = dzVar.b.b;
+                z13 = i15;
+            } else {
+                charSequence = dzVar.b.b;
+                charSequence2 = dzVar.N;
+                z13 = r32;
+            }
+            int t6 = org.telegram.messenger.g0.t(charSequence, charSequence2);
+            if (t6 >= 0) {
+                CharSequence m10 = org.telegram.messenger.i6.m(charSequence, textPaint.getFontMetricsInt(), r32, null, r32);
                 SpannableStringBuilder spannableStringBuilder4 = new SpannableStringBuilder(m10);
                 SpannableStringBuilder spannableStringBuilder5 = new SpannableStringBuilder(m10);
                 if (t6 != 0) {
@@ -289,50 +227,92 @@ public final class zy extends v4.k {
                     spannableStringBuilder5.setSpan(new iy((boolean) r32), charSequence2.length() + t6, charSequence.length(), r32);
                 }
                 spannableStringBuilder4.setSpan(new iy((boolean) r32), t6, charSequence2.length() + t6, r32);
-                int L2 = org.telegram.messenger.g0.L(400.0f);
-                Layout.Alignment alignment4 = Layout.Alignment.ALIGN_NORMAL;
-                StaticLayout staticLayout3 = new StaticLayout(spannableStringBuilder4, textPaint4, L2, alignment4, 1.0f, 0.0f, false);
-                dzVar.P = staticLayout3;
+                int L = org.telegram.messenger.g0.L(400.0f);
+                boolean z19 = z13;
+                Layout.Alignment alignment3 = Layout.Alignment.ALIGN_NORMAL;
+                z11 = r32;
+                StaticLayout staticLayout = new StaticLayout(spannableStringBuilder4, textPaint, L, alignment3, 1.0f, 0.0f, false);
+                dzVar.P = staticLayout;
                 if (dzVar.l0) {
-                    int i31 = dzVar.b.g ? 26 : r32;
-                    n5 n5Var3 = dzVar.O;
-                    Layout[] layoutArr3 = new Layout[i15];
-                    layoutArr3[r32] = staticLayout3;
-                    dzVar.O = r5.update(i31, dzVar, n5Var3, layoutArr3);
+                    int i29 = dzVar.b.g ? 26 : z11 ? 1 : 0;
+                    n5 n5Var = dzVar.O;
+                    Layout[] layoutArr = new Layout[1];
+                    layoutArr[z11 ? 1 : 0] = staticLayout;
+                    dzVar.O = r5.update(i29, dzVar, n5Var, layoutArr);
                 }
-                StaticLayout staticLayout4 = new StaticLayout(spannableStringBuilder5, textPaint4, org.telegram.messenger.g0.L(400.0f), alignment4, 1.0f, 0.0f, false);
-                dzVar.T = staticLayout4;
+                StaticLayout staticLayout2 = new StaticLayout(spannableStringBuilder5, textPaint, org.telegram.messenger.g0.L(400.0f), alignment3, 1.0f, 0.0f, false);
+                dzVar.T = staticLayout2;
                 if (dzVar.l0) {
-                    int i32 = dzVar.b.g ? 26 : r32;
-                    n5 n5Var4 = dzVar.S;
-                    Layout[] layoutArr4 = new Layout[i15];
-                    layoutArr4[r32] = staticLayout4;
-                    dzVar.S = r5.update(i32, dzVar, n5Var4, layoutArr4);
+                    int i30 = dzVar.b.g ? 26 : z11 ? 1 : 0;
+                    n5 n5Var2 = dzVar.S;
+                    z15 = true;
+                    Layout[] layoutArr2 = new Layout[1];
+                    layoutArr2[z11 ? 1 : 0] = staticLayout2;
+                    dzVar.S = r5.update(i30, dzVar, n5Var2, layoutArr2);
+                } else {
+                    z15 = true;
                 }
-                dzVar.U = i15;
-                dzVar.V = z14;
+                dzVar.U = z15;
+                dzVar.V = z19;
                 dzVar.a0 = t6 == 0 ? 0.0f : -dzVar.T.getPrimaryHorizontal(t6);
                 dzVar.c0 = dzVar.b0;
                 dzVar.R = null;
                 r5.release(dzVar, dzVar.Q);
-                z18 = i15;
+            } else {
+                z11 = r32;
+                CharSequence charSequence4 = dzVar.b.b;
+                int L2 = org.telegram.messenger.g0.L(400.0f);
+                Layout.Alignment alignment4 = Layout.Alignment.ALIGN_NORMAL;
+                StaticLayout staticLayout3 = new StaticLayout(charSequence4, textPaint, L2, alignment4, 1.0f, 0.0f, false);
+                dzVar.P = staticLayout3;
+                if (dzVar.l0) {
+                    int i31 = dzVar.b.g ? 26 : z11 ? 1 : 0;
+                    n5 n5Var3 = dzVar.O;
+                    Layout[] layoutArr3 = new Layout[1];
+                    layoutArr3[z11 ? 1 : 0] = staticLayout3;
+                    dzVar.O = r5.update(i31, dzVar, n5Var3, layoutArr3);
+                }
+                StaticLayout staticLayout4 = new StaticLayout(dzVar.N, textPaint, org.telegram.messenger.g0.L(400.0f), alignment4, 1.0f, 0.0f, false);
+                dzVar.R = staticLayout4;
+                if (dzVar.l0) {
+                    int i32 = dzVar.b.g ? 26 : z11 ? 1 : 0;
+                    n5 n5Var4 = dzVar.Q;
+                    z14 = true;
+                    Layout[] layoutArr4 = new Layout[1];
+                    layoutArr4[z11 ? 1 : 0] = staticLayout4;
+                    dzVar.Q = r5.update(i32, dzVar, n5Var4, layoutArr4);
+                } else {
+                    z14 = true;
+                }
+                dzVar.T = null;
+                r5.release(dzVar, dzVar.S);
+                dzVar.U = z14;
+                dzVar.a0 = 0.0f;
+                dzVar.c0 = dzVar.b0;
             }
+            z10 = true;
         }
-        z11 = r32;
-        f10 = 0.0f;
-        z12 = z18;
-        if (i28 == dzVar.h0) {
+        if (i28 == dzVar.h0 && dzVar.getMeasuredWidth() == dzVar.j0) {
+            z12 = true;
+        } else {
+            z12 = true;
+            dzVar.W = true;
+            dzVar.i0 = dzVar.h0;
+            z10 = true;
         }
-        dzVar.W = i15;
-        dzVar.i0 = dzVar.h0;
-        z13 = i15;
-        if (z13) {
+        if (z10) {
+            dzVar.y = 0.0f;
+            dzVar.x = z12;
+            fz fzVar2 = this.F;
+            fzVar2.F.invalidate();
+            fzVar2.invalidate();
         }
-        if (i19 != 0) {
+        if (i19 == 0 && i20 == 0 && !z10) {
+            v(d1Var);
+            return z11;
         }
-        boolean z192 = i15;
         this.r.add(new v4.j(d1Var, i13, i14, i11, i12));
-        return z192;
+        return z12;
     }
 
     @Override // v4.f1

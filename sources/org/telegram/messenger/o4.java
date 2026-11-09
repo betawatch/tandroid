@@ -9,9 +9,9 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.i70;
+import org.telegram.ui.k70;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class o4 implements RequestDelegate {
     public final /* synthetic */ int a = 0;
@@ -130,7 +130,7 @@ public final /* synthetic */ class o4 implements RequestDelegate {
                 break;
             default:
                 LaunchActivity launchActivity = (LaunchActivity) this.d;
-                org.telegram.ui.q10 q10Var = (org.telegram.ui.q10) this.e;
+                org.telegram.ui.s10 s10Var = (org.telegram.ui.s10) this.e;
                 boolean z16 = this.b;
                 Long l10 = (Long) this.f;
                 vf.b bVar = (vf.b) this.g;
@@ -142,14 +142,14 @@ public final /* synthetic */ class o4 implements RequestDelegate {
                 int i14 = this.c;
                 Bundle bundle = (Bundle) this.m;
                 String str = LaunchActivity.B1;
-                g0.h3(new i70(launchActivity, q10Var, tLObject, z16, l10, bVar, l11, num, num2, bArr, f2Var, i14, bundle));
+                g0.h3(new k70(launchActivity, s10Var, tLObject, z16, l10, bVar, l11, num, num2, bArr, f2Var, i14, bundle));
                 break;
         }
     }
 
-    public /* synthetic */ o4(LaunchActivity launchActivity, org.telegram.ui.q10 q10Var, boolean z9, Long l10, vf.b bVar, Long l11, Integer num, Integer num2, byte[] bArr, org.telegram.ui.ActionBar.f2 f2Var, int i7, Bundle bundle) {
+    public /* synthetic */ o4(LaunchActivity launchActivity, org.telegram.ui.s10 s10Var, boolean z9, Long l10, vf.b bVar, Long l11, Integer num, Integer num2, byte[] bArr, org.telegram.ui.ActionBar.f2 f2Var, int i7, Bundle bundle) {
         this.d = launchActivity;
-        this.e = q10Var;
+        this.e = s10Var;
         this.b = z9;
         this.f = l10;
         this.g = bVar;

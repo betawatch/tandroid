@@ -22,10 +22,10 @@ import org.telegram.messenger.w7;
 import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class r3 {
-    public static final int[] h = {k6.ra, k6.ob, k6.Ci, k6.Be, k6.Ce, k6.De, k6.Ee, k6.Fe};
+    public static final int[] h = {l6.ra, l6.ob, l6.Ci, l6.Be, l6.Ce, l6.De, l6.Ee, l6.Fe};
     public boolean a;
     public boolean b;
     public ig.b c;
@@ -60,19 +60,19 @@ public final class r3 {
         r3Var.c = ig.b.d("🏠");
         r3Var.d = TLRPC.ChatTheme.ofEmoticon(r3Var.e);
         q3 q3Var = new q3();
-        q3Var.a = k6.Q0("Blue");
+        q3Var.a = l6.Q0("Blue");
         q3Var.e = 99;
         r3Var.f.add(q3Var);
         q3 q3Var2 = new q3();
-        q3Var2.a = k6.Q0("Day");
+        q3Var2.a = l6.Q0("Day");
         q3Var2.e = 9;
         r3Var.f.add(q3Var2);
         q3 q3Var3 = new q3();
-        q3Var3.a = k6.Q0("Night");
+        q3Var3.a = l6.Q0("Night");
         q3Var3.e = 0;
         r3Var.f.add(q3Var3);
         q3 q3Var4 = new q3();
-        q3Var4.a = k6.Q0("Dark Blue");
+        q3Var4.a = l6.Q0("Dark Blue");
         q3Var4.e = 0;
         r3Var.f.add(q3Var4);
         return r3Var;
@@ -93,21 +93,21 @@ public final class r3 {
         return r3Var;
     }
 
-    public static j6 d(boolean z9) {
-        j6 D0 = z9 ? k6.J : k6.D0();
+    public static k6 d(boolean z9) {
+        k6 D0 = z9 ? l6.J : l6.D0();
         if (z9 != D0.q()) {
             SharedPreferences sharedPreferences = org.telegram.messenger.t0.b.getSharedPreferences("themeconfig", 0);
-            D0 = k6.Q0(z9 ? sharedPreferences.getString("lastDarkTheme", "Dark Blue") : sharedPreferences.getString("lastDayTheme", "Blue"));
+            D0 = l6.Q0(z9 ? sharedPreferences.getString("lastDarkTheme", "Dark Blue") : sharedPreferences.getString("lastDayTheme", "Blue"));
             if (D0 == null) {
-                D0 = k6.Q0(z9 ? "Dark Blue" : "Blue");
+                D0 = l6.Q0(z9 ? "Dark Blue" : "Blue");
             }
         }
-        return new j6(D0);
+        return new k6(D0);
     }
 
     public static int f(SparseIntArray sparseIntArray, int i7) {
         if (sparseIntArray == null) {
-            return k6.F0(i7);
+            return l6.F0(i7);
         }
         try {
             int indexOfKey = sparseIntArray.indexOfKey(i7);
@@ -117,7 +117,7 @@ public final class r3 {
         } catch (Exception e10) {
             a8.g(e10, true);
         }
-        return k6.F0(i7);
+        return l6.F0(i7);
     }
 
     public static void o(int i7, long j3, TLRPC.WallPaper wallPaper, c20 c20Var) {
@@ -141,27 +141,27 @@ public final class r3 {
         }
     }
 
-    public static void q(j6 j6Var, int i7) {
+    public static void q(k6 k6Var, int i7) {
         SparseArray sparseArray;
-        h6 h6Var;
-        if (j6Var == null) {
+        i6 i6Var;
+        if (k6Var == null) {
             return;
         }
-        if (i7 < 0 || (sparseArray = j6Var.a0) == null || !((h6Var = (h6) sparseArray.get(i7)) == null || h6Var.z)) {
-            if (j6Var.m().equals("Blue") && i7 == 99) {
+        if (i7 < 0 || (sparseArray = k6Var.a0) == null || !((i6Var = (i6) sparseArray.get(i7)) == null || i6Var.z)) {
+            if (k6Var.m().equals("Blue") && i7 == 99) {
                 return;
             }
-            if (j6Var.m().equals("Day") && i7 == 9) {
+            if (k6Var.m().equals("Day") && i7 == 9) {
                 return;
             }
-            if (j6Var.m().equals("Night") && i7 == 0) {
+            if (k6Var.m().equals("Night") && i7 == 0) {
                 return;
             }
-            if (j6Var.m().equals("Dark Blue") && i7 == 0) {
+            if (k6Var.m().equals("Dark Blue") && i7 == 0) {
                 return;
             }
-            boolean q10 = j6Var.q();
-            org.telegram.messenger.t0.b.getSharedPreferences("themeconfig", 0).edit().putString(q10 ? "lastDarkCustomTheme" : "lastDayCustomTheme", j6Var.m()).putInt(q10 ? "lastDarkCustomThemeAccentId" : "lastDayCustomThemeAccentId", i7).apply();
+            boolean q10 = k6Var.q();
+            org.telegram.messenger.t0.b.getSharedPreferences("themeconfig", 0).edit().putString(q10 ? "lastDarkCustomTheme" : "lastDayCustomTheme", k6Var.m()).putInt(q10 ? "lastDarkCustomThemeAccentId" : "lastDayCustomThemeAccentId", i7).apply();
         }
     }
 
@@ -177,66 +177,66 @@ public final class r3 {
     }
 
     public final SparseIntArray g(int i7, int i10) {
-        h6 h6Var;
+        i6 i6Var;
         SparseIntArray T0;
         int indexOfKey;
-        j6 j6Var;
-        h6 h6Var2;
+        k6 k6Var;
+        i6 i6Var2;
         ArrayList arrayList = this.f;
         SparseIntArray sparseIntArray = ((q3) arrayList.get(i10)).f;
         if (sparseIntArray != null) {
             return sparseIntArray;
         }
-        j6 i11 = i(i10);
+        k6 i11 = i(i10);
         if (i11 == null) {
             int i12 = ((q3) arrayList.get(i10)).d;
             ig.a aVar = (ig.a) arrayList.get(i10);
             TLRPC.TL_theme tL_theme = ((q3) arrayList.get(i10)).b;
-            j6 Q0 = aVar != null ? k6.Q0(k6.r0(((q3) aVar).b(i12))) : k6.Q0("Blue");
+            k6 Q0 = aVar != null ? l6.Q0(l6.r0(((q3) aVar).b(i12))) : l6.Q0("Blue");
             if (Q0 != null) {
-                j6 j6Var2 = new j6(Q0);
+                k6 k6Var2 = new k6(Q0);
                 if (aVar != null) {
                     q3 q3Var = (q3) aVar;
-                    h6Var2 = j6Var2.e(q3Var.a(), q3Var.b(i12), tL_theme, i7, true);
+                    i6Var2 = k6Var2.e(q3Var.a(), q3Var.b(i12), tL_theme, i7, true);
                 } else {
-                    h6Var2 = null;
+                    i6Var2 = null;
                 }
-                if (h6Var2 != null) {
-                    j6Var2.u(h6Var2.a);
+                if (i6Var2 != null) {
+                    k6Var2.u(i6Var2.a);
                 }
-                h6Var = h6Var2;
-                i11 = j6Var2;
+                i6Var = i6Var2;
+                i11 = k6Var2;
             }
-            h6Var = null;
+            i6Var = null;
         } else {
             SparseArray sparseArray = i11.a0;
             if (sparseArray != null) {
-                h6Var = (h6) sparseArray.get(((q3) arrayList.get(i10)).e);
+                i6Var = (i6) sparseArray.get(((q3) arrayList.get(i10)).e);
             }
-            h6Var = null;
+            i6Var = null;
         }
         if (i11 == null) {
             return sparseIntArray;
         }
         String[] strArr = new String[1];
         if (i11.b != null) {
-            T0 = k6.T0(new File(i11.b), null, strArr);
+            T0 = l6.T0(new File(i11.b), null, strArr);
         } else {
             String str = i11.d;
-            T0 = str != null ? k6.T0(null, str, strArr) : new SparseIntArray();
+            T0 = str != null ? l6.T0(null, str, strArr) : new SparseIntArray();
         }
         int i13 = 0;
         ((q3) arrayList.get(i10)).g = strArr[0];
-        if (h6Var != null) {
+        if (i6Var != null) {
             SparseIntArray clone = T0.clone();
-            h6Var.d(T0, clone);
+            i6Var.d(T0, clone);
             ig.b bVar = this.c;
-            if (bVar != null && !TextUtils.isEmpty(bVar.b) && (j6Var = h6Var.b) != null && j6Var.b == null && !j6Var.q()) {
-                h6.h(clone);
+            if (bVar != null && !TextUtils.isEmpty(bVar.b) && (k6Var = i6Var.b) != null && k6Var.b == null && !k6Var.q()) {
+                i6.h(clone);
             }
             T0 = clone;
         }
-        SparseIntArray sparseIntArray2 = k6.fm;
+        SparseIntArray sparseIntArray2 = l6.fm;
         SparseIntArray sparseIntArray3 = new SparseIntArray();
         ((q3) arrayList.get(i10)).f = sparseIntArray3;
         while (true) {
@@ -267,7 +267,7 @@ public final class r3 {
         return ((q3) this.f.get(i7)).a();
     }
 
-    public final j6 i(int i7) {
+    public final k6 i(int i7) {
         return ((q3) this.f.get(i7)).a;
     }
 
@@ -298,14 +298,14 @@ public final class r3 {
             }
             if (arrayList.get(i10) != null) {
                 SparseIntArray g10 = g(i7, i10);
-                ((q3) arrayList.get(i10)).h = f(g10, k6.ra);
-                ((q3) arrayList.get(i10)).i = f(g10, k6.ob);
-                ((q3) arrayList.get(i10)).j = f(g10, k6.Ci);
-                ((q3) arrayList.get(i10)).k = g10.get(k6.Be, 0);
-                ((q3) arrayList.get(i10)).l = g10.get(k6.Ce, 0);
-                ((q3) arrayList.get(i10)).m = g10.get(k6.De, 0);
-                ((q3) arrayList.get(i10)).n = g10.get(k6.Ee, 0);
-                ((q3) arrayList.get(i10)).o = g10.get(k6.Fe, 0);
+                ((q3) arrayList.get(i10)).h = f(g10, l6.ra);
+                ((q3) arrayList.get(i10)).i = f(g10, l6.ob);
+                ((q3) arrayList.get(i10)).j = f(g10, l6.Ci);
+                ((q3) arrayList.get(i10)).k = g10.get(l6.Be, 0);
+                ((q3) arrayList.get(i10)).l = g10.get(l6.Ce, 0);
+                ((q3) arrayList.get(i10)).m = g10.get(l6.De, 0);
+                ((q3) arrayList.get(i10)).n = g10.get(l6.Ee, 0);
+                ((q3) arrayList.get(i10)).o = g10.get(l6.Fe, 0);
                 if (((q3) arrayList.get(i10)).a != null && ((q3) arrayList.get(i10)).a.m().equals("Blue")) {
                     if ((((q3) arrayList.get(i10)).e >= 0 ? ((q3) arrayList.get(i10)).e : ((q3) arrayList.get(i10)).a.Y) == 99) {
                         ((q3) arrayList.get(i10)).k = -2368069;

@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public abstract class b6 {
     public static double a;
@@ -210,9 +210,9 @@ public abstract class b6 {
         }
         svVar.getClass();
         qv qvVar = (qv) p10.i(i10).m(svVar.d).get(e8Var.a);
-        if (ijVar == null || (!ijVar.Q3() && !ijVar.m4())) {
-            boolean z9 = (ijVar != null && ij.M4(ijVar.k)) || e8Var.c == 3;
-            long T1 = ijVar != null ? ijVar.T1() : e8Var.d;
+        if (ijVar == null || (!ijVar.P3() && !ijVar.l4())) {
+            boolean z9 = (ijVar != null && ij.L4(ijVar.k)) || e8Var.c == 3;
+            long S1 = ijVar != null ? ijVar.S1() : e8Var.d;
             boolean z10 = svVar.b;
             boolean z11 = svVar.a;
             long j3 = svVar.c;
@@ -221,7 +221,7 @@ public abstract class b6 {
                 z11 = qvVar.a;
                 j3 = qvVar.c;
             }
-            if (!z9 ? z11 : !(!z10 || (j3 != -1 && T1 >= j3))) {
+            if (!z9 ? z11 : !(!z10 || (j3 != -1 && S1 >= j3))) {
                 return true;
             }
         }

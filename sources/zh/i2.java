@@ -1,52 +1,55 @@
 package zh;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class i2 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ l3 b;
+import java.util.Comparator;
+import org.telegram.tgnet.tl.TL_stars;
 
-    public /* synthetic */ i2(l3 l3Var, int i7) {
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class i2 implements Comparator {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ m3 b;
+
+    public /* synthetic */ i2(m3 m3Var, int i7) {
         this.a = i7;
-        this.b = l3Var;
+        this.b = m3Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                b3 b3Var = this.b.d;
-                if (!b3Var.l.isEmpty()) {
-                    b3Var.l.clear();
-                    b3Var.h();
-                    break;
+                c3 c3Var = this.b.d;
+                Integer num = (Integer) c3Var.m.get(Long.valueOf(((TL_stars.starGiftAttributeModel) obj).document.id));
+                Integer num2 = (Integer) c3Var.m.get(Long.valueOf(((TL_stars.starGiftAttributeModel) obj2).document.id));
+                if (num == null) {
+                    return 1;
                 }
-                break;
+                if (num2 == null) {
+                    return -1;
+                }
+                return num2.intValue() - num.intValue();
             case 1:
-                b3 b3Var2 = this.b.d;
-                if (!b3Var2.k.isEmpty()) {
-                    b3Var2.k.clear();
-                    b3Var2.h();
-                    break;
+                c3 c3Var2 = this.b.d;
+                Integer num3 = (Integer) c3Var2.n.get(Integer.valueOf(((TL_stars.starGiftAttributeBackdrop) obj).backdrop_id));
+                Integer num4 = (Integer) c3Var2.n.get(Integer.valueOf(((TL_stars.starGiftAttributeBackdrop) obj2).backdrop_id));
+                if (num3 == null) {
+                    return 1;
                 }
-                break;
-            case 2:
-                b3 b3Var3 = this.b.d;
-                if (!b3Var3.j.isEmpty()) {
-                    b3Var3.j.clear();
-                    b3Var3.h();
-                    break;
+                if (num4 == null) {
+                    return -1;
                 }
-                break;
-            case 3:
-                this.b.d.i(a3.a);
-                break;
-            case 4:
-                this.b.d.i(a3.b);
-                break;
+                return num4.intValue() - num3.intValue();
             default:
-                this.b.d.i(a3.c);
-                break;
+                c3 c3Var3 = this.b.d;
+                Integer num5 = (Integer) c3Var3.o.get(Long.valueOf(((TL_stars.starGiftAttributePattern) obj).document.id));
+                Integer num6 = (Integer) c3Var3.o.get(Long.valueOf(((TL_stars.starGiftAttributePattern) obj2).document.id));
+                if (num5 == null) {
+                    return 1;
+                }
+                if (num6 == null) {
+                    return -1;
+                }
+                return num6.intValue() - num5.intValue();
         }
     }
 }

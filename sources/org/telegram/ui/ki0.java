@@ -1,54 +1,62 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.tl.TL_account;
+import android.text.Editable;
+import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ki0 implements org.telegram.messenger.v10 {
+public final class ki0 implements TextWatcher {
     public final /* synthetic */ int a;
-    public final /* synthetic */ PasskeysActivity b;
+    public final /* synthetic */ PasscodeActivity b;
 
-    public /* synthetic */ ki0(PasskeysActivity passkeysActivity, int i7) {
+    public /* synthetic */ ki0(PasscodeActivity passcodeActivity, int i7) {
         this.a = i7;
-        this.b = passkeysActivity;
+        this.b = passcodeActivity;
     }
 
-    @Override // org.telegram.messenger.v10
-    public final void a(Object obj, Object obj2) {
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
         int i7 = this.a;
-        PasskeysActivity passkeysActivity = this.b;
-        switch (i7) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+        switch (this.a) {
             case 0:
-                ArrayList arrayList = (ArrayList) obj;
-                ArrayList arrayList2 = passkeysActivity.b;
-                passkeysActivity.addPasskeyRow = -1;
-                String M0 = org.telegram.messenger.id.M0(2131747630, null);
-                org.telegram.ui.Components.x31 x31Var = new org.telegram.ui.Components.x31(2);
-                x31Var.l = M0;
-                x31Var.k = R.raw.passkey;
-                arrayList.add(x31Var);
-                for (int i10 = 0; i10 < arrayList2.size(); i10++) {
-                    TL_account.Passkey passkey = (TL_account.Passkey) arrayList2.get(i10);
-                    g40 g40Var = new g40(passkeysActivity, 16);
-                    int i11 = mi0.b;
-                    org.telegram.ui.Components.x31 K = org.telegram.ui.Components.x31.K(mi0.class);
-                    K.G = passkey;
-                    K.D = g40Var;
-                    arrayList.add(K);
+                PasscodeActivity passcodeActivity = this.b;
+                fi0 fi0Var = passcodeActivity.S;
+                if (passcodeActivity.R) {
+                    passcodeActivity.n.removeCallbacks(fi0Var);
+                    fi0Var.run();
+                    break;
                 }
-                if (arrayList2.size() + 1 <= ((org.telegram.messenger.j0) passkeysActivity.getMessagesController().x7.z.b).c) {
-                    passkeysActivity.addPasskeyRow = arrayList.size();
-                    org.telegram.ui.Components.x31 c10 = org.telegram.ui.Components.x31.c(-1, R.drawable.menu_passkey_add, org.telegram.messenger.id.M0(2131747651, null));
-                    c10.q = true;
-                    arrayList.add(c10);
-                }
-                arrayList.add(org.telegram.ui.Components.x31.C(org.telegram.messenger.g0.H2(org.telegram.messenger.g0.U2(org.telegram.messenger.id.M0(2131747636, null), new ef0(passkeysActivity, 4)), true)));
                 break;
             default:
-                PasskeysActivity.Z(passkeysActivity, (TL_account.Passkey) obj, (String) obj2);
+                PasscodeActivity passcodeActivity2 = this.b;
+                fi0 fi0Var2 = passcodeActivity2.S;
+                if (passcodeActivity2.R) {
+                    passcodeActivity2.n.removeCallbacks(fi0Var2);
+                    fi0Var2.run();
+                    break;
+                }
                 break;
         }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+        int i12 = this.a;
+    }
+
+    private final void a(Editable editable) {
+    }
+
+    private final void b(Editable editable) {
+    }
+
+    private final void c(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void d(int i7, int i10, int i11, CharSequence charSequence) {
     }
 }

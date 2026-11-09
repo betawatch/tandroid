@@ -3,7 +3,7 @@ package org.telegram.ui;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class dd implements Runnable {
     public final /* synthetic */ int a;
@@ -22,16 +22,16 @@ public final /* synthetic */ class dd implements Runnable {
         zd zdVar = this.b;
         switch (i7) {
             case 0:
-                vf.c.t(zdVar.getContext(), org.telegram.messenger.id.M0(2131748405, null));
+                vf.c.t(zdVar.getContext(), org.telegram.messenger.id.M0(2131748404, null));
                 break;
             case 1:
-                vf.c.t(zdVar.getContext(), org.telegram.messenger.id.M0(2131748371, null));
+                vf.c.t(zdVar.getContext(), org.telegram.messenger.id.M0(2131748370, null));
                 break;
             case 2:
-                org.telegram.ui.Components.q41 q41Var = zdVar.X0;
-                if (q41Var != null) {
+                org.telegram.ui.Components.r41 r41Var = zdVar.X0;
+                if (r41Var != null) {
                     boolean z9 = zdVar.e0;
-                    q41Var.f3.O((zdVar.R0 != -1) == zdVar.a1.a());
+                    r41Var.f3.O((zdVar.R0 != -1) == zdVar.a1.a());
                     if (z9 && zdVar.R0 != -1) {
                         zdVar.a();
                         break;

@@ -6,7 +6,7 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -31,7 +31,7 @@ public final /* synthetic */ class j implements View.OnLongClickListener {
         switch (i7) {
             case 0:
                 g0 g0Var = (g0) obj3;
-                org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) obj2;
+                org.telegram.ui.ActionBar.g6 g6Var = (org.telegram.ui.ActionBar.g6) obj2;
                 Context context = (Context) obj;
                 if (!g0Var.e2) {
                     if (g0Var.g2 != null) {
@@ -40,9 +40,9 @@ public final /* synthetic */ class j implements View.OnLongClickListener {
                     } else if (g0Var.f2 == null || g0Var.m1() == null) {
                     }
                     boolean z9 = g0Var.d2 == org.telegram.messenger.p10.i(g0Var.a).e();
-                    k60 F = k60.F(g0Var.c, f6Var, g0Var.x2);
-                    F.l(R.drawable.input_notify_off, org.telegram.messenger.id.M0(2131745586, null), new a(g0Var, 4), !z9);
-                    F.c(R.drawable.msg_calendar2, org.telegram.messenger.id.M0(z9 ? 2131745517 : 2131745862, null), new l2.z0(g0Var, context, f6Var, 25), false);
+                    l60 F = l60.F(g0Var.c, g6Var, g0Var.x2);
+                    F.l(R.drawable.input_notify_off, org.telegram.messenger.id.M0(2131745583, null), new a(g0Var, 4), !z9);
+                    F.c(R.drawable.msg_calendar2, org.telegram.messenger.id.M0(z9 ? 2131745514 : 2131745859, null), new l2.z0(g0Var, context, g6Var, 25), false);
                     F.Z();
                     break;
                 }
@@ -51,13 +51,13 @@ public final /* synthetic */ class j implements View.OnLongClickListener {
                 ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) obj3;
                 org.telegram.messenger.ij ijVar = (org.telegram.messenger.ij) obj2;
                 org.telegram.messenger.dj djVar = (org.telegram.messenger.dj) obj;
-                org.telegram.ui.ActionBar.f6 f6Var2 = chatActivityEnterView.W3;
-                if (!ijVar.G3() && (xeVar = chatActivityEnterView.E0) != null && !TextUtils.isEmpty(xeVar.getTextToUse())) {
+                org.telegram.ui.ActionBar.g6 g6Var2 = chatActivityEnterView.W3;
+                if (!ijVar.F3() && (xeVar = chatActivityEnterView.E0) != null && !TextUtils.isEmpty(xeVar.getTextToUse())) {
                     if (djVar == null || (djVar.c && !djVar.i)) {
                         int i10 = ijVar.D;
                         if (i10 == 1 || i10 == 3 || i10 == 8) {
-                            org.telegram.ui.bg0 bg0Var = new org.telegram.ui.bg0(chatActivityEnterView.getContext(), f6Var2);
-                            bg0Var.g0 = true;
+                            org.telegram.ui.dg0 dg0Var = new org.telegram.ui.dg0(chatActivityEnterView.getContext(), g6Var2);
+                            dg0Var.g0 = true;
                             ArrayList arrayList = new ArrayList();
                             if (djVar != null) {
                                 ArrayList arrayList2 = djVar.d;
@@ -69,16 +69,16 @@ public final /* synthetic */ class j implements View.OnLongClickListener {
                             } else {
                                 arrayList.add(chatActivityEnterView.d0(ijVar, true));
                             }
-                            bg0Var.p(arrayList);
-                            k60 F2 = k60.F(chatActivityEnterView.m1, f6Var2, chatActivityEnterView.F1);
-                            ha0 ha0Var = new ha0(chatActivityEnterView.getContext(), R.raw.position_below, org.telegram.messenger.id.M0(2131752560, null), R.raw.position_above, org.telegram.messenger.id.M0(2131752559, null), chatActivityEnterView.W3);
-                            ha0Var.a(!chatActivityEnterView.R4, false);
-                            ha0Var.setOnClickListener(new di.u3(chatActivityEnterView, arrayList, ha0Var, bg0Var, 10));
-                            F2.q(ha0Var);
+                            dg0Var.p(arrayList);
+                            l60 F2 = l60.F(chatActivityEnterView.m1, g6Var2, chatActivityEnterView.F1);
+                            ia0 ia0Var = new ia0(chatActivityEnterView.getContext(), R.raw.position_below, org.telegram.messenger.id.M0(2131752560, null), R.raw.position_above, org.telegram.messenger.id.M0(2131752559, null), chatActivityEnterView.W3);
+                            ia0Var.a(!chatActivityEnterView.R4, false);
+                            ia0Var.setOnClickListener(new di.v3(chatActivityEnterView, arrayList, ia0Var, dg0Var, 10));
+                            F2.q(ia0Var);
                             F2.Y();
-                            bg0Var.o(F2);
-                            bg0Var.q(chatActivityEnterView.F1, false, new di.u3(chatActivityEnterView, djVar, ijVar, bg0Var, 11));
-                            bg0Var.show();
+                            dg0Var.o(F2);
+                            dg0Var.q(chatActivityEnterView.F1, false, new di.v3(chatActivityEnterView, djVar, ijVar, dg0Var, 11));
+                            dg0Var.show();
                             break;
                         }
                     }

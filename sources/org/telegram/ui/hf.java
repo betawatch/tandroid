@@ -3,16 +3,16 @@ package org.telegram.ui;
 import android.view.View;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class hf implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ an b;
+    public final /* synthetic */ cn b;
     public final /* synthetic */ ArrayList c;
 
-    public /* synthetic */ hf(an anVar, ArrayList arrayList, int i7) {
+    public /* synthetic */ hf(cn cnVar, ArrayList arrayList, int i7) {
         this.a = i7;
-        this.b = anVar;
+        this.b = cnVar;
         this.c = arrayList;
     }
 
@@ -20,20 +20,20 @@ public final /* synthetic */ class hf implements View.OnClickListener {
     public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                an anVar = this.b;
-                xh xhVar = new xh(anVar, anVar, anVar.getParentActivity(), anVar.xa, this.c);
-                boolean T9 = anVar.T9();
-                xhVar.h0 = T9;
-                xhVar.n = T9;
-                xhVar.o0 = false;
-                anVar.O7(false);
-                anVar.showDialog(xhVar);
+                cn cnVar = this.b;
+                zh zhVar = new zh(cnVar, cnVar, cnVar.getParentActivity(), cnVar.za, this.c);
+                boolean U9 = cnVar.U9();
+                zhVar.h0 = U9;
+                zhVar.n = U9;
+                zhVar.o0 = false;
+                cnVar.P7(false);
+                cnVar.showDialog(zhVar);
                 break;
             default:
-                an anVar2 = this.b;
-                if (anVar2.getParentActivity() != null && anVar2.getParentActivity() != null) {
-                    new org.telegram.ui.Components.ru(anVar2, anVar2.getParentActivity(), anVar2.xa, this.c).show();
-                    anVar2.O7(true);
+                cn cnVar2 = this.b;
+                if (cnVar2.getParentActivity() != null && cnVar2.getParentActivity() != null) {
+                    new org.telegram.ui.Components.ru(cnVar2, cnVar2.getParentActivity(), cnVar2.za, this.c).show();
+                    cnVar2.P7(true);
                     break;
                 }
                 break;

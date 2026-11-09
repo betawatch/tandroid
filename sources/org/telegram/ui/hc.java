@@ -7,7 +7,7 @@ import android.graphics.Path;
 import android.graphics.RectF;
 import android.view.View;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class hc extends View {
     public final Paint a;
@@ -46,24 +46,24 @@ public final class hc extends View {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void a(org.telegram.messenger.fp fpVar) {
-        org.telegram.ui.ActionBar.f6 f6Var = this.x.a;
-        boolean a10 = f6Var != null ? f6Var.a() : org.telegram.ui.ActionBar.k6.I.q();
+        org.telegram.ui.ActionBar.g6 g6Var = this.x.a;
+        boolean a10 = g6Var != null ? g6Var.a() : org.telegram.ui.ActionBar.l6.I.q();
         Paint paint = this.c;
         Paint paint2 = this.b;
         if (a10) {
             if (fpVar.g() != fpVar.f()) {
                 if (!(fpVar.i() != fpVar.f())) {
-                    paint2.setColor(fpVar.e(1, f6Var));
-                    paint.setColor(fpVar.e(0, f6Var));
-                    this.d.setColor(fpVar.e(2, f6Var));
+                    paint2.setColor(fpVar.e(1, g6Var));
+                    paint.setColor(fpVar.e(0, g6Var));
+                    this.d.setColor(fpVar.e(2, g6Var));
                     this.h = fpVar.g() == fpVar.f();
                     this.n = fpVar.i() != fpVar.f();
                 }
             }
         }
-        paint2.setColor(fpVar.e(0, f6Var));
-        paint.setColor(fpVar.e(1, f6Var));
-        this.d.setColor(fpVar.e(2, f6Var));
+        paint2.setColor(fpVar.e(0, g6Var));
+        paint.setColor(fpVar.e(1, g6Var));
+        this.d.setColor(fpVar.e(2, g6Var));
         this.h = fpVar.g() == fpVar.f();
         this.n = fpVar.i() != fpVar.f();
     }

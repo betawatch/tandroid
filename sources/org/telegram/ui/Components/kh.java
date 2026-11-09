@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.text.style.ImageSpan;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class kh implements TextWatcher {
     public boolean a;
@@ -65,10 +65,10 @@ public final class kh implements TextWatcher {
             j6Var2.animate().setListener(null).cancel();
             j6Var2.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(100L).start();
             if (i7 < 0) {
-                org.telegram.ui.ActionBar.r6.Z(j6Var2, org.telegram.ui.ActionBar.k6.p7, diVar.I0);
+                org.telegram.ui.ActionBar.s6.Y(j6Var2, org.telegram.ui.ActionBar.l6.p7, diVar.I0);
                 z9 = false;
             } else {
-                org.telegram.ui.ActionBar.r6.Z(j6Var2, org.telegram.ui.ActionBar.k6.y6, diVar.I0);
+                org.telegram.ui.ActionBar.s6.Y(j6Var2, org.telegram.ui.ActionBar.l6.y6, diVar.I0);
                 z9 = true;
             }
             j6Var.c(org.telegram.messenger.id.E(j3, ','), false, true);

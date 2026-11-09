@@ -8,12 +8,12 @@ import android.widget.TextView;
 import java.util.HashSet;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class kc extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
-    public final ol0 a;
+public final class kc extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
+    public final ql0 a;
     public final jc b;
-    public final org.telegram.ui.ActionBar.k5 c;
+    public final org.telegram.ui.ActionBar.l5 c;
     public final TextView d;
     public final TextView e;
     public final LinearLayout f;
@@ -22,40 +22,40 @@ public final class kc extends FrameLayout implements org.telegram.ui.ActionBar.a
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public kc(rc rcVar, Activity activity) {
         super(activity);
-        org.telegram.ui.ActionBar.f6 f6Var;
+        org.telegram.ui.ActionBar.g6 g6Var;
         int i7;
-        org.telegram.ui.ActionBar.f6 f6Var2;
+        org.telegram.ui.ActionBar.g6 g6Var2;
         this.h = rcVar;
         Context context = getContext();
-        f6Var = ((org.telegram.ui.ActionBar.f2) rcVar).resourceProvider;
-        ol0 ol0Var = new ol0(context, f6Var);
-        this.a = ol0Var;
-        ol0Var.setProgressToGradient(1.0f);
-        ol0Var.F = true;
-        addView(ol0Var, c8.ha.e(-1, -1, org.telegram.messenger.qs.E1));
+        g6Var = ((org.telegram.ui.ActionBar.f2) rcVar).resourceProvider;
+        ql0 ql0Var = new ql0(context, g6Var);
+        this.a = ql0Var;
+        ql0Var.setProgressToGradient(1.0f);
+        ql0Var.F = true;
+        addView(ql0Var, c8.ha.e(-1, -1, org.telegram.messenger.qs.E1));
         Context context2 = getContext();
         i7 = ((org.telegram.ui.ActionBar.f2) rcVar).currentAccount;
         long j3 = rcVar.a;
-        f6Var2 = ((org.telegram.ui.ActionBar.f2) rcVar).resourceProvider;
-        jc jcVar = new jc(this, context2, i7, j3, f6Var2);
+        g6Var2 = ((org.telegram.ui.ActionBar.f2) rcVar).resourceProvider;
+        jc jcVar = new jc(this, context2, i7, j3, g6Var2);
         this.b = jcVar;
         boolean z9 = rcVar.d;
         addView(jcVar, c8.ha.d(-1, z9 ? 230.0f : 190.0f, 80, 0.0f, 0.0f, 0.0f, z9 ? 24.0f : 0.0f));
-        if (rcVar instanceof j40) {
-            org.telegram.ui.ActionBar.k5 k5Var = new org.telegram.ui.ActionBar.k5(getContext());
-            this.c = k5Var;
-            k5Var.setGravity(19);
-            int i10 = org.telegram.ui.ActionBar.k6.A8;
-            k5Var.setTextColor(rcVar.getThemedColor(i10));
-            k5Var.setTypeface(org.telegram.messenger.g0.o());
-            k5Var.l(org.telegram.messenger.id.M0(2131752551, null), false);
-            k5Var.setAlpha(0.0f);
+        if (rcVar instanceof l40) {
+            org.telegram.ui.ActionBar.l5 l5Var = new org.telegram.ui.ActionBar.l5(getContext());
+            this.c = l5Var;
+            l5Var.setGravity(19);
+            int i10 = org.telegram.ui.ActionBar.l6.A8;
+            l5Var.setTextColor(rcVar.getThemedColor(i10));
+            l5Var.setTypeface(org.telegram.messenger.g0.o());
+            l5Var.l(org.telegram.messenger.id.M0(2131752551, null), false);
+            l5Var.setAlpha(0.0f);
             a();
-            addView(k5Var, c8.ha.d(-1, -2.0f, 80, 72.0f, 0.0f, 0.0f, 16.0f));
+            addView(l5Var, c8.ha.d(-1, -2.0f, 80, 72.0f, 0.0f, 0.0f, 16.0f));
             LinearLayout linearLayout = new LinearLayout(activity);
             this.f = linearLayout;
             linearLayout.setOrientation(0);
-            linearLayout.setBackground(org.telegram.ui.ActionBar.k6.i0(org.telegram.ui.ActionBar.k6.r1(0.065f, -16777216), -16777216));
+            linearLayout.setBackground(org.telegram.ui.ActionBar.l6.i0(org.telegram.ui.ActionBar.l6.r1(0.065f, -16777216), -16777216));
             linearLayout.setGravity(17);
             linearLayout.setPadding(org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f));
             TextView textView = new TextView(activity);
@@ -79,30 +79,30 @@ public final class kc extends FrameLayout implements org.telegram.ui.ActionBar.a
         float f10;
         boolean z9 = getResources().getConfiguration().orientation == 2;
         int i7 = (org.telegram.messenger.g0.Q1() || !z9) ? 20 : 18;
-        org.telegram.ui.ActionBar.k5 k5Var = this.c;
-        k5Var.setTextSize(i7);
+        org.telegram.ui.ActionBar.l5 l5Var = this.c;
+        l5Var.setTextSize(i7);
         if (org.telegram.messenger.g0.Q1()) {
             f10 = -2.0f;
         } else {
             f10 = z9 ? 4 : 0;
         }
-        k5Var.setTranslationY(org.telegram.messenger.g0.L(f10));
+        l5Var.setTranslationY(org.telegram.messenger.g0.L(f10));
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.k6.A8));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.l6.A8));
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
-        org.telegram.ui.ActionBar.k5 k5Var = this.c;
-        if (k5Var != null) {
+        org.telegram.ui.ActionBar.l5 l5Var = this.c;
+        if (l5Var != null) {
             rc rcVar = this.h;
             int i7 = -1;
-            k5Var.setTextColor((!rcVar.d || rcVar.s == -1) ? rcVar.getThemedColor(org.telegram.ui.ActionBar.k6.A8) : -1);
+            l5Var.setTextColor((!rcVar.d || rcVar.s == -1) ? rcVar.getThemedColor(org.telegram.ui.ActionBar.l6.A8) : -1);
             if (rcVar.d && rcVar.s == -1) {
-                i7 = rcVar.getThemedColor(org.telegram.ui.ActionBar.k6.A8);
+                i7 = rcVar.getThemedColor(org.telegram.ui.ActionBar.l6.A8);
             }
             this.e.setTextColor(i7);
         }

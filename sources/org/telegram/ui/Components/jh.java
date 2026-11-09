@@ -8,7 +8,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class jh implements org.telegram.ui.web.d0 {
     public ValueAnimator a;
@@ -74,7 +74,7 @@ public final class jh implements org.telegram.ui.web.d0 {
         org.telegram.ui.ActionBar.f2 f2Var = diVar.W1;
         boolean z9 = tLObject instanceof TLRPC.TL_payments_paymentFormStars;
         hi.c4 c4Var = this.b;
-        org.telegram.ui.hl0 hl0Var = null;
+        org.telegram.ui.jl0 jl0Var = null;
         if (z9) {
             org.telegram.ui.ActionBar.u1 u1Var = new org.telegram.ui.ActionBar.u1(3, diVar.getContext(), null);
             u1Var.r(150L);
@@ -85,18 +85,18 @@ public final class jh implements org.telegram.ui.web.d0 {
         if (tLObject instanceof TLRPC.PaymentForm) {
             TLRPC.PaymentForm paymentForm = (TLRPC.PaymentForm) tLObject;
             org.telegram.messenger.qp.s1(i7).Y3(paymentForm.users, false);
-            hl0Var = new org.telegram.ui.hl0(paymentForm, null, str, f2Var);
+            jl0Var = new org.telegram.ui.jl0(paymentForm, null, str, f2Var);
         } else if (tLObject instanceof TLRPC.PaymentReceipt) {
-            hl0Var = new org.telegram.ui.hl0((TLRPC.PaymentReceipt) tLObject);
+            jl0Var = new org.telegram.ui.jl0((TLRPC.PaymentReceipt) tLObject);
         }
-        if (hl0Var != null) {
+        if (jl0Var != null) {
             c4Var.J();
             org.telegram.messenger.g0.v1(c4Var);
-            mb0 mb0Var = new mb0(f2Var.getParentActivity());
-            mb0Var.show();
-            hl0Var.Z0 = new a3.h((Object) mb0Var, (Object) c4Var, str, 25);
-            hl0Var.Y0 = diVar.I0;
-            mb0Var.c(hl0Var);
+            nb0 nb0Var = new nb0(f2Var.getParentActivity());
+            nb0Var.show();
+            jl0Var.Z0 = new a3.h((Object) nb0Var, (Object) c4Var, str, 25);
+            jl0Var.Y0 = diVar.I0;
+            nb0Var.c(jl0Var);
         }
     }
 
@@ -124,7 +124,7 @@ public final class jh implements org.telegram.ui.web.d0 {
                 j6Var.setTextColor(i10);
                 j6Var.setEmojiColor(i10);
                 boolean z13 = org.telegram.ui.web.x0.Q0;
-                j6Var.setBackground(org.telegram.ui.ActionBar.k6.i0(i7, i0.a.h(i7) >= 0.30000001192092896d ? 301989888 : 385875967));
+                j6Var.setBackground(org.telegram.ui.ActionBar.l6.i0(i7, i0.a.h(i7) >= 0.30000001192092896d ? 301989888 : 385875967));
                 if (diVar.x3 != z9) {
                     diVar.x3 = z9;
                     ValueAnimator valueAnimator = this.a;
@@ -211,8 +211,8 @@ public final class jh implements org.telegram.ui.web.d0 {
         di diVar = this.e;
         if (isEmpty) {
             org.telegram.ui.ActionBar.f2 f2Var = diVar.W1;
-            if (f2Var instanceof org.telegram.ui.an) {
-                ((org.telegram.ui.an) f2Var).Z.setFieldText("@" + org.telegram.messenger.t10.n(user) + " " + str);
+            if (f2Var instanceof org.telegram.ui.cn) {
+                ((org.telegram.ui.cn) f2Var).Z.setFieldText("@" + org.telegram.messenger.t10.n(user) + " " + str);
             }
             diVar.a(true);
             return;
@@ -226,11 +226,11 @@ public final class jh implements org.telegram.ui.web.d0 {
         bundle.putBoolean("allowUsers", arrayList.contains("users"));
         bundle.putBoolean("allowChannels", arrayList.contains("channels"));
         bundle.putBoolean("allowBots", arrayList.contains("bots"));
-        org.telegram.ui.ww wwVar = new org.telegram.ui.ww(bundle);
-        mb0 mb0Var = new mb0(diVar.getContext());
-        wwVar.C2 = new a1.d(this, user, str, mb0Var, 10);
-        mb0Var.show();
-        mb0Var.c(wwVar);
+        org.telegram.ui.yw ywVar = new org.telegram.ui.yw(bundle);
+        nb0 nb0Var = new nb0(diVar.getContext());
+        ywVar.D2 = new a1.d(this, user, str, nb0Var, 10);
+        nb0Var.show();
+        nb0Var.c(ywVar);
     }
 
     @Override // org.telegram.ui.web.d0

@@ -15,7 +15,7 @@ import org.telegram.messenger.id;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public class i6 extends FrameLayout {
     public final TextView a;
@@ -55,7 +55,7 @@ public class i6 extends FrameLayout {
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         if (this.c) {
-            canvas.drawLine(id.a0 ? 0.0f : org.telegram.messenger.g0.L(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (id.a0 ? org.telegram.messenger.g0.L(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.k6.k0);
+            canvas.drawLine(id.a0 ? 0.0f : org.telegram.messenger.g0.L(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (id.a0 ? org.telegram.messenger.g0.L(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.l6.k0);
         }
     }
 
@@ -83,11 +83,11 @@ public class i6 extends FrameLayout {
         this.a.setTextColor(i7);
     }
 
-    public i6(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+    public i6(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
         super(context);
         TextView textView = new TextView(context);
         this.a = textView;
-        org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.G6, f6Var);
+        org.telegram.ui.ActionBar.s6.U(textView, org.telegram.ui.ActionBar.l6.G6, g6Var);
         org.telegram.messenger.camera.q.n(textView, 1, 16.0f, 1, 1);
         textView.setSingleLine(true);
         textView.setEllipsize(TextUtils.TruncateAt.END);
@@ -97,7 +97,7 @@ public class i6 extends FrameLayout {
         RadioButton radioButton = new RadioButton(context);
         this.b = radioButton;
         radioButton.setSize(org.telegram.messenger.g0.L(20.0f));
-        org.telegram.ui.ActionBar.r6.P(radioButton, org.telegram.ui.ActionBar.k6.g7, org.telegram.ui.ActionBar.k6.h7, f6Var);
+        org.telegram.ui.ActionBar.s6.O(radioButton, org.telegram.ui.ActionBar.l6.g7, org.telegram.ui.ActionBar.l6.h7, g6Var);
         boolean z9 = id.a0;
         addView(radioButton, c8.ha.d(22, 22.0f, (z9 ? 3 : 5) | 48, z9 ? 22 : 0, 14.0f, z9 ? 0 : 22, 0.0f));
     }

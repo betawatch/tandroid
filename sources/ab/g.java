@@ -23,11 +23,12 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseCommonRegistrar;
-import di.i4;
-import di.p9;
-import di.s7;
+import di.a4;
+import di.f8;
+import di.h4;
+import di.j4;
+import di.q9;
 import di.y0;
-import di.z3;
 import e2.c1;
 import fi.b8;
 import fi.e8;
@@ -72,28 +73,28 @@ import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.l2;
 import org.telegram.ui.ActionBar.r1;
 import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.Cells.m8;
 import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.cj0;
 import org.telegram.ui.Components.dj0;
+import org.telegram.ui.Components.ej0;
 import org.telegram.ui.Components.hc;
-import org.telegram.ui.Components.k60;
+import org.telegram.ui.Components.l60;
 import org.telegram.ui.Components.xs;
 import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.d10;
-import org.telegram.ui.ha0;
-import org.telegram.ui.ma0;
-import org.telegram.ui.ma1;
-import org.telegram.ui.pa0;
-import org.telegram.ui.r01;
+import org.telegram.ui.f10;
+import org.telegram.ui.ja0;
+import org.telegram.ui.oa0;
+import org.telegram.ui.oa1;
+import org.telegram.ui.ra0;
+import org.telegram.ui.t01;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class g implements OnCompleteListener, Continuation, CameraView.CameraViewDelegate, ma1, r1, OnFailureListener, u9.d, r01, jh.i, y7, cj0, dj0, y10, ma0, li.m0, xs, g4, h2.p, h2.o {
+public final /* synthetic */ class g implements OnCompleteListener, Continuation, CameraView.CameraViewDelegate, oa1, r1, OnFailureListener, u9.d, t01, jh.i, y7, dj0, ej0, y10, oa0, li.m0, xs, g4, h2.p, h2.o {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -105,13 +106,13 @@ public final /* synthetic */ class g implements OnCompleteListener, Continuation
     }
 
     @Override // li.m0
-    public k60 a(g1 g1Var) {
+    public l60 a(g1 g1Var) {
         wf.b bVar = (wf.b) this.b;
-        f6 f6Var = (f6) this.c;
+        g6 g6Var = (g6) this.c;
         li.p pVar = (li.p) bVar.c;
-        k60 k60Var = new k60(pVar, f6Var, g1Var, false, false, true);
-        pVar.H = k60Var;
-        return k60Var;
+        l60 l60Var = new l60(pVar, g6Var, g1Var, false, false, true);
+        pVar.H = l60Var;
+        return l60Var;
     }
 
     @Override // jh.i
@@ -125,7 +126,7 @@ public final /* synthetic */ class g implements OnCompleteListener, Continuation
         }
     }
 
-    @Override // org.telegram.ui.Components.dj0
+    @Override // org.telegram.ui.Components.ej0
     public boolean c(int i7, View view) {
         return q3.E0((q3) this.b, (Context) this.c, view, i7);
     }
@@ -189,17 +190,17 @@ public final /* synthetic */ class g implements OnCompleteListener, Continuation
     
         if (r1 == null) goto L15;
      */
-    @Override // org.telegram.ui.ma0
+    @Override // org.telegram.ui.oa0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void d(TLRPC.MessageMedia messageMedia, int i7, boolean z9, int i10, long j3) {
         a1 a1Var = (a1) this.b;
-        pa0 pa0Var = (pa0) this.c;
+        ra0 ra0Var = (ra0) this.c;
         a1Var.x = messageMedia.geo;
         String str = null;
         if (TextUtils.isEmpty(a1Var.y)) {
-            ha0 ha0Var = pa0Var.P;
+            ja0 ja0Var = ra0Var.P;
         }
     }
 
@@ -268,7 +269,7 @@ public final /* synthetic */ class g implements OnCompleteListener, Continuation
         }
     }
 
-    @Override // org.telegram.ui.Components.cj0
+    @Override // org.telegram.ui.Components.dj0
     public void f(float f10, float f11, int i7, View view) {
         boolean z9;
         String str;
@@ -304,10 +305,10 @@ public final /* synthetic */ class g implements OnCompleteListener, Continuation
                     if (i12 == 1) {
                         TLRPC.InputPeer inputPeer = s8Var.j1;
                         long n10 = inputPeer != null ? m5.n(inputPeer) : p10.i(s8Var.a).e();
-                        k60 F = k60.F(n8Var, s8Var.I0, view);
-                        F.c(R.drawable.msg_addfolder, id.M0(2131744788, null), new r3(n8Var, n10, i11), false);
+                        l60 F = l60.F(n8Var, s8Var.I0, view);
+                        F.c(R.drawable.msg_addfolder, id.M0(2131744785, null), new r3(n8Var, n10, i11), false);
                         F.k();
-                        k60.f(F, qp.s1(s8Var.a).P1().B(n10, true), s8Var.r1, false, null, new f1(12, n8Var, F));
+                        l60.f(F, qp.s1(s8Var.a).P1().B(n10, true), s8Var.r1, false, null, new f1(12, n8Var, F));
                         F.Z();
                         return;
                     }
@@ -345,12 +346,12 @@ public final /* synthetic */ class g implements OnCompleteListener, Continuation
                     s8Var.t1 = d;
                     r13 = s8Var.E1 == 4 ? 1 : 0;
                     if (d) {
-                        cc G = new hc(l2Var, s8Var.I0).G(R.raw.ic_save_to_gallery, 4, id.M0(r13 != 0 ? 2131744672 : 2131744673, null));
+                        cc G = new hc(l2Var, s8Var.I0).G(R.raw.ic_save_to_gallery, 4, id.M0(r13 != 0 ? 2131744669 : 2131744670, null));
                         G.j = 5000;
                         G.k(true);
                         return;
                     } else {
-                        cc G2 = new hc(l2Var, s8Var.I0).G(R.raw.passcode_lock_close, 4, id.M0(r13 != 0 ? 2131744686 : 2131744687, null));
+                        cc G2 = new hc(l2Var, s8Var.I0).G(R.raw.passcode_lock_close, 4, id.M0(r13 != 0 ? 2131744683 : 2131744684, null));
                         G2.j = 5000;
                         G2.k(true);
                         return;
@@ -368,11 +369,11 @@ public final /* synthetic */ class g implements OnCompleteListener, Continuation
                 s8Var.u1 = d2;
                 boolean z10 = s8Var.j1 instanceof TLRPC.TL_inputPeerChannel;
                 if (d2) {
-                    cc G3 = new hc(l2Var, s8Var.I0).G(R.raw.msg_story_keep, 4, id.M0(z10 ? 2131744710 : 2131744674, null));
+                    cc G3 = new hc(l2Var, s8Var.I0).G(R.raw.msg_story_keep, 4, id.M0(z10 ? 2131744707 : 2131744671, null));
                     G3.j = 5000;
                     G3.k(true);
                 } else {
-                    cc G4 = new hc(l2Var, s8Var.I0).G(R.raw.fire_on, 4, id.M0(z10 ? 2131744711 : 2131744688, null));
+                    cc G4 = new hc(l2Var, s8Var.I0).G(R.raw.fire_on, 4, id.M0(z10 ? 2131744708 : 2131744685, null));
                     G4.j = 5000;
                     G4.k(true);
                 }
@@ -432,11 +433,11 @@ public final /* synthetic */ class g implements OnCompleteListener, Continuation
                     } catch (Throwable unused) {
                     }
                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, n8Var.getContext(), s8Var.I0);
-                    String M0 = id.M0(2131749395, null);
+                    String M0 = id.M0(2131749394, null);
                     u1 u1Var2 = alertDialog$Builder.a;
                     u1Var2.R = M0;
-                    u1Var2.T = id.M0(2131749394, null);
-                    jg.g.C(null, 2131747832, alertDialog$Builder, null);
+                    u1Var2.T = id.M0(2131749393, null);
+                    jg.g.C(null, 2131747831, alertDialog$Builder, null);
                 } else if (hashMap.containsKey(Long.valueOf(j3))) {
                     ArrayList arrayList4 = (ArrayList) hashMap.get(Long.valueOf(j3));
                     if (arrayList4 != null) {
@@ -535,7 +536,7 @@ public final /* synthetic */ class g implements OnCompleteListener, Continuation
         g8Var.L = z9;
     }
 
-    @Override // org.telegram.ui.Components.cj0
+    @Override // org.telegram.ui.Components.dj0
     public /* synthetic */ boolean f1(View view) {
         return false;
     }
@@ -550,14 +551,14 @@ public final /* synthetic */ class g implements OnCompleteListener, Continuation
                 h.d();
                 int i10 = k7Var.a;
                 e4 e4Var = new e4(k7Var, h, f1Var, 1);
-                org.telegram.ui.Wallet.m0 x10 = org.telegram.ui.Wallet.m0.x(i10);
-                x10.m0(new d10(i10, e4Var, x10));
+                org.telegram.ui.Wallet.l0 x10 = org.telegram.ui.Wallet.l0.x(i10);
+                x10.m0(new f10(i10, e4Var, x10));
                 break;
             case 13:
-                z3 z3Var = (z3) this.b;
-                di.g1 g1Var = ((p9) this.c).A0;
+                a4 a4Var = (a4) this.b;
+                di.g1 g1Var = ((q9) this.c).A0;
                 if (g1Var == null) {
-                    i4.d0(z3Var.x);
+                    j4.d0(a4Var.x);
                     break;
                 } else if (!g1Var.x) {
                     TL_phone.discardGroupCall discardgroupcall = new TL_phone.discardGroupCall();
@@ -589,17 +590,43 @@ public final /* synthetic */ class g implements OnCompleteListener, Continuation
         bVar.E((c1) this.c, new wf.b(sVar, ((m2.e) this.b).e));
     }
 
-    @Override // org.telegram.messenger.y10
-    public void i(Object obj, TLRPC.Document document, Boolean bool) {
-        kg.m mVar = (kg.m) this.b;
-        View view = (View) this.c;
-        mVar.x = false;
-        org.telegram.messenger.g0.r(mVar.e);
-        kg.i iVar = mVar.n;
-        mVar.y = document;
-        iVar.setSticker(document);
-        ((m8) view).setValueSticker(document);
-        mVar.j0(true);
+    @Override // fi.y7
+    public void i(q8 q8Var, boolean z9, boolean z10, boolean z11, boolean z12, TLRPC.InputPeer inputPeer, int i7, f2.h hVar, f8 f8Var) {
+        switch (this.a) {
+            case 11:
+                j4 j4Var = (j4) this.b;
+                TL_stories.StoryItem storyItem = (TL_stories.StoryItem) this.c;
+                TL_stories.TL_stories_editStory tL_stories_editStory = new TL_stories.TL_stories_editStory();
+                tL_stories_editStory.peer = qp.s1(j4Var.l2).j1(storyItem.dialogId);
+                tL_stories_editStory.id = storyItem.id;
+                tL_stories_editStory.flags |= 4;
+                tL_stories_editStory.privacy_rules = q8Var.b;
+                ConnectionsManager.getInstance(j4Var.l2).sendRequest(tL_stories_editStory, new g2(j4Var, hVar, storyItem, q8Var, 5));
+                break;
+            default:
+                a4 a4Var = (a4) this.b;
+                s8 s8Var = (s8) this.c;
+                j4 j4Var2 = a4Var.x;
+                h4 h4Var = j4Var2.x1;
+                TL_stories.StoryItem storyItem2 = h4Var.a;
+                if ((storyItem2 != null && storyItem2.pinned) != z11) {
+                    qp.s1(j4Var2.l2).P1().r0(j4Var2.k1, j4Var2.e1, z11, null);
+                }
+                TL_stories.StoryItem storyItem3 = h4Var.a;
+                if (storyItem3 != null) {
+                    TLRPC.MessageMedia messageMedia = storyItem3.media;
+                    if (messageMedia instanceof TLRPC.TL_messageMediaVideoStream) {
+                        TLRPC.InputGroupCall inputGroupCall = ((TLRPC.TL_messageMediaVideoStream) messageMedia).call;
+                        TL_phone.toggleGroupCallSettings togglegroupcallsettings = new TL_phone.toggleGroupCallSettings();
+                        togglegroupcallsettings.call = inputGroupCall;
+                        togglegroupcallsettings.messages_enabled = Boolean.valueOf(z9);
+                        togglegroupcallsettings.send_paid_messages_stars = Long.valueOf(i7);
+                        ConnectionsManager.getInstance(j4Var2.l2).sendRequest(togglegroupcallsettings, new bi.j(8, a4Var, s8Var));
+                        break;
+                    }
+                }
+                break;
+        }
     }
 
     @Override // h2.o
@@ -614,48 +641,22 @@ public final /* synthetic */ class g implements OnCompleteListener, Continuation
         }
     }
 
-    @Override // org.telegram.ui.ma1
+    @Override // org.telegram.ui.oa1
     public void j(TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP) {
         ((bi.z) this.b).u0(false, 0L, tL_inputCheckPasswordSRP, (TwoStepVerificationActivity) this.c);
     }
 
-    @Override // fi.y7
-    public void k(q8 q8Var, boolean z9, boolean z10, boolean z11, boolean z12, TLRPC.InputPeer inputPeer, int i7, f2.h hVar, s7 s7Var) {
-        switch (this.a) {
-            case 11:
-                i4 i4Var = (i4) this.b;
-                TL_stories.StoryItem storyItem = (TL_stories.StoryItem) this.c;
-                TL_stories.TL_stories_editStory tL_stories_editStory = new TL_stories.TL_stories_editStory();
-                tL_stories_editStory.peer = qp.s1(i4Var.l2).j1(storyItem.dialogId);
-                tL_stories_editStory.id = storyItem.id;
-                tL_stories_editStory.flags |= 4;
-                tL_stories_editStory.privacy_rules = q8Var.b;
-                ConnectionsManager.getInstance(i4Var.l2).sendRequest(tL_stories_editStory, new g2(i4Var, hVar, storyItem, q8Var, 5));
-                break;
-            default:
-                z3 z3Var = (z3) this.b;
-                s8 s8Var = (s8) this.c;
-                i4 i4Var2 = z3Var.x;
-                di.g4 g4Var = i4Var2.x1;
-                TL_stories.StoryItem storyItem2 = g4Var.a;
-                if ((storyItem2 != null && storyItem2.pinned) != z11) {
-                    qp.s1(i4Var2.l2).P1().r0(i4Var2.k1, i4Var2.e1, z11, null);
-                }
-                TL_stories.StoryItem storyItem3 = g4Var.a;
-                if (storyItem3 != null) {
-                    TLRPC.MessageMedia messageMedia = storyItem3.media;
-                    if (messageMedia instanceof TLRPC.TL_messageMediaVideoStream) {
-                        TLRPC.InputGroupCall inputGroupCall = ((TLRPC.TL_messageMediaVideoStream) messageMedia).call;
-                        TL_phone.toggleGroupCallSettings togglegroupcallsettings = new TL_phone.toggleGroupCallSettings();
-                        togglegroupcallsettings.call = inputGroupCall;
-                        togglegroupcallsettings.messages_enabled = Boolean.valueOf(z9);
-                        togglegroupcallsettings.send_paid_messages_stars = Long.valueOf(i7);
-                        ConnectionsManager.getInstance(i4Var2.l2).sendRequest(togglegroupcallsettings, new bi.j(8, z3Var, s8Var));
-                        break;
-                    }
-                }
-                break;
-        }
+    @Override // org.telegram.messenger.y10
+    public void k(Object obj, TLRPC.Document document, Boolean bool) {
+        kg.m mVar = (kg.m) this.b;
+        View view = (View) this.c;
+        mVar.x = false;
+        org.telegram.messenger.g0.r(mVar.e);
+        kg.i iVar = mVar.n;
+        mVar.y = document;
+        iVar.setSticker(document);
+        ((m8) view).setValueSticker(document);
+        mVar.j0(true);
     }
 
     @Override // org.telegram.ui.Components.xs
@@ -779,7 +780,7 @@ public final /* synthetic */ class g implements OnCompleteListener, Continuation
         this.c = obj;
     }
 
-    @Override // org.telegram.ui.Components.cj0
+    @Override // org.telegram.ui.Components.dj0
     public /* synthetic */ void r0(View view, float f10, float f11) {
     }
 }

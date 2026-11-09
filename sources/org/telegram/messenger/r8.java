@@ -17,7 +17,7 @@ import org.telegram.tgnet.tl.TL_ephemeral;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class r8 extends c1 {
     public static volatile r8[] s = new r8[4];
@@ -293,20 +293,20 @@ public final class r8 extends c1 {
         TLRPC.Message message;
         TLRPC.MessageFwdHeader messageFwdHeader;
         TLRPC.Peer peer;
-        if (obj instanceof di.i6) {
-            di.i6 i6Var = (di.i6) obj;
-            if (i6Var.a == null) {
+        if (obj instanceof di.j6) {
+            di.j6 j6Var = (di.j6) obj;
+            if (j6Var.a == null) {
                 a8.b("failed request reference can't find list in botpreview");
                 return null;
             }
-            TLRPC.MessageMedia messageMedia = i6Var.media;
+            TLRPC.MessageMedia messageMedia = j6Var.media;
             if (messageMedia.document != null) {
-                return "botstory_doc_" + i6Var.media.document.id;
+                return "botstory_doc_" + j6Var.media.document.id;
             }
             if (messageMedia.photo != null) {
-                return "botstory_photo_" + i6Var.media.photo.id;
+                return "botstory_photo_" + j6Var.media.photo.id;
             }
-            return "botstory_" + i6Var.id;
+            return "botstory_" + j6Var.id;
         }
         if (obj instanceof TL_stories.StoryItem) {
             TL_stories.StoryItem storyItem = (TL_stories.StoryItem) obj;
@@ -334,7 +334,7 @@ public final class r8 extends c1 {
             if (ijVar.D == 29 && (message = ijVar.k) != null && (messageFwdHeader = message.fwd_from) != null && (peer = messageFwdHeader.from_id) != null) {
                 v02 = m5.o(peer);
             }
-            return "message" + ijVar.M1() + "_" + v02 + "_" + ijVar.p1 + "_" + ij.J1(ijVar.k);
+            return "message" + ijVar.L1() + "_" + v02 + "_" + ijVar.p1 + "_" + ij.I1(ijVar.k);
         }
         if (obj instanceof TLRPC.Message) {
             TLRPC.Message message2 = (TLRPC.Message) obj;
@@ -390,20 +390,20 @@ public final class r8 extends c1 {
         if (z10 && (((TL_ephemeral.TL_sendMessage) obj2).media instanceof TLRPC.TL_inputMediaPoll) && (obj instanceof ArrayList)) {
             return null;
         }
-        if (obj2 instanceof di.i6) {
-            di.i6 i6Var = (di.i6) obj2;
-            TLRPC.MessageMedia messageMedia = i6Var.media;
+        if (obj2 instanceof di.j6) {
+            di.j6 j6Var = (di.j6) obj2;
+            TLRPC.MessageMedia messageMedia = j6Var.media;
             if (messageMedia.document != null) {
                 TLRPC.TL_inputDocumentFileLocation tL_inputDocumentFileLocation = new TLRPC.TL_inputDocumentFileLocation();
-                tL_inputDocumentFileLocation.id = i6Var.media.document.id;
-                return new Pair(tL_inputDocumentFileLocation, "botstory_doc_" + i6Var.media.document.id);
+                tL_inputDocumentFileLocation.id = j6Var.media.document.id;
+                return new Pair(tL_inputDocumentFileLocation, "botstory_doc_" + j6Var.media.document.id);
             }
             if (messageMedia.photo == null) {
-                return new Pair(new TLRPC.TL_inputDocumentFileLocation(), "botstory_" + i6Var.id);
+                return new Pair(new TLRPC.TL_inputDocumentFileLocation(), "botstory_" + j6Var.id);
             }
             TLRPC.TL_inputPhotoFileLocation tL_inputPhotoFileLocation = new TLRPC.TL_inputPhotoFileLocation();
-            tL_inputPhotoFileLocation.id = i6Var.media.photo.id;
-            return new Pair(tL_inputPhotoFileLocation, "botstory_photo_" + i6Var.media.photo.id);
+            tL_inputPhotoFileLocation.id = j6Var.media.photo.id;
+            return new Pair(tL_inputPhotoFileLocation, "botstory_photo_" + j6Var.media.photo.id);
         }
         if (obj2 instanceof TL_stories.TL_storyItem) {
             TL_stories.TL_storyItem tL_storyItem = (TL_stories.TL_storyItem) obj2;
@@ -919,8 +919,8 @@ public final class r8 extends c1 {
                 inputFileLocationArr[0] = (TLRPC.InputFileLocation) obj;
             }
         }
-        if (tLObject instanceof di.i6) {
-            TLRPC.MessageMedia messageMedia3 = ((di.i6) tLObject).media;
+        if (tLObject instanceof di.j6) {
+            TLRPC.MessageMedia messageMedia3 = ((di.j6) tLObject).media;
             TLRPC.Document document2 = messageMedia3.document;
             if (document2 != null) {
                 bArr = e(document2, messageMedia3.alt_documents, inputFileLocation, zArr, inputFileLocationArr);
@@ -1393,8 +1393,8 @@ public final class r8 extends c1 {
                                 z12 = true;
                             }
                             p8Var3.d = z12;
-                            if (tLObject instanceof di.i6) {
-                                TLRPC.MessageMedia messageMedia2 = ((di.i6) tLObject).media;
+                            if (tLObject instanceof di.j6) {
+                                TLRPC.MessageMedia messageMedia2 = ((di.j6) tLObject).media;
                                 arrayList2 = arrayList;
                                 TLRPC.Document document3 = messageMedia2.document;
                                 if (document3 != null) {
@@ -2762,28 +2762,28 @@ public final class r8 extends c1 {
                     TLRPC.TL_messages_saveGif tL_messages_saveGif = (TLRPC.TL_messages_saveGif) obj;
                     if (!z9 || !Arrays.equals(tL_messages_saveGif.id.file_reference, bArr)) {
                         tL_messages_saveGif.id.file_reference = bArr;
-                        getConnectionsManager().sendRequest(tL_messages_saveGif, new di.u5(i16));
+                        getConnectionsManager().sendRequest(tL_messages_saveGif, new di.v5(i16));
                         return true;
                     }
                 } else if (obj instanceof TLRPC.TL_messages_saveRecentSticker) {
                     TLRPC.TL_messages_saveRecentSticker tL_messages_saveRecentSticker = (TLRPC.TL_messages_saveRecentSticker) obj;
                     if (!z9 || !Arrays.equals(tL_messages_saveRecentSticker.id.file_reference, bArr)) {
                         tL_messages_saveRecentSticker.id.file_reference = bArr;
-                        getConnectionsManager().sendRequest(tL_messages_saveRecentSticker, new di.u5(i16));
+                        getConnectionsManager().sendRequest(tL_messages_saveRecentSticker, new di.v5(i16));
                         return true;
                     }
                 } else if (obj instanceof TLRPC.TL_stickers_addStickerToSet) {
                     TLRPC.TL_stickers_addStickerToSet tL_stickers_addStickerToSet = (TLRPC.TL_stickers_addStickerToSet) obj;
                     if (!z9 || !Arrays.equals(tL_stickers_addStickerToSet.sticker.document.file_reference, bArr)) {
                         tL_stickers_addStickerToSet.sticker.document.file_reference = bArr;
-                        getConnectionsManager().sendRequest(tL_stickers_addStickerToSet, new di.u5(i16));
+                        getConnectionsManager().sendRequest(tL_stickers_addStickerToSet, new di.v5(i16));
                         return true;
                     }
                 } else if (obj instanceof TLRPC.TL_messages_faveSticker) {
                     TLRPC.TL_messages_faveSticker tL_messages_faveSticker = (TLRPC.TL_messages_faveSticker) obj;
                     if (!z9 || !Arrays.equals(tL_messages_faveSticker.id.file_reference, bArr)) {
                         tL_messages_faveSticker.id.file_reference = bArr;
-                        getConnectionsManager().sendRequest(tL_messages_faveSticker, new di.u5(i16));
+                        getConnectionsManager().sendRequest(tL_messages_faveSticker, new di.v5(i16));
                         return true;
                     }
                 } else {
@@ -2885,7 +2885,7 @@ public final class r8 extends c1 {
                 simpleName = a8.p0.n(storyItem.id, ")", sb3);
             } else if (obj instanceof ij) {
                 ij ijVar = (ij) obj;
-                simpleName = "message(dialogId=" + ij.B0(ijVar.k) + "messageId" + ijVar.f1() + ")";
+                simpleName = "message(dialogId=" + ij.B0(ijVar.k) + "messageId" + ijVar.e1() + ")";
             } else {
                 simpleName = obj == null ? null : obj.getClass().getSimpleName();
             }
@@ -2954,7 +2954,7 @@ public final class r8 extends c1 {
         String str8 = (String) p10.second;
         if (obj instanceof ij) {
             ij ijVar2 = (ij) obj;
-            if (ijVar2.M1() < 0 && (message = ijVar2.k) != null && (messageMedia = message.media) != null && (webPage = messageMedia.webpage) != null) {
+            if (ijVar2.L1() < 0 && (message = ijVar2.k) != null && (messageMedia = message.media) != null && (webPage = messageMedia.webpage) != null) {
                 obj2 = webPage;
                 o4 = o(obj2);
                 if (o4 != null) {
@@ -3052,24 +3052,24 @@ public final class r8 extends c1 {
                             }
                         }
                     }
-                    if (!(obj2 instanceof di.i6)) {
-                        di.i6 i6Var = (di.i6) obj2;
-                        di.j6 j6Var = i6Var.a;
-                        if (j6Var == null) {
+                    if (!(obj2 instanceof di.j6)) {
+                        di.j6 j6Var = (di.j6) obj2;
+                        di.k6 k6Var = j6Var.a;
+                        if (k6Var == null) {
                             v(objArr);
                             return;
                         }
-                        aa.s sVar = new aa.s(j6Var, i6Var, new d3(this, str7, str4, 2), 26);
-                        if (j6Var.F != 0) {
-                            ConnectionsManager.getInstance(j6Var.c).cancelRequest(j6Var.F, true);
+                        aa.s sVar = new aa.s(k6Var, j6Var, new d3(this, str7, str4, 2), 26);
+                        if (k6Var.F != 0) {
+                            ConnectionsManager.getInstance(k6Var.c).cancelRequest(k6Var.F, true);
                             z9 = false;
-                            j6Var.F = 0;
+                            k6Var.F = 0;
                         } else {
                             z9 = false;
                         }
-                        j6Var.C = z9;
-                        j6Var.D = z9;
-                        j6Var.H(sVar);
+                        k6Var.C = z9;
+                        k6Var.D = z9;
+                        k6Var.H(sVar);
                         return;
                     }
                     if (obj2 instanceof TL_stories.StoryItem) {
@@ -3564,7 +3564,7 @@ public final class r8 extends c1 {
                         if (ijVar3.p1) {
                             TLRPC.TL_messages_getScheduledMessages tL_messages_getScheduledMessages = new TLRPC.TL_messages_getScheduledMessages();
                             tL_messages_getScheduledMessages.peer = getMessagesController().j1(ij.B0(ijVar3.k));
-                            tL_messages_getScheduledMessages.id.add(Integer.valueOf(ijVar3.M1()));
+                            tL_messages_getScheduledMessages.id.add(Integer.valueOf(ijVar3.L1()));
                             final int i19 = 20;
                             getConnectionsManager().sendRequest(tL_messages_getScheduledMessages, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
                                 public final /* synthetic */ r8 b;
@@ -3659,11 +3659,11 @@ public final class r8 extends c1 {
                             });
                             return;
                         }
-                        if (ij.c4(ijVar3.k)) {
+                        if (ij.b4(ijVar3.k)) {
                             TLRPC.TL_messages_getQuickReplyMessages tL_messages_getQuickReplyMessages = new TLRPC.TL_messages_getQuickReplyMessages();
-                            tL_messages_getQuickReplyMessages.shortcut_id = ij.J1(ijVar3.k);
+                            tL_messages_getQuickReplyMessages.shortcut_id = ij.I1(ijVar3.k);
                             tL_messages_getQuickReplyMessages.flags |= 1;
-                            tL_messages_getQuickReplyMessages.id.add(Integer.valueOf(ijVar3.M1()));
+                            tL_messages_getQuickReplyMessages.id.add(Integer.valueOf(ijVar3.L1()));
                             final int i20 = 21;
                             getConnectionsManager().sendRequest(tL_messages_getQuickReplyMessages, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
                                 public final /* synthetic */ r8 b;
@@ -3762,7 +3762,7 @@ public final class r8 extends c1 {
                         if (message2 != null && message2.rich_message != null) {
                             TL_iv.getRichMessage getrichmessage = new TL_iv.getRichMessage();
                             getrichmessage.peer = j12;
-                            getrichmessage.id = ijVar3.M1();
+                            getrichmessage.id = ijVar3.L1();
                             final int i21 = 22;
                             getConnectionsManager().sendRequest(getrichmessage, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
                                 public final /* synthetic */ r8 b;
@@ -3859,7 +3859,7 @@ public final class r8 extends c1 {
                         }
                         if (v02 == 0) {
                             TLRPC.TL_messages_getMessages tL_messages_getMessages = new TLRPC.TL_messages_getMessages();
-                            tL_messages_getMessages.id.add(Integer.valueOf(ijVar3.M1()));
+                            tL_messages_getMessages.id.add(Integer.valueOf(ijVar3.L1()));
                             final int i22 = 0;
                             getConnectionsManager().sendRequest(tL_messages_getMessages, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
                                 public final /* synthetic */ r8 b;
@@ -3956,7 +3956,7 @@ public final class r8 extends c1 {
                         }
                         TLRPC.TL_channels_getMessages tL_channels_getMessages = new TLRPC.TL_channels_getMessages();
                         tL_channels_getMessages.channel = getMessagesController().h1(v02);
-                        tL_channels_getMessages.id.add(Integer.valueOf(ijVar3.M1()));
+                        tL_channels_getMessages.id.add(Integer.valueOf(ijVar3.L1()));
                         final int i23 = 23;
                         getConnectionsManager().sendRequest(tL_channels_getMessages, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
                             public final /* synthetic */ r8 b;
@@ -5612,7 +5612,7 @@ public final class r8 extends c1 {
                 b10 = b(str);
                 if (b10 == null) {
                 }
-                if (!(obj2 instanceof di.i6)) {
+                if (!(obj2 instanceof di.j6)) {
                 }
             }
         }

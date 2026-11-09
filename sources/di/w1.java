@@ -8,15 +8,15 @@ import org.telegram.messenger.qp;
 import org.telegram.messenger.qs;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w1 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ i4 b;
+    public final /* synthetic */ j4 b;
 
-    public /* synthetic */ w1(i4 i4Var, int i7) {
+    public /* synthetic */ w1(j4 j4Var, int i7) {
         this.a = i7;
-        this.b = i4Var;
+        this.b = j4Var;
     }
 
     @Override // java.lang.Runnable
@@ -24,68 +24,68 @@ public final /* synthetic */ class w1 implements Runnable {
         int i7 = this.a;
         int i10 = 3;
         boolean z9 = false;
-        i4 i4Var = this.b;
+        j4 j4Var = this.b;
         switch (i7) {
             case 0:
-                i4Var.S1.setVisibility(8);
+                j4Var.S1.setVisibility(8);
                 break;
             case 1:
-                if (!i4Var.s0.G0) {
-                    i4Var.i3 = null;
-                    if (i4Var.q0 == null) {
-                        fi.m3 m3Var = new fi.m3(i4Var.getContext(), 3);
+                if (!j4Var.s0.G0) {
+                    j4Var.i3 = null;
+                    if (j4Var.q0 == null) {
+                        fi.m3 m3Var = new fi.m3(j4Var.getContext(), 3);
                         m3Var.o(1.0f, -22.0f);
-                        i4Var.q0 = m3Var;
+                        j4Var.q0 = m3Var;
                         m3Var.j(i0.a.o(i0.a.f(0.13f, -16777216, -1), qs.P3));
-                        fi.m3 m3Var2 = i4Var.q0;
+                        fi.m3 m3Var2 = j4Var.q0;
                         m3Var2.U = false;
-                        m3Var2.u(id.M0(2131746400, null));
-                        i4Var.q0.setPadding(org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(1.0f));
-                        i4Var.L0.addView(i4Var.q0, ha.d(-1, -2.0f, 85, 0.0f, 0.0f, 0.0f, i4Var.g2 ? 0.0f : 56.0f));
+                        m3Var2.u(id.M0(2131746399, null));
+                        j4Var.q0.setPadding(org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(1.0f));
+                        j4Var.L0.addView(j4Var.q0, ha.d(-1, -2.0f, 85, 0.0f, 0.0f, 0.0f, j4Var.g2 ? 0.0f : 56.0f));
                     }
-                    i4Var.q0.w();
+                    j4Var.q0.w();
                     iz.H(true);
                     break;
                 }
                 break;
             case 2:
-                i4Var.O0();
+                j4Var.O0();
                 break;
             case 3:
-                ((g9) i4Var.z1).b(true);
+                ((h9) j4Var.z1).b(true);
                 break;
             case 4:
-                i4Var.p0(true);
+                j4Var.p0(true);
                 break;
             case 5:
-                p9 p9Var = i4Var.s0;
-                if (p9Var != null) {
-                    p9Var.N(new PremiumPreviewFragment(0, "noncontacts"));
+                q9 q9Var = j4Var.s0;
+                if (q9Var != null) {
+                    q9Var.N(new PremiumPreviewFragment(0, "noncontacts"));
                     break;
                 }
                 break;
             case 6:
-                i4Var.M0();
+                j4Var.M0();
                 break;
             case 7:
-                i4Var.u3 = 0L;
-                o2 o2Var = i4Var.K1;
+                j4Var.u3 = 0L;
+                o2 o2Var = j4Var.K1;
                 if (o2Var != null) {
                     o2Var.E(true);
-                    i4Var.K1.T1();
-                    i4Var.p0(true);
+                    j4Var.K1.T1();
+                    j4Var.p0(true);
                     break;
                 }
                 break;
             case 8:
-                Activity W = org.telegram.messenger.g0.W(i4Var.getContext());
+                Activity W = org.telegram.messenger.g0.W(j4Var.getContext());
                 if (W != null) {
-                    z0 z0Var = new z0(i10, i4Var, W);
-                    p9 p9Var2 = ((g9) i4Var.z1).d;
-                    o9 o9Var = p9Var2.z0;
-                    if (o9Var != null) {
-                        z9 = o9Var.release(z0Var);
-                        p9Var2.z0 = null;
+                    z0 z0Var = new z0(i10, j4Var, W);
+                    q9 q9Var2 = ((h9) j4Var.z1).d;
+                    p9 p9Var = q9Var2.z0;
+                    if (p9Var != null) {
+                        z9 = p9Var.release(z0Var);
+                        q9Var2.z0 = null;
                     }
                     if (!z9) {
                         org.telegram.messenger.g0.i3(z0Var, 80L);
@@ -94,20 +94,20 @@ public final /* synthetic */ class w1 implements Runnable {
                 }
                 break;
             case 9:
-                p9 p9Var3 = ((g9) i4Var.z1).d;
-                p9Var3.h1 = false;
-                p9Var3.V();
+                q9 q9Var3 = ((h9) j4Var.z1).d;
+                q9Var3.h1 = false;
+                q9Var3.V();
                 break;
             case 10:
-                i4Var.J0(null);
+                j4Var.J0(null);
                 break;
             case 11:
-                i4Var.a1(false);
+                j4Var.a1(false);
                 qp.e1().edit().putInt("taptostorysoundhint", qp.e1().getInt("taptostorysoundhint", 0) + 1).apply();
                 break;
             default:
-                i4Var.D3 = true;
-                i4Var.setActive(false);
+                j4Var.D3 = true;
+                j4Var.setActive(false);
                 break;
         }
     }

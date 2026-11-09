@@ -1,52 +1,103 @@
 package zh;
 
-import bi.v9;
-import org.telegram.messenger.ls;
-import org.telegram.messenger.qs;
+import android.text.SpannableString;
+import android.text.TextUtils;
+import android.view.View;
+import bi.ea;
+import java.util.ArrayList;
+import org.telegram.messenger.id;
+import org.telegram.messenger.p10;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.Components.dj0;
+import org.telegram.ui.Components.y31;
+import org.telegram.ui.ll0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class j3 implements ls {
-    public final int a;
-    public final v9 b;
-    public final b3 c;
-    public f3 d;
-    public boolean e;
+public final /* synthetic */ class j3 implements dj0, ni.p {
+    public final /* synthetic */ Object a;
+    public final /* synthetic */ Object b;
 
-    public j3(int i7, long j3) {
-        this.a = i7;
-        v9 v9Var = new v9(i7, 0L, false);
-        this.b = v9Var;
-        v9Var.p = j3;
-        b3 b3Var = new b3(i7, j3, new xg.a(this, 5));
-        b3Var.s = true;
-        this.c = b3Var;
+    public /* synthetic */ j3(Object obj, Object obj2) {
+        this.a = obj;
+        this.b = obj2;
     }
 
-    public final void a() {
-        if (this.e) {
+    @Override // ni.p
+    public void b(j2.n nVar) {
+        org.telegram.messenger.g0.h3(new l2.z0((SpannableString) this.a, nVar, (org.telegram.ui.ActionBar.p) this.b, 11));
+    }
+
+    @Override // org.telegram.ui.Components.dj0
+    public void f(float f10, float f11, int i7, View view) {
+        TL_stars.SavedStarGift savedStarGift;
+        l3 l3Var = (l3) this.a;
+        k3 k3Var = (k3) this.b;
+        y31 G = l3Var.a2.G(i7 - 1);
+        if (G == null) {
             return;
         }
-        qs.f(this.a).c(this, qs.G3);
-        this.b.a();
-        this.c.g(false);
-        this.e = true;
-    }
-
-    public final void b() {
-        if (this.e) {
-            qs.f(this.a).n(this, qs.G3);
-            this.b.f();
-            this.c.f();
-            this.e = false;
+        Object obj = G.G;
+        if (obj instanceof TL_stars.StarGift) {
+            TL_stars.StarGift starGift = (TL_stars.StarGift) obj;
+            boolean z9 = G.r;
+            if (!TextUtils.isEmpty(starGift.gift_address) && l3Var.Z1) {
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, l3Var.getContext(), l3Var.I0);
+                String M0 = id.M0(2131749792, null);
+                org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
+                u1Var.R = M0;
+                u1Var.T = id.M0(2131749793, null);
+                jg.g.C(null, 2131747831, alertDialog$Builder, null);
+                return;
+            }
+            if (z9 && (starGift instanceof TL_stars.TL_starGiftUnique)) {
+                TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) G.G;
+                org.telegram.ui.ActionBar.u1 u1Var2 = new org.telegram.ui.ActionBar.u1(3, l3Var.getContext(), null);
+                u1Var2.r(400L);
+                long e10 = p10.i(l3Var.a).e();
+                cg.b bVar = tL_starGiftUnique.resale_ton_only ? cg.b.b : cg.b.a;
+                ea.x(l3Var.a, bVar).H(tL_starGiftUnique, e10, null, true, new ll0(l3Var, u1Var2, bVar, tL_starGiftUnique, e10));
+                return;
+            }
+            if (!z9) {
+                ArrayList arrayList = k3Var.b.l;
+                int size = arrayList.size();
+                int i10 = 0;
+                while (true) {
+                    if (i10 >= size) {
+                        savedStarGift = null;
+                        break;
+                    }
+                    Object obj2 = arrayList.get(i10);
+                    i10++;
+                    savedStarGift = (TL_stars.SavedStarGift) obj2;
+                    if (savedStarGift.gift == starGift) {
+                        break;
+                    }
+                }
+                if (savedStarGift != null && savedStarGift.can_craft_at > 0 && savedStarGift.can_craft_at > ConnectionsManager.getInstance(l3Var.a).getCurrentTime()) {
+                    AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(l3Var.getContext());
+                    String M02 = id.M0(2131749755, null);
+                    org.telegram.ui.ActionBar.u1 u1Var3 = alertDialog$Builder2.a;
+                    u1Var3.R = M02;
+                    u1Var3.T = org.telegram.messenger.g0.X2(id.a0(null, null, 2131749756, id.x(savedStarGift.can_craft_at, true)));
+                    jg.g.C(null, 2131747831, alertDialog$Builder2, null);
+                    return;
+                }
+            }
+            l3Var.X1.a(starGift);
+            l3Var.dismiss();
         }
     }
 
-    @Override // org.telegram.messenger.ls
-    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        f3 f3Var;
-        if (i7 == qs.G3 && objArr[1] == this.b && (f3Var = this.d) != null) {
-            f3Var.run();
-        }
+    @Override // org.telegram.ui.Components.dj0
+    public /* synthetic */ boolean f1(View view) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.dj0
+    public /* synthetic */ void r0(View view, float f10, float f11) {
     }
 }

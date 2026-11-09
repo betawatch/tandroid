@@ -3,9 +3,9 @@ package org.telegram.ui.web;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.id;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.l6;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final class v0 {
     public final String a;
@@ -28,7 +28,7 @@ public final class v0 {
         switch (string.hashCode()) {
             case -1829997182:
                 if (string.equals("destructive")) {
-                    this.c = k6.q7;
+                    this.c = l6.q7;
                     break;
                 }
                 break;
@@ -40,7 +40,7 @@ public final class v0 {
                 break;
             case 3548:
                 if (string.equals("ok")) {
-                    this.b = id.M0(2131747832, null);
+                    this.b = id.M0(2131747831, null);
                     return;
                 }
                 break;

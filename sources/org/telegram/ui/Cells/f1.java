@@ -14,10 +14,10 @@ import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.hc;
-import org.telegram.ui.Components.ht0;
+import org.telegram.ui.Components.jt0;
 import org.telegram.ui.Components.mz;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public abstract /* synthetic */ class f1 {
     public static /* synthetic */ String A(int i7) {
@@ -63,7 +63,7 @@ public abstract /* synthetic */ class f1 {
     }
 
     public static float c(RecyclerView recyclerView) {
-        int i7 = ht0.l0;
+        int i7 = jt0.l0;
         v4.n0 layoutManager = recyclerView.getLayoutManager();
         if (layoutManager == null || !recyclerView.canScrollVertically(-1)) {
             return 0.0f;
@@ -144,8 +144,8 @@ public abstract /* synthetic */ class f1 {
         arrayList2.add(num);
     }
 
-    public static void r(FrameLayout frameLayout, org.telegram.ui.ActionBar.f6 f6Var, TLRPC.TL_error tL_error, boolean z9) {
-        new hc(frameLayout, f6Var).f0(tL_error, z9);
+    public static void r(FrameLayout frameLayout, org.telegram.ui.ActionBar.g6 g6Var, TLRPC.TL_error tL_error, boolean z9) {
+        new hc(frameLayout, g6Var).f0(tL_error, z9);
     }
 
     public static void s(e2.t tVar, f3.j0 j0Var) {

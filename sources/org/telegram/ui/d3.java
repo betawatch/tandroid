@@ -13,9 +13,9 @@ import org.telegram.messenger.video.VideoPlayerHolderBase;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class d3 extends nq0 {
+public final class d3 extends pq0 {
     public final int[] a = new int[2];
     public final List b;
     public final /* synthetic */ g4 c;
@@ -25,13 +25,13 @@ public final class d3 extends nq0 {
         this.b = list;
     }
 
-    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
+    @Override // org.telegram.ui.pq0, org.telegram.ui.wq0
     public final void D() {
         this.c.l();
     }
 
-    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
-    public final wq0 E(org.telegram.messenger.ij ijVar, TLRPC.FileLocation fileLocation, int i7, boolean z9, boolean z10) {
+    @Override // org.telegram.ui.pq0, org.telegram.ui.wq0
+    public final yq0 E(org.telegram.messenger.ij ijVar, TLRPC.FileLocation fileLocation, int i7, boolean z9, boolean z10) {
         if (i7 < 0) {
             return null;
         }
@@ -47,28 +47,28 @@ public final class d3 extends nq0 {
         if (d02 == null) {
             return null;
         }
-        wq0 wq0Var = new wq0();
-        wq0Var.b = iArr[0];
-        wq0Var.c = iArr[1];
-        wq0Var.d = g4Var.u0[0].b;
-        wq0Var.a = d02;
-        wq0Var.e = d02.p();
-        wq0Var.h = d02.E();
-        wq0Var.j = g4Var.J0;
-        return wq0Var;
+        yq0 yq0Var = new yq0();
+        yq0Var.b = iArr[0];
+        yq0Var.c = iArr[1];
+        yq0Var.d = g4Var.u0[0].b;
+        yq0Var.a = d02;
+        yq0Var.e = d02.p();
+        yq0Var.h = d02.E();
+        yq0Var.j = g4Var.J0;
+        return yq0Var;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:20:0x0067  */
     /* JADX WARN: Removed duplicated region for block: B:34:0x00c4  */
     /* JADX WARN: Removed duplicated region for block: B:46:0x0049 A[EDGE_INSN: B:46:0x0049->B:14:0x0049 BREAK  A[LOOP:0: B:7:0x0034->B:44:0x0046], SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:8:0x0036  */
-    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
+    @Override // org.telegram.ui.pq0, org.telegram.ui.wq0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void Y(int i7) {
         TL_iv.PageBlock pageBlock;
-        org.telegram.ui.Components.t51 t51Var;
+        org.telegram.ui.Components.u51 u51Var;
         TextureView textureView;
         a0.h hVar;
         int i10;
@@ -82,7 +82,7 @@ public final class d3 extends nq0 {
             List list = this.b;
             if (i7 < list.size()) {
                 pageBlock = (TL_iv.PageBlock) list.get(i7);
-                t51Var = PhotoViewer.p1().F2;
+                u51Var = PhotoViewer.p1().F2;
                 textureView = PhotoViewer.p1().B2;
                 SurfaceView surfaceView = PhotoViewer.p1().C2;
                 g4 g4Var = this.c;
@@ -105,10 +105,10 @@ public final class d3 extends nq0 {
                     }
                     i10++;
                 }
-                if (v2Var != null && t51Var != null && textureView != null) {
+                if (v2Var != null && u51Var != null && textureView != null) {
                     long j3 = v2Var.L.video_id;
                     w2 w2Var3 = new w2();
-                    w2Var3.a = t51Var.S();
+                    w2Var3.a = u51Var.S();
                     if (textureView.getSurfaceTexture() != null) {
                         if (Build.VERSION.SDK_INT >= 24) {
                             Surface surface = new Surface(textureView.getSurfaceTexture());
@@ -129,10 +129,10 @@ public final class d3 extends nq0 {
                         v2Var.e.v0(bitmap2);
                     }
                 }
-                if (v2Var != null && t51Var != null && surfaceView != null) {
+                if (v2Var != null && u51Var != null && surfaceView != null) {
                     long j10 = v2Var.L.video_id;
                     w2 w2Var4 = new w2();
-                    w2Var4.a = t51Var.S();
+                    w2Var4.a = u51Var.S();
                     if (Build.VERSION.SDK_INT >= 24) {
                         Bitmap createBitmap2 = Bitmap.createBitmap(surfaceView.getMeasuredWidth(), surfaceView.getMeasuredHeight(), Bitmap.Config.ARGB_8888);
                         org.telegram.messenger.g0.z0(surfaceView, createBitmap2);
@@ -151,7 +151,7 @@ public final class d3 extends nq0 {
             }
         }
         pageBlock = null;
-        t51Var = PhotoViewer.p1().F2;
+        u51Var = PhotoViewer.p1().F2;
         textureView = PhotoViewer.p1().B2;
         SurfaceView surfaceView2 = PhotoViewer.p1().C2;
         g4 g4Var2 = this.c;
@@ -168,7 +168,7 @@ public final class d3 extends nq0 {
         if (v2Var != null) {
             long j32 = v2Var.L.video_id;
             w2 w2Var32 = new w2();
-            w2Var32.a = t51Var.S();
+            w2Var32.a = u51Var.S();
             if (textureView.getSurfaceTexture() != null) {
             }
             v2Var.c(w2Var32);
@@ -183,7 +183,7 @@ public final class d3 extends nq0 {
         if (v2Var != null) {
             long j102 = v2Var.L.video_id;
             w2 w2Var42 = new w2();
-            w2Var42.a = t51Var.S();
+            w2Var42.a = u51Var.S();
             if (Build.VERSION.SDK_INT >= 24) {
             }
             v2Var.c(w2Var42);
@@ -210,7 +210,7 @@ public final class d3 extends nq0 {
     }
 
     public final ImageReceiver e0(View view, TL_iv.PageBlock pageBlock, int[] iArr) {
-        org.telegram.ui.Components.xi0 xi0Var;
+        org.telegram.ui.Components.yi0 yi0Var;
         ImageReceiver e02;
         ImageReceiver e03;
         VideoPlayerHolderBase videoPlayerHolderBase;
@@ -261,13 +261,13 @@ public final class d3 extends nq0 {
             return null;
         }
         if (view instanceof v1) {
-            org.telegram.ui.Components.xi0 xi0Var2 = ((v1) view).d;
-            if (xi0Var2 == null || (e03 = e0(xi0Var2.a, pageBlock, iArr)) == null) {
+            org.telegram.ui.Components.yi0 yi0Var2 = ((v1) view).d;
+            if (yi0Var2 == null || (e03 = e0(yi0Var2.a, pageBlock, iArr)) == null) {
                 return null;
             }
             return e03;
         }
-        if (!(view instanceof y1) || (xi0Var = ((y1) view).d) == null || (e02 = e0(xi0Var.a, pageBlock, iArr)) == null) {
+        if (!(view instanceof y1) || (yi0Var = ((y1) view).d) == null || (e02 = e0(yi0Var.a, pageBlock, iArr)) == null) {
             return null;
         }
         return e02;

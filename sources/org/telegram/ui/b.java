@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public abstract class b {
     public static boolean a;
@@ -45,40 +45,40 @@ public abstract class b {
         }
     }
 
-    public static void c(int i7, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+    public static void c(int i7, Context context, org.telegram.ui.ActionBar.g6 g6Var) {
         if (a) {
             return;
         }
         int i10 = 1;
-        org.telegram.ui.ActionBar.v2 l10 = org.telegram.messenger.k5.l(1, context, f6Var, false);
+        org.telegram.ui.ActionBar.v2 l10 = org.telegram.messenger.k5.l(1, context, g6Var, false);
         ai.e0 e0Var = new ai.e0(i7, context, r5, 25);
         LinearLayout f10 = org.telegram.messenger.k5.f(context, 1);
         f10.setPadding(org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(20.0f), org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(8.0f));
         f10.setClipChildren(false);
         f10.setClipToPadding(false);
-        org.telegram.ui.Components.ch0 ch0Var = new org.telegram.ui.Components.ch0(context);
-        ch0Var.f(R.raw.media_forbidden, org.telegram.messenger.g0.L(115.0f), org.telegram.messenger.g0.L(115.0f), null);
-        ch0Var.d();
-        f10.addView(ch0Var, c8.ha.t(org.telegram.messenger.qs.A1, org.telegram.messenger.qs.A1, 17, 0, 0, 0, 9));
+        org.telegram.ui.Components.dh0 dh0Var = new org.telegram.ui.Components.dh0(context);
+        dh0Var.f(R.raw.media_forbidden, org.telegram.messenger.g0.L(115.0f), org.telegram.messenger.g0.L(115.0f), null);
+        dh0Var.d();
+        f10.addView(dh0Var, c8.ha.t(org.telegram.messenger.qs.A1, org.telegram.messenger.qs.A1, 17, 0, 0, 0, 9));
         TextView textView = new TextView(context);
         org.telegram.messenger.camera.q.m(textView, 1, 20.0f);
-        org.telegram.messenger.camera.q.o(textView, org.telegram.ui.ActionBar.k6.G6, f6Var, null, 2131754696);
+        org.telegram.messenger.camera.q.o(textView, org.telegram.ui.ActionBar.l6.G6, g6Var, null, 2131754696);
         textView.setGravity(17);
         f10.addView(textView, c8.ha.t(-1, -2, 17, 0, 0, 0, 23));
-        bi.q0 q0Var = new bi.q0(1, context, f6Var);
+        bi.q0 q0Var = new bi.q0(1, context, g6Var);
         q0Var.a(R.drawable.msg_block2, org.telegram.messenger.id.M0(2131754707, null), org.telegram.messenger.id.M0(2131754708, null));
         f10.addView(q0Var, c8.ha.t(-1, -2, 17, 0, 0, 0, 0));
-        bi.q0 q0Var2 = new bi.q0(1, context, f6Var);
+        bi.q0 q0Var2 = new bi.q0(1, context, g6Var);
         q0Var2.a(R.drawable.menu_privacy, org.telegram.messenger.id.M0(2131754705, null), org.telegram.messenger.id.M0(2131754706, null));
         f10.addView(q0Var2, c8.ha.t(-1, -2, 17, 0, 0, 0, 0));
-        bi.q0 q0Var3 = new bi.q0(1, context, f6Var);
-        q0Var3.a(R.drawable.menu_feature_hourglass, org.telegram.messenger.id.M0(2131754703, null), org.telegram.messenger.g0.U2(org.telegram.messenger.id.a0(null, null, 2131754704, org.telegram.messenger.id.f0(org.telegram.messenger.qp.s1(i7).N6)), new gq0(e0Var, 2)));
+        bi.q0 q0Var3 = new bi.q0(1, context, g6Var);
+        q0Var3.a(R.drawable.menu_feature_hourglass, org.telegram.messenger.id.M0(2131754703, null), org.telegram.messenger.g0.U2(org.telegram.messenger.id.a0(null, null, 2131754704, org.telegram.messenger.id.f0(org.telegram.messenger.qp.s1(i7).N6)), new iq0(e0Var, 2)));
         f10.addView(q0Var3, c8.ha.t(-1, -2, 17, 0, 0, 0, 0));
-        fi.d dVar = new fi.d(context, f6Var, true);
+        fi.d dVar = new fi.d(context, g6Var, true);
         dVar.i(org.telegram.messenger.id.M0(2131754698, null), false, true);
         dVar.setOnClickListener(new a(e0Var, 0));
         f10.addView(dVar, c8.ha.t(-1, 48, 7, 0, 13, 0, 4));
-        fi.d dVar2 = new fi.d(context, f6Var, false);
+        fi.d dVar2 = new fi.d(context, g6Var, false);
         dVar2.i(org.telegram.messenger.id.M0(2131754697, null), false, true);
         dVar2.setOnClickListener(new a(r5, i10));
         f10.addView(dVar2, c8.ha.t(-1, 48, 7, 0, 0, 0, 0));

@@ -1,24 +1,29 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.RectF;
+import android.text.TextPaint;
+import android.text.style.URLSpan;
+import android.view.View;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class dw0 extends org.telegram.ui.Cells.x8 {
-    public final /* synthetic */ jw0 r;
+public final class dw0 extends URLSpan {
+    public final /* synthetic */ String a;
+    public final /* synthetic */ lw0 b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public dw0(jw0 jw0Var, Context context, org.telegram.ui.ActionBar.f6 f6Var, boolean z9, boolean z10) {
-        super(18, context, f6Var, z9, z10);
-        this.r = jw0Var;
+    public dw0(lw0 lw0Var, String str, String str2) {
+        super(str);
+        this.b = lw0Var;
+        this.a = str2;
     }
 
-    @Override // org.telegram.ui.Cells.x8
-    public final int a(int i7) {
-        ProfileActivity profileActivity = this.r.e;
-        RectF rectF = ProfileActivity.S6;
-        profileActivity.getClass();
-        return i7;
+    @Override // android.text.style.URLSpan, android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        vf.c.t(this.b.e.getParentActivity(), this.a);
+    }
+
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        textPaint.setUnderlineText(true);
     }
 }

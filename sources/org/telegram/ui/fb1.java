@@ -1,50 +1,42 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.text.Editable;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class fb1 extends org.telegram.ui.Components.w31 {
-    public static final /* synthetic */ int b = 0;
+public final class fb1 extends org.telegram.ui.Cells.k3 {
+    public final /* synthetic */ int E;
+    public final /* synthetic */ UserInfoActivity F;
 
-    static {
-        org.telegram.ui.Components.w31.h(new fb1());
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ fb1(UserInfoActivity userInfoActivity, Context context, String str, org.telegram.ui.ActionBar.g6 g6Var, int i7) {
+        super(context, str, false, false, -1, g6Var);
+        this.E = i7;
+        this.F = userInfoActivity;
     }
 
-    @Override // org.telegram.ui.Components.w31
-    public final void b(View view, org.telegram.ui.Components.x31 x31Var, boolean z9, org.telegram.ui.Components.l41 l41Var, org.telegram.ui.Components.q41 q41Var) {
-        gb1 gb1Var = (gb1) view;
-        int i7 = x31Var.k;
-        CharSequence charSequence = x31Var.l;
-        CharSequence charSequence2 = x31Var.m;
-        boolean z10 = x31Var.q;
-        boolean z11 = x31Var.r;
-        int i10 = x31Var.z;
-        TextView textView = gb1Var.e;
-        ImageView imageView = gb1Var.f;
-        gb1Var.h = z10;
-        gb1Var.n = z11;
-        gb1Var.b.setImageResource(i7);
-        if (i10 != 0) {
-            imageView.setVisibility(0);
-            imageView.setImageResource(i10);
-        } else {
-            imageView.setVisibility(8);
+    @Override // org.telegram.ui.Cells.k3
+    public final void b(Editable editable) {
+        switch (this.E) {
+            case 0:
+                this.F.g0(true);
+                break;
+            case 1:
+                this.F.g0(true);
+                break;
+            default:
+                UserInfoActivity userInfoActivity = this.F;
+                userInfoActivity.g0(true);
+                userInfoActivity.j0();
+                break;
         }
-        gb1Var.d.setText(charSequence);
-        textView.setText(charSequence2);
-        textView.setVisibility(TextUtils.isEmpty(charSequence2) ? 8 : 0);
-        int L = org.telegram.messenger.g0.L(TextUtils.isEmpty(charSequence2) ? 15.0f : 10.0f);
-        gb1Var.c.setPadding(0, L, 0, L);
-        gb1Var.updateColors();
     }
 
-    @Override // org.telegram.ui.Components.w31
-    public final View d(Context context, org.telegram.ui.Components.pj0 pj0Var, int i7, org.telegram.ui.ActionBar.f6 f6Var) {
-        return new gb1(context, f6Var);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public fb1(UserInfoActivity userInfoActivity, Context context, String str, int i7, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(context, str, true, false, i7, g6Var);
+        this.E = 2;
+        this.F = userInfoActivity;
     }
 }

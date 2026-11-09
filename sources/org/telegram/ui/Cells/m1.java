@@ -7,10 +7,10 @@ import android.text.TextPaint;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.a80;
+import org.telegram.ui.Components.b80;
 import org.telegram.ui.Components.ic;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class m1 {
     public final boolean a;
@@ -25,14 +25,14 @@ public final class m1 {
     public int j;
     public y k;
     public int l;
-    public a80 m;
+    public b80 m;
     public boolean n;
     public final float[] o;
 
     public m1(q1 q1Var, boolean z9) {
         ImageReceiver imageReceiver = new ImageReceiver(q1Var);
         this.b = imageReceiver;
-        this.c = new org.telegram.ui.Components.w8((org.telegram.ui.ActionBar.f6) null);
+        this.c = new org.telegram.ui.Components.w8((org.telegram.ui.ActionBar.g6) null);
         this.d = new RectF();
         this.e = new ic(q1Var);
         this.o = new float[8];

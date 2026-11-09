@@ -35,7 +35,7 @@ import org.telegram.ui.Components.ic;
 import org.telegram.ui.Components.xp;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class g6 extends View implements o2 {
     public boolean A0;
@@ -222,7 +222,7 @@ public final class g6 extends View implements o2 {
         Drawable mutate = activity.getResources().getDrawable(R.drawable.msg_media_gallery).mutate();
         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
         mutate.setColorFilter(new PorterDuffColorFilter(1308622847, mode));
-        xp xpVar = new xp(org.telegram.ui.ActionBar.k6.d0(org.telegram.messenger.g0.L(6.0f), -13750737), mutate);
+        xp xpVar = new xp(org.telegram.ui.ActionBar.l6.d0(org.telegram.messenger.g0.L(6.0f), -13750737), mutate);
         this.c = xpVar;
         xpVar.x = false;
         int L = org.telegram.messenger.g0.L(24.0f);
@@ -591,7 +591,7 @@ public final class g6 extends View implements o2 {
             invalidate();
             long j10 = currentTimeMillis / 1000;
             if (j10 != this.R / 1000) {
-                ((s9) this.a).a.J0.a(j10, z9);
+                ((r9) this.a).a.J0.a(j10, z9);
             }
             if (j3 > 0 && currentTimeMillis >= j3) {
                 post(new d6(this, 0));
@@ -909,11 +909,11 @@ public final class g6 extends View implements o2 {
                     invalidate();
                     if (this.r0 && !this.X0 && c10) {
                         d(180.0f);
-                        ((s9) this.a).b();
+                        ((r9) this.a).b();
                     }
                     if (this.r0 && this.z0) {
                         float i10 = Utilities.i(((this.j0 - org.telegram.messenger.g0.L(48.0f)) - y10) / (org.telegram.messenger.g0.q.y / 2.0f), 1.0f, 0.0f);
-                        va vaVar = ((s9) this.a).a;
+                        va vaVar = ((r9) this.a).a;
                         vaVar.V0.b(true, i10);
                         vaVar.i0(false);
                     }
@@ -928,41 +928,41 @@ public final class g6 extends View implements o2 {
                     org.telegram.messenger.g0.r(d6Var);
                     boolean z11 = this.r0;
                     if (!z11 && icVar.i) {
-                        ((s9) this.a).c();
+                        ((r9) this.a).c();
                     } else if (z11 && this.z0) {
                         if (icVar.i) {
                             this.z0 = false;
                             this.G0.e(true, 1.0f);
-                            k3 k3Var = ((s9) this.a).a.T0;
-                            k3Var.a.t(id.M0(2131744664, null), true, true);
+                            k3 k3Var = ((r9) this.a).a.T0;
+                            k3Var.a.t(id.M0(2131744661, null), true, true);
                             k3Var.invalidate();
                         } else {
                             this.r0 = false;
                             this.v0 = SystemClock.elapsedRealtime();
                             this.u0 = true;
-                            ((s9) this.a).e(false);
+                            ((r9) this.a).e(false);
                         }
                     } else if (icVar2.i) {
                         if (b()) {
-                            ((s9) this.a).a();
+                            ((r9) this.a).a();
                         } else if (!this.o0 && !this.r0 && !this.z0) {
-                            ((s9) this.a).d();
+                            ((r9) this.a).d();
                         } else if (this.r0) {
                             this.r0 = false;
                             this.v0 = SystemClock.elapsedRealtime();
                             this.u0 = true;
-                            ((s9) this.a).e(false);
-                        } else if (va.c(((s9) this.a).a)) {
+                            ((r9) this.a).e(false);
+                        } else if (va.c(((r9) this.a).a)) {
                             this.R = 0L;
                             this.Q = System.currentTimeMillis();
                             this.A0 = false;
-                            ((s9) this.a).f(new d6(this, z10 ? 1 : 0), false);
+                            ((r9) this.a).f(new d6(this, z10 ? 1 : 0), false);
                         }
                     }
                     this.z0 = false;
                     if (icVar3.i) {
                         d(180.0f);
-                        ((s9) this.a).b();
+                        ((r9) this.a).b();
                     }
                     icVar2.c(false);
                     icVar3.c(false);

@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class hk implements Runnable {
     public final /* synthetic */ int a;
@@ -93,11 +93,11 @@ public final /* synthetic */ class hk implements Runnable {
                             byteBufferValue.reuse();
                             if (tL_messageReactions2 == null) {
                                 tL_messageReactions2 = TLdeserialize.reactions;
-                                j10 = ij.R1(e10, TLdeserialize);
+                                j10 = ij.Q1(e10, TLdeserialize);
                             }
-                            ij.g6(TLdeserialize, tL_messageReactions);
+                            ij.f6(TLdeserialize, tL_messageReactions);
                             SQLitePreparedStatement executeFast = i7 == 0 ? yrVar.b.executeFast("UPDATE messages_v2 SET data = ? WHERE mid = ? AND uid = ?") : yrVar.b.executeFast("UPDATE messages_topics SET data = ? WHERE mid = ? AND uid = ?");
-                            ij.r5(TLdeserialize);
+                            ij.q5(TLdeserialize);
                             NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(TLdeserialize.getObjectSize());
                             TLdeserialize.serializeToStream(nativeByteBuffer);
                             executeFast.requery();
@@ -195,12 +195,12 @@ public final /* synthetic */ class hk implements Runnable {
                     TLRPC.Message TLdeserialize = TLRPC.Message.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false);
                     TLdeserialize.readAttachPath(byteBufferValue, p10.i(i7).n);
                     byteBufferValue.reuse();
-                    if (ij.L3(TLdeserialize)) {
+                    if (ij.K3(TLdeserialize)) {
                         TLdeserialize.id = queryFinalized.intValue(1);
                         TLdeserialize.dialog_id = j3;
                         ij ijVar = new ij(i7, TLdeserialize, false, true);
                         arrayList.add(ijVar);
-                        arrayList2.add(new MediaSessionCompat$QueueItem(null, new MediaDescriptionCompat(j3 + "_" + arrayList.size(), ijVar.z1(true), ijVar.x1(true), null, null, null, null, null), arrayList2.size()));
+                        arrayList2.add(new MediaSessionCompat$QueueItem(null, new MediaDescriptionCompat(j3 + "_" + arrayList.size(), ijVar.y1(true), ijVar.w1(true), null, null, null, null, null), arrayList2.size()));
                     }
                 }
             }

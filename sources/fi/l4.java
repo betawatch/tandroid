@@ -8,7 +8,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.id;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l4 implements Runnable {
     public final /* synthetic */ int a;
@@ -42,7 +42,7 @@ public final /* synthetic */ class l4 implements Runnable {
                 final int i11 = 1;
                 if (!z9) {
                     TextView textView = new TextView(o5Var.getContext());
-                    org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.E8, g5Var);
+                    org.telegram.ui.ActionBar.s6.U(textView, org.telegram.ui.ActionBar.l6.E8, g5Var);
                     textView.setGravity(16);
                     textView.setLines(1);
                     textView.setSingleLine();
@@ -51,7 +51,7 @@ public final /* synthetic */ class l4 implements Runnable {
                     textView.setPadding(org.telegram.messenger.g0.L(14.0f), 0, org.telegram.messenger.g0.L(14.0f), 0);
                     textView.setTextSize(1, 14.0f);
                     textView.setTag(0);
-                    textView.setText(id.M0(2131747673, "PaintDelete"));
+                    textView.setText(id.M0(2131747672, "PaintDelete"));
                     textView.setOnClickListener(new View.OnClickListener() { // from class: fi.q4
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
@@ -187,7 +187,7 @@ public final /* synthetic */ class l4 implements Runnable {
                 final int i12 = 3;
                 if (jVar instanceof tg.k2) {
                     TextView textView2 = new TextView(o5Var.getContext());
-                    org.telegram.ui.ActionBar.r6.V(textView2, org.telegram.ui.ActionBar.k6.E8, g5Var);
+                    org.telegram.ui.ActionBar.s6.U(textView2, org.telegram.ui.ActionBar.l6.E8, g5Var);
                     textView2.setGravity(16);
                     textView2.setLines(1);
                     textView2.setSingleLine();
@@ -197,7 +197,7 @@ public final /* synthetic */ class l4 implements Runnable {
                     textView2.setTextSize(1, 14.0f);
                     if ((!x4Var.c() || x4Var.d) && o5Var.c2 <= 0) {
                         textView2.setTag(1);
-                        textView2.setText(id.M0(2131747671, null));
+                        textView2.setText(id.M0(2131747670, null));
                         final int i13 = 2;
                         textView2.setOnClickListener(new View.OnClickListener() { // from class: fi.q4
                             @Override // android.view.View.OnClickListener
@@ -331,7 +331,7 @@ public final /* synthetic */ class l4 implements Runnable {
                         });
                     } else {
                         textView2.setTag(3);
-                        textView2.setText(id.M0(2131747436, null));
+                        textView2.setText(id.M0(2131747435, null));
                         textView2.setOnClickListener(new View.OnClickListener() { // from class: fi.q4
                             @Override // android.view.View.OnClickListener
                             public final void onClick(View view) {
@@ -466,7 +466,7 @@ public final /* synthetic */ class l4 implements Runnable {
                     linearLayout.addView(textView2, c8.ha.o(-2, 44));
                     f10 = 14.0f;
                 } else if (jVar instanceof tg.n0) {
-                    TextView e02 = o5Var.e0(1, id.M0(2131747671, null));
+                    TextView e02 = o5Var.e0(1, id.M0(2131747670, null));
                     f10 = 14.0f;
                     e02.setOnClickListener(new View.OnClickListener() { // from class: fi.q4
                         @Override // android.view.View.OnClickListener
@@ -602,7 +602,7 @@ public final /* synthetic */ class l4 implements Runnable {
                 } else {
                     f10 = 14.0f;
                     if (jVar instanceof tg.k0) {
-                        TextView e03 = o5Var.e0(1, id.M0(2131747671, null));
+                        TextView e03 = o5Var.e0(1, id.M0(2131747670, null));
                         final int i14 = 4;
                         e03.setOnClickListener(new View.OnClickListener() { // from class: fi.q4
                             @Override // android.view.View.OnClickListener
@@ -738,7 +738,7 @@ public final /* synthetic */ class l4 implements Runnable {
                     }
                 }
                 if ((jVar instanceof tg.d2) || (jVar instanceof tg.r1) || (jVar instanceof tg.n1) || (jVar instanceof tg.q1)) {
-                    TextView e04 = o5Var.e0(4, id.M0(2131750691, null));
+                    TextView e04 = o5Var.e0(4, id.M0(2131750690, null));
                     final int i15 = 5;
                     e04.setOnClickListener(new View.OnClickListener() { // from class: fi.q4
                         @Override // android.view.View.OnClickListener
@@ -875,7 +875,7 @@ public final /* synthetic */ class l4 implements Runnable {
                 boolean z10 = jVar instanceof tg.n1;
                 if (j5Var.indexOfChild(jVar) != j5Var.getChildCount() - 1 && !(jVar instanceof tg.q1)) {
                     TextView textView3 = new TextView(o5Var.getContext());
-                    org.telegram.ui.ActionBar.r6.V(textView3, org.telegram.ui.ActionBar.k6.E8, g5Var);
+                    org.telegram.ui.ActionBar.s6.U(textView3, org.telegram.ui.ActionBar.l6.E8, g5Var);
                     textView3.setLines(1);
                     textView3.setSingleLine();
                     textView3.setEllipsize(TextUtils.TruncateAt.END);
@@ -884,7 +884,7 @@ public final /* synthetic */ class l4 implements Runnable {
                     textView3.setPadding(org.telegram.messenger.g0.L(f10), 0, org.telegram.messenger.g0.L(f10), 0);
                     textView3.setTextSize(1, f10);
                     textView3.setTag(2);
-                    textView3.setText(id.M0(2131747676, null));
+                    textView3.setText(id.M0(2131747675, null));
                     final int i16 = 6;
                     textView3.setOnClickListener(new View.OnClickListener() { // from class: fi.q4
                         @Override // android.view.View.OnClickListener
@@ -1019,7 +1019,7 @@ public final /* synthetic */ class l4 implements Runnable {
                     linearLayout.addView(textView3, c8.ha.o(-2, 44));
                 } else if (!z10 && !z9 && !(jVar instanceof tg.r1) && !(jVar instanceof tg.n0) && !(jVar instanceof tg.l2) && !(jVar instanceof tg.k0) && !(jVar instanceof tg.q1)) {
                     TextView textView4 = new TextView(o5Var.getContext());
-                    org.telegram.ui.ActionBar.r6.V(textView4, org.telegram.ui.ActionBar.k6.E8, g5Var);
+                    org.telegram.ui.ActionBar.s6.U(textView4, org.telegram.ui.ActionBar.l6.E8, g5Var);
                     textView4.setLines(1);
                     textView4.setSingleLine();
                     textView4.setEllipsize(TextUtils.TruncateAt.END);
@@ -1028,7 +1028,7 @@ public final /* synthetic */ class l4 implements Runnable {
                     textView4.setPadding(org.telegram.messenger.g0.L(14.0f), 0, org.telegram.messenger.g0.L(14.0f), 0);
                     textView4.setTextSize(1, 14.0f);
                     textView4.setTag(2);
-                    textView4.setText(id.M0(2131747672, "PaintDuplicate"));
+                    textView4.setText(id.M0(2131747671, "PaintDuplicate"));
                     final int i17 = 7;
                     textView4.setOnClickListener(new View.OnClickListener() { // from class: fi.q4
                         @Override // android.view.View.OnClickListener
@@ -1165,8 +1165,8 @@ public final /* synthetic */ class l4 implements Runnable {
                 int i18 = 0;
                 while (i18 < linearLayout.getChildCount()) {
                     View childAt = linearLayout.getChildAt(i18);
-                    int i19 = org.telegram.ui.ActionBar.k6.i6;
-                    int w02 = org.telegram.ui.ActionBar.k6.w0(i19, g5Var);
+                    int i19 = org.telegram.ui.ActionBar.l6.i6;
+                    int w02 = org.telegram.ui.ActionBar.l6.w0(i19, g5Var);
                     int i20 = 8;
                     int i21 = i18 == 0 ? 8 : 0;
                     int i22 = i18 == linearLayout.getChildCount() - 1 ? 8 : 0;
@@ -1174,7 +1174,7 @@ public final /* synthetic */ class l4 implements Runnable {
                     if (i18 != 0) {
                         i20 = 0;
                     }
-                    org.telegram.ui.ActionBar.r6.R(childAt, org.telegram.ui.ActionBar.k6.c0(w02, i21, i22, i23, i20), null, org.telegram.ui.ActionBar.r6.N(i19), g5Var);
+                    org.telegram.ui.ActionBar.s6.Q(childAt, org.telegram.ui.ActionBar.l6.c0(w02, i21, i22, i23, i20), null, org.telegram.ui.ActionBar.s6.M(i19), g5Var);
                     i18++;
                 }
                 o5Var.r1.addView(linearLayout);

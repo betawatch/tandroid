@@ -17,12 +17,12 @@ import java.util.WeakHashMap;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.rt;
 import org.telegram.ui.Components.vy;
-import org.telegram.ui.hy0;
+import org.telegram.ui.ky0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public abstract class n0 {
-    public hy0 a;
+    public ky0 a;
     public RecyclerView b;
     public final sg.i0 c;
     public final sg.i0 d;
@@ -273,8 +273,8 @@ public abstract class n0 {
         if (U == null || U.j()) {
             return;
         }
-        hy0 hy0Var = this.a;
-        if (((ArrayList) hy0Var.d).contains(U.a)) {
+        ky0 ky0Var = this.a;
+        if (((ArrayList) ky0Var.d).contains(U.a)) {
             return;
         }
         RecyclerView recyclerView = this.b;
@@ -307,9 +307,9 @@ public abstract class n0 {
             }
             this.a.l(view, i7, view.getLayoutParams(), false);
         } else if (view.getParent() == this.b) {
-            hy0 hy0Var = this.a;
-            ua uaVar = (ua) hy0Var.c;
-            int indexOfChild = ((RecyclerView) ((vy) hy0Var.b).b).indexOfChild(view);
+            ky0 ky0Var = this.a;
+            ua uaVar = (ua) ky0Var.c;
+            int indexOfChild = ((RecyclerView) ((vy) ky0Var.b).b).indexOfChild(view);
             int B = (indexOfChild == -1 || uaVar.E(indexOfChild)) ? -1 : indexOfChild - uaVar.B(indexOfChild);
             if (i7 == -1) {
                 i7 = this.a.v();
@@ -449,15 +449,15 @@ public abstract class n0 {
 
     public final void j0(int i7) {
         if (q(i7) != null) {
-            hy0 hy0Var = this.a;
-            int z9 = hy0Var.z(i7);
-            vy vyVar = (vy) hy0Var.b;
+            ky0 ky0Var = this.a;
+            int z9 = ky0Var.z(i7);
+            vy vyVar = (vy) ky0Var.b;
             View childAt = ((RecyclerView) vyVar.b).getChildAt(z9);
             if (childAt == null) {
                 return;
             }
-            if (((ua) hy0Var.c).G(z9)) {
-                hy0Var.M(childAt);
+            if (((ua) ky0Var.c).G(z9)) {
+                ky0Var.M(childAt);
             }
             vyVar.Q(z9);
         }
@@ -537,9 +537,9 @@ public abstract class n0 {
     }
 
     public final View q(int i7) {
-        hy0 hy0Var = this.a;
-        if (hy0Var != null) {
-            return hy0Var.u(i7);
+        ky0 ky0Var = this.a;
+        if (ky0Var != null) {
+            return ky0Var.u(i7);
         }
         return null;
     }
@@ -560,9 +560,9 @@ public abstract class n0 {
     }
 
     public final int r() {
-        hy0 hy0Var = this.a;
-        if (hy0Var != null) {
-            return hy0Var.v();
+        ky0 ky0Var = this.a;
+        if (ky0Var != null) {
+            return ky0Var.v();
         }
         return 0;
     }

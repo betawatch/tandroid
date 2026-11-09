@@ -1,35 +1,58 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
-import android.widget.TextView;
-import java.util.HashSet;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.SerializedData;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class vw0 extends TextView implements org.telegram.ui.ActionBar.a6 {
-    public final /* synthetic */ ProfileActivity a;
+public final class vw0 {
+    public final String a;
+    public final Runnable b;
+    public final String c;
+    public final String[] d;
+    public final int e;
+    public final int f;
+    public int g;
+    public String h;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public vw0(ProfileActivity profileActivity, Context context) {
-        super(context);
-        this.a = profileActivity;
-        updateColors();
+    public vw0(int i7, String str, int i10, Runnable runnable) {
+        this(i7, str, null, null, null, i10, runnable);
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
-    public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.k6.G6));
+    public final void a(String str) {
+        this.h = str;
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), i10);
+    public final boolean equals(Object obj) {
+        return (obj instanceof vw0) && this.f == ((vw0) obj).f;
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
-    public final void updateColors() {
-        setTextColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.G6, this.a.z0));
+    public final String toString() {
+        SerializedData serializedData = new SerializedData();
+        serializedData.writeInt32(this.g);
+        serializedData.writeInt32(1);
+        serializedData.writeInt32(this.f);
+        return Utilities.f(serializedData.toByteArray());
+    }
+
+    public vw0(int i7, String str, String str2, int i10, Runnable runnable) {
+        this(i7, str, null, str2, null, i10, runnable);
+    }
+
+    public vw0(int i7, String str, String str2, String str3, int i10, Runnable runnable) {
+        this(i7, str, str2, str3, null, i10, runnable);
+    }
+
+    public vw0(int i7, String str, String str2, String str3, String str4, int i10, Runnable runnable) {
+        this.f = i7;
+        this.a = str;
+        this.c = str2;
+        this.b = runnable;
+        this.e = i10;
+        if (str3 != null && str4 != null) {
+            this.d = new String[]{str3, str4};
+        } else if (str3 != null) {
+            this.d = new String[]{str3};
+        }
     }
 }

@@ -6,25 +6,25 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.TextView;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.b80;
-import org.telegram.ui.Components.l41;
-import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.q41;
-import org.telegram.ui.Components.w31;
+import org.telegram.ui.Components.c80;
+import org.telegram.ui.Components.m41;
+import org.telegram.ui.Components.qj0;
+import org.telegram.ui.Components.r41;
 import org.telegram.ui.Components.x31;
 import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.y31;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class pc extends w31 {
+public final class pc extends x31 {
     public static final /* synthetic */ int b = 0;
 
     static {
-        w31.h(new pc());
+        x31.h(new pc());
     }
 
-    public static x31 i(int i7, int i10, TL_stars.TL_starsTopupOption tL_starsTopupOption) {
-        x31 K = x31.K(pc.class);
+    public static y31 i(int i7, int i10, TL_stars.TL_starsTopupOption tL_starsTopupOption) {
+        y31 K = y31.K(pc.class);
         K.d = i7;
         K.z = i10;
         long j3 = tL_starsTopupOption.stars;
@@ -35,12 +35,12 @@ public final class pc extends w31 {
         return K;
     }
 
-    @Override // org.telegram.ui.Components.w31
-    public final void b(View view, x31 x31Var, boolean z9, l41 l41Var, q41 q41Var) {
+    @Override // org.telegram.ui.Components.x31
+    public final void b(View view, y31 y31Var, boolean z9, m41 m41Var, r41 r41Var) {
         qc qcVar = (qc) view;
-        int i7 = x31Var.z;
-        CharSequence charSequence = x31Var.l;
-        CharSequence charSequence2 = x31Var.m;
+        int i7 = y31Var.z;
+        CharSequence charSequence = y31Var.l;
+        CharSequence charSequence2 = y31Var.m;
         org.telegram.ui.Components.j6 j6Var = qcVar.e;
         TextView textView = qcVar.d;
         boolean equals = TextUtils.equals(textView.getText(), charSequence);
@@ -53,7 +53,7 @@ public final class pc extends w31 {
             if (qcVar.f == null) {
                 SpannableString spannableString = new SpannableString("x");
                 qcVar.f = spannableString;
-                spannableString.setSpan(new b80(org.telegram.messenger.g0.L(55.0f), j6Var), 0, qcVar.f.length(), 33);
+                spannableString.setSpan(new c80(org.telegram.messenger.g0.L(55.0f), j6Var), 0, qcVar.f.length(), 33);
             }
             charSequence2 = qcVar.f;
         }
@@ -68,18 +68,18 @@ public final class pc extends w31 {
         qcVar.invalidate();
     }
 
-    @Override // org.telegram.ui.Components.w31
-    public final boolean c(x31 x31Var, x31 x31Var2) {
-        return x31Var.z == x31Var2.z && x31Var.d == x31Var2.d && TextUtils.equals(x31Var.m, x31Var2.m);
+    @Override // org.telegram.ui.Components.x31
+    public final boolean c(y31 y31Var, y31 y31Var2) {
+        return y31Var.z == y31Var2.z && y31Var.d == y31Var2.d && TextUtils.equals(y31Var.m, y31Var2.m);
     }
 
-    @Override // org.telegram.ui.Components.w31
-    public final View d(Context context, pj0 pj0Var, int i7, org.telegram.ui.ActionBar.f6 f6Var) {
-        return new qc(context, f6Var);
+    @Override // org.telegram.ui.Components.x31
+    public final View d(Context context, qj0 qj0Var, int i7, org.telegram.ui.ActionBar.g6 g6Var) {
+        return new qc(context, g6Var);
     }
 
-    @Override // org.telegram.ui.Components.w31
-    public final boolean e(x31 x31Var, x31 x31Var2) {
-        return x31Var.d == x31Var2.d;
+    @Override // org.telegram.ui.Components.x31
+    public final boolean e(y31 y31Var, y31 y31Var2) {
+        return y31Var.d == y31Var2.d;
     }
 }

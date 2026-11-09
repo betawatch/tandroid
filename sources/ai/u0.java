@@ -9,9 +9,9 @@ import org.telegram.messenger.v10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Cells.m8;
 import org.telegram.ui.Components.hc;
-import org.telegram.ui.oq;
+import org.telegram.ui.qq;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u0 implements v10 {
     public final /* synthetic */ int a;
@@ -61,7 +61,7 @@ public final /* synthetic */ class u0 implements v10 {
                             if ((tL_exportedNoPaidMessagesToken2.expires != 0) == z9) {
                                 if (str != null) {
                                     l1Var.getClass();
-                                    l1Var.d1(R.drawable.msg_warning, id.M0(2131751106, null), null);
+                                    l1Var.d1(R.drawable.msg_warning, id.M0(2131751105, null), null);
                                     break;
                                 }
                             }
@@ -70,30 +70,30 @@ public final /* synthetic */ class u0 implements v10 {
                         y0Var.f().edit().putBoolean("qrNoPaidPermanent", false).apply();
                         if (!l1Var.v0) {
                             if (str != null) {
-                                l1Var.d1(R.drawable.msg_warning, id.M0(2131751106, null), null);
+                                l1Var.d1(R.drawable.msg_warning, id.M0(2131751105, null), null);
                                 break;
                             }
                         } else {
-                            l1Var.U0(str != null ? id.M0(2131751106, null) : null);
+                            l1Var.U0(str != null ? id.M0(2131751105, null) : null);
                             break;
                         }
                     }
                 }
                 break;
             default:
-                oq oqVar = (oq) lsVar;
+                qq qqVar = (qq) lsVar;
                 m8 m8Var = (m8) obj3;
                 TLRPC.Updates updates = (TLRPC.Updates) obj;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
                 if (updates == null) {
-                    oqVar.getClass();
+                    qqVar.getClass();
                     if (tL_error2 != null) {
                         m8Var.setChecked(z9);
-                        hc.a0(oqVar).f0(tL_error2, false);
+                        hc.a0(qqVar).f0(tL_error2, false);
                         break;
                     }
                 } else {
-                    oqVar.getMessagesController().O3(updates, false);
+                    qqVar.getMessagesController().O3(updates, false);
                     break;
                 }
                 break;

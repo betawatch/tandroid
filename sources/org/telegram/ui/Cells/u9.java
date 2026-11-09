@@ -16,7 +16,7 @@ import android.view.animation.OvershootInterpolator;
 import java.util.ArrayList;
 import org.telegram.messenger.ij;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class u9 extends View {
     public final Paint a;
@@ -122,10 +122,10 @@ public final class u9 extends View {
                 canvas.translate(f13, f12);
                 q9 q9Var2 = v9Var.W;
                 ij messageObject = q9Var2 instanceof q1 ? ((q1) q9Var2).getMessageObject() : null;
-                if (messageObject == null || !messageObject.Q3()) {
-                    paint.setColor(v9Var.t(org.telegram.ui.ActionBar.k6.jg));
+                if (messageObject == null || !messageObject.P3()) {
+                    paint.setColor(v9Var.t(org.telegram.ui.ActionBar.l6.jg));
                 } else {
-                    paint.setColor(v9Var.t(org.telegram.ui.ActionBar.k6.Kc));
+                    paint.setColor(v9Var.t(org.telegram.ui.ActionBar.l6.Kc));
                 }
                 int length = v9Var.s(v9Var.W, false).length();
                 int i13 = v9Var.v;

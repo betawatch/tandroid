@@ -1,9 +1,9 @@
 package fi;
 
 import android.widget.FrameLayout;
-import org.telegram.ui.Components.g90;
+import org.telegram.ui.Components.h90;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g4 implements r1.c {
     public final /* synthetic */ int a;
@@ -45,16 +45,16 @@ public final /* synthetic */ class g4 implements r1.c {
                 }
                 break;
             default:
-                g90 g90Var = (g90) this.b;
+                h90 h90Var = (h90) this.b;
                 if (!z9) {
-                    g90Var.K = null;
+                    h90Var.K = null;
                     boolean z10 = this.c;
-                    g90Var.setVisibility(z10 ? 8 : 0);
-                    if (g90Var.N && z10) {
-                        g90Var.N = false;
-                        g90Var.b.setLayoutManager(g90Var.getNeededLayoutManager());
-                        g90Var.I = true;
-                        g90Var.o(true);
+                    h90Var.setVisibility(z10 ? 8 : 0);
+                    if (h90Var.N && z10) {
+                        h90Var.N = false;
+                        h90Var.b.setLayoutManager(h90Var.getNeededLayoutManager());
+                        h90Var.I = true;
+                        h90Var.o(true);
                         break;
                     }
                 }

@@ -19,11 +19,11 @@ import org.telegram.messenger.qp;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ic;
-import org.telegram.ui.Components.my0;
+import org.telegram.ui.Components.ny0;
 import org.telegram.ui.Components.wp;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class q6 extends View {
     public boolean D;
@@ -43,8 +43,8 @@ public final class q6 extends View {
     public final RectF f;
     public final ImageReceiver h;
     public boolean n;
-    public my0 r;
-    public my0 s;
+    public ny0 r;
+    public ny0 s;
     public final Path w;
     public final Paint x;
     public final ic y;
@@ -69,7 +69,7 @@ public final class q6 extends View {
         if (p6Var == null) {
             return;
         }
-        this.r = new my0(p6Var.b(), 16.0f, org.telegram.messenger.g0.o());
+        this.r = new ny0(p6Var.b(), 16.0f, org.telegram.messenger.g0.o());
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(this.E.a());
         if (spannableStringBuilder.toString().contains(">")) {
             spannableStringBuilder.clear();
@@ -82,7 +82,7 @@ public final class q6 extends View {
             wpVar.I = 1.25f;
             spannableStringBuilder.setSpan(wpVar, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
         }
-        this.s = new my0(spannableStringBuilder, 14.0f, null);
+        this.s = new ny0(spannableStringBuilder, 14.0f, null);
         this.E.d(this.h);
         this.n = true;
     }
@@ -93,11 +93,11 @@ public final class q6 extends View {
         float f11;
         Object obj;
         float d = this.d.d(this.D);
-        my0 my0Var = this.r;
-        if (my0Var == null || this.s == null || d <= 0.0f) {
+        ny0 ny0Var = this.r;
+        if (ny0Var == null || this.s == null || d <= 0.0f) {
             return;
         }
-        my0Var.p = getWidth() * 0.7f;
+        ny0Var.p = getWidth() * 0.7f;
         this.s.p = getWidth() * 0.7f;
         float L = org.telegram.messenger.g0.L(5.0f);
         float L2 = org.telegram.messenger.g0.L(10.0f);
@@ -123,7 +123,7 @@ public final class q6 extends View {
         if (i7 < 29 || (obj = this.G) == null || this.F == null) {
             f10 = L;
             f11 = 2.0f;
-            paint.setColor(org.telegram.ui.ActionBar.k6.r1(d, -587202560));
+            paint.setColor(org.telegram.ui.ActionBar.l6.r1(d, -587202560));
             canvas.drawRoundRect(rectF2, org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(12.0f), paint);
         } else {
             RenderNode e10 = ni.a.e(obj);
@@ -141,7 +141,7 @@ public final class q6 extends View {
             canvas.scale(max3, max3);
             canvas.drawRenderNode(e10);
             canvas.restore();
-            paint.setColor(org.telegram.ui.ActionBar.k6.r1(d, 1879048192));
+            paint.setColor(org.telegram.ui.ActionBar.l6.r1(d, 1879048192));
             canvas.drawRoundRect(rectF2, org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(12.0f), paint);
         }
         canvas.save();
@@ -156,9 +156,9 @@ public final class q6 extends View {
             imageReceiver.h(canvas, null);
         }
         float centerY = rectF.centerY() - ((this.s.i() + (this.r.i() + L4)) / f11);
-        my0 my0Var2 = this.r;
-        my0Var2.c(rectF.left + (this.n ? L5 + L3 + L5 : 0.0f) + f10, (my0Var2.i() / f11) + centerY, d, -1, canvas);
-        this.s.c(rectF.left + (this.n ? L3 + L5 + L5 : 0.0f) + f10, this.r.i() + centerY + L4 + (this.s.i() / f11), d, org.telegram.ui.ActionBar.k6.w(-16777216, -1610612737), canvas);
+        ny0 ny0Var2 = this.r;
+        ny0Var2.c(rectF.left + (this.n ? L5 + L3 + L5 : 0.0f) + f10, (ny0Var2.i() / f11) + centerY, d, -1, canvas);
+        this.s.c(rectF.left + (this.n ? L3 + L5 + L5 : 0.0f) + f10, this.r.i() + centerY + L4 + (this.s.i() / f11), d, org.telegram.ui.ActionBar.l6.w(-16777216, -1610612737), canvas);
         canvas.restore();
     }
 

@@ -17,13 +17,13 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.et;
 import org.telegram.ui.Components.fx;
-import org.telegram.ui.Components.qm0;
+import org.telegram.ui.Components.rm0;
 import org.telegram.ui.Components.vs;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.c40;
+import org.telegram.ui.e40;
 import org.webrtc.VideoFrame;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class g1 implements ti.m, ls {
     public static g1 w;
@@ -84,20 +84,20 @@ public final class g1 implements ti.m, ls {
             et etVar = g1Var.n;
             org.telegram.messenger.g0.r(etVar);
             org.telegram.messenger.g0.i3(etVar, 700L);
-            c40 c40Var = c40.u5;
-            if (c40Var != null) {
-                c40Var.dismiss();
+            e40 e40Var = e40.u5;
+            if (e40Var != null) {
+                e40Var.dismiss();
             }
             org.telegram.messenger.g0.h3(new vs(13));
         }
     }
 
     public static void n(boolean z9) {
-        c40 c40Var = c40.u5;
-        if (c40Var == null || c40Var.getWindow() == null) {
+        e40 e40Var = e40.u5;
+        if (e40Var == null || e40Var.getWindow() == null) {
             return;
         }
-        c40Var.getWindow().getDecorView().setVisibility(z9 ? 4 : 0);
+        e40Var.getWindow().getDecorView().setVisibility(z9 ? 4 : 0);
     }
 
     public static void o() {
@@ -154,8 +154,8 @@ public final class g1 implements ti.m, ls {
 
     @Override // ti.m
     public final boolean E() {
-        c40 c40Var = c40.u5;
-        return c40Var != null && c40.v5 && c40Var.u1();
+        e40 e40Var = e40.u5;
+        return e40Var != null && e40.v5 && e40Var.u1();
     }
 
     /* JADX WARN: Removed duplicated region for block: B:13:0x002a  */
@@ -217,7 +217,7 @@ public final class g1 implements ti.m, ls {
     }
 
     @Override // ti.m
-    public final /* synthetic */ boolean R(boolean z9, float f10, qm0 qm0Var) {
+    public final /* synthetic */ boolean R(boolean z9, float f10, rm0 rm0Var) {
         return false;
     }
 
@@ -246,8 +246,8 @@ public final class g1 implements ti.m, ls {
             }
             return;
         }
-        if (c40.u5 == null) {
-            c40.e1(launchActivity, org.telegram.messenger.c.a(sharedInstance.getAccount()), null, null, false, null);
+        if (e40.u5 == null) {
+            e40.e1(launchActivity, org.telegram.messenger.c.a(sharedInstance.getAccount()), null, null, false, null);
         }
         if (this.a == null) {
             return;

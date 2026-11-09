@@ -6,7 +6,7 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class qi extends vh {
     public bi.q1 n;
@@ -75,7 +75,7 @@ public final class qi extends vh {
             diVar.R2.getTitleTextView().setBuildFullLayout(true);
         } catch (Exception unused) {
         }
-        diVar.R2.setTitle(org.telegram.messenger.id.M0(2131745666, null));
+        diVar.R2.setTitle(org.telegram.messenger.id.M0(2131745663, null));
         this.s.h1(0, 0);
     }
 
@@ -92,10 +92,10 @@ public final class qi extends vh {
             return ConnectionsManager.DEFAULT_DATACENTER_ID;
         }
         View childAt = q1Var.getChildAt(0);
-        xi0 xi0Var = (xi0) q1Var.G(childAt);
+        yi0 yi0Var = (yi0) q1Var.G(childAt);
         int top = childAt.getTop();
         int L = org.telegram.messenger.g0.L(7.0f);
-        if (top < org.telegram.messenger.g0.L(7.0f) || xi0Var == null || xi0Var.b() != 0) {
+        if (top < org.telegram.messenger.g0.L(7.0f) || yi0Var == null || yi0Var.b() != 0) {
             top = L;
         }
         q1Var.setTopGlowOffset(top);

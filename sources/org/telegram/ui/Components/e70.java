@@ -1,30 +1,26 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e70 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ f70 b;
+    public final /* synthetic */ g70 b;
     public final /* synthetic */ boolean c;
-    public final /* synthetic */ boolean d;
 
-    public /* synthetic */ e70(f70 f70Var, boolean z9, boolean z10, int i7) {
+    public /* synthetic */ e70(g70 g70Var, boolean z9, int i7) {
         this.a = i7;
-        this.b = f70Var;
+        this.b = g70Var;
         this.c = z9;
-        this.d = z10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                org.telegram.messenger.g0.h3(new e70(this.b, this.c, this.d, 1));
+                org.telegram.messenger.g0.h3(new e70(this.b, this.c, 1));
                 break;
             default:
-                f70 f70Var = this.b;
-                f70Var.setJoinRequest(this.c);
-                f70Var.setJoinToSend(this.d);
+                this.b.setJoinRequest(this.c);
                 break;
         }
     }

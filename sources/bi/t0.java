@@ -17,7 +17,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.web.BotWebViewContainer$BotWebViewProxy;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t0 implements v10 {
     public final /* synthetic */ int a;
@@ -43,7 +43,6 @@ public final /* synthetic */ class t0 implements v10 {
         org.telegram.ui.Components.kc kcVar2;
         int i7 = this.a;
         int i10 = 1;
-        int i11 = 0;
         Object obj3 = this.d;
         Object obj4 = this.c;
         Object obj5 = this.b;
@@ -112,17 +111,17 @@ public final /* synthetic */ class t0 implements v10 {
                 break;
             case 4:
                 org.telegram.ui.Components.s sVar = (org.telegram.ui.Components.s) obj5;
-                org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) obj4;
+                org.telegram.ui.ActionBar.g6 g6Var = (org.telegram.ui.ActionBar.g6) obj4;
                 TL_aicompose.AiComposeTone aiComposeTone = (TL_aicompose.AiComposeTone) obj3;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
                 FrameLayout frameLayout2 = sVar.W1;
                 sVar.X1.setLoading(false);
                 if (tL_error2 != null) {
                     if ("TONES_SAVED_TOO_MANY".equalsIgnoreCase(tL_error2.text)) {
-                        org.telegram.ui.Components.g0.t1(new org.telegram.ui.Components.hc(frameLayout2, f6Var), sVar.a);
+                        org.telegram.ui.Components.g0.t1(new org.telegram.ui.Components.hc(frameLayout2, g6Var), sVar.a);
                         break;
                     } else {
-                        org.telegram.ui.Cells.f1.r(frameLayout2, f6Var, tL_error2, false);
+                        org.telegram.ui.Cells.f1.r(frameLayout2, g6Var, tL_error2, false);
                         break;
                     }
                 } else {
@@ -130,8 +129,8 @@ public final /* synthetic */ class t0 implements v10 {
                     ArrayList arrayList = R12.b;
                     if (aiComposeTone instanceof TL_aicompose.TL_aiComposeTone) {
                         long j3 = ((TL_aicompose.TL_aiComposeTone) aiComposeTone).id;
-                        for (int i12 = 0; i12 < arrayList.size(); i12++) {
-                            if ((arrayList.get(i12) instanceof TL_aicompose.TL_aiComposeTone) && ((TL_aicompose.TL_aiComposeTone) arrayList.get(i12)).id == j3) {
+                        for (int i11 = 0; i11 < arrayList.size(); i11++) {
+                            if ((arrayList.get(i11) instanceof TL_aicompose.TL_aiComposeTone) && ((TL_aicompose.TL_aiComposeTone) arrayList.get(i11)).id == j3) {
                                 sVar.dismiss();
                                 T = LaunchActivity.T();
                                 if (T == null) {
@@ -162,20 +161,20 @@ public final /* synthetic */ class t0 implements v10 {
                 break;
             case 6:
                 org.telegram.ui.web.x0 x0Var = (org.telegram.ui.web.x0) obj5;
-                di.o7 o7Var = (di.o7) obj4;
+                di.p7 p7Var = (di.p7) obj4;
                 BotWebViewContainer$BotWebViewProxy botWebViewContainer$BotWebViewProxy = (BotWebViewContainer$BotWebViewProxy) obj3;
                 String str = (String) obj;
                 ArrayList arrayList2 = (ArrayList) obj2;
                 if (TextUtils.isEmpty(str)) {
-                    x0Var.x(o7Var, "prepared_message_sent", null);
+                    x0Var.x(p7Var, "prepared_message_sent", null);
                     org.telegram.ui.web.d0 d0Var = x0Var.c;
                     if (d0Var != null) {
                         d0Var.c();
                     }
-                    org.telegram.messenger.g0.i3(new org.telegram.ui.web.w(i11, botWebViewContainer$BotWebViewProxy, arrayList2), 500L);
+                    org.telegram.messenger.g0.i3(new org.telegram.ui.web.s(i10, botWebViewContainer$BotWebViewProxy, arrayList2), 500L);
                     break;
                 } else {
-                    x0Var.x(o7Var, "prepared_message_failed", org.telegram.ui.web.x0.A(str, "error"));
+                    x0Var.x(p7Var, "prepared_message_failed", org.telegram.ui.web.x0.A(str, "error"));
                     break;
                 }
             case 7:
@@ -218,15 +217,15 @@ public final /* synthetic */ class t0 implements v10 {
                 m3Var4.w();
                 break;
             default:
-                zh.k3 k3Var = (zh.k3) obj5;
+                zh.l3 l3Var = (zh.l3) obj5;
                 TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) obj3;
                 ((vf.b) obj4).b();
                 if (((Boolean) obj).booleanValue()) {
-                    n2 n2Var = k3Var.X1;
+                    n2 n2Var = l3Var.X1;
                     if (n2Var != null) {
                         n2Var.a(tL_starGiftUnique);
                     }
-                    k3Var.dismiss();
+                    l3Var.dismiss();
                     break;
                 }
                 break;

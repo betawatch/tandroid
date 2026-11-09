@@ -37,7 +37,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class yr extends c1 {
     public static volatile yr[] e0 = new yr[4];
@@ -308,23 +308,23 @@ public final class yr extends c1 {
     }
 
     public static void d(TLRPC.Message message, a0.h hVar, a0.h hVar2) {
-        long C1;
+        long B1;
         TLRPC.MessageReplyHeader messageReplyHeader = message.reply_to;
         int i7 = messageReplyHeader.reply_to_msg_id;
         if ((message.flags & TLObject.FLAG_30) != 0) {
-            C1 = message.quick_reply_shortcut_id;
+            B1 = message.quick_reply_shortcut_id;
         } else {
             TLRPC.Peer peer = messageReplyHeader.reply_to_peer_id;
-            C1 = peer != null ? ij.C1(peer) : ij.B0(message);
+            B1 = peer != null ? ij.B1(peer) : ij.B0(message);
         }
-        SparseArray sparseArray = (SparseArray) hVar.f(C1);
-        ArrayList arrayList = (ArrayList) hVar2.f(C1);
+        SparseArray sparseArray = (SparseArray) hVar.f(B1);
+        ArrayList arrayList = (ArrayList) hVar2.f(B1);
         if (sparseArray == null) {
             sparseArray = new SparseArray();
-            hVar.k(sparseArray, C1);
+            hVar.k(sparseArray, B1);
         }
         if (arrayList == null) {
-            arrayList = k5.j(hVar2, C1);
+            arrayList = k5.j(hVar2, B1);
         }
         ArrayList arrayList2 = (ArrayList) sparseArray.get(message.reply_to.reply_to_msg_id);
         if (arrayList2 == null) {
@@ -345,9 +345,9 @@ public final class yr extends c1 {
                     return 1;
                 }
             }
-            return ((message.media instanceof TLRPC.TL_messageMediaPhoto) || ij.M4(message)) ? 0 : -1;
+            return ((message.media instanceof TLRPC.TL_messageMediaPhoto) || ij.L4(message)) ? 0 : -1;
         }
-        if (!(message.media instanceof TLRPC.TL_messageMediaPhoto) && !ij.u3(message) && !ij.S4(message) && !ij.M4(message) && !ij.k4(message)) {
+        if (!(message.media instanceof TLRPC.TL_messageMediaPhoto) && !ij.t3(message) && !ij.R4(message) && !ij.L4(message) && !ij.j4(message)) {
             return -1;
         }
         int i7 = message.ttl;
@@ -367,13 +367,13 @@ public final class yr extends c1 {
         TL_stories.StoryItem storyItem;
         TLRPC.Peer peer6;
         TLRPC.Peer peer7;
-        long C1 = ij.C1(message.from_id);
-        if (m5.E(C1)) {
-            if (!arrayList.contains(Long.valueOf(C1))) {
-                arrayList.add(Long.valueOf(C1));
+        long B1 = ij.B1(message.from_id);
+        if (m5.E(B1)) {
+            if (!arrayList.contains(Long.valueOf(B1))) {
+                arrayList.add(Long.valueOf(B1));
             }
-        } else if (m5.z(C1)) {
-            long j3 = -C1;
+        } else if (m5.z(B1)) {
+            long j3 = -B1;
             if (!arrayList2.contains(Long.valueOf(j3))) {
                 arrayList2.add(Long.valueOf(j3));
             }
@@ -1805,7 +1805,7 @@ public final class yr extends c1 {
                                                                             arrayList14 = arrayList20;
                                                                             TLdeserialize.readAttachPath(byteBufferValue2, getUserConfig().n);
                                                                             byteBufferValue2.reuse();
-                                                                            ij.N5(queryFinalized.intValue(5), TLdeserialize);
+                                                                            ij.M5(queryFinalized.intValue(5), TLdeserialize);
                                                                             TLdeserialize.id = queryFinalized.intValue(6);
                                                                             int intValue4 = queryFinalized.intValue(9);
                                                                             if (intValue4 != 0) {
@@ -2161,7 +2161,7 @@ public final class yr extends c1 {
                                                 try {
                                                     TLdeserialize3.readAttachPath(byteBufferValue5, yrVar3.getUserConfig().n);
                                                     byteBufferValue5.reuse();
-                                                    ij.N5(sQLiteCursor4.intValue(2), TLdeserialize3);
+                                                    ij.M5(sQLiteCursor4.intValue(2), TLdeserialize3);
                                                     TLdeserialize3.id = sQLiteCursor4.intValue(3);
                                                     int intValue5 = sQLiteCursor4.intValue(5);
                                                     if (intValue5 != 0) {
@@ -2555,7 +2555,7 @@ public final class yr extends c1 {
                         TLdeserialize.readAttachPath(byteBufferValue, getUserConfig().n);
                         byteBufferValue.reuse();
                         if (sparseArray.indexOfKey(TLdeserialize.id) < 0) {
-                            ij.N5(sQLiteCursor.intValue(0), TLdeserialize);
+                            ij.M5(sQLiteCursor.intValue(0), TLdeserialize);
                             TLdeserialize.id = sQLiteCursor.intValue(3);
                             TLdeserialize.date = sQLiteCursor.intValue(4);
                             if (!sQLiteCursor.isNull(5)) {
@@ -2995,7 +2995,7 @@ public final class yr extends c1 {
                                         arrayList8 = arrayList18;
                                         TLdeserialize.readAttachPath(byteBufferValue2, getUserConfig().n);
                                         byteBufferValue2.reuse();
-                                        ij.N5(sQLiteCursor3.intValue(0), TLdeserialize);
+                                        ij.M5(sQLiteCursor3.intValue(0), TLdeserialize);
                                         TLdeserialize.id = sQLiteCursor3.intValue(3);
                                         TLdeserialize.date = sQLiteCursor3.intValue(4);
                                         str3 = str;
@@ -4366,7 +4366,7 @@ public final class yr extends c1 {
                                                                     arrayList3.add(user2);
                                                                     channelParticipant.date = queryFinalized3.intValue(3);
                                                                     TLRPC.TL_chatChannelParticipant tL_chatChannelParticipant = new TLRPC.TL_chatChannelParticipant();
-                                                                    tL_chatChannelParticipant.user_id = ij.C1(channelParticipant.peer);
+                                                                    tL_chatChannelParticipant.user_id = ij.B1(channelParticipant.peer);
                                                                     tL_chatChannelParticipant.date = channelParticipant.date;
                                                                     tL_chatChannelParticipant.inviter_id = channelParticipant.inviter_id;
                                                                     tL_chatChannelParticipant.channelParticipant = channelParticipant;
@@ -4853,7 +4853,7 @@ public final class yr extends c1 {
                                                         int size2 = P0.size();
                                                         while (i15 < size2) {
                                                             ij ijVar = (ij) P0.get(i15);
-                                                            hashMap.put(Integer.valueOf(ijVar.f1()), ijVar);
+                                                            hashMap.put(Integer.valueOf(ijVar.e1()), ijVar);
                                                             i15++;
                                                         }
                                                     }
@@ -5551,7 +5551,7 @@ public final class yr extends c1 {
                                 if (TLdeserialize != null) {
                                     TLdeserialize.readAttachPath(byteBufferValue3, yrVar.getUserConfig().n);
                                     byteBufferValue3.reuse();
-                                    ij.N5(queryFinalized2.intValue(5), TLdeserialize);
+                                    ij.M5(queryFinalized2.intValue(5), TLdeserialize);
                                     TLdeserialize.id = queryFinalized2.intValue(6);
                                     int intValue4 = queryFinalized2.intValue(9);
                                     if (intValue4 != 0) {
@@ -5709,7 +5709,7 @@ public final class yr extends c1 {
                                     if (TLdeserialize3 != null) {
                                         TLdeserialize3.readAttachPath(byteBufferValue, yrVar.getUserConfig().n);
                                         byteBufferValue.reuse();
-                                        ij.N5(queryFinalized.intValue(2), TLdeserialize3);
+                                        ij.M5(queryFinalized.intValue(2), TLdeserialize3);
                                         TLdeserialize3.id = queryFinalized.intValue(3);
                                         int intValue5 = queryFinalized.intValue(5);
                                         if (intValue5 != 0) {
@@ -6330,8 +6330,8 @@ public final class yr extends c1 {
             if (TextUtils.isEmpty(lowerCase)) {
                 return;
             }
-            String lowerCase2 = id.L0(2131745904).toLowerCase();
-            String lowerCase3 = id.L0(2131746267).toLowerCase();
+            String lowerCase2 = id.L0(2131745901).toLowerCase();
+            String lowerCase3 = id.L0(2131746266).toLowerCase();
             String str11 = "replies";
             String R0 = id.E0().R0(lowerCase);
             if (!lowerCase.equals(R0)) {
@@ -6433,7 +6433,7 @@ public final class yr extends c1 {
                     if (a22 != null) {
                         jg.d0 d0Var2 = new jg.d0();
                         d0Var2.b = ConnectionsManager.DEFAULT_DATACENTER_ID;
-                        d0Var2.c = id.L0(2131746267);
+                        d0Var2.c = id.L0(2131746266);
                         d0Var2.a = a22;
                         hVar6.k(d0Var2, a22.id);
                         i12++;
@@ -6751,7 +6751,7 @@ public final class yr extends c1 {
                                             if (c10 == 1) {
                                                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(g5.n(user.first_name, user.last_name));
                                                 d0Var4.c = spannableStringBuilder;
-                                                spannableStringBuilder.setSpan(new ForegroundColorSpan(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.Z8)), 0, d0Var4.c.length(), 33);
+                                                spannableStringBuilder.setSpan(new ForegroundColorSpan(org.telegram.ui.ActionBar.l6.v0(org.telegram.ui.ActionBar.l6.Z8)), 0, d0Var4.c.length(), 33);
                                             } else {
                                                 d0Var4.c = g0.r0("@" + t10.n(user), null, "@" + str23);
                                             }
@@ -7146,7 +7146,7 @@ public final class yr extends c1 {
                                 }
                                 sQLitePreparedStatement = executeFast;
                                 try {
-                                    ij.r5(message);
+                                    ij.q5(message);
                                     NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(message.getObjectSize());
                                     message.serializeToStream(nativeByteBuffer);
                                     sQLitePreparedStatement.bindByteBuffer(1, nativeByteBuffer);
@@ -7571,7 +7571,7 @@ public final class yr extends c1 {
                                 TLRPC.Message TLdeserialize = TLRPC.Message.TLdeserialize(byteBufferValue2, byteBufferValue2.readInt32(false), false);
                                 TLdeserialize.readAttachPath(byteBufferValue2, getUserConfig().n);
                                 byteBufferValue2.reuse();
-                                ij.N5(queryFinalized2.intValue(5), TLdeserialize);
+                                ij.M5(queryFinalized2.intValue(5), TLdeserialize);
                                 TLdeserialize.id = queryFinalized2.intValue(6);
                                 TLdeserialize.send_state = queryFinalized2.intValue(7);
                                 int intValue3 = queryFinalized2.intValue(8);
@@ -7725,7 +7725,7 @@ public final class yr extends c1 {
                                         TLRPC.Message TLdeserialize2 = TLRPC.Message.TLdeserialize(byteBufferValue3, byteBufferValue3.readInt32(false), false);
                                         TLdeserialize2.readAttachPath(byteBufferValue3, getUserConfig().n);
                                         byteBufferValue3.reuse();
-                                        ij.N5(queryFinalized3.intValue(2), TLdeserialize2);
+                                        ij.M5(queryFinalized3.intValue(2), TLdeserialize2);
                                         TLdeserialize2.id = queryFinalized3.intValue(3);
                                         TLdeserialize2.send_state = queryFinalized3.intValue(4);
                                         int intValue4 = queryFinalized3.intValue(5);
@@ -9562,7 +9562,7 @@ public final class yr extends c1 {
                                                     n(e);
                                                     if (sQLitePreparedStatement2 != null) {
                                                     }
-                                                    if (ij.g3(i7)) {
+                                                    if (ij.f3(i7)) {
                                                     }
                                                     executeFast = this.b.executeFast("UPDATE dialogs SET last_mid = ? WHERE last_mid = ?");
                                                     executeFast.bindInteger(1, i7);
@@ -9576,7 +9576,7 @@ public final class yr extends c1 {
                                                 } else {
                                                     sQLitePreparedStatement12 = sQLitePreparedStatement2;
                                                 }
-                                                if (ij.g3(i7)) {
+                                                if (ij.f3(i7)) {
                                                 }
                                                 executeFast = this.b.executeFast("UPDATE dialogs SET last_mid = ? WHERE last_mid = ?");
                                                 executeFast.bindInteger(1, i7);
@@ -9594,7 +9594,7 @@ public final class yr extends c1 {
                                         } catch (Throwable th17) {
                                             th = th17;
                                         }
-                                        if (ij.g3(i7)) {
+                                        if (ij.f3(i7)) {
                                         }
                                     } finally {
                                         if (sQLitePreparedStatement2 != null) {
@@ -9632,7 +9632,7 @@ public final class yr extends c1 {
                                         sQLitePreparedStatement2.step();
                                         sQLitePreparedStatement2.dispose();
                                         str4 = "DELETE FROM media_topics WHERE mid = ";
-                                        if (ij.g3(i7)) {
+                                        if (ij.f3(i7)) {
                                         }
                                         executeFast = this.b.executeFast("UPDATE dialogs SET last_mid = ? WHERE last_mid = ?");
                                         executeFast.bindInteger(1, i7);
@@ -9652,7 +9652,7 @@ public final class yr extends c1 {
                                     sQLitePreparedStatement2.step();
                                     sQLitePreparedStatement2.dispose();
                                     str4 = "DELETE FROM media_topics WHERE mid = ";
-                                    if (ij.g3(i7)) {
+                                    if (ij.f3(i7)) {
                                     }
                                     executeFast = this.b.executeFast("UPDATE dialogs SET last_mid = ? WHERE last_mid = ?");
                                     executeFast.bindInteger(1, i7);
@@ -9676,7 +9676,7 @@ public final class yr extends c1 {
                                     n(e);
                                     if (sQLitePreparedStatement2 != null) {
                                     }
-                                    if (ij.g3(i7)) {
+                                    if (ij.f3(i7)) {
                                     }
                                     executeFast = this.b.executeFast("UPDATE dialogs SET last_mid = ? WHERE last_mid = ?");
                                     executeFast.bindInteger(1, i7);
@@ -9685,7 +9685,7 @@ public final class yr extends c1 {
                                     executeFast.dispose();
                                     return new long[]{j13, num3.intValue()};
                                 }
-                                if (ij.g3(i7)) {
+                                if (ij.f3(i7)) {
                                 }
                                 try {
                                     executeFast = this.b.executeFast("UPDATE dialogs SET last_mid = ? WHERE last_mid = ?");
@@ -9755,7 +9755,7 @@ public final class yr extends c1 {
                         sQLitePreparedStatement2.step();
                         sQLitePreparedStatement2.dispose();
                         str4 = "DELETE FROM media_topics WHERE mid = ";
-                        if (ij.g3(i7)) {
+                        if (ij.f3(i7)) {
                         }
                         executeFast = this.b.executeFast("UPDATE dialogs SET last_mid = ? WHERE last_mid = ?");
                         executeFast.bindInteger(1, i7);
@@ -9771,7 +9771,7 @@ public final class yr extends c1 {
                     sQLitePreparedStatement2.step();
                     sQLitePreparedStatement2.dispose();
                     str4 = "DELETE FROM media_topics WHERE mid = ";
-                    if (ij.g3(i7)) {
+                    if (ij.f3(i7)) {
                         try {
                             SQLiteDatabase sQLiteDatabase11 = this.b;
                             Locale locale10 = Locale.US;
@@ -9948,17 +9948,17 @@ public final class yr extends c1 {
         long j3;
         int i7;
         TLRPC.Document G0 = ij.G0(message);
-        TLRPC.Photo D1 = ij.D1(message);
+        TLRPC.Photo C1 = ij.C1(message);
         int i10 = 0;
-        if (!ij.S4(message)) {
-            if (ij.x4(message) || ij.M2(message)) {
+        if (!ij.R4(message)) {
+            if (ij.w4(message) || ij.L2(message)) {
                 if (G0 != null) {
                     j3 = G0.id;
                     i7 = 1;
                 }
                 return false;
             }
-            if (ij.M4(message) || ij.k4(message) || ij.u3(message)) {
+            if (ij.L4(message) || ij.j4(message) || ij.t3(message)) {
                 if (G0 != null) {
                     j3 = G0.id;
                     i7 = 4;
@@ -9971,16 +9971,16 @@ public final class yr extends c1 {
                 }
                 j3 = G0.id;
                 i7 = 8;
-            } else if (D1 == null || w7.w(D1.sizes, g0.Z0(false), false, null, false) == null) {
+            } else if (C1 == null || w7.w(C1.sizes, g0.Z0(false), false, null, false) == null) {
                 j3 = 0;
                 i7 = 0;
             } else {
-                j3 = D1.id;
+                j3 = C1.id;
                 i7 = 1;
             }
             if (j3 != 0) {
             }
-            if (D1 != null) {
+            if (C1 != null) {
             }
             return true;
         }
@@ -9992,7 +9992,7 @@ public final class yr extends c1 {
         if (j3 != 0) {
             arrayList2.add(new Pair(Long.valueOf(j3), Integer.valueOf(i7)));
         }
-        if (D1 != null) {
+        if (C1 != null) {
             if (G0 != null) {
                 String r10 = w7.r(null, G0);
                 if (!TextUtils.isEmpty(r10)) {
@@ -10016,9 +10016,9 @@ public final class yr extends c1 {
             }
             return false;
         }
-        int size2 = D1.sizes.size();
+        int size2 = C1.sizes.size();
         while (i10 < size2) {
-            TLRPC.PhotoSize photoSize2 = D1.sizes.get(i10);
+            TLRPC.PhotoSize photoSize2 = C1.sizes.get(i10);
             String r11 = w7.r(null, photoSize2);
             if (!TextUtils.isEmpty(r11)) {
                 arrayList3.add(r11);
@@ -10983,7 +10983,7 @@ public final class yr extends c1 {
             if ((reaction instanceof TLRPC.TL_reactionEmoji) || (reaction instanceof TLRPC.TL_reactionCustomEmoji)) {
                 sQLitePreparedStatement.requery();
                 sQLitePreparedStatement.bindLong(1, message.id);
-                sQLitePreparedStatement.bindLong(2, ij.R1(e10, message));
+                sQLitePreparedStatement.bindLong(2, ij.Q1(e10, message));
                 TLRPC.Reaction reaction2 = reactionCount2.reaction;
                 sQLitePreparedStatement.bindLong(3, reaction2 instanceof TLRPC.TL_reactionEmoji ? ((TLRPC.TL_reactionEmoji) reaction2).emoticon.hashCode() : reaction2 instanceof TLRPC.TL_reactionCustomEmoji ? ((TLRPC.TL_reactionCustomEmoji) reaction2).document_id : 0L);
                 sQLitePreparedStatement.bindString(4, S0 == null ? "" : S0);
@@ -13263,7 +13263,7 @@ public final class yr extends c1 {
         }
         if (messageAction instanceof TLRPC.TL_messageActionTopicEdit) {
             TLRPC.TL_messageActionTopicEdit tL_messageActionTopicEdit = (TLRPC.TL_messageActionTopicEdit) messageAction;
-            tL_forumTopic.id = (int) ij.c2(this.currentAccount, message, true, false);
+            tL_forumTopic.id = (int) ij.b2(this.currentAccount, message, true, false);
             tL_forumTopic.icon_emoji_id = tL_messageActionTopicEdit.icon_emoji_id;
             tL_forumTopic.title = tL_messageActionTopicEdit.title;
             tL_forumTopic.closed = tL_messageActionTopicEdit.closed;

@@ -15,10 +15,10 @@ import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.xp;
-import org.telegram.ui.v41;
-import org.telegram.ui.z41;
+import org.telegram.ui.a51;
+import org.telegram.ui.w41;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public abstract class w7 extends FrameLayout {
     public final u7 a;
@@ -29,20 +29,20 @@ public abstract class w7 extends FrameLayout {
     public final TextView f;
     public final Paint h;
     public final org.telegram.ui.Components.w8 n;
-    public final di.n7 r;
-    public final org.telegram.ui.ActionBar.f6 s;
-    public z41 w;
+    public final di.o7 r;
+    public final org.telegram.ui.ActionBar.g6 s;
+    public a51 w;
     public final TLRPC.ChatFull x;
     public boolean y;
 
-    public w7(Context context, TLRPC.ChatFull chatFull, org.telegram.ui.ActionBar.f6 f6Var) {
+    public w7(Context context, TLRPC.ChatFull chatFull, org.telegram.ui.ActionBar.g6 g6Var) {
         super(context);
         this.h = new Paint(1);
-        this.n = new org.telegram.ui.Components.w8((org.telegram.ui.ActionBar.f6) null);
-        this.r = new di.n7(null, false);
+        this.n = new org.telegram.ui.Components.w8((org.telegram.ui.ActionBar.g6) null);
+        this.r = new di.o7(null, false);
         this.x = chatFull;
-        this.s = f6Var;
-        u7 u7Var = new u7(this, context, f6Var);
+        this.s = g6Var;
+        u7 u7Var = new u7(this, context, g6Var);
         this.a = u7Var;
         setClipChildren(false);
         boolean z9 = id.a0;
@@ -99,18 +99,18 @@ public abstract class w7 extends FrameLayout {
         linearLayout.addView(f11, c8.ha.d(-1, -2.0f, 8388659, 0.0f, 3.0f, 0.0f, 9.0f));
         boolean z10 = id.a0;
         addView(linearLayout, c8.ha.d(-1, -2.0f, 0, !z10 ? 72.0f : 18.0f, 0.0f, !z10 ? 18.0f : 72.0f, 0.0f));
-        int i7 = org.telegram.ui.ActionBar.k6.j5;
-        org.telegram.ui.ActionBar.r6.Y(v7Var, i7, null);
-        org.telegram.ui.ActionBar.r6.V(textView, i7, null);
-        int i10 = org.telegram.ui.ActionBar.k6.A6;
-        org.telegram.ui.ActionBar.r6.V(textView2, i10, null);
-        org.telegram.ui.ActionBar.r6.V(textView3, i10, null);
-        org.telegram.ui.ActionBar.r6.V(textView4, i10, null);
+        int i7 = org.telegram.ui.ActionBar.l6.j5;
+        org.telegram.ui.ActionBar.s6.X(v7Var, i7, null);
+        org.telegram.ui.ActionBar.s6.U(textView, i7, null);
+        int i10 = org.telegram.ui.ActionBar.l6.A6;
+        org.telegram.ui.ActionBar.s6.U(textView2, i10, null);
+        org.telegram.ui.ActionBar.s6.U(textView3, i10, null);
+        org.telegram.ui.ActionBar.s6.U(textView4, i10, null);
         Drawable mutate = context.getDrawable(R.drawable.mini_stats_likes).mutate();
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
-        org.telegram.ui.ActionBar.r6.y(textView4, mutate, i10, null, mode);
+        org.telegram.ui.ActionBar.s6.x(textView4, mutate, i10, null, mode);
         Drawable mutate2 = context.getDrawable(R.drawable.mini_stats_shares).mutate();
-        org.telegram.ui.ActionBar.r6.y(textView3, mutate2, i10, null, mode);
+        org.telegram.ui.ActionBar.s6.x(textView3, mutate2, i10, null, mode);
         xp xpVar = new xp(null, mutate, 0, org.telegram.messenger.g0.L(1.0f));
         int intrinsicWidth = mutate2.getIntrinsicWidth();
         int intrinsicHeight = mutate2.getIntrinsicHeight();
@@ -132,7 +132,7 @@ public abstract class w7 extends FrameLayout {
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
         if (this.y) {
-            int w02 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.d7, this.s);
+            int w02 = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.d7, this.s);
             Paint paint = this.h;
             paint.setColor(w02);
             if (id.a0) {
@@ -147,11 +147,11 @@ public abstract class w7 extends FrameLayout {
         return this.a;
     }
 
-    public z41 getPostInfo() {
+    public a51 getPostInfo() {
         return this.w;
     }
 
-    public di.n7 getStoryAvatarParams() {
+    public di.o7 getStoryAvatarParams() {
         return this.r;
     }
 
@@ -161,16 +161,16 @@ public abstract class w7 extends FrameLayout {
         this.r.g();
     }
 
-    public void setData(v41 v41Var) {
-        TLRPC.User user = v41Var.a;
+    public void setData(w41 w41Var) {
+        TLRPC.User user = w41Var.a;
         org.telegram.ui.Components.w8 w8Var = this.n;
         w8Var.r(user);
-        TLRPC.User user2 = v41Var.a;
+        TLRPC.User user2 = w41Var.a;
         u7 u7Var = this.a;
         u7Var.e(user2, w8Var);
         u7Var.setRoundRadius(org.telegram.messenger.g0.L(46.0f) >> 1);
-        this.b.k(v41Var.a.first_name);
-        this.e.setText(v41Var.b);
+        this.b.k(w41Var.a.first_name);
+        this.e.setText(w41Var.b);
         this.c.setVisibility(8);
         this.d.setVisibility(8);
         this.f.setVisibility(8);

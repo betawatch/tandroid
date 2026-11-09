@@ -4,15 +4,15 @@ import android.content.Context;
 import android.view.ViewGroup;
 import org.telegram.ui.Components.wo;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class a3 extends wo {
     public final /* synthetic */ int d;
     public final /* synthetic */ ViewGroup e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ a3(ViewGroup viewGroup, Context context, org.telegram.ui.ActionBar.f6 f6Var, int i7) {
-        super(21, context, f6Var);
+    public /* synthetic */ a3(ViewGroup viewGroup, Context context, org.telegram.ui.ActionBar.g6 g6Var, int i7) {
+        super(21, context, g6Var);
         this.d = i7;
         this.e = viewGroup;
     }
@@ -36,8 +36,8 @@ public final class a3 extends wo {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a3(b3 b3Var, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(24, context, f6Var);
+    public a3(b3 b3Var, Context context, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(24, context, g6Var);
         this.d = 0;
         this.e = b3Var;
     }

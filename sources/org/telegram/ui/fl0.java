@@ -1,16 +1,66 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public interface fl0 {
-    void a(TL_account.Password password);
+public final class fl0 extends FrameLayout {
+    public final Paint a;
+    public float b;
+    public r1.g c;
+    public final /* synthetic */ jl0 d;
 
-    void b();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public fl0(jl0 jl0Var, Context context) {
+        super(context);
+        this.d = jl0Var;
+        this.a = new Paint(1);
+        setWillNotDraw(false);
+    }
 
-    boolean c(String str, String str2, boolean z9, TLRPC.TL_inputPaymentCredentialsGooglePay tL_inputPaymentCredentialsGooglePay, TLRPC.TL_paymentSavedCredentialsCard tL_paymentSavedCredentialsCard);
+    public final void a(boolean z9, boolean z10) {
+        r1.g gVar = this.c;
+        if (gVar != null) {
+            gVar.d();
+        }
+        float f10 = z9 ? 1.0f : 0.0f;
+        if (!z10) {
+            this.b = f10;
+            TextView textView = this.d.U;
+            if (textView != null) {
+                textView.setAlpha((f10 * 0.2f) + 0.8f);
+            }
+            invalidate();
+            return;
+        }
+        float f11 = this.b;
+        if (f11 == f10) {
+            return;
+        }
+        r1.g gVar2 = new r1.g(new r1.f(f11 * 100.0f));
+        r1.h hVar = new r1.h(f10 * 100.0f);
+        hVar.b(z9 ? 500.0f : 650.0f);
+        hVar.a(1.0f);
+        gVar2.m = hVar;
+        this.c = gVar2;
+        gVar2.b(new cb0(this, 1));
+        this.c.a(new l9(this, 1));
+        this.c.h();
+    }
 
-    void d(TLRPC.TL_payments_validateRequestedInfo tL_payments_validateRequestedInfo);
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        int i7 = org.telegram.ui.ActionBar.l6.O6;
+        jl0 jl0Var = this.d;
+        canvas.drawColor(jl0Var.getThemedColor(i7));
+        int themedColor = jl0Var.getThemedColor(org.telegram.ui.ActionBar.l6.Si);
+        Paint paint = this.a;
+        paint.setColor(themedColor);
+        canvas.drawCircle(org.telegram.messenger.id.a0 ? getWidth() - org.telegram.messenger.g0.L(28.0f) : org.telegram.messenger.g0.L(28.0f), -org.telegram.messenger.g0.L(28.0f), Math.max(getWidth(), getHeight()) * this.b, paint);
+    }
 }

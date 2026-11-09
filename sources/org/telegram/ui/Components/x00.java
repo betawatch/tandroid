@@ -11,7 +11,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class x00 extends LinearLayout {
     public final fi.d a;
@@ -24,35 +24,35 @@ public final class x00 extends LinearLayout {
         TLRPC.TL_emojiList a10 = v8.a(i7);
         setOrientation(1);
         l9 l9Var = new l9(context);
-        l9Var.setImageDrawable(new zg0(R.raw.utyan_gallery, org.telegram.messenger.g0.L(110.0f), org.telegram.messenger.g0.L(110.0f)));
+        l9Var.setImageDrawable(new ah0(R.raw.utyan_gallery, org.telegram.messenger.g0.L(110.0f), org.telegram.messenger.g0.L(110.0f)));
         if (!org.telegram.messenger.g0.Q1()) {
             addView(l9Var, c8.ha.r(org.telegram.messenger.qs.v1, org.telegram.messenger.qs.v1, 49));
         }
         TextView g10 = org.telegram.messenger.k5.g(context, 1, 20.0f);
-        org.telegram.ui.ActionBar.r6.V(g10, org.telegram.ui.ActionBar.k6.G6, null);
+        org.telegram.ui.ActionBar.s6.U(g10, org.telegram.ui.ActionBar.l6.G6, null);
         g10.setGravity(1);
-        g10.setText(org.telegram.messenger.id.M0(2131750484, null));
+        g10.setText(org.telegram.messenger.id.M0(2131750483, null));
         g10.setTypeface(org.telegram.messenger.g0.o());
         addView(g10, c8.ha.t(-2, -2, 49, 0, 15, 0, 7));
         TextView textView = new TextView(context);
         textView.setTextSize(1, 14.0f);
-        org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.c7, null);
+        org.telegram.ui.ActionBar.s6.U(textView, org.telegram.ui.ActionBar.l6.c7, null);
         textView.setGravity(1);
-        textView.setText(org.telegram.messenger.id.M0(org.telegram.messenger.p10.i(i7).q() ? 2131750479 : 2131750480, null));
+        textView.setText(org.telegram.messenger.id.M0(org.telegram.messenger.p10.i(i7).q() ? 2131750478 : 2131750479, null));
         textView.setMaxWidth(org.telegram.messenger.g0.L(260.0f));
         textView.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
         addView(textView, c8.ha.t(-2, -2, 49, 0, 0, 0, 14));
         fi.d dVar = new fi.d(context, null, true);
         this.a = dVar;
         dVar.f();
-        dVar.i(org.telegram.messenger.id.M0(2131750483, null), false, true);
+        dVar.i(org.telegram.messenger.id.M0(2131750482, null), false, true);
         addView(dVar, c8.ha.r(-2, 44, 49));
         fi.d dVar2 = new fi.d(context, null, false);
         this.b = dVar2;
         dVar2.f();
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("c");
         spannableStringBuilder.setSpan(new wp(R.drawable.outline_attach_camera_24, 0), 0, 1, 33);
-        spannableStringBuilder.append((CharSequence) "  ").append((CharSequence) org.telegram.messenger.id.M0(2131750481, null));
+        spannableStringBuilder.append((CharSequence) "  ").append((CharSequence) org.telegram.messenger.id.M0(2131750480, null));
         dVar2.i(spannableStringBuilder, false, true);
         addView(dVar2, c8.ha.t(-2, 44, 49, 0, 8, 0, 0));
         fi.d dVar3 = new fi.d(context, null, false);
@@ -69,7 +69,7 @@ public final class x00 extends LinearLayout {
             spannableStringBuilder2.setSpan(new r5(longValue, (Paint.FontMetricsInt) null), 0, 1, 33);
             spannableStringBuilder2.append((CharSequence) "  ");
         }
-        spannableStringBuilder2.append((CharSequence) org.telegram.messenger.id.M0(2131743800, null));
+        spannableStringBuilder2.append((CharSequence) org.telegram.messenger.id.M0(2131743797, null));
         dVar3.i(spannableStringBuilder2, false, true);
         addView(dVar3, c8.ha.t(-2, 44, 49, 0, 1, 0, 0));
     }

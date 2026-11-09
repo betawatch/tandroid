@@ -13,7 +13,7 @@ import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_ephemeral;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class w extends c1 {
     public static volatile w[] a = new w[4];
@@ -174,7 +174,7 @@ public final class w extends c1 {
                 if (z9) {
                     TLRPC.TL_inputReplyToMessage tL_inputReplyToMessage = (TLRPC.TL_inputReplyToMessage) inputReplyTo;
                     inputReplyTo2 = inputReplyTo;
-                    if (ij.g3(tL_inputReplyToMessage.reply_to_msg_id)) {
+                    if (ij.f3(tL_inputReplyToMessage.reply_to_msg_id)) {
                         TLRPC.TL_inputReplyToEphemeralMessage tL_inputReplyToEphemeralMessage = new TLRPC.TL_inputReplyToEphemeralMessage();
                         tL_inputReplyToEphemeralMessage.id = ij.S(tL_inputReplyToMessage.reply_to_msg_id);
                         inputReplyTo2 = tL_inputReplyToEphemeralMessage;
@@ -219,7 +219,7 @@ public final class w extends c1 {
                 if (z10) {
                     TLRPC.TL_inputReplyToMessage tL_inputReplyToMessage2 = (TLRPC.TL_inputReplyToMessage) inputReplyTo3;
                     inputReplyTo4 = inputReplyTo3;
-                    if (ij.g3(tL_inputReplyToMessage2.reply_to_msg_id)) {
+                    if (ij.f3(tL_inputReplyToMessage2.reply_to_msg_id)) {
                         TLRPC.TL_inputReplyToEphemeralMessage tL_inputReplyToEphemeralMessage2 = new TLRPC.TL_inputReplyToEphemeralMessage();
                         tL_inputReplyToEphemeralMessage2.id = ij.S(tL_inputReplyToMessage2.reply_to_msg_id);
                         inputReplyTo4 = tL_inputReplyToEphemeralMessage2;

@@ -7,9 +7,9 @@ import di.b3;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.id;
 import org.telegram.ui.Components.c10;
-import org.telegram.ui.Components.j51;
+import org.telegram.ui.Components.k51;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final class h extends c10 {
     public float a;
@@ -31,7 +31,7 @@ public final class h extends c10 {
     @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnDoubleTapListener
     public final boolean onDoubleTap(MotionEvent motionEvent) {
         i iVar = this.d;
-        j51 j51Var = iVar.F;
+        k51 k51Var = iVar.F;
         m mVar = iVar.b;
         if (iVar.b() && iVar.c()) {
             boolean z9 = motionEvent.getX() >= ((float) iVar.x) * 0.5f;
@@ -47,13 +47,13 @@ public final class h extends c10 {
                 return true;
             }
             if (l10 != j3) {
-                j51Var.e(true);
-                j51Var.d(!z9);
-                long j10 = j51Var.o + 10000;
-                j51Var.o = j10;
-                j51Var.p = id.G((int) (j10 / 1000), "Seconds", new Object[0]);
+                k51Var.e(true);
+                k51Var.d(!z9);
+                long j10 = k51Var.o + 10000;
+                k51Var.o = j10;
+                k51Var.p = id.G((int) (j10 / 1000), "Seconds", new Object[0]);
                 mVar.c(j3);
-                j51Var.g(0L);
+                k51Var.g(0L);
                 iVar.I = j3 / duration;
                 b3 b3Var = iVar.o;
                 if (b3Var != null) {

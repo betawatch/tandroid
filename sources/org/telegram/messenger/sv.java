@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import android.content.SharedPreferences;
 import android.util.LongSparseArray;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class sv extends rv {
     public int d;
@@ -31,13 +31,13 @@ public final class sv extends rv {
         StringBuilder sb2 = new StringBuilder();
         if (a()) {
             if (this.a) {
-                sb2.append(id.M0(2131745923, null));
+                sb2.append(id.M0(2131745920, null));
             }
             if (this.b) {
                 if (sb2.length() != 0) {
                     sb2.append(", ");
                 }
-                sb2.append(id.M0(2131745916, null));
+                sb2.append(id.M0(2131745913, null));
                 long j3 = this.c;
                 if (j3 > 0 && j3 < 4194304000L) {
                     sb2.append(" (");
@@ -46,7 +46,7 @@ public final class sv extends rv {
                 }
             }
         } else {
-            sb2.append(id.M0(2131745924, null));
+            sb2.append(id.M0(2131745921, null));
         }
         LongSparseArray m10 = p10.i(i7).m(this.d);
         if (m10.size() != 0) {

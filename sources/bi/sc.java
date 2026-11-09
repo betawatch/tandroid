@@ -3,7 +3,6 @@ package bi;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.text.SpannableString;
-import android.text.SpannableStringBuilder;
 import android.view.View;
 import android.view.animation.OvershootInterpolator;
 import android.widget.LinearLayout;
@@ -14,35 +13,29 @@ import org.telegram.messenger.p10;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.b80;
-import org.telegram.ui.Components.wp;
+import org.telegram.ui.Components.c80;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class sc extends LinearLayout implements ls {
     public long a;
     public final int b;
     public final rc c;
-    public boolean d;
-    public SpannableString e;
-    public long f;
-    public final wp[] h;
-    public final wp[] n;
-    public ValueAnimator r;
+    public SpannableString d;
+    public long e;
+    public ValueAnimator f;
 
-    public sc(int i7, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+    public sc(int i7, Context context, org.telegram.ui.ActionBar.g6 g6Var) {
         super(context);
-        this.f = -1L;
-        this.h = new wp[1];
-        this.n = new wp[1];
+        this.e = -1L;
         this.b = i7;
         this.a = p10.i(i7).e();
         setOrientation(1);
         setGravity(21);
         TextView textView = new TextView(context);
-        int i10 = org.telegram.ui.ActionBar.k6.G6;
-        org.telegram.ui.ActionBar.r6.V(textView, i10, f6Var);
-        jg.g.v(textView, 1, 13.0f, null, 2131745158);
+        int i10 = org.telegram.ui.ActionBar.l6.G6;
+        org.telegram.ui.ActionBar.s6.U(textView, i10, g6Var);
+        jg.g.v(textView, 1, 13.0f, null, 2131745155);
         textView.setGravity(5);
         textView.setTypeface(org.telegram.messenger.g0.o());
         addView(textView, c8.ha.r(-2, -2, 5));
@@ -51,7 +44,7 @@ public final class sc extends LinearLayout implements ls {
         rcVar.n = true;
         rcVar.getDrawable().r(false, true);
         rcVar.setTypeface(org.telegram.messenger.g0.o());
-        org.telegram.ui.ActionBar.r6.Z(rcVar, i10, f6Var);
+        org.telegram.ui.ActionBar.s6.Y(rcVar, i10, g6Var);
         rcVar.setTextSize(org.telegram.messenger.g0.L(13.0f));
         rcVar.setGravity(5);
         rcVar.setPadding(org.telegram.messenger.g0.L(19.0f), 0, 0, 0);
@@ -61,73 +54,49 @@ public final class sc extends LinearLayout implements ls {
     }
 
     public final void a(boolean z9) {
+        long j3;
         boolean z10;
         TLRPC.TL_starsRevenueStatus tL_starsRevenueStatus;
         int i7 = this.b;
         ea y10 = ea.y(i7, false);
-        int i10 = 1;
-        ea y11 = this.d ? ea.y(i7, true) : null;
-        long j3 = 0;
-        cg.a i11 = cg.a.i(0L, cg.b.b);
         rc rcVar = this.c;
         rcVar.a();
+        int i10 = 1;
         if (this.a == p10.i(i7).e()) {
             z10 = !y10.e;
             j3 = y10.p().amount;
-            if (y11 != null) {
-                z10 |= !y11.e;
-                i11 = y11.s();
-            }
         } else {
             TLRPC.TL_payments_starsRevenueStats h = n0.g(i7).h(this.a, false);
             boolean z11 = h == null || h.status == null;
-            if (h != null && (tL_starsRevenueStatus = h.status) != null) {
-                j3 = tL_starsRevenueStatus.current_balance.amount;
-            }
+            j3 = (h == null || (tL_starsRevenueStatus = h.status) == null) ? 0L : tL_starsRevenueStatus.current_balance.amount;
             z10 = z11;
         }
-        long j10 = this.f;
+        long j10 = this.e;
         if (j3 > j10 && j10 != -1) {
-            ValueAnimator valueAnimator = this.r;
+            ValueAnimator valueAnimator = this.f;
             if (valueAnimator != null) {
                 valueAnimator.cancel();
             }
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.9f, 1.0f);
-            this.r = ofFloat;
+            this.f = ofFloat;
             ofFloat.addUpdateListener(new ah.h(this, 8));
-            this.r.addListener(new t5(this, i10));
-            this.r.setDuration(320L);
-            this.r.setInterpolator(new OvershootInterpolator());
-            this.r.start();
+            this.f.addListener(new t5(this, i10));
+            this.f.setDuration(320L);
+            this.f.setInterpolator(new OvershootInterpolator());
+            this.f.start();
         }
-        if (z10) {
-            if (this.e == null) {
-                SpannableString spannableString = new SpannableString("x");
-                this.e = spannableString;
-                spannableString.setSpan(new b80(org.telegram.messenger.g0.L(48.0f), rcVar), 0, this.e.length(), 33);
-            }
-            rcVar.c(this.e, z9, true);
-            this.f = -1L;
+        if (!z10) {
+            rcVar.setText(org.telegram.messenger.id.E(j3, ' '));
+            this.e = j3;
             return;
         }
-        if (this.d) {
-            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-            if (!i11.k()) {
-                String str = "⭐️" + i11.d();
-                wp[] wpVarArr = this.n;
-                spannableStringBuilder.append((CharSequence) dd.a1(true, str, 0.62f, wpVarArr));
-                wp wpVar = wpVarArr[0];
-                if (wpVar != null) {
-                    wpVar.a(org.telegram.ui.ActionBar.k6.Wl);
-                }
-                spannableStringBuilder.append((CharSequence) "  ");
-            }
-            spannableStringBuilder.append((CharSequence) dd.a1(false, jg.g.m(j3, ' ', new StringBuilder("⭐️")), 0.62f, this.h));
-            rcVar.setText(spannableStringBuilder);
-        } else {
-            rcVar.setText(org.telegram.messenger.id.E(j3, ' '));
+        if (this.d == null) {
+            SpannableString spannableString = new SpannableString("x");
+            this.d = spannableString;
+            spannableString.setSpan(new c80(org.telegram.messenger.g0.L(48.0f), rcVar), 0, this.d.length(), 33);
         }
-        this.f = j3;
+        rcVar.c(this.d, z9, true);
+        this.e = -1L;
     }
 
     @Override // org.telegram.messenger.ls

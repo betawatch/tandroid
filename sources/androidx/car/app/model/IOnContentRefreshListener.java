@@ -6,18 +6,18 @@ import android.os.IInterface;
 import android.os.Parcel;
 import androidx.car.app.IOnDoneCallback;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public interface IOnContentRefreshListener extends IInterface {
     public static final String DESCRIPTOR = "androidx$car$app$model$IOnContentRefreshListener".replace('$', '.');
 
     void onContentRefreshRequested(IOnDoneCallback iOnDoneCallback);
 
-    /* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+    /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
     public static abstract class Stub extends Binder implements IOnContentRefreshListener {
         static final int TRANSACTION_onContentRefreshRequested = 2;
 
-        /* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+        /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
         public static class Proxy implements IOnContentRefreshListener {
             private IBinder mRemote;
 
@@ -82,7 +82,7 @@ public interface IOnContentRefreshListener extends IInterface {
         }
     }
 
-    /* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+    /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
     public static class Default implements IOnContentRefreshListener {
         @Override // android.os.IInterface
         public IBinder asBinder() {

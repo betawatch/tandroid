@@ -1,126 +1,95 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import java.util.ArrayList;
+import android.content.Context;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class dv0 extends Drawable {
-    public final int a;
-    public final int b;
-    public final i5[] c;
-    public final boolean e;
-    public int d = org.telegram.messenger.qs.e4;
-    public final RectF f = new RectF();
-    public boolean g = false;
+public final class dv0 extends l9 implements org.telegram.messenger.ls {
+    public final int G;
+    public int H;
+    public String I;
 
-    public dv0(int i7, ArrayList arrayList, boolean z9) {
-        this.e = z9;
-        int max = (int) Math.max(1.0d, Math.sqrt(arrayList.size()));
-        this.a = max;
-        int min = Math.min(max * max, arrayList.size());
-        this.b = min;
-        this.c = new i5[min];
-        if (!arrayList.isEmpty()) {
-            org.telegram.messenger.ij.I2((TLRPC.Document) arrayList.get(0));
-        }
-        int i10 = max < 2 ? 1 : 0;
-        for (int i11 = 0; i11 < this.b; i11++) {
-            this.c[i11] = i5.l(i7, i10, (TLRPC.Document) arrayList.get(i11));
-        }
+    public dv0(Context context, int i7) {
+        super(context);
+        this.I = "tg_placeholders_android";
+        this.G = i7;
     }
 
-    public final void a(org.telegram.ui.Cells.q1 q1Var) {
-        for (int i7 = 0; i7 < this.b; i7++) {
-            this.c[i7].n(q1Var);
-        }
-    }
-
-    public final boolean b() {
-        return this.g;
-    }
-
-    public final boolean c(ArrayList arrayList) {
-        i5[] i5VarArr = this.c;
-        if (i5VarArr.length == arrayList.size()) {
-            for (int i7 = 0; i7 < i5VarArr.length; i7++) {
-                TLRPC.Document document = i5VarArr[i7].e;
-                if ((document == null ? 0L : document.id) == ((TLRPC.Document) arrayList.get(i7)).id) {
-                }
+    @Override // org.telegram.messenger.ls
+    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
+        if (i7 == org.telegram.messenger.qs.y0) {
+            if (this.I.equals((String) objArr[0])) {
+                v();
             }
-            return true;
         }
-        return false;
     }
 
-    public final void d() {
-        this.g = false;
+    @Override // org.telegram.ui.Components.l9, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        v();
+        org.telegram.messenger.qs.f(this.G).c(this, org.telegram.messenger.qs.y0);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        i5 i5Var;
-        if (this.d <= 0) {
-            return;
+    @Override // org.telegram.ui.Components.l9, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        org.telegram.messenger.qs.f(this.G).n(this, org.telegram.messenger.qs.y0);
+    }
+
+    public void setStickerNum(int i7) {
+        if (this.H != i7) {
+            this.H = i7;
+            v();
         }
-        Rect bounds = getBounds();
-        RectF rectF = this.f;
-        rectF.set(bounds);
-        float centerX = rectF.centerX() - (org.telegram.messenger.g0.L(48.0f) / 2.0f);
-        float centerY = rectF.centerY() - (org.telegram.messenger.g0.L(48.0f) / 2.0f);
-        int L = org.telegram.messenger.g0.L(48.0f);
-        int i7 = this.a;
-        float f10 = L / i7;
-        float L2 = org.telegram.messenger.g0.L(48.0f) / i7;
-        canvas.save();
-        canvas.clipRect(centerX, centerY, org.telegram.messenger.g0.L(48.0f) + centerX, org.telegram.messenger.g0.L(48.0f) + centerY);
-        for (int i10 = 0; i10 < i7; i10++) {
-            for (int i11 = 0; i11 < i7; i11++) {
-                int i12 = (i10 * i7) + i11;
-                if (i12 >= 0) {
-                    i5[] i5VarArr = this.c;
-                    if (i12 < i5VarArr.length && (i5Var = i5VarArr[i12]) != null) {
-                        i5Var.setBounds((int) ((i11 * f10) + centerX), (int) ((i10 * L2) + centerY), (int) (((i11 + 1) * f10) + centerX), (int) (((i10 + 1) * L2) + centerY));
-                        i5VarArr[i12].setAlpha(this.d);
-                        i5VarArr[i12].setColorFilter(this.e ? org.telegram.ui.ActionBar.k6.w3 : org.telegram.ui.ActionBar.k6.v3);
-                        i5VarArr[i12].draw(canvas);
-                    }
+    }
+
+    public void setStickerPackName(String str) {
+        this.I = str;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:11:0x0033  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0041  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0049  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x0056  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void v() {
+        TLRPC.Document document;
+        org.telegram.messenger.rz d;
+        int i7 = this.G;
+        TLRPC.TL_messages_stickerSet p02 = org.telegram.messenger.ui.b0(i7).p0(this.I);
+        if (p02 == null) {
+            p02 = org.telegram.messenger.ui.b0(i7).n0(this.I);
+        }
+        TLRPC.TL_messages_stickerSet tL_messages_stickerSet = p02;
+        if (tL_messages_stickerSet != null) {
+            int size = tL_messages_stickerSet.documents.size();
+            int i10 = this.H;
+            if (size > i10) {
+                document = tL_messages_stickerSet.documents.get(i10);
+                d = document != null ? org.telegram.messenger.t5.d(document.thumbs, org.telegram.ui.ActionBar.l6.c7, 0.2f, false) : null;
+                if (d != null) {
+                    d.e = 512;
+                    d.f = 512;
+                }
+                if (document == null) {
+                    k(org.telegram.messenger.hc.b(document), "130_130", "tgs", d, tL_messages_stickerSet);
+                    return;
+                } else {
+                    this.a.f();
+                    org.telegram.messenger.ui.b0(i7).c1(this.I, false, tL_messages_stickerSet == null);
+                    return;
                 }
             }
         }
-        canvas.restore();
-    }
-
-    public final void e() {
-        this.g = true;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return org.telegram.messenger.g0.L(48.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return org.telegram.messenger.g0.L(48.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i7) {
-        this.d = i7;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+        document = null;
+        d = document != null ? org.telegram.messenger.t5.d(document.thumbs, org.telegram.ui.ActionBar.l6.c7, 0.2f, false) : null;
+        if (d != null) {
+        }
+        if (document == null) {
+        }
     }
 }

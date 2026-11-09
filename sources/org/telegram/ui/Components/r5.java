@@ -20,7 +20,7 @@ import java.util.HashMap;
 import java.util.List;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public class r5 extends ReplacementSpan {
     private static boolean lockPositionChanging;
@@ -88,10 +88,10 @@ public class r5 extends ReplacementSpan {
 
     public static boolean c(Layout layout, int i7, int i10) {
         if (layout.getText() instanceof Spanned) {
-            vy0[] vy0VarArr = (vy0[]) ((Spanned) layout.getText()).getSpans(Math.max(0, i7), Math.min(layout.getText().length() - 1, i10), vy0.class);
-            for (int i11 = 0; vy0VarArr != null && i11 < vy0VarArr.length; i11++) {
-                vy0 vy0Var = vy0VarArr[i11];
-                if (vy0Var != null && vy0Var.c()) {
+            wy0[] wy0VarArr = (wy0[]) ((Spanned) layout.getText()).getSpans(Math.max(0, i7), Math.min(layout.getText().length() - 1, i10), wy0.class);
+            for (int i11 = 0; wy0VarArr != null && i11 < wy0VarArr.length; i11++) {
+                wy0 wy0Var = wy0VarArr[i11];
+                if (wy0Var != null && wy0Var.c()) {
                     return true;
                 }
             }
@@ -476,7 +476,7 @@ public class r5 extends ReplacementSpan {
                                     }
                                 }
                             } else if (i5Var2.k != null) {
-                                i5Var2.setColorFilter(colorFilter == null ? org.telegram.ui.ActionBar.k6.v3 : colorFilter);
+                                i5Var2.setColorFilter(colorFilter == null ? org.telegram.ui.ActionBar.l6.v3 : colorFilter);
                                 m5Var.f.p(currentTimeMillis);
                                 float extraScale2 = m5Var.d.getExtraScale();
                                 if (extraScale2 != 1.0f || m5Var.d.invert) {

@@ -4,7 +4,7 @@ import android.graphics.RectF;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class od implements t4, org.telegram.messenger.pc {
     public final /* synthetic */ String a;
@@ -39,9 +39,9 @@ public final /* synthetic */ class od implements t4, org.telegram.messenger.pc {
         String[] strArr = (String[]) this.d;
         boolean[] zArr = (boolean[]) this.e;
         jg.c1 c1Var = (jg.c1) this.f;
-        RectF rectF = ProfileActivity.S6;
+        RectF rectF = ProfileActivity.V6;
         strArr[0] = str;
-        zArr[0] = str != null && (!str.equals(this.a) || str.equals("und")) && ((this.b && !org.telegram.ui.qy0.d0().contains(str)) || ((chat = profileActivity.D2) != null && ((chat.has_link || org.telegram.messenger.t3.t0(chat)) && ("uk".equals(str) || "ru".equals(str)))));
+        zArr[0] = str != null && (!str.equals(this.a) || str.equals("und")) && ((this.b && !org.telegram.ui.ty0.d0().contains(str)) || ((chat = profileActivity.D2) != null && ((chat.has_link || org.telegram.messenger.t3.t0(chat)) && ("uk".equals(str) || "ru".equals(str)))));
         c1Var.run();
     }
 

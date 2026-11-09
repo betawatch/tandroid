@@ -7,7 +7,7 @@ import android.graphics.Rect;
 import java.util.ArrayList;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class iu extends is {
     public int M;
@@ -118,7 +118,7 @@ public final class iu extends is {
                 Rect rect = org.telegram.messenger.g0.Q;
                 rect.set(kuVar.getPaddingLeft() + kuVar.getLeft(), kuVar.getPaddingTop(), kuVar.getRight() - kuVar.getPaddingRight(), kuVar.getMeasuredHeight() - kuVar.getPaddingBottom());
                 icVarArr[i10].b(rect);
-                int w02 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.G6, ruVar.I0);
+                int w02 = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.G6, ruVar.I0);
                 if (w02 != ruVar.L1 || ruVar.K1 == null) {
                     ruVar.L1 = w02;
                     ruVar.K1 = new PorterDuffColorFilter(w02, PorterDuff.Mode.SRC_IN);

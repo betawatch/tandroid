@@ -1,29 +1,45 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class fi implements org.telegram.messenger.ls {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ai.a1 b;
-    public final /* synthetic */ an c;
-    public final /* synthetic */ an d;
+public final class fi implements Runnable {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ org.telegram.ui.Components.ji0 e;
+    public final /* synthetic */ float f;
+    public final /* synthetic */ float h;
+    public final /* synthetic */ ch.o0 n;
+    public final /* synthetic */ org.telegram.messenger.ij r;
+    public final /* synthetic */ cn s;
 
-    public fi(an anVar, int i7, ai.a1 a1Var, an anVar2) {
-        this.d = anVar;
-        this.a = i7;
-        this.b = a1Var;
-        this.c = anVar2;
+    public fi(cn cnVar, boolean z9, boolean z10, int i7, boolean z11, org.telegram.ui.Components.ji0 ji0Var, float f10, float f11, ch.o0 o0Var, org.telegram.messenger.ij ijVar) {
+        this.s = cnVar;
+        this.a = z9;
+        this.b = z10;
+        this.c = i7;
+        this.d = z11;
+        this.e = ji0Var;
+        this.f = f10;
+        this.h = f11;
+        this.n = o0Var;
+        this.r = ijVar;
     }
 
-    @Override // org.telegram.messenger.ls
-    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        int i11;
-        int i12 = org.telegram.messenger.qs.D;
-        if (i7 == i12 && ((Integer) objArr[10]).intValue() == this.a) {
-            this.b.run();
-            org.telegram.messenger.g0.i3(new l2.a0(this.c, i7, i10, objArr, 10), 50L);
-            i11 = ((org.telegram.ui.ActionBar.f2) this.d).currentAccount;
-            org.telegram.messenger.qs.f(i11).n(this, i12);
+    @Override // java.lang.Runnable
+    public final void run() {
+        if (!this.a) {
+            cn cnVar = this.s;
+            if (cnVar.Hc != null) {
+                cnVar.Hc = null;
+                if (this.b) {
+                    cnVar.x8(new ei(this, this.c, this.d, this.e, this.f, this.h, this.n, 0));
+                } else {
+                    cnVar.x8(new rf(15, this, this.r));
+                }
+                cnVar.P7(true);
+            }
         }
     }
 }

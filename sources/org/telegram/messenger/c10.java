@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class c10 extends TLObject {
     public TLRPC.TL_textWithEntities a;
@@ -40,8 +40,8 @@ public final class c10 extends TLObject {
     public static boolean b(ij ijVar, c10 c10Var) {
         TLRPC.TL_messageMediaPoll tL_messageMediaPoll;
         TLRPC.Poll poll;
-        TLRPC.MessageMedia n1 = ij.n1(ijVar);
-        if (!(n1 instanceof TLRPC.TL_messageMediaPoll) || (poll = (tL_messageMediaPoll = (TLRPC.TL_messageMediaPoll) n1).poll) == null) {
+        TLRPC.MessageMedia m12 = ij.m1(ijVar);
+        if (!(m12 instanceof TLRPC.TL_messageMediaPoll) || (poll = (tL_messageMediaPoll = (TLRPC.TL_messageMediaPoll) m12).poll) == null) {
             return true;
         }
         if ((poll.question != null) != (c10Var.a != null)) {

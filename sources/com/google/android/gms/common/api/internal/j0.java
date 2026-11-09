@@ -19,9 +19,9 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Set;
 import m.q3;
-import org.telegram.ui.hy0;
+import org.telegram.ui.ky0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class j0 implements com.google.android.gms.common.api.k, com.google.android.gms.common.api.l {
     public final com.google.android.gms.common.api.c b;
@@ -42,7 +42,7 @@ public final class j0 implements com.google.android.gms.common.api.k, com.google
     public j0(g gVar, com.google.android.gms.common.api.j jVar) {
         this.o = gVar;
         Looper looper = gVar.y.getLooper();
-        hy0 a10 = jVar.a();
+        ky0 a10 = jVar.a();
         a0.g gVar2 = (a0.g) a10.b;
         String str = (String) a10.c;
         String str2 = (String) a10.d;
@@ -70,7 +70,7 @@ public final class j0 implements com.google.android.gms.common.api.k, com.google
         }
         Context context = gVar.e;
         com.google.android.gms.internal.cast.y yVar = gVar.y;
-        hy0 a12 = jVar.a();
+        ky0 a12 = jVar.a();
         this.j = new v0(context, yVar, new q3((a0.g) a12.b, null, (String) a12.c, (String) a12.d, aVar));
     }
 

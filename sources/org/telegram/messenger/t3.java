@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_communities;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public abstract class t3 {
     public static boolean A(int i7, TLRPC.Chat chat, int i10) {
@@ -219,7 +219,7 @@ public abstract class t3 {
     }
 
     public static String L(int i7, TLRPC.Chat chat) {
-        return i7 == 23 ? (chat == null || P(i7, chat)) ? id.M0(2131749546, null) : g0.D1(chat.banned_rights) ? id.a0("AttachGifRestrictedForever", null, 2131753969, new Object[0]) : id.a0("AttachGifRestricted", null, 2131753970, id.v(chat.banned_rights.until_date)) : i7 == 8 ? (chat == null || P(i7, chat)) ? id.M0(2131749540, null) : g0.D1(chat.banned_rights) ? id.a0("AttachStickersRestrictedForever", null, 2131753934, new Object[0]) : id.a0("AttachStickersRestricted", null, 2131753935, id.v(chat.banned_rights.until_date)) : i7 == 16 ? (chat == null || P(i7, chat)) ? id.M0(2131749543, null) : g0.D1(chat.banned_rights) ? id.a0("AttachPhotoRestrictedForever", null, 2131753945, new Object[0]) : id.a0("AttachPhotoRestricted", null, 2131753946, id.v(chat.banned_rights.until_date)) : i7 == 17 ? (chat == null || P(i7, chat)) ? id.M0(2131749539, null) : g0.D1(chat.banned_rights) ? id.a0("AttachVideoRestrictedForever", null, 2131753930, new Object[0]) : id.a0("AttachVideoRestricted", null, 2131753931, id.v(chat.banned_rights.until_date)) : i7 == 19 ? (chat == null || P(i7, chat)) ? id.M0(2131749548, null) : g0.D1(chat.banned_rights) ? id.a0("AttachDocumentsRestrictedForever", null, 2131753973, new Object[0]) : id.a0("AttachDocumentsRestricted", null, 2131753974, id.v(chat.banned_rights.until_date)) : i7 == 7 ? (chat == null || P(i7, chat)) ? id.M0(2131749544, null) : g0.D1(chat.banned_rights) ? id.a0("AttachMediaRestrictedForever", null, 2131753955, new Object[0]) : id.a0("AttachMediaRestricted", null, 2131753956, id.v(chat.banned_rights.until_date)) : i7 == 18 ? (chat == null || P(i7, chat)) ? id.M0(2131749549, null) : g0.D1(chat.banned_rights) ? id.a0("AttachAudioRestrictedForever", null, 2131753980, new Object[0]) : id.a0("AttachAudioRestricted", null, 2131753981, id.v(chat.banned_rights.until_date)) : i7 == 22 ? (chat == null || P(i7, chat)) ? id.M0(2131749542, null) : g0.D1(chat.banned_rights) ? id.a0("AttachPlainRestrictedForever", null, 2131753943, new Object[0]) : id.a0("AttachPlainRestricted", null, 2131753944, id.v(chat.banned_rights.until_date)) : i7 == 21 ? (chat == null || P(i7, chat)) ? id.M0(2131749541, null) : g0.D1(chat.banned_rights) ? id.a0("AttachRoundRestrictedForever", null, 2131753938, new Object[0]) : id.a0("AttachRoundRestricted", null, 2131753939, id.v(chat.banned_rights.until_date)) : i7 == 20 ? (chat == null || P(i7, chat)) ? id.M0(2131749538, null) : g0.D1(chat.banned_rights) ? id.a0("AttachVoiceRestrictedForever", null, 2131753927, new Object[0]) : id.a0("AttachVoiceRestricted", null, 2131753928, id.v(chat.banned_rights.until_date)) : "";
+        return i7 == 23 ? (chat == null || P(i7, chat)) ? id.M0(2131749545, null) : g0.D1(chat.banned_rights) ? id.a0("AttachGifRestrictedForever", null, 2131753969, new Object[0]) : id.a0("AttachGifRestricted", null, 2131753970, id.v(chat.banned_rights.until_date)) : i7 == 8 ? (chat == null || P(i7, chat)) ? id.M0(2131749539, null) : g0.D1(chat.banned_rights) ? id.a0("AttachStickersRestrictedForever", null, 2131753934, new Object[0]) : id.a0("AttachStickersRestricted", null, 2131753935, id.v(chat.banned_rights.until_date)) : i7 == 16 ? (chat == null || P(i7, chat)) ? id.M0(2131749542, null) : g0.D1(chat.banned_rights) ? id.a0("AttachPhotoRestrictedForever", null, 2131753945, new Object[0]) : id.a0("AttachPhotoRestricted", null, 2131753946, id.v(chat.banned_rights.until_date)) : i7 == 17 ? (chat == null || P(i7, chat)) ? id.M0(2131749538, null) : g0.D1(chat.banned_rights) ? id.a0("AttachVideoRestrictedForever", null, 2131753930, new Object[0]) : id.a0("AttachVideoRestricted", null, 2131753931, id.v(chat.banned_rights.until_date)) : i7 == 19 ? (chat == null || P(i7, chat)) ? id.M0(2131749547, null) : g0.D1(chat.banned_rights) ? id.a0("AttachDocumentsRestrictedForever", null, 2131753973, new Object[0]) : id.a0("AttachDocumentsRestricted", null, 2131753974, id.v(chat.banned_rights.until_date)) : i7 == 7 ? (chat == null || P(i7, chat)) ? id.M0(2131749543, null) : g0.D1(chat.banned_rights) ? id.a0("AttachMediaRestrictedForever", null, 2131753955, new Object[0]) : id.a0("AttachMediaRestricted", null, 2131753956, id.v(chat.banned_rights.until_date)) : i7 == 18 ? (chat == null || P(i7, chat)) ? id.M0(2131749548, null) : g0.D1(chat.banned_rights) ? id.a0("AttachAudioRestrictedForever", null, 2131753980, new Object[0]) : id.a0("AttachAudioRestricted", null, 2131753981, id.v(chat.banned_rights.until_date)) : i7 == 22 ? (chat == null || P(i7, chat)) ? id.M0(2131749541, null) : g0.D1(chat.banned_rights) ? id.a0("AttachPlainRestrictedForever", null, 2131753943, new Object[0]) : id.a0("AttachPlainRestricted", null, 2131753944, id.v(chat.banned_rights.until_date)) : i7 == 21 ? (chat == null || P(i7, chat)) ? id.M0(2131749540, null) : g0.D1(chat.banned_rights) ? id.a0("AttachRoundRestrictedForever", null, 2131753938, new Object[0]) : id.a0("AttachRoundRestricted", null, 2131753939, id.v(chat.banned_rights.until_date)) : i7 == 20 ? (chat == null || P(i7, chat)) ? id.M0(2131749537, null) : g0.D1(chat.banned_rights) ? id.a0("AttachVoiceRestrictedForever", null, 2131753927, new Object[0]) : id.a0("AttachVoiceRestricted", null, 2131753928, id.v(chat.banned_rights.until_date)) : "";
     }
 
     public static long M(TLRPC.Chat chat, TLRPC.ChatFull chatFull, boolean z9) {
@@ -384,7 +384,7 @@ public abstract class t3 {
                 if (q0(i7, tL_forumTopic) && (message = tL_forumTopic.topMessage) != null && (message2 = tL_forumTopic.topicStartMessage) != null) {
                     int i10 = message.id - message2.id;
                     ArrayList<ij> arrayList = tL_forumTopic.groupedMessages;
-                    if (i10 > Math.max(1, arrayList == null ? 0 : arrayList.size()) || !ij.w5(tL_forumTopic.from_id, tL_forumTopic.topMessage.from_id)) {
+                    if (i10 > Math.max(1, arrayList == null ? 0 : arrayList.size()) || !ij.v5(tL_forumTopic.from_id, tL_forumTopic.topMessage.from_id)) {
                     }
                 }
             }
@@ -622,9 +622,11 @@ public abstract class t3 {
         return w(17, chat);
     }
 
-    public static boolean u0(int i7, TLRPC.User user) {
-        TLRPC.Chat M0;
-        return (user == null || user.linked_community_id == 0 || (M0 = qp.s1(i7).M0(Long.valueOf(user.linked_community_id))) == null || !M0.collapsed_in_dialogs) ? false : true;
+    public static boolean u0(TLRPC.Chat chat) {
+        if (chat != null) {
+            return (chat.forum && chat.forum_sidebar) || chat.monoforum;
+        }
+        return false;
     }
 
     public static boolean v(TLRPC.Chat chat) {
@@ -634,20 +636,9 @@ public abstract class t3 {
         return w(20, chat);
     }
 
-    public static boolean v0(TLRPC.ChatFull chatFull, String str) {
-        TLRPC.ChatReactions chatReactions = chatFull.available_reactions;
-        if (chatReactions instanceof TLRPC.TL_chatReactionsAll) {
-            return true;
-        }
-        if (chatReactions instanceof TLRPC.TL_chatReactionsSome) {
-            TLRPC.TL_chatReactionsSome tL_chatReactionsSome = (TLRPC.TL_chatReactionsSome) chatReactions;
-            for (int i7 = 0; i7 < tL_chatReactionsSome.reactions.size(); i7++) {
-                if ((tL_chatReactionsSome.reactions.get(i7) instanceof TLRPC.TL_reactionEmoji) && TextUtils.equals(((TLRPC.TL_reactionEmoji) tL_chatReactionsSome.reactions.get(i7)).emoticon, str)) {
-                    return true;
-                }
-            }
-        }
-        return false;
+    public static boolean v0(int i7, TLRPC.User user) {
+        TLRPC.Chat M0;
+        return (user == null || user.linked_community_id == 0 || (M0 = qp.s1(i7).M0(Long.valueOf(user.linked_community_id))) == null || !M0.collapsed_in_dialogs) ? false : true;
     }
 
     public static boolean w(int i7, TLRPC.Chat chat) {
@@ -692,6 +683,22 @@ public abstract class t3 {
             return false;
         }
         return true;
+    }
+
+    public static boolean w0(TLRPC.ChatFull chatFull, String str) {
+        TLRPC.ChatReactions chatReactions = chatFull.available_reactions;
+        if (chatReactions instanceof TLRPC.TL_chatReactionsAll) {
+            return true;
+        }
+        if (chatReactions instanceof TLRPC.TL_chatReactionsSome) {
+            TLRPC.TL_chatReactionsSome tL_chatReactionsSome = (TLRPC.TL_chatReactionsSome) chatReactions;
+            for (int i7 = 0; i7 < tL_chatReactionsSome.reactions.size(); i7++) {
+                if ((tL_chatReactionsSome.reactions.get(i7) instanceof TLRPC.TL_reactionEmoji) && TextUtils.equals(((TLRPC.TL_reactionEmoji) tL_chatReactionsSome.reactions.get(i7)).emoticon, str)) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:22:0x0050  */

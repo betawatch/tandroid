@@ -8,7 +8,7 @@ import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public abstract class sc {
     public static int a = 198684;
@@ -182,7 +182,7 @@ public abstract class sc {
             rz.A = e(32);
         }
         if (i12 > 0) {
-            org.telegram.ui.ActionBar.k6.u1(true);
+            org.telegram.ui.ActionBar.l6.u1(true);
         }
         if (c8.zc.a(i11, 256) || c8.zc.a(i11, 262144)) {
             oi.q.f();

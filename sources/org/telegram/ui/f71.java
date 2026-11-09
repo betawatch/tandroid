@@ -1,22 +1,37 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
-/* loaded from: classes3.dex */
-public final class f71 extends v71 {
-    public final /* synthetic */ an l2;
-    public final /* synthetic */ boolean m2;
+import android.graphics.Point;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f71(Object obj, an anVar, boolean z9) {
-        super(obj, null, true);
-        this.l2 = anVar;
-        this.m2 = z9;
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* loaded from: classes3.dex */
+public final class f71 extends c8.ea {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.messenger.ls b;
+
+    public /* synthetic */ f71(org.telegram.messenger.ls lsVar, int i7) {
+        this.a = i7;
+        this.b = lsVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.f2
-    public final void onFragmentClosed() {
-        super.onFragmentClosed();
-        ym ymVar = this.l2.xa;
-        ymVar.r(ymVar.f, ymVar.g, false, Boolean.valueOf(this.m2), false);
+    @Override // c8.ea
+    public void a() {
+        switch (this.a) {
+            case 1:
+                ((ic1) this.b).w.invalidate();
+                break;
+        }
+    }
+
+    @Override // c8.ea
+    public void b(int i7, int i10) {
+        switch (this.a) {
+            case 0:
+                Point point = org.telegram.messenger.g0.q;
+                if ((point.x <= point.y) == (i7 <= i10)) {
+                    ((w71) this.b).y0.invalidate();
+                    break;
+                }
+                break;
+        }
     }
 }

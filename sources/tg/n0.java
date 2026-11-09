@@ -6,9 +6,9 @@ import android.view.ViewGroup;
 import c8.ha;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.ki0;
+import org.telegram.ui.Components.li0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class n0 extends j {
     public final m0 q0;
@@ -62,16 +62,16 @@ public final class n0 extends j {
     }
 
     @Override // tg.j
-    public ki0 getSelectionBounds() {
+    public li0 getSelectionBounds() {
         ViewGroup viewGroup = (ViewGroup) getParent();
         if (viewGroup == null) {
-            return new ki0();
+            return new li0();
         }
         float scaleX = viewGroup.getScaleX();
         float L = (org.telegram.messenger.g0.L(64.0f) / scaleX) + (getScale() * getMeasuredWidth());
         float L2 = (org.telegram.messenger.g0.L(64.0f) / scaleX) + (getScale() * getMeasuredHeight());
         float x10 = org.telegram.messenger.camera.q.x(L, 2.0f, getPositionX(), scaleX);
-        return new ki0(x10, org.telegram.messenger.camera.q.x(L2, 2.0f, getPositionY(), scaleX), ((L * scaleX) + x10) - x10, L2 * scaleX);
+        return new li0(x10, org.telegram.messenger.camera.q.x(L2, 2.0f, getPositionY(), scaleX), ((L * scaleX) + x10) - x10, L2 * scaleX);
     }
 
     @Override // tg.j

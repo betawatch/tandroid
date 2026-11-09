@@ -5,10 +5,11 @@ import android.content.Intent;
 import android.hardware.display.VirtualDisplay;
 import android.media.projection.MediaProjection;
 import android.media.projection.MediaProjectionManager;
+import android.os.Build;
 import android.view.Surface;
 import org.telegram.messenger.a8;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public class ScreenCapturerAndroid implements VideoCapturer, VideoSink {
     private static final int DISPLAY_FLAGS = 3;
@@ -46,9 +47,19 @@ public class ScreenCapturerAndroid implements VideoCapturer, VideoSink {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$changeCaptureFormat$1() {
-        this.virtualDisplay.release();
-        createVirtualDisplay();
+    public /* synthetic */ void lambda$changeCaptureFormat$1(int i7, int i10) {
+        VirtualDisplay virtualDisplay = this.virtualDisplay;
+        if (virtualDisplay == null) {
+            return;
+        }
+        if (Build.VERSION.SDK_INT < 31) {
+            virtualDisplay.release();
+            createVirtualDisplay();
+        } else {
+            this.surfaceTextureHelper.setTextureSize(i7, i10);
+            this.virtualDisplay.resize(i7, i10, VIRTUAL_DISPLAY_DPI);
+            this.virtualDisplay.setSurface(new Surface(this.surfaceTextureHelper.getSurfaceTexture()));
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -76,7 +87,7 @@ public class ScreenCapturerAndroid implements VideoCapturer, VideoSink {
         if (this.virtualDisplay == null) {
             return;
         }
-        ThreadUtils.invokeAtFrontUninterruptibly(this.surfaceTextureHelper.getHandler(), new p(this, 0));
+        ThreadUtils.invokeAtFrontUninterruptibly(this.surfaceTextureHelper.getHandler(), new jg.r(this, i7, i10, 14));
     }
 
     @Override // org.webrtc.VideoCapturer
@@ -119,7 +130,7 @@ public class ScreenCapturerAndroid implements VideoCapturer, VideoSink {
 
     @Override // org.webrtc.VideoSink
     public final /* synthetic */ void setParentSink(VideoSink videoSink) {
-        e0.a(this, videoSink);
+        d0.a(this, videoSink);
     }
 
     @Override // org.webrtc.VideoCapturer
@@ -146,6 +157,6 @@ public class ScreenCapturerAndroid implements VideoCapturer, VideoSink {
     @Override // org.webrtc.VideoCapturer
     public synchronized void stopCapture() {
         checkNotDisposed();
-        ThreadUtils.invokeAtFrontUninterruptibly(this.surfaceTextureHelper.getHandler(), new p(this, 1));
+        ThreadUtils.invokeAtFrontUninterruptibly(this.surfaceTextureHelper.getHandler(), new h(this, 2));
     }
 }

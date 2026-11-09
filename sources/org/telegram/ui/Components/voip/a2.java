@@ -11,9 +11,9 @@ import c8.ha;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.k5;
-import org.telegram.ui.Components.mu0;
+import org.telegram.ui.Components.ou0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class a2 extends LinearLayout {
     public HashMap a;
@@ -35,7 +35,7 @@ public final class a2 extends LinearLayout {
         z1Var.a = str2;
         int L = org.telegram.messenger.g0.q.x - org.telegram.messenger.g0.L(120.0f);
         TextView textView = z1Var.c;
-        StaticLayout c10 = mu0.c(str, textView.getPaint(), L, Layout.Alignment.ALIGN_NORMAL, 0.0f, TextUtils.TruncateAt.END, L, 10, true);
+        StaticLayout c10 = ou0.c(str, textView.getPaint(), L, Layout.Alignment.ALIGN_NORMAL, 0.0f, TextUtils.TruncateAt.END, L, 10, true);
         if (c10 != null) {
             L = 0;
             for (int i10 = 0; i10 < c10.getLineCount(); i10++) {

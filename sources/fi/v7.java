@@ -5,19 +5,19 @@ import android.view.ViewGroup;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.oj0;
-import org.telegram.ui.Components.xi0;
+import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.yi0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class v7 extends oj0 {
+public final class v7 extends pj0 {
     public final /* synthetic */ w7 c;
 
     public v7(w7 w7Var) {
         this.c = w7Var;
     }
 
-    @Override // org.telegram.ui.Components.oj0
+    @Override // org.telegram.ui.Components.pj0
     public final boolean D(v4.d1 d1Var) {
         return d1Var.f == 2;
     }
@@ -85,6 +85,6 @@ public final class v7 extends oj0 {
         } else {
             view = new r8(w7Var.getContext(), w7Var.I0);
         }
-        return new xi0(view);
+        return new yi0(view);
     }
 }

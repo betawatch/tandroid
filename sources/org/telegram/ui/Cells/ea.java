@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.ui.Components.hc;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ea implements Runnable {
     public final /* synthetic */ int a;
@@ -81,7 +81,7 @@ public final /* synthetic */ class ea implements Runnable {
                 final t0 t0Var2 = (t0) this.b;
                 final org.telegram.ui.ActionBar.f2 f2Var = (org.telegram.ui.ActionBar.f2) this.c;
                 TL_payments.TL_resolveStarGiftOffer tL_resolveStarGiftOffer = new TL_payments.TL_resolveStarGiftOffer();
-                tL_resolveStarGiftOffer.offer_msg_id = t0Var2.getMessageObject().f1();
+                tL_resolveStarGiftOffer.offer_msg_id = t0Var2.getMessageObject().e1();
                 tL_resolveStarGiftOffer.decline = true;
                 ConnectionsManager.getInstance(t0Var2.H).sendRequestTyped(tL_resolveStarGiftOffer, new v10() { // from class: org.telegram.ui.Cells.p0
                     @Override // org.telegram.messenger.v10
@@ -121,7 +121,7 @@ public final /* synthetic */ class ea implements Runnable {
                 }
                 break;
             default:
-                ((ga) this.b).z1((org.telegram.ui.ActionBar.j6) this.c);
+                ((ga) this.b).z1((org.telegram.ui.ActionBar.k6) this.c);
                 break;
         }
     }

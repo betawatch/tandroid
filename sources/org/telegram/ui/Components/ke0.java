@@ -1,61 +1,35 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.os.SystemClock;
+import java.util.Arrays;
+import java.util.Comparator;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class ke0 extends pj0 {
-    public final bg.c0 e3;
-    public long f3;
-    public final /* synthetic */ qe0 g3;
+public final class ke0 implements Comparator {
+    public final /* synthetic */ re0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ke0(qe0 qe0Var, Context context) {
-        super(context, null);
-        this.g3 = qe0Var;
-        this.e3 = new bg.c0(8);
+    public ke0(re0 re0Var) {
+        this.a = re0Var;
     }
 
-    @Override // org.telegram.ui.Components.pj0
-    public final boolean E0(float f10) {
-        return f10 >= ((float) (this.g3.v1 + org.telegram.messenger.g0.m));
-    }
-
-    @Override // org.telegram.ui.Components.pj0, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        float f10;
-        qe0 qe0Var = this.g3;
-        if (qe0Var.C1) {
-            long elapsedRealtime = SystemClock.elapsedRealtime();
-            long abs = Math.abs(this.f3 - elapsedRealtime);
-            if (abs > 17) {
-                abs = 16;
+    public final int a(qe0 qe0Var) {
+        re0 re0Var = this.a;
+        int size = re0Var.p1.answers.size();
+        for (int i7 = 0; i7 < size; i7++) {
+            if (Arrays.equals(re0Var.p1.answers.get(i7).option, qe0Var.d)) {
+                return i7;
             }
-            this.f3 = elapsedRealtime;
-            qe0Var.A1 += (abs * qe0Var.B1) / 1800.0f;
-            while (true) {
-                f10 = qe0Var.A1;
-                float f11 = qe0Var.B1 * 2.0f;
-                if (f10 < f11) {
-                    break;
-                } else {
-                    qe0Var.A1 = f10 - f11;
-                }
-            }
-            qe0Var.z1.setTranslate(f10, 0.0f);
-            qe0Var.y1.setLocalMatrix(qe0Var.z1);
-            g1();
-            invalidate();
         }
-        super.dispatchDraw(canvas);
-        int measuredHeight = getMeasuredHeight() - org.telegram.messenger.g0.n;
-        int measuredWidth = getMeasuredWidth();
-        int measuredHeight2 = getMeasuredHeight();
-        bg.c0 c0Var = this.e3;
-        c0Var.setBounds(0, measuredHeight, measuredWidth, measuredHeight2);
-        c0Var.b(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.i5, this.n2));
-        c0Var.draw(canvas);
+        return 0;
+    }
+
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        int a10 = a((qe0) obj);
+        int a11 = a((qe0) obj2);
+        if (a10 > a11) {
+            return 1;
+        }
+        return a10 < a11 ? -1 : 0;
     }
 }

@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.messenger.Intro;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class k2 implements c5.g {
     public final /* synthetic */ int a;
@@ -22,10 +22,10 @@ public final class k2 implements c5.g {
                 o2Var.d.invalidate();
                 break;
             case 1:
-                ((u50) this.b).H = i7;
+                ((w50) this.b).H = i7;
                 break;
             default:
-                ((v71) this.b).b0.invalidate();
+                ((w71) this.b).b0.invalidate();
                 break;
         }
     }
@@ -43,14 +43,14 @@ public final class k2 implements c5.g {
                 }
                 break;
             case 1:
-                u50 u50Var = (u50) this.b;
-                org.telegram.ui.Components.ea eaVar = u50Var.e;
+                w50 w50Var = (w50) this.b;
+                org.telegram.ui.Components.ea eaVar = w50Var.e;
                 eaVar.b = f10;
                 eaVar.c = i7;
                 eaVar.invalidate();
-                float measuredWidth2 = u50Var.d.getMeasuredWidth();
+                float measuredWidth2 = w50Var.d.getMeasuredWidth();
                 if (measuredWidth2 != 0.0f) {
-                    Intro.setScrollOffset((((i7 * measuredWidth2) + i10) - (u50Var.H * measuredWidth2)) / measuredWidth2);
+                    Intro.setScrollOffset((((i7 * measuredWidth2) + i10) - (w50Var.H * measuredWidth2)) / measuredWidth2);
                     break;
                 }
                 break;
@@ -61,21 +61,21 @@ public final class k2 implements c5.g {
     public final void c(int i7) {
         switch (this.a) {
             case 1:
-                u50 u50Var = (u50) this.b;
+                w50 w50Var = (w50) this.b;
                 if (i7 != 1) {
                     if (i7 == 0 || i7 == 2) {
-                        if (u50Var.K) {
-                            u50Var.K = false;
+                        if (w50Var.K) {
+                            w50Var.K = false;
                         }
-                        if (u50Var.x != u50Var.d.getCurrentItem()) {
-                            u50Var.x = u50Var.d.getCurrentItem();
+                        if (w50Var.x != w50Var.d.getCurrentItem()) {
+                            w50Var.x = w50Var.d.getCurrentItem();
                             break;
                         }
                     }
                 } else {
-                    u50Var.K = true;
-                    u50Var.d.getCurrentItem();
-                    u50Var.d.getMeasuredWidth();
+                    w50Var.K = true;
+                    w50Var.d.getCurrentItem();
+                    w50Var.d.getMeasuredWidth();
                     break;
                 }
                 break;

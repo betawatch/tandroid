@@ -8,9 +8,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.hc;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.t5;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.l6;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class h1 extends View {
     public final /* synthetic */ i1 a;
@@ -45,10 +45,10 @@ public final class h1 extends View {
         ImageReceiver imageReceiver2 = i1Var.c;
         ImageReceiver imageReceiver3 = i1Var.d;
         if (i1Var.s) {
-            imageReceiver2.q0(hc.b(i1Var.r), null, t5.f(i1Var.r, k6.a7, 0.5f, null), "webp", null, 1);
-            if (ij.Y3(i1Var.r)) {
+            imageReceiver2.q0(hc.b(i1Var.r), null, t5.f(i1Var.r, l6.a7, 0.5f, null), "webp", null, 1);
+            if (ij.X3(i1Var.r)) {
                 imageReceiver = imageReceiver3;
-                imageReceiver.t0(hc.d(ij.G1(i1Var.r), i1Var.r), "140_140", null, null, "tgs", null, 1);
+                imageReceiver.t0(hc.d(ij.F1(i1Var.r), i1Var.r), "140_140", null, null, "tgs", null, 1);
                 if (!i1Var.e) {
                     if (i1Var.h == 0.0f) {
                         i1Var.h = 1.0f;

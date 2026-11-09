@@ -1,173 +1,151 @@
 package di;
 
-import a8.ra;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.cc;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.SurfaceView;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.iz;
+import org.telegram.ui.Components.eh0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class z8 implements GestureDetector.OnGestureListener {
-    public final /* synthetic */ p9 a;
+public final class z8 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ q9 b;
 
-    public z8(p9 p9Var) {
-        this.a = p9Var;
+    public /* synthetic */ z8(q9 q9Var, int i7) {
+        this.a = i7;
+        this.b = q9Var;
     }
 
-    @Override // android.view.GestureDetector.OnGestureListener
-    public final boolean onDown(MotionEvent motionEvent) {
-        p9 p9Var = this.a;
-        p9Var.f1 = false;
-        return !p9.c(p9Var, p9Var.s, motionEvent.getX(), motionEvent.getY(), false);
-    }
-
-    @Override // android.view.GestureDetector.OnGestureListener
-    public final boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent2, float f10, float f11) {
-        p9 p9Var = this.a;
-        if (p9Var.Z != 0.0f && p9Var.t1 == null && f11 < -1000.0f && !p9Var.a0) {
-            p9Var.a0 = true;
-            try {
-                p9Var.s.performHapticFeedback(3);
-            } catch (Exception unused) {
-            }
-            p9.g(p9Var);
-        }
-        if (p9Var.e0 != 0.0f) {
-            if (f11 < -1000.0f) {
-                p9Var.o(true);
-            } else if (f11 > 1000.0f) {
-                p9Var.o(false);
-            } else {
-                p9Var.o(p9Var.x.f > 0.5f);
-            }
-        }
-        p9Var.f1 = true;
-        return false;
-    }
-
-    @Override // android.view.GestureDetector.OnGestureListener
-    public final boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f10, float f11) {
-        float f12;
-        cc ccVar;
-        p9 p9Var = this.a;
-        if (!p9Var.j0) {
-            return false;
-        }
-        if (p9Var.l0) {
-            p9Var.Z += f11;
-            float L = org.telegram.messenger.g0.L(200.0f);
-            if (p9Var.Z > L && !p9Var.a0) {
-                p9Var.a0 = true;
-                p9.g(p9Var);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        j4 z9;
+        eh0 eh0Var;
+        switch (this.a) {
+            case 0:
+                super.onAnimationEnd(animator);
+                q9 q9Var = this.b;
+                n9 n9Var = q9Var.s0;
+                f9 f9Var = q9Var.w;
+                if (f9Var != null) {
+                    f9Var.a(true);
+                }
+                q9Var.q();
+                q9Var.I0.e();
+                d7 d7Var = q9Var.t1;
+                if (d7Var != null) {
+                    d7Var.b();
+                    org.telegram.messenger.g0.E2(q9Var.t1);
+                    q9Var.t1 = null;
+                }
+                ImageReceiver imageReceiver = n9Var.b;
+                if (imageReceiver != null) {
+                    imageReceiver.O0(true, true);
+                    n9Var.b = null;
+                }
+                ImageReceiver imageReceiver2 = n9Var.c;
+                if (imageReceiver2 != null) {
+                    imageReceiver2.setAlpha(1.0f);
+                    n9Var.c.O0(true, true);
+                }
+                if (n9Var.d != null && (z9 = q9Var.z()) != null && (eh0Var = z9.X0.d) != null) {
+                    eh0 eh0Var2 = n9Var.d;
+                    eh0Var2.getClass();
+                    eh0Var2.c = eh0Var.c;
+                    eh0Var2.f = eh0Var.f;
+                    eh0Var2.b = eh0Var.b;
+                    eh0Var2.a = System.currentTimeMillis();
+                    eh0Var2.c();
+                }
+                i4 i4Var = q9Var.F0;
+                if (i4Var != null) {
+                    i4Var.b();
+                }
+                SurfaceView surfaceView = q9Var.C0;
+                if (surfaceView != null) {
+                    surfaceView.setVisibility(4);
+                }
+                q9Var.O();
                 try {
-                    p9Var.s.performHapticFeedback(3);
+                    org.telegram.messenger.g0.h3(new f8(this, 4));
                 } catch (Exception unused) {
                 }
-            }
-            p9Var.d0 = Utilities.i(p9Var.Z / L, 1.0f, 0.0f);
-            if (p9Var.n0.getCurrentPeerView() != null) {
-                p9Var.n0.getCurrentPeerView().invalidate();
-            }
-            if (p9Var.Z < 0.0f) {
-                p9Var.Z = 0.0f;
-                p9Var.l0 = false;
-            }
-            return true;
-        }
-        if (p9Var.c0) {
-            float f13 = p9Var.e0;
-            if (f13 <= p9Var.x.c || f11 <= 0.0f) {
-                p9Var.e0 = f13 + f11;
-            } else {
-                p9Var.e0 = (0.05f * f11) + f13;
-            }
-            d9 d9Var = p9Var.s;
-            cc ccVar2 = cc.w;
-            if (ccVar2 != null && ccVar2.h == d9Var) {
-                ccVar2.b();
-            }
-            if (p9Var.n0.getCurrentPeerView() != null) {
-                p9Var.n0.getCurrentPeerView().invalidate();
-            }
-            p9Var.w.invalidate();
-            if (p9Var.e0 < 0.0f) {
-                p9Var.e0 = 0.0f;
-                p9Var.c0 = false;
-            }
-            return true;
-        }
-        if (p9Var.V > 0.8f) {
-            float f14 = -f11;
-            if ((f14 > 0.0f && p9Var.W > 0.0f) || (f14 < 0.0f && p9Var.W < 0.0f)) {
-                f12 = 0.3f;
-                p9Var.W -= f11 * f12;
-                d9 d9Var2 = p9Var.s;
-                ccVar = cc.w;
-                if (ccVar != null && ccVar.h == d9Var2) {
-                    ccVar.b();
+                q9Var.m0 = false;
+                q9Var.d = false;
+                l3 l3Var = q9Var.n1;
+                if (l3Var != null) {
+                    l3Var.run();
+                    q9Var.n1 = null;
+                    break;
                 }
-                p9.i(p9Var);
-                return true;
-            }
-        }
-        f12 = 0.6f;
-        p9Var.W -= f11 * f12;
-        d9 d9Var22 = p9Var.s;
-        ccVar = cc.w;
-        if (ccVar != null) {
-            ccVar.b();
-        }
-        p9.i(p9Var);
-        return true;
-    }
-
-    @Override // android.view.GestureDetector.OnGestureListener
-    public final boolean onSingleTapUp(MotionEvent motionEvent) {
-        i4 currentPeerView;
-        p9 p9Var = this.a;
-        if (p9Var.e0 == 0.0f && p9Var.f0) {
-            if (p9Var.y || p9Var.K0 || p9Var.l1 || p9Var.h1 || p9Var.i1) {
-                f9 f9Var = p9Var.n0;
-                if (f9Var != null && (currentPeerView = f9Var.getCurrentPeerView()) != null) {
-                    currentPeerView.q0();
+                break;
+            case 1:
+                q9 q9Var2 = this.b;
+                q9Var2.H = null;
+                q9Var2.Z = 0.0f;
+                q9Var2.d0 = 0.0f;
+                g9 g9Var = q9Var2.n0;
+                j4 currentPeerView = g9Var != null ? g9Var.getCurrentPeerView() : null;
+                if (currentPeerView != null) {
+                    currentPeerView.invalidate();
+                    break;
                 }
-            } else {
-                i4 z9 = p9Var.z();
-                if (z9 == null || !z9.x1.f) {
-                    boolean z10 = motionEvent.getX() > ((float) p9Var.w.getMeasuredWidth()) * 0.33f;
-                    i4 currentPeerView2 = p9Var.n0.getCurrentPeerView();
-                    if (currentPeerView2 != null && !currentPeerView2.b1(z10)) {
-                        if (p9Var.n0.E(z10)) {
-                            f9 f9Var2 = p9Var.n0;
-                            f9Var2.L0 = true;
-                            f9Var2.onTouchEvent(MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0));
-                            ra raVar = f9Var2.M0;
-                            org.telegram.messenger.g0.r(raVar);
-                            org.telegram.messenger.g0.i3(raVar, 150L);
-                            return false;
-                        }
-                        if (z10) {
-                            p9Var.u(true);
-                            return false;
-                        }
-                        o9 o9Var = p9Var.z0;
-                        if (o9Var != null) {
-                            o9Var.loopBack();
-                            return false;
-                        }
+                break;
+            default:
+                q9 q9Var3 = this.b;
+                n9 n9Var2 = q9Var3.s0;
+                q9Var3.U = 1.0f;
+                q9Var3.q();
+                q9.w1 = false;
+                f9 f9Var2 = q9Var3.w;
+                if (f9Var2 != null) {
+                    f9Var2.a(true);
+                }
+                e9 e9Var = q9Var3.s;
+                if (e9Var != null) {
+                    e9Var.invalidate();
+                }
+                ImageReceiver imageReceiver3 = n9Var2.b;
+                if (imageReceiver3 != null && !q9Var3.d) {
+                    imageReceiver3.O0(true, true);
+                    n9Var2.b = null;
+                }
+                ImageReceiver imageReceiver4 = n9Var2.c;
+                if (imageReceiver4 != null && !q9Var3.d) {
+                    imageReceiver4.setAlpha(1.0f);
+                    n9Var2.c.O0(true, true);
+                    n9Var2.c = null;
+                }
+                j4 z10 = q9Var3.z();
+                if (z10 != null) {
+                    z10.d1(false);
+                }
+                g1 g1Var = q9Var3.A0;
+                if (g1Var != null) {
+                    g1Var.v((1.0f - q9Var3.V) * q9Var3.U);
+                }
+                if (q9Var3.v1) {
+                    q9Var3.v1 = false;
+                    q9Var3.r();
+                    org.telegram.messenger.g0.i3(new l3(q9Var3, 1), 30L);
+                } else if (!iz.U) {
+                    if (q9Var3.t1 == null && q9Var3.w != null) {
+                        d7 d7Var2 = new d7(q9Var3.w.getContext(), q9Var3.s);
+                        q9Var3.t1 = d7Var2;
+                        d7Var2.setAlpha(0.0f);
+                        q9Var3.w.addView(q9Var3.t1);
                     }
+                    d7 d7Var3 = q9Var3.t1;
+                    if (d7Var3 != null) {
+                        d7Var3.setOnClickListener(new ah.d(this, 18));
+                        q9Var3.t1.animate().alpha(1.0f).setDuration(150L).setListener(new j9(this, 1)).start();
+                    }
+                    iz.G(true);
                 }
-            }
+                q9Var3.V();
+                q9Var3.I0.e();
+                break;
         }
-        return false;
-    }
-
-    @Override // android.view.GestureDetector.OnGestureListener
-    public final void onLongPress(MotionEvent motionEvent) {
-    }
-
-    @Override // android.view.GestureDetector.OnGestureListener
-    public final void onShowPress(MotionEvent motionEvent) {
     }
 }

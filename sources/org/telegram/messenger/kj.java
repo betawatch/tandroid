@@ -8,7 +8,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class kj {
     public final Boolean a;
@@ -46,7 +46,7 @@ public final class kj {
         while (i11 < arrayList.size()) {
             ij ijVar2 = (ij) arrayList.get(i11);
             if (i7 == 0 && sparseBooleanArray == null) {
-                this.g.put(ijVar2.f1(), true);
+                this.g.put(ijVar2.e1(), true);
             }
             TLRPC.TL_message tL_message = new TLRPC.TL_message();
             if (i7 != 1) {
@@ -100,7 +100,7 @@ public final class kj {
                     TLRPC.Message message4 = ijVar2.k;
                     messageFwdHeader = message4.fwd_from;
                     if (messageFwdHeader != null) {
-                        if (ijVar2.U2()) {
+                        if (ijVar2.T2()) {
                             mjVar.m = true;
                         } else {
                             mjVar.h = true;
@@ -112,7 +112,7 @@ public final class kj {
                         if (j11 == 0 || message4.dialog_id != e10 || j11 != e10) {
                             messageFwdHeader = new TLRPC.TL_messageFwdHeader();
                             messageFwdHeader.from_id = ijVar2.k.from_id;
-                            if (ijVar2.U2()) {
+                            if (ijVar2.T2()) {
                                 mjVar.m = true;
                             } else {
                                 mjVar.h = true;
@@ -123,7 +123,7 @@ public final class kj {
                         tL_message.fwd_from = messageFwdHeader;
                         tL_message.flags |= 4;
                     }
-                    if (ijVar2.c5()) {
+                    if (ijVar2.b5()) {
                         tL_message.id = ijVar2.P0();
                         TLRPC.MessageFwdHeader messageFwdHeader2 = tL_message.fwd_from;
                         if (messageFwdHeader2 != null && messageFwdHeader2.from_id != null) {
@@ -138,7 +138,7 @@ public final class kj {
                 messageFwdHeader = null;
                 if (messageFwdHeader != null) {
                 }
-                if (ijVar2.c5()) {
+                if (ijVar2.b5()) {
                 }
             } else {
                 i10 = i12;
@@ -164,16 +164,16 @@ public final class kj {
                 }
             }
             jjVar.k.dialog_id = j3;
-            if (jjVar.d1() != j10) {
-                dj djVar = (dj) this.d.get(jjVar.d1(), null);
+            if (jjVar.c1() != j10) {
+                dj djVar = (dj) this.d.get(jjVar.c1(), null);
                 if (djVar == null) {
                     djVar = new dj();
-                    this.d.put(jjVar.d1(), djVar);
+                    this.d.put(jjVar.c1(), djVar);
                 }
                 djVar.d.add(jjVar);
             }
             this.f.add(0, jjVar);
-            if (ijVar2.U3()) {
+            if (ijVar2.T3()) {
                 TLRPC.TL_messageMediaPoll tL_messageMediaPoll = (TLRPC.TL_messageMediaPoll) ijVar2.k.media;
                 lj ljVar = new lj();
                 ljVar.poll = tL_messageMediaPoll.poll;
@@ -263,7 +263,7 @@ public final class kj {
                         break;
                     }
                     ij ijVar2 = (ij) arrayList.get(i10);
-                    if (ijVar2 != null && ijVar.f1() == ijVar2.f1() && ij.B0(ijVar.k) == ij.B0(ijVar2.k)) {
+                    if (ijVar2 != null && ijVar.e1() == ijVar2.e1() && ij.B0(ijVar.k) == ij.B0(ijVar2.k)) {
                         arrayList2.set(i7, ijVar2);
                         z9 = true;
                         break;
@@ -287,7 +287,7 @@ public final class kj {
                 return;
             }
             ij ijVar = (ij) arrayList2.get(i7);
-            if (this.g.get(ijVar.f1(), false)) {
+            if (this.g.get(ijVar.e1(), false)) {
                 arrayList.add(ijVar);
             }
             i7++;

@@ -1,40 +1,32 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.ui.Components.FragmentContextView;
+import android.text.SpannableStringBuilder;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class hv extends FragmentContextView {
-    public final /* synthetic */ int X0;
-    public final /* synthetic */ ww Y0;
+public final class hv extends org.telegram.ui.Components.lg0 {
+    public final /* synthetic */ int f0 = 0;
+    public final /* synthetic */ Object g0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public hv(ww wwVar, Context context, ww wwVar2, int i7) {
-        super(context, wwVar2, true);
-        this.X0 = i7;
-        switch (i7) {
-            case 1:
-                this.Y0 = wwVar;
-                super(context, wwVar2, false);
-                break;
+    public hv(y91 y91Var, SpannableStringBuilder spannableStringBuilder, SpannableStringBuilder spannableStringBuilder2) {
+        super(spannableStringBuilder, spannableStringBuilder2);
+        this.g0 = y91Var;
+    }
+
+    @Override // org.telegram.ui.Components.lg0
+    public final float d() {
+        switch (this.f0) {
+            case 0:
+                return ((xw) this.g0).a.getViewOffset();
             default:
-                this.Y0 = wwVar;
-                break;
+                return ((y91) this.g0).N.l3;
         }
     }
 
-    @Override // org.telegram.ui.Components.FragmentContextView, android.view.View
-    public final void setVisibility(int i7) {
-        switch (this.X0) {
-            case 0:
-                ww wwVar = this.Y0;
-                wwVar.J1.i(wwVar.G1, i7 == 0, true);
-                break;
-            default:
-                ww wwVar2 = this.Y0;
-                wwVar2.J1.i(wwVar2.I1, i7 == 0, true);
-                break;
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public hv(String str, String str2, xw xwVar) {
+        super(str, str2);
+        this.g0 = xwVar;
     }
 }

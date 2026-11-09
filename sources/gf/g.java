@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewConfiguration;
 import com.google.android.gms.tasks.TaskCompletionSource;
+import fi.v9;
 import gb.a1;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -47,7 +48,7 @@ import org.telegram.messenger.l0;
 import org.telegram.messenger.o0;
 import org.telegram.messenger.ta;
 import org.telegram.messenger.w10;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.Cells.h9;
 import org.telegram.ui.Cells.i9;
 import org.telegram.ui.Cells.l1;
@@ -55,22 +56,22 @@ import org.telegram.ui.Cells.s7;
 import org.telegram.ui.Cells.t7;
 import org.telegram.ui.Cells.z8;
 import org.telegram.ui.Components.b8;
-import org.telegram.ui.Components.fm0;
-import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.lm0;
+import org.telegram.ui.Components.gm0;
+import org.telegram.ui.Components.jm0;
+import org.telegram.ui.Components.mm0;
 import org.telegram.ui.Components.t4;
-import org.telegram.ui.Components.xi0;
-import org.telegram.ui.Components.yl0;
+import org.telegram.ui.Components.yi0;
+import org.telegram.ui.Components.zl0;
 import org.telegram.ui.ThemeActivity;
-import org.telegram.ui.b61;
-import org.telegram.ui.hw;
-import org.telegram.ui.rz;
-import org.telegram.ui.xz;
+import org.telegram.ui.c61;
+import org.telegram.ui.jw;
+import org.telegram.ui.tz;
+import org.telegram.ui.zz;
 import w7.s;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
-public final class g implements i6.a, xz, y1, com.google.android.gms.common.api.internal.p, im0, t4, i0, w, m.l, ce.c, o0.a, ta, ab, ue.a, lm0 {
+public final class g implements i6.a, zz, y1, com.google.android.gms.common.api.internal.p, jm0, t4, i0, w, m.l, ce.c, o0.a, ta, ab, ue.a, mm0 {
     public final /* synthetic */ int a;
     public Object b;
 
@@ -151,7 +152,7 @@ public final class g implements i6.a, xz, y1, com.google.android.gms.common.api.
         }
     }
 
-    @Override // org.telegram.ui.Components.lm0
+    @Override // org.telegram.ui.Components.mm0
     public void D() {
         int i7 = this.a;
     }
@@ -243,7 +244,7 @@ public final class g implements i6.a, xz, y1, com.google.android.gms.common.api.
         return null;
     }
 
-    @Override // org.telegram.ui.Components.im0
+    @Override // org.telegram.ui.Components.jm0
     public void a(float f10) {
         x xVar = (x) this.b;
         ij ijVar = xVar.P;
@@ -327,7 +328,7 @@ public final class g implements i6.a, xz, y1, com.google.android.gms.common.api.
         }
     }
 
-    @Override // org.telegram.ui.Components.im0
+    @Override // org.telegram.ui.Components.jm0
     public void d(float f10) {
         ij ijVar = ((x) this.b).P;
         if (ijVar == null) {
@@ -349,19 +350,19 @@ public final class g implements i6.a, xz, y1, com.google.android.gms.common.api.
         }
     }
 
-    @Override // org.telegram.ui.xz
-    public boolean f(rz rzVar) {
+    @Override // org.telegram.ui.zz
+    public boolean f(tz tzVar) {
         return false;
     }
 
-    @Override // org.telegram.ui.xz
+    @Override // org.telegram.ui.zz
     public void g(ij ijVar) {
         ii.d0 d0Var = (ii.d0) this.b;
-        d0Var.q1.presentFragment(fm0.M(d0Var.a, ijVar));
+        d0Var.q1.presentFragment(gm0.M(d0Var.a, ijVar));
         d0Var.dismiss();
     }
 
-    @Override // org.telegram.ui.Components.lm0
+    @Override // org.telegram.ui.Components.mm0
     public CharSequence getContentDescription() {
         w10 w10Var;
         switch (this.a) {
@@ -417,7 +418,7 @@ public final class g implements i6.a, xz, y1, com.google.android.gms.common.api.
         return ViewConfiguration.getLongPressTimeout();
     }
 
-    @Override // org.telegram.ui.xz
+    @Override // org.telegram.ui.zz
     public boolean i() {
         return false;
     }
@@ -523,28 +524,28 @@ public final class g implements i6.a, xz, y1, com.google.android.gms.common.api.
     public boolean k1(int i7) {
         switch (this.a) {
             case 7:
-                return i7 == ((yl0) this.b).d0;
+                return i7 == ((zl0) this.b).d0;
             default:
                 return true;
         }
     }
 
-    @Override // org.telegram.ui.Components.lm0
+    @Override // org.telegram.ui.Components.mm0
     public void l(boolean z9, float f10) {
         int round;
         switch (this.a) {
             case 26:
-                b61 b61Var = (b61) ((org.telegram.ui.Cells.i0) this.b);
-                int i7 = (int) (k6.q * 100.0f);
+                c61 c61Var = (c61) ((org.telegram.ui.Cells.i0) this.b);
+                int i7 = (int) (l6.q * 100.0f);
                 int i10 = (int) (f10 * 100.0f);
-                k6.q = f10;
+                l6.q = f10;
                 if (i7 != i10) {
-                    ThemeActivity themeActivity = b61Var.f.e;
-                    xi0 xi0Var = (xi0) themeActivity.b.K(themeActivity.f0);
-                    if (xi0Var != null) {
-                        ((z8) xi0Var.a).setText(id.a0("AutoNightBrightnessInfo", null, 2131753794, Integer.valueOf((int) (k6.q * 100.0f))));
+                    ThemeActivity themeActivity = c61Var.f.e;
+                    yi0 yi0Var = (yi0) themeActivity.b.K(themeActivity.f0);
+                    if (yi0Var != null) {
+                        ((z8) yi0Var.a).setText(id.a0("AutoNightBrightnessInfo", null, 2131753794, Integer.valueOf((int) (l6.q * 100.0f))));
                     }
-                    k6.F(true);
+                    l6.F(true);
                     break;
                 }
                 break;
@@ -585,7 +586,7 @@ public final class g implements i6.a, xz, y1, com.google.android.gms.common.api.
                     MediaController.B().i0(MediaController.B().u0, f10);
                 }
                 ij ijVar = MediaController.B().u0;
-                if (ijVar != null && ijVar.J3()) {
+                if (ijVar != null && ijVar.I3()) {
                     ((b8) this.b).b1(ijVar, false);
                     break;
                 }
@@ -597,15 +598,15 @@ public final class g implements i6.a, xz, y1, com.google.android.gms.common.api.
     public void m1(ArrayList arrayList) {
         switch (this.a) {
             case 7:
-                yl0 yl0Var = (yl0) this.b;
+                zl0 zl0Var = (zl0) this.b;
                 for (int i7 = 0; i7 < arrayList.size(); i7++) {
-                    yl0Var.J.add(((x1) arrayList.get(i7)).a);
+                    zl0Var.J.add(((x1) arrayList.get(i7)).a);
                 }
-                hw hwVar = yl0Var.U;
-                if (hwVar != null) {
-                    hwVar.d(yl0Var.D0 > 0, false);
+                jw jwVar = zl0Var.U;
+                if (jwVar != null) {
+                    jwVar.d(zl0Var.D0 > 0, false);
                 }
-                yl0Var.f();
+                zl0Var.f();
                 break;
         }
     }
@@ -640,34 +641,34 @@ public final class g implements i6.a, xz, y1, com.google.android.gms.common.api.
     public void q(int i7) {
         switch (this.a) {
             case 7:
-                yl0 yl0Var = (yl0) this.b;
-                yl0Var.D0--;
-                yl0Var.e0 = i7;
-                if (yl0Var.f0 != i7) {
-                    yl0Var.s.clear();
+                zl0 zl0Var = (zl0) this.b;
+                zl0Var.D0--;
+                zl0Var.e0 = i7;
+                if (zl0Var.f0 != i7) {
+                    zl0Var.s.clear();
                 }
-                if (yl0Var.g0 != i7) {
-                    yl0Var.I.clear();
+                if (zl0Var.g0 != i7) {
+                    zl0Var.I.clear();
                 }
-                yl0Var.N = true;
-                hw hwVar = yl0Var.U;
-                if (hwVar != null) {
-                    hwVar.d(yl0Var.D0 > 0, true);
+                zl0Var.N = true;
+                jw jwVar = zl0Var.U;
+                if (jwVar != null) {
+                    jwVar.d(zl0Var.D0 > 0, true);
                 }
-                yl0Var.f();
-                hw hwVar2 = yl0Var.U;
-                if (hwVar2 != null) {
-                    hwVar2.c();
+                zl0Var.f();
+                jw jwVar2 = zl0Var.U;
+                if (jwVar2 != null) {
+                    jwVar2.c();
                     break;
                 }
                 break;
             default:
-                g0.h3(new fi.h9(this, 25));
+                g0.h3(new v9(this, 24));
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.lm0
+    @Override // org.telegram.ui.Components.mm0
     public int q0() {
         switch (this.a) {
             case 26:
@@ -855,14 +856,14 @@ public final class g implements i6.a, xz, y1, com.google.android.gms.common.api.
     private final void v() {
     }
 
-    @Override // org.telegram.ui.xz
+    @Override // org.telegram.ui.zz
     public void e() {
     }
 
     private final /* synthetic */ void x(ArrayList arrayList) {
     }
 
-    @Override // org.telegram.ui.xz
+    @Override // org.telegram.ui.zz
     public void h(ij ijVar, View view, int i7) {
     }
 

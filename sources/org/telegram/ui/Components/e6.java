@@ -7,7 +7,7 @@ import android.widget.TextView;
 import org.telegram.messenger.camera.Camera2Session;
 import org.telegram.messenger.camera.CameraSession;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e6 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -214,30 +214,30 @@ public final /* synthetic */ class e6 implements ValueAnimator.AnimatorUpdateLis
                 lzVar.invalidate();
                 break;
             case 25:
-                p10 p10Var = (p10) this.b;
-                n10 n10Var = p10Var.a;
-                if (!p10Var.G) {
+                q10 q10Var = (q10) this.b;
+                n10 n10Var = q10Var.a;
+                if (!q10Var.G) {
                     float floatValue7 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                    p10Var.c0 = floatValue7;
-                    p10Var.V.setPinnedProgress(floatValue7);
-                    n10Var.setScaleX(1.0f - (p10Var.c0 * 0.6f));
-                    n10Var.setScaleY(1.0f - (p10Var.c0 * 0.6f));
-                    if (p10Var.X) {
-                        p10Var.j();
+                    q10Var.c0 = floatValue7;
+                    q10Var.V.setPinnedProgress(floatValue7);
+                    n10Var.setScaleX(1.0f - (q10Var.c0 * 0.6f));
+                    n10Var.setScaleY(1.0f - (q10Var.c0 * 0.6f));
+                    if (q10Var.X) {
+                        q10Var.j();
                         break;
                     }
                 }
                 break;
             case 26:
-                o40 o40Var = (o40) this.b;
-                if (!o40Var.r0) {
-                    CameraSession cameraSession = o40Var.s0;
+                p40 p40Var = (p40) this.b;
+                if (!p40Var.r0) {
+                    CameraSession cameraSession = p40Var.s0;
                     if (cameraSession != null) {
                         cameraSession.setZoom(((Float) valueAnimator.getAnimatedValue()).floatValue());
                         break;
                     }
                 } else {
-                    Camera2Session camera2Session = o40Var.v0;
+                    Camera2Session camera2Session = p40Var.v0;
                     if (camera2Session != null) {
                         camera2Session.setZoom(((Float) valueAnimator.getAnimatedValue()).floatValue());
                         break;
@@ -245,15 +245,15 @@ public final /* synthetic */ class e6 implements ValueAnimator.AnimatorUpdateLis
                 }
                 break;
             case 27:
-                x50 x50Var = (x50) this.b;
-                x50Var.getClass();
-                x50Var.Y1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                x50Var.b.invalidate();
+                y50 y50Var = (y50) this.b;
+                y50Var.getClass();
+                y50Var.Y1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                y50Var.b.invalidate();
                 break;
             default:
-                x50 x50Var2 = ((w50) this.b).e;
-                x50Var2.b2 = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                x50Var2.b.invalidate();
+                y50 y50Var2 = ((x50) this.b).e;
+                y50Var2.b2 = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+                y50Var2.b.invalidate();
                 break;
         }
     }

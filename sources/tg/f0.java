@@ -9,12 +9,12 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import c8.ha;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.s6;
 import org.telegram.ui.Components.xq;
-import org.telegram.ui.s81;
+import org.telegram.ui.t81;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class f0 extends LinearLayout {
     public final TextView a;
@@ -32,9 +32,9 @@ public final class f0 extends LinearLayout {
         super(context);
         this.r = g0Var;
         setOrientation(0);
-        int i7 = k6.i6;
+        int i7 = l6.i6;
         u uVar = g0Var.z1;
-        setBackground(k6.h0(k6.w0(i7, uVar), 2, -1));
+        setBackground(l6.h0(l6.w0(i7, uVar), 2, -1));
         pg.h hVar = new pg.h(this, context);
         this.b = hVar;
         addView(hVar, ha.t(-2, -2, 19, 16, 0, 16, 0));
@@ -43,26 +43,26 @@ public final class f0 extends LinearLayout {
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
         imageView.setScaleType(scaleType);
         ImageView imageView2 = this.c;
-        int i10 = k6.E8;
+        int i10 = l6.E8;
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_ATOP;
-        r6.t(imageView2, i10, uVar, mode);
+        s6.s(imageView2, i10, uVar, mode);
         hVar.addView(this.c, ha.e(-2, -2, 17));
         ImageView imageView3 = new ImageView(context);
         this.d = imageView3;
         imageView3.setScaleType(scaleType);
-        r6.t(this.d, i10, uVar, mode);
+        s6.s(this.d, i10, uVar, mode);
         this.d.setVisibility(8);
         hVar.addView(this.d, ha.e(-2, -2, 17));
         TextView textView = new TextView(context);
         this.a = textView;
-        r6.V(textView, i10, uVar);
+        s6.U(textView, i10, uVar);
         textView.setTextSize(1, 16.0f);
         addView(textView, ha.t(-2, -2, 19, 0, 0, 16, 0));
         ImageView imageView4 = new ImageView(context);
         this.n = imageView4;
         imageView4.setImageResource(R.drawable.msg_text_check);
         imageView4.setScaleType(scaleType);
-        r6.t(imageView4, k6.h7, uVar, PorterDuff.Mode.MULTIPLY);
+        s6.s(imageView4, l6.h7, uVar, PorterDuff.Mode.MULTIPLY);
         imageView4.setVisibility(8);
         addView(imageView4, ha.o(50, -1));
     }
@@ -86,7 +86,7 @@ public final class f0 extends LinearLayout {
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         this.h = ofFloat;
         ofFloat.addUpdateListener(new ch.u(12, this, z9));
-        this.h.addListener(new s81(this, 15));
+        this.h.addListener(new t81(this, 15));
         this.h.setInterpolator(xq.h);
         this.h.setDuration(420L);
         this.h.start();

@@ -6,7 +6,7 @@ import android.text.TextUtils;
 import java.util.ArrayList;
 import org.telegram.messenger.id;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class b3 extends k1.b {
     public static final /* synthetic */ int r = 0;
@@ -102,9 +102,9 @@ public final class b3 extends k1.b {
             rect.set((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
             dVar.h(rect);
             if (TextUtils.isEmpty(b10)) {
-                str = id.M0(2131747818, null);
+                str = id.M0(2131747817, null);
             } else {
-                str = id.M0(2131747818, null) + ", " + b10;
+                str = id.M0(2131747817, null) + ", " + b10;
             }
             dVar.j(str);
             return;

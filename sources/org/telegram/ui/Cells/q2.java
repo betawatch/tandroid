@@ -11,7 +11,7 @@ import org.telegram.messenger.ui;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class q2 {
     public long a;
@@ -96,7 +96,7 @@ public final class q2 {
             return false;
         }
         ij ijVar = t2Var.f1;
-        int hashCode = ijVar == null ? 0 : t2Var.f1.hashCode() + ijVar.f1();
+        int hashCode = ijVar == null ? 0 : t2Var.f1.hashCode() + ijVar.e1();
         long j12 = dialog.read_inbox_max_id + (dialog.read_outbox_max_id << 8) + ((dialog.unread_count + (dialog.unread_mark ? -1 : 0)) << 16) + (dialog.unread_reactions_count > 0 ? 262144 : 0) + (dialog.unread_mentions_count > 0 ? TLObject.FLAG_19 : 0) + (dialog.unread_poll_votes_count > 0 ? TLObject.FLAG_21 : 0);
         if (t2Var.W()) {
             qp.s1(i10).q7.h(-t2Var.H0);

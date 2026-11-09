@@ -61,13 +61,13 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.PipRoundVideoView;
-import org.telegram.ui.Components.t51;
+import org.telegram.ui.Components.u51;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.hy0;
+import org.telegram.ui.ky0;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public class MediaController implements AudioManager.OnAudioFocusChangeListener, ls, SensorEventListener {
     public static final String[] V1;
@@ -91,7 +91,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
     public rf.a D0;
     public int D1;
     public int E;
-    public t51 E0;
+    public u51 E0;
     public boolean E1;
     public int F;
     public boolean F0;
@@ -127,7 +127,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
     public float Q;
     public kp Q0;
     public ValueAnimator Q1;
-    public final di.m4 R1;
+    public final di.n4 R1;
     public androidx.emoji2.text.j S1;
     public boolean T1;
     public int U;
@@ -170,7 +170,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
     public ij q1;
     public boolean r;
     public ij r1;
-    public org.telegram.ui.an s;
+    public org.telegram.ui.cn s;
     public TL_stories.StoryItem s1;
     public float t0;
     public hw t1;
@@ -207,8 +207,8 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
     public final HashMap c0 = new HashMap();
     public boolean g0 = false;
     public boolean h0 = false;
-    public t51 i0 = null;
-    public t51 j0 = null;
+    public u51 i0 = null;
+    public u51 j0 = null;
     public int k0 = 0;
     public float p0 = 1.0f;
     public float q0 = 1.0f;
@@ -244,7 +244,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
         int i7 = 2;
         int i10 = 6;
         this.O1 = new m.f3(this, i10);
-        this.R1 = new di.m4(this, i10);
+        this.R1 = new di.n4(this, i10);
         p5 p5Var = new p5("recordQueue");
         this.M1 = p5Var;
         p5Var.setPriority(10);
@@ -679,7 +679,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
             mediaController.o1 = j10;
             mediaController.p1 = njVar;
             if (ijVar != null) {
-                j11 = ij.c2(mediaController.h1, ijVar.k, false, false);
+                j11 = ij.b2(mediaController.h1, ijVar.k, false, false);
             }
             mediaController.n1 = j11;
             mediaController.h1 = i7;
@@ -907,7 +907,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                     if (i7 != 0) {
                         try {
                             org.telegram.ui.ActionBar.u1 u1Var2 = new org.telegram.ui.ActionBar.u1(2, context, null);
-                            u1Var2.n(id.M0(2131748780, null));
+                            u1Var2.n(id.M0(2131748779, null));
                             u1Var2.setCanceledOnTouchOutside(false);
                             u1Var2.setCancelable(true);
                             u1Var2.setOnCancelListener(new ce(zArr, i10));
@@ -950,7 +950,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
         boolean[] zArr2 = new boolean[1];
         try {
             org.telegram.ui.ActionBar.u1 u1Var2 = new org.telegram.ui.ActionBar.u1(2, context, null);
-            u1Var2.n(id.M0(2131748780, null));
+            u1Var2.n(id.M0(2131748779, null));
             u1Var2.setCanceledOnTouchOutside(false);
             u1Var2.setCancelable(true);
             u1Var2.setOnCancelListener(new ce(zArr, i7));
@@ -985,7 +985,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
         if (i7 == 3) {
             mediaController.F0 = true;
             ij ijVar3 = mediaController.u0;
-            if (ijVar3 != null && (ij.M4(ijVar3.k) || mediaController.u0.i4())) {
+            if (ijVar3 != null && (ij.L4(ijVar3.k) || mediaController.u0.h4())) {
                 g0.r(seVar);
                 w7.G(ijVar.I1).Z(mediaController.u0.F0(), true, false);
             }
@@ -996,7 +996,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
             if (!z10 || (ijVar2 = mediaController.u0) == null) {
                 return;
             }
-            if (ij.M4(ijVar2.k) || mediaController.u0.i4()) {
+            if (ij.L4(ijVar2.k) || mediaController.u0.h4()) {
                 if (mediaController.F0) {
                     seVar.run();
                     return;
@@ -1009,7 +1009,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
         }
         if (mediaController.E0.d0() && i7 == 4) {
             ij ijVar4 = mediaController.u0;
-            if (ijVar4 == null || !ij.M4(ijVar4.k) || z9 || (iArr != null && iArr[0] >= 4)) {
+            if (ijVar4 == null || !ij.L4(ijVar4.k) || z9 || (iArr != null && iArr[0] >= 4)) {
                 if (mediaController.a0()) {
                     return;
                 }
@@ -1090,14 +1090,14 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
         cfVar.a = cVar;
         cfVar.c = arrayList;
         cfVar.s = srVar;
-        cfVar.w = ((ij) arrayList.get(0)).J3();
+        cfVar.w = ((ij) arrayList.get(0)).I3();
         int i7 = cVar.a;
         qs.f(i7).b(cfVar, qs.Y1);
         qs.f(i7).b(cfVar, qs.X1);
         qs.f(i7).b(cfVar, qs.Z1);
         org.telegram.ui.ActionBar.u1 u1Var = new org.telegram.ui.ActionBar.u1(2, context, PhotoViewer.p1().P1() ? new di.b() : null);
         cfVar.b = u1Var;
-        u1Var.n(id.M0(2131748780, null));
+        u1Var.n(id.M0(2131748779, null));
         u1Var.setCancelable(true);
         u1Var.H = true;
         u1Var.setOnCancelListener(new ce(cfVar, 3));
@@ -1518,7 +1518,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
         }
     }
 
-    public final void A0(org.telegram.ui.an anVar, boolean z9, boolean z10) {
+    public final void A0(org.telegram.ui.cn cnVar, boolean z9, boolean z10) {
         if (this.O) {
             this.O = false;
             return;
@@ -1533,7 +1533,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
         if (!this.P || this.O) {
             return;
         }
-        if ((this.f == null && this.n == null) || this.e == null || this.s != anVar) {
+        if ((this.f == null && this.n == null) || this.e == null || this.s != cnVar) {
             return;
         }
         this.s = null;
@@ -1738,13 +1738,13 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
         ij ijVar2 = this.u0;
         if ((this.i0 != null || this.E0 != null) && ijVar != null && ijVar2 != null && L(ijVar)) {
             try {
-                t51 t51Var = this.i0;
-                if (t51Var != null) {
-                    return t51Var.S();
+                u51 u51Var = this.i0;
+                if (u51Var != null) {
+                    return u51Var.S();
                 }
-                t51 t51Var2 = this.E0;
-                if (t51Var2 != null) {
-                    return t51Var2.S();
+                u51 u51Var2 = this.E0;
+                if (u51Var2 != null) {
+                    return u51Var2.S();
                 }
             } catch (Exception unused) {
             }
@@ -1859,12 +1859,12 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
     public final boolean F() {
         ArrayList arrayList;
         ij ijVar = this.u0;
-        return ijVar == null || !(ij.S4(ijVar.k) || this.u0.i4()) || (arrayList = this.e0) == null || arrayList.size() <= 1 || !this.e0.contains(this.u0) || this.e0.indexOf(this.u0) >= this.e0.size() - 1;
+        return ijVar == null || !(ij.R4(ijVar.k) || this.u0.h4()) || (arrayList = this.e0) == null || arrayList.size() <= 1 || !this.e0.contains(this.u0) || this.e0.indexOf(this.u0) >= this.e0.size() - 1;
     }
 
     public final void F0() {
         ij ijVar = this.u0;
-        if (ijVar != null && H() && this.h0 && (ij.S4(ijVar.k) || ijVar.J3())) {
+        if (ijVar != null && H() && this.h0 && (ij.R4(ijVar.k) || ijVar.I3())) {
             S(ijVar);
         }
         this.h0 = false;
@@ -1927,7 +1927,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
 
     public final boolean L(ij ijVar) {
         ij ijVar2 = this.u0;
-        if (ijVar2 != null && ij.B0(ijVar2.k) == ij.B0(ijVar.k) && this.u0.f1() == ijVar.f1()) {
+        if (ijVar2 != null && ij.B0(ijVar2.k) == ij.B0(ijVar.k) && this.u0.e1() == ijVar.e1()) {
             if ((this.u0.T == 0) == (ijVar.T == 0)) {
                 return true;
             }
@@ -2008,7 +2008,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
             jg.o0 o0Var = (jg.o0) a0Var2.i;
             tL_messages_search.filter = o0Var == null ? new TLRPC.TL_inputMessagesFilterEmpty() : o0Var.e;
             tL_messages_search.peer = qp.s1(c.a(i10).a).j1(this.C0.a);
-            tL_messages_search.offset_id = ((ij) jg.g.i(1, arrayList)).f1();
+            tL_messages_search.offset_id = ((ij) jg.g.i(1, arrayList)).e1();
             h2.a0 a0Var3 = this.C0;
             long j12 = a0Var3.b;
             if (j12 > 0) {
@@ -2027,7 +2027,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
             tL_messages_searchGlobal2.q = (String) a0Var4.h;
             tL_messages_searchGlobal2.filter = ((jg.o0) a0Var4.i).e;
             ij ijVar2 = (ij) jg.g.i(1, arrayList);
-            tL_messages_searchGlobal2.offset_id = ijVar2.f1();
+            tL_messages_searchGlobal2.offset_id = ijVar2.e1();
             h2.a0 a0Var5 = this.C0;
             tL_messages_searchGlobal2.offset_rate = a0Var5.f;
             tL_messages_searchGlobal2.flags |= 1;
@@ -2072,11 +2072,11 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
             z0();
             try {
                 if (this.i0 == null) {
-                    t51 t51Var = this.E0;
-                    if (t51Var != null) {
-                        t51Var.g0();
+                    u51 u51Var = this.E0;
+                    if (u51Var != null) {
+                        u51Var.g0();
                     }
-                } else if (!z9 || d1.f.u() || ij.S4(this.u0.k) || this.u0.L0() * (1.0f - this.u0.b0) <= 1.0d || !LaunchActivity.F1) {
+                } else if (!z9 || d1.f.u() || ij.R4(this.u0.k) || this.u0.L0() * (1.0f - this.u0.b0) <= 1.0d || !LaunchActivity.F1) {
                     this.i0.g0();
                 } else {
                     ValueAnimator valueAnimator = this.Q1;
@@ -2092,7 +2092,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                     this.Q1.start();
                 }
                 this.g0 = true;
-                qs.f(this.u0.I1).k(qs.g2, Integer.valueOf(this.u0.f1()));
+                qs.f(this.u0.I1).k(qs.g2, Integer.valueOf(this.u0.e1()));
                 try {
                     d1.f.b(1);
                     if (!this.T1) {
@@ -2155,7 +2155,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
     /* JADX WARN: Removed duplicated region for block: B:329:0x0571  */
     /* JADX WARN: Removed duplicated region for block: B:84:0x0220  */
     /* JADX WARN: Type inference failed for: r5v24 */
-    /* JADX WARN: Type inference failed for: r5v25, types: [org.telegram.messenger.ij, org.telegram.ui.Components.t51] */
+    /* JADX WARN: Type inference failed for: r5v25, types: [org.telegram.messenger.ij, org.telegram.ui.Components.u51] */
     /* JADX WARN: Type inference failed for: r5v26 */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -2170,11 +2170,11 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
         File M2;
         boolean z12;
         org.telegram.ui.j4 j4Var;
-        boolean M4;
+        boolean L4;
         String str;
         boolean z13;
         PipRoundVideoView pipRoundVideoView;
-        t51 t51Var;
+        u51 u51Var;
         PowerManager.WakeLock wakeLock;
         ?? r52;
         ef efVar;
@@ -2195,21 +2195,21 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
             w0(this.s);
             return true;
         }
-        if (!ijVar.O3() && ijVar.k.media_unread) {
+        if (!ijVar.N3() && ijVar.k.media_unread) {
             qp.s1(ijVar.I1).r3(ijVar);
         }
         boolean z15 = !this.B0;
         ij ijVar2 = this.u0;
         if (ijVar2 != null) {
-            if ((ijVar2.J3() && ij.S4(ijVar.k)) || ijVar.i4() || ij.M4(ijVar.k)) {
+            if ((ijVar2.I3() && ij.R4(ijVar.k)) || ijVar.h4() || ij.L4(ijVar.k)) {
                 ij ijVar3 = this.u0;
-                if (ijVar3 != null && ijVar3.J3() && !this.R0.isEmpty()) {
+                if (ijVar3 != null && ijVar3.I3() && !this.R0.isEmpty()) {
                     this.U1 = new jf(this.u0);
                 }
                 z14 = true;
                 if (!this.B0) {
-                    this.u0.H5();
-                    qs.f(this.u0.I1).k(i10, Integer.valueOf(this.u0.f1()), 0);
+                    this.u0.G5();
+                    qs.f(this.u0.I1).k(i10, Integer.valueOf(this.u0.e1()), 0);
                 }
                 z9 = z14;
                 z15 = false;
@@ -2241,9 +2241,9 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
             w7.G(ijVar.I1);
             M = w7.M(ijVar.k, false, true);
         }
-        boolean z16 = iz.B0 && !((!ijVar.J3() && !ijVar.i4() && (!ij.M4(ijVar.k) || !ijVar.B())) || ij.S5(ijVar.k) || m5.C(ij.B0(ijVar.k)));
+        boolean z16 = iz.B0 && !((!ijVar.I3() && !ijVar.h4() && (!ij.L4(ijVar.k) || !ijVar.B())) || ij.R5(ijVar.k) || m5.C(ij.B0(ijVar.k)));
         if (M != file && !(z10 = M.exists()) && !z16) {
-            w7.G(ijVar.I1).W(ijVar.F0(), ijVar, 0, ij.S5(ijVar.k) ? 2 : 0);
+            w7.G(ijVar.I1).W(ijVar.F0(), ijVar, 0, ij.R5(ijVar.k) ? 2 : 0);
             this.A0 = true;
             this.g0 = false;
             this.D0 = null;
@@ -2257,12 +2257,12 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
             } else {
                 t0.b.stopService(new Intent(t0.b, (Class<?>) MusicPlayerService.class));
             }
-            qs.f(this.u0.I1).k(i7, Integer.valueOf(this.u0.f1()));
+            qs.f(this.u0.I1).k(i7, Integer.valueOf(this.u0.e1()));
             return true;
         }
         boolean z17 = z10;
         this.A0 = false;
-        if (ijVar.J3()) {
+        if (ijVar.I3()) {
             l(ijVar.I1);
         } else {
             int i11 = ijVar.I1;
@@ -2287,31 +2287,31 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                     z12 = false;
                 } else {
                     z12 = false;
-                    w7.G(i11).W(ijVar4.F0(), ijVar4, 0, ij.S5(ijVar4.k) ? 2 : 0);
+                    w7.G(i11).W(ijVar4.F0(), ijVar4, 0, ij.R5(ijVar4.k) ? 2 : 0);
                 }
                 j4Var = this.L0;
                 if (j4Var != null) {
                     this.M0 = z12;
                     j4Var.setDrawingReady(z12);
                 }
-                M4 = ij.M4(ijVar.k);
-                if (!ijVar.i4() || M4) {
+                L4 = ij.L4(ijVar.k);
+                if (!ijVar.h4() || L4) {
                     File file3 = file;
                     w7.G(ijVar.I1).c0(ijVar.F0(), true);
                     this.F0 = false;
-                    if (M4) {
+                    if (L4) {
                         str = "tg://";
                     } else {
                         str = "tg://";
                         if (ijVar.k.peer_id.channel_id != 0 || ijVar.b0 > 0.1f) {
                             z13 = false;
-                            int[] iArr = (M4 || ijVar.L0() > 30.0d) ? null : new int[]{1};
+                            int[] iArr = (L4 || ijVar.L0() > 30.0d) ? null : new int[]{1};
                             if (!z11) {
                                 r();
                             }
-                            t51 t51Var2 = new t51();
-                            this.E0 = t51Var2;
-                            t51Var2.s0(false);
+                            u51 u51Var2 = new u51();
+                            this.E0 = u51Var2;
+                            u51Var2.s0(false);
                             int i12 = this.m0 + 1;
                             this.m0 = i12;
                             String str4 = str;
@@ -2378,7 +2378,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                                         }
                                         this.E0.j0(Uri.fromFile(M), "other");
                                     }
-                                    if (ijVar.i4()) {
+                                    if (ijVar.h4()) {
                                         this.E0.x0(3);
                                     } else {
                                         this.E0.x0(this.L ? 0 : 3);
@@ -2409,18 +2409,18 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                             }
                             if (z17) {
                             }
-                            if (ijVar.i4()) {
+                            if (ijVar.h4()) {
                             }
                         }
                     }
                     z13 = true;
-                    if (M4) {
+                    if (L4) {
                     }
                     if (!z11) {
                     }
-                    t51 t51Var22 = new t51();
-                    this.E0 = t51Var22;
-                    t51Var22.s0(false);
+                    u51 u51Var22 = new u51();
+                    this.E0 = u51Var22;
+                    u51Var22.s0(false);
                     int i122 = this.m0 + 1;
                     this.m0 = i122;
                     String str42 = str;
@@ -2435,7 +2435,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                     }
                     if (z17) {
                     }
-                    if (ijVar.i4()) {
+                    if (ijVar.h4()) {
                     }
                 } else {
                     PipRoundVideoView pipRoundVideoView3 = this.H0;
@@ -2444,12 +2444,12 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                         this.H0 = null;
                     }
                     try {
-                        t51 t51Var3 = new t51();
-                        this.i0 = t51Var3;
+                        u51 u51Var3 = new u51();
+                        this.i0 = u51Var3;
                         int i14 = this.m0 + 1;
                         this.m0 = i14;
-                        t51Var3.J = new le(this, i14, ijVar, 0);
-                        t51Var3.K = new pb.b(17);
+                        u51Var3.J = new le(this, i14, ijVar, 0);
+                        u51Var3.K = new pb.b(17);
                         if (z17) {
                             if (!ijVar.x0 && M != file) {
                                 final int i15 = 1;
@@ -2502,7 +2502,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                             this.i0.j0(Uri.parse("tg://" + ijVar.S0() + sb3.toString()), "other");
                             this.l0 = true;
                         }
-                        if (ij.S4(ijVar.k)) {
+                        if (ij.R4(ijVar.k)) {
                             String S0 = ijVar.S0();
                             if (S0 != null && ijVar.L0() >= 300.0d) {
                                 float f11 = t0.b.getSharedPreferences("media_saved_pos", 0).getFloat(S0, -1.0f);
@@ -2544,7 +2544,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                             ijVar.b0 = f13;
                             ijVar.c0 = -1.0f;
                         }
-                        if (!ijVar.J3() || ijVar.F0() == null || m5.C(ij.B0(ijVar.k))) {
+                        if (!ijVar.I3() || ijVar.F0() == null || m5.C(ij.B0(ijVar.k))) {
                             ef efVar2 = this.w0;
                             if (efVar2 != null) {
                                 efVar2.b();
@@ -2582,7 +2582,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                         }
                         this.i0.x0(this.L ? 0 : 3);
                         this.i0.h0();
-                        if (ijVar.Q4()) {
+                        if (ijVar.P4()) {
                             this.P1 = 1.0f;
                             n0();
                         } else {
@@ -2601,7 +2601,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                         a8.f(e12);
                         qs f14 = qs.f(ijVar.I1);
                         ij ijVar5 = this.u0;
-                        f14.k(i7, Integer.valueOf(ijVar5 != null ? ijVar5.f1() : 0));
+                        f14.k(i7, Integer.valueOf(ijVar5 != null ? ijVar5.e1() : 0));
                         if (this.i0 == null) {
                             return false;
                         }
@@ -2615,7 +2615,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                         }
                         this.i0.m0();
                         this.i0 = r52;
-                        org.telegram.ui.ActionBar.k6.N1(this.u0);
+                        org.telegram.ui.ActionBar.l6.N1(this.u0);
                         this.g0 = false;
                         this.u0 = r52;
                         this.A0 = false;
@@ -2629,16 +2629,16 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                 if (!iz.k(true)) {
                     w0(this.s);
                 }
-                if (!t0.x && (wakeLock = this.d) != null && !wakeLock.isHeld() && !this.u0.Q4()) {
-                    this.u0.i4();
+                if (!t0.x && (wakeLock = this.d) != null && !wakeLock.isHeld() && !this.u0.P4()) {
+                    this.u0.h4();
                 }
                 v0(this.u0);
                 qs.f(ijVar.I1).k(qs.h2, ijVar, ijVar2);
-                t51Var = this.E0;
-                if (t51Var == null) {
+                u51Var = this.E0;
+                if (u51Var == null) {
                     try {
                         if (this.u0.b0 != 0.0f) {
-                            long U = t51Var.U();
+                            long U = u51Var.U();
                             if (U == -9223372036854775807L) {
                                 U = ((long) this.u0.L0()) * 1000;
                             }
@@ -2655,16 +2655,16 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                         ij ijVar7 = this.u0;
                         ijVar7.b0 = 0.0f;
                         ijVar7.g0 = 0;
-                        qs.f(ijVar.I1).k(i10, Integer.valueOf(this.u0.f1()), 0);
+                        qs.f(ijVar.I1).k(i10, Integer.valueOf(this.u0.e1()), 0);
                         a8.f(e13);
                     }
                     this.E0.h0();
                 } else {
-                    t51 t51Var4 = this.i0;
-                    if (t51Var4 != null) {
+                    u51 u51Var4 = this.i0;
+                    if (u51Var4 != null) {
                         try {
                             if (this.u0.b0 != 0.0f) {
-                                long U2 = t51Var4.U();
+                                long U2 = u51Var4.U();
                                 if (U2 == -9223372036854775807L) {
                                     U2 = ((long) this.u0.L0()) * 1000;
                                 }
@@ -2675,8 +2675,8 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                                 }
                             }
                         } catch (Exception e14) {
-                            this.u0.H5();
-                            qs.f(ijVar.I1).k(i10, Integer.valueOf(this.u0.f1()), 0);
+                            this.u0.G5();
+                            qs.f(ijVar.I1).k(i10, Integer.valueOf(this.u0.e1()), 0);
                             a8.f(e14);
                         }
                     }
@@ -2705,22 +2705,22 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
         j4Var = this.L0;
         if (j4Var != null) {
         }
-        M4 = ij.M4(ijVar.k);
-        if (ijVar.i4()) {
+        L4 = ij.L4(ijVar.k);
+        if (ijVar.h4()) {
         }
         File file32 = file;
         w7.G(ijVar.I1).c0(ijVar.F0(), true);
         this.F0 = false;
-        if (M4) {
+        if (L4) {
         }
         z13 = true;
-        if (M4) {
+        if (L4) {
         }
         if (!z11) {
         }
-        t51 t51Var222 = new t51();
-        this.E0 = t51Var222;
-        t51Var222.s0(false);
+        u51 u51Var222 = new u51();
+        this.E0 = u51Var222;
+        u51Var222.s0(false);
         int i1222 = this.m0 + 1;
         this.m0 = i1222;
         String str422 = str;
@@ -2735,7 +2735,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
         }
         if (z17) {
         }
-        if (ijVar.i4()) {
+        if (ijVar.h4()) {
         }
         j(ijVar);
         n0();
@@ -2744,12 +2744,12 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
         if (!iz.k(true)) {
         }
         if (!t0.x) {
-            this.u0.i4();
+            this.u0.h4();
         }
         v0(this.u0);
         qs.f(ijVar.I1).k(qs.h2, ijVar, ijVar2);
-        t51Var = this.E0;
-        if (t51Var == null) {
+        u51Var = this.E0;
+        if (u51Var == null) {
         }
         if (h()) {
         }
@@ -2770,7 +2770,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
             this.B0 = true;
             ij ijVar = (ij) arrayList.get(i7);
             if (this.u0 != null && !L(ijVar)) {
-                this.u0.H5();
+                this.u0.G5();
             }
             S(ijVar);
         }
@@ -2798,17 +2798,17 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
             }
             ij ijVar2 = this.u0;
             if (ijVar2 != null) {
-                ijVar2.H5();
+                ijVar2.G5();
             }
             this.B0 = true;
             S((ij) arrayList.get(this.U0));
             return;
         }
-        t51 t51Var = this.i0;
-        if (t51Var == null && this.E0 == null) {
+        u51 u51Var = this.i0;
+        if (u51Var == null && this.E0 == null) {
             return;
         }
-        if (t51Var != null) {
+        if (u51Var != null) {
             ef efVar = this.w0;
             if (efVar != null) {
                 efVar.b();
@@ -2820,7 +2820,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                 a8.g(e10, true);
             }
             this.i0 = null;
-            org.telegram.ui.ActionBar.k6.N1(this.u0);
+            org.telegram.ui.ActionBar.l6.N1(this.u0);
         } else {
             this.L0 = null;
             this.N0 = null;
@@ -2841,8 +2841,8 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
         ij ijVar3 = this.u0;
         ijVar3.b0 = 0.0f;
         ijVar3.g0 = 0;
-        qs.f(ijVar3.I1).k(qs.e2, Integer.valueOf(this.u0.f1()), 0);
-        qs.f(this.u0.I1).k(qs.g2, Integer.valueOf(this.u0.f1()));
+        qs.f(ijVar3.I1).k(qs.e2, Integer.valueOf(this.u0.e1()), 0);
+        qs.f(this.u0.I1).k(qs.g2, Integer.valueOf(this.u0.e1()));
     }
 
     public final void V() {
@@ -2875,15 +2875,15 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
         }
         int currentAccount = this.s.getCurrentAccount();
         long a10 = this.s.a();
-        org.telegram.ui.an anVar = this.s;
-        ij ijVar = anVar.l4;
-        int classGuid = anVar.getClassGuid();
-        org.telegram.ui.an anVar2 = this.s;
-        hw W8 = anVar2 != null ? anVar2.W8() : null;
-        org.telegram.ui.an anVar3 = this.s;
-        long h92 = anVar3 != null ? anVar3.h9() : 0L;
-        org.telegram.ui.an anVar4 = this.s;
-        x0(currentAccount, a10, null, ijVar, null, classGuid, false, W8, h92, anVar4 != null ? anVar4.w5 : null);
+        org.telegram.ui.cn cnVar = this.s;
+        ij ijVar = cnVar.l4;
+        int classGuid = cnVar.getClassGuid();
+        org.telegram.ui.cn cnVar2 = this.s;
+        hw X8 = cnVar2 != null ? cnVar2.X8() : null;
+        org.telegram.ui.cn cnVar3 = this.s;
+        long i92 = cnVar3 != null ? cnVar3.i9() : 0L;
+        org.telegram.ui.cn cnVar4 = this.s;
+        x0(currentAccount, a10, null, ijVar, null, classGuid, false, X8, i92, cnVar4 != null ? cnVar4.w5 : null);
     }
 
     public final boolean X() {
@@ -2942,7 +2942,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
             ij ijVar2 = jfVar.a;
             this.U1 = null;
             ArrayList arrayList = iz.N0 ? this.T0 : this.R0;
-            if (arrayList != null && (i7 = this.U0) >= 0 && i7 < arrayList.size() && (ijVar = (ij) arrayList.get(this.U0)) != null && ij.B0(ijVar.k) == ij.B0(ijVar2.k) && ijVar.f1() == ijVar2.f1()) {
+            if (arrayList != null && (i7 = this.U0) >= 0 && i7 < arrayList.size() && (ijVar = (ij) arrayList.get(this.U0)) != null && ij.B0(ijVar.k) == ij.B0(ijVar2.k) && ijVar.e1() == ijVar2.e1()) {
                 this.B0 = false;
                 float f10 = jfVar.b;
                 ijVar.c0 = f10;
@@ -2968,7 +2968,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                 valueAnimator.removeAllListeners();
                 this.Q1.cancel();
             }
-            if (ij.S4(ijVar.k) || ijVar.i4()) {
+            if (ij.R4(ijVar.k) || ijVar.h4()) {
                 this.P1 = 1.0f;
                 n0();
             } else {
@@ -2978,18 +2978,18 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                 this.Q1.setDuration(300L);
                 this.Q1.start();
             }
-            t51 t51Var = this.i0;
-            if (t51Var != null) {
-                t51Var.h0();
+            u51 u51Var = this.i0;
+            if (u51Var != null) {
+                u51Var.h0();
             } else {
-                t51 t51Var2 = this.E0;
-                if (t51Var2 != null) {
-                    t51Var2.h0();
+                u51 u51Var2 = this.E0;
+                if (u51Var2 != null) {
+                    u51Var2.h0();
                 }
             }
             j(ijVar);
             this.g0 = false;
-            qs.f(this.u0.I1).k(qs.g2, Integer.valueOf(this.u0.f1()));
+            qs.f(this.u0.I1).k(qs.g2, Integer.valueOf(this.u0.e1()));
             try {
                 d1.f.b(1);
                 if (this.T1) {
@@ -3006,12 +3006,12 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
 
     public final void c0() {
         ij ijVar;
-        t51 t51Var = this.i0;
-        if (t51Var == null || (ijVar = this.u0) == null || this.g0) {
+        u51 u51Var = this.i0;
+        if (u51Var == null || (ijVar = this.u0) == null || this.g0) {
             return;
         }
-        if (t51Var.d == null || t51Var.L != 2) {
-            t51Var.h0();
+        if (u51Var.d == null || u51Var.L != 2) {
+            u51Var.h0();
         } else {
             q(false, false, false, false);
             S(ijVar);
@@ -3056,7 +3056,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
             long longValue = ((Long) objArr[1]).longValue();
             ArrayList arrayList2 = (ArrayList) objArr[0];
             ij ijVar3 = this.u0;
-            if (ijVar3 != null && longValue == ijVar3.k.peer_id.channel_id && arrayList2.contains(Integer.valueOf(ijVar3.f1()))) {
+            if (ijVar3 != null && longValue == ijVar3.k.peer_id.channel_id && arrayList2.contains(Integer.valueOf(ijVar3.e1()))) {
                 q(true, true, false, false);
             }
             ArrayList arrayList3 = this.e0;
@@ -3091,7 +3091,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
             long longValue3 = ((Long) objArr[0]).longValue();
             long longValue4 = ((Long) objArr[3]).longValue();
             ij ijVar6 = this.u0;
-            if (ijVar6 != null && ijVar6.J3() && ij.B0(this.u0.k) == longValue3 && this.a1 == longValue4 && !this.u0.p1) {
+            if (ijVar6 != null && ijVar6.I3() && ij.B0(this.u0.k) == longValue3 && this.a1 == longValue4 && !this.u0.p1) {
                 ArrayList arrayList5 = (ArrayList) objArr[1];
                 ArrayList arrayList6 = (ArrayList) objArr[2];
                 arrayList4.addAll(0, arrayList5);
@@ -3099,8 +3099,8 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                 int size = arrayList4.size();
                 for (int i13 = 0; i13 < size; i13++) {
                     ij ijVar7 = (ij) arrayList4.get(i13);
-                    hashMap.put(Integer.valueOf(ijVar7.f1()), ijVar7);
-                    iArr[0] = Math.min(iArr[0], ijVar7.f1());
+                    hashMap.put(Integer.valueOf(ijVar7.e1()), ijVar7);
+                    iArr[0] = Math.min(iArr[0], ijVar7.e1());
                 }
                 t0();
                 if (iz.N0) {
@@ -3132,11 +3132,11 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
             int i16 = 0;
             for (int i17 = 0; i17 < arrayList7.size(); i17++) {
                 ij ijVar9 = (ij) arrayList7.get(i17);
-                if (!ijVar9.T4() && !hashMap.containsKey(Integer.valueOf(ijVar9.f1()))) {
+                if (!ijVar9.S4() && !hashMap.containsKey(Integer.valueOf(ijVar9.e1()))) {
                     i16++;
                     arrayList4.add(0, ijVar9);
-                    hashMap.put(Integer.valueOf(ijVar9.f1()), ijVar9);
-                    iArr[c10] = Math.min(iArr[c10], ijVar9.f1());
+                    hashMap.put(Integer.valueOf(ijVar9.e1()), ijVar9);
+                    iArr[c10] = Math.min(iArr[c10], ijVar9.e1());
                 }
             }
             t0();
@@ -3161,21 +3161,21 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
             ArrayList arrayList8 = (ArrayList) objArr[1];
             while (i11 < arrayList8.size()) {
                 ij ijVar10 = (ij) arrayList8.get(i11);
-                if ((ij.S4(ijVar10.k) || ijVar10.i4()) && !ijVar10.T4() && !ijVar10.h4() && (!this.d0 || (ijVar10.k.media_unread && !ijVar10.O3()))) {
+                if ((ij.R4(ijVar10.k) || ijVar10.h4()) && !ijVar10.S4() && !ijVar10.g4() && (!this.d0 || (ijVar10.k.media_unread && !ijVar10.N3()))) {
                     this.e0.add(ijVar10);
-                    this.f0.put(ijVar10.f1(), ijVar10);
+                    this.f0.put(ijVar10.e1(), ijVar10);
                 }
                 i11++;
             }
             return;
         }
         if (i7 == qs.H4) {
-            t51 t51Var = (t51) objArr[0];
-            if (this.E0 == t51Var || this.i0 == t51Var) {
+            u51 u51Var = (u51) objArr[0];
+            if (this.E0 == u51Var || this.i0 == u51Var) {
                 return;
             }
             ij ijVar11 = this.u0;
-            if (ijVar11 != null && I(ijVar11) && !H() && (ijVar11.J3() || ij.S4(ijVar11.k))) {
+            if (ijVar11 != null && I(ijVar11) && !H() && (ijVar11.I3() || ij.R4(ijVar11.k))) {
                 this.h0 = true;
             }
             R(ijVar11, true);
@@ -3247,7 +3247,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
     public final boolean h() {
         ij ijVar = this.u0;
         if (ijVar != null) {
-            return ((!ijVar.J3() && !ij.S4(this.u0.k) && !this.u0.i4()) || this.u0.T4() || this.u0.h4()) ? false : true;
+            return ((!ijVar.I3() && !ij.R4(this.u0.k) && !this.u0.h4()) || this.u0.S4() || this.u0.g4()) ? false : true;
         }
         return false;
     }
@@ -3307,9 +3307,9 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
             return;
         }
         try {
-            t51 t51Var = this.i0;
-            if (t51Var != null) {
-                long U = t51Var.U();
+            u51 u51Var = this.i0;
+            if (u51Var != null) {
+                long U = u51Var.U();
                 if (U == -9223372036854775807L) {
                     this.t0 = f10;
                 } else {
@@ -3321,15 +3321,15 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                     }
                 }
             } else {
-                t51 t51Var2 = this.E0;
-                if (t51Var2 != null) {
-                    t51Var2.p0((long) (t51Var2.U() * f10));
+                u51 u51Var2 = this.E0;
+                if (u51Var2 != null) {
+                    u51Var2.p0((long) (u51Var2.U() * f10));
                     if (!this.T1) {
                         d1.f.v((long) (this.E0.U() * f10));
                     }
                 }
             }
-            qs.f(ijVar.I1).k(qs.i2, Integer.valueOf(ijVar2.f1()), Float.valueOf(f10));
+            qs.f(ijVar.I1).k(qs.i2, Integer.valueOf(ijVar2.e1()), Float.valueOf(f10));
         } catch (Exception e10) {
             a8.g(e10, true);
         }
@@ -3337,7 +3337,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
 
     public final void j(ij ijVar) {
         int requestAudioFocus;
-        int i7 = (ij.S4(ijVar.k) || ijVar.i4()) ? this.L ? 3 : 2 : 1;
+        int i7 = (ij.R4(ijVar.k) || ijVar.h4()) ? this.L ? 3 : 2 : 1;
         if (this.U != i7) {
             this.U = i7;
             if (i7 == 3) {
@@ -3470,10 +3470,10 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
             M = w7.M(ijVar.k, false, true);
         }
         M.exists();
-        if (M == file || M.exists() || !ijVar.J3()) {
+        if (M == file || M.exists() || !ijVar.I3()) {
             return;
         }
-        w7.G(i7).W(ijVar.F0(), ijVar, 0, ij.S5(ijVar.k) ? 2 : 0);
+        w7.G(i7).W(ijVar.F0(), ijVar, 0, ij.R5(ijVar.k) ? 2 : 0);
     }
 
     public final void l0(int i7) {
@@ -3490,7 +3490,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
         }
         MediaController B = B();
         ij ijVar = B.u0;
-        if (ijVar != null && ijVar.J3()) {
+        if (ijVar != null && ijVar.I3()) {
             B.l(B.u0.I1);
         }
         SharedPreferences.Editor edit = qp.e1().edit();
@@ -3549,13 +3549,13 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                 this.r0 = f10;
             }
         }
-        t51 t51Var = this.i0;
-        if (t51Var != null) {
-            t51Var.v0(Math.round(f10 * 10.0f) / 10.0f);
+        u51 u51Var = this.i0;
+        if (u51Var != null) {
+            u51Var.v0(Math.round(f10 * 10.0f) / 10.0f);
         } else {
-            t51 t51Var2 = this.E0;
-            if (t51Var2 != null) {
-                t51Var2.v0(Math.round(f10 * 10.0f) / 10.0f);
+            u51 u51Var2 = this.E0;
+            if (u51Var2 != null) {
+                u51Var2.v0(Math.round(f10 * 10.0f) / 10.0f);
             }
         }
         qp.e1().edit().putFloat(z9 ? "musicPlaybackSpeed" : "playbackSpeed", f10).putFloat(z9 ? "fastMusicPlaybackSpeed" : "fastPlaybackSpeed", z9 ? this.s0 : this.r0).commit();
@@ -3611,20 +3611,20 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
     public final void n0() {
         try {
             float f10 = this.X != 1 ? 1.0f : 0.2f;
-            t51 t51Var = this.i0;
+            u51 u51Var = this.i0;
             float f11 = 0.0f;
-            if (t51Var != null) {
+            if (u51Var != null) {
                 if (!d1.f.u()) {
                     f11 = this.P1 * f10;
                 }
-                t51Var.B0(f11);
+                u51Var.B0(f11);
             } else {
-                t51 t51Var2 = this.E0;
-                if (t51Var2 != null) {
+                u51 u51Var2 = this.E0;
+                if (u51Var2 != null) {
                     if (d1.f.u()) {
                         f10 = 0.0f;
                     }
-                    t51Var2.B0(f10);
+                    u51Var2.B0(f10);
                 }
             }
         } catch (Exception e10) {
@@ -3684,14 +3684,14 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                 break;
             }
             ij ijVar3 = (ij) arrayList.get(size);
-            if (ijVar3.J3()) {
-                int f12 = ijVar3.f1();
-                if (f12 > 0 || z10) {
-                    i7 = Math.min(i7, f12);
-                    i10 = Math.max(i10, f12);
+            if (ijVar3.I3()) {
+                int e12 = ijVar3.e1();
+                if (e12 > 0 || z10) {
+                    i7 = Math.min(i7, e12);
+                    i10 = Math.max(i10, e12);
                 }
                 arrayList2.add(ijVar3);
-                hashMap.put(Integer.valueOf(f12), ijVar3);
+                hashMap.put(Integer.valueOf(e12), ijVar3);
             }
             size--;
         }
@@ -3702,9 +3702,9 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
             r();
             this.U0 = arrayList2.size();
             arrayList2.add(ijVar);
-            hashMap.put(Integer.valueOf(ijVar.f1()), ijVar);
+            hashMap.put(Integer.valueOf(ijVar.e1()), ijVar);
         }
-        if (ijVar.J3() && !ijVar.p1) {
+        if (ijVar.I3() && !ijVar.p1) {
             if (iz.N0) {
                 g();
             }
@@ -3788,7 +3788,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                                                     TLRPC.Message TLdeserialize = TLRPC.Message.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(r12), r12);
                                                     TLdeserialize.readAttachPath(byteBufferValue, uiVar.getUserConfig().n);
                                                     byteBufferValue.reuse();
-                                                    if (ij.L3(TLdeserialize)) {
+                                                    if (ij.K3(TLdeserialize)) {
                                                         TLdeserialize.id = sQLiteCursor.intValue(1);
                                                         TLdeserialize.dialog_id = j15;
                                                         z11 = false;
@@ -4005,7 +4005,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                 this.x = System.currentTimeMillis();
             }
             boolean z14 = (this.x0 || this.u0 != null || !iz.k(z9) || !t0.w || this.M || !this.N || this.s == null || this.W) ? false : z9;
-            boolean z15 = (iz.k(false) && (ijVar = this.u0) != null && (ij.S4(ijVar.k) || this.u0.i4())) ? z9 : false;
+            boolean z15 = (iz.k(false) && (ijVar = this.u0) != null && (ij.R4(ijVar.k) || this.u0.h4())) ? z9 : false;
             boolean z16 = this.I;
             boolean z17 = (this.E == 6 || this.w || System.currentTimeMillis() - this.x < 60) ? z9 : false;
             boolean z18 = (this.L || this.r) ? z9 : false;
@@ -4034,19 +4034,19 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                         }
                         this.L = z9;
                         if (this.f1 == null) {
-                            org.telegram.ui.an anVar = this.s;
-                            ArrayList arrayList2 = anVar.K6;
-                            org.telegram.ui.qj qjVar = anVar.Z;
-                            if (qjVar == null || !qjVar.v0()) {
+                            org.telegram.ui.cn cnVar = this.s;
+                            ArrayList arrayList2 = cnVar.K6;
+                            org.telegram.ui.sj sjVar = cnVar.Z;
+                            if (sjVar == null || !sjVar.v0()) {
                                 int size = arrayList2.size() - 1;
                                 while (true) {
                                     if (size >= 0) {
                                         ij ijVar2 = (ij) arrayList2.get(size);
-                                        if ((ij.S4(ijVar2.k) || ijVar2.i4()) && ijVar2.k.media_unread && !ijVar2.O3()) {
+                                        if ((ij.R4(ijVar2.k) || ijVar2.h4()) && ijVar2.k.media_unread && !ijVar2.N3()) {
                                             MediaController B = B();
                                             if (B().S(ijVar2)) {
                                                 z11 = true;
-                                                arrayList = anVar.g8(ijVar2, true);
+                                                arrayList = cnVar.h8(ijVar2, true);
                                             } else {
                                                 z11 = true;
                                                 arrayList = null;
@@ -4055,8 +4055,8 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                                         } else {
                                             size--;
                                         }
-                                    } else if (anVar.getParentActivity() != null && anVar.getParentActivity().checkSelfPermission("android.permission.RECORD_AUDIO") != 0) {
-                                        anVar.getParentActivity().requestPermissions(new String[]{"android.permission.RECORD_AUDIO"}, 3);
+                                    } else if (cnVar.getParentActivity() != null && cnVar.getParentActivity().checkSelfPermission("android.permission.RECORD_AUDIO") != 0) {
+                                        cnVar.getParentActivity().requestPermissions(new String[]{"android.permission.RECORD_AUDIO"}, 3);
                                     }
                                 }
                             }
@@ -4132,17 +4132,17 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
             this.N0 = null;
             return;
         }
-        t51 t51Var = this.E0;
-        if (t51Var == null || textureView == this.G0) {
+        u51 u51Var = this.E0;
+        if (u51Var == null || textureView == this.G0) {
             return;
         }
         this.M0 = j4Var != null && j4Var.d;
         this.G0 = textureView;
         PipRoundVideoView pipRoundVideoView = this.H0;
         if (pipRoundVideoView != null) {
-            t51Var.A0(pipRoundVideoView.c);
+            u51Var.A0(pipRoundVideoView.c);
         } else {
-            t51Var.A0(textureView);
+            u51Var.A0(textureView);
         }
         this.L0 = j4Var;
         this.N0 = frameLayout;
@@ -4177,25 +4177,25 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                 valueAnimator.removeAllUpdateListeners();
                 this.Q1.cancel();
             }
-            if (d1.f.u() || !this.i0.d0() || (ijVar = this.u0) == null || ij.S4(ijVar.k)) {
+            if (d1.f.u() || !this.i0.d0() || (ijVar = this.u0) == null || ij.R4(ijVar.k)) {
                 try {
                     this.i0.m0();
                 } catch (Exception e10) {
                     a8.g(e10, true);
                 }
             } else {
-                t51 t51Var = this.i0;
+                u51 u51Var = this.i0;
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(this.P1, 0.0f);
-                ofFloat.addUpdateListener(new q(i10, this, t51Var));
-                ofFloat.addListener(new m.a(t51Var, 6));
+                ofFloat.addUpdateListener(new q(i10, this, u51Var));
+                ofFloat.addListener(new m.a(u51Var, 6));
                 ofFloat.setDuration(300L);
                 ofFloat.start();
             }
             this.i0 = null;
-            org.telegram.ui.ActionBar.k6.N1(this.u0);
+            org.telegram.ui.ActionBar.l6.N1(this.u0);
         } else {
-            t51 t51Var2 = this.E0;
-            if (t51Var2 != null) {
+            u51 u51Var2 = this.E0;
+            if (u51Var2 != null) {
                 this.L0 = null;
                 this.N0 = null;
                 this.P0 = false;
@@ -4208,9 +4208,9 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                     this.v0 = ijVar2;
                     qs.f(ijVar2.I1).k(i7, this.u0, Boolean.TRUE);
                 } else {
-                    long S = t51Var2.S();
+                    long S = u51Var2.S();
                     ij ijVar3 = this.u0;
-                    if (ijVar3 != null && ij.M4(ijVar3.k) && S > 0) {
+                    if (ijVar3 != null && ij.L4(ijVar3.k) && S > 0) {
                         ij ijVar4 = this.u0;
                         ijVar4.d0 = (int) S;
                         qs.f(ijVar4.I1).k(i7, this.u0, Boolean.FALSE);
@@ -4238,8 +4238,8 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
             }
             ij ijVar6 = this.u0;
             if (z9) {
-                ijVar6.H5();
-                qs.f(ijVar6.I1).k(qs.e2, Integer.valueOf(this.u0.f1()), 0);
+                ijVar6.G5();
+                qs.f(ijVar6.I1).k(qs.e2, Integer.valueOf(this.u0.e1()), 0);
             }
             this.u0 = null;
             this.A0 = false;
@@ -4254,7 +4254,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                         this.f0 = null;
                     } else {
                         this.e0.remove(i11);
-                        this.f0.remove(ijVar6.f1());
+                        this.f0.remove(ijVar6.e1());
                         if (this.e0.isEmpty()) {
                             this.e0 = null;
                             this.f0 = null;
@@ -4263,23 +4263,23 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                 }
                 ArrayList arrayList2 = this.e0;
                 if (arrayList2 == null || i11 >= arrayList2.size()) {
-                    if ((ij.S4(ijVar6.k) || ijVar6.i4()) && ijVar6.f1() != 0 && this.L && this.s != null && this.N && iz.k(true)) {
+                    if ((ij.R4(ijVar6.k) || ijVar6.h4()) && ijVar6.e1() != 0 && this.L && this.s != null && this.N && iz.k(true)) {
                         this.r = true;
                         int currentAccount = this.s.getCurrentAccount();
                         long a10 = this.s.a();
-                        org.telegram.ui.an anVar = this.s;
-                        ij ijVar7 = anVar.l4;
-                        int classGuid = anVar.getClassGuid();
-                        org.telegram.ui.an anVar2 = this.s;
-                        hw W8 = anVar2 != null ? anVar2.W8() : null;
-                        org.telegram.ui.an anVar3 = this.s;
-                        long h92 = anVar3 != null ? anVar3.h9() : 0L;
-                        org.telegram.ui.an anVar4 = this.s;
-                        x0(currentAccount, a10, null, ijVar7, null, classGuid, false, W8, h92, anVar4 != null ? anVar4.w5 : null);
+                        org.telegram.ui.cn cnVar = this.s;
+                        ij ijVar7 = cnVar.l4;
+                        int classGuid = cnVar.getClassGuid();
+                        org.telegram.ui.cn cnVar2 = this.s;
+                        hw X8 = cnVar2 != null ? cnVar2.X8() : null;
+                        org.telegram.ui.cn cnVar3 = this.s;
+                        long i92 = cnVar3 != null ? cnVar3.i9() : 0L;
+                        org.telegram.ui.cn cnVar4 = this.s;
+                        x0(currentAccount, a10, null, ijVar7, null, classGuid, false, X8, i92, cnVar4 != null ? cnVar4.w5 : null);
                         this.O = true;
                     }
                     z13 = false;
-                    qs.f(ijVar6.I1).k(qs.f2, Integer.valueOf(ijVar6.f1()), Boolean.valueOf(z10));
+                    qs.f(ijVar6.I1).k(qs.f2, Integer.valueOf(ijVar6.e1()), Boolean.valueOf(z10));
                     this.I0 = 0;
                     PipRoundVideoView pipRoundVideoView2 = this.H0;
                     if (pipRoundVideoView2 != null) {
@@ -4289,7 +4289,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                 } else {
                     ij ijVar8 = (ij) this.e0.get(i11);
                     S(ijVar8);
-                    if (!ijVar8.i4() && (pipRoundVideoView = this.H0) != null) {
+                    if (!ijVar8.h4() && (pipRoundVideoView = this.H0) != null) {
                         pipRoundVideoView.a(true);
                         this.H0 = null;
                     }
@@ -4309,9 +4309,9 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
             z13 = false;
         }
         if (!z14 && z11 && !iz.k(true)) {
-            org.telegram.ui.an anVar5 = this.s;
-            A0(anVar5, z13, z13);
-            this.s = anVar5;
+            org.telegram.ui.cn cnVar5 = this.s;
+            A0(cnVar5, z13, z13);
+            this.s = cnVar5;
         }
         if (!z10 || d1.f.f() == null) {
             return;
@@ -4361,7 +4361,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
             this.f0 = new SparseArray();
             for (int i7 = 0; i7 < this.e0.size(); i7++) {
                 ij ijVar = (ij) this.e0.get(i7);
-                this.f0.put(ijVar.f1(), ijVar);
+                this.f0.put(ijVar.e1(), ijVar);
             }
         }
     }
@@ -4412,9 +4412,9 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
             return;
         }
         qs.f(ijVar.I1).k(qs.u2, Boolean.valueOf(this.L));
-        t51 t51Var = this.E0;
-        if (t51Var != null) {
-            t51Var.x0(this.L ? 0 : 3);
+        u51 u51Var = this.E0;
+        if (u51Var != null) {
+            u51Var.x0(this.L ? 0 : 3);
             if (z9) {
                 R(this.u0, true);
                 return;
@@ -4425,12 +4425,12 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
             this.E0.h0();
             return;
         }
-        t51 t51Var2 = this.i0;
-        boolean z10 = t51Var2 != null;
+        u51 u51Var2 = this.i0;
+        boolean z10 = u51Var2 != null;
         ij ijVar2 = this.u0;
         float f10 = ijVar2.b0;
         int i7 = ijVar2.h0;
-        if (z9 || t51Var2 == null || !t51Var2.d0() || i7 * f10 > 1.0f) {
+        if (z9 || u51Var2 == null || !u51Var2.d0() || i7 * f10 > 1.0f) {
             ijVar2.b0 = f10;
         } else {
             ijVar2.b0 = 0.0f;
@@ -4464,8 +4464,8 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
         }
     }
 
-    public final void w0(org.telegram.ui.an anVar) {
-        if (anVar != null) {
+    public final void w0(org.telegram.ui.cn cnVar) {
+        if (cnVar != null) {
             if ((this.f == null && this.n == null) || this.e == null) {
                 return;
             }
@@ -4474,11 +4474,11 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                 if (ijVar == null) {
                     return;
                 }
-                if (!ij.S4(ijVar.k) && !this.u0.i4()) {
+                if (!ij.R4(ijVar.k) && !this.u0.h4()) {
                     return;
                 }
             }
-            this.s = anVar;
+            this.s = cnVar;
             if (this.P) {
                 return;
             }
@@ -4555,7 +4555,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
         this.m1 = j3;
         this.o1 = j10;
         this.p1 = njVar;
-        this.n1 = ijVar2 == null ? 0L : ij.c2(i7, ijVar2.k, false, false);
+        this.n1 = ijVar2 == null ? 0L : ij.b2(i7, ijVar2.k, false, false);
         this.q1 = ijVar;
         this.r1 = ijVar2;
         this.s1 = storyItem;
@@ -4597,16 +4597,16 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
     */
     public final g7.c z() {
         FileOutputStream fileOutputStream;
-        hy0 hy0Var;
+        ky0 ky0Var;
         wf.d dVar;
         ij ijVar = this.u0;
         FileOutputStream fileOutputStream2 = null;
         String str = null;
         if (ijVar != null) {
-            String z12 = ijVar.z1(true);
-            String x12 = this.u0.x1(true);
+            String y12 = ijVar.y1(true);
+            String w12 = this.u0.w1(true);
             TLRPC.Document F0 = this.u0.F0();
-            if (this.u0.i4() || ij.M4(this.u0.k) || this.u0.J3()) {
+            if (this.u0.h4() || ij.L4(this.u0.k) || this.u0.I3()) {
                 ij ijVar2 = this.u0;
                 File file = (!ijVar2.w0 || ijVar2.k == null) ? null : new File(this.u0.k.attachPath);
                 if (file == null || !file.exists()) {
@@ -4614,7 +4614,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                     file = w7.M(this.u0.k, false, true);
                 }
                 if (file != null && file.exists()) {
-                    String u12 = this.u0.u1();
+                    String t12 = this.u0.t1();
                     Uri parse = Uri.parse("file://" + file.getAbsolutePath());
                     f6.l lVar = new f6.l(0);
                     rf.a aVar = this.D0;
@@ -4675,19 +4675,19 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                                             file2 = null;
                                             this.D0.q = file2;
                                             if (file2 != null) {
-                                                hy0Var = (hy0) wf.b.Z().b;
-                                                dVar = (wf.d) hy0Var.b;
+                                                ky0Var = (ky0) wf.b.Z().b;
+                                                dVar = (wf.d) ky0Var.b;
                                                 if (dVar != null) {
                                                 }
                                                 str = "/file" + Utilities.c.nextLong();
-                                                if (((wf.d) hy0Var.b) == null) {
+                                                if (((wf.d) ky0Var.b) == null) {
                                                 }
-                                                ((wf.d) hy0Var.b).l(file2, str);
+                                                ((wf.d) ky0Var.b).l(file2, str);
                                                 lVar.a.add(new p6.a(Uri.parse(wf.d.j(wf.d.i(), str)), 0, 0));
                                             }
-                                            v4.v0 v0Var = new v4.v0(parse, u12, "/player_" + this.u0.f1());
-                                            v0Var.g = z12;
-                                            v0Var.h = x12;
+                                            v4.v0 v0Var = new v4.v0(parse, t12, "/player_" + this.u0.e1());
+                                            v0Var.g = y12;
+                                            v0Var.h = w12;
                                             v0Var.f = lVar;
                                             return new g7.c(new wf.e(v0Var));
                                         }
@@ -4715,13 +4715,13 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                                 this.D0.q = file2;
                             }
                             if (file2 != null && file2.exists()) {
-                                hy0Var = (hy0) wf.b.Z().b;
-                                dVar = (wf.d) hy0Var.b;
+                                ky0Var = (ky0) wf.b.Z().b;
+                                dVar = (wf.d) ky0Var.b;
                                 if (dVar != null) {
                                     Pair pair = dVar.i;
                                     if ((pair == null ? null : (File) pair.second) != null) {
                                         if (TextUtils.equals((pair == null ? null : (File) pair.second).getAbsolutePath(), file2.getAbsolutePath())) {
-                                            Pair pair2 = ((wf.d) hy0Var.b).i;
+                                            Pair pair2 = ((wf.d) ky0Var.b).i;
                                             if (pair2 != null) {
                                                 str = (String) pair2.first;
                                             }
@@ -4730,28 +4730,28 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                                     }
                                 }
                                 str = "/file" + Utilities.c.nextLong();
-                                if (((wf.d) hy0Var.b) == null) {
-                                    hy0Var.b = new wf.d();
+                                if (((wf.d) ky0Var.b) == null) {
+                                    ky0Var.b = new wf.d();
                                 }
-                                ((wf.d) hy0Var.b).l(file2, str);
+                                ((wf.d) ky0Var.b).l(file2, str);
                                 lVar.a.add(new p6.a(Uri.parse(wf.d.j(wf.d.i(), str)), 0, 0));
                             }
                         }
                     }
-                    v4.v0 v0Var2 = new v4.v0(parse, u12, "/player_" + this.u0.f1());
-                    v0Var2.g = z12;
-                    v0Var2.h = x12;
+                    v4.v0 v0Var2 = new v4.v0(parse, t12, "/player_" + this.u0.e1());
+                    v0Var2.g = y12;
+                    v0Var2.h = w12;
                     v0Var2.f = lVar;
                     return new g7.c(new wf.e(v0Var2));
                 }
             }
-            t51 t51Var = this.E0;
-            if (t51Var != null) {
-                return t51Var.Q(a8.p0.r(new StringBuilder(), F0 != null ? F0.id : this.u0.f1(), ""), z12, x12);
+            u51 u51Var = this.E0;
+            if (u51Var != null) {
+                return u51Var.Q(a8.p0.r(new StringBuilder(), F0 != null ? F0.id : this.u0.e1(), ""), y12, w12);
             }
-            t51 t51Var2 = this.i0;
-            if (t51Var2 != null) {
-                return t51Var2.Q(a8.p0.r(new StringBuilder(), F0 != null ? F0.id : this.u0.f1(), ""), z12, x12);
+            u51 u51Var2 = this.i0;
+            if (u51Var2 != null) {
+                return u51Var2.Q(a8.p0.r(new StringBuilder(), F0 != null ? F0.id : this.u0.e1(), ""), y12, w12);
             }
         }
         return null;

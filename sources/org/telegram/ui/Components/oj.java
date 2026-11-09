@@ -9,9 +9,9 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class oj extends oj0 {
+public final class oj extends pj0 {
     public final /* synthetic */ int c;
     public final Context d;
     public ArrayList e;
@@ -19,21 +19,21 @@ public final class oj extends oj0 {
     public Object h;
     public final /* synthetic */ Object n;
 
-    public oj(org.telegram.ui.qs qsVar, Context context, HashMap hashMap) {
+    public oj(org.telegram.ui.ss ssVar, Context context, HashMap hashMap) {
         this.c = 1;
-        this.n = qsVar;
+        this.n = ssVar;
         this.f = new ArrayList();
         this.d = context;
         Iterator it = hashMap.values().iterator();
         while (it.hasNext()) {
             Iterator it2 = ((List) it.next()).iterator();
             while (it2.hasNext()) {
-                this.f.add((org.telegram.ui.ms) it2.next());
+                this.f.add((org.telegram.ui.os) it2.next());
             }
         }
     }
 
-    @Override // org.telegram.ui.Components.oj0
+    @Override // org.telegram.ui.Components.pj0
     public final boolean D(v4.d1 d1Var) {
         switch (this.c) {
             case 0:
@@ -120,10 +120,10 @@ public final class oj extends oj0 {
                 if (i11 == 0) {
                     org.telegram.ui.Cells.n4 n4Var = (org.telegram.ui.Cells.n4) view;
                     if (!vjVar.c0) {
-                        n4Var.setText(org.telegram.messenger.id.M0(2131746369, null));
+                        n4Var.setText(org.telegram.messenger.id.M0(2131746368, null));
                         break;
                     } else {
-                        n4Var.setText(org.telegram.messenger.id.M0(2131746368, null));
+                        n4Var.setText(org.telegram.messenger.id.M0(2131746367, null));
                         break;
                     }
                 } else if (i11 == 1) {
@@ -146,11 +146,11 @@ public final class oj extends oj0 {
                 }
                 break;
             default:
-                org.telegram.ui.ms msVar = (org.telegram.ui.ms) this.e.get(i7);
+                org.telegram.ui.os osVar = (org.telegram.ui.os) this.e.get(i7);
                 org.telegram.ui.Cells.w9 w9Var = (org.telegram.ui.Cells.w9) d1Var.a;
-                CharSequence m10 = org.telegram.messenger.i6.m(org.telegram.ui.qs.a0(msVar), w9Var.getTextView().getPaint().getFontMetricsInt(), false, null, 0);
-                if (((org.telegram.ui.qs) obj).h) {
-                    str = "+" + msVar.c;
+                CharSequence m10 = org.telegram.messenger.i6.m(org.telegram.ui.ss.a0(osVar), w9Var.getTextView().getPaint().getFontMetricsInt(), false, null, 0);
+                if (((org.telegram.ui.ss) obj).h) {
+                    str = "+" + osVar.c;
                 }
                 w9Var.c(m10, str, false, false);
                 break;
@@ -163,10 +163,10 @@ public final class oj extends oj0 {
         View view;
         switch (this.c) {
             case 0:
-                org.telegram.ui.ActionBar.f6 f6Var = ((vj) this.n).a;
+                org.telegram.ui.ActionBar.g6 g6Var = ((vj) this.n).a;
                 Context context = this.d;
                 if (i7 == 0) {
-                    n4Var = new org.telegram.ui.Cells.n4(context, f6Var);
+                    n4Var = new org.telegram.ui.Cells.n4(context, g6Var);
                 } else {
                     if (i7 != 1) {
                         if (i7 != 2) {
@@ -175,14 +175,14 @@ public final class oj extends oj0 {
                         } else {
                             view = new org.telegram.ui.Cells.y6(context, (org.telegram.ui.Cells.f1) null);
                         }
-                        return new xi0(view);
+                        return new yi0(view);
                     }
-                    n4Var = new org.telegram.ui.Cells.h7(1, context, f6Var);
+                    n4Var = new org.telegram.ui.Cells.h7(1, context, g6Var);
                 }
                 view = n4Var;
-                return new xi0(view);
+                return new yi0(view);
             default:
-                return new xi0(org.telegram.ui.qs.Z(this.d));
+                return new yi0(org.telegram.ui.ss.Z(this.d));
         }
     }
 

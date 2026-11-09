@@ -8,7 +8,7 @@ import android.view.ActionMode;
 import android.view.Menu;
 import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class gh extends lt {
     public boolean V;
@@ -18,8 +18,8 @@ public final class gh extends lt {
     public final /* synthetic */ di c0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gh(di diVar, Context context, qh qhVar, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, qhVar, null, 1, true, f6Var);
+    public gh(di diVar, Context context, qh qhVar, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(context, qhVar, null, 1, true, g6Var);
         this.c0 = diVar;
     }
 
@@ -74,8 +74,8 @@ public final class gh extends lt {
     @Override // org.telegram.ui.Components.lt
     public final void i(ActionMode actionMode, Menu menu) {
         org.telegram.ui.ActionBar.f2 f2Var = this.c0.W1;
-        if (f2Var instanceof org.telegram.ui.an) {
-            org.telegram.ui.an.A8(menu, ((org.telegram.ui.an) f2Var).h, true, true, true, true);
+        if (f2Var instanceof org.telegram.ui.cn) {
+            org.telegram.ui.cn.B8(menu, ((org.telegram.ui.cn) f2Var).h, true, true, true, true);
         }
     }
 

@@ -1,9 +1,9 @@
 package org.telegram.ui.Components.voip;
 
 import android.animation.ValueAnimator;
-import org.telegram.ui.fc1;
+import org.telegram.ui.ic1;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -33,12 +33,12 @@ public final /* synthetic */ class h0 implements ValueAnimator.AnimatorUpdateLis
                 k0Var.invalidate();
                 break;
             case 1:
-                fc1 fc1Var = (fc1) this.e;
+                ic1 ic1Var = (ic1) this.e;
                 float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                fc1Var.e1 = com.google.android.recaptcha.internal.a.z(1.0f, floatValue2, 1.0f, this.b * floatValue2);
-                fc1Var.X0 = this.c * floatValue2;
-                fc1Var.Y0 = this.d * floatValue2;
-                fc1Var.s.invalidate();
+                ic1Var.e1 = com.google.android.recaptcha.internal.a.z(1.0f, floatValue2, 1.0f, this.b * floatValue2);
+                ic1Var.X0 = this.c * floatValue2;
+                ic1Var.Y0 = this.d * floatValue2;
+                ic1Var.s.invalidate();
                 break;
             default:
                 vg.m mVar = (vg.m) this.e;

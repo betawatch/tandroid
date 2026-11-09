@@ -1,22 +1,22 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class t1 implements fb0 {
+public final /* synthetic */ class t1 implements gb0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ hb0 b;
-    public final /* synthetic */ hb0 c;
-    public final /* synthetic */ hb0 d;
+    public final /* synthetic */ ib0 b;
+    public final /* synthetic */ ib0 c;
+    public final /* synthetic */ ib0 d;
 
-    public /* synthetic */ t1(hb0 hb0Var, hb0 hb0Var2, hb0 hb0Var3, int i7) {
+    public /* synthetic */ t1(ib0 ib0Var, ib0 ib0Var2, ib0 ib0Var3, int i7) {
         this.a = i7;
-        this.b = hb0Var;
-        this.c = hb0Var2;
-        this.d = hb0Var3;
+        this.b = ib0Var;
+        this.c = ib0Var2;
+        this.d = ib0Var3;
     }
 
-    @Override // org.telegram.ui.Components.fb0
-    public final void n(hb0 hb0Var, int i7) {
+    @Override // org.telegram.ui.Components.gb0
+    public final void n(ib0 ib0Var, int i7) {
         switch (this.a) {
             case 0:
                 v4.v0(this.b, this.c, this.d);

@@ -1,14 +1,15 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public interface g90 {
-    void a(TLRPC.TL_chatInviteExported tL_chatInviteExported);
-
-    void b(TLRPC.TL_chatInviteExported tL_chatInviteExported, TLObject tLObject);
-
-    void c(TLObject tLObject);
+public final class g90 extends org.telegram.ui.Cells.r8 {
+    @Override // org.telegram.ui.Cells.r8, android.view.View
+    public final void onDraw(Canvas canvas) {
+        canvas.save();
+        canvas.clipRect(0, 0, getWidth(), getHeight());
+        super.onDraw(canvas);
+        canvas.restore();
+    }
 }

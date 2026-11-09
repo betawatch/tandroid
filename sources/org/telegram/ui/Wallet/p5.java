@@ -1,39 +1,60 @@
 package org.telegram.ui.Wallet;
 
 import android.content.Context;
-import android.view.View;
-import org.telegram.ui.Components.l41;
-import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.q41;
-import org.telegram.ui.Components.w31;
-import org.telegram.ui.Components.x31;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
-public final class p5 extends w31 {
-    public static final /* synthetic */ int b = 0;
+public final class p5 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
+    public final org.telegram.ui.ActionBar.g6 a;
+    public final ImageView b;
+    public final TextView c;
+    public final TextView d;
 
-    static {
-        w31.h(new p5());
+    public p5(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(context);
+        this.a = g6Var;
+        setPadding(org.telegram.messenger.g0.L(36.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(36.0f), org.telegram.messenger.g0.L(8.0f));
+        ImageView imageView = new ImageView(context);
+        this.b = imageView;
+        addView(imageView, c8.ha.d(28, 28.0f, 51, 0.0f, 2.0f, 0.0f, 0.0f));
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(1);
+        addView(linearLayout, c8.ha.d(-1, -2.0f, 55, 42.0f, 0.0f, 0.0f, 0.0f));
+        TextView textView = new TextView(context);
+        this.c = textView;
+        com.google.android.recaptcha.internal.a.q(textView, 1, 14.0f);
+        TextView f10 = org.telegram.messenger.camera.q.f(linearLayout, textView, c8.ha.t(-1, -2, 55, 0, 0, 0, 2), context);
+        this.d = f10;
+        f10.setTextSize(1, 14.0f);
+        linearLayout.addView(f10, c8.ha.t(-1, -2, 55, 0, 0, 0, 2));
+        updateColors();
     }
 
-    @Override // org.telegram.ui.Components.w31
-    public final void b(View view, x31 x31Var, boolean z9, l41 l41Var, q41 q41Var) {
-        ((q5) view).a(x31Var.k, x31Var.l, x31Var.m);
+    public final void a(int i7, CharSequence charSequence, CharSequence charSequence2) {
+        this.b.setImageResource(i7);
+        this.c.setText(charSequence);
+        this.d.setText(charSequence2);
     }
 
-    @Override // org.telegram.ui.Components.w31
-    public final View d(Context context, pj0 pj0Var, int i7, org.telegram.ui.ActionBar.f6 f6Var) {
-        return new q5(context, f6Var);
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void addColorKeys(HashSet hashSet) {
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.l6.G6));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.l6.z6));
     }
 
-    @Override // org.telegram.ui.Components.w31
-    public final boolean f() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.w31
-    public final boolean g() {
-        return true;
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void updateColors() {
+        int i7 = org.telegram.ui.ActionBar.l6.G6;
+        org.telegram.ui.ActionBar.g6 g6Var = this.a;
+        this.b.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.l6.w0(i7, g6Var), PorterDuff.Mode.SRC_IN));
+        this.c.setTextColor(org.telegram.ui.ActionBar.l6.w0(i7, g6Var));
+        this.d.setTextColor(org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.z6, g6Var));
     }
 }

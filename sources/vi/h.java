@@ -7,7 +7,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
 import b7.l;
-import di.h4;
+import di.i4;
 import h2.l0;
 import h2.z;
 import j2.n;
@@ -24,13 +24,13 @@ import org.telegram.messenger.a8;
 import org.telegram.messenger.me;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.xk;
-import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.s31;
 import u9.f;
 import vi.g;
 import vi.h;
 import w7.s;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
 public final class h {
     public static final s H = new s(26, false);
@@ -71,21 +71,21 @@ public final class h {
 
     /* JADX WARN: Type inference failed for: r4v3, types: [vi.d] */
     /* JADX WARN: Type inference failed for: r4v4, types: [vi.d] */
-    public h(h4 h4Var) {
+    public h(i4 i4Var) {
         q();
-        Context context = (Context) h4Var.b;
+        Context context = (Context) i4Var.b;
         Context applicationContext = context.getApplicationContext();
         context = applicationContext != null ? applicationContext : context;
         this.a = context;
-        File file = (File) h4Var.c;
+        File file = (File) i4Var.c;
         this.b = file == null ? context.getCacheDir() : file;
         this.c = 700L;
-        f fVar = (f) h4Var.d;
+        f fVar = (f) i4Var.d;
         this.d = fVar;
-        this.e = h4Var.a;
-        this.f = (n) h4Var.e;
-        this.g = (d0) h4Var.f;
-        b bVar = new b((s) h4Var.g);
+        this.e = i4Var.a;
+        this.f = (n) i4Var.e;
+        this.g = (d0) i4Var.f;
+        b bVar = new b((s) i4Var.g);
         this.h = bVar;
         final int i7 = 0;
         this.D = new Runnable(this) { // from class: vi.d
@@ -227,7 +227,7 @@ public final class h {
         }
         this.x = true;
         ac.e eVar = this.C;
-        u9.f fVar = new u9.f(14, this, eVar == null ? null : (File) eVar.b);
+        u9.f fVar = new u9.f(15, this, eVar == null ? null : (File) eVar.b);
         try {
             this.j.execute(fVar);
         } catch (RejectedExecutionException unused) {
@@ -242,7 +242,7 @@ public final class h {
         g gVar = new g(j3, f10);
         synchronized (this.l) {
             this.z = gVar;
-            this.k.execute(new r31(this, gVar, f10, 19));
+            this.k.execute(new s31(this, gVar, f10, 19));
         }
         b bVar = this.h;
         StringBuilder t6 = p0.t(j3, "output generation started: id=", ", file=");
@@ -348,7 +348,7 @@ public final class h {
                         } catch (Throwable th2) {
                             th = th2;
                             hVar = absolutePath2;
-                            handler.post(new f(13, hVar, th));
+                            handler.post(new f(14, hVar, th));
                         }
                     } catch (Throwable th3) {
                         th = th3;

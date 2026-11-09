@@ -22,13 +22,13 @@ import android.view.ViewGroup;
 import bi.m6;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.Components.i5;
 import org.telegram.ui.Components.w5;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class v0 extends Drawable {
     public static c1 E = new c1();
@@ -37,7 +37,7 @@ public final class v0 extends Drawable {
     public Paint C;
     public int D;
     public final ViewGroup a;
-    public final f6 b;
+    public final g6 b;
     public final Paint c;
     public final Paint d;
     public final RectF e;
@@ -63,7 +63,7 @@ public final class v0 extends Drawable {
     public int y;
     public Integer z;
 
-    public v0(ViewGroup viewGroup, f6 f6Var, boolean z9) {
+    public v0(ViewGroup viewGroup, g6 g6Var, boolean z9) {
         Paint paint = new Paint(1);
         this.c = paint;
         Paint paint2 = new Paint(1);
@@ -75,14 +75,14 @@ public final class v0 extends Drawable {
         this.o = new Matrix();
         Paint paint3 = new Paint(1);
         this.q = paint3;
-        this.r = new w5(new wg.p(this, 8), 320L, xq.h);
+        this.r = new w5(new wg.a0(this, 6), 320L, xq.h);
         this.s = org.telegram.messenger.g0.L(11.0f);
         this.v = true;
         this.w = 0;
-        int i7 = k6.d6;
+        int i7 = l6.d6;
         this.y = i7;
         this.a = viewGroup;
-        this.b = f6Var;
+        this.b = g6Var;
         u0 u0Var = new u0(this, viewGroup, org.telegram.messenger.g0.L(28.0f));
         this.l = u0Var;
         viewGroup.addOnAttachStateChangeListener(new m6(this, 13));
@@ -90,7 +90,7 @@ public final class v0 extends Drawable {
             u0Var.a();
         }
         this.g = z9;
-        int w02 = k6.w0(i7, f6Var);
+        int w02 = l6.w0(i7, g6Var);
         this.x = w02;
         paint.setColor(w02);
         a(z9);
@@ -100,7 +100,7 @@ public final class v0 extends Drawable {
     }
 
     public final void a(boolean z9) {
-        int w02 = z9 ? k6.w0(k6.a6, this.b) : 0;
+        int w02 = z9 ? l6.w0(l6.a6, this.b) : 0;
         if (this.t != z9 || (z9 && this.u != w02)) {
             this.t = z9;
             Paint paint = this.c;
@@ -139,8 +139,8 @@ public final class v0 extends Drawable {
         Paint paint = this.c;
         int color = paint.getColor();
         int i13 = this.x;
-        f6 f6Var = this.b;
-        if (color == i13 && (w02 = k6.w0(k6.d6, f6Var)) != this.x) {
+        g6 g6Var = this.b;
+        if (color == i13 && (w02 = l6.w0(l6.d6, g6Var)) != this.x) {
             this.x = w02;
             paint.setColor(w02);
         }
@@ -167,11 +167,11 @@ public final class v0 extends Drawable {
         } else {
             paint.setShader(null);
         }
-        int i15 = k6.a6;
-        int w03 = k6.w0(i15, f6Var);
-        int i16 = k6.d6;
-        int w04 = k6.w0(i16, f6Var);
-        boolean z9 = this.s == ((float) org.telegram.messenger.g0.L(11.0f)) && w03 == k6.x0(null, i15, false) && w04 == k6.x0(null, i16, false);
+        int i15 = l6.a6;
+        int w03 = l6.w0(i15, g6Var);
+        int i16 = l6.d6;
+        int w04 = l6.w0(i16, g6Var);
+        boolean z9 = this.s == ((float) org.telegram.messenger.g0.L(11.0f)) && w03 == l6.x0(null, i15, false) && w04 == l6.x0(null, i16, false);
         boolean z10 = this.g;
         a(z10 && !z9);
         if (z9) {
@@ -343,7 +343,7 @@ public final class v0 extends Drawable {
             Paint paint4 = this.q;
             if (i20 == 0) {
                 Integer num = this.z;
-                paint4.setColor(num != null ? num.intValue() : k6.w0(this.y, f6Var));
+                paint4.setColor(num != null ? num.intValue() : l6.w0(this.y, g6Var));
                 paint4.setStrokeWidth(org.telegram.messenger.g0.T1(0.0f, org.telegram.messenger.g0.N(1.667f), d));
                 RectF rectF2 = org.telegram.messenger.g0.P;
                 rectF2.set(rectF);
@@ -355,7 +355,7 @@ public final class v0 extends Drawable {
             }
             if (i20 == i10) {
                 Integer num2 = this.z;
-                paint4.setColor(num2 != null ? num2.intValue() : k6.w0(this.y, f6Var));
+                paint4.setColor(num2 != null ? num2.intValue() : l6.w0(this.y, g6Var));
                 paint4.setStrokeWidth(org.telegram.messenger.g0.T1(0.0f, org.telegram.messenger.g0.N(3.0f), d));
                 RectF rectF3 = org.telegram.messenger.g0.P;
                 rectF3.set(rectF);

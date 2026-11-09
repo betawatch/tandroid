@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewPropertyAnimator;
 import android.widget.ImageView;
 import c8.ha;
-import di.d4;
+import di.e4;
 import java.util.Date;
 import java.util.HashSet;
 import org.telegram.messenger.a8;
@@ -20,19 +20,19 @@ import org.telegram.messenger.t10;
 import org.telegram.messenger.t3;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.a6;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k5;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.ActionBar.b6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l5;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.s6;
 import org.telegram.ui.Components.l9;
-import org.telegram.ui.Components.nu0;
+import org.telegram.ui.Components.pu0;
 import org.telegram.ui.Components.w8;
 import org.telegram.ui.Components.wo;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class r extends yg.c implements a6 {
+public final class r extends yg.c implements b6 {
     public final ImageView D;
     public boolean E;
     public final ImageView F;
@@ -40,36 +40,36 @@ public final class r extends yg.c implements a6 {
     public TLRPC.User H;
     public TLRPC.Chat I;
     public TL_stories.TL_myBoost J;
-    public final nu0 K;
+    public final pu0 K;
     public int L;
     public final boolean[] s;
     public final wo w;
     public final ImageView x;
     public boolean y;
 
-    public r(Context context, boolean z9, boolean z10, f6 f6Var, boolean z11) {
-        super(context, f6Var);
+    public r(Context context, boolean z9, boolean z10, g6 g6Var, boolean z11) {
+        super(context, g6Var);
         this.s = new boolean[1];
         this.G = true;
-        this.K = new nu0(this);
+        this.K = new pu0(this);
         this.d.setTypeface(g0.o());
         this.f.setVisibility(8);
         if (z10) {
-            wo woVar = new wo(21, context, f6Var);
+            wo woVar = new wo(21, context, g6Var);
             this.w = woVar;
-            woVar.b(k6.B5, k6.h5, k6.k7);
+            woVar.b(l6.B5, l6.h5, l6.k7);
             woVar.setDrawUnchecked(false);
             woVar.setDrawBackgroundAsArc(3);
             boolean z12 = id.a0;
             addView(woVar, ha.d(24, 24.0f, (z12 ? 5 : 3) | 48, z12 ? 0.0f : 40.0f, 33.0f, z12 ? 39.0f : 0.0f, 0.0f));
             d();
         } else if (z9) {
-            wo woVar2 = new wo(21, context, f6Var);
+            wo woVar2 = new wo(21, context, g6Var);
             this.w = woVar2;
             if (z11) {
-                woVar2.b(k6.i7, k6.j7, k6.C5);
+                woVar2.b(l6.i7, l6.j7, l6.C5);
             } else {
-                woVar2.b(k6.B5, k6.j7, k6.C5);
+                woVar2.b(l6.B5, l6.j7, l6.C5);
             }
             woVar2.setDrawUnchecked(true);
             woVar2.setDrawBackgroundAsArc(10);
@@ -85,16 +85,16 @@ public final class r extends yg.c implements a6 {
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
         imageView.setScaleType(scaleType);
         imageView.setImageResource(R.drawable.ic_ab_other);
-        int i7 = k6.od;
+        int i7 = l6.od;
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
-        r6.t(imageView, i7, f6Var, mode);
+        s6.s(imageView, i7, g6Var, mode);
         addView(imageView, ha.d(32, 32.0f, (id.a0 ? 3 : 5) | 16, 12.0f, 0.0f, 12.0f, 0.0f));
         ImageView imageView2 = new ImageView(context);
         this.D = imageView2;
         imageView2.setScaleType(scaleType);
         imageView2.setImageResource(R.drawable.menu_phone);
-        int i10 = k6.Ci;
-        r6.t(imageView2, i10, f6Var, mode);
+        int i10 = l6.Ci;
+        s6.s(imageView2, i10, g6Var, mode);
         boolean z13 = id.a0;
         addView(imageView2, ha.d(32, 32.0f, (z13 ? 3 : 5) | 16, z13 ? 52.0f : 12.0f, 0.0f, z13 ? 12.0f : 52.0f, 0.0f));
         imageView2.setVisibility(8);
@@ -102,7 +102,7 @@ public final class r extends yg.c implements a6 {
         this.F = imageView3;
         imageView3.setScaleType(scaleType);
         imageView3.setImageResource(R.drawable.menu_videocall);
-        r6.t(imageView3, i10, f6Var, mode);
+        s6.s(imageView3, i10, g6Var, mode);
         addView(imageView3, ha.d(32, 32.0f, (id.a0 ? 3 : 5) | 16, 12.0f, 0.0f, 12.0f, 0.0f));
         imageView3.setVisibility(8);
     }
@@ -123,9 +123,9 @@ public final class r extends yg.c implements a6 {
         return sb2.toString();
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(k6.z9));
+        hashSet.add(Integer.valueOf(l6.z9));
     }
 
     @Override // yg.c
@@ -246,9 +246,9 @@ public final class r extends yg.c implements a6 {
         l9Var.setRoundRadius(L);
         l9Var.e(chat, w8Var);
         String str = chat.title;
-        d4 d4Var = this.d;
-        d4Var.k(str);
-        d4Var.i(null);
+        e4 e4Var = this.d;
+        e4Var.k(str);
+        e4Var.i(null);
         if (i7 <= 0) {
             i7 = chat.participants_count;
         }
@@ -256,10 +256,10 @@ public final class r extends yg.c implements a6 {
         if (i7 >= 1) {
             M0 = id.G(i7, V ? "Subscribers" : "Members", new Object[0]);
         } else {
-            M0 = id.M0(V ? 2131751391 : 2131754876, null);
+            M0 = id.M0(V ? 2131751390 : 2131754876, null);
         }
         setSubtitle(M0);
-        r6.Y(this.e, k6.r5, this.a);
+        s6.X(this.e, l6.r5, this.a);
         i(false, i7 > 200 ? 0.3f : 1.0f);
     }
 
@@ -301,22 +301,22 @@ public final class r extends yg.c implements a6 {
         l9Var.setRoundRadius(L);
         l9Var.e(this.I, w8Var);
         String str = this.I.title;
-        d4 d4Var = this.d;
-        d4Var.k(str);
-        int i7 = k6.r5;
-        f6 f6Var = this.a;
-        k5 k5Var = this.e;
-        r6.Y(k5Var, i7, f6Var);
+        e4 e4Var = this.d;
+        e4Var.k(str);
+        int i7 = l6.r5;
+        g6 g6Var = this.a;
+        l5 l5Var = this.e;
+        s6.X(l5Var, i7, g6Var);
         setSubtitle(id.a0(null, null, 2131753661, id.E0().o0().format(new Date(tL_myBoost.expires * 1000))));
         int i10 = tL_myBoost.cooldown_until_date;
         if (i10 <= 0) {
-            d4Var.setAlpha(1.0f);
-            k5Var.setAlpha(1.0f);
+            e4Var.setAlpha(1.0f);
+            l5Var.setAlpha(1.0f);
             i(false, 1.0f);
         } else {
             setSubtitle(id.a0(null, null, 2131753594, f((i10 * 1000) - System.currentTimeMillis())));
-            d4Var.setAlpha(0.65f);
-            k5Var.setAlpha(0.65f);
+            e4Var.setAlpha(0.65f);
+            l5Var.setAlpha(0.65f);
             i(false, 0.3f);
         }
     }
@@ -342,8 +342,8 @@ public final class r extends yg.c implements a6 {
         l9Var.setRoundRadius(L);
         l9Var.e(user, w8Var);
         String p10 = t10.p(user);
-        d4 d4Var = this.d;
-        d4Var.k(p10);
+        e4 e4Var = this.d;
+        e4Var.k(p10);
         boolean[] zArr = this.s;
         zArr[0] = false;
         if (t10.t(user)) {
@@ -356,26 +356,26 @@ public final class r extends yg.c implements a6 {
         } else {
             setSubtitle(id.d0(p10.s0, user, zArr, null));
         }
-        r6.Y(this.e, zArr[0] ? k6.n5 : k6.r5, this.a);
+        s6.X(this.e, zArr[0] ? l6.n5 : l6.r5, this.a);
         wo woVar = this.w;
         if (woVar != null) {
             woVar.setAlpha(1.0f);
         }
-        int x02 = k6.x0(null, k6.z9, false);
+        int x02 = l6.x0(null, l6.z9, false);
         this.L = x02;
-        d4Var.i(this.K.a(user, x02, false));
+        e4Var.i(this.K.a(user, x02, false));
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
-        nu0 nu0Var;
-        d4 d4Var;
+        pu0 pu0Var;
+        e4 e4Var;
         int x02;
         try {
-            if (this.H != null && (nu0Var = this.K) != null && (d4Var = this.d) != null && (x02 = k6.x0(null, k6.z9, false)) != this.L) {
+            if (this.H != null && (pu0Var = this.K) != null && (e4Var = this.d) != null && (x02 = l6.x0(null, l6.z9, false)) != this.L) {
                 this.L = x02;
-                nu0Var.a(this.H, x02, false);
-                d4Var.invalidate();
+                pu0Var.a(this.H, x02, false);
+                e4Var.invalidate();
             }
         } catch (Exception e10) {
             a8.g(e10, true);

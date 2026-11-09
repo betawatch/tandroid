@@ -1,24 +1,24 @@
 package x2;
 
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.hy0;
+import org.telegram.ui.ky0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class x0 implements f0 {
     public final j2.g a;
     public final u5.e b;
-    public final hy0 c;
+    public final ky0 c;
     public final pb.b d;
     public final int e;
 
     public x0(j2.g gVar, f3.m mVar) {
         u5.e eVar = new u5.e(mVar, 10);
-        hy0 hy0Var = new hy0(6);
+        ky0 ky0Var = new ky0(6);
         pb.b bVar = new pb.b(4);
         this.a = gVar;
         this.b = eVar;
-        this.c = hy0Var;
+        this.c = ky0Var;
         this.d = bVar;
         this.e = TLObject.FLAG_20;
     }

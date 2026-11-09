@@ -14,24 +14,24 @@ import org.telegram.messenger.t10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class f5 extends LinearLayout {
     public final org.telegram.ui.Components.l9 a;
     public final md b;
     public final TextView c;
     public final org.telegram.ui.Components.w8 d;
-    public final org.telegram.ui.ActionBar.f6 e;
+    public final org.telegram.ui.ActionBar.g6 e;
     public Drawable f;
     public boolean h;
     public boolean n;
 
-    public f5(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+    public f5(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
         super(context);
         this.h = false;
-        this.e = f6Var;
+        this.e = g6Var;
         setOrientation(0);
-        org.telegram.ui.Components.w8 w8Var = new org.telegram.ui.Components.w8((org.telegram.ui.ActionBar.f6) null);
+        org.telegram.ui.Components.w8 w8Var = new org.telegram.ui.Components.w8((org.telegram.ui.ActionBar.g6) null);
         this.d = w8Var;
         w8Var.u(org.telegram.messenger.g0.L(18.0f));
         org.telegram.ui.Components.l9 l9Var = new org.telegram.ui.Components.l9(context);
@@ -40,7 +40,7 @@ public final class f5 extends LinearLayout {
         addView(l9Var, c8.ha.k(8.0f, 4.0f, 0.0f, 0.0f, 28, 28));
         md mdVar = new md(context, 7);
         this.b = mdVar;
-        org.telegram.ui.ActionBar.r6.V(mdVar, org.telegram.ui.ActionBar.k6.G6, f6Var);
+        org.telegram.ui.ActionBar.s6.U(mdVar, org.telegram.ui.ActionBar.l6.G6, g6Var);
         mdVar.setTextSize(1, 15.0f);
         mdVar.setSingleLine(true);
         mdVar.setGravity(3);
@@ -49,7 +49,7 @@ public final class f5 extends LinearLayout {
         addView(mdVar, c8.ha.t(-2, -2, 16, 12, 0, 0, 0));
         TextView textView = new TextView(context);
         this.c = textView;
-        org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.A6, f6Var);
+        org.telegram.ui.ActionBar.s6.U(textView, org.telegram.ui.ActionBar.l6.A6, g6Var);
         textView.setTextSize(1, 15.0f);
         textView.setSingleLine(true);
         textView.setGravity(3);
@@ -117,7 +117,7 @@ public final class f5 extends LinearLayout {
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (this.h) {
-            canvas.drawLine(org.telegram.messenger.g0.L(52.0f), getHeight() - 1, getWidth() - org.telegram.messenger.g0.L(8.0f), getHeight() - 1, org.telegram.ui.ActionBar.k6.k0);
+            canvas.drawLine(org.telegram.messenger.g0.L(52.0f), getHeight() - 1, getWidth() - org.telegram.messenger.g0.L(8.0f), getHeight() - 1, org.telegram.ui.ActionBar.l6.k0);
         }
     }
 
@@ -208,16 +208,16 @@ public final class f5 extends LinearLayout {
         TextView textView = this.c;
         md mdVar = this.b;
         if (z9) {
-            org.telegram.ui.ActionBar.r6.r(mdVar);
-            org.telegram.ui.ActionBar.r6.r(textView);
+            org.telegram.ui.ActionBar.s6.q(mdVar);
+            org.telegram.ui.ActionBar.s6.q(textView);
             mdVar.setTextColor(-1);
             textView.setTextColor(-4473925);
             return;
         }
-        int i7 = org.telegram.ui.ActionBar.k6.G6;
-        org.telegram.ui.ActionBar.f6 f6Var = this.e;
-        org.telegram.ui.ActionBar.r6.V(mdVar, i7, f6Var);
-        org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.A6, f6Var);
+        int i7 = org.telegram.ui.ActionBar.l6.G6;
+        org.telegram.ui.ActionBar.g6 g6Var = this.e;
+        org.telegram.ui.ActionBar.s6.U(mdVar, i7, g6Var);
+        org.telegram.ui.ActionBar.s6.U(textView, org.telegram.ui.ActionBar.l6.A6, g6Var);
     }
 
     public void setText(String str) {

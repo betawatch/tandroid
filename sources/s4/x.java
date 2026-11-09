@@ -11,9 +11,9 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import org.telegram.ui.Components.et;
 import org.telegram.ui.Components.rt;
-import org.telegram.ui.hy0;
+import org.telegram.ui.ky0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class x {
     public static e c;
@@ -73,9 +73,9 @@ public final class x {
         if (eVar == null) {
             return null;
         }
-        hy0 hy0Var = eVar.C;
-        if (hy0Var != null) {
-            android.support.v4.media.session.a0 a0Var = (android.support.v4.media.session.a0) hy0Var.b;
+        ky0 ky0Var = eVar.C;
+        if (ky0Var != null) {
+            android.support.v4.media.session.a0 a0Var = (android.support.v4.media.session.a0) ky0Var.b;
             if (a0Var != null) {
                 return ((android.support.v4.media.session.u) a0Var.b).c;
             }

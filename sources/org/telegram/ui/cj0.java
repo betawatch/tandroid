@@ -1,82 +1,148 @@
 package org.telegram.ui;
 
-import java.util.HashMap;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.tgnet.TLRPC;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import j$.util.Objects;
+import java.util.regex.Pattern;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class cj0 extends nq0 {
-    public final /* synthetic */ bk0 a;
+public final class cj0 implements TextWatcher {
+    public final /* synthetic */ int a;
+    public final Object b;
+    public String c;
+    public final /* synthetic */ Object d;
 
-    public cj0(bk0 bk0Var) {
-        this.a = bk0Var;
+    public /* synthetic */ cj0(dk0 dk0Var, EditTextBoldCursor editTextBoldCursor, String str, int i7) {
+        this.a = i7;
+        this.d = dk0Var;
+        this.b = editTextBoldCursor;
+        this.c = str;
     }
 
-    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
-    public final void B(int i7) {
-        bk0 bk0Var = this.a;
-        int i10 = bk0Var.S0;
-        org.telegram.messenger.ew ewVar = i10 == 1 ? bk0Var.j1 : i10 == 4 ? (org.telegram.messenger.ew) bk0Var.k1.get(i7) : i10 == 2 ? bk0Var.l1 : i10 == 3 ? bk0Var.m1 : (org.telegram.messenger.ew) bk0Var.i1.get(i7);
-        zj0 zj0Var = (zj0) bk0Var.n1.remove(ewVar);
-        if (zj0Var == null) {
-            return;
+    /* JADX WARN: Removed duplicated region for block: B:27:0x00bc  */
+    @Override // android.text.TextWatcher
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void afterTextChanged(Editable editable) {
+        long parseLong;
+        int i7;
+        int i10 = this.a;
+        boolean z9 = true;
+        Object obj = this.b;
+        Object obj2 = this.d;
+        switch (i10) {
+            case 0:
+                dk0.N0((dk0) obj2, (EditTextBoldCursor) obj, this.c, editable, false);
+                break;
+            case 1:
+                dk0 dk0Var = (dk0) obj2;
+                EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) obj;
+                int intValue = ((Integer) editTextBoldCursor.getTag()).intValue();
+                int i11 = 0;
+                while (true) {
+                    if (i11 < editable.length()) {
+                        char charAt = editable.charAt(i11);
+                        if ((charAt >= '0' && charAt <= '9') || ((charAt >= 'a' && charAt <= 'z') || ((charAt >= 'A' && charAt <= 'Z') || charAt == ' ' || charAt == '\'' || charAt == ',' || charAt == '.' || charAt == '&' || charAt == '-' || charAt == '/'))) {
+                            i11++;
+                        }
+                    } else {
+                        z9 = false;
+                    }
+                }
+                if (z9 && !dk0Var.u0) {
+                    editTextBoldCursor.setErrorText(org.telegram.messenger.id.M0(2131747449, null));
+                    break;
+                } else {
+                    dk0Var.t0[intValue] = z9;
+                    dk0.N0(dk0Var, editTextBoldCursor, this.c, editable, false);
+                    break;
+                }
+                break;
+            case 2:
+                dk0.N0((dk0) obj2, (EditTextBoldCursor) obj, this.c, editable, false);
+                break;
+            default:
+                sg.p pVar = (sg.p) obj2;
+                sg.q qVar = pVar.f;
+                EditTextBoldCursor editTextBoldCursor2 = pVar.d;
+                if (!pVar.e && this.c != null && editable != null && !TextUtils.isEmpty(editable) && !Objects.equals(this.c.toString(), editable.toString())) {
+                    String obj3 = editable.toString();
+                    if (obj3.length() > 8) {
+                        editTextBoldCursor2.setText(obj3.substring(2, 8).toUpperCase());
+                        editTextBoldCursor2.setSelection(8);
+                        break;
+                    } else if (((Pattern) obj).matcher(editable).find()) {
+                        int length = obj3.length();
+                        if (length != 3) {
+                            if (length == 6) {
+                                i7 = ((int) Long.parseLong(obj3, 16)) - 16777216;
+                            } else if (length != 8) {
+                                i7 = qVar.m1;
+                            } else {
+                                parseLong = Long.parseLong(obj3, 16);
+                            }
+                            if (i7 == qVar.m1) {
+                                qVar.I0(i7, 5);
+                                break;
+                            }
+                        } else {
+                            parseLong = Long.parseLong("FF" + obj3.charAt(0) + obj3.charAt(0) + obj3.charAt(1) + obj3.charAt(1) + obj3.charAt(2) + obj3.charAt(2), 16);
+                        }
+                        i7 = (int) parseLong;
+                        if (i7 == qVar.m1) {
+                        }
+                    }
+                }
+                break;
         }
-        String r12 = bk0.r1(ewVar);
-        int i11 = bk0Var.S0;
-        String str = null;
-        if (i11 == 1) {
-            bk0Var.j1 = null;
-            str = rf.b.i("selfie", r12);
-        } else if (i11 == 4) {
-            str = rf.b.i("translation", r12);
-        } else if (i11 == 2) {
-            bk0Var.l1 = null;
-            str = rf.b.i("front", r12);
-        } else if (i11 == 3) {
-            bk0Var.m1 = null;
-            str = rf.b.i("reverse", r12);
-        } else if (i11 == 0) {
-            str = rf.b.i("files", r12);
-        }
-        if (str != null) {
-            HashMap hashMap = bk0Var.x1;
-            if (hashMap != null) {
-                hashMap.remove(str);
-            }
-            HashMap hashMap2 = bk0Var.y1;
-            if (hashMap2 != null) {
-                hashMap2.remove(str);
-            }
-        }
-        bk0Var.X1(bk0Var.S0);
-        bk0Var.i0.removeView(zj0Var);
     }
 
-    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
-    public final wq0 E(org.telegram.messenger.ij ijVar, TLRPC.FileLocation fileLocation, int i7, boolean z9, boolean z10) {
-        if (i7 < 0) {
-            return null;
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+        switch (this.a) {
+            case 0:
+            case 1:
+            case 2:
+                break;
+            default:
+                this.c = charSequence.toString();
+                break;
         }
-        bk0 bk0Var = this.a;
-        if (i7 >= bk0Var.i0.getChildCount()) {
-            return null;
-        }
-        zj0 zj0Var = (zj0) bk0Var.i0.getChildAt(i7);
-        int[] iArr = new int[2];
-        zj0Var.c.getLocationInWindow(iArr);
-        wq0 wq0Var = new wq0();
-        wq0Var.b = iArr[0];
-        wq0Var.c = iArr[1];
-        wq0Var.d = bk0Var.i0;
-        ImageReceiver imageReceiver = zj0Var.c.getImageReceiver();
-        wq0Var.a = imageReceiver;
-        wq0Var.e = imageReceiver.p();
-        return wq0Var;
     }
 
-    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
-    public final String b0() {
-        return this.a.S0 == 1 ? org.telegram.messenger.id.a0("PassportDeleteSelfieAlert", null, 2131747582, new Object[0]) : org.telegram.messenger.id.a0("PassportDeleteScanAlert", null, 2131747584, new Object[0]);
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+        int i12 = this.a;
+    }
+
+    public cj0(sg.p pVar) {
+        this.a = 3;
+        this.d = pVar;
+        this.b = Pattern.compile("^[0-9a-fA-F]*$");
+    }
+
+    private final void a(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void b(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void c(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void d(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void e(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void f(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void g(int i7, int i10, int i11, CharSequence charSequence) {
     }
 }

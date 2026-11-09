@@ -1,6 +1,6 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o6 implements Runnable {
     public final /* synthetic */ int a;
@@ -33,7 +33,7 @@ public final /* synthetic */ class o6 implements Runnable {
                     p6Var.dismiss();
                     break;
                 } else {
-                    org.telegram.messenger.g0.i3(new gq0(p6Var, 16), Math.max(0L, 1000 - (System.currentTimeMillis() - jArr[0])));
+                    org.telegram.messenger.g0.i3(new iq0(p6Var, 16), Math.max(0L, 1000 - (System.currentTimeMillis() - jArr[0])));
                     break;
                 }
         }

@@ -20,8 +20,8 @@ import bi.ab;
 import bi.de;
 import c8.rb;
 import com.google.firebase.messaging.FirebaseMessaging;
+import di.f8;
 import di.h3;
-import di.s7;
 import h9.y1;
 import j$.util.Objects;
 import java.lang.reflect.Array;
@@ -45,23 +45,23 @@ import org.telegram.messenger.fz;
 import org.telegram.messenger.kf;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.Components.j30;
-import org.telegram.ui.Components.pp0;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.Components.k30;
+import org.telegram.ui.Components.qp0;
 import org.telegram.ui.Components.xq;
+import org.telegram.ui.Wallet.x0;
 import org.telegram.ui.Wallet.y0;
-import org.telegram.ui.Wallet.z0;
 import org.telegram.ui.b5;
-import org.telegram.ui.fx;
+import org.telegram.ui.hx;
 import org.telegram.ui.r4;
 import org.telegram.ui.u4;
 import org.telegram.ui.w0;
 import org.telegram.ui.w4;
-import org.telegram.ui.wm0;
+import org.telegram.ui.ym0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
-public final class q implements f3.q, wm0 {
+public final class q implements f3.q, ym0 {
     public static q e;
     public boolean a;
     public Object b;
@@ -136,7 +136,7 @@ public final class q implements f3.q, wm0 {
         return c10 != 0 ? c10 != 1 ? gc.e.c(40) : gc.e.c(26) : gc.e.c(9);
     }
 
-    public void C(ViewGroup viewGroup, f6 f6Var, w4 w4Var, u4 u4Var) {
+    public void C(ViewGroup viewGroup, g6 g6Var, w4 w4Var, u4 u4Var) {
         Objects.requireNonNull(viewGroup);
         Context context = viewGroup.getContext();
         if (((ViewGroup) this.b) != viewGroup) {
@@ -147,7 +147,7 @@ public final class q implements f3.q, wm0 {
             }
             this.b = viewGroup;
             this.c = (WindowManager) context.getSystemService(WindowManager.class);
-            r4 r4Var2 = new r4(this, context, f6Var, u4Var);
+            r4 r4Var2 = new r4(this, context, g6Var, u4Var);
             this.d = r4Var2;
             w0 w0Var = new w0(this, 3);
             WeakHashMap weakHashMap = r0.i0.a;
@@ -211,7 +211,7 @@ public final class q implements f3.q, wm0 {
 
     public void G(Runnable runnable, Executor executor) {
         try {
-            executor.execute(new fx(this, runnable, false, 4));
+            executor.execute(new hx(this, runnable, false, 4));
         } catch (RejectedExecutionException unused) {
             F();
         }
@@ -352,22 +352,22 @@ public final class q implements f3.q, wm0 {
         while (i7 < size) {
             Object obj = arrayList.get(i7);
             i7++;
-            y0 y0Var = (y0) obj;
+            x0 x0Var = (x0) obj;
             try {
                 try {
                     rc.u uVar = (rc.u) this.b;
-                    org.telegram.messenger.g0.h3(new pp0(y0Var.c, uVar, y0Var.a, "websocket error: " + z0.a(vVar), 18));
+                    org.telegram.messenger.g0.h3(new qp0(x0Var.c, uVar, x0Var.a, "websocket error: " + y0.a(vVar), 18));
                 } catch (Throwable unused) {
                 }
             } catch (Throwable unused2) {
-                y0Var.getClass();
+                x0Var.getClass();
             }
         }
     }
 
-    @Override // org.telegram.ui.wm0
+    @Override // org.telegram.ui.ym0
     public boolean e() {
-        return ((j30) this.d).b.e();
+        return ((k30) this.d).b.e();
     }
 
     @Override // f3.q
@@ -382,12 +382,12 @@ public final class q implements f3.q, wm0 {
         while (i7 < size) {
             Object obj = arrayList.get(i7);
             i7++;
-            y0 y0Var = (y0) obj;
+            x0 x0Var = (x0) obj;
             try {
                 try {
-                    y0Var.getClass();
+                    x0Var.getClass();
                 } catch (Throwable unused) {
-                    y0Var.getClass();
+                    x0Var.getClass();
                 }
             } catch (Throwable unused2) {
             }
@@ -507,7 +507,7 @@ public final class q implements f3.q, wm0 {
                 while (i7 < size) {
                     Object obj = arrayList2.get(i7);
                     i7++;
-                    arrayList.add((y0) obj);
+                    arrayList.add((x0) obj);
                 }
                 this.d = arrayList;
                 this.a = false;
@@ -635,12 +635,12 @@ public final class q implements f3.q, wm0 {
         return b11;
     }
 
-    @Override // org.telegram.ui.wm0
+    @Override // org.telegram.ui.ym0
     public void v0(int i7, boolean z9, boolean z10) {
         ArrayList arrayList = (ArrayList) this.c;
-        j30 j30Var = (j30) this.d;
+        k30 k30Var = (k30) this.d;
         HashMap hashMap = (HashMap) this.b;
-        if (hashMap.isEmpty() || j30Var.b == null || this.a || z9) {
+        if (hashMap.isEmpty() || k30Var.b == null || this.a || z9) {
             return;
         }
         this.a = true;
@@ -666,7 +666,7 @@ public final class q implements f3.q, wm0 {
                 fzVar.h = kfVar.x;
             }
         }
-        j30.a(j30Var, false, arrayList2);
+        k30.a(k30Var, false, arrayList2);
     }
 
     public void w() {
@@ -696,7 +696,7 @@ public final class q implements f3.q, wm0 {
     public void y() {
         h2.i0 i0Var = (h2.i0) this.d;
         if (this.a) {
-            i0Var.d(new s7(this, 10));
+            i0Var.d(new f8(this, 9));
             this.a = false;
         }
     }
@@ -737,15 +737,15 @@ public final class q implements f3.q, wm0 {
         this.b = new AtomicMarkableReference(new ca.e(z9 ? TLObject.FLAG_13 : 1024), false);
     }
 
-    @Override // org.telegram.ui.wm0
+    @Override // org.telegram.ui.ym0
     public void A() {
     }
 
-    @Override // org.telegram.ui.wm0
+    @Override // org.telegram.ui.ym0
     public /* synthetic */ void f0() {
     }
 
-    @Override // org.telegram.ui.wm0
+    @Override // org.telegram.ui.ym0
     public void B(Editable editable) {
     }
 }

@@ -16,17 +16,17 @@ import org.telegram.messenger.id;
 import org.telegram.messenger.ls;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Components.ch0;
+import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.Components.ah0;
+import org.telegram.ui.Components.dh0;
 import org.telegram.ui.Components.jg;
-import org.telegram.ui.Components.zg0;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
 public final class e1 extends FrameLayout implements ls {
     public static final List x = Arrays.asList(new b1(0, 1, 20, 0), new b1(0, 2, 20, 40), new b1(1, 0, 0, 20), new b1(1, 2, 60, 40), new b1(2, 0, 40, 20), new b1(2, 1, 40, 60));
     public int a;
-    public final ch0 b;
+    public final dh0 b;
     public final ImageView c;
     public final ImageView d;
     public final View e;
@@ -74,17 +74,17 @@ public final class e1 extends FrameLayout implements ls {
             }
         });
         addView(view, ha.d(24, 24.0f, 48, 0.0f, 0.0f, 16.0f, 0.0f));
-        ch0 ch0Var = new ch0(context);
-        this.b = ch0Var;
-        ch0Var.f(R.raw.photo_text_allign, 24, 24, null);
-        zg0 animatedDrawable = ch0Var.getAnimatedDrawable();
+        dh0 dh0Var = new dh0(context);
+        this.b = dh0Var;
+        dh0Var.f(R.raw.photo_text_allign, 24, 24, null);
+        ah0 animatedDrawable = dh0Var.getAnimatedDrawable();
         final int i10 = 1;
         animatedDrawable.h = true;
         animatedDrawable.P(20);
         animatedDrawable.M(20);
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
-        ch0Var.setColorFilter(new PorterDuffColorFilter(-1, mode));
-        ch0Var.setOnClickListener(new View.OnClickListener(this) { // from class: tg.a1
+        dh0Var.setColorFilter(new PorterDuffColorFilter(-1, mode));
+        dh0Var.setOnClickListener(new View.OnClickListener(this) { // from class: tg.a1
             public final /* synthetic */ e1 b;
 
             {
@@ -113,8 +113,8 @@ public final class e1 extends FrameLayout implements ls {
                 }
             }
         });
-        ch0Var.setPadding(org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f));
-        addView(ch0Var, ha.d(28, 28.0f, 16, 0.0f, 0.0f, 16.0f, 0.0f));
+        dh0Var.setPadding(org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f));
+        addView(dh0Var, ha.d(28, 28.0f, 16, 0.0f, 0.0f, 16.0f, 0.0f));
         ImageView imageView = new ImageView(context);
         this.c = imageView;
         imageView.setImageResource(R.drawable.msg_text_outlined);
@@ -154,7 +154,7 @@ public final class e1 extends FrameLayout implements ls {
         this.d = imageView2;
         imageView2.setImageResource(R.drawable.msg_add);
         imageView2.setColorFilter(new PorterDuffColorFilter(-1, mode));
-        imageView2.setBackground(k6.h0(1090519039, 1, -1));
+        imageView2.setBackground(l6.h0(1090519039, 1, -1));
         final int i12 = 3;
         imageView2.setOnClickListener(new View.OnClickListener(this) { // from class: tg.a1
             public final /* synthetic */ e1 b;
@@ -252,9 +252,9 @@ public final class e1 extends FrameLayout implements ls {
         int i10 = this.a;
         this.a = i7;
         List list = x;
-        ch0 ch0Var = this.b;
+        dh0 dh0Var = this.b;
         if (i10 == i7) {
-            zg0 animatedDrawable = ch0Var.getAnimatedDrawable();
+            ah0 animatedDrawable = dh0Var.getAnimatedDrawable();
             b1 b1Var = (b1) list.get(0);
             Iterator it = list.iterator();
             while (true) {
@@ -287,7 +287,7 @@ public final class e1 extends FrameLayout implements ls {
                 break;
             }
         }
-        zg0 animatedDrawable2 = ch0Var.getAnimatedDrawable();
+        ah0 animatedDrawable2 = dh0Var.getAnimatedDrawable();
         animatedDrawable2.M(b1Var3.c);
         animatedDrawable2.P(b1Var3.d);
         animatedDrawable2.start();

@@ -7,33 +7,33 @@ import android.view.ViewPropertyAnimator;
 import android.widget.ImageView;
 import c8.ka;
 import java.util.HashSet;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes4.dex */
-public final class x1 extends ImageView implements org.telegram.ui.ActionBar.a6 {
+public final class x1 extends ImageView implements org.telegram.ui.ActionBar.b6 {
     public final int a;
     public int b;
     public boolean c;
     public boolean d;
     public int e;
     public int f;
-    public final f6 h;
+    public final g6 h;
     public boolean n;
     public boolean r;
     public boolean s;
 
-    public x1(int i7, Context context, f6 f6Var) {
+    public x1(int i7, Context context, g6 g6Var) {
         super(context);
         this.e = 20;
-        this.f = k6.d6;
+        this.f = l6.d6;
         this.n = true;
         this.s = true;
         this.b = i7;
         this.a = i7;
-        this.h = f6Var;
+        this.h = g6Var;
         if (i7 != 0) {
             setImageResource(i7);
         }
@@ -46,11 +46,11 @@ public final class x1 extends ImageView implements org.telegram.ui.ActionBar.a6 
         e(this.a);
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(k6.Ci));
-        hashSet.add(Integer.valueOf(k6.G6));
-        hashSet.add(Integer.valueOf(k6.i6));
+        hashSet.add(Integer.valueOf(l6.Ci));
+        hashSet.add(Integer.valueOf(l6.G6));
+        hashSet.add(Integer.valueOf(l6.i6));
         hashSet.add(Integer.valueOf(this.f));
     }
 
@@ -119,16 +119,16 @@ public final class x1 extends ImageView implements org.telegram.ui.ActionBar.a6 
         updateColors();
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
         boolean z9 = this.r;
-        f6 f6Var = this.h;
+        g6 g6Var = this.h;
         if (!z9) {
-            setBackground(k6.b0(k6.w0(this.f, f6Var), k6.w0(k6.i6, f6Var), org.telegram.messenger.g0.L(this.e), org.telegram.messenger.g0.L(this.e)));
-            setColorFilter(new PorterDuffColorFilter(k6.w0(k6.G6, f6Var), PorterDuff.Mode.SRC_IN));
+            setBackground(l6.b0(l6.w0(this.f, g6Var), l6.w0(l6.i6, g6Var), org.telegram.messenger.g0.L(this.e), org.telegram.messenger.g0.L(this.e)));
+            setColorFilter(new PorterDuffColorFilter(l6.w0(l6.G6, g6Var), PorterDuff.Mode.SRC_IN));
         } else {
-            int x02 = k6.x0(null, this.s ? k6.Ci : k6.G6, false);
-            setBackground(k6.b0(k6.w(k6.w0(this.f, f6Var), k6.r1(0.1f, x02)), k6.r1(0.1f, x02), org.telegram.messenger.g0.L(this.e), org.telegram.messenger.g0.L(this.e)));
+            int x02 = l6.x0(null, this.s ? l6.Ci : l6.G6, false);
+            setBackground(l6.b0(l6.w(l6.w0(this.f, g6Var), l6.r1(0.1f, x02)), l6.r1(0.1f, x02), org.telegram.messenger.g0.L(this.e), org.telegram.messenger.g0.L(this.e)));
             setColorFilter(new PorterDuffColorFilter(x02, PorterDuff.Mode.SRC_IN));
         }
     }

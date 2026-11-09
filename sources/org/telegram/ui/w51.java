@@ -1,93 +1,104 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.os.Bundle;
-import android.text.TextPaint;
-import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.FrameLayout;
-import java.util.HashSet;
-import org.telegram.tgnet.TLObject;
+import android.content.SharedPreferences;
+import android.widget.TextView;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class w51 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
-    public final org.telegram.ui.Components.mm0 a;
-    public final int b;
-    public final TextPaint c;
-    public int d;
-    public final /* synthetic */ ThemeActivity e;
+public final class w51 extends org.telegram.ui.ActionBar.j {
+    public final /* synthetic */ ThemeActivity a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w51(ThemeActivity themeActivity, Context context) {
-        super(context);
-        this.e = themeActivity;
-        this.b = 17;
-        setWillNotDraw(false);
-        TextPaint textPaint = new TextPaint(1);
-        this.c = textPaint;
-        textPaint.setTextSize(org.telegram.messenger.g0.L(16.0f));
-        org.telegram.ui.Components.mm0 mm0Var = new org.telegram.ui.Components.mm0(context);
-        this.a = mm0Var;
-        mm0Var.setReportChanges(true);
-        mm0Var.setSeparatorsCount(18);
-        mm0Var.setDelegate(new wr0(this, 3));
-        mm0Var.setImportantForAccessibility(2);
-        addView(mm0Var, c8.ha.d(-1, 38.0f, 51, 5.0f, 5.0f, 39.0f, 0.0f));
+    public w51(ThemeActivity themeActivity) {
+        this.a = themeActivity;
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
-    public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.k6.Jj));
-    }
-
-    @Override // android.view.View
-    public final void invalidate() {
-        super.invalidate();
-        this.a.invalidate();
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        int x02 = org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.I6, false);
-        TextPaint textPaint = this.c;
-        textPaint.setColor(x02);
-        canvas.drawText("" + org.telegram.messenger.iz.Y0, getMeasuredWidth() - org.telegram.messenger.g0.L(39.0f), org.telegram.messenger.g0.L(28.0f), textPaint);
-    }
-
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        this.a.getSeekBarAccessibilityDelegate().e(this, accessibilityNodeInfo);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), i10);
-        this.a.setProgress(org.telegram.messenger.iz.Y0 / this.b);
-    }
-
-    @Override // android.view.View
-    public final boolean performAccessibilityAction(int i7, Bundle bundle) {
-        return super.performAccessibilityAction(i7, bundle) || this.a.getSeekBarAccessibilityDelegate().g(this, i7, bundle);
-    }
-
-    @Override // org.telegram.ui.ActionBar.a6
-    public final void updateColors() {
-        org.telegram.ui.Components.mm0 mm0Var = this.a;
-        if (mm0Var == null) {
+    /* JADX WARN: Removed duplicated region for block: B:53:0x0151  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x0156  */
+    @Override // org.telegram.ui.ActionBar.j
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void b(int i7) {
+        if (i7 == -1) {
+            this.a.finishFragment();
             return;
         }
-        try {
-            int x02 = org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Jj, false);
-            if (x02 != this.d) {
-                this.d = x02;
-                mm0Var.setOuterColor(x02);
+        if (i7 == 1) {
+            this.a.B0();
+            return;
+        }
+        if (i7 == 2) {
+            org.telegram.ui.ActionBar.i6 k10 = org.telegram.ui.ActionBar.l6.D0().k(false);
+            if (k10.r == null) {
+                this.a.getMessagesController().y4(k10.b, k10);
+                org.telegram.messenger.qs.e().k(org.telegram.messenger.qs.s4, k10.b, k10);
+                return;
             }
-            invalidate();
-        } catch (Exception e10) {
-            org.telegram.messenger.a8.g(e10, true);
+            String str = "https://" + this.a.getMessagesController().U2 + "/addtheme/" + k10.r.slug;
+            this.a.showDialog(new org.telegram.ui.Components.no0(this.a.getParentActivity(), null, str, false, str, false, null));
+            return;
+        }
+        if (i7 == 3) {
+            this.a.C0();
+            return;
+        }
+        if (i7 == 4) {
+            if (this.a.getParentActivity() == null) {
+                return;
+            }
+            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(this.a.getParentActivity());
+            alertDialog$Builder.a.R = org.telegram.messenger.id.M0(2131744146, "ThemeResetToDefaultsTitle");
+            alertDialog$Builder.a.T = org.telegram.messenger.id.M0(2131744147, "ThemeResetToDefaultsText");
+            alertDialog$Builder.k(org.telegram.messenger.id.M0(2131746118, "Reset"), new ni0(this, 18));
+            alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, "Cancel"), null);
+            org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
+            this.a.showDialog(u1Var);
+            TextView textView = (TextView) u1Var.d(-1);
+            if (textView != null) {
+                org.telegram.ui.ActionBar.s6.U(textView, org.telegram.ui.ActionBar.l6.q7, null);
+                return;
+            }
+            return;
+        }
+        if (i7 == 5) {
+            SharedPreferences sharedPreferences = org.telegram.messenger.t0.b.getSharedPreferences("themeconfig", 0);
+            String str2 = "Blue";
+            String string = sharedPreferences.getString("lastDayTheme", "Blue");
+            if (org.telegram.ui.ActionBar.l6.Q0(string) == null || org.telegram.ui.ActionBar.l6.Q0(string).q()) {
+                string = "Blue";
+            }
+            String str3 = "Dark Blue";
+            String string2 = sharedPreferences.getString("lastDarkTheme", "Dark Blue");
+            if (org.telegram.ui.ActionBar.l6.Q0(string2) == null || !org.telegram.ui.ActionBar.l6.Q0(string2).q()) {
+                string2 = "Dark Blue";
+            }
+            org.telegram.ui.ActionBar.k6 k6Var = org.telegram.ui.ActionBar.l6.I;
+            if (!string.equals(string2)) {
+                str3 = string2;
+            } else if (k6Var.q() || string.equals("Dark Blue") || string.equals("Night")) {
+                str3 = string2;
+                boolean equals = str2.equals(k6Var.m());
+                org.telegram.ui.ActionBar.k6 Q0 = !equals ? org.telegram.ui.ActionBar.l6.Q0(str3) : org.telegram.ui.ActionBar.l6.Q0(str2);
+                int[] iArr = {(this.a.s.getIconView().getMeasuredWidth() / 2) + r9, (this.a.s.getIconView().getMeasuredHeight() / 2) + r9};
+                this.a.s.getIconView().getLocationInWindow(iArr);
+                int i10 = iArr[0];
+                int i11 = iArr[1];
+                org.telegram.messenger.qs.e().k(org.telegram.messenger.qs.t4, Q0, Boolean.FALSE, iArr, -1, Boolean.valueOf(equals), this.a.s.getIconView());
+                this.a.F0(true);
+                org.telegram.ui.ActionBar.l6.M1(this.a);
+            }
+            str2 = string;
+            boolean equals2 = str2.equals(k6Var.m());
+            if (!equals2) {
+            }
+            int[] iArr2 = {(this.a.s.getIconView().getMeasuredWidth() / 2) + i10, (this.a.s.getIconView().getMeasuredHeight() / 2) + i11};
+            this.a.s.getIconView().getLocationInWindow(iArr2);
+            int i102 = iArr2[0];
+            int i112 = iArr2[1];
+            org.telegram.messenger.qs.e().k(org.telegram.messenger.qs.t4, Q0, Boolean.FALSE, iArr2, -1, Boolean.valueOf(equals2), this.a.s.getIconView());
+            this.a.F0(true);
+            org.telegram.ui.ActionBar.l6.M1(this.a);
         }
     }
 }

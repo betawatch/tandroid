@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class u5 implements Runnable {
     public final /* synthetic */ int a;
@@ -47,7 +47,7 @@ public final /* synthetic */ class u5 implements Runnable {
                                 ijVar = this.d;
                                 if (i10 >= size) {
                                     arrayList.add(0, ijVar);
-                                    z5Var.I.put(ijVar.f1(), ijVar);
+                                    z5Var.I.put(ijVar.e1(), ijVar);
                                     m.f3 f3Var = z5Var.S;
                                     g0.r(f3Var);
                                     g0.i3(f3Var, 60000L);

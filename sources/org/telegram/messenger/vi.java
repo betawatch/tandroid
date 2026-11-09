@@ -5,7 +5,7 @@ import android.util.LongSparseArray;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes.dex */
 public final class vi extends c1 {
     public static final vi[] b = new vi[4];
@@ -57,7 +57,7 @@ public final class vi extends c1 {
     }
 
     public final void c(TL_update.TL_updatePendingJoinRequests tL_updatePendingJoinRequests) {
-        long j3 = -ij.C1(tL_updatePendingJoinRequests.peer);
+        long j3 = -ij.B1(tL_updatePendingJoinRequests.peer);
         this.a.put(j3, null);
         TLRPC.ChatFull N0 = getMessagesController().N0(j3);
         if (N0 != null) {

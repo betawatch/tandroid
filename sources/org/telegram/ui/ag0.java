@@ -1,49 +1,33 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.tgnet.ConnectionsManager;
-
-/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
+/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
 /* loaded from: classes3.dex */
-public final class ag0 extends org.telegram.ui.Cells.q1 {
-    public int ld;
-    public int md;
-    public int nd;
-    public final /* synthetic */ bg0 od;
+public final /* synthetic */ class ag0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ bg0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ag0(bg0 bg0Var, Context context, int i7, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, i7, true, null, f6Var);
-        this.od = bg0Var;
-        this.ld = ConnectionsManager.DEFAULT_DATACENTER_ID;
-        this.md = ConnectionsManager.DEFAULT_DATACENTER_ID;
-        this.nd = -1;
+    public /* synthetic */ ag0(bg0 bg0Var, int i7) {
+        this.a = i7;
+        this.b = bg0Var;
     }
 
-    @Override // org.telegram.ui.Cells.q1
-    public final xh.e V2() {
-        return xh.e.d(1, this, this.od.E);
-    }
-
-    @Override // android.view.View
-    public final boolean isPressed() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Cells.q1, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
-        super.onLayout(z9, i7, i10, i11, i12);
-        if (!this.hb.x0 || i10 == 0 || this.ld == Integer.MAX_VALUE || i12 == 0 || this.md == Integer.MAX_VALUE) {
-            return;
-        }
-        if (this.nd == (getMessageObject() == null ? 0 : getMessageObject().f1())) {
-            if (!this.od.v0) {
-                setTranslationY(-(i10 - this.ld));
-                animate().translationY(0.0f).setDuration(320L).setInterpolator(org.telegram.ui.Components.xq.h).start();
-            }
-            this.ld = getTop();
-            this.md = getBottom();
-            this.nd = getMessageObject() != null ? getMessageObject().f1() : 0;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.W = null;
+                if (org.telegram.messenger.r2.a) {
+                    org.telegram.messenger.a8.b("chatItemAnimator enable notifications");
+                    break;
+                }
+                break;
+            default:
+                this.b.W = null;
+                if (org.telegram.messenger.r2.a) {
+                    org.telegram.messenger.a8.b("chatItemAnimator enable notifications");
+                    break;
+                }
+                break;
         }
     }
 }
